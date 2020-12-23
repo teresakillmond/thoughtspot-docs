@@ -1,13 +1,11 @@
----
-title: [Best practices for Embrace with Snowflake]
-last_updated: 01/15/2020
-summary: "You can connect to Snowflake using ThoughtSpot Embrace, and start searching your data. This article contains helpful pointers on data modeling."
-sidebar: mydoc_sidebar
-permalink: /:collection/:path.html
----
+= Best practices for Embrace with Snowflake
+:last_updated: 01/15/2020
+
+You can connect to Snowflake using ThoughtSpot Embrace, and start searching your data. This article contains helpful pointers on data modeling.
+
 After connecting to Snowflake through ThoughtSpot Embrace, you may notice that some things don’t work as you expect. This article lists best practices for improving the user experience by making small changes to the Snowflake schema in Snowflake, to optimize it for ThoughtSpot.
 
-## Change JSON to a relational schema in Snowflake
+== Change JSON to a relational schema in Snowflake
 
 ThoughtSpot works with relational data, where data must be in the form of a table, with rows and columns. Relational data is commonly stored as comma separated values, in CSV format, or in tables in a database.
 
@@ -15,25 +13,25 @@ The Snowflake warehouse uses more flexible requirements for storing data, such a
 
 For example, if you connect to the Snowflake Free Trail sample WEATHER dataset, and search it in ThoughtSpot, the `DAILY_14_TOTAL` table features JSON data.
 
-![JSON data in Snowflake](snowflake-jsondata.png "JSON data in Snowflake")
+image::snowflake-jsondata.png[JSON data in Snowflake]
 
 To make this data searchable in ThoughtSpot, you must first create a view in Snowflake, which effectively makes the JSON data into relational (table) data. You can then search this data in ThoughtSpot, and generate chart and table results from your searches. This process is called “schema on read”.
 
-### Create a view in snowflake
+== Create a view in snowflake
 
 To create a view from a Snowflake table that contains JSON, follow these steps:
 
-1. Log in to your Snowflake instance.
+. Log in to your Snowflake instance.
 
-2. If necessary, change your role so you can issue `CREATE VIEW` DDL statement in the target schema. See [CREATE VIEW](https://docs.snowflake.net/manuals/sql-reference/sql/create-view.html) in Snowflake.
+. If necessary, change your role so you can issue `CREATE VIEW` DDL statement in the target schema. See [CREATE VIEW](https://docs.snowflake.net/manuals/sql-reference/sql/create-view.html) in Snowflake.
 
     ![Switch roles in Snowflake](snowflake-switch-role.png "Switch roles in Snowflake")
 
-3. Click **Worksheets**.
+. Click **Worksheets**.
 
     ![Switch to Worksheets in Snowflake](snowflake-worksheets.png "Switch to Worksheets in Snowflake")
 
-4. Issue the `CREATE VIEW` statement.
+. Issue the `CREATE VIEW` statement.
 
    See [CREATE VIEW Syntax](https://docs.snowflake.net/manuals/sql-reference/sql/create-view.html#syntax).
 
@@ -61,7 +59,7 @@ FROM json_weather_data
 WHERE city_id = 5128638;
    ```
 
-5. Query the new view in Snowflake.
+. Query the new view in Snowflake.
 
    The following example demonstrates how you can query the view <code><strong>json_weather_data_view</strong></code> created in the previous step:
 
@@ -71,17 +69,17 @@ WHERE date_trunc('month',observation_time) = '2018-01-01'
 LIMIT 20;
    ```
 
-6. In ThoughtSpot Embrace, add a connection to Snowflake, specifically to the view you created.
+. In ThoughtSpot Embrace, add a connection to Snowflake, specifically to the view you created.
 
    See [Connect to Snowflake through Embrace](#connect-snowflake).
 
 
 When you subsequently search in ThoughtSpot against the Snowflake view, you can easily create charts and graphs, as expected.
 
-![Visualization on Snowflake view](snowflake-view-visualization.png "Visualization on Snowflake view")
+image::snowflake-view-visualization.png[Visualization on Snowflake view]
 
 
-## Add joins between tables
+== Add joins between tables
 
 To search more than one table at the same time in ThoughtSpot, you must define joins between these tables by specifying the  columns that contain matching data across two tables. These columns represent the 'primary key' and 'foreign key' of the join.
 
@@ -137,16 +135,16 @@ To search multi-table Snowflake data in ThoughtSpot, you must explicitly create 
 
 There are two ways to do this:
 
-1. ThoughtSpot recommends that you add the necessary foreign key constraints by creating a join in Snowflake. We demonstrate how you can do in [Create joins in Snowflake]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-best.html#join-snowflake).
+. ThoughtSpot recommends that you add the necessary foreign key constraints by creating a join in Snowflake. We demonstrate how you can do in [Create joins in Snowflake]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-best.html#join-snowflake).
 
    For in-depth information from Snowflake, see [CREATE or ALTER TABLE … CONSTRAINT](https://docs.snowflake.net/manuals/sql-reference/sql/create-table-constraint.html).
 
-2. Alternatively, if you don't have the necessary permissions, you can create these relationships in ThoughtSpot.
+. Alternatively, if you don't have the necessary permissions, you can create these relationships in ThoughtSpot.
 
    See [Join a table or view to another data source]({{ site.baseurl }}/admin/data-modeling/create-new-relationship.html) and [Constraints]({{ site.baseurl }}/admin/loading/constraints.html).
 
-{: id="join-snowflake"}
-### Create joins in Snowflake
+[#join-snowflake]
+=== Create joins in Snowflake
 
 To add a foreign key constraint in Snowflake, you must issue the following `ALTER TABLE` statement:
 
@@ -167,7 +165,7 @@ ALTER TABLE &lt;table_name&gt; ADD { outoflineUniquePK | outoflineFK }
   [ ENABLE | DISABLE ]
   [ VALIDATE | NOVALIDATE ]
   [ RELY | NORELY ]</pre>
-    </dd>  
+    </dd>
   </dlentry>
   <dlentry>
     <dt>outoflineFK</dt>
@@ -185,11 +183,11 @@ ALTER TABLE &lt;table_name&gt; ADD { outoflineUniquePK | outoflineFK }
     [ ENABLE | DISABLE ]
     [ VALIDATE | NOVALIDATE ]
     [ RELY | NORELY ]</pre>
-    </dd>  
+    </dd>
   </dlentry>
 </dl>
 
-{: id="add-fk-snowflake"}
+[#add-fk-snowflake"]
 **Example 1: adding a foreign key in Snowflake**
 
 For example, you can add a foreign key to Retail Sales schema in Snowflake by running the following `ALTER TABLE` statement. Also, contrast it with [Example 2](#add-fk-thoughtspot):
@@ -203,7 +201,7 @@ ALTER TABLE "HO_RETAIL"."PUBLIC"."HO_Retail_Sales_Fact"
   ON DELETE NO ACTION;
 ```
 
-{: id="add-fk-thoughtspot"}
+[#add-fk-thoughtspot]
 **Example 2: adding a foreign key in ThoughtSpot**
 
 To add the foreign key in ThoughtSpot (an alternative to the process outlined in [Example 1](#add-fk-snowflake)), you can issue the following TQL `ALTER TABLE` statement:
@@ -214,14 +212,14 @@ TQL&gt; ALTER TABLE "HO_Retail_Sales_Fact"
    REFERENCES "HO_Date_Dimension" ("Date_Key");
 </pre>
 
-{: id="connect-snowflake"}
-## Connect to Snowflake through Embrace
+[#connect-snowflake]
+== Connect to Snowflake through Embrace
 
-Follow the general steps in [Add a Snowflake connection]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-add.html).
+Follow the general steps in xref:embrace-snowflake-add.adoc[Add a Snowflake connection].
 
 In the following screen, the **Account name** is the first part of the URL that you use to access Snowflake.
 
-![Snowflake connection details](snowflake-connectiondetails.png "Snowflake connection details")
+xref:snowflake-connectiondetails.png.adoc[Snowflake connection details]
 
 If you cannot find your **Full account name** in Snowflake, see the following examples for determining your account based on the account name, cloud platform, and region. Assume that the **account name** is `xy12345`.
 
