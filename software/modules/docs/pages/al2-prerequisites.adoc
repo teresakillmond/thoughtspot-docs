@@ -1,10 +1,9 @@
-= ["Amazon Linux 2 installation prerequisites"]
+= Amazon Linux 2 installation prerequisites
 :last_updated: 6/11/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Prepare the system and ThoughtSpot clusters for installation.
 
-[cols=2*]
+Prepare the system and ThoughtSpot clusters for installation.
+
+[cols="5%,95%"]
 |===
 | &#10063;
 | <<set-up-hosts,1.
@@ -36,38 +35,33 @@ Disable SELinux or run it in permissive mode>>
 
 Set up hosts for the ThoughtSpot cluster on Amazon Web Services.
 
-. Refer to link:{{ site.baseurl }}/appliance/aws/configuration-options.html[AWS configuration options] for the exact specification for the hosts:
+. Refer to xref:configuration-options.adoc[AWS configuration options] for the exact specification for the hosts:
  ** CPU
  ** memory
  ** disks
-. Refer to link:{{ site.baseurl }}/appliance/aws/launch-an-instance.html[Set up AWS resources for ThoughtSpot] to create and launch your AWS virtual machines.
- ** Ensure that your link:{{ site.baseurl }}/appliance/aws/launch-an-instance.html#al2-ami[AMI] is an Amazon Linux 2 image.
+. Refer to xref:launch-an-instance.adoc[Set up AWS resources for ThoughtSpot] to create and launch your AWS virtual machines.
+ ** Ensure that your xref:launch-an-instance.adoc#al2-ami[AMI] is an Amazon Linux 2 image.
 
 [#aws-ssm]
 == [Optional] Set up AWS Systems Manager Agent
 
-If you plan to use the https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html[AWS SSM agent] as an alternative to SSH, create a new IAM role while creating VMs.
+If you plan to use the xref:https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html[AWS SSM agent, window="_blank"] as an alternative to SSH, create a new IAM role while creating VMs.
 This IAM role must have an SSM policy to grant AWS SSM permission to perform actions on your instances.
-Refer to https://docs.aws.amazon.com/systems-manager/latest/userguide/setup-instance-profile.html[Create an IAM instance profile for Systems Manager].
+Refer to xref:https://docs.aws.amazon.com/systems-manager/latest/userguide/setup-instance-profile.html[Create an IAM instance profile for Systems Manager, window="_blank"].
 
 You must install the SSM agent on each node.
-Refer to https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-manual-agent-install.html[Manually install SSM Agent on EC2 instances for Linux], if the SSM agent is not already on each node.
+Refer to xref:https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-manual-agent-install.html[Manually install SSM Agent on EC2 instances for Linux, window="_blank"], if the SSM agent is not already on each node.
 
 [#partition-hosts]
 == Partition the hosts
 
-As you create VMs, ensure that all ThoughtSpot hosts have the following partitions on the root drive.+++<table>++++++<tbody>++++++<tr>++++++<th>+++Partition+++</th>+++
-+++<th>+++Drive type+++</th>+++
-+++<th>+++Description+++</th>+++
-+++<th>+++Minimum size+++</th>++++++</tr>+++
-+++<tr>++++++<td>++++++<strong>+++OS partition+++</strong>++++++</td>+++
-+++<td>+++SSD (root drive)+++</td>+++
-+++<td>+++Root partition for OS, +++<code>+++/tmp+++</code>++++++</td>+++
-+++<td>+++100GB+++<br>++++++</br>+++Allocate at least 50GB to +++<code>+++/tmp+++</code>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>++++++<strong>+++Export partition+++</strong>++++++</td>+++
-+++<td>+++SSD (root drive)&nbsp;+++</td>+++
-+++<td>+++Stores ThoughtSpot objects, hdfs logs, service logs, and so on+++</td>+++
-+++<td>+++200GB+++</td>++++++</tr>++++++</tbody>++++++</table>+++
+As you create VMs, ensure that all ThoughtSpot hosts have the following partitions on the root drive.
+[width="100%",options="header"]
+|====================
+| Partition | Drive type | Description | Minimum size
+| *OS partition* | SSD (root drive) | Root partition for OS, /tmp | Allocate at least 50GB to /tmp
+| *Export partition* | SSD (root drive) | Stores ThoughtSpot objects, hdfs logs, service logs, and so on | 200GB
+|====================
 
 [#enable-hosts]
 == Enable the hosts to download Amazon Linux 2 packages
@@ -107,4 +101,4 @@ We recommend that you disable SELinux, or run it in permissive mode.
 
 == Next steps
 
-Next, link:{{ site.baseurl }}/appliance/amazon-linux-2/al2-ts-artifacts.html[get ThoughtSpot artifacts].
+Next, xref:al2-ts-artifacts.adoc[get ThoughtSpot artifacts].

@@ -1,16 +1,14 @@
-= ["Create or change schedule for refreshing a materialized view"]
+= Create or change schedule for refreshing a materialized view
 :last_updated: 09/21/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Learn how to create or change the schedule for data refresh in a materialized view.
-:toc: false
+
+Learn how to create or change the schedule for data refresh in a materialized view.
 
 To keep the data in a materialized view consistent and relevant, we recommend that you periodically refresh it with data from the parent table or tables.
 ThoughtSpot makes it easy, by letting you schedule regular refreshes at daily, weekly, or monthly intervals.
 
 To schedule materialization of a view, follow these steps:
 
-{% include content/view-materialize/view-materialize-navigation.md %}
+include::partial$view-materialize-navigation.adoc[]
 
 . Under *Materialization*, in the *Update schedule* section, either update an existing schedule, or create a new schedule:
  ** To update an existing schedule, click _Daily_, _Weekly_, or _Monthly_.
@@ -19,10 +17,10 @@ To schedule materialization of a view, follow these steps:
 +
 image::view-materialize-10.png[Update or create a schedule]
 
-{% include content/view-materialize/view-materialize-schedule-options.md %}
+include::partial$view-materialize-schedule-options.adoc[]
 
 == Related Information
 
-* link:{{ site.baseurl }}/complex-search/about-query-on-query.html[Understand views]
-* link:{{ site.baseurl }}/complex-search/create-aggregated-worksheet.html[Save a search as a view]
-* link:{{ site.baseurl }}/admin/loading/materialized-views.html[About materialized views]
+* xref:about-query-on-query.adoc[Understand views]
+* xref:create-aggregated-worksheet.adoc[Save a search as a view]
+* xref:materialized-views.adoc[About materialized views]

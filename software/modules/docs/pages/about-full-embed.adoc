@@ -1,8 +1,7 @@
-= ["Full application embedding"]
+= Full application embedding
 :last_updated: 11/02/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Full embedding allows users to create ThoughtSpot content in an embedded environment.
+
+Full embedding allows users to create ThoughtSpot content in an embedded environment.
 
 == Advantages of full embedding
 
@@ -24,7 +23,7 @@ users in a fully  embedded applications cannot perform the following tasks:
 * modify profiles
 * view the Help Center
 
-Before committing to fully embed the application, review the article link:{{ site.baseurl }}/app-integrate/embedding-viz/about-embedding-viz.html[Understand embedding].
+Before committing to fully embed the application, review the article xref:about-embedding-viz.adoc[Understand embedding].
 
 == Example of full application embedding
 
@@ -83,15 +82,21 @@ To have an embedded ThoughtSpot application show in a full screen, the `<iframe>
 === Browser support for full screen embedding
 
 Note the following support across browsers:
-+++<dlentry>+++Supported desktop browsers::::  Chrome, Edge, Firefox, and Opera+++</dlentry>++++++<dlentry>+++Supported mobile browsers::::  Android webview, Chrome for Android, Firefox for Android, Opera for Android, and Samsung Internet+++</dlentry>++++++<dlentry>+++NOT supported desktop browsers::::  Internet Explorer, Safari+++</dlentry>++++++<dlentry>+++NOT supported mobile browser::::  Safari on iOS+++</dlentry>+++
+
+Supported desktop browsers:: Chrome, Edge, Firefox, and Opera
+Supported mobile browsers:: Android webview, Chrome for Android, Firefox for Android, Opera for Android, and Samsung Internet
+NOT supported desktop browsers:: Internet Explorer, Safari
+NOT supported mobile browser::  Safari on iOS
 
 === Framework support for full screen embedding
 
 Additionally, consider the following framework factors:
-+++<dlentry>+++allowfullscreen::::
-This attribute is the legacy precursor of `allow="fullscreen"`, and may still work with some browsers.
-+ Set to `true` if the `<iframe>` can activate fullscreen mode by calling the `requestFullscreen()` method.
-+ We strongly recommend that you update your embedding scripts to use the new approach inside the `<iframe>` tag.+++</dlentry>++++++<dlentry>+++Spring MVC::::  This framework supports the `allowfullscreen="true"` parameter inside the `iframe` tag.+++</dlentry>++++++<dlentry>+++React::::  This framework is case sensitive, and uses the attribute `allowFullScreen` inside the `iframe` tag.+++</dlentry>+++
+
+allowfullscreen:: This attribute is the legacy precursor of `allow="fullscreen"`, and may still work with some browsers.Set to `true` if the `<iframe>` can activate fullscreen mode by calling the `requestFullscreen()` method.
++
+We strongly recommend that you update your embedding scripts to use the new approach inside the `<iframe>` tag.
+Spring MVC:: This framework supports the `allowfullscreen="true"` parameter inside the `iframe` tag.
+React:: This framework is case sensitive, and uses the attribute `allowFullScreen` inside the `iframe` tag.
 
 == Hide the ThoughtSpot navigation bar
 

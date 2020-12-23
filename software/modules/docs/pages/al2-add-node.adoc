@@ -1,8 +1,7 @@
-= ["Add a node to a ThoughtSpot cluster on Amazon Linux 2"]
+= Add a node to a ThoughtSpot cluster on Amazon Linux 2
 :last_updated: 6/10/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: You can easily configure an additional node for a ThoughtSpot cluster on Amazon Linux 2.
+
+You can easily configure an additional node for a ThoughtSpot cluster on Amazon Linux 2.
 
 To add a new node to a ThoughtSpot cluster deployed through Amazon Linux 2, you must first make this new node ready for ThoughtSpot.
 
@@ -16,7 +15,7 @@ To add a new node to a ThoughtSpot cluster deployed through Amazon Linux 2, you 
 [#configure-ansible]
 == Configure the Ansible Playbook
 
-Follow the general steps for configuring the Ansible Playbook, either on link:{{ site.baseurl }}/appliance/amazon-linux-2/al2-install-online.html#configure-ansible[online clusters], or on link:{{ site.baseurl }}/appliance/amazon-linux-2/al2-install-offline.html#configure-ansible[offline clusters].
+Follow the general steps for configuring the Ansible Playbook, either on xref:al2-install-online.adoc#configure-ansible[online clusters], or on xref:al2-install-offline.adoc#configure-ansible[offline clusters].
 
 . Save a new copy of the `hosts.yaml` file, as `new-host.yaml`.
 . In the `hosts` parameter, *_only_* specify the `IP` or `hostname` of the new node.
@@ -33,8 +32,8 @@ ansible-playbook -i new-host.yaml ts.yaml
 ----
 
 As the Ansible Playbook runs, it will perform the same tasks on the new node that it completed during the initial cluster set-up, but only for the new node.
-See link:{{ site.baseurl }}/appliance/amazon-linux-2/al2-install-online.html#run-ansible[Run Ansible].
-It will install all link:{{ site.baseurl }}/appliance/amazon-linux-2/al2-packages.html[Yum, Python, and R packages], configure the local user accounts for ThoughtSpot administration, install the ThoughtSpot CLI, and configure the node (create any necessary partitions, formatting the data disks, and running the `prepare disks` command).
+See xref:al2-install-online.adoc#run-ansible[Run Ansible].
+It will install all xref:al2-packages.adoc[Yum, Python, and R packages], configure the local user accounts for ThoughtSpot administration, install the ThoughtSpot CLI, and configure the node (create any necessary partitions, formatting the data disks, and running the `prepare disks` command).
 
 After the Ansible Playbook finishes, your new host is ready for installing the ThoughtSpot application.
 
@@ -48,7 +47,7 @@ Follow these general steps to install ThoughtSpot on the new node:
 . Run the `tscli cluster create` command.
 This script prompts you for user input.
 . Check the cluster health by running health checks and logging into the application.
-Refer to the link:{{ site.baseurl }}/appliance/aws/configuration-options.html[Amazon Web Services (AWS) EC2 deployment guide] for the detailed steps to install ThoughtSpot.
+Refer to the xref:configuration-options.adoc[Amazon Web Services (AWS) EC2 deployment guide] for the detailed steps to install ThoughtSpot.
 
 Follow these general steps to install ThoughtSpot on the prepared hosts:
 
