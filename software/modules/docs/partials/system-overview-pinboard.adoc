@@ -1,13 +1,12 @@
-You can view system and usage information for your ThoughtSpot cluster from the Admin Console.
-The *System Overview Pinboard* contains several charts and tables that track monthly active users, top Pinboards by number of views, today's users, and so on.
-To view this Pinboard, navigate to the Admin Console by clicking on the *Admin* tab from the top navigation bar.
-Select *Overview* from the side navigation bar that appears.
+You can view system and usage information for your ThoughtSpot cluster from the *TS Stats: System Information and Usage Pinboard*.
+This Pinboard contains several charts and tables that track monthly active users, top Pinboards by number of views, today's users, and so on.
+To view this Pinboard, search for it in the *Pinboards* tab.
 
-image::admin-portal-overview-pinboard.png[Admin Console - Overview Pinboard]
+image::system-info-usage-pinboard.png[TS Stats: System Information and Usage Pinboard]
 
-== Understand the System Overview Pinbaord
+== Understand the TS Stats: System Information and Usage Pinboard
 
-The *System Overview Pinboard* page consists of standard ThoughtSpot Answers that update in real time and rely on internal system data.
+The *TS Stats: System Information and Usage Pinboard* page consists of standard ThoughtSpot Answers that update in real time and rely on internal system data.
 The Answers rely on underlying system worksheets, which are available to ThoughtSpot administrators.
 The information in these worksheets updates hourly from internal tables that collect monitoring statistics.
 
@@ -17,7 +16,7 @@ When you *edit* the Answer, you see the query that ThoughtSpot built the Answer 
 You can also copy the Answer's embed link, use link:{{ site.baseurl }}/end-user/pinboards/answer-explorer.html[Answer Explorer] on the Answer, or interact with the Answer by link:{{ site.baseurl }}/complex-search/drill-down.html[drilling down].
 While you can interact with and change a copied version of the Answer, you cannot save changes to the underlying query.
 
-The following charts, tables, and panels are available on the *System Overview Pinboard*: <<cluster-summary,cluster summary>>, <<relational-data-cache,relational data cache>>, <<relational-search-engine,relational search engine>>, <<critical-alerts,critical alerts>>, <<space-utilization,space utilization>>, <<mau,monthly active users>>, <<monthly-searches,monthly ad-hoc searches>>, <<monthly-pb-views,monthly Pinboard views,>>, <<top-users,top users last month>>, <<top-pinboards,top Pinboards last month>>, <<searches-user,ad-hoc search by user>>, and <<users-today,today's users>>.
+The following charts, tables, and panels are available on the *TS Stats: System Information and Usage Pinboard*: <<cluster-summary,cluster summary>>, <<critical-alerts,critical alerts>>, <<mau,monthly active users>>, <<monthly-searches,monthly ad-hoc searches>>, <<monthly-pb-views,monthly Pinboard views,>>, <<top-users,top users last month>>, <<top-pinboards,top Pinboards last month>>, <<searches-user,ad-hoc search by user>>, <<users-today,today's users>>, and <<configuration-events,configuration events>>.
 
 [#cluster-summary]
 == Cluster Summary
@@ -319,6 +318,7 @@ today
 
 The query uses the `TS: BI Server` data source.
 
+[#configuration-events]
 == Configuration Events
 
 This system answer displays recent events that changed the configuration of the system.

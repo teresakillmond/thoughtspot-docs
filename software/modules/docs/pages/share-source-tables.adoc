@@ -1,9 +1,9 @@
 = Sharing tables and columns
 :last_updated: 2/12/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
+
 
 As an administrator, you can share view or edit access to any table.
+
 
 By default, when a table is loaded using the ThoughtSpot Loader, ODBC, or JDBC, it is only visible to administrators.
 Tables imported from a Web browser are visible to administrators and the user who uploaded it.
@@ -19,8 +19,8 @@ Objects created from tables can include worksheets, Views, Answers, and Pinboard
 This means that if a user wants to drop or modify a table, any object that depends upon it must be edited or removed first, to remove the dependency.
 
 For this reason, it is a best practice to only grant the *Edit* permission on a table to a small number of users.
-If you want to prevent shares from also revealing the columns regardless of where it appears (worksheets, answers, and pinboards), you can ask xref:appliance:contact.adoc[ThoughtSpot Support] to enable a stricter behavior.
+If you want to prevent shares from also revealing the columns regardless of where it appears (worksheets, answers, and pinboards), you can ask link:{{ site.baseurl }}/appliance/contact.html[ThoughtSpot Support] to enable a stricter behavior.
 
 You can share a table <<share-datatab,from the *Data* tab>>, or <<share-dataset,from within the table>> that you want to share.
 
-include::partial$share-data.adoc[]
+{% include content/share-data.md %}

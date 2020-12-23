@@ -1,8 +1,8 @@
-= Data types
+'''
 
-ThoughtSpot supports the common data types.
+title: [Data types]
 
-Before you import data, compare the data types you want to load with these supported data types.
+last_updated: 4/21/2020 summary: "ThoughtSpot supports the common data types." sidebar: mydoc_sidebar permalink: /:collection/:path.html -- Before you import data, compare the data types you want to load with these supported data types.
 Then, convert your data before loading it.
 Typically, you would export the data, transform it to meet these type rules, and then load the data.
 This is known as an extract-transform-load process.
@@ -32,8 +32,8 @@ Choose a data type for each column from the list of supported data types:+++<tab
     +++<td>++++++<code>+++DATE+++</code>+++,  +++<code>+++DATETIME+++</code>+++, +++<code>+++TIMESTAMP+++</code>+++, +++<code>+++TIME+++</code>++++++</td>+++
     +++<td>++++++<code>+++DATETIME+++</code>+++, +++<code>+++TIMESTAMP+++</code>+++, and +++<code>+++TIME+++</code>+++ are stored at the granularity of seconds. +++<code>+++TIMESTAMP+++</code>+++ is identical to +++<code>+++DATETIME+++</code>+++, but is included for syntax compatibility.+++</td>++++++</tr>++++++</table>+++
 
-WARNING: There is a 64MB limitation on the number of characters for `VARCHAR`.
-If you have any `VARCHAR` data that exceeds this limit, the entire load will fail.
+{% include warning.html content="There is a 64MB limitation on the number of characters for `VARCHAR`.
+If you have any `VARCHAR` data that exceeds this limit, the entire load will fail."%}
 
 == Geographical data types
 
@@ -47,6 +47,7 @@ You can use `DOUBLE` or `VARCHAR` for latitude and longitude data.
 See the following example:
 
 image::geoconfig-zipcodes.png[Geo data example]
+
 In the above example, the zipcodes were imported as text values.
 By default, the `data type` is `VARCHAR`, the `column type` is `attribute`, and `additive` is `no`.
 You must specify the `geo config` for your data yourself.

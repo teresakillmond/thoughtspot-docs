@@ -1,8 +1,8 @@
 = Configure a reverse SSH tunnel
 :last_updated: 7/27/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: You can set up a reverse tunnel to allow ThoughtSpot Support to get access to your ThoughtSpot instance, to perform support-related activities.
+
+
+You can set up a reverse tunnel to allow ThoughtSpot Support to get access to your ThoughtSpot instance, to perform support-related activities.
 :toc: true
 
 [#reverse-tunnel]
@@ -16,8 +16,8 @@ The remote tunnel enables SSH and HTTP access to your ThoughtSpot instance by Th
 You can grant and revoke this access easily, so you can enable it for a troubleshooting session, and then disable it again.
 Before doing this procedure, make sure your company's security policies allow reverse tunneling.
 
-NOTE: Before you set up a reverse tunnel, open port `22` in your firewall outgoing rules to add `tunnelrelay.thoughtspot.com` to your list of allowed domains.
+{% include note.html content="Before you set up a reverse tunnel, open port `22` in your firewall outgoing rules to add `tunnelrelay.thoughtspot.com` to your list of allowed domains." %}
 
 == Configure reverse SSH tunnel
 
-include::partial$reverse-ssh-tunnel.adoc[]
+{% include content/admin-portal/reverse-ssh-tunnel.md %}

@@ -1,7 +1,6 @@
 = Schema planning concepts
 :last_updated: 11/15/2019
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
+
 
 Learn about creating a schema for the ThoughtSpot Loader.
 
@@ -43,7 +42,6 @@ Make note of this information for each table:
 
 Here's what you must take into account in your TQL for creating each table, based on these properties:
 
-[cols="15%,15%,20%,50%"]
 |===
 | Table type | Table size | To be joined with | Schema recommendations
 
@@ -80,9 +78,7 @@ Primary key must be the same as the distribution key.
 
 == Where to go next
 
-* xref:admin:datatypes.adoc[Data types]
-+ ThoughtSpot supports the common data types.
-
+* *link:{{ site.baseurl }}/admin/loading/datatypes.html[Data types]* + ThoughtSpot supports the common data types.
 Compare these with the data types you want to load, and do any necessary conversion ahead of loading the data.
 * *link:{{ site.baseurl }}/admin/loading/constraints.html[Constraints]* + Constraints include primary keys, foreign keys, and relationships.
 Relationships allow you to create a generic relationship for use when you want to join tables that don't have a primary key/foreign key relationship.

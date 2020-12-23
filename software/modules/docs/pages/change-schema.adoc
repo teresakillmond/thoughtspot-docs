@@ -1,15 +1,14 @@
 = How to change a schema
 :last_updated: 08/26/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
+
 
 After creating the schema and loading data, you may have to change your set up. You can alter the schema by changing the primary key, relationships between tables, and table sharding.
 
 Making changes to a schema after data has been loaded and users have created worksheets or pinboards on the tables requires care, so that you don't lose the relationship between the objects created in ThoughtSpot and the underlying tables.
 If you follow the procedures here, your tables will retain their relationships to the objects created on top of them.
 
-TIP: Always take a snapshot of your database before making any schema changes.
-This snapshot allows you to revert back to the prior state if you make an error, or something doesn't work as you expected after the schema change.
+{% include tip.html content="Always take a snapshot of your database before making any schema changes.
+This snapshot allows you to revert back to the prior state if you make an error, or something doesn't work as you expected after the schema change." %}
 
 == Change the primary key for a table
 
@@ -27,8 +26,8 @@ Any dependent objects, like Pinboards or Worksheets, remain intact.
 
 To change the primary key of a table:
 
-. xref:overview-snapshot.adoc[Create a manual snapshot].
-. xref:prep-schema-for-load.adoc#connect-with-tql[Connect to the database with the ThoughtSpot SQL Command Line (TQL)].
+. link:{{ site.baseurl }}/admin/backup-restore/overview-snapshot.html[Create a manual snapshot].
+. link:prep-schema-for-load.html#connect-with-tql[Connect to the database with the ThoughtSpot SQL Command Line (TQL)].
 . Drop the existing primary key (if any), by issuing a command like this example:
 +
 ----
@@ -39,6 +38,7 @@ To change the primary key of a table:
 +
 Dropping a primary key can impact existing Worksheets, Answers, and Pinboards.
 The system warns you if dropping a primary key impacts other objects.
+[//]: # (To continue, use the `--allow_unsafe` flag.)
 
 . Add a new primary key, if desired:
 +
@@ -66,11 +66,12 @@ Any dependent objects (pinboards or worksheets) will remain intact.
 
 To change the relationship between tables:
 
-. xref:overview-snapshot.adoc[Create a manual snapshot].
-. xref:prep-schema-for-load.adoc#connect-with-tql[Connect to the database with the ThoughtSpot SQL Command Line (TQL)].
+. link:{{ site.baseurl }}/admin/backup-restore/overview-snapshot.html[Create a manual snapshot].
+. link:prep-schema-for-load.html#connect-with-tql[Connect to the database with the ThoughtSpot SQL Command Line (TQL)].
 . Issue the command to drop the existing relationship
 +
 Before dropping a relationship TQL checks for and then warns of any dependent objects.
+[//]: # (To continue with the drop any way, use the `--allow_unsafe` flag.)
 +
 The following examples illustrate several different types of drop operations.
 +
@@ -164,8 +165,8 @@ ALTER TABLE "sales"
    KEY ("productID");
 ----
 +
-NOTE: When you re-shard the table, the system re-shards all the existing data.
-You do not need to force reload.
+{% include note.html content="When you re-shard the table, the system re-shards all the existing data.
+You do not need to force reload." %}
 
 . Test that any dependent objects (pinboards, worksheets, etc.) are still working correctly.
 . Delete the snapshot you created earlier using the command:

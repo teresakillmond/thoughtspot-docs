@@ -1,10 +1,16 @@
 = Keyword reference
+:last_updated: 11/19/2019
+
+:redirect_from: /6.3.0/reference/keywords.html", "/6.3.0.CU1/reference/keywords.html
+
+Use keywords to help define a search.
+:toc: true
 
 You can use keywords when asking a question to help define your search.
 This reference lists the various keywords.
 You can also see this list of keywords and examples from within the help center.
 
-== Keywords in Other Languages
+=== Keywords in Other Languages
 
 Currently, we offer the following keyword translations.
 
@@ -16,62 +22,69 @@ Currently, we offer the following keyword translations.
 
 [cols=5*]
 |===
-| xref:keywords-ja-JP.html[日本語]
-| xref:keywords-zh-CN.html[中文 (简体)]
-| xref:keywords-de-DE.html[Deutsche]
-| xref:keywords-es-US.html[Español (Latinoamérica)]
-| xref:keywords-es-ES.html[Español (España)]
+| link:{{ site.baseurl }}/reference/keywords-ja-JP.html[日本語]
+| link:{{ site.baseurl }}/reference/keywords-zh-CN.html[中文 (简体)]
+| link:{{ site.baseurl }}/reference/keywords-de-DE.html[Deutsche]
+| link:{{ site.baseurl }}/reference/keywords-es-US.html[Español (Latinoamérica)]
+| link:{{ site.baseurl }}/reference/keywords-es-ES.html[Español (España)]
 
-| xref:keywords-fr-CA.html[Français (Canada)]
-| xref:keywords-fr-FR.html[Français (France)]
-| xref:keywords-pt-BR.html[Português (Brasil)]
-| xref:keywords-pt-PT.html[Português (Portugal)]
-| xref:keywords-it-IT.html[Italiano]
+| link:{{ site.baseurl }}/reference/keywords-fr-CA.html[Français (Canada)]
+| link:{{ site.baseurl }}/reference/keywords-fr-FR.html[Français (France)]
+| link:{{ site.baseurl }}/reference/keywords-pt-BR.html[Português (Brasil)]
+| link:{{ site.baseurl }}/reference/keywords-pt-PT.html[Português (Portugal)]
+| link:{{ site.baseurl }}/reference/keywords-it-IT.html[Italiano]
 
-| xref:keywords-da-DK.html[Dansk]
-| xref:keywords-fi-FI.html[Suomi]
-| xref:keywords-sv-SE.html[Svenska]
-| xref:keywords-nb-NO.html[Norsk]
-| xref:keywords-nl-NL.html[Nederland]
+| link:{{ site.baseurl }}/reference/keywords-da-DK.html[Dansk]
+| link:{{ site.baseurl }}/reference/keywords-fi-FI.html[Suomi]
+| link:{{ site.baseurl }}/reference/keywords-sv-SE.html[Svenska]
+| link:{{ site.baseurl }}/reference/keywords-nb-NO.html[Norsk]
+| link:{{ site.baseurl }}/reference/keywords-nl-NL.html[Nederland]
 |===
 
 Also, see the topic on how to set link:{{ site.baseurl }}/end-user/introduction/about-user.html[locale preferences in your user profile] to control language, date, and number formats on the ThoughtSpot UI.
 
 == General
 
-include::partial$keywords-general.adoc[]
+{% include content/keywords-general.md %}
 
 == Date
 
-include::partial$keywords-date.adoc[]
+{% include content/keywords-date.md %}
 
 == Time
 
-include::partial$keywords-time.adoc[]
+{% include content/keywords-time.md %}
 
 == Text
 
-include::partial$keywords-text.adoc[]
+{% include content/keywords-text.md %}
+
+Starting with release 6.3, when you use more than one `begins with` or `ends with` keyword in a search or formula on the same column, ThoughtSpot returns your results using an `OR` condition, instead of an `AND` condition.
+When you use a combination of `begins with` and `ends with`, ThoughtSpot still returns your results using an `AND` condition.
+When using multiple `begins with` on different columns, ThoughtSpot returns results using an `AND` condition.
+
+For example, if you search for `state name begins with "V" state name begins with "C"`, your results are Virginia, Vermont, California, and Connecticut.
+If you search for `state name begins with V state name ends with T`, your only result is Vermont.
 
 == Number
 
-include::partial$keywords-number.adoc[]
+{% include content/keywords-number.md %}
 
 == Comparative
 
-include::partial$keywords-comparative.adoc[]
+{% include content/keywords-comparative.md %}
 
 == Location
 
-include::partial$keywords-location.adoc[]
+{% include content/keywords-location.md %}
 
 == Period
 
-include::partial$keywords-period.adoc[]
+{% include content/keywords-period.md %}
 
 == In / Not in
 
-include::partial$keywords-in.adoc[]
+{% include content/keywords-in.md %}
 
 Starting with release 6.2, searches with the `in` keyword do not include \{null} values.
 To include these \{null} values, create a formula for the relevant attribute in your search, to convert \{null} values to 'unknown,' or some similar word.
@@ -79,5 +92,5 @@ To include these \{null} values, create a formula for the relevant attribute in 
 ////
 ## Help
 
-//// include::partial$keywords-help.adoc[]
+{% include content/keywords-help.md %}
 ////

@@ -1,9 +1,11 @@
 = Set the relay host for SMTP (email)
 :last_updated: 8/13/2020
 
-ThoughtSpot uses emails to send critical notifications to ThoughtSpot Support. A relay host for SMTP traffic routes the alert and notification emails coming from ThoughtSpot through an SMTP email server.
 
-include::partial$smtp-configure.adoc[]
+ThoughtSpot uses emails to send critical notifications to ThoughtSpot Support. A relay host for SMTP traffic routes the alert and notification emails coming from ThoughtSpot through an SMTP email server.
+:toc: true
+
+{% include content/admin-portal/smtp-configure.md %}
 
 === Configure an email to receive alerts
 
@@ -11,9 +13,9 @@ ThoughtSpot sends alerts to the email address specified during installation.
 If you do not specify an email address, you do not receive any alerts.
 To add an email to receive alerts, `ssh` into your cluster from the command line and issue the following command.
 
-NOTE: Add the ThoughtSpot Support alert email, `prod-alerts@thoughtspot.com`, to allow ThoughtSpot Support to receive alerts.
+{% include note.html content="Add the ThoughtSpot Support alert email, `prod-alerts@thoughtspot.com`, to allow ThoughtSpot Support to receive alerts.
 ThoughtSpot Support monitors these alerts to ensure your cluster's health.
-Do not add this email to POC or demo environments.
+Do not add this email to POC or demo environments." %}
 
  $ tscli monitoring set-config --email <prod-alerts@thoughtspot.com>,<your_email>
 
@@ -36,4 +38,4 @@ As you develop your expertise in emails and alerts, we recommend the following T
 
 * https://training.thoughtspot.com/emails-alerts[Email and Alert Setup]
 
-See other training resources at https://training.thoughtspot.com/[ThoughtSpot U]
+See other training resources at + https://training.thoughtspot.com/[<img src="{{ "/images/ts-u.png" | prepend: site.baseurl }}" alt="ThoughtSpot U">]

@@ -1,8 +1,8 @@
 = SpotIQ 101: Load and analyze data
-:last_updated: 11/15/2019
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Go through a sample SpotIQ workflow to learn about SpotIQ.
+:last_updated: 11/13/2020
+
+
+Go through a sample SpotIQ workflow to learn about SpotIQ.
 
 This 101 walks you through a few simple, SpotIQ workflows.
 When you have completed the walkthrough, you will be able to use the core features of SpotIQ in your ThoughtSpot installation.
@@ -19,9 +19,7 @@ These features require that your user account has the following privileges:
 * *Has Spot IQ privilege*
 
 Your ThoughtSpot administrator can give you these privileges.
-If you can see the SpotIQ option on your ThoughtSpot dashboard, you have access to SpotIQ:
-
-image::spotiq-is-on.png[]
+If you can see the SpotIQ option on your ThoughtSpot dashboard, you have access to SpotIQ.
 
 == Get the sample data and some insights
 
@@ -29,13 +27,13 @@ You can use SpotIQ with any of the data in your system.
 
 This tutorial uses a dataset containing a list of sales and movement data by item and department.
 
-. Download the xref:FoodDollarDataReal.csv[FoodDollarDataReal] CSV file.
+. Download the link:{{ site.baseurl }}/downloads/FoodDollarDataReal.csv[FoodDollarDataReal] CSV file.
 . Save or move the file to a place on your local drive.
 
 == Upload the data
 
 . If you haven't already, sign in to the ThoughtSpot application and click the *Data* tab.
-. Click the More icon image:icon-ellipses.png[more options menu icon], and select *Upload data*.
+. Click the ellipses icon image:icon-ellipses.png[more options menu icon], and select *Upload data*.
 . Browse to the sample data file you downloaded or drag the file into the upload area.
 . Choose `Yes` for the *Are the column names already defined in the file header?* setting.
 . Choose `Comma` for the *Are the files separated by?* setting.
@@ -45,7 +43,7 @@ image::spotiq-download.png[]
 . Click *Next* to go to the *Set column names* page.
 . Set the *category_num* column to *TEXT* on the *Set column types* page.
 +
-image::spotiq-set-column-types[]
+image::spotiq-set-column-types.png[]
 
 . Click *Upload*.
 +
@@ -83,7 +81,7 @@ image::spotiq-insights.png[]
 
 . Look for results from your *FoodDollarDataReal* data.
 +
-SpotIQ labels each result with a *NAME*, *DESCRIPTION*, *STICKERS*,  and *MODIFIED*.
+SpotIQ labels each result with a *NAME*, *DESCRIPTION*, *tagS*,  and *MODIFIED*.
 The *NAME* comes from the object that was analyzed which  is referenced again in the *DESCRIPTION*.
 The combination of *NAME*,  *DESCRIPTION*, and *MODIFIED* is unique.
 
@@ -109,4 +107,4 @@ You must delete each individually.
 
 == Where to go next
 
-At this point, you've created a set of insights using SpotIQ, in the next section you xref:work-with-insights.adoc[Review insights] you created.
+At this point, you've created a set of insights using SpotIQ, in the next section you link:{{ site.baseurl }}/spotiq/work-with-insights.html[Review insights] you created.

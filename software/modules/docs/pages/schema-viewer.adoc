@@ -1,10 +1,9 @@
 = How to view a data schema
-:last_updated: 07/27/2019
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
+:last_updated: 11/19/2020
+
 
 Use the schema viewer to see tables and worksheets and their relationships.
-
+:toc: true
 
 ThoughtSpot has a *Schema Viewer* though which you can examine the database schema.
 It is interactive and configurable, so you can see the level of detail that is relevant to your work.
@@ -14,18 +13,14 @@ You must have *Admin* privileges to use the *Schema Viewer*.
 == Accessing the Schema Viewer for all objects
 
 . Click the *Data* tab in the top menu.
-+
-image::click-data.png[]
-
 . Click the *More* menu image:icon-ellipses.png[more options menu icon] (ellipses icon), and select *View Schema*.
 +
-image::access_schema_viewer.png[]
+image::view-schema.png[]
 
 . When the schema appears, you can see that you can control the visible part of the schema.
 +
 image::schema_viewer.png[]
 +
-[cols="10%,90%"]
 |===
 | Legend | Action
 
@@ -36,7 +31,7 @@ image::schema_viewer.png[]
 | See either _All types_ (Default), _Worksheets_, _Tables_, or _Views_.
 
 | 3.
-| Select artifacts tagged with stickers.
+| Select artifacts tagged with tags.
 |===
 
 . The list of tables, worksheets, and imported data on the left changes as you select the various filters.
@@ -50,14 +45,10 @@ You can also drag the objects around in the viewer to position them better.
 You can now see the schema for each object for tables, worksheets, or views.
 
 . Click the *Data* tab in the top menu.
-+
-image::click-data.png[]
-
 . Select from the list of the possible objects:
 +
 image::select-tables.png[]
 +
-[cols="10%,90%"]
 |===
 | Legend | Action
 
@@ -68,7 +59,7 @@ image::select-tables.png[]
 | See either _All types_ (Default), _Worksheets_, _Tables_, or _Views_.
 
 | 3.
-| Select artifacts tagged with stickers.
+| Select artifacts tagged with tags.
 |===
 
 . From the list of objects, select one.
@@ -107,9 +98,9 @@ For example, joins appear in different colors to distinguish their type:
 
 When viewing a worksheet, you can also see what joins connect the tables: the inner, left outer, right outer, or full outer joins.
 
-NOTE: Defining a generic relationship in the UI rather than using a primary key/ foreign key join through TQL has no impact on performance.
+{% include note.html content="Defining a generic relationship in the UI rather than using a primary key/ foreign key join through TQL has no impact on performance.
 However, when creating relationships in the UI, you must ensure that you create it in the right direction: many to one.
-To create many-to-many joins, or to create joins using >, <, >=, or \<=, use TQL.
+To create many-to-many joins, or to create joins using >, <, >=, or \<=, use TQL." %}
 
 == Worksheet view
 
@@ -134,7 +125,7 @@ image::worksheet_viewer.png[]
 
 == Related Information
 
-* xref:add-joins.adoc[Worksheet joins]
-* xref:mod-ws-internal-joins.adoc[Modify joins within a worksheet]
-* xref:change-schema.adoc[Change the schema using TQL]
-* xref:constraints.adoc[Constraints]
+* link:{{ site.baseurl }}/admin/worksheets/add-joins.html[Worksheet joins]
+* link:{{ site.baseurl }}/admin/worksheets/mod-ws-internal-joins.html[Modify joins within a worksheet]
+* link:{{ site.baseurl }}/admin/loading/change-schema.html[Change the schema using TQL]
+* link:{{ site.baseurl }}/admin/loading/constraints.html[Constraints]

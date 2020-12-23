@@ -1,8 +1,8 @@
-= ["Enable Columns for SearchIQ"]
-:last_updated: 11/19/2019
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Allow users to use SearchIQ by enabling SearchIQ for the columns of the data source."
+= Enable Columns for SearchIQ
+:last_updated: 12/17/2020
+
+
+Allow users to use SearchIQ by enabling SearchIQ for the columns of the data source."
 
 SearchIQ is in [.label.label-beta]#Beta#.
 
@@ -48,8 +48,6 @@ image::worksheet-column-synonyms-searchiq.png[]
 We recommend excluding a column when it is descriptive in nature, =contains a large amount of text, has link:{{ site.baseurl }}/reference/stop-words.html[stop words], or for a variety of similar reason.
 See link:{{ site.baseurl }}/admin/data-modeling/change-index.html[Turn off indexing].
 +
-image::data-modeling-columns-indextype-dont-index.png[]
-+
 This prevents SearchIQ from scanning through large amounts of text to understand what user asked.
 Note that searches on text fields that use the `contains` keyword still work.
 +
@@ -57,8 +55,6 @@ image::worksheet-column-do-not-index-searchiq.png[]
 
 . Change the *Index Type* for columns that represent formulas with categorical values to `PREFIX_AND_SUBSTRING`.
 See link:{{ site.baseurl }}/admin/data-modeling/change-index.html[Turn off indexing].
-+
-image::data-modeling-columns-indextype-prefix-substring.png[]
 +
 image::worksheet-column-prefix-and-substring-searchiq.png[]
 

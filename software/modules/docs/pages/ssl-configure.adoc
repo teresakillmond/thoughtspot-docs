@@ -2,7 +2,9 @@
 :experimental:
 :last_updated: 8/27/2020
 
+
 Secure socket layers (SSL) provide authentication and data security when sending data to and from ThoughtSpot.
+:toc: true
 
 You can use your own SSL certificate to secure ThoughtSpot HTTP(S) traffic.
 
@@ -51,7 +53,7 @@ You need a computer you can run Linux commands on, and a recent version of _open
 . Run the command to generate a CSR and private key pair:
 +
 ----
- openssl req -new -newkey rsa:2048 -nodes -out csr.pem -keyout pk.key[-subj "/key1=value1/key2=value with space/"]
+ openssl req -new -newkey rsa:2048 -nodes -out csr.pem -keyout pk.key[-subj "/key1=value1/key2=value with space/
 ----
 +
 Note the following parameters:
@@ -75,7 +77,7 @@ Follow these steps to generate a CSR with an existing private key:
 . Run the command to generate a CSR and private key pair:
 +
 ----
- openssl req -new -key <private_key_file> -nodes -out csr.pem[-subj "/key1=value1/key2=value with space/"]
+ openssl req -new -key <private_key_file> -nodes -out csr.pem[-subj "/key1=value1/key2=value with space/
 ----
 +
 Specify the existing private key file.
@@ -93,7 +95,7 @@ The certificate chain may contain a series of certificates, with the root certif
 The private key must also be in compatible PEM format.
 It cannot be password-protected, or passphrase-protected.
 
-NOTE: Do not use a passphrase when creating certificates with ThoughtSpot.
+{% include note.html content="Do not use a passphrase when creating certificates with ThoughtSpot." %}
 
 If you are prompted to specify a passphrase, first check if it exists by invoking the following command:
 
@@ -103,7 +105,7 @@ openssl rsa -check -in pk.key`
 
 If the answer is 'yes', you must remove the passphrase first, and then proceed to use the private key with ThoughtSpot.
 
-include::partial$ssl-configure.adoc[]
+{% include content/admin-portal/ssl-configure.md %}
 
 [#config-load-balancer]
 === Configuration string for load balancers
@@ -150,4 +152,4 @@ As you develop your expertise in authentication and security, we recommend the f
 
 * https://training.thoughtspot.com/authentication-security/610523[Nginx SSL]
 
-See other training resources at https://training.thoughtspot.com/[ThoughtSpot U]
+See other training resources at + https://training.thoughtspot.com/[<img src="{{ "/images/ts-u.png" | prepend: site.baseurl }}" alt="ThoughtSpot U">]

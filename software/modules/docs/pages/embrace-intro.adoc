@@ -1,9 +1,9 @@
 = Embrace overview
 :last_updated: 06/18/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
+
 
 Using Embrace, you can perform live queries on external databases.
+:toc: true
 
 If your company stores source data externally in data warehouses, you can use ThoughtSpot Embrace to directly query that data and use ThoughtSpot's analysis and visualization features, without moving the data into ThoughtSpot.
 
@@ -36,6 +36,8 @@ It's easy to apply transformations and filter the data also.
 
 == Limitations
 
+{% include important.html content="Embrace does not support joins across connections." %}
+
 === Feature availability in Embrace
 
 The following matrix compares the features that are available in our internal high-performance database, Falcon, and the ones available in Embrace:+++<table>++++++<tbody>++++++<tr>++++++<th>+++Feature Name+++</th>+++
@@ -53,7 +55,10 @@ The following matrix compares the features that are available in our internal hi
 +++<tr>++++++<td>+++All chart types and configurations+++</td>+++
 +++<td>+++&check;+++</td>+++
 +++<td>+++&check;+++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Spot IQ: Instant insights, Did you know?,+++<br>++++++</br>+++Pinboard insights, Analyze+++</td>+++
++++<tr>++++++<td>+++Spot IQ: Analyze+++</td>+++
++++<td>+++&check;+++</td>+++
++++<td>+++&check;+++</td>++++++</tr>+++
++++<tr>++++++<td>+++Spot IQ: Instant insights, Did you know?,+++<br>++++++</br>+++Pinboard insights+++</td>+++
 +++<td>+++&check;+++</td>+++
 +++<td>+++&cross;+++</td>++++++</tr>+++
 +++<tr>++++++<td>+++Monitor+++</td>+++
@@ -213,9 +218,9 @@ If you need to use calculation views in ThoughtSpot, you must remove the mandato
 
 == Next steps
 
-* *xref:embrace-snowflake-add.adoc[Add a Snowflake connection]* + Create the connection between ThoughtSpot and tables in a Snowflake database.
-* *xref:embrace-redshift-add.adoc[Add a Redshift connection]* + Create the connection between ThoughtSpot and tables in an Amazon RedShift database.
-* *xref:embrace-gbq-add.adoc[Add a BigQuery connection]* + Create the connection between ThoughtSpot and tables in a Google BigQuery database.
-* *xref:embrace-synapse-add.adoc[Add a Synapse connection]* + Create the connection between ThoughtSpot and tables in an Azure Synapse database.
-* *xref:embrace-teradata-add.adoc[Add a Teradata connection]* + Create the connection between ThoughtSpot and tables in a Teradata database.
-* *xref:embrace-hana-add.adoc[Add an SAP HANA connection]* + Create the connection between ThoughtSpot and tables in an SAP HANA database.
+* *link:{{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-add.html[Add a Snowflake connection]* + Create the connection between ThoughtSpot and tables in a Snowflake database.
+* *link:{{ site.baseurl }}/data-integrate/embrace/embrace-redshift-add.html[Add a Redshift connection]* + Create the connection between ThoughtSpot and tables in an Amazon RedShift database.
+* *link:{{ site.baseurl }}/data-integrate/embrace/embrace-gbq-add.html[Add a BigQuery connection]* + Create the connection between ThoughtSpot and tables in a Google BigQuery database.
+* *link:{{ site.baseurl }}/data-integrate/embrace/embrace-synapse-add.html[Add a Synapse connection]* + Create the connection between ThoughtSpot and tables in an Azure Synapse database.
+* *link:{{ site.baseurl }}/data-integrate/embrace/embrace-teradata-add.html[Add a Teradata connection]* + Create the connection between ThoughtSpot and tables in a Teradata database.
+* *link:{{ site.baseurl }}/data-integrate/embrace/embrace-hana-add.html[Add an SAP HANA connection]* + Create the connection between ThoughtSpot and tables in an SAP HANA database.

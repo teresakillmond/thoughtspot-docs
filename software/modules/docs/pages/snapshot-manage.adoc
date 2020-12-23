@@ -1,8 +1,8 @@
 = Manage and create snapshots
 :last_updated: 7/28/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: A snapshot is a point-in-time image of your running cluster. You can use a snapshot to restore the cluster to a specific point in time. Create and manage snapshots from the Admin Console.
+
+
+A snapshot is a point-in-time image of your running cluster. You can use a snapshot to restore the cluster to a specific point in time. Create and manage snapshots from the Admin Console.
 :toc: true
 
 [#manual-snapshot]
@@ -16,6 +16,6 @@ You can delete a snapshot <<admin-portal-delete,from the Admin Console>>.
 ThughtSpot generates a snapshot in approximately 20 seconds, depending on the size of the cluster.
 To restore from a snapshot, contact link:{{ site.baseurl }}/admin/misc/contact.html#[ThoughtSpot Support].
 
-NOTE: During an upgrade, all snapshots from the previous version of ThoughtSpot become manual snapshots.
+{% include note.html content="During an upgrade, all snapshots from the previous version of ThoughtSpot become manual snapshots." %}
 
-include::partial$snapshot-manage.adoc[]
+{% include content/admin-portal/snapshot-manage.md %}

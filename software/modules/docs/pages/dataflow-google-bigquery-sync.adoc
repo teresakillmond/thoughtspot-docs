@@ -1,7 +1,7 @@
-= ["Sync data through a Google BigQuery connection"]
+= Sync data through a Google BigQuery connection
 :last_updated: 7/03/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
+
+
 :toc: true
 
 After using ThoughtSpot DataFlow to establish a connection to a Google BigQuery database, you can create automatic data updates, to seamlessly refresh your data.
@@ -9,6 +9,14 @@ After using ThoughtSpot DataFlow to establish a connection to a Google BigQuery 
 {% include content/dataflow/sync-for-databases.md %}
 
 . Specify the sync properties for Google BigQuery:
++
+////
+<details>
+  <summary>See the <strong>Connection-specific sync properties</strong> screen</summary>
+  <p><img src="../../images/dataflow-set-sync-properties-draft.png" alt="Enter sync details" /></p></details>
+
+![Enter sync details]({{ site.baseurl }}/images/dataflow-google-bigquery-sync.png "Enter sync details")
+////
  ** link:{{ site.baseurl }}/data-integrate/dataflow/dataflow-google-bigquery-reference.html#dataflow-google-bigquery-sync-column-delimiter[Column delimiter] + Specify the column delimiter character.
  ** link:{{ site.baseurl }}/data-integrate/dataflow/dataflow-google-bigquery-reference.html#dataflow-google-bigquery-sync-enclosing-character[Enclosing character] + Specify if the text columns in the source data needs to be enclosed in quotes.
  ** link:{{ site.baseurl }}/data-integrate/dataflow/dataflow-google-bigquery-reference.html#dataflow-google-bigquery-sync-escape-character[Escape character] + Specify the escape character if using a text qualifier in the source data.

@@ -1,8 +1,10 @@
-= Delete a data source
+'''
 
-How to prepare for and delete a data source using the ThoughtSpot application.
+title: [Delete a data source]
 
-There are two separate ways to delete a data source, through the browser or xref:check-dependencies-tql.adoc[through TQL] describes the dependency checking that occurs when deleting or changing a table using TQL.
+last_updated: 11/13/2020 summary: "How to prepare for and delete a data source using the ThoughtSpot application." sidebar: mydoc_sidebar permalink: /:collection/:path.html --
+
+There are two separate ways to delete a data source, through the browser or link:check-dependencies-tql.html#[through TQL] describes the dependency checking that occurs when deleting or changing a table using TQL.
 When you want to delete a data source, you first need to handle any dependent objects that have been built on top of it.
 You can easily see these dependencies, and choose how to handle them before deleting the data source.
 
@@ -19,7 +21,7 @@ To view dependent objects for a data source:
 You will see a list of the names of the dependent objects (worksheets and pinboards), and the columns they use from that data source.
 You can use this information to determine the impact of changing the structure of the data source or to see how widely it is used.
 +
-image::idependents.png[]
+image::dependents.png[]
 
 . Click a dependent object to modify or delete it.
 +
@@ -42,9 +44,6 @@ ThoughtSpot checks for dependencies whenever you try to delete a table or worksh
 . Click *Data* on the top navigation bar.
 . Check the box next to the name of the data source you want to delete.
 . Click the delete icon.
-+
-image::delete_data_worksheet.png[]
-
 . If you attempt to delete a data source with dependent objects, the operation will be blocked.
 +
 You will see a list of dependent objects with links.

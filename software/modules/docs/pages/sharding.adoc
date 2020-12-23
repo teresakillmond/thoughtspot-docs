@@ -1,7 +1,6 @@
 = Sharding
 :last_updated: 10/8/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
+
 
 Sharding partitions very large tables into smaller, faster, more easily managed parts called data shards.
 
@@ -11,7 +10,7 @@ Sharded tables consist of a single data set, divided into multiple tables, or _s
 The shards have identical schemas, but different sets of data.
 
 Note that sharding and loading tables into ThoughtSpot only apply to ThoughtSpot's in-memory database.
-If you use xref:data-integrate:embrace-intro.adoc[Embrace], and store your data in another data warehouse such as Snowflake or Amazon Redshift, your data modeling is done in that data warehouse, and not in ThoughtSpot.
+If you use link:{{ site.baseurl }}/data-integrate/embrace/embrace-intro.html[Embrace], and store your data in another data warehouse such as Snowflake or Amazon Redshift, your data modeling is done in that data warehouse, and not in ThoughtSpot.
 
 == When to shard your data
 
@@ -57,7 +56,7 @@ This applies even if 60% of your CPU is above 1000.
 If you feel that you need more than 1000 shards for a given table, consult with your ThoughtSpot contact.
 . *The number of shards should be a multiple of the number of nodes*: To ensure equal distribution of data across all nodes, so that none of your nodes sits idle, the number of shards should be a multiple of the number of nodes.
 So, for a 12-node cluster, for example, a table could have 12, 24, 36, or 48 shards, and so on.
-. *Minimum number of shards*: Because the number of shards should be a multiple of the number of nodes, the mininum number of shards is the number of nodes.
+. *Minimum number of shards*: Because the number of shards should be a multiple of the number of nodes, the minimum number of shards is the number of nodes.
 For a 12-node cluster, you should not have fewer than 12 shards.
 +
 This requirement may be difficult to achieve on large clusters with a high number of nodes.
@@ -151,8 +150,8 @@ TQL> CREATE TABLE "supplier" (
 
 == How to choose a shard key
 
-TIP: We recommended that you always specify the `KEY` parameter when `HASH` is greater than 1.
-If you omit the `KEY` parameter in your `CREATE TABLE` statement, ThoughtSpot shards the table randomly.
+{% include tip.html content="We recommended that you always specify the `KEY` parameter when `HASH` is greater than 1.
+If you omit the `KEY` parameter in your `CREATE TABLE` statement, ThoughtSpot shards the table randomly." %}
 
 ThoughtSpot does not have a default shard key.
 

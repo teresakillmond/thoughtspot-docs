@@ -1,202 +1,130 @@
-= 6.2 Release Notes
-:last_updated: 09/28/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:toc: false
+= 6.3 Release Notes
+:experimental:
+:last_updated: 10/18/2020
 
-ThoughtSpot version 6.2.1 is now available.
+:redirect_from: /6.3.0/release/notes.html", "/6.3.0.CU1/release/notes.html
+
+
+
+ThoughtSpot version 6.3 is now available.
 These release notes include information about new and enhanced features.
 
 For a complete list of issues that we fixed in this release, see link:{{ site.baseurl }}/release/fixed.html[Fixed issues].
 
-* <<6-2-1-new,6.2.1 New Features>>
-* <<6-2-new,6.2 New Features>>
-* <<beta-program,Beta Programs>>
+* <<6-3-new,6.3 New Features>>
+ ** <<6-3-analyst,For the Analyst>>
+ ** <<6-3-business-user,For the Business User>>
+ ** <<6-3-data-engineer,For the Data Engineer>>
+ ** <<6-3-it-ops-engineer,For the IT Ops Engineer>>
+// * [Beta Programs](#beta-program)
 * <<upgrade-paths,Supported Upgrade Paths>>
 
-[#6-2-1-new]
-== 6.2.1 New Features and Functionality
+[#6-3-new]
+== 6.3 New Features and Functionality
 
-For a complete list of issues that we fixed in this release, see link:{{ site.baseurl }}/release/fixed.html#6-2-1[6.2.1 Fixed issues].
-
-=== For the IT Ops Engineer
-+++<dlentry id="granular-pinboard-access">+++Granular access to Pinboards::::
-Starting with this release, you can control user's permissions to create or update Pinboards, essentially limiting them to 'read only' access.
-These users can view and explore Pinboards.
-However, they cannot edit, copy, download, or share Pinboards and Answers.
-+ This must be enabled on the cluster.
-+ See link:{{ site.baseurl }}/end-user/introduction/pinboard-granular-permission.html[Granular access to Pinboards], and link:{{ site.baseurl }}/end-user/introduction/about-privileges-end-user.html#read-only[Cannot create or update Pinboards] privilege.+++</dlentry>++++++<dlentry id="style-customization">+++Style customization::::
-You can now customize the ThoughtSpot application from the Admin Console.
-With style customization, you can change the fonts, chart color palettes, footer text, application logo, and background colors in your embedded ThoughtSpot instance.
-+  + Refer to link:{{ site.baseurl }}/admin/admin-portal/style-customization.html[Style customization].+++</dlentry>+++
-
-[#6-2-new]
-== 6.2 New Features and Functionality
-
-For a complete list of issues that we fixed in this release, see link:{{ site.baseurl }}/release/fixed.html#6-2[6.2 Fixed issues].
+For a complete list of issues that we fixed in this release, see link:{{ site.baseurl }}/release/fixed.html#6-3[6.3 Fixed issues].
 
 === For the Analyst
-+++<dlentry id="geomaps">+++Geomaps::::  ThoughtSpot now supports link:{{ site.baseurl }}/reference/geomap-reference.html[GeoMap] visualizations for these new locales:
++++<dlentry id="geomaps">+++Geomaps::::  ThoughtSpot now supports link:{{ site.baseurl }}/reference/geomap-reference.html[GeoMap] visualizations for this new locale:
 
-* *India*: State, District, Postcode
-* *Portugal*: District, Municipality, Postcode
-* *Italy*: Improved regional name support *Geomaps overview* ++++<script src="https://fast.wistia.com/embed/medias/u7prltvp9w.jsonp" async="">++++++</script>++++++<script src="https://fast.wistia.com/assets/external/E-v1.js" async="">++++++</script>+++
+* *Netherlands*: Province, Municipality, Postcode+++</dlentry>++++++<dlentry id="scriptability">+++Scriptability::::
+This release introduces expanded support for link:{{ site.baseurl }}/admin/scriptability/scriptability-overview.html[exporting and importing ThoughtSpot objects].
+Pinboard and Answer Scriptability is now GA.
+You can also export, import, and update the following newly scriptable objects:
 
-[.wistia_embed.wistia_async_u7prltvp9w.popover=true.popoverAnimateThumbnail=true.popoverBorderColor=4E55FD.popoverBorderWidth=2]#&nbsp;#+++</dlentry>++++++<dlentry id="table-config">+++Table configuration::::  This release introduces a more intuitive way to configure your tables, including these new features:
+* Views
+* Tables
 
-* *xref:about-tables.html#rearrange-column-order[Drag and drop chips]* allow you to easily rearrange the order of the columns in your table
-* *xref:about-tables.html#clip-wrap-text[Clip or wrap text]* for the entire table from the *Edit table: Settings* menu, or by column from the column's *more options menu*
-* *xref:about-tables.html#number-formatting[Number formatting]* for any table column based on a measure, allowing you to change the category (number, percentage, or currency), units (auto, none, thousand, million, billion, or trillion), or method of writing negative values (-1234, 1234-, or (1234))
-* *xref:about-tables.html#table-footer[Enable or disable the table footer]* from the *Edit table: Settings* menu
-* *xref:about-tables.html#column-summaries[Enable or disable column summaries]* from the *Edit table: Settings* menu *Table configuration overview* ++++<script src="https://fast.wistia.com/embed/medias/9ggsx9glpz.jsonp" async="">++++++</script>++++++<script src="https://fast.wistia.com/assets/external/E-v1.js" async="">++++++</script>+++
-
-[.wistia_embed.wistia_async_9ggsx9glpz.popover=true.popoverAnimateThumbnail=true.popoverBorderColor=4E55FD.popoverBorderWidth=2]#&nbsp;#
-
-For more information, see xref:about-tables.html[Results that are tables].+++</dlentry>++++++<dlentry id="high-cardinality">+++High cardinality::::
-In this release, ThoughtSpot supports charts and tables with a very large number of data values, and shows how much of the data your chart or table displays.
-+
-
-* Your search in table form can now have more than 1000 rows.
-* Your charts now come with a horizontal scroll bar, to support up to 35,000 data points.
-* You can have up to 250 distinct legend items on a chart. *High cardinality overview* ++++<script src="https://fast.wistia.com/embed/medias/q9jggoxmjy.jsonp" async="">++++++</script>++++++<script src="https://fast.wistia.com/assets/external/E-v1.js" async="">++++++</script>+++
-
-[.wistia_embed.wistia_async_q9jggoxmjy.popover=true.popoverAnimateThumbnail=true.popoverBorderColor=4E55FD.popoverBorderWidth=2]#&nbsp;#
-
-See xref:high-cardinality.html[Charts and tables with a very large number of data values].+++</dlentry>++++++<dlentry id="keywords">+++New search keywords and changed behavior::::
-* *The nested '`top`' keyword* + The new keyword phrase, <a href="{{"/reference/keywords.html#top-n-by" | prepend: site.baseurl}}">top _n_ _measure1_ by _attribute_ | _measure2_</a>, enables you to search the top n results by an attribute or a secondary measure.
-* *The '`not in`' keyword* + Another keyword phrase, <a href="{{"/reference/keywords.html#not-in" | prepend: site.baseurl}}">not in</a>, enables you to find the relative complement of two sets: results that satisfy the outer query that are not in the inner query.
-Contrast this with <a href="{{"/reference/keywords.html#in" | prepend: site.baseurl}}">in</a> that returns results that are an intersection of the outer and inner query, or 'query within a query'.
-* +++<strong>+++Change in behavior for the '`in`' keyword+++</strong>+++ + The <a href="{{"/reference/keywords.html#in" | prepend: site.baseurl}}">in</a> keyword returns results that are an intersection of the outer and inner query, or 'query within a query'.
-Starting in 6.2, searches with the `in` keyword do not include \{null} values.
-To include these \{null} values, create a formula for the relevant attribute in your search, to convert \{null} values to 'unknown,' or some similar word. *Search keywords overview* ++++<script src="https://fast.wistia.com/embed/medias/0m74x2bszt.jsonp" async="">++++++</script>++++++<script src="https://fast.wistia.com/assets/external/E-v1.js" async="">++++++</script>+++
-
-[.wistia_embed.wistia_async_0m74x2bszt.popover=true.popoverAnimateThumbnail=true.popoverBorderColor=4E55FD.popoverBorderWidth=2]#&nbsp;#+++</dlentry>++++++<dlentry id="monitor">+++Monitor [.label.label-beta]#Beta#::::
-* *Subscribe others*: To drive adoption of Pinboards, analysts can now subscribe business users to receive daily email notification for the relevant metrics.
-See <a href="{{"/spotiq/monitor-headlines.html#subscribe-others" | prepend: site.baseurl}}">Subscribe others</a>.
-* *UI enhancements*: We made several improvements to the Monitor and Follow features, optimizing the workflow.+++</dlentry>++++++<dlentry id="insights">+++Insights::::
-Insights no longer appear on Home page and Pinboard by default, unless that feature is turned on for the cluster.
-See <a href="{{"/end-user/introduction/about-navigating-thoughtspot.html#insights" | prepend: site.baseurl}}">Finding your way around, Insights</a>.+++</dlentry>++++++<dlentry id="scriptability">+++Scriptability::::
-This release introduces expanded support for link:{{ site.baseurl }}/admin/scriptability/scriptability.html[exporting and importing ThoughtSpot objects].
-You can now export and import the following scriptable objects:
-
-* link:{{ site.baseurl }}/admin/worksheets/worksheet-export.html[Worksheets with filters]
-* link:{{ site.baseurl }}/admin/scriptability/scriptability-answer.html[Answers] [.label.label-beta]#Beta#
-* link:{{ site.baseurl }}/admin/scriptability/scriptability-pinboard.html[Pinboards] [.label.label-beta]#Beta#+++</dlentry>++++++<dlentry id="aggregate-formulas">+++Aggregate formulas as Worksheet filters::::
-You can now use an aggregate formula as a Worksheet filter.
-See link:{{ site.baseurl }}/complex-search/aggregation-formulas.html#aggregate-filter[Use aggregate formulas as Worksheet filters].+++</dlentry>++++++<dlentry id="formula-parser">+++Formula Parser Improvements::::
-ThoughtSpot 6.2 includes improvements to the latency of the formula parser.
-Complex formulas that took over 45 seconds to parse are now parsed in 150 milliseconds -- a 300x improvement.
-Latency no longer increases exponentially with the depth of the formula nesting, no matter how complex the formula is.+++</dlentry>+++
+ThoughtSpot Scripting Language is now called link:{{ site.baseurl }}/admin/scriptability/tml.html[ThoughtSpot Modeling Language].+++</dlentry>++++++<dlentry id="linked-filters">+++Linked Pinboard filters::::
+You can now create one filter that filters visualizations based on multiple Worksheets by linking the Worksheet columns, at the Pinboard level.
+This is useful when you have a Pinboard built on multiple Worksheets, and you would like to filter on columns that are functionally the same, but exist in multiple Worksheets.
+Refer to link:{{ site.baseurl }}/complex-search/linked-filters.html[Linked Pinboard filters].+++</dlentry>++++++<dlentry id="selective-filters">+++Selective Pinboard filters::::
+You can now configure Pinboard filters to apply to specific visualizations that you choose.
+This is useful when you would like to filter some, but not all, visualizations in a Pinboard.
+Refer to link:{{ site.baseurl }}/complex-search/selective-filters.html[Selective Pinboard filters].+++</dlentry>+++
 
 === For the Business User
-+++<dlentry id="growth-sharing">+++Growth: Sharing::::  Updates to link:{{ site.baseurl }}/end-user/data-view/sharing-for-end-users.html[sharing] in 6.2 make the feature more intuitive, and remove moments of friction that can occur when sharing, or trying to access objects for which you have limited permissions.
++++<dlentry id="monitor">+++Monitor::::  The Monitor suite of features, some of which were introduced in earlier releases as Beta, are now generally available by default.+++</dlentry>++++++<dlentry id="mobile-improvements">+++Mobile app updates::::  ThoughtSpot mobile supports more features that were previously available only through the ThoughtSpot Web app, including:
 
-* *link:{{ site.baseurl }}/end-user/pinboards/share-pinboards.html#share-viz[Share a specific visualization within a Pinboard]* so that the email link opens up to that visualization in Explore mode
-* *link:{{ site.baseurl }}/end-user/pinboards/share-pinboards.html#share-direct-link[Copy a direct link to the Pinboard, Answer, or visualization within a Pinboard]* that you are sharing, so you can separately send that link to users after you share the object with them
-* *link:{{ site.baseurl }}/end-user/pinboards/request-access[Request access within a Pinboard or Answer]* if you need edit or underlying data access to the Pinboard or Answer
-* *link:{{ site.baseurl }}/end-user/pinboards/share-pinboards.html#share-underlying-data[Share underlying data access]* within the sharing modal if the user does not have data access+++</dlentry>++++++<dlentry id="answer-explorer">+++Answer Explorer v2::::
-Updates to Answer Explorer in 6.2 introduce a cleaner user interface and allow users to add their own filters, comparisons, measures, and attributes to a visualization while in Explore mode.
-See link:{{ site.baseurl }}/end-user/pinboards/answer-explorer.html[Answer Explorer] for more information.  *Answer Explorer overview* ++++<script src="https://fast.wistia.com/embed/medias/e69konui8y.jsonp" async="">++++++</script>++++++<script src="https://fast.wistia.com/assets/external/E-v1.js" async="">++++++</script>+++
+* Deep linking
+* Drill down
 
-[.wistia_embed.wistia_async_e69konui8y.popover=true.popoverAnimateThumbnail=true.popoverBorderColor=4E55FD.popoverBorderWidth=2]#&nbsp;#+++</dlentry>++++++<dlentry id="mobile-android">+++Mobile for Android::::
-In time for this release, you can download ThoughtSpot app for Android OS from the PlayStore.
-See link:{{ site.baseurl }}/admin/mobile/notes-mobile.html[ThoughtSpot Mobile release notes] and link:{{ site.baseurl }}/admin/mobile/use-mobile.html[ThoughtSpot Mobile overview].+++</dlentry>+++
+See link:{{ site.baseurl }}/admin/mobile/notes-mobile.html[ThoughtSpot mobile release notes] and link:{{ site.baseurl }}/admin/mobile/use-mobile.html[ThoughtSpot Mobile overview] for detailed information.+++</dlentry>++++++<dlentry id="pivot-table">+++Pivot table enhancements::::
+This release includes enhancements to link:{{ site.baseurl }}/complex-search/about-pivoting-a-table.html[Pivot tables].
+You can now:
+
+* *Drill down* on values in pivot tables
+* *Show underlying data* for values in pivot tables
+* *SpotIQ analyze* values in pivot tables+++</dlentry>+++
 
 === For the Data Engineer
-+++<dlentry id="dataflow">+++DataFlow::::
-DataFlow is a new graphical, code-free, analyst-friendly approach for easily loading data into ThoughtSpot's in-memory engine.
-+ In this release, DataFlow supports a large number of databases (<a href="{{"/data-integrate/dataflow/dataflow-amazon-aurora.html" | prepend: site.baseurl}}">Amazon Aurora</a>, <a href="{{"/data-integrate/dataflow/dataflow-amazon-redshift.html" | prepend: site.baseurl}}">Amazon Redshift</a>), <a href="{{"/data-integrate/dataflow/dataflow-azure-synapse.html" | prepend: site.baseurl}}">Azure Synapse</a>, <a href="{{"/data-integrate/dataflow/dataflow-cassandra.html" | prepend: site.baseurl}}">Cassandra</a>, <a href="{{"/data-integrate/dataflow/dataflow-google-bigquery.html" | prepend: site.baseurl}}">Google BigQuery</a>, <a href="{{"/data-integrate/dataflow/dataflow-hive.html" | prepend: site.baseurl}}">Hive</a>, <a href="{{"/data-integrate/dataflow/dataflow-ibm-db2.html" | prepend: site.baseurl}}">IBM Db2</a>, <a href="{{"/data-integrate/dataflow/dataflow-mariadb.html" | prepend: site.baseurl}}">MariaDB</a>, <a href="{{"/data-integrate/dataflow/dataflow-mongodb.html" | prepend: site.baseurl}}">MongoDB</a>, <a href="{{"/data-integrate/dataflow/dataflow-mysql.html" | prepend: site.baseurl}}">MySQL</a>, <a href="{{"/data-integrate/dataflow/dataflow-netezza.html" | prepend: site.baseurl}}">Netezza</a>, <a href="{{"/data-integrate/dataflow/dataflow-oracle.html" | prepend: site.baseurl}}">Oracle</a>, <a href="{{"/data-integrate/dataflow/dataflow-postgresql.html" | prepend: site.baseurl}}">PostgreSQL</a>, <a href="{{"/data-integrate/dataflow/dataflow-presto.html" | prepend: site.baseurl}}">Presto</a>, <a href="{{"/data-integrate/dataflow/dataflow-sap-adaptive-server-enterprise.html" | prepend: site.baseurl}}">SAP Adaptive Server Enterprise</a>, <a href="{{"/data-integrate/dataflow/dataflow-sap-hana.html" | prepend: site.baseurl}}">SAP HANA</a>, <a href="{{"/data-integrate/dataflow/dataflow-sap-sql-anywhere.html" | prepend: site.baseurl}}">SAP SQL Anywhere</a>, <a href="{{"/data-integrate/dataflow/dataflow-sql-server.html" | prepend: site.baseurl}}">SQL Server</a>, <a href="{{"/data-integrate/dataflow/dataflow-snowflake.html" | prepend: site.baseurl}}">Snowflake</a>, <a href="{{"/data-integrate/dataflow/dataflow-splice-machine.html" | prepend: site.baseurl}}">Splice Machine</a>, and <a href="{{"/data-integrate/dataflow/dataflow-teradata.html" | prepend: site.baseurl}}">Teradata</a>), file systems (<a href="{{"/data-integrate/dataflow/dataflow-amazon-s3.html" | prepend: site.baseurl}}">Amazon S3</a>, <a href="{{"/data-integrate/dataflow/dataflow-azure-blob-storage.html" | prepend: site.baseurl}}">Azure Blob Storage</a>, <a href="{{"/data-integrate/dataflow/dataflow-files.html" | prepend: site.baseurl}}">Flat Files</a>, <a href="{{"/data-integrate/dataflow/dataflow-google-cloud-storage.html" | prepend: site.baseurl}}">Google Cloud Storage</a>, <a href="{{"/data-integrate/dataflow/dataflow-hdfs.html" | prepend: site.baseurl}}">HDFS</a>), and one application, <a href="{{"/data-integrate/dataflow/dataflow-salesforce.html" | prepend: site.baseurl}}">Salesforce</a>. *DataFlow overview* ++++<script src="https://fast.wistia.com/embed/medias/0850igo7wv.jsonp" async="">++++++</script>++++++<script src="https://fast.wistia.com/assets/external/E-v1.js" async="">++++++</script>+++
++++<dlentry id="dataflow">+++DataFlow::::  *New connection types* + In this release, DataFlow expands support to the following connection types:
 
-[.wistia_embed.wistia_async_0850igo7wv.popover=true.popoverAnimateThumbnail=true.popoverBorderColor=4E55FD.popoverBorderWidth=2]#&nbsp;#+++</dlentry>++++++<dlentry id="embrace">+++Embrace::::  In this release, Embrace supports two new data warehouses and includes new features.
-
-New data warehouses:
-
-* *Teradata* + Teradata Vantage version 16.20 or later is required.
-For more information, see <a href="{{"/data-integrate/embrace/embrace-teradata.html" | prepend: site.baseurl}}">Teradata overview</a>. +
-
-* *SAP HANA* [.label.label-beta]#Beta# + SAP HANA version 2.0 or later is required.
-For more information, see <a href="{{"/data-integrate/embrace/embrace-hana.html" | prepend: site.baseurl}}">SAP HANA overview</a>.
-
-New features:
-
-* Ability to remove columns from a connection.
-* Actual SQL is displayed in the query visualizer.
-This allows analysts to check the actual external database query so they can easily validate the output.
-* A summary of connected tables/columns is displayed in the add/edit connection workflow.
-* Improved performance when creating or editing a connection.+++</dlentry>++++++<dlentry id="tsload">+++tsload connector::::
-This release introduces a new option for loading data in bulk, called tsload connector.
-It is a collection of APIs that allow you to directly, and more quickly load your data into the ThoughtSpot Falcon database.
-For more information, see <a href="{{"/admin/loading/load-with-tsload.html" | prepend: site.baseurl}}">Use the tsload connector to load data</a>.+++</dlentry>+++
+* <a href="{{"/data-integrate/dataflow/dataflow-apache-parquet.html" | prepend: site.baseurl}}">Apache Parquet</a>
+* <a href="{{"/data-integrate/dataflow/dataflow-databricks-delta-lake.html" | prepend: site.baseurl}}">Databricks Delta Lake</a>
+* <a href="{{"/data-integrate/dataflow/dataflow-denodo.html" | prepend: site.baseurl}}">Denodo</a>
+* <a href="{{"/data-integrate/dataflow/dataflow-jdbc.html" | prepend: site.baseurl}}">JDBC</a>
+* <a href="{{"/data-integrate/dataflow/dataflow-rest-api.html" | prepend: site.baseurl}}">REST API</a>
+* <a href="{{"/data-integrate/dataflow/dataflow-sas.html" | prepend: site.baseurl}}">SAS</a>  *Transformations* + In all DataFlow database connections, you can now add row-level formulas that use native database functions to transform your data as it loads into ThoughtSpot.+++</dlentry>++++++<dlentry id="embrace">+++Embrace::::
+In this release, Embrace adds support for SpotIQ analyze.
+Now you can analyze any answer, pinboard vizualization, or data source to generate instant insights, by clicking the SpotIQ analyze button image:../images/icon-lightbulb.png[spotiq analyze icon].
+Embrace now supports security passthrough for Snowflake and Google BigQuery using OAuth for authentication and authorization.
+This feature is in beta for this release.
+Contact ThoughtSpot support for assistance.+++</dlentry>+++
 
 === For the IT Ops Engineer
-+++<dlentry id="amazon-linux-2">+++Amazon Linux 2 Deployment::::
-This release of ThoughtSpot introduces deployment support for https://aws.amazon.com/amazon-linux-2/[Amazon Linux 2].
-This decouples the OS and application files we shipped together in previous releases, and gives you the flexibility to run ThoughtSpot on an Amazon Linux 2 image that your organization manages internally.
-ThoughtSpot certifies Amazon Linux 2 on the AWS platform.
-To deploy ThoughtSpot on Amazon Linux 2, you must have the Ansible tarball;
-you can obtain the tarball through your ThoughtSpot contact.
-For more information, see the <a href="{{"/appliance/amazon-linux-2/al2-overview.html" | prepend: site.baseurl}}">Amazon Linux 2 Deployment Overview</a>.+++</dlentry>++++++<dlentry id="admin-portal">+++Admin Console::::
-This release of ThoughtSpot introduces the link:{{ site.baseurl }}/admin/admin-portal/admin-portal.html[Admin Console], providing you with an intuitive, user-friendly interface to accomplish most of the necessary tasks for administering ThoughtSpot.
-You can accomplish the following tasks from the Admin Console:
++++<dlentry id="entry">+++Advanced lean mode for cloud deployments:::: For ThoughtSpot customers who want to deploy their AWS, Azure, and GCP instances with lower data sizes, this release brings enhancements to advanced lean mode configuration.
+You can now configure lean mode yourself using tscli commands.
+No need to contact ThoughtSpot.
+For details, see link:{{ site.baseurl }}/appliance/cloud.html#reducing-your-cloud-infrastructure-costs[Use small and medium instance types].+++</dlentry>++++++<dlentry id="open-ldap-auth">+++OpenLDAP authentication::::
+ThoughtSpot now integrates with OpenLDAP for user authentication.
+LDAP provides security and makes user management more centralized.
+To enable user authentication through OpenLDAP, link:{{ site.baseurl }}/appliance/contact.html[contact ThoughtSpot Support].
+This feature also exists in ThoughtSpot release 6.0.5.+++</dlentry>++++++<dlentry id="open-ldap-admin-user">+++OpenLDAP admin user::::
+ThoughtSpot now supports using your company's OpenLDAP admin user to SSH into your cluster(s) as an admin, instead of using the local ThoughtSpot admin user, which has sudo privileges.
+This feature is only applicable to ThoughtSpot clusters run on an link:{{ site.baseurl }}/appliance/rhel/rhel.html[RHEL image].
+Refer to link:{{ site.baseurl }}/appliance/rhel/rhel-install-online.html#ldap_admin_user[Install the ThoughtSpot application on online clusters that use RHEL] to learn how to add the three OpenLDAP admin user parameters to your Ansible playbook.+++</dlentry>++++++<dlentry id="admin-console">+++Admin Console enhancements::::
+This release reorganizes the Admin Console, to make it cleaner and more intuitive.
+This includes the following changes:
 
-* link:{{ site.baseurl }}/admin/admin-portal/users.html[Manage ThoughtSpot users]
-* link:{{ site.baseurl }}/admin/admin-portal/groups.html[Manage ThoughtSpot groups]
-* link:{{ site.baseurl }}/admin/admin-portal/authentication-local.html[Manage local authentication]
-* link:{{ site.baseurl }}/admin/admin-portal/authentication-saml.html[Configure SAML authentication]
-* link:{{ site.baseurl }}/admin/admin-portal/authentication-active-directory.html[Configure LDAP authentication through Active Directory]
-* link:{{ site.baseurl }}/admin/admin-portal/ssl-configure.html[Configure SSL]
-* link:{{ site.baseurl }}/admin/admin-portal/reverse-ssh-tunnel.html[Configure a reverse SSH tunnel for Support]
-* link:{{ site.baseurl }}/admin/admin-portal/smtp-configure.html[Set the relay host for SMTP (email)]
-* link:{{ site.baseurl }}/admin/admin-portal/customize-help.html[Customize ThoughtSpot help]
-* link:{{ site.baseurl }}/admin/admin-portal/customize-actions-menu.html[Customize Answer actions menu]
-* link:{{ site.baseurl }}/admin/admin-portal/system-overview-pinboard.html[View System Overview Pinboard]
-* link:{{ site.baseurl }}/admin/admin-portal/system-cluster-pinboard.html[View System Cluster Pinboard]
-* link:{{ site.baseurl }}/admin/admin-portal/system-alerts-pinboard.html[View System Alerts Pinboard]
-* link:{{ site.baseurl }}/admin/admin-portal/available-update.html[Monitor available cluster updates] *Admin Console overview* ++++<script src="https://fast.wistia.com/embed/medias/ic9rg4gru8.jsonp" async="">++++++</script>++++++<script src="https://fast.wistia.com/assets/external/E-v1.js" async="">++++++</script>+++
+* The *System Overview Pinboard* in the Admin Console has been deprecated.
+You can find visualizations from it on the link:{{ site.baseurl }}/admin/admin-portal/system-cluster-pinboard.html[System Cluster Pinboard] and the link:{{ site.baseurl }}/admin/admin-portal/system-alerts-pinboard.html[System Alerts Pinboard].
+* The *Total Capacity* visualization is now in the *System Cluster Pinboard*.
+* The visualizations about user activity that appeared in the *System Overview Pinboard* now appear in the new link:{{ site.baseurl }}/admin/admin-portal/user-adoption-pinboard.html[User Adoption Pinboard].
+* The *Relational Data Cache* and *Relational Search Engine* panels that appeared in the *System Overview Pinboard* now appear in menu:Data[Usage > Data].
+* Many of the visualizations that appeared in the *System Overview Pinboard* appear in the link:{{ site.baseurl }}/admin/system-monitor/overview.html[System Information and Usage Pinboard].
+* The *Configuration Events* panel that appeared in the *System Overview Pinboard* now appears in the link:{{ site.baseurl }}/admin/admin-portal/system-alerts-pinboard.html[System Alerts Pinboard].+++</dlentry>++++++<dlentry id="user-adoption-perfomance-tracking-pinboard">+++User adoption and performance Pinboards::::
+This release of ThoughtSpot contains two new default Pinboards for administrators.
+Use the User Adoption Pinboard in the Admin Console to understand how your ThoughtSpot users are interacting with ThoughtSpot, and how your user adoption is changing over time.
+Use the Performance Tracking Pinboard, accessible from the *Pinboards* tab, to understand how your ThoughtSpot cluster is performing.
+Refer to link:{{ site.baseurl }}/admin/admin-portal/user-adoption-pinboard.html[User Adoption Pinboard] and link:{{ site.baseurl }}/admin/system-monitor/performance-tracking.html[Performance Tracking Pinboard].+++</dlentry>++++++<dlentry id="ease-of-installation">+++RHEL and Amazon Linux 2 ease of installation:::: This release of ThoughtSpot makes it easier to deploy ThoughtSpot on an link:{{ site.baseurl }}/appliance/amazon-linux-2/al2-overview.html[Amazon Linux 2] or link:{{ site.baseurl }}/appliance/rhel/rhel.html[RHEL image].
 
-[.wistia_embed.wistia_async_ic9rg4gru8.popover=true.popoverAnimateThumbnail=true.popoverBorderColor=4E55FD.popoverBorderWidth=2]#&nbsp;#+++</dlentry>++++++<dlentry id="in-memory-data-compression">+++In-memory data compression::::
-ThoughtSpot release 6.2 includes improvements to in-memory data compression.
-These improvements lower your RAM requirements and reduce the number of VMs you need for in-memory data, when deploying on a cloud platform.
-In release 6.2, ThoughtSpot added two new compression algorithms to the Dictionary compression that ThoughtSpot already supports.
-ThoughtSpot now supports *LZ4*, for `INT`, `BIGINT`, `DOUBLE`, and `FLOAT` data types, and *RLE*, for strings.
-See link:{{ site.baseurl }}/admin/architecture/data-compression.html[In-memory data compression] for more information.+++</dlentry>++++++<dlentry id="falcon-monitor">+++Falcon monitoring Pinboards::::
-In ThoughtSpot release 6.2, there are 4 new Pinboards, based on Falcon metrics, that are available to system administrators.
-Use the Falcon monitoring system Pinboards for an overview of Falcon, ThoughtSpot's in-memory database, and its health, based on query, data load, and varz metrics.
-You can use these Pinboards for proactive monitoring, or, with help from link:{{ site.baseurl }}/appliance/contact.html[ThoughtSpot Support], for debugging.
-See link:{{ site.baseurl }}/admin/system-monitor/falcon-monitor.html[Falcon monitoring Pinboards] for more information.+++</dlentry>++++++<dlentry id="use-agreement">+++In-app acceptance of ThoughtSpot's use agreement::::
-You can now sign ThoughtSpot's end-user use agreement from the application itself.
-Even if you previously signed a paper copy of the use agreement, an admin *_must_* sign the agreement in the application, within 30 days of your upgrade to release 6.2.
-See link:{{ site.baseurl }}/admin/setup/use-agreement.html[ThoughtSpot use agreement] for more information.+++</dlentry>+++
+* You can now use a Terraform, Puppet, or Chef template, or an Ansible tarball, to install OS packages, dependencies, and the ThoughtSpot CLI (tscli), and configure your cluster.
+Previously, you could only use an Ansible tarball or Terraform template.
+* You now only need 20 GB on the root drive for yum packages and system logs, and 200 GB for ThoughtSpot installation.
+* You can now deploy ThoughtSpot on RHEL version 7.9.
+You can no longer deploy ThoughtSpot on RHEL version 7.7.+++</dlentry>+++
 
-[#beta-program]
-== Beta Programs
+////
+{: id="beta-program"}
+## Beta Programs
 
-If you are interested in seeing some of our newest features, we want to add you to our testing group.
-ThoughtSpot is looking for people with all levels of experience: end-users, analysts, administrators, configurators, and so on.
-We like to have a diversity of experience and perspective, and want to hear from you.
-Because we strive for excellence, we will partner with you to adjust the final details of our offerings based on your feedback.
-
-=== Monitor
-
-Please contact us if you are interested in participating in the link:mailto:BetaProgram@thoughtspot.com?subject=Monitor%20Beta%20Program%20Request[Monitor Beta Program], for monitoring selected metrics over time.
-
-=== Scriptability
-
-Please contact us if you are interested in participating in the link:mailto:BetaProgram@thoughtspot.com?subject=Scriptability%20Beta%20Program%20Request[Scriptability Beta Program], for migrating and updating Answers and Pinboards in a flat-file format.
+If you are interested in seeing some of our newest features, we want to add you to our testing group. ThoughtSpot is looking for people with all levels of experience: end-users, analysts, administrators, configurators, and so on.
+We like to have a diversity of experience and perspective, and want to hear from you. Because we strive for excellence, we will partner with you to adjust the final details of our offerings based on your feedback.
+////
 
 [#upgrade-paths]
 == Supported Upgrade Paths
 
-If you are running one of the following versions, you can upgrade to the 6.2.1 release directly:
+If you are running one of the following versions, you can upgrade to the 6.2 release directly:
 
-* 6.0.x to 6.2.1
-* 6.1.x to 6.2.1
-* 6.2 to 6.2.1
+* 6.1.x to 6.3
+* 6.2.x to 6.3
 
 This includes any hotfixes or customer patches on these branches.
 
 If you are running a different version, you must do a multiple pass upgrade.
-First, upgrade to version 6.0.x, 6.1.x, or 6.2, and then to the 6.2.1 release.
+First, upgrade to version 6.1.x, or version 6.2.x, and then to the 6.3 release.
 
-NOTE: To successfully upgrade your ThoughtSpot cluster, all user profiles must include a valid email address.
-Without valid email addresses, the upgrade is blocked.
+{% include note.html content="To successfully upgrade your ThoughtSpot cluster, all user profiles must include a valid email address.
+Without valid email addresses, the upgrade is blocked." %}

@@ -13,7 +13,7 @@ You could then trigger an action that brings up a web page from an external bill
 The billing system could be set up to read the data (list of names, emails, products, and renewal dates) from ThoughtSpot.
 The billing system might then add the price, generate an invoice for each customer, and send it by email.
 
-To turn on the Data Push API functionality, xref:contact.adoc[contact ThoughtSpot Support].
+To turn on the Data Push API functionality, link:{{ site.baseurl}}/admin/misc/contact.html[contact ThoughtSpot Support].
 
 The data is available to the external application in JSON (JavaScript Object Notation) format.
 You must parse the JSON to get the data values you need using JavaScript in the receiving application.
@@ -37,4 +37,4 @@ Your action has a *custom* tag to differentiate it from ThoughtSpot actions.
 
 When a user clicks on your action, the application you specified appears, and completes the actions specified by the Data Push API.
 
-NOTE: In order for your action to work correctly, you *_must_* use the search terms that the external application expects to receive in your Answer or unsaved ThoughtSpot search.
+{% include note.html content="In order for your action to work correctly, you *_must_* use the search terms that the external application expects to receive in your Answer or unsaved ThoughtSpot search." %}

@@ -1,8 +1,8 @@
-= Understand backup/snapshot schedules
+'''
 
-Learn about backup and snapshot schedules.
+title: [Understand backup/snapshot schedules]
 
-You can schedule periodic snapshots and backups.
+last_updated: 3/10/2020 summary: "Learn about backup and snapshot schedules." sidebar: mydoc_sidebar permalink: /:collection/:path.html -- You can schedule periodic snapshots and backups.
 ThoughtSpot comes configured with a default periodic snapshot policy.
 For backups, there is no such policy.
 You may want to configure one or several of your own backup policies.
@@ -10,9 +10,9 @@ This section helps you understand existing schedules and how to configure new sc
 
 == Configuration format
 
-ThoughtSpot uses a https://developers.google.com/protocol-buffers/[protocol buffer, window=_blank] configuration file to hold snapshot and backup policies.
+ThoughtSpot uses a https://developers.google.com/protocol-buffers/[protocol buffer] configuration file to hold snapshot and backup policies.
 There are slight differences between the configuration of snapshots and backups.
-Refer to xref:overview-snapshot.adoc[work with snapshots] and xref:configure-backup.adoc[configure periodic backups].
+Refer to link:{{ site.baseurl }}/admin/backup-restore/overview-snapshot.html[work with snapshots] and link:{{ site.baseurl }}/admin/backup-restore/configure-backup.html[configure periodic backups].
 However, the file format defines a `schedule` structure, which is the same for both snapshots and backups.
 The following example shows the `schedule` format:
 
@@ -130,19 +130,19 @@ The system creates the first snapshot at midnight, and creates subsequent snapsh
 
 [cols=16*]
 |===
-|
+|  
 | 2
-|
+|  
 | 4
-|
+|  
 | 6
-|
+|  
 | 8
-|
+|  
 | 10
-|
+|  
 | 12
-|
+|  
 | 14
 | ...
 | 24
@@ -261,17 +261,17 @@ What is in your buckets at hour 24?
 | 1
 | ...
 | 12
-|
+|  
 | 14
-|
+|  
 | 16
-|
+|  
 | 18R
-|
+|  
 | 20R
-|
+|  
 | 22R
-|
+|  
 | 24R
 |===
 

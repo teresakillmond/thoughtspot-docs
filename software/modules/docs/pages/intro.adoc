@@ -1,29 +1,56 @@
-= Introduction to administration
-:last_updated: 09-23-2019
+= About installation and upgrades
+:last_updated: 3/4/2020
 
-This guide covers all topics of special interest to application administrators.
 
-This guide provides information for application administrators, or users with xref:logins.adoc[administrative access privileges].
+As administrator, you are responsible for setting up and configuring ThoughtSpot. This guide explains how. It will also assist you in troubleshooting some common problems, finding additional resources, and contacting ThoughtSpot.
 
-Before addressing the major components of this guide, we recommend that you familiarize yourself with the general top-level xref:components.adoc[architecture] of the ThoughtSpot service.
+In ThoughtSpot, both physical appliances and virtual machines ship with a base OS image.
+ThoughtSpot Support then helps you to install, and subsequently update the software.
+Note the exception of RHEL installations, where the customer provides the OS image themselves, and uses a slightly different installation protocol.
 
-Administrators are responsible for many facets of the ThoughtSpot service.
-They are most frequently in charge of these common processes:
+The ThoughtSpot Support team contacts all clients to schedule updates as we release new versions of ThoughtSpot.
+To schedule upgrades to patch releases that support your use cases, work with our Customer Success team.
 
-* xref:intro.adoc[Installation and setup of ThoughtSpot]
-* xref:loading-intro.adoc[Loading and managing data]
-* xref:about-users-groups.adoc[Managing users and groups]
-* xref:about-security.adoc[Security]
-* xref:sysadmin-overview.adoc[System administration]
-* xref:choose-strategy.adoc[Backup and Restore]
+As administrator, you are responsible for setting up and configuring ThoughtSpot.
+This guide helps you with these tasks, and also assists in troubleshooting some common problems and finding additional resources.
 
-Additionally, administrators are often involved in the following workflows:
+[#display-current-config]
+== Display your current configuration
 
-* xref:about-data-modeling-intro.adoc[Data modeling]
-* xref:about-worksheets.adoc[Using worksheets] to simplify search.
-* xref:about-query-on-query.adoc[Using views] for 'stacked' search;
-note that starting with Release 5.2, you can accomplish some aspects of search stacking by using the `IN` keyword (See https://docs.thoughtspot.com/6.0/complex-search/in-keyword-searches.html).
-* xref:about-query-on-query.html[Enabling SearchIQ][.label.label-beta] #Beta#, ThoughtSpot's natural language search.
-* xref:about-scheduled-pinboards.html[Managing scheduled jobs]
-* xref:introduction.adoc[Monitoring system health]
-* xref:troubleshooting-intro.adoc[Troubleshooting]
+To perform the setup and configuration, you must first learn how to link:{{ site.baseurl }}/admin/setup/logins.html[gain administrative access].
+
+. Log in to the ThoughtSpot cluster as the `admin` user.
+. Use the `tscli feature` subcommand to display your current configuration.
++
+----
+ $ tscli feature get-all-config
+ +---------------------------------+----------+---------------+
+ |              NAME               |  STATUS  | CONFIGURATION |
+ +---------------------------------+----------+---------------+
+ | Firewall                        | Disabled |               |
+ | Saml                            | Disabled |               |
+ | Ldap                            | Disabled |               |
+ | CustomBranding                  | Disabled |               |
+ | CustomBrandingFontCustomization | Disabled |               |
+ | DataConnect                     | Disabled |               |
+ | RLS                             | Enabled  |               |
+ | Callhome                        | Enabled  |               |
+ | SSHTunnel                       | Enabled  |               |
+ | Fileserver                      | Disabled |               |
+ +---------------------------------+----------+---------------+
+----
+
+[#related]
+== Related information
+
+The following tasks are also available:
+
+* link:{{ site.baseurl }}/admin/setup/set-your-thoughtspot-locale.html[Set your locale]
+* link:{{ site.baseurl }}/admin/setup/test-network.html[Test connectivity between nodes]
+* link:{{ site.baseurl }}/admin/setup/set-custom-calendar.html[Set up a fiscal calendar year]
+* link:{{ site.baseurl }}/admin/setup/about-LDAP.html[Integrate LDAP]
+* link:{{ site.baseurl }}/admin/setup/set-up-monitoring.html[Set up monitoring]
+* link:{{ site.baseurl }}/admin/setup/work-with-ts-support.html[Configure support services]
+* link:{{ site.baseurl }}/appliance/ports.html[Network ports]
+* link:{{ site.baseurl }}/admin/setup/about-load-balancer-configuration.html[Configure load balancing and proxies]
+* link:{{ site.baseurl }}/admin/setup/customize-style.html[Customize look and feel]

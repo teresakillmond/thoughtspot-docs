@@ -1,12 +1,11 @@
 = Import CSV files with tsload
-:last_updated: 03/07/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
+:last_updated: 12/8/2020
 
-Use the `tsload` command to import data from a CSV file.
 
-NOTE: To add data into the system, you must have the required permissions.
-Initially, only the `Admin` user has that level of access.
+Use the <code>tsload</code> command to import data from a CSV file.
+
+{% include access.html content="To add data into the system, you must have the required permissions.
+Initially, only the `Admin` user has that level of access." %}
 
 Use ThoughtSpot Loader (`tsload`) to load data from a CSV text file into an existing table in ThoughtSpot.
 ThoughtSpot Loader (`tsload`) is a common way to import data.
@@ -19,12 +18,10 @@ Before importing data, you need to link:create-schema.html#[build the schema].
 
 After importing data, you can see it in the *Data* tab.
 
-image::data-tab.png[Click the Data tab from the top navigation bar]
-
 == ThoughtSpot Loader
 
 To use ThoughtSpot Loader, type the command `tsload` followed by the appropriate flags.
-You can see the list of the flags it accepts in the xref:reference:data-importer-ref.adoc[ThoughtSpot Loader flag reference], or by issuing `tsload -help` on the command line.
+You can see the list of the flags it accepts in the link:{{ site.baseurl }}/reference/data-importer-ref.html#[ThoughtSpot Loader flag reference], or by issuing `tsload -help` on the command line.
 
 The `tsload` feature supports both full and incremental data loads.
 For incremental loads, it performs an upsert (insert or update).
@@ -131,8 +128,8 @@ If you do not supply the `--s3a_bucket_name`, `tsload` prompts you to enter it.
  $ tsload --source_file "/s3a/default/<my_file_in_aws>"
         --target_database "<my_database_in_ThoughtSpot>" --target_table "<my_table_in_the_database_in_ThoughtSpot>" --s3a_bucket_name <bucket_name>
 +
-IMPORTANT: --source_file should contain the file path inside the bucket and *_must_* be prefixed by `/s3a/default`.
-For example, to load from a file named "`directory/file.csv`", the --source_file should be "`/s3a/default/directory/file.csv`".
+{% include important.html content="--source_file should contain the file path inside the bucket and *_must_* be prefixed by `/s3a/default`.
+For example, to load from a file named "`directory/file.csv`", the --source_file should be "`/s3a/default/directory/file.csv`"." %}
 +
 This example imports the CSV file `teams.csv` into the table `teams` in the database `temp`:
 
