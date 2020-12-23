@@ -1,9 +1,7 @@
-= ["Configure trusted authentication"]
+= Configure trusted authentication
 :last_updated: 11/07/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Learn how to configure trusted authentication.
-:toc: true
+
+Learn how to configure trusted authentication.
 
 If your organization has a trusted authentication server, you can use it to authenticate users of the embedded ThoughtSpot application.
 After authenticating a user, the trusted authenticator server or service obtains an authentication token from ThoughtSpot on that user's behalf.
@@ -82,9 +80,12 @@ It is also important that the `username` is a match for a `username` on the Thou
 ----
 +
 This post request takes the following parameters:
-+++<dlentry>+++secret_key::::  A required `formData` parameter containing a string which is the authentication token provide by the ThoughtSpot server.+++</dlentry>++++++<dlentry>+++username::::  A required `formData` parameter containing a string which is the user's `username` on ThoughtSpot.+++</dlentry>++++++<dlentry>+++access_level::::  A required `formData` parameter containing one of `FULL` or `REPORT_BOOK_VIEW`.+++</dlentry>++++++<dlentry>+++id::::
-An optional `formData` parameter containing a ThoughtSpot object identifier.
-This is only required if you specified `REPORT_BOOK_VIEW` for the `access_level` parameter.+++</dlentry>+++
+
+secret_key::  A required `formData` parameter containing a string which is the authentication token provide by the ThoughtSpot server.
+username::  A required `formData` parameter containing a string which is the user's `username` on ThoughtSpot.
+access_level::  A required `formData` parameter containing one of `FULL` or `REPORT_BOOK_VIEW`.
+id:: An optional `formData` parameter containing a ThoughtSpot object identifier.
+This is only required if you specified `REPORT_BOOK_VIEW` for the `access_level` parameter.
 
 . The trusted authenticator server is responsible for managing this token.
 +

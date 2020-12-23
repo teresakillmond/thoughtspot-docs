@@ -21,8 +21,8 @@ CAUTION: You should never disable the periodic snapshot system, because backups 
 For example, if you have disabled the periodic snapshots system and periodic backups are enabled, then the periodic backup may use a very outdated snapshot or it may fail all together.
 
 ThoughtSpot usually stores backups on a xref:NAS-mount.adoc[NAS (network attached storage) file system] but you can store them on a local disk as well.
-You can back up an AWS cluster xref:appliance:aws-backup-restore.adoc[using an S3 bucket].
-You can back up a GCP cluster xref:appliance:gcp-backup-restore.adoc[using a GCS bucket].
+You can back up an AWS cluster xref:aws-backup-restore.adoc[using an S3 bucket].
+You can back up a GCP cluster xref:gcp-backup-restore.adoc[using a GCS bucket].
 When creating a backup, ThoughtSpot copies a release tarball and several supporting files to a disk you specify.
 Storing these supporting files takes about 10 GB of extra space beyond the backup itself.
 The final backup image is smaller because these extra files are removed after the backup completes successfully.

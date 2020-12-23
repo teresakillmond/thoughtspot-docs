@@ -1,9 +1,7 @@
-= ["About materialized views"]
+= About materialized views
 :last_updated: 10/31/2018
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: You can materialize a view to improve its performance.
-:toc: false
+
+You can materialize a view to improve its performance.
 
 == Introduction to materialized views
 
@@ -13,17 +11,17 @@ To improve the performance of a view, you can materialize it.
 Materializing pre-computes the view and stores it in memory, just like a table.
 You can expect a materialized view to be three to six times faster than a view that is not materialized, on average.
 
-To materialize a view, you must have the link:{{ site.baseurl }}/admin/users-groups/about-users-groups.html[*Can administer ThoughtSpot* privilege].
+To materialize a view, you must have the xref:about-users-groups.adoc[*Can administer ThoughtSpot* privilege].
 
-{% include note.html content="The number of materialized views you can create is limited to 50, because materialized views take up space in memory.
-+ Row Level Security does not apply to materialized views.
-All users will see the same data when using the materialized view as a data source." %}
+NOTE: The number of materialized views you can create is limited to 50, because materialized views take up space in memory.
+Row Level Security does not apply to materialized views.
+All users will see the same data when using the materialized view as a data source.
 
 These are the operations you can do on a view:
 
-* link:{{ site.baseurl }}/admin/loading/materialize-a-view.html[Materialize a view] to improve performance,
-* link:{{ site.baseurl }}/admin/loading/dematerialize-a-view.html[Dematerialize a view] to save space, or
-* link:{{ site.baseurl }}/admin/loading/refresh-view.html[Refresh a view] to synchronize its data with the latest data load to the underlying tables.
+* xref:materialize-a-view.adoc[Materialize a view] to improve performance,
+* xref:dematerialize-a-view.adoc[Dematerialize a view] to save space, or
+* xref:refresh-view.adoc[Refresh a view] to synchronize its data with the latest data load to the underlying tables.
 * Check the status of a view.
 
 After materializing, a view can have one of three statuses.
@@ -73,8 +71,8 @@ Optionally run a report.
 Your view can become stale, if it isn't refreshed when the data in the tables used to create it is updated.
 There are two ways to refresh the data:
 
-* link:{{ site.baseurl }}/admin/loading/refresh-view.html[Manually refresh data in a view]
-* link:{{ site.baseurl }}/admin/loading/schedule-materialization.html[Refresh the view on a schedule]
+* xref:refresh-view.adoc[Manually refresh data in a view]
+* xref:schedule-materialization.adoc[Refresh the view on a schedule]
 
 Here are some conditions that could lead to a view becoming stale:
 
@@ -86,6 +84,6 @@ Here are some conditions that could lead to a view becoming stale:
 
 == Related Information
 
-* link:{{ site.baseurl }}/complex-search/about-query-on-query.html[Understand views]
-* link:{{ site.baseurl }}/complex-search/create-aggregated-worksheet.html[Save a search as a view]
-* link:{{ site.baseurl }}/admin/loading/materialize-a-view.html[Materialize a view]
+* xref:about-query-on-query.adoc[Understand views]
+* xref:create-aggregated-worksheet.html[Save a search as a view]
+* xref:materialize-a-view.adoc[Materialize a view]
