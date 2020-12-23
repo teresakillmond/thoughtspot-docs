@@ -1,13 +1,12 @@
 = Overview of data modeling settings
 :last_updated: 11/15/2019
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
+
 
 Learn about data modeling settings.
 
 You can change data modeling settings in two ways, both of which change the model.
-If you want to make a few small changes, you should xref:model-data-in-UI.adoc[make them in the ThoughtSpot application].
-If you want to make many changes xref:edit-model-file.adoc[you should edit the modeling file].
+If you want to make a few small changes, you should link:{{ site.baseurl }}/admin/data-modeling/model-data-in-UI.html[make them in the ThoughtSpot application].
+If you want to make many changes link:{{ site.baseurl }}/admin/data-modeling/edit-model-file.html#[you should edit the modeling file].
 Whether you are changing data modeling settings using the modeling file or the Web interface, the settings and their accepted values are the same.
 
 == Modeling settings
@@ -17,60 +16,60 @@ The following index includes mutable data modeling settings that you can apply t
 |===
 | Setting&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description
 
-| xref:change-column-basics.adoc#change-the-column-name[Column Name]
+| link:change-column-basics.html#change-the-column-name#[Column Name]
 | Sets the name of the column to be used in searches.
 
-| xref:change-column-basics.adoc#change-column-description[Description]
+| link:change-column-basics.html#change-column-description[Description]
 | Adds a text description of what the column contains.
 
-| xref:datatypes.adoc[Data Type]
+| link:{{ site.baseurl }}/admin/loading/datatypes.html#[Data Type]
 | *Read only.* Shows the column's data type.
 
-| xref:change-column-basics.adoc#change-column-type[Column Type]
+| link:change-column-basics.html#change-column-type[Column Type]
 | Sets the type of column, either `ATTRIBUTE` or `MEASURE`.
 
-| xref:change-aggreg-additive.adoc[Additive]
+| link:change-aggreg-additive.html#[Additive]
 | Controls the type of aggregations that will be available for a column.
 
-| xref:change-aggreg-additive.adoc[Aggregation]
+| link:change-aggreg-additive.html#[Aggregation]
 | Sets the default aggregation type for a column.
 
-| xref:change-visibility-synonym.adoc[Hidden]
+| link:change-visibility-synonym.html#[Hidden]
 | Sets the visibility of a column.
 
-| xref:change-visibility-synonym.adoc[Synonyms]
+| link:change-visibility-synonym.html#[Synonyms]
 | Adds synonyms that can be used in the search bar to refer to a column.
 
-| xref:spotiq-data-model-preferences.adoc[SpotIQ Preference]
+| link:spotiq-data-model-preferences.html#[SpotIQ Preference]
 | Excludes specified columns from SpotIQ analyses.
 By Default, all columns are included in SpotIQ.
 
-| xref:change-index.adoc[Index Type]
+| link:change-index.html#[Index Type]
 | Sets the type of index that will be created for a column.
 
-| xref:model-geo-data.adoc[Geo Config]
+| link:model-geo-data.html#[Geo Config]
 | Enables a column to be used in GeoMap visualizations.
 
-| xref:change-index.adoc[Index Priority]
+| link:change-index.html#[Index Priority]
 | Changes the priority of a column in search suggestions.
 
-| xref:set-format-pattern-numbers.adoc[Format Pattern]
+| link:set-format-pattern-numbers.html#[Format Pattern]
 | Specifies the format to use for numeric values or dates that show in the column.
 
-| xref:set-format-pattern-numbers.adoc#set-currency-type[Currency Type]
+| link:set-format-pattern-numbers.html#set-currency-type[Currency Type]
 | Specifies the format of currencies in a column.
 
 | link:attributable-dimension.html#[Attribution Dimension]
-| Only applies to tables that join over a xref:chasm-trap.adoc[Chasm Trap].
+| Only applies to tables that join over a link:{{ site.baseurl }}/admin/loading/chasm-trap.html#[Chasm Trap].
 Designates whether the tables depend on this column for attribution.
 You cannot change the attribution dimension in the modeling file.
 You can only configure it on a table-by-table basis.
 
-| xref:set-custom-calendar.adoc[Calendar Type]
+| link:{{ site.baseurl }}/admin/setup/set-custom-calendar.html[Calendar Type]
 | Specifies what type of calendar a date type column uses.
 It can be Gregorian calendar (default), a fiscal calendar, or any custom calendar.
 
-| xref:set-entity-category.adoc[Entity Category]
+| link:set-entity-category.html#[Entity Category]
 | Specifies how to categorize the data in the column: person, place, time, and so on.
 Important for configuring SearchIQ [.label.label-beta]#Beta#.
 
@@ -97,5 +96,5 @@ For example, if you've changed the GeoMap setting from "None" to "Country", you 
 
 == Related information
 
-* xref:about-data-modeling-intro.adoc[Model the data for searching]
-* xref:model-geo-data.adoc[Add a geographical data setting for a column]
+* link:{{ site.baseurl }}/admin/data-modeling/about-data-modeling-intro.html[Model the data for searching]
+* link:{{ site.baseurl }}/admin/data-modeling/model-geo-data.html[Add a geographical data setting for a column]

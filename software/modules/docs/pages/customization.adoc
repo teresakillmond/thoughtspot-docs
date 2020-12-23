@@ -1,5 +1,6 @@
 = Custom SpotIQ analysis
-:last_updated: 11/15/2019
+:last_updated: 11/25/2020
+
 
 Learn how to customize SpotIQ analysis.
 
@@ -11,7 +12,7 @@ The customized analysis can be a one-time customization or can apply to all futu
 Every menu or location where you can run *SpotIQ analyze*, you can customize your analysis.
 You access it using the lightbulb button image:icon-lightbulb.png[more options menu icon] or the ellipses menu image:icon-ellipses.png[SpotIQ analyze icon].
 
-image::spotiq-where-customize.png[]
+image::spotiq-menu-items.png[]
 
 Regardless of where you run *SpotIQ analyze* in ThoughtSpot, the *SpotIQ* window has the same layout.
 The columns displayed, though, are specific to the data from which you run *SpotIQ analyze*.
@@ -41,48 +42,49 @@ You can set SpotIQ customization parameters in your link:{{ site.baseurl }}/_spo
 
 == Eliminate null values
 
-[width="100%",options="header"]
-|====================
-| From next analysis | From future analyses
-|In the Search bar, add a filter `column!= Null` to the search bar. Or choose **Exclude null values from current analysis**, using the **Advanced** panel.  |  Set **Exclude null values from my analysis** on your user **Profile** to exclude them from any future SpotIQ analyses you do.
-|====================
+Null values should be eliminated from your analysis.+++<table>++++++<tr>++++++<th>+++From next analysis+++</th>+++
+    +++<th>+++From future analyses+++</th>++++++</tr>+++
+  +++<tr>++++++<td>+++// next
+    +++<p>+++In the Search bar, add a filter +++<code>++++++<i>+++column+++</i>+++!= Null+++</code>+++ to the search bar. Or choose +++<b>+++Exclude null values from current analysis+++</b>+++, using the +++<b>+++Advanced+++</b>+++ panel.+++</p>++++++</td>+++
+    +++<td>+++// future
+    Set +++<b>+++Exclude null values from my analysis+++</b>+++ on your user +++<b>+++Profile+++</b>+++ to exclude them from any future  SpotIQ analyses you do.+++</td>++++++</tr>++++++</table>+++
 
 == Exclude uninteresting column(s) in insight
 
-[width="100%",options="header"]
-|====================
-| From next analysis | From future analyses
-2+|Use the EXCLUDE option of SPOTIQ PREFERENCE under the DATA tab to exclude any column permanently from all future analysis.  |
-|====================
+You should always exclude columns you are not interested from your analysis.+++<table>++++++<tr>++++++<th>+++From next analysis+++</th>+++
+    +++<th>+++From future analyses+++</th>++++++</tr>+++
+  +++<tr>++++++<td>+++// next
+    +++<p>+++Use the +++<b>+++EXCLUDE+++</b>+++ option of +++<b>+++SPOTIQ PREFERENCE+++</b>+++ under the +++<b>+++DATA+++</b>+++ tab to exclude any column permanently from all future analysis.+++</p>++++++</td>++++++</tr>++++++</table>+++
 
 == Include an interesting column
 
-You can always include columns that interest you in your analysis.
-[width="100%",options="header"]
-|====================
-| From next analysis | From future analyses
-| Choose **Customize analysis** and select columns that you want to include. | Ensure **Index Priority** is between 8-10 on the column under the **DATA** tab.
-|====================
+You can always include columns that interest you in your analysis.+++<table>++++++<tr>++++++<th>+++From next analysis+++</th>+++
+    +++<th>+++From future analyses+++</th>++++++</tr>+++
+  +++<tr>++++++<td>+++// next
+    +++<p>+++Choose +++<b>+++Customize analysis+++</b>+++ and select columns that you want to include.+++</p>++++++</td>+++
+    +++<td>+++// future
+    Ensure +++<b>+++Index Priority+++</b>+++ is between 8-10 on the column under the +++<b>+++DATA+++</b>+++ tab.+++</td>++++++</tr>++++++</table>+++
 
 == Remove known date outliers
 
 Your data may contain known outliers.
 For example, you are in the middle of a quarter and only want to analyze the previous quarter.
-Anything from the present quarter could contain an outlier.
-[width="100%",options="header"]
-|====================
-| From next analysis | From future analyses
-| In the Search bar, add a filter `date< last time period` to the search bar. | Not applicable.
-|====================
+Anything from the present quarter could contain an outlier.+++<table>++++++<tr>++++++<th>+++From next analysis+++</th>+++
+    +++<th>+++From future analyses+++</th>++++++</tr>+++
+  +++<tr>++++++<td>+++// next
+    +++<p>+++In the Search bar, add a filter +++<code>++++++<i>+++date+++</i>+++< last time period+++</code>+++ to the search bar.+++</p>++++++</td>+++
+    +++<td>+++// future
+    Not applicable.+++</td>++++++</tr>++++++</table>+++
 
 == Too few insights
 
-Your SpotIQ analysis may not provide you as many insights as you think it should.
-[width="100%",options="header"]
-|====================
-| From next analysis | From future analyses
-| Choose **Customize analysis**, select the **Advanced** tab, and decrease the **Multiplier for Outlier Detection** to a value closer to zero. | Not applicable.
-|====================
+Your SpotIQ analysis may not provide you as many insights as you think it should.+++<table style="border:1px;">++++++<tr>++++++<th>+++From next analysis+++</th>+++
+    +++<th>+++From future analyses+++</th>++++++</tr>+++
+  +++<tr>++++++<td>+++// next
+    +++<p>+++Choose +++<b>+++Customize analysis+++</b>+++, select the +++<b>+++Advanced+++</b>+++ tab, and decrease the +++<b>+++Multiplier for Outlier Detection+++</b>+++ to a value closer to zero.+++</p>++++++</td>+++
+    +++<td>+++// future
+    Not applicable.+++</td>++++++</tr>++++++</table>+++
+
 == Explaining Anomaly Insights
 
 When SpotIQ finds insights with anomaly points, you have the option to run the Explain Insight command to have SpotIQ do further analysis on the anomaly points.
@@ -104,4 +106,4 @@ The results of your insight analysis explaining your anomaly points appear.
 
 image::spotiq-explain-insight-2.png[]
 
-NOTE: *Explain insight* does not work with Trend Analysis or Cross Correlation Analysis.
+{% include note.html content="*Explain insight* does not work with Trend Analysis or Cross Correlation Analysis." %}

@@ -1,8 +1,9 @@
 = Configure SSL
 :last_updated: 8/27/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Secure socket layers (SSL) provide authentication and data security when sending data to and from ThoughtSpot.
+
+:redirect_from: /6.3.0/admin/setup/SSL-config.html", "/6.3.0.CU1/admin/setup/SSL-config.html
+
+Secure socket layers (SSL) provide authentication and data security when sending data to and from ThoughtSpot.
 
 You can use your own SSL certificate to secure ThoughtSpot HTTP(S) traffic.
 
@@ -53,7 +54,7 @@ You need a computer you can run Linux commands on, and a recent version of _open
 . Run the command to generate a CSR and private key pair:
 +
 ----
- openssl req -new -newkey rsa:2048 -nodes -out csr.pem -keyout pk.key[-subj "/key1=value1/key2=value with space/"]
+ openssl req -new -newkey rsa:2048 -nodes -out csr.pem -keyout pk.key[-subj "/key1=value1/key2=value with space/
 ----
 +
 Note the following parameters:
@@ -77,7 +78,7 @@ Follow these steps to generate a CSR with an existing private key:
 . Run the command to generate a CSR and private key pair:
 +
 ----
- openssl req -new -key <private_key_file> -nodes -out csr.pem[-subj "/key1=value1/key2=value with space/"]
+ openssl req -new -key <private_key_file> -nodes -out csr.pem[-subj "/key1=value1/key2=value with space/
 ----
 +
 Specify the existing private key file.
@@ -196,8 +197,7 @@ You can retrieve these from the ThoughtSpot web server (not against the load bal
 You must ensure that your load balancer supports these ciphers.
 If your load balancer cannot support these ciphers, link:{{ site.baseurl }}/appliance/contact.html[contact ThoughtSpot Support].
 
-include::partial$ssl-configure.adoc[]
-
+{% include content/admin-portal/ssl-configure.md %}
 
 [#ssl-configure-test]
 == Test the SSL certificate

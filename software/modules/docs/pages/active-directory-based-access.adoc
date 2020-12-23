@@ -1,8 +1,8 @@
 = Enable SSH access through Active Directory
 :last_updated: 01-13-2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: You can enable Active Directory (AD) access on each ThoughtSpot node.
+
+
+You can enable Active Directory (AD) access on each ThoughtSpot node.
 
 == Enable user access on a ThoughtSpot node through AD
 
@@ -20,7 +20,7 @@ Here, _`USER`_ is the user account you are enabling on the domain _`DOMAIN`_.
 
 The system prompts for password credentials before completing the step.
 
-NOTE: The user must have permission to join a computer or VM to the domain.
+{% include note.html content="The user must have permission to join a computer or VM to the domain."%}
 
 == Set sudo AD Group on a ThoughtSpot node
 
@@ -56,7 +56,7 @@ To disable system AD user access, issue the link:{{ site.baseurl }}/reference/ts
 tscli sssd disable
 ----
 
-NOTE: Running this command also removes the AD group from `sudo` list.
+{% include note.html content="Running this command also removes the AD group from `sudo` list."%}
 
 == Related Information
 

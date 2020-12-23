@@ -1,8 +1,8 @@
-= ["RHEL installation prerequisites"]
-:last_updated: 6/30/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Prepare the system and ThoughtSpot clusters for installation.
+= RHEL installation prerequisites
+:last_updated: 10/19/2020
+
+
+Prepare the system and ThoughtSpot clusters for installation.
 
 [cols=2*]
 |===
@@ -16,7 +16,7 @@ Partition the hosts>>
 
 | &#10063;
 | <<install-rhel,3.
-Install RHEL version 7.7 or 7.8 on all hosts>>
+Install RHEL version 7.8 or 7.9 on all hosts>>
 
 | &#10063;
 | <<linux-kernel-version,4.
@@ -51,52 +51,36 @@ Please refer to the relevant deployment sections in our documentation for the ex
 [#partition-hosts]
 == Partition the hosts
 
-Ensure that all ThoughtSpot hosts have the following partitions on the root drive.
+Ensure that all ThoughtSpot hosts meet the following partition and sizing requirements.
+All drives must be SSDs.
 
-Note that the size of the root drive on appliances is limited to 200GB;
-the partition requirements are therefore somewhat different when compared to the other environments.+++<table>++++++<tbody>++++++<tr>++++++<th>+++Platform+++</th>+++
-+++<th>+++Partition+++</th>+++
-+++<th>+++Drive type+++</th>+++
-+++<th>+++Description+++</th>+++
-+++<th>+++Minimum size+++</th>++++++</tr>+++
-+++<tr>++++++<th rowspan="2">+++Hosts in AWS, GCP, Azure, and VMWare&nbsp;+++</th>+++
-+++<td>+++OS partition+++</td>+++
-+++<td>+++SSD (root drive)+++</td>+++
-+++<td>+++Root partition for OS, +++<code>+++/tmp+++</code>++++++</td>+++
-+++<td>+++100GB+++<br>++++++</br>+++Allocate at least 50GB to +++<code>+++/tmp+++</code>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Export partition+++</td>+++
-+++<td>+++SSD (root drive)&nbsp;+++</td>+++
-+++<td>+++Stores ThoughtSpot objects, hdfs logs, service logs, and so on+++</td>+++
-+++<td>+++200GB+++</td>++++++</tr>+++
-+++<tr>++++++<th rowspan="2">+++Hosts on ThoughtSpot-certified hardware appliances+++</th>+++
-+++<td>+++OS partition+++</td>+++
-+++<td>+++SSD (root drive)+++</td>+++
-+++<td>+++Root partition for OS, +++<code>+++/tmp+++</code>++++++</td>+++
-+++<td>+++80GB+++<br>++++++</br>+++Allocate at least 50GB to +++<code>+++/tmp+++</code>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Export partition+++</td>+++
-+++<td>+++SSD (root drive)&nbsp;+++</td>+++
-+++<td>+++Stores ThoughtSpot objects, hdfs logs, service logs, and so on+++</td>+++
-+++<td>+++100GB+++</td>++++++</tr>++++++</tbody>++++++</table>+++
+. At least 20 GB available on the root drive, for yum packages and system logs.
+. At least 200 GB for ThoughtSpot installation, either on a secondary drive or as a separate partition on the root drive.
+For ThoughtSpot-certified hardware platforms, link:{{ site.baseurl }}/appliance/hardware/installing-dell.html[Dell] and link:{{ site.baseurl }}/appliance/hardware/installing-the-smc.html[Super Micro Computer], you must use a secondary drive, since the root drive has a limit of 200 GB.
++
+{% include note.html content="This drive must be separate from the data drive(s)." %}
 
 [#install-rhel]
 == Install RHEL on hosts
 
-ThoughtSpot is certified with RHEL versions 7.7 and 7.8;
-we *do not* support other versions of RHEL, including 8 and 8.1.
-Install RHEL version 7.7 or 7.8, and ensure that your <<linux-kernel-version,linux kernel version>> is 3.10.0-1127.19.1.
+ThoughtSpot is certified with RHEL versions 7.8 and 7.9;
+we *do not* support other versions of RHEL, including 7.7, 8, and 8.1.
+Install RHEL version 7.8 or 7.9, and ensure that your <<linux-kernel-version,linux kernel version>> is 3.10.0-1127.19.1.
 
 [#linux-kernel-version]
 === Linux kernel version
 
 Your Linux kernel *_must_* be on version 3.10.0-1127.19.1.
-RHEL 7.7 and 7.8 used to come with a Linux kernel of version 3.10.x, which has a bug that causes nodes to reboot unexpectedly.
-The default Linux kernel version for RHEL 7.7 and 7.8 is now 3.10.0-1127.19.1.
-However, you may have an older RHEL 7.7 or 7.8, with a Linux kernel of version 3.10.x.
+RHEL 7.8 used to come with a Linux kernel of version 3.10.x, which has a bug that causes nodes to reboot unexpectedly.
+The default Linux kernel version for RHEL 7.8 is now 3.10.0-1127.19.1.
+However, you may have an older RHEL 7.8, with a Linux kernel of version 3.10.x.
 You must upgrade to 3.10.0-1127.19.1.
 If you have trouble upgrading your Linux kernel to version 3.10.0-1127.19.1, link:{{ site.baseurl }}/appliance/contact.html[contact ThoughtSpot Support].
 This is a requirement for *_all_* platforms: appliance, cloud, and VMware.
 
-{% include warning.html content="If Linux kernel version is not 3.10.0-1127.19.1, you may run into unexpected node reboots and possible loss of data." %}
+If you are using RHEL version 7.9, the default Linux kernel never had this bug.
+
+{% include warning.html content="If your Linux kernel version is not 3.10.0-1127.19.1, you may run into unexpected node reboots and possible loss of data." %}
 
 [#enable-hosts]
 == Enable the hosts to download RHEL packages

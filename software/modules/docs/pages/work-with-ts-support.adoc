@@ -1,7 +1,7 @@
 = Configure support services
 :last_updated: 3/4/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
+
+:redirect_from: /6.3.0/admin/setup/work-with-ts-support.html", "/6.3.0.CU1/admin/setup/work-with-ts-support.html
 
 There are several configurations you can set up in your installation to ensure your company's support from ThoughtSpot works smoothly.
 
@@ -18,14 +18,14 @@ Before doing this procedure, make sure your company's security policies allow re
 
 You can set up a reverse tunnel <<remote-support-tscli,using tscli>>, or <<admin-portal,through the Admin Console>>.
 
-NOTE: Before you set up a reverse tunnel, open port `22` in your firewall outgoing rules to add `tunnelrelay.thoughtspot.com` to your list of allowed domains.
+{% include note.html content="Before you set up a reverse tunnel, open port `22` in your firewall outgoing rules to add `tunnelrelay.thoughtspot.com` to your list of allowed domains." %}
 
 [#remote-support-tscli]
 === Using remote support with tscli
 
 To enable remote support, follow these steps:
 
-. Contact xref:contact.adoc[ThoughtSpot Support] and open a support ticket for making the appropriate reverse tunnel settings on our end.
+. Contact link:{{ site.baseurl }}/admin/misc/contact.html[ThoughtSpot Support] and open a support ticket for making the appropriate reverse tunnel settings on our end.
 Provide the cluster name of the cluster for which you want to enable remote support.
 . After the ticket is completed, continue with the remaining steps in this procedure to make the settings on your side.
 . Log in to the Linux shell using SSH.
@@ -50,7 +50,7 @@ After that, this setting persists when you start and stop the  remote tunnel.
  $ tscli support start-remote
 ----
 
-. Contact xref:contact.adoc[ThoughtSpot Support] and test your setup.
+. Contact ThoughtSpot Support (https://docs.thoughtspot.com/latest/admin/misc/contact.html) and test your setup.
 . After your remote session with ThoughtSpot Support is over, turn the remote tunnel off until you need to use it again:
 +
 ----
@@ -68,7 +68,7 @@ You can repeat the steps to start and stop the remote tunnel as needed for futur
 [#admin-portal]
 === Configure reverse SSH tunnel with the Admin Console
 
-include::partial$reverse-ssh-tunnel.adoc[]
+{% include content/admin-portal/reverse-ssh-tunnel.md %}
 
 [#configure-secure-file-server]
 == Configure a secure file server
@@ -187,4 +187,4 @@ image::help_center_support_contact.png[]
 
 * In error messages, when a user selects *What Happened?*
 +
-// [](trace_log.png "Error message support contact")
+// []({{ site.baseurl }}/images/trace_log.png "Error message support contact")

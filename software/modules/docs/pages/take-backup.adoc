@@ -1,13 +1,12 @@
 = Create a manual backup
 :last_updated: 3/11/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
+
 
 Learn how to manually create a backup.
 
 ThoughtSpot enables you to manually create a backup to restore a cluster to a prior state or a differently configured appliance.
 You can also move the backup from an appliance to a virtual cluster or vice versa.
-To restore a cluster from a backup, xref:contact.adoc[contact ThoughtSpot Support].
+To restore a cluster from a backup, link:{{ site.baseurl }}/admin/misc/contact.html#[contact ThoughtSpot Support].
 
 You create a manual backup from an existing snapshot.
 So, you must identify an existing snapshot to use or take a new snapshot first.
@@ -26,7 +25,7 @@ To manually create a backup using ThoughtSpot's command line interface, tscli:
  $ ssh admin@<cluster-IP>
 ----
 
-. xref:/overview-snapshot.adoc#snapshot-tscli[Create a manual snapshot] or find a snapshot you want to use.
+. link:{{ site.baseurl }}/admin/backup-restore/overview-snapshot.html#snapshot-tscli[Create a manual snapshot] or find a snapshot you want to use.
 To find a snapshot you want to use for your backup, run `tscli snapshot ls`:
 +
 ----
@@ -57,9 +56,9 @@ You can use the `df -h` command to check disk size.
  $ df -h
 ----
 
-. Create the backup, designating the xref:backup-modes.adoc[type of backup], the snapshot name, and a directory:
+. Create the backup, designating the link:{{ site.baseurl }}/admin/backup-restore/backup-modes.html#[type of backup], the snapshot name, and a directory:
 +
-Choose the xref:backup-modes.adoc[mode of backup] you want to create, either `full`, `lightweight`, or `dataless`.
+Choose the link:{{ site.baseurl }}/admin/backup-restore/backup-modes.html#[mode of backup] you want to create, either `full`, `lightweight`, or `dataless`.
 You specify an existing directory path, but the folder (the last part of the path: `/home/admin/<folder>`) *must not* already exist.
 ThoughtSpot creates the folder when it runs a backup.
 The BASE value is the name of the backup.
@@ -84,5 +83,5 @@ Here is a sample `tscli backup create` command:
 
 For details on how to back up a ThoughtSpot cluster hosted in the cloud, see:
 
-* xref:appliance:aws-backup-restore.adoc[Backup and Restore with AWS]
-* xref:appliance:gcp-backup-restore.adoc[Backup and Restore with GCP]
+* link:{{ site.baseurl }}/appliance/aws/aws-backup-restore.html#[Backup and Restore with AWS]
+* link:{{ site.baseurl }}/appliance/gcp/gcp-backup-restore.html#[Backup and Restore with GCP]
