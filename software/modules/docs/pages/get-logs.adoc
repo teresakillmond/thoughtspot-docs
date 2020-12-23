@@ -1,8 +1,7 @@
-= ["Get your configuration and logs"]
+= Get your configuration and logs
 :last_updated: 11/18/2019
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Two main troubleshooting tools are getting a log bundle and understanding your cluster configuration.
+
+Two main troubleshooting tools are getting a log bundle and understanding your cluster configuration.
 
 For troubleshooting on specific incidents or cluster problems, two things are important: understanding your current configuration and getting a log bundle.
 
@@ -99,5 +98,5 @@ Pass all the entries in `--include` starting with `/` to find(1), and all entrie
  $ tscli logs collect --include system,orion --exclude *hadoop*,*zookeeper* --since 2h
 
 The above command collects all system and all orion logs, but excludes hadoop (hdfs) and zookeeper logs.
-See link:{{ site.baseurl }}/admin/troubleshooting/upload-logs-egnyte.html[Upload logs to ThoughtSpot Support] about using a secure file sever to collect log files or other files needed for troubleshooting.
+See xref:upload-logs-egnyte.adoc[Upload logs to ThoughtSpot Support] about using a secure file sever to collect log files or other files needed for troubleshooting.
 You can easily send log files to this file serve directly from the ThoughtSpot instance.

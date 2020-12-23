@@ -1,8 +1,7 @@
-= ["Authentication flow with embed"]
+= Authentication flow with embed
 :last_updated: 11/18/2019
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: You can enable Single Sign On (SSO) with your embedded version of ThoughtSpot.
+
+You can enable Single Sign On (SSO) with your embedded version of ThoughtSpot.
 
 If your ThoughtSpot system is configured for Security Assertion Markup Language (SAML) you can enable Single Sign On (SSO) for your embed application.
 
@@ -27,14 +26,7 @@ The `onAuthExpiration` is only available if you have at least one ThoughtSpot vi
 
 To authenticate with SSO:
 
-. {blank}
-+
-[cols=2*]
-|===
-| <a href="{{"/release/downloads.html"
-| prepend: site.baseurl }}" target="_blank">Download</a> the ThoughtSpot JavaScript library.
-|===
-
+. xref:downloads.adoc[Download, window="_blank"] the ThoughtSpot JavaScript library.
 . Include the library file into your web page's `<head>` section:
 +
 ----
@@ -80,4 +72,4 @@ For example:
 +
 When this value is changed, the `nginx` service is restarted automatically to reflect the change.
 
-Now, you're ready to either link:{{ site.baseurl }}/app-integrate/embedding-viz/embed-a-viz.html#[embed a visualization] or link:{{ site.baseurl }}/app-integrate/data-api/use-data-api-read.html#[use the REST API to get data] from ThoughtSpot and display it within your Web page or application.
+Now, you're ready to either xref:embed-a-viz.adoc[embed a visualization] or xref:use-data-api-read.adoc[use the REST API to get data] from ThoughtSpot and display it within your Web page or application.

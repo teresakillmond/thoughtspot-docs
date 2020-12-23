@@ -1,8 +1,5 @@
-= ["Understand embedding"]
+= Understand embedding
 :last_updated: 11/06/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:toc: true
 
 Embedding allows you to use all or part of ThoughtSpot inside another client application.
 
@@ -16,16 +13,12 @@ Regardless of the simplicity or complexity of your client application, its infra
 This library allows you to authenticate to ThoughtSpot and load specific objects.
 
 There are different methods for embedding ThoughtSpot into a client application:
-+++<dlentry>+++Full::::
-Embeds the entire ThoughtSpot application including menu bars.
-Full navigation is supported.+++</dlentry>++++++<dlentry>+++Page-level::::
-Embeds pages without the menus bars or page-level navigation.
-This is useful where you want to limit the inclusion to a portion of ThoughtSpot.
-For example, you may only embed the *Search* or the *Answers* page.+++</dlentry>++++++<dlentry>+++Object-level embedding::::
-Embed a single visualization in your application.
-Content is created in ThoughtSpot and then that content is embedded.
-The content is rendered within an `iframe`.
-This returns a JSON object that includes the underlying data.+++</dlentry>+++
+
+Full:: Embeds the entire ThoughtSpot application including menu bars. Full navigation is supported.
+Page-level:: Embeds pages without the menus bars or page-level navigation. This is useful where you want to limit the inclusion to a portion of ThoughtSpot.
+For example, you may only embed the *Search* or the *Answers* page.
+Object-level embedding:: Embed a single visualization in your application. Content is created in ThoughtSpot and then that content is embedded. The content is rendered within an `iframe`.
+This returns a JSON object that includes the underlying data.
 
 You can also use the ThoughtSpot data APIs to request data from ThoughtSpot.
 
@@ -45,7 +38,10 @@ But there is a system-wide setting that can be changed to open the links within 
 
 Changing this setting opens the links.
 Consider the possible link types, and how they open:
-+++<dlentry>+++Link in search result table in ThoughtSpot::::  Same browser tab as ThoughtSpot application+++</dlentry>++++++<dlentry>+++Link in table embedded in an `<iframe>`::::  Same `<iframe>` that contains the table+++</dlentry>++++++<dlentry>+++Link in full ThoughtSpot application embedded in an `<iframe>` element::::  Same `<iframe>` that contains the application+++</dlentry>+++
+
+Link in search result table in ThoughtSpot:: Same browser tab as ThoughtSpot application
+Link in table embedded in an `<iframe>`::  Same `<iframe>` that contains the table
+Link in full ThoughtSpot application embedded in an `<iframe>` element:: Same `<iframe>` that contains the application
 
 == Choose an authentication methodology
 
@@ -63,7 +59,7 @@ Do not use this in a production environment.
 Before you can embed all or part of ThoughtSpot, you must authenticate to ThoughtSpot using SAML with the public REST API call.
 After authentication, a URL is provided to call the desired visualization, and populate it into an `<iframe>` element.
 
-You must link:{{ site.baseurl}}/admin/setup/configure-SAML-with-tscli.html[configure SAML] on your ThoughtSpot instance before using this method.
+You must xref:configure-SAML-with-tscli.adoc[configure SAML] on your ThoughtSpot instance before using this method.
 
 === Trusted authentication service
 
@@ -99,7 +95,7 @@ This protects your data, so that another actor cannot use the same URL to embed 
 ThoughtSpot has an automated feature that collects feedback from users and sends it to ThoughtSpot Support.
 Depending on what and how you embed, user actions with your embedded application can trigger feedback.
 You can continue to forward feedback in this manner or direct the feedback to another email.
-To learn how to change the feedback email, see link:{{site.baseurl }}/admin/setup/work-with-ts-support.html#manage-the-feedback-contact[Manage the feedback contact].
+To learn how to change the feedback email, see xref:work-with-ts-support.adoc#manage-the-feedback-contact[Manage the feedback contact].
 
 == Remove the ThoughtSpot branded footer
 

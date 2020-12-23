@@ -95,7 +95,7 @@ The certificate chain may contain a series of certificates, with the root certif
 The private key must also be in compatible PEM format.
 It cannot be password-protected, or passphrase-protected.
 
-{% include note.html content="Do not use a passphrase when creating certificates with ThoughtSpot." %}
+NOTE: Do not use a passphrase when creating certificates with ThoughtSpot.
 
 If you are prompted to specify a passphrase, first check if it exists by invoking the following command:
 
@@ -133,7 +133,7 @@ This is usually sent to you by email, or available for download.
  $ tscli ssl add-cert <key> <certificate> <IP_address_or_URL>
 ----
 
-. To test that the certificate is correctly installed, sign in to the ThoughtSpot application (https://docs.thoughtspot.com/6.0/admin/setup/logins.html#sign-in-to-the-thoughtspot-application).
+. To test that the certificate is correctly installed, sign in to the ThoughtSpot application (see: xref:logins.adoc#sign-in-to-the-thoughtspot-application[sign in to the ThoughtSpot application]).
 +
 You should see that the application's URL begins with `https://`.
 
@@ -210,4 +210,4 @@ As you develop your expertise in authentication and security, we recommend the f
 
 * https://training.thoughtspot.com/authentication-security/610523[Nginx SSL]
 
-See other training resources at + https://training.thoughtspot.com/[<img src="{{ "/images/ts-u.png" | prepend: site.baseurl }}" alt="ThoughtSpot U">]
+See other training resources at + https://training.thoughtspot.com/[ThoughtSpot U]
