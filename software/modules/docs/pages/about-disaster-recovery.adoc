@@ -1,9 +1,7 @@
-= ["About disaster recovery"]
+= About disaster recovery
 :last_updated: 08/18/2019
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: ThoughtSpot's disaster recovery prevents data loss if there is a hardware or software failure.
-:toc: false
+
+ThoughtSpot's disaster recovery prevents data loss if there is a hardware or software failure.
 
 Disaster recovery is the ability to recover from a hardware or software failure or a catastrophic event.
 ThoughtSpot protects you from data loss in the event of a hardware or software failure or a catastrophic event.
@@ -15,12 +13,12 @@ See the ThoughtSpot Administrator Guide for details on backups, snapshots and re
 The information here addresses disaster recovery specifically.
 These are some potential types of failure, listed in increasing order of severity:
 
-* *link:{{ site.baseurl }}/disaster-recovery/disk-failure.html[Disk failure]* + ThoughtSpot uses replication of stored data.
+* *xref:disk-failure.adoc[Disk failure]* + ThoughtSpot uses replication of stored data.
 When a disk faila, ThoughtSpot continues to operate.
-* *link:{{ site.baseurl }}/disaster-recovery/node-failure.html[Node failure]* + ThoughtSpot uses replication of stored data.
+* *xref:node-failure.adoc[Node failure]* + ThoughtSpot uses replication of stored data.
 When a node fails, ThoughtSpot continues to operate.
-See also link:{{ site.baseurl }}/disaster-recovery/ha-resilience.html[High Availability and resilience].
-* *link:{{ site.baseurl }}/disaster-recovery/cluster-replacement.html[Cluster replacement]* + Using a mirrored system architecture, you can replace faulty clusters.
+See also xref:ha-resilience.adoc[High Availability and resilience].
+* *xref:cluster-replacement.adoc[Cluster replacement]* + Using a mirrored system architecture, you can replace faulty clusters.
 This approach enables you to rapidly recover an entire system without data loss.
 
 ThoughtSpot supports recovery from disk or node failure within each appliance.

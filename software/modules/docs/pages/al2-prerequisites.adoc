@@ -1,5 +1,6 @@
 = Amazon Linux 2 installation prerequisites
 :last_updated: 6/11/2020
+:linkattrs:
 
 Prepare the system and ThoughtSpot clusters for installation.
 
@@ -45,12 +46,12 @@ Set up hosts for the ThoughtSpot cluster on Amazon Web Services.
 [#aws-ssm]
 == [Optional] Set up AWS Systems Manager Agent
 
-If you plan to use the xref:https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html[AWS SSM agent, window="_blank"] as an alternative to SSH, create a new IAM role while creating VMs.
+If you plan to use the https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html[AWS SSM agent,window=_blank] as an alternative to SSH, create a new IAM role while creating VMs.
 This IAM role must have an SSM policy to grant AWS SSM permission to perform actions on your instances.
-Refer to xref:https://docs.aws.amazon.com/systems-manager/latest/userguide/setup-instance-profile.html[Create an IAM instance profile for Systems Manager, window="_blank"].
+Refer to https://docs.aws.amazon.com/systems-manager/latest/userguide/setup-instance-profile.html[Create an IAM instance profile for Systems Manager,window=_blank].
 
 You must install the SSM agent on each node.
-Refer to xref:https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-manual-agent-install.html[Manually install SSM Agent on EC2 instances for Linux, window="_blank"], if the SSM agent is not already on each node.
+Refer to https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-manual-agent-install.html[Manually install SSM Agent on EC2 instances for Linux, window=_blank], if the SSM agent is not already on each node.
 
 [#partition-hosts]
 == Partition the hosts

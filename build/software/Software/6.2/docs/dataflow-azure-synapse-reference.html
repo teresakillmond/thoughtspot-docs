@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["Azure Synapse connection reference"] :: ThoughtSpot Software</title>
+    <title>Azure Synapse connection reference :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 2.3.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -15,7 +15,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>["Azure Synapse connection reference"] | ThoughtSpot Software</title>
+    <title>Azure Synapse connection reference | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
@@ -2187,16 +2187,16 @@
     <span class="nav-text">SQL Server</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server.adoc">Overview</a>
+    <a class="nav-link" href="dataflow-sql-server.html">Overview</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-add.adoc">Connect</a>
+    <a class="nav-link" href="dataflow-sql-server-add.html">Connect</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-sync.adoc">Sync</a>
+    <a class="nav-link" href="dataflow-sql-server-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-reference.adoc">Reference</a>
+    <a class="nav-link" href="dataflow-sql-server-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2277,7 +2277,7 @@
     <a class="nav-link" href="dataflow-amazon-s3-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-amazon-s3-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-amazon-s3-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2295,7 +2295,7 @@
     <a class="nav-link" href="dataflow-azure-blob-storage-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-azure-blob-storage-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-azure-blob-storage-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2313,7 +2313,7 @@
     <a class="nav-link" href="dataflow-files-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-files-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-files-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2331,7 +2331,7 @@
     <a class="nav-link" href="dataflow-google-cloud-storage-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-google-cloud-storage-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-google-cloud-storage-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2349,7 +2349,7 @@
     <a class="nav-link" href="dataflow-hdfs-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-hdfs-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-hdfs-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2376,7 +2376,7 @@
     <a class="nav-link" href="dataflow-salesforce-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-salesforce-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-salesforce-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2569,7 +2569,13 @@
     <a class="nav-link" href="stop-words.html">Stop word reference</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="geomap-reference.html">Geo Map reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-australia.html">Australia</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="glossary.html">Glossary</a>
@@ -2659,9 +2665,12 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["Azure Synapse connection reference"]</h1>
+<h1 class="page">Azure Synapse connection reference</h1>
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph">
+<p>Learn about the fields used to create an Azure Synapse connection with ThoughtSpot DataFlow.</p>
+</div>
 <div class="paragraph">
 <p>Here is a list of the fields for an Azure Synapse connection in ThoughtSpot DataFlow.
 You need specific information to establish a seamless and secure connection.</p>
@@ -2673,14 +2682,91 @@ You need specific information to establish a seamless and secure connection.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><dlentry id="dataflow-azure-synapse-conn-connection-name">Connection name</dt>
+<dt class="hdlist1">Connection name</dt>
 <dd>
-<p>Name your connection. Mandatory field. <strong>Example:</strong> + AzureSynapseConnection</dlentry><dlentry id="dataflow-azure-synapse-conn-connection-type">Connection type:::: Choose the Azure Synapse connection type. Mandatory field. <strong>Example:</strong> + Azure Synapse</dlentry><dlentry id="dataflow-azure-synapse-conn-host">Host:::: Specify the name of the server. Mandatory field. <strong>Example:</strong> + <a href="http://www.example.net/</dlentry><dlentry id="dataflow-azure-synapse-conn-port">Port:::" class="bare">http://www.example.net/</dlentry><dlentry id="dataflow-azure-synapse-conn-port">Port:::</a>: Specify the connection port for Azure Synapse. Mandatory field. <strong>Example:</strong> + 1234</dlentry><dlentry id="dataflow-azure-synapse-conn-user">User::::
-Specify the user who connects to Azure Synapse.</p>
+<p>Name your connection.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> AzureSynapseConnection</p>
+</div>
 </dd>
-<dt class="hdlist1">This user must have data access privileges. Mandatory field. <strong>Example:</strong> + user1</dlentry><dlentry id="dataflow-azure-synapse-conn-password">Password:::: Specify the password. Mandatory field. <strong>Example:</strong> + pswrd234%!</dlentry><dlentry id="dataflow-azure-synapse-conn-jdbc-options">JDBC options:::: Specify JDBC URL for connecting to Azure Synapse, and the neccessary options. Optional field. <strong>Example:</strong> + jdbc:sqlserver://yourserver.database.windows.net:1234;database=mydatabase; <strong>Other notes:</strong> + Under <strong>Advanced configuration</strong>.</dlentry><dlentry id="dataflow-azure-synapse-conn-jdbc-options">JDBC options</dt>
+<dt class="hdlist1">Connection type</dt>
 <dd>
-<p>Specify the options associated with the JDBC URL. Optional field. <strong>Example:</strong> + <code>jdbc:sqlserver://[serverName[\instanceName][:portNumber]]</code> <strong>Other notes:</strong> + Advanced configuration</dlentry></p>
+<p>Choose the Azure Synapse connection type.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> Azure Synapse</p>
+</div>
+</dd>
+<dt class="hdlist1">Host</dt>
+<dd>
+<p>Specify the name of the server.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> <a href="http://www.example.net/" class="bare">http://www.example.net/</a></p>
+</div>
+</dd>
+<dt class="hdlist1">Port</dt>
+<dd>
+<p>Specify the connection port for Azure Synapse.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> 1234</p>
+</div>
+</dd>
+<dt class="hdlist1">User</dt>
+<dd>
+<p>Specify the user to connect to Azure Synapse. This user must have data access privileges.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> user1</p>
+</div>
+</dd>
+<dt class="hdlist1">Password</dt>
+<dd>
+<p>Specify the password for the User.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> pswrd234%!</p>
+</div>
+</dd>
+<dt class="hdlist1">JDBC options</dt>
+<dd>
+<p>Specify JDBC URL for connecting to Azure Synapse, and the necessary options.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> jdbc:sqlserver://yourserver.database.windows.net:1234;database=mydatabase;</p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong> Under <strong>Advanced configuration</strong>.</p>
+</div>
+</dd>
+<dt class="hdlist1">JDBC options</dt>
+<dd>
+<p>Specify the options associated with the JDBC URL.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> <code>jdbc:sqlserver://[serverName[\instanceName][:portNumber]]</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong> Advanced configuration</p>
+</div>
 </dd>
 </dl>
 </div>
@@ -2691,31 +2777,132 @@ Specify the user who connects to Azure Synapse.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><dlentry id="dataflow-azure-synapse-sync-data-extraction-mode">Data extraction mode</dt>
+<dt class="hdlist1">Data extraction mode</dt>
 <dd>
-<p>Specify the extraction type. Mandatory field. <strong>Example:</strong> + BCP <strong>Valid Values:</strong> + JDBC, BCP <strong>Default:</strong> + JDBC</dlentry><dlentry id="dataflow-azure-synapse-sync-column-delimiter">Column delimiter:::: Specify the column delimiter character. Mandatory field. <strong>Example:</strong> + , (comma)
-<strong>Valid Values:</strong> + Any character, (comma, semicolon) or a number.</p>
+<p>Specify the column delimiter character.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> 1</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid values:</strong> JDBC, BCP</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong> JDBC</p>
+</div>
 </dd>
-<dt class="hdlist1">If using a number, system uses its ASCII value as delimiter. <strong>Default:</strong> + , (comma)</dlentry><dlentry id="dataflow-azure-synapse-sync-null-value">Null value</dt>
+<dt class="hdlist1">Column delimiter</dt>
 <dd>
-<p>Specify the string literal that represents NULL on the source.
-When loading data, the system replaces this with NULL.
-Optional field.</p>
+<p>Specify the column delimiter character.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> , (comma)</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid values:</strong> Any character, (comma, semicolon) or a number. If using a number, system uses its ASCII value as delimiter.</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong> , (comma)</p>
+</div>
 </dd>
-<dt class="hdlist1">+ Available only when <strong>Data extraction mode</strong> is <em>BCP</em>. <strong>Example:</strong> + NULL <strong>Valid Values:</strong> + Any string literal <strong>Default:</strong> + NULL</dlentry><dlentry id="dataflow-azure-synapse-sync-enclosing-character">Enclosing character</dt>
+<dt class="hdlist1">Null value</dt>
 <dd>
-<p>Specify if text columns in the source data are enclosed in quotes;</p>
+<p>Specify the string literal that represents NULL on the source. When loading data, the system replaces this with NULL.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p>Available only when <strong>Data extraction</strong> mode is BCP.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> NULL</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid values:</strong> Any string literal</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong> NULL</p>
+</div>
 </dd>
-<dt class="hdlist1">if yes, single quotes or double quoates. Optional field. <strong>Example:</strong> + Double <strong>Valid Values:</strong> + Single, Double <strong>Default:</strong> + Double <strong>Other notes:</strong> + Required if text data uses newline character or delimiter character.</dlentry><dlentry id="dataflow-azure-synapse-sync-escape-character">Escape character:::: Specify the escape character if using a text qualifier in the source data. Optional field. <strong>Example:</strong> + \" <strong>Valid Values:</strong> + Any ASCII character <strong>Default:</strong> + \"</dlentry><dlentry id="dataflow-azure-synapse-sync-fetch-size">Fetch size</dt>
+<dt class="hdlist1">Enclosing character</dt>
 <dd>
-<p>Specify the number of rows fetched into memory at the same time.
-If the value is 0, system fetches all rows at the same time.
-Mandatory field.</p>
+<p>Specify if text columns in the source data are enclosed in quotes; if yes, single quotes or double quotes.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> DOUBLE</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid values:</strong> Single, Double</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong> DOUBLE</p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong> Required if text data uses newline character or delimiter character.</p>
+</div>
 </dd>
-<dt class="hdlist1">+ Available only when <strong>Data extraction mode</strong> is <em>JDBC</em>. <strong>Example:</strong> + 1000 <strong>Valid Values:</strong> + Any numeric value <strong>Default:</strong> + 1000</dlentry><dlentry id="dataflow-azure-synapse-sync-ts-load-options">TS load options</dt>
+<dt class="hdlist1">Escape character</dt>
 <dd>
-<p>Specify additional parameters passed with the <code>tsload</code> command.
-The format for these parameters is: + <code>--&lt;param_1_name&gt; &lt;optional_param_1_value&gt;</code> Optional field. <strong>Example:</strong> + <code>--max_ignored_rows 0</code> <strong>Valid Values:</strong> +  + ` --null_value ""` + ` --escape_character ""` + ` --max_ignored_rows 0` <strong>Default:</strong> + ` --max_ignored_rows 0`</dlentry></p>
+<p>Specify the escape character if using a text qualifier in the source data.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> \"</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid values:</strong> Any ASCII character</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong> \"</p>
+</div>
+</dd>
+<dt class="hdlist1">Fetch size</dt>
+<dd>
+<p>Specify the number of rows to be fetched at a time and processed in memory. If the value specified is zero then, all rows are extracted at once.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>Available only when Data extraction mode is JDBC.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> 1000</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid values:</strong> Any numeric value</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong> 1000</p>
+</div>
+</dd>
+<dt class="hdlist1">TS load options</dt>
+<dd>
+<p>Specifies the parameters passed with the tsload command, in addition to the commands already included by the application.</p>
+<div class="paragraph">
+<p>The format for these parameters is:</p>
+</div>
+<div class="paragraph">
+<p><code>--&lt;param_1_name&gt; &lt;optional_param_1_value&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> --max_ignored_rows 0</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid values:</strong> --null_value "" --escape_character "" --max_ignored_rows 0</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong> --max_ignored_rows 0</p>
+</div>
 </dd>
 </dl>
 </div>

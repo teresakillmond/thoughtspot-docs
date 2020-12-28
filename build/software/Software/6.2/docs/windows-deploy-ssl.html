@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["Deploy SSL with ODBC on Windows"] :: ThoughtSpot Software</title>
+    <title>Deploy SSL with ODBC on Windows :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 2.3.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -15,7 +15,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>["Deploy SSL with ODBC on Windows"] | ThoughtSpot Software</title>
+    <title>Deploy SSL with ODBC on Windows | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
@@ -2187,16 +2187,16 @@
     <span class="nav-text">SQL Server</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server.adoc">Overview</a>
+    <a class="nav-link" href="dataflow-sql-server.html">Overview</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-add.adoc">Connect</a>
+    <a class="nav-link" href="dataflow-sql-server-add.html">Connect</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-sync.adoc">Sync</a>
+    <a class="nav-link" href="dataflow-sql-server-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-reference.adoc">Reference</a>
+    <a class="nav-link" href="dataflow-sql-server-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2277,7 +2277,7 @@
     <a class="nav-link" href="dataflow-amazon-s3-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-amazon-s3-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-amazon-s3-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2295,7 +2295,7 @@
     <a class="nav-link" href="dataflow-azure-blob-storage-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-azure-blob-storage-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-azure-blob-storage-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2313,7 +2313,7 @@
     <a class="nav-link" href="dataflow-files-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-files-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-files-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2331,7 +2331,7 @@
     <a class="nav-link" href="dataflow-google-cloud-storage-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-google-cloud-storage-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-google-cloud-storage-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2349,7 +2349,7 @@
     <a class="nav-link" href="dataflow-hdfs-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-hdfs-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-hdfs-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2376,7 +2376,7 @@
     <a class="nav-link" href="dataflow-salesforce-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-salesforce-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-salesforce-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2569,7 +2569,13 @@
     <a class="nav-link" href="stop-words.html">Stop word reference</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="geomap-reference.html">Geo Map reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-australia.html">Australia</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="glossary.html">Glossary</a>
@@ -2659,9 +2665,12 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["Deploy SSL with ODBC on Windows"]</h1>
+<h1 class="page">Deploy SSL with ODBC on Windows</h1>
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph">
+<p>Enable SSL for an ODBC connection.</p>
+</div>
 <div class="paragraph">
 <p>You can configure a secure ODBC connection between your ThoughtSpot cluster and a remote Windows Machine.
 This article explains the SSL resources and ODBC configuration options you need to enable SSL for an ODBC connection.</p>
@@ -2680,11 +2689,20 @@ Additionally, the system administrator should have available both the proper Pri
 <div class="sect1">
 <h2 id="_configure_the_thoughtspot_cluster_nodes"><a class="anchor" href="#_configure_the_thoughtspot_cluster_nodes"></a>Configure the ThoughtSpot cluster nodes</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>{% include important.html content="Portions of this procedure require that you work with your ThoughtSpot Customer Service or Support Engineer." %}</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Portions of this procedure require that you work with your ThoughtSpot Customer Service or Support Engineer.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>The <a href="https://www.simba.com/products/SEN/doc/Client-Server_user_guide/content/clientserver/configuringsimbaserver/configurationoptions.htm">SimbaServer Configuration Properties reference</a> includes full details on <a href="https://www.simba.com/products/SEN/doc/Client-Server_user_guide/content/clientserver/configuringsimbaserver/configurationoptions.htm#SSL_Server">SSL Configuration Properties</a>.</p>
+<p>The <a href="https://www.simba.com/products/SEN/doc/Client-Server_user_guide/content/clientserver/configuringsimbaserver/configurationoptions.htm" target="_blank" rel="noopener">SimbaServer Configuration Properties reference</a> includes full details on <a href="https://www.simba.com/products/SEN/doc/Client-Server_user_guide/content/clientserver/configuringsimbaserver/configurationoptions.htm#SSL_Server" target="_blank" rel="noopener">SSL Configuration Properties</a>.</p>
 </div>
 <div class="paragraph">
 <p>Before you change your ODBC configuration, decide on a path where you will store the Private Key and Server Certificate, for example, you could decide to use <code>/home/admin/Simba_SSL/</code> as the path.</p>
@@ -2730,8 +2748,8 @@ Additionally, the system administrator should have available both the proper Pri
 <p>Please note that the SSL settings on the server and client are interdependent.</p>
 </div>
 <div class="paragraph">
-<p>The <a href="https://www.simba.com/products/SEN/doc/Client-Server_user_guide/content/clientserver/configuringsimbaclientodbc/simbaclientodbcconfigurationoptions.htm">SimbaClient for ODBC Configuration Properties</a> reference describes how to set parameters on the client to use SSL (scroll down to useSsl section at the end).
-The Simba documentation also provides a chart showing <a href="https://www.simba.com/products/SEN/doc/Client-Server_user_guide/content/clientserver/configuringssl/configcombinations.htm">configuration properties for SSL</a> where you can see how different combinations of SSL settings on client and server will behave.
+<p>The <a href="#https://www.simba.com/products/SEN/doc/Client-Server_user_guide/content/clientserver/configuringsimbaclientodbc/simbaclientodbcconfigurationoptions.htm">SimbaClient for ODBC Configuration Properties</a> reference describes how to set parameters on the client to use SSL (scroll down to useSsl section at the end).
+The Simba documentation also provides a chart showing <a href="https://www.simba.com/products/SEN/doc/Client-Server_user_guide/content/clientserver/configuringssl/configcombinations.htm" target="_blank" rel="noopener">configuration properties for SSL</a> where you can see how different combinations of SSL settings on client and server will behave.
 For example:</p>
 </div>
 <div class="ulist">
@@ -2744,11 +2762,20 @@ For example:</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>{% include note.html content="Note that the SSL and certificate parameters can be set through the pre-defined options on the options dialog, but customers have reported that these are not always reliable.
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Note that the SSL and certificate parameters can be set through the pre-defined options on the options dialog, but customers have reported that these are not always reliable.
 In the following procedure, we recommend using custom properties to define these settings (either preemptively, or as a solution if the ODBC connection over SSL does not work with the pre-defined options).
 There is no harm in setting both.
-Example settings are: <code>UseSSL = Required</code> and <code>SslCACertfile = C:\ODBC-SSL\CA.pem</code>" %}</p>
+Example settings are: <code>UseSSL = Required</code> and <code>SslCACertfile = C:\ODBC-SSL\CA.pem</code>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>On the workstation you want to use for your ODBC connection, specify the level of SSL you want to use on the client along with the path to the CA certificate, and then test the connection.</p>

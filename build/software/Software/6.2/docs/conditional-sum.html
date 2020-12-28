@@ -2187,16 +2187,16 @@
     <span class="nav-text">SQL Server</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server.adoc">Overview</a>
+    <a class="nav-link" href="dataflow-sql-server.html">Overview</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-add.adoc">Connect</a>
+    <a class="nav-link" href="dataflow-sql-server-add.html">Connect</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-sync.adoc">Sync</a>
+    <a class="nav-link" href="dataflow-sql-server-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-reference.adoc">Reference</a>
+    <a class="nav-link" href="dataflow-sql-server-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2277,7 +2277,7 @@
     <a class="nav-link" href="dataflow-amazon-s3-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-amazon-s3-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-amazon-s3-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2295,7 +2295,7 @@
     <a class="nav-link" href="dataflow-azure-blob-storage-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-azure-blob-storage-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-azure-blob-storage-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2313,7 +2313,7 @@
     <a class="nav-link" href="dataflow-files-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-files-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-files-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2331,7 +2331,7 @@
     <a class="nav-link" href="dataflow-google-cloud-storage-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-google-cloud-storage-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-google-cloud-storage-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2349,7 +2349,7 @@
     <a class="nav-link" href="dataflow-hdfs-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-hdfs-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-hdfs-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2376,7 +2376,7 @@
     <a class="nav-link" href="dataflow-salesforce-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-salesforce-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-salesforce-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2569,7 +2569,13 @@
     <a class="nav-link" href="stop-words.html">Stop word reference</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="geomap-reference.html">Geo Map reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-australia.html">Australia</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="glossary.html">Glossary</a>
@@ -2676,33 +2682,54 @@ You can leverage operators in your formulas to have them return true, false, or 
 <div class="paragraph">
 <p>The operators include:</p>
 </div>
-<div class="paragraph">
-<p><table><colgroup><col style="width:5%"></col>
-   <col style="width:45%"></col>
-   <col style="width:50%"></col></colgroup>
-  <thead><tr><th>Operator</th>
+<table>
+<colgroup>
+   <col style="width:5%" />
+   <col style="width:45%" />
+   <col style="width:50%" />
+</colgroup>
+  <thead>
+    <tr>
+      <th>Operator</th>
       <th>Description</th>
-      <th>Examples</th></tr></thead>
-  <tbody><tr id="and"><td><code>and</code></td>
+      <th>Examples</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id="and">
+      <td><code>and</code></td>
       <td>Returns <code>true</code> when both conditions are <code>true</code>, otherwise returns <code>false</code>.</td>
-      <td><code class="highlighter-rouge">(1 = 1) and (3 &gt; 2) = true</code><br></br><code class="highlighter-rouge">lastname = 'smith' and state ='texas'</code>
-      {% include note.html content="Not available for row-level security (RLS) formulas." %}</td></tr>
-    <tr id="if-then-else"><td><code>if&#8230;&#8203;then&#8230;&#8203;else</code></td>
+      <td><code class="highlighter-rouge">(1 = 1) and (3 &gt; 2) = true</code><br><code class="highlighter-rouge">lastname = 'smith' and state ='texas'</code>
+      {% include note.html content="Not available for row-level security (RLS) formulas." %}
+      </td>
+    </tr>
+    <tr id="if-then-else">
+      <td><code>if…then…else</code></td>
       <td>Conditional operator</td>
-      <td><code class="highlighter-rouge">if (3 &gt; 2) then 'bigger' else 'not bigger'</code><br></br><code class="highlighter-rouge">if (cost &gt; 500) then 'flag' else 'approve'</code></td></tr>
-    <tr id="ifnull"><td><code>ifnull</code></td>
+      <td><code class="highlighter-rouge">if (3 &gt; 2) then 'bigger' else 'not bigger'</code><br><code class="highlighter-rouge">if (cost &gt; 500) then 'flag' else 'approve'</code></td>
+    </tr>
+    <tr id="ifnull">
+      <td><code>ifnull</code></td>
       <td>Returns the first value if it is not <code>null</code>, otherwise returns the second value.</td>
-      <td><code class="highlighter-rouge">ifnull (cost, 'unknown')</code></td></tr>
-    <tr id="isnull"><td><code>isnull</code></td>
+      <td><code class="highlighter-rouge">ifnull (cost, 'unknown')</code></td>
+    </tr>
+    <tr id="isnull">
+      <td><code>isnull</code></td>
       <td>Returns <code>true</code> if the value is <code>null</code>.</td>
-      <td><code class="highlighter-rouge">isnull (phone)</code></td></tr>
-    <tr id="not"><td><code>not</code></td>
+      <td><code class="highlighter-rouge">isnull (phone)</code></td>
+    </tr>
+    <tr id="not">
+      <td><code>not</code></td>
       <td>Returns <code>true</code> if the condition is <code>false</code>, otherwise returns <code>false</code>.</td>
-      <td><code class="highlighter-rouge">not (3 &gt; 2) = false</code><br></br><code class="highlighter-rouge">not (state = 'texas')</code></td></tr>
-    <tr id="or"><td><code>or</code></td>
+      <td><code class="highlighter-rouge">not (3 &gt; 2) = false</code><br><code class="highlighter-rouge">not (state = 'texas')</code></td>
+    </tr>
+    <tr id="or">
+      <td><code>or</code></td>
       <td>Returns <code>true</code> when either condition is <code>true</code>, otherwise returns <code>false</code>.</td>
-      <td><code class="highlighter-rouge">(1 = 5) or (3 &gt; 2) = true</code><br></br><code class="highlighter-rouge">state = 'california' or state ='oregon'</code></td></tr></tbody></table></p>
-</div>
+      <td><code class="highlighter-rouge">(1 = 5) or (3 &gt; 2) = true</code><br><code class="highlighter-rouge">state = 'california' or state ='oregon'</code></td>
+    </tr>
+  </tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
