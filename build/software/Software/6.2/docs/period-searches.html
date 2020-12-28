@@ -2187,16 +2187,16 @@
     <span class="nav-text">SQL Server</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server.adoc">Overview</a>
+    <a class="nav-link" href="dataflow-sql-server.html">Overview</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-add.adoc">Connect</a>
+    <a class="nav-link" href="dataflow-sql-server-add.html">Connect</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-sync.adoc">Sync</a>
+    <a class="nav-link" href="dataflow-sql-server-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-reference.adoc">Reference</a>
+    <a class="nav-link" href="dataflow-sql-server-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2277,7 +2277,7 @@
     <a class="nav-link" href="dataflow-amazon-s3-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-amazon-s3-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-amazon-s3-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2295,7 +2295,7 @@
     <a class="nav-link" href="dataflow-azure-blob-storage-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-azure-blob-storage-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-azure-blob-storage-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2313,7 +2313,7 @@
     <a class="nav-link" href="dataflow-files-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-files-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-files-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2331,7 +2331,7 @@
     <a class="nav-link" href="dataflow-google-cloud-storage-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-google-cloud-storage-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-google-cloud-storage-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2349,7 +2349,7 @@
     <a class="nav-link" href="dataflow-hdfs-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-hdfs-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-hdfs-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2376,7 +2376,7 @@
     <a class="nav-link" href="dataflow-salesforce-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-salesforce-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-salesforce-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2569,7 +2569,13 @@
     <a class="nav-link" href="stop-words.html">Stop word reference</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="geomap-reference.html">Geo Map reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-australia.html">Australia</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="glossary.html">Glossary</a>
@@ -2689,36 +2695,64 @@ You can also do relative analysis, such as sales for the last 3 months of each y
 <div class="sect1">
 <h2 id="_period_keywords"><a class="anchor" href="#_period_keywords"></a>Period keywords</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p><table><colgroup><col style="width:25%"></col>
-      <col style="width:50%"></col></colgroup>
-  <tr><th>Keyword</th>
-    <th>Example</th></tr>
-  <tr><td>quarter (<i>date</i>)</td>
-    <td><code><b>quarter</b> (purchase date)</code></td></tr>
-  <tr><td>quarter of year (<i>date</i>)</td>
-    <td><code><b>quarter of year</b> (purchase date)</code></td></tr>
-  <tr><td>month of quarter (<i>date</i>)</td>
-    <td><code><b>month of quarter</b> (purchase date)</code></td></tr>
-  <tr><td>week of year (<i>date</i>)</td>
-    <td><code><b>week of year</b> (ship date)</code></td></tr>
-  <tr><td>week of quarter (<i>date</i>)</td>
-    <td><code><b>week of quarter</b> (ship date)</code></td></tr>
-  <tr><td>week of month (<i>date</i>)</td>
-    <td><code><b>week of month</b> (ship date)</code></td></tr>
-  <tr><td>day of year (<i>date</i>)</td>
-    <td><code><b>day of year</b> (ship date)</code></td></tr>
-  <tr><td>day of quarter (<i>date</i>)</td>
-    <td><code><b>day of quarter</b> (ship date)</code></td></tr>
-  <tr><td>day (<i>date</i>)</td>
-    <td><code><b>day</b> (ship date)</code></td></tr>
-  <tr><td>day of month (<i>date</i>)</td>
-    <td><code><b>day of month</b> (order date)</code></td></tr>
-  <tr><td>day of week (<i>date</i>)</td>
-    <td><code><b>day of week</b> (order date)</code></td></tr>
-  <tr><td>hour (<i>datetime</i>)</td>
-    <td><code><b>hour</b> (timestamp)</code></td></tr></table></p>
-</div>
+<table>
+   <colgroup>
+      <col style="width:25%" />
+      <col style="width:50%" />
+   </colgroup>
+  <tr>
+    <th>Keyword</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td>quarter (<i>date</i>)</td>
+    <td><code><b>quarter</b> (purchase date)</code></td>
+  </tr>
+  <tr>
+    <td>quarter of year (<i>date</i>)</td>
+    <td><code><b>quarter of year</b> (purchase date)</code></td>
+  </tr>
+  <tr>
+    <td>month of quarter (<i>date</i>)</td>
+    <td><code><b>month of quarter</b> (purchase date)</code></td>
+  </tr>
+  <tr>
+    <td>week of year (<i>date</i>)</td>
+    <td><code><b>week of year</b> (ship date)</code></td>
+  </tr>
+  <tr>
+    <td>week of quarter (<i>date</i>)</td>
+    <td><code><b>week of quarter</b> (ship date)</code></td>
+  </tr>
+  <tr>
+    <td>week of month (<i>date</i>)</td>
+    <td><code><b>week of month</b> (ship date)</code></td>
+  </tr>
+  <tr>
+    <td>day of year (<i>date</i>)</td>
+    <td><code><b>day of year</b> (ship date)</code></td>
+  </tr>
+  <tr>
+    <td>day of quarter (<i>date</i>)</td>
+    <td><code><b>day of quarter</b> (ship date)</code></td>
+  </tr>
+  <tr>
+    <td>day (<i>date</i>)</td>
+    <td><code><b>day</b> (ship date)</code></td>
+  </tr>
+  <tr>
+    <td>day of month (<i>date</i>)</td>
+    <td><code><b>day of month</b> (order date)</code></td>
+  </tr>
+  <tr>
+    <td>day of week (<i>date</i>)</td>
+    <td><code><b>day of week</b> (order date)</code></td>
+  </tr>
+  <tr>
+    <td>hour (<i>datetime</i>)</td>
+    <td><code><b>hour</b> (timestamp)</code></td>
+  </tr>
+</table>
 <div class="paragraph">
 <p>All of these keywords sort the data using datetime semantics, that is chronologically in a time sequence.
 By default, the <strong>Search</strong> bar suggests these keywords less frequently than others.</p>

@@ -1,8 +1,7 @@
-= ["Cluster replacement"]
+= Cluster replacement
 :last_updated: tbd
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Cluster replacement can be achieved using a mirrored system architecture. This allows you to recover an entire system very quickly without data loss.
+
+Cluster replacement can be achieved using a mirrored system architecture. This allows you to recover an entire system very quickly without data loss.
 
 You have the option of architecting your system for fast recovery from a disaster in which you lose an entire ThoughtSpot instance.
 This involves running two ThoughtSpot appliances in a mirrored configuration.
@@ -20,8 +19,8 @@ It uses each new backup to restore itself to match the production cluster.
 
 image::Disaster_recovery.png[]
 
-* *link:{{ site.baseurl }}/admin/setup/NAS-mount.html[Mount a NAS file system]* + Some operations, like backup/restore and data loading, require you to either read or write large files.
+* *xref:NAS-mount.adoc[Mount a NAS file system]* + Some operations, like backup/restore and data loading, require you to either read or write large files.
 You can mount a NAS (network attached storage) file system for these operations.
-* *link:{{ site.baseurl }}/disaster-recovery/set-up-DR-config.html[Set up a disaster recovery configuration]*  Use this procedure to set up a disaster recovery configuration with a primary and a mirror instance.
+* *xref:set-up-DR-config.adoc[Set up a disaster recovery configuration]*  Use this procedure to set up a disaster recovery configuration with a primary and a mirror instance.
 If the primary cluster fails, the mirror cluster can take over its operations after a small manual intervention.
 The manual procedure makes the mirror instance into the primary.

@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["Cassandra connection reference"] :: ThoughtSpot Software</title>
+    <title>Cassandra connection reference :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 2.3.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -15,7 +15,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>["Cassandra connection reference"] | ThoughtSpot Software</title>
+    <title>Cassandra connection reference | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
@@ -2187,16 +2187,16 @@
     <span class="nav-text">SQL Server</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server.adoc">Overview</a>
+    <a class="nav-link" href="dataflow-sql-server.html">Overview</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-add.adoc">Connect</a>
+    <a class="nav-link" href="dataflow-sql-server-add.html">Connect</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-sync.adoc">Sync</a>
+    <a class="nav-link" href="dataflow-sql-server-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-reference.adoc">Reference</a>
+    <a class="nav-link" href="dataflow-sql-server-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2277,7 +2277,7 @@
     <a class="nav-link" href="dataflow-amazon-s3-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-amazon-s3-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-amazon-s3-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2295,7 +2295,7 @@
     <a class="nav-link" href="dataflow-azure-blob-storage-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-azure-blob-storage-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-azure-blob-storage-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2313,7 +2313,7 @@
     <a class="nav-link" href="dataflow-files-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-files-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-files-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2331,7 +2331,7 @@
     <a class="nav-link" href="dataflow-google-cloud-storage-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-google-cloud-storage-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-google-cloud-storage-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2349,7 +2349,7 @@
     <a class="nav-link" href="dataflow-hdfs-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-hdfs-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-hdfs-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2376,7 +2376,7 @@
     <a class="nav-link" href="dataflow-salesforce-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-salesforce-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-salesforce-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2569,7 +2569,13 @@
     <a class="nav-link" href="stop-words.html">Stop word reference</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="geomap-reference.html">Geo Map reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-australia.html">Australia</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="glossary.html">Glossary</a>
@@ -2659,9 +2665,12 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["Cassandra connection reference"]</h1>
+<h1 class="page">Cassandra connection reference</h1>
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph">
+<p>Learn about the fields used to create a Cassandra connection with ThoughtSpot DataFlow.</p>
+</div>
 <div class="paragraph">
 <p>Here is a list of the fields for a Cassandra connection in ThoughtSpot DataFlow.
 You need specific information to establish a seamless and secure connection.</p>
@@ -2673,102 +2682,327 @@ You need specific information to establish a seamless and secure connection.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><dlentry id="dataflow-cassandra-conn-connection-name">Connection name</dt>
+<dt class="hdlist1">Connection name</dt>
 <dd>
-<p>Name your connection. Mandatory field. <strong>Example:</strong> + CassandraConnection</dlentry><dlentry id="dataflow-cassandra-conn-connection-type">Connection type:::: Choose the Cassandra connection type. Mandatory field. <strong>Example:</strong> + Cassandra</dlentry><dlentry id="dataflow-cassandra-conn-host">Host:::: Specify the hostname or the IP address of the Cassandra system Mandatory field. <strong>Example:</strong> + www.example.com</dlentry><dlentry id="dataflow-cassandra-conn-port">Port:::: Specify the port associated to the Cassandra system Mandatory field. <strong>Example:</strong> + 1234 <strong>Default:</strong> + 9042</dlentry><dlentry id="dataflow-cassandra-conn-user">User::::
-Specify the user to connect to Cassandra.</p>
+<p>Name your connection.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> CassandraConnection</p>
+</div>
 </dd>
-<dt class="hdlist1">This user must have data access privileges. Mandatory field. <strong>Example:</strong> + userdi</dlentry><dlentry id="dataflow-cassandra-conn-password">Password:::: Specify the password for the User. Mandatory field. <strong>Example:</strong> + pswrd234%!</dlentry><dlentry id="dataflow-cassandra-conn-authentication">Authentication</dt>
+<dt class="hdlist1">Connection type</dt>
 <dd>
-<p>Specifies the type of security protocol to connect to the instance.</p>
+<p>Choose the Cassandra connection type.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> Cassandra</p>
+</div>
 </dd>
-<dt class="hdlist1">Based on the type of security select the authentication type and provide details. Mandatory field. <strong>Example:</strong> + Kerberos <strong>Valid Values:</strong> + None, SSL, LDAP, Kerberos <strong>Default:</strong> + None</dlentry><dlentry id="dataflow-cassandra-conn-row-scan-depth">Row scan depth</dt>
+<dt class="hdlist1">Host</dt>
 <dd>
-<p>The maximum number of rows to scan to look for the columns available in a table.</p>
+<p>Specify the hostname or the IP address of the Cassandra system.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> <a href="http://www.example.com/" class="bare">http://www.example.com/</a></p>
+</div>
 </dd>
-<dt class="hdlist1">Set this property to gain more control over how the provider applies data types to collections. Optional field. <strong>Example:</strong> + -1 <strong>Default:</strong> + 100 <strong>Other notes:</strong> + Advanced Configuration</dlentry><dlentry id="dataflow-cassandra-conn-kdc-host">KDC host</dt>
+<dt class="hdlist1">Port</dt>
 <dd>
-<p>Specify KDC Host Name where as KDC (Kerberos Key Distribution Center) is a service than runs on a domain controller server role.
-Mandatory field.</p>
+<p>Specify the port associated to the Cassandra system.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> 9042</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For Kerberos authentication only. <strong>Example:</strong> + <a href="mailto:my_email@example.com">my_email@example.com</a></dlentry><dlentry id="dataflow-cassandra-conn-user-keytab">User keytab</dt>
+<dt class="hdlist1">User</dt>
 <dd>
-<p>To authenticate via a key-tab you must have supporting key-tab file which is generated by Kerberos Admin and also requires the user principal associated with Key-tab ( Configured while enabling Kerberos)
-Mandatory field.</p>
+<p>Specify the user to connect to Cassandra. This user must have data access privileges.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> userdi</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For Kerberos authentication only. <strong>Example:</strong> + /app/keytabs/labuser.keytab</dlentry><dlentry id="dataflow-cassandra-conn-default-realm">Default realm</dt>
+<dt class="hdlist1">Password</dt>
 <dd>
-<p>A Kerberos realm is the domain over which a Kerberos authentication server has the authority to authenticate a user, host or service.
-Mandatory field.</p>
+<p>Specify the password for the User.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> pswrd234%!</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For Kerberos authentication only. <strong>Example:</strong> + name.example.com</dlentry><dlentry id="dataflow-cassandra-conn-kerberos-service-kdc">Kerberos service KDC</dt>
+<dt class="hdlist1">Authentication</dt>
 <dd>
-<p>Specify the Kerberos KDC of the service.
-Mandatory field.</p>
+<p>Specifies the type of security protocol to connect to the instance. Based on the type of security select the authentication type and provide details.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> Kerberos</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For Kerberos authentication only. <strong>Example:</strong> + www.example.com</dlentry><dlentry id="dataflow-cassandra-conn-kerberos-service-realm">Kerberos service realm</dt>
+</dl>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong> None, SSL, LDAP, Kerberos</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong> None</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Row scan depth</dt>
 <dd>
-<p>Specify the Kerberos realm of the service.
-Mandatory field.</p>
+<p>The maximum number of rows to scan to look for the columns available in a table. Set this property to gain more control over how the provider applies data types to collections.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> -1</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For Kerberos authentication only. <strong>Example:</strong> + EXAMPLE.COM</dlentry><dlentry id="dataflow-cassandra-conn-kerberos-spn">Kerberos SPN</dt>
+</dl>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong> 100</p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong> Advanced Configuration</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">KDC host</dt>
 <dd>
-<p>Specify the service principal name (SPN) for the Kerberos Domain Controller.
-Mandatory field.</p>
+<p>Specify KDC Host Name where as KDC (Kerberos Key Distribution Center) is a service than runs on a domain controller server role.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For Kerberos authentication only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> <a href="mailto:my_email@example.com">my_email@example.com</a></p>
+</div>
 </dd>
-<dt class="hdlist1">+ For Kerberos authentication only. <strong>Example:</strong> + cassandra/www.example.com@EXAMPLE.COM</dlentry><dlentry id="dataflow-cassandra-conn-ldap-user">LDAP user</dt>
+<dt class="hdlist1">User keytab</dt>
 <dd>
-<p>Specify the default LDAP user used to connect to and communicate with the server, it must be set if the LDAP server do not allow anonymous bind.
-Mandatory field.</p>
+<p>To authenticate via a key-tab you must have supporting key-tab file which is generated by Kerberos Admin and also requires the user principal associated with Key-tab ( Configured while enabling Kerberos).</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For Kerberos authentication only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> /app/keytabs/labuser.keytab</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For LDAP authentication only. <strong>Example:</strong> + userdi</dlentry><dlentry id="dataflow-cassandra-conn-ldap-password">LDAP password</dt>
+<dt class="hdlist1">Default realm</dt>
 <dd>
-<p>Specify the password for the LDAP User.
-Mandatory field.</p>
+<p>A Kerberos realm is the domain over which a Kerberos authentication server has the authority to authenticate a user, host or service.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For Kerberos authentication only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> name.example.com</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For LDAP authentication only. <strong>Example:</strong> + pswrd234%!</dlentry><dlentry id="dataflow-cassandra-conn-ldap-server">LDAP server</dt>
+<dt class="hdlist1">Kerberos service KDC</dt>
 <dd>
-<p>Specify the host name or IP address of the LDAP server.
-Mandatory field.</p>
+<p>Specify the Kerberos KDC of the service.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For Kerberos authentication only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> www.example.com</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For LDAP authentication only. <strong>Example:</strong> + <a href="mailto:my_email@example.com">my_email@example.com</a></dlentry><dlentry id="dataflow-cassandra-conn-ldap-port">LDAP port</dt>
+<dt class="hdlist1">Kerberos service realm</dt>
 <dd>
-<p>Specify the port number that is associated to the LDAP server
-Mandatory field.</p>
+<p>Specify the Kerberos realm of the service.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For Kerberos authentication only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> EXAMPLE.COM</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For LDAP authentication only. <strong>Example:</strong> + 1234</dlentry><dlentry id="dataflow-cassandra-conn-search-filter">Search filter</dt>
+<dt class="hdlist1">Kerberos SPN</dt>
 <dd>
-<p>Specify the search filter for looking up usernames in LDAP.
-Mandatory field.</p>
+<p>Specify the service principal name (SPN) for the Kerberos Domain Controller.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For Kerberos authentication only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> cassandra/www.example.com@EXAMPLE.COM</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For LDAP authentication only. <strong>Example:</strong> + sAMAccountName= <strong>Default:</strong> + uid</dlentry><dlentry id="dataflow-cassandra-conn-search-base">Search base</dt>
+<dt class="hdlist1">LDAP user</dt>
 <dd>
-<p>Specify the search base for the LDAP server, used to look up users.
-Mandatory field.</p>
+<p>Specify the default LDAP user used to connect to and communicate with the server, it must be set if the LDAP server do not allow anonymous bind.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For LDAP authentication only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> userdi</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For LDAP authentication only. <strong>Example:</strong> + DC=maxcrc,DC=com</dlentry><dlentry id="dataflow-cassandra-conn-trust-store-path">Trust store path</dt>
+<dt class="hdlist1">LDAP password</dt>
 <dd>
-<p>Specify the TLS/SSL client certificate store for SSL Client Authentication (2-way SSL)
-Mandatory field.</p>
+<p>Specify the password for the LDAP User.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For LDAP authentication only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> pswrd234%!</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For SSL authentication only. <strong>Example:</strong> + trust store path</dlentry><dlentry id="dataflow-cassandra-conn-trust-store-password">Trust store password</dt>
+<dt class="hdlist1">LDAP server</dt>
 <dd>
-<p>Specify the password for the TLS/SSL client certificate.
-Mandatory field.</p>
+<p>Specify the host name or IP address of the LDAP server.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For LDAP authentication only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> <a href="mailto:my_email@example.com">my_email@example.com</a></p>
+</div>
 </dd>
-<dt class="hdlist1">+ For SSL authentication only. <strong>Example:</strong> + password</dlentry><dlentry id="dataflow-cassandra-conn-certificate-type">Certificate type</dt>
+<dt class="hdlist1">LDAP port</dt>
 <dd>
-<p>Specify the type of key store containing the TLS/SSL client certificate.
-Mandatory field.</p>
+<p>Specify the port number that is associated to the LDAP server.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For LDAP authentication only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> 1234</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For SSL authentication only. <strong>Example:</strong> + JKSFILE</dlentry><dlentry id="dataflow-cassandra-conn-certificate-subject">Certificate subject</dt>
+<dt class="hdlist1">Search filter</dt>
 <dd>
-<p>Specify the subject of the TLS/SSL client certificate.
-Mandatory field.</p>
+<p>Specify the search filter for looking up usernames in LDAP.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For LDAP authentication only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> sAMAccountName=</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For SSL authentication only. <strong>Example:</strong> + CN=www.example.com <strong>Default:</strong> + *</dlentry><dlentry id="dataflow-cassandra-conn-jdbc-options">JDBC options</dt>
+</dl>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong> uid</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Search base</dt>
 <dd>
-<p>Specify the options associated with the JDBC URL. Optional field. <strong>Example:</strong> + <code>jdbc:sqlserver://[serverName[\instanceName][:portNumber]]</code> <strong>Other notes:</strong> + Advanced configuration</dlentry></p>
+<p>Specify the search base for the LDAP server, used to look up users.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For LDAP authentication only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> DC=maxcrc,DC=com</p>
+</div>
+</dd>
+<dt class="hdlist1">Trust store path</dt>
+<dd>
+<p>Specify the TLS/SSL client certificate store for SSL Client Authentication (2-way SSL).</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For SSL authentication only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> password</p>
+</div>
+</dd>
+<dt class="hdlist1">Certificate type</dt>
+<dd>
+<p>Specify the subject of the TLS/SSL client certificate.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For SSL authentication only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> JKSFILE</p>
+</div>
+</dd>
+<dt class="hdlist1">Certificate subject</dt>
+<dd>
+<p>Specify the subject of the TLS/SSL client certificate.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For SSL authentication only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> CN=www.example.com</p>
+</div>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong> *</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">JDBC options</dt>
+<dd>
+<p>Specify the options associated with the JDBC URL.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> <code>jdbc:sqlserver://[serverName[\instanceName][:portNumber]]</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong> Advanced configuration</p>
+</div>
 </dd>
 </dl>
 </div>
@@ -2779,11 +3013,81 @@ Mandatory field.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><dlentry id="dataflow-cassandra-sync-column-delimiter">Column delimiter</dt>
+<dt class="hdlist1">Column delimiter</dt>
 <dd>
-<p>Specify the column delimiter character. Mandatory field. <strong>Example:</strong> + 1 <strong>Valid Values:</strong> + Any printable ASCII character or decimal value for ASCII character <strong>Default:</strong> + 1</dlentry><dlentry id="dataflow-cassandra-sync-enclosing-character">Enclosing character:::: Specify if the text columns in the source data needs to be enclosed in quotes. Optional field. <strong>Example:</strong> + DOUBLE <strong>Valid Values:</strong> + SINGLE, DOUBLE <strong>Default:</strong> + DOUBLE <strong>Other notes:</strong> + This is required if the text data has newline character or delimiter character.</dlentry><dlentry id="dataflow-cassandra-sync-escape-character">Escape character:::: Specify the escape character if using a text qualifier in the source data. Optional field. <strong>Example:</strong> + \" <strong>Valid Values:</strong> + Any ASCII character <strong>Default:</strong> + \"</dlentry><dlentry id="dataflow-cassandra-sync-ts-load-options">TS load options::::
-Specifies the parameters passed with the <code>tsload</code> command, in addition to the commands already included by the application.
-The format for these parameters is: + ` --&lt;param_1_name&gt; &lt;optional_param_1_value&gt;` + ` --&lt;param_2_name&gt; &lt;optional_param_2_value&gt;` Optional field. <strong>Example:</strong> + <code>--max_ignored_rows 0</code> <strong>Valid Values:</strong> +  + ` --null_value ""` + ` --escape_character ""` + ` --max_ignored_rows 0` <strong>Default:</strong> + ` --max_ignored_rows 0`</dlentry></p>
+<p>Specify the column delimiter character.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> 1</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid values:</strong> Any printable ASCII character or decimal value for ASCII character.</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong> 1</p>
+</div>
+</dd>
+<dt class="hdlist1">Enclosing character</dt>
+<dd>
+<p>Specify if text columns in the source data are enclosed in quotes.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> DOUBLE</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid values:</strong> SINGLE, DOUBLE</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong> DOUBLE</p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong> Required if text data uses newline character or delimiter character.</p>
+</div>
+</dd>
+<dt class="hdlist1">Escape character</dt>
+<dd>
+<p>Specify the escape character if using a text qualifier in the source data.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> \"</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid values:</strong> Any ASCII character</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong> \"</p>
+</div>
+</dd>
+<dt class="hdlist1">TS load options</dt>
+<dd>
+<p>Specifies the parameters passed with the <code>tsload</code> command, in addition to the commands already included by the application.</p>
+<div class="paragraph">
+<p>The format for these parameters is:</p>
+</div>
+<div class="paragraph">
+<p><code>--&lt;param_1_name&gt; &lt;optional_param_1_value&gt;</code></p>
+</div>
+<div class="paragraph">
+<p><code>--&lt;param_2_name&gt; &lt;optional_param_2_value&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> --max_ignored_rows 0</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid values:</strong> --null_value "" --escape_character "" --max_ignored_rows 0</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong> --max_ignored_rows 0</p>
+</div>
 </dd>
 </dl>
 </div>

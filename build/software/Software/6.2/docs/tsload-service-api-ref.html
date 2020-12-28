@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["tsload connector reference"] :: ThoughtSpot Software</title>
+    <title>tsload connector reference :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 2.3.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -15,7 +15,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>["tsload connector reference"] | ThoughtSpot Software</title>
+    <title>tsload connector reference | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
@@ -2187,16 +2187,16 @@
     <span class="nav-text">SQL Server</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server.adoc">Overview</a>
+    <a class="nav-link" href="dataflow-sql-server.html">Overview</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-add.adoc">Connect</a>
+    <a class="nav-link" href="dataflow-sql-server-add.html">Connect</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-sync.adoc">Sync</a>
+    <a class="nav-link" href="dataflow-sql-server-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-reference.adoc">Reference</a>
+    <a class="nav-link" href="dataflow-sql-server-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2277,7 +2277,7 @@
     <a class="nav-link" href="dataflow-amazon-s3-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-amazon-s3-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-amazon-s3-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2295,7 +2295,7 @@
     <a class="nav-link" href="dataflow-azure-blob-storage-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-azure-blob-storage-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-azure-blob-storage-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2313,7 +2313,7 @@
     <a class="nav-link" href="dataflow-files-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-files-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-files-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2331,7 +2331,7 @@
     <a class="nav-link" href="dataflow-google-cloud-storage-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-google-cloud-storage-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-google-cloud-storage-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2349,7 +2349,7 @@
     <a class="nav-link" href="dataflow-hdfs-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-hdfs-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-hdfs-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2376,7 +2376,7 @@
     <a class="nav-link" href="dataflow-salesforce-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-salesforce-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-salesforce-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2569,7 +2569,13 @@
     <a class="nav-link" href="stop-words.html">Stop word reference</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="geomap-reference.html">Geo Map reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-australia.html">Australia</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="glossary.html">Glossary</a>
@@ -2657,7 +2663,14 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["tsload connector reference"]</h1>
+<h1 class="page">tsload connector reference</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The tsload connector APIs enable you to load data into ThoughtSpot.</p>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_login"><a class="anchor" href="#_login"></a>Login</h2>
 <div class="sectionbody">
@@ -2667,18 +2680,25 @@
 The authentication requires a username and password.</p>
 </div>
 <div class="sect2">
-<h3 id="_request_parameters"><a class="anchor" href="#_request_parameters"></a>Request Parameters<table><colgroup><col style="width:20%"></col></h3>
-<div class="literalblock">
-<div class="content">
-<pre>+++&lt;col style="width:15%"&gt;++++++&lt;/col&gt;+++
-+++&lt;col style="width:65%"&gt;++++++&lt;/col&gt;++++++&lt;/colgroup&gt;+++
-+++&lt;thead class="thead" style="text-align:left;"&gt;++++++&lt;tr&gt;++++++&lt;th&gt;+++Form Parameter+++&lt;/th&gt;+++
-      +++&lt;th&gt;+++Data Type+++&lt;/th&gt;+++
-      +++&lt;th&gt;+++Description+++&lt;/th&gt;++++++&lt;/tr&gt;++++++&lt;/thead&gt;+++
-+++&lt;tbody&gt;++++++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;code&gt;+++username+++&lt;/code&gt;++++++&lt;/td&gt;+++ +++&lt;td&gt;+++string+++&lt;/td&gt;+++ +++&lt;td&gt;+++ThoughtSpot username+++&lt;/td&gt;++++++&lt;/tr&gt;+++
- +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;code&gt;+++password+++&lt;/code&gt;++++++&lt;/td&gt;+++ +++&lt;td&gt;+++string+++&lt;/td&gt;+++ +++&lt;td&gt;+++ThoughtSpot password+++&lt;/td&gt;++++++&lt;/tr&gt;++++++&lt;/tbody&gt;++++++&lt;/table&gt;+++</pre>
-</div>
-</div>
+<h3 id="_request_parameters"><a class="anchor" href="#_request_parameters"></a>Request Parameters</h3>
+<table>
+   <colgroup>
+   <col style="width:20%" />
+   <col style="width:15%" />
+   <col style="width:65%" />
+   </colgroup>
+   <thead class="thead" style="text-align:left;">
+      <tr>
+         <th>Form Parameter</th>
+         <th>Data Type</th>
+         <th>Description</th>
+      </tr>
+   </thead>
+   <tbody>
+    <tr> <td><code>username</code></td> <td>string</td> <td>ThoughtSpot username</td> </tr>
+    <tr> <td><code>password</code></td> <td>string</td> <td>ThoughtSpot password</td> </tr>
+  </tbody>
+</table>
 </div>
 <div class="sect2">
 <h3 id="_request"><a class="anchor" href="#_request"></a>Request</h3>
@@ -2716,8 +2736,17 @@ Unable to verify user. Please login again.</pre>
 error code = INTERNAL, message = Couldn't resolve the authentication service.</pre>
 </div>
 </div>
-<div class="paragraph">
-<p>{% include note.html content="If the cookie is not passed in subsequent calls, then requests fail." %}</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the cookie is not passed in subsequent calls, then requests fail.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -2737,100 +2766,155 @@ Once complete, you use <strong>Load</strong> to start the actual data load.</p>
 <h4 id="_target"><a class="anchor" href="#_target"></a>Target</h4>
 <div class="paragraph">
 <p>Specification of the target.
-This DB/Schema/Table must pre-exist on the destination ThoughtSpot system.<table><colgroup><col style="width:20%"></col>
-   <col style="width:15%"></col>
-   <col style="width:65%"></col></colgroup>
-   <thead class="thead" style="text-align:left;"><tr><th>Form Parameter</th>
+This DB/Schema/Table must pre-exist on the destination ThoughtSpot system.</p>
+</div>
+<table>
+   <colgroup>
+   <col style="width:20%" />
+   <col style="width:15%" />
+   <col style="width:65%" />
+   </colgroup>
+   <thead class="thead" style="text-align:left;">
+      <tr>
+         <th>Form Parameter</th>
          <th>Data Type</th>
          <th>Description</th>
-         <th>Default value</th></tr></thead>
-   <tbody><tr><td><code>database</code></td> <td>string</td> <td>database in ThoughtSpot</td> <td>&nbsp;</td></tr>
-    <tr><td><code>schema</code>(optional)</td> <td>string</td> <td>schema in ThoughtSpot</td> <td>falcon_default_schema</td></tr>
-    <tr><td><code>table</code></td> <td>string</td> <td>table in ThoughtSpot</td><td>&nbsp;</td></tr></tbody></table></p>
-</div>
+         <th>Default value</th>
+      </tr>
+   </thead>
+   <tbody>
+    <tr> <td><code>database</code></td> <td>string</td> <td>database in ThoughtSpot</td> <td>&nbsp;</td></tr>
+    <tr> <td><code>schema</code>(optional)</td> <td>string</td> <td>schema in ThoughtSpot</td> <td>falcon_default_schema</td></tr>
+    <tr> <td><code>table</code></td> <td>string</td> <td>table in ThoughtSpot</td><td>&nbsp;</td> </tr>
+  </tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="_format"><a class="anchor" href="#_format"></a>Format</h4>
 <div class="paragraph">
-<p>Format specifiers for parsing the input data.<table><colgroup><col style="width:20%"></col>
-   <col style="width:15%"></col>
-   <col style="width:65%"></col></colgroup>
-   <thead class="thead" style="text-align:left;"><tr><th>Form Parameter</th>
+<p>Format specifiers for parsing the input data.</p>
+</div>
+<table>
+   <colgroup>
+   <col style="width:20%" />
+   <col style="width:15%" />
+   <col style="width:65%" />
+   </colgroup>
+   <thead class="thead" style="text-align:left;">
+      <tr>
+         <th>Form Parameter</th>
          <th>Data Type</th>
          <th>Description</th>
-         <th>Default value</th></tr></thead>
-   <tbody><tr><td><code>type</code>(optional)</td> <td>string</td> <td>field separator character in source data. &nbsp;Either <code>csv</code> or <code>delimited</code></td> <td>csv</td></tr>
-    <tr><td><code>field_separator</code>(optional)</td> <td>string</td> <td>input format. Either <code>.csv</code> or <code>delimited</code></td> <td>","</td></tr>
-    <tr><td><code>trailing_field_separator</code>(optional)</td> <td>boolean</td> <td>True if input data has trailing field separator, false otherwise.</td> <td>false</td></tr>
-    <tr><td><code>enclosing_character</code>(optional)</td> <td>string</td> <td>enclosing character in csv source format. This option applies only to csv format.</td> <td>"\""</td></tr>
-    <tr><td><code>escape_character</code>(optional)</td> <td>string</td> <td>escape character in source data. This applies only to delimited data format. This option is ignored for other data sources.</td> <td>""</td></tr>
-    <tr><td><code>null_value</code>(optional)</td> <td>string</td> <td>escape character in source data. This applies only to delimited data format. This option is ignored for other data sources.</td> <td>"(null)"</td></tr>
-    <tr><td><code>has_header_row</code>(optional)</td> <td>boolean</td> <td>True if input data file has header row, false otherwise.</td> <td>false</td></tr>
-    <tr><td><code>flexible</code>(optional)</td> <td>boolean</td> <td>Whether input data file exactly matches target schema. When true, attempts to load as follows. If extra columns are present in input file, these are discarded. If fewer columns are  present in input file, missing columns are filled with nulls. When false, load proceeds if input data file exactly matches target schema.</td> <td>false</td></tr></tbody></table></p>
+         <th>Default value</th>
+      </tr>
+   </thead>
+   <tbody>
+    <tr> <td><code>type</code>(optional)</td> <td>string</td> <td>field separator character in source data. &nbsp;Either <code>csv</code> or <code>delimited</code> </td> <td>csv</td> </tr>
+    <tr> <td><code>field_separator</code>(optional)</td> <td>string</td> <td>input format. Either <code>.csv</code> or <code>delimited</code> </td> <td>","</td></tr>
+    <tr> <td><code>trailing_field_separator</code>(optional)</td> <td>boolean</td> <td>True if input data has trailing field separator, false otherwise.</td> <td>false</td></tr>
+    <tr> <td><code>enclosing_character</code>(optional)</td> <td>string</td> <td>enclosing character in csv source format. This option applies only to csv format.</td> <td>"\""</td></tr>
+    <tr> <td><code>escape_character</code>(optional)</td> <td>string</td> <td>escape character in source data. This applies only to delimited data format. This option is ignored for other data sources.
+</td> <td>""</td></tr>
+    <tr> <td><code>null_value</code>(optional)</td> <td>string</td> <td>escape character in source data. This applies only to delimited data format. This option is ignored for other data sources.
+    </td> <td>"(null)"</td></tr>
+    <tr> <td><code>has_header_row</code>(optional)</td> <td>boolean</td> <td>True if input data file has header row, false otherwise.</td> <td>false</td> </tr>
+    <tr> <td><code>flexible</code>(optional)</td> <td>boolean</td> <td>Whether input data file exactly matches target schema. When true, attempts to load as follows. If extra columns are present in input file, these are discarded. If fewer columns are  present in input file, missing columns are filled with nulls. When false, load proceeds if input data file exactly matches target schema.</td> <td>false</td> </tr>
+  </tbody>
+</table>
+<div class="sect4">
+<h5 id="_date_time"><a class="anchor" href="#_date_time"></a>date_time</h5>
+<table>
+   <colgroup>
+   <col style="width:20%" />
+   <col style="width:15%" />
+   <col style="width:65%" />
+   </colgroup>
+   <thead class="thead" style="text-align:left;">
+      <tr>
+         <th>Form Parameter</th>
+         <th>Data Type</th>
+         <th>Description</th>
+         <th>Default value</th>
+      </tr>
+   </thead>
+   <tbody>
+    <tr> <td><code>converted_to_epoch</code>(optional)</td> <td>boolean</td> <td>Whether date or datetime fields are already converted to epoch in source CSV. This option is ignored for other source types.</td> <td>true</td> </tr>
+    <tr> <td><code>date_time_format</code>(optional)</td> <td>string</td> <td>Format string for datetime values. Default is yearmonthday hour:minute:second e.g. Dec 30th, 2001 1:15:12 is represented as 20011230 01:15:12. System accepts date time format specifications supported in strptime datetime library.</td> <td>"%Y%m%d %H:%M:%S"</td> </tr>
+    <tr> <td><code>date_format</code>(optional)</td> <td>string</td> <td>Format string for date values. Default is yearmonthday e.g. Dec 30th, 2001 is represented as 20011230. System accepts date format specifications supported in strptime datetime library.</td> <td>"%Y%m%d"</td> </tr>
+    <tr> <td><code>time_format</code>(optional)</td> <td>string</td> <td>Format string for time values. Default is hour:minute:second System accepts time format specifications supported in strptime datetime library.
+    </td> <td>"%H:%M:%S"</td> </tr>
+    <tr> <td><code>skip_second_fraction</code>(optional)</td> <td>boolean</td> <td>When true, skip fractional part of seconds e.g., milliseconds, microseconds or nanoseconds from datetime or time values if present in source data. This option is ignored for other source types. Note that skipping fractional component (e.g. ms) from input data can impact upsert behavior if input data has non-unique fractional values for same time or datetime values.
+    </td> <td>false</td> </tr>
+  </tbody>
+</table>
 </div>
 <div class="sect4">
-<h5 id="_date_time"><a class="anchor" href="#_date_time"></a>date_time<table><colgroup><col style="width:20%"></col></h5>
-<div class="literalblock">
-<div class="content">
-<pre>+++&lt;col style="width:15%"&gt;++++++&lt;/col&gt;+++
-+++&lt;col style="width:65%"&gt;++++++&lt;/col&gt;++++++&lt;/colgroup&gt;+++
-+++&lt;thead class="thead" style="text-align:left;"&gt;++++++&lt;tr&gt;++++++&lt;th&gt;+++Form Parameter+++&lt;/th&gt;+++
-      +++&lt;th&gt;+++Data Type+++&lt;/th&gt;+++
-      +++&lt;th&gt;+++Description+++&lt;/th&gt;+++
-      +++&lt;th&gt;+++Default value+++&lt;/th&gt;++++++&lt;/tr&gt;++++++&lt;/thead&gt;+++
-+++&lt;tbody&gt;++++++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;code&gt;+++converted_to_epoch+++&lt;/code&gt;+++(optional)+++&lt;/td&gt;+++ +++&lt;td&gt;+++boolean+++&lt;/td&gt;+++ +++&lt;td&gt;+++Whether date or datetime fields are already converted to epoch in source CSV. This option is ignored for other source types.+++&lt;/td&gt;+++ +++&lt;td&gt;+++true+++&lt;/td&gt;++++++&lt;/tr&gt;+++
- +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;code&gt;+++date_time_format+++&lt;/code&gt;+++(optional)+++&lt;/td&gt;+++ +++&lt;td&gt;+++string+++&lt;/td&gt;+++ +++&lt;td&gt;+++Format string for datetime values. Default is yearmonthday hour:minute:second e.g. Dec 30th, 2001 1:15:12 is represented as 20011230 01:15:12. System accepts date time format specifications supported in strptime datetime library.+++&lt;/td&gt;+++ +++&lt;td&gt;+++"%Y%m%d %H:%M:%S"+++&lt;/td&gt;++++++&lt;/tr&gt;+++
- +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;code&gt;+++date_format+++&lt;/code&gt;+++(optional)+++&lt;/td&gt;+++ +++&lt;td&gt;+++string+++&lt;/td&gt;+++ +++&lt;td&gt;+++Format string for date values. Default is yearmonthday e.g. Dec 30th, 2001 is represented as 20011230. System accepts date format specifications supported in strptime datetime library.+++&lt;/td&gt;+++ +++&lt;td&gt;+++"%Y%m%d"+++&lt;/td&gt;++++++&lt;/tr&gt;+++
- +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;code&gt;+++time_format+++&lt;/code&gt;+++(optional)+++&lt;/td&gt;+++ +++&lt;td&gt;+++string+++&lt;/td&gt;+++ +++&lt;td&gt;+++Format string for time values. Default is hour:minute:second System accepts time format specifications supported in strptime datetime library.+++&lt;/td&gt;+++ +++&lt;td&gt;+++"%H:%M:%S"+++&lt;/td&gt;++++++&lt;/tr&gt;+++
- +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;code&gt;+++skip_second_fraction+++&lt;/code&gt;+++(optional)+++&lt;/td&gt;+++ +++&lt;td&gt;+++boolean+++&lt;/td&gt;+++ +++&lt;td&gt;+++When true, skip fractional part of seconds e.g., milliseconds, microseconds or nanoseconds from datetime or time values if present in source data. This option is ignored for other source types. Note that skipping fractional component (e.g. ms) from input data can impact upsert behavior if input data has non-unique fractional values for same time or datetime values.+++&lt;/td&gt;+++ +++&lt;td&gt;+++false+++&lt;/td&gt;++++++&lt;/tr&gt;++++++&lt;/tbody&gt;++++++&lt;/table&gt;+++</pre>
-</div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_boolean"><a class="anchor" href="#_boolean"></a>boolean<table><colgroup><col style="width:20%"></col></h5>
-<div class="literalblock">
-<div class="content">
-<pre>+++&lt;col style="width:15%"&gt;++++++&lt;/col&gt;+++
-+++&lt;col style="width:65%"&gt;++++++&lt;/col&gt;++++++&lt;/colgroup&gt;+++
-+++&lt;thead class="thead" style="text-align:left;"&gt;++++++&lt;tr&gt;++++++&lt;th&gt;+++Form Parameter+++&lt;/th&gt;+++
-      +++&lt;th&gt;+++Data Type+++&lt;/th&gt;+++
-      +++&lt;th&gt;+++Description+++&lt;/th&gt;+++
-      +++&lt;th&gt;+++Default value+++&lt;/th&gt;++++++&lt;/tr&gt;++++++&lt;/thead&gt;+++
-+++&lt;tbody&gt;++++++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;code&gt;+++use_bit_values+++&lt;/code&gt;+++(optional)+++&lt;/td&gt;+++ +++&lt;td&gt;+++boolean+++&lt;/td&gt;+++ +++&lt;td&gt;+++If true, source csv uses a bit for boolean values. Here in source, false is represented as 0x0 and true as 0x1. If false, boolean values are interpreted using flag boolean_representation. This option is valid for CSV only. Ignored for other types.+++&lt;/td&gt;+++ +++&lt;td&gt;+++false+++&lt;/td&gt;++++++&lt;/tr&gt;+++
- +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;code&gt;+++true_format+++&lt;/code&gt;+++(optional)+++&lt;/td&gt;+++ +++&lt;td&gt;+++string+++&lt;/td&gt;+++ +++&lt;td&gt;+++Represents True for boolean values in input.+++&lt;/td&gt;+++ +++&lt;td&gt;+++T+++&lt;/td&gt;++++++&lt;/tr&gt;+++
- +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;code&gt;+++false_format+++&lt;/code&gt;+++(optional)+++&lt;/td&gt;+++ +++&lt;td&gt;+++string+++&lt;/td&gt;+++ +++&lt;td&gt;+++Represents False for boolean values in input.+++&lt;/td&gt;+++ +++&lt;td&gt;+++F+++&lt;/td&gt;++++++&lt;/tr&gt;++++++&lt;/tbody&gt;++++++&lt;/table&gt;+++</pre>
-</div>
-</div>
+<h5 id="_boolean"><a class="anchor" href="#_boolean"></a>boolean</h5>
+<table>
+   <colgroup>
+   <col style="width:20%" />
+   <col style="width:15%" />
+   <col style="width:65%" />
+   </colgroup>
+   <thead class="thead" style="text-align:left;">
+      <tr>
+         <th>Form Parameter</th>
+         <th>Data Type</th>
+         <th>Description</th>
+         <th>Default value</th>
+      </tr>
+   </thead>
+   <tbody>
+    <tr> <td><code>use_bit_values</code>(optional)</td> <td>boolean</td> <td>If true, source csv uses a bit for boolean values. Here in source, false is represented as 0x0 and true as 0x1. If false, boolean values are interpreted using flag boolean_representation. This option is valid for CSV only. Ignored for other types.</td> <td>false</td> </tr>
+    <tr> <td><code>true_format</code>(optional)</td> <td>string</td> <td>Represents True for boolean values in input.</td> <td>T</td> </tr>
+    <tr> <td><code>false_format</code>(optional)</td> <td>string</td> <td>Represents False for boolean values in input.</td> <td>F</td> </tr>
+  </tbody>
+</table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_load_options"><a class="anchor" href="#_load_options"></a>load_options<table><colgroup><col style="width:20%"></col></h4>
-<div class="literalblock">
-<div class="content">
-<pre>+++&lt;col style="width:15%"&gt;++++++&lt;/col&gt;+++
-+++&lt;col style="width:65%"&gt;++++++&lt;/col&gt;++++++&lt;/colgroup&gt;+++
-+++&lt;thead class="thead" style="text-align:left;"&gt;++++++&lt;tr&gt;++++++&lt;th&gt;+++Form Parameter+++&lt;/th&gt;+++
-      +++&lt;th&gt;+++Data Type+++&lt;/th&gt;+++
-      +++&lt;th&gt;+++Description+++&lt;/th&gt;+++
-      +++&lt;th&gt;+++Default value+++&lt;/th&gt;++++++&lt;/tr&gt;++++++&lt;/thead&gt;+++
-+++&lt;tbody&gt;++++++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;code&gt;+++empty_target+++&lt;/code&gt;+++(optional)+++&lt;/td&gt;+++ +++&lt;td&gt;+++boolean+++&lt;/td&gt;+++ +++&lt;td&gt;+++If true, current rows in target table or file are dropped before loading new data. If false, current rows are appended to target table or file.+++&lt;/td&gt;+++ +++&lt;td&gt;+++false+++&lt;/td&gt;++++++&lt;/tr&gt;+++
- +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;code&gt;+++max_ignored_rows+++&lt;/code&gt;+++(optional)+++&lt;/td&gt;+++ +++&lt;td&gt;+++integer+++&lt;/td&gt;+++ +++&lt;td&gt;+++Max number of rows that can be ignored for successful load. If number of ignored rows exceeds this limit, the load is aborted.+++&lt;/td&gt;+++ +++&lt;td&gt;+++0+++&lt;/td&gt;++++++&lt;/tr&gt;++++++&lt;/tbody&gt;++++++&lt;/table&gt;+++</pre>
-</div>
-</div>
+<h4 id="_load_options"><a class="anchor" href="#_load_options"></a>load_options</h4>
+<table>
+   <colgroup>
+   <col style="width:20%" />
+   <col style="width:15%" />
+   <col style="width:65%" />
+   </colgroup>
+   <thead class="thead" style="text-align:left;">
+      <tr>
+         <th>Form Parameter</th>
+         <th>Data Type</th>
+         <th>Description</th>
+         <th>Default value</th>
+      </tr>
+   </thead>
+   <tbody>
+    <tr> <td><code>empty_target</code>(optional)</td> <td>boolean</td> <td>If true, current rows in target table or file are dropped before loading new data. If false, current rows are appended to target table or file.</td> <td>false</td></tr>
+    <tr> <td><code>max_ignored_rows</code>(optional)</td> <td>integer</td> <td>Max number of rows that can be ignored for successful load. If number of ignored rows exceeds this limit, the load is aborted.
+</td> <td>0</td></tr>
+  </tbody>
+</table>
 </div>
 <div class="sect3">
-<h4 id="_advanced_options"><a class="anchor" href="#_advanced_options"></a>advanced_options<table><colgroup><col style="width:20%"></col></h4>
-<div class="literalblock">
-<div class="content">
-<pre>+++&lt;col style="width:15%"&gt;++++++&lt;/col&gt;+++
-+++&lt;col style="width:65%"&gt;++++++&lt;/col&gt;++++++&lt;/colgroup&gt;+++
-+++&lt;thead class="thead" style="text-align:left;"&gt;++++++&lt;tr&gt;++++++&lt;th&gt;+++Form Parameter+++&lt;/th&gt;+++
-      +++&lt;th&gt;+++Data Type+++&lt;/th&gt;+++
-      +++&lt;th&gt;+++Description+++&lt;/th&gt;+++
-      +++&lt;th&gt;+++Default value+++&lt;/th&gt;++++++&lt;/tr&gt;++++++&lt;/thead&gt;+++
-+++&lt;tbody&gt;++++++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;code&gt;+++max_reported_parsing_errors+++&lt;/code&gt;+++(optional)+++&lt;/td&gt;+++ +++&lt;td&gt;+++integer+++&lt;/td&gt;+++ +++&lt;td&gt;+++Maximum number of parsing errors to report back along with the status.+++&lt;/td&gt;+++ +++&lt;td&gt;+++100+++&lt;/td&gt;++++++&lt;/tr&gt;++++++&lt;/tbody&gt;++++++&lt;/table&gt;+++</pre>
-</div>
-</div>
+<h4 id="_advanced_options"><a class="anchor" href="#_advanced_options"></a>advanced_options</h4>
+<table>
+   <colgroup>
+   <col style="width:20%" />
+   <col style="width:15%" />
+   <col style="width:65%" />
+   </colgroup>
+   <thead class="thead" style="text-align:left;">
+      <tr>
+         <th>Form Parameter</th>
+         <th>Data Type</th>
+         <th>Description</th>
+         <th>Default value</th>
+      </tr>
+   </thead>
+   <tbody>
+    <tr> <td><code>max_reported_parsing_errors</code>(optional)</td> <td>integer</td> <td>Maximum number of parsing errors to report back along with the status.</td> <td>100</td></tr>
+  </tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="_example_use_of_parameters"><a class="anchor" href="#_example_use_of_parameters"></a>Example use of parameters</h4>
@@ -2954,7 +3038,7 @@ Content-Disposition: form-data; name="file"; filename="sample.csv"
 </div>
 </div>
 <div class="paragraph">
-<p>{% include note.html content="We only support multipart form/data." %}</p>
+<p>{% include note.adoc content="We only support multipart form/data." %}</p>
 </div>
 </div>
 <div class="sect2">
@@ -3230,7 +3314,7 @@ error code = INTERNAL, message = Couldn't resolve the authentication service.</p
 <h2 id="_related_information"><a class="anchor" href="#_related_information"></a>Related information</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>link:{{ site.baseurl }}/admin/loading/load-with-tsload.html[Use the tsload connector to load data]</p>
+<p><a href="load-with-tsload.html" class="page">Use the tsload connector to load data</a></p>
 </div>
 </div>
 </div>

@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["Introduction to Data Integration"] :: ThoughtSpot Software</title>
+    <title>Introduction to Data Integration :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 2.3.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -15,7 +15,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>["Introduction to Data Integration"] | ThoughtSpot Software</title>
+    <title>Introduction to Data Integration | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
@@ -2187,16 +2187,16 @@
     <span class="nav-text">SQL Server</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server.adoc">Overview</a>
+    <a class="nav-link" href="dataflow-sql-server.html">Overview</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-add.adoc">Connect</a>
+    <a class="nav-link" href="dataflow-sql-server-add.html">Connect</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-sync.adoc">Sync</a>
+    <a class="nav-link" href="dataflow-sql-server-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-reference.adoc">Reference</a>
+    <a class="nav-link" href="dataflow-sql-server-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2277,7 +2277,7 @@
     <a class="nav-link" href="dataflow-amazon-s3-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-amazon-s3-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-amazon-s3-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2295,7 +2295,7 @@
     <a class="nav-link" href="dataflow-azure-blob-storage-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-azure-blob-storage-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-azure-blob-storage-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2313,7 +2313,7 @@
     <a class="nav-link" href="dataflow-files-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-files-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-files-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2331,7 +2331,7 @@
     <a class="nav-link" href="dataflow-google-cloud-storage-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-google-cloud-storage-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-google-cloud-storage-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2349,7 +2349,7 @@
     <a class="nav-link" href="dataflow-hdfs-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-hdfs-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-hdfs-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2376,7 +2376,7 @@
     <a class="nav-link" href="dataflow-salesforce-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-salesforce-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-salesforce-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2569,7 +2569,13 @@
     <a class="nav-link" href="stop-words.html">Stop word reference</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="geomap-reference.html">Geo Map reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-australia.html">Australia</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="glossary.html">Glossary</a>
@@ -2657,7 +2663,7 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["Introduction to Data Integration"]</h1>
+<h1 class="page">Introduction to Data Integration</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
@@ -2678,9 +2684,18 @@ These include ODBC and JDBC drivers.</p>
 Always use the version of the ThoughtSpot clients that corresponds with the version of ThoughtSpot that you are running.
 When upgrading, make sure to upgrade your clients as well.</p>
 </div>
-<div class="paragraph">
-<p>{% include important.html content="The ETL tool must add a data transformation step if the source column data type does not exactly match the target&#8217;s, ThoughtSpot&#8217;s, column data type.
-The driver does not do any implicit conversions." %}</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+The ETL tool must add a data transformation step if the source column data type does not exactly match the target&#8217;s, ThoughtSpot&#8217;s, column data type.
+The driver does not do any implicit conversions.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -2692,23 +2707,48 @@ The driver does not do any implicit conversions." %}</p>
 Always consider your requirements for recurring loads when planning how best to bring the data into ThoughtSpot.</p>
 </div>
 <div class="paragraph">
-<p>Here are the options, with information on where to find the documentation for each method:<table><colgroup><col style="width:30%"></col>
-   <col style="width:70%"></col></colgroup>
-  <thead><tr><th>Method</th>
-      <th>Description</th></tr></thead>
-  <tbody><tr><td>ThoughtSpot Loader (tsload)</td>
-      <td>ThoughtSpot Loader is a command line tool to load CSV files into an existing database schema in ThoughtSpot. This is the fastest way to load extremely large amounts of data, and it can be run in parallel. You can also use this method to script recurring loads. See the ThoughtSpot Administrator Guide for details.</td></tr>
-    <tr><td>User Data Import</td>
-      <td>Users can upload a spreadsheet through the web interface with User Data Import. This is useful for giving everyone easy access to loading small amounts of their own data. See the ThoughtSpot Administrator Guide for details.</td></tr>
-    <tr><td>&lt;a href="{{"/data-integrate/clients/about-odbc.html" | prepend: site.baseurl }}"&gt;ODBC&lt;/a&gt;</td>
-      <td>ThoughtSpot provides an ODBC (Open Database Connectivity) driver to enable transferring data from your ETL tool into ThoughtSpot.</td></tr>
-    <tr><td>&lt;a href="{{"/data-integrate/clients/about-jdbc-driver.html" | prepend: site.baseurl }}"&gt;JDBC&lt;/a&gt;</td>
-      <td>ThoughtSpot provides a JDBC (Java Database Connectivity) driver to enable transferring data from your ETL tool into ThoughtSpot.</td></tr>
-    <tr><td>&lt;a href="{{"/data-integrate/clients/set-up-the-odbc-driver-using-ssis.html" | prepend: site.baseurl }}"&gt;Microsoft SSIS (SQL Server Integration Services)&lt;/a&gt;</td>
-      <td>You can use the ODBC driver to connect to SSIS and import data into ThoughtSpot. Basic instructions are included in this guide.</td></tr>
-    <tr><td>&lt;a href="{{"/data-integrate/clients/set-up-the-jdbc-driver-for-pentaho.html" | prepend: site.baseurl}}"&gt;Connect to Pentaho&lt;/a&gt;</td>
-      <td>You can use the JDBC driver to connect to Pentaho and import data into ThoughtSpot. Basic instructions are included in this guide.</td></tr></tbody></table></p>
+<p>Here are the options, with information on where to find the documentation for each method:</p>
 </div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Method</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ThoughtSpot Loader (tsload)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ThoughtSpot Loader is a command line tool to load CSV files into an existing database schema in ThoughtSpot. This is the fastest way to load extremely large amounts of data, and it can be run in parallel. You can also use this method to script recurring loads. See the ThoughtSpot Administrator Guide for details.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User Data Import</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Users can upload a spreadsheet through the web interface with User Data Import. This is useful for giving everyone easy access to loading small amounts of their own data. See the ThoughtSpot Administrator Guide for details.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="about-odbc.html" class="page">ODBC</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ThoughtSpot provides an ODBC (Open Database Connectivity) driver to enable transferring data from your ETL tool into ThoughtSpot.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="about-jdbc-driver.html" class="page">JDBC</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You can use the ODBC driver to connect to SSIS and import data into ThoughtSpot. Basic instructions are included in this guide.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="set-up-the-jdbc-driver-for-pentaho.html" class="page">Connect to Pentaho</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You can use the JDBC driver to connect to Pentaho and import data into ThoughtSpot. Basic instructions are included in this guide.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
@@ -2717,14 +2757,23 @@ Always consider your requirements for recurring loads when planning how best to 
 <div class="ulist">
 <ul>
 <li>
-<p><strong>link:{{ site.baseurl }}/data-integrate/introduction/jdbc-odbc-prereqs.html[Server-side prerequisites for using JDBC/ODBC to import data]</strong> + You must follow setup prerequisites for importing data using JDBC/ODBC.</p>
+<p><strong><a href="jdbc-odbc-prereqs.html" class="page">Server-side prerequisites for using JDBC/ODBC to import data</a></strong></p>
+<div class="paragraph">
+<p>You must follow setup prerequisites for importing data using JDBC/ODBC.</p>
+</div>
 </li>
 <li>
-<p><strong>link:{{ site.baseurl }}/data-integrate/clients/about-odbc.html[About the ODBC Driver]</strong> + You can use the ThoughtSpot ODBC driver to bring data into ThoughtSpot from your ETL tool or database.</p>
+<p><strong><a href="about-odbc.html" class="page">About the ODBC Driver</a></strong></p>
+<div class="paragraph">
+<p>You can use the ThoughtSpot ODBC driver to bring data into ThoughtSpot from your ETL tool or database.</p>
+</div>
 </li>
 <li>
-<p><strong>link:{{ site.baseurl }}/data-integrate/clients/about-jdbc-driver.html[About the JDBC Driver]</strong> +  Java Database Connectivity (JDBC) is a Java standard API that allows applications to interact with databases in a standard manner.
+<p><strong><a href="about-jdbc-driver.html" class="page">About the JDBC Driver</a></strong></p>
+<div class="paragraph">
+<p>Java Database Connectivity (JDBC) is a Java standard API that allows applications to interact with databases in a standard manner.
 ThoughtSpot has JDBC support through a JDBC driver that we provide.</p>
+</div>
 </li>
 </ul>
 </div>

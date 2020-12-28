@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>Untitled :: ThoughtSpot Software</title>
+    <title>Set up the ODBC Driver for SSIS :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 2.3.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -15,7 +15,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Untitled | ThoughtSpot Software</title>
+    <title>Set up the ODBC Driver for SSIS | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
@@ -2187,16 +2187,16 @@
     <span class="nav-text">SQL Server</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server.adoc">Overview</a>
+    <a class="nav-link" href="dataflow-sql-server.html">Overview</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-add.adoc">Connect</a>
+    <a class="nav-link" href="dataflow-sql-server-add.html">Connect</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-sync.adoc">Sync</a>
+    <a class="nav-link" href="dataflow-sql-server-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-reference.adoc">Reference</a>
+    <a class="nav-link" href="dataflow-sql-server-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2277,7 +2277,7 @@
     <a class="nav-link" href="dataflow-amazon-s3-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-amazon-s3-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-amazon-s3-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2295,7 +2295,7 @@
     <a class="nav-link" href="dataflow-azure-blob-storage-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-azure-blob-storage-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-azure-blob-storage-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2313,7 +2313,7 @@
     <a class="nav-link" href="dataflow-files-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-files-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-files-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2331,7 +2331,7 @@
     <a class="nav-link" href="dataflow-google-cloud-storage-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-google-cloud-storage-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-google-cloud-storage-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2349,7 +2349,7 @@
     <a class="nav-link" href="dataflow-hdfs-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-hdfs-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-hdfs-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2376,7 +2376,7 @@
     <a class="nav-link" href="dataflow-salesforce-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-salesforce-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-salesforce-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2569,7 +2569,13 @@
     <a class="nav-link" href="stop-words.html">Stop word reference</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="geomap-reference.html">Geo Map reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-australia.html">Australia</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="glossary.html">Glossary</a>
@@ -2659,12 +2665,11 @@
 </div>
   <div class="content">
 <article class="doc">
-<hr>
+<h1 class="page">Set up the ODBC Driver for SSIS</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>title: [Set up the ODBC Driver for SSIS]</p>
-</div>
-<div class="paragraph">
-<p>last_updated: tbd summary: "Use SSIS to set up the ODBC Driver." sidebar: mydoc_sidebar permalink: /:collection/:path.html&#8201;&#8212;&#8201;</p>
+<p>Use SSIS to set up the ODBC Driver.</p>
 </div>
 <div class="paragraph">
 <p>Microsoft SSIS (SQL Server Integration Services) is a data integration and workflow applications platform you can use to connect to ThoughtSpot.
@@ -2679,6 +2684,8 @@ It can move data from a variety of source types to a variety of destination type
 <div class="paragraph">
 <p>Use SSIS to set up the ODBC Driver by creating a connection manager.
 This manager connects an OLE DB Source and the ODBC Destination.</p>
+</div>
+</div>
 </div>
 <div class="sect1">
 <h2 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h2>
@@ -2723,7 +2730,7 @@ If the drivers aren&#8217;t named the same, then you can get an error stating th
 <p>Click <strong>File</strong> and select <strong>New</strong>, then <strong>Project</strong>.</p>
 </li>
 <li>
-<p>Select the <strong>Integration Services</strong> tab under <span class="menuseq"><b class="menu">Installed</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Templates</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Business Intelligence</b></span>.</p>
+<p>Select the <strong>Integration Services</strong> tab under menu:Installed[Templates &gt; Business Intelligence].</p>
 </li>
 <li>
 <p>Enter a name in the <strong>Name</strong> field and click <strong>OK</strong>.</p>

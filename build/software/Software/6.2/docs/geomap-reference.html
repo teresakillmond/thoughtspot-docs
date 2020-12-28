@@ -2187,16 +2187,16 @@
     <span class="nav-text">SQL Server</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server.adoc">Overview</a>
+    <a class="nav-link" href="dataflow-sql-server.html">Overview</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-add.adoc">Connect</a>
+    <a class="nav-link" href="dataflow-sql-server-add.html">Connect</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-sync.adoc">Sync</a>
+    <a class="nav-link" href="dataflow-sql-server-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-reference.adoc">Reference</a>
+    <a class="nav-link" href="dataflow-sql-server-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2277,7 +2277,7 @@
     <a class="nav-link" href="dataflow-amazon-s3-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-amazon-s3-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-amazon-s3-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2295,7 +2295,7 @@
     <a class="nav-link" href="dataflow-azure-blob-storage-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-azure-blob-storage-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-azure-blob-storage-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2313,7 +2313,7 @@
     <a class="nav-link" href="dataflow-files-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-files-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-files-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2331,7 +2331,7 @@
     <a class="nav-link" href="dataflow-google-cloud-storage-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-google-cloud-storage-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-google-cloud-storage-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2349,7 +2349,7 @@
     <a class="nav-link" href="dataflow-hdfs-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-hdfs-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-hdfs-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2376,7 +2376,7 @@
     <a class="nav-link" href="dataflow-salesforce-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-salesforce-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-salesforce-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2569,7 +2569,13 @@
     <a class="nav-link" href="stop-words.html">Stop word reference</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="geomap-reference.html">Geo Map reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-australia.html">Australia</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="glossary.html">Glossary</a>
@@ -2665,33 +2671,35 @@
 <p>This reference lists supported countries and their subdivisions.
 ThoughtSpot renders these regions in geo maps.</p>
 </div>
-<table class="tableblock frame-all grid-all stretch">
+<table class="tableblock frame-none grid-none stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 60%;">
+<col style="width: 40%;">
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">You may have to make changes to your data to support geo maps.
-+  + For example, you may be collecting data for locations in Washington County, Alabama, and also for locations in Washington County, Wisconsin.
-+  + According to the 2010 Census, there are 31 distinct Washington Counties in the United States.
-+  + To account for multiple different geographical entities with the same name, you must be specific within your data.
-+  + A value of <em>Washington County</em> without a state attached to it may result in incorrect or incomplete geo maps.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">image::wa-county.png[Washington Counties in United States]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You may have to make changes to your data to support geo maps.</p>
+<p class="tableblock">For example, you may be collecting data for locations in Washington County, Alabama, and also for locations in Washington County, Wisconsin.</p>
+<p class="tableblock">According to the 2010 Census, there are 31 distinct Washington Counties in the United States.</p>
+<p class="tableblock">To account for multiple different geographical entities with the same name, you must be specific within your data.</p>
+<p class="tableblock">A value of <em>Washington County</em> without a state attached to it may result in incorrect or incomplete geo maps.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="_images/wa-county.png" alt="Washington Counties in United States">
+</div>
+</div></div></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>ThoughtSpot supports the following countries and their associated subdivisions:
-<dlentry>// Since 5.2.0</p>
+<p>ThoughtSpot supports the following countries and their associated subdivisions:</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Australia</dt>
-<dd>
-<p><details><summary><strong>State</strong></summary> {% include content/geo/au-state.md %}</details><details><summary><strong>Suburb</strong></summary> {% include content/geo/au-suburb.md %}</details><details><summary><strong>Postcode</strong></summary> {% include content/geo/au-post-code.md %}</details></dlentry></p>
-</dd>
-</dl>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="geomap-australia.html" class="page">Australia</a></p>
+</li>
+</ul>
 </div>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">

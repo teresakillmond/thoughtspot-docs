@@ -2187,16 +2187,16 @@
     <span class="nav-text">SQL Server</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server.adoc">Overview</a>
+    <a class="nav-link" href="dataflow-sql-server.html">Overview</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-add.adoc">Connect</a>
+    <a class="nav-link" href="dataflow-sql-server-add.html">Connect</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-sync.adoc">Sync</a>
+    <a class="nav-link" href="dataflow-sql-server-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-reference.adoc">Reference</a>
+    <a class="nav-link" href="dataflow-sql-server-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2277,7 +2277,7 @@
     <a class="nav-link" href="dataflow-amazon-s3-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-amazon-s3-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-amazon-s3-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2295,7 +2295,7 @@
     <a class="nav-link" href="dataflow-azure-blob-storage-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-azure-blob-storage-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-azure-blob-storage-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2313,7 +2313,7 @@
     <a class="nav-link" href="dataflow-files-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-files-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-files-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2331,7 +2331,7 @@
     <a class="nav-link" href="dataflow-google-cloud-storage-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-google-cloud-storage-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-google-cloud-storage-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2349,7 +2349,7 @@
     <a class="nav-link" href="dataflow-hdfs-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-hdfs-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-hdfs-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2376,7 +2376,7 @@
     <a class="nav-link" href="dataflow-salesforce-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-salesforce-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-salesforce-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2569,7 +2569,13 @@
     <a class="nav-link" href="stop-words.html">Stop word reference</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="geomap-reference.html">Geo Map reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-australia.html">Australia</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="glossary.html">Glossary</a>
@@ -2713,24 +2719,34 @@ This provides the benefit of computing the answer dynamically without the extra 
 <div class="sect1">
 <h2 id="_the_in_keyword"><a class="anchor" href="#_the_in_keyword"></a>The "in" keyword</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p><table><colgroup><col style="width:15%"></col>
-      <col style="width:20%"></col>
-      <col style="width:65%"></col></colgroup>
-   <tr id="in"><th>Keyword</th>
+<table>
+   <colgroup>
+      <col style="width:15%" />
+      <col style="width:20%" />
+      <col style="width:65%" />
+   </colgroup>
+   <tr id="in">
+     <th>Keyword</th>
      <th>Description</th>
-     <th>Example</th></tr>
-   <tr><td><em>attribute</em> in (<em>attribute</em> <em>subsearch</em>)</td>
-     <td>Query in query search (intersection of two sets)<br></br>Must match last attribute before keyword with first attribute inside subsearch.</td>
-     <td><ul><li><code><em>store name</em> <strong>in</strong> (top 10 <em>store name</em> by sales footwear)</code></li>
-     <li><code>product name 2014 product name <strong>in</strong> (product name 2013) sales</code></li></ul></td></tr>
-   <tr id="not-in"><td><em>attribute</em> not in (<em>attribute</em> <em>subsearch</em>)</td>
-     <td>Relative complement of two sets<br></br>
+     <th>Example</th>
+   </tr>
+   <tr>
+     <td><em>attribute</em> in (<em>attribute</em> <em>subsearch</em>)</td>
+     <td>Query in query search (intersection of two sets)<br/>Must match last attribute before keyword with first attribute inside subsearch.</td>
+     <td><ul>
+     <li><code><em>store name</em> <strong>in</strong> (top 10 <em>store name</em> by sales footwear)</code></li>
+     <li><code>product name 2014 product name <strong>in</strong> (product name 2013) sales</code></li></ul></td>
+   </tr>
+   <tr id="not-in">
+     <td><em>attribute</em> not in (<em>attribute</em> <em>subsearch</em>)</td>
+     <td>Relative complement of two sets<br/>
      Must match last attribute before keyword with first attribute inside subsearch.</td>
-     <td><ul><li><code>product name 2014 product name <strong>not in</strong> (product name 2013) sales</code><br></br>
-     <br></br>Find sales for all products ordered in 2014 that were not ordered in 2013</li></ul></td></tr>
-   Find all products ordered in 2014 that were not ordered in 2013</table></p>
-</div>
+     <td><ul>
+     <li><code>product name 2014 product name <strong>not in</strong> (product name 2013) sales</code><br/>
+     <br/>Find sales for all products ordered in 2014 that were not ordered in 2013</li></ul></td>
+   </tr>
+   Find all products ordered in 2014 that were not ordered in 2013
+</table>
 </div>
 </div>
 <div class="sect1">

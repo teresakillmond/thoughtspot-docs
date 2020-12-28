@@ -1,21 +1,18 @@
-:pp: {plus}{plus}
+= Install the ODBC driver on Windows
+:experimental:
 
-'''
+Use this procedure to obtain the Microsoft Windows ODBC driver and install it.
 
-title: [Install the ODBC driver on Windows]
-
-last_updated: tbd summary: "Use this procedure to obtain the Microsoft Windows ODBC driver and install it." sidebar: mydoc_sidebar permalink: /:collection/:path.html --
-
-ThoughtSpot's ODBC connection relies on the https://www.simba.com/products/SEN/doc/Client-Server_user_guide/content/clientserver/configuringsimbaclientodbc/simbaclientodbcunix.htm[SimbaEngine X SDK] to connect through ODBC or JDBC to ThoughtSpot's remote data stores.
+ThoughtSpot's ODBC connection relies on the xref:https://www.simba.com/products/SEN/doc/Client-Server_user_guide/content/clientserver/configuringsimbaclientodbc/simbaclientodbcunix.htm[SimbaEngine X SDK,window="_blank"] to connect through ODBC or JDBC to ThoughtSpot's remote data stores.
 The instructions on this page explain how to configure the Simba ODBC driver on a Windows workstation.
 
-Make sure you have read the overview material in the link:{{ site.baseurl }}/data-integrate/clients/about-odbc.html#[ODBC driver overview].
+Make sure you have read the overview material in the xref:about-odbc.adoc[ODBC driver overview].
 This workstation is the same machine where you plan to run your ETL activities.
 
 == Prerequisites
 
 These instructions include directions to use the `ssh` command.
-Make sure your Windows workstation is equipped with a tool https://www.putty.org/[such as Putty] for making `ssh` connections to your ThoughtSpot server.
+Make sure your Windows workstation is equipped with a tool xref:https://www.putty.org/[such as Putty,window="_blank"] for making `ssh` connections to your ThoughtSpot server.
 
 The ODBC driver for Windows requires Visual C{pp} Redistributable for Visual Studio 2013.
 You are prompted to install it during installation of the driver if it isn't already installed.
@@ -26,17 +23,17 @@ To check if this Microsoft tool is already installed, search for it on your work
 
 image::odbc-windows-search-0.png[]
 
-If it isn't installed, make sure you https://www.microsoft.com/en-us/download/details.aspx?id=40784[download and install it] before continuing.
+If it isn't installed, make sure you xref:https://www.microsoft.com/en-us/download/details.aspx?id=40784[download and install it,window="_blank"] before continuing.
 
 == Check the ThoughtSpot IP and the simba_server status
 
-{% include content/simba-server-start.md %}
+include::partial$simba-server-start.adoc[]
 
 == Download the driver
 
 On the workstation where you want to connect from, do the following:
 
-. Navigate to the link:{{ site.baseurl }}/release/downloads.html#[*Downloads*] page.
+. Navigate to the xref:downloads.adoc[*Downloads*] page.
 . Download the *ODBC Driver for Windows*.
 . Unzip the file you downloaded at a convenient location on your workstation.
 +
@@ -154,5 +151,5 @@ Now, you are ready to begin using the connection you've configured.
 
 == Related information
 
-* link:{{ site.baseurl}}/data-integrate/troubleshooting/enable-ODBC-log.html[Enable ODBC logs].
-* link:{{ site.baseurl}}/data-integrate/clients/multiple-sources-windows.html[Configure multiple connections on Windows].
+* xref:enable-ODBC-log.adoc[Enable ODBC logs].
+* xref:multiple-sources-windows.adoc[Configure multiple connections on Windows].

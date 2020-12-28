@@ -2187,16 +2187,16 @@
     <span class="nav-text">SQL Server</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server.adoc">Overview</a>
+    <a class="nav-link" href="dataflow-sql-server.html">Overview</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-add.adoc">Connect</a>
+    <a class="nav-link" href="dataflow-sql-server-add.html">Connect</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-sync.adoc">Sync</a>
+    <a class="nav-link" href="dataflow-sql-server-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-reference.adoc">Reference</a>
+    <a class="nav-link" href="dataflow-sql-server-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2277,7 +2277,7 @@
     <a class="nav-link" href="dataflow-amazon-s3-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-amazon-s3-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-amazon-s3-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2295,7 +2295,7 @@
     <a class="nav-link" href="dataflow-azure-blob-storage-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-azure-blob-storage-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-azure-blob-storage-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2313,7 +2313,7 @@
     <a class="nav-link" href="dataflow-files-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-files-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-files-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2331,7 +2331,7 @@
     <a class="nav-link" href="dataflow-google-cloud-storage-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-google-cloud-storage-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-google-cloud-storage-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2349,7 +2349,7 @@
     <a class="nav-link" href="dataflow-hdfs-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-hdfs-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-hdfs-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2376,7 +2376,7 @@
     <a class="nav-link" href="dataflow-salesforce-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-salesforce-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-salesforce-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2569,7 +2569,13 @@
     <a class="nav-link" href="stop-words.html">Stop word reference</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="geomap-reference.html">Geo Map reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-australia.html">Australia</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="glossary.html">Glossary</a>
@@ -2673,7 +2679,7 @@ This reference lists TQL commands you can use to do things like creating a schem
 <h2 id="_about_using_tql"><a class="anchor" href="#_about_using_tql"></a>About using TQL</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can use TQL either link:{{ site.baseurl }}/admin/loading/upload-sql-script.html#[through the ThoughtSpot application&#8217;s web interface] or the link:{{ site.baseurl }}/reference/sql-cli-commands.html#[command line interface] in the Linux shell.</p>
+<p>You can use TQL either <a href="upload-sql-script.html" class="page">through the ThoughtSpot application&#8217;s web interface</a> or the <a href="#">command line interface</a> in the Linux shell.</p>
 </div>
 <div class="paragraph">
 <p>Use  <code>--query_results_apply_top_row_count &lt;number&gt;</code> flag to limit the number of result rows returned by a query.
@@ -2699,241 +2705,365 @@ When referring to objects using fully qualified object names, the syntax is:</p>
 Remember to add a semicolon after each command.
 Commands are not case sensitive but are capitalized here for readability.</p>
 </div>
-<div class="paragraph">
-<p>{% include note.html content="Worksheets and pinboards in ThoughtSpot are dependent upon the data in the underlying tables.
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Worksheets and pinboards in ThoughtSpot are dependent upon the data in the underlying tables.
 Use caution when modifying tables directly.
-If you change or remove a schema on which those objects rely, the objects could become invalid." %}</p>
+If you change or remove a schema on which those objects rely, the objects could become invalid.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_view_schemas_and_data"><a class="anchor" href="#_view_schemas_and_data"></a>View schemas and data<table><colgroup><col style="width:25%"></col></h2>
+<h2 id="_view_schemas_and_data"><a class="anchor" href="#_view_schemas_and_data"></a>View schemas and data</h2>
 <div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>   +++&lt;col style="width:75%"&gt;++++++&lt;/col&gt;++++++&lt;/colgroup&gt;+++
-+++&lt;thead&gt;++++++&lt;tr&gt;++++++&lt;th&gt;+++Syntax+++&lt;/th&gt;+++
-      +++&lt;th&gt;+++Description+++&lt;/th&gt;++++++&lt;/tr&gt;++++++&lt;/thead&gt;+++
-+++&lt;tbody&gt;++++++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;code&gt;+++SHOW DATABASES+++&lt;/code&gt;++++++&lt;/td&gt;+++
-      +++&lt;td&gt;+++Lists all available databases.</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>         +++&lt;p&gt;+++Examples:+++&lt;/p&gt;+++
-            +++&lt;p&gt;++++++&lt;code&gt;+++SHOW DATABASES;+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
-      +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;p&gt;++++++&lt;code&gt;+++USE &lt;database&gt;+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;+++
-         +++&lt;td&gt;+++Switches the context to the specified database. This is required if queries
+<table>
+   <colgroup>
+      <col style="width:25%">
+      <col style="width:75%">
+   </colgroup>
+   <thead >
+      <tr>
+         <th>Syntax</th>
+         <th>Description</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>
+            <code>SHOW DATABASES</code>
+         </td>
+         <td>Lists all available databases.
+
+         <p>Examples:</p>
+            <p><code>SHOW DATABASES;</code></p>
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <p><code>USE &lt;database&gt;</code></p>
+         </td>
+         <td>Switches the context to the specified database. This is required if queries
             do not use fully qualified names (database.schema.table) for specifying
             tables.
-         +++&lt;p&gt;+++Examples:+++&lt;/p&gt;+++
-            +++&lt;p&gt;++++++&lt;code&gt;+++USE "fruit_database";+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
-      +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;code&gt;+++SHOW SCHEMAS+++&lt;/code&gt;++++++&lt;/td&gt;+++
-         +++&lt;td&gt;++++++&lt;p&gt;+++Lists all schemas within the current database. For example:+++&lt;/p&gt;+++
-            +++&lt;p&gt;++++++&lt;code&gt;+++SHOW SCHEMAS;+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
-      +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;p&gt;++++++&lt;code&gt;+++SHOW TABLES+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;+++
-         +++&lt;td&gt;++++++&lt;p&gt;+++Lists all tables within the current database by schema. For example:+++&lt;/p&gt;+++
-            +++&lt;p&gt;++++++&lt;code&gt;+++SHOW TABLES;+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
-      +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;p&gt;++++++&lt;code&gt;+++SHOW TABLE &lt;table&gt;+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;+++
-         +++&lt;td&gt;++++++&lt;p&gt;+++Lists all the columns for a table. For example:+++&lt;/p&gt;+++
-            +++&lt;p&gt;++++++&lt;code&gt;+++SHOW TABLE "locations";+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
-      +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;p&gt;++++++&lt;code&gt;+++SCRIPT SERVER+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;+++
-         +++&lt;td&gt;++++++&lt;p&gt;+++Generates the TQL schema for all tables in all databases on the
-            server. For example:+++&lt;/p&gt;+++
-            +++&lt;p&gt;++++++&lt;code&gt;+++SCRIPT SERVER;+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
-      +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;p&gt;++++++&lt;code&gt;+++SCRIPT DATABASE &lt;database&gt;+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;+++
-         +++&lt;td&gt;++++++&lt;p&gt;+++Generates the TQL schema for all tables in a database. For example:+++&lt;/p&gt;+++
-            +++&lt;p&gt;++++++&lt;code&gt;+++SCRIPT DATABASE "fruit_database";+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
-      +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;p&gt;++++++&lt;code&gt;+++SCRIPT TABLE &lt;table&gt;+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;+++
-         +++&lt;td&gt;++++++&lt;p&gt;+++Generates the TQL schema for a table. For example:+++&lt;/p&gt;+++
-            +++&lt;p&gt;++++++&lt;code&gt;+++SCRIPT TABLE "vendor";+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
-      +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;p&gt;++++++&lt;code&gt;+++SELECT
+         <p>Examples:</p>
+            <p><code>USE "fruit_database";</code></p>
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <code>SHOW SCHEMAS</code>
+         </td>
+         <td><p>Lists all schemas within the current database. For example:</p>
+            <p><code>SHOW SCHEMAS;</code></p>
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <p><code>SHOW TABLES</code></p>
+         </td>
+         <td><p>Lists all tables within the current database by schema. For example:</p>
+            <p><code>SHOW TABLES;</code></p>
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <p><code>SHOW TABLE &lt;table&gt;</code></p>
+         </td>
+         <td><p>Lists all the columns for a table. For example:</p>
+            <p><code>SHOW TABLE "locations";</code></p>
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <p><code>SCRIPT SERVER</code></p>
+         </td>
+         <td><p>Generates the TQL schema for all tables in all databases on the
+            server. For example:</p>
+            <p><code>SCRIPT SERVER;</code></p>
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <p><code>SCRIPT DATABASE &lt;database&gt;</code></p>
+         </td>
+         <td><p>Generates the TQL schema for all tables in a database. For example:</p>
+            <p><code>SCRIPT DATABASE "fruit_database";</code></p>
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <p><code>SCRIPT TABLE &lt;table&gt;</code></p>
+         </td>
+         <td><p>Generates the TQL schema for a table. For example:</p>
+            <p><code>SCRIPT TABLE "vendor";</code></p>
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <p><code>SELECT
    &lt;cols_or_expr&gt;
    FROM &lt;table_list&gt;
    [WHERE &lt;predicates&gt;]
    [GROUP BY &lt;expr&gt;]
-   [ORDER BY &lt;expr&gt;]+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;+++
-         +++&lt;td&gt;+++Shows specified set of table data.
-            +++&lt;p&gt;+++If you do not specify the TOP number of
+   [ORDER BY &lt;expr&gt;]</code></p>
+         </td>
+         <td>
+            Shows specified set of table data.
+            <p>If you do not specify the TOP number of
                rows to select, the top 50 rows will be returned by default. The number of rows
-               to return can be set using the [.ph]#TQL# command line flag:+++&lt;/p&gt;+++
-            +++&lt;p&gt;++++++&lt;code&gt;+++--query_results apply_top_row_count+++&lt;/code&gt;++++++&lt;/p&gt;+++
-            +++&lt;p&gt;+++You can use the following aggregation functions:+++&lt;/p&gt;+++
-            +++&lt;ul&gt;++++++&lt;li&gt;++++++&lt;code&gt;+++sum+++&lt;/code&gt;++++++&lt;/li&gt;+++
-               +++&lt;li&gt;++++++&lt;code&gt;+++count+++&lt;/code&gt;++++++&lt;/li&gt;+++
-               +++&lt;li&gt;++++++&lt;code&gt;+++count distinct+++&lt;/code&gt;++++++&lt;/li&gt;+++
-               +++&lt;li&gt;++++++&lt;code&gt;+++stddev+++&lt;/code&gt;++++++&lt;/li&gt;+++
-               +++&lt;li&gt;++++++&lt;code&gt;+++avg+++&lt;/code&gt;++++++&lt;/li&gt;+++
-               +++&lt;li&gt;++++++&lt;code&gt;+++variance+++&lt;/code&gt;++++++&lt;/li&gt;+++
-               +++&lt;li&gt;++++++&lt;code&gt;+++min+++&lt;/code&gt;++++++&lt;/li&gt;+++
-               +++&lt;li&gt;++++++&lt;code&gt;+++max+++&lt;/code&gt;++++++&lt;/li&gt;++++++&lt;/ul&gt;+++
-            +++&lt;div&gt;+++You can use the following date functions:
-               +++&lt;ul&gt;++++++&lt;li&gt;++++++&lt;code&gt;+++absyear+++&lt;/code&gt;++++++&lt;/li&gt;+++
-                  +++&lt;li&gt;++++++&lt;code&gt;+++absmonth+++&lt;/code&gt;++++++&lt;/li&gt;+++
-                  +++&lt;li&gt;++++++&lt;code&gt;+++absday+++&lt;/code&gt;++++++&lt;/li&gt;+++
-                  +++&lt;li&gt;++++++&lt;code&gt;+++absquarter+++&lt;/code&gt;++++++&lt;/li&gt;+++
-                  +++&lt;li&gt;++++++&lt;code&gt;+++date+++&lt;/code&gt;++++++&lt;/li&gt;+++
-                  +++&lt;li&gt;++++++&lt;code&gt;+++time+++&lt;/code&gt;++++++&lt;/li&gt;++++++&lt;/ul&gt;++++++&lt;/div&gt;+++
-          +++&lt;p&gt;+++For example:+++&lt;/p&gt;+++
-+++&lt;p&gt;++++++&lt;code&gt;+++SELECT TOP 10 "quantity" FROM "sales_fact";+++&lt;/code&gt;++++++&lt;/p&gt;+++
-+++&lt;p&gt;++++++&lt;code&gt;+++SELECT COUNT(&amp;#42;) FROM "vendor";+++&lt;/code&gt;++++++&lt;/p&gt;+++
-+++&lt;p&gt;++++++&lt;code&gt;+++SELECT "vendor", SUM("quantity") FROM "sales_fact" GROUP BY "vendor";+++&lt;/code&gt;++++++&lt;/p&gt;+++
-+++&lt;p&gt;++++++&lt;code&gt;+++SELECT "vendor", SUM("amount") FROM "vendor", "sales_fact"
+               to return can be set using the <span class="ph">TQL</span> command line flag:
+            </p>
+            <p><code>--query_results apply_top_row_count</code></p>
+            <p>You can use the following aggregation functions:</p>
+            <ul>
+               <li><code>sum</code></li>
+               <li><code>count</code></li>
+               <li><code>count distinct</code></li>
+               <li><code>stddev</code></li>
+               <li><code>avg</code></li>
+               <li><code>variance</code></li>
+               <li><code>min</code></li>
+               <li><code>max</code></li>
+            </ul>
+            <div>
+               You can use the following date functions:
+               <ul>
+                  <li><code>absyear</code></li>
+                  <li><code>absmonth</code></li>
+                  <li><code>absday</code></li>
+                  <li><code>absquarter</code></li>
+                  <li><code>date</code></li>
+                  <li><code>time</code></li>
+               </ul>
+            </div>
+          <p>For example:</p>
+<p><code>SELECT TOP 10 "quantity" FROM "sales_fact";</code></p>
+<p><code>SELECT COUNT(&#42;) FROM "vendor";</code></p>
+<p><code>SELECT "vendor", SUM("quantity") FROM "sales_fact" GROUP BY "vendor";</code></p>
+<p><code>SELECT "vendor", SUM("amount") FROM "vendor", "sales_fact"
      WHERE "sales_fact"."vendorid" = "vendor"."vendorid"
-     AND "amount" &gt; 100 GROUP BY "vendor" ORDER BY "amount" DESC;+++&lt;/code&gt;++++++&lt;/p&gt;+++
-+++&lt;p&gt;++++++&lt;code&gt;+++SELECT "vendor", SUM("quantity") FROM "sales_fact"
-GROUP BY "vendor" LIMIT 10;+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;++++++&lt;/tbody&gt;++++++&lt;/table&gt;+++</pre>
-</div>
-</div>
+     AND "amount" &gt; 100 GROUP BY "vendor" ORDER BY "amount" DESC;</code></p>
+<p><code>SELECT "vendor", SUM("quantity") FROM "sales_fact"
+GROUP BY "vendor" LIMIT 10;</code></p>
+         </td>
+      </tr>
+   </tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_schema_creation"><a class="anchor" href="#_schema_creation"></a>Schema creation<table><colgroup><col style="width:25%"></col></h2>
+<h2 id="_schema_creation"><a class="anchor" href="#_schema_creation"></a>Schema creation</h2>
 <div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>      +++&lt;col style="width:75%"&gt;++++++&lt;/col&gt;++++++&lt;/colgroup&gt;+++
-   +++&lt;thead&gt;++++++&lt;tr&gt;++++++&lt;th&gt;+++Syntax+++&lt;/th&gt;+++
-         +++&lt;th&gt;+++Description+++&lt;/th&gt;++++++&lt;/tr&gt;++++++&lt;/thead&gt;+++
-   +++&lt;tbody&gt;++++++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;p&gt;++++++&lt;code&gt;+++CREATE DATABASE
-            &lt;database&gt;+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;+++
-         +++&lt;td&gt;++++++&lt;p&gt;+++Creates a database. For example:+++&lt;/p&gt;+++
-            +++&lt;p&gt;++++++&lt;code&gt;+++CREATE DATABASE "fruit_database";+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
-      +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;p&gt;++++++&lt;code&gt;+++CREATE SCHEMA &lt;schema&gt;+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;+++
-         +++&lt;td&gt;++++++&lt;p&gt;+++Creates a schema within the current database. For example:+++&lt;/p&gt;+++
-            +++&lt;p&gt;++++++&lt;code&gt;+++CREATE SCHEMA "fruit_schema";+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
-      +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;p&gt;++++++&lt;code&gt;+++CREATE TABLE &lt;table&gt; (&lt;column_definitions&gt;
+<table>
+   <colgroup>
+      <col style="width:25%">
+      <col style="width:75%">
+   </colgroup>
+   <thead >
+      <tr>
+         <th>Syntax</th>
+         <th>Description</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>
+            <p><code>CREATE DATABASE
+            &lt;database&gt;</code></p>
+         </td>
+         <td>
+            <p>Creates a database. For example:</p>
+            <p><code>CREATE DATABASE "fruit_database";</code></p>
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <p><code>CREATE SCHEMA &lt;schema&gt;</code></p>
+         </td>
+         <td>
+            <p>Creates a schema within the current database. For example:</p>
+            <p><code>CREATE SCHEMA "fruit_schema";</code></p>
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <p><code>CREATE TABLE &lt;table&gt; (&lt;column_definitions&gt;
             [&lt;constraints&gt;]) [PARTITION BY HASH (&lt;number&gt;) [KEY
-            ("&lt;column&gt;")]])+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;+++
-         +++&lt;td&gt;++++++&lt;p&gt;+++Creates a table with the specified column definitions and constraints.+++&lt;/p&gt;+++
-            +++&lt;p&gt;+++Use +++&lt;code&gt;+++PARTITION BY HASH+++&lt;/code&gt;+++ to shard a table across all nodes. If no +++&lt;code&gt;+++KEY+++&lt;/code&gt;+++ is specified, the table will be randomly sharded.+++&lt;/p&gt;+++
-            +++&lt;p&gt;+++Do not specify relationship constraints (+++&lt;code&gt;+++FOREIGN KEY+++&lt;/code&gt;+++
-               or +++&lt;code&gt;+++RELATIONSHIP+++&lt;/code&gt;+++) in the +++&lt;code&gt;+++CREATE TABLE+++&lt;/code&gt;+++
-               statement. Instead, define these using +++&lt;code&gt;+++ALTER TABLE+++&lt;/code&gt;+++
+            ("&lt;column&gt;")]])</code></p>
+         </td>
+         <td>
+            <p>Creates a table with the specified column definitions and constraints.</p>
+            <p>
+            Use <code>PARTITION BY HASH</code> to shard a table across all nodes. If no <code>KEY</code> is specified, the table will be randomly sharded.
+            </p>
+            <p>
+               Do not specify relationship constraints (<code>FOREIGN KEY</code>
+               or <code>RELATIONSHIP</code>) in the <code>CREATE TABLE</code>
+               statement. Instead, define these using <code>ALTER TABLE</code>
                statements at the end of your TQL script, after
                creating your tables. This method guarantees that tables are created
-               before they are referenced in the constraint definitions. For example:+++&lt;/p&gt;+++
-            +++&lt;p&gt;++++++&lt;code&gt;+++CREATE TABLE "vendor" ("vendorid" int, "name" varchar(255));+++&lt;/code&gt;++++++&lt;/p&gt;+++
-+++&lt;p&gt;++++++&lt;code&gt;+++CREATE TABLE "sales_fact" ("saleid" int, "locationid" int, "vendorid" int,
+               before they are referenced in the constraint definitions. For example:
+            </p>
+            <p><code>CREATE TABLE "vendor" ("vendorid" int, "name" varchar(255));</code></p>
+<p><code>CREATE TABLE "sales_fact" ("saleid" int, "locationid" int, "vendorid" int,
 "quantity" int, "sale_amount" double, "fruitid" int,
-CONSTRAINT PRIMARY KEY("saleid")) PARTITION BY HASH(96) KEY ("saleid");+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;++++++&lt;/tbody&gt;++++++&lt;/table&gt;+++</pre>
-</div>
-</div>
+CONSTRAINT PRIMARY KEY("saleid")) PARTITION BY HASH(96) KEY ("saleid");</code></p>
+         </td>
+      </tr>
+   </tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_schema_modification"><a class="anchor" href="#_schema_modification"></a>Schema modification<table><colgroup><col style="width:25%"></col></h2>
+<h2 id="_schema_modification"><a class="anchor" href="#_schema_modification"></a>Schema modification</h2>
 <div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>      +++&lt;col style="width:75%"&gt;++++++&lt;/col&gt;++++++&lt;/colgroup&gt;+++
-   +++&lt;thead&gt;++++++&lt;tr&gt;++++++&lt;th&gt;+++Syntax+++&lt;/th&gt;+++
-         +++&lt;th&gt;+++Description+++&lt;/th&gt;++++++&lt;/tr&gt;++++++&lt;/thead&gt;+++
-   +++&lt;tbody&gt;++++++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;p&gt;++++++&lt;code&gt;+++DROP DATABASE
-         &lt;database&gt;+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;+++
-      +++&lt;td&gt;++++++&lt;p&gt;+++Drops a database and all of its schemas and tables. For example:+++&lt;/p&gt;+++
-         +++&lt;p&gt;++++++&lt;code&gt;+++DROP DATABASE "fruit_database";+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
-   +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;p&gt;++++++&lt;code&gt;+++DROP SCHEMA &lt;schema&gt;+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;+++
-      +++&lt;td&gt;++++++&lt;p&gt;+++Drops a schema within the current database, and drops all of the tables in
-         the schema. For example:+++&lt;/p&gt;+++
-         +++&lt;p&gt;++++++&lt;code&gt;+++DROP SCHEMA "fruit_schema";+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
-   +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;p&gt;++++++&lt;code&gt;+++DROP TABLE &lt;table&gt;+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;+++
-      +++&lt;td&gt;++++++&lt;p&gt;+++Drops a table. For example:+++&lt;/p&gt;+++
-         +++&lt;p&gt;++++++&lt;code&gt;+++DROP TABLE "location";+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
-   +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;code&gt;+++TRUNCATE TABLE
-         &lt;table&gt;+++&lt;/code&gt;++++++&lt;/td&gt;+++
-      +++&lt;td&gt;++++++&lt;p&gt;+++Removes all data from a table, but preserves its metadata, including all
+<table>
+   <colgroup>
+      <col style="width:25%">
+      <col style="width:75%">
+   </colgroup>
+   <thead>
+      <tr>
+         <th>Syntax</th>
+         <th>Description</th>
+      </tr>
+   </thead>
+   <tbody>
+   <tr>
+      <td>
+         <p><code>DROP DATABASE
+         &lt;database&gt;</code></p>
+      </td>
+      <td><p>Drops a database and all of its schemas and tables. For example:</p>
+         <p><code>DROP DATABASE "fruit_database";</code></p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <p><code>DROP SCHEMA &lt;schema&gt;</code></p>
+      </td>
+      <td><p>Drops a schema within the current database, and drops all of the tables in
+         the schema. For example:</p>
+         <p><code>DROP SCHEMA "fruit_schema";</code></p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <p><code>DROP TABLE &lt;table&gt;</code></p>
+      </td>
+      <td><p>Drops a table. For example:</p>
+         <p><code>DROP TABLE "location";</code></p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <code>TRUNCATE TABLE
+         &lt;table&gt;</code>
+      </td>
+      <td>
+         <p>Removes all data from a table, but preserves its metadata, including all
          GUIDs, relationships, etc. This can be used to force a new schema for a table
-         without losing the metadata.+++&lt;/p&gt;+++
-         +++&lt;p&gt;+++However, this operation removes all existing data
+         without losing the metadata.</p>
+         <p>However, this operation removes all existing data
             from the table and must be used with caution. You must reload the data following
-            a +++&lt;code&gt;+++TRUNCATE+++&lt;/code&gt;+++, or all dependent objects (worksheets and pinboards) in [.ph]#ThoughtSpot# will become invalid. For example:+++&lt;/p&gt;+++
-         +++&lt;p&gt;++++++&lt;code&gt;+++TRUNCATE TABLE "location";+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
-   +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;p&gt;++++++&lt;code&gt;+++ALTER TABLE &lt;table&gt; ADD|DROP|RENAME COLUMN
-         &lt;column&gt;+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;+++
-      +++&lt;td&gt;+++Alters a table to add, drop, or rename a column.
-         +++&lt;p&gt;+++When you add a column to
+            a <code>TRUNCATE</code>, or all dependent objects (worksheets and pinboards) in <span class="ph">ThoughtSpot</span> will become invalid. For example:
+         </p>
+         <p><code>TRUNCATE TABLE "location";</code></p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <p><code>ALTER TABLE &lt;table&gt; ADD|DROP|RENAME COLUMN
+         &lt;column&gt;</code></p>
+      </td>
+      <td>
+         Alters a table to add, drop, or rename a column.
+         <p>When you add a column to
             an existing table, you must provide a default value to use for existing
-            rows. For example:+++&lt;/p&gt;+++
-+++&lt;p&gt;++++++&lt;code&gt;+++ALTER TABLE "cart" ADD COLUMN "nickname" varchar(255) DEFAULT 'no
-nickname';+++&lt;/code&gt;++++++&lt;/p&gt;+++
-+++&lt;p&gt;++++++&lt;code&gt;+++ALTER TABLE "cart" DROP COLUMN "nickname";+++&lt;/code&gt;++++++&lt;/p&gt;+++
-+++&lt;p&gt;++++++&lt;code&gt;+++ALTER TABLE "cart" RENAME COLUMN "nickname" TO "shortname";+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
-   +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;p&gt;++++++&lt;code&gt;+++ALTER TABLE &lt;table&gt; DROP CONSTRAINT PRIMARY KEY;+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;+++
-      +++&lt;td&gt;++++++&lt;p&gt;+++Drops the primary key from a table.+++&lt;/p&gt;+++
-         +++&lt;p&gt;+++Note that if you then add a new
+            rows. For example:</p>
+<p><code>ALTER TABLE "cart" ADD COLUMN "nickname" varchar(255) DEFAULT 'no
+nickname';</code></p>
+<p><code>ALTER TABLE "cart" DROP COLUMN "nickname";</code></p>
+<p><code>ALTER TABLE "cart" RENAME COLUMN "nickname" TO "shortname";</code></p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <p><code>ALTER TABLE &lt;table&gt; DROP CONSTRAINT PRIMARY KEY;</code></p>
+      </td>
+      <td>
+        <p> Drops the primary key from a table.</p>
+         <p>Note that if you then add a new
             primary key, the same upsert behavior will be applied as with adding any primary
             key. This can result in data deletion, so make sure you understand how the
             upsert will affect your data ahead of time.
-            For example:+++&lt;/p&gt;+++
-         +++&lt;p&gt;++++++&lt;code&gt;+++ALTER TABLE "sales" DROP CONSTRAINT PRIMARY KEY;+++&lt;/code&gt;++++++&lt;/p&gt;+++
-         +++&lt;p&gt;++++++&lt;code&gt;+++ALTER TABLE "sales" ADD CONSTRAINT PRIMARY KEY ("PO_number");+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
-   +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;p&gt;++++++&lt;code&gt;+++ALTER TABLE &lt;table&gt; DROP [CONSTRAINT | RELATIONSHIP]
-       &lt;name&gt;;+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;+++
-      +++&lt;td&gt;++++++&lt;p&gt;+++Drops the named foreign key or relationship between two tables. For example:+++&lt;/p&gt;+++
-         +++&lt;p&gt;++++++&lt;code&gt;+++ALTER TABLE "sales_fact" DROP CONSTRAINT "FK_PO_number";+++&lt;/code&gt;++++++&lt;/p&gt;+++
-        +++&lt;p&gt;++++++&lt;code&gt;+++ALTER TABLE "fruit_dim" DROP RELATIONSHIP "REL_dates";+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
-   +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;p&gt;++++++&lt;code&gt;+++ALTER TABLE &lt;table&gt; [SET DIMENSION | SET FACT [PARTITION BY
-         HASH [(&lt;shards&gt;)] [KEY(&lt;column&gt;)]]]+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;+++
-      +++&lt;td&gt;++++++&lt;div&gt;++++++&lt;p&gt;+++Changes the partitioning on a table by doing one of:+++&lt;/p&gt;+++
-            +++&lt;ul class="ul" id="reference_cbc_fx4_j4__ul_egx_4jg_wv"&gt;++++++&lt;li&gt;+++re-sharding a sharded table+++&lt;/li&gt;+++
-               +++&lt;li&gt;+++changing a replicated table to a sharded table+++&lt;/li&gt;+++
-               +++&lt;li&gt;+++changing a sharded table to a replicated (unsharded) table+++&lt;/li&gt;++++++&lt;/ul&gt;+++
-            +++&lt;p&gt;+++By default, ThoughtSpot does not shard dimension tables.+++&lt;/p&gt;++++++&lt;/div&gt;+++
-         +++&lt;p&gt;+++To change the partitioning on a table, or to change a dimension table to a
-            sharded table, use +++&lt;code&gt;+++ALTER TABLE\...SET FACT PARTITION BY HASH\...;+++&lt;/code&gt;++++++&lt;/p&gt;+++
-         +++&lt;p&gt;+++To make a sharded table into a dimension table (replicated on every node),  use
-            +++&lt;code&gt;+++ALTER TABLE\...SET DIMENSION;+++&lt;/code&gt;+++ command.+++&lt;/p&gt;+++
-         +++&lt;p&gt;+++Examples of this statement:+++&lt;/p&gt;+++
-         +++&lt;p&gt;++++++&lt;code&gt;+++ALTER TABLE "sales_fact" SET FACT PARTITION BY HASH (96) KEY
+            For example:
+         </p>
+         <p><code>ALTER TABLE "sales" DROP CONSTRAINT PRIMARY KEY;</code></p>
+         <p><code>ALTER TABLE "sales" ADD CONSTRAINT PRIMARY KEY ("PO_number");</code></p>
+
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <p><code>ALTER TABLE &lt;table&gt; DROP [CONSTRAINT | RELATIONSHIP]
+       &lt;name&gt;;</code></p>
+      </td>
+      <td><p>Drops the named foreign key or relationship between two tables. For example:</p>
+         <p><code>ALTER TABLE "sales_fact" DROP CONSTRAINT "FK_PO_number";</code></p>
+        <p><code>ALTER TABLE "fruit_dim" DROP RELATIONSHIP "REL_dates";</code></p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <p><code>ALTER TABLE &lt;table&gt; [SET DIMENSION | SET FACT [PARTITION BY
+         HASH [(&lt;shards&gt;)] [KEY(&lt;column&gt;)]]]</code></p>
+      </td>
+      <td>
+         <div>
+            <p>Changes the partitioning on a table by doing one of:</p>
+            <ul class="ul" id="reference_cbc_fx4_j4__ul_egx_4jg_wv">
+               <li>re-sharding a sharded table</li>
+               <li>changing a replicated table to a sharded table</li>
+               <li>changing a sharded table to a replicated (unsharded) table</li>
+            </ul>
+            <p>By default, ThoughtSpot does not shard dimension tables.</p>
+         </div>
+         <p>To change the partitioning on a table, or to change a dimension table to a
+            sharded table, use <code>ALTER TABLE...SET FACT PARTITION BY HASH...;</code>
+         </p>
+         <p>To make a sharded table into a dimension table (replicated on every node),  use
+            <code>ALTER TABLE...SET DIMENSION;</code> command.
+         </p>
+         <p>Examples of this statement:</p>
+         <p><code>ALTER TABLE "sales_fact" SET FACT PARTITION BY HASH (96) KEY
          ("PO_number");
-         ALTER TABLE "fruit_dim" SET DIMENSION;+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
-   +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;p&gt;++++++&lt;code align="left"&gt;+++ALTER TABLE &lt;table&gt; MODIFY COLUMN &lt;column&gt;
-&lt;new_data_type&gt;;+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;+++
-      +++&lt;td&gt;++++++&lt;p&gt;+++Changes the data type of a column. This can have implications on sharding and
-            primary key behavior. See &lt;a href="{{"/admin/loading/about-data-type-conversion.html#concept_u2t_clg_wv" | prepend: site.baseurl}}"&gt; About data type conversion&lt;/a&gt;. For example:+++&lt;/p&gt;+++
-         +++&lt;p&gt;++++++&lt;code&gt;+++ALTER TABLE fact100 MODIFY COLUMN product_id int;+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;++++++&lt;/tbody&gt;++++++&lt;/table&gt;+++</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_modify_data"><a class="anchor" href="#_modify_data"></a>Modify data<table><colgroup><col style="width:25%"></col></h2>
-<div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>   +++&lt;col style="width:75%"&gt;++++++&lt;/col&gt;++++++&lt;/colgroup&gt;+++
-+++&lt;thead&gt;++++++&lt;tr&gt;++++++&lt;th&gt;+++Syntax+++&lt;/th&gt;+++
-      +++&lt;th&gt;+++Description+++&lt;/th&gt;++++++&lt;/tr&gt;++++++&lt;/thead&gt;+++
-+++&lt;tbody&gt;++++++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;p&gt;++++++&lt;code&gt;+++INSERT INTO &lt;table&gt; VALUES \...+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;+++
-      +++&lt;td&gt;++++++&lt;p&gt;+++Inserts values into a table. Only use this for testing. Do not use +++&lt;code&gt;+++INSERT+++&lt;/code&gt;+++ on
-         a production system. For example:+++&lt;/p&gt;+++</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>            +++&lt;p&gt;++++++&lt;code&gt;+++INSERT INTO "vendor" VALUES ('helen rose', 'jacob norse', 'eileen ruff',
-'manny gates');+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
-      +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;p&gt;++++++&lt;code align="left"&gt;+++ALTER TABLE &lt;table&gt; SET LOAD PRIORITY &lt;value&gt;
-   &lt;new_data_type&gt;;+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;+++
-         +++&lt;td&gt;++++++&lt;p&gt;+++Sets the load priority for a table. Load priority determines the order in which a table is loaded on a cluster restart. You can set any value from +++&lt;code&gt;+++1-100+++&lt;/code&gt;+++. The system default for all tables is +++&lt;code&gt;+++50+++&lt;/code&gt;+++. For example:+++&lt;/p&gt;+++
-            +++&lt;p&gt;++++++&lt;code&gt;+++ALTER TABLE 'sales_facts' SET LOAD PRIORITY 1;+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
-      +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;p&gt;++++++&lt;code&gt;+++UPDATE &lt;table&gt; \... SET \... [WHERE \...]+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;+++
-         +++&lt;td&gt;++++++&lt;p&gt;+++Updates rows in a table that match optionally provided predicates. Predicates
-            have the form +++&lt;code&gt;+++column = value+++&lt;/code&gt;+++ connected by the +++&lt;code&gt;+++AND+++&lt;/code&gt;+++ keyword. Sets the column values
-            to the specified values. For example:+++&lt;/p&gt;+++
-            +++&lt;p&gt;++++++&lt;code&gt;+++UPDATE "location" SET "borough" = 'staten island', "city" = 'new york'
-WHERE "borough" = 'staten isl' AND city = 'NY';+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
-      +++&lt;tr&gt;++++++&lt;td&gt;++++++&lt;p&gt;++++++&lt;code&gt;+++DELETE FROM &lt;table&gt; [WHERE\...]+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;+++
-         +++&lt;td&gt;++++++&lt;p&gt;+++Deletes rows from a table that match optionally provided predicates.
-            Predicates have the form +++&lt;code&gt;+++column = value+++&lt;/code&gt;+++ connected by the +++&lt;code&gt;+++AND+++&lt;/code&gt;+++ keyword. When specifying dates, use +++&lt;a href="https://www.epochconverter.com/"&gt;+++epoch values+++&lt;/a&gt;+++. Other date formats can result in error and unwanted deletion of data from the table.
-         For example.+++&lt;/p&gt;+++</pre>
-</div>
-</div>
-<div class="paragraph">
-<p><p><code>DELETE FROM "vendor" WHERE "name" = 'Joey Smith' AND "vendorid" =
-'19463';</code></p></td></tr></tbody></table></p>
-</div>
+         ALTER TABLE "fruit_dim" SET DIMENSION;</code></p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <p><code align="left">ALTER TABLE &lt;table&gt; MODIFY COLUMN &lt;column&gt;
+&lt;new_data_type&gt;;</code></p>
+      </td>
+      <td>
+         <p>Changes the data type of a column. This can have implications on sharding and
+            primary key behavior. See <a href="{{"/admin/loading/about-data-type-conversion.html#concept_u2t_clg_wv" | prepend: site.baseurl}}"> About data type conversion</a>. For example:
+         </p>
+         <p><code>ALTER TABLE fact100 MODIFY COLUMN product_id int;</code></p>
+      </td>
+   </tr>
+
+   </tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
@@ -2942,69 +3072,212 @@ WHERE "borough" = 'staten isl' AND city = 'NY';+++&lt;/code&gt;++++++&lt;/p&gt;+
 <div class="paragraph">
 <p>Constraints and relationships in ThoughtSpot are used to define the relationships between tables (how they can be joined).
 However, constraints are not enforced, as they would be in a transactional database.
-You can define the following constraints when creating a table with <code>CREATE TABLE</code>, or add them to an existing table using the <code>ADD CONSTRAINT</code> syntax:<table><colgroup><col style="width:25%"></col>
-      <col style="width:75%"></col></colgroup>
-   <thead><tr><th>Syntax</th>
-         <th>Description</th></tr></thead>
-   <tbody><tr><td>PRIMARY KEY</td>
-         <td>Designates a unique, non-null value as the primary key for a table. This can
+You can define the following constraints when creating a table with <code>CREATE TABLE</code>, or add them to an existing table using the <code>ADD CONSTRAINT</code> syntax:</p>
+</div>
+<table>
+   <colgroup>
+      <col style="width:25%">
+      <col style="width:75%">
+   </colgroup>
+   <thead >
+      <tr>
+         <th>Syntax</th>
+         <th>Description</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>PRIMARY KEY</td>
+         <td>
+            Designates a unique, non-null value as the primary key for a table. This can
             be one column or a combination of columns. If values are not unique, an upsert
                will be performed if a row includes a primary key that is already present in the
                data. Some examples:
-            &lt;/p&gt;
+            </p>
 <p><code>CREATE TABLE "schools" ( "schoolID" varchar(15), "schoolName"
 varchar(255), "schoolCity" varchar(55), "schoolState" varchar(55), "schoolNick"
 varchar(55), CONSTRAINT PRIMARY KEY ("schoolID") ) ;</code></p>
 <p><code>ALTER TABLE "cart" ADD CONSTRAINT PRIMARY KEY ("cart_id");</code></p>
-<p><code>ALTER TABLE "cart" DROP CONSTRAINT PRIMARY KEY "cart_id";</code></p></td></tr>
-      <tr><td>FOREIGN KEY</td>
-         <td><p>Defines a relationship where the value(s) in the table are used to join to a
+<p><code>ALTER TABLE "cart" DROP CONSTRAINT PRIMARY KEY "cart_id";</code></p>
+         </td>
+      </tr>
+      <tr>
+         <td>FOREIGN KEY</td>
+         <td>
+            <p>Defines a relationship where the value(s) in the table are used to join to a
             second table. Uses an equality operator. The foreign key must match the primary
             key of the table that is referenced in number, column type, and order of
             columns.</p>
             <p>When creating a foreign key, give it a name. You can reference the
-               foreign key name later, if you want to remove it.</p>
+               foreign key name later, if you want to remove it.
+            </p>
 <p>Examples of this statement:</p>
 <p><code>ALTER TABLE "batting" ADD CONSTRAINT "FK_player" FOREIGN KEY ("playerID")
-REFERENCES "players" ("playerID");</code></p></p>
-</div>
-<div class="paragraph">
-<p><p><code>ALTER TABLE "batting" ADD CONSTRAINT "FK_lg_team" FOREIGN KEY ("lgID" ,"teamID")
-REFERENCES "teams" ("lgID" ,"teamID");</code></p></p>
-</div>
-<div class="paragraph">
-<p><p><code>ALTER TABLE "shipment" ADD CONSTRAINT "FK_PO_vendor" FOREIGN KEY ("po_number",
-"vendor") REFERENCES "orders" ("po_number", "vendor");</code></p></p>
-</div>
-<div class="paragraph">
-<p><p><code>ALTER TABLE "shipment" DROP CONSTRAINT "FK_PO_vendor";</code></p></td></tr>
-      <tr><td>RELATIONSHIP</td>
-         <td><p>Defines a relationship where the value(s) in the table can be used to join to
+REFERENCES "players" ("playerID");</code></p>
+
+<p><code>ALTER TABLE "batting" ADD CONSTRAINT "FK_lg_team" FOREIGN KEY ("lgID" ,"teamID")
+REFERENCES "teams" ("lgID" ,"teamID");</code></p>
+
+<p><code>ALTER TABLE "shipment" ADD CONSTRAINT "FK_PO_vendor" FOREIGN KEY ("po_number",
+"vendor") REFERENCES "orders" ("po_number", "vendor");</code></p>
+
+<p><code>ALTER TABLE "shipment" DROP CONSTRAINT "FK_PO_vendor";</code></p>
+         </td>
+      </tr>
+      <tr>
+         <td>RELATIONSHIP</td>
+         <td>
+            <p>Defines a relationship where the value(s) in the table can be used to join to
             a second table, using an equality condition (required) and one or more range
             conditions (optional). These conditions act like a WHERE clause when the two
             tables are joined. They are applied using AND logic, such that all conditions must
             be met for a row to be included.</p>
             <p>You may add multiple relationships between
                tables. When creating a relationship, give it a name. You can reference
-               the relationship name later, if you want to remove it.</p>
+               the relationship name later, if you want to remove it.
+            </p>
             <p>Examples of this statement:</p>
             <p><code>ALTER TABLE "wholesale_buys" ADD RELATIONSHIP "REL_fruit" WITH
 "retail_sales" AS "wholesale_buys"."fruit" = "retail_sales"."fruit" AND
 ("wholesale_buys"."date_order" &lt; "retail_sales"."date_sold" AND
-"retail_sales"."date_sold" &lt; "wholesale_buys"."expire_date");</code></p></p>
-</div>
-<div class="paragraph">
-<p><p><code>ALTER TABLE "wholesale_buys" DROP RELATIONSHIP "REL_fruit";</code></p></td></tr>
-      <tr><td></td></tr></tbody></table></p>
-</div>
+"retail_sales"."date_sold" &lt; "wholesale_buys"."expire_date");</code></p>
+
+<p><code>ALTER TABLE "wholesale_buys" DROP RELATIONSHIP "REL_fruit";</code></p>
+         </td>
+      </tr>
+      <tr>
+      <td>
+
+      </td>
+      </tr>
+   </tbody>
+</table>
 <div class="sect2">
 <h3 id="_permitted_joins_and_necessary_permissions"><a class="anchor" href="#_permitted_joins_and_necessary_permissions"></a>Permitted joins and necessary permissions</h3>
 <div class="paragraph">
 <p>See this matrix for information about which joins you can create, and what permissions these joins require.</p>
 </div>
-<div class="paragraph">
-<p>{% include content/joins-matrix.md %}</p>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1112%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">Worksheets</th>
+<th class="tableblock halign-left valign-top">View</th>
+<th class="tableblock halign-left valign-top">Materialized View</th>
+<th class="tableblock halign-left valign-top">Imported table (UI)</th>
+<th class="tableblock halign-left valign-top">Table uploaded from backend (tsload) or through DataFlow</th>
+<th class="tableblock halign-left valign-top">Table uploaded through Embrace</th>
+<th class="tableblock halign-left valign-top">View on top of table uploaded through Embrace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Necessary permissions:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">None</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">None</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">None</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Can manage data permission to load the table</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Admin privileges to access tsload</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">None</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">None</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Worksheets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Can edit permission on the source Worksheet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Can edit permission on the source View</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Materialized View</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Can edit permission on the source Materialized View</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p>
+<p class="tableblock">Note: It is a best practice to create this join through the UI, rather than using TQL.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Imported table (UI)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Can edit permission on the source table</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Table uploaded from backend (tsload) or through DataFlow</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Can edit permission on the source table</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Table uploaded through Embrace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Can edit permission on the source table, and can manage data permission</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p>
+<p class="tableblock">Note: The two tables must be from the same connection.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p>
+<p class="tableblock">Note: The View and the table must be from the same connection.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View on top of table uploaded through Embrace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Can edit permission on the source View</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p>
+<p class="tableblock">Note: The View and the table must be from the same connection.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p>
+<p class="tableblock">Note: The two Views must be from the same connection.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -3012,38 +3285,85 @@ REFERENCES "teams" ("lgID" ,"teamID");</code></p></p>
 <h2 id="_data_types"><a class="anchor" href="#_data_types"></a>Data types</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>ThoughtSpot supports a simplified list of data types:<table><colgroup><col style="width:25%"></col>
-      <col style="width:25%"></col>
-      <col style="width:50%"></col></colgroup>
-   <thead><tr><th>Syntax</th>
+<p>ThoughtSpot supports a simplified list of data types:</p>
+</div>
+<table>
+   <colgroup>
+      <col style="width:25%">
+      <col style="width:25%">
+      <col style="width:50%">
+   </colgroup>
+   <thead >
+      <tr>
+         <th>Syntax</th>
          <th>Description</th>
-         <th>Examples</th></tr></thead>
-   <tbody><tr><td>Character</td>
-         <td><ul class="ul" id="reference_cbc_fx4_j4__d109e35"><li>VARCHAR(<em class="ph i">n</em>)</li></ul></td>
+         <th>Examples</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>Character</td>
+         <td>
+            <ul class="ul" id="reference_cbc_fx4_j4__d109e35">
+               <li>VARCHAR(<em class="ph i">n</em>)</li>
+            </ul>
+         </td>
          <td>Specify the maximum number of characters, as in VARCHAR(255). The size limit is 64MB for
-            VARCHAR values.</td></tr>
-      <tr><td>Floating point</td>
-         <td><ul class="ul" id="reference_cbc_fx4_j4__d109e47"><li>DOUBLE</li>
-               <li>FLOAT</li></ul></td>
-         <td>DOUBLE is recommended.</td></tr>
-      <tr><td>Boolean</td>
-         <td><ul class="ul" id="reference_cbc_fx4_j4__d109e58"><li>BOOL</li></ul></td>
-         <td>Can be <code class="ph codeph">true</code> or <code class="ph codeph">false</code>.</td></tr>
-      <tr><td>Integer</td>
-         <td><ul class="ul" id="reference_cbc_fx4_j4__d109e73"><li>INT</li>
-               <li>BIGINT</li></ul></td>
-         <td>INT holds 32 bits.
-            <p>BIGINT holds 64 bits.</p></td></tr>
-      <tr><td>Date or time</td>
-         <td><ul class="ul" id="reference_cbc_fx4_j4__d109e86"><li>DATE</li>
+            VARCHAR values.
+         </td>
+      </tr>
+      <tr>
+         <td>Floating point</td>
+         <td>
+            <ul class="ul" id="reference_cbc_fx4_j4__d109e47">
+               <li>DOUBLE</li>
+               <li>FLOAT</li>
+            </ul>
+         </td>
+         <td>DOUBLE is recommended.</td>
+      </tr>
+      <tr>
+         <td>Boolean</td>
+         <td>
+            <ul class="ul" id="reference_cbc_fx4_j4__d109e58">
+               <li>BOOL</li>
+            </ul>
+         </td>
+         <td>Can be <code class="ph codeph">true</code> or <code class="ph codeph">false</code>.</td>
+      </tr>
+      <tr>
+         <td>Integer</td>
+         <td>
+            <ul class="ul" id="reference_cbc_fx4_j4__d109e73">
+               <li>INT</li>
+               <li>BIGINT</li>
+            </ul>
+         </td>
+         <td>
+            INT holds 32 bits.
+            <p>BIGINT holds 64 bits.</p>
+         </td>
+      </tr>
+      <tr>
+         <td>Date or time</td>
+         <td>
+            <ul class="ul" id="reference_cbc_fx4_j4__d109e86">
+               <li>DATE</li>
                <li>DATETIME</li>
                <li>TIMESTAMP</li>
-               <li>TIME</li></ul></td>
-         <td><p>DATETIME, TIMESTAMP, and TIME are stored at the granularity of seconds</p>.
+               <li>TIME</li>
+            </ul>
+         </td>
+         <td>
+            <p>DATETIME, TIMESTAMP, and TIME are stored at the granularity of seconds</p>.
             <p>TIMESTAMP is
                identical to DATETIME, but is included for syntax
-               compatibility.</p></td></tr></tbody></table></p>
-</div>
+               compatibility.
+            </p>
+         </td>
+      </tr>
+   </tbody>
+</table>
 </div>
 </div>
 </article>

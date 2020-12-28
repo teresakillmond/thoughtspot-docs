@@ -1,8 +1,7 @@
-= ["JDBC Driver Overview"]
+= JDBC Driver Overview
 :last_updated: tbd
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Use JDBC to interact with databases in a standard manner.
+
+Use JDBC to interact with databases in a standard manner.
 
 Java Database Connectivity (JDBC) is a Java standard API that allows applications to interact with databases in a standard manner.
 ThoughtSpot has JDBC support through a JDBC driver that we provide.
@@ -35,5 +34,5 @@ These are some general recommendations for maximizing the performance of JDBC:
 * Insert in batches rather than doing single inserts at a time using the `PreparedStatement::addBatch()` and `PreparedStatement::executeBatch` commands.
 * If you need to upload a lot of data, consider running multiple connections with batch inserts in parallel.
 
-{% include note.html content="The ETL tool must add a data transformation step if the source column data type does not exactly match the target's, ThoughtSpot's, column data type.
-The driver does not do any implicit conversions." %}
+NOTE: The ETL tool must add a data transformation step if the source column data type does not exactly match the target's, ThoughtSpot's, column data type.
+The driver does not do any implicit conversions.

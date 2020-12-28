@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>Untitled :: ThoughtSpot Software</title>
+    <title>Install the ODBC Driver on Linux :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 2.3.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -15,7 +15,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Untitled | ThoughtSpot Software</title>
+    <title>Install the ODBC Driver on Linux | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
@@ -2187,16 +2187,16 @@
     <span class="nav-text">SQL Server</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server.adoc">Overview</a>
+    <a class="nav-link" href="dataflow-sql-server.html">Overview</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-add.adoc">Connect</a>
+    <a class="nav-link" href="dataflow-sql-server-add.html">Connect</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-sync.adoc">Sync</a>
+    <a class="nav-link" href="dataflow-sql-server-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-reference.adoc">Reference</a>
+    <a class="nav-link" href="dataflow-sql-server-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2277,7 +2277,7 @@
     <a class="nav-link" href="dataflow-amazon-s3-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-amazon-s3-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-amazon-s3-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2295,7 +2295,7 @@
     <a class="nav-link" href="dataflow-azure-blob-storage-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-azure-blob-storage-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-azure-blob-storage-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2313,7 +2313,7 @@
     <a class="nav-link" href="dataflow-files-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-files-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-files-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2331,7 +2331,7 @@
     <a class="nav-link" href="dataflow-google-cloud-storage-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-google-cloud-storage-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-google-cloud-storage-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2349,7 +2349,7 @@
     <a class="nav-link" href="dataflow-hdfs-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-hdfs-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-hdfs-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2376,7 +2376,7 @@
     <a class="nav-link" href="dataflow-salesforce-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-salesforce-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-salesforce-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2569,7 +2569,13 @@
     <a class="nav-link" href="stop-words.html">Stop word reference</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="geomap-reference.html">Geo Map reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-australia.html">Australia</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="glossary.html">Glossary</a>
@@ -2658,23 +2664,54 @@
 </div>
   <div class="content">
 <article class="doc">
-<hr>
+<h1 class="page">Install the ODBC Driver on Linux</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>title: [Install the ODBC Driver on Linux]</p>
+<p>Use this procedure to obtain the Linux ODBC driver and install it.</p>
 </div>
 <div class="paragraph">
-<p>last_updated: tbd summary: "Use this procedure to obtain the Linux ODBC driver and install it." sidebar: mydoc_sidebar permalink: /:collection/:path.html&#8201;&#8212;&#8201;ThoughtSpot&#8217;s ODBC connection relies on the <a href="https://www.simba.com/products/SEN/doc/Client-Server_user_guide/content/clientserver/configuringsimbaclientodbc/simbaclientodbcunix.htm">SimbaEngine X SDK</a> to connect through ODBC or JDBC to ThoughtSpot&#8217;s remote data stores.
+<p>ThoughtSpot&#8217;s ODBC connection relies on the <a href="#https://www.simba.com/products/SEN/doc/Client-Server_user_guide/content/clientserver/configuringsimbaclientodbc/simbaclientodbcunix.htm">SimbaEngine X SDK</a> to connect through ODBC or JDBC to ThoughtSpot&#8217;s remote data stores.
 The instructions on this page explain how to configure the Simba ODBC driver on a Linux workstation.</p>
 </div>
 <div class="paragraph">
-<p>Make sure you have read the overview material in the link:{{ site.baseurl }}/data-integrate/clients/about-odbc.html#[ODBC driver overview].
+<p>Make sure you have read the overview material in the <a href="about-odbc.html" class="page">ODBC driver overview</a>.
 This workstation is the same machine where you plan to run your ETL activities.</p>
+</div>
+</div>
 </div>
 <div class="sect1">
 <h2 id="_check_the_thoughtspot_ip_and_the_simba_server_status"><a class="anchor" href="#_check_the_thoughtspot_ip_and_the_simba_server_status"></a>Check the ThoughtSpot IP and the simba_server status</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>{% include content/simba-server-start.md %}</p>
+<p>Before you begin, you need to know the IP address or DNS name of the server you intend to connect your server to.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>SSH as <code>admin</code> or the <code>thoughtspot</code> user to your ThoughtSpot node.</p>
+</li>
+<li>
+<p>Verify the node IP(s).</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ tscli node ls
+172.18.231.17
+172.18.231.18</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Make a note of each IP;
+there may be more than one.</p>
+</li>
+<li>
+<p>Configure the ThoughtSpot firewall to allow connections from your ETL client, by running the following command on any ThoughtSpot node: <code>tscli firewall open-ports --ports 12345</code></p>
+</li>
+<li>
+<p>Exit or close the shell.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -2690,7 +2727,7 @@ This workstation is the same machine where you plan to run your ETL activities.<
 <p>Open a browser on your workstation.</p>
 </li>
 <li>
-<p>Navigate to the link:{{ site.baseurl }}/release/downloads.html#[<strong>Downloads</strong>] page.</p>
+<p>Navigate to the <a href="downloads.html" class="page"><strong>Downloads</strong></a> page.</p>
 </li>
 <li>
 <p>Click <strong>ODBC Driver for Linux</strong> to download the driver.</p>
@@ -2811,10 +2848,19 @@ You can use this architecture information in the  procedures that follow.</p>
 If you are experienced with ODBC and want to skip this, you can.
 Simply substitute your preferred mechanism in the subsequent procedures where references are made to the unixODBC tools.</p>
 </div>
-<div class="paragraph">
-<p>{% include warning.html content="Your ThoughtSpot installation contains a version of the unixODBC tools.
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Your ThoughtSpot installation contains a version of the unixODBC tools.
 These tools are incompatible with CentOS.
-Do not use these tools if you are performing this procedure on your ThoughtSpot server." %}</p>
+Do not use these tools if you are performing this procedure on your ThoughtSpot server.
+</td>
+</tr>
+</table>
 </div>
 <div class="olist arabic">
 <ol class="arabic">

@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>Untitled :: ThoughtSpot Software</title>
+    <title>Set up the JDBC driver for Pentaho :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 2.3.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -15,7 +15,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Untitled | ThoughtSpot Software</title>
+    <title>Set up the JDBC driver for Pentaho | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
@@ -2187,16 +2187,16 @@
     <span class="nav-text">SQL Server</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server.adoc">Overview</a>
+    <a class="nav-link" href="dataflow-sql-server.html">Overview</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-add.adoc">Connect</a>
+    <a class="nav-link" href="dataflow-sql-server-add.html">Connect</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-sync.adoc">Sync</a>
+    <a class="nav-link" href="dataflow-sql-server-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-reference.adoc">Reference</a>
+    <a class="nav-link" href="dataflow-sql-server-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2277,7 +2277,7 @@
     <a class="nav-link" href="dataflow-amazon-s3-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-amazon-s3-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-amazon-s3-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2295,7 +2295,7 @@
     <a class="nav-link" href="dataflow-azure-blob-storage-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-azure-blob-storage-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-azure-blob-storage-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2313,7 +2313,7 @@
     <a class="nav-link" href="dataflow-files-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-files-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-files-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2331,7 +2331,7 @@
     <a class="nav-link" href="dataflow-google-cloud-storage-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-google-cloud-storage-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-google-cloud-storage-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2349,7 +2349,7 @@
     <a class="nav-link" href="dataflow-hdfs-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-hdfs-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-hdfs-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2376,7 +2376,7 @@
     <a class="nav-link" href="dataflow-salesforce-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-salesforce-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-salesforce-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2569,7 +2569,13 @@
     <a class="nav-link" href="stop-words.html">Stop word reference</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="geomap-reference.html">Geo Map reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-australia.html">Australia</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="glossary.html">Glossary</a>
@@ -2657,12 +2663,11 @@
 </div>
   <div class="content">
 <article class="doc">
-<hr>
+<h1 class="page">Set up the JDBC driver for Pentaho</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>title: [Set up the JDBC driver for Pentaho]</p>
-</div>
-<div class="paragraph">
-<p>last_updated: 11/19/2019 summary: "Use Pentaho to create a JDBC connection to ThoughtSpot." sidebar: mydoc_sidebar permalink: /:collection/:path.html&#8201;&#8212;&#8201;</p>
+<p>Use Pentaho to create a JDBC connection to ThoughtSpot.</p>
 </div>
 <div class="paragraph">
 <p>You can use the Pentaho Data Integration (PDI) to create a JDBC connection.
@@ -2682,11 +2687,40 @@ Using the community edition is sufficient, though you may use the enterprise edi
 <p>Use JDBC to connect to the ThoughtSpot Simba server from Pentaho.
 The connection will be made between a new ThoughtSpot Table Input and Output objects.</p>
 </div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_check_the_thoughtspot_ip_and_the_simba_server_status"><a class="anchor" href="#_check_the_thoughtspot_ip_and_the_simba_server_status"></a>Check the ThoughtSpot IP and the simba_server status</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>{% include content/simba-server-start.md %}</p>
+<p>Before you begin, you need to know the IP address or DNS name of the server you intend to connect your server to.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>SSH as <code>admin</code> or the <code>thoughtspot</code> user to your ThoughtSpot node.</p>
+</li>
+<li>
+<p>Verify the node IP(s).</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ tscli node ls
+172.18.231.17
+172.18.231.18</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Make a note of each IP;
+there may be more than one.</p>
+</li>
+<li>
+<p>Configure the ThoughtSpot firewall to allow connections from your ETL client, by running the following command on any ThoughtSpot node: <code>tscli firewall open-ports --ports 12345</code></p>
+</li>
+<li>
+<p>Exit or close the shell.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -2703,7 +2737,7 @@ This will ensure that the drivers picked up at runtime.</p>
 <p>Log in to the local machine where you have alredy installed the Pentaho Data Integration (PDI) client.</p>
 </li>
 <li>
-<p>Click link:{{ site.baseurl }}/release/downloads.html[<strong>Here</strong>] to download the JDBC driver.</p>
+<p>Click <a href="downloads.html" class="page"><strong>Here</strong></a> to download the JDBC driver.</p>
 </li>
 <li>
 <p>Click <strong>JDBC Driver</strong> to download the file <code>thoughtspot_jdbc&lt;version&gt;.jar</code>.</p>
@@ -2887,41 +2921,69 @@ Click <strong>OK</strong> to start the transformation in preview.</p>
 </div>
 </li>
 <li>
-<p>Enter or select the following information in the Database Connection dialog:<table><tr><th>Field</th>
-   <th>Description</th></tr>
-<tr><th>Connection Name</th>
-   <td>Any string.</td></tr>
-<tr><th>Connection Type</th>
-   <td>Generic database</td></tr>
-<tr><th>Access</th>
-   <td>Native (JDBC)</td></tr>
-<tr><th>Custom Connection URL</th>
-   <td><code>jdbc:simba://SERVER_IP:12345;Database=DATABASE_or_SCHEMA_NAME</code>&lt;/code&gt;
-   <p>The IP is a node in your ThoughtSpot cluster. The name or schema of the database you want to connect to. Use TQL to create a database name if needed. Ensure that there are no leading or trailing spaces.</p></td></tr>
-<tr><th>Custom Driver Class Name</th>
-   <td><code>com.simba.client.core.jdbc4.JDBC4Driver</code>
-   <p>Ensure that there are no leading or trailing spaces.</p></td></tr>
-<tr><th>User Name</th>
-   <td>A ThoughtSpot username. If you leave this empty, you are prompted for it at connection time. This user should have <strong>Data Management</strong> privileges on ThoughtSpot.</td></tr>
-<tr><th>Password</th>
-   <td>The password for the <strong>User Name</strong>. If you leave this empty, you are prompted for it at connection time.</td></tr></table></p>
-<div class="imageblock">
-<div class="content">
-<img src="_images/database_connection_pentaho.png" alt="database connection pentaho">
-</div>
-</div>
+<p>Enter or select the following information in the Database Connection dialog:</p>
 </li>
-<li>
-<p>Click <strong>Test</strong> to test your database connection.</p>
-</li>
-<li>
-<p>If you are able to make a successful connection to the ThoughtSpot Simba Server, click <strong>OK</strong>.</p>
-<div class="imageblock">
-<div class="content">
-<img src="_images/database_connection_test_pentaho.png" alt="database connection test pentaho">
+</ol>
 </div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Field</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Connection Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Any string.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Connection Type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generic database</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Access</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Native (JDBC)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Custom Connection URL</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>jdbc:simba://SERVER_IP:12345;Database=DATABASE_or_SCHEMA_NAME</code></p>
 </div>
-</li>
+<div class="paragraph">
+<p>The IP is a node in your ThoughtSpot cluster. The name or schema of the database you want to connect to. Use TQL to create a database name if needed. Ensure that there are no leading or trailing spaces.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Custom Driver Class Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>com.simba.client.core.jdbc4.JDBC4Driver</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>User Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A ThoughtSpot username. If you leave this empty, you are prompted for it at connection time. This user should have <strong>Data Management</strong> privileges on ThoughtSpot.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Password</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The password for the <strong>User Name</strong>. If you leave this empty, you are prompted for it at connection time.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>+
+image::database_connection_pentaho.png[]
+. Click <strong>Test</strong> to test your database connection.
+. If you are able to make a successful connection to the ThoughtSpot Simba Server, click <strong>OK</strong>.</p>
+</div>
+<div class="paragraph">
+<p>+
+image::database_connection_test_pentaho.png[]</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Click <strong>OK</strong> in the Database Connection dialog to create the new connection.</p>
 </li>

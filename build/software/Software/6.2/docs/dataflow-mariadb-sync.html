@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["Sync data through a MariaDB connection"] :: ThoughtSpot Software</title>
+    <title>Sync data through a MariaDB connection :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 2.3.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -15,7 +15,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>["Sync data through a MariaDB connection"] | ThoughtSpot Software</title>
+    <title>Sync data through a MariaDB connection | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
@@ -2187,16 +2187,16 @@
     <span class="nav-text">SQL Server</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server.adoc">Overview</a>
+    <a class="nav-link" href="dataflow-sql-server.html">Overview</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-add.adoc">Connect</a>
+    <a class="nav-link" href="dataflow-sql-server-add.html">Connect</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-sync.adoc">Sync</a>
+    <a class="nav-link" href="dataflow-sql-server-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server-reference.adoc">Reference</a>
+    <a class="nav-link" href="dataflow-sql-server-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2277,7 +2277,7 @@
     <a class="nav-link" href="dataflow-amazon-s3-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-amazon-s3-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-amazon-s3-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2295,7 +2295,7 @@
     <a class="nav-link" href="dataflow-azure-blob-storage-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-azure-blob-storage-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-azure-blob-storage-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2313,7 +2313,7 @@
     <a class="nav-link" href="dataflow-files-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-files-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-files-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2331,7 +2331,7 @@
     <a class="nav-link" href="dataflow-google-cloud-storage-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-google-cloud-storage-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-google-cloud-storage-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2349,7 +2349,7 @@
     <a class="nav-link" href="dataflow-hdfs-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-hdfs-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-hdfs-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2376,7 +2376,7 @@
     <a class="nav-link" href="dataflow-salesforce-sync.html">Sync</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-salesforce-reference.html">Sync</a>
+    <a class="nav-link" href="dataflow-salesforce-reference.html">Reference</a>
   </li>
 </ul>
   </li>
@@ -2569,7 +2569,13 @@
     <a class="nav-link" href="stop-words.html">Stop word reference</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="geomap-reference.html">Geo Map reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-australia.html">Australia</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="glossary.html">Glossary</a>
@@ -2659,39 +2665,397 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["Sync data through a MariaDB connection"]</h1>
+<h1 class="page">Sync data through a MariaDB connection</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
 <p>After using ThoughtSpot DataFlow to establish a connection to a MariaDB database, you can create automatic data updates, to seamlessly refresh your data.</p>
 </div>
 <div class="paragraph">
-<p>{% include content/dataflow/sync-for-databases.md %}</p>
+<p>To sync your data, perform these tasks:</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_select_table"><a class="anchor" href="#_select_table"></a>Select table</h2>
+<div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Specify the sync properties for MariaDB:</p>
+<p>Immediately after creating a new connection, the connection detail page appears.</p>
+<div class="paragraph">
+<p>You can fill out this information immediately, or return to it at a later stage, by clicking on the connection name in the list of connections.</p>
+</div>
+</li>
+<li>
+<p>On the connection detail page, click <strong>Add table sync</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Add table sync</strong> interface, on the database selector, scroll to select and open the source database.</p>
+<div class="paragraph">
+<p>Note that you can search for the database by name.</p>
+</div>
+</li>
+<li>
+<p>From the database, select the table you plan to sync.
+You can also search for the table by name.</p>
+<div class="paragraph">
+<p>Note that if you use multiple tables, you have to repeat these steps for each table.</p>
+</div>
+<div class="paragraph">
+<p>Before confirming that you plan to sync a particular table, examine it to ensure that it has the right information: the correct data types, and reasonable sample data.</p>
+</div>
+<div class="paragraph">
+<p>For large tables, use the search bar to search column names.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Setup sync</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_specify_sync_schedule"><a class="anchor" href="#_specify_sync_schedule"></a>Specify sync schedule</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Immediately after creating a new connection, the connection detail page appears.</p>
+</div>
+<div class="paragraph">
+<p>When you schedule you create a sync, you have the following scheduling options:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>link:{{ site.baseurl }}/data-integrate/dataflow/dataflow-mariadb-reference.html#dataflow-mariadb-sync-column-delimiter[Column delimiter] + Specify the column delimiter character.</p>
+<p>Hourly</p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/data-integrate/dataflow/dataflow-mariadb-reference.html#dataflow-mariadb-sync-enclosing-character[Enclosing character] + Specify if the text columns in the source data needs to be enclosed in quotes.</p>
+<p>Daily(default)</p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/data-integrate/dataflow/dataflow-mariadb-reference.html#dataflow-mariadb-sync-escape-character[Escape character] + Specify the escape character if using a text qualifier in the source data.</p>
+<p>Weekly</p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/data-integrate/dataflow/dataflow-mariadb-reference.html#dataflow-mariadb-sync-fetch-size[Fetch size] + Specify the number of rows to be fetched at a time and processed in memory.
-If the value specified is zero then, all rows are extracted at once.</p>
+<p>Monthly</p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/data-integrate/dataflow/dataflow-mariadb-reference.html#dataflow-mariadb-sync-ts-load-options[TS load options] + Specify the parameters passed with the <code>tsload</code> command, in addition to the commands already included by the application.</p>
+<p>Does not repeat</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>See link:{{ site.baseurl }}/data-integrate/dataflow/dataflow-mariadb-reference.html#sync-properties[Sync properties] for details, defaults, and examples.</p>
+<p>After you specify the sync schedule, click <strong>Save and sync now</strong>.
+This action saves the schedule, and starts the data sync immediately.</p>
+</div>
+<div class="paragraph">
+<p>Alternatively, if you click <strong>Save</strong>, the system saves the schedule, but does not sync the data.
+This gives you the opportunity to fine-tune the column mapping between external data sources and tables inside ThoughtSpot, such as naming, visibility, data type conversion, conditions, and so on.
+The first sync starts on the specified schedule.</p>
+</div>
+<div class="sect2">
+<h3 id="_hourly_sync"><a class="anchor" href="#_hourly_sync"></a>Hourly sync</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><dlentry id="schedule-hourly-repeat">Repeat</dt>
+<dd>
+<p>Select <strong>hourly</strong>.</p>
+</dd>
+<dt class="hdlist1">Mandatory field.</dlentry><dlentry id="schedule-hourly-starts">Starts</dt>
+<dd>
+<p>Accept the defaults, or set your own starting date and time for syncing.</p>
+<div class="paragraph">
+<p>Note that the timezone is in UTC+00:00.</p>
+</div>
+</dd>
+<dt class="hdlist1">Mandatory fields.</dlentry><dlentry id="schedule-hourly-hour">Run the task every X hour(s)</dt>
+<dd>
+<p>Select the frequency of the sync.</p>
+<div class="paragraph">
+<p>The valid range is from 1 (default) to 12 hours.</p>
+</div>
+</dd>
+<dt class="hdlist1">Mandatory field.</dlentry><dlentry id="schedule-hourly-alert-notifications">Alert notifications</dt>
+<dd>
+<p>Specify when to notify of the sync status:<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Failures (default)</p>
+</li>
+<li>
+<p>Success and Failures</p>
+</li>
+<li>
+<p>Never</dlentry></p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_daily_sync"><a class="anchor" href="#_daily_sync"></a>Daily sync</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><dlentry id="schedule-daily-repeat">Repeat</dt>
+<dd>
+<p>Select <strong>daily</strong>.</p>
+</dd>
+<dt class="hdlist1">Mandatory field.</dlentry><dlentry id="schedule-daily-starts">Starts</dt>
+<dd>
+<p>Accept the defaults, or set your own starting date and time for syncing.</p>
+<div class="paragraph">
+<p>Note that the timezone is in UTC+00:00.</p>
+</div>
+</dd>
+<dt class="hdlist1">Mandatory fields.</dlentry><dlentry id="schedule-daily-alert-notifications">Alert notifications</dt>
+<dd>
+<p>Specify when to notify of the sync status:<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Failures (default)</p>
+</li>
+<li>
+<p>Success and Failures</p>
+</li>
+<li>
+<p>Never</dlentry></p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_weekly_sync"><a class="anchor" href="#_weekly_sync"></a>Weekly sync</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><dlentry id="schedule-weekly-repeat">Repeat</dt>
+<dd>
+<p>Select <strong>weekly</strong>.</p>
+</dd>
+<dt class="hdlist1">Mandatory field.</dlentry><dlentry id="schedule-weekly-starts">Starts</dt>
+<dd>
+<p>Accept the defaults, or set your own starting date and time for syncing.</p>
+<div class="paragraph">
+<p>Note that the timezone is in UTC+00:00.</p>
+</div>
+</dd>
+<dt class="hdlist1">Mandatory fields.</dlentry><dlentry id="schedule-weekly-days">Days of the week</dt>
+<dd>
+<p>Select the days of the week when you want to sync.</p>
+<div class="paragraph">
+<p>For example, you may select only <em>Monday</em>, or only <em>Monday</em> through <em>Friday</em>.</p>
+</div>
+</dd>
+<dt class="hdlist1">Mandatory field.</dlentry><dlentry id="schedule-weekly-alert-notifications">Alert notifications</dt>
+<dd>
+<p>Specify when to notify of the sync status:<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Failures (default)</p>
+</li>
+<li>
+<p>Success and Failures</p>
+</li>
+<li>
+<p>Never</dlentry></p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_monthly_sync"><a class="anchor" href="#_monthly_sync"></a>Monthly sync</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><dlentry id="schedule-monthly-repeat">Repeat</dt>
+<dd>
+<p>Select <strong>monthly</strong>.</p>
+</dd>
+<dt class="hdlist1">Mandatory field.</dlentry><dlentry id="schedule-monthly-starts">Starts</dt>
+<dd>
+<p>Accept the defaults, or set your own starting date and time for syncing.</p>
+<div class="paragraph">
+<p>Note that the timezone is in UTC+00:00.</p>
+</div>
+</dd>
+<dt class="hdlist1">Mandatory fields.</dlentry><dlentry id="schedule-monthly-days">Day of the Month</dt>
+<dd>
+<p>Select the days of the month when you want to sync.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>There are two basic approaches:<br></p>
+</div>
+</dd>
+<dt class="hdlist1"><dlentry>Cardinal day</dt>
+<dd>
+<p>Click the <strong>Day</strong> selector, and choose by date of the month from drop down menu.</p>
+</dd>
+<dt class="hdlist1">For example, select <code>15</code> to run sync on 15th of each month.</dlentry><dlentry>Ordinal day</dt>
+<dd>
+<p>Click the <strong>The</strong> selector.
+Then choose one of <em>First</em>(default), <em>Second</em>, <em>Third</em>, <em>Fourth</em>, or <em>Last</em>.</p>
+</dd>
+<dt class="hdlist1">Then choose one of the days of the week, <em>Sunday</em> through <em>Saturday</em>.</dlentry></dlentry><dlentry id="schedule-weekly-alert-notifications">Alert notifications</dt>
+<dd>
+<p>Specify when to notify of the sync status:<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Failures (default)</p>
+</li>
+<li>
+<p>Success and Failures</p>
+</li>
+<li>
+<p>Never</dlentry></p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_does_not_repeat"><a class="anchor" href="#_does_not_repeat"></a>Does not repeat</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><dlentry id="schedule-no-repeat">Repeat</dt>
+<dd>
+<p>Select <strong>Does not repeat</strong>.</p>
+</dd>
+<dt class="hdlist1">Mandatory field.</dlentry><dlentry id="schedule-no-repeat-alert-notifications">Alert notifications</dt>
+<dd>
+<p>Specify when to notify of the sync status:<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Failures (default)</p>
+</li>
+<li>
+<p>Success and Failures</p>
+</li>
+<li>
+<p>Never</dlentry></p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_map_tables"><a class="anchor" href="#_map_tables"></a>Map tables</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To map the external tables to ThoughtSpot&#8217;s internal database, follow these steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the <strong>Advanced setup</strong> interface by clicking the toggle to open.</p>
+</li>
+<li>
+<p>Choose the <strong>Map tables and columns</strong> tab.</p>
+</li>
+<li>
+<p>Notice that the external database and table already appear, under <strong>External data source</strong>.</p>
+</li>
+<li>
+<p>Specify the following information for internal ThoughtSpot storage:<dlentry id="ts-target-database">ThoughtSpot database::::  Select an existing ThoughtSpot database from the drop-down menu.  If you wish to create a new database in ThoughtSpot, click <strong>TQL Editor</strong>, enter the <code>CREATE DATABASE my_database;</code> command, and click <strong>Execute</strong>.  Mandatory field.</dlentry><dlentry id="ts-target-schema">ThoughtSpot schema::::  Select an existing ThoughtSpot schema from the drop-down menu.  If you wish to create a new schema in your ThoughtSpot database, click <strong>TQL Editor</strong>, enter the <code>CREATE SCHEMA my_schema;</code> command, and click <strong>Execute</strong>.  Mandatory field.</dlentry><dlentry id="ts-target-new-existing">New or Existing table::::
+Mandatory field.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><dlentry>Create a new table</dt>
+<dd>
+<p>Choose this option when you want to load data into a new table.</p>
+<div class="paragraph">
+<p>The system creates a new table automatically.</p>
+</div>
+<div class="paragraph">
+<p>If you want the new table to have some special properties, create the table using the TQL Editor, proceed to <strong>Choose existing table</strong>, and then select the table you just created.
+Click <strong>TQL Editor</strong>, enter the <code>CREATE TABLE my_table ...;</code> command, and click <strong>Execute</strong>.</p>
+</div>
+</dd>
+<dt class="hdlist1">Specify the table name.</dlentry><dlentry>Choose existing table</dt>
+<dd>
+<p>Choose this option to load data into a table that already exists inside ThoughtSpot.</p>
+</dd>
+<dt class="hdlist1">Select the table name from the drop-down menu.</dlentry></dlentry><dlentry id="ts-target-table-name">ThoughtSpot table</dt>
+<dd>
+<p>The name of the target table for data sync, inside ThoughtSpot.</p>
+<div class="paragraph">
+<p>Mandatory field.</dlentry></p>
+</div>
+</dd>
+</dl>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_map_columns"><a class="anchor" href="#_map_columns"></a>Map columns</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To map the columns of the external tables to columns in ThoughtSpot&#8217;s internal tables, follow these steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the <strong>Advanced setup</strong> interface by clicking the toggle to open.</p>
+</li>
+<li>
+<p>Choose the <strong>Map tables and columns</strong> tab.</p>
+</li>
+<li>
+<p>Scroll down, to <strong>Map the columns&#8230;&#8203;</strong> section.</p>
+</li>
+<li>
+<p>Specify the following information for columns:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Select (or deselect) <strong>columns</strong> for syncing into ThoughtSpot.
++ By default, all columns are selected.</p>
+</li>
+<li>
+<p><strong>Search</strong> for columns by name;
+this is very useful for very wide tables.</p>
+</li>
+<li>
+<p><strong>Rename</strong> columns in the ThoughtSpot table, for easier search.
++ To make this change, click the pencil (edit) icon next to the name of the column.</p>
+</li>
+<li>
+<p><strong>Change the data type</strong> of the column inside the ThoughtSpot table.
++ Click the down chevron icon to open the drop-down menu, and select a new data type.
++ For example, if you know you have integer data, change the default <strong>DOUBLE</strong> datatype to <strong>INT32</strong>.</p>
+</li>
+<li>
+<p>Set <strong>Primary keys</strong> of the table by toggling the selector to the 'on' position.
++ Note that several columns may be primary keys.</p>
+</li>
+<li>
+<p>Set the <strong>Sharding keys</strong> of the table by toggling the selector to the 'on' position.</p>
+</li>
+<li>
+<p>Specify the <strong>Number of shards</strong> in the table.</p>
+</li>
+</ol>
 </div>
 </li>
 <li>
@@ -2699,6 +3063,168 @@ If the value specified is zero then, all rows are extracted at once.</p>
 + Alternatively, click <strong>Save and sync now</strong> to save your work and sync data at the same time.</p>
 </li>
 </ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_set_sync_properties"><a class="anchor" href="#_set_sync_properties"></a>Set sync properties</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_basic_sync_properties"><a class="anchor" href="#_basic_sync_properties"></a>Basic sync properties</h3>
+<div class="paragraph">
+<p>To set the sync properties, follow these steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the <strong>Advanced setup</strong> interface by clicking the toggle to open.</p>
+</li>
+<li>
+<p>Choose the <strong>Sync properties</strong> tab.</p>
+</li>
+<li>
+<p>Under <strong>Set sync properties</strong>, specify the following information:<dlentry id="set-sync-properties-condition">Condition::::
+Add the condition that restricts the import of new rows into the ThoughtSpot table.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p>For example, to import rows of data from yesterday, enter the expression <code>DATE &gt; ADD_DAYS (TODAY(),-1)</code>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">To find the correct functions for the condition, click <strong>Expression editor</strong>, use it to create a valid expression, and click <strong>OK</strong>.</dlentry><dlentry id="set-sync-properties-mode">Sync mode</dt>
+<dd>
+<p>Choose the sync mode, either <strong>Append</strong> or <strong>Overwrite</strong>.</p>
+<div class="paragraph">
+<p>Mandatory field.
+Append::: This option adds new rows to the table.
+Overwrite::: This option removes all existing rows, and then adds new rows to the table.</p>
+</div>
+</dd>
+</dl>
+</div>
+</li>
+<li>
+<p>Save your work by clicking <strong>Save</strong>.</p>
+<div class="paragraph">
+<p>Alternatively, click <strong>Save and sync now</strong> to save your work and sync data at the same time.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_scripting_for_sync"><a class="anchor" href="#_scripting_for_sync"></a>Scripting for sync</h3>
+<div class="paragraph">
+<p>To use scripting before or after the sync, follow these steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the <strong>Advanced setup</strong> interface by clicking the toggle to open.</p>
+</li>
+<li>
+<p>Choose the <strong>Sync properties</strong> tab.</p>
+</li>
+<li>
+<p>Scroll down to <strong>Advanced configuration</strong>, and click the toggle to expand.</p>
+</li>
+<li>
+<p>Specify the following information:<dlentry id="set-sync-pre-script">Pre-script::::
+Add the script that you want to run <strong>before</strong> syncing.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p>For example, to drop data that is over 1 year old, enter the following expression: + <code>DELETE from FACT_TABLE Where DATE &lt; ADD_DAYS(TODAY(),-365)</code>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">To find the correct functions for the script, click <strong>Expression editor</strong>, use it to create a valid command (or several commands), and click <strong>OK</strong>.</dlentry><dlentry id="set-sync-post-script">Post-script</dt>
+<dd>
+<p>Add the script that you want to run <strong>after</strong> syncing.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p>For example, to drop data that is over 1 year old, enter the following expression: + <code>DELETE from FACT_TABLE Where DATE &lt; ADD_DAYS(TODAY(),-365)</code>.</p>
+</div>
+<div class="paragraph">
+<p>To find the correct functions for the script, click <strong>Expression editor</strong>, use it to create a valid command (or several commands), and click <strong>OK</strong>.</dlentry></p>
+</div>
+</dd>
+</dl>
+</div>
+</li>
+<li>
+<p>Save your work by clicking <strong>Save</strong>.</p>
+<div class="paragraph">
+<p>Alternatively, click <strong>Save and sync now</strong> to save your work and sync data at the same time.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_connector_specific_sync_properties"><a class="anchor" href="#_connector_specific_sync_properties"></a>Connector-specific sync properties</h3>
+<div class="paragraph">
+<p>To modify connection-specific properties for sync, follow these steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the <strong>Advanced setup</strong> interface by clicking the toggle to open.</p>
+</li>
+<li>
+<p>Choose the <strong>Sync properties</strong> tab.</p>
+</li>
+<li>
+<p>Scroll down to <strong>Sync connector properties</strong>, and click the toggle to expand.</p>
+</li>
+<li>
+<p>Specify the sync properties for MariaDB:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="dataflow-mariadb-reference.html#dataflow-mariadb-sync-column-delimiter" class="page">Column delimiter</a>
+<br>
+Specify the column delimiter character.</p>
+</li>
+<li>
+<p><a href="dataflow-mariadb-reference.html#dataflow-mariadb-sync-enclosing-character" class="page">Enclosing character</a>
+<br>
+Specify if the text columns in the source data needs to be enclosed in quotes.</p>
+</li>
+<li>
+<p><a href="dataflow-mariadb-reference.html#dataflow-mariadb-sync-escape-character" class="page">Escape character</a>
+<br>
+Specify the escape character if using a text qualifier in the source data.</p>
+</li>
+<li>
+<p><a href="dataflow-mariadb-reference.html#dataflow-mariadb-sync-fetch-size" class="page">Fetch size</a>
+<br>
+Specify the number of rows to be fetched at a time and processed in memory. If the value specified is zero then, all rows are extracted at once.</p>
+</li>
+<li>
+<p><a href="dataflow-mariadb-reference.html#dataflow-mariadb-sync-ts-load-options" class="page">TS load options</a>
+<br>
+Specify the parameters passed with the <code>tsload</code> command, in addition to the commands already included by the application.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>See <a href="dataflow-mariadb-reference.html#sync-properties" class="page">Sync properties</a> for details, defaults, and examples.</p>
+</div>
+</li>
+<li>
+<p>Save your work by clicking <strong>Save</strong>.
++ Alternatively, click <strong>Save and sync now</strong> to save your work and sync data at the same time.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
 </div>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
