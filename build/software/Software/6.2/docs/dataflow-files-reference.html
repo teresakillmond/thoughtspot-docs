@@ -2575,6 +2575,54 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="geomap-australia.html">Australia</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-austria.html">Austria</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-canada.html">Canada</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-france.html">France</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-germany.html">Germany</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-india.html">India</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-indonesia.html">Indonesia</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-italy.html">Italy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-japan.html">Japan</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-norway.html">Norway</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-poland.html">Poland</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-portugal.html">Portugal</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-sweden.html">Sweden</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-switzerland.html">Switzerland</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-south-africa.html">South Africa</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-united-states.html">United States</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-united-kingdom.html">United Kingdom</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2682,47 +2730,212 @@ You need specific information to establish a seamless and secure connection.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><dlentry id="dataflow-files-conn-connection-name">Connection name</dt>
+<dt class="hdlist1">Connection name</dt>
 <dd>
-<p>Name your connection. Mandatory field. <strong>Example:</strong> + FilesConnection</dlentry><dlentry id="dataflow-files-conn-connection-type">Connection type:::: Choose the Files connection type. Mandatory field. <strong>Example:</strong> + Files</dlentry><dlentry id="dataflow-files-conn-file-location">File location:::: Specify the base location of the file on the server. Mandatory field. <strong>Example:</strong> + /home/admin/dataflow/data</dlentry><dlentry id="dataflow-files-conn-files-on-remote-location">Files on remote location:::: Specify If the files on remote server. Mandatory field. <strong>Default:</strong> + No <strong>Other notes:</strong> + These are under Advanced configuration</dlentry><dlentry id="dataflow-files-conn-protocol">Protocol:::: Select the required remote server connection
-Mandatory field.</p>
+<p>Name your connection.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>FilesConnection</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For remote location files only. <strong>Example:</strong> + FTP <strong>Valid Values:</strong> + FTP, SFTP <strong>Default:</strong> + FTP</dlentry><dlentry id="dataflow-files-conn-authentication-type">Authentication type</dt>
+<dt class="hdlist1">Connection type</dt>
 <dd>
-<p>Specify the authentication type for SFTP Protocol
-Mandatory field.</p>
+<p>Choose the Files connection type.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>Files</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For SFTP protocol only <strong>Example:</strong> + Password <strong>Valid Values:</strong> + Key, Password <strong>Default:</strong> + Password</dlentry><dlentry id="dataflow-files-conn-host">Host</dt>
+<dt class="hdlist1">File location</dt>
 <dd>
-<p>Specify the Hostname or the IP address of the remote server
-Mandatory field.</p>
+<p>Specify the base location of the file on the server.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>/home/admin/dataflow/data</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For remote location files only. <strong>Example:</strong> + www.example.com</dlentry><dlentry id="dataflow-files-conn-port">Port</dt>
+<dt class="hdlist1">Files on remote location</dt>
 <dd>
-<p>Specify the Port to connect the remote server
-Mandatory field.</p>
+<p>Specify If the files on remote server.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>No</p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong></p>
+</div>
+<div class="paragraph">
+<p>These are under Advanced configuration</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For remote location files only. <strong>Example:</strong> + 1234</dlentry><dlentry id="dataflow-files-conn-user">User</dt>
+<dt class="hdlist1">Protocol</dt>
 <dd>
-<p>Specify the user to connect to remote server.
-This user must have data access privileges.
-Mandatory field.</p>
+<p>Select the required remote server connection.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For remote location files only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>FTP</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>FTP, SFTP</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>FTP</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For remote location files only. <strong>Example:</strong> + userdi</dlentry><dlentry id="dataflow-files-conn-password">Password</dt>
+<dt class="hdlist1">Authentication type</dt>
 <dd>
-<p>Specify the password.
-Optional field.</p>
+<p>Specify the authentication type for SFTP Protocol</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For SFTP protocol only</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>Password</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Key, Password</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>Password</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For remote location files only, when using password authentication. <strong>Example:</strong> + pswrd234%!</dlentry><dlentry id="dataflow-files-conn-key-file">Key file</dt>
+<dt class="hdlist1">Host</dt>
 <dd>
-<p>Specify the key file and its fully qualified path.
-Mandatory field.</p>
+<p>Specify the Hostname or the IP address of the remote server.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For remote location files only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>www.example.com</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For remote location files only, when using key authentication. <strong>Example:</strong> + /app/key/sftp.key</dlentry><dlentry id="dataflow-files-conn-passphrase-for-key-file">Passphrase for key file</dt>
+<dt class="hdlist1">Port</dt>
 <dd>
-<p>Specify the passphrase for the key file.
-Optional field.
-+ For remote location files only, when using key authentication. <strong>Example:</strong> + !hello</dlentry></p>
+<p>Specify the Port to connect the remote server.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For remote location files only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>1234</p>
+</div>
+</dd>
+<dt class="hdlist1">User</dt>
+<dd>
+<p>Specify the user to connect to remote server. This user must have data access privileges.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For remote location files only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>userdi</p>
+</div>
+</dd>
+<dt class="hdlist1">Password</dt>
+<dd>
+<p>Specify the password.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p>For remote location files only, when using password authentication.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>pswrd234%!</p>
+</div>
+</dd>
+<dt class="hdlist1">Key file</dt>
+<dd>
+<p>Specify the key file and its fully qualified path.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For remote location files only, when using key authentication.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> + /app/key/sftp.key</p>
+</div>
+</dd>
+<dt class="hdlist1">Passphrase for key file</dt>
+<dd>
+<p>Specify the passphrase for the key file.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p>For remote location files only, when using key authentication.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>!hello</p>
+</div>
 </dd>
 </dl>
 </div>
@@ -2733,18 +2946,506 @@ Optional field.
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><dlentry id="dataflow-files-sync-file-name">File name</dt>
+<dt class="hdlist1">File name</dt>
 <dd>
-<p>Specify name of the file. Mandatory field. <strong>Example:</strong> + CUSTOMER.csv <strong>Valid Values:</strong> + Any string literal <strong>Default:</strong> + The name of the file <strong>Other notes:</strong> + To specify wildcard, use '<strong>' character in the file name</dlentry><dlentry id="dataflow-files-sync-column-delimiter">Column delimiter:::: Specify the column delimiter character. Mandatory field. *Example:</strong> + , <strong>Valid Values:</strong> + Any printable ASCII character or decimal value for ASCII character <strong>Default:</strong> + The delimiter specified in sync</dlentry><dlentry id="dataflow-files-sync-enable-archive-on-success">Enable archive on success:::: Specify if system is to archive file after successful sync. Optional field. <strong>Example:</strong> + No <strong>Valid Values:</strong> + Yes, No <strong>Default:</strong> + No</dlentry><dlentry id="dataflow-files-sync-delete-file-on-success">Delete file on success:::: Specify if system to delete file after successful sync. Optional field. <strong>Example:</strong> + No <strong>Valid Values:</strong> + Yes, No <strong>Default:</strong> + No</dlentry><dlentry id="dataflow-files-sync-compression">Compression:::: Specify if file uses complression, and compression type. Optional field. <strong>Example:</strong> + gzip <strong>Valid Values:</strong> + None, gzip <strong>Default:</strong> + None</dlentry><dlentry id="dataflow-files-sync-skip-header-rows">Skip header rows:::: Specify the number of header rows to skip when loading data. Optional field. <strong>Example:</strong> + 5 <strong>Valid Values:</strong> + Any numeric value <strong>Default:</strong> + 0</dlentry><dlentry id="dataflow-files-sync-enclosing-character">Enclosing character:::: Specify if the text columns in the source data needs to be enclosed in quotes. Optional field. <strong>Example:</strong> + Single <strong>Valid Values:</strong> + Single, Double, Empty <strong>Default:</strong> + Empty</dlentry><dlentry id="dataflow-files-sync-escape-character">Escape character:::: Specify the escape character if using a text qualifier in the source data. Optional field. <strong>Example:</strong> + \\ <strong>Valid Values:</strong> + Any ASCII character <strong>Default:</strong> + Empty</dlentry><dlentry id="dataflow-files-sync-null-value">Null value::::
-Specifies the string literal indicates the null value for a column.</p>
+<p>Specify name of the file.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>CUSTOMER.csv</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any string literal</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>The name of the file</p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong></p>
+</div>
+<div class="paragraph">
+<p>To specify wildcard, use '*' character in the file name</p>
+</div>
 </dd>
-<dt class="hdlist1">During the data load, the column value matching this string will be loaded as null in the target. Optional field. <strong>Example:</strong> + NULL <strong>Valid Values:</strong> + Any string literal <strong>Default:</strong> + NULL</dlentry><dlentry id="dataflow-files-sync-date-style">Date style:::: Specifies how to interpret the date format Optional field. <strong>Example:</strong> + YMD <strong>Valid Values:</strong> + <code>YMD</code>, <code>MDY</code>, <code>DMY</code>, <code>DMONY</code>, <code>MONDY</code>, <code>Y2MD</code>, <code>MDY2</code>, <code>DMY2</code>, <code>DMONY2</code>, and <code>MONDY2</code> <strong>Default:</strong> + <code>YMD</code> <strong>Other notes:</strong> + <code>MDY</code>: 2-digit month, 2-digit day, 4-digit year + <code>DMY</code>: 2-digit month, 2-digit day, 4-digit year + <code>DMONY</code>: 2-digit day, 3-character month name, 4-digit year + <code>MONDY</code>: 3-character month name, 2-digit day, 4-digit year + <code>Y2MD</code>: 2-digit year, 2-digit month, 2-digit day + <code>MDY2</code>: 2-digit month, 2-digit day, 2-digit year + <code>DMY2</code>: 2-digit day, 2-digit month, 2-digit year + <code>DMONY2</code>: 2-digit day, 3-character month name, 2-digit year + <code>MONDY2</code>: 3-character month name, 2-digit day, 2-digit year</dlentry><dlentry id="dataflow-files-sync-date-delimiter">Date delimiter:::: Specifies the separator used in the date format. Optional field. <strong>Example:</strong> + - <strong>Valid Values:</strong> + Any printable ASCII character <strong>Default:</strong> + -</dlentry><dlentry id="dataflow-files-sync-time-style">Time style:::: Specifies the format of the time portion in the data. Optional field. <strong>Example:</strong> + 24HOUR <strong>Valid Values:</strong> + 12 Hour, 24 Hour <strong>Default:</strong> + 24HOUR</dlentry><dlentry id="dataflow-files-sync-time-delimiter">Time delimiter:::: Specifies the character used as separate the time components. Optional field. <strong>Example:</strong> + : <strong>Valid Values:</strong> + Any printable ASCII character <strong>Default:</strong> + :</dlentry><dlentry id="dataflow-files-sync-statistics">Statistics:::: Specify if the file source count needs to be displayed in Monitor statistics. Optional field. <strong>Example:</strong> + ON <strong>Valid Values:</strong> + OFF <strong>Default:</strong> + ON</dlentry><dlentry id="dataflow-files-sync-skip-trailer-rows">Skip trailer rows:::: Skip trailer row while processing the data Optional field. <strong>Example:</strong> + 5 <strong>Valid Values:</strong> + Any numeric value <strong>Default:</strong> + 0</dlentry><dlentry id="dataflow-files-sync-reader-encoder">Reader encoder:::: Specify the encoding format of the source system. Optional field. <strong>Example:</strong> + UFT-8 <strong>Valid Values:</strong> + ISO-8859-1, UTF-16, UTF-16BE, WINDOWS-1252 <strong>Default:</strong> + UFT-8</dlentry><dlentry id="dataflow-files-sync-ts-load-options">TS load options</dt>
+<dt class="hdlist1">Column delimiter</dt>
 <dd>
-<p>Specifies the parameters passed with the <code>tsload</code> command, in addition to the commands already included by the application.</p>
+<p>Specify the column delimiter character.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>,</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any printable ASCII character or decimal value for ASCII character</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>The delimiter specified in sync</p>
+</div>
 </dd>
-<dt class="hdlist1">The format for these parameters is: + ` --&lt;param_1_name&gt; &lt;optional_param_1_value&gt;` + ` --&lt;param_2_name&gt; &lt;optional_param_2_value&gt;` Optional field. <strong>Example:</strong> + <code>--max_ignored_rows 0</code> <strong>Valid Values:</strong> + <code>--user "dbuser"</code> + <code>--password "$DIWD"</code> + <code>--target_database "ditest"</code> + <code>--target_schema "falcon_schema"</code> <strong>Default:</strong> + <code>--max_ignored_rows 0</code></dlentry><dlentry id="dataflow-files-sync-boolean-representation">Boolean representation</dt>
+<dt class="hdlist1">Enable archive on success</dt>
 <dd>
-<p>Specifies the representation of data in the boolean field Optional field. <strong>Example:</strong> + true_false <strong>Valid Values:</strong> + true_false, T_F, 1_0, T_NULL <strong>Default:</strong> + true_false</dlentry></p>
+<p>Specify if system is to archive file after successful sync.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>No</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Yes, No</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>No</p>
+</div>
+</dd>
+<dt class="hdlist1">Delete file on success</dt>
+<dd>
+<p>Specify if system to delete file after successful sync.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>No</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Yes, No</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>No</p>
+</div>
+</dd>
+<dt class="hdlist1">Compression</dt>
+<dd>
+<p>Specify if file uses compression, and compression type.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>gzip</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>None, gzip</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>None</p>
+</div>
+</dd>
+<dt class="hdlist1">Skip header rows</dt>
+<dd>
+<p>Specify the number of header rows to skip when loading data.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>5</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any numeric value</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>0</p>
+</div>
+</dd>
+<dt class="hdlist1">Enclosing character</dt>
+<dd>
+<p>Specify if the text columns in the source data needs to be enclosed in quotes.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>Single <strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Single, Double, Empty</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>Empty</p>
+</div>
+</dd>
+<dt class="hdlist1">Escape character</dt>
+<dd>
+<p>Specify the escape character if using a text qualifier in the source data.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>\\</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any ASCII character</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>Empty</p>
+</div>
+</dd>
+<dt class="hdlist1">Null value</dt>
+<dd>
+<p>Specifies the string literal indicates the null value for a column. During the data load, the column value matching this string will be loaded as null in the target.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>+
+NULL</p>
+</div>
+<div class="paragraph">
+<p>+
+<strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>+
+Any string literal</p>
+</div>
+<div class="paragraph">
+<p>+
+<strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>+
+NULL</p>
+</div>
+</dd>
+<dt class="hdlist1">Date style</dt>
+<dd>
+<p>Specifies how to interpret the date format.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>YMD</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p><code>YMD</code>, <code>MDY</code>, <code>DMY</code>, <code>DMONY</code>, <code>MONDY</code>, <code>Y2MD</code>, <code>MDY2</code>, <code>DMY2</code>, <code>DMONY2</code>, and <code>MONDY2</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p><code>YMD</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong></p>
+</div>
+<div class="paragraph">
+<p><code>MDY</code>: 2-digit month, 2-digit day, 4-digit year</p>
+</div>
+<div class="paragraph">
+<p><code>DMY</code>: 2-digit month, 2-digit day, 4-digit year</p>
+</div>
+<div class="paragraph">
+<p><code>DMONY</code>: 2-digit day, 3-character month name, 4-digit year</p>
+</div>
+<div class="paragraph">
+<p><code>MONDY</code>: 3-character month name, 2-digit day, 4-digit year</p>
+</div>
+<div class="paragraph">
+<p><code>Y2MD</code>: 2-digit year, 2-digit month, 2-digit day</p>
+</div>
+<div class="paragraph">
+<p><code>MDY2</code>: 2-digit month, 2-digit day, 2-digit year</p>
+</div>
+<div class="paragraph">
+<p><code>DMY2</code>: 2-digit day, 2-digit month, 2-digit year</p>
+</div>
+<div class="paragraph">
+<p><code>DMONY2</code>: 2-digit day, 3-character month name, 2-digit year</p>
+</div>
+<div class="paragraph">
+<p><code>MONDY2</code>: 3-character month name, 2-digit day, 2-digit year</p>
+</div>
+</dd>
+<dt class="hdlist1">Date delimiter</dt>
+<dd>
+<p>Specifies the separator used in the date format.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Valid Values:</strong></p>
+<div class="paragraph">
+<p>Any printable ASCII character</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>-</p>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Time style</dt>
+<dd>
+<p>Specifies the format of the time portion in the data.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>24HOUR</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>12 Hour, 24 Hour</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>24HOUR</p>
+</div>
+</dd>
+<dt class="hdlist1">Time delimiter</dt>
+<dd>
+<p>Specifies the character used as separate the time components.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>:</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any printable ASCII character</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>:</p>
+</div>
+</dd>
+<dt class="hdlist1">Statistics</dt>
+<dd>
+<p>Specify if the file source count needs to be displayed in Monitor statistics.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>ON</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>OFF</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>ON</p>
+</div>
+</dd>
+<dt class="hdlist1">Skip trailer rows</dt>
+<dd>
+<p>Skip trailer row while processing the data.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>5</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any numeric value</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>0</p>
+</div>
+</dd>
+<dt class="hdlist1">Reader encoder</dt>
+<dd>
+<p>Specify the encoding format of the source system.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>UFT-8</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>ISO-8859-1, UTF-16, UTF-16BE, WINDOWS-1252</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>UFT-8</p>
+</div>
+</dd>
+<dt class="hdlist1">TS load options</dt>
+<dd>
+<p>Specifies the parameters passed with the <code>tsload</code> command, in addition to the commands already included by the application. The format for these parameters is:</p>
+<div class="paragraph">
+<p>` --&lt;param_1_name&gt; &lt;optional_param_1_value&gt;`</p>
+</div>
+<div class="paragraph">
+<p>` --&lt;param_2_name&gt; &lt;optional_param_2_value&gt;`</p>
+</div>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p><code>--max_ignored_rows 0</code> <strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p><code>--user "dbuser"</code></p>
+</div>
+<div class="paragraph">
+<p><code>--password "$DIWD"</code></p>
+</div>
+<div class="paragraph">
+<p><code>--target_database "ditest"</code></p>
+</div>
+<div class="paragraph">
+<p><code>--target_schema "falcon_schema"</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p><code>--max_ignored_rows 0</code></p>
+</div>
+</dd>
+<dt class="hdlist1">Boolean representation</dt>
+<dd>
+<p>Specifies the representation of data in the boolean field.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>true_false</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>true_false, T_F, 1_0, T_NULL</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>true_false</p>
+</div>
 </dd>
 </dl>
 </div>

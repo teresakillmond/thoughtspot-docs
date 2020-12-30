@@ -2575,6 +2575,54 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="geomap-australia.html">Australia</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-austria.html">Austria</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-canada.html">Canada</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-france.html">France</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-germany.html">Germany</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-india.html">India</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-indonesia.html">Indonesia</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-italy.html">Italy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-japan.html">Japan</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-norway.html">Norway</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-poland.html">Poland</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-portugal.html">Portugal</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-sweden.html">Sweden</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-switzerland.html">Switzerland</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-south-africa.html">South Africa</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-united-states.html">United States</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-united-kingdom.html">United Kingdom</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2746,32 +2794,33 @@ Members of groups with <strong>Can Administer and Bypass RLS</strong>:</p>
 <div class="paragraph">
 <p>An RLS rule evaluates against two system variables:</p>
 </div>
-<table>
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col width="20%" />
-<col width="50%" />
-<col width="30%" />
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
 </colgroup>
-   <tr>
-      <td>Function</td>
-      <td>Description</td>
-      <td>Examples
-      </td>
-   </tr>
-   <tr>
-      <td><code>ts_groups</code></td>
-      <td>Returns a list of all the groups the current logged in user belongs to. For
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Function</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ts_groups</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns a list of all the groups the current logged in user belongs to. For
          any row, if the expression evaluates to true for any of the groups, the user can
-         see that row.
-      </td>
-      <td><code>ts_groups = 'east'</code>
-      </td>
-   </tr>
-   <tr>
-      <td> <code>ts_username</code> </td>
-      <td>Returns the user with the matching name.  </td>
-      <td><code>ts_username != 'mark'</code>  </td>
-   </tr>
+         see that row.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ts_groups = 'east'</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ts_username</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns the user with the matching name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ts_username != 'mark'</code></p></td>
+</tr>
+</tbody>
 </table>
 <div class="paragraph">
 <p>ThoughtSpot filters a table&#8217;s rows by evaluating a rule against the authenticated user.</p>

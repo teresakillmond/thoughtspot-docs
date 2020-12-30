@@ -2575,6 +2575,54 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="geomap-australia.html">Australia</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-austria.html">Austria</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-canada.html">Canada</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-france.html">France</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-germany.html">Germany</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-india.html">India</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-indonesia.html">Indonesia</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-italy.html">Italy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-japan.html">Japan</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-norway.html">Norway</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-poland.html">Poland</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-portugal.html">Portugal</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-sweden.html">Sweden</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-switzerland.html">Switzerland</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-south-africa.html">South Africa</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-united-states.html">United States</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-united-kingdom.html">United Kingdom</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2682,53 +2730,83 @@ You can leverage operators in your formulas to have them return true, false, or 
 <div class="paragraph">
 <p>The operators include:</p>
 </div>
-<table>
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
-   <col style="width:5%" />
-   <col style="width:45%" />
-   <col style="width:50%" />
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
 </colgroup>
-  <thead>
-    <tr>
-      <th>Operator</th>
-      <th>Description</th>
-      <th>Examples</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr id="and">
-      <td><code>and</code></td>
-      <td>Returns <code>true</code> when both conditions are <code>true</code>, otherwise returns <code>false</code>.</td>
-      <td><code class="highlighter-rouge">(1 = 1) and (3 &gt; 2) = true</code><br><code class="highlighter-rouge">lastname = 'smith' and state ='texas'</code>
-      {% include note.html content="Not available for row-level security (RLS) formulas." %}
-      </td>
-    </tr>
-    <tr id="if-then-else">
-      <td><code>if…then…else</code></td>
-      <td>Conditional operator</td>
-      <td><code class="highlighter-rouge">if (3 &gt; 2) then 'bigger' else 'not bigger'</code><br><code class="highlighter-rouge">if (cost &gt; 500) then 'flag' else 'approve'</code></td>
-    </tr>
-    <tr id="ifnull">
-      <td><code>ifnull</code></td>
-      <td>Returns the first value if it is not <code>null</code>, otherwise returns the second value.</td>
-      <td><code class="highlighter-rouge">ifnull (cost, 'unknown')</code></td>
-    </tr>
-    <tr id="isnull">
-      <td><code>isnull</code></td>
-      <td>Returns <code>true</code> if the value is <code>null</code>.</td>
-      <td><code class="highlighter-rouge">isnull (phone)</code></td>
-    </tr>
-    <tr id="not">
-      <td><code>not</code></td>
-      <td>Returns <code>true</code> if the condition is <code>false</code>, otherwise returns <code>false</code>.</td>
-      <td><code class="highlighter-rouge">not (3 &gt; 2) = false</code><br><code class="highlighter-rouge">not (state = 'texas')</code></td>
-    </tr>
-    <tr id="or">
-      <td><code>or</code></td>
-      <td>Returns <code>true</code> when either condition is <code>true</code>, otherwise returns <code>false</code>.</td>
-      <td><code class="highlighter-rouge">(1 = 5) or (3 &gt; 2) = true</code><br><code class="highlighter-rouge">state = 'california' or state ='oregon'</code></td>
-    </tr>
-  </tbody>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Operator</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>and</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns true when both conditions are true, otherwise returns false.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>(1 = 1) and (3 &gt; 2) = true</code></p>
+</div>
+<div class="paragraph">
+<p><code>lastname = 'smith' and state ='texas'</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Not available for row-level security (RLS) formulas.
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>if…then…else</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conditional operator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>if (3 &gt; 2) then 'bigger' else 'not bigger'</code></p>
+<p class="tableblock"><code>if (cost &gt; 500) then 'flag' else 'approve'</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>ifnull</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns the first value if it is not null, otherwise returns the second value.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ifnull (cost, 'unknown')</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>isnull</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns true if the value is null.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isnull (phone)</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>not</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns true if the condition is false, otherwise returns false.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>not (3 &gt; 2) = false</code></p>
+<p class="tableblock"><code>not (state = 'texas')</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>or</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns true when either condition is true, otherwise returns false.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>(1 = 5) or (3 &gt; 2) = true</code></p>
+<p class="tableblock"><code>state = 'california' or state ='oregon'</code></p></td>
+</tr>
+</tbody>
 </table>
 </div>
 </div>

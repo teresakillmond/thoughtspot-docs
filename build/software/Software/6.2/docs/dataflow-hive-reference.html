@@ -2575,6 +2575,54 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="geomap-australia.html">Australia</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-austria.html">Austria</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-canada.html">Canada</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-france.html">France</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-germany.html">Germany</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-india.html">India</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-indonesia.html">Indonesia</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-italy.html">Italy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-japan.html">Japan</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-norway.html">Norway</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-poland.html">Poland</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-portugal.html">Portugal</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-sweden.html">Sweden</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-switzerland.html">Switzerland</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-south-africa.html">South Africa</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-united-states.html">United States</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-united-kingdom.html">United Kingdom</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2682,139 +2730,695 @@ You need specific information to establish a seamless and secure connection.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><dlentry id="dataflow-hive-conn-connection-name">Connection name</dt>
+<dt class="hdlist1">Connection name</dt>
 <dd>
-<p>Name your connection. Mandatory field. <strong>Example:</strong> + HiveConnection</dlentry><dlentry id="dataflow-hive-conn-connection-type">Connection type:::: Choose the Hive connection type. Mandatory field. <strong>Example:</strong> + Hive</dlentry><dlentry id="dataflow-hive-conn-hiveserver2-ha-configured">HiveServer2 HA configured:::: Specify this option if using HiveServer2 High Availability. Mandatory field.</dlentry><dlentry id="dataflow-hive-conn-hiveserver2-zookeeper-namespace">HiveServer2 zookeeper namespace::::
-Specify zookeeper namespace as hivesever2.
-This is the default value.
-Mandatory field.</p>
+<p>Name your connection.</p>
+<div class="paragraph">
+<p>Mandatory field.
+<strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>HiveConnection</p>
+</div>
 </dd>
-<dt class="hdlist1">+ Only when using Hiveserver2 HA. <strong>Example:</strong> + hiveserver2 <strong>Other notes:</strong> + If value is different then, the value can be found from hive-site.xml against the property <code>hive.server2.zookeeper.namespace</code>.</dlentry><dlentry id="dataflow-hive-conn-host">Host</dt>
+<dt class="hdlist1">Connection type</dt>
 <dd>
-<p>Specify the hostname or the IP address of the Hadoop system
-Mandatory field.</p>
+<p>Choose the Hive connection type.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
 </dd>
-<dt class="hdlist1">+ Only when <em>not</em> using Hiveserver2 HA. <strong>Example:</strong> + <a href="mailto:myEmail@example.com">myEmail@example.com</a></dlentry><dlentry id="dataflow-hive-conn-port">Port</dt>
+<dt class="hdlist1">HiveHiveServer2 HA configured</dt>
 <dd>
-<p>Specify the port.
-Mandatory field.</p>
+<p>Specify this option if using HiveServer2 High Availability.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
 </dd>
-<dt class="hdlist1">+ Only when <em>not</em> using Hiveserver2 HA. <strong>Example:</strong> + 1234</dlentry><dlentry id="dataflow-hive-conn-hive-security-authentication">Hive security authentication</dt>
+<dt class="hdlist1">HiveServer2 zookeeper namespace</dt>
 <dd>
-<p>Specifies the type of security protocol to connect to the instance.</p>
+<p>Specify zookeeper namespace as hivesever2. This is the default value.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>Only when using Hiveserver2 HA.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>hiveserver2</p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong></p>
+</div>
+<div class="paragraph">
+<p>If value is different then, the value can be found from hive-site.xml against the property <code>hive.server2.zookeeper.namespace</code>.</p>
+</div>
 </dd>
-<dt class="hdlist1">Based on the type of security select the authentication type and provide details. Mandatory field. <strong>Example:</strong> + Kerberos <strong>Valid Values:</strong> + Simple, Kerberos, LDAP, SSL, Kerberos &amp; SSL, LDAP &amp; SSL <strong>Default:</strong> + Simple <strong>Other notes:</strong> + The authentication type setup for the instance can be found from hive-site.xml against the property <code>hive.server2.authentication</code>.</dlentry><dlentry id="dataflow-hive-conn-user">User</dt>
+<dt class="hdlist1">Host</dt>
 <dd>
-<p>Specify the user to connect to Hive.
-This user must have data access privileges.
-Mandatory field.</p>
+<p>Specify the hostname or the IP address of the Hadoop system.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>Only when <em>not</em> using Hiveserver2 HA.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> + <a href="mailto:myEmail@example.com">myEmail@example.com</a></p>
+</div>
 </dd>
-<dt class="hdlist1">+ For simple, LDAP, and Simple authentication only. <strong>Example:</strong> + userdi <strong>Default:</strong> + simple</dlentry><dlentry id="dataflow-hive-conn-password">Password</dt>
+<dt class="hdlist1">Port</dt>
 <dd>
-<p>Specify the password.
-Optional field.</p>
+<p>Specify the port.</p>
+<div class="paragraph">
+<p>Mandatory field.
++ Only when <em>not</em> using Hiveserver2 HA.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>1234</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For simple, LDAP authentication only. <strong>Example:</strong> + pswrd234%!</dlentry><dlentry id="dataflow-hive-conn-trust-store">Trust store</dt>
+<dt class="hdlist1">Hive security authentication</dt>
 <dd>
-<p>Specify the trust store name for authentication
-Mandatory field.</p>
+<p>Specifies the type of security protocol to connect to the instance. Based on the type of security select the authentication type and provide details.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>Kerberos <strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Simple, Kerberos, LDAP, SSL, Kerberos &amp; SSL, LDAP &amp; SSL</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>Simple</p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong></p>
+</div>
+<div class="paragraph">
+<p>The authentication type setup for the instance can be found from hive-site.xml against the property <code>hive.server2.authentication</code>.</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For SSL and Kerberos &amp; SSL authentication only. <strong>Example:</strong> + trust store <strong>Default:</strong> + SSL</dlentry><dlentry id="dataflow-hive-conn-trust-store-password">Trust store password</dt>
+<dt class="hdlist1">User</dt>
 <dd>
-<p>Specify the password for the trust store
-Mandatory field.</p>
+<p>Specify the user to connect to Hive. This user must have data access privileges.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For simple, LDAP, and Simple authentication only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>userdi</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>simple</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For SSL and Kerberos &amp; SSL authentication only. <strong>Example:</strong> + password <strong>Default:</strong> + SSL</dlentry><dlentry id="dataflow-hive-conn-hive-transport-mode">Hive transport mode</dt>
+<dt class="hdlist1">Password</dt>
 <dd>
-<p>Applicable only for hive process engine.</p>
+<p>Specify the password.</p>
+<div class="paragraph">
+<p>Optional field.
++ For simple, LDAP authentication only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong>
++ pswrd234%!</p>
+</div>
 </dd>
-<dt class="hdlist1">This specifies the network protocol used for communicating between hive nodes. Mandatory field. <strong>Example:</strong> + binary <strong>Valid Values:</strong> + Binary, HTTP <strong>Default:</strong> + binary <strong>Other notes:</strong> + The Hive transport mode can be identified from hive-site.xml against the property hive.server2.transport.mode.</dlentry><dlentry id="dataflow-hive-conn-http-path">HTTP path</dt>
+<dt class="hdlist1">Trust store</dt>
 <dd>
-<p>This is specified as an option when http transport mode is selected
-Mandatory field.</p>
+<p>Specify the trust store name for authentication</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For SSL and Kerberos &amp; SSL authentication only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>trust store</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>SSL</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For HTTP transport mode only. <strong>Example:</strong> + cliservice <strong>Valid Values:</strong> + cliservice <strong>Default:</strong> + cliservice <strong>Other notes:</strong> + The HTTP Path value can be identified from <code>hive-site.xml</code> against the property <code>hive.server2.thrift.http.path</code>.</dlentry><dlentry id="dataflow-hive-conn-hadoop-distribution">Hadoop distribution:::: Provide the distribution of Hadoop being connected to Mandatory field. <strong>Example:</strong> + Hortonworks <strong>Valid Values:</strong> + CDH, Hortonworks, EMR <strong>Default:</strong> + CDH</dlentry><dlentry id="dataflow-hive-conn-distribution-version">Distribution version:::: Provide the version of the Distribution chosen above Mandatory field. <strong>Example:</strong> + 2.6.5 <strong>Valid Values:</strong> + Any Numeric value <strong>Default:</strong> + 6.3.x</dlentry><dlentry id="dataflow-hive-conn-hadoop-conf-path">Hadoop conf path</dt>
+<dt class="hdlist1">Trust store password</dt>
 <dd>
-<p>By default, the system picks the Hadoop configuration files from the HDFS.
-To override, specify an alternate location.</p>
+<p>Specify the password for the trust store.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For SSL and Kerberos &amp; SSL authentication only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>password</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>SSL</p>
+</div>
 </dd>
-<dt class="hdlist1">Applies only when using configuration settings that are different from global Hadoop instance settings. Mandatory field. <strong>Example:</strong> + $DI_HOME/app/path <strong>Other notes:</strong> + An instance where this could be needed is, if the hdfs is encrypted and the location of key files and password decrypt the files is available in the hadoop config files.</dlentry><dlentry id="dataflow-hive-conn-dfs-ha-configured">DFS HA configured</dt>
+<dt class="hdlist1">Hive transport mode</dt>
 <dd>
-<p>Specify if using High Availability for DFS.
-Optional field.</p>
+<p>Applicable only for hive process engine. This specifies the network protocol used for communicating between hive nodes.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>binary</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Binary, HTTP</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>binary</p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong></p>
+</div>
+<div class="paragraph">
+<p>The Hive transport mode can be identified from hive-site.xml against the property hive.server2.transport.mode.</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For Hadoop Extract only. <strong>Example:</strong> + Checked</dlentry><dlentry id="dataflow-hive-conn-dfs-name-service">DFS name service</dt>
+<dt class="hdlist1">HTTP path</dt>
 <dd>
-<p>Specify the logical name of the HDFS nameservice.
-Mandatory field.</p>
+<p>This is specified as an option when http transport mode is selected.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For HTTP transport mode only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>cliservice</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>cliservice</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>cliservice</p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong></p>
+</div>
+<div class="paragraph">
+<p>The HTTP Path value can be identified from <code>hive-site.xml</code> against the property <code>hive.server2.thrift.http.path</code>.</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For DFS HA and Hadoop Extract only. <strong>Example:</strong> + lahdfs <strong>Other notes:</strong> + It is available in hdfs-site.xml and defined as dfs.nameservices</dlentry><dlentry id="dataflow-hive-conn-dfs-name-node-ids">DFS name node IDs</dt>
+<dt class="hdlist1">Hadoop distribution</dt>
+<dd>
+<p>Provide the distribution of Hadoop being connected to.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>Hortonworks</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>CDH, Hortonworks, EMR</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>CDH</p>
+</div>
+</dd>
+<dt class="hdlist1">Distribution version</dt>
+<dd>
+<p>Provide the version of the Distribution chosen above.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>2.6.5</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any Numeric value</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>6.3.x</p>
+</div>
+</dd>
+<dt class="hdlist1">Hadoop conf path</dt>
+<dd>
+<p>By default, the system picks the Hadoop configuration files from the HDFS. To override, specify an alternate location.
+Applies only when using configuration settings that are different from global Hadoop instance settings.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>$DI_HOME/app/path</p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong></p>
+</div>
+<div class="paragraph">
+<p>An instance where this could be needed is, if the hdfs is encrypted and the location of key files and password decrypt the files is available in the hadoop config files.</p>
+</div>
+</dd>
+<dt class="hdlist1">DFS HA configured</dt>
+<dd>
+<p>Specify if using High Availability for DFS.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p>For Hadoop Extract only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>Checked</p>
+</div>
+</dd>
+<dt class="hdlist1">DFS name service</dt>
+<dd>
+<p>Specify the logical name of the HDFS nameservice.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For DFS HA and Hadoop Extract only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>lahdfs <strong>Other notes:</strong></p>
+</div>
+<div class="paragraph">
+<p>It is available in hdfs-site.xml and defined as dfs.nameservices</p>
+</div>
+</dd>
+<dt class="hdlist1">DFS name node IDs</dt>
 <dd>
 <p>Specify a comma-separated list of NameNode IDs.
-System uses this property to determine all NameNodes in the cluster.
-XML property name is <code>dfs.ha.namenodes.dfs.nameservices</code>.
-Mandatory field.</p>
+System uses this property to determine all NameNodes in the cluster. XML property name is <code>dfs.ha.namenodes.dfs.nameservices</code>.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For DFS HA and Hadoop Extract only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>nn1, nn2</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For DFS HA and Hadoop Extract only. <strong>Example:</strong> + nn1, nn2</dlentry><dlentry id="dataflow-hive-conn-rpc-address-for-namenode1">RPC address for namenode1</dt>
+<dt class="hdlist1">RPC address for namenode1</dt>
 <dd>
-<p>Specify the fully-qualified RPC address for each listed NameNode.
-Defined as <code>dfs.namenode.rpc-address.dfs.nameservices.name node ID 1</code>.
-Mandatory field.</p>
+<p>Specify the fully-qualified RPC address for each listed NameNode. Defined as <code>dfs.namenode.rpc-address.dfs.nameservices.name node ID 1</code>.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For DFS HA and Hadoop Extract only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>lclabh.example.com:5678</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For DFS HA and Hadoop Extract only. <strong>Example:</strong> + lclabh.example.com:5678</dlentry><dlentry id="dataflow-hive-conn-rpc-address-for-namenode2">RPC address for namenode2</dt>
+<dt class="hdlist1">RPC address for namenode2</dt>
 <dd>
-<p>Specify the fully-qualified RPC address for each listed NameNode.
-Define as <code>dfs.namenode.rpc-address.dfs.nameservices.name node ID 2</code>.
-Mandatory field.</p>
+<p>Specify the fully-qualified RPC address for each listed NameNode. Define as <code>dfs.namenode.rpc-address.dfs.nameservices.name node ID 2</code>.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For DFS HA and Hadoop Extract only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>lvclabh.example.com:9876</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For DFS HA and Hadoop Extract only. <strong>Example:</strong> + lvclabh.example.com:9876</dlentry><dlentry id="dataflow-hive-conn-dfs-host">DFS host</dt>
+<dt class="hdlist1">DFS host</dt>
 <dd>
-<p>Specify the DFS hostname or the IP address
-Mandatory field.</p>
+<p>Specify the DFS hostname or the IP address.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For Hadoop Extract only, when <em>not</em> using DFS HA.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> + <a href="mailto:myemail@example.com">myemail@example.com</a></p>
+</div>
 </dd>
-<dt class="hdlist1">+ For Hadoop Extract only, when <em>not</em> using DFS HA. <strong>Example:</strong> + <a href="mailto:myemail@example.com">myemail@example.com</a></dlentry><dlentry id="dataflow-hive-conn-dfs-port">DFS port</dt>
+<dt class="hdlist1">DFS port</dt>
 <dd>
-<p>Specify the associated DFS port
-Mandatory field.</p>
+<p>Specify the associated DFS port.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For Hadoop Extract only, when <em>not</em> using DFS HA.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>1234</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For Hadoop Extract only, when <em>not</em> using DFS HA. <strong>Example:</strong> + 1234</dlentry><dlentry id="dataflow-hive-conn-default-dfs-location">Default DFS location</dt>
+<dt class="hdlist1">Default DFS location</dt>
 <dd>
-<p>Specify the location for the default source/target location
-Mandatory field.</p>
+<p>Specify the location for the default source/target location.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For Hadoop Extract only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong>
++ /tmp</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For Hadoop Extract only. <strong>Example:</strong> + /tmp</dlentry><dlentry id="dataflow-hive-conn-temp-dfs-location">Temp DFS location</dt>
+<dt class="hdlist1">Temp DFS location</dt>
 <dd>
-<p>Specify the location for creating temp directory
-Mandatory field.</p>
+<p>Specify the location for creating temp directory.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For Hadoop Extract only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>/tmp</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For Hadoop Extract only. <strong>Example:</strong> + /tmp</dlentry><dlentry id="dataflow-hive-conn-dfs-security-authentication">DFS security authentication</dt>
+<dt class="hdlist1">DFS security authentication</dt>
 <dd>
-<p>Select the type of security being enabled
-Mandatory field.</p>
+<p>Select the type of security being enabled.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For Hadoop Extract only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>Kerberos</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Simple, Kerberos</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>simple</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For Hadoop Extract only. <strong>Example:</strong> + Kerberos <strong>Valid Values:</strong> + Simple, Kerberos <strong>Default:</strong> + simple</dlentry><dlentry id="dataflow-hive-conn-hadoop-rpc-protection">Hadoop RPC protection</dt>
+<dt class="hdlist1">Hadoop RPC protection</dt>
 <dd>
-<p>Hadoop cluster administrators control the quality of protection using the configuration parameter <code>hadoop.rpc.protection</code>.
-Mandatory field.</p>
+<p>Hadoop cluster administrators control the quality of protection using the configuration parameter <code>hadoop.rpc.protection</code>.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>When using Kerberos DFS security authentication <em>and</em> Hadoop Extract.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>none</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>None, authentication, integrity, privacy</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>authentication</p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong></p>
+</div>
+<div class="paragraph">
+<p>It is available in core-site.xml.</p>
+</div>
 </dd>
-<dt class="hdlist1">+ When using Kerberos DFS security authentication <em>and</em> Hadoop Extract. <strong>Example:</strong> + none <strong>Valid Values:</strong> + None, authentication, integrity, privacy <strong>Default:</strong> + authentication <strong>Other notes:</strong> + It is available in core-site.xml.</dlentry><dlentry id="dataflow-hive-conn-hive-principal">Hive principal:::: Principal for authenticating hive services Mandatory field. <strong>Example:</strong> + hive/host@lab.example.com <strong>Other notes:</strong> + It is available in hive-site.xml</dlentry><dlentry id="dataflow-hive-conn-user-principal">User principal:::: To authenticate via a key-tab you must have supporting key-tab file which is generated by Kerberos Admin and also requires the user principal associated with Key-tab ( Configured while enabling Kerberos) Mandatory field. <strong>Example:</strong> + <a href="mailto:labuser@labdp.example.com">labuser@labdp.example.com</a></dlentry><dlentry id="dataflow-hive-conn-user-keytab">User keytab:::: To authenticate via a key-tab you must have supporting key-tab file which is generated by Kerberos Admin and also requires the user principal associated with Key-tab ( Configured while enabling Kerberos) Mandatory field. <strong>Example:</strong> + /app/keytabs/labuser.keytab</dlentry><dlentry id="dataflow-hive-conn-kdc-host">KDC host:::: Specify KDC Host Name where as KDC (Kerberos Key Distribution Center) is a service than runs on a domain controller server role (Configured from Kerbores configuration-/etc/krb5.conf ) Mandatory field. <strong>Example:</strong> + example.example.com</dlentry><dlentry id="dataflow-hive-conn-default-realm">Default realm:::: A Kerberos realm is the domain over which a Kerberos authentication server has the authority to authenticate a user, host or service (Configured from Kerbores configuration-/etc/krb5.conf ) Mandatory field. <strong>Example:</strong> + labhdp.example.com</dlentry><dlentry id="dataflow-hive-conn-queue-name">Queue name</dt>
+<dt class="hdlist1">Hive principal</dt>
 <dd>
-<p>Specify the queue name followed by a coma separated form in yarn.scheduler.capacity.root.queues.
-Mandatory field.</p>
+<p>Principal for authenticating hive services.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>hive/host@lab.example.com</p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong></p>
+</div>
+<div class="paragraph">
+<p>It is available in hive-site.xml</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For Hadoop Extract only. <strong>Example:</strong> + default <strong>Other notes:</strong> + It is available in capacity-scheduler.xml</dlentry><dlentry id="dataflow-hive-conn-yarn-web-ui-port">YARN web UI port</dt>
+<dt class="hdlist1">User principal</dt>
 <dd>
-<p>Yarn Providing web UI for yarn RM and by default 8088 in use
-Mandatory field.</p>
+<p>To authenticate via a key-tab you must have supporting key-tab file which is generated by Kerberos Admin and also requires the user principal associated with Key-tab (Configured while enabling Kerberos).</p>
+<div class="paragraph">
+<p>Mandatory field.
+<strong>Example:</strong>
++ <a href="mailto:labuser@labdp.example.com">labuser@labdp.example.com</a></p>
+</div>
 </dd>
-<dt class="hdlist1">+ For Hadoop Extract only. <strong>Example:</strong> + 8088</dlentry><dlentry id="dataflow-hive-conn-zookeeper-quorum-host">Zookeeper quorum host</dt>
+<dt class="hdlist1">User keytab</dt>
 <dd>
-<p>Specify the value of hadoop.registry.zk.quorum from yarn-site.xml
-Mandatory field.</p>
+<p>To authenticate via a key-tab you must have supporting key-tab file which is generated by Kerberos Admin and also requires the user principal associated with Key-tab (Configured while enabling Kerberos).</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>/app/keytabs/labuser.keytab</p>
+</div>
 </dd>
-<dt class="hdlist1">+ Only when <em>not</em> using Hiveserver2 HA. <strong>Example:</strong> + lvclhdp1.example.com:21,lvclabhdp12.example.com:81,lvclabhdp12.example.com:2093</dlentry><dlentry id="dataflow-hive-conn-yarn-timeline-webapp-host">Yarn timeline webapp host:::: Specify the ip adress of yarn timeline service web application Mandatory field. <strong>Example:</strong> + 8188</dlentry><dlentry id="dataflow-hive-conn-yarn-timeline-webapp-port">Yarn timeline webapp port:::: Specify the port associated with the yarn timeline service web application Mandatory field. <strong>Example:</strong> + 8190</dlentry><dlentry id="dataflow-hive-conn-yarn-timeline-webapp-version">Yarn timeline webapp version:::: Specify the version associated with the yarn timeline service web application Mandatory field. <strong>Example:</strong> + v1</dlentry><dlentry id="dataflow-hive-conn-jdbc-options">JDBC options</dt>
+<dt class="hdlist1">KDC host</dt>
 <dd>
-<p>Specify the options associated with the JDBC URL. Optional field. <strong>Example:</strong> + <code>jdbc:sqlserver://[serverName[\instanceName][:portNumber]]</code></dlentry></p>
+<p>Specify KDC Host Name where as KDC (Kerberos Key Distribution Center) is a service than runs on a domain controller server role (Configured from Kerbores configuration-/etc/krb5.conf)</p>
+<div class="paragraph">
+<p>Mandatory field.
+<strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>example.example.com</p>
+</div>
+</dd>
+<dt class="hdlist1">Default realm</dt>
+<dd>
+<p>A Kerberos realm is the domain over which a Kerberos authentication server has the authority to authenticate a user, host or service (Configured from Kerbores configuration-/etc/krb5.conf)</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>labhdp.example.com</p>
+</div>
+</dd>
+<dt class="hdlist1">Queue name</dt>
+<dd>
+<p>Specify the queue name followed by a coma separated form in yarn.scheduler.capacity.root.queues.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For Hadoop Extract only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>default</p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong></p>
+</div>
+<div class="paragraph">
+<p>It is available in capacity-scheduler.xml</p>
+</div>
+</dd>
+<dt class="hdlist1">YARN web UI port</dt>
+<dd>
+<p>Yarn Providing web UI for yarn RM and by default 8088 in use.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For Hadoop Extract only.<br>
+<strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>8088</p>
+</div>
+</dd>
+<dt class="hdlist1">Zookeeper quorum host</dt>
+<dd>
+<p>Specify the value of hadoop.registry.zk.quorum from yarn-site.xml.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>Only when <em>not</em> using Hiveserver2 HA.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>lvclhdp1.example.com:21,lvclabhdp12.example.com:81,lvclabhdp12.example.com:2093</p>
+</div>
+</dd>
+<dt class="hdlist1">Yarn timeline webapp host</dt>
+<dd>
+<p>Specify the ip adress of yarn timeline service web application.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>8188</p>
+</div>
+</dd>
+<dt class="hdlist1">Yarn timeline webapp port</dt>
+<dd>
+<p>Specify the port associated with the yarn timeline service web application.</p>
+<div class="paragraph">
+<p>Mandatory field.
+<strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>8190</p>
+</div>
+</dd>
+<dt class="hdlist1">Yarn timeline webapp version</dt>
+<dd>
+<p>Specify the version associated with the yarn timeline service web application.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>v1</p>
+</div>
+</dd>
+<dt class="hdlist1">JDBC options</dt>
+<dd>
+<p>Specify the options associated with the JDBC URL.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p><code>jdbc:sqlserver://[serverName[\instanceName][:portNumber]]</code></p>
+</div>
 </dd>
 </dl>
 </div>
@@ -2825,17 +3429,123 @@ Mandatory field.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><dlentry id="dataflow-hive-sync-data-extraction-mode">Data extraction mode</dt>
+<dt class="hdlist1">Data extraction mode</dt>
 <dd>
-<p>Specify the extraction type. Mandatory field. <strong>Example:</strong> + Hadoop Extract <strong>Valid Values:</strong> + Hadoop Extract, JDBC <strong>Default:</strong> + Hadoop Extract</dlentry><dlentry id="dataflow-hive-sync-null-value">Null value::::
-Specifies the string literal that should indicate the null value in the extracted data.
-During the data load the column value matching this string will be loaded as null in the target.
-Mandatory field.</p>
+<p>Specify the extraction type.</p>
+<div class="paragraph">
+<p>Mandatory field.
+<strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>Hadoop Extract <strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Hadoop Extract, JDBC</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>Hadoop Extract</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For Hadoop Extract only. <strong>Example:</strong> + NULL <strong>Valid Values:</strong> + NULL <strong>Default:</strong> + NULL</dlentry><dlentry id="dataflow-hive-sync-enclosing-character">Enclosing character:::: Specify if the text columns in the source data needs to be enclosed in quotes. Mandatory field. <strong>Example:</strong> + DOUBLE <strong>Valid Values:</strong> + SINGLE, DOUBLE <strong>Default:</strong> + DOUBLE</dlentry><dlentry id="dataflow-hive-sync-escape-character">Escape character:::: Specify the escape character if using a text qualifier in the source data. Mandatory field. <strong>Example:</strong> + \" <strong>Valid Values:</strong> + \\, Any ASCII character <strong>Default:</strong> + \"</dlentry><dlentry id="dataflow-hive-sync-ts-load-options">TS load options</dt>
+<dt class="hdlist1">Null value</dt>
+<dd>
+<p>Specifies the string literal that should indicate the null value in the extracted data. During the data load the column value matching this string will be loaded as null in the target.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For Hadoop Extract only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>NULL <strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>NULL <strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>NULL</p>
+</div>
+</dd>
+<dt class="hdlist1">Enclosing character</dt>
+<dd>
+<p>Specify if the text columns in the source data needs to be enclosed in quotes.</p>
+<div class="paragraph">
+<p>Mandatory field.
+<strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>DOUBLE</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>SINGLE, DOUBLE
+<strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>DOUBLE</p>
+</div>
+</dd>
+<dt class="hdlist1">Escape character</dt>
+<dd>
+<p>Specify the escape character if using a text qualifier in the source data.</p>
+<div class="paragraph">
+<p>Mandatory field.
+<strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>\"
+<strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>\\, Any ASCII character
+<strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>\"</p>
+</div>
+</dd>
+<dt class="hdlist1">TS load options</dt>
 <dd>
 <p>Specifies the parameters passed with the <code>tsload</code> command, in addition to the commands already included by the application.
-The format for these parameters is: + ` --&lt;param_1_name&gt; &lt;optional_param_1_value&gt;` + ` --&lt;param_2_name&gt; &lt;optional_param_2_value&gt;` Optional field. <strong>Example:</strong> + --max_ignored_rows 0 <strong>Valid Values:</strong> +  + ` --null_value "` + ` --escape_character "` + ` --max_ignored_rows 0` <strong>Default:</strong> + --max_ignored_rows 0</dlentry></p>
+The format for these parameters is:</p>
+<div class="paragraph">
+<p>` --&lt;param_1_name&gt; &lt;optional_param_1_value&gt;`</p>
+</div>
+<div class="paragraph">
+<p>` --&lt;param_2_name&gt; &lt;optional_param_2_value&gt;`</p>
+</div>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong>
++ --max_ignored_rows 0</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>` --null_value "`</p>
+</div>
+<div class="paragraph">
+<p>` --escape_character "`</p>
+</div>
+<div class="paragraph">
+<p>` --max_ignored_rows 0`</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>--max_ignored_rows 0</p>
+</div>
 </dd>
 </dl>
 </div>

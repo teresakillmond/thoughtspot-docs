@@ -2575,6 +2575,54 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="geomap-australia.html">Australia</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-austria.html">Austria</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-canada.html">Canada</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-france.html">France</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-germany.html">Germany</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-india.html">India</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-indonesia.html">Indonesia</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-italy.html">Italy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-japan.html">Japan</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-norway.html">Norway</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-poland.html">Poland</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-portugal.html">Portugal</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-sweden.html">Sweden</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-switzerland.html">Switzerland</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-south-africa.html">South Africa</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-united-states.html">United States</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-united-kingdom.html">United Kingdom</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2682,18 +2730,162 @@ You need specific information to establish a seamless and secure connection.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><dlentry id="dataflow-snowflake-conn-connection-name">Connection Properties</dt>
+<dt class="hdlist1">Connection Properties</dt>
 <dd>
-<p>Name your connection. Mandatory field. <strong>Example:</strong> + SnowflakeConnection</dlentry><dlentry id="dataflow-snowflake-conn-connection-type">Connection type:::: Choose the Snowflake connection type. Mandatory field. <strong>Example:</strong> + Snowflake</dlentry><dlentry id="dataflow-snowflake-conn-user">User::::
-Specify the user to connect to Snowflake.</p>
+<p>Name your connection.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>SnowflakeConnection</p>
+</div>
 </dd>
-<dt class="hdlist1">This user must have data access privileges to the databases. Mandatory field. <strong>Example:</strong> + user1</dlentry><dlentry id="dataflow-snowflake-conn-password">Password:::: Specify the password. Mandatory field. <strong>Example:</strong> + pswrd234%!</dlentry><dlentry id="dataflow-snowflake-conn-account">Account:::: Specify the account to connect to the Snowflake database. Mandatory field. <strong>Example:</strong> + example_account</dlentry><dlentry id="dataflow-snowflake-conn-role">Role:::: Specify the role that defines the set of privelleges assigned to a user or a user group. Mandatory field. <strong>Example:</strong> + Developer <strong>Valid Values:</strong> + Developer, Operator, Business Analyst,Public,Scheduler Read,Scheduler Write,Scheduler Execute <strong>Default:</strong> + Public</dlentry><dlentry id="dataflow-snowflake-conn-jdbc-options">JDBC options:::: Specify the options associated with the JDBC URL. Optional field. <strong>Example:</strong> + <code>jdbc:sqlserver://[serverName[\instanceName][:portNumber]]</code> <strong>Other notes:</strong> + Advanced configuration</dlentry><dlentry id="dataflow-snowflake-conn-warehouse">Warehouse:::: Choose the warehouse of databases. Mandatory field. <strong>Example:</strong> + demo_wh</dlentry><dlentry id="dataflow-snowflake-conn-keep-connection-alive">Keep connection alive</dt>
+<dt class="hdlist1">Connection type</dt>
 <dd>
-<p>Specify if system must force the user to log in again after a period of inactivity.
-+ &bull;
-When <code>TRUE</code>, Snowflake keeps the session active indefinitely, even if there is no user activity.
-+ &bull;
-When set to <code>FALSE</code> user must log in after four hours of inactivity. Optional field. <strong>Example:</strong> + TRUE <strong>Valid Values:</strong> + TRUE, FALSE <strong>Default:</strong> + TRUE <strong>Other notes:</strong> + Advanced configuration</dlentry></p>
+<p>Choose the Snowflake connection type.</p>
+<div class="paragraph">
+<p>Mandatory field.<br>
+<strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>Snowflake</p>
+</div>
+</dd>
+<dt class="hdlist1">User</dt>
+<dd>
+<p>Specify the user to connect to Snowflake. This user must have data access privileges to the databases.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>user1</p>
+</div>
+</dd>
+<dt class="hdlist1">Password</dt>
+<dd>
+<p>Specify the password.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>pswrd234%!</p>
+</div>
+</dd>
+<dt class="hdlist1">Account</dt>
+<dd>
+<p>Specify the account to connect to the Snowflake database.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>example_account</p>
+</div>
+</dd>
+<dt class="hdlist1">Role</dt>
+<dd>
+<p>Specify the role that defines the set of privelleges assigned to a user or a user group.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>Developer</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Developer, Operator, Business Analyst,Public,Scheduler Read,Scheduler Write,Scheduler Execute</p>
+</div>
+<div class="paragraph">
+<p>+
+<strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>+
+Public</p>
+</div>
+</dd>
+<dt class="hdlist1">JDBC options</dt>
+<dd>
+<p>Specify the options associated with the JDBC URL.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p><code>jdbc:sqlserver://[serverName[\instanceName][:portNumber]]</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong></p>
+</div>
+<div class="paragraph">
+<p>Advanced configuration</p>
+</div>
+</dd>
+<dt class="hdlist1">Warehouse</dt>
+<dd>
+<p>Choose the warehouse of databases.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>demo_wh</p>
+</div>
+</dd>
+<dt class="hdlist1">Keep connection alive</dt>
+<dd>
+<p>Specify if system must force the user to log in again after a period of inactivity.</p>
+<div class="paragraph">
+<p>When <code>TRUE</code>, Snowflake keeps the session active indefinitely, even if there is no user activity.</p>
+</div>
+<div class="paragraph">
+<p>When set to <code>FALSE</code> user must log in after four hours of inactivity.</p>
+</div>
+<div class="paragraph">
+<p>Optional field.<br>
+<strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>TRUE</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>TRUE, FALSE</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>TRUE</p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong></p>
+</div>
+<div class="paragraph">
+<p>Advanced configuration</p>
+</div>
 </dd>
 </dl>
 </div>
@@ -2704,23 +2896,310 @@ When set to <code>FALSE</code> user must log in after four hours of inactivity. 
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><dlentry id="dataflow-snowflake-sync-data-extraction-mode">Data extraction mode</dt>
+<dt class="hdlist1">Data extraction mode</dt>
 <dd>
-<p>Specify the extraction type. Mandatory field. <strong>Example:</strong> + JDBC <strong>Valid Values:</strong> + JDBC, Bulk export <strong>Default:</strong> + Bulk export</dlentry><dlentry id="dataflow-snowflake-sync-column-delimiter">Column delimiter:::: Specify the column delimiter character. Mandatory field. <strong>Example:</strong> + 1 <strong>Valid Values:</strong> + Any printable ASCII character or decimal value for ASCII character <strong>Default:</strong> + 1</dlentry><dlentry id="dataflow-snowflake-sync-enclosing-character">Enclosing character:::: Specify if text column data is in quotes, and if Optional field. <strong>Example:</strong> + DOUBLE <strong>Valid Values:</strong> + SINGLE, DOUBLE <strong>Default:</strong> + DOUBLE <strong>Other notes:</strong> + Required when text data contains a newline character or delimiter character.</dlentry><dlentry id="dataflow-snowflake-sync-escape-character">Escape character:::: Specify the escape character if using a text qualifier in the source data. Optional field. <strong>Example:</strong> + \" <strong>Valid Values:</strong> + Any ASCII character <strong>Default:</strong> + \"</dlentry><dlentry id="dataflow-snowflake-sync-escape-unclosed-field">Escape unclosed field::::
-Specify this if the text qualifier is mentioned.</p>
+<p>Specify the extraction type.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>JDBC<br>
+<strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>JDBC, Bulk export</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>Bulk export</p>
+</div>
 </dd>
-<dt class="hdlist1">This should be the character which escapes the text qualifier character in the source data. Optional field. <strong>Example:</strong> + NONE <strong>Valid Values:</strong> + NONE <strong>Default:</strong> + NONE</dlentry><dlentry id="dataflow-snowflake-sync-field-optionally-enclosed-by">Field optionally enclosed by:::: Specify if the text columns in the source data needs to be enclosed in quotes. Optional field. <strong>Example:</strong> + DOUBLE <strong>Valid Values:</strong> + None, Double <strong>Default:</strong> + DOUBLE</dlentry><dlentry id="dataflow-snowflake-sync-null-if">Null If</dt>
+<dt class="hdlist1">Column delimiter</dt>
 <dd>
-<p>Specify the string literal that indicates NULL value in the extracted data.</p>
+<p>Specify the column delimiter character.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>1</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any printable ASCII character or decimal value for ASCII character</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>1</p>
+</div>
 </dd>
-<dt class="hdlist1">During data loading, column values that match this string loaded as NULL in the target. Optional field. <strong>Example:</strong> + NULL <strong>Valid Values:</strong> + NULL <strong>Default:</strong> + NULL</dlentry><dlentry id="dataflow-snowflake-sync-stage-location">Stage location:::: Specify a temporary staging server Snowflake has to use while DataFlow extracts data. Mandatory field. <strong>Example:</strong> + /tmp <strong>Valid Values:</strong> + /tmp <strong>Default:</strong> + /tmp</dlentry><dlentry id="dataflow-snowflake-sync-max-file-size">Max file size:::: Specify the maximum size of each file in the stage location, in bytes. Mandatory field. <strong>Example:</strong> + 16000000 <strong>Valid Values:</strong> + Any numeric value <strong>Default:</strong> + 16000000</dlentry><dlentry id="dataflow-snowflake-sync-parallel-threads">Parallel threads:::: Specify the number of parallel threads to unload data. Mandatory field. <strong>Example:</strong> + 4 <strong>Valid Values:</strong> + Any numeric value <strong>Default:</strong> + 4</dlentry><dlentry id="dataflow-snowflake-sync-fetch-size">Fetch size</dt>
+<dt class="hdlist1">Enclosing character</dt>
 <dd>
-<p>Specify the number of rows fetched into memory at the same time.</p>
+<p>Specify if text column data is in quotes, and if.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>DOUBLE</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>SINGLE, DOUBLE<br>
+<strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>DOUBLE</p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong></p>
+</div>
+<div class="paragraph">
+<p>Required when text data contains a newline character or delimiter character.</p>
+</div>
 </dd>
-<dt class="hdlist1">If the value is 0, system fetches all rows at the same time. Mandatory field. <strong>Example:</strong> + 1000 <strong>Valid Values:</strong> + Any numeric value <strong>Default:</strong> + 1000</dlentry><dlentry id="dataflow-snowflake-sync-ts-load-options">TS load options</dt>
+<dt class="hdlist1">Escape character</dt>
 <dd>
-<p>Specify additional parameters passed with the <code>tsload</code> command.
-The format for these parameters is: + <code>--&lt;param_1_name&gt; &lt;optional_param_1_value&gt;</code> Optional field. <strong>Example:</strong> + <code>--max_ignored_rows 0</code> <strong>Valid Values:</strong> + <code>--user "dbuser"</code> + <code>--password "$DIWD"</code> + <code>--target_database "ditest"</code> + <code>--target_schema "falcon_schema"</code> <strong>Default:</strong> + <code>--max_ignored_rows 0</code></dlentry></p>
+<p>Specify the escape character if using a text qualifier in the source data.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong>
++ \"</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any ASCII character</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>\"</p>
+</div>
+</dd>
+<dt class="hdlist1">Escape unclosed field</dt>
+<dd>
+<p>Specify this if the text qualifier is mentioned. This should be the character which escapes the text qualifier character in the source data.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>NONE</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>NONE</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>NONE</p>
+</div>
+</dd>
+<dt class="hdlist1">Field optionally enclosed by</dt>
+<dd>
+<p>Specify if the text columns in the source data needs to be enclosed in quotes.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>DOUBLE</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>None, Double<br>
+<strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>DOUBLE</p>
+</div>
+</dd>
+<dt class="hdlist1">Null If</dt>
+<dd>
+<p>Specify the string literal that indicates NULL value in the extracted data. During data loading, column values that match this string loaded as NULL in the target.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>NULL</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>NULL</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>NULL</p>
+</div>
+</dd>
+<dt class="hdlist1">Stage location</dt>
+<dd>
+<p>Specify a temporary staging server Snowflake has to use while DataFlow extracts data.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>/tmp</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>/tmp</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>/tmp</p>
+</div>
+</dd>
+<dt class="hdlist1">Max file size</dt>
+<dd>
+<p>Specify the maximum size of each file in the stage location, in bytes.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>16000000</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any numeric value</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong>
++ 16000000</p>
+</div>
+</dd>
+<dt class="hdlist1">Parallel threads</dt>
+<dd>
+<p>Specify the number of parallel threads to unload data.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>4 <strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any numeric value</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>4</p>
+</div>
+</dd>
+<dt class="hdlist1">Fetch size</dt>
+<dd>
+<p>Specify the number of rows fetched into memory at the same time. If the value is 0, system fetches all rows at the same time.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>1000</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any numeric value</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>1000</p>
+</div>
+</dd>
+<dt class="hdlist1">TS load options</dt>
+<dd>
+<p>Specify additional parameters passed with the <code>tsload</code> command. The format for these parameters is:</p>
+<div class="paragraph">
+<p><code>--&lt;param_1_name&gt; &lt;optional_param_1_value&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p><code>--max_ignored_rows 0</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p><code>--user "dbuser"</code></p>
+</div>
+<div class="paragraph">
+<p><code>--password "$DIWD"</code></p>
+</div>
+<div class="paragraph">
+<p><code>--target_database "ditest"</code></p>
+</div>
+<div class="paragraph">
+<p><code>--target_schema "falcon_schema"</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p><code>--max_ignored_rows 0</code></p>
+</div>
 </dd>
 </dl>
 </div>

@@ -2575,6 +2575,54 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="geomap-australia.html">Australia</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-austria.html">Austria</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-canada.html">Canada</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-france.html">France</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-germany.html">Germany</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-india.html">India</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-indonesia.html">Indonesia</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-italy.html">Italy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-japan.html">Japan</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-norway.html">Norway</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-poland.html">Poland</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-portugal.html">Portugal</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-sweden.html">Sweden</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-switzerland.html">Switzerland</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-south-africa.html">South Africa</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-united-states.html">United States</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-united-kingdom.html">United Kingdom</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2682,57 +2730,365 @@ You need specific information to establish a seamless and secure connection.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><dlentry id="dataflow-hdfs-conn-connection-name">Connection name</dt>
+<dt class="hdlist1">Connection name</dt>
 <dd>
-<p>Name your connection. Mandatory field. <strong>Example:</strong> + HDFSConnection</dlentry><dlentry id="dataflow-hdfs-conn-connection-type">Connection type:::: Choose the Google BigQuery connection type. Mandatory field. <strong>Example:</strong> + HDFS</dlentry><dlentry id="dataflow-hdfs-conn-user">User::::
-Specify the user to connect to HDFS file system.
-This user must have data access privileges.
-Mandatory field.</p>
+<p>Name your connection.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>HDFSConnection</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For Hive security with simple, LDAP, and SSL authentication only. <strong>Example:</strong> + user1</dlentry><dlentry id="dataflow-hdfs-conn-hadoop-distribution">Hadoop distribution:::: Provide the distribution of Hadoop being connected to Mandatory field. <strong>Example:</strong> + Hortonworks <strong>Valid Values:</strong> + CDH, Hortonworks, EMR <strong>Default:</strong> + CDH</dlentry><dlentry id="dataflow-hdfs-conn-distribution-version">Distribution version:::: Provide the version of the Distribution chosen above Mandatory field. <strong>Example:</strong> + 2.6.5 <strong>Valid Values:</strong> + Valid distribution number of the <strong>Hadoop distribution</strong> <strong>Default:</strong> + 6.3.x</dlentry><dlentry id="dataflow-hdfs-conn-hadoop-conf-path">Hadoop conf path</dt>
+<dt class="hdlist1">Connection type</dt>
 <dd>
-<p>By default, the system picks the Hadoop configuration files from the HDFS.
-To override, specify an alternate location.</p>
+<p>Choose the Google BigQuery connection type.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>HDFS</p>
+</div>
 </dd>
-<dt class="hdlist1">Applies only when using configuration settings that are different from global Hadoop instance settings. Mandatory field. <strong>Example:</strong> + /app/path <strong>Other notes:</strong> + An instance where this could be needed is, if the hdfs is encrypted and the location of key files and password decrypt the files is available in the hadoop config files.</dlentry><dlentry id="dataflow-hdfs-conn-hdfs-ha-configured">HDFS HA configured:::: Enables High Availability for HDFS Optional field.</dlentry><dlentry id="dataflow-hdfs-conn-hdfs-name-service">HDFS name service</dt>
+<dt class="hdlist1">User</dt>
 <dd>
-<p>The logical name of given to HDFS nameservice.
-Mandatory field.</p>
+<p>Specify the user to connect to HDFS file system. This user must have data access privileges.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For Hive security with simple, LDAP, and SSL authentication only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>user1</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For HDFS HA only. <strong>Example:</strong> + lahdfs <strong>Other notes:</strong> + It is available in <code>hdfs-site.xml</code> and defined as <code>dfs.nameservices</code>.</dlentry><dlentry id="dataflow-hdfs-conn-hdfs-name-node-ids">HDFS name node IDs</dt>
+<dt class="hdlist1">Hadoop distribution</dt>
 <dd>
-<p>Provides the list of NameNode IDs separted by comma and DataNodes use this property to determine all the NameNodes in the cluster.
-XML property name is <code>dfs.ha.namenodes.dfs.nameservices</code>.
-Mandatory field.</p>
+<p>Provide the distribution of Hadoop being connected to.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>Hortonworks</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>CDH, Hortonworks, EMR</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>CDH</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For HDFS HA only. <strong>Example:</strong> + nn1,nn2</dlentry><dlentry id="dataflow-hdfs-conn-rpc-address-for-namenode1">RPC address for namenode1</dt>
+<dt class="hdlist1">Distribution version</dt>
 <dd>
-<p>To specify the fully-qualified RPC address for each listed NameNode and defined as <code>dfs.namenodes.rpc-address.dfs.nameservices.name_node_ID_1&gt;</code>.
-Mandatory field.</p>
+<p>Provide the version of the Distribution chosen above.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>2.6.5</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Valid distribution number of the <strong>Hadoop distribution</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong>
++ 6.3.x</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For HDFS HA only. <strong>Example:</strong> + www.example1.com:1234</dlentry><dlentry id="dataflow-hdfs-conn-rpc-address-for-namenode2">RPC address for namenode2</dt>
+<dt class="hdlist1">Hadoop conf path</dt>
 <dd>
-<p>To specify the fully-qualified RPC address for each listed NameNode and defined as <code>dfs.namenode.rpc-address.dfs.nameservices.name_node_ID_2</code>.
-Mandatory field.</p>
+<p>By default, the system picks the Hadoop configuration files from the HDFS. To override, specify an alternate location. Applies only when using configuration settings that are different from global Hadoop instance settings.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>/app/path</p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong></p>
+</div>
+<div class="paragraph">
+<p>An instance where this could be needed is, if the hdfs is encrypted and the location of key files and password decrypt the files is available in the hadoop config files.</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For HDFS HA only. <strong>Example:</strong> + www.example2.com:1234</dlentry><dlentry id="dataflow-hdfs-conn-dfs-host">DFS host</dt>
+<dt class="hdlist1">HDFS HA configured</dt>
 <dd>
-<p>Specify the DFS hostname or the IP address
-Mandatory field.</p>
+<p>Enables High Availability for HDFS.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For when <em>not</em> using HDFS HA.</dlentry><dlentry id="dataflow-hdfs-conn-dfs-port">DFS port</dt>
+<dt class="hdlist1">HDFS name service</dt>
 <dd>
-<p>Speciffy the associated DFS port
-Mandatory field.</p>
+<p>The logical name of given to HDFS nameservice.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For HDFS HA only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>lahdfs</p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong></p>
+</div>
+<div class="paragraph">
+<p>It is available in <code>hdfs-site.xml</code> and defined as <code>dfs.nameservices</code>.</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For when <em>not</em> using HDFS HA.</dlentry><dlentry id="dataflow-hdfs-conn-default-hdfs-location">Default HDFS location:::: Specify the location for the default source/target location Mandatory field. <strong>Example:</strong> + /tmp</dlentry><dlentry id="dataflow-hdfs-conn-temp-hdfs-location">Temp HDFS location:::: Specify the location for creating temp directory Mandatory field. <strong>Example:</strong> + /tmp</dlentry><dlentry id="dataflow-hdfs-conn-hdfs-security-authentication">HDFS security authentication:::: Select the type of security being enabled Mandatory field. <strong>Example:</strong> + Kerberos <strong>Valid Values:</strong> + Simple, Kerberos <strong>Default:</strong> + simple</dlentry><dlentry id="dataflow-hdfs-conn-hadoop-rpc-protection">Hadoop RPC protection</dt>
+<dt class="hdlist1">HDFS name node IDs</dt>
 <dd>
-<p>Hadoop cluster administrators control the quality of protection using the configuration parameter hadoop.rpc.protection
-Mandatory field.</p>
+<p>Provides the list of NameNode IDs separted by comma and DataNodes use this property to determine all the NameNodes in the cluster. XML property name is <code>dfs.ha.namenodes.dfs.nameservices</code>.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For HDFS HA only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>nn1,nn2</p>
+</div>
 </dd>
-<dt class="hdlist1">+ For DFS security authentication with Kerberos only. <strong>Example:</strong> + none <strong>Valid Values:</strong> + None, authentication, integrity, privacy <strong>Default:</strong> + authentication <strong>Other notes:</strong> + It is available in <code>core-site.xml</code>.</dlentry><dlentry id="dataflow-hdfs-conn-hive-principal">Hive principal:::: Principal for authenticating hive services Mandatory field. <strong>Example:</strong> + hive/host@name.example.com <strong>Other notes:</strong> + It is available in <code>hive-site.xml</code>.</dlentry><dlentry id="dataflow-hdfs-conn-user-principal">User principal:::: To authenticate via a key-tab you must have supporting key-tab file which is generated by Kerberos Admin and also requires the user principal associated with Key-tab ( Configured while enabling Kerberos) Mandatory field. <strong>Example:</strong> + <a href="mailto:labuser@name.example.com">labuser@name.example.com</a></dlentry><dlentry id="dataflow-hdfs-conn-user-keytab">User keytab:::: To authenticate via a key-tab you must have supporting key-tab file which is generated by Kerberos Admin and also requires the user principal associated with Key-tab ( Configured while enabling Kerberos) Mandatory field. <strong>Example:</strong> + /app/keytabs/labuser.keytab</dlentry><dlentry id="dataflow-hdfs-conn-kdc-host">KDC host:::: Specify KDC Host Name where as KDC (Kerberos Key Distribution Center) is a service than runs on a domain controller server role (Configured from Kerbores configuration-/etc/krb5.conf ) Mandatory field. <strong>Example:</strong> + <a href="mailto:kdc_host@example.com">kdc_host@example.com</a></dlentry><dlentry id="dataflow-hdfs-conn-default-realm">Default realm</dt>
+<dt class="hdlist1">RPC address for namenode1</dt>
 <dd>
-<p>A Kerberos realm is the domain over which a Kerberos authentication server has the authority to authenticate a user, host or service (Configured from Kerbores configuration-/etc/krb5.conf ) Mandatory field. <strong>Example:</strong> + name.example.com</dlentry></p>
+<p>To specify the fully-qualified RPC address for each listed NameNode and defined as <code>dfs.namenodes.rpc-address.dfs.nameservices.name_node_ID_1&gt;</code>.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For HDFS HA only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>www.example1.com:1234</p>
+</div>
+</dd>
+<dt class="hdlist1">RPC address for namenode2</dt>
+<dd>
+<p>To specify the fully-qualified RPC address for each listed NameNode and defined as <code>dfs.namenode.rpc-address.dfs.nameservices.name_node_ID_2</code>.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For HDFS HA only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>www.example2.com:1234</p>
+</div>
+</dd>
+<dt class="hdlist1">DFS host</dt>
+<dd>
+<p>Specify the DFS hostname or the IP address.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For when <em>not</em> using HDFS HA.</p>
+</div>
+</dd>
+<dt class="hdlist1">DFS port</dt>
+<dd>
+<p>Specify the associated DFS port.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For when <em>not</em> using HDFS HA.</p>
+</div>
+</dd>
+<dt class="hdlist1">Default HDFS location</dt>
+<dd>
+<p>Specify the location for the default source/target location.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>/tmp</p>
+</div>
+</dd>
+<dt class="hdlist1">Temp HDFS location</dt>
+<dd>
+<p>Specify the location for creating temp directory.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>/tmp</p>
+</div>
+</dd>
+<dt class="hdlist1">HDFS security authentication</dt>
+<dd>
+<p>Select the type of security being enabled.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>Kerberos</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Simple, Kerberos</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>simple</p>
+</div>
+</dd>
+<dt class="hdlist1">Hadoop RPC protection</dt>
+<dd>
+<p>Hadoop cluster administrators control the quality of protection using the configuration parameter hadoop.rpc.protection.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p>For DFS security authentication with Kerberos only.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>none</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>None, authentication, integrity, privacy</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>authentication<br>
+<strong>Other notes:</strong></p>
+</div>
+<div class="paragraph">
+<p>It is available in <code>core-site.xml</code>.</p>
+</div>
+</dd>
+<dt class="hdlist1">Hive principal</dt>
+<dd>
+<p>Principal for authenticating hive services.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>hive/host@name.example.com</p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong></p>
+</div>
+<div class="paragraph">
+<p>It is available in <code>hive-site.xml</code>.</p>
+</div>
+</dd>
+<dt class="hdlist1">User principal</dt>
+<dd>
+<p>To authenticate via a key-tab you must have supporting key-tab file which is generated by Kerberos Admin and also requires the user principal associated with Key-tab (Configured while enabling Kerberos).</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p><a href="mailto:labuser@name.example.com">labuser@name.example.com</a></p>
+</div>
+</dd>
+<dt class="hdlist1">User keytab</dt>
+<dd>
+<p>To authenticate via a key-tab you must have supporting key-tab file which is generated by Kerberos Admin and also requires the user principal associated with Key-tab (Configured while enabling Kerberos).</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>/app/keytabs/labuser.keytab</p>
+</div>
+</dd>
+<dt class="hdlist1">KDC host</dt>
+<dd>
+<p>Specify KDC Host Name where as KDC (Kerberos Key Distribution Center) is a service than runs on a domain controller server role (Configured from Kerberos configuration-/etc/krb5.conf).</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p><a href="mailto:kdc_host@example.com">kdc_host@example.com</a></p>
+</div>
+</dd>
+<dt class="hdlist1">Default realm</dt>
+<dd>
+<p>A Kerberos realm is the domain over which a Kerberos authentication server has the authority to authenticate a user, host or service (Configured from Kerberos configuration-/etc/krb5.conf).</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>name.example.com</p>
+</div>
 </dd>
 </dl>
 </div>
@@ -2743,19 +3099,301 @@ Mandatory field.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><dlentry id="dataflow-hdfs-sync-column-delimiter">Column delimiter</dt>
+<dt class="hdlist1">Column delimiter</dt>
 <dd>
-<p>Specify the column delimiter character. Mandatory field. <strong>Example:</strong> + 1 <strong>Valid Values:</strong> + Any ASCII character <strong>Default:</strong> + ASCII 01 (SOH)</dlentry><dlentry id="dataflow-hdfs-sync-enable-archive-on-success">Enable archive on success:::: Specify if data needs to be archived once it is succeeded Optional field. <strong>Example:</strong> + No <strong>Valid Values:</strong> + Yes <strong>Default:</strong> + No</dlentry><dlentry id="dataflow-hdfs-sync-delete-on-success">Delete on success:::: Specify if data needs to be deleted after execution is successful Optional field. <strong>Example:</strong> + No <strong>Valid Values:</strong> + Yes <strong>Default:</strong> + No</dlentry><dlentry id="dataflow-hdfs-sync-compression">Compression:::: Specify this if the file is compressed and what kind of compressed file it is Mandatory field. <strong>Example:</strong> + gzip <strong>Valid Values:</strong> + None, gzip <strong>Default:</strong> + None</dlentry><dlentry id="dataflow-hdfs-sync-enclosing-character">Enclosing character:::: Specify if the text columns in the source data needs to be enclosed in quotes. Optional field. <strong>Example:</strong> + Single <strong>Valid Values:</strong> + Single, Double, Empty <strong>Default:</strong> + Double</dlentry><dlentry id="dataflow-hdfs-sync-escape-character">Escape character:::: Specify the escape character if using a text qualifier in the source data. Optional field. <strong>Example:</strong> + \\ <strong>Valid Values:</strong> + Any ASCII character <strong>Default:</strong> + Empty</dlentry><dlentry id="dataflow-hdfs-sync-null-value">Null value::::
-Specify the string literal that represents NULL values in data.</p>
+<p>Specify the column delimiter character. Mandatory field.</p>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>1</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any ASCII character</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>ASCII 01 (SOH)</p>
+</div>
 </dd>
-<dt class="hdlist1">During the data load, the column value that matches this string loads as NULL into ThoughtSpot. Optional field. <strong>Example:</strong> + NULL <strong>Valid Values:</strong> + NULL <strong>Default:</strong> + NULL</dlentry><dlentry id="dataflow-hdfs-sync-date-style">Date style:::: Specifies how to interpret the date format Optional field. <strong>Example:</strong> + YMD <strong>Valid Values:</strong> + YMD, MDY, DMY, DMONY, MONDY, Y2MD, MDY2, DMY2, DMONY2, MONDY2 <strong>Default:</strong> + YMD</dlentry><dlentry id="dataflow-hdfs-sync-date-delimiter">Date delimiter:::: Specifies the separator used in the date format ( only default delimiter is supported). Optional field. <strong>Example:</strong> + - <strong>Valid Values:</strong> + Any printable ASCII character <strong>Default:</strong> + -</dlentry><dlentry id="dataflow-hdfs-sync-time-style">Time style:::: Specifies the format of the time portion in the data. Optional field. <strong>Example:</strong> + 24HOUR <strong>Valid Values:</strong> + 12 HOUR</dlentry><dlentry id="dataflow-hdfs-sync-time-delimiter">Time delimiter</dt>
+<dt class="hdlist1">Enable archive on success</dt>
 <dd>
-<p>Specifies the character used as separate the time components.</p>
+<p>Specify if data needs to be archived once it is succeeded.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>No</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Yes</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>No</p>
+</div>
 </dd>
-<dt class="hdlist1">(Only default delimiter is supported) Optional field. <strong>Example:</strong> + : <strong>Valid Values:</strong> + Any printable ASCII character <strong>Default:</strong> + :</dlentry><dlentry id="dataflow-hdfs-sync-ts-load-options">TS load options</dt>
+<dt class="hdlist1">Delete on success</dt>
 <dd>
-<p>Specify additional parameters passed with the <code>tsload</code> command.
-The format for these parameters is: + <code>--&lt;param_1_name&gt; &lt;optional_param_1_value&gt;</code> Optional field. <strong>Example:</strong> + <code>--max_ignored_rows 0</code> <strong>Valid Values:</strong> +  + ` --null_value ""` + ` --escape_character ""` + ` --max_ignored_rows 0` <strong>Default:</strong> + ` --max_ignored_rows 0`</dlentry></p>
+<p>Specify if data needs to be deleted after execution is successful.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>No</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Yes</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>No</p>
+</div>
+</dd>
+<dt class="hdlist1">Compression</dt>
+<dd>
+<p>Specify this if the file is compressed and what kind of compressed file it is.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>gzip</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>None, gzip</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>None</p>
+</div>
+</dd>
+<dt class="hdlist1">Enclosing character</dt>
+<dd>
+<p>Specify if the text columns in the source data needs to be enclosed in quotes.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>Single <strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Single, Double, Empty</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>Double</p>
+</div>
+</dd>
+<dt class="hdlist1">Escape character</dt>
+<dd>
+<p>Specify the escape character if using a text qualifier in the source data.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>\\</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any ASCII character</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>Empty</p>
+</div>
+</dd>
+<dt class="hdlist1">Null value</dt>
+<dd>
+<p>Specify the string literal that represents NULL values in data. During the data load, the column value that matches this string loads as NULL into ThoughtSpot.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>NULL</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>NULL</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>NULL</p>
+</div>
+</dd>
+<dt class="hdlist1">Date style</dt>
+<dd>
+<p>Specifies how to interpret the date format.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>YMD</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>YMD, MDY, DMY, DMONY, MONDY, Y2MD, MDY2, DMY2, DMONY2, MONDY2</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>YMD</p>
+</div>
+</dd>
+<dt class="hdlist1">Date delimiter</dt>
+<dd>
+<p>Specifies the separator used in the date format (only default delimiter is supported).</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Valid Values:</strong>
++ Any printable ASCII character</p>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>-</p>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Time style</dt>
+<dd>
+<p>Specifies the format of the time portion in the data.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>24HOUR</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>12 HOUR</p>
+</div>
+</dd>
+<dt class="hdlist1">Time delimiter</dt>
+<dd>
+<p>Specifies the character used as separate the time components. (Only default delimiter is supported).</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>:</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any printable ASCII character</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>:</p>
+</div>
+</dd>
+<dt class="hdlist1">TS load options</dt>
+<dd>
+<p>Specify additional parameters passed with the <code>tsload</code> command. The format for these parameters is:</p>
+<div class="paragraph">
+<p><code>--&lt;param_1_name&gt; &lt;optional_param_1_value&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p><code>--max_ignored_rows 0</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>` --null_value ""`</p>
+</div>
+<div class="paragraph">
+<p>` --escape_character ""`</p>
+</div>
+<div class="paragraph">
+<p>` --max_ignored_rows 0`</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>` --max_ignored_rows 0`</p>
+</div>
 </dd>
 </dl>
 </div>
