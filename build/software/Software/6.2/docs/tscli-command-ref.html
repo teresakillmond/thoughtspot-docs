@@ -2575,6 +2575,54 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="geomap-australia.html">Australia</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-austria.html">Austria</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-canada.html">Canada</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-france.html">France</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-germany.html">Germany</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-india.html">India</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-indonesia.html">Indonesia</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-italy.html">Italy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-japan.html">Japan</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-norway.html">Norway</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-poland.html">Poland</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-portugal.html">Portugal</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-sweden.html">Sweden</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-switzerland.html">Switzerland</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-south-africa.html">South Africa</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-united-states.html">United States</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-united-kingdom.html">United Kingdom</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2667,13 +2715,16 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The command returns <code>0</code> on success, and a non-zero exit code on failure.
+<p>The ThoughtSpot command line interface, or tscli, is an administration interface for the cluster. Use <code>tscli</code> to take snapshots (backups) of data, to apply updates, to stop and to start services, and to view information about the system. This reference defines each subcommand.</p>
+</div>
+<div class="paragraph">
+<p>The command returns <code>0</code> code on success, and a non-zero exit code on failure.
 The <code>tscli</code> command logs errors to the <code>stderr</code> directory.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="tscli-help-command"><a class="anchor" href="#tscli-help-command"></a>How to use the tscli command</h2>
+<h2 id="tscli-command-how-to"><a class="anchor" href="#tscli-command-how-to"></a>How to use the tscli command</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The <code>tscli</code> command has the following syntax:</p>
@@ -2724,7 +2775,7 @@ For example, the command <code>tscli access list --type TYPE</code>, where you w
 <h2 id="tscli-optional-flags"><a class="anchor" href="#tscli-optional-flags"></a>tscli optional flags</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>There are eight optional flags common to each <code>tscli</code> subcommand.</p>
+<p>There are several optional flags that are common to each <code>tscli</code> subcommand.</p>
 </div>
 <div class="sect2">
 <h3 id="tscli--help"><a class="anchor" href="#tscli--help"></a>help</h3>
@@ -2758,10 +2809,7 @@ This flag lists the specified command&#8217;s subcommands and their definitions.
 </div>
 <div class="paragraph">
 <p>Turns verbose logging on for the console.
-By default, logs are written to both the console and log files, with the log files containing the highest verbosity log messages.</p>
-</div>
-<div class="paragraph">
-<p>The default is <code>false</code>.</p>
+By default, logs are written to both the console and log files, with the log files containing the highest verbosity log messages. The default is <code>false</code>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2772,10 +2820,7 @@ By default, logs are written to both the console and log files, with the log fil
 </div>
 </div>
 <div class="paragraph">
-<p>Prompts y/n for each question within a command instead of assuming <code>yes</code>.</p>
-</div>
-<div class="paragraph">
-<p>The default is <code>True</code>.</p>
+<p>Prompts y/n response for each question within a command, instead of assuming <code>yes</code>. The default is <code>True</code>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2786,11 +2831,8 @@ By default, logs are written to both the console and log files, with the log fil
 </div>
 </div>
 <div class="paragraph">
-<p>Automatically configures properties of the cluster when possible.
-User may still be prompted for certain inputs.</p>
-</div>
-<div class="paragraph">
-<p>The default is <code>False</code>.</p>
+<p>Automatically configures properties of the cluster whenever possible.
+User may still be prompted for certain inputs. The default is <code>False</code>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2802,10 +2844,7 @@ User may still be prompted for certain inputs.</p>
 </div>
 <div class="paragraph">
 <p>Automatically configures properties of the cluster when possible.
-User may still be prompted for certain inputs.</p>
-</div>
-<div class="paragraph">
-<p>The default is <code>False</code>.</p>
+User may still be prompted for certain inputs. The default is <code>False</code>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2817,10 +2856,7 @@ User may still be prompted for certain inputs.</p>
 </div>
 <div class="paragraph">
 <p>Name of the cluster.
-Used when a cluster is not automatically detected.</p>
-</div>
-<div class="paragraph">
-<p>The default is <code>False</code>.</p>
+Used when a cluster is not automatically detected. The default is <code>False</code>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2831,8 +2867,7 @@ Used when a cluster is not automatically detected.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>List of Zookeeper servers, comma separated.
-Used when a cluster is not automatically detected.</p>
+<p>List of Zookeeper servers, comma-separated. Used when a cluster is not detected automatically.</p>
 </div>
 </div>
 </div>
@@ -2851,24 +2886,35 @@ Used when a cluster is not automatically detected.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following option:
-<dlentry><code>tscli access list</code>::::  Lists objects by last access time, with the following parameters:
-<dlentry><code>--type TYPE</code>::::  Type of object, either answer or pinboard.</dlentry><dlentry><code>--limit	LIMIT</code>::::  The number of objects to fetch.</p>
+<p>This subcommand has the following option:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The default is 30.</dlentry><dlentry><code>--offset OFFSET</code></dt>
+<dt class="hdlist1">tscli access list</dt>
 <dd>
-<p>Offset to use to skip objects for batched results.</p>
+<p>Lists objects by last access time, with the following parameters:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--type TYPE</dt>
+<dd>
+<p>Type of object, either answer or pinboard.</p>
 </dd>
-<dt class="hdlist1">The default is 0.</dlentry><dlentry><code>--ascending</code></dt>
+<dt class="hdlist1">--limit	LIMIT</dt>
 <dd>
-<p>Sorts the answers by access time ascending.</p>
+<p>The number of objects to fetch. The default is 30.</p>
+</dd>
+<dt class="hdlist1">--offset OFFSET</dt>
+<dd>
+<p>Offset to use when skipping objects for batched results. The default is 0.</p>
+</dd>
+<dt class="hdlist1">--ascending</dt>
+<dd>
+<p>Sorts the answers by access time ascending. The default is <code>True</code>.</p>
 </dd>
 </dl>
 </div>
-<div class="paragraph">
-<p>The default is <code>True</code>.</dlentry></dlentry></p>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect2">
@@ -2879,17 +2925,59 @@ Used when a cluster is not automatically detected.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli alert count</code>::::  Lists counts of generated alerts by type.</dlentry><dlentry><code>tscli alert info</code>::::
-Lists all alerts.
-Add <code>--silenced</code> to list only silenced alerts, <code>--active</code> to list only active alerts, or <code>--detailed</code> to get detailed alert information.</dlentry><dlentry><code>tscli alert list</code>::::  Lists the generated alerts, with these parameters:
-<dlentry><code>--limit LIMIT</code>::::  Specifies the number of recent alerts to display.</dlentry><dlentry><code>--since SINCE</code>::::  Lists all alerts raised since a specified time period, in the form of a human readable duration string, such as 4h (4 hours) or 4m (4 minutes).</dlentry></dlentry><dlentry><code>tscli alert off</code>::::  Disables all alerts from the cluster in the cluster&#8217;s timezone.</dlentry><dlentry><code>tscli alert on</code>::::  Enables alerts from the cluster.</dlentry><dlentry><code>tscli alert refresh</code>::::  Refreshes alert metadata on the cluster.</dlentry><dlentry><code>tscli alert silence --name NAME</code>::::
-Silences the alert with <code>NAME</code>.
-For example, <code>DISK_ERROR</code>.
-Silenced alerts are still recorded in postgres;
-however, emails are not sent out.</dlentry><dlentry><code>tscli alert status</code>::::  Shows the status of cluster alerts.</dlentry><dlentry><code>tscli alert unsilence --name  NAME</code>::::
-Unsilences the alert with <code>NAME</code>.
-For example, <code>DISK_ERROR</code>.</dlentry></p>
+<p>This subcommand has the following options:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">tscli alert count</dt>
+<dd>
+<p>Lists counts of generated alerts by type.</p>
+</dd>
+<dt class="hdlist1">tscli alert info</dt>
+<dd>
+<p>Lists all alerts. Add <code>--silenced</code> to list only silenced alerts, <code>--active</code> to list only active alerts, or <code>--detailed</code> to get detailed alert information.</p>
+</dd>
+<dt class="hdlist1">tscli alert list</dt>
+<dd>
+<p>Lists the generated alerts, with these parameters:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--limit LIMIT</dt>
+<dd>
+<p>Specifies the number of recent alerts to display.</p>
+</dd>
+<dt class="hdlist1">--since SINCE</dt>
+<dd>
+<p>Lists all alerts raised since a specified time period, in the form of a human-readable duration string, such as 4h (4 hours) or 4m (4 minutes).</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">tscli alert off</dt>
+<dd>
+<p>Disables all alerts from the cluster in the cluster&#8217;s timezone.</p>
+</dd>
+<dt class="hdlist1">tscli alert on</dt>
+<dd>
+<p>Enables alerts from the cluster.</p>
+</dd>
+<dt class="hdlist1">tscli alert refresh</dt>
+<dd>
+<p>Refreshes alert metadata on the cluster.</p>
+</dd>
+<dt class="hdlist1">tscli alert silence --name NAME</dt>
+<dd>
+<p>Silences the alert with <code>NAME</code>, such as <code>DISK_ERROR</code>. Silenced alerts are still recorded in postgres, but emails are not sent out.</p>
+</dd>
+<dt class="hdlist1">tscli alert status</dt>
+<dd>
+<p>Shows the status of cluster alerts.</p>
+</dd>
+<dt class="hdlist1">tscli alert unsilence --name NAME</dt>
+<dd>
+<p>Unsilences the alert with <code>NAME</code>, such as <code>DISK_ERROR</code>.</p>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect2">
@@ -2900,93 +2988,90 @@ For example, <code>DISK_ERROR</code>.</dlentry></p>
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli ansible checkout --host HOST</code>::::  Checks out Ansible playbook with the target <code>HOST</code> that is running the ts_ansible service.</dlentry><dlentry><code>tscli ansible commit --host HOST</code>::::  Commits Ansible playbooks with the target `HOST ` that is running the ts_ansible service.</dlentry></p>
+<p>This subcommand has the following options:</p>
 </div>
-<div class="paragraph">
-<p>Use this subcommand to install and configure third-party software on the ThoughtSpot cluster.</p>
-</div>
-<div class="paragraph">
-<p>For details, see these articles:</p>
-</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">tscli ansible checkout --host HOST</dt>
+<dd>
+<p>Checks out Ansible playbook with the target <code>HOST</code> that is running the <code>ts_ansible</code> service.</p>
+</dd>
+<dt class="hdlist1">tscli ansible commit --host HOST</dt>
+<dd>
+<p>Commits Ansible playbooks with the target <code>HOST</code> that is running the <code>ts_ansible service</code>. Use this subcommand to install and configure third-party software on the ThoughtSpot cluster. For details, see these articles:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>link:{{ site.baseurl}}/admin/data-security/about-secure-monitor-sw.html#[About third party security and monitoring software]</p>
+<p><a href="about-secure-monitor-sw.html" class="page">About third party security and monitoring software</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl}}/admin/data-security/install-secure-monitor-sw.html#[Installing third party security and monitoring software]</p>
+<p><a href="install-secure-monitor-sw.html" class="page">Installing third party security and monitoring software</a></p>
 </li>
 </ul>
+</div>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect2">
 <h3 id="tscli-backup"><a class="anchor" href="#tscli-backup"></a>backup</h3>
 <div class="listingblock">
 <div class="content">
-<pre>tscli backup [-h] {create,delete,ls,}</pre>
+<pre>tscli backup [-h] {create,delete,ls}</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli backup create [-h] [--mode {full,light,dataless}] [--type {full,incremental}] [--base BASE] [--storage_type {local,nas,cloud}] [--remote] [--no-orion-master] name out `::::
-Pulls a snapshot and saves it as a backup.
-You must specify the snapshot name (`name</code>) and the directory to send the backup to (<code>out</code>).
-The command has the following optional parameters:
-<dlentry><code>--mode {full,light,dataless}</code>::::  Mode of backups.</p>
+<p>This subcommand has the following options:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The default is <code>full</code>.</dlentry><dlentry><code>--type</code></dt>
+<dt class="hdlist1">tscli backup create [-h] [--mode {full,light,dataless}] [--type {full,incremental}] [--base BASE] [--storage_type {local,nas,cloud}] [--remote] [--no-orion-master] name out</dt>
 <dd>
-<p>Type of backup.</p>
+<p>Pulls a snapshot and saves it as a backup. You must specify the snapshot name, <code>name</code>, and also the backup directory, <code>out</code>. The command has the following optional parameters:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--mode {full,light,dataless}</dt>
+<dd>
+<p>Mode of backups. The default is <code>full</code>.</p>
 </dd>
-<dt class="hdlist1">Only <code>STANDALONE</code> is supported.</dlentry><dlentry><code>--base BASE</code></dt>
+<dt class="hdlist1">--type</dt>
 <dd>
-<p>Based snapshot name for incremental backup.</p>
+<p>Type of backup. Only <code>STANDALONE</code> is supported.</p>
+</dd>
+<dt class="hdlist1">--base BASE</dt>
+<dd>
+<p>Based snapshot name for incremental backup. Because <code>incremental</code> is not implemented, neither is this option. There is no default setting.</p>
+</dd>
+<dt class="hdlist1">--storage_type {local,nas,cloud}</dt>
+<dd>
+<p>Storage type of output directory. The default setting is <code>local</code>.</p>
+</dd>
+<dt class="hdlist1">--remote</dt>
+<dd>
+<p>Takes backup through Orion. The default setting is <code>True</code>.</p>
+</dd>
+<dt class="hdlist1">--no-orion-master</dt>
+<dd>
+<p>Determines whether Orion is available during backup. The default is <code>False</code>.</p>
+</dd>
+<dt class="hdlist1">--bucket_name BUCKET_NAME</dt>
+<dd>
+<p>The name of the s3/gcs bucket to create the backup. The platform depends on the storage type of the cluster. You must specify <code>--storage_type</code> as <code>cloud</code>.</p>
+</dd>
+<dt class="hdlist1">--staging_dir STAGING_DIR</dt>
+<dd>
+<p>Used for staging hdfs data in cloud based backups. No effect in non-cloud based backups. You must specify <code>--storage_type</code> as <code>cloud</code>.</p>
 </dd>
 </dl>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Because <code>incremental</code> is not implemented, neither is this option.
-</td>
-</tr>
-</table>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">There is no default setting.</dlentry><dlentry><code>--storage_type {local,nas,cloud}</code></dt>
-<dd>
-<p>Storage type of output directory.</p>
 </dd>
-<dt class="hdlist1">The default setting is <code>local</code>.</dlentry><dlentry><code>--remote</code></dt>
+<dt class="hdlist1">tscli backup delete ID</dt>
 <dd>
-<p>Takes backup through orion master.</p>
+<p>Deletes the backup with the specified ID.</p>
 </dd>
-<dt class="hdlist1">The default setting is <code>True</code>.</dlentry><dlentry><code>--no-orion-master</code></dt>
+<dt class="hdlist1">tscli backup ls</dt>
 <dd>
-<p>Determines whether orion master is available during backup.</p>
-</dd>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry><dlentry><code>--bucket_name BUCKET_NAME</code></dt>
-<dd>
-<p>The name of the s3/gcs bucket to create the backup.
-The platform depends on the storage type of the cluster.</p>
-</dd>
-<dt class="hdlist1">You must specify <code>--storage_type</code> as <code>cloud</code>.</dlentry><dlentry><code>--staging_dir STAGING_DIR</code></dt>
-<dd>
-<p>Used for staging hdfs data in cloud based backups.
-No effect in non-cloud based backups.</p>
-</dd>
-<dt class="hdlist1">You must specify <code>--storage_type</code> as <code>cloud</code>.</dlentry></dlentry><dlentry><code>tscli backup delete ID</code>::::  Deletes the backup with the specified ID.</dlentry><dlentry><code>tscli backup ls</code></dt>
-<dd>
-<p>Lists all periodic backups taken by the system.
-Note that this command only shows periodic backups, and not manual backups.</dlentry></p>
+<p>Lists all periodic backups taken by the system. This command only shows periodic backups, not manual backups.</p>
 </dd>
 </dl>
 </div>
@@ -3002,35 +3087,77 @@ Note that this command only shows periodic backups, and not manual backups.</dle
 <p>Manages the backup policy.</p>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli backup-policy create</code>::::  Prompts an editor for you to edit the parameters of a new periodic backup policy, with the following parameters:
-<dlentry><code>name</code>::::  Specify a name for your backup.</dlentry><dlentry><code>mode {full,light,dataless}</code>::::
-The backup mode.
-A <code>FULL</code> backup is required for restoring a cluster.</p>
+<p>This subcommand has the following options:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The default is <code>full.</code></dlentry><dlentry><code>type</code></dt>
+<dt class="hdlist1">tscli backup-policy create</dt>
 <dd>
-<p>The backup type.
-Only <code>STANDALONE</code> is supported.</p>
-</dd>
-<dt class="hdlist1"><code>directory</code></dt>
+<p>Prompts an editor for you to edit the parameters of a new periodic backup policy, with the following parameters:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">name</dt>
 <dd>
-<p>The location on the disk to place the backup.
-You specify an existing directory path, but the folder (the last part of the path: <code>home/admin/folder</code>) must not already exist.</p>
+<p>Specify a name for your backup.</p>
 </dd>
-<dt class="hdlist1">ThoughtSpot creates the folder when it runs a backup.</dlentry><dlentry><code>storage_type {NAS,local,S3}</code></dt>
+<dt class="hdlist1">mode {full,light,dataless}</dt>
 <dd>
-<p>The type of storage you are using.</p>
+<p>The backup mode. A <code>FULL</code> backup is required for restoring a cluster. The default is <code>full.</code></p>
 </dd>
-<dt class="hdlist1"><code>NAS</code> storage is recommended for <code>FULL</code> backups.</dlentry><dlentry><code>--config CONFIG</code>::::  Specifies the text format of the periodic backup policy config.</dlentry></dlentry><dlentry><code>tscli backup-policy delete NAME</code>::::  Deletes the backup policy <code>name</code>.</dlentry><dlentry><code>tscli backup-policy disable NAME</code>::::  Disables the policy <code>name</code>.</dlentry><dlentry><code>tscli backup-policy enable NAME</code>::::  Enables the policy <code>name</code>.</dlentry><dlentry><code>tscli backup-policy ls</code>::::  Lists backup policies.</dlentry><dlentry><code>tscli backup-policy show NAME</code>::::  Shows the backup policy <code>name</code>.</dlentry><dlentry><code>tscli backup-policy status NAME</code>::::  Shows the status of the backup policy <code>name</code>.</dlentry><dlentry><code>tscli backup-policy update NAME</code></dt>
+<dt class="hdlist1">type</dt>
+<dd>
+<p>The backup type. Only <code>STANDALONE</code> is supported.</p>
+</dd>
+<dt class="hdlist1">directory</dt>
+<dd>
+<p>The location on the disk to place the backup. You specify an existing directory path as <code>home/admin/folder</code>. The <code>folder</code> cannot already exist. ThoughtSpot creates the folder when it runs a backup.</p>
+</dd>
+<dt class="hdlist1">storage_type {NAS,local,S3}</dt>
+<dd>
+<p>The type of storage you are using. <code>NAS</code> storage is recommended for <code>FULL</code> backups.</p>
+</dd>
+<dt class="hdlist1">--config CONFIG</dt>
+<dd>
+<p>Specifies the text format of the periodic backup policy config.</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">tscli backup-policy delete NAME</dt>
+<dd>
+<p>Deletes the backup policy <code>name</code>.</p>
+</dd>
+<dt class="hdlist1">tscli backup-policy disable NAME</dt>
+<dd>
+<p>Disables the policy <code>name</code>.</p>
+</dd>
+<dt class="hdlist1">tscli backup-policy enable NAME</dt>
+<dd>
+<p>Enables the policy <code>name</code>.</p>
+</dd>
+<dt class="hdlist1">tscli backup-policy ls</dt>
+<dd>
+<p>Lists backup policies.</p>
+</dd>
+<dt class="hdlist1">tscli backup-policy show NAME</dt>
+<dd>
+<p>Shows the backup policy <code>name</code></p>
+</dd>
+<dt class="hdlist1">tscli backup-policy status NAME</dt>
+<dd>
+<p>Shows the status of the backup policy <code>name</code>.</p>
+</dd>
+<dt class="hdlist1">tscli backup-policy update NAME</dt>
 <dd>
 <p>Prompts an editor for you to edit the backup policy <code>name</code>, with the following parameter:</p>
-</dd>
-<dt class="hdlist1"><dlentry><code>--config CONFIG</code></dt>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--config CONFIG</dt>
 <dd>
-<p>Specifies the text format of the periodic backup policy config.</dlentry></dlentry></p>
+<p>Specifies the text format of the periodic backup policy config.</p>
+</dd>
+</dl>
+</div>
 </dd>
 </dl>
 </div>
@@ -3043,59 +3170,161 @@ You specify an existing directory path, but the folder (the last part of the pat
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli calendar create</code>::::  Creates a new custom calendar, with the following parameters:
-<dlentry><code>--file_path FILE_PATH</code>::::  Path to the CSV file holding custom calendar data.</dlentry><dlentry><code>--name NAME</code>::::  Custom calendar name.</dlentry><dlentry><code>--separator SEPARATOR</code>::::  The separator used in the CSV file.</p>
+<p>This subcommand has the following options:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The default is <code>,</code>.</dlentry><dlentry><code>--no-header-row</code></dt>
+<dt class="hdlist1">tscli calendar create</dt>
 <dd>
-<p>Flag to indicate that the CSV file has no header row.</p>
+<p>Creates a new custom calendar, with the following parameters:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--file_path FILE_PATH</dt>
+<dd>
+<p>Path to the CSV file holding custom calendar data.</p>
 </dd>
-<dt class="hdlist1">The default is <code>True</code>.</dlentry><dlentry><code>--username USERNAME</code>::::  The admin username for ThoughtSpot login.</dlentry></dlentry><dlentry><code>tscli calendar delete</code></dt>
+<dt class="hdlist1">--name NAME</dt>
+<dd>
+<p>Custom calendar name.</p>
+</dd>
+<dt class="hdlist1">--separator SEPARATOR</dt>
+<dd>
+<p>The separator used in the CSV file. The default is the comma, <code>,</code>.</p>
+</dd>
+<dt class="hdlist1">--no-header-row</dt>
+<dd>
+<p>Flag to indicate that the CSV file has no header row. The default is <code>True</code>.</p>
+</dd>
+<dt class="hdlist1">--username USERNAME</dt>
+<dd>
+<p>The admin username for ThoughtSpot login.</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">tscli calendar delete</dt>
 <dd>
 <p>Deletes a custom calendar table from the system, with the following parameters:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--name NAME</dt>
+<dd>
+<p>Deletes the custom calendar <em>NAME</em>.</p>
 </dd>
-<dt class="hdlist1"><dlentry><code>--name NAME</code>::::  Deletes the custom calendar <em>NAME</em>.</dlentry><dlentry><code>--username USERNAME</code>::::  The admin username for ThoughtSpot login.</dlentry></dlentry><dlentry><code>tscli calendar disable</code>::::  Disables custom calendar on the cluster.</dlentry><dlentry><code>tscli calendar enable</code>::::  Enables custom calendar on the cluster.</dlentry><dlentry><code>tscli calendar generate</code></dt>
+<dt class="hdlist1">--username USERNAME</dt>
+<dd>
+<p>The admin username for ThoughtSpot login.</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">tscli calendar disable</dt>
+<dd>
+<p>Disables custom calendar on the cluster.</p>
+</dd>
+<dt class="hdlist1">tscli calendar enable</dt>
+<dd>
+<p>Enables custom calendar on the cluster.</p>
+</dd>
+<dt class="hdlist1">tscli calendar generate</dt>
 <dd>
 <p>Creates a custom calendar table based on given specifications, with the following parameters:</p>
-</dd>
-<dt class="hdlist1"><dlentry><code>--name NAME</code>::::  A name to create the custom calendar CSV file with.</dlentry><dlentry><code>--start_date START_DATE</code>::::  The start date to begin the custom calendar with in the form mm/dd/yyyy.</dlentry><dlentry><code>--end_date END_DATE</code>::::  The end date to end the custom calendar with in the form mm/dd/yyyy.</dlentry><dlentry><code>--calendar_type {MONTH_OFFSET,4-4-5,4-5-4,5-4-4}</code></dt>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--name NAME</dt>
 <dd>
-<p>The type of custom calendar to create.</p>
+<p>A name for the new custom calendar CSV file.</p>
 </dd>
-<dt class="hdlist1">The default is <code>MONTH_OFFSET</code>.</dlentry><dlentry><code>--month_offset {January,February,March,April,May,June,July,August,September,October,November,December}</code></dt>
+<dt class="hdlist1">--start_date START_DATE</dt>
 <dd>
-<p>The month offset to start the year from, if the calendar is the MONTH_OFFSET type.</p>
+<p>The start date for the custom calendar, in the form <code>mm/dd/yyyy</code>.</p>
 </dd>
-<dt class="hdlist1">The default is <code>January</code>.</dlentry><dlentry><code>--start_day_of_week</code></dt>
+<dt class="hdlist1">--end_date END_DATE</dt>
 <dd>
-<p>The day the week starts on.</p>
+<p>The end date for the custom calendar, in the form <code>mm/dd/yyyy</code>.</p>
 </dd>
-<dt class="hdlist1">The default is <code>Sunday</code>.</dlentry><dlentry><code>--quarter_name_prefix</code>::::  The string to prefix a quarter name with.</dlentry><dlentry><code>--year_name_prefix YEAR_NAME_PREFIX</code>::::  The string to prefix a year name with.</dlentry><dlentry><code>--username USERNAME</code>::::  The admin username for ThoughtSpot login.</dlentry></dlentry><dlentry><code>tscli calendar get</code></dt>
+<dt class="hdlist1">--calendar_type {MONTH_OFFSET,4-4-5,4-5-4,5-4-4}</dt>
+<dd>
+<p>The type of custom calendar. The default is <code>MONTH_OFFSET</code>.</p>
+</dd>
+<dt class="hdlist1">--month_offset {January,February,March,April,May,June,July,August,September,October,November,December}</dt>
+<dd>
+<p>The month offset that starts the year, if the calendar is the <code>MONTH_OFFSET</code> type. The default is <code>January</code>.</p>
+</dd>
+<dt class="hdlist1">--start_day_of_week DAY_OF_WEEK</dt>
+<dd>
+<p>The day for starting the week. The default is <code>Sunday</code>.</p>
+</dd>
+<dt class="hdlist1">--quarter_name_prefix QUARTER_NAME_PREFIX</dt>
+<dd>
+<p>The string for the prefix to the quarter.</p>
+</dd>
+<dt class="hdlist1">--year_name_prefix YEAR_NAME_PREFIX</dt>
+<dd>
+<p>The string for the prefix to the year.</p>
+</dd>
+<dt class="hdlist1">--username USERNAME</dt>
+<dd>
+<p>The admin username for ThoughtSpot login.</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">tscli calendar get</dt>
 <dd>
 <p>Procures data of a custom calendar as a CSV file, with the following parameters:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--name NAME</dt>
+<dd>
+<p>Procures data of custom calendar <code>NAME</code>.</p>
 </dd>
-<dt class="hdlist1"><dlentry><code>--name NAME</code>::::  Procures data of custom calendar <code>NAME</code></dlentry><dlentry><code>--username USERNAME</code>::::  Admin username for ThoughtSpot login.</dlentry></dlentry><dlentry><code>tscli calendar list</code></dt>
+<dt class="hdlist1">--username USERNAME</dt>
+<dd>
+<p>Admin username for ThoughtSpot login.</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">tscli calendar list</dt>
 <dd>
 <p>Procures a list of custom calendars present in the cluster, with the following parameter:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--username USERNAME</dt>
+<dd>
+<p>Admin username for ThoughtSpot login.</p>
 </dd>
-<dt class="hdlist1"><dlentry><code>--username USERNAME</code>::::  Admin username for ThoughtSpot login.</dlentry></dlentry><dlentry><code>tscli calendar update</code></dt>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">tscli calendar update</dt>
 <dd>
 <p>Updates a custom calendar table in the system, with the following parameters:</p>
-</dd>
-<dt class="hdlist1"><dlentry><code>--file_path FILE_PATH</code>::::  Path to the CSV file holding custom calendar data.</dlentry><dlentry><code>--name NAME</code>::::  Custom calendar name.</dlentry><dlentry><code>--separator SEPARATOR</code></dt>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--file_path FILE_PATH</dt>
 <dd>
-<p>The separator used in the CSV file.</p>
+<p>Path to the CSV file holding custom calendar data.</p>
 </dd>
-<dt class="hdlist1">The default is <code>,</code>.</dlentry><dlentry><code>--no-header-row</code></dt>
+<dt class="hdlist1">--name NAME</dt>
 <dd>
-<p>Flag to indicate that the CSV file has no header row.</p>
+<p>Custom calendar name.</p>
 </dd>
-<dt class="hdlist1">The default is <code>True</code>.</dlentry><dlentry><code>--username USERNAME</code></dt>
+<dt class="hdlist1">--separator SEPARATOR</dt>
 <dd>
-<p>The admin username for ThoughtSpot login.</dlentry></dlentry></p>
+<p>The separator used in the CSV file. The default is comma, <code>,</code>.</p>
+</dd>
+<dt class="hdlist1">--no-header-row</dt>
+<dd>
+<p>Flag to indicate that the CSV file has no header row. The default is <code>True</code>.</p>
+</dd>
+<dt class="hdlist1">--username USERNAME</dt>
+<dd>
+<p>The admin username for ThoughtSpot login.</p>
+</dd>
+</dl>
+</div>
 </dd>
 </dl>
 </div>
@@ -3103,7 +3332,7 @@ You specify an existing directory path, but the folder (the last part of the pat
 <div class="sect2">
 <h3 id="tscli-callhome"><a class="anchor" href="#tscli-callhome"></a>callhome</h3>
 <div class="paragraph">
-<p>Provides usage statistics to ThoughtSpot by uploading the callhome bundle data daily into Egnyte.</p>
+<p>Provides usage statistics to ThoughtSpot.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3111,36 +3340,43 @@ You specify an existing directory path, but the folder (the last part of the pat
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli callhome enable --customer_name CUSTOMER_NAME</code>::::  Enables the callhome feature.</p>
-</div>
-<div class="paragraph">
-<p>This feature is enabled by default.</p>
+<p>This subcommand has the following options:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The parameter <code>customer_name</code> takes the form <code>Shared/CUSTOMER_NAME/stats</code>.</dlentry><dlentry><code>tscli callhome disable</code></dt>
+<dt class="hdlist1">tscli callhome enable --customer_name CUSTOMER_NAME</dt>
 <dd>
-<p>Turns off the callhome feature.</dlentry><dlentry><code>tscli callhome generate-bundle [--d D] [--since SINCE]</code>::::  Generates the callhome stats tar file, with the following parameters:</p>
-</dd>
-<dt class="hdlist1"><dlentry><code>--d D</code></dt>
+<p>Enables the callhome feature. This feature is enabled by default.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--customer_name CUSTOMER_NAME</dt>
 <dd>
-<p>Destination folder for the tar file.</p>
-</dd>
-<dt class="hdlist1">There is no default setting.</dlentry><dlentry><code>--since SINCE</code></dt>
-<dd>
-<p>Grabs <code>callhome</code> data from the specified time window in the past.</p>
+<p>The parameter <code>customer_name</code> takes the form <code>Shared/CUSTOMER_NAME/stats</code>.</p>
 </dd>
 </dl>
 </div>
-<div class="paragraph">
-<p>This should be a human-readable duration string, such as <code>4h</code> (4 hours), <code>30m</code> (30 minutes), <code>1d</code> (1 day).</p>
+</dd>
+<dt class="hdlist1">tscli callhome disable</dt>
+<dd>
+<p>Turns off the callhome feature.</p>
+</dd>
+<dt class="hdlist1">tscli callhome generate-bundle [--d D] [--since SINCE]</dt>
+<dd>
+<p>Generates the callhome stats <code>*.tar</code> file, with the following parameters:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--d D</dt>
+<dd>
+<p>Destination folder for the <code>*.tar</code> file. There is no default setting.</p>
+</dd>
+<dt class="hdlist1">--since SINCE</dt>
+<dd>
+<p>Grabs <code>callhome</code> data from the specified time window, in the past. This should be a human-readable duration string, such as <code>4h</code> (4 hours), <code>30m</code> (30 minutes), <code>1d</code> (1 day). This option generates a <code>*.tar</code> file of the cluster metrics and writes it to the specified directory. Here, <code>SINCE</code> is how many days back the file must start. There is no default setting</p>
+</dd>
+</dl>
 </div>
-<div class="paragraph">
-<p>This option generates a <code>tar</code> file of the cluster metrics and writes it to the specified directory, where <code>SINCE</code> is how many days back the file must start.</p>
-</div>
-<div class="paragraph">
-<p>There is no default setting.</dlentry></dlentry></p>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect2">
@@ -3154,10 +3390,39 @@ You specify an existing directory path, but the folder (the last part of the pat
 <p>Backs up cassandra.</p>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli cassandra backup</code>::::  Takes a backup of cassandra, with the following parameters:
-<dlentry><code>--keyspaces KEYSPACES</code>::::  Comma separated list of keyspaces to take a backup of.</dlentry><dlentry><code>backup_dir BACKUP_DIR</code>::::  The path to the backup directory to write the backup to.</dlentry></dlentry><dlentry><code>tscli cassandra restore</code>::::  Restores cassandra from a backup, with the following parameter:
-<dlentry><code>--backup_dir BACKUP_DIR</code>::::  The path to the backup directory to restore the backup to.</dlentry></dlentry></p>
+<p>This subcommand has the following options:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">tscli cassandra backup</dt>
+<dd>
+<p>Takes a backup of cassandra, with the following parameters:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--keyspaces KEYSPACES</dt>
+<dd>
+<p>Comma-separated list of keyspaces to back up.</p>
+</dd>
+<dt class="hdlist1">backup_dir BACKUP_DIR</dt>
+<dd>
+<p>The path to the backup directory.</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">tscli cassandra restore</dt>
+<dd>
+<p>Restores cassandra from a backup, with the following parameter:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--backup_dir BACKUP_DIR</dt>
+<dd>
+<p>The path to the backup directory.</p>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect2">
@@ -3168,177 +3433,273 @@ You specify an existing directory path, but the folder (the last part of the pat
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli cluster abort-update</code>::::  Aborts an ongoing cluster update, if safe.</dlentry><dlentry><code>tscli cluster bucket-migrate</code>::::
-Migrates the cluster to use another S3/GCS bucket, also migrating the data from the current s3 bucket to the new bucket.
-This command has the following optional parameter:
-<dlentry><code>--name NAME</code>::::  Name of the new bucket.</dlentry></dlentry><dlentry><code>tscli cluster bucket-name</code>::::  Returns the name of the s3 bucket associated with the cluster, if there is one.</dlentry><dlentry><code>tscli cluster check [--path PATH] [--includes INCLUDES] [--retry RETRY] [--localhost] [--disable-events]</code>::::  Checks the status of all nodes in the cluster, with the following parameters:
-<dlentry><code>--path PATH</code>::::  Specifies the working directory of the diagnostic tool.</p>
+<p>This subcommand has the following options:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The default is <code>/usr/local/scaligent/release</code>.</dlentry><dlentry><code>--includes INCLUDES</code></dt>
+<dt class="hdlist1">tscli cluster abort-update</dt>
 <dd>
-<p>Specifies the comma-separated component(s) to be included in the check.</p>
+<p>Aborts an ongoing cluster update, if safe.</p>
 </dd>
-<dt class="hdlist1">The default is <code>all</code>.</dlentry><dlentry><code>--retry RETRY</code></dt>
+<dt class="hdlist1">tscli cluster bucket-migrate</dt>
 <dd>
-<p>The maximum number of retry times if the node is unreachable.</p>
-</dd>
-<dt class="hdlist1">The default is <code>10</code>.</dlentry><dlentry><code>--localhost</code></dt>
+<p>Migrates the cluster to use another S3/GCS bucket, also migrating the data from the current s3 bucket to the new bucket. This command has the following optional parameter:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--name NAME</dt>
 <dd>
-<p>Runs cluster checks only on localhost.</p>
-</dd>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry><dlentry><code>--disable-events</code></dt>
-<dd>
-<p>Disables raising configuration events.</p>
-</dd>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry></dlentry><dlentry><code>tscli cluster create release</code></dt>
-<dd>
-<p>Creates a new cluster from the release file specified by adding the release number.</p>
+<p>Name of the new bucket.</p>
 </dd>
 </dl>
 </div>
-<div class="paragraph">
-<p>Used by ThoughtSpot Support when installing a new cluster.
-For example, <code>tscli cluster create 5.3.2.tar.gz</code>.</p>
-</div>
-<div class="paragraph">
-<p>This command has the following parameters:
-<dlentry><code>--disable_rotate_keys</code>::::  Disables cluster rotate key configuration.</p>
-</div>
+</dd>
+<dt class="hdlist1">tscli cluster bucket-name</dt>
+<dd>
+<p>Returns the name of the s3 bucket associated with the cluster, if there is one.</p>
+</dd>
+<dt class="hdlist1">tscli cluster check [--path PATH] [--includes INCLUDES] [--retry RETRY] [--localhost] [--disable-events]</dt>
+<dd>
+<p>Checks the status of all nodes in the cluster, with the following parameters:</p>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry><dlentry><code>--enable_cloud_storage {s3a,gcs}</code></dt>
+<dt class="hdlist1">--path PATH</dt>
 <dd>
-<p>Determines whether to enable Cloud Storage setup, and which storage format to use.</dlentry><dlentry><code>heterogeneous</code>::::  Should be set for heterogeneous clusters.</p>
+<p>Specifies the working directory of the diagnostic tool. The default is <code>/usr/local/scaligent/release</code>.</p>
 </dd>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry></dlentry><dlentry><code>tscli cluster download-release release</code>::::  Downloads the specified release to the Hadoop Distributed File Sytem (HDFS) for later upgrading.</dlentry><dlentry><code>tscli cluster get-config</code></dt>
+<dt class="hdlist1">--includes INCLUDES</dt>
 <dd>
-<p>Gets current cluster network and time configuration.
-Prints JSON configuration to <code>stdout</code>.</p>
+<p>Specifies the comma-separated component(s) to be included in the check. The default is <code>all</code>.</p>
+</dd>
+<dt class="hdlist1">--retry RETRY</dt>
+<dd>
+<p>The maximum number of retry times if the node is unreachable. The default is <code>10</code>.</p>
+</dd>
+<dt class="hdlist1">--localhost</dt>
+<dd>
+<p>Runs cluster checks only on localhost. The default is <code>False</code>.</p>
+</dd>
+<dt class="hdlist1">--disable-events</dt>
+<dd>
+<p>Disables raising configuration events. The default is <code>False</code>.</p>
 </dd>
 </dl>
 </div>
-<div class="paragraph">
-<p>If the system cannot be connected to all interfaces, the command returns an error but continues to function.</p>
-</div>
-<div class="paragraph">
-<p>This command has the following parameters:
-<dlentry><code>--local</code>::::  Gets the config for the local host only.</p>
-</div>
+</dd>
+<dt class="hdlist1">tscli cluster create release</dt>
+<dd>
+<p>Creates a new cluster from the release file specified by adding the release number. Used by ThoughtSpot Support when installing a new cluster. For example, <code>tscli cluster create 6.3.1.tar.gz</code>. This command has the following parameters:</p>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry><dlentry><code>--nodes NODES</code></dt>
+<dt class="hdlist1">--disable_rotate_keys</dt>
 <dd>
-<p>A comma separated list of specified nodes to get the config for.</dlentry></dlentry><dlentry><code>tscli cluster list-available-releases</code>::::  Lists the available releases to update to on the cluster.</dlentry><dlentry><code>tscli cluster list-downloaded-releases</code>::::  Lists the releases downloaded to the cluster.</dlentry><dlentry><code>tscli cluster load backupdir</code>::::
-Loads the state from a specified backup directory onto an existing cluster.
-Add <code>--reuse_cluster</code> to reuse the cluster service configs rather than restoring from the backup directory.</p>
+<p>Disables cluster rotate key configuration. The default is <code>False</code>.</p>
 </dd>
-<dt class="hdlist1">Add <code>--cloud_data_dirCLOUD_DATA_DIR</code> to specify the cloud path to the restore.</dlentry><dlentry><code>tscli cluster restore --release RELEASE backupdir</code></dt>
+<dt class="hdlist1">--enable_cloud_storage {s3a,gcs}</dt>
 <dd>
-<p>Restores a cluster on the specified release number using the backup in the specified directory <em>backupdir</em>.
-If you&#8217;re restoring from a dataless backup, you must supply the release tarball for the corresponding software release.</p>
+<p>Determines whether to enable Cloud Storage setup, and which storage format to use.</p>
+</dd>
+<dt class="hdlist1">heterogeneous</dt>
+<dd>
+<p>Should be set for heterogeneous clusters. The default is <code>False</code>.</p>
 </dd>
 </dl>
 </div>
-<div class="paragraph">
-<p>This command has the following parameters:
-<dlentry><code>--disable_rotate_keys</code>::::  Disables cluster rotate key configurations.</p>
-</div>
+</dd>
+<dt class="hdlist1">tscli cluster download-release release</dt>
+<dd>
+<p>Downloads the specified release to the Hadoop Distributed File Sytem (HDFS) for a subsequent upgrade.</p>
+</dd>
+<dt class="hdlist1">tscli cluster get-config</dt>
+<dd>
+<p>Gets current cluster network and time configuration. Prints JSON configuration to <code>stdout</code>. If the system cannot be connected to all interfaces, the command returns an error but continues to function. This command has the following parameters:</p>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry><dlentry><code>--enable_cloud_storage {s3a,gcs}</code></dt>
+<dt class="hdlist1">--local</dt>
 <dd>
-<p>Determines whether to enable Cloud Storage setup.</p>
+<p>Gets the config for the local host only. The default is <code>False</code>.</p>
 </dd>
-<dt class="hdlist1">For example, run <code>tscli cluster restore --enable_cloud_storage=s3a</code> to enable AWS S3 object storage.</dlentry><dlentry><code>--heterogeneous</code></dt>
+<dt class="hdlist1">--nodes NODES</dt>
 <dd>
-<p>Should be set for heterogeneous clusters.</p>
+<p>A comma-separated list of specified nodes.</p>
 </dd>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry></dlentry><dlentry><code>tscli cluster resume-update</code></dt>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">tscli cluster list-available-releases</dt>
+<dd>
+<p>Lists the available releases to update to on the cluster.</p>
+</dd>
+<dt class="hdlist1">tscli cluster list-downloaded-releases</dt>
+<dd>
+<p>Lists the releases downloaded to the cluster.</p>
+</dd>
+<dt class="hdlist1">tscli cluster load backupdir</dt>
+<dd>
+<p>Loads the state from a specified backup directory onto an existing cluster. This command has the following parameters:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--reuse_cluster CLUSTER</dt>
+<dd>
+<p>Add this parameter to reuse the cluster service configs, instead of restoring from the backup directory.</p>
+</dd>
+<dt class="hdlist1">--cloud_data_dir CLOUD_DATA_DIR</dt>
+<dd>
+<p>Add this parameter to specify the cloud path to the restore.</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">tscli cluster restore --release RELEASE backupdir</dt>
+<dd>
+<p>Restores a cluster on the specified release number using the backup in the specified directory, <code>backupdir</code>. If you are restoring from a data-less backup, you must supply the release tarball for the corresponding software release. This command has the following parameters:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--disable_rotate_keys</dt>
+<dd>
+<p>Disables cluster rotate key configurations. The default is <code>False</code>.</p>
+</dd>
+<dt class="hdlist1">--enable_cloud_storage {s3a,gcs}</dt>
+<dd>
+<p>Determines whether to enable Cloud Storage setup. For example, run <code>tscli cluster restore --enable_cloud_storage=s3a</code> to enable AWS S3 object storage.</p>
+</dd>
+<dt class="hdlist1">--heterogeneous</dt>
+<dd>
+<p>Must be set for heterogeneous clusters. The default is <code>False</code>.</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">tscli cluster resume-update</dt>
 <dd>
 <p>Resumes in-progress updates, with the following parameter:</p>
-</dd>
-<dt class="hdlist1"><dlentry><code>--ignore_if_unhealthy</code></dt>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--ignore_if_unhealthy</dt>
 <dd>
-<p>Comma separated list of node IPs on which upgrade is not attempted if they are found to be unhealthy.</p>
-</dd>
-<dt class="hdlist1">If a node outside of this list is found unhealthy, the upgrade is aborted.</dlentry></dlentry><dlentry><code>tscli cluster set-config</code></dt>
-<dd>
-<p>Sets cluster network and time configuration.
-Takes JSON configuration from stdin.</p>
+<p>Comma-separated list of node IPs on which upgrade is not attempted if they are found to be unhealthy. If a node outside of this list is found unhealthy, the upgrade is aborted.</p>
 </dd>
 </dl>
 </div>
-<div class="paragraph">
-<p>This subcommand has the following parameters:
-<dlentry><code>--ipv4-only</code>::::
-Only use ipv4 for node communication.
-Requires passing ipMap in config unless no-network-change is also specified.</p>
-</div>
+</dd>
+<dt class="hdlist1">tscli cluster set-config</dt>
+<dd>
+<p>Sets cluster network and time configuration. Takes JSON configuration from <code>stdin</code>. This subcommand has the following parameters:</p>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry><dlentry><code>--no-network-change</code></dt>
+<dt class="hdlist1">--ipv4-only</dt>
 <dd>
-<p>This flag ensures that a change made with set-config does not update network settings.</p>
+<p>Only use ipv4 for node communication. Requires passing ipMap in config unless no-network-change is also specified. The default is <code>False</code>.</p>
 </dd>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry><dlentry><code>--allow_network_gateway_mismatch</code></dt>
+<dt class="hdlist1">--no-network-change</dt>
 <dd>
-<p>Allows a network and gateway mismatch.</p>
+<p>This flag ensures that a change made with set-config does not update network settings. The default is <code>False</code>.</p>
 </dd>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry></dlentry><dlentry><code>tscli cluster set-min-resource-spec</code></dt>
+<dt class="hdlist1">--allow_network_gateway_mismatch</dt>
+<dd>
+<p>Allows a network and gateway mismatch. The default is <code>False</code>.</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">tscli cluster set-min-resource-spec</dt>
 <dd>
 <p>Sets the minimum resource configuration of the cluster, with the following parameter:</p>
-</dd>
-<dt class="hdlist1"><dlentry><code>--file FILE</code></dt>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--file FILE</dt>
 <dd>
-<p>Specified script with overrides.</p>
+<p>Specified script with overrides. The default is <code>False</code>.</p>
 </dd>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry></dlentry><dlentry><code>tscli cluster setup-release-host HOST</code>::::  Sets up the release host for Self Service Upgrade, with the specified <code>HOST</code>.</dlentry><dlentry><code>tscli cluster setup-release-host-key</code>::::  Sets up the release host api key for Self Service Upgrade.</dlentry><dlentry><code>tscli cluster show-resource-spec</code>::::  Prints default or min.</dlentry><dlentry><code>tscli cluster start</code>::::  Starts the cluster.</dlentry><dlentry><code>tscli cluster status</code></dt>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">tscli cluster setup-release-host HOST</dt>
 <dd>
-<p>Gives the status of the cluster, including release number, date last updated, number of nodes, pending tables time, and services status.
-This subcommand has the following parameters:</p>
+<p>Sets up the release host for Self Service Upgrade, with the specified <code>HOST</code>.</p>
 </dd>
-<dt class="hdlist1"><dlentry><code>--mode {basic,service,table,full,reinstall-os}</code>::::  Specifies the kind of status message you want.</dlentry><dlentry><code>--tail</code></dt>
+<dt class="hdlist1">tscli cluster setup-release-host-key</dt>
 <dd>
-<p>Prints the details of creation and update progress.</p>
+<p>Sets up the release host api key for Self Service Upgrade.</p>
 </dd>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry><dlentry><code>--no-orion</code></dt>
+<dt class="hdlist1">tscli cluster show-resource-spec</dt>
 <dd>
-<p>Runs checks not related to orion.</p>
+<p>Prints default or min.</p>
 </dd>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry><dlentry><code>--includes INCLUDES</code>::::  The name of the service to check the status of, either falcon or sage.</dlentry></dlentry><dlentry><code>tscli cluster stop</code>::::  Pauses the cluster (but does not stop storage services).</dlentry><dlentry><code>tscli cluster update</code></dt>
+<dt class="hdlist1">tscli cluster start</dt>
+<dd>
+<p>Starts the cluster.</p>
+</dd>
+<dt class="hdlist1">tscli cluster status</dt>
+<dd>
+<p>Gives the status of the cluster, including release number, date last updated, number of nodes, pending tables time, and services status. This subcommand has the following parameters:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--mode {basic,service,table,full,reinstall-os}</dt>
+<dd>
+<p>Specifies the kind of status message you want.</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">--tail</dt>
+<dd>
+<p>Prints the details of creation and update progress. The default is <code>False</code>.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--no-orion</dt>
+<dd>
+<p>Runs checks not related to orion. The default is <code>False</code>.</p>
+</dd>
+<dt class="hdlist1">--includes INCLUDES</dt>
+<dd>
+<p>The name of the service, either falcon or sage.</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">tscli cluster stop</dt>
+<dd>
+<p>Pauses the cluster, but does not stop storage services.</p>
+</dd>
+<dt class="hdlist1">tscli cluster update</dt>
 <dd>
 <p>Updates an existing cluster on a specified release, with the following parameters:</p>
-</dd>
-<dt class="hdlist1"><dlentry><code>--release_version</code></dt>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--release_version</dt>
 <dd>
-<p>Looks for 'release' in the downloaded tarballs and if found, will update to that tarball.</p>
+<p>Looks for 'release' in the downloaded tarballs and if found, updates to that tarball. The default is <code>False</code>.</p>
 </dd>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry><dlentry><code>--dry_run_only</code></dt>
+<dt class="hdlist1">--dry_run_only</dt>
 <dd>
-<p>Runs only the pre-update checks.</p>
+<p>Runs only the pre-update checks. The default is <code>False</code>.</p>
 </dd>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry><dlentry><code>--wait_for_falcon_sage</code></dt>
+<dt class="hdlist1">--wait_for_falcon_sage</dt>
 <dd>
-<p>Waits for Falcon and Sage to be in a serving state before marking an update as complete.</p>
+<p>Waits for Falcon and Sage to be in a serving state before marking an update as complete. The default is <code>False</code>.</p>
 </dd>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry><dlentry><code>--create_snapshot_before_update</code></dt>
+<dt class="hdlist1">--create_snapshot_before_update</dt>
 <dd>
-<p>Creates a snapshot automatically before starting update.</p>
+<p>Creates a snapshot automatically before starting an update. The default is <code>False</code>.</p>
 </dd>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry><dlentry><code>--generate_compare_scoreboard</code></dt>
+<dt class="hdlist1">--generate_compare_scoreboard</dt>
 <dd>
-<p>Generates pre-update and post-update scoreboards and compares them.</p>
+<p>Generates pre-update and post-update scoreboards and compares them. The default is <code>False</code>.</p>
 </dd>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry><dlentry><code>--update_orion_only</code>::::  Only updates orion.</dlentry><dlentry><code>--ignore_if_unhealthy</code></dt>
+<dt class="hdlist1">--update_orion_only</dt>
 <dd>
-<p>A comma separated list of node IPs on which upgrade is not attempted in case they are found to be unhealthy.</p>
+<p>Only updates orion.</p>
 </dd>
-<dt class="hdlist1">If a node outside of this list is found unhealthy, the upgrade is aborted.</dlentry></dlentry><dlentry><code>tscli cluster update-hadoop</code></dt>
+<dt class="hdlist1">--ignore_if_unhealthy</dt>
 <dd>
-<p>Updates Hadoop/Zookeeper on the cluster.</dlentry></p>
+<p>A comma-separated list of node IPs on which upgrade is not attempted in case they are found to be unhealthy. If a node outside of this list is found unhealthy, the upgrade is aborted.</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">tscli cluster update-hadoop</dt>
+<dd>
+<p>Updates Hadoop/Zookeeper on the cluster.</p>
 </dd>
 </dl>
 </div>
@@ -3351,31 +3712,38 @@ This subcommand has the following parameters:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Runs a specified command (<code>COMMAND</code>) on all nodes.</p>
+<p>Runs the specified command, <code>COMMAND</code>, on all nodes.</p>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following option:
-<dlentry><code>tscli command run COMMAND</code>::::  This subcommand has the following parameters:
-<dlentry><code>--nodes NODES</code>::::  Space-separated IPs of nodes on which to run the command.</p>
+<p>This subcommand has the following option:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The default setting is <code>all</code>.</dlentry><dlentry><code>--dest_dir DEST_DIR</code></dt>
+<dt class="hdlist1">tscli command run COMMAND</dt>
 <dd>
-<p>Directory to save the files that contain the output from each node.</p>
+<p>This subcommand has the following parameters:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--nodes NODES</dt>
+<dd>
+<p>Space-separated IPs of nodes where to run the command. The default setting is <code>all</code>.</p>
 </dd>
-<dt class="hdlist1">This is a mandatory parameter.</dlentry><dlentry><code>--copyfirst COPYFIRST</code></dt>
+<dt class="hdlist1">--dest_dir DEST_DIR</dt>
 <dd>
-<p>Command to copy the executable to required nodes first.</p>
+<p>Directory to save the files that contain the output from each node. This is a mandatory parameter.</p>
 </dd>
-<dt class="hdlist1">The default setting is <code>False</code>.</dlentry><dlentry><code>--timeout TIMEOUT</code></dt>
+<dt class="hdlist1">--copyfirst COPYFIRST</dt>
 <dd>
-<p>Timeout waiting for the command to finish.</p>
+<p>Command to copy the executable to required nodes first. The default setting is <code>False</code>.</p>
+</dd>
+<dt class="hdlist1">--timeout TIMEOUT</dt>
+<dd>
+<p>Timeout waiting for the command to finish. The default setting is <code>60</code>.</p>
 </dd>
 </dl>
 </div>
-<div class="paragraph">
-<p>The default setting is <code>60</code>.</dlentry></dlentry></p>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect2">
@@ -3386,128 +3754,231 @@ This subcommand has the following parameters:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli dr-mirror start</code>::::  Starts a mirror cluster which will continuously recover from a primary cluster, with the following parameters:
-<dlentry><code>directory</code>::::  Directory where backups of primary cluster can be found.</dlentry><dlentry><code>nodes</code>::::  Comma-separated list of IP addresses of nodes in the mirror cluster.</dlentry><dlentry><code>cluster_name</code>::::  The name of the mirror cluster.</dlentry><dlentry><code>cluster_id</code>::::  The ID of the mirror cluster.</dlentry><dlentry><code>--email EMAIL</code>::::  Option alert email setting.</p>
+<p>This subcommand has the following options:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The default is <code>later</code>.</dlentry></dlentry><dlentry><code>tscli dr-mirror status</code></dt>
+<dt class="hdlist1">tscli dr-mirror start</dt>
 <dd>
-<p>Checks whether the current cluster is running in mirror mode.</dlentry><dlentry><code>tscli dr-mirror stop</code>::::  Stops mirroring on the local cluster.</dlentry></p>
+<p>Starts a mirror cluster which will continuously recover from a primary cluster, with the following parameters:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">directory</dt>
+<dd>
+<p>Directory where backups of primary cluster can be found</p>
+</dd>
+<dt class="hdlist1">nodes</dt>
+<dd>
+<p>Comma-separated list of IP addresses of nodes in the mirror cluster.</p>
+</dd>
+<dt class="hdlist1">cluster_name</dt>
+<dd>
+<p>The name of the mirror cluster.</p>
+</dd>
+<dt class="hdlist1">cluster_id</dt>
+<dd>
+<p>The ID of the mirror cluster.</p>
+</dd>
+<dt class="hdlist1">--email EMAIL</dt>
+<dd>
+<p>Optional alert email setting. The default is <code>later</code>.</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">tscli dr-mirror status</dt>
+<dd>
+<p>Checks whether the current cluster is running in mirror mode.</p>
+</dd>
+<dt class="hdlist1">tscli dr-mirror stop</dt>
+<dd>
+<p>Stops mirroring on the local cluster.</p>
 </dd>
 </dl>
 </div>
 </div>
 <div class="sect2">
-<h3 id="etl"><a class="anchor" href="#etl"></a>etl</h3>
+<h3 id="tscili-etl"><a class="anchor" href="#tscili-etl"></a>etl</h3>
 <div class="listingblock">
 <div class="content">
 <pre>tscli etl [-h] {change-password,disable-lw,download-agent,enable-lw,show-lw}</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli etl change-password</code>::::  Changes the Informatica Cloud account password used by ThoughtSpot Data Connect, with the following parameters:
-<dlentry><code>--admin_username ADMIN_USERNAME</code>::::  Specifies the Administrator username for ThoughtSpot.</dlentry><dlentry><code>--username USERNAME</code>::::  Specifies the username for Informatica Cloud.</dlentry><dlentry><code>--max_wait MAX_WAIT</code>::::  The maximum time in seconds to wait for the Data Connect agent to start.</dlentry><dlentry><code>--isIICS</code>::::
-This flag identifies whether Informatica is in IICS or ICS mode.
-By default, Informatica is in ICS mode.</dlentry></dlentry><dlentry><code>tscli etl disable-lw</code>::::  Disables ThoughtSpot Data Connect.</dlentry><dlentry><code>tscli etl download-agent</code>::::  Downloads the ThoughtSpot Data Connect agent to the cluster, with the following parameters:
-<dlentry><code>--push_to_all</code>::::  Pushes the downloaded installer to all nodes.</p>
+<p>This subcommand has the following options:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry><dlentry><code>--proxy_host PROXY_HOST</code></dt>
+<dt class="hdlist1">tscli etl change-password</dt>
 <dd>
-<p>Specify your proxy server host for network access.</dlentry><dlentry><code>--proxy_port PROXY_PORT</code>::::  Specify your proxy server port.</dlentry><dlentry><code>--proxy_username PROXY_USERNAME</code>::::  Specify your proxy server username.</dlentry><dlentry><code>--isIICS</code>::::
-This flag identifies whether Informatica is in IICS or ICS mode.
-By default, Informatica is in ICS mode.</p>
-</dd>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry></dlentry><dlentry><code>tscli etl enable-lw</code></dt>
-<dd>
-<p>Enables Data Connect.Contact ThoughtSpot Support for assistance in setting this up.</p>
-</dd>
-</dl>
-</div>
-<div class="paragraph">
-<p>This subcommand has the following parameters:
-<dlentry><code>--username USERNAME</code>::::  Username for Informatica Cloud</dlentry><dlentry><code>--thoughtspot_url THOUGHTSPOT_URL</code>::::  URL to reach ThoughtSpot.</dlentry><dlentry><code>--admin_username ADMIN_USERNAME</code>::::  Admin username for ThoughtSpot</dlentry><dlentry><code>--groupname GROUPNAME</code>::::  Name of the secure agent group to use.</dlentry><dlentry><code>--org_id ORG_ID</code>::::  Specifies the Informatica <code>id</code> of the company.</p>
-</div>
-<div class="paragraph">
-<p>Specifies the IP address to pin to.
-If you specify an IP to pin to, that node becomes sticky to the Informatica agent, and will always be used.
-Defaults to the public IP address of the localhost where this command was run.</dlentry><dlentry><code>--proxy_host PROXY_HOST</code>::::  Proxy server host for network access.</dlentry><dlentry><code>--proxy_port PROXY_PORT</code>::::  Proxy server port.</dlentry><dlentry><code>--proxy_username PROXY_USERNAME</code>::::  Proxy server username.</dlentry><dlentry><code>--max_wait MAX_WAIT</code>::::  Maximum time in seconds to wait for Data Connect agent to start.</dlentry><dlentry><code>--isIICS</code>::::
-This flag identifies whether Informatica is in IICS or ICS mode.
-By default, Informatica is in ICS mode.</p>
-</div>
+<p>Changes the Informatica Cloud account password used by ThoughtSpot Data Connect, with the following parameters:</p>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry></dlentry><dlentry><code>tscli etl show-lw</code></dt>
+<dt class="hdlist1">--admin_username ADMIN_USERNAME</dt>
 <dd>
-<p>Shows the status of ThoughtSpot Data Connect.</p>
+<p>Specifies the Administrator username for ThoughtSpot.</p>
+</dd>
+<dt class="hdlist1">--username USERNAME</dt>
+<dd>
+<p>Specifies the username for Informatica Cloud.</p>
+</dd>
+<dt class="hdlist1">--max_wait MAX_WAIT</dt>
+<dd>
+<p>The maximum time in seconds to wait for the Data Connect agent to start.</p>
+</dd>
+<dt class="hdlist1">--isIICS</dt>
+<dd>
+<p>This flag identifies whether Informatica is in IICS or ICS mode. By default, Informatica is in ICS mode.</p>
 </dd>
 </dl>
 </div>
-<div class="paragraph">
-<p>It also returns the Informatica username and OrgId.</dlentry></p>
+</dd>
+<dt class="hdlist1">tscli etl disable-lw</dt>
+<dd>
+<p>Disables ThoughtSpot Data Connect.</p>
+</dd>
+<dt class="hdlist1">tscli etl download-agent</dt>
+<dd>
+<p>Downloads the ThoughtSpot Data Connect agent to the cluster, with the following parameters:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--push_to_all</dt>
+<dd>
+<p>Pushes the downloaded installer to all nodes. The default is <code>False</code>.</p>
+</dd>
+<dt class="hdlist1">--proxy_host PROXY_HOST</dt>
+<dd>
+<p>Specify your proxy server host for network access.</p>
+</dd>
+<dt class="hdlist1">--proxy_port PROXY_PORT</dt>
+<dd>
+<p>Specify your proxy server port.</p>
+</dd>
+<dt class="hdlist1">--proxy_username PROXY_USERNAME</dt>
+<dd>
+<p>Specify your proxy server username.</p>
+</dd>
+<dt class="hdlist1">--isIICS</dt>
+<dd>
+<p>This flag identifies whether Informatica is in IICS or ICS mode. By default, Informatica is in ICS mode. The default is <code>False</code>.</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">tscli etl enable-lw</dt>
+<dd>
+<p>Enables Data Connect. Contact ThoughtSpot Support for assistance in setting this up. This subcommand has the following parameters:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--username USERNAME</dt>
+<dd>
+<p>Username for Informatica Cloud.</p>
+</dd>
+<dt class="hdlist1">--thoughtspot_url THOUGHTSPOT_URL</dt>
+<dd>
+<p>URL to reach ThoughtSpot.</p>
+</dd>
+<dt class="hdlist1">--admin_username ADMIN_USERNAME</dt>
+<dd>
+<p>Admin username for ThoughtSpot.</p>
+</dd>
+<dt class="hdlist1">--groupname GROUPNAME</dt>
+<dd>
+<p>Name of the secure agent group to use.</p>
+</dd>
+<dt class="hdlist1">--org_id ORG_ID</dt>
+<dd>
+<p>Specifies the Informatica <code>id</code> of the company.</p>
+</dd>
+<dt class="hdlist1">--pin_to PIN_TO</dt>
+<dd>
+<p>Specifies the IP address to pin to. If you specify an IP to pin to, that node becomes sticky to the Informatica agent, and will always be used. Defaults to the public IP address of the localhost where this command was run.</p>
+</dd>
+<dt class="hdlist1">--proxy_host PROXY_HOST</dt>
+<dd>
+<p>Proxy server host for network access.</p>
+</dd>
+<dt class="hdlist1">--proxy_port PROXY_PORT</dt>
+<dd>
+<p>Proxy server port.</p>
+</dd>
+<dt class="hdlist1">--proxy_username PROXY_USERNAME</dt>
+<dd>
+<p>Proxy server username.</p>
+</dd>
+<dt class="hdlist1">--max_wait MAX_WAIT</dt>
+<dd>
+<p>Maximum time in seconds to wait for Data Connect agent to start.</p>
+</dd>
+<dt class="hdlist1">--isIICS</dt>
+<dd>
+<p>This flag identifies whether Informatica is in IICS or ICS mode. By default, Informatica is in ICS mode. The default is <code>False</code>.</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">tscli etl show-lw</dt>
+<dd>
+<p>Shows the status of ThoughtSpot Data Connect. It also returns the Informatica username and OrgId.</p>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_event"><a class="anchor" href="#_event"></a>event</h3>
+<h3 id="tscli-event"><a class="anchor" href="#tscli-event"></a>event</h3>
 <div class="listingblock">
 <div class="content">
 <pre>tscli event [-h] {list}</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand and its options manage event notifications.</p>
-</div>
-<div class="paragraph">
-<p>This subcommand has the following option:
-<dlentry><code>tscli event list [-h] [--include INCLUDE] [--since SINCE] [--from FROM] [--to TO] [--limit LIMIT] [--detail] [--summary_contains SUMMARY_CONTAINS] [--detail_contains DETAIL_CONTAINS] [--attributes ATTRIBUTES]</code>::::  The <code>event list ` subcommand accepts these optional flags:
-<dlentry></code>--include INCLUDE`::::  Options are all, config, and notification.</p>
+<p>This subcommand and its options manage event notifications. This subcommand has the following option:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The default is <code>config</code>.</dlentry><dlentry><code>--since SINCE</code></dt>
+<dt class="hdlist1">tscli event list [-h] [--include INCLUDE] [--since SINCE] [--from FROM] [--to TO] [--limit LIMIT] [--detail] [--summary_contains SUMMARY_CONTAINS] [--detail_contains DETAIL_CONTAINS] [--attributes ATTRIBUTES]</dt>
 <dd>
-<p>Grabs events from the specified time window.</p>
+<p>The `event list ` subcommand accepts these optional flags:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--include INCLUDE</dt>
+<dd>
+<p>Options are all, config, and notification. The default is <code>config</code>.</p>
 </dd>
-<dt class="hdlist1">Should be a human readable duration string, such as <code>4h</code> (4 hours), <code>30m</code> (30 minutes), or <code>1d</code> (1 day).</dlentry><dlentry><code>--from FROM</code></dt>
+<dt class="hdlist1">--since SINCE</dt>
 <dd>
-<p>Specifies the starting point for the time window to grab events from.</p>
+<p>Grabs events from the specified time window. Should be a human readable duration string, such as <code>4h</code> (4 hours), <code>30m</code> (30 minutes), or <code>1d</code> (1 day).</p>
 </dd>
-<dt class="hdlist1">Must be of the form <code>yyyymmdd-HH:MM</code>.</dlentry><dlentry><code>--to TO</code></dt>
+<dt class="hdlist1">--from FROM</dt>
 <dd>
-<p>Specifies the ending point for the time window to grab events from.</p>
+<p>Specifies the starting point for the time window to grab events from. Must be of the form <code>yyyymmdd-HH:MM</code>.</p>
 </dd>
-<dt class="hdlist1">Must be of the form: <code>yyyymmdd-HH:MM</code>.</dlentry><dlentry><code>--limit LIMIT</code></dt>
+<dt class="hdlist1">--to TO</dt>
 <dd>
-<p>Maximum number of events to fetch.</p>
+<p>Specifies the ending point for the time window to grab events from. Must be of the form: <code>yyyymmdd-HH:MM</code>.</p>
 </dd>
-<dt class="hdlist1">The default setting is <code>0</code>.</dlentry><dlentry><code>--detail</code></dt>
+<dt class="hdlist1">--limit LIMIT</dt>
 <dd>
-<p>Prints events in detail format.
-This is not tabular.
-Default is a tabular summary.</p>
+<p>Maximum number of events to fetch. The default setting is <code>0</code>.</p>
 </dd>
-<dt class="hdlist1">The default setting is <code>False</code>.</dlentry><dlentry><code>--summary_contains SUMMARY_CONTAINS</code></dt>
+<dt class="hdlist1">--detail</dt>
 <dd>
-<p>Summary of the event will be checked for this string.
-Multiple strings to check for can be specified by separating them with <code>|</code> (pipe).
-The event is returned if it <code>matches ALL</code>.</p>
+<p>Prints events in detail format. This is not tabular. Default is a tabular summary. The default setting is <code>False</code>.</p>
 </dd>
-<dt class="hdlist1">Put single quotes around the param value to prevent undesired glob expansion.</dlentry><dlentry><code>--detail_contains DETAIL_CONTAINS</code></dt>
+<dt class="hdlist1">--summary_contains SUMMARY_CONTAINS</dt>
 <dd>
-<p>Details of the event will be checked for this string.
-Multiple strings to check for can be specified by separating them with <code>|</code> (pipe).
-The event is returned if it <code>matches ALL</code>.</p>
+<p>Summary of the event will be checked for this string. Multiple strings to check for can be specified by separating them with <code>|</code> (pipe). The event is returned if it <code>matches ALL</code>. Put single quotes around the param value to prevent undesired glob expansion.</p>
 </dd>
-<dt class="hdlist1">Put single quotes around the param value to prevent undesired glob expansion.</dlentry><dlentry><code>--attributes ATTRIBUTES</code></dt>
+<dt class="hdlist1">--detail_contains DETAIL_CONTAINS</dt>
 <dd>
-<p>Specify attributes to match as key=value.
-Multiple strings to check for can be specified by separating them with <code>|</code> (pipe).
-The event is returned if it <code>matches ALL</code>.
-Put single quotes around the param value to prevent undesired glob expansion.</dlentry></dlentry></p>
+<p>Details of the event will be checked for this string. Multiple strings to check for can be specified by separating them with <code>|</code> (pipe). The event is returned if it <code>matches ALL</code>. Put single quotes around the param value to prevent undesired glob expansion.</p>
+</dd>
+<dt class="hdlist1">--attributes ATTRIBUTES</dt>
+<dd>
+<p>Specify attributes to match as <code>key=value</code>. Multiple strings to check for can be specified by separating them with <code>|</code> (pipe). The event is returned if it <code>matches ALL</code>. Put single quotes around the param value to prevent undesired glob expansion.</p>
+</dd>
+</dl>
+</div>
 </dd>
 </dl>
 </div>
@@ -3520,15 +3991,23 @@ Put single quotes around the param value to prevent undesired glob expansion.</d
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following option:
-<dlentry><code>tscli feature get-all-config</code>::::
-Gets the configured features in a cluster.
-The command returns a list of features, such as custom branding, Data Connect, and callhome, and informs whether they are enabled or disabled.
-This subcommand has the following parameter:
-<dlentry><code>--proto</code>::::  Shows the output as a serialized proto.</p>
+<p>This subcommand has the following option:</p>
 </div>
-<div class="paragraph">
-<p>The default is <code>False</code>.</dlentry></dlentry></p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">tscli feature get-all-config</dt>
+<dd>
+<p>Gets the configured features in a cluster. The command returns a list of features, such as custom branding, Data Connect, and callhome, and informs the requester if they are enabled or disabled. This subcommand has the following parameter:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--proto</dt>
+<dd>
+<p>Shows the output as a serialized proto. The default is <code>False</code>.</p>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect2">
@@ -3539,38 +4018,75 @@ This subcommand has the following parameter:
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli fileserver configure [-h] --user USER [--password PASSWORD]</code>::::  Configures the secure file server username and password for file upload/download, and the call home feature.</p>
+<p>This subcommand has the following options:</p>
 </div>
-<div class="paragraph">
-<p>You only have to issue this command one time, to set up the connection to the secure file server.
-Reissue this command if the password changes.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">tscli fileserver configure [-h] --user USER [--password PASSWORD]</dt>
+<dd>
+<p>Configures the secure file server username and password for file upload/download, and the call home feature. You only have to issue this command one time, to set up the connection to the secure file server. Reissue this command if the password changes. The parameter <code>PASSWORD</code> is optional. If a password is not specified, the system prompts the user to enter it.</p>
+</dd>
+<dt class="hdlist1">tscli fileserver download-release [-h] [--user USER] [--password PASSWORD] [--url URL] [--md5 MD5] [--out OUT] release</dt>
+<dd>
+<p>Downloads the specified release file, including its checksum, and verifies the integrity of release bundle. You must specify the exact release number, such as <code>6.3.1</code>. Before using this command for the first time, you must set up the file server connection using <code>tscli fileserver configure</code>.  You can then work with a member of the ThoughtSpot Support team because a privileged <code>user</code> and a corresponding <code>password</code> must be specified to download releases.  This command has the following parameters:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--user USER</dt>
+<dd>
+<p>The fileserver username.</p>
+</dd>
+<dt class="hdlist1">--password PASSWORD</dt>
+<dd>
+<p>The fileserver password.</p>
+</dd>
+<dt class="hdlist1">--url URL</dt>
+<dd>
+<p>Url from where the release needs to be downloaded.</p>
+</dd>
+<dt class="hdlist1">--md5 MD5</dt>
+<dd>
+<p>Md5 of the release tarball, if known.</p>
+</dd>
+<dt class="hdlist1">--out OUT</dt>
+<dd>
+<p>File name of the tar ball.</p>
+</dd>
+</dl>
 </div>
-<div class="paragraph">
-<p>The parameter <code>PASSWORD</code> is optional.
-If a password is not specified, you will be prompted to enter it.</dlentry><dlentry><code>tscli fileserver download-release [-h] [--user USER] [--password PASSWORD] [--url URL] [--md5 MD5] [--out OUT] release</code>::::  Downloads the specified release file, including its checksum, and verifies the integrity of release bundle.</p>
+</dd>
+<dt class="hdlist1">tscli fileserver purge-config</dt>
+<dd>
+<p>Removes the file server configuration.</p>
+</dd>
+<dt class="hdlist1">tscli fileserver show-config</dt>
+<dd>
+<p>Shows the file server configuration.</p>
+</dd>
+<dt class="hdlist1">tscli fileserver upload [-h] [--user USER] [--password PASSWORD] --file_name FILE_NAME --server_dir_path SERVER_DIR_PATH</dt>
+<dd>
+<p>Uploads the specified file to the specified directory on the secure file server. You may optionally specify the <code>user</code> and <code>password</code> to bypass the credentials specified when configuring the file server connection with <code>tscli fileserver configure</code>. Before using this command for the first time, you must set up the file server connection using <code>tscli fileserver configure</code>. This command uses the following flags:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--user USER</dt>
+<dd>
+<p>Username of the fileserver.</p>
+</dd>
+<dt class="hdlist1">--password PASSWORD</dt>
+<dd>
+<p>Password of the fileserver. This is required and the command prompts you for it if you do not supply it.</p>
+</dd>
+<dt class="hdlist1">--file_name FILE_NAME</dt>
+<dd>
+<p>Local file to upload.</p>
+</dd>
+<dt class="hdlist1">--server_dir_path SERVER_DIR_PATH</dt>
+<dd>
+<p>Directory path on fileserver. The <code>SERVER_DIR_PATH</code> parameter specifies the directory for file upload. It is based on customer name, and takes the form <code>/Shared/support/customer_name</code>.</p>
+</dd>
+</dl>
 </div>
-<div class="paragraph">
-<p>You must specify the exact release number, such as <code>5.1.3</code>.</p>
-</div>
-<div class="paragraph">
-<p>Before using this command for the first time, you must set up the file server connection using <code>tscli fileserver configure</code>.
-You can then work with a member of the ThoughtSpot Support team because a privileged <code>user</code> and a corresponding <code>password</code> must be specified to download releases.
-This command has the following parameters:
-<dlentry><code>--user USER</code>::::  The fileserver username.</dlentry><dlentry><code>--password PASSWORD</code>::::  The fileserver password.</dlentry><dlentry><code>--url URL</code>::::  Url from where the release needs to be downloaded.</dlentry><dlentry><code>--md5 MD5</code>::::  Md5 of the release tarball, if known.</dlentry><dlentry><code>--out OUT</code>::::  File name of the tar ball.</dlentry></dlentry><dlentry><code>tscli fileserver purge-config</code>::::  Removes the file server configuration.</dlentry><dlentry><code>tscli fileserver show-config</code>::::  Shows the file server configuration.</dlentry><dlentry><code>tscli fileserver upload [-h] [--user USER] [--password PASSWORD] --file_name FILE_NAME --server_dir_path SERVER_DIR_PATH</code>::::  Uploads the specified file to the directory specified on the secure file server.</p>
-</div>
-<div class="paragraph">
-<p>You may optionally specify the <code>user</code> and <code>password</code> to bypass the credentials specified when configuring the file server connection with <code>tscli fileserver configure</code>.
-Before using this command for the first time, you must set up the file server connection using <code>tscli fileserver configure</code>.</p>
-</div>
-<div class="paragraph">
-<p>This command uses the following flags:
-<dlentry><code>--user USER</code>::::  Username of the fileserver.</dlentry><dlentry><code>--password PASSWORD</code>::::
-Password of the fileserver.
-This is required and the command prompts you for it if you do not supply it.</dlentry><dlentry><code>--file_name FILE_NAME</code>::::  Local file to upload.</dlentry><dlentry><code>--server_dir_path SERVER_DIR_PATH</code>::::
-Directory path on fileserver.
-The <code>SERVER_DIR_PATH</code> parameter specifies the directory for file upload.
-It is based on customer name, and takes the form <code>/Shared/support/customer_name</code>.</dlentry></dlentry></p>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect2">
@@ -3581,26 +4097,31 @@ It is based on customer name, and takes the form <code>/Shared/support/customer_
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli firewall close-ports --ports PORTS</code>::::  Closes specified ports through firewall on all nodes.</p>
+<p>This subcommand has the following options:</p>
 </div>
-<div class="paragraph">
-<p>Accepts a comma-separated list of ports.
-Only closes ports that were previously opened using <code>open-ports</code>, and ignores ports that were not opened with <code>open-port</code>, or closed ports.</p>
-</div>
-<div class="paragraph">
-<p>Some essential ports are always kept open, such as <code>ssh</code>;
-they are not affected by this command or by <code>open-ports</code>.</dlentry><dlentry><code>tscli firewall disable</code>::::  Disables firewall.</dlentry><dlentry><code>tscli firewall enable</code>::::  Enables firewall.</dlentry><dlentry><code>tscli firewall open-ports --ports PORTS</code>::::  Opens specified ports through a firewall on all nodes.</p>
-</div>
-<div class="paragraph">
-<p>Accepts a comma-separated list of ports.</p>
-</div>
-<div class="paragraph">
-<p>Ignores open ports.</p>
-</div>
-<div class="paragraph">
-<p>Some essential ports are always kept open, such as <code>ssh</code>;
-they are not affected by this command or by <code>close-ports</code>.</dlentry><dlentry><code>tscli firewall status</code>::::  Shows whether firewall is currently enabled or disabled.</dlentry></p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">tscli firewall close-ports --ports PORTS</dt>
+<dd>
+<p>Closes specified ports through firewall on all nodes. Accepts a comma-separated list of ports. Only closes ports that were previously opened using <code>open-ports</code>, and ignores ports that were not opened with <code>open-port</code>, or closed ports. Some essential ports are always kept open, such as <code>ssh</code>; they are not affected by this command or by <code>open-ports</code>.</p>
+</dd>
+<dt class="hdlist1">tscli firewall disable</dt>
+<dd>
+<p>Disables firewall.</p>
+</dd>
+<dt class="hdlist1">tscli firewall enable</dt>
+<dd>
+<p>Enables firewall.</p>
+</dd>
+<dt class="hdlist1">tscli firewall open-ports --ports PORTS</dt>
+<dd>
+<p>Opens specified ports through a firewall on all nodes. Accepts a comma-separated list of ports. Ignores open ports. Some essential ports are always kept open, such as <code>ssh</code>; they are not affected by this command or by <code>close-ports</code>.</p>
+</dd>
+<dt class="hdlist1">tscli firewall status</dt>
+<dd>
+<p>Shows whether firewall is currently enabled or disabled.</p>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect2">
@@ -3611,12 +4132,23 @@ they are not affected by this command or by <code>close-ports</code>.</dlentry><
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following option:
-<dlentry><code>tscli hdfs leave-safemode</code>::::  Command to get HDFS <code>namenodes</code> out of <code>safemode</code>, with the following parameter:
-<dlentry><code>--timeout TIMEOUT</code>::::  Specifies timeout when waiting for the command to finish.</p>
+<p>This subcommand has the following option:</p>
 </div>
-<div class="paragraph">
-<p>The default is <code>5</code>.</dlentry></dlentry></p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">tscli hdfs leave-safemode</dt>
+<dd>
+<p>Command to get HDFS <code>namenodes</code> out of <code>safemode</code>, with the following parameter:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--timeout TIMEOUT</dt>
+<dd>
+<p>Specifies timeout when waiting for the command to finish. The default is <code>5</code>.</p>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect2">
@@ -3627,8 +4159,23 @@ they are not affected by this command or by <code>close-ports</code>.</dlentry><
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli ipsec disable</code>::::  Disables IPSec.</dlentry><dlentry><code>tscli ipsec enable</code>::::  Enables IPSec.</dlentry><dlentry><code>tscli ipsec status</code>::::  Shows IPSec status on all nodes.</dlentry></p>
+<p>This subcommand has the following options:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">tscli ipsec disable</dt>
+<dd>
+<p>Disables IPSec.</p>
+</dd>
+<dt class="hdlist1">tscli ipsec enable</dt>
+<dd>
+<p>Enables IPSec.</p>
+</dd>
+<dt class="hdlist1">tscli ipsec status</dt>
+<dd>
+<p>Shows IPSec status on all nodes.</p>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect2">
@@ -3639,12 +4186,23 @@ they are not affected by this command or by <code>close-ports</code>.</dlentry><
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli ldap add-cert name cert_file</code>::::
-Adds an SSL certificate for LDAP.
-Use only if LDAP has been configured without SSL and you wish to add it.
-Use <code>name</code> to supply an alias for the certificate you are installing.
-Use <code>cert-file</code> to specify the file where the certificate is.</dlentry><dlentry><code>tscli ldap configure</code>::::  Configures LDAP using an interactive script.</dlentry><dlentry><code>tscli ldap purge-configuration</code>::::  Purges (removes) any existing LDAP configuration.</dlentry></p>
+<p>This subcommand has the following options:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">tscli ldap add-cert name cert_file</dt>
+<dd>
+<p>Adds an SSL certificate for LDAP. Use only if LDAP has already been configured without SSL, when you are adding SSL. Use <code>name</code> to supply an alias for the certificate you are installing. Use <code>cert-file</code> to specify the certificate file.</p>
+</dd>
+<dt class="hdlist1">tscli ldap configure</dt>
+<dd>
+<p>Configures LDAP using an interactive script.</p>
+</dd>
+<dt class="hdlist1">tscli ldap purge-configuration</dt>
+<dd>
+<p>Purges (removes) any existing LDAP configuration.</p>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect2">
@@ -3658,147 +4216,118 @@ Use <code>cert-file</code> to specify the file where the certificate is.</dlentr
 <p>Manages the logging behavior.</p>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli logs collect [-h] [--include INCLUDE] [--exclude EXCLUDE] [--since SINCE] [--from FROM] [--to TO] [--out OUT] [--maxsize MAXSIZE] [--sizeonly] [--nodes NODES]</code>::::
-Extracts logs from the cluster.
-Does not include any logs that have been deleted due to log rotation.</p>
-</div>
-<div class="paragraph">
-<p>This subcommand has the following parameters:
-<dlentry><code>--include INCLUDE</code>::::
-Specifies a comma separated list of logs to include.
-Each entry is either a "selector" or a glob for matching files.
-Selectors must be among: <code>all</code>, <code>orion</code>, <code>system</code>, <code>ts</code>.
-Anything starting with <code>/</code> is assumed to be a glob pattern, and it is interpreted through <code>find(1)</code>.
-Other entries are ignored.
-Put single quotes around the param value to prevent undesired glob expansion.</p>
+<p>This subcommand has the following options:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The default is <code>all</code>.</dlentry><dlentry><code>--exclude EXCLUDE</code></dt>
+<dt class="hdlist1">tscli logs collect [-h] [--include INCLUDE] [--exclude EXCLUDE] [--since SINCE] [--from FROM] [--to TO] [--out OUT] [--maxsize MAXSIZE] [--sizeonly] [--nodes NODES]</dt>
 <dd>
-<p>Comma separated list of logs to exclude.
-Applies to the list selected by <code>--include</code>.</p>
+<p>Extracts logs from the cluster. Does not include any logs that were dropped because of log rotation. This subcommand has the following parameters:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--include INCLUDE</dt>
+<dd>
+<p>Specifies a comma-separated list of logs to include. Each entry is either a "selector" or a glob for matching files. Selectors must be among: <code>all</code>, <code>orion</code>, <code>system</code>, <code>ts</code>. Anything starting with <code>/</code> is assumed to be a glob pattern, and it is interpreted through <code>find(1)</code>. Other entries are ignored. Put single quotes around the param value to prevent undesired glob expansion. The default is <code>all</code>.</p>
 </dd>
-<dt class="hdlist1">Params are interpreted just like in <code>--include</code>.</dlentry><dlentry><code>--since SINCE</code></dt>
+<dt class="hdlist1">--exclude EXCLUDE</dt>
 <dd>
-<p>Grabs logs from the specified time window in the past.</p>
+<p>Comma separated list of logs to exclude. Applies to the list selected by <code>--include</code>. Params are interpreted just like in <code>--include</code>.</p>
 </dd>
-<dt class="hdlist1">Should be a human-readable duration string, such as <code>4h</code> (4 hours), <code>30m</code> (30 minutes), <code>1d</code> (1 day).</dlentry><dlentry><code>--from FROM</code></dt>
+<dt class="hdlist1">--since SINCE</dt>
 <dd>
-<p>Timestamp where collection begins;</p>
+<p>Grabs logs from the specified time window in the past. Should be a human-readable duration string, such as <code>4h</code> (4 hours), <code>30m</code> (30 minutes), <code>1d</code> (1 day).</p>
 </dd>
-<dt class="hdlist1">must be of the form <code>yyyymmdd-HH:MM</code>.</dlentry><dlentry><code>--to TO</code></dt>
+<dt class="hdlist1">--from FROM</dt>
 <dd>
-<p>Timestamp where collection ends;</p>
+<p>Timestamp where collection begins; must be of the form <code>yyyymmdd-HH:MM</code>.</p>
 </dd>
-<dt class="hdlist1">must be of the form <code>yyyymmdd-HH:MM</code>.</dlentry><dlentry><code>--out OUT</code></dt>
+<dt class="hdlist1">--to TO</dt>
 <dd>
-<p>Tarball path for writing logs from each node.</p>
+<p>Timestamp where collection ends; must be of the form <code>yyyymmdd-HH:MM</code>.</p>
 </dd>
-<dt class="hdlist1">The default setting is <code>/tmp/logs.tar.gz</code>.</dlentry><dlentry><code>--maxsize MAXSIZE</code></dt>
+<dt class="hdlist1">--out OUT</dt>
 <dd>
-<p>Only fetch logs if size is smaller than this value.</p>
+<p>Tarball path for writing logs from each node. The default setting is <code>/tmp/logs.tar.gz</code>.</p>
 </dd>
-<dt class="hdlist1">Can be specified in megabytes or gigabytes, such as <code>100MB</code>, <code>10GB</code>.</dlentry><dlentry><code>--sizeonly</code></dt>
+<dt class="hdlist1">--maxsize MAXSIZE</dt>
 <dd>
-<p>Do not collect logs.
-Just report the size.</p>
+<p>Only fetch logs if size is smaller than this value. Can be specified in megabytes or gigabytes, such as <code>100MB</code>, <code>10GB</code>.</p>
 </dd>
-<dt class="hdlist1">The default setting is <code>False</code>.</dlentry><dlentry><code>--nodes NODES</code></dt>
+<dt class="hdlist1">--sizeonly</dt>
 <dd>
-<p>Comma separated list of nodes from where to collect logs.
-Skip this to use all nodes.</dlentry></dlentry><dlentry>`tscli logs runcmd [-h] --cmd CMD [--include INCLUDE] [--exclude EXCLUDE]</p>
+<p>Do not collect logs. Just report the size. The default setting is <code>False</code>.</p>
 </dd>
-<dt class="hdlist1">[--since SINCE] [--from FROM] [--to TO] [--outfile OUTFILE] [--outdir OUTDIR] [--cmd_infmt CMD_INFMT] [--cmd_outfmt CMD_OUTFMT] [--nodes NODES]`</dt>
+<dt class="hdlist1">--nodes NODES</dt>
 <dd>
-<p>Runs a Unix command on logs in the cluster matching the given constraints.
-Results are reported as text dumped to standard out, the specified output file, or as tarballs dumped into the specified directory.</p>
+<p>Comma separated list of nodes from where to collect logs. Skip this to use all nodes.</p>
 </dd>
 </dl>
 </div>
-<div class="paragraph">
-<p>Accepts these optional flags:
-<dlentry><code>--cmd CMD</code>::::
-Unix-Command to be run on the selected logs.
-Use single quotes to escape spaces etc.
-Note the language used to specify CMDSTR has the following rules.</p>
-</div>
+</dd>
+<dt class="hdlist1">tscli logs runcmd [-h] --cmd CMD [--include INCLUDE] [--exclude EXCLUDE] [--since SINCE] [--from FROM] [--to TO] [--outfile OUTFILE] [--outdir OUTDIR] [--cmd_infmt CMD_INFMT] [--cmd_outfmt CMD_OUTFMT] [--nodes NODES]</dt>
+<dd>
+<p>Runs a Unix command on logs in the cluster matching the given constraints. Results are reported as text dumped to standard out, the specified output file, or as tarballs dumped into the specified directory. Accepts these optional flags:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--cmd CMD</dt>
+<dd>
+<p>Unix-Command to run on the selected logs. Use single quotes to escape spaces and other common characters. Note the language used to specify CMDSTR has the following rules:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>A logfile and its corresponding result file can be referred to by the keywords <code>SRCFILE</code> and <code>DSTFILE</code>.
-For example, <code>cp SRCFILE DSTFILE</code>.</p>
+<p>A logfile and its corresponding result file can be referred to by the keywords <code>SRCFILE</code> and <code>DSTFILE</code>. For example, <code>cp SRCFILE DSTFILE</code>.</p>
 </li>
 <li>
-<p>Without any reference to <code>DSTFILE</code> in CMDSTR, <code>DSTFILE</code> will be appended to CMDSTR for output redirection.
-For example, <code>du -sch SRCFILE</code> gets auto-translated to <code>du -sch SRCFILE &gt; DSTFILE</code>.</p>
+<p>Without any reference to <code>DSTFILE</code> in CMDSTR, <code>DSTFILE</code> will be appended to CMDSTR for output redirection. For example, <code>du -sch SRCFILE</code> gets auto-translated to <code>du -sch SRCFILE &gt; DSTFILE</code>.</p>
 </li>
 <li>
-<p>Without any reference to <code>SRCFILE</code>, the contents of the log are streamed to CMDSTR by pipe.</p>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">For example, <code>tail -n100 | grep ERROR</code> gets auto-translated to <code>cat SRCFILE | tail -n100 |     grep ERROR &gt; DSTFILE</code>.</dlentry><dlentry><code>--include INCLUDE</code></dt>
-<dd>
-<p>Comma-separated list of logs to include.
-Each entry is either a "selector" or a glob for matching files.</p>
-</dd>
-</dl>
-</div>
+<p>Without any reference to <code>SRCFILE</code>, the contents of the log are streamed to CMDSTR by pipe. For example, <code>tail -n100 | grep ERROR</code> gets auto-translated to <code>cat SRCFILE | tail -n100 |     grep ERROR &gt; DSTFILE</code>.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>Selectors must be one of <code>all</code>, <code>orion</code>, <code>system</code>, or <code>ts</code>.</p>
+</dd>
+<dt class="hdlist1">--include INCLUDE</dt>
+<dd>
+<p>Comma-separated list of logs to include. Each entry is either a "selector" or a glob for matching files. Selectors must be one of <code>all</code>, <code>orion</code>, <code>system</code>, or <code>ts</code>. Anything that starts with <code>/</code> (forward slash) is assumed to be a glob pattern and interpreted through <code>find(1)</code>. Other entries are ignored. Use single quotes around the parameter value to prevent undesired glob expansion. The default setting is <code>all</code>.</p>
+</dd>
+<dt class="hdlist1">--exclude EXCLUDE</dt>
+<dd>
+<p>Comma separated list of logs to exclude. Applies to the list selected by <code>--include</code>. Parameters are interpreted just like in <code>--include</code>.</p>
+</dd>
+<dt class="hdlist1">--since SINCE</dt>
+<dd>
+<p>Grabs logs from the specified time window in the past. Should be a human-readable duration string, such as <code>4h</code> (4 hours), <code>30m</code> (30 minutes), or <code>1d</code> (1 day).</p>
+</dd>
+<dt class="hdlist1">--from FROM</dt>
+<dd>
+<p>Timestamp where collection begins; must be of the form <code>yyyymmdd-HH:MM</code>.</p>
+</dd>
+<dt class="hdlist1">--to TO</dt>
+<dd>
+<p>Timestamp where collection ends; must be of the form <code>yyyymmdd-HH:MM</code>.</p>
+</dd>
+<dt class="hdlist1">--outfile OUTFILE</dt>
+<dd>
+<p>File path for printing all results. By default printed to <code>stdout</code>.</p>
+</dd>
+<dt class="hdlist1">--outdir OUTDIR</dt>
+<dd>
+<p>Directory path for writing results with original directory structure from each node. Used as an alternative to printing output to <code>outfile/stdout</code>.</p>
+</dd>
+<dt class="hdlist1">--cmd_infmt CMD_INFMT</dt>
+<dd>
+<p>Specify if the input file should be compressed or uncompressed before running <code>CMD</code>. Use <code>C</code> for compressed, and <code>U</code> for uncompressed. Don&#8217;t use this flag if <code>CMD</code> works on both.</p>
+</dd>
+<dt class="hdlist1">--cmd_outfmt CMD_OUTFMT</dt>
+<dd>
+<p>Specify if <code>OUTFILE</code> generated by <code>CMD</code> should be compressed or uncompressed. Use <code>C</code> for compressed, and <code>U</code> for uncompressed. Don&#8217;t use this flag if output file is of the same format as the input file.</p>
+</dd>
+<dt class="hdlist1">--nodes NODES</dt>
+<dd>
+<p>Comma-separated list of nodes to run command on. Skip this to use all nodes.</p>
+</dd>
+</dl>
 </div>
-<div class="paragraph">
-<p>Anything that starts with <code>/</code> (forward slash) is assumed to be a glob pattern and interpreted through <code>find(1)</code>.
-Other entries are ignored.</p>
-</div>
-<div class="paragraph">
-<p><strong>TIP:</strong> use single quotes around the parameter value to prevent undesired glob expansion.</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">The default setting is <code>all</code>.</dlentry><dlentry><code>--exclude EXCLUDE</code></dt>
-<dd>
-<p>Comma separated list of logs to exclude.
-Applies to the list selected by <code>--include</code>.</p>
-</dd>
-<dt class="hdlist1">Parameters are interpreted just like in <code>--include</code>.</dlentry><dlentry><code>--since SINCE</code></dt>
-<dd>
-<p>Grabs logs from the specified time window in the past.</p>
-</dd>
-<dt class="hdlist1">Should be a human-readable duration string, such as <code>4h</code> (4 hours), <code>30m</code> (30 minutes), or <code>1d</code> (1 day).</dlentry><dlentry><code>--from FROM</code></dt>
-<dd>
-<p>Timestamp where collection begins;</p>
-</dd>
-<dt class="hdlist1">must be of the form <code>yyyymmdd-HH:MM</code>.</dlentry><dlentry><code>--to TO</code></dt>
-<dd>
-<p>Timestamp where collection ends;</p>
-</dd>
-<dt class="hdlist1">must be of the form <code>yyyymmdd-HH:MM</code>.</dlentry><dlentry><code>--outfile OUTFILE</code></dt>
-<dd>
-<p>File path for printing all results.</p>
-</dd>
-<dt class="hdlist1">By default printed to <code>stdout</code>.</dlentry><dlentry><code>--outdir OUTDIR</code></dt>
-<dd>
-<p>Directory path for writing results with original directory structure from each node.</p>
-</dd>
-<dt class="hdlist1">Used as an alternative to printing output to <code>outfile/stdout</code>.</dlentry><dlentry><code>--cmd_infmt CMD_INFMT</code></dt>
-<dd>
-<p>Specify if the input file should be compressed or uncompressed before running <code>CMD</code>.
-<code>C</code> for compressed, <code>U</code> for uncompressed.</p>
-</dd>
-<dt class="hdlist1">Don&#8217;t use this flag if <code>CMD</code> works on both.</dlentry><dlentry><code>--cmd_outfmt CMD_OUTFMT</code></dt>
-<dd>
-<p>Specify if <code>OUTFILE</code> generated by <code>CMD</code> should be compressed or uncompressed.
-<code>C</code> for compressed, <code>U</code> for uncompressed.</p>
-</dd>
-<dt class="hdlist1">Don&#8217;t use this flag if output file is of the same format as the input file.</dlentry><dlentry><code>--nodes NODES</code></dt>
-<dd>
-<p>Comma separated list of nodes to run command on.
-Skip this to use all nodes.</dlentry></dlentry></p>
 </dd>
 </dl>
 </div>
@@ -3811,28 +4340,49 @@ Skip this to use all nodes.</dlentry></dlentry></p>
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli map-tiles enable [-h] [--online] [--offline] [--tar TAR] [--md5 MD5]</code>::::
-Enables ThoughtSpot&#8217;s map tiles.
-Used when constructing geomap charts.</p>
-</div>
-<div class="paragraph">
-<p>If you don&#8217;t have internet access, you must download the map tiles tar and md5 files, and append the following to the <code>tscli</code> command:
-<dlentry><code>--online</code>::::  Downloads <code>maptiles</code> tar from internet.</p>
+<p>This subcommand has the following options:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The default setting is <code>True</code>.</dlentry><dlentry><code>--offline</code></dt>
+<dt class="hdlist1">tscli map-tiles enable [-h] [--online] [--offline] [--tar TAR] [--md5 MD5]</dt>
 <dd>
-<p>Specifies that you are using <code>maptiles</code> tar from a local disk.</p>
+<p>Enables ThoughtSpot&#8217;s map tiles. Used when constructing geomap charts. If you don&#8217;t have internet access, you must download the map tiles tar and md5 files, and append the following to the <code>tscli</code> command:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--online</dt>
+<dd>
+<p>Downloads <code>maptiles</code> tar from internet. The default setting is <code>True</code>.</p>
 </dd>
-<dt class="hdlist1">The default setting is <code>False</code>.</dlentry><dlentry><code>--tar TAR</code>::::  Specified tar file for map-tiles.</dlentry><dlentry><code>--md5 MD5</code>::::  Specified md5 file for map-tiles.</dlentry></dlentry><dlentry><code>tscli map-tiles disable</code>::::  Disables map-tiles functionality.</dlentry><dlentry><code>tscli map-tiles status</code></dt>
+<dt class="hdlist1">--offline</dt>
+<dd>
+<p>Specifies that you are using <code>maptiles</code> tar from a local disk. The default setting is <code>False</code>.</p>
+</dd>
+<dt class="hdlist1">--tar TAR</dt>
+<dd>
+<p>Specified tar file for map-tiles.</p>
+</dd>
+<dt class="hdlist1">--md5 MD5</dt>
+<dd>
+<p>Specified md5 file for map-tiles.</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">tscli map-tiles disable</dt>
+<dd>
+<p>Disables map-tiles functionality.</p>
+</dd>
+<dt class="hdlist1">tscli map-tiles status</dt>
 <dd>
 <p>Checks whether map-tiles are enabled, with the following parameter:</p>
-</dd>
-<dt class="hdlist1"><dlentry><code>--md5 MD5</code></dt>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--md5 MD5</dt>
 <dd>
-<p>Specified md5 checksum for validation.</dlentry></dlentry></p>
+<p>Specified md5 checksum for validation.</p>
+</dd>
+</dl>
+</div>
 </dd>
 </dl>
 </div>
@@ -3845,26 +4395,37 @@ Used when constructing geomap charts.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli monitoring set-config [-h] [--email EMAIL] [--clear_email] [--heartbeat_interval HEARTBEAT_INTERVAL] [--heartbeat_disable]</code>::::  Sets the monitoring configuration.</p>
-</div>
-<div class="paragraph">
-<p>The <code>monitoring</code> subcommand accepts the following optional flags:
-<dlentry><code>--email EMAIL</code>::::  Comma separated list (no spaces) of email addresses where the cluster sends monitoring information.</dlentry><dlentry><code>--clear_email</code>::::  Disables monitoring emails by clearing email configuration.</p>
+<p>This subcommand has the following options:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry><dlentry><code>--heartbeat_interval HEARTBEAT_INTERVAL</code></dt>
+<dt class="hdlist1">tscli monitoring set-config [-h] [--email EMAIL] [--clear_email] [--heartbeat_interval HEARTBEAT_INTERVAL] [--heartbeat_disable]</dt>
 <dd>
-<p>Specify a heartbeat email generation interval in seconds.</p>
+<p>Sets the monitoring configuration. The <code>monitoring</code> subcommand accepts the following optional flags:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--email EMAIL</dt>
+<dd>
+<p>Comma separated list (no spaces) of email addresses where the cluster sends monitoring information.</p>
 </dd>
-<dt class="hdlist1">The interval should be greater than 0.</dlentry><dlentry><code>--heartbeat_disable</code></dt>
+<dt class="hdlist1">--clear_email</dt>
 <dd>
-<p>Disables heartbeat email generation.</p>
+<p>Disables monitoring emails by clearing email configuration. The default is <code>False</code>.</p>
 </dd>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry></dlentry><dlentry><code>tscli monitoring show-config</code></dt>
+<dt class="hdlist1">--heartbeat_interval HEARTBEAT_INTERVAL</dt>
 <dd>
-<p>Shows the monitoring configuration.</dlentry></p>
+<p>Specify a heartbeat email generation interval in seconds. The interval should be greater than 0.</p>
+</dd>
+<dt class="hdlist1">--heartbeat_disable</dt>
+<dd>
+<p>Disables heartbeat email generation. The default is <code>False</code>.</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">tscli monitoring show-config</dt>
+<dd>
+<p>Shows the monitoring configuration.</p>
 </dd>
 </dl>
 </div>
@@ -3877,109 +4438,87 @@ Used when constructing geomap charts.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli nas ls [-h]</code>::::  Lists mounts managed by NAS mounter service.</dlentry><dlentry><code>tscli nas mount-cifs [-h] --server SERVER [--path_on_server PATH_ON_SERVER] --mount_point MOUNT_POINT--username USERNAME --password PASSWORD [--uid UID] [--gid GID] [--options OPTIONS]</code>::::  Mounts a CIFS device on all nodes.</p>
-</div>
-<div class="paragraph">
-<p>Accepts the following optional flags:
-<dlentry><code>--server SERVER</code>::::  IP address or DNS name of CIFS service.</p>
+<p>This subcommand has the following options:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">For example, <code>10.20.30.40</code>.</dlentry><dlentry><code>--path_on_server PATH_ON_SERVER</code></dt>
+<dt class="hdlist1">tscli nas ls [-h]</dt>
 <dd>
-<p>Filesystem path on the CIFS source server to mount NAS.</p>
+<p>Lists mounts managed by NAS mounter service.</p>
 </dd>
-</dl>
-</div>
-<div class="paragraph">
-<p>For example, <code>/a</code>.</p>
-</div>
+<dt class="hdlist1">tscli nas mount-cifs [-h] --server SERVER [--path_on_server PATH_ON_SERVER] --mount_point MOUNT_POINT&#8212;&#8203;username USERNAME --password PASSWORD [--uid UID] [--gid GID] [--options OPTIONS]</dt>
+<dd>
+<p>Mounts a CIFS device on all nodes. Accepts the following optional flags:</p>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The default setting is <code>/</code> (forward slash).</dlentry><dlentry><code>--mount_point MOUNT_POINT</code></dt>
+<dt class="hdlist1">--server SERVER</dt>
 <dd>
-<p>Directory on all cluster nodes where the NFS filesystem should be mounted on the target.</p>
+<p>IP address or DNS name of CIFS service. For example, <code>10.20.30.40</code>.</p>
+</dd>
+<dt class="hdlist1">--path_on_server PATH_ON_SERVER</dt>
+<dd>
+<p>Filesystem path on the CIFS source server to mount NAS. For example, <code>/a</code>. The default setting is <code>/</code> (forward slash).</p>
+</dd>
+<dt class="hdlist1">--mount_point MOUNT_POINT</dt>
+<dd>
+<p>Directory on all cluster nodes where the NFS filesystem should be mounted on the target. If this directory does not exist, the command creates it. If this directory already exists, the command uses it for mounting. For example, <code>/mnt/external</code>.</p>
+</dd>
+<dt class="hdlist1">--username USERNAME</dt>
+<dd>
+<p>Username to connect to the CIFS filesystem.</p>
+</dd>
+<dt class="hdlist1">--password PASSWORD</dt>
+<dd>
+<p>CIFS password for <code>--username</code>.</p>
+</dd>
+<dt class="hdlist1">--uid UID</dt>
+<dd>
+<p>The <em>UID</em> that owns all files or directories on the mounted filesystem when the server does not provide ownership information. See <code>man mount.cifs</code> for more details. The default setting is <code>1001</code>.</p>
+</dd>
+<dt class="hdlist1">--gid GID</dt>
+<dd>
+<p>The <code>GID</code> that owns all files or directories on the mounted filesystem when the server does not provide ownership information. See <code>man mount.cifs</code> for more details. The default is <code>1001</code>.</p>
+</dd>
+<dt class="hdlist1">--options OPTIONS</dt>
+<dd>
+<p>Other command-line options to forward to the <code>mount.cifs</code> command. The default setting is <code>noexec</code>.</p>
 </dd>
 </dl>
 </div>
-<div class="paragraph">
-<p>If this directory does not exist, the command creates it.
-If this directory already exists, the command uses it for mounting.</p>
-</div>
+</dd>
+<dt class="hdlist1">tscli nas mount-nfs [-h] [--server SERVER] [--path_on_server PATH_ON_SERVER] [--mount_point MOUNT_POINT] [--options OPTIONS] [--protocol {nfs,nfs4}]</dt>
+<dd>
+<p>Mounts the NFS filesystem on all nodes. Accepts the following optional flags:</p>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">For example, <code>/mnt/external</code>.</dlentry><dlentry><code>--username USERNAME</code></dt>
+<dt class="hdlist1">--server SERVER</dt>
 <dd>
-<p>Username to connect to the CIFS filesystem.</dlentry><dlentry><code>--password PASSWORD</code>::::  CIFS password for <code>--username</code>.</dlentry><dlentry><code>--uid UID</code>::::  The <em>UID</em> that owns all files or directories on the mounted filesystem when the server does not provide ownership information.</p>
+<p>IP address or DNS name of NFS service. For example, <code>10.20.30.40</code>.</p>
+</dd>
+<dt class="hdlist1">--path_on_server PATH_ON_SERVER</dt>
+<dd>
+<p>Filesystem path on the NFS source server. For example, <code>/a/b/c/d</code>. The default setting is <code>/</code>.</p>
+</dd>
+<dt class="hdlist1">--mount_point MOUNT_POINT</dt>
+<dd>
+<p>Directory on all cluster nodes of the target system. If this directory does not exist, the command creates it. If this directory already exists, the command uses it for mounting. For example, <code>/mnt/external</code>.</p>
+</dd>
+<dt class="hdlist1">--options OPTIONS</dt>
+<dd>
+<p>Command-line options to mount. The default setting is <code>noexec</code>.</p>
+</dd>
+<dt class="hdlist1">--protocol PROTO</dt>
+<dd>
+<p>Protocol to use for mounting, either <code>nfs</code> or <code>nfs4</code>. The default is <code>nfs</code>.</p>
 </dd>
 </dl>
 </div>
-<div class="paragraph">
-<p>See <code>man mount.cifs</code> for more details.</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">The default setting is <code>1001</code>.</dlentry><dlentry><code>--gid GID</code></dt>
+</dd>
+<dt class="hdlist1">tscli nas unmount [-h] --dir DIR</dt>
 <dd>
-<p>The <code>GID</code> that owns all files or directories on the mounted filesystem when the server does not provide ownership information.</p>
+<p>Unmounts all devices from the specified directory, <code>DIR</code>. This command returns an error if nothing is currently mounted on this directory through <code>tscli nas mount</code>.</p>
 </dd>
 </dl>
-</div>
-<div class="paragraph">
-<p>See <code>man mount.cifs</code> for more details.</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">The default is <code>1001</code>.</dlentry><dlentry><code>--options OPTIONS</code></dt>
-<dd>
-<p>Other command-line options to forward to the <code>mount.cifs</code> command.</p>
-</dd>
-<dt class="hdlist1">The default setting is <code>noexec</code>.</dlentry></dlentry><dlentry><code>tscli nas mount-nfs [-h] [--server SERVER] [--path_on_server PATH_ON_SERVER] [--mount_point MOUNT_POINT] [--options OPTIONS] [--protocol {nfs,nfs4}]</code></dt>
-<dd>
-<p>Mounts the NFS filesystem on all nodes.</p>
-</dd>
-</dl>
-</div>
-<div class="paragraph">
-<p>Accepts the following optional flags:
-<dlentry><code>--server SERVER</code>::::
-IP address or DNS name of NFS service.
-For example, <code>10.20.30.40</code>.</dlentry><dlentry><code>--path_on_server PATH_ON_SERVER</code>::::  Filesystem path on the NFS source server.</p>
-</div>
-<div class="paragraph">
-<p>For example, <code>/a/b/c/d</code>.</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">The default setting is <code>/</code>.</dlentry><dlentry><code>--mount_point MOUNT_POINT</code></dt>
-<dd>
-<p>Directory on all cluster nodes of the target system.</p>
-</dd>
-</dl>
-</div>
-<div class="paragraph">
-<p>If this directory does not exist, the command creates it.
-If this directory already exists, the command uses it for mounting.</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">For example, <code>/mnt/external</code>.</dlentry><dlentry><code>--options OPTIONS</code></dt>
-<dd>
-<p>Command-line options to mount.</p>
-</dd>
-<dt class="hdlist1">The default setting is <code>noexec</code>.</dlentry><dlentry><code>--protocol PROTO</code></dt>
-<dd>
-<p>Protocol to use for mounting, either <code>nfs</code> or <code>nfs4</code>.</p>
-</dd>
-<dt class="hdlist1">The default is <code>nfs</code>.</dlentry></dlentry><dlentry><code>tscli nas unmount [-h] --dir DIR</code></dt>
-<dd>
-<p>Unmounts all devices from the specified directory, <code>DIR</code>.</p>
-</dd>
-</dl>
-</div>
-<div class="paragraph">
-<p>This command returns an error if nothing is currently mounted on this directory through <code>tscli nas mount</code>.</dlentry></p>
 </div>
 </div>
 <div class="sect2">
@@ -3990,39 +4529,55 @@ If this directory already exists, the command uses it for mounting.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli node check [-h] [--select {reinstall-preflight}] [--secondary SECONDARY]</code>::::  Runs checks per node.</p>
-</div>
-<div class="paragraph">
-<p>Accepts the following flags:
-<dlentry><code>--select {reinstall-preflight}</code>::::  Specifies the type of node check.</p>
+<p>This subcommand has the following options:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The default setting is <code>reinstall-preflight</code>.</dlentry><dlentry><code>--secondary SECONDARY</code></dt>
+<dt class="hdlist1">tscli node check [-h] [--select { reinstall-preflight}] [--secondary SECONDARY]</dt>
 <dd>
-<p>Secondary drive for <code>reinstall-preflight</code>.</p>
+<p>Runs checks per node. Accepts the following flags:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--select { reinstall-preflight}</dt>
+<dd>
+<p>Specifies the type of node check. The default setting is <code>reinstall-preflight</code>.</p>
 </dd>
-<dt class="hdlist1">The default setting is <code>sdd</code>.</dlentry></dlentry><dlentry><code>tscli node ls [-h] [--type {all,healthy,not-healthy}]</code></dt>
+<dt class="hdlist1">--secondary SECONDARY</dt>
 <dd>
-<p>Lists all nodes in the cluster, with the following parameter:</p>
-</dd>
-<dt class="hdlist1"><dlentry><code>--type {all,healthy,not-healthy}</code></dt>
-<dd>
-<p>Filters by node state.</p>
-</dd>
-<dt class="hdlist1">The default setting is <code>all</code>.</dlentry></dlentry><dlentry><code>tscli node status</code></dt>
-<dd>
-<p>Get Node status for operation specified by mode, with the following paramaters:</p>
-</dd>
-<dt class="hdlist1"><dlentry><code>--mode {reinstall-os}</code>::::  Mode to run node status in.</dlentry><dlentry><code>--tail</code></dt>
-<dd>
-<p>Prints the details of create and update progress.</p>
+<p>Secondary drive for <code>reinstall-preflight</code>. The default setting is <code>sdd</code>.</p>
 </dd>
 </dl>
 </div>
-<div class="paragraph">
-<p>The default is <code>False</code>.</dlentry></dlentry></p>
+</dd>
+<dt class="hdlist1">tscli node ls [-h] [--type {all,healthy,not-healthy}]</dt>
+<dd>
+<p>Lists all nodes in the cluster, with the following parameter:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--type {all,healthy,not-healthy}</dt>
+<dd>
+<p>Filters by node state. The default setting is <code>all</code>.</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">tscli node status</dt>
+<dd>
+<p>Get Node status for the operation specified by mode, with the following parameters:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--mode { reinstall-os}</dt>
+<dd>
+<p>Mode for running node status.</p>
+</dd>
+<dt class="hdlist1">--tail</dt>
+<dd>
+<p>Prints the details of create and update progress. The default is <code>False</code>.</p>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect2">
@@ -4033,8 +4588,15 @@ If this directory already exists, the command uses it for mounting.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following option:
-<dlentry><code>tscli notification set-apns-config</code>::::  Sets APNS configuration.</dlentry></p>
+<p>This subcommand has the following option:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">tscli notification set-apns-config</dt>
+<dd>
+<p>Sets APNS configuration.</p>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect2">
@@ -4049,12 +4611,17 @@ If this directory already exists, the command uses it for mounting.</p>
 In particular, it configures various in-app email options.</p>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli onboarding --help</code>::::  Prints help for the onboarding configuration</dlentry><dlentry><code>tscli onboarding configure</code>::::  Configures the onboarding through a series of steps.</p>
+<p>This subcommand has the following options:</p>
 </div>
-<div class="paragraph">
-<p>Asks the user to provide information necessary for onboarding-related functionality, such as the following:</p>
-</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">tscli onboarding --help</dt>
+<dd>
+<p>Prints help for the onboarding configuration.</p>
+</dd>
+<dt class="hdlist1">tscli onboarding configure</dt>
+<dd>
+<p>Configures the onboarding through a series of steps. Asks the user to provide information necessary for onboarding-related functionality, such as:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4080,12 +4647,19 @@ In particular, it configures various in-app email options.</p>
 <p>URL of the ThoughtSpot instance</p>
 </li>
 <li>
-<p>URL of the ThoughtSpot documentation</dlentry><dlentry><code>tscli onboarding purge-configuration</code>::::  This command removes all previous onboarding configuration.</dlentry></p>
+<p>URL of the ThoughtSpot documentation</p>
 </li>
 </ul>
 </div>
 </li>
 </ol>
+</div>
+</dd>
+<dt class="hdlist1">tscli onboarding purge-configuration</dt>
+<dd>
+<p>This command removes all previous onboarding configuration.</p>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect2">
@@ -4096,46 +4670,81 @@ In particular, it configures various in-app email options.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli patch abort-apply</code>::::  Aborts an ongoing patch-apply, if safe.</dlentry><dlentry><code>tscli patch apply [-h] [release]</code>::::  Applies the patch on an existing cluster, with the specified <code>release</code>.</p>
-</div>
-<div class="paragraph">
-<p>Accepts the following flag:
-<dlentry><code>--skip-check</code>::::  When set, skips all pre-apply checks.</p>
+<p>This subcommand has the following options:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry></dlentry><dlentry><code>tscli patch ls [-h]  [--applied] [--rolled_back] [--service SERVICE] [--md5 MD5] [--history]</code></dt>
+<dt class="hdlist1">tscli patch abort-apply</dt>
 <dd>
-<p>Lists the patches currently applied.</p>
+<p>Aborts an ongoing patch-apply, if safe.</p>
+</dd>
+<dt class="hdlist1">tscli patch apply [-h] [release]</dt>
+<dd>
+<p>Applies the patch on an existing cluster, with the specified <code>release</code>. Accepts the following flag:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--skip-check</dt>
+<dd>
+<p>When set, skips all pre-apply checks. The default is <code>False</code>.</p>
 </dd>
 </dl>
 </div>
-<div class="paragraph">
-<p>Accepts the following flags:
-<dlentry><code>--applied</code>::::  Shows only the patches applied since the last full release.</p>
-</div>
+</dd>
+<dt class="hdlist1">tscli patch ls [-h]  [--applied] [--rolled_back] [--service SERVICE] [--md5 MD5] [--history]</dt>
+<dd>
+<p>Lists the patches currently applied. Accepts the following flags:</p>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The default setting is <code>False</code>.</dlentry><dlentry><code>--rolled_back</code></dt>
+<dt class="hdlist1">--applied</dt>
 <dd>
-<p>Shows only the patches rolled back since the last full release.</p>
+<p>Shows only the patches applied since the last full release. The default setting is <code>False</code>.</p>
 </dd>
-<dt class="hdlist1">The default setting is <code>False</code>.</dlentry><dlentry><code>--service SERVICE</code>::::  Shows patches filtered by service.</dlentry><dlentry><code>--md5 MD5</code>::::  Shows the details of the patch specified.</dlentry><dlentry><code>--history</code></dt>
+<dt class="hdlist1">--rolled_back</dt>
 <dd>
-<p>Shows the history of all patches applied/rollback releases.</p>
+<p>Shows only the patches rolled back since the last full release. The default setting is <code>False</code>.</p>
 </dd>
-<dt class="hdlist1">The default setting is <code>False</code>.</dlentry></dlentry><dlentry><code>tscli patch resume-apply [-h]</code>::::  Resumes patch apply.</dlentry><dlentry><code>tscli patch resume-rollback [-h]</code>::::  Resumes patch roll-back.</dlentry><dlentry><code>tscli patch rollback md5 [-h]</code></dt>
+<dt class="hdlist1">--service SERVICE</dt>
+<dd>
+<p>Shows patches filtered by service.</p>
+</dd>
+<dt class="hdlist1">--md5 MD5</dt>
+<dd>
+<p>Shows the details of the patch specified.</p>
+</dd>
+<dt class="hdlist1">--history</dt>
+<dd>
+<p>Shows the history of all patches applied/rollback releases. The default setting is <code>False</code>.</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">tscli patch resume-apply [-h]</dt>
+<dd>
+<p>Resumes patch apply.</p>
+</dd>
+<dt class="hdlist1">tscli patch resume-rollback [-h]</dt>
+<dd>
+<p>Resumes patch roll-back.</p>
+</dd>
+<dt class="hdlist1">tscli patch rollback md5 [-h]</dt>
 <dd>
 <p>Rolls back a specified patch from an existing cluster with the following parameters:</p>
-</dd>
-<dt class="hdlist1"><dlentry><code>md5</code>::::  Specifies the md5 of the patch to be rolled back.</dlentry><dlentry><code>--skip_check</code></dt>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">md5</dt>
 <dd>
-<p>When set, skips all pre-apply checks while rolling back.</p>
+<p>Specifies the md5 of the patch to be rolled back.</p>
 </dd>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry></dlentry><dlentry><code>tscli patch status</code></dt>
+<dt class="hdlist1">--skip_check</dt>
 <dd>
-<p>Shows the progress of patch operation.</dlentry></p>
+<p>When set, skips all pre-apply checks while rolling back. The default is <code>False</code>.</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">tscli patch status</dt>
+<dd>
+<p>Shows the progress of patch operation.</p>
 </dd>
 </dl>
 </div>
@@ -4151,58 +4760,63 @@ In particular, it configures various in-app email options.</p>
 <p>Manages R packages available to SpotIQ.</p>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli rpackage add [-h] [--repo REPO] [--timeout TIMEOUT] [--dest_dir DEST_DIR] [--nodes NODES] package_name</code>::::  Command to add an R package, <code>package_name</code>, to the cluster.</p>
-</div>
-<div class="paragraph">
-<p>Accepts the following flags:
-<dlentry><code>--repo REPO</code>::::  Specifies the url of a specific repository to download packages from.</p>
+<p>This subcommand has the following options:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The default is <code>http://cran.rstudio.com/</code>.</dlentry><dlentry><code>-timeout  REPO</code></dt>
+<dt class="hdlist1">tscli rpackage add [-h] [--repo REPO] [--timeout TIMEOUT] [--dest_dir DEST_DIR] [--nodes NODES] package_name</dt>
 <dd>
-<p>Timeout waiting for the R Package to be installed.</p>
+<p>Command to add an R package, <code>package_name</code>, to the cluster. Accepts the following flags:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--repo REPO</dt>
+<dd>
+<p>Specifies the URL of a specific source repository of packages, to download them. The default is <code><a href="http://cran.rstudio.com/" class="bare">http://cran.rstudio.com/</a></code>.</p>
+</dd>
+<dt class="hdlist1">--timeout  REPO</dt>
+<dd>
+<p>Timeout waiting for the R package to install. The default is <code>60</code>.</p>
+</dd>
+<dt class="hdlist1">--dest_dir REPO</dt>
+<dd>
+<p>Directory where output of this command will be placed.</p>
+</dd>
+<dt class="hdlist1">--nodes NODES</dt>
+<dd>
+<p>Space-separated list of IPs for nodes to run the command on. The default setting is <code>all</code>.</p>
 </dd>
 </dl>
 </div>
-<div class="paragraph">
-<p>The default is <code>60</code>.</p>
-</div>
+</dd>
+<dt class="hdlist1">tscli rpackage delete [-h] [--timeout TIMEOUT] [--dest_dir DEST_DIR] [--nodes NODES] package_name</dt>
+<dd>
+<p>Command to delete an installed R package from the cluster. Accepts the following flags:</p>
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><code>--dest_dir REPO</code></dt>
+<dt class="hdlist1">--timeout REPO</dt>
 <dd>
-<p>Directory where output of this command will be placed.</dlentry><dlentry><code>--nodes NODES</code>::::  Space-separated list of IPs for nodes to run the command on.</p>
+<p>Timeout waiting for the R package to be removed. The default is 60.</p>
 </dd>
-<dt class="hdlist1">The default setting is <code>all</code>.</dlentry></dlentry><dlentry><code>tscli rpackage delete [-h] [--timeout TIMEOUT] [--dest_dir DEST_DIR] [--nodes NODES] package_name</code></dt>
+<dt class="hdlist1">--dest_dir REPO</dt>
 <dd>
-<p>Command to delete an installed R package from the cluster.</p>
+<p>Directory where the output of this command should be saved.</p>
+</dd>
+<dt class="hdlist1">--nodes NODES</dt>
+<dd>
+<p>Space-separated list of node IPs on which to run the command. The default setting is <code>all</code>.</p>
 </dd>
 </dl>
 </div>
-<div class="paragraph">
-<p>Accepts the following flags:
-<dlentry><code>--timeout REPO</code>::::  Timeout waiting for the R Package to be removed.</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">The default is 60.</dlentry><dlentry><code>--dest_dir REPO</code></dt>
-<dd>
-<p>Directory where the output of this command should be saved.</dlentry><dlentry><code>--nodes NODES</code>::::  Space-separated list of node IPs on which to run the command.</p>
 </dd>
-<dt class="hdlist1">The default setting is <code>all</code>.</dlentry></dlentry><dlentry><code>tscli rpackage list [-h] [--detailed]</code></dt>
+<dt class="hdlist1">tscli rpackage list [-h] [--detailed]</dt>
 <dd>
 <p>List all R packages installed on the cluster, with the following parameter:</p>
 </dd>
-<dt class="hdlist1"><dlentry><code>--detailed</code></dt>
+<dt class="hdlist1">--detailed</dt>
 <dd>
-<p>Command to get install information as well as package names.</p>
+<p>Command to get install information as well as package names. The default is <code>False</code>.</p>
 </dd>
 </dl>
-</div>
-<div class="paragraph">
-<p>The default is <code>False</code>.</dlentry></dlentry></p>
 </div>
 </div>
 <div class="sect2">
@@ -4213,11 +4827,22 @@ In particular, it configures various in-app email options.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli saml configure [-h]</code>::::  Configures SAML.</dlentry><dlentry><code>tscli saml purge-configuration</code>::::  Purges any existing SAML configuration.</dlentry></p>
+<p>This subcommand has the following options:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">tscli saml configure [-h]</dt>
+<dd>
+<p>Configures SAML.</p>
+</dd>
+<dt class="hdlist1">tscli saml purge-configuration</dt>
+<dd>
+<p>Purges any existing SAML configuration.</p>
+</dd>
+</dl>
 </div>
 <div class="paragraph">
-<p>To see a list of prerequisites, refer to link:{{ site.baseurl }}/admin/setup/configure-SAML-with-tscli.html[Configure SAML].</p>
+<p>To see a list of prerequisites, refer to <a href="configure-SAML-with-tscli.html" class="page">Configure SAML</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -4228,12 +4853,32 @@ In particular, it configures various in-app email options.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli scheduled-pinboards disable</code>::::  Disables scheduled pinboards for the cluster.</dlentry><dlentry><code>tscli scheduled-pinboards enable [-h]</code>::::  Enables scheduled pinboards, which are disabled in prod clusters by default.</dlentry></p>
+<p>This subcommand has the following options:</p>
 </div>
-<div class="paragraph">
-<p>{% include note.html content="When you enable scheduled pinboards, you should also configure a list of intended email domains.
-Contact ThoughtSpot Support for help on how to configure this list." %}</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">tscli scheduled-pinboards disable</dt>
+<dd>
+<p>Disables scheduled pinboards for the cluster.</p>
+</dd>
+<dt class="hdlist1">tscli scheduled-pinboards enable [-h]</dt>
+<dd>
+<p>Enables scheduled Pinboards, which are disabled in prod clusters by default.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+When you enable scheduled Pinboards, you should also configure a list of intended email domains.
+Contact <a href="https://community.thoughtspot.com/customers/s/contactsupport" target="_blank" rel="noopener">ThoughtSpot Support</a>  for help on how to configure this list.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -4244,20 +4889,27 @@ Contact ThoughtSpot Support for help on how to configure this list." %}</p>
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following option:
-<dlentry><code>tscli set heterogeneous</code>::::  Sets or unsets a cluster as heterogeneous, with the following parameters:
-<dlentry><code>--set</code>::::  Marks the cluster heterogeneous.</p>
+<p>This subcommand has the following option:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The default is <code>True</code>.</dlentry><dlentry><code>--unset</code></dt>
+<dt class="hdlist1">tscli set heterogeneous</dt>
 <dd>
-<p>Marks the cluster homogeneous.</p>
+<p>Sets or unsets a cluster as heterogeneous, with the following parameters:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--set</dt>
+<dd>
+<p>Marks the cluster heterogeneous. The default is <code>True</code>.</p>
+</dd>
+<dt class="hdlist1">--unset</dt>
+<dd>
+<p>Marks the cluster homogeneous. The default is <code>False</code>.</p>
 </dd>
 </dl>
 </div>
-<div class="paragraph">
-<p>The default is <code>False</code>.</dlentry></dlentry></p>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect2">
@@ -4268,61 +4920,88 @@ Contact ThoughtSpot Support for help on how to configure this list." %}</p>
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli smtp remove-mailfromname</code>::::  Removes current cluster mail from name.</p>
-</div>
-<div class="paragraph">
-<p>It is the first half of the email address, the part before the @ sign.
-In <em>example@company.com</em>, it is <em>example</em>.</dlentry><dlentry><code>tscli smtp remove-mailname</code>::::  Removes current cluster mail name.</p>
-</div>
-<div class="paragraph">
-<p>It is the second half of the email address, the part after the @ sign.
-In <em>example@company.com</em>, it is <em>company</em>.</dlentry><dlentry><code>tscli smtp remove-relayhost</code>::::  Removes current cluster relay host.</dlentry><dlentry><code>tscli smtp remove-saslcredentials</code>::::  Clears SASL credentials and disables SMTP AUTH.</dlentry><dlentry><code>tscli smtp reset-canonical-mapping</code>::::  Deletes the current postmap mapping.</dlentry><dlentry><code>tscli smtp set-canonical-mapping [-h] new_key new_value</code>::::
-Sets a new Postmap mapping.
-You must specify the <code>new_key</code> and the <code>new_value</code>.</dlentry><dlentry><code>tscli smtp set-mailfromname mailfromname</code>::::  Sets the name from where email alerts are sent for the cluster.</p>
-</div>
-<div class="paragraph">
-<p>It is the first half of the email address, the part before the @ sign.
-In <em>example@company.com</em>, it is <em>example</em>.</dlentry><dlentry><code>tscli smtp set-mailname mailname</code>::::  Sets the domain from where email alerts are sent for the cluster.</p>
-</div>
-<div class="paragraph">
-<p>It is the second half of the email address, the part after the @ sign.
-In <em>example@company.com</em>, it is <em>company</em>.</dlentry><dlentry><code>tscli smtp set-relayhost [-h] [--force FORCE] relayhost</code>::::  Sets the specified <code>relayhost</code> for SMTP (email) sent from the cluster.</p>
-</div>
-<div class="paragraph">
-<p>Accepts the following flag:
-<dlentry><code>--force FORCE</code>::::  Set even if relay host is not accessible.</p>
-</div>
-<div class="paragraph">
-<p>The default setting is <code>False</code>.</dlentry></p>
-</div>
-<div class="paragraph">
-<p>On ThoughtSpot release 6.1.1 or later, on on release 6.0.5, you can specify a custom port to connect to the relay host.
-If you do not specify a port, the system uses the default recommended port, port 25.
-Use a custom port if port 25 is blocked in your environment.</p>
-</div>
-<div class="paragraph">
-<p>To use the default port, run the setup command normally:</p>
-</div>
-<div class="paragraph">
-<p><code>$ tscli smtp set-relayhost IP_address</code></p>
-</div>
-<div class="paragraph">
-<p>To use a custom port instead of port 25, run the setup command, specifying the port you want to use:</p>
-</div>
-<div class="paragraph">
-<p><code>$ tscli smtp set-relayhost IP_address:custom_port</code></p>
+<p>This subcommand has the following options:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">If you are on 6.1 rather than 6.1.1, or an earlier version than 6.0.5, link:{{ site.baseurl }}/appliance/contact.html[contact ThoughtSpot Support] to use a custom port.</dlentry><dlentry><code>tscli smtp set-saslcredentials</code></dt>
+<dt class="hdlist1">tscli smtp remove-mailfromname</dt>
 <dd>
-<p>Sets SASL credentials and enables SMTP AUTH.</dlentry><dlentry><code>tscli smtp show-canonical-mapping</code>::::  Shows the current postmap mapping.</dlentry><dlentry><code>tscli smtp show-mailfromname</code>::::  Shows the mailname, from which email alerts are sent, for the cluster.</dlentry><dlentry><code>tscli smtp show-mailname</code>::::  Shows the mailname, from which email alerts are sent, for the cluster.</dlentry><dlentry><code>tscli smtp show-relayhost</code>::::  Shows the relay host for SMTP (email) sent from the cluster.</p>
+<p>Removes current cluster mail from name. It is the first half of the email address, the part before the @ sign. In <em>example@company.com</em>, it is <em>example</em>.</p>
+</dd>
+<dt class="hdlist1">tscli smtp remove-mailname</dt>
+<dd>
+<p>Removes current cluster mail name. It is the second half of the email address, the part after the @ sign. In <em>example@company.com</em>, it is <em>company</em>.</p>
+</dd>
+<dt class="hdlist1">tscli smtp remove-relayhost</dt>
+<dd>
+<p>Removes current cluster relay host.</p>
+</dd>
+<dt class="hdlist1">tscli smtp remove-saslcredentials</dt>
+<dd>
+<p>Clears SASL credentials and disables SMTP AUTH.</p>
+</dd>
+<dt class="hdlist1">tscli smtp reset-canonical-mapping</dt>
+<dd>
+<p>Deletes the current postmap mapping.</p>
+</dd>
+<dt class="hdlist1">tscli smtp set-canonical-mapping [-h] new_key new_value</dt>
+<dd>
+<p>Sets a new Postmap mapping. You must specify the <code>new_key</code> and the <code>new_value</code>.</p>
+</dd>
+<dt class="hdlist1">tscli smtp set-mailfromname mailfromname</dt>
+<dd>
+<p>Sets the name from where email alerts are sent for the cluster. It is the first half of the email address, the part before the @ sign. In <em>example@company.com</em>, it is <em>example</em>.</p>
+</dd>
+<dt class="hdlist1">+tscli smtp set-mailname mailname</dt>
+<dd>
+<p>Sets the domain from where email alerts are sent for the cluster. It is the second half of the email address, the part after the @ sign. In <em>example@company.com</em>, it is <em>company</em>.</p>
+</dd>
+<dt class="hdlist1">tscli smtp set-relayhost [-h] [--force FORCE] relayhost</dt>
+<dd>
+<p>Sets the specified <code>relayhost</code> for SMTP (email) sent from the cluster. Accepts the following flag:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--force FORCE</dt>
+<dd>
+<p>Set even if relay host is not accessible. The default setting is <code>False</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>On ThoughtSpot release 6.1.1 or later, and on release 6.0.5, you can specify a custom port to connect to the relay host. If you do not specify a port, the system uses the default recommended port, port 25. Use a custom port if port 25 is blocked in your environment.</p>
+</li>
+<li>
+<p>To use the default port, run the setup command normally: <code>$ tscli smtp set-relayhost IP_address</code>. To use a custom port instead of port 25, run the setup command, specifying the port you want to use: <code>$ tscli smtp set-relayhost IP_address:custom_port</code>.</p>
+</li>
+<li>
+<p>If you are on 6.1 rather than 6.1.1, or an a version earlier than 6.0.5, contact <a href="https://community.thoughtspot.com/customers/s/contactsupport" target="_blank" rel="noopener">ThoughtSpot Support</a> to help you set up a custom port.</p>
+</li>
+</ul>
+</div>
 </dd>
 </dl>
 </div>
-<div class="paragraph">
-<p>If the relay host is not configured, the command returns <code>NOT FOUND</code>.</dlentry></p>
+</dd>
+<dt class="hdlist1">tscli smtp set-saslcredentials</dt>
+<dd>
+<p>Sets SASL credentials and enables SMTP AUTH.</p>
+</dd>
+<dt class="hdlist1">tscli smtp show-canonical-mapping</dt>
+<dd>
+<p>Shows the current postmap mapping.</p>
+</dd>
+<dt class="hdlist1">tscli smtp show-mailfromname</dt>
+<dd>
+<p>Shows the mailname, from which email alerts are sent, for the cluster.</p>
+</dd>
+<dt class="hdlist1">tscli smtp show-mailname</dt>
+<dd>
+<p>Shows the mailname, from which email alerts are sent, for the cluster.</p>
+</dd>
+<dt class="hdlist1">tscli smtp show-relayhost</dt>
+<dd>
+<p>Shows the relay host for SMTP (email) sent from the cluster. If the relay host is not configured, the command returns <code>NOT FOUND</code>.</p>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect2">
@@ -4333,105 +5012,122 @@ Use a custom port if port 25 is blocked in your environment.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>To learn more about snapshots and backups, see the link:{{ site.baseurl }}/admin/backup-restore/choose-strategy.html[Understand the backup strategies] documentation.</p>
+<p>To learn more about snapshots and backups, see <a href="choose-strategy.html" class="page">Understand the backup strategies</a>.</p>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli snapshot backup [-h] [--mode {full,light,dataless}] [--type {full,incremental}] [--base BASE] [--storage_type {local,nas}] [--remote] [--no-orion-master] name out</code>::::  Pulls snapshot out as a backup.</p>
-</div>
-<div class="paragraph">
-<p>This command has the following required elements:
-<dlentry><code>name</code>::::
-Name of snapshot to pull out as a backup.
-To list all snapshots, run <code>tscli snapshot ls</code>.</dlentry><dlentry><code>out</code>::::
-Directory where backup will be written.
-The directory must not already exist.</dlentry></p>
-</div>
-<div class="paragraph">
-<p><code>tscli snapshot backup</code> also accepts the following optional flags:
-<dlentry><code>--mode {full,light,dataless}</code>::::  Mode of backups.</p>
+<p>This subcommand has the following options:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The default is <code>full</code>.</dlentry><dlentry><code>--type {full,incremental}</code></dt>
+<dt class="hdlist1">tscli snapshot backup [-h] [--mode {full,light,dataless}] [--type {full,incremental}] [--base BASE] [--storage_type {local,nas}] [--remote] [--no-orion-master] name out</dt>
 <dd>
-<p>Type of backup.</p>
-</dd>
-</dl>
-</div>
-<div class="paragraph">
-<p>Incremental backup is not implemented.</p>
-</div>
+<p>Pulls snapshot out as a backup. This command has two required elements: <code>name</code> and <code>out</code>. The rest of the flags are optional:</p>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The default setting is <code>full</code>.</dlentry><dlentry><code>--base BASE</code></dt>
+<dt class="hdlist1">name</dt>
 <dd>
-<p>Based snapshot name for incremental backup.</p>
+<p>Name of snapshot to pull out as a backup. To list all snapshots, run <code>tscli snapshot ls</code>.</p>
 </dd>
-<dt class="hdlist1">Incremental backup is not implemented yet.</dlentry><dlentry><code>storage_type {local,nas}</code></dt>
+<dt class="hdlist1">out</dt>
 <dd>
-<p>Storage type of output directory.</p>
+<p>Directory where backup will be written. The directory must not already exist.</p>
 </dd>
-<dt class="hdlist1">The default is <code>local</code>.</dlentry><dlentry><code>--remote</code></dt>
+<dt class="hdlist1">--mode {full,light,dataless}</dt>
 <dd>
-<p>Takes backup through orion master.</p>
+<p>Mode of backups. The default is <code>full</code>.</p>
 </dd>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry><dlentry><code>--no-orion-master</code></dt>
+<dt class="hdlist1">--type {full,incremental}</dt>
 <dd>
-<p>Specifies whether orion master is available during backup</p>
+<p>Type of backup. Incremental backup is not implemented. The default setting is <code>full</code>.</p>
 </dd>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry><dlentry><code>--bucket_name BUCKET_NAME</code></dt>
+<dt class="hdlist1">--base BASE</dt>
 <dd>
-<p>The name of the s3/gcs bucket to create the backup.
-The platform depends on the storage type of the cluster.</p>
+<p>Based snapshot name for incremental backup. Incremental backup is not implemented yet.</p>
 </dd>
-<dt class="hdlist1">You must specify <code>--storage_type</code> as <code>cloud</code>.</dlentry><dlentry><code>--staging_dir STAGING_DIR</code></dt>
+<dt class="hdlist1">storage_type {local,nas}</dt>
 <dd>
-<p>Used for staging hdfs data in cloud based backups.
-No effect in non-cloud based backups.
-You must specify <code>--storage_type</code> as <code>cloud</code>.</dlentry></p>
+<p>Storage type of output directory. The default is <code>local</code>.</p>
 </dd>
-<dt class="hdlist1">&lt;/dl&gt;</dlentry><dlentry><code>tscli snapshot create [-h] name reason ttl</code></dt>
+<dt class="hdlist1">--remote</dt>
 <dd>
-<p>Creates a new snapshot with the specified <code>name</code> and <code>reason</code>.</p>
+<p>Takes backup through orion master. The default is <code>False</code>.</p>
+</dd>
+<dt class="hdlist1">--no-orion-master</dt>
+<dd>
+<p>Specifies whether orion master is available during backup. The default is <code>False</code>.</p>
+</dd>
+<dt class="hdlist1">--bucket_name BUCKET_NAME</dt>
+<dd>
+<p>The name of the s3/gcs bucket to create the backup. The platform depends on the storage type of the cluster. You must specify <code>--storage_type</code> as <code>cloud</code>.</p>
+</dd>
+<dt class="hdlist1">--staging_dir STAGING_DIR</dt>
+<dd>
+<p>Used for staging hdfs data in cloud based backups. No effect in non-cloud based backups. You must specify <code>--storage_type</code> as <code>cloud</code>.</p>
 </dd>
 </dl>
 </div>
-<div class="paragraph">
-<p>This command does not accept <code>.</code> (periods).
-It does accept <code>-</code> (dashes or hyphens).</p>
-</div>
-<div class="paragraph">
-<p>The <code>ttl</code> parameter is the number of days after which this snapshot is automatically deleted.
-A value of <code>-1</code> disables automatic deletion.</dlentry><dlentry><code>tscli snapshot delete [-h] name</code>::::  Deletes the named snapshot.</dlentry><dlentry><code>tscli snapshot ls [-h]</code>::::  Lists available snapshots.</dlentry><dlentry><code>tscli snapshot pin [-h] name</code>::::  Pins a snapshot with the specified <em>name</em> so it cannot be deleted or garbage collected.</dlentry><dlentry><code>tscli snapshot restore [-h] [--allow_release_change] [--only_service_state] name</code>::::  Restores cluster to the specified snapshot <em>name</em>.</p>
-</div>
-<div class="paragraph">
-<p>Accepts the following flags:
-<dlentry><code>--allow_release_change</code>::::  Allows restoration to a snapshot at a different release.</p>
-</div>
+</dd>
+<dt class="hdlist1">tscli snapshot create [-h] name reason ttl</dt>
+<dd>
+<p>Creates a new snapshot with the specified <code>name</code> and <code>reason</code>. This command does not accept <code>.</code> (periods). It does accept <code>-</code> (dashes or hyphens). The <code>ttl</code> parameter is the number of days after which this snapshot is automatically deleted. A value of <code>-1</code> disables automatic deletion.</p>
+</dd>
+<dt class="hdlist1">tscli snapshot delete [-h] name</dt>
+<dd>
+<p>Deletes the named snapshot.</p>
+</dd>
+<dt class="hdlist1">tscli snapshot ls [-h]</dt>
+<dd>
+<p>Lists available snapshots.</p>
+</dd>
+<dt class="hdlist1">tscli snapshot pin [-h] name</dt>
+<dd>
+<p>Pins a snapshot with the specified <em>name</em> so it cannot be deleted or garbage collected.</p>
+</dd>
+<dt class="hdlist1">tscli snapshot restore [-h] [--allow_release_change] [--only_service_state] name</dt>
+<dd>
+<p>Restores cluster to the specified snapshot <em>name</em>. Accepts the following flags:</p>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry><dlentry><code>--only_service_state</code></dt>
+<dt class="hdlist1">--allow_release_change</dt>
 <dd>
-<p>Restores only the service state.</p>
+<p>Allows restoration to a snapshot at a different release. The default is <code>False</code>.</p>
 </dd>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry></dlentry><dlentry><code>tscli snapshot unpin [-h] name</code>::::  Unpins the specified snapshot <em>name</em> so it can be deleted or garbage-collected.</dlentry><dlentry><code>tscli snapshot update-ttl [-h] [--disable DISABLE] name ttl</code></dt>
+<dt class="hdlist1">--only_service_state</dt>
 <dd>
-<p>Updates manual snapshot garbage collection policy.</p>
+<p>Restores only the service state. The default is <code>False</code>.</p>
 </dd>
 </dl>
 </div>
-<div class="paragraph">
-<p>Accepts the following flags:
-<dlentry><code>name</code>::::  Specifies which snapshot to update.</dlentry><dlentry><code>ttl</code>::::  This is the "time-to-live" value.</p>
+</dd>
+<dt class="hdlist1">tscli snapshot unpin [-h] name</dt>
+<dd>
+<p>Unpins the specified snapshot <em>name</em> so it can be deleted or garbage-collected.</p>
+</dd>
+<dt class="hdlist1">tscli snapshot update-ttl [-h] [--disable DISABLE] name ttl</dt>
+<dd>
+<p>Updates manual snapshot garbage collection policy. Accepts the following flags:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">name</dt>
+<dd>
+<p>Specifies which snapshot to update.</p>
+</dd>
+<dt class="hdlist1">ttl</dt>
+<dd>
+<p>This is the "time-to-live" value. Use a positive value to increase <code>ttl</code>. Use negative values to decrease it.</p>
+</dd>
+<dt class="hdlist1">--disable DISABLE</dt>
+<dd>
+<p>Disables manual snapshot garbage collection. Setting this value to <code>True</code> overrides any <code>ttl</code> value. The default is <code>False</code>.</p>
+</dd>
+</dl>
 </div>
-<div class="paragraph">
-<p>Use a positive value to increase <code>ttl</code>.
-Use negative values to decrease it.</dlentry><dlentry><code>--disable DISABLE</code>::::  Disables manual snapshot garbage collection.</p>
-</div>
-<div class="paragraph">
-<p>Setting this value to <code>True</code> overrides any <code>ttl</code> value.
-The default is <code>False</code>.</dlentry></dlentry><dlentry><code>tscli snapshot validate</code>::::  Validates a specified snapshot <em>name</em> to ensure it is not corrupt.</dlentry></p>
+</dd>
+<dt class="hdlist1">tscli snapshot validate</dt>
+<dd>
+<p>Validates a specified snapshot <em>name</em> to ensure it is not corrupt.</p>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect2">
@@ -4442,9 +5138,35 @@ The default is <code>False</code>.</dlentry></dlentry><dlentry><code>tscli snaps
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli snapshot-policy disable [-h]</code>::::  Disables a specified snapshot policy.</dlentry><dlentry><code>tscli snapshot-policy enable -h</code>::::  Enables a specified snapshot policy.</dlentry><dlentry><code>tscli snapshot-policy show [-h]</code>::::  Shows snapshot policy.</dlentry><dlentry><code>tscli snapshot-policy update [-h] [--config CONFIG]</code>::::  Updates periodic snapshot config, with the following parameter:
-<dlentry><code>--config CONFIG</code>::::  Text format of periodic backup policy config.</dlentry></dlentry></p>
+<p>This subcommand has the following options:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">tscli snapshot-policy disable [-h]</dt>
+<dd>
+<p>Disables a specified snapshot policy.</p>
+</dd>
+<dt class="hdlist1">tscli snapshot-policy enable -h</dt>
+<dd>
+<p>Enables a specified snapshot policy.</p>
+</dd>
+<dt class="hdlist1">tscli snapshot-policy show [-h]</dt>
+<dd>
+<p>Shows snapshot policy.</p>
+</dd>
+<dt class="hdlist1">tscli snapshot-policy update [-h] [--config CONFIG]</dt>
+<dd>
+<p>Updates periodic snapshot config, with the following parameter:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--config CONFIG</dt>
+<dd>
+<p>Text format of periodic backup policy config.</p>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect2">
@@ -4455,8 +5177,19 @@ The default is <code>False</code>.</dlentry></dlentry><dlentry><code>tscli snaps
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli socialproof disable</code>::::  Disables socialproof.</dlentry><dlentry><code>tscli socialproof enable</code>::::  Enables socialproof.</dlentry></p>
+<p>This subcommand has the following options:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">tscli socialproof disable</dt>
+<dd>
+<p>Disables socialproof.</p>
+</dd>
+<dt class="hdlist1">tscli socialproof enable</dt>
+<dd>
+<p>Enables socialproof.</p>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect2">
@@ -4483,56 +5216,77 @@ The default is <code>False</code>.</dlentry></dlentry><dlentry><code>tscli snaps
 </ul>
 </div>
 <div class="paragraph">
-<p>Refer to link:{{ site.baseurl }}/admin/setup/SSL-config.html[Configure SSL] for more information.</p>
+<p>Refer to <a href="SSL-config.html" class="page">Configure SSL</a> for more information.</p>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli ssl add-cert [-h] key certificate valid_hosts</code>::::
-Adds a specified SSL certificate and key pair.
-Requires a comma-separated host list.
-Nginx will reject if the hosts are not valid.
-This command has the following optional flag:
-<dlentry><code>--force</code>::::  Forces setting of key and certification without validation.</p>
+<p>This subcommand has the following options:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The default is <code>False</code>.</dlentry></dlentry><dlentry><code>tscli ssl add-valid-hosts [-h] VALID_HOSTS</code></dt>
+<dt class="hdlist1">tscli ssl add-cert [-h] key certificate valid_hosts</dt>
 <dd>
-<p>Enables host validation for the specified host(s).
-Helps improve security.
-This feature is for all customers that have or are planning to enable SSL.
-Multiple hosts must be separated by a comma (,).  Examples:
-1.
-If you want to make sure the valid host is <strong>cluster1.corp.example.com</strong>, you would run the command: + <code>tscli ssl add-valid-hosts cluster1.corp.example.com</code>
-2.
-If you want to allow all hosts which have the suffix <strong>corp.example.com</strong>, you would run the command: + <code>tscli ssl add-valid-hosts *.corp.example.com</code>.
-This wild card should be used within the hostname.
-3.</p>
+<p>Adds a specified SSL certificate and key pair. Requires a comma-separated host list. Nginx will reject if the hosts are not valid. This command has the following optional flag:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--force</dt>
+<dd>
+<p>Forces setting of key and certification without validation. The default is <code>False</code>.</p>
 </dd>
-<dt class="hdlist1">If you want to allow multiple valid hosts, for example both <strong>*.corp.example.com</strong> and <strong>cluster1</strong>, you would run the command: + <code>tscli ssl add-valid-hosts *.corp.thoughtspot.com,cluster1</code></dlentry><dlentry><code>tscli ssl clear-min-tls-version [-h]</code>::::  Clears any customizations for the minimum TLS version to support.</dlentry><dlentry><code>tscli ssl off</code></dt>
-<dd>
-<p>Disables SSL.</p>
+</dl>
+</div>
 </dd>
-<dt class="hdlist1">Disabling SSL will stop users from seeing a security warning when accessing ThoughtSpot from a browser if there is no SSL certificate installed.</dlentry><dlentry><code>tscli ssl on [-h]</code></dt>
+<dt class="hdlist1">tscli ssl add-valid-hosts [-h] VALID_HOSTS</dt>
 <dd>
-<p>If SSL is enabled and there is no certificate, users will see a security warning when accessing ThoughtSpot from a browser.</p>
+<p>Enables host validation for the specified host(s). Helps improve security. This feature is for all customers that have or are planning to enable SSL. Multiple hosts must be separated by a comma (,).</p>
+<div class="ulist">
+<ul>
+<li>
+<p>To ensure that the valid host is <strong>cluster1.corp.example.com</strong>, run the command <code>tscli ssl add-valid-hosts cluster1.corp.example.com</code>.</p>
+</li>
+<li>
+<p>To allow all hosts that have the suffix <strong>corp.example.com</strong>, run the command <code>tscli ssl add-valid-hosts *.corp.example.com</code>. Use the wild card within the hostname.</p>
+</li>
+<li>
+<p>To allow multiple valid hosts, such as both <strong>*.corp.example.com</strong> and <strong>cluster1</strong>, run the command <code>tscli ssl add-valid-hosts *.corp.thoughtspot.com,cluster1</code>.</p>
+</li>
+</ul>
+</div>
 </dd>
-<dt class="hdlist1">To bypass this warning, users must click <strong>Advanced</strong> and then <strong>Proceed</strong>.</dlentry><dlentry><code>tscli ssl remove-valid-hosts</code>::::  Turns off validation of hosts.</dlentry><dlentry><code>tscli ssl rm-cert</code></dt>
+<dt class="hdlist1">tscli ssl clear-min-tls-version [-h]</dt>
 <dd>
-<p>Removes the existing SSL certificate, if any.</p>
+<p>Clears any customizations for the minimum TLS version to support.</p>
 </dd>
-<dt class="hdlist1">Reverts to default self-signed certificate.</dlentry><dlentry><code>tscli ssl set-alert-days days</code></dt>
+<dt class="hdlist1">tscli ssl off</dt>
 <dd>
-<p>Sets alert threshold for a specifed number of days to check before SSL certificate expires.</p>
+<p>Disables SSL. Disabling SSL will stop users from seeing a security warning when accessing ThoughtSpot from a browser if there is no SSL certificate installed.</p>
 </dd>
-<dt class="hdlist1">The default is <code>30 days</code>.</dlentry><dlentry><code>tscli ssl set-min-tls-version {1.0,1.1,1.2}</code></dt>
+<dt class="hdlist1">tscli ssl on [-h]</dt>
 <dd>
-<p>Sets a specified minimum supported TLS version.
-Sets the minimum SSL version to be supported by the ThoughtSpot application.</p>
+<p>If SSL is enabled and there is no certificate, users see a security warning when accessing ThoughtSpot from a browser. To bypass this warning, users must click <strong>Advanced</strong> and then <strong>Proceed</strong>.</p>
 </dd>
-<dt class="hdlist1">You must ensure that client browsers are enabled for this version or newer.</dlentry><dlentry><code>tscli ssl status</code>::::  Shows whether SSL authentication is enabled or disabled.</dlentry><dlentry><code>tscli ssl tls-status</code></dt>
+<dt class="hdlist1">tscli ssl remove-valid-hosts</dt>
 <dd>
-<p>Prints the status of TLS support.</dlentry></p>
+<p>Turns off validation of hosts.</p>
+</dd>
+<dt class="hdlist1">tscli ssl rm-cert</dt>
+<dd>
+<p>Removes the existing SSL certificate, if any. Reverts to default self-signed certificate.</p>
+</dd>
+<dt class="hdlist1">tscli ssl set-alert-days days</dt>
+<dd>
+<p>Sets alert threshold for a specifed number of days to check before SSL certificate expires. The default is <code>30 days</code>.</p>
+</dd>
+<dt class="hdlist1">tscli ssl set-min-tls-version {1.0,1.1,1.2}</dt>
+<dd>
+<p>Sets a specified minimum supported TLS version. Sets the minimum SSL version to be supported by the ThoughtSpot application. You must ensure that client browsers are enabled for this version or newer.</p>
+</dd>
+<dt class="hdlist1">tscli ssl status</dt>
+<dd>
+<p>Shows whether SSL authentication is enabled or disabled.</p>
+</dd>
+<dt class="hdlist1">tscli ssl tls-status</dt>
+<dd>
+<p>Prints the status of TLS support.</p>
 </dd>
 </dl>
 </div>
@@ -4541,22 +5295,100 @@ Sets the minimum SSL version to be supported by the ThoughtSpot application.</p>
 <h3 id="tscli-sssd"><a class="anchor" href="#tscli-sssd"></a>sssd</h3>
 <div class="listingblock">
 <div class="content">
-<pre>tscli sssd {enable, disable, set-sudo-group, clear-sudo-group}</pre>
+<pre>tscli sssd {clear-sudo-group,disable,disable-openldap,enable,enable-openldap,set-sudo-group}</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand uses system security services daemon (SSSD), and has the following options:
-<dlentry id="tscli-sssd-enable"><code>tscli sssd enable --user USER --domain DOMAIN</code>::::
-Enables system Active Directory (AD) user access on a single node.
-You will be prompted for password credentials.
-The user must have permission to join a computer or VM to the domain.
-This subcommand has the following parameters:
-<dlentry><code>--user USER</code>::::  You must specify the user to receive access.</dlentry><dlentry><code>--domain DOMAIN</code>::::  You must specify the domain.</dlentry></dlentry><dlentry id="tscli-sssd-disable"><code>tscli sssd disable</code>::::
-Disables Active Directory access.
-Leaves identity domain and removes AD sudo group.</dlentry><dlentry id="tscli-sssd-set-sudo-group"><code>tscli sssd set-sudo-group ACTIVE_DIRECTORY_GROUP_NAME</code>::::  Allows <code>sudo</code> permissions for a specified AD group.</dlentry><dlentry id="tscli-sssd-clear-sudo-group"><code>tscli sssd clear-sudo-group ACTIVE_DIRECTORY_GROUP_NAME</code>::::  Clears a specified AD sudo group so that they no longer have <code>sudo</code> permissions.</dlentry></p>
+<p>This subcommand uses system security services daemon (SSSD), and has the following options:</p>
+</div>
+<div id="tscli-sssd-clear-sudo-group" class="dlist">
+<dl>
+<dt class="hdlist1">tscli sssd clear-sudo-group ACTIVE_DIRECTORY_GROUP_NAME</dt>
+<dd>
+<p>Clears a specified AD sudo group so that they no longer have <code>sudo</code> permissions.</p>
+</dd>
+</dl>
+</div>
+<div id="tscli-sssd-disable" class="dlist">
+<dl>
+<dt class="hdlist1">tscli sssd disable</dt>
+<dd>
+<p>Disables Active Directory access. Leaves identity domain and removes AD sudo group.</p>
+</dd>
+</dl>
+</div>
+<div id="tscli-sssd-disable-openldap" class="dlist">
+<dl>
+<dt class="hdlist1">tscli sssd disable-openldap</dt>
+<dd>
+<p>Disables OpenLDAP integration.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If you mapped your OpenLDAP admin user to ThoughtSpot&#8217;s local admin user through the Ansible playbook while deploying ThoughtSpot on RHEL, do not run this command. If you ran <code>tscli sssd enable-openldap</code> and also mapped your OpenLDAP admin user to ThoughtSpot&#8217;s local admin user through the Ansible playbook, contact <a href="https://community.thoughtspot.com/customers/s/contactsupport" target="_blank" rel="noopener">ThoughtSpot Support</a>.
+</td>
+</tr>
+</table>
+</div>
+<div id="tscli-sssd-enable" class="dlist">
+<dl>
+<dt class="hdlist1">tscli sssd enable --user USER --domain DOMAIN</dt>
+<dd>
+<p>Enables system Active Directory (AD) user access on a single node. Prompts for password credentials. The user must have permission to join a computer or VM to the domain. This subcommand has the following parameters:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--user USER</dt>
+<dd>
+<p>You must specify the user to receive access.</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">--domain DOMAIN</dt>
+<dd>
+<p>You must specify the domain.</p>
+</dd>
+</dl>
+</div>
+<div id="tscli-sssd-enable-openldap" class="dlist">
+<dl>
+<dt class="hdlist1">tscli sssd enable-openldap</dt>
+<dd>
+<p>Connects to your OpenLDAP server and allows users to SSH into your ThoughtSpot cluster with their LDAP credentials, without using the fully qualified domain name.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If you mapped your OpenLDAP admin user to ThoughtSpot&#8217;s local admin user through the Ansible playbook while deploying ThoughtSpot on RHEL, do not run this command.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>For more about setting up Active Directory access, see link:{{ site.baseurl }}/admin/setup/active-directory-based-access.html[Enable Active Directory based access].</p>
+<p>This subcommand has the following parameters:
+  --server_base_dn SERVER_BASE_DN;; Specify the LDAP server base distinguished name, in the form <em>dc=&lt;optional_subdomain&gt;,dc=&lt;domain&gt;,dc=&lt;top-level-domain&gt;</em>, such as <em>dc=thoughtspot,dc=com</em>.
+  --server_uri SERVER_URI;; Specify the LDAP server uniform resource identifier, in the form <em>ldap://&lt;ldap_server_IP&gt;</em>.</p>
+</div>
+<div id="tscli-sssd-set-sudo-group" class="dlist">
+<dl>
+<dt class="hdlist1">tscli sssd set-sudo-group ACTIVE_DIRECTORY_GROUP_NAME</dt>
+<dd>
+<p>Allows <code>sudo</code> permissions for a specified AD group. For more about setting up Active Directory access, see <a href="active-directory-based-access.html" class="page">Enable Active Directory based access</a>.</p>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect2">
@@ -4568,7 +5400,7 @@ Leaves identity domain and removes AD sudo group.</dlentry><dlentry id="tscli-ss
 </div>
 <div class="paragraph">
 <p>This subcommand has the following options:
-<dlentry><code>tscli storage gc [-h] [--log_age LOG_AGE] [--force] [--localhost_only]</code>::::  Garbage collects unused storage.</p>
+tscli storage gc [-h] [--log_age LOG_AGE] [--force] [--localhost_only]::  Garbage collects unused storage.</p>
 </div>
 <div class="paragraph">
 <p>Before issuing this command, you must stop the cluster using <code>tscli     cluster stop</code>.</p>
@@ -4591,29 +5423,29 @@ Leaves identity domain and removes AD sudo group.</dlentry><dlentry id="tscli-ss
 </div>
 </div>
 <div class="paragraph">
-<p>The <code>storage gc</code> subcommand accepts these optional flags:
-<dlentry><code>--log_age LOG_AGE</code>::::</p>
-</div>
-<div class="paragraph">
-<p>Deletes logs older than a specified number of hours.
-Use a non-zero value, because zero deletes all temporary files, including the ones that are closed temporarily while passing from one component to the next.</p>
+<p>The <code>storage gc</code> subcommand accepts these optional flags:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">The default setting is <code>4</code>.</dlentry><dlentry><code>--force</code></dt>
+<dt class="hdlist1">--log_age LOG_AGE</dt>
 <dd>
-<p>Forces deletion of all logs and temporary files regardless of age.
-Only run this command on a stopped cluster.
-To stop a cluster, run <code>tscli cluster stop</code>.</p>
+<p>Deletes logs older than a specified number of hours. Use a non-zero value, because zero deletes all temporary files, including the ones that are closed temporarily while passing from one component to the next. The default setting is <code>4</code>.</p>
 </dd>
-<dt class="hdlist1">The default setting is <code>False</code>.</dlentry><dlentry><code>--localhost_only</code></dt>
+<dt class="hdlist1">--force</dt>
 <dd>
-<p>Only removes the logs on the local host.</p>
+<p>Forces deletion of all logs and temporary files regardless of age. Only run this command on a stopped cluster. To stop a cluster, run <code>tscli cluster stop</code>. The default setting is <code>False</code>.</p>
 </dd>
-<dt class="hdlist1">If not specified, the command acts on the entire cluster.</dlentry></dlentry><dlentry><code>tscli storage df [--mode disk|hdfs]</code></dt>
+<dt class="hdlist1">--localhost_only</dt>
 <dd>
-<p>Checks the disk usage on the relevant mounts.
-Returns output similar to the Linux system command <code>df -h directory</code>.</dlentry></p>
+<p>Only removes the logs on the local host. If not specified, the command acts on the entire cluster.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">tscli storage df [--mode disk|hdfs]</dt>
+<dd>
+<p>Checks the disk usage on the relevant mounts. Returns output similar to the Linux system command <code>df -h directory</code>.</p>
+</dd>
+</dl>
+</div>
 </dd>
 </dl>
 </div>
@@ -4630,41 +5462,107 @@ Returns output similar to the Linux system command <code>df -h directory</code>.
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli support bundle [-h] [--include INCLUDE] [--exclude EXCLUDE] [--list_selectors] [--since SINCE] [--from FROM] [--to TO] [--out OUT] [--nodes NODES]</code>::::
-<dlentry><code>--include INCLUDE</code>::::  Comma-separated list of selectors to include.
-Each entry is either a "selector" or a glob for matching files.
-To see the list of valid selectors, run this command with <code>--list_selectors</code>.
-You may also specify <code>all</code> to get all selectors and logs, and <code>basic</code> to get only the basic selectors.
-Selectors can be used for logs collection: <code>all</code>, <code>orion</code>, <code>system</code>, <code>ts</code>, or the name of a service.
-Anything that starts with <code>/</code> (forward slash) is assumed to be a glob pattern, and is interpreted through <code>find(1)</code>.
-Other entries are ignored.
-<strong>TIP:</strong> Use single quotes around the parameter value to prevent undesired glob expansion.
-Use <code>all</code> to collect all selectors and all logs.
-The default setting is <code>all_but_logs</code>.</dlentry><dlentry><code>--exclude EXCLUDE</code>::::  Comma-separated list of selectors to exclude.
-Applies to the list selected by <code>--include</code>.
-Parameters are interpreted in the same manner as in <code>--include</code>.
-Use the special keyword <code>logs</code> to exclude logs collection altogether.
-There is no default setting.</dlentry><dlentry><code>--list_selectors</code>::::  Lists the selectors available for <code>--include</code> and <code>--exclude</code>, and then exits.
-The default setting is <code>False</code>.</dlentry><dlentry><code>--since SINCE</code>::::  Grabs logs from the specified time window.
-Should be a human-readable duration string, such as <code>4h</code> (4 hours), <code>30m</code> (30 minutes), <code>1d</code> (1 day).
-There is no default setting.</dlentry><dlentry><code>--from FROM</code>::::  Timestamp when collection begins.
-Must be of the form: <code>yyyymmdd-HH:MM</code>.
-There is no default setting.</dlentry><dlentry><code>--to TO</code>::::  Timestamp when collection ends.
-Must be of the form: <code>yyyymmdd-HH:MM</code>.
-There is no default setting.</dlentry><dlentry><code>--out OUT</code>::::  Tarball path for dumping the support bundle.
-The default setting is <code>/tmp/support_bundle.tar.gz</code>.</dlentry><dlentry><code>--nodes NODES</code>::::  Comma separated list of nodes from where to collect logs.
-Skip this to use all nodes.
-There is no default setting.</dlentry></dlentry><dlentry><code>tscli support restart-remote</code>::::  Restarts remote support.</dlentry><dlentry><code>tscli support rm-admin-email</code>::::
-Removes the email address for contacting the customer administrator.
-Replaces it with the default ThoughtSpot Support email address.</dlentry><dlentry><code>tscli support rm-feedback-email</code>::::
-Removes the email address for product feedback.
-Replaces it with the default ThoughtSpot Support email address.</dlentry><dlentry><code>tscli support rm-admin-phone</code>::::
-Removes the phone number for contacting the customer administrator.
-Replaces it with the default ThoughtSpot Support phone number.</dlentry><dlentry><code>tscli support set-admin-email email</code>::::  Sets the specified email address for contacting the customer administrator.</dlentry><dlentry><code>tscli support set-feedback-email email</code>::::  Sets the specified email address for sending feedback.</dlentry><dlentry><code>tscli support set-admin-phone phone_number</code>::::
-Sets the specified phone number for contacting the customer administrator.
-Specify a phone number using any value, such as <code>+1 800-508-7008 Ext.
-1</code>.</dlentry><dlentry><code>tscli support set-remote [-h] [--addr ADDR] [--user USER]</code>::::  Configures the cluster for remote support through SSH tunneling, where <em>`ADDR`</em> is the support address, such as <code>tunnel.thoughtspot.com</code>, and <em>`USER`</em> is the support username.</dlentry><dlentry><code>tscli support show-admin-email</code>::::  Shows the email address for the customer administrator, if set.</dlentry><dlentry><code>tscli support show-feedback-email</code>::::  Shows the email address for product feedback, if set.</dlentry><dlentry><code>tscli support show-admin-phone</code>::::  Shows the phone number for the customer administrator, if set.</dlentry><dlentry><code>tscli support show-remote</code>::::  Prints the status and configuration of remote support.</dlentry><dlentry><code>tscli support start-remote</code>::::  Starts remote support.</dlentry><dlentry><code>tscli support stop-remote</code>::::  Stops remote support.</dlentry></p>
+<p>This subcommand has the following options:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">tscli support bundle [-h] [--include INCLUDE] [--exclude EXCLUDE] [--list_selectors] [--since SINCE] [--from FROM] [--to TO] [--out OUT] [--nodes NODES]</dt>
+<dd>
+<p>This subcommand specifies the support bundle. It uses the following flags:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">--include INCLUDE</dt>
+<dd>
+<p>Comma-separated list of selectors to include. Each entry is either a "selector" or a glob for matching files. To see the list of valid selectors, run this command with <code>--list_selectors</code>. You may also specify <code>all</code> to get all selectors and logs, and <code>basic</code> to get only the basic selectors. Selectors can be used for logs collection: <code>all</code>, <code>orion</code>, <code>system</code>, <code>ts</code>, or the name of a service. Anything that starts with <code>/</code> (forward slash) is assumed to be a glob pattern, and is interpreted through <code>find(1)</code>. Other entries are ignored. Use single quotes around the parameter value to prevent undesired glob expansion. Use <code>all</code> to collect all selectors and all logs. The default setting is <code>all_but_logs</code>.</p>
+</dd>
+<dt class="hdlist1">--exclude EXCLUDE</dt>
+<dd>
+<p>Comma-separated list of selectors to exclude. Applies to the list selected by <code>--include</code>. Parameters are interpreted in the same manner as in <code>--include</code>. Use the special keyword <code>logs</code> to exclude logs collection altogether. There is no default setting.</p>
+</dd>
+<dt class="hdlist1">--list_selectors</dt>
+<dd>
+<p>Lists the selectors available for <code>--include</code> and <code>--exclude</code>, and then exits. The default setting is <code>False</code>.</p>
+</dd>
+<dt class="hdlist1">--since SINCE</dt>
+<dd>
+<p>Grabs logs from the specified time window. Should be a human-readable duration string, such as <code>4h</code> (4 hours), <code>30m</code> (30 minutes), <code>1d</code> (1 day). There is no default setting.</p>
+</dd>
+<dt class="hdlist1">--from FROM</dt>
+<dd>
+<p>Timestamp when collection begins. Must be of the form: <code>yyyymmdd-HH:MM</code>. There is no default setting.</p>
+</dd>
+<dt class="hdlist1">--to TO</dt>
+<dd>
+<p>Timestamp when collection ends. Must be of the form: <code>yyyymmdd-HH:MM</code>. There is no default setting.</p>
+</dd>
+<dt class="hdlist1">--out OUT</dt>
+<dd>
+<p>Tarball path for dumping the support bundle. The default setting is <code>/tmp/support_bundle.tar.gz</code>.</p>
+</dd>
+<dt class="hdlist1">--nodes NODES</dt>
+<dd>
+<p>Comma-separated list of nodes from which the system collects logs. Skip this to use all nodes. There is no default setting.</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">tscli support restart-remote</dt>
+<dd>
+<p>Restarts remote support.</p>
+</dd>
+<dt class="hdlist1">tscli support rm-admin-email</dt>
+<dd>
+<p>Removes the email address for contacting the customer administrator. Replaces it with the default ThoughtSpot Support email address.</p>
+</dd>
+<dt class="hdlist1">tscli support rm-feedback-email</dt>
+<dd>
+<p>Removes the email address for product feedback. Replaces it with the default ThoughtSpot Support email address.</p>
+</dd>
+<dt class="hdlist1">tscli support rm-admin-phone</dt>
+<dd>
+<p>Removes the phone number for contacting the customer administrator. Replaces it with the default ThoughtSpot Support phone number.</p>
+</dd>
+<dt class="hdlist1">tscli support set-admin-email email</dt>
+<dd>
+<p>Sets the specified email address for contacting the customer administrator.</p>
+</dd>
+<dt class="hdlist1">tscli support set-feedback-email email</dt>
+<dd>
+<p>Sets the specified email address for sending feedback.</p>
+</dd>
+<dt class="hdlist1">tscli support set-admin-phone phone_number</dt>
+<dd>
+<p>Sets the specified phone number for contacting the customer administrator. Specify a phone number using any value, such as <code>+1 800-508-7008 Ext. 1</code>.</p>
+</dd>
+<dt class="hdlist1">tscli support set-remote [-h] [--addr ADDR] [--user USER]</dt>
+<dd>
+<p>Configures the cluster for remote support through SSH tunneling, where <em>`ADDR`</em> is the support address, such as <code>tunnel.thoughtspot.com</code>, and <em>`USER`</em> is the support username.</p>
+</dd>
+<dt class="hdlist1">tscli support show-admin-email</dt>
+<dd>
+<p>Shows the email address for the customer administrator, if set.</p>
+</dd>
+<dt class="hdlist1">tscli support show-feedback-email</dt>
+<dd>
+<p>Shows the email address for product feedback, if set.</p>
+</dd>
+<dt class="hdlist1">tscli support show-admin-phone</dt>
+<dd>
+<p>Shows the phone number for the customer administrator, if set.</p>
+</dd>
+<dt class="hdlist1">tscli support show-remote</dt>
+<dd>
+<p>Prints the status and configuration of remote support.</p>
+</dd>
+<dt class="hdlist1">tscli support start-remote</dt>
+<dd>
+<p>Starts remote support.</p>
+</dd>
+<dt class="hdlist1">tscli support stop-remote</dt>
+<dd>
+<p>Stops remote support.</p>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect2">
@@ -4675,8 +5573,19 @@ Specify a phone number using any value, such as <code>+1 800-508-7008 Ext.
 </div>
 </div>
 <div class="paragraph">
-<p>This subcommand has the following options:
-<dlentry><code>tscli tokenauthentication enable</code>::::  Configures token-based login.</dlentry><dlentry><code>tscli tokenauthentication disable</code>::::  Purges existing token-based login configuration.</dlentry></p>
+<p>This subcommand has the following options:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">tscli tokenauthentication enable</dt>
+<dd>
+<p>Configures token-based login.</p>
+</dd>
+<dt class="hdlist1">tscli tokenauthentication disable</dt>
+<dd>
+<p>Purges existing token-based login configuration.</p>
+</dd>
+</dl>
 </div>
 </div>
 </div>

@@ -2575,6 +2575,54 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="geomap-australia.html">Australia</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-austria.html">Austria</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-canada.html">Canada</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-france.html">France</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-germany.html">Germany</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-india.html">India</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-indonesia.html">Indonesia</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-italy.html">Italy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-japan.html">Japan</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-norway.html">Norway</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-poland.html">Poland</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-portugal.html">Portugal</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-sweden.html">Sweden</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-switzerland.html">Switzerland</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-south-africa.html">South Africa</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-united-states.html">United States</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-united-kingdom.html">United Kingdom</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2682,9 +2730,166 @@ You need specific information to establish a seamless and secure connection.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><dlentry id="dataflow-google-cloud-storage-conn-connection-name">Connection name</dt>
+<dt class="hdlist1">Connection name</dt>
 <dd>
-<p>Name your connection. Mandatory field. <strong>Example:</strong> + GoogleCloudStorageConnection</dlentry><dlentry id="dataflow-google-cloud-storage-conn-connection-type">Connection type:::: Choose the Google Cloud storage connection type. Mandatory field. <strong>Example:</strong> + Google Cloud storage</dlentry><dlentry id="dataflow-google-cloud-storage-conn-project-id">Project ID:::: The identification number given to particular project and its always unique. Mandatory field. <strong>Example:</strong> + myproject-1234</dlentry><dlentry id="dataflow-google-cloud-storage-conn-authentication-type-">Authentication type:::: It can be either Service Account or Access Tokens Mandatory field. <strong>Example:</strong> + Service Account <strong>Valid Values:</strong> + Service Account, Access Token <strong>Default:</strong> + Service Account</dlentry><dlentry id="dataflow-google-cloud-storage-conn-service-account-key-or-access-token">Service account key or access token:::: Provide the Service Account key when authentication type is selected as Service account and token when access token is selected as authentication type. Mandatory field. <strong>Example:</strong> + ABCDEFGH245HIJK</dlentry><dlentry id="dataflow-google-cloud-storage-conn-bucket-">Bucket:::: To specify GCS bucket name Mandatory field. <strong>Example:</strong> + bucket</dlentry><dlentry id="dataflow-google-cloud-storage-conn-file-location-">File location:::: Specify directory of source on agent location Mandatory field.</dlentry><dlentry id="dataflow-google-cloud-storage-conn-use-proxy">Use proxy:::: If required, to use a proxy, select the check box Use Proxy and provide the details Optional field. <strong>Other notes:</strong> + These are under Advanced configuration</dlentry><dlentry id="dataflow-google-cloud-storage-conn-host">Host:::: Specify the hostname or the IP address of the GCS system Mandatory field. <strong>Example:</strong> + www.example.com</dlentry><dlentry id="dataflow-google-cloud-storage-conn-port">Port:::: Specify the port associated to the GCS system Mandatory field. <strong>Example:</strong> + 1234</dlentry><dlentry id="dataflow-google-cloud-storage-conn-protocol">Protocol:::: It can be either http or https Mandatory field. <strong>Example:</strong> + http <strong>Valid Values:</strong> + http, https <strong>Default:</strong> + http</dlentry></p>
+<p>Name your connection.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>GoogleCloudStorageConnection</p>
+</div>
+</dd>
+<dt class="hdlist1">Connection type</dt>
+<dd>
+<p>Choose the Google Cloud storage connection type.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>Google Cloud storage</p>
+</div>
+</dd>
+<dt class="hdlist1">Project ID</dt>
+<dd>
+<p>The identification number given to particular project and its always unique.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>myproject-1234</p>
+</div>
+</dd>
+<dt class="hdlist1">Authentication type</dt>
+<dd>
+<p>It can be either Service Account or Access Tokens.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>Service Account</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Service Account, Access Token</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>Service Account</p>
+</div>
+</dd>
+<dt class="hdlist1">Service account key or access token</dt>
+<dd>
+<p>Provide the Service Account key when authentication type is selected as Service account and token when access token is selected as authentication type.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>ABCDEFGH245HIJK</p>
+</div>
+</dd>
+<dt class="hdlist1">Bucket</dt>
+<dd>
+<p>To specify GCS bucket name.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>bucket</p>
+</div>
+</dd>
+<dt class="hdlist1">File location</dt>
+<dd>
+<p>Specify directory of source on agent location.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+</dd>
+<dt class="hdlist1">Use proxy</dt>
+<dd>
+<p>If required, to use a proxy, select the check box Use Proxy and provide the details.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong></p>
+</div>
+<div class="paragraph">
+<p>These are under Advanced configuration</p>
+</div>
+</dd>
+<dt class="hdlist1">Host</dt>
+<dd>
+<p>Specify the hostname or the IP address of the GCS system.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>www.example.com</p>
+</div>
+</dd>
+<dt class="hdlist1">Port</dt>
+<dd>
+<p>Specify the port associated to the GCS system.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>1234</p>
+</div>
+</dd>
+<dt class="hdlist1">Protocol</dt>
+<dd>
+<p>It can be either http or https.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>http</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>http, https</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>http</p>
+</div>
 </dd>
 </dl>
 </div>
@@ -2695,18 +2900,491 @@ You need specific information to establish a seamless and secure connection.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><dlentry id="dataflow-google-cloud-storage-sync-file-name">File name</dt>
+<dt class="hdlist1">File name</dt>
 <dd>
-<p>Specify name of the file. Mandatory field. <strong>Example:</strong> + PRODUCT.csv <strong>Valid Values:</strong> + Any string literal <strong>Default:</strong> + The name of the file used to create sync <strong>Other notes:</strong> + To specify wildcard pattern use '<strong>' character in the file name</dlentry><dlentry id="dataflow-google-cloud-storage-sync-enable-archive-on-success">Enable archive on success:::: Specify if file needs to be archived once it is succeeded Optional field. *Example:</strong> + No <strong>Valid Values:</strong> + Yes, No <strong>Default:</strong> + No</dlentry><dlentry id="dataflow-google-cloud-storage-sync-delete-file-on-success">Delete file on success:::: Specify if file needs to be deleted after execution is successful Optional field. <strong>Example:</strong> + No <strong>Valid Values:</strong> + Yes, No <strong>Default:</strong> + No</dlentry><dlentry id="dataflow-google-cloud-storage-sync-column-delimiter">Column delimiter:::: Specify the column delimiter character. Mandatory field. <strong>Example:</strong> + , <strong>Valid Values:</strong> + Any printable ASCII character or decimal value for ASCII character <strong>Default:</strong> + The delimiter specified in sync</dlentry><dlentry id="dataflow-google-cloud-storage-sync-skip-header-rows">Skip header rows:::: Skip the number of header rows specified while loading the data Optional field. <strong>Example:</strong> + 5 <strong>Valid Values:</strong> + Any numeric value <strong>Default:</strong> + 0</dlentry><dlentry id="dataflow-google-cloud-storage-sync-compression">Compression:::: Specify this if the file is compressed and what kind of compressed file it is Mandatory field. <strong>Example:</strong> + gzip <strong>Valid Values:</strong> + None, gzip <strong>Default:</strong> + None</dlentry><dlentry id="dataflow-google-cloud-storage-sync-row-delimiter">Row delimiter:::: Specifies the character to be used to indicate the end of the row in the extracted data. Optional field. <strong>Example:</strong> + \\n <strong>Valid Values:</strong> + Any printable ASCII character <strong>Default:</strong> + \\n (new line character)</dlentry><dlentry id="dataflow-google-cloud-storage-sync-enclosing-character">Enclosing character:::: Specify if the text columns in the source data is enclosed in quotes. Optional field. <strong>Example:</strong> + Single <strong>Valid Values:</strong> + Single, Double, Empty <strong>Default:</strong> + Empty</dlentry><dlentry id="dataflow-google-cloud-storage-sync-escape-character">Escape character:::: Specify the escape character if using a text qualifier in the source data. Optional field. <strong>Example:</strong> + \\ <strong>Valid Values:</strong> + Any ASCII character <strong>Default:</strong> + Empty</dlentry><dlentry id="dataflow-google-cloud-storage-sync-null-value">Null value::::
-Specifies the string literal indicates the null value for a column.</p>
+<p>Specify name of the file.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>PRODUCT.csv</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any string literal</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>The name of the file used to create sync <strong>Other notes:</strong></p>
+</div>
+<div class="paragraph">
+<p>To specify wildcard pattern use '*' character in the file name</p>
+</div>
 </dd>
-<dt class="hdlist1">During the data load, the column value matching this string will be loaded as null in the target. Optional field. <strong>Example:</strong> + NULL <strong>Valid Values:</strong> + Any string literal <strong>Default:</strong> + NULL</dlentry><dlentry id="dataflow-google-cloud-storage-sync-date-style">Date style:::: Specifies how to interpret the date format Optional field. <strong>Example:</strong> + YMD <strong>Valid Values:</strong> + <code>YMD</code>, <code>MDY</code>, <code>DMY</code>, <code>DMONY</code>, <code>MONDY</code>, <code>Y2MD</code>, <code>MDY2</code>, <code>DMY2</code>, <code>DMONY2</code>, and <code>MONDY2</code> <strong>Default:</strong> + <code>YMD</code> <strong>Other notes:</strong> + <code>MDY</code>: 2-digit month, 2-digit day, 4-digit year + <code>DMY</code>: 2-digit month, 2-digit day, 4-digit year + <code>DMONY</code>: 2-digit day, 3-character month name, 4-digit year + <code>MONDY</code>: 3-character month name, 2-digit day, 4-digit year + <code>Y2MD</code>: 2-digit year, 2-digit month, 2-digit day + <code>MDY2</code>: 2-digit month, 2-digit day, 2-digit year + <code>DMY2</code>: 2-digit day, 2-digit month, 2-digit year + <code>DMONY2</code>: 2-digit day, 3-character month name, 2-digit year + <code>MONDY2</code>: 3-character month name, 2-digit day, 2-digit year</dlentry><dlentry id="dataflow-google-cloud-storage-sync-date-delimiter">Date delimiter:::: Specifies the separator used in the date format. Optional field. <strong>Example:</strong> + - <strong>Valid Values:</strong> + Any printable ASCII character <strong>Default:</strong> + -</dlentry><dlentry id="dataflow-google-cloud-storage-sync-time-style">Time style:::: Specifies the format of the time portion in the data. Optional field. <strong>Example:</strong> + 24 hour <strong>Valid Values:</strong> + 12 Hour, 24 Hour <strong>Default:</strong> + 24 Hour</dlentry><dlentry id="dataflow-google-cloud-storage-sync-time-delimiter">Time delimiter:::: Specifies the character used as separate the time components. Optional field. <strong>Example:</strong> + : <strong>Valid Values:</strong> + Any printable ASCII character <strong>Default:</strong> + :</dlentry><dlentry id="dataflow-google-cloud-storage-sync-decimal-delimiter">Decimal delimiter:::: Specify the decimal delimiter for float/double/numeric data types. Optional field. <strong>Example:</strong> + . <strong>Valid Values:</strong> + (.), (,), EMPTY <strong>Default:</strong> + EMPTY</dlentry><dlentry id="dataflow-google-cloud-storage-sync-skip-trailer-rows">Skip trailer rows:::: Skip the number of trailer rows specified while loading the data Optional field. <strong>Example:</strong> + 5 <strong>Valid Values:</strong> + Any numeric value <strong>Default:</strong> + 0</dlentry><dlentry id="dataflow-google-cloud-storage-sync-ts-load-options">TS load options</dt>
+<dt class="hdlist1">Enable archive on success</dt>
 <dd>
-<p>Specify additional parameters passed with the <code>tsload</code> command.</p>
+<p>Specify if file needs to be archived once it is succeeded.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>No</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Yes, No</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>No</p>
+</div>
 </dd>
-<dt class="hdlist1">The format for these parameters is: + <code>--&lt;param_1_name&gt; &lt;optional_param_1_value&gt;</code> Optional field. <strong>Example:</strong> + <code>--max_ignored_rows 0</code> <strong>Valid Values:</strong> +  + ` --null_value ""` + ` --escape_character ""` + ` --max_ignored_rows 0` <strong>Default:</strong> + ` --max_ignored_rows 0`</dlentry><dlentry id="dataflow-google-cloud-storage-sync-boolean-representation">Boolean representation</dt>
+<dt class="hdlist1">Delete file on success</dt>
 <dd>
-<p>Specifies the representation of data in the boolean field Optional field. <strong>Example:</strong> + true_false <strong>Valid Values:</strong> + true_false, T_F, 1_0, T_NULL <strong>Default:</strong> + true_false</dlentry></p>
+<p>Specify if file needs to be deleted after execution is successful.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>No</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Yes, No</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>No</p>
+</div>
+</dd>
+<dt class="hdlist1">Column delimiter</dt>
+<dd>
+<p>Specify the column delimiter character.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>,</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any printable ASCII character or decimal value for ASCII character</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>The delimiter specified in sync</p>
+</div>
+</dd>
+<dt class="hdlist1">Skip header rows</dt>
+<dd>
+<p>Skip the number of header rows specified while loading the data.</p>
+<div class="paragraph">
+<p>Optional field.
+<strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>5</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any numeric value</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>0</p>
+</div>
+</dd>
+<dt class="hdlist1">Compression</dt>
+<dd>
+<p>Specify this if the file is compressed and what kind of compressed file it is.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>gzip</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>None, gzip</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>None</p>
+</div>
+</dd>
+<dt class="hdlist1">Row delimiter</dt>
+<dd>
+<p>Specifies the character to be used to indicate the end of the row in the extracted data.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>\\n</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any printable ASCII character</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>\\n (new line character)</p>
+</div>
+</dd>
+<dt class="hdlist1">Enclosing character</dt>
+<dd>
+<p>Specify if the text columns in the source data is enclosed in quotes.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>Single</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Single, Double, Empty</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>Empty</p>
+</div>
+</dd>
+<dt class="hdlist1">Escape character</dt>
+<dd>
+<p>Specify the escape character if using a text qualifier in the source data.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>\\</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any ASCII character<br>
+<strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>Empty</p>
+</div>
+</dd>
+<dt class="hdlist1">Null value</dt>
+<dd>
+<p>Specifies the string literal indicates the null value for a column. During the data load, the column value matching this string will be loaded as null in the target.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>NULL</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any string literal</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>NULL</p>
+</div>
+</dd>
+<dt class="hdlist1">Date style</dt>
+<dd>
+<p>Specifies how to interpret the date format.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>YMD <strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p><code>YMD</code>, <code>MDY</code>, <code>DMY</code>, <code>DMONY</code>, <code>MONDY</code>, <code>Y2MD</code>, <code>MDY2</code>, <code>DMY2</code>, <code>DMONY2</code>, and <code>MONDY2</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p><code>YMD</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong></p>
+</div>
+<div class="paragraph">
+<p><code>MDY</code>: 2-digit month, 2-digit day, 4-digit year</p>
+</div>
+<div class="paragraph">
+<p><code>DMY</code>: 2-digit month, 2-digit day, 4-digit year</p>
+</div>
+<div class="paragraph">
+<p><code>DMONY</code>: 2-digit day, 3-character month name, 4-digit year</p>
+</div>
+<div class="paragraph">
+<p><code>MONDY</code>: 3-character month name, 2-digit day, 4-digit year</p>
+</div>
+<div class="paragraph">
+<p><code>Y2MD</code>: 2-digit year, 2-digit month, 2-digit day</p>
+</div>
+<div class="paragraph">
+<p><code>MDY2</code>: 2-digit month, 2-digit day, 2-digit year</p>
+</div>
+<div class="paragraph">
+<p><code>DMY2</code>: 2-digit day, 2-digit month, 2-digit year</p>
+</div>
+<div class="paragraph">
+<p><code>DMONY2</code>: 2-digit day, 3-character month name, 2-digit year</p>
+</div>
+<div class="paragraph">
+<p><code>MONDY2</code>: 3-character month name, 2-digit day, 2-digit year</p>
+</div>
+</dd>
+<dt class="hdlist1">Date delimiter</dt>
+<dd>
+<p>Specifies the separator used in the date format.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Valid Values:</strong></p>
+<div class="paragraph">
+<p>Any printable ASCII character</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>-</p>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Time style</dt>
+<dd>
+<p>Specifies the format of the time portion in the data.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>24 hour</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>12 Hour, 24 Hour</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>24 Hour</p>
+</div>
+</dd>
+<dt class="hdlist1">Time delimiter</dt>
+<dd>
+<p>Specifies the character used as separate the time components.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>:</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any printable ASCII character</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>:</p>
+</div>
+</dd>
+<dt class="hdlist1">Decimal delimiter</dt>
+<dd>
+<p>Specify the decimal delimiter for float/double/numeric data types.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>(.), (,), EMPTY</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>EMPTY</p>
+</div>
+</dd>
+<dt class="hdlist1">Skip trailer rows</dt>
+<dd>
+<p>Skip the number of trailer rows specified while loading the data.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>5</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any numeric value</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>0</p>
+</div>
+</dd>
+<dt class="hdlist1">TS load options</dt>
+<dd>
+<p>Specify additional parameters passed with the <code>tsload</code> command. The format for these parameters is:</p>
+<div class="paragraph">
+<p><code>--&lt;param_1_name&gt; &lt;optional_param_1_value&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p><code>--max_ignored_rows 0</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>` --null_value ""`</p>
+</div>
+<div class="paragraph">
+<p>` --escape_character ""`</p>
+</div>
+<div class="paragraph">
+<p>` --max_ignored_rows 0`</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>` --max_ignored_rows 0`</p>
+</div>
+</dd>
+<dt class="hdlist1">Boolean representation</dt>
+<dd>
+<p>Specifies the representation of data in the boolean field.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>true_false</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>true_false, T_F, 1_0, T_NULL</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>true_false</p>
+</div>
 </dd>
 </dl>
 </div>

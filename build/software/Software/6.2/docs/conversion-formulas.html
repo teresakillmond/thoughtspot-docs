@@ -2575,6 +2575,54 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="geomap-australia.html">Australia</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-austria.html">Austria</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-canada.html">Canada</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-france.html">France</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-germany.html">Germany</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-india.html">India</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-indonesia.html">Indonesia</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-italy.html">Italy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-japan.html">Japan</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-norway.html">Norway</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-poland.html">Poland</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-portugal.html">Portugal</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-sweden.html">Sweden</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-switzerland.html">Switzerland</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-south-africa.html">South Africa</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-united-states.html">United States</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-united-kingdom.html">United Kingdom</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2675,48 +2723,93 @@ If you find that you want to pass a value to the function, but it is of the wron
 <div class="paragraph">
 <p>The following are the conversion formulas:</p>
 </div>
-<table>
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
-   <col style="width:25%" />
-   <col style="width:25%" />
-   <col style="width:50%" />
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
 </colgroup>
-  <thead>
-    <tr>
-      <th>Function</th>
-      <th>Description</th>
-      <th>Examples</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr id="to_bool">
-      <td><code>to_bool</code></td>
-      <td>Returns the input as a <code>boolean</code> data type (<code>true</code> or <code>false</code>).</td>
-      <td><code class="highlighter-rouge">to_bool (0) = false</code><br><code class="highlighter-rouge">to_bool (married)</code></td>
-    </tr>
-    <tr id="to_date">
-      <td><code>to_date</code></td>
-      <td>Accepts a date represented as an integer or text string, and a second string parameter that can include <code>strptime</code> date formatting elements.<br>Replaces all the valid strptime date formatting elements with their string counterparts and returns the result.<br>Does not accept epoch formatted dates as input.</td>
-      <td><code class="highlighter-rouge">to_date (date_sold, '%Y-%m-%d')</code></td>
-    </tr>
-    <tr id="to_double">
-      <td><code>to_double</code></td>
-      <td>Returns the input as a <code>double</code> data type.</td>
-      <td><code class="highlighter-rouge">to_double ('3.14') = 3.14</code><br><code class="highlighter-rouge">to_double (revenue * .01)</code></td>
-    </tr>
-    <tr id="to_integer">
-      <td><code>to_integer</code></td>
-      <td>Returns the input as an integer.</td>
-      <td><code class="highlighter-rouge">to_integer ('45') + 1 = 46</code><br><code class="highlighter-rouge">to_integer (price + tax - cost)</code></td>
-    </tr>
-    <tr id="to_string">
-      <td><code>to_string</code></td>
-      <td>Returns the input as a text string. To convert a date data type to a string data type, specify the date format you want to use.</td>
-      <td><code class="highlighter-rouge">to_string (45 + 1) = '46'</code>
-      <br><code class="highlighter-rouge">to_string (revenue - cost)</code>
-      <br><code class="highlighter-rouge">to_string (date,('%m/%d/%y')) </code></td>
-    </tr>
-  </tbody>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Function</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>to_bool</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Returns the input as a boolean data type (<code>true</code> or <code>false</code>).</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>to_bool (0) = false</code></p>
+</div>
+<div class="paragraph">
+<p><code>to_bool (married)</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>to_date</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Accepts a date represented as an integer or text string, and a second string parameter that can include strptime date formatting elements.
+Replaces all the valid strptime date formatting elements with their string counterparts and returns the result.
+Does not accept epoch formatted dates as input.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>to_date (date_sold, '%Y-%m-%d')</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>to_double</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Returns the input as a double data type.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>to_double ('3.14') = 3.14</code></p>
+</div>
+<div class="paragraph">
+<p><code>to_double (revenue * .01)</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>to_integer</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Returns the input as an integer.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>to_integer ('45') + 1 = 46</code></p>
+</div>
+<div class="paragraph">
+<p><code>to_integer (price + tax - cost)</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>to_string</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Returns the input as a text string. To convert a date data type to a string data type, specify the date format you want to use.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>to_string (45 + 1) = '46'</code></p>
+</div>
+<div class="paragraph">
+<p><code>to_string (revenue - cost)</code></p>
+</div>
+<div class="paragraph">
+<p><code>to_string (date,('%m/%d/%y'))</code></p>
+</div></div></td>
+</tr>
+</tbody>
 </table>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">

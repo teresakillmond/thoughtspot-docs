@@ -2575,6 +2575,54 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="geomap-australia.html">Australia</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-austria.html">Austria</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-canada.html">Canada</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-france.html">France</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-germany.html">Germany</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-india.html">India</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-indonesia.html">Indonesia</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-italy.html">Italy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-japan.html">Japan</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-norway.html">Norway</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-poland.html">Poland</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-portugal.html">Portugal</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-sweden.html">Sweden</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-switzerland.html">Switzerland</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-south-africa.html">South Africa</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-united-states.html">United States</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-united-kingdom.html">United Kingdom</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2677,19 +2725,172 @@
 <div class="sect1">
 <h2 id="_informational_alerts"><a class="anchor" href="#_informational_alerts"></a>Informational alerts</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_task_terminated"><a class="anchor" href="#_task_terminated"></a>TASK_TERMINATED</h3>
 <div class="paragraph">
-<p>{% for item in site.data.extract-alerts.alerts %} +   {% if item.type == "INFO" %}</p>
+<p><strong>Msg</strong>: <code>Task {{.Service}}.{{.Task}} terminated on machine {{.Machine}}</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: INFO</p>
+</div>
+<div class="paragraph">
+<p>This alert is raised when a task terminates.</p>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_item_id"><a class="anchor" href="#_item_id"></a>{{item.id}}</h3>
+<h3 id="_disk_error"><a class="anchor" href="#_disk_error"></a>DISK_ERROR</h3>
 <div class="paragraph">
-<p><strong>Msg</strong>: <code>{{item.msg}}</code></p>
+<p><strong>Msg</strong>: <code>Machine {{.Machine}} has disk errors</code></p>
 </div>
 <div class="paragraph">
-<p><strong>Type</strong>: {{item.type}}</p>
+<p><strong>Type</strong>: INFO</p>
 </div>
 <div class="paragraph">
-<p>{{item.description}}    {% endif %}  {% unless forloop.last %}  {% endunless %} {% endfor %}</p>
+<p>Raised when a machine has disk errors.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_zk_avg_latency"><a class="anchor" href="#_zk_avg_latency"></a>ZK_AVG_LATENCY</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>Average Zookeeper latency is more than {{.Num}} msec</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: INFO</p>
+</div>
+<div class="paragraph">
+<p>Raised when average Zookeeper latency is above a threshold.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_zk_max_latency"><a class="anchor" href="#_zk_max_latency"></a>ZK_MAX_LATENCY</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>Max Zookeeper latency is more than {{.Num}} msec</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: INFO</p>
+</div>
+<div class="paragraph">
+<p>Raised when max Zookeeper latency is above a threshold.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_zk_min_latency"><a class="anchor" href="#_zk_min_latency"></a>ZK_MIN_LATENCY</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>Min Zookeeper latency is more than {{.Num}} msec</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: INFO</p>
+</div>
+<div class="paragraph">
+<p>Raised when min Zookeeper latency is above a threshold.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_zk_outstanding_requests"><a class="anchor" href="#_zk_outstanding_requests"></a>ZK_OUTSTANDING_REQUESTS</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>Number of outstanding Zookeeper requests exceeds {{.Num}}</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: INFO</p>
+</div>
+<div class="paragraph">
+<p>Raised when there are too many outstanding Zookeeper requests.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_zk_num_watchers"><a class="anchor" href="#_zk_num_watchers"></a>ZK_NUM_WATCHERS</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>Msg: Number of Zookeeper watchers exceeds {{.Num}}</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: INFO</p>
+</div>
+<div class="paragraph">
+<p>Raised when there are too many Zookeeper watchers.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_master_election"><a class="anchor" href="#_master_election"></a>MASTER_ELECTION</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>{{.Machine}} elected as Orion Master</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: INFO</p>
+</div>
+<div class="paragraph">
+<p>Raised when a new Orion Master is elected.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_periodic_backup"><a class="anchor" href="#_periodic_backup"></a>PERIODIC_BACKUP</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>{{.Process}} periodic backup for policy {{.Name}} failed.</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: INFO</p>
+</div>
+<div class="paragraph">
+<p>Raised when periodic backup fails.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_periodic_snapshot"><a class="anchor" href="#_periodic_snapshot"></a>PERIODIC_SNAPSHOT</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>{{.Process}} periodic snapshot {{.Name}} failed.</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: INFO</p>
+</div>
+<div class="paragraph">
+<p>Raised when a periodic snapshot fails.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_hdfs_corruption"><a class="anchor" href="#_hdfs_corruption"></a>HDFS_CORRUPTION</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>HDFS root directory is in a corrupted state.</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: INFO</p>
+</div>
+<div class="paragraph">
+<p>Raised when HDFS root directory is corrupted.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_application_invalid_state"><a class="anchor" href="#_application_invalid_state"></a>APPLICATION_INVALID_STATE</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>{{.Service}}.{{.Task}} on {{.Machine}} at location {{.Location}}</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: INFO</p>
+</div>
+<div class="paragraph">
+<p>Raised when Application raises invalid state alert.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_update_start"><a class="anchor" href="#_update_start"></a>UPDATE_START</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>Starting update of ThoughtSpot cluster {{.Cluster}}</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: INFO</p>
+</div>
+<div class="paragraph">
+<p>Raised when update starts.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_update_end"><a class="anchor" href="#_update_end"></a>UPDATE_END</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>Finished update of ThoughtSpot cluster {{.Cluster}} to release {{.Release}}</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: INFO</p>
+</div>
+<div class="paragraph">
+<p>Raised when update completes.</p>
 </div>
 </div>
 </div>
@@ -2697,19 +2898,28 @@
 <div class="sect1">
 <h2 id="_errors"><a class="anchor" href="#_errors"></a>Errors</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_timely_job_run_error"><a class="anchor" href="#_timely_job_run_error"></a>TIMELY_JOB_RUN_ERROR</h3>
 <div class="paragraph">
-<p>{% for item in site.data.extract-alerts.alerts %} +   {% if item.type == "ERROR" %}</p>
+<p><strong>Msg</strong>: <code>Job run {{.Message}}</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: ERROR</p>
+</div>
+<div class="paragraph">
+<p>Raised when a job run fails.</p>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_item_id_2"><a class="anchor" href="#_item_id_2"></a>{{item.id}}</h3>
+<h3 id="_timely_error"><a class="anchor" href="#_timely_error"></a>TIMELY_ERROR</h3>
 <div class="paragraph">
-<p><strong>Msg</strong>: <code>{{item.msg}}</code></p>
+<p><strong>Msg</strong>: <code>Job manager {{.Message}}</code></p>
 </div>
 <div class="paragraph">
-<p><strong>Type</strong>: {{item.type}}</p>
+<p><strong>Type</strong>: ERROR</p>
 </div>
 <div class="paragraph">
-<p>{{item.description}}    {% endif %}  {% unless forloop.last %}  {% endunless %} {% endfor %}</p>
+<p>Raised when a job manager runs into an inconsistent state.</p>
 </div>
 </div>
 </div>
@@ -2717,19 +2927,196 @@
 <div class="sect1">
 <h2 id="_warnings"><a class="anchor" href="#_warnings"></a>Warnings</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_disk_space"><a class="anchor" href="#_disk_space"></a>DISK_SPACE</h3>
 <div class="paragraph">
-<p>{% for item in site.data.extract-alerts.alerts %} +   {% if item.type == "WARNING" %}</p>
+<p><strong>Msg</strong>: <code>Machine {{.Machine}} has less than {{.Perc}}% disk space free</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: WARNING</p>
+</div>
+<div class="paragraph">
+<p>Raised when a disk is low on available disk space. Valid only in the 3.2 version of ThoughtSpot.</p>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_item_id_3"><a class="anchor" href="#_item_id_3"></a>{{item.id}}</h3>
+<h3 id="_root_disk_space"><a class="anchor" href="#_root_disk_space"></a>ROOT_DISK_SPACE</h3>
 <div class="paragraph">
-<p><strong>Msg</strong>: <code>{{item.msg}}</code></p>
+<p><strong>Msg</strong>: <code>Machine {{.Machine}} has less than {{.Perc}}% disk space free on root partition</code></p>
 </div>
 <div class="paragraph">
-<p><strong>Type</strong>: {{item.type}}</p>
+<p><strong>Type</strong>: WARNING</p>
 </div>
 <div class="paragraph">
-<p>{{item.description}}    {% endif %}  {% unless forloop.last %}  {% endunless %} {% endfor %}</p>
+<p>Raised when a machine is low on available disk space on root partition.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_boot_disk_space"><a class="anchor" href="#_boot_disk_space"></a>BOOT_DISK_SPACE</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>Machine {{.Machine}} has less than {{.Perc}}% disk space free on boot partition</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: WARNING</p>
+</div>
+<div class="paragraph">
+<p>Raised when a machine is low on available disk space on boot partition.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_update_disk_space"><a class="anchor" href="#_update_disk_space"></a>UPDATE_DISK_SPACE</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>Machine {{.Machine}} has less than {{.Perc}}% disk space free on update partition</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: WARNING</p>
+</div>
+<div class="paragraph">
+<p>Raised when a machine is low on available disk space on update partition.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_export_disk_space"><a class="anchor" href="#_export_disk_space"></a>EXPORT_DISK_SPACE</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>Machine {{.Machine}} has less than {{.Perc}}% disk space free on export partition</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: WARNING</p>
+</div>
+<div class="paragraph">
+<p>Raised when a machine is low on available disk space on export partition.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_hdfs_namenode_disk_space"><a class="anchor" href="#_hdfs_namenode_disk_space"></a>HDFS_NAMENODE_DISK_SPACE</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>Machine {{.Machine}} has less than {{.Perc}}% disk space free on HDFS namenode drive</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: WARNING</p>
+</div>
+<div class="paragraph">
+<p>Raised when a machine is low on available disk space on HDFS namenode drive.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_memory"><a class="anchor" href="#_memory"></a>MEMORY</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>Machine {{.Machine}} has less than {{.Perc}}% memory free</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: WARNING</p>
+</div>
+<div class="paragraph">
+<p>Raised when a machine is low on free memory.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_os_users"><a class="anchor" href="#_os_users"></a>OS_USERS</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>Machine {{.Machine}} has more than {{.Num}} logged in users</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: WARNING</p>
+</div>
+<div class="paragraph">
+<p>Raised when a machine has too many users logged in.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_os_procs"><a class="anchor" href="#_os_procs"></a>OS_PROCS</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>Machine {{.Machine}} has more than {{.Num}} processes</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: WARNING</p>
+</div>
+<div class="paragraph">
+<p>Raised when a machine has more too many processes.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ssh"><a class="anchor" href="#_ssh"></a>SSH</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>Machine {{.Machine}} doesn&#8217;t have an active SSH server</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: WARNING</p>
+</div>
+<div class="paragraph">
+<p>Raised when a machine has more than 600 processes.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_disk_error_external"><a class="anchor" href="#_disk_error_external"></a>DISK_ERROR_EXTERNAL</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>Machine {{.Machine}} has disk errors</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: WARNING</p>
+</div>
+<div class="paragraph">
+<p>Raised when more than 2 disk errors happen in a day.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_zk_fd_count"><a class="anchor" href="#_zk_fd_count"></a>ZK_FD_COUNT</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>Zookeeper has more than {{.Num}} open file descriptors</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: WARNING</p>
+</div>
+<div class="paragraph">
+<p>Raised when there are too many open Zookeeper files.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_zk_ephemeral_count"><a class="anchor" href="#_zk_ephemeral_count"></a>ZK_EPHEMERAL_COUNT</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>Zookeeper has more than {{.Num}} ephemeral files</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: WARNING</p>
+</div>
+<div class="paragraph">
+<p>Raised when there are too many Zookeeper ephemeral files.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_host_down"><a class="anchor" href="#_host_down"></a>HOST_DOWN</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>{{.Machine}} is down</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: WARNING</p>
+</div>
+<div class="paragraph">
+<p>Raised when a host is down.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_task_unreachable"><a class="anchor" href="#_task_unreachable"></a>TASK_UNREACHABLE</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>{{.ServiceDesc}} on {{.Machine}} is unreachable over HTTP</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: WARNING</p>
+</div>
+<div class="paragraph">
+<p>Raised when a task is unreachable over HTTP.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_task_not_running"><a class="anchor" href="#_task_not_running"></a>TASK_NOT_RUNNING</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>{{.ServiceDesc}} is not running</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: WARNING</p>
+</div>
+<div class="paragraph">
+<p>Raised when a service task is not running on any machine in the cluster.</p>
 </div>
 </div>
 </div>
@@ -2737,19 +3124,88 @@
 <div class="sect1">
 <h2 id="_critical_alerts"><a class="anchor" href="#_critical_alerts"></a>Critical alerts</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_task_flapping"><a class="anchor" href="#_task_flapping"></a>TASK_FLAPPING</h3>
 <div class="paragraph">
-<p>{% for item in site.data.extract-alerts.alerts %} +   {% if item.type == "CRITICAL" %}</p>
+<p><strong>Msg</strong>: <code>Task {{.Service}}.{{.Task}} terminated {{._actual_num_occurrences}} times in last {{._earliest_duration_str}}</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: CRITICAL</p>
+</div>
+<div class="paragraph">
+<p>This alert is raised when a task is crashing repeatedly. The service is evaluted across the whole cluster. So, if a service crashes 5 times in a day across all nodes in the cluster, this alert is generated.</p>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_item_id_4"><a class="anchor" href="#_item_id_4"></a>{{item.id}}</h3>
+<h3 id="_oreo_terminated"><a class="anchor" href="#_oreo_terminated"></a>OREO_TERMINATED</h3>
 <div class="paragraph">
-<p><strong>Msg</strong>: <code>{{item.msg}}</code></p>
+<p><strong>Msg</strong>: <code>Oreo terminated on machine {{.Machine}}</code></p>
 </div>
 <div class="paragraph">
-<p><strong>Type</strong>: {{item.type}}</p>
+<p><strong>Type</strong>: CRITICAL</p>
 </div>
 <div class="paragraph">
-<p>{{item.description}}    {% endif %}  {% unless forloop.last %}  {% endunless %} {% endfor %}</p>
+<p>This alert is raised when the Oreo daemon on a machine terminates due to an error. This typically happens due to an error accessing Zookeeper, HDFS, or a hardware issue.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_hdfs_disk_space"><a class="anchor" href="#_hdfs_disk_space"></a>HDFS_DISK_SPACE</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>HDFS has less than {{.Perc}}% space free</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: CRITICAL</p>
+</div>
+<div class="paragraph">
+<p>Raised when a HDFS cluster is low on total available disk space.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_zk_inaccessible"><a class="anchor" href="#_zk_inaccessible"></a>ZK_INACCESSIBLE</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>Zookeeper is not accessible</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: CRITICAL</p>
+</div>
+<div class="paragraph">
+<p>aised when Zookeeper is inaccessible.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_periodic_backup_flapping"><a class="anchor" href="#_periodic_backup_flapping"></a>PERIODIC_BACKUP_FLAPPING</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>Periodic backup failed {{._actual_num_occurrences}} times in last {{._earliest_duration_str}}</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: CRITICAL</p>
+</div>
+<div class="paragraph">
+<p>This alert is raised when a periodic backup failed repeatedly.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_periodic_snapshot_flapping"><a class="anchor" href="#_periodic_snapshot_flapping"></a>PERIODIC_SNAPSHOT_FLAPPING</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>Periodic snapshot failed {{._actual_num_occurrences}} times in last {{._earliest_duration_str}}</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: CRITICAL</p>
+</div>
+<div class="paragraph">
+<p>This alert is raised when periodic snapshot failed repeatedly.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_application_invalid_state_external"><a class="anchor" href="#_application_invalid_state_external"></a>APPLICATION_INVALID_STATE_EXTERNAL</h3>
+<div class="paragraph">
+<p><strong>Msg</strong>: <code>{{.Service}}.{{.Task}} on {{.Machine}} at location {{.Location}}</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Type</strong>: CRITICAL</p>
+</div>
+<div class="paragraph">
+<p>Raised when Application raises invalid state alert.</p>
 </div>
 </div>
 </div>

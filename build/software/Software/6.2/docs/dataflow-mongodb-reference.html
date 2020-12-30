@@ -2575,6 +2575,54 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="geomap-australia.html">Australia</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-austria.html">Austria</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-canada.html">Canada</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-france.html">France</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-germany.html">Germany</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-india.html">India</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-indonesia.html">Indonesia</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-italy.html">Italy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-japan.html">Japan</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-norway.html">Norway</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-poland.html">Poland</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-portugal.html">Portugal</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-sweden.html">Sweden</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-switzerland.html">Switzerland</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-south-africa.html">South Africa</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-united-states.html">United States</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-united-kingdom.html">United Kingdom</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2682,22 +2730,121 @@ You need specific information to establish a seamless and secure connection.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><dlentry id="dataflow-mongodb-conn-connection-name">Connection name</dt>
+<dt class="hdlist1">Connection name</dt>
 <dd>
-<p>Name your connection. Mandatory field. <strong>Example:</strong> + MongoDBConnection</dlentry><dlentry id="dataflow-mongodb-conn-connection-type">Connection type:::: Choose the MongoDB connection type. Mandatory field. <strong>Example:</strong> + MongoDB</dlentry><dlentry id="dataflow-mongodb-conn-host-">Host:::: Specify the hostname or the IP address of the MongoDB system Mandatory field. <strong>Example:</strong> + www.example.com</dlentry><dlentry id="dataflow-mongodb-conn-port-">Port:::: Specify the port associated to the MongoDB system Mandatory field. <strong>Example:</strong> + 1234</dlentry><dlentry id="dataflow-mongodb-conn-user-">User::::
-Specify the user id that will be used to connect to the MongoDB system.</p>
+<p>Name your connection.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>MongoDBConnection</p>
+</div>
 </dd>
-<dt class="hdlist1">This user should have necessary privileges to access the data in the databases. Mandatory field. <strong>Example:</strong> + userdi</dlentry><dlentry id="dataflow-mongodb-conn-password-">Password:::: Specify the password for the User Mandatory field. <strong>Example:</strong> + pswrd234%!</dlentry><dlentry id="dataflow-mongodb-conn-database-">Database:::: Collection of information that is organized so that it can be easily accessed, managed and updated Mandatory field. <strong>Example:</strong> + Test</dlentry><dlentry id="dataflow-mongodb-sync-flatten-arrays">Flatten arrays</dt>
+<dt class="hdlist1">Connection type</dt>
 <dd>
-<p>The FlattenArrays property can be used to flatten the elements of nested arrays into columns of their own.</p>
+<p>Choose the MongoDB connection type.</p>
+<div class="paragraph">
+<p>Mandatory field.
+<strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>MongoDB</p>
+</div>
 </dd>
-<dt class="hdlist1">Set FlattenArrays to the number of elements you want to return from nested arrays. Optional field. <strong>Example:</strong> + 0 <strong>Other notes:</strong> + Advanced configuration</dlentry><dlentry id="dataflow-mongodb-sync-row-scan-depth">Row scan depth</dt>
+<dt class="hdlist1">Host</dt>
 <dd>
-<p>The maximum number of rows to scan to look for the columns available in a table.</p>
+<p>Specify the hostname or the IP address of the MongoDB system.</p>
+<div class="paragraph">
+<p>Mandatory field.
+<strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>www.example.com</p>
+</div>
 </dd>
-<dt class="hdlist1">Set this property to gain more control over how the provider applies data types to collections. Optional field. <strong>Example:</strong> + -1 <strong>Other notes:</strong> + Advanced configuration</dlentry><dlentry id="dataflow-mongodb-conn-jdbc-options">JDBC options</dt>
+<dt class="hdlist1">Port</dt>
 <dd>
-<p>Specify the options associated with the JDBC URL. Optional field. <strong>Example:</strong> + <code>jdbc:sqlserver://[serverName[\instanceName][:portNumber]]</code> <strong>Other notes:</strong> + Advanced configuration</dlentry></p>
+<p>Specify the port associated to the MongoDB system.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>1234</p>
+</div>
+</dd>
+<dt class="hdlist1">User</dt>
+<dd>
+<p>Specify the user id that will be used to connect to the MongoDB system. This user should have necessary privileges to access the data in the databases. Mandatory field. <strong>Example:</strong> + userdi</dlentry><dlentry id="dataflow-mongodb-conn-password-">Password:::: Specify the password for the User Mandatory field. <strong>Example:</strong> + pswrd234%!</dlentry><dlentry id="dataflow-mongodb-conn-database-">Database:::: Collection of information that is organized so that it can be easily accessed, managed and updated.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>Test</p>
+</div>
+</dd>
+<dt class="hdlist1">Flatten arrays</dt>
+<dd>
+<p>The FlattenArrays property can be used to flatten the elements of nested arrays into columns of their own. Set FlattenArrays to the number of elements you want to return from nested arrays.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>0</p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong></p>
+</div>
+<div class="paragraph">
+<p>Advanced configuration</p>
+</div>
+</dd>
+<dt class="hdlist1">Row scan depth</dt>
+<dd>
+<p>The maximum number of rows to scan to look for the columns available in a table. Set this property to gain more control over how the provider applies data types to collections.</p>
+<div class="paragraph">
+<p>Optional field.
+<strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>-1</p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong></p>
+</div>
+<div class="paragraph">
+<p>Advanced configuration</p>
+</div>
+</dd>
+<dt class="hdlist1">JDBC options</dt>
+<dd>
+<p>Specify the options associated with the JDBC URL.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p><code>jdbc:sqlserver://[serverName[\instanceName][:portNumber]]</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong></p>
+</div>
+<div class="paragraph">
+<p>Advanced configuration</p>
+</div>
 </dd>
 </dl>
 </div>
@@ -2708,11 +2855,113 @@ Specify the user id that will be used to connect to the MongoDB system.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><dlentry id="dataflow-mongodb-sync-column-delimiter">Column delimiter</dt>
+<dt class="hdlist1">Column delimiter</dt>
 <dd>
-<p>Specify the column delimiter character. Mandatory field. <strong>Example:</strong> + 1 <strong>Valid Values:</strong> + Any printable ASCII character or decimal value for ASCII character <strong>Default:</strong> + 1</dlentry><dlentry id="dataflow-mongodb-sync-enclosing-character">Enclosing character:::: Specify if the text columns in the source data needs to be enclosed in quotes. Optional field. <strong>Example:</strong> + DOUBLE <strong>Valid Values:</strong> + SINGLE, DOUBLE <strong>Default:</strong> + DOUBLE <strong>Other notes:</strong> + This is required if the text data has newline character or delimiter character.</dlentry><dlentry id="dataflow-mongodb-sync-escape-character">Escape character:::: Specify the escape character if using a text qualifier in the source data. Optional field. <strong>Example:</strong> + \" <strong>Valid Values:</strong> + Any ASCII character <strong>Default:</strong> + \"</dlentry><dlentry id="dataflow-mongodb-sync-ts-load-options">TS load options::::
-Specifies the parameters passed with the <code>tsload</code> command, in addition to the commands already included by the application.
-The format for these parameters is: + ` --&lt;param_1_name&gt; &lt;optional_param_1_value&gt;` + ` --&lt;param_2_name&gt; &lt;optional_param_2_value&gt;` Optional field. <strong>Example:</strong> + --max_ignored_rows 0 <strong>Valid Values:</strong> + --user "dbuser" --password "$DIWD" --target_database "ditest" --target_schema "falcon_schema" <strong>Default:</strong> + --max_ignored_rows 0</dlentry></p>
+<p>Specify the column delimiter character.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>1</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any printable ASCII character or decimal value for ASCII character</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>1</p>
+</div>
+</dd>
+<dt class="hdlist1">Enclosing character</dt>
+<dd>
+<p>Specify if the text columns in the source data needs to be enclosed in quotes.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>DOUBLE</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>SINGLE, DOUBLE
+<strong>Default:</strong>
++ DOUBLE</p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong></p>
+</div>
+<div class="paragraph">
+<p>This is required if the text data has newline character or delimiter character.</p>
+</div>
+</dd>
+<dt class="hdlist1">Escape character</dt>
+<dd>
+<p>Specify the escape character if using a text qualifier in the source data.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>\"</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any ASCII character</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>\"</p>
+</div>
+</dd>
+<dt class="hdlist1">TS load options</dt>
+<dd>
+<p>Specifies the parameters passed with the <code>tsload</code> command, in addition to the commands already included by the application. The format for these parameters is:</p>
+<div class="paragraph">
+<p>` --&lt;param_1_name&gt; &lt;optional_param_1_value&gt;`</p>
+</div>
+<div class="paragraph">
+<p>` --&lt;param_2_name&gt; &lt;optional_param_2_value&gt;`</p>
+</div>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>--max_ignored_rows 0</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>--user "dbuser" --password "$DIWD" --target_database "ditest" --target_schema "falcon_schema"</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>--max_ignored_rows 0</p>
+</div>
 </dd>
 </dl>
 </div>

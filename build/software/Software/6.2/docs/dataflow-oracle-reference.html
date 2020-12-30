@@ -2575,6 +2575,54 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="geomap-australia.html">Australia</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-austria.html">Austria</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-canada.html">Canada</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-france.html">France</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-germany.html">Germany</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-india.html">India</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-indonesia.html">Indonesia</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-italy.html">Italy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-japan.html">Japan</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-norway.html">Norway</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-poland.html">Poland</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-portugal.html">Portugal</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-sweden.html">Sweden</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-switzerland.html">Switzerland</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-south-africa.html">South Africa</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-united-states.html">United States</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="geomap-united-kingdom.html">United Kingdom</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -2682,14 +2730,96 @@ You need specific information to establish a seamless and secure connection.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><dlentry id="dataflow-oracle-conn-connection-name">Connection name</dt>
+<dt class="hdlist1">Connection name</dt>
 <dd>
-<p>Name your connection. Mandatory field. <strong>Example:</strong> + OracleConnection</dlentry><dlentry id="dataflow-oracle-conn-connection-type">Connection type:::: Choose the Oracle connection type. Mandatory field. <strong>Example:</strong> + Oracle</dlentry><dlentry id="dataflow-oracle-conn-host">Host:::: Specify the hostname or the IP address of the Oracle system Mandatory field. <strong>Example:</strong> + www.example.com</dlentry><dlentry id="dataflow-oracle-conn-port">Port:::: Specify the port associated to the Oracle system Mandatory field. <strong>Example:</strong> + 1234</dlentry><dlentry id="dataflow-oracle-conn-user">User::::
-Specify the user id that will be used to connect to the Oracle system.</p>
+<p>Name your connection.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Mandatory field. <strong>Example:</strong> + OracleConnection</dlentry><dlentry id="dataflow-oracle-conn-connection-type">Connection type</dt>
+<dd>
+<p>Choose the Oracle connection type. Mandatory field. <strong>Example:</strong> + Oracle</dlentry><dlentry id="dataflow-oracle-conn-host">Host:::: Specify the hostname or the IP address of the Oracle system Mandatory field. <strong>Example:</strong> + www.example.com</dlentry><dlentry id="dataflow-oracle-conn-port">Port:::: Specify the port associated to the Oracle system Mandatory field.</p>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>1234</p>
+</div>
 </dd>
-<dt class="hdlist1">This user should have necessary privileges to access the data in the databases. Mandatory field. <strong>Example:</strong> + userdi</dlentry><dlentry id="dataflow-oracle-conn-password">Password:::: Specify the password for the User Mandatory field. <strong>Example:</strong> + pswrd234%!</dlentry><dlentry id="dataflow-oracle-conn-service-name">Service name:::: Service name is the TNS alias that you give when you remotely connect to your database and this Service name is recorded in Tnsnames.ora file on your clients and it can be the same as SID and you can also give it any other name you want Mandatory field. <strong>Example:</strong> + idxdb03</dlentry><dlentry id="dataflow-oracle-conn-version">Version:::: Specify the Oracle version being connected to Optional field. <strong>Example:</strong> + 11.x <strong>Other notes:</strong> + Advanced configuration</dlentry><dlentry id="dataflow-oracle-conn-jdbc-options">JDBC options</dt>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">User</dt>
 <dd>
-<p>Specify the options associated with the JDBC URL. Optional field. <strong>Example:</strong> + <code>jdbc:sqlserver://[serverName[\instanceName][:portNumber]]</code> <strong>Other notes:</strong> + Advanced configuration</dlentry></p>
+<p>Specify the user id that will be used to connect to the Oracle system. This user should have necessary privileges to access the data in the databases.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>userdi</p>
+</div>
+</dd>
+<dt class="hdlist1">Password</dt>
+<dd>
+<p>Specify the password for the user.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>pswrd234%!</p>
+</div>
+</dd>
+<dt class="hdlist1">Service name</dt>
+<dd>
+<p>Service name is the TNS alias that you give when you remotely connect to your database and this Service name is recorded in Tnsnames.ora file on your clients and it can be the same as SID and you can also give it any other name you want.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong>
++ idxdb03</p>
+</div>
+</dd>
+<dt class="hdlist1">Version</dt>
+<dd>
+<p>Specify the Oracle version being connected to.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>11.x</p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong></p>
+</div>
+<div class="paragraph">
+<p>Advanced configuration</p>
+</div>
+</dd>
+<dt class="hdlist1">JDBC options</dt>
+<dd>
+<p>Specify the options associated with the JDBC URL.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p><code>jdbc:sqlserver://[serverName[\instanceName][:portNumber]]</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong>
++ Advanced configuration</p>
+</div>
 </dd>
 </dl>
 </div>
@@ -2700,19 +2830,192 @@ Specify the user id that will be used to connect to the Oracle system.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><dlentry id="dataflow-oracle-sync-data-extraction-mode">Data extraction mode</dt>
+<dt class="hdlist1">Data extraction mode</dt>
 <dd>
-<p>Specify the extraction type. Mandatory field. <strong>Example:</strong> + JDBC <strong>Valid Values:</strong> + JDBC,OCI <strong>Default:</strong> + JDBC</dlentry><dlentry id="dataflow-oracle-sync-column-delimiter">Column delimiter:::: Specify the column delimiter character. Mandatory field. <strong>Example:</strong> + 1 <strong>Valid Values:</strong> + Any printable ASCII character or decimal value for ASCII character <strong>Default:</strong> + 1</dlentry><dlentry id="dataflow-oracle-sync-null-value">Null value::::
-Specifies the string literal that should indicate the null value in the extracted data.</p>
+<p>Specify the extraction type.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>JDBC</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>JDBC,OCI</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>JDBC</p>
+</div>
 </dd>
-<dt class="hdlist1">During the data load the column value matching this string will be loaded as null in the target. Optional field. <strong>Example:</strong> + NULL <strong>Valid Values:</strong> + Any string literal <strong>Default:</strong> + NULL</dlentry><dlentry id="dataflow-oracle-sync-enclosing-character">Enclosing character:::: Specify if the text columns in the source data needs to be enclosed in quotes. Optional field. <strong>Example:</strong> + DOUBLE <strong>Valid Values:</strong> + SINGLE, DOUBLE <strong>Default:</strong> + DOUBLE <strong>Other notes:</strong> + This is required if the text data has newline character or delimiter character.</dlentry><dlentry id="dataflow-oracle-sync-escape-character">Escape character:::: Specify the escape character if using a text qualifier in the source data. Optional field. <strong>Example:</strong> + \" <strong>Valid Values:</strong> + Any ASCII character <strong>Default:</strong> + \"</dlentry><dlentry id="dataflow-oracle-sync-fetch-size">Fetch size</dt>
+<dt class="hdlist1">Column delimiter</dt>
 <dd>
-<p>Specify the number of rows to be fetched at a time and processed in memory.</p>
+<p>Specify the column delimiter character.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>1</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any printable ASCII character or decimal value for ASCII character</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>1</p>
+</div>
 </dd>
-<dt class="hdlist1">If the value specified is zero then, all rows are extracted at once. Mandatory field. <strong>Example:</strong> + 1000 <strong>Valid Values:</strong> + Any numeric value <strong>Default:</strong> + 1000</dlentry><dlentry id="dataflow-oracle-sync-ts-load-options">TS load options</dt>
+<dt class="hdlist1">Null value</dt>
 <dd>
-<p>Specifies the parameters passed with the <code>tsload</code> command, in addition to the commands already included by the application.
-The format for these parameters is: + ` --&lt;param_1_name&gt; &lt;optional_param_1_value&gt;` + ` --&lt;param_2_name&gt; &lt;optional_param_2_value&gt;` Optional field. <strong>Example:</strong> + --max_ignored_rows 0 <strong>Valid Values:</strong> + --user "dbuser" --password "$DIWD" --target_database "ditest" --target_schema "falcon_schema" <strong>Default:</strong> + --max_ignored_rows 0</dlentry></p>
+<p>Specifies the string literal that should indicate the null value in the extracted data. During the data load the column value matching this string will be loaded as null in the target.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>NULL</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any string literal</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>NULL</p>
+</div>
+</dd>
+<dt class="hdlist1">Enclosing character</dt>
+<dd>
+<p>Specify if the text columns in the source data needs to be enclosed in quotes.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>DOUBLE</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>SINGLE, DOUBLE</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>DOUBLE</p>
+</div>
+<div class="paragraph">
+<p><strong>Other notes:</strong></p>
+</div>
+<div class="paragraph">
+<p>This is required if the text data has newline character or delimiter character.</p>
+</div>
+</dd>
+<dt class="hdlist1">Escape character</dt>
+<dd>
+<p>Specify the escape character if using a text qualifier in the source data.</p>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>\"</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any ASCII character</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>\"</p>
+</div>
+</dd>
+<dt class="hdlist1">Fetch size</dt>
+<dd>
+<p>Specify the number of rows to be fetched at a time and processed in memory. If the value specified is zero then, all rows are extracted at once.</p>
+<div class="paragraph">
+<p>Mandatory field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>1000</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>Any numeric value</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>1000</p>
+</div>
+</dd>
+<dt class="hdlist1">TS load options</dt>
+<dd>
+<p>Specifies the parameters passed with the <code>tsload</code> command, in addition to the commands already included by the application. The format for these parameters is:</p>
+<div class="paragraph">
+<p>` --&lt;param_1_name&gt; &lt;optional_param_1_value&gt;`</p>
+</div>
+<div class="paragraph">
+<p>` --&lt;param_2_name&gt; &lt;optional_param_2_value&gt;`</p>
+</div>
+<div class="paragraph">
+<p>Optional field.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>--max_ignored_rows 0</p>
+</div>
+<div class="paragraph">
+<p><strong>Valid Values:</strong></p>
+</div>
+<div class="paragraph">
+<p>--user "dbuser" --password "$DIWD" --target_database "ditest" --target_schema "falcon_schema"</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong></p>
+</div>
+<div class="paragraph">
+<p>--max_ignored_rows 0</p>
+</div>
 </dd>
 </dl>
 </div>
