@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["Azure configuration options"] :: ThoughtSpot Software</title>
+    <title>Azure configuration options :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 2.3.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -15,7 +15,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>["Azure configuration options"] | ThoughtSpot Software</title>
+    <title>Azure configuration options | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
@@ -1550,7 +1550,7 @@
     <a class="nav-link" href="rhel-add-node.html">Add new nodes to clusters on RHEL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="inthebox.html">Packages installed with RHEL</a>
+    <a class="nav-link" href="rhel-packages.html">Packages installed with RHEL</a>
   </li>
 </ul>
   </li>
@@ -1559,7 +1559,7 @@
     <span class="nav-text">Hardware appliance</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel-packages.html">Hardware appliance overview</a>
+    <a class="nav-link" href="inthebox.html">Hardware appliance overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2704,24 +2704,27 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Software</a></li>
-    <li><a href="azure-configuration-options.html">["Azure configuration options"]</a></li>
+    <li><a href="azure-configuration-options.html">Azure configuration options</a></li>
   </ul>
 </nav>
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["Azure configuration options"]</h1>
+<h1 class="page">Azure configuration options</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
+<p>ThoughtSpot offers several Microsoft Azure instance types.</p>
+</div>
+<div class="paragraph">
 <p>ThoughtSpot can be deployed in your Azure environment by deploying compute VM instances in your VNET, or Azure Virtual Network, and your underlying persistent storage infrastructure.
 ThoughtSpot supports Premium SSD Managed Disks for persistent storage.
-For more information, see <a href="https://azure.microsoft.com/en-us/pricing/details/managed-disks/">Managed Disks pricing</a> in Microsoft&#8217;s Azure documentation.</p>
+For more information, see <a href="https://azure.microsoft.com/en-us/pricing/details/managed-disks/" target="_blank" rel="noopener">Managed Disks pricing</a> in Microsoft&#8217;s Azure documentation.</p>
 </div>
 <div class="paragraph">
 <p>All Azure VMs (nodes) in a ThoughtSpot cluster must be in the same availability zone (and, therefore, also in the same region).
 ThoughtSpot does not support deploying VMs( nodes) of the same cluster across availability zones.
-For more information, see <a href="https://docs.microsoft.com/en-us/azure/availability-zones/az-overview">What are Availability Zones in Azure?</a> in Microsoft&#8217;s Azure documentation.</p>
+For more information, see <a href="https://docs.microsoft.com/en-us/azure/availability-zones/az-overview" target="_blank" rel="noopener">What are Availability Zones in Azure?</a> in Microsoft&#8217;s Azure documentation.</p>
 </div>
 <div class="paragraph">
 <p>When choosing an instance type, ensure that it uses Intel CPUs.</p>

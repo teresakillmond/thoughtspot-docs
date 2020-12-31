@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["Add a node to a ThoughtSpot cluster on RHEL"] :: ThoughtSpot Software</title>
+    <title>Add a node to a ThoughtSpot cluster on RHEL :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 2.3.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -15,7 +15,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>["Add a node to a ThoughtSpot cluster on RHEL"] | ThoughtSpot Software</title>
+    <title>Add a node to a ThoughtSpot cluster on RHEL | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
@@ -1550,7 +1550,7 @@
     <a class="nav-link" href="rhel-add-node.html">Add new nodes to clusters on RHEL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="inthebox.html">Packages installed with RHEL</a>
+    <a class="nav-link" href="rhel-packages.html">Packages installed with RHEL</a>
   </li>
 </ul>
   </li>
@@ -1559,7 +1559,7 @@
     <span class="nav-text">Hardware appliance</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel-packages.html">Hardware appliance overview</a>
+    <a class="nav-link" href="inthebox.html">Hardware appliance overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2712,9 +2712,12 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["Add a node to a ThoughtSpot cluster on RHEL"]</h1>
+<h1 class="page">Add a node to a ThoughtSpot cluster on RHEL</h1>
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph">
+<p>You can easily configure an additional node for a ThoughtSpot cluster on RHEL.</p>
+</div>
 <div class="paragraph">
 <p>To add a new node to a ThoughtSpot cluster deployed through RHEL, you must first make this new node ready for ThoughtSpot.</p>
 </div>
@@ -2742,7 +2745,7 @@
 <h2 id="configure-ansible"><a class="anchor" href="#configure-ansible"></a>Configure the Ansible Playbook</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Follow the general steps for configuring the Ansible Playbook, either on link:{{ site.baseurl }}/appliance/rhel/rhel-install-online.html#configure-ansible[online clusters], or on link:{{ site.baseurl }}/appliance/rhel/rhel-install-offline.html#configure-ansible[offline clusters].</p>
+<p>Follow the general steps for configuring the Ansible Playbook, either on <a href="rhel-install-online.html#configure-ansible" class="page">online clusters</a>, or on <a href="rhel-install-offline.html#configure-ansible" class="page">offline clusters</a>.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2773,8 +2776,8 @@ the Ansible configuration must be identical to the existing cluster.</p>
 </div>
 <div class="paragraph">
 <p>As the Ansible Playbook runs, it will perform the same tasks on the new node that it completed during the initial cluster set-up, but only for the new node.
-See link:{{ site.baseurl }}/appliance/rhel/rhel-online.html#run-ansible}[Run Ansible].
-It will install all link:{{ site.baseurl }}/appliance/rhel/rhel-packages.html[Yum, Python, and R packages], configure the local user accounts for ThoughtSpot administration, install the ThoughtSpot CLI, and configure the node (create any necessary partitions, formatting the data disks, and running the <code>prepare disks</code> command).</p>
+See <a href="rhel-install-online.html#run-ansible]" class="page">Run Ansible</a>.
+It will install all <a href="rhel-packages.html" class="page">Yum, Python, and R packages</a>, configure the local user accounts for ThoughtSpot administration, install the ThoughtSpot CLI, and configure the node (create any necessary partitions, formatting the data disks, and running the <code>prepare disks</code> command).</p>
 </div>
 <div class="paragraph">
 <p>After the Ansible Playbook finishes, your new host is ready for installing the ThoughtSpot application.</p>
@@ -2805,19 +2808,19 @@ Refer to the ThoughtSpot documentation for the detailed steps to install Thought
 <div class="ulist">
 <ul>
 <li>
-<p>link:{{ site.baseurl }}/appliance/hardware/inthebox.html[Hardware appliance]</p>
+<p><a href="inthebox.html" class="page">Hardware appliance</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/aws/configuration-options.html[Amazon Web Services (AWS) EC2]</p>
+<p><a href="configuration-options.html" class="page">Amazon Web Services (AWS) EC2</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/azure/configuration-options.html[Microsoft Azure]</p>
+<p><a href="configuration-options.html" class="page">Microsoft Azure</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/gcp/configuration-options.html[Google Cloud Platform (GCP)]</p>
+<p><a href="configuration-options.html" class="page">Google Cloud Platform (GCP)</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/vmware/vmware-intro.html[VMware]</p>
+<p><a href="vmware-intro.html" class="page">VMware</a></p>
 </li>
 </ul>
 </div>

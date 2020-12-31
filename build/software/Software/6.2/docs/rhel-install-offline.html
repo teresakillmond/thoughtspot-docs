@@ -1550,7 +1550,7 @@
     <a class="nav-link" href="rhel-add-node.html">Add new nodes to clusters on RHEL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="inthebox.html">Packages installed with RHEL</a>
+    <a class="nav-link" href="rhel-packages.html">Packages installed with RHEL</a>
   </li>
 </ul>
   </li>
@@ -1559,7 +1559,7 @@
     <span class="nav-text">Hardware appliance</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel-packages.html">Hardware appliance overview</a>
+    <a class="nav-link" href="inthebox.html">Hardware appliance overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2809,7 +2809,7 @@
 </dd>
 <dt class="hdlist1">rpm_gpg</dt>
 <dd>
-<p>This directory contains the <a href="#https://access.redhat.com/documentation/en-us/red_hat_network/5.0.0/html/client_configuration_guide/ch-gpg-keys">GPG keys</a> that authenticate the public repository.</p>
+<p>This directory contains the <a href="https://access.redhat.com/documentation/en-us/red_hat_network/5.0.0/html/client_configuration_guide/ch-gpg-keys" target="_blank" rel="noopener">GPG keys</a> that authenticate the public repository.</p>
 </dd>
 <dt class="hdlist1">toolchain</dt>
 <dd>
@@ -2842,12 +2842,11 @@
 <dt class="hdlist1">admin_uid</dt>
 <dd>
 <p>The admin user ID parameter.</p>
-</dd>
+<div class="dlist">
+<dl>
 <dt class="hdlist1">On-premise deployments</dt>
 <dd>
-<div class="paragraph">
 <p>Use the default values.</p>
-</div>
 </dd>
 <dt class="hdlist1">AWS</dt>
 <dd>
@@ -2860,159 +2859,85 @@
 </dd>
 </dl>
 </div>
+</dd>
+<dt class="hdlist1">admin_gid</dt>
+<dd>
+<p>The admin user group ID.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">On-premise deployments</dt>
+<dd>
+<p>Use the default values.</p>
+</dd>
+<dt class="hdlist1">AWS</dt>
+<dd>
+<p>Use the default values.</p>
+</dd>
+<dt class="hdlist1">GCP</dt>
+<dd>
+<p>Add values that are not currently in use. To determine what values your system uses already, run the following command:
+<code>cat /etc/passwd | cut -d ":" -f3-4| sort</code></p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">ssh_user</dt>
+<dd>
+<p>The ssh_user must exist on the ThoughtSpot host, and it must have sudo privileges.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">On-premise deployments</dt>
+<dd>
+<p>The <code>ssh_user</code> is the user who runs the playbook, and who is connected to the hosts.</p>
+</dd>
+<dt class="hdlist1">AWS</dt>
+<dd>
+<p>The same as <code>ec2_user</code>.</p>
+</dd>
+<dt class="hdlist1">GCP</dt>
+<dd>
+<p>The <code>ssh_user</code> is the user who runs the playbook, and who is connected to the hosts.</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">ssh_private_key</dt>
+<dd>
+<p>Add the private key for ssh access to the hosts.yaml file. You can use an existing key pair, or generate a new key pair in the Ansible Control server.
+Run the following command to verify that the Ansible Control Server can connect to the hosts over <code>ssh</code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>ansible -m ping -i hosts.yaml all</code></pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">ssh_public_key</dt>
+<dd>
+<p>Add the public key to the ssh authorized_keys file for each host, and add the private key to the hosts.yaml file. You can use an existing key pair, or generate a new key pair in the Ansible Control server.
+Run the following command to verify that the Ansible Control Server can connect to the hosts over ssh:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>ansible -m ping -i hosts.yaml all</code></pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">extra_admin_ssh_key</dt>
+<dd>
+<p>[Optional] An additional or extra key may be required by your security application, such as Qualys, to connect to the hosts.</p>
+</dd>
+<dt class="hdlist1">http(s)_proxy</dt>
+<dd>
+<p>If the hosts must access public repositories through an internal proxy service, provide the proxy information.
+This release of ThoughtSpot does not support proxy credentials to authenticate to the proxy service.</p>
+</dd>
+<dt class="hdlist1">ts_partition_name</dt>
+<dd>
+<p>The extended name of the ThoughtSpot export partition, such as <code>/dev/sdb1</code>.</p>
+</dd>
+</dl>
+</div>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p>&lt;ol&gt;
-  &lt;li&gt;Obtain the Ansible tarball by joining our RHEL Early Access program, and email us your &lt;a href="mailto:early_access@thoughtspot.com?subject=RHEL%20Early%20Access%20Program%20Ansible%20File%20Request" target="_blank"&gt;Ansible request&lt;/a&gt;. Download it to your local machine.&lt;/li&gt;</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>&lt;li&gt;Unzip the Ansible tarball, to see the following files and directories on your local machine:&lt;br/&gt;
- &lt;dl&gt;
-  &lt;dlentry&gt;
-    &lt;dt&gt;customize.sh&lt;/dt&gt;
-    &lt;dd&gt;This script runs as the last step in the preparation process. You can use it to inject deployment-specific customizations, such as enabling or disabling a corporate proxy, configuring extra SSH keys, installing extra services, and so on. Additionally, you can include the &lt;code&gt;prepare_disks&lt;/code&gt; script here. Add the following line to the &lt;code&gt;customize.sh&lt;/code&gt; file: &lt;code&gt;sudo /usr/local/scaligent/bin/prepare_disks.sh&lt;/code&gt;.&lt;/dd&gt;
-  &lt;/dlentry&gt;
-  &lt;dlentry&gt;
-    &lt;dt&gt;hosts.sample&lt;/dt&gt;
-    &lt;dd&gt;&lt;/dd&gt;
-  &lt;/dlentry&gt;
-  &lt;dlentry&gt;
-    &lt;dt&gt;prod_image&lt;/dt&gt;
-    &lt;dd&gt;This directory contains the ThoughtSpot tools and &lt;code&gt;tscli&lt;/code&gt;, the ThoughtSpot CLI binary.&lt;/dd&gt;
-  &lt;/dlentry&gt;
-  &lt;dlentry&gt;
-    &lt;dt&gt;README.md&lt;/dt&gt;
-    &lt;dd&gt;Basic information for the unzipped file&lt;/dd&gt;
-  &lt;/dlentry&gt;
-  &lt;dlentry&gt;
-    &lt;dt&gt;rpm_gpg&lt;/dt&gt;
-    &lt;dd&gt;This directory contains the &lt;a href="https://access.redhat.com/documentation/en-us/red_hat_network/5.0.0/html/client_configuration_guide/ch-gpg-keys" target="_blank"&gt;GPG keys&lt;/a&gt; that authenticate the public repository.&lt;/dd&gt;
-  &lt;/dlentry&gt;
-  &lt;dlentry&gt;
-    &lt;dt&gt;toolchain&lt;/dt&gt;
-    &lt;dd&gt;The tools that are necessary to compile the instructions you define in the Ansible Playbook, the source code, into executables that can run on your device. The toolchain includes a compiler, a linker, and run-time libraries.&lt;/dd&gt;
-  &lt;/dlentry&gt;
-  &lt;dlentry&gt;
-    &lt;dt&gt;ts-new.yaml&lt;/dt&gt;
-    &lt;dd&gt;The Ansible Playbook for new installations.&lt;/dd&gt;
-  &lt;/dlentry&gt;
-  &lt;dlentry&gt;
-    &lt;dt&gt;ts-update.yaml&lt;/dt&gt;
-    &lt;dd&gt;The Ansible Playbook for updates.&lt;/dd&gt;
-  &lt;/dlentry&gt;
-  &lt;dlentry&gt;
-    &lt;dt&gt;ts.yaml&lt;/dt&gt;
-    &lt;dd&gt;&lt;/dd&gt;
-  &lt;/dlentry&gt;
-  &lt;dlentry&gt;
-    &lt;dt&gt;yum.repos.d&lt;/dt&gt;
-    &lt;dd&gt;This directory contains information about the yum repo used by the cluster.&lt;/dd&gt;
-  &lt;/dlentry&gt;
-&lt;/dl&gt;
-&lt;/li&gt;</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>&lt;li&gt;Copy the Ansible inventory file &lt;code&gt;hosts.sample&lt;/code&gt; to &lt;code&gt;hosts.yaml&lt;/code&gt;, and using a text editor of your choice, update the file to include your host configuration:&lt;br/&gt;</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>      &lt;dl&gt;
-       &lt;dlentry id="hosts"&gt;
-      &lt;dt&gt;hosts&lt;/dt&gt;
-      &lt;dd&gt;Add the IP addresses or hostnames of all hosts in the ThoughtSpot cluster.&lt;/dd&gt;
-    &lt;/dlentry&gt;
-    &lt;dlentry id="admin_uid"&gt;
-      &lt;dt&gt;admin_uid&lt;/dt&gt;
-      &lt;dd&gt;The admin user ID parameter.&lt;br/&gt;
-      &lt;dl&gt;
-        &lt;dlentry&gt;
-          &lt;dt&gt;On-premise deployments&lt;/dt&gt;
-          &lt;dd&gt;Use the default values.&lt;/dd&gt;
-        &lt;/dlentry&gt;
-        &lt;dlentry&gt;
-          &lt;dt&gt;AWS&lt;/dt&gt;
-          &lt;dd&gt;Use the default values.&lt;/dd&gt;
-        &lt;/dlentry&gt;
-        &lt;dlentry&gt;
-          &lt;dt&gt;GCP&lt;/dt&gt;
-          &lt;dd&gt;Add values that are not currently in use. To determine what values your system uses already, run the following command:&lt;br/&gt;
-          &lt;code&gt;cat /etc/passwd | cut -d ":" -f3-4| sort&lt;/code&gt;&lt;/dd&gt;
-        &lt;/dlentry&gt;
-      &lt;/dl&gt;
-&lt;/dd&gt;
-    &lt;/dlentry&gt;
-    &lt;dlentry id="admin-gid"&gt;
-      &lt;dt&gt;admin_gid&lt;/dt&gt;
-      &lt;dd&gt;The admin user group ID.&lt;br/&gt;
-      &lt;dl&gt;
-        &lt;dlentry&gt;
-          &lt;dt&gt;On-premise deployments&lt;/dt&gt;
-          &lt;dd&gt;Use the default values.&lt;/dd&gt;
-        &lt;/dlentry&gt;
-        &lt;dlentry&gt;
-          &lt;dt&gt;AWS&lt;/dt&gt;
-          &lt;dd&gt;Use the default values.&lt;/dd&gt;
-        &lt;/dlentry&gt;
-        &lt;dlentry&gt;
-          &lt;dt&gt;GCP&lt;/dt&gt;
-          &lt;dd&gt;Add values that are not currently in use. To determine what values your system uses already, run the following command:&lt;br/&gt;
-          &lt;code&gt;cat /etc/passwd | cut -d ":" -f3-4| sort&lt;/code&gt;&lt;/dd&gt;
-        &lt;/dlentry&gt;
-      &lt;/dl&gt;
-&lt;/dd&gt;
-    &lt;/dlentry&gt;
-    &lt;dlentry id="ssh_user"&gt;
-      &lt;dt&gt;ssh_user&lt;/dt&gt;
-      &lt;dd&gt;&lt;p&gt;The &lt;code&gt;ssh_user&lt;/code&gt; must exist on the ThoughtSpot host, and it must have &lt;code&gt;sudo&lt;/code&gt; privileges.&lt;/p&gt;
-      &lt;dl&gt;
-      &lt;dlentry&gt;
-        &lt;dt&gt;On-premise deployments&lt;/dt&gt;
-        &lt;dd&gt;The &lt;code&gt;ssh_user&lt;/code&gt; is the user who runs the playbook, and who is connected to the hosts.&lt;/dd&gt;
-      &lt;/dlentry&gt;
-      &lt;dlentry&gt;
-        &lt;dt&gt;AWS&lt;/dt&gt;
-        &lt;dd&gt;The same as &lt;code&gt;ec2_user&lt;/code&gt;.&lt;/dd&gt;
-      &lt;/dlentry&gt;
-      &lt;dlentry&gt;
-        &lt;dt&gt;GCP&lt;/dt&gt;
-        &lt;dd&gt;The &lt;code&gt;ssh_user&lt;/code&gt; is the user who runs the playbook, and who is connected to the hosts.&lt;/dd&gt;
-      &lt;/dlentry&gt;
-      &lt;/dl&gt;
-&lt;/dd&gt;
-    &lt;/dlentry&gt;
-    &lt;dlentry id="ssh_private_key"&gt;
-      &lt;dt&gt;ssh_private_key&lt;/dt&gt;
-      &lt;dd&gt;Add the private key for &lt;code&gt;ssh&lt;/code&gt; access to the &lt;code&gt;hosts.yaml&lt;/code&gt; file. You can use an existing key pair, or generate a new key pair in the Ansible Control server.&lt;br/&gt;
-      Run the following command to verify that the Ansible Control Server can connect to the hosts over &lt;code&gt;ssh&lt;/code&gt;:&lt;br/&gt;&lt;pre&gt;&lt;code&gt;ansible -m ping -i hosts.yaml all&lt;/code&gt;&lt;/pre&gt;&lt;/dd&gt;
-    &lt;/dlentry&gt;
-    &lt;dlentry id="ssh_public_key"&gt;
-      &lt;dt&gt;ssh_public_key&lt;/dt&gt;
-      &lt;dd&gt;Add the public key to the &lt;code&gt;ssh authorized_keys&lt;/code&gt; file for each host, and add the private key to the &lt;code&gt;hosts.yaml&lt;/code&gt; file. You can use an existing key pair, or generate a new key pair in the Ansible Control server.&lt;br/&gt;
-      Run the following command to verify that the Ansible Control Server can connect to the hosts over &lt;code&gt;ssh&lt;/code&gt;:&lt;br/&gt;&lt;pre&gt;&lt;code&gt;ansible -m ping -i hosts.yaml all&lt;/code&gt;&lt;/pre&gt;&lt;/dd&gt;
-    &lt;/dlentry&gt;
-    &lt;dlentry id="extra_admin_ssh_key"&gt;
-      &lt;dt&gt;extra_admin_ssh_key&lt;/dt&gt;
-      &lt;dd&gt;[Optional] An additional or extra key may be required by your security application, such as Qualys, to connect to the hosts.&lt;/dd&gt;
-    &lt;/dlentry&gt;
-    &lt;dlentry id="http(s)_proxy"&gt;
-      &lt;dt&gt;http(s)_proxy&lt;/dt&gt;
-      &lt;dd&gt;If the hosts must access public repositories through an internal proxy service, provide the proxy information.&lt;br/&gt;
-      This release of ThoughtSpot does not support proxy credentials to authenticate to the proxy service.&lt;/dd&gt;
-    &lt;/dlentry&gt;
-    &lt;dlentry id="ts_partition_name"&gt;
-      &lt;dt&gt;ts_partition_name&lt;/dt&gt;
-      &lt;dd&gt;The extended name of the ThoughtSpot export partition, such as &lt;code&gt;/dev/sdb1&lt;/code&gt;.&lt;/dd&gt;
-    &lt;/dlentry&gt;
-  &lt;/dl&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;</pre>
-</div>
 </div>
 </div>
 </div>

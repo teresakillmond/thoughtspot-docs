@@ -1550,7 +1550,7 @@
     <a class="nav-link" href="rhel-add-node.html">Add new nodes to clusters on RHEL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="inthebox.html">Packages installed with RHEL</a>
+    <a class="nav-link" href="rhel-packages.html">Packages installed with RHEL</a>
   </li>
 </ul>
   </li>
@@ -1559,7 +1559,7 @@
     <span class="nav-text">Hardware appliance</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel-packages.html">Hardware appliance overview</a>
+    <a class="nav-link" href="inthebox.html">Hardware appliance overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2780,9 +2780,18 @@ If you choose this method, you can run the script periodically using a cron job.
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>{% include note.html content="When you run the synchronization script, you perform a one-time sync.
-You must schedule a recurring sync using a cron job or your own scheduling tool to keep your ThoughtSpot users up to date with your users in LDAP." %}</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+When you run the synchronization script, you perform a one-time sync.
+You must schedule a recurring sync using a cron job or your own scheduling tool to keep your ThoughtSpot users up to date with your users in LDAP.
+</td>
+</tr>
+</table>
 </div>
 <div class="sect2">
 <h3 id="_run_the_sync_script"><a class="anchor" href="#_run_the_sync_script"></a>Run the sync script</h3>
@@ -2878,41 +2887,82 @@ It also deletes any other entities created in the ThoughtSpot system from this L
 <div class="sect2">
 <h3 id="_syncusersandgroups_py_command_line_switches"><a class="anchor" href="#_syncusersandgroups_py_command_line_switches"></a><code>syncUsersAndGroups.py</code> command-line switches</h3>
 <div class="paragraph">
-<p>The following table provides a description of each command-line switch available for the <code>syncUsersAndGroups</code> python script.<table width="100%" border="0"><col width="260"></col>
-  <col width="900"></col>
-	  <tbody><tr><th scope="col">Switch</th>
-	      <th scope="col">Description</th></tr>
-        <tr><td><code>--ts_hostport &lt;ts_hostport&gt;</code></td>
-  	      <td>ThoughtSpot cluster host port. Default port is 8088.</td></tr>
-	    <tr><td><code>--disable_ssl</code></td>
-	      <td>Controls the communication between the sync script and the ThoughtSpot cluster. It disables SSL communications between the script and the cluster ONLY, and prevents the need to provide SSL certs during the script execution in order to create users and groups.</td></tr>
-	    <tr><td><code>--ts_uname</code></td>
-	      <td>ThoughtSpot cluster username. The <code>admin</code> user is usually used.</td></tr>
-	    <tr><td><code>--ts_pass</code></td>
-	      <td>ThoughtSpot cluster password.</td></tr>
-		<tr><td><code>--ldap_hostport</code></td>
-	      <td>AD/LDAP server port that is queried. Default is 389.</td></tr>
-		<tr><td><code>--ldap_uname</code></td>
-	      <td>Username for the LDAP/AD server.</td></tr>
-		<tr><td><code>--ldap_pass &lt;ldap_password&gt;</code></td>
-	      <td>Password for the LDAP/AD server.</td></tr>
-		<tr><td><code>--sync</code></td>
-	      <td>Syncs users and groups which match the <code>basedn</code> and <code>filter_str</code> queries to your ThoughtSpot cluster.</td></tr>
-		<tr><td><code>--purge</code></td>
-	      <td>Purges any users that exist in ThoughtSpot, but not in AD.</td></tr>
-		<tr><td><code>--basedn</code></td>
-	      <td>Place in the directory that will be searched for users.</td></tr>
-		<tr><td><code>--filter_str</code></td>
-	      <td>Further filters results from your base DN.</td></tr>
-		<tr><td><code>--include_nontree_members</code></td>
-	      <td>Includes group members from LDAP/AD even if they do not belong to the current subtree that is being synced.</td></tr>
-    <tr><td><code>--user_identifier &lt;user_identifier&gt;</code></td>
-        <td>User name identifier key for user creation or sync.</td></tr>
-    <tr><td><code>--authdomain_identifier &lt;authdomain_identifier&gt;</code></td>
-        <td>Override domain name to be appended to user identifier in user name.</td></tr>
-    <tr><td><code>--email_identifier &lt;email_identifier&gt;</code></td>
-        <td>Email identifier key for user creation or sync.</td></tr></tbody></table></p>
+<p>The following table provides a description of each command-line switch available for the <code>syncUsersAndGroups</code> python script.</p>
 </div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Switch</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--ts_hostport &lt;ts_hostport&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ThoughtSpot cluster host port. Default port is 8088.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--disable_ssl</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Controls the communication between the sync script and the ThoughtSpot cluster. It disables SSL communications between the script and the cluster ONLY, and prevents the need to provide SSL certs during the script execution in order to create users and groups.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--ts_uname</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ThoughtSpot cluster username. The admin user is usually used.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--ts_pass</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ThoughtSpot cluster password.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--ldap_hostport</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AD/LDAP server port that is queried. Default is 389.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--ldap_uname</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Username for the LDAP/AD server.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--ldap_pass &lt;ldap_password&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Password for the LDAP/AD server.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--sync</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Syncs users and groups which match the basedn and filter_str queries to your ThoughtSpot cluster.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--purge</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Purges any users that exist in ThoughtSpot, but not in AD.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--basedn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place in the directory that will be searched for users.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--filter_str</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Further filters results from your base DN.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--include_nontree_members</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Includes group members from LDAP/AD even if they do not belong to the current subtree that is being synced.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--user_identifier &lt;user_identifier&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User name identifier key for user creation or sync.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--authdomain_identifier &lt;authdomain_identifier&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Override domain name to be appended to user identifier in user name.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--email_identifier &lt;email_identifier&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Email identifier key for user creation or sync.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>

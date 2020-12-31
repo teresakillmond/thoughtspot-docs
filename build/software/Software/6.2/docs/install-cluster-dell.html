@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["Install Cluster"] :: ThoughtSpot Software</title>
+    <title>Install Cluster :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 2.3.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -15,7 +15,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>["Install Cluster"] | ThoughtSpot Software</title>
+    <title>Install Cluster | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
@@ -1550,7 +1550,7 @@
     <a class="nav-link" href="rhel-add-node.html">Add new nodes to clusters on RHEL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="inthebox.html">Packages installed with RHEL</a>
+    <a class="nav-link" href="rhel-packages.html">Packages installed with RHEL</a>
   </li>
 </ul>
   </li>
@@ -1559,7 +1559,7 @@
     <span class="nav-text">Hardware appliance</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel-packages.html">Hardware appliance overview</a>
+    <a class="nav-link" href="inthebox.html">Hardware appliance overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2713,9 +2713,12 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["Install Cluster"]</h1>
+<h1 class="page">Install Cluster</h1>
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph">
+<p>Install your ThoughtSpot cluster(s) on your Dell appliance.</p>
+</div>
 <div class="paragraph">
 <p>Install the cluster using the ThoughtSpot software release bundle.
 Installation takes approximately one hour.
@@ -2724,15 +2727,15 @@ If you can, you can run the installer on your local computer.</p>
 </div>
 <div class="paragraph">
 <p>Refer to your welcome letter from ThoughtSpot to find the link to download the release bundle.
-If you do not have a link to download the release bundle, open a support ticket at link:{{ site.baseurl }}/appliance/contact.html[ThoughtSpot Support] to access the release bundle.</p>
+If you do not have a link to download the release bundle, open a support ticket at <a href="#contact.html">ThoughtSpot Support</a> to access the release bundle.</p>
 </div>
 <div class="paragraph">
 <p>Follow the steps in this checklist to install your cluster.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 5%;">
+<col style="width: 95%;">
 </colgroup>
 <tbody>
 <tr>
@@ -2778,13 +2781,22 @@ Ask your network administrator if you do not know your hostname.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>{% include note.html content="You can use another secure copy method, if you prefer a method other than the <code>scp</code> command." %}</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You can use another secure copy method, if you prefer a method other than the <code>scp</code> command.
+</td>
+</tr>
+</table>
 </div>
 </li>
 <li>
 <p>Alternatively, use <code>tscli fileserver download-release</code> to download the release bundle.
-+ You must link:{{ site.baseurl }}/reference/tscli-command-ref.html#tscli-fileserver[configure the fileserver] by running <code>tscli fileserver configure</code> before you can download the release.</p>
++ You must <a href="#tscli-command-ref.html#tscli-fileserver" class="page unresolved">configure the fileserver</a> by running <code>tscli fileserver configure</code> before you can download the release.</p>
 </li>
 </ol>
 </div>
@@ -2823,7 +2835,7 @@ For example, <code>/export/sdb1/TS_TASKS/install/6.0.tar.gz</code>.</p>
 </div>
 </li>
 <li>
-<p>Launch a <a href="https://linux.die.net/man/1/screen">screen</a> session.
+<p>Launch a <a href="https://linux.die.net/man/1/screen" target="_blank" rel="noopener">screen</a> session.
 Use screen to ensure that your installation does not stop if you lose network connectivity.</p>
 <div class="listingblock">
 <div class="content">
@@ -2841,7 +2853,7 @@ Use screen to ensure that your installation does not stop if you lose network co
 </li>
 <li>
 <p>Edit the output using your specific cluster information.
-For more information on this process, refer to link:{{ site.baseurl }}/appliance/hardware/cluster-create.html[Using the tscli cluster create command] and link:{{ site.baseurl }}/appliance/hardware/parameters-cluster-create.html[Parameters of the <code>cluster create</code> command].</p>
+For more information on this process, refer to <a href="#cluster-create.html">Using the tscli cluster create command</a> and <a href="#parameters-cluster-create.html">Parameters of the <code>cluster create</code> command</a>.</p>
 </li>
 </ol>
 </div>
@@ -2960,9 +2972,18 @@ Connecting to hosts...
 <p>Your output may look something like the above.
 Ensure that all diagnostics show <code>SUCCESS</code>.</p>
 </div>
-<div class="paragraph">
-<p>{% include warning.html content="If <code>tscli cluster check</code> returns an error, it may suggest you run <code>tscli storage gc</code> to resolve the issue.
-If you run <code>tscli storage gc</code>, note that it restarts your cluster." %}</p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+If <code>tscli cluster check</code> returns an error, it may suggest you run <code>tscli storage gc</code> to resolve the issue.
+If you run <code>tscli storage gc</code>, note that it restarts your cluster.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -3003,7 +3024,7 @@ If you run <code>tscli storage gc</code>, note that it restarts your cluster." %
 <p>The ThoughtSpot login page appears.</p>
 </li>
 <li>
-<p>In the link:{{ site.baseurl }}/appliance/hardware/install-cluster-dell.html#ts-login[ThoughtSpot sign-in window], enter admin credentials, and click <strong>Sign in</strong>.
+<p>In the <a href="#install-cluster-dell.html#ts-login" class="page unresolved">ThoughtSpot sign-in window</a>, enter admin credentials, and click <strong>Sign in</strong>.
 ThoughtSpot recommends changing the default admin password.</p>
 </li>
 </ol>
@@ -3017,11 +3038,63 @@ ThoughtSpot recommends changing the default admin password.</p>
 <h2 id="_lean_configuration"><a class="anchor" href="#_lean_configuration"></a>Lean configuration</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>(For use with thin provisioning only)</strong> If you have a link:{{ site.baseurl }}/appliance/cloud.html#use-small-and-medium-instance-types-when-applicable[small or medium instance type], with less than 100GB of data, advanced lean configuration is required before loading any data into ThoughtSpot.
-After installing the cluster, contact link:{{ site.baseurl }}/appliance/contact.html[ThoughtSpot Support] for assistance with this configuration.</p>
+<p><strong>(For use with thin provisioning only)</strong> If you have a <a href="#cloud.html#use-small-and-medium-instance-types-when-applicable" class="page unresolved">small or medium instance type</a>, with less than 100GB of data, advanced lean configuration is required before loading any data into ThoughtSpot.
+After installing the cluster, contact <a href="#contact.html">ThoughtSpot Support</a> for assistance with this configuration.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="set-config-error-recovery"><a class="anchor" href="#set-config-error-recovery"></a>Error recovery</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_set_config_error_recovery"><a class="anchor" href="#_set_config_error_recovery"></a><code>Set-config</code> error recovery</h3>
+<div class="paragraph">
+<p>If you get a warning about node detection when you run the <code>set-config</code> command, restart the node-scout service.</p>
 </div>
 <div class="paragraph">
-<p>{% include content/install/install-cluster-error-recovery.md %}</p>
+<p>Your error may look something like the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Connecting to local node-scout WARNING: Detected 0 nodes, but found configuration for
+only 1 nodes.
+Continuing anyway. Error in cluster config validation: [] is not a valid link-local
+IPv6 address for node: 0e:86:e2:23:8f:76 Configuration failed.
+Please retry or contact support.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Restart the node-scout service with the following command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ sudo systemctl restart node-scout</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ensure that you restarted the node-scout by running <code>sudo systemctl status node-scout</code>.
+Your output should specify that the node-scout service is active.
+It may look something like the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ sudo systemctl status node-scout
+  ● node-scout.service - Setup Node Scout service
+    Loaded: loaded (/etc/systemd/system/node-scout.service; enabled; vendor preset: disabled)
+    Active: active (running) since Fri 2019-12-06 13:56:29 PST; 4s ago</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Next, retry the <code>set-config</code> command.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ cat nodes.config | tscli cluster set-config</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command output should no longer have a warning.</p>
+</div>
 </div>
 </div>
 </div>
@@ -3034,12 +3107,16 @@ After installing the cluster, contact link:{{ site.baseurl }}/appliance/contact.
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://training.thoughtspot.com/create-upgrade-patch-a-thoughtspot-cluster/430642">Create a Cluster</a></p>
+<p><a href="https://training.thoughtspot.com/create-upgrade-patch-a-thoughtspot-cluster/430642" target="_blank" rel="noopener">Create a Cluster</a></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>See other training resources at + <a href="https://training.thoughtspot.com/">&lt;img src="{{ "/images/ts-u.png" | prepend: site.baseurl }}" alt="ThoughtSpot U"&gt;</a></p>
+<p>See other training resources at</p>
+</div>
+<div class="paragraph">
+<p>+
+<a href="https://training.thoughtspot.com/">ThoughtSpot U</a></p>
 </div>
 </div>
 </div>

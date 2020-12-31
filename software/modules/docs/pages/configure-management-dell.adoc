@@ -1,12 +1,12 @@
-= ["Configure the Dell Management Settings"]
+= Configure the Dell Management Settings
 :last_updated: 3/3/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Configure the management settings for Dell before you can deploy ThoughtSpot.
+:linkattrs:
+
+Configure the management settings for Dell before you can deploy ThoughtSpot.
 
 Input your specific network information to configure the management settings for your Dell appliance.
 Refer to <<dell-idrac-config,Dell Management Configuration>>.
-If you need additional guidance, view https://www.dell.com/support/home/us/en/04/product-support/product/dell-xc6420/overview[Dell Support] for this product.
+If you need additional guidance, view https://www.dell.com/support/home/us/en/04/product-support/product/dell-xc6420/overview[Dell Support,window=_blank] for this product.
 
 . *Open the iDRAC settings modal* Before the node boots, a screen appears on your monitor with several options.
 Click F2 to open the Bios setup menu.
@@ -21,9 +21,10 @@ image::dell-select-network.png[Select network]
 
 . *Fill out the iDRAC settings form* Add your specific network information for the IP address, Gateway, and Netmask in the empty boxes.
 DNS information is optional.
-Download and fill out the ThoughtSpot link:{{ site.baseurl }}/site-survey.pdf[site survey] for a quick reference, and ask your network administrator for help if you have not filled out the site survey yet.
-{% include warning.html content="If you configure DNS servers, you must only configure two servers.
-ThoughtSpot does not support configuration of three DNS servers." %}
+Download and fill out the ThoughtSpot xref:site-survey.pdf[site survey] for a quick reference, and ask your network administrator for help if you have not filled out the site survey yet.
+
+WARNING: If you configure DNS servers, you must only configure two servers.
+ThoughtSpot does not support configuration of three DNS servers.
  ** For *Enable IPv4*, select *enabled*.
  ** For *Enable DHCP*, select *disabled*.
 . *Save changes and reboot* Follow the prompts on the monitor to save changes to the management settings form, exit, and reboot the system.
@@ -35,4 +36,4 @@ image::dell-idracconfig.png[Dell iDRAC configuration]
 
 == Configure nodes
 
-Next, link:{{ site.baseurl }}/appliance/hardware/configure-nodes-dell.html[configure nodes.]
+Next, xref:configure-nodes-dell.adoc[configure nodes.]

@@ -1550,7 +1550,7 @@
     <a class="nav-link" href="rhel-add-node.html">Add new nodes to clusters on RHEL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="inthebox.html">Packages installed with RHEL</a>
+    <a class="nav-link" href="rhel-packages.html">Packages installed with RHEL</a>
   </li>
 </ul>
   </li>
@@ -1559,7 +1559,7 @@
     <span class="nav-text">Hardware appliance</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel-packages.html">Hardware appliance overview</a>
+    <a class="nav-link" href="inthebox.html">Hardware appliance overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2849,18 +2849,30 @@ Primary key must be the same as the distribution key.</p></td>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="datatypes.html" class="page">Data types</a> - ThoughtSpot supports the common data types.</p>
+<p><strong><a href="datatypes.html" class="page">Data types</a></strong></p>
+<div class="paragraph">
+<p>ThoughtSpot supports the common data types. Compare these with the data types you want to load, and do any necessary conversion ahead of loading the data.</p>
+</div>
+</li>
+<li>
+<p><strong><a href="constraints.html" class="page">Constraints</a></strong></p>
+<div class="paragraph">
+<p>Constraints include primary keys, foreign keys, and relationships. Relationships allow you to create a generic relationship for use when you want to join tables that don&#8217;t have a primary key/foreign key relationship.</p>
+</div>
+</li>
+<li>
+<p><strong><a href="sharding.html" class="page">Sharding</a></strong></p>
+<div class="paragraph">
+<p>For the best performance, you should split (or shard) very large tables across nodes. If you have a large dimension table, you might choose to co-shard it with the fact table it will be joined with.</p>
+</div>
+</li>
+<li>
+<p><strong><a href="chasm-trap.html" class="page">Chasm traps</a></strong></p>
+<div class="paragraph">
+<p>In a complex schema, you may have a fact table with no relationship to another fact table, except that each contains a foreign key to a shared dimension table. This is known as a chasm trap, and ThoughtSpot can handle it!</p>
+</div>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>Compare these with the data types you want to load, and do any necessary conversion ahead of loading the data.
-* <strong><a href="constraints.html" class="page">Constraints</a></strong> - Constraints include primary keys, foreign keys, and relationships.
-Relationships allow you to create a generic relationship for use when you want to join tables that don&#8217;t have a primary key/foreign key relationship.
-* <strong><a href="sharding.html" class="page">Sharding</a></strong> - For the best performance, you should split (or shard) very large tables across nodes.
-If you have a large dimension table, you might choose to co-shard it with the fact table it will be joined with.
-* <strong><a href="chasm-trap.html" class="page">Chasm traps</a></strong> - In a complex schema, you may have a fact table with no relationship to another fact table, except that each contains a foreign key to a shared dimension table.
-This is known as a chasm trap, and ThoughtSpot can handle it!</p>
 </div>
 </div>
 </div>

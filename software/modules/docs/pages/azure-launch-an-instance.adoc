@@ -1,8 +1,8 @@
-= ["Set up ThoughtSpot in Azure"]
+= Set up ThoughtSpot in Azure
 :last_updated: 9/1/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: After you determine your configuration options, you must set up your virtual machines using a ThoughtSpot image for Azure.
+:linkattrs:
+
+After you determine your configuration options, you must set up your virtual machines using a ThoughtSpot image for Azure.
 
 == About the ThoughtSpot image
 
@@ -16,11 +16,11 @@ The ThoughtSpot Virtual Machine has the ThoughtSpot software installed and confi
 Check with your ThoughtSpot contact to learn about the latest version of the ThoughtSpot Virtual Machine.
 
 Due to security restrictions, the ThoughtSpot Virtual Machine does not have default passwords for the administrator users.
-When you are ready to obtain the password, contact link:{{ site.baseurl }}/appliance/contact.html[ThoughtSpot Support].
+When you are ready to obtain the password, contact xref:contact.adoc[ThoughtSpot Support].
 
 This guide explains how to deploy ThoughtSpot on Microsoft Azure, using ThoughtSpot's CentOS-based image.
 You can also deploy ThoughtSpot on Azure using Red Hat Enterprise Linux (RHEL), allowing you to run ThoughtSpot on an RHEL 7.7 or 7.8 image that your organization manages internally.
-To install ThoughtSpot using RHEL, refer to the link:{{ site.baseurl }}/appliance/rhel/rhel.html[RHEL deployment guide].
+To install ThoughtSpot using RHEL, refer to the xref:rhel.adoc[RHEL deployment guide].
 
 == Set up ThoughtSpot in Azure
 
@@ -32,15 +32,15 @@ Complete these steps before launching your ThoughtSpot Virtual Machine:
 
 . Obtain an Azure login account.
 . Set up usage payment details with Microsoft Azure.
-. Find your company's https://portal.azure.com/#blade/HubsExtension/BrowseResourceGroups[Resource Group].
+. Find your company's https://portal.azure.com/#blade/HubsExtension/BrowseResourceGroups[Resource Group,window=_blank].
 (optional--you can also create one while creating your virtual machines.)
-. Download and fill out the ThoughtSpot link:{{ site.baseurl }}/site-survey.pdf[site survey] to have a quick reference for any networking information you may need to fill out.
+. Download and fill out the ThoughtSpot xref:site-survey.pdf[site survey] to have a quick reference for any networking information you may need to fill out.
 Ask your network administrator if you need help filling out the site survey.
 
 [#create-instance]
 === Create an instance
 
-Create your virtual machines based on the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/thoughtspot-inc.thoughtspotvirtualmachine[ThoughtSpot Virtual Machine].
+Create your virtual machines based on the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/thoughtspot-inc.thoughtspotvirtualmachine[ThoughtSpot Virtual Machine,window=_blank].
 
 . Log in to the Azure portal.
 +
@@ -55,7 +55,7 @@ image::azure-createvm.png[Create a virtual machine]
 +
 image::azure-basicsettings.png[Specify information under Basics]
 +
-[cols=2*]
+[cols="5%,95%"]
 |===
 | *1*
 | Choose a subscription type from the dropdown menu.
@@ -72,10 +72,10 @@ If not, _create new_.
 
 | *5*
 | Click *Browse all public and private images*, and search for the ThoughtSpot image.
-Choose the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/thoughtspot-inc.thoughtspotvirtualmachine?tab=Overview[ThoughtSpot Search & AI-driven Analytics (BYOL)] image.
+Choose the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/thoughtspot-inc.thoughtspotvirtualmachine?tab=Overview[ThoughtSpot Search & AI-driven Analytics (BYOL),window=_blank] image.
 
 | *6*
-| Refer to link:{{ site.baseurl }}/appliance/azure/configuration-options.html[Azure configuration options] to choose a size for your VM that works for your cluster needs.
+| Refer to xref:configuration-options.adoc[Azure configuration options] to choose a size for your VM that works for your cluster needs.
 
 | *7*
 | Select *SSH public key* and specify a username.
@@ -84,7 +84,7 @@ You cannot log into ThoughtSpot, or `ssh` into the command line, with this user.
 
 | *8*
 | Enter an SSH public key.
-You can choose *use existing public key* or *generate new key pair*, or link:{{ site.baseurl }}/appliance/contact.html[contact ThoughtSpot support] to obtain a public key.
+You can choose *use existing public key* or *generate new key pair*, or xref:contact.adoc[contact ThoughtSpot support] to obtain a public key.
 Note that this SSH public key is different from the SSH private key you use later, to ssh into your VM from the command line.
 This public key is necessary for Azure VM creation, but is not necessary at any later point.
 
@@ -109,16 +109,16 @@ ThoughtSpot recommends the Premium SSD disks.
 | *2*
 | Click *Create and attach a new disk*.
 Add two data disks.
-Refer to link:{{ site.baseurl }}/appliance/azure/configuration-options.html#thoughtspot-azure-instance-types.html[Azure configuration options] to see what size they should be.
+Refer to xref:configuration-options.adoc#thoughtspot-azure-instance-types.adoc[Azure configuration options] to see what size they should be.
 
 | *3*
 | Under *Advanced*, click *yes* to *use managed disks*.
 |===
 +
-{% include tip.html content=" The new Standard SSD disk types are only available for particular regions.
+{% include tip.adoc content=" The new Standard SSD disk types are only available for particular regions.
 Make sure this disk type is supported in the region you chose for your VM before selecting it." %}
 +
-See https://azure.microsoft.com/en-us/blog/preview-standard-ssd-disks-for-azure-virtual-machine-workloads/[Standard SSD Disks for Virtual Machine workloads] for more on SSD disks.
+See https://azure.microsoft.com/en-us/blog/preview-standard-ssd-disks-for-azure-virtual-machine-workloads/[Standard SSD Disks for Virtual Machine workloads,window=_blank] for more on SSD disks.
 ThoughtSpot recommends the Premium SSD disks.
 
 . Specify information under *Networking*.
@@ -176,11 +176,11 @@ The minimum ports needed are:
 | ODBC and JDBC drivers access
 |===
 
-{% include note.html content="Nodes purchased from Azure must be reachable to each other so that they can communicate and form a distributed environment.
+{% include note.adoc content="Nodes purchased from Azure must be reachable to each other so that they can communicate and form a distributed environment.
 ThoughtSpot requires that these ports be accessible between nodes within a cluster.
 Use your discretion about whether to restrict public access or not for all nodes and all ports." %}
 
-Refer to link:{{ site.baseurl }}/appliance/ports.html[Network ports] for more information.
+Refer to xref:ports.adoc[Network ports] for more information.
 
 [#prepare-for-startup]
 === Prepare for starting up ThoughtSpot
@@ -199,7 +199,7 @@ Log in as the admin user, using the private key that your ThoughtSpot contact se
 
  $ ssh -i <path_to_private_key> admin@<public_VM_IP>
 +
-// {% include tip.html content="If the SSH key is not accepted or lost, you can reset it by going to <strong>Reset password</strong> under <strong>Support + troubleshooting</strong> on the Azure Virtual Machine page. You can only do this before deploying the cluster." %}
+// {% include tip.adoc content="If the SSH key is not accepted or lost, you can reset it by going to <strong>Reset password</strong> under <strong>Support + troubleshooting</strong> on the Azure Virtual Machine page. You can only do this before deploying the cluster." %}
 
 . Update the password for both the `admin` and the `thoughtspot` users.
 +   The command prompts you to type in a new password, and then to confirm the password.
@@ -209,8 +209,8 @@ Log in as the admin user, using the private key that your ThoughtSpot contact se
  $ sudo passwd thoughtspot
  Changing password for user thoughtspot
 +
-{% include warning.html content="If you do not change the password, you cannot log back into your Azure VMs.
-Your private key does not work after initial installation." %}
+WARNING: If you do not change the password, you cannot log back into your Azure VMs.
+Your private key does not work after initial installation.
 
 . Update the file `/etc/hosts` with all the node IP addresses for the other VMs that will be part of the ThoughtSpot cluster.
 
@@ -243,14 +243,14 @@ Your result may look something like the following:
 
  $ sudo umount /mnt/resource
 +
-{% include warning.html content="The `/mnt/resource` disk, which is mounted on the `/dev/sdb` disk, is temporary.
+WARNING: The `/mnt/resource` disk, which is mounted on the `/dev/sdb` disk, is temporary.
 Any data on it will be wiped if the VM is shut down.
-You must unmount the `/mnt/resource` disk." %}
+You must unmount the `/mnt/resource` disk.
 
 . Prepare the disks /dev/sdc and /dev/sdd for ThoughtSpot by issuing the following command:
 +
-{% include warning.html content="Do not use the disk `/dev/sdb`.
-Any data on it will be wiped if the VM is shut down." %}
+WARNING: Do not use the disk `/dev/sdb`.
+Any data on it will be wiped if the VM is shut down.
 +
 ----
  $ sudo /usr/local/scaligent/bin/prepare_disks.sh /dev/sdc /dev/sdd
@@ -266,14 +266,14 @@ Any data on it will be wiped if the VM is shut down." %}
 
 As you develop your expertise in Azure VM creation, we recommend the following ThoughtSpot U course:
 
-* https://training.thoughtspot.com/node-network-configuration/510569[Node Configuration: Azure]
+* https://training.thoughtspot.com/node-network-configuration/510569[Node Configuration: Azure,window=_blank]
 
-See other training resources at + https://training.thoughtspot.com/[<img src="{{ "/images/ts-u.png" | prepend: site.baseurl }}" alt="ThoughtSpot U">]
+See other training resources at + https://training.thoughtspot.com/[ThoughtSpot U,window=_blank]
 
 ////
 ### Create network support settings
 
-{% include tip.html content="All changes in this section must be re-applied each
+{% include tip.adoc content="All changes in this section must be re-applied each
 time after a cluster is created or updated. If these changes are not present, a
 reboot of the VMs will not have network access. So when updating these files,
 keep a backup to copy after any subsequent cluster creation or update." %}

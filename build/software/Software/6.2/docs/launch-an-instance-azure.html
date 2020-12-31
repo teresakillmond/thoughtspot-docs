@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["Set up ThoughtSpot in Azure"] :: ThoughtSpot Software</title>
+    <title>Set up ThoughtSpot in Azure :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 2.3.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -15,7 +15,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>["Set up ThoughtSpot in Azure"] | ThoughtSpot Software</title>
+    <title>Set up ThoughtSpot in Azure | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
@@ -1550,7 +1550,7 @@
     <a class="nav-link" href="rhel-add-node.html">Add new nodes to clusters on RHEL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="inthebox.html">Packages installed with RHEL</a>
+    <a class="nav-link" href="rhel-packages.html">Packages installed with RHEL</a>
   </li>
 </ul>
   </li>
@@ -1559,7 +1559,7 @@
     <span class="nav-text">Hardware appliance</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel-packages.html">Hardware appliance overview</a>
+    <a class="nav-link" href="inthebox.html">Hardware appliance overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2713,7 +2713,14 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["Set up ThoughtSpot in Azure"]</h1>
+<h1 class="page">Set up ThoughtSpot in Azure</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>After you determine your configuration options, you must set up your virtual machines using a ThoughtSpot image for Azure.</p>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_about_the_thoughtspot_image"><a class="anchor" href="#_about_the_thoughtspot_image"></a>About the ThoughtSpot image</h2>
 <div class="sectionbody">
@@ -2731,12 +2738,12 @@ Check with your ThoughtSpot contact to learn about the latest version of the Tho
 </div>
 <div class="paragraph">
 <p>Due to security restrictions, the ThoughtSpot Virtual Machine does not have default passwords for the administrator users.
-When you are ready to obtain the password, contact link:{{ site.baseurl }}/appliance/contact.html[ThoughtSpot Support].</p>
+When you are ready to obtain the password, contact <a href="contact.html" class="page">ThoughtSpot Support</a>.</p>
 </div>
 <div class="paragraph">
 <p>This guide explains how to deploy ThoughtSpot on Microsoft Azure, using ThoughtSpot&#8217;s CentOS-based image.
 You can also deploy ThoughtSpot on Azure using Red Hat Enterprise Linux (RHEL), allowing you to run ThoughtSpot on an RHEL 7.7 or 7.8 image that your organization manages internally.
-To install ThoughtSpot using RHEL, refer to the link:{{ site.baseurl }}/appliance/rhel/rhel.html[RHEL deployment guide].</p>
+To install ThoughtSpot using RHEL, refer to the <a href="rhel.html" class="page">RHEL deployment guide</a>.</p>
 </div>
 </div>
 </div>
@@ -2760,7 +2767,7 @@ To install ThoughtSpot using RHEL, refer to the link:{{ site.baseurl }}/applianc
 <p>Set up usage payment details with Microsoft Azure.</p>
 </li>
 <li>
-<p>Find your company&#8217;s <a href="https://portal.azure.com/#blade/HubsExtension/BrowseResourceGroups">Resource Group</a>.
+<p>Find your company&#8217;s <a href="https://portal.azure.com/#blade/HubsExtension/BrowseResourceGroups" target="_blank" rel="noopener">Resource Group</a>.
 (optional&#8212;&#8203;you can also create one while creating your virtual machines.)</p>
 </li>
 <li>
@@ -2773,7 +2780,7 @@ Ask your network administrator if you need help filling out the site survey.</p>
 <div class="sect2">
 <h3 id="create-instance"><a class="anchor" href="#create-instance"></a>Create an instance</h3>
 <div class="paragraph">
-<p>Create your virtual machines based on the <a href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/thoughtspot-inc.thoughtspotvirtualmachine">ThoughtSpot Virtual Machine</a>.</p>
+<p>Create your virtual machines based on the <a href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/thoughtspot-inc.thoughtspotvirtualmachine" target="_blank" rel="noopener">ThoughtSpot Virtual Machine</a>.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2787,104 +2794,79 @@ Ask your network administrator if you need help filling out the site survey.</p>
 <p>On the Azure portal homepage, hover over <strong>Virtual machines</strong>, and click <strong>Create</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/azure-createvm.png" alt="Create a virtual machine">
+<img src="_images/azure-createvm.png" alt="azure createvm">
 </div>
 </div>
 </li>
 <li>
 <p>Specify information under <strong>Basics</strong>.</p>
-<div class="paragraph">
-<p>+
-image::{{ site.baseurl }}/images/azure-basicsettings.png[Specify information under Basics]</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/azure-basicsettings.png" alt="Specify information under Basics">
 </div>
-<div class="paragraph">
-<p>+</p>
-</div>
-</li>
-</ol>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 100%;">
+<col style="width: 5%;">
+<col style="width: 95%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>1</strong></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Choose a subscription type from the dropdown menu.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2</strong></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If your company already has a resource group, <em>select existing</em>.
 If not, <em>create new</em>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>3</strong></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specify a name for your virtual machine.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>4</strong></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specify the region in which you are creating the VM.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>5</strong></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Click <strong>Browse all public and private images</strong>, and search for the ThoughtSpot image.
-Choose the <a href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/thoughtspot-inc.thoughtspotvirtualmachine?tab=Overview">ThoughtSpot Search &amp; AI-driven Analytics (BYOL)</a> image.</p></td>
+Choose the <a href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/thoughtspot-inc.thoughtspotvirtualmachine?tab=Overview" target="_blank" rel="noopener">ThoughtSpot Search &amp; AI-driven Analytics (BYOL)</a> image.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>6</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Refer to link:{{ site.baseurl }}/appliance/azure/configuration-options.html[Azure configuration options] to choose a size for your VM that works for your cluster needs.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Refer to <a href="configuration-options.html" class="page">Azure configuration options</a> to choose a size for your VM that works for your cluster needs.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>7</strong></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Select <strong>SSH public key</strong> and specify a username.
 Note that this user is necessary for Azure VM creation, but the user does not exist in ThoughtSpot.
 You cannot log into ThoughtSpot, or <code>ssh</code> into the command line, with this user.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>8</strong></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Enter an SSH public key.
-You can choose <strong>use existing public key</strong> or <strong>generate new key pair</strong>, or link:{{ site.baseurl }}/appliance/contact.html[contact ThoughtSpot support] to obtain a public key.
+You can choose <strong>use existing public key</strong> or <strong>generate new key pair</strong>, or <a href="contact.html" class="page">contact ThoughtSpot support</a> to obtain a public key.
 Note that this SSH public key is different from the SSH private key you use later, to ssh into your VM from the command line.
 This public key is necessary for Azure VM creation, but is not necessary at any later point.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>9</strong></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Choose <strong>allow selected ports</strong>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>10</strong></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Open the necessary Inbound and Outbound ports to ensure that the ThoughtSpot processes do not get blocked.
 See the <a href="#port-requirements">minimum port requirements</a>.</p></td>
 </tr>
 </tbody>
 </table>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
 <li>
 <p>Specify information under <strong>Disks</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/azure-disks.png" alt="Specify disk information">
+<img src="_images/azure-disks.png" alt="Specify disk information">
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -2902,7 +2884,7 @@ ThoughtSpot recommends the Premium SSD disks.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Click <strong>Create and attach a new disk</strong>.
 Add two data disks.
-Refer to link:{{ site.baseurl }}/appliance/azure/configuration-options.html#thoughtspot-azure-instance-types.html[Azure configuration options] to see what size they should be.</p></td>
+Refer to <a href="configuration-options.html#thoughtspot-azure-instance-types.adoc" class="page">Azure configuration options</a> to see what size they should be.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>3</strong></p></td>
@@ -2910,12 +2892,21 @@ Refer to link:{{ site.baseurl }}/appliance/azure/configuration-options.html#thou
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>{% include tip.html content=" The new Standard SSD disk types are only available for particular regions.
-Make sure this disk type is supported in the region you chose for your VM before selecting it." %}</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The new Standard SSD disk types are only available for particular regions.
+Make sure this disk type is supported in the region you chose for your VM before selecting it.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>See <a href="https://azure.microsoft.com/en-us/blog/preview-standard-ssd-disks-for-azure-virtual-machine-workloads/">Standard SSD Disks for Virtual Machine workloads</a> for more on SSD disks.
+<p>See <a href="https://azure.microsoft.com/en-us/blog/preview-standard-ssd-disks-for-azure-virtual-machine-workloads/" target="_blank" rel="noopener">Standard SSD Disks for Virtual Machine workloads</a> for more on SSD disks.
 ThoughtSpot recommends the Premium SSD disks.</p>
 </div>
 </li>
@@ -2923,13 +2914,13 @@ ThoughtSpot recommends the Premium SSD disks.</p>
 <p>Specify information under <strong>Networking</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/azure-networking.png" alt="Specify networking information">
+<img src="_images/azure-networking.png" alt="Specify networking information">
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 5%;">
+<col style="width: 95%;">
 </colgroup>
 <tbody>
 <tr>
@@ -3015,13 +3006,22 @@ This ensures that the ThoughtSpot processes do not get blocked.</p>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>{% include note.html content="Nodes purchased from Azure must be reachable to each other so that they can communicate and form a distributed environment.
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Nodes purchased from Azure must be reachable to each other so that they can communicate and form a distributed environment.
 ThoughtSpot requires that these ports be accessible between nodes within a cluster.
-Use your discretion about whether to restrict public access or not for all nodes and all ports." %}</p>
+Use your discretion about whether to restrict public access or not for all nodes and all ports.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Refer to link:{{ site.baseurl }}/appliance/ports.html[Network ports] for more information.</p>
+<p>Refer to <a href="ports.html" class="page">Network ports</a> for more information.</p>
 </div>
 </div>
 <div class="sect2">
@@ -3069,9 +3069,18 @@ $ sudo passwd thoughtspot
 Changing password for user thoughtspot</pre>
 </div>
 </div>
-<div class="paragraph">
-<p>{% include warning.html content="If you do not change the password, you cannot log back into your Azure VMs.
-Your private key does not work after initial installation." %}</p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+If you do not change the password, you cannot log back into your Azure VMs.
+Your private key does not work after initial installation.
+</td>
+</tr>
+</table>
 </div>
 </li>
 <li>
@@ -3118,17 +3127,35 @@ Your private key does not work after initial installation." %}</p>
 <pre>$ sudo umount /mnt/resource</pre>
 </div>
 </div>
-<div class="paragraph">
-<p>{% include warning.html content="The <code>/mnt/resource</code> disk, which is mounted on the <code>/dev/sdb</code> disk, is temporary.
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+The <code>/mnt/resource</code> disk, which is mounted on the <code>/dev/sdb</code> disk, is temporary.
 Any data on it will be wiped if the VM is shut down.
-You must unmount the <code>/mnt/resource</code> disk." %}</p>
+You must unmount the <code>/mnt/resource</code> disk.
+</td>
+</tr>
+</table>
 </div>
 </li>
 <li>
 <p>Prepare the disks /dev/sdc and /dev/sdd for ThoughtSpot by issuing the following command:</p>
-<div class="paragraph">
-<p>{% include warning.html content="Do not use the disk <code>/dev/sdb</code>.
-Any data on it will be wiped if the VM is shut down." %}</p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Do not use the disk <code>/dev/sdb</code>.
+Any data on it will be wiped if the VM is shut down.
+</td>
+</tr>
+</table>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3161,12 +3188,16 @@ Any data on it will be wiped if the VM is shut down." %}</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://training.thoughtspot.com/node-network-configuration/510569">Node Configuration: Azure</a></p>
+<p><a href="https://training.thoughtspot.com/node-network-configuration/510569" target="_blank" rel="noopener">Node Configuration: Azure</a></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>See other training resources at + <a href="https://training.thoughtspot.com/">&lt;img src="{{ "/images/ts-u.png" | prepend: site.baseurl }}" alt="ThoughtSpot U"&gt;</a></p>
+<p>See other training resources at</p>
+</div>
+<div class="paragraph">
+<p>+
+<a href="https://training.thoughtspot.com/" target="_blank" rel="noopener">ThoughtSpot U</a></p>
 </div>
 </div>
 </div>

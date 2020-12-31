@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["Configure ThoughtSpot Nodes on the SMC Appliance"] :: ThoughtSpot Software</title>
+    <title>Configure ThoughtSpot Nodes on the SMC Appliance :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 2.3.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -15,7 +15,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>["Configure ThoughtSpot Nodes on the SMC Appliance"] | ThoughtSpot Software</title>
+    <title>Configure ThoughtSpot Nodes on the SMC Appliance | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
@@ -1550,7 +1550,7 @@
     <a class="nav-link" href="rhel-add-node.html">Add new nodes to clusters on RHEL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="inthebox.html">Packages installed with RHEL</a>
+    <a class="nav-link" href="rhel-packages.html">Packages installed with RHEL</a>
   </li>
 </ul>
   </li>
@@ -1559,7 +1559,7 @@
     <span class="nav-text">Hardware appliance</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel-packages.html">Hardware appliance overview</a>
+    <a class="nav-link" href="inthebox.html">Hardware appliance overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2713,17 +2713,20 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["Configure ThoughtSpot Nodes on the SMC Appliance"]</h1>
+<h1 class="page">Configure ThoughtSpot Nodes on the SMC Appliance</h1>
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph">
+<p>Configure your nodes before you can install your cluster(s).</p>
+</div>
 <div class="paragraph">
 <p>After you connect the appliance, configure the nodes in your Mac or Windows terminal emulator.
 Follow the steps in this checklist.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 5%;">
+<col style="width: 95%;">
 </colgroup>
 <tbody>
 <tr>
@@ -2753,7 +2756,7 @@ Follow the steps in this checklist.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>If you completed ThoughtSpot&#8217;s link:{{ site.baseurl }}/site-survey.pdf[site survey] form and returned it to link:{{ site.baseurl }}/appliance/contact.html[ThoughtSpot Support] before ThoughtSpot shipped the appliance, the appliance may be pre-configured for your network environment and ready to install and connect to your network.</p>
+<p>If you completed ThoughtSpot&#8217;s <a href="#site-survey.pdf">site survey</a> form and returned it to <a href="contact.html" class="page">ThoughtSpot Support</a> before ThoughtSpot shipped the appliance, the appliance may be pre-configured for your network environment and ready to install and connect to your network.</p>
 </div>
 <div class="paragraph">
 <p>If the network configuration was not pre-set, then this step must be done as part of the installation process.</p>
@@ -2782,10 +2785,10 @@ Run <code>ssh admin@&lt;nodeIP&gt;</code>.
 </div>
 </li>
 <li>
-<p>If the output shows READY, and looks like the link:{{ site.baseurl }}/appliance/hardware/smc-cluster-install.html#check-cluster-health[cluster status output] in the next article, your appliance is configured.</p>
+<p>If the output shows READY, and looks like the <a href="smc-cluster-install.html#check-cluster-health" class="page">cluster status output</a> in the next article, your appliance is configured.</p>
 </li>
 <li>
-<p>Skip to link:{{ site.baseurl }}/appliance/hardware/smc-cluster-install.html#step-3-finalize-installation[Finalize installation].</p>
+<p>Skip to <a href="smc-cluster-install.html#step-3-finalize-installation" class="page">Finalize installation</a>.</p>
 </li>
 </ol>
 </div>
@@ -2839,7 +2842,7 @@ If your <code>/install</code> subdirectory does not exist, you may have to use t
 <div class="paragraph">
 <p>Run the <code>tscli cluster get-config</code> command to get a template for network configuration.
 Redirect it to the file <code>nodes.config</code>.
-You can find more information on this process in the link:{{ site.baseurl }}/appliance/hardware/nodesconfig-example.html[nodes.config file reference].</p>
+You can find more information on this process in the <a href="nodesconfig-example.html" class="page">nodes.config file reference</a>.</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -2854,26 +2857,35 @@ You can find more information on this process in the link:{{ site.baseurl }}/app
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add your specific network information for the nodes in the <code>nodes.config</code> file, as demonstrated in the link:{{ site.baseurl }}/appliance/hardware/nodesconfig-example.html#autodiscovery-of-one-node-example[autodiscovery of one node example].
+<p>Add your specific network information for the nodes in the <code>nodes.config</code> file, as demonstrated in the <a href="nodesconfig-example.html#autodiscovery-of-one-node-example" class="page">autodiscovery of one node example</a>.
 Run <code>vim nodes.config</code> to edit the file.</p>
 <div class="listingblock">
 <div class="content">
 <pre> $ vim nodes.config</pre>
 </div>
 </div>
-<div class="paragraph">
-<p>{% include note.html content="Some of the information in the <code>nodes.config</code> file may be pre-populated from earlier steps.
-For example, if you specified an IP address while creating VMs, that IP address might already be present in your <code>nodes.config</code> file." %}</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Some of the information in the <code>nodes.config</code> file may be pre-populated from earlier steps.
+For example, if you specified an IP address while creating VMs, that IP address might already be present in your <code>nodes.config</code> file.
+</td>
+</tr>
+</table>
 </div>
 </li>
 <li>
-<p>Fill in the areas specified in link:{{ site.baseurl }}/appliance/hardware/parameters-nodesconfig.html[Parameters of the nodes.config file] with your specific network information.
+<p>Fill in the areas specified in <a href="parameters-nodesconfig.html" class="page">Parameters of the nodes.config file</a> with your specific network information.
 + If you have additional nodes, complete each node within the nodes.config file in the same way.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Edit only the parts of the nodes.config file that are explicitly discussed in link:{{ site.baseurl }}/appliance/hardware/parameters-nodesconfig.html[Parameters of <code>nodes.config</code>].
+<p>Edit only the parts of the nodes.config file that are explicitly discussed in <a href="parameters-nodesconfig.html" class="page">Parameters of <code>nodes.config</code></a>.
 If you delete quotation marks, commas, or other parts of the code, it may cause setup to fail.</p>
 </div>
 </div>
@@ -2886,7 +2898,7 @@ If you delete quotation marks, commas, or other parts of the code, it may cause 
 </div>
 <div class="paragraph">
 <p>Run <code>$ cat nodes.config | tscli cluster set-config</code> in your terminal.
-+ If the command returns an error, refer to link:{{ site.baseurl }}/appliance/hardware/smc-cluster-install.html#set-config-error-recovery[set-config error recovery].</p>
++ If the command returns an error, refer to <a href="smc-cluster-install.html#set-config-error-recovery" class="page">set-config error recovery</a>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2953,12 +2965,16 @@ Done setting up ThoughtSpot</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://training.thoughtspot.com/node-network-configuration/437249">Network Configuration</a></p>
+<p><a href="https://training.thoughtspot.com/node-network-configuration/437249" target="_blank" rel="noopener">Network Configuration</a></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>See other training resources at + <a href="https://training.thoughtspot.com/">&lt;img src="{{ "/images/ts-u.png" | prepend: site.baseurl }}" alt="ThoughtSpot U"&gt;</a></p>
+<p>See other training resources at</p>
+</div>
+<div class="paragraph">
+<p>+
+<a href="https://training.thoughtspot.com/" target="_blank" rel="noopener">ThoughtSpot U</a></p>
 </div>
 </div>
 </div>
@@ -2966,7 +2982,7 @@ Done setting up ThoughtSpot</code></pre>
 <h2 id="_install_the_cluster"><a class="anchor" href="#_install_the_cluster"></a>Install the cluster</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Next, link:{{ site.baseurl }}/appliance/hardware/smc-cluster-install.html[install your cluster.]</p>
+<p>Next, <a href="smc-cluster-install.html" class="page">install your cluster.</a></p>
 </div>
 </div>
 </div>

@@ -1550,7 +1550,7 @@
     <a class="nav-link" href="rhel-add-node.html">Add new nodes to clusters on RHEL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="inthebox.html">Packages installed with RHEL</a>
+    <a class="nav-link" href="rhel-packages.html">Packages installed with RHEL</a>
   </li>
 </ul>
   </li>
@@ -1559,7 +1559,7 @@
     <span class="nav-text">Hardware appliance</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel-packages.html">Hardware appliance overview</a>
+    <a class="nav-link" href="inthebox.html">Hardware appliance overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2766,24 +2766,40 @@ Each group includes a set of privileges for its users.</p>
 <img src="_images/add-group.png" alt="Enter details for the new group">
 </div>
 </div>
-<div class="paragraph">
-<p><table><colgroup><col width="20%"></col>
- <col width="80%"></col></colgroup>
-  <tr><th>Field</th>
-    <th>Description</th></tr>
-  <tr id="group-name"><th>Group name</th>
-    <td>Enter a unique name for the group.</td></tr>
-  <tr id="display-name"><th>Display name</th>
-    <td>Name of the group as it appears in ThoughtSpot.</td></tr>
-  <tr id="sharing-visibioity"><th>Sharing visibility</th>
-    <td>Indicate whether objects can be shared with this group. When set to <b>SHARABLE</b>,
-    this group is an option in the <b>Share</b> dialog.</td></tr>
-  <tr id="description"><th>Description</th>
-    <td>Optionally, enter a description.</td></tr>
-  <tr id="privileges"><th>Privileges</th>
-    <td>Check the &lt;a href="{{"/admin/users-groups/about-users-groups.html#list-of-privileges" | prepend: site.baseurl }}"&gt;privileges&lt;/a&gt; you want to grant to the group. If you add the privilege <b>Has administration privileges</b> to a group, all users in that group can see all the data in ThoughtSpot. Administrators can always see all data sources, and &lt;a href="{{"/admin/data-security/about-row-security.html#" | prepend: site.baseurl }}"&gt;Row level security&lt;/a&gt; does not
-    apply to them.</td></tr></table></p>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Group name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a unique name for the group.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Display name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the group as it appears in ThoughtSpot.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sharing visibility</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicate whether objects can be shared with this group. When set to <strong>SHARABLE</strong>, this group is an option in the <strong>Share</strong> dialog.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optionally, enter a description.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Privileges</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Check the <a href="about-users-groups.html#list-of-privileges" class="page">privileges</a> you want to grant to the group. If you add the privilege Has administration privileges to a group, all users in that group can see all the data in ThoughtSpot. Administrators can always see all data sources, and <a href="about-row-security.html" class="page">Row level security</a> does not apply to them.</p></td>
+</tr>
+</tbody>
+</table>
 </li>
 <li>
 <p>You can also add <em><a href="#add-groups">Groups</a></em> (these would be the subgroups of the group you are editing), <em><a href="#add-users">Users</a></em>.

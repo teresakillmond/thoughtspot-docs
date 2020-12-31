@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["Set up AWS resources for ThoughtSpot"] :: ThoughtSpot Software</title>
+    <title>Set up AWS resources for ThoughtSpot :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 2.3.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -15,7 +15,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>["Set up AWS resources for ThoughtSpot"] | ThoughtSpot Software</title>
+    <title>Set up AWS resources for ThoughtSpot | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
@@ -1550,7 +1550,7 @@
     <a class="nav-link" href="rhel-add-node.html">Add new nodes to clusters on RHEL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="inthebox.html">Packages installed with RHEL</a>
+    <a class="nav-link" href="rhel-packages.html">Packages installed with RHEL</a>
   </li>
 </ul>
   </li>
@@ -1559,7 +1559,7 @@
     <span class="nav-text">Hardware appliance</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel-packages.html">Hardware appliance overview</a>
+    <a class="nav-link" href="inthebox.html">Hardware appliance overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2713,7 +2713,14 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["Set up AWS resources for ThoughtSpot"]</h1>
+<h1 class="page">Set up AWS resources for ThoughtSpot</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>After you determine your configuration options, you must set up your virtual machines (VMs) in AWS using a ThoughtSpot Amazon Machine Image (AMI).</p>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="aws-overview"><a class="anchor" href="#aws-overview"></a>Overview of ThoughtSpot setup in AWS</h2>
 <div class="sectionbody">
@@ -2722,8 +2729,8 @@
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 5%;">
+<col style="width: 95%;">
 </colgroup>
 <tbody>
 <tr>
@@ -2800,7 +2807,7 @@ It contains the maximum number of disks to handle a fully loaded VM.</p>
 <div class="paragraph">
 <p>This guide explains how to deploy ThoughtSpot on AWS, using ThoughtSpot&#8217;s CentOS-based image.
 You can also deploy ThoughtSpot on AWS using Red Hat Enterprise Linux (RHEL), allowing you to run ThoughtSpot on an RHEL 7.7 or 7.8 image that your organization manages internally.
-To install ThoughtSpot using RHEL, choose your own RHEL-based image on the AWS console, instead of ThoughtSpot&#8217;s image, and refer to the link:{{ site.baseurl }}/appliance/rhel/rhel.html[RHEL deployment guide] after you launch your virtual machines.</p>
+To install ThoughtSpot using RHEL, choose your own RHEL-based image on the AWS console, instead of ThoughtSpot&#8217;s image, and refer to the <a href="rhel.html" class="page">RHEL deployment guide</a> after you launch your virtual machines.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2808,7 +2815,7 @@ To install ThoughtSpot using RHEL, choose your own RHEL-based image on the AWS c
 <div class="paragraph">
 <p>This guide explains how to deploy ThoughtSpot on AWS, using ThoughtSpot&#8217;s CentOS-based image.
 You can also deploy ThoughtSpot on AWS using Amazon Linux 2, allowing you to run ThoughtSpot on an Amazon Linux 2 image that your organization manages internally.
-To install ThoughtSpot using Amazon Linux 2, choose your own Amazon Linux 2-based image on the AWS console, instead of ThoughtSpot&#8217;s image, and refer to the link:{{ site.baseurl }}/appliance/amazon-linux-2/al2-overview.html[Amazon Linux 2 deployment guide] after you launch your virtual machines.</p>
+To install ThoughtSpot using Amazon Linux 2, choose your own Amazon Linux 2-based image on the AWS console, instead of ThoughtSpot&#8217;s image, and refer to the <a href="#amazon-linux-2/al2-overview.adoc" class="page unresolved">Amazon Linux 2 deployment guide</a> after you launch your virtual machines.</p>
 </div>
 </div>
 </div>
@@ -2821,8 +2828,8 @@ To install ThoughtSpot using Amazon Linux 2, choose your own Amazon Linux 2-base
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 5%;">
+<col style="width: 95%;">
 </colgroup>
 <tbody>
 <tr>
@@ -2835,20 +2842,20 @@ To install ThoughtSpot using Amazon Linux 2, choose your own Amazon Linux 2-base
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#10063;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Networking information: Download and fill out the ThoughtSpot link:{{ site.baseurl }}/site-survey.pdf[site survey] to have a quick reference point.
+<td class="tableblock halign-left valign-top"><p class="tableblock">Networking information: Download and fill out the ThoughtSpot <a href="#site-survey.pdf">site survey</a> to have a quick reference point.
 Ask your network administrator if you need help filling out the site survey.</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>For more information about IAM, see: <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html">What Is IAM?</a> in Amazon&#8217;s AWS documentation.</p>
+<p>For more information about IAM, see: <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.adoc" target="_blank" rel="noopener">What Is IAM?</a> in Amazon&#8217;s AWS documentation.</p>
 </div>
 <div class="sect2">
 <h3 id="aws-required"><a class="anchor" href="#aws-required"></a>Required AWS components</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 5%;">
+<col style="width: 95%;">
 </colgroup>
 <tbody>
 <tr>
@@ -2856,7 +2863,7 @@ Ask your network administrator if you need help filling out the site survey.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">An AWS Virtual Private Cloud (VPC).
 An AWS VPC is a virtual network specifically for your AWS account.
 It exists in all availability zones in your region, but you can specify a local zone for even lower latency.
-For more details, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in Amazon&#8217;s AWS documentation.</p></td>
+For more details, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.adoc" target="_blank" rel="noopener">VPCs and Subnets</a> in Amazon&#8217;s AWS documentation.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#10063;</p></td>
@@ -2866,12 +2873,12 @@ For details, see <a href="#ami">Choose VM instances</a>.</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#10063;</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">AWS security groups.
-For required open ports, see link:{{ site.baseurl }}/appliance/ports.html[Network ports].</p></td>
+For required open ports, see <a href="ports.html" class="page">Network ports</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#10063;</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">AWS VM instances.
-For instance type recommendations, see link:{{ site.baseurl }}/appliance/aws/configuration-options.html#ts-aws-instance-types[ThoughtSpot AWS instance types].</p></td>
+For instance type recommendations, see <a href="configuration-options.html#ts-aws-instance-types" class="page">ThoughtSpot AWS instance types</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#10063;</p></td>
@@ -2922,12 +2929,21 @@ California</p></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>{% include note.html content="The AMI is based in the N.
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The AMI is based in the N.
 California region.
 You may have to temporarily switch to the N.
 California region on the AWS website to initiate copying the AMI to the region of your choice.
-Once the copy is complete, you can return to your own region." %}</p>
+Once the copy is complete, you can return to your own region.
+</td>
+</tr>
+</table>
 </div>
 </li>
 </ol>
@@ -2940,7 +2956,7 @@ Once the copy is complete, you can return to your own region." %}</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Choose the appropriate EC2 instance type: See link:{{ site.baseurl }}/appliance/aws/configuration-options.html#ts-aws-instance-types[ThoughtSpot AWS instance types] for help choosing the correct instance type for your cluster.</p>
+<p>Choose the appropriate EC2 instance type: See <a href="configuration-options.html#ts-aws-instance-types" class="page">ThoughtSpot AWS instance types</a> for help choosing the correct instance type for your cluster.</p>
 </li>
 <li>
 <p>Networking requirements: 10 GbE network bandwidth is needed between the VMs.
@@ -2954,12 +2970,21 @@ Add all nodes in the same placement group.</p>
 </li>
 <li>
 <p>Determine the number of EC2 instances you need: Based on the datasets, this number will vary.
-Refer to link:{{ site.baseurl }}/appliance/aws/configuration-options.html#ts-aws-instance-types[ThoughtSpot AWS instance types] for recommended nodes for a given data size.</p>
+Refer to <a href="configuration-options.html#ts-aws-instance-types" class="page">ThoughtSpot AWS instance types</a> for recommended nodes for a given data size.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>{% include note.html content="Staging larger datasets (&gt; 50 GB per VM), may require provisioning additional attached EBS volumes that are SSD (gp2)." %}</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Staging larger datasets (&gt; 50 GB per VM), may require provisioning additional attached EBS volumes that are SSD (gp2).
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -2968,7 +2993,7 @@ Refer to link:{{ site.baseurl }}/appliance/aws/configuration-options.html#ts-aws
 <div class="sectionbody">
 <div class="paragraph">
 <p>If you are going to deploy your cluster using the S3-storage option, you must set up that bucket before you set up your cluster.
-Contact link:{{ site.baseurl }}/admin/misc/contact.html#[ThoughtSpot Support] to find out if your specific cluster size can benefit from the S3 storage option.</p>
+Contact <a href="contact.html" class="page">ThoughtSpot Support</a> to find out if your specific cluster size can benefit from the S3 storage option.</p>
 </div>
 <div class="paragraph">
 <p>Follow these steps to set up an S3 bucket in AWS.</p>
@@ -3023,10 +3048,10 @@ If you are using the S3 persistent storage model, you can encrypt the S3 buckets
 <div class="ulist">
 <ul>
 <li>
-<p>For EBS, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in Amazon&#8217;s AWS documentation.</p>
+<p>For EBS, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.adoc" target="_blank" rel="noopener">Amazon EBS Encryption</a> in Amazon&#8217;s AWS documentation.</p>
 </li>
 <li>
-<p>For S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon S3 Default Encryption for S3 Buckets</a> in Amazon&#8217;s AWS documentation.</p>
+<p>For S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.adoc" target="_blank" rel="noopener">Amazon S3 Default Encryption for S3 Buckets</a> in Amazon&#8217;s AWS documentation.</p>
 </li>
 </ul>
 </div>
@@ -3044,7 +3069,7 @@ If you are using the S3 persistent storage model, you can encrypt the S3 buckets
 <p>On the AWS website, navigate to the EC2 service dashboard by clicking <strong>Services</strong>, then <strong>EC2</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/navigate_to_ec2_dashboard.png" alt="navigate to ec2 dashboard">
+<img src="_images/navigate_to_ec2_dashboard.png" alt="navigate to ec2 dashboard">
 </div>
 </div>
 </li>
@@ -3057,7 +3082,7 @@ Let ThoughtSpot support know if you change your region.</p>
 <p>Start the process of launching a VM by clicking <strong>Launch Instance</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/launch_instance.png" alt="launch instance">
+<img src="_images/launch_instance.png" alt="launch instance">
 </div>
 </div>
 </li>
@@ -3070,13 +3095,13 @@ Choose AMI</strong>, search <strong>ThoughtSpot</strong> to find the ThoughtSpot
 Ensure that you select the ThoughtSpot AMI listed <a href="#ami">above</a>, which you entered earlier in this process.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/aws-choose-ami.png" alt="Select the ThoughtSpot AMI">
+<img src="_images/aws-choose-ami.png" alt="Select the ThoughtSpot AMI">
 </div>
 </div>
 </li>
 <li>
 <p>On the <strong>Choose an Instance Type</strong> page, select a ThoughtSpot-supported instance type.
-(See link:{{ site.baseurl }}/appliance/aws/configuration-options.html#ts-aws-instance-types[ThoughtSpot AWS instance types].)</p>
+(See <a href="configuration-options.html#ts-aws-instance-types" class="page">ThoughtSpot AWS instance types</a>.)</p>
 </li>
 <li>
 <p>Click <strong>Next: Configure Instance Details</strong>.</p>
@@ -3091,23 +3116,23 @@ Create a new IAM role that provides read/write access to the specific bucket, an
 For details on that, click <strong>Create new IAM role</strong>.</p>
 </div>
 <div class="paragraph">
-<p><strong>AWS Systems Manager Agent</strong>: If you plan to use the <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html">AWS SSM agent</a> as an alternative to SSH, create a new IAM role with an SSM policy to grant AWS SSM permission to perform actions on your instances.
-Refer to <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/setup-instance-profile.html">Create an IAM instance profile for Systems Manager</a>.</p>
+<p><strong>AWS Systems Manager Agent</strong>: If you plan to use the <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.adoc" target="_blank" rel="noopener">AWS SSM agent</a> as an alternative to SSH, create a new IAM role with an SSM policy to grant AWS SSM permission to perform actions on your instances.
+Refer to <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/setup-instance-profile.adoc" target="_blank" rel="noopener">Create an IAM instance profile for Systems Manager</a>.</p>
 </div>
 </li>
 <li>
 <p>Click <strong>Next: Add Storage</strong>.
 Add the required storage based on your instance type (either EBS volumes or S3), and the amount of data you are deploying.
-For specific storage requirements, refer to link:{{ site.baseurl }}/appliance/aws/configuration-options.html#ts-aws-instance-types[ThoughtSpot AWS instance types].</p>
+For specific storage requirements, refer to <a href="configuration-options.html#ts-aws-instance-types" class="page">ThoughtSpot AWS instance types</a>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/aws-add-storage.png" alt="Add storage volumes">
+<img src="_images/aws-add-storage.png" alt="aws add storage">
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 5%;">
+<col style="width: 95%;">
 </colgroup>
 <tbody>
 <tr>
@@ -3157,7 +3182,7 @@ For easier configuration, ThoughtSpot recommends that you enable full access bet
 Check ThoughtSpot&#8217;s Network ports documentation to determine the minimum required ports you must open for your ThoughtSpot appliance.&lt;/li&gt;&lt;/ul&gt; {{site.data.alerts.end}}</p>
 </div>
 <div class="paragraph">
-<p>Refer to link:{{ site.baseurl }}/appliance/ports.html[Network ports].</p>
+<p>Refer to <a href="ports.html" class="page">Network ports</a>.</p>
 </div>
 </li>
 <li>
@@ -3185,7 +3210,7 @@ After it starts, it appears on the EC2 console.</p>
 <h2 id="prepare-vms"><a class="anchor" href="#prepare-vms"></a>Prepare the VMs</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Before installing a ThoughtSpot cluster, an administrator must link:{{ site.baseurl }}/appliance/aws/aws-prepare-vms.html[prepare the VMs.]</p>
+<p>Before installing a ThoughtSpot cluster, an administrator must <a href="aws-prepare-vms.html" class="page">prepare the VMs.</a></p>
 </div>
 </div>
 </div>
@@ -3198,12 +3223,16 @@ After it starts, it appears on the EC2 console.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://training.thoughtspot.com/node-network-configuration/484851">Node Configuration: AWS</a></p>
+<p><a href="https://training.thoughtspot.com/node-network-configuration/484851" target="_blank" rel="noopener">Node Configuration: AWS</a></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>See other training resources at + <a href="https://training.thoughtspot.com/">&lt;img src="{{ "/images/ts-u.png" | prepend: site.baseurl }}" alt="ThoughtSpot U"&gt;</a></p>
+<p>See other training resources at</p>
+</div>
+<div class="paragraph">
+<p>+
+<a href="https://training.thoughtspot.com/">ThoughtSpot U</a></p>
 </div>
 </div>
 </div>

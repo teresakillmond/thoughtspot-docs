@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["RHEL installation prerequisites"] :: ThoughtSpot Software</title>
+    <title>RHEL installation prerequisites :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 2.3.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -15,7 +15,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>["RHEL installation prerequisites"] | ThoughtSpot Software</title>
+    <title>RHEL installation prerequisites | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
@@ -1550,7 +1550,7 @@
     <a class="nav-link" href="rhel-add-node.html">Add new nodes to clusters on RHEL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="inthebox.html">Packages installed with RHEL</a>
+    <a class="nav-link" href="rhel-packages.html">Packages installed with RHEL</a>
   </li>
 </ul>
   </li>
@@ -1559,7 +1559,7 @@
     <span class="nav-text">Hardware appliance</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel-packages.html">Hardware appliance overview</a>
+    <a class="nav-link" href="inthebox.html">Hardware appliance overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2712,20 +2712,25 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["RHEL installation prerequisites"]</h1>
+<h1 class="page">RHEL installation prerequisites</h1>
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph">
+<p>Prepare the system and ThoughtSpot clusters for installation.</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 5%;">
+<col style="width: 95%;">
 </colgroup>
-<tbody>
+<thead>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#10063;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#set-up-hosts">1.
-Set up hosts for the ThoughtSpot cluster</a></p></td>
+<th class="tableblock halign-left valign-top">&#10063;</th>
+<th class="tableblock halign-left valign-top"><a href="#set-up-hosts">1.
+Set up hosts for the ThoughtSpot cluster</a></th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#10063;</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#partition-hosts">2.
@@ -2770,22 +2775,22 @@ Please refer to the relevant deployment sections in our documentation for the ex
 <div class="ulist">
 <ul>
 <li>
-<p>ThoughtSpot-certified hardware appliance manufactured by link:{{ site.baseurl }}/appliance/hardware/installing-dell.html[DELL]</p>
+<p>ThoughtSpot-certified hardware appliance manufactured by <a href="installing-dell.html" class="page">DELL</a></p>
 </li>
 <li>
-<p>ThoughtSpot-certified hardware appliance manufactured by link:{{ site.baseurl }}/appliance/hardware/installing-the-smc.html[SMC]</p>
+<p>ThoughtSpot-certified hardware appliance manufactured by <a href="installing-the-smc.html" class="page">SMC</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/aws/configuration-options.html[Amazon Web Services (AWS) EC2]</p>
+<p><a href="configuration-options.html" class="page">Amazon Web Services (AWS) EC2</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/gcp/configuration-options.html[Google Cloud Platform (GCP)]</p>
+<p><a href="configuration-options.html" class="page">Google Cloud Platform (GCP)</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/vmware/vmware-intro.html[VMware]</p>
+<p><a href="vmware-intro.html" class="page">VMware</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/azure/configuration-options.html[Microsoft Azure]</p>
+<p><a href="configuration-options.html" class="page">Microsoft Azure</a></p>
 </li>
 </ul>
 </div>
@@ -2799,30 +2804,55 @@ Please refer to the relevant deployment sections in our documentation for the ex
 </div>
 <div class="paragraph">
 <p>Note that the size of the root drive on appliances is limited to 200GB;
-the partition requirements are therefore somewhat different when compared to the other environments.<table><tbody><tr><th>Platform</th>
-<th>Partition</th>
-<th>Drive type</th>
-<th>Description</th>
-<th>Minimum size</th></tr>
-<tr><th rowspan="2">Hosts in AWS, GCP, Azure, and VMWare&nbsp;</th>
-<td>OS partition</td>
-<td>SSD (root drive)</td>
-<td>Root partition for OS, <code>/tmp</code></td>
-<td>100GB<br></br>Allocate at least 50GB to <code>/tmp</code></td></tr>
-<tr><td>Export partition</td>
-<td>SSD (root drive)&nbsp;</td>
-<td>Stores ThoughtSpot objects, hdfs logs, service logs, and so on</td>
-<td>200GB</td></tr>
-<tr><th rowspan="2">Hosts on ThoughtSpot-certified hardware appliances</th>
-<td>OS partition</td>
-<td>SSD (root drive)</td>
-<td>Root partition for OS, <code>/tmp</code></td>
-<td>80GB<br></br>Allocate at least 50GB to <code>/tmp</code></td></tr>
-<tr><td>Export partition</td>
-<td>SSD (root drive)&nbsp;</td>
-<td>Stores ThoughtSpot objects, hdfs logs, service logs, and so on</td>
-<td>100GB</td></tr></tbody></table></p>
+the partition requirements are therefore somewhat different when compared to the other environments.</p>
 </div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Platform</th>
+<th class="tableblock halign-left valign-top">Partition</th>
+<th class="tableblock halign-left valign-top">Drive type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Minimum size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Hosts in AWS, GCP, Azure, and VMWare</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OS partition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SSD (root drive)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Root partition for OS, /tmp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100GB Allocate at least 50GB to /tmp</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Export partition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SSD (root drive)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stores ThoughtSpot objects, hdfs logs, service logs, and so on</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">200GB</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Hosts on ThoughtSpot-certified hardware appliances</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OS partition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SSD (root drive)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Root partition for OS, /tmp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">80GB
+Allocate at least 50GB to /tmp</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Export partition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SSD (root drive)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stores ThoughtSpot objects, hdfs logs, service logs, and so on</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">service logs, and so on	100GB</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
@@ -2841,11 +2871,20 @@ RHEL 7.7 and 7.8 used to come with a Linux kernel of version 3.10.x, which has a
 The default Linux kernel version for RHEL 7.7 and 7.8 is now 3.10.0-1127.19.1.
 However, you may have an older RHEL 7.7 or 7.8, with a Linux kernel of version 3.10.x.
 You must upgrade to 3.10.0-1127.19.1.
-If you have trouble upgrading your Linux kernel to version 3.10.0-1127.19.1, link:{{ site.baseurl }}/appliance/contact.html[contact ThoughtSpot Support].
+If you have trouble upgrading your Linux kernel to version 3.10.0-1127.19.1, link:{{ site.baseurl }}/appliance/contact.adoc[contact ThoughtSpot Support].
 This is a requirement for <strong><em>all</em></strong> platforms: appliance, cloud, and VMware.</p>
 </div>
-<div class="paragraph">
-<p>{% include warning.html content="If Linux kernel version is not 3.10.0-1127.19.1, you may run into unexpected node reboots and possible loss of data." %}</p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+If Linux kernel version is not 3.10.0-1127.19.1, you may run into unexpected node reboots and possible loss of data.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -2873,7 +2912,7 @@ This is a requirement for <strong><em>all</em></strong> platforms: appliance, cl
 <p>Make sure that you can download RHEL packages to all hosts, either from the <a href="#official-repositories">official package repositories</a>, or from a <a href="#mirror-repositories">mirror repository</a> owned and managed by your organization.</p>
 </div>
 <div class="paragraph">
-<p>If you cannot access the RHEL repositories, there is no mirror repository in your organization, or you are unable to access Yum, Python, or R repositories, please link:{{ site.baseurl }}/appliance/contact.html[contact ThoughtSpot Support].</p>
+<p>If you cannot access the RHEL repositories, there is no mirror repository in your organization, or you are unable to access Yum, Python, or R repositories, please <a href="contact.html" class="page">contact ThoughtSpot Support</a>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Official package repositories</strong></p>

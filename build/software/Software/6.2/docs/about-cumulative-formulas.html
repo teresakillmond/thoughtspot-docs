@@ -1550,7 +1550,7 @@
     <a class="nav-link" href="rhel-add-node.html">Add new nodes to clusters on RHEL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="inthebox.html">Packages installed with RHEL</a>
+    <a class="nav-link" href="rhel-packages.html">Packages installed with RHEL</a>
   </li>
 </ul>
   </li>
@@ -1559,7 +1559,7 @@
     <span class="nav-text">Hardware appliance</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel-packages.html">Hardware appliance overview</a>
+    <a class="nav-link" href="inthebox.html">Hardware appliance overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2732,21 +2732,54 @@ If you supply both a measure and attributes, the formula returns the aggregate o
 You should experiment with only a measure and then with an attribute to see which output best meets your use case.</p>
 </div>
 <div class="paragraph">
-<p>The cumulative formulas are:<table><colgroup><col style="width:25%"></col>
-    <col style="width:75%"></col></colgroup>
-    <tr><th>Function</th>
-       <th>Description</th></tr>
-    <tr><td><code>cumulative_average</code></td>
-       <td>Takes a measure and one or more attributes. Returns the average of the measure, accumulated by the attribute(s) in the order specified. For example:
-       <code>cumulative_average (revenue, order date, state)</code></td></tr>
-    <tr><td><code>cumulative_max</code></td>
-       <td>Takes a measure and one or more attributes. Returns the maximum of the measure, accumulated by the
-    attribute(s) in the order specified. For example: <code>cumulative_max (revenue, state)</code></td></tr>
-    <tr><td><code>cumulative_min</code></td>
-       <td>Takes a measure and one or more attributes. Returns the minimum of the measure, accumulated by the attribute(s) in the order specified. or example: <code>cumulative_min (revenue, campaign)</code></td></tr>
-    <tr><td><code>cumulative_sum</code></td>
-       <td>Takes a measure and one or more attributes. Returns the sum of the measure, accumulated by the attribute(s) in the order specified. For example:  <code>cumulative_sum (revenue, order date)</code></td></tr></table></p>
+<p>The cumulative formulas are:</p>
 </div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Function</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>cumulative_average</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Takes a measure and one or more attributes. Returns the average of the measure, accumulated by the attribute(s) in the order specified. For example: <code>cumulative_average (revenue, order date, state)</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>cumulative_max</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Takes a measure and one or more attributes. Returns the maximum of the measure, accumulated by the attribute(s) in the order specified. For example: <code>cumulative_max (revenue, state)</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>cumulative_min</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Takes a measure and one or more attributes. Returns the minimum of the measure, accumulated by the attribute(s) in the order specified. or example: <code>cumulative_min (revenue, campaign)</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>cumulative_sum</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Takes a measure and one or more attributes. Returns the sum of the measure, accumulated by the attribute(s) in the order specified. For example: <code>cumulative_sum (revenue, order date)</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">

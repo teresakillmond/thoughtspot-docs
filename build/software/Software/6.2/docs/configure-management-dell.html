@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["Configure the Dell Management Settings"] :: ThoughtSpot Software</title>
+    <title>Configure the Dell Management Settings :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 2.3.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -15,7 +15,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>["Configure the Dell Management Settings"] | ThoughtSpot Software</title>
+    <title>Configure the Dell Management Settings | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
@@ -1550,7 +1550,7 @@
     <a class="nav-link" href="rhel-add-node.html">Add new nodes to clusters on RHEL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="inthebox.html">Packages installed with RHEL</a>
+    <a class="nav-link" href="rhel-packages.html">Packages installed with RHEL</a>
   </li>
 </ul>
   </li>
@@ -1559,7 +1559,7 @@
     <span class="nav-text">Hardware appliance</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel-packages.html">Hardware appliance overview</a>
+    <a class="nav-link" href="inthebox.html">Hardware appliance overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2713,13 +2713,16 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["Configure the Dell Management Settings"]</h1>
+<h1 class="page">Configure the Dell Management Settings</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
+<p>Configure the management settings for Dell before you can deploy ThoughtSpot.</p>
+</div>
+<div class="paragraph">
 <p>Input your specific network information to configure the management settings for your Dell appliance.
 Refer to <a href="#dell-idrac-config">Dell Management Configuration</a>.
-If you need additional guidance, view <a href="https://www.dell.com/support/home/us/en/04/product-support/product/dell-xc6420/overview">Dell Support</a> for this product.</p>
+If you need additional guidance, view <a href="https://www.dell.com/support/home/us/en/04/product-support/product/dell-xc6420/overview" target="_blank" rel="noopener">Dell Support</a> for this product.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2747,29 +2750,28 @@ Select <strong>iDRAC settings</strong> to configure your iDRAC management settin
 <li>
 <p><strong>Fill out the iDRAC settings form</strong> Add your specific network information for the IP address, Gateway, and Netmask in the empty boxes.
 DNS information is optional.
-Download and fill out the ThoughtSpot link:{{ site.baseurl }}/site-survey.pdf[site survey] for a quick reference, and ask your network administrator for help if you have not filled out the site survey yet.
-{% include warning.html content="If you configure DNS servers, you must only configure two servers.
-ThoughtSpot does not support configuration of three DNS servers." %}</p>
-<div class="ulist">
-<ul>
-<li>
-<p>For <strong>Enable IPv4</strong>, select <strong>enabled</strong>.</p>
-</li>
-<li>
-<p>For <strong>Enable DHCP</strong>, select <strong>disabled</strong>.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Save changes and reboot</strong> Follow the prompts on the monitor to save changes to the management settings form, exit, and reboot the system.</p>
-</li>
-<li>
-<p><strong>Log in to ThoughtSpot</strong> After the system reboots, the login page appears.
-Log in as an administrator.
-Ask your network administrator if you do not know the admin credentials.</p>
+Download and fill out the ThoughtSpot <a href="#site-survey.pdf">site survey</a> for a quick reference, and ask your network administrator for help if you have not filled out the site survey yet.</p>
 </li>
 </ol>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+If you configure DNS servers, you must only configure two servers.
+ThoughtSpot does not support configuration of three DNS servers.
+ <strong> For <strong>Enable IPv4</strong>, select <strong>enabled</strong>.
+ </strong> For <strong>Enable DHCP</strong>, select <strong>disabled</strong>.
+. <strong>Save changes and reboot</strong> Follow the prompts on the monitor to save changes to the management settings form, exit, and reboot the system.
+. <strong>Log in to ThoughtSpot</strong> After the system reboots, the login page appears.
+Log in as an administrator.
+Ask your network administrator if you do not know the admin credentials.
+</td>
+</tr>
+</table>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -2782,7 +2784,7 @@ Ask your network administrator if you do not know the admin credentials.</p>
 <h2 id="_configure_nodes"><a class="anchor" href="#_configure_nodes"></a>Configure nodes</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Next, link:{{ site.baseurl }}/appliance/hardware/configure-nodes-dell.html[configure nodes.]</p>
+<p>Next, <a href="configure-nodes-dell.html" class="page">configure nodes.</a></p>
 </div>
 </div>
 </div>

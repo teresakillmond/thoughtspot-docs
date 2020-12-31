@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["VMware configuration overview"] :: ThoughtSpot Software</title>
+    <title>VMware configuration overview :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 2.3.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -15,7 +15,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>["VMware configuration overview"] | ThoughtSpot Software</title>
+    <title>VMware configuration overview | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
@@ -1550,7 +1550,7 @@
     <a class="nav-link" href="rhel-add-node.html">Add new nodes to clusters on RHEL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="inthebox.html">Packages installed with RHEL</a>
+    <a class="nav-link" href="rhel-packages.html">Packages installed with RHEL</a>
   </li>
 </ul>
   </li>
@@ -1559,7 +1559,7 @@
     <span class="nav-text">Hardware appliance</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel-packages.html">Hardware appliance overview</a>
+    <a class="nav-link" href="inthebox.html">Hardware appliance overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2712,7 +2712,7 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["VMware configuration overview"]</h1>
+<h1 class="page">VMware configuration overview</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
@@ -2733,9 +2733,18 @@ The following diagram shows the components of a VMware and ThoughtSpot architect
 <img src="_images/vmware-components.png" alt="vmware components">
 </div>
 </div>
-<div class="paragraph">
-<p>{% include note.html content="This is a generic representation.
-ThoughtSpot supports deployment on its CentOS-based image, or an RHEL 7.7 or 7.8 image that your organization manages internally." %}</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This is a generic representation.
+ThoughtSpot supports deployment on its CentOS-based image, or an RHEL 7.7 or 7.8 image that your organization manages internally.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Your database capacity will determine the number of ThoughtSpot instances and the instance network/storage requirements.
@@ -2751,26 +2760,44 @@ In addition, you can scale your ThoughtSpot VMs as your dataset size grows.</p>
 Based on this testing, ThoughtSpot recommends the following <em>minimum specifications</em> for an individual VMware ESXi guest machine.</p>
 </div>
 <div class="paragraph">
-<p>When choosing an instance type, ensure that it uses Intel CPUs.<table width="100%" border="0"><tbody><tr><th scope="col">Per VM user data capacity</th>
-	      <th scope="col">CPU/RAM</th>
-	      <th scope="col">Data disk</th>
-				<th scope="col">Required root volume capacity</th></tr>
-	    <tr><td>20 GB</td>
-	      <td>16/128 GB</td>
-	      <td>2x400 GB</td>
-				<td>200 GB for each node</td></tr>
-	    <tr><td>100 GB</td>
-	      <td>32/256 GB</td>
-	      <td>2X400 GB</td>
-				<td>200 GB for each node</td></tr>
-	    <tr><td>256 GB</td>
-	      <td>72/512 GB</td>
-	      <td>3X1 TB</td>
-				<td>200 GB for each node</td></tr>
-		<tr><td colspan="4"><b>Note:</b> All cores must be hyperthreaded. 200 GB SSD boot disk required for all configurations.</td>
-	      <td></td>
-	      <td></td></tr></tbody></table></p>
+<p>When choosing an instance type, ensure that it uses Intel CPUs.</p>
 </div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Per VM user data capacity</th>
+<th class="tableblock halign-left valign-top">CPU/RAM</th>
+<th class="tableblock halign-left valign-top">Data disk</th>
+<th class="tableblock halign-left valign-top">Required root volume capacity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20 GB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16/128 GB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2x400 GB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">200 GB for each node</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100 GB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32/256 GB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2X400 GB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">200 GB for each node</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">256 GB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">72/512 GB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3X1 TB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">200 GB for each node</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p>For most instances, the per VM recommended user data capacity is set at 50% of the available RAM on the instance.
 However, in the case of our 16CPU/128GB RAM and 32CPU/256GB RAM instances, we support user data sizes below those numbers to budget for application overhead.</p>
@@ -2804,7 +2831,7 @@ OVF is a platform-independent, efficient, extensible, and open packaging distrib
 </div>
 <div class="paragraph">
 <p>The ThoughtSpot VM configuration uses thin provisioning and sets the recommended reserved memory, among other important specifications.
-You can obtain these files from link:{{ site.baseurl }}/appliance/contact.html[ThoughtSpot Support].</p>
+You can obtain these files from <a href="contact.html" class="page">ThoughtSpot Support</a>.</p>
 </div>
 </div>
 </div>
@@ -2814,7 +2841,7 @@ You can obtain these files from link:{{ site.baseurl }}/appliance/contact.html[T
 <div class="paragraph">
 <p>We hope your experience with ThoughtSpot is excellent.
 Please let us know how it goes, and what we can do to make it better.
-You can link:{{ site.baseurl }}/appliance/contact.html[contact ThoughtSpot] by email, phone, or by filing a support ticket.</p>
+You can <a href="contact.html" class="page">contact ThoughtSpot</a> by email, phone, or by filing a support ticket.</p>
 </div>
 </div>
 </div>

@@ -1550,7 +1550,7 @@
     <a class="nav-link" href="rhel-add-node.html">Add new nodes to clusters on RHEL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="inthebox.html">Packages installed with RHEL</a>
+    <a class="nav-link" href="rhel-packages.html">Packages installed with RHEL</a>
   </li>
 </ul>
   </li>
@@ -1559,7 +1559,7 @@
     <span class="nav-text">Hardware appliance</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel-packages.html">Hardware appliance overview</a>
+    <a class="nav-link" href="inthebox.html">Hardware appliance overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2732,28 +2732,49 @@ This is known as an extract-transform-load process.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The tables you create to receive the data must have the same number of columns and data types as the data you will be loading.
-Choose a data type for each column from the list of supported data types:<table><colgroup><col width="25%"></col>
-<col width="25%"></col>
-<col width="50%"></col></colgroup>
-  <tr><th>Data</th>
-    <th>Supported data types</th>
-    <th>Details</th></tr>
-  <tr><td>Character</td>
-    <td><code>VARCHAR(<strong>n</strong>)</code></td>
-    <td>Specify the maximum number of characters, as in <code>VARCHAR(255)</code>. The size limit is 64MB for <code>VARCHAR</code> values.</td></tr>
-  <tr><td>Floating point</td>
-    <td><code>DOUBLE</code> or <code>FLOAT</code></td>
-    <td><code>DOUBLE</code> is recommended. <code>DOUBLE</code> has a range of <code>1.7E +/- 308</code> (15 digits).</td></tr>
-  <tr><td>Boolean</td>
-    <td><code>BOOL</code></td>
-    <td>Can be <code>true</code> or <code>false</code>.</td></tr>
-  <tr><td>Integer</td>
-    <td><code>INT</code> or <code>BIGINT</code></td>
-    <td><code>INT</code> holds 32 bits. <code>BIGINT</code> holds 64 bits. <code>INT</code> has a range of <code>--2,147,483,648</code> to <code>2,147,483,647</code>. <code>BIGINT</code> has a range of <code>--9,223,372,036,854,775,808</code> to <code>9,223,372,036,854,775,807</code>.</td></tr>
-  <tr><td>Date or time</td>
-    <td><code>DATE</code>,  <code>DATETIME</code>, <code>TIMESTAMP</code>, <code>TIME</code></td>
-    <td><code>DATETIME</code>, <code>TIMESTAMP</code>, and <code>TIME</code> are stored at the granularity of seconds. <code>TIMESTAMP</code> is identical to <code>DATETIME</code>, but is included for syntax compatibility.</td></tr></table></p>
+Choose a data type for each column from the list of supported data types:</p>
 </div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Data</th>
+<th class="tableblock halign-left valign-top">Supported data types</th>
+<th class="tableblock halign-left valign-top">Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Character</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR(<strong>n</strong>)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specify the maximum number of characters, as in VARCHAR(255). The size limit is 64MB for VARCHAR values.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Floating point</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DOUBLE or FLOAT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DOUBLE is recommended. DOUBLE has a range of 1.7E +/- 308 (15 digits).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BOOL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Can be true or false.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT or BIGINT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT holds 32 bits. BIGINT holds 64 bits. INT has a range of –2,147,483,648 to 2,147,483,647. BIGINT has a range of –9,223,372,036,854,775,808 to 9,223,372,036,854,775,807.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date or time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DATE,  DATETIME, TIMESTAMP, TIME</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DATETIME, TIMESTAMP, and TIME are stored at the granularity of seconds. TIMESTAMP is identical to DATETIME, but is included for syntax compatibility.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="admonitionblock warning">
 <table>
 <tr>
