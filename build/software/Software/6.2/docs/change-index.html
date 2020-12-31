@@ -1550,7 +1550,7 @@
     <a class="nav-link" href="rhel-add-node.html">Add new nodes to clusters on RHEL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="inthebox.html">Packages installed with RHEL</a>
+    <a class="nav-link" href="rhel-packages.html">Packages installed with RHEL</a>
   </li>
 </ul>
   </li>
@@ -1559,7 +1559,7 @@
     <span class="nav-text">Hardware appliance</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel-packages.html">Hardware appliance overview</a>
+    <a class="nav-link" href="inthebox.html">Hardware appliance overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2832,29 +2832,46 @@ If you have concerns or questions, your ThoughtSpot Customer Success Engineer ca
 <p>You can change a column&#8217;s <strong>INDEX TYPE</strong> in the <span class="menuseq"><b class="menu">Data</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Tables</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Columns</b></span> page or in the <strong>Index</strong> value in the modeling file.</p>
 </div>
 <div class="paragraph">
-<p>The values you can set for <strong>INDEX TYPE</strong> are:<table id="index-type"><colgroup><col style="width:30%"></col>
-    <col style="width:70%"></col></colgroup>
-  <tbody><tr><th>Index type</th>
-    <th>Description</th></tr>
-    <tr><td><code class="highlighter-rouge">DEFAULT</code></td>
-      <td>The default behavior applies to all <code class="highlighter-rouge">ATTRIBUTE</code> columns that are not <code class="highlighter-rouge">DATE</code> types. <code class="highlighter-rouge">PREFIX_AND_SUBSTRING</code> for short values and <code class="highlighter-rouge">PREFIX_ONLY</code> for long values and free-form text.</td></tr>
-    <tr><td><code class="highlighter-rouge">DONT_INDEX</code></td>
-      <td>Prevents indexing on the column values. The column doesn&#8217;t appear in search suggestions.</td></tr>
-    <tr><td><code class="highlighter-rouge">PREFIX_AND_SUBSTRING</code></td>
-      <td>Allows full indexing such that prefix and sub-string search both work for the column values.</td></tr>
-    <tr><td><code class="highlighter-rouge">PREFIX_AND_WORD_SUBSTRING</code></td>
-      <td>Allows indexing such that only prefix search works for each word of a multi-word string, for the column values.</td></tr>
-    <tr><td><code class="highlighter-rouge">PREFIX_ONLY</code></td>
-      <td>Allows indexing such that only prefix search works for the column values.</td></tr></tbody></table></p>
+<p>The values you can set for <strong>INDEX TYPE</strong> are:</p>
 </div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Index type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DEFAULT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The default behavior applies to all <code>ATTRIBUTE</code> columns that are not <code>DATE</code> types. <code>PREFIX_AND_SUBSTRING</code> for short values and <code>PREFIX_ONLY</code> for long values and free-form text.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DONT_INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prevents indexing on the column values. The column doesn’t appear in search suggestions.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>PREFIX_AND_SUBSTRING</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows full indexing such that prefix and sub-string search both work for the column values.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>PREFIX_ONLY</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows indexing such that only prefix search works for the column values.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p>Consider a column in which there are four values <code>ThoughtSpot</code>, <code>Thought</code>, <code>Spot</code> and <code>Thought Spot</code>.
 If you search for <code>sp</code>, depending on the setting for indexing, the column value search result suggestions will vary:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 40%;">
+<col style="width: 60%;">
 </colgroup>
 <thead>
 <tr>
@@ -2967,7 +2984,7 @@ Use <code>1-3</code> for low priority columns.</p>
 <p><a href="about-data-modeling-intro.html" class="page">Model the data for searching</a></p>
 </li>
 <li>
-<p><a href="#end-user:recent-searches.adoc#usage-based-ranking" class="page unresolved">Usage based rankings (UBR)</a>.</p>
+<p><a href="recent-searches.html#usage-based-ranking" class="page">Usage based rankings (UBR)</a>.</p>
 </li>
 </ul>
 </div>

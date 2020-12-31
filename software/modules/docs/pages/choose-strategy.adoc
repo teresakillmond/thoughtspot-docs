@@ -46,44 +46,36 @@ Details on this architecture, and instructions on setting it up, are available i
 == Choosing a strategy
 
 Depending on your situation and your goals, you can choose to use either a snapshot or a backup.
-This table should help you decide:+++<table>++++++<colgroup>++++++<col width="16%">++++++</col>+++
-+++<col width="42%">++++++</col>+++
-+++<col width="42%">++++++</col>++++++</colgroup>+++
-                +++<tr>++++++<td>++++++</td>+++
-                    +++<td>++++++<strong>+++Snapshot+++</strong>++++++</td>+++
-                    +++<td>++++++<strong>+++Backup+++</strong>++++++</td>++++++</tr>+++
-                +++<tr id="purpose">++++++<td>++++++<strong>+++Purpose+++</strong>++++++</td>+++
-                    +++<td>+++Restore a cluster to particular point in time.+++</td>+++
-                    +++<td>++++++<ul>++++++<li>+++Restore a cluster to a prior state.+++</li>+++
-                            +++<li>+++Move a cluster to a different hardware, cloud, or VMware appliance.+++</li>+++
-                            +++<li>+++Remove a node.+++</li>+++
-                            +++<li>+++Restore to a cluster that runs a different release from the one
-                                where the backup was taken.+++</li>++++++</ul>++++++</td>++++++</tr>+++
-                +++<tr id="storage">++++++<td>++++++<strong>+++Storage+++</strong>++++++</td>+++
-                    +++<td>+++In the cluster's HDFS+++</td>+++
-                    +++<td>+++Options:
-                      +++<ul>++++++<li>+++Outside the cluster on a local disk+++</li>+++
-                        +++<li>+++Outside the cluster on an NAS disk+++</li>+++
-                        +++<li>+++You can back up an AWS cluster using an S3 bucket.+++</li>+++
-                        +++<li>+++You can back up a GCP cluster using a GCS bucket.+++</li>++++++</ul>++++++</td>++++++</tr>+++
-                +++<tr id="advantages">++++++<td>++++++<strong>+++Advantages+++</strong>++++++</td>+++
-                    +++<td>++++++<ul>++++++<li>+++Can be taken on, or restored to, a running cluster+++</li>+++
-                            +++<li>+++Fastest create and restore+++</li>++++++</ul>++++++</td>+++
-                    +++<td>++++++<ul>++++++<li>+++Very stable.+++</li>+++
-                            +++<li>+++Can be used to recover from data loss or corruption, even if the cluster is destroyed.+++</li>+++
-                            +++<li>+++Can be +++<em>+++full+++</em>+++, +++<em>+++lightweight+++</em>+++, or +++<em>+++dataless+++</em>+++.+++</li>++++++</ul>++++++</td>++++++</tr>+++
-                +++<tr id="limitations">++++++<td>++++++<strong>+++Limitations+++</strong>++++++</td>+++
-                    +++<td>++++++<ul>++++++<li>+++Includes all data, state, and metadata created between
-                                snapshot create and restore.+++</li>+++
-                            +++<li>+++Snapshots do not copy over anything that is in the home directories or root partitions of an instance. If you routinely add flat files or scripts directly, make separate copies of these flat files and scripts.+++</li>+++
-                            +++<li>+++Lost if the HDFS name node fails, if you lose multiple disks, or if the entire cluster is destroyed+++</li>+++
-                            +++<li>+++Can be restored only to the cluster on which the snapshot was taken+++</li>++++++</ul>++++++</td>+++
-                    +++<td>++++++<ul>++++++<li>+++Requires deleting the existing cluster first.+++</li>+++
-                            +++<li>+++You are responsible for validating your backup configuration as
-                                viable for restoring a cluster.+++</li>+++
-                            +++<li>+++Backups do not copy over anything that is in the home directories or root partitions of an instance. If you routinely add flat files or scripts directly, make separate copies of these flat files and scripts.+++</li>+++
-                            +++<li>+++Best practice recommends you to maintain multiple backups.+++</li>+++
-                            +++<li>+++Typically, very large in memory size.+++</li>++++++</ul>++++++</td>++++++</tr>++++++</table>+++
+This table should help you decide:
+[width="100%",options="header",cols="20%,40%,40%"]
+|====================
+||Snapshot|Backup
+|**Purpose**|Restore a cluster to particular point in time. a|- Restore a cluster to a prior state.
+- Move a cluster to a different hardware, cloud, or VMware appliance.
+- Remove a node.
+- Restore to a cluster that runs a different release from the one
+where the backup was taken.
+|**Storage**|In the cluster's HDFS a|Options:
+
+- Outside the cluster on a local disk
+- Outside the cluster on an NAS disk
+- You can back up an AWS cluster using an S3 bucket.
+- You can back up a GCP cluster using a GCS bucket.
+|**Advantages** a|- Can be taken on, or restored to, a running cluster
+- Fastest create and restore a|- Very stable.
+- Can be used to recover from data loss or corruption, even if the cluster is destroyed.
+- Can be _full, lightweight,_ or __dataless__.
+|**Limitations** a|- Includes all data, state, and metadata created between
+snapshot create and restore.
+- Snapshots do not copy over anything that is in the home directories or root partitions of an instance. If you routinely add flat files or scripts directly, make separate copies of these flat files and scripts.
+- Lost if the HDFS name node fails, if you lose multiple disks, or if the entire cluster is destroyed
+- Can be restored only to the cluster on which the snapshot was taken a| - Requires deleting the existing cluster first.
+- You are responsible for validating your backup configuration as
+    viable for restoring a cluster.
+- Backups do not copy over anything that is in the home directories or root partitions of an instance. If you routinely add flat files or scripts directly, make separate copies of these flat files and scripts.
+- Best practice recommends you to maintain multiple backups.
+- Typically, very large in memory size.
+|====================
 
 You should never restore from a snapshot or backup yourself.
 Contact xref:contact.adoc[ThoughtSpot Support] for help.

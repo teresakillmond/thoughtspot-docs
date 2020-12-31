@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["Connect the SMC appliance"] :: ThoughtSpot Software</title>
+    <title>Connect the SMC appliance :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 2.3.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -15,7 +15,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>["Connect the SMC appliance"] | ThoughtSpot Software</title>
+    <title>Connect the SMC appliance | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
@@ -1550,7 +1550,7 @@
     <a class="nav-link" href="rhel-add-node.html">Add new nodes to clusters on RHEL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="inthebox.html">Packages installed with RHEL</a>
+    <a class="nav-link" href="rhel-packages.html">Packages installed with RHEL</a>
   </li>
 </ul>
   </li>
@@ -1559,7 +1559,7 @@
     <span class="nav-text">Hardware appliance</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel-packages.html">Hardware appliance overview</a>
+    <a class="nav-link" href="inthebox.html">Hardware appliance overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2713,18 +2713,21 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["Connect the SMC appliance"]</h1>
+<h1 class="page">Connect the SMC appliance</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
+<p>Connect the SMC appliance before you can deploy ThoughtSpot.</p>
+</div>
+<div class="paragraph">
 <p>After you rack and stack the appliance, it is time to configure it.
-If necessary, review the link:{{ site.baseurl }}/appliance/hardware/inthebox.html[Hardware Appliance Overview].
+If necessary, review the <a href="inthebox.html" class="page">Hardware Appliance Overview</a>.
 Follow the steps in this checklist.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 5%;">
+<col style="width: 95%;">
 </colgroup>
 <tbody>
 <tr>
@@ -2751,23 +2754,32 @@ Follow the steps in this checklist.</p>
 <h2 id="appliance-step-1"><a class="anchor" href="#appliance-step-1"></a>Step 1: Connect switches to 10GbE ports</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Connect the 10GbE port of each node, as illustrated in link:{{ site.baseurl }}/appliance/hardware/connect-appliance-smc.html#haswell-port-location[Haswell port location] and link:{{ site.baseurl }}/appliance/hardware/connect-appliance-smc.html#skylake-port-location[Skylake port location], to the 10GbE switches on your own rack, using either fiber or DAC cables.</p>
+<p>Connect the 10GbE port of each node, as illustrated in <a href="#haswell-port-location">Haswell port location</a> and <a href="#skylake-port-location">Skylake port location</a>, to the 10GbE switches on your own rack, using either fiber or DAC cables.</p>
 </div>
 <div class="paragraph">
-<p>Refer to the link:{{ site.baseurl }}/appliance/hardware/cable-networking.html[Cable reference] for information on the cable types:</p>
+<p>Refer to the <a href="cable-networking.html" class="page">Cable reference</a> for information on the cable types:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>link:{{ site.baseurl }}/appliance/hardware/cable-networking.html#fiber-cables[Fiber Cables]</p>
+<p><a href="cable-networking.html#fiber-cables" class="page">Fiber Cables</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/hardware/cable-networking.html#dac-cables[DAC Cables]</p>
+<p><a href="cable-networking.html#dac-cables" class="page">DAC Cables</a></p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>{% include note.html content="Ask your hardware vendor for more details about what they supply and what you need to buy." %}</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Ask your hardware vendor for more details about what they supply and what you need to buy.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Depending on which version of the SMC appliance you have, Haswell or Skylake, your 10GbE ports are in a different spot on the back of the appliance.
@@ -2800,7 +2812,7 @@ Here is a picture of the back of each appliance.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Connect the IPMI port of each node to the management switch.
-+ See link:{{ site.baseurl }}/appliance/hardware/connect-appliance-smc.html#haswell-port-location[Haswell port location] and link:{{ site.baseurl }}/appliance/hardware/connect-appliance-smc.html#skylake-port-location[Skylake port location].</p>
++ See <a href="#haswell-port-location">Haswell port location</a> and <a href="#skylake-port-location">Skylake port location</a>.</p>
 </div>
 </div>
 </div>
@@ -2809,7 +2821,7 @@ Here is a picture of the back of each appliance.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Turn on the power to the nodes by pressing the power button;
-see link:{{ site.baseurl }}/appliance/hardware/connect-appliance-smc.html#smc-appliance-power-button[Appliance Power Button].</p>
+see <a href="#smc-appliance-power-button">Appliance Power Button</a>.</p>
 </div>
 <div class="paragraph">
 <p>There is one power button for each node.
@@ -2845,7 +2857,7 @@ There should be a steady green light for the 100MB/s or 1Gb/s management NIC con
 </div>
 <div class="paragraph">
 <p>After the LEDs are the correct colors, verify that the connection is valid and the nodes are on by pinging the gateway: + Enter <code>ping &lt;default-gateway-IP&gt;</code>.
-+ Ask your network administrator for your default gateway IP if you have not already listed it in your ThoughtSpot link:{{ site.baseurl }}/site-survey.pdf[site survey].</p>
++ Ask your network administrator for your default gateway IP if you have not already listed it in your ThoughtSpot <a href="#site-survey.pdf">site survey</a>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2878,7 +2890,7 @@ If you do not know the admin credentials, ask your network administrator.</p>
 <h2 id="_configure_nodes"><a class="anchor" href="#_configure_nodes"></a>Configure nodes</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Next, link:{{ site.baseurl }}/appliance/hardware/configure-nodes-smc.html[configure nodes.]</p>
+<p>Next, <a href="configure-nodes-smc.html" class="page">configure nodes.</a></p>
 </div>
 </div>
 </div>

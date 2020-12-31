@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["Prepare AWS VMs for ThoughtSpot"] :: ThoughtSpot Software</title>
+    <title>Prepare AWS VMs for ThoughtSpot :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 2.3.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -15,7 +15,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>["Prepare AWS VMs for ThoughtSpot"] | ThoughtSpot Software</title>
+    <title>Prepare AWS VMs for ThoughtSpot | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
@@ -1550,7 +1550,7 @@
     <a class="nav-link" href="rhel-add-node.html">Add new nodes to clusters on RHEL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="inthebox.html">Packages installed with RHEL</a>
+    <a class="nav-link" href="rhel-packages.html">Packages installed with RHEL</a>
   </li>
 </ul>
   </li>
@@ -1559,7 +1559,7 @@
     <span class="nav-text">Hardware appliance</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel-packages.html">Hardware appliance overview</a>
+    <a class="nav-link" href="inthebox.html">Hardware appliance overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2713,9 +2713,12 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["Prepare AWS VMs for ThoughtSpot"]</h1>
+<h1 class="page">Prepare AWS VMs for ThoughtSpot</h1>
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph">
+<p>Prepare the VMs before installing your ThoughtSpot cluster(s).</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2728,9 +2731,18 @@
 </li>
 <li>
 <p>Run <code>sudo /usr/local/scaligent/bin/prepare_disks.sh</code> to configure the VMs.</p>
-<div class="paragraph">
-<p>{% include warning.html content="Make sure you migrate any data off the disks.
-This command formats the disks, wiping them clean." %}</p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Make sure you migrate any data off the disks.
+This command formats the disks, wiping them clean.
+</td>
+</tr>
+</table>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2767,7 +2779,7 @@ Refer to your site-survey or ask your network administrator for that information
 <h2 id="network-ports"><a class="anchor" href="#network-ports"></a>Open the required network ports</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you have not already opened the required network ports, see link:{{ site.baseurl }}/appliance/ports.html[Network ports] to determine which ports to open.</p>
+<p>If you have not already opened the required network ports, see <a href="ports.html" class="page">Network ports</a> to determine which ports to open.</p>
 </div>
 </div>
 </div>
@@ -2776,7 +2788,7 @@ Refer to your site-survey or ask your network administrator for that information
 <div class="sectionbody">
 <div class="paragraph">
 <p>Next, you must configure your nodes and install your cluster.
-Follow the steps in link:{{ site.baseurl }}/appliance/aws/installing-aws.html[Installing AWS].</p>
+Follow the steps in <a href="installing-aws.html" class="page">Installing AWS</a>.</p>
 </div>
 </div>
 </div>
@@ -2784,7 +2796,7 @@ Follow the steps in link:{{ site.baseurl }}/appliance/aws/installing-aws.html[In
 <h2 id="_related_information"><a class="anchor" href="#_related_information"></a>Related information</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-best-practices.html">EC2 Best Practices</a> + link:{{site.baseurl }}/admin/loading/use-data-importer.html#loading-data-from-an-aws-s3-bucket[Loading data from an AWS S3 bucket]</p>
+<p><a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-best-practices.adoc">EC2 Best Practices</a> + <a href="use-data-importer.html#loading-data-from-an-aws-s3-bucket" class="page">Loading data from an AWS S3 bucket</a></p>
 </div>
 </div>
 </div>

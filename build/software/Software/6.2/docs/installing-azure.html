@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["Configure ThoughtSpot nodes in Azure"] :: ThoughtSpot Software</title>
+    <title>Configure ThoughtSpot nodes in Azure :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 2.3.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -15,7 +15,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>["Configure ThoughtSpot nodes in Azure"] | ThoughtSpot Software</title>
+    <title>Configure ThoughtSpot nodes in Azure | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
@@ -1550,7 +1550,7 @@
     <a class="nav-link" href="rhel-add-node.html">Add new nodes to clusters on RHEL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="inthebox.html">Packages installed with RHEL</a>
+    <a class="nav-link" href="rhel-packages.html">Packages installed with RHEL</a>
   </li>
 </ul>
   </li>
@@ -1559,7 +1559,7 @@
     <span class="nav-text">Hardware appliance</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel-packages.html">Hardware appliance overview</a>
+    <a class="nav-link" href="inthebox.html">Hardware appliance overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2713,9 +2713,12 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["Configure ThoughtSpot nodes in Azure"]</h1>
+<h1 class="page">Configure ThoughtSpot nodes in Azure</h1>
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph">
+<p>Prepare to install your ThoughtSpot cluster by configuring nodes.</p>
+</div>
 <div class="paragraph">
 <p>Before you can install a ThoughtSpot cluster in Azure, you must configure your nodes.</p>
 </div>
@@ -2730,17 +2733,17 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><strong>Review configuration options</strong> Refer to link:{{ site.baseurl }}/appliance/azure/configuration-options.html[Azure configuration options] for detailed instance specs.</p>
+<p><strong>Review configuration options</strong> Refer to <a href="configuration-options.html" class="page">Azure configuration options</a> for detailed instance specs.</p>
 </li>
 <li>
-<p><strong>Create the instance</strong> Refer to link:{{ site.baseurl }}/appliance/azure/launch-an-instance.html[Set up Azure for ThoughtSpot] to create and launch your instance.</p>
+<p><strong>Create the instance</strong> Refer to <a href="launch-an-instance.html" class="page">Set up Azure for ThoughtSpot</a> to create and launch your instance.</p>
 </li>
 <li>
-<p><strong>Change the admin password</strong> Refer to link:{{ site.baseurl }}/appliance/azure/launch-an-instance.html#prepare-for-startup[Prepare for starting up ThoughtSpot] to learn how to log into your VM with the private key, and change the admin password.
+<p><strong>Change the admin password</strong> Refer to <a href="launch-an-instance.html#prepare-for-startup" class="page">Prepare for starting up ThoughtSpot</a> to learn how to log into your VM with the private key, and change the admin password.
 You must change the admin password on first login, or you will not be able to log back into your VMs.</p>
 </li>
 <li>
-<p><strong>Review required ports</strong> Refer to link:{{ site.baseurl }}/appliance/ports.html[Network ports] to view the required ports for successful operation of ThoughtSpot.</p>
+<p><strong>Review required ports</strong> Refer to <a href="ports.html" class="page">Network ports</a> to view the required ports for successful operation of ThoughtSpot.</p>
 </li>
 </ol>
 </div>
@@ -2757,8 +2760,8 @@ You must change the admin password on first login, or you will not be able to lo
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 5%;">
+<col style="width: 95%;">
 </colgroup>
 <tbody>
 <tr>
@@ -2787,7 +2790,7 @@ You must change the admin password on first login, or you will not be able to lo
 <h3 id="node-step-1"><a class="anchor" href="#node-step-1"></a>Step 1: Log in to your cluster</h3>
 <div class="paragraph">
 <p>Use Terminal on a Mac or a terminal emulator on Windows to log in to your cluster.
-Log in using the new password you created for the <em>admin</em> user in step two of link:{{ site.baseurl }}/appliance/azure/launch-an-instance.html#prepare-for-startup[Prepare for starting up ThoughtSpot].</p>
+Log in using the new password you created for the <em>admin</em> user in step two of <a href="launch-an-instance.html#prepare-for-startup" class="page">Prepare for starting up ThoughtSpot</a>.</p>
 </div>
 <div class="paragraph">
 <p>To log in to your cluster, run <code>ssh admin@&lt;public_VM-IP&gt;</code>.</p>
@@ -2802,8 +2805,11 @@ Log in using the new password you created for the <em>admin</em> user in step tw
 <h3 id="node-step-2"><a class="anchor" href="#node-step-2"></a>Step 2: Get a template for network configuration</h3>
 <div class="paragraph">
 <p>Run the <code>tscli cluster get-config</code> command to get a template for network configuration for the new cluster.
-Redirect it to the file <code>nodes.config</code>.
-+ You can find more information on this process in the link:{{ site.baseurl }}/appliance/hardware/nodesconfig-example.html[<code>nodes.config</code> file reference].</p>
+Redirect it to the file <code>nodes.config</code>.</p>
+</div>
+<div class="paragraph">
+<p>+
+You can find more information on this process in the <a href="nodesconfig-example.html" class="page"><code>nodes.config</code> file reference</a>.</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -2813,34 +2819,52 @@ Redirect it to the file <code>nodes.config</code>.
 </div>
 <div class="sect2">
 <h3 id="node-step-3"><a class="anchor" href="#node-step-3"></a>Step 3: Prepare node configuration</h3>
-<div class="paragraph">
-<p>{% include warning.html content="<em>DNS server</em> and <em>IP address</em> values must be set in the Azure cloud backend.
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<em>DNS server</em> and <em>IP address</em> values must be set in the Azure cloud backend.
 It then populates them into the VM configuration.
-If you specify different values during this step, it can create a temporary mismatch and lead to connectivity issues." %}</p>
+If you specify different values during this step, it can create a temporary mismatch and lead to connectivity issues.
+</td>
+</tr>
+</table>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add your specific network information for the nodes in the <code>nodes.config</code> file, as demonstrated in the link:{{ site.baseurl }}/appliance/hardware/nodesconfig-example.html#autodiscovery-of-one-node-example[autodiscovery of one node example].
+<p>Add your specific network information for the nodes in the <code>nodes.config</code> file, as demonstrated in the <a href="nodesconfig-example.html#autodiscovery-of-one-node-example" class="page">autodiscovery of one node example</a>.
 Run <code>vim nodes.config</code> to edit the file.</p>
 <div class="listingblock">
 <div class="content">
 <pre> $ vim nodes.config</pre>
 </div>
 </div>
-<div class="paragraph">
-<p>{% include note.html content="Some of the information in the <code>nodes.config</code> file may be pre-populated from earlier steps.
-For example, if you specified an IP address while creating VMs, that IP address might already be present in your <code>nodes.config</code> file." %}</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Some of the information in the <code>nodes.config</code> file may be pre-populated from earlier steps.
+For example, if you specified an IP address while creating VMs, that IP address might already be present in your <code>nodes.config</code> file.
+</td>
+</tr>
+</table>
 </div>
 </li>
 <li>
-<p>Fill in the areas specified in link:{{ site.baseurl }}/appliance/hardware/parameters-nodesconfig.html[Parameters of the nodes.config file] with your specific network information.
+<p>Fill in the areas specified in <a href="parameters-nodesconfig.html" class="page">Parameters of the nodes.config file</a> with your specific network information.
 + If you have additional nodes, complete each node within the nodes.config file in the same way.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Do not edit any part of the <code>nodes.config</code> file except the sections described in link:{{ site.baseurl }}/appliance/hardware/parameters-nodesconfig.html[Parameters of the nodes.config file].
+<p>Do not edit any part of the <code>nodes.config</code> file except the sections described in <a href="parameters-nodesconfig.html" class="page">Parameters of the nodes.config file</a>.
 If you delete quotation marks, commas, or other parts of the code, it may cause setup to fail.</p>
 </div>
 </div>
@@ -2939,7 +2963,7 @@ It may look something like the following:</p>
 <h2 id="_install_thoughtspot_software"><a class="anchor" href="#_install_thoughtspot_software"></a>Install ThoughtSpot software</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Next, link:{{ site.baseurl }}/appliance/azure/azure-cluster-install.html[install your ThoughtSpot clusters].</p>
+<p>Next, <a href="azure-cluster-install.html" class="page">install your ThoughtSpot clusters</a>.</p>
 </div>
 </div>
 </div>
@@ -2952,15 +2976,71 @@ It may look something like the following:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://training.thoughtspot.com/node-network-configuration/437249">Network Configuration</a></p>
+<p><a href="https://training.thoughtspot.com/node-network-configuration/437249" target="_blank" rel="noopener">Network Configuration</a></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>See other training resources at + <a href="https://training.thoughtspot.com/">&lt;img src="{{ "/images/ts-u.png" | prepend: site.baseurl }}" alt="ThoughtSpot U"&gt;</a></p>
+<p>See other training resources at</p>
 </div>
 <div class="paragraph">
-<p>{% include content/install/install-cluster-error-recovery.md %}</p>
+<p>+
+<a href="#https://training.thoughtspot.com/">ThoughtSpot U</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="set-config-error-recovery"><a class="anchor" href="#set-config-error-recovery"></a>Error recovery</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_set_config_error_recovery"><a class="anchor" href="#_set_config_error_recovery"></a><code>Set-config</code> error recovery</h3>
+<div class="paragraph">
+<p>If you get a warning about node detection when you run the <code>set-config</code> command, restart the node-scout service.</p>
+</div>
+<div class="paragraph">
+<p>Your error may look something like the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Connecting to local node-scout WARNING: Detected 0 nodes, but found configuration for
+only 1 nodes.
+Continuing anyway. Error in cluster config validation: [] is not a valid link-local
+IPv6 address for node: 0e:86:e2:23:8f:76 Configuration failed.
+Please retry or contact support.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Restart the node-scout service with the following command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ sudo systemctl restart node-scout</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ensure that you restarted the node-scout by running <code>sudo systemctl status node-scout</code>.
+Your output should specify that the node-scout service is active.
+It may look something like the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ sudo systemctl status node-scout
+  ● node-scout.service - Setup Node Scout service
+    Loaded: loaded (/etc/systemd/system/node-scout.service; enabled; vendor preset: disabled)
+    Active: active (running) since Fri 2019-12-06 13:56:29 PST; 4s ago</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Next, retry the <code>set-config</code> command.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ cat nodes.config | tscli cluster set-config</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command output should no longer have a warning.</p>
+</div>
 </div>
 </div>
 </div>
@@ -2973,19 +3053,19 @@ It may look something like the following:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>link:{{ site.baseurl }}/appliance/hardware/nodesconfig-example[The nodes.config file]</p>
+<p><a href="nodesconfig-example.html" class="page">The nodes.config file</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/hardware/parameters-nodesconfig.html[Parameters of the nodes.config file]</p>
+<p><a href="parameters-nodesconfig.html" class="page">Parameters of the nodes.config file</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/hardware/cluster-create.html[Using the tscli cluster create command]</p>
+<p><a href="cluster-create.html" class="page">Using the tscli cluster create command</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/hardware/parameters-cluster-create.html[Parameters of the cluster create command]</p>
+<p><a href="parameters-cluster-create.html" class="page">Parameters of the cluster create command</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/contact.html[Contact Support]</p>
+<p><a href="contact.html" class="page">Contact Support</a></p>
 </li>
 </ul>
 </div>

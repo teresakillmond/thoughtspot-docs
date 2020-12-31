@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["Set up ThoughtSpot in GCP"] :: ThoughtSpot Software</title>
+    <title>Set up ThoughtSpot in GCP :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 2.3.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -15,7 +15,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>["Set up ThoughtSpot in GCP"] | ThoughtSpot Software</title>
+    <title>Set up ThoughtSpot in GCP | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
@@ -1550,7 +1550,7 @@
     <a class="nav-link" href="rhel-add-node.html">Add new nodes to clusters on RHEL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="inthebox.html">Packages installed with RHEL</a>
+    <a class="nav-link" href="rhel-packages.html">Packages installed with RHEL</a>
   </li>
 </ul>
   </li>
@@ -1559,7 +1559,7 @@
     <span class="nav-text">Hardware appliance</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel-packages.html">Hardware appliance overview</a>
+    <a class="nav-link" href="inthebox.html">Hardware appliance overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2713,12 +2713,17 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["Set up ThoughtSpot in GCP"]</h1>
+<h1 class="page">Set up ThoughtSpot in GCP</h1>
 <div id="preamble">
 <div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>Set up your GCP virtual machines.</pre>
+</div>
+</div>
 <div class="paragraph">
 <p>After you determine your configuration options, set up your virtual machines (VMs).
-ThoughtSpot will share the ThoughtSpot base image for booting the VMs and some other aspects of system setup with you on <a href="https://console.cloud.google.com">the GCP platform</a>.</p>
+ThoughtSpot will share the ThoughtSpot base image for booting the VMs and some other aspects of system setup with you on <a href="https://console.cloud.google.com" target="_blank" rel="noopener">the GCP platform</a>.</p>
 </div>
 </div>
 </div>
@@ -2737,7 +2742,7 @@ We will share ThoughtSpot&#8217;s GCP project with them so they can use the cont
 <div class="paragraph">
 <p>This guide explains how to deploy ThoughtSpot on GCP, using ThoughtSpot&#8217;s CentOS-based image.
 You can also deploy ThoughtSpot on GCP using Red Hat Enterprise Linux (RHEL), allowing you to run ThoughtSpot on an RHEL 7.7 or 7.8 image that your organization manages internally.
-To install ThoughtSpot using RHEL, refer to the link:{{ site.baseurl }}/appliance/rhel/rhel.html[RHEL deployment guide].</p>
+To install ThoughtSpot using RHEL, refer to the <a href="rhel.html" class="page">RHEL deployment guide</a>.</p>
 </div>
 </div>
 </div>
@@ -2778,13 +2783,13 @@ Ask your network administrator if you need help filling out the site survey.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>If you are going to deploy your cluster using the GCS-storage option, you must set up that bucket before you set up your cluster.
-Contact link:{{ site.baseurl }}/admin/misc/contact.html#[ThoughtSpot Support] to find out if your specific cluster size will benefit from the GCS storage option.
+Contact <a href="contact.html" class="page">ThoughtSpot Support</a> to find out if your specific cluster size will benefit from the GCS storage option.
 If you are not using GCS, skip this step and <a href="#create-an-instance">create an instance</a>.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Sign in to the <a href="https://console.cloud.google.com/">Google Cloud Console</a>.</p>
+<p>Sign in to the <a href="https://console.cloud.google.com/" target="_blank" rel="noopener">Google Cloud Console</a>.</p>
 </li>
 <li>
 <p>Go to the <strong>Storage</strong> dashboard from the navigation bar on the side of your screen.</p>
@@ -2836,13 +2841,13 @@ If you are not using GCS, skip this step and <a href="#create-an-instance">creat
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Sign in to the <a href="https://console.cloud.google.com/">Google Cloud Console</a>.</p>
+<p>Sign in to the <a href="https://console.cloud.google.com/" target="_blank" rel="noopener">Google Cloud Console</a>.</p>
 </li>
 <li>
 <p>Click <strong>Select a Project</strong> from the top bar.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/gcp-selectproj.png" alt="Select a project">
+<img src="_images/gcp-selectproj.png" alt="Select a project">
 </div>
 </div>
 </li>
@@ -2853,7 +2858,7 @@ If you are not using GCS, skip this step and <a href="#create-an-instance">creat
 <p>Go to the Compute Engine dashboard.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/gcp-computeenginedash.png" alt="Go to the Compute Engine Dashboard">
+<img src="_images/gcp-computeenginedash.png" alt="Go to the Compute Engine Dashboard">
 </div>
 </div>
 </li>
@@ -2877,18 +2882,18 @@ If you are not using GCS, skip this step and <a href="#create-an-instance">creat
 </li>
 <li>
 <p>Select the number of vCPU cores you need.
-+ Refer to link:{{ site.baseurl }}/appliance/gcp/configuration-options.html#thoughtspot-gcp-instance-types[ThoughtSpot GCP instance types] to determine the number of vCPU cores your cluster needs.</p>
++ Refer to <a href="configuration-options.html#thoughtspot-gcp-instance-types" class="page">ThoughtSpot GCP instance types</a> to determine the number of vCPU cores your cluster needs.</p>
 </li>
 <li>
 <p>Specify your memory requirements and CPU platform.
-Refer to link:{{ site.baseurl }}/appliance/gcp/configuration-options.html#thoughtspot-gcp-instance-types[ThoughtSpot GCP instance types] to determine the memory your cluster needs.</p>
+Refer to <a href="configuration-options.html#thoughtspot-gcp-instance-types" class="page">ThoughtSpot GCP instance types</a> to determine the memory your cluster needs.</p>
 <div class="paragraph">
 <p>Your configuration may look something like the following, but with your specific information.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 20%;">
+<col style="width: 80%;">
 </colgroup>
 <thead>
 <tr>
@@ -2913,12 +2918,12 @@ Refer to link:{{ site.baseurl }}/appliance/gcp/configuration-options.html#though
 </table>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/gcp-machineconfig.png" alt="Specify machine configuration">
+<img src="_images/gcp-machineconfig.png" alt="Specify machine configuration">
 </div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/gcp-3-preferred-CPUs.png" alt="Preferred CPU platforms">
+<img src="_images/gcp-3-preferred-CPUs.png" alt="Preferred CPU platforms">
 </div>
 </div>
 </li>
@@ -2930,7 +2935,7 @@ Scroll down to the <strong>Boot disk</strong> section and click <strong>Change</
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/gcp-4-change-boot-disk.png" alt="Change boot disk">
+<img src="_images/gcp-4-change-boot-disk.png" alt="Change boot disk">
 </div>
 </div>
 <div class="paragraph">
@@ -2950,7 +2955,7 @@ If so, use that image.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/gcp-selecttsimage.png" alt="Select the latest ThoughtSpot image">
+<img src="_images/gcp-selecttsimage.png" alt="Select the latest ThoughtSpot image">
 </div>
 </div>
 <div class="paragraph">
@@ -2958,8 +2963,8 @@ If so, use that image.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 20%;">
+<col style="width: 80%;">
 </colgroup>
 <thead>
 <tr>
@@ -2974,11 +2979,20 @@ If so, use that image.</p>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>{% include note.html content="ThoughtSpot updates these base images with patches and enhancements.
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+ThoughtSpot updates these base images with patches and enhancements.
 If more than one image is available, select the latest one by looking at the dates of creation.
 Each image will work, but we recommend using the latest image because it typically contains the latest security and maintenance patches.
-Contact ThoughtSpot Support if you are unsure which image to use." %}</p>
+Contact ThoughtSpot Support if you are unsure which image to use.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>e.
@@ -2986,8 +3000,8 @@ Configure the boot disk as follows:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 20%;">
+<col style="width: 80%;">
 </colgroup>
 <thead>
 <tr>
@@ -3019,22 +3033,22 @@ Click <strong>Select</strong> to save the boot disk configuration.</p>
 <p>Back on the main configuration page, click to expand the advanced configuration options (<strong>Management, security, disks, networking, sole tenancy</strong>).</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/gcp-6-save-boot-disk-expand-mgmt.png" alt="Advanced configuration options">
+<img src="_images/gcp-6-save-boot-disk-expand-mgmt.png" alt="Advanced configuration options">
 </div>
 </div>
 </li>
 <li>
 <p>Attach two 1 TB SSD drives for data storage.
-Refer to link:{{ site.baseurl }}/appliance/gcp/configuration-options.html#vms-with-persistent-disk-only-storage[SSD-only persistent storage].
+Refer to <a href="configuration-options.html#vms-with-persistent-disk-only-storage" class="page">SSD-only persistent storage</a>.
 If you are using GCS, attach only 1 SSD drive, with 500 GB instead of 1 TB.
-Refer to link:{{ site.baseurl }}/appliance/gcp/configuration-options.html#vms-with-persistent-disk-and-google-cloud-storage[GCS and SSD persistent storage].</p>
+Refer to <a href="configuration-options.html#vms-with-persistent-disk-and-google-cloud-storage" class="page">GCS and SSD persistent storage</a>.</p>
 <div class="paragraph">
 <p>a.
 Click the <strong>Disks</strong> tab, and click <strong>Add new disk</strong>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/gcp-7-advanced-disk-config.png" alt="Add new disk">
+<img src="_images/gcp-7-advanced-disk-config.png" alt="Add new disk">
 </div>
 </div>
 <div class="paragraph">
@@ -3043,13 +3057,13 @@ Click the <strong>Disks</strong> tab, and click <strong>Add new disk</strong>.</
 <div class="paragraph">
 <p>b.
 Configure the following settings for each disk.
-Refer to link:{{ site.baseurl }}/appliance/gcp/configuration-options.html#vms-with-persistent-disk-and-google-cloud-storage[ThoughtSpot GCP instance types] to determine the size in GB when you have GCS.
+Refer to <a href="configuration-options.html#vms-with-persistent-disk-and-google-cloud-storage" class="page">ThoughtSpot GCP instance types</a> to determine the size in GB when you have GCS.
 Ensure the disks have read/write access.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 20%;">
+<col style="width: 80%;">
 </colgroup>
 <thead>
 <tr>
@@ -3077,7 +3091,7 @@ Ensure the disks have read/write access.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/gcp-8-advanced-blank-disk-config.png" alt="Configure your disk">
+<img src="_images/gcp-8-advanced-blank-disk-config.png" alt="Configure your disk">
 </div>
 </div>
 </li>
@@ -3108,13 +3122,13 @@ Ask your network administrator if you do not know your default VPC settings.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/gcp-setnetworkinterface.png" alt="Set your network interface">
+<img src="_images/gcp-setnetworkinterface.png" alt="Set your network interface">
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 5%;">
+<col style="width: 95%;">
 </colgroup>
 <tbody>
 <tr>
@@ -3122,7 +3136,7 @@ Ask your network administrator if you do not know your default VPC settings.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Add an existing VPC network, or create a new one by clicking <strong>VPC network</strong> from the main menu.
 Ensure that this network has a <strong>firewall rule</strong> attached, with the minimum ports required for ThoughtSpot operation open.
 Refer to the <a href="#port-requirements">minimum port requirements</a>.
-See Google&#8217;s <a href="https://cloud.google.com/vpc/docs/using-firewalls">using firewalls</a> and <a href="https://cloud.google.com/vpc/docs/using-vpc">using VPCs</a> documentation for assistance creating a firewall rule and a VPC network.</p></td>
+See Google&#8217;s <a href="https://cloud.google.com/vpc/docs/using-firewalls" target="_blank" rel="noopener">using firewalls</a> and <a href="https://cloud.google.com/vpc/docs/using-vpc" target="_blank" rel="noopener">using VPCs</a> documentation for assistance creating a firewall rule and a VPC network.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2</strong></p></td>
@@ -3145,7 +3159,7 @@ See Google&#8217;s <a href="https://cloud.google.com/vpc/docs/using-firewalls">u
 <div class="paragraph">
 <p>Open the following ports between the User/ETL server and ThoughtSpot nodes.
 This ensures that the ThoughtSpot processes do not get blocked.
-Refer to link:{{ site.baseurl }}/appliance/ports.html#required-ports-for-cluster-communication[Network ports] for more information on what ports to open for intracluster operation, so that your clusters can communicate.</p>
+Refer to <a href="ports.html#required-ports-for-cluster-communication" class="page">Network ports</a> for more information on what ports to open for intracluster operation, so that your clusters can communicate.</p>
 </div>
 <div class="paragraph">
 <p>The minimum ports needed are:</p>
@@ -3222,7 +3236,7 @@ Refer to link:{{ site.baseurl }}/appliance/ports.html#required-ports-for-cluster
 <h2 id="_install_cluster"><a class="anchor" href="#_install_cluster"></a>Install cluster</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To install your ThoughtSpot cluster, complete the installation process outlined in link:{{ site.baseurl }}/appliance/gcp/installing-gcp.html[Installing ThoughtSpot in GCP].</p>
+<p>To install your ThoughtSpot cluster, complete the installation process outlined in link:{{ site.baseurl }}/appliance/gcp/installing-gcp.adoc[Installing ThoughtSpot in GCP].</p>
 </div>
 </div>
 </div>
@@ -3235,12 +3249,12 @@ Refer to link:{{ site.baseurl }}/appliance/ports.html#required-ports-for-cluster
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://training.thoughtspot.com/node-network-configuration/430736">Node Configuration: GCP</a></p>
+<p><a href="https://training.thoughtspot.com/node-network-configuration/430736" target="_blank" rel="noopener">Node Configuration: GCP</a></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>See other training resources at + <a href="https://training.thoughtspot.com/">&lt;img src="{{ "/images/ts-u.png" | prepend: site.baseurl }}" alt="ThoughtSpot U"&gt;</a></p>
+<p>See other training resources at + <a href="https://training.thoughtspot.com/" target="_blank" rel="noopener">ThoughtSpot U</a></p>
 </div>
 </div>
 </div>
@@ -3248,7 +3262,7 @@ Refer to link:{{ site.baseurl }}/appliance/ports.html#required-ports-for-cluster
 <h2 id="_related_information"><a class="anchor" href="#_related_information"></a>Related information</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://cloud.google.com/compute/docs/disks/gcs-buckets">Connecting to Google Cloud Storage buckets</a> + link:{{ site.baseurl }}/admin/loading/use-data-importer.html#loading-data-from-a-gcp-gcs-bucket[Loading data from a GCP GCS bucket]</p>
+<p><a href="https://cloud.google.com/compute/docs/disks/gcs-buckets" target="_blank" rel="noopener">Connecting to Google Cloud Storage buckets</a> + <a href="use-data-importer.html#loading-data-from-a-gcp-gcs-bucket" class="page">Loading data from a GCP GCS bucket</a></p>
 </div>
 </div>
 </div>

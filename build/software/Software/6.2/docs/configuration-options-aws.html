@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["AWS configuration options"] :: ThoughtSpot Software</title>
+    <title>AWS configuration options :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 2.3.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -15,7 +15,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>["AWS configuration options"] | ThoughtSpot Software</title>
+    <title>AWS configuration options | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
@@ -1550,7 +1550,7 @@
     <a class="nav-link" href="rhel-add-node.html">Add new nodes to clusters on RHEL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="inthebox.html">Packages installed with RHEL</a>
+    <a class="nav-link" href="rhel-packages.html">Packages installed with RHEL</a>
   </li>
 </ul>
   </li>
@@ -1559,7 +1559,7 @@
     <span class="nav-text">Hardware appliance</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel-packages.html">Hardware appliance overview</a>
+    <a class="nav-link" href="inthebox.html">Hardware appliance overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2713,9 +2713,12 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["AWS configuration options"]</h1>
+<h1 class="page">AWS configuration options</h1>
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph">
+<p>Your instances require specific configurations of memory, CPU, storage, and networking capacity.</p>
+</div>
 <div class="paragraph">
 <p>ThoughtSpot can be deployed in your AWS environment by deploying compute (VM) instances in your Amazon VPC as well as an underlying persistent storage infrastructure.
 Currently two configuration modes are supported by ThoughtSpot:</p>
@@ -2734,12 +2737,12 @@ Currently two configuration modes are supported by ThoughtSpot:</p>
 <p>The cost of infrastructure for deploying ThoughtSpot is cheaper when using S3.
 However, there are differences in where data is loaded, as well as in the backup and restore procedures.
 For assistance in choosing the best mode for your organization, contact your ThoughtSpot representative.
-For more information on purchasing ThoughtSpot in AWS, see: <a href="https://www.thoughtspot.com/pricing">ThoughtSpot Pricing</a>.</p>
+For more information on purchasing ThoughtSpot in AWS, see: <a href="https://www.thoughtspot.com/pricing" target="_blank" rel="noopener">ThoughtSpot Pricing</a>.</p>
 </div>
 <div class="paragraph">
 <p>All AWS VMs in a ThoughtSpot cluster must be in the same availability zone (and therefore, also in the same region).
 ThoughtSpot does not support deploying VMs in the same cluster across availability zones.
-For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a> in Amazon&#8217;s AWS documentation.</p>
+For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.adoc" target="_blank" rel="noopener">Regions and Availability Zones</a> in Amazon&#8217;s AWS documentation.</p>
 </div>
 </div>
 </div>
@@ -2761,7 +2764,7 @@ The data volumes on the EBS would need to be provision with 2x1 TB volumes per V
 <h3 id="vm-ebs-only-persistent-storage"><a class="anchor" href="#vm-ebs-only-persistent-storage"></a>VMs with EBS-only persistent storage</h3>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/persistent-storage-ebs.svg" alt="persistent storage ebs">
+<img src="_images/persistent-storage-ebs.svg" alt="persistent storage ebs">
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -2824,7 +2827,7 @@ The data volumes on the EBS would need to be provision with 2x1 TB volumes per V
 <h3 id="vm-ebs-s3-persistent-storage"><a class="anchor" href="#vm-ebs-s3-persistent-storage"></a>VMs with EBS and S3 persistent storage</h3>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/persistent-storage-ebs-s3.svg" alt="persistent storage ebs s3">
+<img src="_images/persistent-storage-ebs-s3.svg" alt="persistent storage ebs s3">
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -2882,8 +2885,17 @@ The data volumes on the EBS would need to be provision with 2x1 TB volumes per V
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>{% include note.html content="The S3 bucket size is approximately equal to the size of the user data." %}</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The S3 bucket size is approximately equal to the size of the user data.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>For most instances, the per VM recommended user data capacity is set at 50% of the available RAM on the instance.
@@ -2898,16 +2910,16 @@ However, in the case of our 16CPU/128GB RAM and 32CPU/256GB RAM instances, we su
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://aws.amazon.com/ec2/instance-types/">EC2 instance types</a></p>
+<p><a href="https://aws.amazon.com/ec2/instance-types/" target="_blank" rel="noopener">EC2 instance types</a></p>
 </li>
 <li>
-<p><a href="https://aws.amazon.com/ec2/pricing/">EC2 pricing</a></p>
+<p><a href="https://aws.amazon.com/ec2/pricing/" target="_blank" rel="noopener">EC2 pricing</a></p>
 </li>
 <li>
-<p><a href="https://aws.amazon.com/ebs/pricing/">EBS pricing</a></p>
+<p><a href="https://aws.amazon.com/ebs/pricing/" target="_blank" rel="noopener">EBS pricing</a></p>
 </li>
 <li>
-<p><a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a></p>
+<p><a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.adoc" target="_blank" rel="noopener">Placement groups</a></p>
 </li>
 </ul>
 </div>

@@ -1550,7 +1550,7 @@
     <a class="nav-link" href="rhel-add-node.html">Add new nodes to clusters on RHEL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="inthebox.html">Packages installed with RHEL</a>
+    <a class="nav-link" href="rhel-packages.html">Packages installed with RHEL</a>
   </li>
 </ul>
   </li>
@@ -1559,7 +1559,7 @@
     <span class="nav-text">Hardware appliance</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel-packages.html">Hardware appliance overview</a>
+    <a class="nav-link" href="inthebox.html">Hardware appliance overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2811,17 +2811,49 @@ For example, you search for revenue and cost and want to calculate profit in you
 </ul>
 </div>
 <div class="paragraph">
-<p>The following table illustrates some examples of these functions in use:<table><colgroup><col style="width:30%"></col>
-      <col style="width:70%"></col></colgroup>
-   <thead class="thead" style="text-align:left;"><tr><th>Function</th>
-         <th>Examples</th></tr></thead>
-  <tr><td><code>sum_if(region=&#8217;west&#8217;, revenue)</code></td>
-    <td>Only aggregate the revenue for the values corresponding to west region.</td></tr>
-  <tr><td><code>count_if(region =&#8217;west&#8217;, region)</code></td>
-    <td>Only aggregate the region for the values corresponding to west region.</td></tr>
-  <tr><td><code>count_if(revenue &gt; 100, red)</code></td>
-    <td>Count the number of times red appears when revenue was greater than 100 (row level revenue data, not aggregated).</td></tr></table></p>
+<p>The following table illustrates some examples of these functions in use:</p>
 </div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Function</th>
+<th class="tableblock halign-left valign-top">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>sum_if(region=’west’, revenue)</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Takes a measure and one or more attributes. Returns the average of the measure grouped by the attribute(s).
+    group_average (revenue, customer region)</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>count_if(region =’west’, region)</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Takes a measure and one or more attributes. Returns the count of the measure grouped by the attribute(s).
+    group_count (revenue, customer region)</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>count_if(revenue &gt; 100, red)</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Takes a measure and one or more attributes. Returns the count of the measure grouped by the attribute(s).
+    group_count (revenue, customer region)</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p>A condition can have multiple filters like <code>sales region = west OR region = east</code>.
 You can also just type a value such as <code>east</code> as in <code>sales east</code> as a filter.

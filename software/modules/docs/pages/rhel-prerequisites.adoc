@@ -1,10 +1,9 @@
-= ["RHEL installation prerequisites"]
+= RHEL installation prerequisites
 :last_updated: 6/30/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Prepare the system and ThoughtSpot clusters for installation.
 
-[cols=2*]
+Prepare the system and ThoughtSpot clusters for installation.
+
+[width="100%",options="header",cols="5%,95%"]
 |===
 | &#10063;
 | <<set-up-hosts,1.
@@ -41,12 +40,12 @@ Disable SELinux>>
 Set up hosts for the ThoughtSpot cluster on your chosen platform.
 Please refer to the relevant deployment sections in our documentation for the exact specification for the hosts: CPU, memory, and disks.
 
-* ThoughtSpot-certified hardware appliance manufactured by link:{{ site.baseurl }}/appliance/hardware/installing-dell.html[DELL]
-* ThoughtSpot-certified hardware appliance manufactured by link:{{ site.baseurl }}/appliance/hardware/installing-the-smc.html[SMC]
-* link:{{ site.baseurl }}/appliance/aws/configuration-options.html[Amazon Web Services (AWS) EC2]
-* link:{{ site.baseurl }}/appliance/gcp/configuration-options.html[Google Cloud Platform (GCP)]
-* link:{{ site.baseurl }}/appliance/vmware/vmware-intro.html[VMware]
-* link:{{ site.baseurl }}/appliance/azure/configuration-options.html[Microsoft Azure]
+* ThoughtSpot-certified hardware appliance manufactured by xref:installing-dell.adoc[DELL]
+* ThoughtSpot-certified hardware appliance manufactured by xref:installing-the-smc.adoc[SMC]
+* xref:configuration-options.adoc[Amazon Web Services (AWS) EC2]
+* xref:configuration-options.adoc[Google Cloud Platform (GCP)]
+* xref:vmware-intro.adoc[VMware]
+* xref:configuration-options.adoc[Microsoft Azure]
 
 [#partition-hosts]
 == Partition the hosts
@@ -54,29 +53,17 @@ Please refer to the relevant deployment sections in our documentation for the ex
 Ensure that all ThoughtSpot hosts have the following partitions on the root drive.
 
 Note that the size of the root drive on appliances is limited to 200GB;
-the partition requirements are therefore somewhat different when compared to the other environments.+++<table>++++++<tbody>++++++<tr>++++++<th>+++Platform+++</th>+++
-+++<th>+++Partition+++</th>+++
-+++<th>+++Drive type+++</th>+++
-+++<th>+++Description+++</th>+++
-+++<th>+++Minimum size+++</th>++++++</tr>+++
-+++<tr>++++++<th rowspan="2">+++Hosts in AWS, GCP, Azure, and VMWare&nbsp;+++</th>+++
-+++<td>+++OS partition+++</td>+++
-+++<td>+++SSD (root drive)+++</td>+++
-+++<td>+++Root partition for OS, +++<code>+++/tmp+++</code>++++++</td>+++
-+++<td>+++100GB+++<br>++++++</br>+++Allocate at least 50GB to +++<code>+++/tmp+++</code>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Export partition+++</td>+++
-+++<td>+++SSD (root drive)&nbsp;+++</td>+++
-+++<td>+++Stores ThoughtSpot objects, hdfs logs, service logs, and so on+++</td>+++
-+++<td>+++200GB+++</td>++++++</tr>+++
-+++<tr>++++++<th rowspan="2">+++Hosts on ThoughtSpot-certified hardware appliances+++</th>+++
-+++<td>+++OS partition+++</td>+++
-+++<td>+++SSD (root drive)+++</td>+++
-+++<td>+++Root partition for OS, +++<code>+++/tmp+++</code>++++++</td>+++
-+++<td>+++80GB+++<br>++++++</br>+++Allocate at least 50GB to +++<code>+++/tmp+++</code>++++++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Export partition+++</td>+++
-+++<td>+++SSD (root drive)&nbsp;+++</td>+++
-+++<td>+++Stores ThoughtSpot objects, hdfs logs, service logs, and so on+++</td>+++
-+++<td>+++100GB+++</td>++++++</tr>++++++</tbody>++++++</table>+++
+the partition requirements are therefore somewhat different when compared to the other environments.
+
+[width="100%",options="header",cols=5*]
+|====================
+| Platform |Partition|Drive type|Description|Minimum size
+.2+| Hosts in AWS, GCP, Azure, and VMWare | OS partition | SSD (root drive) | Root partition for OS, /tmp| 100GB Allocate at least 50GB to /tmp
+| Export partition | SSD (root drive) | Stores ThoughtSpot objects, hdfs logs, service logs, and so on |200GB
+.2+| Hosts on ThoughtSpot-certified hardware appliances | OS partition | SSD (root drive) | Root partition for OS, /tmp |80GB
+Allocate at least 50GB to /tmp
+| Export partition | SSD (root drive) | Stores ThoughtSpot objects, hdfs logs, service logs, and so on | service logs, and so on	100GB
+|====================
 
 [#install-rhel]
 == Install RHEL on hosts
@@ -93,10 +80,10 @@ RHEL 7.7 and 7.8 used to come with a Linux kernel of version 3.10.x, which has a
 The default Linux kernel version for RHEL 7.7 and 7.8 is now 3.10.0-1127.19.1.
 However, you may have an older RHEL 7.7 or 7.8, with a Linux kernel of version 3.10.x.
 You must upgrade to 3.10.0-1127.19.1.
-If you have trouble upgrading your Linux kernel to version 3.10.0-1127.19.1, link:{{ site.baseurl }}/appliance/contact.html[contact ThoughtSpot Support].
+If you have trouble upgrading your Linux kernel to version 3.10.0-1127.19.1, link:{{ site.baseurl }}/appliance/contact.adoc[contact ThoughtSpot Support].
 This is a requirement for *_all_* platforms: appliance, cloud, and VMware.
 
-{% include warning.html content="If Linux kernel version is not 3.10.0-1127.19.1, you may run into unexpected node reboots and possible loss of data." %}
+WARNING: If Linux kernel version is not 3.10.0-1127.19.1, you may run into unexpected node reboots and possible loss of data.
 
 [#enable-hosts]
 == Enable the hosts to download RHEL packages
@@ -111,7 +98,7 @@ This is a requirement for *_all_* platforms: appliance, cloud, and VMware.
 
 Make sure that you can download RHEL packages to all hosts, either from the <<official-repositories,official package repositories>>, or from a <<mirror-repositories,mirror repository>> owned and managed by your organization.
 
-If you cannot access the RHEL repositories, there is no mirror repository in your organization, or you are unable to access Yum, Python, or R repositories, please link:{{ site.baseurl }}/appliance/contact.html[contact ThoughtSpot Support].
+If you cannot access the RHEL repositories, there is no mirror repository in your organization, or you are unable to access Yum, Python, or R repositories, please xref:contact.adoc[contact ThoughtSpot Support].
 
 *Official package repositories*
 
