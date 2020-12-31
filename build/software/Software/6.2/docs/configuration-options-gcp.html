@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["GCP configuration options"] :: ThoughtSpot Software</title>
+    <title>GCP configuration options :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 2.3.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -15,7 +15,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>["GCP configuration options"] | ThoughtSpot Software</title>
+    <title>GCP configuration options | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
@@ -1550,7 +1550,7 @@
     <a class="nav-link" href="rhel-add-node.html">Add new nodes to clusters on RHEL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="inthebox.html">Packages installed with RHEL</a>
+    <a class="nav-link" href="rhel-packages.html">Packages installed with RHEL</a>
   </li>
 </ul>
   </li>
@@ -1559,7 +1559,7 @@
     <span class="nav-text">Hardware appliance</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel-packages.html">Hardware appliance overview</a>
+    <a class="nav-link" href="inthebox.html">Hardware appliance overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2713,9 +2713,12 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["GCP configuration options"]</h1>
+<h1 class="page">GCP configuration options</h1>
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph">
+<p>ThoughtSpot can be deployed using several different GCP instance types.</p>
+</div>
 <div class="paragraph">
 <p>ThoughtSpot can be deployed in your GCP environment by deploying compute (VM) instances in your VPC as well as an underlying persistent storage infrastructure.
 Currently two configuration modes are supported by ThoughtSpot:</p>
@@ -2731,15 +2734,15 @@ Currently two configuration modes are supported by ThoughtSpot:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>For more information about Persistent Storage, see <a href="https://cloud.google.com/compute/docs/disks/#pdspecs">Zonal Persistent SSD disks</a> in Google&#8217;s Cloud documentation.</p>
+<p>For more information about Persistent Storage, see <a href="https://cloud.google.com/compute/docs/disks/#pdspecs" target="_blank" rel="noopener">Zonal Persistent SSD disks</a> in Google&#8217;s Cloud documentation.</p>
 </div>
 <div class="paragraph">
-<p>For more information about Google Cloud Storage, see <a href="https://cloud.google.com/compute/docs/disks/#gcsbuckets">Cloud Storage Buckets</a> in Google&#8217;s Cloud documentation.</p>
+<p>For more information about Google Cloud Storage, see <a href="https://cloud.google.com/compute/docs/disks/#gcsbuckets" target="_blank" rel="noopener">Cloud Storage Buckets</a> in Google&#8217;s Cloud documentation.</p>
 </div>
 <div class="paragraph">
 <p>All GCP VMs (nodes) in a ThoughtSpot cluster must be in the same zone (and, therefore, also in the same region).
 ThoughtSpot does not support deploying VMs (nodes) of the same cluster across different zones.
-For more information, see <a href="https://cloud.google.com/compute/docs/regions-zones/">Regions and Zones</a> in Google&#8217;s Cloud documentation.</p>
+For more information, see <a href="https://cloud.google.com/compute/docs/regions-zones/" target="_blank" rel="noopener">Regions and Zones</a> in Google&#8217;s Cloud documentation.</p>
 </div>
 </div>
 </div>
@@ -2753,7 +2756,7 @@ For more information, see <a href="https://cloud.google.com/compute/docs/regions
 <h3 id="_vms_with_persistent_disk_only_storage"><a class="anchor" href="#_vms_with_persistent_disk_only_storage"></a>VMs with Persistent Disk-only storage</h3>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/persistent-storage-ssd.svg" alt="persistent storage ssd">
+<img src="_images/persistent-storage-ssd.svg" alt="persistent storage ssd">
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -2816,7 +2819,7 @@ For more information, see <a href="https://cloud.google.com/compute/docs/regions
 <h3 id="_vms_with_persistent_disk_and_google_cloud_storage"><a class="anchor" href="#_vms_with_persistent_disk_and_google_cloud_storage"></a>VMs with Persistent Disk and Google Cloud storage</h3>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/persistent-storage-ssd-gcs.svg" alt="persistent storage ssd gcs">
+<img src="_images/persistent-storage-ssd-gcs.svg" alt="persistent storage ssd gcs">
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">

@@ -35,7 +35,7 @@ customize.sh:: This script runs as the last step in the preparation process. You
 hosts.sample::
 prod_image:: This directory contains the ThoughtSpot tools and tscli, the ThoughtSpot CLI binary.
 README.md:: Basic information for the unzipped file
-rpm_gpg:: This directory contains the xref:https://access.redhat.com/documentation/en-us/red_hat_network/5.0.0/html/client_configuration_guide/ch-gpg-keys[GPG keys] that authenticate the public repository.
+rpm_gpg:: This directory contains the https://access.redhat.com/documentation/en-us/red_hat_network/5.0.0/html/client_configuration_guide/ch-gpg-keys[GPG keys,window=_blank] that authenticate the public repository.
 toolchain:: The tools that are necessary to compile the instructions you define in the Ansible Playbook, the source code, into executables that can run on your device. The toolchain includes a compiler, a linker, and run-time libraries.
 ts-new.yaml:: The Ansible Playbook for new installations.
 ts-update.yaml:: The Ansible Playbook for updates.
@@ -44,154 +44,38 @@ yum.repos.d:: This directory contains information about the yum repo used by the
 . Copy the Ansible inventory file hosts.sample to hosts.yaml, and using a text editor of your choice, update the file to include your host configuration:
 +
 hosts:: Add the IP addresses or hostnames of all hosts in the ThoughtSpot cluster.
-admin_uid:: The admin user ID parameter.
-On-premise deployments::
-+
-Use the default values.
-AWS:: Use the default values.
-GCP:: Add values that are not currently in use. To determine what values your system uses already, run the following command:
+admin_uid::
+The admin user ID parameter.
+On-premise deployments::: Use the default values.
+AWS::: Use the default values.
+GCP::: Add values that are not currently in use. To determine what values your system uses already, run the following command:
 `cat /etc/passwd | cut -d ":" -f3-4| sort`
 
-<ol>
-  <li>Obtain the Ansible tarball by joining our RHEL Early Access program, and email us your <a href="mailto:early_access@thoughtspot.com?subject=RHEL%20Early%20Access%20Program%20Ansible%20File%20Request" target="_blank">Ansible request</a>. Download it to your local machine.</li>
-
-  <li>Unzip the Ansible tarball, to see the following files and directories on your local machine:<br/>
-   <dl>
-    <dlentry>
-      <dt>customize.sh</dt>
-      <dd>This script runs as the last step in the preparation process. You can use it to inject deployment-specific customizations, such as enabling or disabling a corporate proxy, configuring extra SSH keys, installing extra services, and so on. Additionally, you can include the <code>prepare_disks</code> script here. Add the following line to the <code>customize.sh</code> file: <code>sudo /usr/local/scaligent/bin/prepare_disks.sh</code>.</dd>
-    </dlentry>
-    <dlentry>
-      <dt>hosts.sample</dt>
-      <dd></dd>
-    </dlentry>
-    <dlentry>
-      <dt>prod_image</dt>
-      <dd>This directory contains the ThoughtSpot tools and <code>tscli</code>, the ThoughtSpot CLI binary.</dd>
-    </dlentry>
-    <dlentry>
-      <dt>README.md</dt>
-      <dd>Basic information for the unzipped file</dd>
-    </dlentry>
-    <dlentry>
-      <dt>rpm_gpg</dt>
-      <dd>This directory contains the <a href="https://access.redhat.com/documentation/en-us/red_hat_network/5.0.0/html/client_configuration_guide/ch-gpg-keys" target="_blank">GPG keys</a> that authenticate the public repository.</dd>
-    </dlentry>
-    <dlentry>
-      <dt>toolchain</dt>
-      <dd>The tools that are necessary to compile the instructions you define in the Ansible Playbook, the source code, into executables that can run on your device. The toolchain includes a compiler, a linker, and run-time libraries.</dd>
-    </dlentry>
-    <dlentry>
-      <dt>ts-new.yaml</dt>
-      <dd>The Ansible Playbook for new installations.</dd>
-    </dlentry>
-    <dlentry>
-      <dt>ts-update.yaml</dt>
-      <dd>The Ansible Playbook for updates.</dd>
-    </dlentry>
-    <dlentry>
-      <dt>ts.yaml</dt>
-      <dd></dd>
-    </dlentry>
-    <dlentry>
-      <dt>yum.repos.d</dt>
-      <dd>This directory contains information about the yum repo used by the cluster.</dd>
-    </dlentry>
-  </dl>
-  </li>
-
-  <li>Copy the Ansible inventory file <code>hosts.sample</code> to <code>hosts.yaml</code>, and using a text editor of your choice, update the file to include your host configuration:<br/>
-
-      <dl>
-       <dlentry id="hosts">
-      <dt>hosts</dt>
-      <dd>Add the IP addresses or hostnames of all hosts in the ThoughtSpot cluster.</dd>
-    </dlentry>
-    <dlentry id="admin_uid">
-      <dt>admin_uid</dt>
-      <dd>The admin user ID parameter.<br/>
-      <dl>
-        <dlentry>
-          <dt>On-premise deployments</dt>
-          <dd>Use the default values.</dd>
-        </dlentry>
-        <dlentry>
-          <dt>AWS</dt>
-          <dd>Use the default values.</dd>
-        </dlentry>
-        <dlentry>
-          <dt>GCP</dt>
-          <dd>Add values that are not currently in use. To determine what values your system uses already, run the following command:<br/>
-          <code>cat /etc/passwd | cut -d ":" -f3-4| sort</code></dd>
-        </dlentry>
-      </dl>
-</dd>
-    </dlentry>
-    <dlentry id="admin-gid">
-      <dt>admin_gid</dt>
-      <dd>The admin user group ID.<br/>
-      <dl>
-        <dlentry>
-          <dt>On-premise deployments</dt>
-          <dd>Use the default values.</dd>
-        </dlentry>
-        <dlentry>
-          <dt>AWS</dt>
-          <dd>Use the default values.</dd>
-        </dlentry>
-        <dlentry>
-          <dt>GCP</dt>
-          <dd>Add values that are not currently in use. To determine what values your system uses already, run the following command:<br/>
-          <code>cat /etc/passwd | cut -d ":" -f3-4| sort</code></dd>
-        </dlentry>
-      </dl>
-</dd>
-    </dlentry>
-    <dlentry id="ssh_user">
-      <dt>ssh_user</dt>
-      <dd><p>The <code>ssh_user</code> must exist on the ThoughtSpot host, and it must have <code>sudo</code> privileges.</p>
-      <dl>
-      <dlentry>
-        <dt>On-premise deployments</dt>
-        <dd>The <code>ssh_user</code> is the user who runs the playbook, and who is connected to the hosts.</dd>
-      </dlentry>
-      <dlentry>
-        <dt>AWS</dt>
-        <dd>The same as <code>ec2_user</code>.</dd>
-      </dlentry>
-      <dlentry>
-        <dt>GCP</dt>
-        <dd>The <code>ssh_user</code> is the user who runs the playbook, and who is connected to the hosts.</dd>
-      </dlentry>
-      </dl>
-</dd>
-    </dlentry>
-    <dlentry id="ssh_private_key">
-      <dt>ssh_private_key</dt>
-      <dd>Add the private key for <code>ssh</code> access to the <code>hosts.yaml</code> file. You can use an existing key pair, or generate a new key pair in the Ansible Control server.<br/>
-      Run the following command to verify that the Ansible Control Server can connect to the hosts over <code>ssh</code>:<br/><pre><code>ansible -m ping -i hosts.yaml all</code></pre></dd>
-    </dlentry>
-    <dlentry id="ssh_public_key">
-      <dt>ssh_public_key</dt>
-      <dd>Add the public key to the <code>ssh authorized_keys</code> file for each host, and add the private key to the <code>hosts.yaml</code> file. You can use an existing key pair, or generate a new key pair in the Ansible Control server.<br/>
-      Run the following command to verify that the Ansible Control Server can connect to the hosts over <code>ssh</code>:<br/><pre><code>ansible -m ping -i hosts.yaml all</code></pre></dd>
-    </dlentry>
-    <dlentry id="extra_admin_ssh_key">
-      <dt>extra_admin_ssh_key</dt>
-      <dd>[Optional] An additional or extra key may be required by your security application, such as Qualys, to connect to the hosts.</dd>
-    </dlentry>
-    <dlentry id="http(s)_proxy">
-      <dt>http(s)_proxy</dt>
-      <dd>If the hosts must access public repositories through an internal proxy service, provide the proxy information.<br/>
-      This release of ThoughtSpot does not support proxy credentials to authenticate to the proxy service.</dd>
-    </dlentry>
-    <dlentry id="ts_partition_name">
-      <dt>ts_partition_name</dt>
-      <dd>The extended name of the ThoughtSpot export partition, such as <code>/dev/sdb1</code>.</dd>
-    </dlentry>
-  </dl>
-  </li>
-</ol>
+admin_gid:: The admin user group ID.
+On-premise deployments::: Use the default values.
+AWS::: Use the default values.
+GCP::: Add values that are not currently in use. To determine what values your system uses already, run the following command:
+`cat /etc/passwd | cut -d ":" -f3-4| sort`
+ssh_user:: The ssh_user must exist on the ThoughtSpot host, and it must have sudo privileges.
+On-premise deployments::: The `ssh_user` is the user who runs the playbook, and who is connected to the hosts.
+AWS::: The same as `ec2_user`.
+GCP::: The `ssh_user` is the user who runs the playbook, and who is connected to the hosts.
+ssh_private_key:: Add the private key for ssh access to the hosts.yaml file. You can use an existing key pair, or generate a new key pair in the Ansible Control server.
+Run the following command to verify that the Ansible Control Server can connect to the hosts over `ssh`:
++
+```
+ansible -m ping -i hosts.yaml all
+```
+ssh_public_key:: Add the public key to the ssh authorized_keys file for each host, and add the private key to the hosts.yaml file. You can use an existing key pair, or generate a new key pair in the Ansible Control server.
+Run the following command to verify that the Ansible Control Server can connect to the hosts over ssh:
++
+```
+ansible -m ping -i hosts.yaml all
+```
+extra_admin_ssh_key:: [Optional] An additional or extra key may be required by your security application, such as Qualys, to connect to the hosts.
+http(s)_proxy:: If the hosts must access public repositories through an internal proxy service, provide the proxy information.
+This release of ThoughtSpot does not support proxy credentials to authenticate to the proxy service.
+ts_partition_name:: The extended name of the ThoughtSpot export partition, such as `/dev/sdb1`.
 
 [#redirect-mirror]
 == Redirect the mirror repository

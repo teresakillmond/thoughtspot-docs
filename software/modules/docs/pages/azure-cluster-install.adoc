@@ -1,17 +1,16 @@
-= ["Install ThoughtSpot clusters in Azure"]
+= Install ThoughtSpot clusters in Azure
 :last_updated: ["2/27/2020"]
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Learn how to install ThoughtSpot clusters in Azure.
+:linkattrs:
+Learn how to install ThoughtSpot clusters in Azure.
 
 == Prerequisites
 
 Before you can install your ThoughtSpot clusters in Azure, complete these prerequisites.
 
-. *Review configuration options* Refer to link:{{ site.baseurl }}/appliance/azure/configuration-options.html[Azure configuration options] for detailed instance specs.
-. *Create the instance* Refer to link:{{ site.baseurl }}/appliance/azure/launch-an-instance.html[Set up Azure for ThoughtSpot] to create and launch your instance.
-. *Review required ports* Refer to link:{{ site.baseurl }}/appliance/ports.html[Network ports] to view the required ports for successful operation of ThoughtSpot.
-. *Configure nodes* Refer to link:{{ site.baseurl }}/appliance/azure/installing-azure.html[Configure ThoughtSpot nodes in Azure] to configure your nodes.
+. *Review configuration options* Refer to xref:configuration-options.adoc[Azure configuration options] for detailed instance specs.
+. *Create the instance* Refer to xref:launch-an-instance.adoc[Set up Azure for ThoughtSpot] to create and launch your instance.
+. *Review required ports* Refer to xref:ports.adoc[Network ports] to view the required ports for successful operation of ThoughtSpot.
+. *Configure nodes* Refer to xref:installing-azure.adoc[Configure ThoughtSpot nodes in Azure] to configure your nodes.
 
 [#cluster-install]
 == Install ThoughtSpot Software
@@ -20,7 +19,7 @@ Install the cluster using the ThoughtSpot software release bundle.
 The estimated installation time is one hour.
 Follow the steps in this checklist.
 
-[cols=2*]
+[cols="5%,95%"]
 |===
 | &#10063;
 | <<cluster-step-1,Step 1: Run the installer>>
@@ -33,7 +32,7 @@ Follow the steps in this checklist.
 |===
 
 Refer to your welcome letter from ThoughtSpot to find the link to download the release bundle.
-If you do not have a link, open a support ticket with link:{{ site.baseurl }}/appliance/contact.html[ThoughtSpot Support] to request access to the release bundle.
+If you do not have a link, open a support ticket with xref:contact.adoc[ThoughtSpot Support] to request access to the release bundle.
 
 [#cluster-step-1]
 === Step 1: Run the installer
@@ -51,10 +50,10 @@ Note the following parameters:
  ** `file-name` is the name of the tarball file on your local computer.
 
 +
-{% include note.html content="You can use another secure copy method, if you prefer a method other than the `scp` command." %}
+{% include note.adoc content="You can use another secure copy method, if you prefer a method other than the `scp` command." %}
 
 . Alternatively, use `tscli fileserver download-release` to download the release bundle.
-+ You must link:{{ site.baseurl }}/reference/tscli-command-ref.html#tscli-fileserver[configure the fileserver] by running `tscli fileserver configure` before you can download the release.
++ You must xref:tscli-command-ref.adoc#tscli-fileserver[configure the fileserver] by running `tscli fileserver configure` before you can download the release.
 +
 +
 ----
@@ -77,7 +76,7 @@ For example, `/export/sdc1/TS_TASKS/install/6.0.tar.gz`.
 +
 Your output says `ok` if you have the correct release.
 
-. Launch a https://linux.die.net/man/1/screen[screen] session.
+. Launch a https://linux.die.net/man/1/screen[screen,window=_blank] session.
 Use screen to ensure that your installation does not stop if you lose network connectivity.
 +
 ----
@@ -96,7 +95,7 @@ Use screen to ensure that your installation does not stop if you lose network co
 ----
 
 . Edit the output with your specific cluster information.
-+ For more information on this process, refer to link:{{ site.baseurl }}/appliance/hardware/cluster-create.html[Using the tscli cluster create command] and link:{{ site.baseurl }}/appliance/hardware/parameters-cluster-create.html[Parameters of the `cluster create` command].
++ For more information on this process, refer to xref:cluster-create.adoc[Using the tscli cluster create command] and xref:parameters-cluster-create.adoc[Parameters of the `cluster create` command].
 +
 The cluster installer automatically reboots all the nodes after a successful install.
 The `firewalld` service automatically turns on.
@@ -198,7 +197,7 @@ Ensure that the cluster is `RUNNING` and that the Database and Search Engine are
  [Wed Jan  8 23:16:12 2020] SUCCESS
  ################################################################################
  [Wed Jan  8 23:16:12 2020] START Diagnosing callosum
- /usr/lib/python2.7/site-packages/urllib3/connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+ /usr/lib/python2.7/site-packages/urllib3/connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.adoc#ssl-warnings
    InsecureRequestWarning)
  [Wed Jan  8 23:16:12 2020] SUCCESS
  ################################################################################
@@ -206,8 +205,8 @@ Ensure that the cluster is `RUNNING` and that the Database and Search Engine are
 Your output may look something like the above.
 Ensure that all diagnostics show `SUCCESS`.
 
-{% include warning.html content="If `tscli cluster check` returns an error, it may suggest you run `tscli storage gc` to resolve the issue.
-If you run `tscli storage gc`, note that it restarts your cluster." %}
+WARNING: If `tscli cluster check` returns an error, it may suggest you run `tscli storage gc` to resolve the issue.
+If you run `tscli storage gc`, note that it restarts your cluster.
 
 [#cluster-step-3]
 === Step 3: Finalize installation
@@ -230,27 +229,29 @@ Follow these steps:
 ThoughtSpot recommends changing the default admin password.
 
 image:ts-login-page.png[ThoughtSpot's sign-in window]
-// {% include image.html file="ts-login-page.png" title="ThoughtSpot's sign-in window" alt="Sign in to ThoughtSpot. Enter Username, Password, and click Sign in. You may select the Remember me option." caption="ThoughtSpot's sign-in window" %}
+// {% include image.adoc file="ts-login-page.png" title="ThoughtSpot's sign-in window" alt="Sign in to ThoughtSpot. Enter Username, Password, and click Sign in. You may select the Remember me option." caption="ThoughtSpot's sign-in window" %}
 
 == Lean configuration
 
-*(For use with thin provisioning only)* If you have a link:{{ site.baseurl }}/appliance/cloud.html#use-small-and-medium-instance-types-when-applicable[small or medium instance type], with less than 100GB of data, advanced lean configuration is required before loading any data into ThoughtSpot.
-After installing the cluster, contact link:{{ site.baseurl }}/appliance/contact.html[ThoughtSpot Support] for assistance with this configuration.
+*(For use with thin provisioning only)* If you have a xref:cloud.adoc#use-small-and-medium-instance-types-when-applicable[small or medium instance type], with less than 100GB of data, advanced lean configuration is required before loading any data into ThoughtSpot.
+After installing the cluster, contact xref:contact.adoc[ThoughtSpot Support] for assistance with this configuration.
 
 == Additional resources
 
 As you develop your expertise in Azure cluster installation, we recommend the following ThoughtSpot U course:
 
-* https://training.thoughtspot.com/create-upgrade-patch-a-thoughtspot-cluster/430642[Create a Cluster]
+* https://training.thoughtspot.com/create-upgrade-patch-a-thoughtspot-cluster/430642[Create a Cluster,window=_blank]
 
-See other training resources at + https://training.thoughtspot.com/[<img src="{{ "/images/ts-u.png" | prepend: site.baseurl }}" alt="ThoughtSpot U">]
+See other training resources at
++
+https://training.thoughtspot.com/[ThoughtSpot U]
 
 == Related information
 
 Use these references for successful installation and administration of ThoughtSpot:
 
-* link:{{ site.baseurl }}/appliance/hardware/nodesconfig-example[The nodes.config file]
-* link:{{ site.baseurl }}/appliance/hardware/parameters-nodesconfig.html[Parameters of the nodes.config file]
-* link:{{ site.baseurl }}/appliance/hardware/cluster-create.html[Using the tscli cluster create command]
-* link:{{ site.baseurl }}/appliance/hardware/parameters-cluster-create.html[Parameters of the cluster create command]
-* link:{{ site.baseurl }}/appliance/contact.html[Contact Support]
+* xref:nodesconfig-example[The nodes.config file]
+* xref:parameters-nodesconfig.adoc[Parameters of the nodes.config file]
+* xref:cluster-create.adoc[Using the tscli cluster create command]
+* xref:parameters-cluster-create.adoc[Parameters of the cluster create command]
+* xref:contact.adoc[Contact Support]

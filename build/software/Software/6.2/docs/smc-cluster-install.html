@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["Install ThoughtSpot Clusters on the SMC Appliance"] :: ThoughtSpot Software</title>
+    <title>Install ThoughtSpot Clusters on the SMC Appliance :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 2.3.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -15,7 +15,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>["Install ThoughtSpot Clusters on the SMC Appliance"] | ThoughtSpot Software</title>
+    <title>Install ThoughtSpot Clusters on the SMC Appliance | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
@@ -1550,7 +1550,7 @@
     <a class="nav-link" href="rhel-add-node.html">Add new nodes to clusters on RHEL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="inthebox.html">Packages installed with RHEL</a>
+    <a class="nav-link" href="rhel-packages.html">Packages installed with RHEL</a>
   </li>
 </ul>
   </li>
@@ -1559,7 +1559,7 @@
     <span class="nav-text">Hardware appliance</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel-packages.html">Hardware appliance overview</a>
+    <a class="nav-link" href="inthebox.html">Hardware appliance overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2713,9 +2713,12 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["Install ThoughtSpot Clusters on the SMC Appliance"]</h1>
+<h1 class="page">Install ThoughtSpot Clusters on the SMC Appliance</h1>
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph">
+<p>Install your clusters on the SMC appliance.</p>
+</div>
 <div class="paragraph">
 <p>Install the cluster using the ThoughtSpot software release bundle.
 Installation takes approximately one hour.
@@ -2724,15 +2727,15 @@ If you can, you can run the installer on your local computer.</p>
 </div>
 <div class="paragraph">
 <p>Refer to your welcome letter from ThoughtSpot to find the link to download the release bundle.
-If you have not received a link to download the release bundle, open a support ticket with link:{{ site.baseurl }}/appliance/contact.html[ThoughtSpot Support] to access the release bundle.</p>
+If you have not received a link to download the release bundle, open a support ticket with <a href="contact.html" class="page">ThoughtSpot Support</a> to access the release bundle.</p>
 </div>
 <div class="paragraph">
 <p>Follow the steps in this checklist to install your cluster.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 5%;">
+<col style="width: 95%;">
 </colgroup>
 <tbody>
 <tr>
@@ -2780,13 +2783,22 @@ Run <code>scp &lt;release-number&gt;.tar.gz admin@&lt;hostname&gt;:/export/sdb1/
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>{% include note.html content="You can use another secure copy method, if you prefer a method other than the <code>scp</code> command." %}</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You can use another secure copy method, if you prefer a method other than the <code>scp</code> command.
+</td>
+</tr>
+</table>
 </div>
 </li>
 <li>
 <p>Alternatively, use <code>tscli fileserver download-release</code> to download the release bundle.
-+ You must link:{{ site.baseurl }}/reference/tscli-command-ref.html#tscli-fileserver[configure the fileserver] by running <code>tscli fileserver configure</code> before you can download the release.</p>
++ You must <a href="tscli-command-ref.html#tscli-fileserver" class="page">configure the fileserver</a> by running <code>tscli fileserver configure</code> before you can download the release.</p>
 </li>
 </ol>
 </div>
@@ -2825,7 +2837,7 @@ For example, <code>/export/sdb1/TS_TASKS/install/6.0.tar.gz</code>.</p>
 </div>
 </li>
 <li>
-<p>Launch a <a href="https://linux.die.net/man/1/screen">screen</a> session.
+<p>Launch a <a href="https://linux.die.net/man/1/screen" target="_blank" rel="noopener">screen</a> session.
 Use screen to ensure that your installation does not stop if you lose network connectivity.</p>
 <div class="listingblock">
 <div class="content">
@@ -2844,7 +2856,7 @@ Use screen to ensure that your installation does not stop if you lose network co
 </li>
 <li>
 <p>Edit the output using your specific cluster information.
-For more information on this process, refer to link:{{ site.baseurl }}/appliance/hardware/cluster-create.html[Using the tscli cluster create command] and link:{{ site.baseurl }}/appliance/hardware/parameters-cluster-create.html[Parameters of the <code>cluster create</code> command].</p>
+For more information on this process, refer to <a href="cluster-create.html" class="page">Using the tscli cluster create command</a> and <a href="parameters-cluster-create.html" class="page">Parameters of the <code>cluster create</code> command</a>.</p>
 </li>
 </ol>
 </div>
@@ -2952,7 +2964,7 @@ Connecting to hosts...
 [Wed Jan  8 23:16:12 2020] SUCCESS
 ################################################################################
 [Wed Jan  8 23:16:12 2020] START Diagnosing callosum
-/usr/lib/python2.7/site-packages/urllib3/connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+/usr/lib/python2.7/site-packages/urllib3/connectionpool.py:852: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.adoc#ssl-warnings[ssl warnings,window=_blank]
   InsecureRequestWarning)
 [Wed Jan  8 23:16:12 2020] SUCCESS
 ################################################################################</pre>
@@ -2963,7 +2975,7 @@ Connecting to hosts...
 Ensure that all diagnostics show <code>SUCCESS</code>.</p>
 </div>
 <div class="paragraph">
-<p>{% include warning.html content="If <code>tscli cluster check</code> returns an error, it may suggest you run <code>tscli storage gc</code> to resolve the issue.
+<p>{% include warning.adoc content="If <code>tscli cluster check</code> returns an error, it may suggest you run <code>tscli storage gc</code> to resolve the issue.
 If you run <code>tscli storage gc</code>, note that it restarts your cluster." %}</p>
 </div>
 </div>
@@ -3005,7 +3017,7 @@ If you run <code>tscli storage gc</code>, note that it restarts your cluster." %
 <p>The ThoughtSpot sign-in page appears.</p>
 </li>
 <li>
-<p>In the link:{{ site.baseurl }}/appliance/hardware/smc-cluster-install.html#ts-login[ThoughtSpot sign-in window], enter admin credentials, and click <strong>Sign in</strong>.
+<p>In the link:{{ site.baseurl }}/appliance/hardware/smc-cluster-install.adoc#ts-login[ThoughtSpot sign-in window], enter admin credentials, and click <strong>Sign in</strong>.
 If you do not know the admin credentials, ask your network administrator.
 ThoughtSpot recommends changing the default admin password.</p>
 </li>
@@ -3020,8 +3032,8 @@ ThoughtSpot recommends changing the default admin password.</p>
 <h2 id="_lean_configuration"><a class="anchor" href="#_lean_configuration"></a>Lean configuration</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>(For use with thin provisioning only)</strong> If you have a link:{{ site.baseurl }}/appliance/cloud.html#use-small-and-medium-instance-types-when-applicable[small or medium instance type], with less than 100GB of data, advanced lean configuration is required before loading any data into ThoughtSpot.
-After installing the cluster, contact link:{{ site.baseurl }}/appliance/contact.html[ThoughtSpot Support] for assistance with this configuration.</p>
+<p><strong>(For use with thin provisioning only)</strong> If you have a link:{{ site.baseurl }}/appliance/cloud.adoc#use-small-and-medium-instance-types-when-applicable[small or medium instance type], with less than 100GB of data, advanced lean configuration is required before loading any data into ThoughtSpot.
+After installing the cluster, contact link:{{ site.baseurl }}/appliance/contact.adoc[ThoughtSpot Support] for assistance with this configuration.</p>
 </div>
 </div>
 </div>

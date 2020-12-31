@@ -1550,7 +1550,7 @@
     <a class="nav-link" href="rhel-add-node.html">Add new nodes to clusters on RHEL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="inthebox.html">Packages installed with RHEL</a>
+    <a class="nav-link" href="rhel-packages.html">Packages installed with RHEL</a>
   </li>
 </ul>
   </li>
@@ -1559,7 +1559,7 @@
     <span class="nav-text">Hardware appliance</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel-packages.html">Hardware appliance overview</a>
+    <a class="nav-link" href="inthebox.html">Hardware appliance overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2737,19 +2737,38 @@ You can present it or copy the link, but  you cannot access the underlying query
 <h2 id="_database_status"><a class="anchor" href="#_database_status"></a>Database Status</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Database Status</strong> column can have the following possible values:<table><colgroup><col width="25%"></col>
-    <col width="60%"></col></colgroup>
-    <thead><tr class="header"><th>Status</th>
-        <th>Meaning</th></tr></thead>
-      <tbody><tr><td><p><code style="highlighter-rouge">READY</code></p></td>
-        <td>The data has been loaded.</td></tr>
-       <tr><td><code style="highlighter-rouge">IN PROGRESS</code></td>
-        <td>The data is still being loaded.</td></tr>
-       <tr><td><code style="highlighter-rouge">STALE</code></td>
-        <td>The data is not up to date.</td></tr>
-       <tr><td><code style="highlighter-rouge">ERROR</code></td>
-        <td>The table is invalid. Call Customer Support.</td></tr></tbody></table></p>
+<p>The <strong>Database Status</strong> column can have the following possible values:</p>
 </div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><code>Status</code></th>
+<th class="tableblock halign-left valign-top">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>READY</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The data has been loaded.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>IN PROGRESS</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The data is still being loaded.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STALE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The data is not up to date.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ERROR</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The table is invalid. Call Customer Support.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
@@ -2769,26 +2788,49 @@ For example, a 10MB table replicated on a 4 node system will show 40MB used capa
 <h2 id="_search_status"><a class="anchor" href="#_search_status"></a>Search Status</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Search Status</strong> column can have the following possible values:<table><colgroup><col width="25%"></col>
-    <col width="60%"></col></colgroup>
-    <thead><tr class="header"><th>Status</th>
-        <th>Meaning</th></tr></thead>
-      <tbody><tr><td><p><code style="highlighter-rouge">READY</code></p></td>
-     <td>The data is up to date and searchable.</td></tr>
-    <tr><td><p><code style="highlighter-rouge">NOT READY</code></p></td>
-     <td>The data is not ready to be searched.</td></tr>
-    <tr><td><p><code style="highlighter-rouge">DELETING INDEX</code></p></td>
-     <td>The table has already been deleted, but the index still exists due to the latency
-      between the database and search engine.</td></tr>
-    <tr><td><code style="highlighter-rouge">INDEXING DISABLED</code></td>
-     <td>Either too many tokens exist in a column for it to be indexed, or indexing has been
-      disabled manually.</td></tr>
-    <tr><td><code style="highlighter-rouge">CREATING INDEX</code></td>
-     <td>The index is being created.</td></tr>
-    <tr><td><code style="highlighter-rouge">UPDATING INDEX</code></td>
-     <td>A change has been made to indexing or the data, and the index is being updated to
-      reflect it.</td></tr></tbody></table></p>
+<p>The <strong>Search Status</strong> column can have the following possible values:</p>
 </div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Status</th>
+<th class="tableblock halign-left valign-top">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>READY</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The data is up to date and searchable.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>NOT READY</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The data is not ready to be searched.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DELETING INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The table has already been deleted, but the index still exists due to the latency
+      between the database and search engine.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INDEXING DISABLED</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Either too many tokens exist in a column for it to be indexed, or indexing has been
+      disabled manually.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CREATING INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The index is being created.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>UPDATING INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A change has been made to indexing or the data, and the index is being updated to
+      reflect it.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </article>

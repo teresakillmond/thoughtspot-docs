@@ -41,8 +41,8 @@ There are two ways for you to fetch users and groups from LDAP and populate them
 If you need details on the Python APIs, link:{{ site.baseurl }}/appliance/contact.html[contact ThoughtSpot Support].
 If you choose this method, you can run the script periodically using a cron job.
 
-{% include note.html content="When you run the synchronization script, you perform a one-time sync.
-You must schedule a recurring sync using a cron job or your own scheduling tool to keep your ThoughtSpot users up to date with your users in LDAP." %}
+NOTE: When you run the synchronization script, you perform a one-time sync.
+You must schedule a recurring sync using a cron job or your own scheduling tool to keep your ThoughtSpot users up to date with your users in LDAP.
 
 === Run the sync script
 
@@ -117,37 +117,23 @@ It also deletes any other entities created in the ThoughtSpot system from this L
 
 === `syncUsersAndGroups.py` command-line switches
 
-The following table provides a description of each command-line switch available for the `syncUsersAndGroups` python script.+++<table width="100%" border="0">++++++<col width="260">++++++</col>+++
-  +++<col width="900">++++++</col>+++
-	  +++<tbody>++++++<tr>++++++<th scope="col">+++Switch+++</th>+++
-	      +++<th scope="col">+++Description+++</th>++++++</tr>+++
-        +++<tr>++++++<td>++++++<code>+++--ts_hostport <ts_hostport>+++</code>++++++</td>+++
-  	      +++<td>+++ThoughtSpot cluster host port. Default port is 8088.+++</td>++++++</tr>+++
-	    +++<tr>++++++<td>++++++<code>+++--disable_ssl+++</code>++++++</td>+++
-	      +++<td>+++Controls the communication between the sync script and the ThoughtSpot cluster. It disables SSL communications between the script and the cluster ONLY, and prevents the need to provide SSL certs during the script execution in order to create users and groups.+++</td>++++++</tr>+++
-	    +++<tr>++++++<td>++++++<code>+++--ts_uname+++</code>++++++</td>+++
-	      +++<td>+++ThoughtSpot cluster username. The +++<code>+++admin+++</code>+++ user is usually used.+++</td>++++++</tr>+++
-	    +++<tr>++++++<td>++++++<code>+++--ts_pass+++</code>++++++</td>+++
-	      +++<td>+++ThoughtSpot cluster password.+++</td>++++++</tr>+++
-		+++<tr>++++++<td>++++++<code>+++--ldap_hostport+++</code>++++++</td>+++
-	      +++<td>+++AD/LDAP server port that is queried. Default is 389.+++</td>++++++</tr>+++
-		+++<tr>++++++<td>++++++<code>+++--ldap_uname+++</code>++++++</td>+++
-	      +++<td>+++Username for the LDAP/AD server.+++</td>++++++</tr>+++
-		+++<tr>++++++<td>++++++<code>+++--ldap_pass <ldap_password>+++</code>++++++</td>+++
-	      +++<td>+++Password for the LDAP/AD server.+++</td>++++++</tr>+++
-		+++<tr>++++++<td>++++++<code>+++--sync+++</code>++++++</td>+++
-	      +++<td>+++Syncs users and groups which match the +++<code>+++basedn+++</code>+++ and +++<code>+++filter_str+++</code>+++ queries to your ThoughtSpot cluster.+++</td>++++++</tr>+++
-		+++<tr>++++++<td>++++++<code>+++--purge+++</code>++++++</td>+++
-	      +++<td>+++Purges any users that exist in ThoughtSpot, but not in AD.+++</td>++++++</tr>+++
-		+++<tr>++++++<td>++++++<code>+++--basedn+++</code>++++++</td>+++
-	      +++<td>+++Place in the directory that will be searched for users.+++</td>++++++</tr>+++
-		+++<tr>++++++<td>++++++<code>+++--filter_str+++</code>++++++</td>+++
-	      +++<td>+++Further filters results from your base DN.+++</td>++++++</tr>+++
-		+++<tr>++++++<td>++++++<code>+++--include_nontree_members+++</code>++++++</td>+++
-	      +++<td>+++Includes group members from LDAP/AD even if they do not belong to the current subtree that is being synced.+++</td>++++++</tr>+++
-    +++<tr>++++++<td>++++++<code>+++--user_identifier <user_identifier>+++</code>++++++</td>+++
-        +++<td>+++User name identifier key for user creation or sync.+++</td>++++++</tr>+++
-    +++<tr>++++++<td>++++++<code>+++--authdomain_identifier <authdomain_identifier>+++</code>++++++</td>+++
-        +++<td>+++Override domain name to be appended to user identifier in user name.+++</td>++++++</tr>+++
-    +++<tr>++++++<td>++++++<code>+++--email_identifier <email_identifier>+++</code>++++++</td>+++
-        +++<td>+++Email identifier key for user creation or sync.+++</td>++++++</tr>++++++</tbody>++++++</table>+++
+The following table provides a description of each command-line switch available for the `syncUsersAndGroups` python script.
+[width="100%",options="header",cols="40%,60%"]
+|====================
+|Switch|Description
+|--ts_hostport <ts_hostport>|ThoughtSpot cluster host port. Default port is 8088.
+|--disable_ssl|Controls the communication between the sync script and the ThoughtSpot cluster. It disables SSL communications between the script and the cluster ONLY, and prevents the need to provide SSL certs during the script execution in order to create users and groups.
+|--ts_uname|ThoughtSpot cluster username. The admin user is usually used.
+|--ts_pass|ThoughtSpot cluster password.
+|--ldap_hostport|AD/LDAP server port that is queried. Default is 389.
+|--ldap_uname|Username for the LDAP/AD server.
+|--ldap_pass <ldap_password>|Password for the LDAP/AD server.
+|--sync|Syncs users and groups which match the basedn and filter_str queries to your ThoughtSpot cluster.
+|--purge|Purges any users that exist in ThoughtSpot, but not in AD.
+|--basedn|Place in the directory that will be searched for users.
+|--filter_str|Further filters results from your base DN.
+|--include_nontree_members|Includes group members from LDAP/AD even if they do not belong to the current subtree that is being synced.
+|--user_identifier <user_identifier>|User name identifier key for user creation or sync.
+|--authdomain_identifier <authdomain_identifier>|Override domain name to be appended to user identifier in user name.
+|--email_identifier <email_identifier>|Email identifier key for user creation or sync.
+|====================

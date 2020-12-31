@@ -1550,7 +1550,7 @@
     <a class="nav-link" href="rhel-add-node.html">Add new nodes to clusters on RHEL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="inthebox.html">Packages installed with RHEL</a>
+    <a class="nav-link" href="rhel-packages.html">Packages installed with RHEL</a>
   </li>
 </ul>
   </li>
@@ -1559,7 +1559,7 @@
     <span class="nav-text">Hardware appliance</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel-packages.html">Hardware appliance overview</a>
+    <a class="nav-link" href="inthebox.html">Hardware appliance overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2776,49 +2776,88 @@ The user inherits privileges and permissions directly from the group assignments
 <img src="_images/add-user.png" alt="Add a new User">
 </div>
 </div>
-<div class="paragraph">
-<p><table><colgroup><col width="20%"></col>
-   <col width="10%"></col>
-   <col width="70%"></col></colgroup>
-  <tr><th>Field</th>
-   <th>Required?</th>
-   <th>Description</th></tr>
-   <tr id="username"><th>Username</th>
-     <td>Yes</td>
-     <td>A login name for the user. Usernames must be unique and lowercase.
-     <p>If you are using Active Directory to authenticate users, and your LDAP configuration requires users to be created manually (they are not created automatically in ThoughtSpot upon authentication), the username you specify has to be domain-qualified (<code><a href="mailto:username@ldap.thoughtspot.com">username@ldap.thoughtspot.com</a></code>), and you must enter a dummy password.</p></td></tr>
-   <tr id="display-name"><th>Display name</th>
-     <td>Yes</td>
-     <td>A unique name for the user (usually their first and last name).</td></tr>
-   <tr id="sharing-visibility"><th>Sharing visibility</th>
-     <td>Yes</td>
-     <td>Indicate whether objects can be shared with this user. When set to <b>SHARABLE</b>,
-     this user is an option in the <b>Share</b> dialog.</td></tr>
-   <tr id="password"><th>Change password</th>
-     <td>Yes</td>
-     <td>A password. Your password must contain three of the following: uppercase letters A-Z, lowercase letters a-z, special characters !<mark>$ etc, numbers 0-9. Your password must be at least eight characters long. When you click on the <strong>change password</strong> field, a tooltip appears to tell you these requirements.</td></tr>
-   <tr id="confirm_password"><th>Confirm password</th>
-     <td>Yes</td>
-     <td>Enter the password again.</td></tr>
-   <tr id="email"><th>Email</th>
-     <td>Yes</td>
-     <td>The user&#8217;s email address. ThoughtSpot uses this for  notification when another user shares something with them, for onboarding, for the <strong>Ask an Expert</strong> feature, and others.
-     <p>Note that during cluster configuration, the domain is specified. ThoughtSpot does not accept emails outside this domain. <a href="{{ site.baseurl }}/appliance/contact.html">Contact ThoughtSpot Support</a> to add new domains to a list of allowed domains.</p></td></tr>
-   <tr id="welcome-email"><th>Send a welcome email</th>
-     <td>No</td>
-     <td>When checked, this option ensures that the new user receives a welcome email.</td></tr>
-   <tr id="email-text"><th>Email message text</th>
-     <td>No</td>
-     <td>Enter text of the optional welcome email here.</td></tr>
-   <tr id="groups"><th>Groups</th>
-     <td>Recommended</td>
-     <td>Select the groups for the user.
-     <p>Note that if you add the user to a group that has the privilege <b>Has administration privileges</b>, they can see all the data in ThoughtSpot.</p>
-     <p>When you create a new user, the groups they belong to define the following attributes for the user:</p>
-     <ul><li><strong>Privileges</strong>: the actions they can perform, defined when you <a href="add-group.html">Add a group and set security privileges</a>.</li>
-       <li><strong>Permissions</strong>: the data they can access and view, defined when you consider &lt;a href="{{"/admin/data-security/sharing-security-overview.html</mark>" | prepend: site.baseurl }}"&gt;Data security&lt;/a&gt;.</li></ul>
-     <p>Administrators can see all data sources, and &lt;a href="{{"/admin/data-security/about-row-security.html#" | prepend: site.baseurl }}"&gt;Row level security&lt;/a&gt; does not apply to them.</p></td></tr></table></p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Required?</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Username</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A login name for the user. Usernames must be unique and lowercase.</p>
+<p class="tableblock">If you are using Active Directory to authenticate users, and your LDAP configuration requires users to be created manually (they are not created automatically in ThoughtSpot upon authentication), the username you specify has to be domain-qualified <code>(<a href="mailto:username@ldap.thoughtspot.com">username@ldap.thoughtspot.com</a>)</code>, and you must enter a dummy password.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Display name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A unique name for the user (usually their first and last name).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sharing visibility</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicate whether objects can be shared with this user. When set to <strong>SHARABLE</strong>, this user is an option in the <strong>Share</strong> dialog.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Change password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A password. Your password must contain three of the following: uppercase letters A-Z, lowercase letters a-z, special characters !#$ etc, numbers 0-9. Your password must be at least eight characters long. When you click on the <strong>change password</strong> field, a tooltip appears to tell you these requirements.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Confirm password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the password again.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Email</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The user&#8217;s email address. ThoughtSpot uses this for notification when another user shares something with them, for onboarding, for the <strong>Ask an Expert</strong> feature, and others.</p>
+<p class="tableblock">Note that during cluster configuration, the domain is specified. ThoughtSpot does not accept emails outside this domain. Contact ThoughtSpot Support to add new domains to a list of allowed domains.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Send a welcome email</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">When checked, this option ensures that the new user receives a welcome email.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Email message text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter text of the optional welcome email here.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Groups</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Recommended</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Select the groups for the user.
+Note that if you add the user to a group that has the privilege <strong>Has administration privileges</strong>, they can see all the data in ThoughtSpot.</p>
 </div>
+<div class="paragraph">
+<p>When you create a new user, the groups they belong to define the following attributes for the user:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Privileges</strong>: the actions they can perform, defined when you <a href="add-group.html" class="page">Add a group and set security privileges</a>.</p>
+</li>
+<li>
+<p><strong>Permissions</strong>: the data they can access and view, defined when you consider <a href="sharing-security-overview.html" class="page">Data security</a>.</p>
+</li>
+<li>
+<p><strong>Administrators</strong>: can see all data sources, and <a href="about-row-security.html" class="page">Row level security</a> does not apply to them.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </li>
 <li>
 <p>Click <strong>Add</strong> to create the user.</p>

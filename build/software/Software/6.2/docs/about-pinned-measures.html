@@ -1550,7 +1550,7 @@
     <a class="nav-link" href="rhel-add-node.html">Add new nodes to clusters on RHEL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="inthebox.html">Packages installed with RHEL</a>
+    <a class="nav-link" href="rhel-packages.html">Packages installed with RHEL</a>
   </li>
 </ul>
   </li>
@@ -1559,7 +1559,7 @@
     <span class="nav-text">Hardware appliance</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel-packages.html">Hardware appliance overview</a>
+    <a class="nav-link" href="inthebox.html">Hardware appliance overview</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -2717,6 +2717,9 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
+<p>Learn about group aggregation functions, or pinned measures.</p>
+</div>
+<div class="paragraph">
 <p>What if you want to aggregate a value by a specific attribute (for example, show revenue by product)?
 This is known as a grouped aggregation, but some people call it a pinned measure or level-based measure.
 You can do this for any aggregation using the grouping functions.</p>
@@ -2741,35 +2744,94 @@ You should experiment with only a measure and then with an attribute to see whic
 <div class="sectionbody">
 <div class="paragraph">
 <p>Group aggregation functions have names with formats like <code>group_&lt;aggregation&gt;</code>.
-The group aggregation functions are the following:<table><colgroup><col style="width:25%"></col>
-   <col style="width:75%"></col></colgroup>
-  <thead><tr><th>Function</th>
-      <th>Description</th></tr></thead>
-  <tr><td><code>group_average</code></td>
-    <td><p>Takes a measure and one or more attributes. Returns the average of the measure grouped by the attribute(s).</p>
-    <p><code>group_average (revenue, customer region)</code></p></td></tr>
-  <tr><td><code>group_count</code></td>
-    <td><p>Takes a measure and one or more attributes. Returns the count of the measure grouped by the attribute(s).</p>
-    <p><code>group_count (revenue, customer region)</code></p></td></tr>
-  <tr><td><code>group_max</code></td>
-    <td><p>Takes a measure and one or more attributes. Returns the maximum of the measure grouped by the attribute(s).</p>
-    <p><code>group_max (revenue, customer region)</code></p></td></tr>
-  <tr><td><code>group_min</code></td>
-    <td><p>Takes a measure and one or more attributes. Returns the minimum of the measure grouped by the attribute(s).</p>
-    <p><code>group_min (revenue, customer region)</code></p></td></tr>
-  <tr><td><code>group_stddev</code></td>
-    <td><p>Takes a measure and one or more attributes. Returns the standard deviation of the measure grouped by the attribute(s).</p>
-    <p><code>group_stddev (revenue, customer region)</code></p></td></tr>
-  <tr><td><code>group_sum</code></td>
-    <td><p>Takes a measure and one or more attributes. Returns the sum of the measure grouped by the attribute(s).</p>
-    <p><code>group_sum (revenue, customer region)</code></p></td></tr>
-  <tr><td><code>group_unique_count</code></td>
-    <td><p>Takes a column name and one or more attributes. Returns the number of unique values in a column, grouped by the attribute(s).</p>
-    <p><code>group_unique_count ( product, supplier)</code></p></td></tr>
-  <tr><td><code>group_variance</code></td>
-    <td><p>Takes a measure and one or more attributes. Returns the variance of the measure grouped by the attribute(s).</p>
-    <p><code>group_variance (revenue, customer region)</code></p></td></tr></table></p>
+The group aggregation functions are the following:</p>
 </div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Function</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>group_average</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Takes a measure and one or more attributes. Returns the average of the measure grouped by the attribute(s).
+    <code>group_average (revenue, customer region)</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>group_count</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Takes a measure and one or more attributes. Returns the count of the measure grouped by the attribute(s).
+    <code>group_count (revenue, customer region)</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>group_max</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Takes a measure and one or more attributes. Returns the maximum of the measure grouped by the attribute(s).
+    <code>group_max (revenue, customer region)</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>group_min</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Takes a measure and one or more attributes. Returns the minimum of the measure grouped by the attribute(s).
+    <code>group_min (revenue, customer region)</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>group_stddev</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Takes a measure and one or more attributes. Returns the standard deviation of the measure grouped by the attribute(s).
+    <code>group_stddev (revenue, customer region)</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>group_sum</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Takes a measure and one or more attributes. Returns the sum of the measure grouped by the attribute(s).
+    <code>group_sum (revenue, customer region)</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>group_unique_count</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Takes a column name and one or more attributes. Returns the number of unique values in a column, grouped by the attribute(s).
+    <code>group_unique_count ( product, supplier)</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>group_variance</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Takes a measure and one or more attributes. Returns the variance of the measure grouped by the attribute(s).
+    <code>group_variance (revenue, customer region)</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
