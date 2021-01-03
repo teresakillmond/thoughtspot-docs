@@ -33,12 +33,13 @@ If you specify different values during this step, it can create a temporary mism
 . Add your specific network information for the nodes in the `nodes.config` file, as demonstrated in the xref:nodesconfig-example.adoc#autodiscovery-of-one-node-example[autodiscovery of one node example].
 Run `vim nodes.config` to edit the file.
 +
+[source]
 ----
  $ vim nodes.config
 ----
 +
-{% include note.adoc content="Some of the information in the `nodes.config` file may be pre-populated from earlier steps.
-For example, if you specified an IP address while creating VMs, that IP address might already be present in your `nodes.config` file." %}
+NOTE: Some of the information in the `nodes.config` file may be pre-populated from earlier steps.
+For example, if you specified an IP address while creating VMs, that IP address might already be present in your `nodes.config` file.
 
 . Fill in the areas specified in xref:parameters-nodesconfig.adoc[Parameters of the nodes.config file] with your specific network information.
 + If you have additional nodes, complete each node within the nodes.config file in the same way.
@@ -55,6 +56,7 @@ Configure the nodes in the `nodes.config` file using the `set-config` command.
 The `firewalld` service is a Linux firewall that must be off for ThoughtSpot installation.
 After the cluster installer reboots the nodes, `firewalld` automatically turns back on.
 +
+[source]
 ----
  $ sudo systemctl stop firewalld
 ----
@@ -63,6 +65,7 @@ After the cluster installer reboots the nodes, `firewalld` automatically turns b
 Your output should specify that `firewalld` is inactive.
 It may look something like the following:
 +
+[source]
 ----
  $ sudo systemctl status firewalld
    ● firewalld.service - firewalld - dynamic firewall daemon
@@ -74,6 +77,8 @@ It may look something like the following:
 + If the command returns an error, refer to <<set-config-error-recovery,set-config error recovery>>.
 +  After you run the node configuration command, your output appears similar to the following:
 +
+
+[source,tscli]
 ----
  $ cat nodes.config | tscli cluster set-config
 
@@ -92,7 +97,7 @@ It may look something like the following:
 Use the `get-config` command to confirm node configuration.
 + Your output may look similar to the following:
 
-[source,console]
+[source,tscli]
 ----
 $ tscli cluster get-config
 
