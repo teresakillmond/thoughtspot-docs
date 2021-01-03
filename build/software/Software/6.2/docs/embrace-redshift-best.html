@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["Best practices for Embrace with Redshift"] :: ThoughtSpot Software</title>
+    <title>Best practices for Embrace with Redshift :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 3.0.0-alpha.1">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>["Best practices for Embrace with Redshift"] | ThoughtSpot Software</title>
+    <title>Best practices for Embrace with Redshift | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
 <!-- end couchbase banner logic -->
@@ -2663,7 +2663,14 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["Best practices for Embrace with Redshift"]</h1>
+<h1 class="page">Best practices for Embrace with Redshift</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can connect to Redshift using ThoughtSpot Embrace, and start searching your data. This article contains helpful pointers on data modeling.</p>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_configuring_your_thoughtspot_server"><a class="anchor" href="#_configuring_your_thoughtspot_server"></a>Configuring your ThoughtSpot server</h2>
 <div class="sectionbody">
@@ -2694,7 +2701,7 @@ Redshift is a columnar MPP database built for analytic workloads, and proper tun
 </div>
 <div class="paragraph">
 <p>You should always follow AWS best practices to optimize query performance.
-For details, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/c-optimizing-query-performance.html">Tuning query performance</a> in Amazon&#8217;s Redshift documentation.</p>
+For details, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/c-optimizing-query-performance.html" target="_blank" rel="noopener">Tuning query performance</a> in Amazon&#8217;s Redshift documentation.</p>
 </div>
 </div>
 </div>
@@ -2708,10 +2715,10 @@ For more information, refer to the following links in Amazon&#8217;s Redshift do
 <div class="ulist">
 <ul>
 <li>
-<p>Implementation: <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-implementing-workload-management.html">Implementing workload management</a></p>
+<p>Implementation: <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-implementing-workload-management.html" target="_blank" rel="noopener">Implementing workload management</a></p>
 </li>
 <li>
-<p>Workload and performance data: <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics">System monitoring tables</a></p>
+<p>Workload and performance data: <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics" target="_blank" rel="noopener">System monitoring tables</a></p>
 </li>
 </ul>
 </div>
@@ -2725,7 +2732,7 @@ For more information, refer to the following links in Amazon&#8217;s Redshift do
 Redshift&#8217;s concurrency scaling feature can be enabled to provide consistent query performance during periods of high activity.</p>
 </div>
 <div class="paragraph">
-<p>For details, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/concurrency-scaling.html">Working with concurrency scaling</a> in Amazon&#8217;s Redshift documentation.</p>
+<p>For details, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/concurrency-scaling.html" target="_blank" rel="noopener">Working with concurrency scaling</a> in Amazon&#8217;s Redshift documentation.</p>
 </div>
 </div>
 </div>
@@ -2737,7 +2744,7 @@ Redshift&#8217;s concurrency scaling feature can be enabled to provide consisten
 Selecting an optimized compression type can also have a big impact on query performance.</p>
 </div>
 <div class="paragraph">
-<p>These and other important topics are covered in <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_designing-tables-best-practices.html">Amazon Redshift best practices for table design</a> in Amazon&#8217;s Redshift documentation.</p>
+<p>These and other important topics are covered in <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_designing-tables-best-practices.html" target="_blank" rel="noopener">Amazon Redshift best practices for table design</a> in Amazon&#8217;s Redshift documentation.</p>
 </div>
 </div>
 </div>
@@ -2748,7 +2755,7 @@ Selecting an optimized compression type can also have a big impact on query perf
 <p>Redshift now supports materialized views, and it is recommended to create a materialized view and use it in place of any complex views or poor performing table joins.</p>
 </div>
 <div class="paragraph">
-<p>For details, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/materialized-view-overview.html">Creating materialized views in Amazon Redshift</a> in Amazon&#8217;s Redshift documentation.</p>
+<p>For details, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/materialized-view-overview.html" target="_blank" rel="noopener">Creating materialized views in Amazon Redshift</a> in Amazon&#8217;s Redshift documentation.</p>
 </div>
 </div>
 </div>
@@ -2761,10 +2768,10 @@ These columns represent the &#8216;primary key&#8217; and &#8216;foreign key&#82
 You can define them in either Redshift or ThoughtSpot.</p>
 </div>
 <div class="paragraph">
-<p>For details on the syntax for defining primary and foreign keys in Redshift, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_ALTER_TABLE.html">ALTER TABLE</a> in Amazon&#8217;s Redshift documentation.</p>
+<p>For details on the syntax for defining primary and foreign keys in Redshift, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_ALTER_TABLE.html" target="_blank" rel="noopener">ALTER TABLE</a> in Amazon&#8217;s Redshift documentation.</p>
 </div>
 <div class="paragraph">
-<p>For details on defining joins in ThoughtSpot, see link:{{ site.baseurl }}/admin/data-modeling/create-new-relationship.html[Join a table or view to another data source].</p>
+<p>For details on defining joins in ThoughtSpot, see <a href="create-new-relationship.html" class="page">Join a table or view to another data source</a>.</p>
 </div>
 </div>
 </div>

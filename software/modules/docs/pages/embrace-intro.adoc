@@ -1,7 +1,5 @@
 = Embrace overview
 :last_updated: 06/18/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
 
 Using Embrace, you can perform live queries on external databases.
 
@@ -38,184 +36,100 @@ It's easy to apply transformations and filter the data also.
 
 === Feature availability in Embrace
 
-The following matrix compares the features that are available in our internal high-performance database, Falcon, and the ones available in Embrace:+++<table>++++++<tbody>++++++<tr>++++++<th>+++Feature Name+++</th>+++
-+++<th>+++Falcon+++</th>+++
-+++<th>+++Embrace+++</th>++++++</tr>+++
-+++<tr>++++++<td>+++Simple Search and Complex searches:+++<br>++++++</br>+++Versus, Inline Subquerying, Growth+++</td>+++
-+++<td>+++&check;+++</td>+++
-+++<td>+++&check;+++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Search Suggestions for column names and values+++</td>+++
-+++<td>+++&check;+++</td>+++
-+++<td>+++&check;+++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Headlines that summarize tables+++</td>+++
-+++<td>+++&check;+++</td>+++
-+++<td>+++&check;+++</td>++++++</tr>+++
-+++<tr>++++++<td>+++All chart types and configurations+++</td>+++
-+++<td>+++&check;+++</td>+++
-+++<td>+++&check;+++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Spot IQ: Instant insights, Did you know?,+++<br>++++++</br>+++Pinboard insights, Analyze+++</td>+++
-+++<td>+++&check;+++</td>+++
-+++<td>+++&cross;+++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Monitor+++</td>+++
-+++<td>+++&check;+++</td>+++
-+++<td>+++&cross;+++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Table and Column remapping through Scriptability+++</td>+++
-+++<td>+++&cross;+++</td>+++
-+++<td>+++&check;+++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Custom calendar+++</td>+++
-+++<td>+++&check;+++</td>+++
-+++<td>+++&cross;+++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Materialized view+++</td>+++
-+++<td>+++&check;+++</td>+++
-+++<td>+++&cross;+++</td>++++++</tr>++++++</tbody>++++++</table>+++
+[width="100%",options="header",cols="70%,15%,15%"]
+|====================
+|Feature Name|Falcon|Embrace
+|Simple Search and Complex searches:Versus, Inline Subquerying, Growth|✓|✓
+|Search Suggestions for column names and values|✓|✓
+|Headlines that summarize tables|✓|✓
+|All chart types and configurations|✓|✓
+|Spot IQ: Instant insights, Did you know?,Pinboard insights, Analyze|✓|✗
+|Monitor|✓|✗
+|Table and Column remapping through Scriptability|✗|✓
+|Custom calendar|✓|✗
+|Materialized view|✓|✗
+|====================
 
 === Function availability in Embrace
 
 The following matrix compares the specific function support across the different databases of Embrace.
 Functions not listed here have full support.
 
-|===
-| Function | Snowflake | Amazon + Redshift | Google + BigQuery | Azure + Synapse | Teradata | SAP + HANA
-
-| `SOUNDS_LIKE`
-| &cross;
-| &cross;
-| &cross;
-| &cross;
-| &cross;
-| &cross;
-
-| `STRING_ MATCH_SCORE`
-| &cross;
-| &cross;
-| &cross;
-| &cross;
-| &cross;
-| &cross;
-
-| `EDIT_DISTANCE_WITH_CAP`
-| &cross;
-| &cross;
-| &cross;
-| &cross;
-| &cross;
-| &cross;
-
-| `APPROX_SET_CARDINALITY`
-| &cross;
-| &cross;
-| &cross;
-| &cross;
-| &cross;
-| &cross;
-
-| `COUNT_NOT_NULL`
-| &cross;
-| &cross;
-| &cross;
-| &cross;
-| &cross;
-| &cross;
-
-| `SPELLS_LIKE`
-| &check;
-| &cross;
-| &cross;
-| &cross;
-| &check;
-| &cross;
-
-| `EDIT_DISTANCE`
-| &check;
-| &cross;
-| &cross;
-| &cross;
-| &check;
-| &cross;
-
-| `MEDIAN`
-| &check;
-| &check;
-| &cross;
-| &check;
-| &check;
-| &check;
-
-| `PERCENTILE`
-| &check;
-| &check;
-| &cross;
-| &check;
-| &check;
-| &cross;
-|===
+[width="100%",options="header",cols="38%,10%,10%,10%,10%,12%,10%"]
+|====================
+|Function|Snowflake|Amazon
+Redshift|Google
+BigQuery|Azure
+Synapse|Teradata|SAP HANA
+|SOUNDS_LIKE|✗|✗|✗|✗|✗|✗
+|STRING_ MATCH_SCORE|✗|✗|✗|✗|✗|✗
+|EDIT_DISTANCE_WITH_CAP|✗|✗|✗|✗|✗|✗
+|APPROX_SET_CARDINALITY|✗|✗|✗|✗|✗|✗
+|COUNT_NOT_NULL|✗|✗|✗|✗|✗|✗
+|SPELLS_LIKE|✓|✗|✗|✗|✓|✗
+|EDIT_DISTANCE|✓|✗|✗|✗|✓|✗
+|MEDIAN|✓|✓|✗|✓|✓|✓
+|PERCENTILE|✓|✓|✗|✓|✓|✗
+|====================
 
 === Data type availability in Embrace
 
 The following matrix captures the specific data type support limitations across the different databases of Embrace.
 Data types not listed here have full support.
 
-|===
-| Data Type + | Snowflake + | Amazon + Redshift | Google + BigQuery | Azure + Synapse | Teradata | SAP + HANA
-
-| `BINARY`
-| &cross;
-| &check;
-| &check;
-| &cross;
-| &check;
-| &check;
-
-| `VARBINARY`
-| &cross;
-| &check;
-| &check;
-| &cross;
-| &check;
-| &cross;
-
-| `GEOMETRY`
-| &check;
-| &cross;
-| &check;
-| &check;
-| &check;
-| &cross;
-
-| `BYTES`
-| &check;
-| &check;
-| &cross;
-| &check;
-| &cross;
-| &check;
-
-| `DATETIMEOFFSET`
-| &check;
-| &check;
-| &check;
-| &cross;
-| &check;
-| &check;
-|===
+[width="100%",options="header",cols="38%,10%,10%,10%,10%,12%,10%"]
+|====================
+|Data Type|Snowflake|Amazon
+Redshift|Google
+BigQuery|Azure
+Synapse|Teradata|SAP HANA
+|BINARY|✗|✓|✓|✗|✓|✓
+|VARBINARY|✗|✓|✓|✗|✓|✗
+|GEOMETRY|✓|✗|✓|✓|✓|✗
+|BYTES|✓|✓|✗|✓|✗|✓
+|DATETIMEOFFSET|✓|✓|✓|✗|✓|✓
+|====================
 
 === Additional specific exceptions
 
 The following list captures the specific limitations across the different databases of Embrace.
 Databases not listed here have full support.
-+++<dlentry>+++General: all databases::::  +++<dlentry>+++Sample values::::  Embrace does not internationalize sample values in tables.+++</dlentry>++++++</dlentry>++++++<dlentry>+++Google BigQuery::::
-+++<dlentry>+++Join support::::  Google BigQuery does not support PK-FK joins.
-Therefore, when using Embrace, you must create joins explicitly in ThoughtSpot.+++</dlentry>++++++<dlentry>+++Partitioned tables::::  When running a query on a partitioned table with the *Require partition filter option* enabled, you must specify the `WHERE` clause.
-Without a `WHERE` clause specified, queries generate an error.
-+ To ensure that the query on such tables honors the partition condition, you must create a worksheet filter in ThoughtSpot.+++</dlentry>++++++</dlentry>++++++<dlentry>+++Azure Synapse::::  Azure Synapse supports up to 10 `IF THEN ELSE` statements in a single query.+++</dlentry>++++++<dlentry>+++Azure Synapse does not support foreign keys, so no PK-FK joins can be defined in Synapse.+++</dlentry>++++++<dlentry>+++Teradata::::  Teradata does not support the function: `AGGREGATE_DISTINCT`.  Teradata does not support the following data types: `JSON, INTERVAL, VARBYTE, BLOB, CLOB, PERIOD, XML, GEOSPATIAL`.+++</dlentry>++++++<dlentry>+++SAP HANA::::  SAP HANA does not support the following functions: `PERCENTILE, AGGREGATE_DISTINCT, SPELLS_LIKE, EDIT_DISTANCE`.  SAP HANA does not support the following data types: `BLOB, CLOB, NCLOB, TEXT, POINT`.
-SAP HANA does not support calculation views with mandatory input parameters.
-If you need to use calculation views in ThoughtSpot, you must remove the mandatory parameter requirement.+++</dlentry>+++
+
+General: all databases::
+Sample values::: Embrace does not internationalize sample values in tables.
+Google BigQuery::
+Join support::: Google BigQuery does not support PK-FK joins. Therefore, when using Embrace, you must create joins explicitly in ThoughtSpot.
+Partitioned tables::: When running a query on a partitioned table with the *Require partition filter option* enabled, you must specify the WHERE clause. Without a WHERE clause specified, queries generate an error.
+To ensure that the query on such tables honors the partition condition, you must create a worksheet filter in ThoughtSpot.
+Azure Synapse:: Azure Synapse supports up to 10 IF THEN ELSE statements in a single query.
++
+Azure Synapse does not support foreign keys, so no PK-FK joins can be defined in Synapse.
+Teradata:: Teradata does not support the function: AGGREGATE_DISTINCT.
++
+Teradata does not support the following data types: `JSON, INTERVAL, VARBYTE, BLOB, CLOB, PERIOD, XML, GEOSPATIAL`.
+SAP HANA:: SAP HANA does not support the following functions: `PERCENTILE, AGGREGATE_DISTINCT, SPELLS_LIKE, EDIT_DISTANCE`.
++
+SAP HANA does not support the following data types: `BLOB, CLOB, NCLOB, TEXT, POINT`.
++
+SAP HANA does not support calculation views with mandatory input parameters. If you need to use calculation views in ThoughtSpot, you must remove the mandatory parameter requirement.
 
 == Next steps
 
-* *xref:embrace-snowflake-add.adoc[Add a Snowflake connection]* + Create the connection between ThoughtSpot and tables in a Snowflake database.
-* *xref:embrace-redshift-add.adoc[Add a Redshift connection]* + Create the connection between ThoughtSpot and tables in an Amazon RedShift database.
-* *xref:embrace-gbq-add.adoc[Add a BigQuery connection]* + Create the connection between ThoughtSpot and tables in a Google BigQuery database.
-* *xref:embrace-synapse-add.adoc[Add a Synapse connection]* + Create the connection between ThoughtSpot and tables in an Azure Synapse database.
-* *xref:embrace-teradata-add.adoc[Add a Teradata connection]* + Create the connection between ThoughtSpot and tables in a Teradata database.
-* *xref:embrace-hana-add.adoc[Add an SAP HANA connection]* + Create the connection between ThoughtSpot and tables in an SAP HANA database.
+* *xref:embrace-snowflake-add.adoc[Add a Snowflake connection]*
++
+Create the connection between ThoughtSpot and tables in a Snowflake database.
+* *xref:embrace-redshift-add.adoc[Add a Redshift connection]*
++
+Create the connection between ThoughtSpot and tables in an Amazon RedShift database.
+* *xref:embrace-gbq-add.adoc[Add a BigQuery connection]*
++
+Create the connection between ThoughtSpot and tables in a Google BigQuery database.
+* *xref:embrace-synapse-add.adoc[Add a Synapse connection]*
++
+Create the connection between ThoughtSpot and tables in an Azure Synapse database.
+* *xref:embrace-teradata-add.adoc[Add a Teradata connection]*
++
+Create the connection between ThoughtSpot and tables in a Teradata database.
+* *xref:embrace-hana-add.adoc[Add an SAP HANA connection]*
++
+Create the connection between ThoughtSpot and tables in an SAP HANA database.
