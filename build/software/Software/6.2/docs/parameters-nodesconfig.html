@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["Parameters of the nodes.config file"] :: ThoughtSpot Software</title>
+    <title>Parameters of the nodes.config file :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 3.0.0-alpha.1">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>["Parameters of the nodes.config file"] | ThoughtSpot Software</title>
+    <title>Parameters of the nodes.config file | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
 <!-- end couchbase banner logic -->
@@ -2663,7 +2663,14 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["Parameters of the nodes.config file"]</h1>
+<h1 class="page">Parameters of the nodes.config file</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Learn the parameters of the nodes.config file to install  your cloud or hardware appliance.</p>
+</div>
+</div>
+</div>
 <div class="sect1 config">
 <h2 id="using-nodes"><a class="anchor" href="#using-nodes"></a>Using the nodes.config file</h2>
 <div class="sectionbody">
@@ -2676,22 +2683,22 @@
 <p>Run the configuration command in your terminal.</p>
 <div class="listingblock">
 <div class="content">
-<pre> $ tscli cluster get-config |&amp; tee nodes.config</pre>
+<pre class="highlightjs highlight"><code class="language-tscli hljs" data-lang="tscli"> tscli cluster get-config |&amp; tee nodes.config</code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>Add network information for your nodes in the <code>nodes.config</code> file output, as demonstrated in link:{{ site.baseurl }}/appliance/hardware/nodesconfig-example.html[the nodes.config file] example.
+<p>Add network information for your nodes in the <code>nodes.config</code> file output, as demonstrated in link:{{ site.baseurl }}/appliance/hardware/nodesconfig-example.adoc[the nodes.config file] example.
 + Run <code>vim nodes.config</code> to edit the file.</p>
 <div class="listingblock">
 <div class="content">
-<pre> $ vim nodes.config</pre>
+<pre class="highlightjs highlight"><code class="language-nodes.config hljs" data-lang="nodes.config">vim nodes.config</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Fill in the areas specified in link:{{ site.baseurl }}/appliance/hardware/parameters-nodesconfig.html#parameters-nodes.config[Parameters of <code>nodes.config</code>] with your specific network information.
-{% include note.html content="Some of the information in the <code>nodes.config</code> file may be pre-populated from earlier steps.
-For example, if you specified an IP address while creating VMs, that IP address might already be present in your <code>nodes.config</code> file." %}</p>
+<p>Fill in the areas specified in <a href="#parameters-nodes.config">Parameters of <code>nodes.config</code></a> with your specific network information.
+NOTE: Some of the information in the <code>nodes.config</code> file may be pre-populated from earlier steps.
+For example, if you specified an IP address while creating VMs, that IP address might already be present in your <code>nodes.config</code> file.</p>
 </div>
 </li>
 <li>
@@ -2700,11 +2707,11 @@ For example, if you specified an IP address while creating VMs, that IP address 
 </ol>
 </div>
 <div class="paragraph">
-<p>Do not edit any part of the nodes.config file except the sections explained in link:{{ site.baseurl }}/appliance/hardware/parameters-nodesconfig.html#parameters-nodes.config[Parameters of <code>nodes.config</code>].
+<p>Do not edit any part of the nodes.config file except the sections explained in <a href="#parameters-nodes.config">Parameters of <code>nodes.config</code></a>.
 If you delete quotation marks, commas, or other parts of the code, setup may fail.</p>
 </div>
 <div class="paragraph">
-<p>See link:{{ site.baseurl }}/appliance/hardware/parameters-nodesconfig.html#parameters-nodes.config[Parameters of <code>nodes.config</code>] to understand the parameters in the file.
+<p>See <a href="#parameters-nodes.config">Parameters of <code>nodes.config</code></a> to understand the parameters in the file.
 Different hardware and cloud installations have different parameters.
 Your installation may not require all the listed parameters.</p>
 </div>
@@ -2737,20 +2744,38 @@ To find your timezone and a city you can use to identify it, use <a href="https:
 </div>
 <div class="paragraph">
 <p><strong>NTPServers</strong>	The address of your company&#8217;s Network Time Protocol (NTP) server.
-If your company does not have an NTP server, you can use one of ThoughtSpot&#8217;s, as listed in link:{{ site.baseurl }}/appliance/hardware/nodesconfig-example.html#autodiscovery-of-one-node-example[the nodes.config] example under NTPServers.
+If your company does not have an NTP server, you can use one of ThoughtSpot&#8217;s, as listed in <a href="nodesconfig-example.html#autodiscovery-of-one-node-example" class="page">the nodes.config</a> example under NTPServers.
 For example, 0.centos.pool.ntp.org.</p>
 </div>
 <div class="paragraph">
 <p><strong>DNS</strong>	The address of your company&#8217;s Domain Name Server (DNS).
 For example, 192.168.2.200,8.8.8.8.</p>
 </div>
-<div class="paragraph">
-<p>{% include warning.html content="Configure only two DNS servers.
-ThoughtSpot does not support configuration of three DNS servers." %}</p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Configure only two DNS servers.
+ThoughtSpot does not support configuration of three DNS servers.
+</td>
+</tr>
+</table>
 </div>
-<div class="paragraph">
-<p>{% include note.html content="You can only edit DNS settings with this command if you are deploying ThoughtSpot on hardware.
-ThoughtSpot does not support using <code>set-config</code> to edit your DNS settings for cloud deployment." %}</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You can only edit DNS settings with this command if you are deploying ThoughtSpot on hardware.
+ThoughtSpot does not support using <code>set-config</code> to edit your DNS settings for cloud deployment.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p><strong>SearchDomains</strong>	The domain of your company or organization, in the form example.company.com.</p>
@@ -2776,25 +2801,25 @@ For example, 192.168.5.70.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>link:{{ site.baseurl }}/appliance/hardware/installing-the-smc.html[Deploying on the SMC appliance]</p>
+<p><a href="installing-the-smc.html" class="page">Deploying on the SMC appliance</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/aws/installing-aws.html[Configure ThoughtSpot nodes in AWS]</p>
+<p><a href="installing-aws.html" class="page">Configure ThoughtSpot nodes in AWS</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/gcp/installing-gcp.html[Configure ThoughtSpot nodes in GCP]</p>
+<p><a href="installing-gcp.html" class="page">Configure ThoughtSpot nodes in GCP</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/vmware/installing-vmware.html[Configure ThoughtSpot nodes in VMware]</p>
+<p><a href="installing-vmware.html" class="page">Configure ThoughtSpot nodes in VMware</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/azure/installing-azure.html[Configure ThoughtSpot nodes in Azure]</p>
+<p><a href="installing-azure.html" class="page">Configure ThoughtSpot nodes in Azure</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/hardware/installing-dell.html[Deploying on the Dell Appliance]</p>
+<p><a href="installing-dell.html" class="page">Deploying on the Dell Appliance</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/hardware/nodesconfig-example.html[The nodes.config file]</p>
+<p><a href="nodesconfig-example.html" class="page">The nodes.config file</a></p>
 </li>
 </ul>
 </div>

@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["The nodes.config file"] :: ThoughtSpot Software</title>
+    <title>The nodes.config file :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 3.0.0-alpha.1">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>["The nodes.config file"] | ThoughtSpot Software</title>
+    <title>The nodes.config file | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
 <!-- end couchbase banner logic -->
@@ -2663,7 +2663,14 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["The nodes.config file"]</h1>
+<h1 class="page">The nodes.config file</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Learn how to use the get.config command and the nodes.config file to install  your hardware or cloud appliance.</p>
+</div>
+</div>
+</div>
 <div class="sect1 config">
 <h2 id="using-nodes"><a class="anchor" href="#using-nodes"></a>Using the nodes.config file</h2>
 <div class="sectionbody">
@@ -2676,91 +2683,91 @@
 <p>Run the configuration command in your terminal.</p>
 <div class="listingblock">
 <div class="content">
-<pre> $ tscli cluster get-config |&amp; tee nodes.config</pre>
+<pre class="highlightjs highlight"><code class="language-tscli hljs" data-lang="tscli">tscli cluster get-config |&amp; tee nodes.config</code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>Fill in the areas specified in link:{{ site.baseurl }}/appliance/hardware/parameters-nodesconfig.html[Parameters of the nodes.config file] with your specific network information, as shown in link:{{ site.baseurl }}/appliance/hardware/nodesconfig-example#autodiscovery-of-one-node-example[Autodiscovery of one node example].
-{% include note.html content="Some of the information in the <code>nodes.config</code> file may be pre-populated from earlier steps.
-For example, if you specified an IP address while creating VMs, that IP address might already be present in your <code>nodes.config</code> file." %}</p>
+<p>Fill in the areas specified in <a href="parameters-nodesconfig.html" class="page">Parameters of the nodes.config file</a> with your specific network information, as shown in <a href="#autodiscovery-of-one-node-example">Autodiscovery of one node example</a>.
+NOTE: Some of the information in the <code>nodes.config</code> file may be pre-populated from earlier steps.
+For example, if you specified an IP address while creating VMs, that IP address might already be present in your <code>nodes.config</code> file.</p>
 </li>
 <li>
-<p>If you have  additional nodes, complete each node within the <code>nodes.config</code> file as shown in the link:{{ site.baseurl }}/appliance/hardware/nodesconfig-example#autodiscovery-of-one-node-example[Autodiscovery of one node example].
-link:{{ site.baseurl }}/appliance/hardware/nodesconfig-example#node-autodiscovery[Autodiscovery of one node] shows the <code>nodes.config</code> file before you fill in your specific information.</p>
+<p>If you have  additional nodes, complete each node within the <code>nodes.config</code> file as shown in the <a href="#autodiscovery-of-one-node-example">Autodiscovery of one node example</a>.
+<a href="#node-autodiscovery">Autodiscovery of one node</a> shows the <code>nodes.config</code> file before you fill in your specific information.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Do not edit any part of the nodes.config file except the sections explained in link:{{ site.baseurl }}/appliance/hardware/parameters-nodesconfig.html[Parameters of the nodes.config file].
+<p>Do not edit any part of the nodes.config file except the sections explained in <a href="parameters-nodesconfig.html" class="page">Parameters of the nodes.config file</a>.
 If you delete quotation marks, commas, or other parts of the code, setup may fail.</p>
 </div>
 <div class="paragraph">
-<p>See link:{{ site.baseurl }}/appliance/hardware/parameters-nodesconfig.html[Parameters of the nodes.config file] to understand the parameters in the file.</p>
+<p>See <a href="parameters-nodesconfig.html" class="page">Parameters of the nodes.config file</a> to understand the parameters in the file.</p>
 </div>
 <div class="sect2">
 <h3 id="node-autodiscovery"><a class="anchor" href="#node-autodiscovery"></a>Autodiscovery of one node</h3>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
 <pre>$ tscli cluster get-config |&amp; tee nodes.config
-{
-  "ClusterId": "",
-   "ClusterName": "",
-   "DataNetmask": "",
-   "DataGateway": "",
-   "IPMINetmask": "",
-   "IPMIGateway": "",
-   "Timezone": "",
-   "NTPServers": ",
-   "DNS": "",
-   "SearchDomains": "",
-   "Nodes": {
-     "06:83:1f:f8:99:9e": {
-       "NodeId": "06:83:1f:f8:99:9e",
-       "Hostname": "",
-       "DataIface": {
-         "Name": "eth0",
-         "IPv4": ""
-       },
-       "IPMI": {
-         "IPv4": ""
-       }
-     }
-   }
- }</pre>
+ {
+   "ClusterId": "",
+    "ClusterName": "",
+    "DataNetmask": "",
+    "DataGateway": "",
+    "IPMINetmask": "",
+    "IPMIGateway": "",
+    "Timezone": "",
+    "NTPServers": ",
+    "DNS": "",
+    "SearchDomains": "",
+    "Nodes": {
+      "06:83:1f:f8:99:9e": {
+        "NodeId": "06:83:1f:f8:99:9e",
+        "Hostname": "",
+        "DataIface": {
+          "Name": "eth0",
+          "IPv4": ""
+        },
+        "IPMI": {
+          "IPv4": ""
+        }
+      }
+    }
+  }</pre>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_autodiscovery_of_one_node_example"><a class="anchor" href="#_autodiscovery_of_one_node_example"></a>Autodiscovery of one node example</h3>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>$ vim nodes.config
-{
-"ClusterId": "",
-  "ClusterName": "",
-  "DataNetmask": "255.255.252.0",
-  "DataGateway": "192.168.4.1",
-  "IPMINetmask": "255.255.252.0",
-  "IPMIGateway": "192.168.4.1",
-  "Timezone": "America/Los_Angeles",
-  "NTPServers": "0.centos.pool.ntp.org,1.centos.pool.ntp.org,2.centos.pool.ntp.org,3.centos.pool.ntp.org",
-  "DNS": "192.168.2.200,8.8.8.8",
-  "SearchDomains": "example.company.com",
-  "Nodes": {
-	"ac:1f:6b:8a:77:f6": {
-  	"NodeId": "ac:1f:6b:8a:77:f6",
-  	"Hostname": "Thoughtspot-server1",
-  	"DataIface": {
-    	"Name": "eth2",
-    	"IPv4": "192.168.7.70"
-  	},
-  	"IPMI": {
-    	"IPv4": "192.168.5.70"
-  	 }
-	}
-  }
-}</pre>
+<pre> $ vim nodes.config
+ {
+ "ClusterId": "",
+   "ClusterName": "",
+   "DataNetmask": "255.255.252.0",
+   "DataGateway": "192.168.4.1",
+   "IPMINetmask": "255.255.252.0",
+   "IPMIGateway": "192.168.4.1",
+   "Timezone": "America/Los_Angeles",
+   "NTPServers": "0.centos.pool.ntp.org,1.centos.pool.ntp.org,2.centos.pool.ntp.org,3.centos.pool.ntp.org",
+   "DNS": "192.168.2.200,8.8.8.8",
+   "SearchDomains": "example.company.com",
+   "Nodes": {
+ 	"ac:1f:6b:8a:77:f6": {
+   	"NodeId": "ac:1f:6b:8a:77:f6",
+   	"Hostname": "Thoughtspot-server1",
+   	"DataIface": {
+     	"Name": "eth2",
+     	"IPv4": "192.168.7.70"
+   	},
+   	"IPMI": {
+     	"IPv4": "192.168.5.70"
+   	 }
+ 	}
+   }
+ }</pre>
 </div>
 </div>
 </div>
@@ -2772,25 +2779,25 @@ If you delete quotation marks, commas, or other parts of the code, setup may fai
 <div class="ulist">
 <ul>
 <li>
-<p>link:{{ site.baseurl }}/appliance/hardware/installing-the-smc.html[Deploying on the SMC appliance]</p>
+<p><a href="installing-the-smc.html" class="page">Deploying on the SMC appliance</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/aws/installing-aws.html[Configure ThoughtSpot nodes in AWS]</p>
+<p><a href="installing-aws.html" class="page">Configure ThoughtSpot nodes in AWS</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/gcp/installing-gcp.html[Configure ThoughtSpot nodes in GCP]</p>
+<p><a href="installing-gcp.html" class="page">Configure ThoughtSpot nodes in GCP</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/vmware/installing-vmware.html[Configure ThoughtSpot nodes in VMware]</p>
+<p><a href="installing-vmware.html" class="page">Configure ThoughtSpot nodes in VMware</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/azure/installing-azure.html[Configure ThoughtSpot nodes in Azure]</p>
+<p><a href="installing-azure.html" class="page">Configure ThoughtSpot nodes in Azure</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/hardware/installing-dell.html[Deploying on the Dell Appliance]</p>
+<p><a href="installing-dell.html" class="page">Deploying on the Dell Appliance</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/hardware/parameters-nodesconfig.html[Parameters of the nodes.config file]</p>
+<p><a href="parameters-nodesconfig.html" class="page">Parameters of the nodes.config file</a></p>
 </li>
 </ul>
 </div>

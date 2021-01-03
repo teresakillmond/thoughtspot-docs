@@ -4,7 +4,7 @@
 <!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["Using the tscli cluster create command"] :: ThoughtSpot Software</title>
+    <title>Using the tscli cluster create command :: ThoughtSpot Software</title>
     <meta name="generator" content="Antora 3.0.0-alpha.1">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>["Using the tscli cluster create command"] | ThoughtSpot Software</title>
+    <title>Using the tscli cluster create command | ThoughtSpot Software</title>
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
 <!-- end couchbase banner logic -->
@@ -2663,7 +2663,14 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["Using the tscli cluster create command"]</h1>
+<h1 class="page">Using the tscli cluster create command</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Learn how to use the cluster create command to install your appliance.</p>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="using-cluster-create"><a class="anchor" href="#using-cluster-create"></a>Using the tscli cluster create command</h2>
 <div class="sectionbody">
@@ -2673,14 +2680,17 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><strong>Download the release tarball</strong> Download the release tarball from the download link sent by ThoughtSpot Support.
-+ Refer to your welcome letter to find a link to download the release tarball.
-If you do not have a download link, open a support ticket with link:{{ site.baseurl }}/appliance/contact.html[ThoughtSpot Support] to access the release tarball.</p>
+<p><strong>Download the release tarball</strong> Download the release tarball from the download link sent by ThoughtSpot Support.</p>
+<div class="paragraph">
+<p>Refer to your welcome letter to find a link to download the release tarball. If you do not have a download link, open a support ticket with <a href="contact.html" class="page">ThoughtSpot Support</a> to access the release tarball.</p>
+</div>
 </li>
 <li>
-<p><strong>Copy the release tarball</strong> In your Terminal (Apple) or using <a href="https://winscp.net/eng/index.php">Winscp</a> (Windows application), copy the downloaded release tarball to <code>/home/admin/</code> and run the cluster installer as shown below.
-+ Run the secure copy command: <code>scp &lt;release-number&gt; admin@&lt;hostname&gt;:/home/admin/&lt;file-name&gt;</code>.
-Note the following parameters:<br></p>
+<p><strong>Copy the release tarball</strong> In your Terminal (Apple) or using <a href="https://winscp.net/eng/index.php" target="_blank" rel="noopener">Winscp</a> (Windows application), copy the downloaded release tarball to <code>/home/admin/</code> and run the cluster installer as shown below.</p>
+<div class="paragraph">
+<p>Run the secure copy command: <code>scp &lt;release-number&gt; admin@&lt;hostname&gt;:/home/admin/&lt;file-name&gt;</code>.
+Note the following parameters:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -2693,35 +2703,18 @@ Ask your network administrator if you do not know your hostname.</p>
 </li>
 <li>
 <p><code>file-name</code> is the name of the tarball file on your local machine.
-For example: <button type="button" button="" id="file-name" title="Copy" onclick="sayCopied(this.id)" class="btn btn-copy" data-clipboard-text="$ scp 6.0.tar.gz admin@ThoughtSpot:/home/admin/TS-tarball">Copy &#128203;</button></p>
-<div class="literalblock">
+For example:</p>
+<div class="listingblock">
 <div class="content">
-<pre>$ scp 6.0.tar.gz admin@ThoughtSpot:/home/admin/TS-tarball</pre>
+<pre class="highlightjs highlight"><code>scp 6.0.tar.gz admin@ThoughtSpot:/home/admin/TS-tarball</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>ThoughtSpot recommends that you start the session using <a href="https://linux.die.net/man/1/screen">screen</a>, so you do not lose your progress if you lose your connection at any point.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre> $ scp &lt;release-number&gt; admin@&lt;hostname&gt;:/home/admin/&lt;file-name&gt;
-. *Run the `tscli cluster create` command* Run `tscli cluster create &lt;release-number&gt;` in your terminal.
-+ If you are using an S3 or GCS bucket for object storage, include the flag `--enable_cloud_storage=s3` or `--enable_cloud_storage=gcs`.
-GCS is GCP's object storage, and s3 is AWS's object storage.
-s3 example: +++&lt;button type="button" id="s3-cloud" title="Copy" onclick="sayCopied(this.id)" class="btn btn-copy" data-clipboard-text="tscli cluster create 6.0.tar.gz --enable_cloud_storage=s3"&gt;+++Copy &amp;#128203;+++&lt;/button&gt;+++</pre>
-</div>
+<p>ThoughtSpot recommends that you start the session using <a href="https://linux.die.net/man/1/screen" target="_blank" rel="noopener">screen</a>, so you do not lose your progress if you lose your connection at any point.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre> $ tscli cluster create 6.0.tar.gz --enable_cloud_storage=s3</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>GCS example: <button type="button" id="gcs-cloud" title="Copy" onclick="sayCopied(this.id)" class="btn btn-copy" data-clipboard-text="tscli cluster create 6.0.tar.gz --enable_cloud_storage=gcs">Copy &#128203;</button></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre> $ tscli cluster create 6.0.tar.gz --enable_cloud_storage=gcs</pre>
+<pre class="highlightjs highlight"><code>scp &lt;release-number&gt; admin@&lt;hostname&gt;:/home/admin/&lt;file-name&gt;</code></pre>
 </div>
 </div>
 </li>
@@ -2729,7 +2722,29 @@ s3 example: +++&lt;button type="button" id="s3-cloud" title="Copy" onclick="sayC
 </div>
 </li>
 <li>
-<p><strong>Specify your installation information</strong> Fill out the cluster name, cluster ID, email alert preferences and the IP&#8217;s of the nodes at the prompts specified in link:{{ site.baseurl }}/appliance/hardware/parameters-cluster-create.html[Parameters of the tscli cluster create command].</p>
+<p><strong>Run the <code>tscli cluster create</code> command</strong> Run <code>tscli cluster create &lt;release-number&gt;</code> in your terminal.</p>
+<div class="paragraph">
+<p>If you are using an S3 or GCS bucket for object storage, include the flag <code>--enable_cloud_storage=s3</code> or <code>--enable_cloud_storage=gcs</code>. GCS is GCP&#8217;s object storage, and s3 is AWS&#8217;s object storage.</p>
+</div>
+<div class="paragraph">
+<p>s3 example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-tscli hljs" data-lang="tscli">tscli cluster create 6.0.tar.gz --enable_cloud_storage=s3</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>GCS example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-tscli hljs" data-lang="tscli">tscli cluster create 6.0.tar.gz --enable_cloud_storage=gcs</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Specify your installation information</strong> Fill out the cluster name, cluster ID, email alert preferences and the IP&#8217;s of the nodes at the prompts specified in <a href="parameters-cluster-create.html" class="page">Parameters of the tscli cluster create command</a>.</p>
 </li>
 <li>
 <p><strong>Wait for output</strong> You may need to wait about 15 seconds before you see any output.
@@ -2738,11 +2753,11 @@ The installer is unpacking files and copying them over to the nodes, which can t
 </ol>
 </div>
 <div class="paragraph">
-<p>Do not edit any part of the installer file except the sections specified in link:{{ site.baseurl }}/appliance/hardware/parameters-cluster-create.html[Parameters of the tscli cluster create command].
+<p>Do not edit any part of the installer file except the sections specified in <a href="parameters-cluster-create.html" class="page">Parameters of the tscli cluster create command</a>.
 if you delete colons, commas, or other parts of the code, setup may fail.</p>
 </div>
 <div class="paragraph">
-<p>Refer to link:{{ site.baseurl }}/appliance/hardware/parameters-cluster-create.html[Parameters of the tscli cluster create command] for further information.</p>
+<p>Refer to <a href="parameters-cluster-create.html" class="page">Parameters of the tscli cluster create command</a> for further information.</p>
 </div>
 <div class="paragraph">
 <p>Your <code>tscli cluster create</code> output may look something like the following:</p>
@@ -2924,25 +2939,25 @@ Successfully deleted deployer service
 <div class="ulist">
 <ul>
 <li>
-<p>link:{{ site.baseurl }}/appliance/hardware/installing-the-smc.html[Deploying on the SMC appliance]</p>
+<p><a href="installing-the-smc.html" class="page">Deploying on the SMC appliance</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/aws/installing-aws.html[Configure ThoughtSpot nodes in AWS]</p>
+<p><a href="installing-aws.html" class="page">Configure ThoughtSpot nodes in AWS</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/gcp/installing-gcp.html[Configure ThoughtSpot nodes in GCP]</p>
+<p><a href="installing-gcp.html" class="page">Configure ThoughtSpot nodes in GCP</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/vmware/installing-vmware.html[Configure ThoughtSpot nodes in VMware]</p>
+<p><a href="installing-vmware.html" class="page">Configure ThoughtSpot nodes in VMware</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/azure/installing-azure.html[Configure ThoughtSpot nodes in Azure]</p>
+<p><a href="installing-azure.html" class="page">Configure ThoughtSpot nodes in Azure</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/hardware/installing-dell.html[Deploying on the Dell Appliance]</p>
+<p><a href="installing-dell.html" class="page">Deploying on the Dell Appliance</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/appliance/hardware/parameters-cluster-create.html[Parameters of the tscli cluster create command]</p>
+<p><a href="parameters-cluster-create.html" class="page">Parameters of the tscli cluster create command</a></p>
 </li>
 </ul>
 </div>
