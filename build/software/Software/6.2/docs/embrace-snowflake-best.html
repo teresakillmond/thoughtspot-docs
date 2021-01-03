@@ -2708,37 +2708,32 @@
 <p>Log in to your Snowflake instance.</p>
 </li>
 <li>
-<p>If necessary, change your role so you can issue <code>CREATE VIEW</code> DDL statement in the target schema. See [CREATE VIEW](<a href="https://docs.snowflake.net/manuals/sql-reference/sql/create-view.html" class="bare">https://docs.snowflake.net/manuals/sql-reference/sql/create-view.html</a>) in Snowflake.</p>
-<div class="literalblock">
+<p>If necessary, change your role so you can issue <code>CREATE VIEW</code> DDL statement in the target schema. See <a href="https://docs.snowflake.net/manuals/sql-reference/sql/create-view.html" target="_blank" rel="noopener">CREATE VIEW</a> in Snowflake.</p>
+<div class="imageblock">
 <div class="content">
-<pre>![Switch roles in Snowflake](snowflake-switch-role.png "Switch roles in Snowflake")</pre>
+<img src="_images/snowflake-switch-role.png" alt="Switch roles in Snowflake">
 </div>
 </div>
 </li>
 <li>
 <p>Click <strong>Worksheets</strong>.</p>
-<div class="literalblock">
+<div class="imageblock">
 <div class="content">
-<pre>![Switch to Worksheets in Snowflake](snowflake-worksheets.png "Switch to Worksheets in Snowflake")</pre>
+<img src="_images/snowflake-worksheets.png" alt="Switch to Worksheets in Snowflake">
 </div>
 </div>
 </li>
 <li>
 <p>Issue the <code>CREATE VIEW</code> statement.</p>
-<div class="literalblock">
+<div class="paragraph">
+<p>See <a href="https://docs.snowflake.net/manuals/sql-reference/sql/create-view.html" target="_blank" rel="noopener">CREATE VIEW Syntax</a>.</p>
+</div>
+<div class="paragraph">
+<p>The following example uses the sample <code>WEATHER</code> data from the <strong>Snowflake Free Trial</strong> sample data:</p>
+</div>
+<div class="listingblock">
 <div class="content">
-<pre>See [CREATE VIEW Syntax](https://docs.snowflake.net/manuals/sql-reference/sql/create-view.html#syntax).</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>The following example uses the sample `WEATHER` data from the **Snowflake Free Trial** sample data:</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>   ```
-CREATE &lt;strong&gt;json_weather_data_view&lt;/strong&gt; as
+<pre class="highlightjs highlight"><code class="language-Snowflake hljs" data-lang="Snowflake">CREATE json_weather_data_view as
 SELECT
   v:time::timestamp as observation_time,
   v:city.id::int as city_id,
@@ -2756,34 +2751,27 @@ SELECT
   v:wind.deg::float as wind_dir,
   v:wind.speed::float as wind_speed
 FROM json_weather_data
-WHERE city_id = 5128638;
-   ```</pre>
+WHERE city_id = 5128638;</code></pre>
 </div>
 </div>
 </li>
 <li>
 <p>Query the new view in Snowflake.</p>
-<div class="literalblock">
-<div class="content">
-<pre>The following example demonstrates how you can query the view &lt;code&gt;&lt;strong&gt;json_weather_data_view&lt;/strong&gt;&lt;/code&gt; created in the previous step:</pre>
+<div class="paragraph">
+<p>The following example demonstrates how you can query the view <code><strong>json_weather_data_view</strong></code> created in the previous step:</p>
 </div>
-</div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>   ```
-   SELECT * FROM json_weather_data_view
+<pre class="highlightjs highlight"><code class="language-Snowflake hljs" data-lang="Snowflake">SELECT * FROM json_weather_data_view
 WHERE date_trunc('month',observation_time) = '2018-01-01'
-LIMIT 20;
-   ```</pre>
+LIMIT 20;</code></pre>
 </div>
 </div>
 </li>
 <li>
 <p>In ThoughtSpot Embrace, add a connection to Snowflake, specifically to the view you created.</p>
-<div class="literalblock">
-<div class="content">
-<pre>See [Connect to Snowflake through Embrace](#connect-snowflake).</pre>
-</div>
+<div class="paragraph">
+<p>See <a href="#connect-snowflake">Connect to Snowflake through Embrace</a>.</p>
 </div>
 </li>
 </ol>
@@ -2812,7 +2800,7 @@ LIMIT 20;
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>select
+<pre class="highlightjs highlight"><code class="language-Snowflake hljs" data-lang="Snowflake">select
   fk_tco.table_schema as foreign_schema,
   fk_tco.table_name as foreign_table,
   fk_tco.constraint_name as foreign_constraint,
@@ -2838,23 +2826,29 @@ order by
 <div class="paragraph">
 <p>The system returns the results of this query as a table that represents all foreign keys in the database, ordered by schema name and by name of the foreign table. The table has the following columns:</p>
 </div>
-<div class="paragraph">
-<p>&lt;dl&gt;
-&lt;dt&gt;foreign_schema&lt;/dt&gt;
-&lt;dd&gt;The name of the foreign schema&lt;/dd&gt;
-&lt;dt&gt;foreign_table&lt;/dt&gt;
-&lt;dd&gt;The name of the foreign table&lt;/dd&gt;
-&lt;dt&gt;foreign_constraint&lt;/dt&gt;
-&lt;dd&gt;The name of the foreign key constraint&lt;/dd&gt;
-&lt;dt&gt;rel&lt;/dt&gt;
-&lt;dd&gt;The relationship symbol that indicates the direction of the join&lt;/dd&gt;
-&lt;dt&gt;referenced_schema&lt;/dt&gt;
-&lt;dd&gt;The name of the referenced schema&lt;/dd&gt;
-&lt;dt&gt;referenced_schema&lt;/dt&gt;
-&lt;dd&gt;The name of the referenced schema&lt;/dd&gt;
-&lt;dt&gt;referenced_schema&lt;/dt&gt;
-&lt;dd&gt;The name of the referenced schema&lt;/dd&gt;
-&lt;/dl&gt;</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">foreign_schema</dt>
+<dd>
+<p>The name of the foreign schema</p>
+</dd>
+<dt class="hdlist1">foreign_table</dt>
+<dd>
+<p>The name of the foreign table</p>
+</dd>
+<dt class="hdlist1">foreign_constraint</dt>
+<dd>
+<p>The name of the foreign key constraint</p>
+</dd>
+<dt class="hdlist1">rel</dt>
+<dd>
+<p>The relationship symbol that indicates the direction of the joi</p>
+</dd>
+<dt class="hdlist1">referenced_schema</dt>
+<dd>
+<p>The name of the referenced schema</p>
+</dd>
+</dl>
 </div>
 <div class="paragraph">
 <p>To search multi-table Snowflake data in ThoughtSpot, you must explicitly create joins.</p>
@@ -2865,19 +2859,15 @@ order by
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>ThoughtSpot recommends that you add the necessary foreign key constraints by creating a join in Snowflake. We demonstrate how you can do in [Create joins in Snowflake]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-best.html#join-snowflake).</p>
-<div class="literalblock">
-<div class="content">
-<pre>For in-depth information from Snowflake, see [CREATE or ALTER TABLE … CONSTRAINT](https://docs.snowflake.net/manuals/sql-reference/sql/create-table-constraint.html).</pre>
-</div>
+<p>ThoughtSpot recommends that you add the necessary foreign key constraints by creating a join in Snowflake. We demonstrate how you can do in <a href="#join-snowflake">Create joins in Snowflake</a>.</p>
+<div class="paragraph">
+<p>For in-depth information from Snowflake, see <a href="https://docs.snowflake.net/manuals/sql-reference/sql/create-table-constraint.html" target="_blank" rel="noopener">CREATE or ALTER TABLE … CONSTRAINT</a>.</p>
 </div>
 </li>
 <li>
 <p>Alternatively, if you don&#8217;t have the necessary permissions, you can create these relationships in ThoughtSpot.</p>
-<div class="literalblock">
-<div class="content">
-<pre>See [Join a table or view to another data source]({{ site.baseurl }}/admin/data-modeling/create-new-relationship.html) and [Constraints]({{ site.baseurl }}/admin/loading/constraints.html).</pre>
-</div>
+<div class="paragraph">
+<p>See <a href="create-new-relationship.html" class="page">Join a table or view to another data source</a> and <a href="constraints.html" class="page">Constraints</a>.</p>
 </div>
 </li>
 </ol>
@@ -2887,34 +2877,46 @@ order by
 <div class="paragraph">
 <p>To add a foreign key constraint in Snowflake, you must issue the following <code>ALTER TABLE</code> statement:</p>
 </div>
-<div class="paragraph">
-<p>&lt;pre&gt;
-ALTER TABLE &lt;table_name&gt; ADD { outoflineUniquePK | outoflineFK }
-&lt;/pre&gt;</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Snowflake hljs" data-lang="Snowflake">ALTER TABLE &lt;table_name&gt; ADD { outoflineUniquePK | outoflineFK }</code></pre>
 </div>
-<div class="paragraph">
-<p>&lt;dl&gt;
-  &lt;dlentry&gt;
-    &lt;dt&gt;outoflineUniquePK&lt;/dt&gt;
-    &lt;dd&gt;The primary key in the relationship, with the following definition:&lt;br&gt;
-    &lt;pre&gt;outoflineUniquePK ::=
-  [ CONSTRAINT &lt;constraint_name&gt;&gt; ]
-  { UNIQUE | PRIMARY KEY } ( &lt;col_name&gt;&gt; [ , &lt;col_name&gt; , &#8230;&#8203; ] )
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">outoflineUniquePK</dt>
+<dd>
+<p>The primary key in the relationship, with the following definition:</p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Snowflake hljs" data-lang="Snowflake">outoflineUniquePK ::=
+  [ CONSTRAINT &lt;constraint_name&gt; ]
+  { UNIQUE | PRIMARY KEY } ( &lt;col_name&gt;&gt; [ , &lt;col_name&gt; , ... ] )
   [ [ NOT ] ENFORCED ]
   [ [ NOT ] DEFERRABLE ]
   [ INITIALLY { DEFERRED | IMMEDIATE } ]
   [ ENABLE | DISABLE ]
   [ VALIDATE | NOVALIDATE ]
-  [ RELY | NORELY ]&lt;/pre&gt;
-    &lt;/dd&gt;
-  &lt;/dlentry&gt;
-  &lt;dlentry&gt;
-    &lt;dt&gt;outoflineFK&lt;/dt&gt;
-    &lt;dd&gt;The foreign key in the relationship, with the following definition:&lt;br&gt;
-      &lt;pre&gt;outoflineFK :=
+  [ RELY | NORELY ]</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">outoflineFK</dt>
+<dd>
+<p>The foreign key in the relationship, with the following definition:</p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Snowflake hljs" data-lang="Snowflake">outoflineFK :=
     [ CONSTRAINT &lt;constraint_name&gt; ]
-    FOREIGN KEY ( &lt;col_namev [ , &lt;col_name&gt; , &#8230;&#8203; ] )
-    REFERENCES &lt;ref_table_name&gt; [ ( &lt;ref_col_name&gt; [ , &lt;ref_col_name&gt; , &#8230;&#8203; ] ) ]
+    FOREIGN KEY ( &lt;col_namev [ , &lt;col_name&gt; , ... ] )
+    REFERENCES &lt;ref_table_name&gt; [ ( &lt;ref_col_name&gt; [ , &lt;ref_col_name&gt; , ... ] ) ]
     [ MATCH { FULL | SIMPLE | PARTIAL } ]
     [ ON [ UPDATE { CASCADE | SET NULL | SET DEFAULT | RESTRICT | NO ACTION } ]
          [ DELETE { CASCADE | SET NULL | SET DEFAULT | RESTRICT | NO ACTION } ] ]
@@ -2923,10 +2925,8 @@ ALTER TABLE &lt;table_name&gt; ADD { outoflineUniquePK | outoflineFK }
     [ INITIALLY { DEFERRED | IMMEDIATE } ]
     [ ENABLE | DISABLE ]
     [ VALIDATE | NOVALIDATE ]
-    [ RELY | NORELY ]&lt;/pre&gt;
-    &lt;/dd&gt;
-  &lt;/dlentry&gt;
-&lt;/dl&gt;</p>
+    [ RELY | NORELY ]</code></pre>
+</div>
 </div>
 <div id="add-fk-snowflake"" class="paragraph">
 <p><strong>Example 1: adding a foreign key in Snowflake</strong></p>
@@ -2936,7 +2936,7 @@ ALTER TABLE &lt;table_name&gt; ADD { outoflineUniquePK | outoflineFK }
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>ALTER TABLE "HO_RETAIL"."PUBLIC"."HO_Retail_Sales_Fact"
+<pre class="highlightjs highlight"><code class="language-Snowflake hljs" data-lang="Snowflake">ALTER TABLE "HO_RETAIL"."PUBLIC"."HO_Retail_Sales_Fact"
   ADD FOREIGN KEY ("Date_Key" )
   REFERENCES "HO_RETAIL"."PUBLIC"."HO_Date_Dimension"
   MATCH FULL
@@ -2950,12 +2950,12 @@ ALTER TABLE &lt;table_name&gt; ADD { outoflineUniquePK | outoflineFK }
 <div class="paragraph">
 <p>To add the foreign key in ThoughtSpot (an alternative to the process outlined in [Example 1](#add-fk-snowflake)), you can issue the following TQL <code>ALTER TABLE</code> statement:</p>
 </div>
-<div class="paragraph">
-<p>&lt;pre&gt;
-TQL&gt; ALTER TABLE "HO_Retail_Sales_Fact"
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Snowflake hljs" data-lang="Snowflake">TQL&gt; ALTER TABLE "HO_Retail_Sales_Fact"
    ADD CONSTRAINT FOREIGN KEY ("Date_Key")
-   REFERENCES "HO_Date_Dimension" ("Date_Key");
-&lt;/pre&gt;</p>
+   REFERENCES "HO_Date_Dimension" ("Date_Key");</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -2969,86 +2969,93 @@ TQL&gt; ALTER TABLE "HO_Retail_Sales_Fact"
 <div class="paragraph">
 <p>In the following screen, the <strong>Account name</strong> is the first part of the URL that you use to access Snowflake.</p>
 </div>
-<div class="paragraph">
-<p><a href="#snowflake-connectiondetails.png.adoc" class="page unresolved">Snowflake connection details</a></p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/snowflake-connectiondetails.png" alt="Snowflake connection details">
+</div>
 </div>
 <div class="paragraph">
 <p>If you cannot find your <strong>Full account name</strong> in Snowflake, see the following examples for determining your account based on the account name, cloud platform, and region. Assume that the <strong>account name</strong> is <code>xy12345</code>.</p>
 </div>
-<div class="paragraph">
-<p>&lt;table&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;th&gt;Cloud platform&lt;/th&gt;
-&lt;th&gt;Region&lt;/th&gt;
-&lt;th&gt;Full account name&lt;/th&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th rowspan="8"&gt;AWS&lt;/th&gt;
-&lt;td&gt;US East (N. Virginia)&lt;/td&gt;
-&lt;td&gt;xy12345.us-east-1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;US East (Ohio)&lt;/td&gt;
-&lt;td&gt;xy12345.us-east-2.aws&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;US West (Oregon)&lt;/td&gt;
-&lt;td&gt;xy12345&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Canada (Central)&lt;/td&gt;
-&lt;td&gt;xy12345.ca-central-1.aws&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;EU (Ireland)&lt;/td&gt;
-&lt;td&gt;xy12345.eu-west-1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;EU (Frankfurt)&lt;/td&gt;
-&lt;td&gt;xy12345.eu-central-1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Asia Pacific (Singapore)&lt;/td&gt;
-&lt;td&gt;xy12345.ap-southeast-1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Asia Pacific (Sydney)&lt;/td&gt;
-&lt;td&gt;xy12345.ap-sowtheast-2&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th&gt;GCP - &lt;em&gt;Preview&lt;/em&gt;&lt;/th&gt;
-&lt;td&gt;us-central1 (Iowa)&lt;/td&gt;
-&lt;td&gt;xy12345.us-central1.gcp&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th rowspan="6"&gt;Azure&lt;/th&gt;
-&lt;td&gt;East US 2&lt;/td&gt;
-&lt;td&gt;xy12345.east-us-2.azure&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;US Gov Virginia&lt;/td&gt;
-&lt;td&gt;xy12345.us-gov-virginia.azure&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Canada Central&lt;/td&gt;
-&lt;td&gt;xy12345.canada-central.azure&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;West Europe&lt;/td&gt;
-&lt;td&gt;xy12345.west-europe.azure&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Australia East&lt;/td&gt;
-&lt;td&gt;xy12345.australia-east.azure&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Southeast Asia&lt;/td&gt;
-&lt;td&gt;xy12345.southeast-asia.azure&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;</p>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Cloud platform</th>
+<th class="tableblock halign-left valign-top">Region</th>
+<th class="tableblock halign-left valign-top">Full account name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="8"><p class="tableblock"><strong>AWS</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">US East (N. Virginia)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xy12345.us-east-1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">US East (Ohio)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xy12345.us-east-2.aws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">US West (Oregon)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xy12345</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canada (Central)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xy12345.ca-central-1.aws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EU (Ireland)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xy12345.eu-west-1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EU (Frankfurt)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xy12345.eu-central-1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Asia Pacific (Singapore)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xy12345.ap-southeast-1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Asia Pacific (Sydney)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xy12345.ap-sowtheast-2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>GCP - Preview</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">us-central1 (Iowa)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xy12345.us-central1.gcp</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock"><strong>Azure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">East US 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xy12345.east-us-2.azure</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">US Gov Virginia</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xy12345.us-gov-virginia.azure</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canada Central</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xy12345.canada-central.azure</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">West Europe</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xy12345.west-europe.azure</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Australia East</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xy12345.australia-east.azure</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Southeast Asia</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xy12345.southeast-asia.azure</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </article>

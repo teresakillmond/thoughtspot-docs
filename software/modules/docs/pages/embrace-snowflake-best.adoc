@@ -1,5 +1,6 @@
 = Best practices for Embrace with Snowflake
 :last_updated: 01/15/2020
+:linkattrs:
 
 You can connect to Snowflake using ThoughtSpot Embrace, and start searching your data. This article contains helpful pointers on data modeling.
 
@@ -22,23 +23,21 @@ To make this data searchable in ThoughtSpot, you must first create a view in Sno
 To create a view from a Snowflake table that contains JSON, follow these steps:
 
 . Log in to your Snowflake instance.
-
-. If necessary, change your role so you can issue `CREATE VIEW` DDL statement in the target schema. See [CREATE VIEW](https://docs.snowflake.net/manuals/sql-reference/sql/create-view.html) in Snowflake.
-
-    ![Switch roles in Snowflake](snowflake-switch-role.png "Switch roles in Snowflake")
-
+. If necessary, change your role so you can issue `CREATE VIEW` DDL statement in the target schema. See https://docs.snowflake.net/manuals/sql-reference/sql/create-view.html[CREATE VIEW,window=_blank] in Snowflake.
++
+image::snowflake-switch-role.png[Switch roles in Snowflake]
 . Click **Worksheets**.
-
-    ![Switch to Worksheets in Snowflake](snowflake-worksheets.png "Switch to Worksheets in Snowflake")
-
++
+image::snowflake-worksheets.png[Switch to Worksheets in Snowflake]
 . Issue the `CREATE VIEW` statement.
-
-   See [CREATE VIEW Syntax](https://docs.snowflake.net/manuals/sql-reference/sql/create-view.html#syntax).
-
-   The following example uses the sample `WEATHER` data from the **Snowflake Free Trial** sample data:
-
-   ```
-CREATE <strong>json_weather_data_view</strong> as
++
+See https://docs.snowflake.net/manuals/sql-reference/sql/create-view.html[CREATE VIEW Syntax,window=_blank].
++
+The following example uses the sample `WEATHER` data from the **Snowflake Free Trial** sample data:
++
+[source,Snowflake]
+----
+CREATE json_weather_data_view as
 SELECT
   v:time::timestamp as observation_time,
   v:city.id::int as city_id,
@@ -57,22 +56,21 @@ SELECT
   v:wind.speed::float as wind_speed
 FROM json_weather_data
 WHERE city_id = 5128638;
-   ```
+----
 
 . Query the new view in Snowflake.
-
-   The following example demonstrates how you can query the view <code><strong>json_weather_data_view</strong></code> created in the previous step:
-
-   ```
-   SELECT * FROM json_weather_data_view
++
+The following example demonstrates how you can query the view `*json_weather_data_view*` created in the previous step:
++
+[source,Snowflake]
+----
+SELECT * FROM json_weather_data_view
 WHERE date_trunc('month',observation_time) = '2018-01-01'
 LIMIT 20;
-   ```
-
+----
 . In ThoughtSpot Embrace, add a connection to Snowflake, specifically to the view you created.
-
-   See [Connect to Snowflake through Embrace](#connect-snowflake).
-
++
+See xref:connect-snowflake[Connect to Snowflake through Embrace].
 
 When you subsequently search in ThoughtSpot against the Snowflake view, you can easily create charts and graphs, as expected.
 
@@ -87,7 +85,8 @@ In Snowflake, you can query the schema to get a list of its existing foreign key
 
 To determine which foreign keys already exist in your Snowflake schema, issue the following `SELECT ... AS` statement:
 
-```
+[source,Snowflake]
+----
 select
   fk_tco.table_schema as foreign_schema,
   fk_tco.table_name as foreign_table,
@@ -109,71 +108,61 @@ join
 order by
   fk_tco.table_schema,
   fk_tco.table_name;
-
-```
+----
 
 The system returns the results of this query as a table that represents all foreign keys in the database, ordered by schema name and by name of the foreign table. The table has the following columns:
 
-<dl>
-<dt>foreign_schema</dt>
-<dd>The name of the foreign schema</dd>
-<dt>foreign_table</dt>
-<dd>The name of the foreign table</dd>
-<dt>foreign_constraint</dt>
-<dd>The name of the foreign key constraint</dd>
-<dt>rel</dt>
-<dd>The relationship symbol that indicates the direction of the join</dd>
-<dt>referenced_schema</dt>
-<dd>The name of the referenced schema</dd>
-<dt>referenced_schema</dt>
-<dd>The name of the referenced schema</dd>
-<dt>referenced_schema</dt>
-<dd>The name of the referenced schema</dd>
-</dl>
+foreign_schema:: The name of the foreign schema
+foreign_table:: The name of the foreign table
+foreign_constraint:: The name of the foreign key constraint
+rel:: The relationship symbol that indicates the direction of the joi
+referenced_schema:: The name of the referenced schema
 
 To search multi-table Snowflake data in ThoughtSpot, you must explicitly create joins.
 
 There are two ways to do this:
 
-. ThoughtSpot recommends that you add the necessary foreign key constraints by creating a join in Snowflake. We demonstrate how you can do in [Create joins in Snowflake]({{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-best.html#join-snowflake).
-
-   For in-depth information from Snowflake, see [CREATE or ALTER TABLE … CONSTRAINT](https://docs.snowflake.net/manuals/sql-reference/sql/create-table-constraint.html).
+. ThoughtSpot recommends that you add the necessary foreign key constraints by creating a join in Snowflake. We demonstrate how you can do in xref:embrace-snowflake-best.adoc#join-snowflake[Create joins in Snowflake].
++
+For in-depth information from Snowflake, see https://docs.snowflake.net/manuals/sql-reference/sql/create-table-constraint.html[CREATE or ALTER TABLE … CONSTRAINT,window=_blank].
 
 . Alternatively, if you don't have the necessary permissions, you can create these relationships in ThoughtSpot.
-
-   See [Join a table or view to another data source]({{ site.baseurl }}/admin/data-modeling/create-new-relationship.html) and [Constraints]({{ site.baseurl }}/admin/loading/constraints.html).
++
+See xref:create-new-relationship.adoc[Join a table or view to another data source] and xref:constraints.adoc[Constraints].
 
 [#join-snowflake]
 === Create joins in Snowflake
 
 To add a foreign key constraint in Snowflake, you must issue the following `ALTER TABLE` statement:
 
-<pre>
-ALTER TABLE &lt;table_name&gt; ADD { outoflineUniquePK | outoflineFK }
-</pre>
+[source,Snowflake]
+----
+ALTER TABLE <table_name> ADD { outoflineUniquePK | outoflineFK }
+----
 
-<dl>
-  <dlentry>
-    <dt>outoflineUniquePK</dt>
-    <dd>The primary key in the relationship, with the following definition:<br>
-    <pre>outoflineUniquePK ::=
-  [ CONSTRAINT &lt;constraint_name&gt;> ]
-  { UNIQUE | PRIMARY KEY } ( &lt;col_name&gt;> [ , &lt;col_name&gt; , ... ] )
+outoflineUniquePK:: The primary key in the relationship, with the following definition:
+
+[source,Snowflake]
+----
+outoflineUniquePK ::=
+  [ CONSTRAINT <constraint_name> ]
+  { UNIQUE | PRIMARY KEY } ( <col_name>> [ , <col_name> , ... ] )
   [ [ NOT ] ENFORCED ]
   [ [ NOT ] DEFERRABLE ]
   [ INITIALLY { DEFERRED | IMMEDIATE } ]
   [ ENABLE | DISABLE ]
   [ VALIDATE | NOVALIDATE ]
-  [ RELY | NORELY ]</pre>
-    </dd>
-  </dlentry>
-  <dlentry>
-    <dt>outoflineFK</dt>
-    <dd>The foreign key in the relationship, with the following definition:<br>
-      <pre>outoflineFK :=
-    [ CONSTRAINT &lt;constraint_name&gt; ]
-    FOREIGN KEY ( &lt;col_namev [ , &lt;col_name&gt; , ... ] )
-    REFERENCES &lt;ref_table_name&gt; [ ( &lt;ref_col_name&gt; [ , &lt;ref_col_name&gt; , ... ] ) ]
+  [ RELY | NORELY ]
+----
+
+outoflineFK:: The foreign key in the relationship, with the following definition:
+
+[source,Snowflake]
+----
+outoflineFK :=
+    [ CONSTRAINT <constraint_name> ]
+    FOREIGN KEY ( <col_namev [ , <col_name> , ... ] )
+    REFERENCES <ref_table_name> [ ( <ref_col_name> [ , <ref_col_name> , ... ] ) ]
     [ MATCH { FULL | SIMPLE | PARTIAL } ]
     [ ON [ UPDATE { CASCADE | SET NULL | SET DEFAULT | RESTRICT | NO ACTION } ]
          [ DELETE { CASCADE | SET NULL | SET DEFAULT | RESTRICT | NO ACTION } ] ]
@@ -182,35 +171,35 @@ ALTER TABLE &lt;table_name&gt; ADD { outoflineUniquePK | outoflineFK }
     [ INITIALLY { DEFERRED | IMMEDIATE } ]
     [ ENABLE | DISABLE ]
     [ VALIDATE | NOVALIDATE ]
-    [ RELY | NORELY ]</pre>
-    </dd>
-  </dlentry>
-</dl>
+    [ RELY | NORELY ]
+----
 
 [#add-fk-snowflake"]
 **Example 1: adding a foreign key in Snowflake**
 
 For example, you can add a foreign key to Retail Sales schema in Snowflake by running the following `ALTER TABLE` statement. Also, contrast it with [Example 2](#add-fk-thoughtspot):
 
-```
+[source,Snowflake]
+----
 ALTER TABLE "HO_RETAIL"."PUBLIC"."HO_Retail_Sales_Fact"
   ADD FOREIGN KEY ("Date_Key" )
   REFERENCES "HO_RETAIL"."PUBLIC"."HO_Date_Dimension"
   MATCH FULL
   ON UPDATE NO ACTION
   ON DELETE NO ACTION;
-```
+----
 
 [#add-fk-thoughtspot]
 **Example 2: adding a foreign key in ThoughtSpot**
 
 To add the foreign key in ThoughtSpot (an alternative to the process outlined in [Example 1](#add-fk-snowflake)), you can issue the following TQL `ALTER TABLE` statement:
 
-<pre>
-TQL&gt; ALTER TABLE "HO_Retail_Sales_Fact"
+[source,Snowflake]
+----
+TQL> ALTER TABLE "HO_Retail_Sales_Fact"
    ADD CONSTRAINT FOREIGN KEY ("Date_Key")
    REFERENCES "HO_Date_Dimension" ("Date_Key");
-</pre>
+----
 
 [#connect-snowflake]
 == Connect to Snowflake through Embrace
@@ -219,79 +208,26 @@ Follow the general steps in xref:embrace-snowflake-add.adoc[Add a Snowflake conn
 
 In the following screen, the **Account name** is the first part of the URL that you use to access Snowflake.
 
-xref:snowflake-connectiondetails.png.adoc[Snowflake connection details]
+image::snowflake-connectiondetails.png[Snowflake connection details]
 
 If you cannot find your **Full account name** in Snowflake, see the following examples for determining your account based on the account name, cloud platform, and region. Assume that the **account name** is `xy12345`.
 
-<table>
-<tbody>
-<tr>
-<th>Cloud platform</th>
-<th>Region</th>
-<th>Full account name</th>
-</tr>
-<tr>
-<th rowspan="8">AWS</th>
-<td>US East (N. Virginia)</td>
-<td>xy12345.us-east-1</td>
-</tr>
-<tr>
-<td>US East (Ohio)</td>
-<td>xy12345.us-east-2.aws</td>
-</tr>
-<tr>
-<td>US West (Oregon)</td>
-<td>xy12345</td>
-</tr>
-<tr>
-<td>Canada (Central)</td>
-<td>xy12345.ca-central-1.aws</td>
-</tr>
-<tr>
-<td>EU (Ireland)</td>
-<td>xy12345.eu-west-1</td>
-</tr>
-<tr>
-<td>EU (Frankfurt)</td>
-<td>xy12345.eu-central-1</td>
-</tr>
-<tr>
-<td>Asia Pacific (Singapore)</td>
-<td>xy12345.ap-southeast-1</td>
-</tr>
-<tr>
-<td>Asia Pacific (Sydney)</td>
-<td>xy12345.ap-sowtheast-2</td>
-</tr>
-<tr>
-<th>GCP - <em>Preview</em></th>
-<td>us-central1 (Iowa)</td>
-<td>xy12345.us-central1.gcp</td>
-</tr>
-<tr>
-<th rowspan="6">Azure</th>
-<td>East US 2</td>
-<td>xy12345.east-us-2.azure</td>
-</tr>
-<tr>
-<td>US Gov Virginia</td>
-<td>xy12345.us-gov-virginia.azure</td>
-</tr>
-<tr>
-<td>Canada Central</td>
-<td>xy12345.canada-central.azure</td>
-</tr>
-<tr>
-<td>West Europe</td>
-<td>xy12345.west-europe.azure</td>
-</tr>
-<tr>
-<td>Australia East</td>
-<td>xy12345.australia-east.azure</td>
-</tr>
-<tr>
-<td>Southeast Asia</td>
-<td>xy12345.southeast-asia.azure</td>
-</tr>
-</tbody>
-</table>
+[width="100%",options="header",cols="20%,40%,40%"]
+|====================
+| Cloud platform | Region | Full account name
+.8+| *AWS* | US East (N. Virginia) | xy12345.us-east-1
+|   US East (Ohio) | xy12345.us-east-2.aws
+|   US West (Oregon) | xy12345
+|   Canada (Central) | xy12345.ca-central-1.aws
+|   EU (Ireland) | xy12345.eu-west-1
+|   EU (Frankfurt) | xy12345.eu-central-1
+|   Asia Pacific (Singapore) | xy12345.ap-southeast-1
+|   Asia Pacific (Sydney) | xy12345.ap-sowtheast-2
+| *GCP - Preview* | us-central1 (Iowa) | xy12345.us-central1.gcp
+.6+| *Azure* | East US 2 | xy12345.east-us-2.azure
+|   US Gov Virginia | xy12345.us-gov-virginia.azure
+|   Canada Central | xy12345.canada-central.azure
+|   West Europe | xy12345.west-europe.azure
+|   Australia East | xy12345.australia-east.azure
+|   Southeast Asia | xy12345.southeast-asia.azure
+|====================

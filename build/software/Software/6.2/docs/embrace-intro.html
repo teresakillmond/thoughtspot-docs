@@ -2742,38 +2742,67 @@ It&#8217;s easy to apply transformations and filter the data also.</p>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_feature_availability_in_embrace"><a class="anchor" href="#_feature_availability_in_embrace"></a>Feature availability in Embrace</h3>
-<div class="paragraph">
-<p>The following matrix compares the features that are available in our internal high-performance database, Falcon, and the ones available in Embrace:<table><tbody><tr><th>Feature Name</th>
-<th>Falcon</th>
-<th>Embrace</th></tr>
-<tr><td>Simple Search and Complex searches:<br></br>Versus, Inline Subquerying, Growth</td>
-<td>&check;</td>
-<td>&check;</td></tr>
-<tr><td>Search Suggestions for column names and values</td>
-<td>&check;</td>
-<td>&check;</td></tr>
-<tr><td>Headlines that summarize tables</td>
-<td>&check;</td>
-<td>&check;</td></tr>
-<tr><td>All chart types and configurations</td>
-<td>&check;</td>
-<td>&check;</td></tr>
-<tr><td>Spot IQ: Instant insights, Did you know?,<br></br>Pinboard insights, Analyze</td>
-<td>&check;</td>
-<td>&cross;</td></tr>
-<tr><td>Monitor</td>
-<td>&check;</td>
-<td>&cross;</td></tr>
-<tr><td>Table and Column remapping through Scriptability</td>
-<td>&cross;</td>
-<td>&check;</td></tr>
-<tr><td>Custom calendar</td>
-<td>&check;</td>
-<td>&cross;</td></tr>
-<tr><td>Materialized view</td>
-<td>&check;</td>
-<td>&cross;</td></tr></tbody></table></p>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 70%;">
+<col style="width: 15%;">
+<col style="width: 15%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Feature Name</th>
+<th class="tableblock halign-left valign-top">Falcon</th>
+<th class="tableblock halign-left valign-top">Embrace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Simple Search and Complex searches:Versus, Inline Subquerying, Growth</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Search Suggestions for column names and values</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Headlines that summarize tables</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All chart types and configurations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spot IQ: Instant insights, Did you know?,Pinboard insights, Analyze</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Monitor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Table and Column remapping through Scriptability</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Custom calendar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Materialized view</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect2">
 <h3 id="_function_availability_in_embrace"><a class="anchor" href="#_function_availability_in_embrace"></a>Function availability in Embrace</h3>
@@ -2783,106 +2812,109 @@ Functions not listed here have full support.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 14.2857%;">
-<col style="width: 14.2857%;">
-<col style="width: 14.2857%;">
-<col style="width: 14.2857%;">
-<col style="width: 14.2857%;">
-<col style="width: 14.2858%;">
+<col style="width: 38%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 12%;">
+<col style="width: 10%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Function</th>
 <th class="tableblock halign-left valign-top">Snowflake</th>
-<th class="tableblock halign-left valign-top">Amazon + Redshift</th>
-<th class="tableblock halign-left valign-top">Google + BigQuery</th>
-<th class="tableblock halign-left valign-top">Azure + Synapse</th>
+<th class="tableblock halign-left valign-top">Amazon
+Redshift</th>
+<th class="tableblock halign-left valign-top">Google
+BigQuery</th>
+<th class="tableblock halign-left valign-top">Azure
+Synapse</th>
 <th class="tableblock halign-left valign-top">Teradata</th>
-<th class="tableblock halign-left valign-top">SAP + HANA</th>
+<th class="tableblock halign-left valign-top">SAP HANA</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SOUNDS_LIKE</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOUNDS_LIKE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING_ MATCH_SCORE</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">STRING_ MATCH_SCORE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>EDIT_DISTANCE_WITH_CAP</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EDIT_DISTANCE_WITH_CAP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>APPROX_SET_CARDINALITY</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">APPROX_SET_CARDINALITY</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>COUNT_NOT_NULL</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">COUNT_NOT_NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SPELLS_LIKE</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SPELLS_LIKE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>EDIT_DISTANCE</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EDIT_DISTANCE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>MEDIAN</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MEDIAN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>PERCENTILE</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PERCENTILE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
 </tr>
 </tbody>
 </table>
@@ -2895,70 +2927,73 @@ Data types not listed here have full support.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 14.2857%;">
-<col style="width: 14.2857%;">
-<col style="width: 14.2857%;">
-<col style="width: 14.2857%;">
-<col style="width: 14.2857%;">
-<col style="width: 14.2858%;">
+<col style="width: 38%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 12%;">
+<col style="width: 10%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Data Type<br></th>
-<th class="tableblock halign-left valign-top">Snowflake<br></th>
-<th class="tableblock halign-left valign-top">Amazon + Redshift</th>
-<th class="tableblock halign-left valign-top">Google + BigQuery</th>
-<th class="tableblock halign-left valign-top">Azure + Synapse</th>
+<th class="tableblock halign-left valign-top">Data Type</th>
+<th class="tableblock halign-left valign-top">Snowflake</th>
+<th class="tableblock halign-left valign-top">Amazon
+Redshift</th>
+<th class="tableblock halign-left valign-top">Google
+BigQuery</th>
+<th class="tableblock halign-left valign-top">Azure
+Synapse</th>
 <th class="tableblock halign-left valign-top">Teradata</th>
-<th class="tableblock halign-left valign-top">SAP + HANA</th>
+<th class="tableblock halign-left valign-top">SAP HANA</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BINARY</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BINARY</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>VARBINARY</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARBINARY</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>GEOMETRY</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GEOMETRY</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BYTES</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BYTES</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DATETIMEOFFSET</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&check;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DATETIMEOFFSET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✗</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✓</p></td>
 </tr>
 </tbody>
 </table>
@@ -2967,14 +3002,62 @@ Data types not listed here have full support.</p>
 <h3 id="_additional_specific_exceptions"><a class="anchor" href="#_additional_specific_exceptions"></a>Additional specific exceptions</h3>
 <div class="paragraph">
 <p>The following list captures the specific limitations across the different databases of Embrace.
-Databases not listed here have full support.
-<dlentry>General: all databases::::  <dlentry>Sample values::::  Embrace does not internationalize sample values in tables.</dlentry></dlentry><dlentry>Google BigQuery::::
-<dlentry>Join support::::  Google BigQuery does not support PK-FK joins.
-Therefore, when using Embrace, you must create joins explicitly in ThoughtSpot.</dlentry><dlentry>Partitioned tables::::  When running a query on a partitioned table with the <strong>Require partition filter option</strong> enabled, you must specify the <code>WHERE</code> clause.
-Without a <code>WHERE</code> clause specified, queries generate an error.
-+ To ensure that the query on such tables honors the partition condition, you must create a worksheet filter in ThoughtSpot.</dlentry></dlentry><dlentry>Azure Synapse::::  Azure Synapse supports up to 10 <code>IF THEN ELSE</code> statements in a single query.</dlentry><dlentry>Azure Synapse does not support foreign keys, so no PK-FK joins can be defined in Synapse.</dlentry><dlentry>Teradata::::  Teradata does not support the function: <code>AGGREGATE_DISTINCT</code>.  Teradata does not support the following data types: <code>JSON, INTERVAL, VARBYTE, BLOB, CLOB, PERIOD, XML, GEOSPATIAL</code>.</dlentry><dlentry>SAP HANA::::  SAP HANA does not support the following functions: <code>PERCENTILE, AGGREGATE_DISTINCT, SPELLS_LIKE, EDIT_DISTANCE</code>.  SAP HANA does not support the following data types: <code>BLOB, CLOB, NCLOB, TEXT, POINT</code>.
-SAP HANA does not support calculation views with mandatory input parameters.
-If you need to use calculation views in ThoughtSpot, you must remove the mandatory parameter requirement.</dlentry></p>
+Databases not listed here have full support.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">General: all databases</dt>
+<dd>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Sample values</dt>
+<dd>
+<p>Embrace does not internationalize sample values in tables.</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">Google BigQuery</dt>
+<dd>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Join support</dt>
+<dd>
+<p>Google BigQuery does not support PK-FK joins. Therefore, when using Embrace, you must create joins explicitly in ThoughtSpot.</p>
+</dd>
+<dt class="hdlist1">Partitioned tables</dt>
+<dd>
+<p>When running a query on a partitioned table with the <strong>Require partition filter option</strong> enabled, you must specify the WHERE clause. Without a WHERE clause specified, queries generate an error.
+To ensure that the query on such tables honors the partition condition, you must create a worksheet filter in ThoughtSpot.</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">Azure Synapse</dt>
+<dd>
+<p>Azure Synapse supports up to 10 IF THEN ELSE statements in a single query.</p>
+<div class="paragraph">
+<p>Azure Synapse does not support foreign keys, so no PK-FK joins can be defined in Synapse.</p>
+</div>
+</dd>
+<dt class="hdlist1">Teradata</dt>
+<dd>
+<p>Teradata does not support the function: AGGREGATE_DISTINCT.</p>
+<div class="paragraph">
+<p>Teradata does not support the following data types: <code>JSON, INTERVAL, VARBYTE, BLOB, CLOB, PERIOD, XML, GEOSPATIAL</code>.</p>
+</div>
+</dd>
+<dt class="hdlist1">SAP HANA</dt>
+<dd>
+<p>SAP HANA does not support the following functions: <code>PERCENTILE, AGGREGATE_DISTINCT, SPELLS_LIKE, EDIT_DISTANCE</code>.</p>
+<div class="paragraph">
+<p>SAP HANA does not support the following data types: <code>BLOB, CLOB, NCLOB, TEXT, POINT</code>.</p>
+</div>
+<div class="paragraph">
+<p>SAP HANA does not support calculation views with mandatory input parameters. If you need to use calculation views in ThoughtSpot, you must remove the mandatory parameter requirement.</p>
+</div>
+</dd>
+</dl>
 </div>
 </div>
 </div>
@@ -2985,22 +3068,40 @@ If you need to use calculation views in ThoughtSpot, you must remove the mandato
 <div class="ulist">
 <ul>
 <li>
-<p><strong><a href="embrace-snowflake-add.html" class="page">Add a Snowflake connection</a></strong> + Create the connection between ThoughtSpot and tables in a Snowflake database.</p>
+<p><strong><a href="embrace-snowflake-add.html" class="page">Add a Snowflake connection</a></strong></p>
+<div class="paragraph">
+<p>Create the connection between ThoughtSpot and tables in a Snowflake database.</p>
+</div>
 </li>
 <li>
-<p><strong><a href="embrace-redshift-add.html" class="page">Add a Redshift connection</a></strong> + Create the connection between ThoughtSpot and tables in an Amazon RedShift database.</p>
+<p><strong><a href="embrace-redshift-add.html" class="page">Add a Redshift connection</a></strong></p>
+<div class="paragraph">
+<p>Create the connection between ThoughtSpot and tables in an Amazon RedShift database.</p>
+</div>
 </li>
 <li>
-<p><strong><a href="embrace-gbq-add.html" class="page">Add a BigQuery connection</a></strong> + Create the connection between ThoughtSpot and tables in a Google BigQuery database.</p>
+<p><strong><a href="embrace-gbq-add.html" class="page">Add a BigQuery connection</a></strong></p>
+<div class="paragraph">
+<p>Create the connection between ThoughtSpot and tables in a Google BigQuery database.</p>
+</div>
 </li>
 <li>
-<p><strong><a href="embrace-synapse-add.html" class="page">Add a Synapse connection</a></strong> + Create the connection between ThoughtSpot and tables in an Azure Synapse database.</p>
+<p><strong><a href="embrace-synapse-add.html" class="page">Add a Synapse connection</a></strong></p>
+<div class="paragraph">
+<p>Create the connection between ThoughtSpot and tables in an Azure Synapse database.</p>
+</div>
 </li>
 <li>
-<p><strong><a href="embrace-teradata-add.html" class="page">Add a Teradata connection</a></strong> + Create the connection between ThoughtSpot and tables in a Teradata database.</p>
+<p><strong><a href="embrace-teradata-add.html" class="page">Add a Teradata connection</a></strong></p>
+<div class="paragraph">
+<p>Create the connection between ThoughtSpot and tables in a Teradata database.</p>
+</div>
 </li>
 <li>
-<p><strong><a href="embrace-hana-add.html" class="page">Add an SAP HANA connection</a></strong> + Create the connection between ThoughtSpot and tables in an SAP HANA database.</p>
+<p><strong><a href="embrace-hana-add.html" class="page">Add an SAP HANA connection</a></strong></p>
+<div class="paragraph">
+<p>Create the connection between ThoughtSpot and tables in an SAP HANA database.</p>
+</div>
 </li>
 </ul>
 </div>
