@@ -1,0 +1,22 @@
+<!-- begin couchbase banner logic -->
+    {{#with page.canonicalUrl}}
+    <link rel="canonical" href="{{ifelse (and (eq env.SUPPORTS_CURRENT_URL 'true') (ne page.version 'master')) (concat site.url (current-url page.url)) page.canonicalUrl}}">
+    {{/with}}
+<!-- end couchbase banner logic -->
+    {{#unless (eq page.attributes.pagination undefined)}}
+    {{#with page.previous}}
+    <link rel="prev" href="{{{relativize ./url}}}">
+    {{/with}}
+    {{#with page.next}}
+    <link rel="next" href="{{{relativize ./url}}}">
+    {{/with}}
+    {{/unless}}
+    {{#with page.description}}
+    <meta name="description" content="{{this}}">
+    {{/with}}
+    {{#with page.keywords}}
+    <meta name="keywords" content="{{this}}">
+    {{/with}}
+    {{#with (or antoraVersion site.antoraVersion)}}
+    <meta name="generator" content="Antora {{this}}">
+    {{/with}}

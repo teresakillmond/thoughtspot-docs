@@ -1,0 +1,17 @@
+{{#if (eq env.FORCE_HTTPS 'true')}}
+  <script>(function(l,p){if(l.protocol!==p)l.protocol=p})(location,'https:')</script>
+{{/if}}
+{{#with site.keys.googleAnalytics}}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{this}}"></script>
+    <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','{{this}}')</script>
+    {{/with}}
+    {{#if env.OPTANON_SCRIPT_URL}}
+<!--      jquery is also loaded in the footer, don't load it twice.-->
+      <script src="{{uiRootPath}}/js/vendor/jquery.js"></script>
+      <script src="{{env.OPTANON_SCRIPT_URL}}"></script>
+      <script>function OptanonWrapper(){}</script>
+    {{/if}}
+    {{#if site.keys.googleAnalytics}}
+      <script>(window.dataLayer=window.dataLayer||[]).push({'gtm.start':+new Date(),event:'gtm.js'})</script>
+      <script async src="https://www.googletagmanager.com/gtm.js?id={{site.keys.googleAnalytics}}"></script>
+    {{/if}}

@@ -1,0 +1,86 @@
+<script src="{{uiRootPath}}/js/site.js"></script>
+<script src="{{uiRootPath}}/js/vendor/highlight.js"></script>
+<script src="{{{uiRootPath}}}/js/vendor/jquery.js"></script>
+<script src="{{{uiRootPath}}}/js/vendor/bootstrap.js"></script>
+<script src="{{{uiRootPath}}}/js/vendor/tab.js"></script>
+<!--<script async src="{{{uiRootPath}}}/js/vendor/docsearch.min.js"></script>-->
+ <script src="{{{uiRootPath}}}/js/vendor/tippy.js"></script>
+<!-- <script async src="{{{uiRootPath}}}/js/vendor/popper.js"></script>-->
+
+<!--<script src="https://unpkg.com/@popperjs/core@2"></script>-->
+<!--<script src="https://unpkg.com/tippy.js@6"></script>-->
+<script>
+tippy('button', {content: 'tooltip'});
+</script>
+<script>
+// IIFE to ensure safe use of $
+(function( $ ) {
+
+  // Create plugin
+  $.fn.tooltips = function(el) {
+
+    var $tooltip,
+      $body = $('body'),
+      $el;
+
+    // Ensure chaining works
+    return this.each(function(i, el) {
+
+      $el = $(el).attr("data-tooltip", i);
+
+      // Make DIV and append to page
+      var $tooltip = $('<div class="tooltip" data-tooltip="' + i + '">' + $el.attr('title') + '<div class="arrow"></div></div>').appendTo("body");
+
+      // Position right away, so first appearance is smooth
+      var linkPosition = $el.position();
+
+      $tooltip.css({
+        top: linkPosition.top - $tooltip.outerHeight() - 13,
+        left: linkPosition.left - ($tooltip.width()/2)
+      });
+
+      $el
+      // Get rid of yellow box popup
+      .removeAttr("title")
+
+      // Mouseenter
+      .hover(function() {
+
+        $el = $(this);
+
+        $tooltip = $('div[data-tooltip=' + $el.data('tooltip') + ']');
+
+        // Reposition tooltip, in case of page movement e.g. screen resize
+        var linkPosition = $el.position();
+
+        $tooltip.css({
+          top: linkPosition.top - $tooltip.outerHeight() - 13,
+          left: linkPosition.left - ($tooltip.width()/2)
+        });
+
+        // Adding class handles animation through CSS
+        $tooltip.addClass("active");
+
+        // Mouseleave
+      }, function() {
+
+        $el = $(this);
+
+        // Temporary class for same-direction fadeout
+        $tooltip = $('div[data-tooltip=' + $el.data('tooltip') + ']').addClass("out");
+
+        // Remove all classes
+        setTimeout(function() {
+          $tooltip.removeClass("active").removeClass("out");
+          }, 300);
+
+        });
+
+      });
+
+    }
+
+})(jQuery);
+
+$("a[title]").tooltips();
+</script>
