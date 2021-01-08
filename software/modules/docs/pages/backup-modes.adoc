@@ -1,9 +1,8 @@
-= Understand backup modes
-:last_updated: 7/13/2020
+= ["Understand backup modes"]
+:last_updated: 3/10/2020
 :permalink: /:collection/:path.html
 :sidebar: mydoc_sidebar
-
-Learn about types of backups.
+:summary: Learn about types of backups.
 
 A backup is a procedure that stores a snapshot _outside_ of a ThoughtSpot cluster.
 Backups are stored in a directory on a local or network file system.
@@ -17,12 +16,12 @@ You can create a manual backup or configure an automated, periodic backup.
 For manual backups, the system creates a backup using the named snapshot you specify.
 For periodic backups, the system uses the most recent snapshot to create the backup.
 
-CAUTION: You should never disable the periodic snapshot system, because backups rely on it.
-For example, if you have disabled the periodic snapshots system and periodic backups are enabled, then the periodic backup may use a very outdated snapshot or it may fail all together.
+{% include warning.html content="You should never disable the periodic snapshot system, because backups rely on it.
+For example, if you have disabled the periodic snapshots system and periodic backups are enabled, then the periodic backup may use a very outdated snapshot or it may fail all together." %}
 
-ThoughtSpot usually stores backups on a xref:NAS-mount.adoc[NAS (network attached storage) file system] but you can store them on a local disk as well.
-You can back up an AWS cluster xref:aws-backup-restore.adoc[using an S3 bucket].
-You can back up a GCP cluster xref:gcp-backup-restore.adoc[using a GCS bucket].
+ThoughtSpot usually stores backups on a link:{{ site.baseurl }}/admin/setup/NAS-mount.html#[NAS (network attached storage) file system] but you can store them on a local disk as well.
+With AWS, you can back up an S3-based cluster link:{{ site.baseurl }}/appliance/aws/aws-backup-restore.html[using an S3 bucket].
+With GCP, you can back up a GCS-based cluster link:{{ site.baseurl }}/appliance/gcp/gcp-backup-restore.html[using a GCS bucket].
 When creating a backup, ThoughtSpot copies a release tarball and several supporting files to a disk you specify.
 Storing these supporting files takes about 10 GB of extra space beyond the backup itself.
 The final backup image is smaller because these extra files are removed after the backup completes successfully.

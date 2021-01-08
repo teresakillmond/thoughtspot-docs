@@ -12,7 +12,7 @@ Ask your network administrator if you do not know the admin credentials.
 . Enter your admin password at the prompt.
 + Ask your network administrator if you don't know the password.
 
-NOTE: The password does not appear on the screen as you type it.
+{% include note.html content="The password does not appear on the screen as you type it." %}
 
 [#node-step-2]
 === Step 2: Get a template for network configuration
@@ -26,9 +26,9 @@ Redirect it to the file `nodes.config`.
 [#node-step-3]
 === Step 3: Prepare node configuration
 
-WARNING: _DNS server_ and _IP address_ values must be set in the cloud backend.
+{% include warning.html content="_DNS server_ and _IP address_ values must be set in the cloud backend.
 It then populates them into the VM configuration.
-If you specify different values during this step, it can create a temporary mismatch and lead to connectivity issues.
+If you specify different values during this step, it can create a temporary mismatch and lead to connectivity issues." %}
 
 . Add your specific network information for the nodes in the `nodes.config` file, as demonstrated in the xref:nodesconfig-example.adoc#autodiscovery-of-one-node-example[autodiscovery of one node example].
 Run `vim nodes.config` to edit the file.
@@ -37,8 +37,7 @@ Run `vim nodes.config` to edit the file.
  $ vim nodes.config
 ----
 +
-{% include note.adoc content="Some of the information in the `nodes.config` file may be pre-populated from earlier steps.
-For example, if you specified an IP address while creating VMs, that IP address might already be present in your `nodes.config` file." %}
+NOTE: Some of the information in the `nodes.config` file may be pre-populated from earlier steps. For example, if you specified an IP address while creating VMs, that IP address might already be present in your `nodes.config` file.
 
 . Fill in the areas specified in xref:parameters-nodesconfig.adoc[Parameters of the nodes.config file] with your specific network information.
 + If you have additional nodes, complete each node within the nodes.config file in the same way.
@@ -74,9 +73,12 @@ It may look something like the following:
 + If the command returns an error, refer to <<set-config-error-recovery,set-config error recovery>>.
 +  After you run the node configuration command, your output appears similar to the following:
 +
+[source,console]
 ----
  $ cat nodes.config | tscli cluster set-config
+----
 
+----
  Connecting to local node-scout
  Setting up hostnames for all nodes
  Setting up networking interfaces on all nodes
@@ -95,7 +97,8 @@ Use the `get-config` command to confirm node configuration.
 [source,console]
 ----
 $ tscli cluster get-config
-
+----
+----
 {
   "ClusterId": "",
   "ClusterName": "",

@@ -106,10 +106,7 @@ Issue the Python script commands, supplying all this information, following this
  --purge \
  --basedn 'DC=ldap,DC=thoughtspot,DC=com' \
  --filter_str '(|(CN=TestGroupAlpha)(CN=TestGroupBeta))' \
- --include_nontree_members \
- --user_identifier <user_identifier> \
- --authdomain_identifier <authdomain_identifier> \
- --email_identifier <email_identifier>
+ --include_nontree_members
 ----
 +
 The bottom half of the preceding command targets sub trees under the DC called TestGroupAlpha and TestGroupBeta, and iterates through them recursively to create/sync users, groups, and their relationships in the ThoughtSpot system.
@@ -133,7 +130,4 @@ The following table provides a description of each command-line switch available
 |--basedn|Place in the directory that will be searched for users.
 |--filter_str|Further filters results from your base DN.
 |--include_nontree_members|Includes group members from LDAP/AD even if they do not belong to the current subtree that is being synced.
-|--user_identifier <user_identifier>|User name identifier key for user creation or sync.
-|--authdomain_identifier <authdomain_identifier>|Override domain name to be appended to user identifier in user name.
-|--email_identifier <email_identifier>|Email identifier key for user creation or sync.
 |====================

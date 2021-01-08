@@ -5,9 +5,7 @@
 
 You can export an entire ThoughtSpot worksheet in a flat-file format. After optional modification, you can migrate it to a different cluster, or restore it to the same cluster.
 
-In ThoughtSpot, you can download Worksheets to a flat file in `TSL`, xref:yaml-worksheet.adoc[ThoughtSpot's Scripting Language], modify the file, and subsequently upload this file either to the same cluster, or to a different cluster.
-
-Note that starting in release 6.2, you can use this feature to export and import Worksheets with filters.
+In ThoughtSpot, you can download Worksheets to a flat file in `YAML`, modify the file, and subsequently upload this file either to the same cluster, or to a different cluster.
 
 This mechanism supports several scenarios that you may encounter:
 
@@ -41,15 +39,15 @@ image::worksheet-export.png[Export Worksheet]
 
 . The worksheet downloads into your default directory.
 +
-You can access the downloaded `*.tsl` file, named for your worksheet either through the file system manager, or by clicking on the name of the downloaded file in the left bottom corner of your Internet browser.
+You can access the downloaded `*.YAML` file, named for your worksheet either through the file system manager, or by clicking on the name of the downloaded file in the left bottom corner of your Internet browser.
 +
 image::worksheet-export-complete.png[Open downloaded worksheet file]
 
 [#worksheet-change]
-== Working with the Worksheet TSL file
+== Working with the Worksheet YAML file
 
-You can change the TSL file that represents the Worksheet by editing its content.
-See xref:yaml-worksheet.adoc[TSL Worksheet specification] for the full syntax of the TSL file.
+You can change the YAML file that represents the Worksheet by editing its content.
+See xref:yaml-worksheet.adoc[YAML Worksheet specification] for the full syntax of the YAML file.
 
 [#worksheet-update]
 == Update a Worksheet
@@ -67,9 +65,9 @@ image::worksheet-update-from-file.png[Start Worksheet update from file]
 
 . In the upload interface, click *Browse your files*.
 +
-image::worksheet-update-browse.png[Find the Worksheet TSL file]
+image::worksheet-update-browse.png[Find the Worksheet YAML file]
 
-. In your file system, find and select the TSL file.
+. In your file system, find and select the YAML file.
 . In the *Update worksheet* interface, click *Upload*.
 +
 image::worksheet-update-upload.png[Upload the Worksheet]
@@ -99,7 +97,7 @@ image::worksheet-create-from-file.png[Create worksheet from file]
 +
 image::worksheet-create-browse-files.png[Browse your files]
 
-. In your file system, find and select the TSL file.
+. In your file system, find and select the YAML file.
 . Click *Upload*.
 +
 image::worksheet-create-upload.png[Upload the Worksheet]
@@ -111,4 +109,4 @@ image::worksheet-create-go-to-worksheet.png[Go to new Worksheet]
 
 == Related Information
 
-* xref:yaml-worksheet.adoc[Worksheet TSL specification]
+* xref:yaml-worksheet.adoc[Worksheet YAML specification]

@@ -17,6 +17,7 @@ These SQL commands are supported for ODBC and JDBC:
 Creates a table with the specified column definitions and constraints.
 The table is replicated on each node.
 +
+[source,SQL]
 ----
   CREATE TABLE country_dim (id_number int, country varchar, CONSTRAINT PRIMARY KEY (id_number));
 ----
@@ -26,6 +27,7 @@ The table is replicated on each node.
 Creates a database.
 For example:
 +
+[source,SQL]
 ----
   CREATE DATABASE "fruit_database";
 ----
@@ -35,6 +37,7 @@ For example:
 Creates a schema within the current database.
 For example:
 +
+[source,SQL]
 ----
   CREATE SCHEMA "fruit_schema";
 ----
@@ -46,14 +49,17 @@ Alters a table to add, drop, or rename a column.
 When you add a column to an existing table, you must provide a default value to use for existing rows.
 For example:
 +
+[source,SQL]
 ----
   ALTER TABLE "cart" ADD COLUMN "nickname" varchar(255) DEFAULT 'no nickname';
 ----
 +
+[source,SQL]
 ----
   ALTER TABLE "cart" DROP COLUMN "nickname";
 ----
 +
+[source,SQL]
 ----
   ALTER TABLE "sales" ADD CONSTRAINT PRIMARY KEY ("PO_number");
 ----
@@ -66,10 +72,12 @@ Note that if you then add a new primary key, the same upsert behavior will be ap
 This can result in data deletion, so make sure you understand how the upsert will affect your data ahead of time.
 For example:
 +
+[source,SQL]
 ----
   ALTER TABLE "sales" DROP CONSTRAINT PRIMARY KEY;
 ----
 +
+[source,SQL]
 ----
   ALTER TABLE "sales" ADD CONSTRAINT PRIMARY KEY ("PO_number");
 ----
@@ -79,10 +87,12 @@ For example:
 Drops the named foreign key or relationship between two tables.
 For example:
 +
+[source,SQL]
 ----
   ALTER TABLE "sales_fact" DROP CONSTRAINT "FK_PO_number";
 ----
 +
+[source,SQL]
 ----
   ALTER TABLE "fruit_dim" DROP RELATIONSHIP "REL_dates";
 ----
@@ -112,13 +122,14 @@ ALTER TABLE "fruit_dim" SET DIMENSION;`
 +
 Changes the data type of a column.
 This can have implications on sharding and primary key behavior.
-See link:{{ site.baseurl }}https:/admin/loading/about-data-type-conversion.html#concept_u2t_clg_wv[About data type conversion].
+See xref:about-data-type-conversion.adoc#concept_u2t_clg_wv[About data type conversion].
 For example:   `ALTER TABLE fact100 MODIFY COLUMN product_id int;`
 
 * `INSERT`
 +
 Creates placeholders in the table to receive the data.
 +
+[source,SQL]
 ----
   INSERT INTO TABLE country_dim (?, ?);
 ----
@@ -129,6 +140,7 @@ Deletes `ALL` rows from the specified table.
 Use the `WHERE` clause to specify only certain rows to be deleted.
 Example: You could remove all data for sales before a certain date to free up space in ThoughtSpot.
 +
+[source,SQL]
 ----
   DELETE FROM country_dim;
 ----
@@ -137,6 +149,7 @@ Example: You could remove all data for sales before a certain date to free up sp
 +
 Fetches the specified set of table data.
 +
+[source,SQL]
 ----
   SELECT id_number, country FROM country_dim WHERE id_number > 200;
 ----
@@ -150,6 +163,7 @@ However, this operation removes all existing data from the table and must be use
 You must reload the data following a TRUNCATE, or all dependent objects (worksheets and pinboards) in ThoughtSpot will become invalid.
 For example:
 +
+[source,SQL]
 ----
   TRUNCATE TABLE "location";
 ----
@@ -159,6 +173,7 @@ For example:
 Drops a database and all of its schemas and tables.
 For example:
 +
+[source,SQL]
 ----
   DROP DATABASE "fruit_database";
 ----
@@ -168,6 +183,7 @@ For example:
 Drops a schema within the current database, and drops all of the tables in the schema.
 For example:
 +
+[source,SQL]
 ----
   DROP SCHEMA "fruit_schema";
 ----
@@ -177,6 +193,7 @@ For example:
 Drops a table.
 For example:
 +
+[source,SQL]
 ----
   DROP TABLE "location";
 ----
@@ -187,6 +204,7 @@ Lists all available databases.
 +
 Examples:
 +
+[source,SQL]
 ----
   SHOW DATABASES;
 ----
@@ -196,6 +214,7 @@ Examples:
 Lists all schemas within the current database.
 For example:
 +
+[source,SQL]
 ----
   SHOW SCHEMAS;
 ----
@@ -205,6 +224,7 @@ For example:
 Lists all tables within the current database by schema.
 For example:
 +
+[source,SQL]
 ----
   SHOW TABLES;
 ----
@@ -214,6 +234,7 @@ For example:
 Lists all the columns for a table.
 For example:
 +
+[source,SQL]
 ----
   SHOW TABLE "locations";
 ----
@@ -223,6 +244,7 @@ For example:
 Generates the TQL schema for all tables in all databases on the server.
 For example:
 +
+[source,SQL]
 ----
   SCRIPT SERVER;
 ----
@@ -232,6 +254,7 @@ For example:
 Generates the TQL schema for all tables in a database.
 For example:
 +
+[source,SQL]
 ----
   SCRIPT DATABASE "fruit_database";
 ----
@@ -241,6 +264,7 @@ For example:
 Generates the TQL schema for a table.
 For example:
 +
+[source,SQL]
 ----
   SCRIPT TABLE "vendor";
 ----

@@ -16,8 +16,10 @@ Please retry or contact support.
 ----
 
 Restart the node-scout service with the following command:
-
+[source,console]
+----
  $ sudo systemctl restart node-scout
+----
 
 Ensure that you restarted the node-scout by running `sudo systemctl status node-scout`.
 Your output should specify that the node-scout service is active.
@@ -30,6 +32,9 @@ It may look something like the following:
 
 Next, retry the `set-config` command.
 
+[source,console]
+----
  $ cat nodes.config | tscli cluster set-config
+----
 
 The command output should no longer have a warning.
