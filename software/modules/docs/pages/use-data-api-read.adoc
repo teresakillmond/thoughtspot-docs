@@ -1,9 +1,8 @@
-'''
+= Use the Data REST API to get data
 
-title: [Use the Data REST API to get data]
+This procedure shows how to use the REST API to get data out of ThoughtSpot, so you can use it in a Web page, portal, or application.
 
-last_updated: tbd summary: "This procedure shows how to use the REST API to get data out of ThoughtSpot, so you can use it in a Web page, portal, or application.
-" sidebar: mydoc_sidebar permalink: /:collection/:path.html -- Data retrieved using the Data REST API is returned as JSON (JavaScript Object Notation).
+Data retrieved using the Data REST API is returned as JSON (JavaScript Object Notation).
 
 Before you can use the Data REST API, you need to enable the link:{{ site.baseurl }}/app-integrate/JSAPI/enable-JS-API.html#[JavaScript API (JS API)] and authenticate to ThoughtSpot.
 
@@ -38,12 +37,14 @@ image::copy_link_viz_pinboard_part.png[]
 
 . Construct the URL as follows: For a pinboard, the URL takes the form:
 +
+[source]
 ----
  https://<thoughtspot_server>/callosum/v1/tspublic/v1/pinboarddata?id=<pinboard_id>
 ----
 +
 For a visualization, the URL takes the form:
 +
+[source]
 ----
  https://<thoughtspot_server>/callosum/v1/tspublic/v1/pinboarddata?id=<pinboard_id>&vizid=%5B<visualization_id>%5D
 ----
