@@ -1,4 +1,4 @@
-* xref:docs:in-release.adoc[About this release]
+* About this release
 ** xref:docs:notes.adoc[Release notes]
 ** xref:docs:fixed.adoc[Fixed issues]
 ** xref:docs:downloads.adoc[Downloads]
@@ -6,7 +6,7 @@
 ---
 * Users
 ** xref:docs:introduction.adoc[Introduction]
-** xref:docs:getting-started.[Getting Started]
+** Getting Started
 *** xref:docs:user-onboarding-experience.adoc[User onboarding experience]
 *** xref:docs:about-navigating-thoughtspot.adoc[Finding your way around]
 *** xref:docs:accessing.adoc[ThoughtSpot browser access]
@@ -14,7 +14,7 @@
 *** xref:docs:about-user.adoc[Your user preferences]
 *** xref:docs:about-privileges-end-user.adoc[Understanding privileges]
 *** xref:docs:stickers.adoc[Use stickers to organize]
-** Use search
+** Use Search
 *** xref:docs:about-starting-a-new-search.adoc[What are searches and answers?]
 *** Search basics
 **** xref:docs:start-a-new-search.adoc[Start a new search]
@@ -24,17 +24,17 @@
 **** xref:docs:about-attributes-and-measures.adoc[Search results and column types]
 **** xref:docs:data-refresh-time.adoc[Last data refresh time]
 **** xref:docs:work-with-answers.adoc[Work with Answers]
-**** xref:docs:ask-an-expert.adoc[Ask an expert]
+**** xref:docs:ask-an-expert.adoc[Ask an Expert]
 **** xref:docs:monitor-expert.adoc[Manage Ask an Expert requests]
 **** xref:docs:retrieve-expert-answer.adoc[Retrieve Ask an Expert answers]
-**** xref:docs:answer-expert-question.adoc[Answer an expert question]
+**** xref:docs:answer-expert-question.adoc[Answer an Ask an Expert question]
 *** xref:docs:about-tables.adoc[Results that are tables]
 *** Use keywords in search
 **** xref:docs:about-keyword-searches.adoc[Overview of keyword searches]
 **** xref:docs:period-searches.adoc[Time series analysis]
 **** xref:docs:search-using-growth-over-time.adoc[Search using growth over time]
-**** xref:docs:in-keyword-searches.adoc[Using the n keyword for nested searches]
-**** xref:docs:proximity-search.adoc[Proximity search: near and farther than]
+**** xref:docs:in-keyword-searches.adoc[Subquery search]
+**** xref:docs:proximity-search.adoc[Proximity searches "near" and "farther than"]
 *** Work with filters
 **** xref:docs:about-filters.adoc[Understand filters]
 **** xref:docs:filter-from-column-headers.adoc[Add a filter to a table]
@@ -78,7 +78,6 @@
 **** xref:docs:reorder-values-on-the-x-axis.adoc[Reorder the labels]
 **** xref:docs:set-the-y-axis-scale.adoc[Set the y-axis range]
 **** xref:docs:hide-and-show-values.adoc[Hide and show values]
-**** xref:docs:high-cardinality.adoc[Charts and tables with a very large number of data values]
 **** xref:docs:change-chart-colors.adoc[Change chart colors]
 **** xref:docs:show-data-labels.adoc[Show data labels]
 **** xref:docs:show-data-markers.adoc[Show data markers]
@@ -123,7 +122,7 @@
 *** xref:docs:save-and-share-r-answers.adoc[Save and share R visualizations]
 ** SpotIQ
 *** xref:docs:whatisspotiq.adoc[What is SpotIQ]
-*** xref:docs:special-topics.adoc[Best practices]
+*** xref:docs:special-topics.adoc[Best SpotIQ practices]
 *** xref:docs:monitor-headlines.adoc[Monitor Headlines]
 *** xref:docs:comparative-analysis.adoc[Comparative Analysis]
 *** xref:docs:customization.adoc[Custom SpotIQ analysis]
@@ -148,6 +147,8 @@
 *** xref:docs:use-searchiq.adoc[Use SearchIQ for natural searches]
 *** xref:docs:teach-searchiq.adoc[Teach SearchIQ your language]
 ** xref:docs:what-you-can-find-in-the-help-center.adoc[More help and support]
+
+---
 * Administration
 ** xref:docs:intro.adoc[Introduction to administration]
 ** xref:docs:logins.adoc[Sign-in credentials for administration]
@@ -176,8 +177,8 @@
 *** xref:docs:NAS-mount.adoc[Configure NAS file system]
 *** xref:docs:set-up-monitoring.adoc[Set up monitoring]
 *** xref:docs:work-with-ts-support.adoc[Configure support services]
-*** xref:docs:ports.adoc[Network ports]
-*** xref:docs:about-load-balancer-configuration.adoc[Configure load balacing and proxies]
+*** xref:docs:ports.adoc[Network policies]
+*** xref:docs:about-load-balancer-configuration.adoc[Configure load balancing and proxies]
 *** xref:docs:customize-help.adoc[Customize ThoughtSpot Help]
 *** xref:docs:customize-style.adoc[Customize look and feel]
 ** Load and manage data
@@ -202,13 +203,12 @@
 **** xref:docs:about-data-type-conversion.adoc[Convert column data type]
 *** Load bulk data
 **** xref:docs:use-data-importer.adoc[Import CSV files with tsload]
-**** xref:docs:load-with-script.adoc[Use a script]
-**** xref:docs:load-with-service.adoc[Use the tsload service]
+**** xref:docs:load-with-script.adoc[Use a script to load data]
 *** Delete a data source
 **** xref:docs:delete-data-source-UX.adoc[Delete a data source (table)]
 **** xref:docs:check-dependencies-tql.adoc[Delete or change a table in TQL]
 ** Manage users and groups
-*** xref:docs:intro-onboarding.adoc[Onboarding users]
+*** xref:docs:intro-onboarding.adoc[Onboarding Users]
 *** xref:docs:about-users-groups.adoc[Understand groups and privileges]
 *** xref:docs:add-group.adoc[Create, edit, or delete a group]
 *** xref:docs:add-user.adoc[Create, edit, or delete a user]
@@ -230,8 +230,8 @@
 **** xref:docs:spotiq-admin.adoc[Security for SpotIQ functions]
 *** Row level security (RLS)
 **** xref:docs:about-row-security.adoc[About row level security (RLS)]
-**** xref:docs:row-level-security.adoc[How rule-based RLS works]
-**** xref:docs:set-rls.adoc[Set rule-based RLS]
+**** xref:docs:row-level-security.adoc[How Rule-Based RLS works]
+**** xref:docs:set-rls.adoc[Set Rule-Based RLS]
 *** xref:docs:security-thoughtspot-lifecycle.adoc[ThoughtSpot Lifecycle]
 *** xref:docs:encryption-of-data.adoc[Encryption of data in transit]
 ** System administration
@@ -295,9 +295,9 @@
 *** xref:docs:searchiq-optimize.adoc[Optimize SearchIQ]
 *** SearchIQ Optimization steps
 **** xref:docs:searchiq-optimize-columns.adoc[Enabling columns in SearchIQ]
-**** xref:docs:searchiq-optimize-experts.adoc[Add experts for SearchIQ]
+**** xref:docs:searchiq-optimize-experts.adoc[Add Experts for SearchIQ]
 **** xref:docs:searchiq-optimize-train.adoc[Train SearchIQ]
-*** xref:docs:set-entity-category.adoc[Set entitiy categories for SearchIQ]
+*** xref:docs:set-entity-category.adoc[Set entity categories for SearchIQ]
 *** xref:docs:searchiq-mappings.adoc[Change SearchIQ mappings]
 ** Managed scheduled jobs
 *** xref:docs:about-scheduled-pinboards.adoc[Job management (scheduled pinboards)]
@@ -309,7 +309,7 @@
 *** xref:docs:cluster-manager.adoc[Cluster Manager board]
 *** xref:docs:alerts-events.adoc[Alerts and Events board]
 *** xref:docs:worksheets.adoc[System worksheets]
-*** xref:docs:monitor-pinboards.adoc[System Pinboards]
+*** xref:docs:monitor-pinboards.adoc[System pinboards]
 ** Troubleshooting
 *** xref:docs:troubleshooting-intro.adoc[About troubleshooting]
 *** xref:docs:get-logs.adoc[Get your configuration and  logs]
@@ -322,12 +322,16 @@
 *** xref:docs:formula-date-problem.adoc[Cannot open a saved answer that contains a formula]
 *** xref:docs:data-loading-too-slowly.adoc[Data loading too slowly]
 *** xref:docs:search-too-many-blanks.adoc[Search results contain too many blanks]
+
+---
 * Mobile
 ** xref:docs:use-mobile.adoc[Overview]
 ** xref:docs:deploy-mobile.adoc[Deploy]
 ** xref:docs:install-mobile.adoc[Install and set up]
 ** xref:docs:faq-mobile.adoc[FAQ]
 ** xref:docs:notes-mobile.adoc[Release notes]
+
+---
 * Embedding
 ** xref:docs:intro-embedding.adoc[Introduction to Embedding]
 ** xref:docs:login-console.adoc[Log into the Linux shell using SSH]
@@ -371,25 +375,18 @@
 *** xref:docs:group-api.adoc[Group API]
 *** xref:docs:materialization-api.adoc[Materialization API]
 *** xref:docs:search-data-api.adoc[Search Data API]
+
+---
 * Deploy
 ** xref:docs:welcome-intro.adoc[Overview]
-** Amazon Linux 2 Support
-*** xref:docs:al2-overview.adoc[Amazon Linux 2 overview]
-*** xref:docs:al2-prerequisites.adoc[Amazon Linux 2 prerequisites]
-*** xref:docs:al2-ts-artifacts.adoc[ThoughtSpot deployment templates for Amazon Linux 2]
-*** xref:docs:al2-install-online.adoc[Online Amazon Linux 2 install]
-*** xref:docs:al2-install-offline.adoc[Offline Amazon Linux 2 install]
-*** xref:docs:al2-upgrade.adoc[Amazon Linux 2 upgrade]
-*** xref:docs:al2-add-node.adoc[Adding new nodes to clusters in Amazon Linux 2]
-*** xref:docs:al2-packages.adoc[Packages installed with Amazon Linux 2]
 ** RHEL Support
 *** xref:docs:rhel.adoc[RHEL overview]
 *** xref:docs:rhel-prerequisites.adoc[RHEL prerequisites]
-*** xref:docs:rhel-ts-artifacts.adoc[ThoughtSpot deployment templates for RHEL]
+*** xref:docs:rhel-ts-artifacts.adoc[ThoughtSpot deployment templates]
 *** xref:docs:rhel-install-online.adoc[Online RHEL install]
 *** xref:docs:rhel-install-offline.adoc[Offline RHEL install]
 *** xref:docs:rhel-upgrade.adoc[RHEL upgrade]
-*** xref:docs:rhel-add-node.adoc[Add new nodes to clusters on RHEL]
+*** xref:docs:rhel-add-node.adoc[Add new nodes to clusters in RHEL]
 *** xref:docs:rhel-packages.adoc[Packages installed with RHEL]
 ** Hardware appliance
 *** xref:docs:inthebox.adoc[Hardware appliance overview]
@@ -417,7 +414,6 @@
 **** xref:docs:installing-aws.adoc[Configure ThoughtSpot nodes in AWS]
 **** xref:docs:aws-cluster-install.adoc[Install ThoughtSpot clusters in AWS]
 **** xref:docs:ha-aws-efs.adoc[Set up high availability]
-**** xref:docs:aws-backup-restore.adoc[Back up and Restore using S3]
 *** Azure
 **** xref:docs:configuration-options-azure.adoc[Configuration options]
 **** xref:docs:launch-an-instance-azure.adoc[Set up ThoughtSpot in Azure]
@@ -428,7 +424,6 @@
 **** xref:docs:launch-an-instance-gcp.adoc[Set up ThoughtSpot in GCP]
 **** xref:docs:installing-gcp.adoc[Configure ThoughtSpot nodes in GCP]
 **** xref:docs:gcp-cluster-install.adoc[Install ThoughtSpot clusters in GCP]
-**** xref:docs:gcp-backup-restore.adoc[Back up and Restore using GCS]
 ** VMware
 *** xref:docs:vmware-intro.adoc[Configuration overview]
 *** xref:docs:vmware-setup.adoc[Set up ThoughtSpot in VMware]
@@ -436,6 +431,8 @@
 *** xref:docs:vmware-cluster-install.adoc[Install ThoughtSpot clusters in VMware]
 ** xref:docs:firewall-ports.adoc[Network policies]
 ** xref:docs:contact.adoc[Contact support]
+
+---
 * Embrace
 ** xref:docs:embrace-intro.adoc[Overview]
 ** Snowflake
@@ -445,7 +442,7 @@
 *** xref:docs:embrace-snowflake-reference.adoc[Reference]
 *** Snowflake Partner Connect
 **** xref:docs:embrace-snowflake-partner.adoc[Overview]
-**** xref:docs:embrace-snowflake-tutorial.adoc[Tutorials]
+**** xref:docs:embrace-snowflake-tutorial.adoc[ThoughtSpot Tutorials for Snowflake Partner Connect]
 ** Redshift
 *** xref:docs:embrace-redshift-add.adoc[Add a connection]
 *** xref:docs:embrace-redshift-modify.adoc[Modify a connection]
@@ -459,6 +456,8 @@
 *** xref:docs:embrace-synapse-add.adoc[Add a connection]
 *** xref:docs:embrace-synapse-modify.adoc[Modify a connection]
 *** xref:docs:embrace-synapse-reference.adoc[Reference]
+
+---
 * Data Integration
 ** xref:docs:introduction-data-integration.adoc[Introduction to Data Integration]
 ** xref:docs:jdbc-odbc-prereqs.adoc[JDBC and ODBC setup prerequisites]
@@ -485,6 +484,8 @@
 ** Reference
 *** xref:docs:odbc-commands.adoc[Supported SQL commands]
 *** xref:docs:simba-settings.adoc[Connection configuration]
+
+---
 * Disaster Recovery
 ** xref:docs:about-disaster-recovery.adoc[About disaster recovery]
 ** xref:docs:disk-failure.adoc[Disk failure]
@@ -493,47 +494,33 @@
 *** xref:docs:cluster-replacement.adoc[Overview of cluster replacement]
 *** xref:docs:NAS-mount.adoc[Mount a NAS file system]
 *** xref:docs:set-up-DR-config.adoc[Configure disaster recovery]
+
+---
 * Reference
 ** xref:docs:intro-reference.adoc[About this reference]
 ** xref:docs:keywords.adoc[Keyword reference]
 ** xref:docs:sql-cli-commands.adoc[TQL reference]
 ** xref:docs:data-importer-ref.adoc[tsload flag reference]
-** xref:docs:tsload-service-api-ref.adoc[tsload service API reference]
 ** xref:docs:tscli-command-ref.adoc[tscli command reference]
 ** xref:docs:date-formats-for-loading.adoc[Date and time formats reference]
 ** xref:docs:rls-rule-builder-reference.adoc[Row level security rules reference]
 ** xref:docs:formula-reference.adoc[Formula function reference]
-** xref:docs:alerts-reference.adoc[Alerts code reference]
+** xref:docs:alerts-reference.adoc[Alert codes reference]
 ** xref:docs:action-codes.adoc[User action code reference]
 ** xref:docs:stop-words.adoc[Stop word reference]
-** xref:docs:geomap-reference.adoc[Geo Map reference]
-*** xref:docs:geomap-australia.adoc[Australia]
-*** xref:docs:geomap-austria.adoc[Austria]
-*** xref:docs:geomap-canada.adoc[Canada]
-*** xref:docs:geomap-france.adoc[France]
-*** xref:docs:geomap-germany.adoc[Germany]
-*** xref:docs:geomap-india.adoc[India]
-*** xref:docs:geomap-indonesia.adoc[Indonesia]
-*** xref:docs:geomap-italy.adoc[Italy]
-*** xref:docs:geomap-japan.adoc[Japan]
-*** xref:docs:geomap-norway.adoc[Norway]
-*** xref:docs:geomap-poland.adoc[Poland]
-*** xref:docs:geomap-portugal.adoc[Portugal]
-*** xref:docs:geomap-sweden.adoc[Sweden]
-*** xref:docs:geomap-switzerland.adoc[Switzerland]
-*** xref:docs:geomap-south-africa.adoc[South Africa]
-*** xref:docs:geomap-united-states.adoc[United States]
-*** xref:docs:geomap-united-kingdom.adoc[United Kingdom]
+** xref:docs:geomap-reference.adoc[Geo map reference]
 ** xref:docs:glossary.adoc[Glossary]
 ** xref:docs:faq.adoc[Frequently asked questions]
 ** Deployment reference
 *** xref:docs:cable-networking.adoc[Cable reference]
 *** xref:docs:firewall-ports.adoc[Network policies]
 *** xref:docs:nodesconfig-example.adoc[The nodes.config file]
-*** xref:docs:parameters-nodesconfig.adoc[Parameters of the nodes.config file]
-*** xref:docs:cluster-create.adoc[Using the tscli cluster create command]
+*** xref:docs:parameters-nodesconfig.adoc[Parameters of nodes.config]
+*** xref:docs:cluster-create.adoc[Using the cluster create command]
 *** xref:docs:parameters-cluster-create.adoc[Parameters of cluster create]
 *** xref:docs:site-survey.pdf[Site Survey]
+
+---
 * ThoughtSpot in Practice
 ** xref:docs:intro-practice.adoc[Introduction]
 ** xref:docs:reaggregation-scenarios.adoc[Reaggregation in practice]
