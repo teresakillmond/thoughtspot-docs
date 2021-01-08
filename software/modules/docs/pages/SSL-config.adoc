@@ -194,22 +194,9 @@ EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH
 You can retrieve these from the ThoughtSpot web server (not against the load balancer) by running the following command on any ThoughtSpot node:     `     nmap --script ssl-enum-ciphers -p 443 <ThoughtSpot_node_IP_address>    `
 
 You must ensure that your load balancer supports these ciphers.
-If your load balancer cannot support these ciphers, link:{{ site.baseurl }}/appliance/contact.html[contact ThoughtSpot Support].
-
-include::partial$ssl-configure.adoc[]
-
+If your load balancer cannot support these ciphers, xref:contact.adoc[contact ThoughtSpot Support].
 
 [#ssl-configure-test]
 == Test the SSL certificate
 
-To test if the certificate is installed correctly, see link:{{ site.baseurl }}/admin/setup/logins.html#sign-in-to-the-thoughtspot-application[Sign in to the ThoughtSpot application].
-
-== Additional resources
-
-As you develop your expertise in authentication and security, we recommend the following ThoughtSpot U course:
-
-* https://training.thoughtspot.com/authentication-security/610523[Nginx SSL]
-
-See other training resources at
-+
-https://training.thoughtspot.com/[ThoughtSpot U]
+To test if the certificate is installed correctly, see xref:logins.adoc#sign-in-to-the-thoughtspot-application[Sign in to the ThoughtSpot application].

@@ -37,9 +37,9 @@ prod_image:: This directory contains the ThoughtSpot tools and tscli, the Though
 README.md:: Basic information for the unzipped file
 rpm_gpg:: This directory contains the https://access.redhat.com/documentation/en-us/red_hat_network/5.0.0/html/client_configuration_guide/ch-gpg-keys[GPG keys,window=_blank] that authenticate the public repository.
 toolchain:: The tools that are necessary to compile the instructions you define in the Ansible Playbook, the source code, into executables that can run on your device. The toolchain includes a compiler, a linker, and run-time libraries.
-ts-new.yaml:: The Ansible Playbook for new installations.
-ts-update.yaml:: The Ansible Playbook for updates.
-ts.yaml::
+ts-new.yaml:: The Ansible Playbook for new installations. Note that this is called `ts-rhel-new.yaml` in ThoughtSpot release 6.1. It is `ts-new.yaml` in releases 6.1.1 and later.
+ts-update.yaml:: The Ansible Playbook for updates. Note that this is called ts-rhel-update.yaml in ThoughtSpot release 6.1. It is `ts-update.yaml` in releases 6.1.1 and later.
+ts.yaml:: Note that this is called `ts-rhel.yaml` in ThoughtSpot release 6.1. It is `ts-yaml` in releases 6.1.1 and later.
 yum.repos.d:: This directory contains information about the yum repo used by the cluster.
 . Copy the Ansible inventory file hosts.sample to hosts.yaml, and using a text editor of your choice, update the file to include your host configuration:
 +

@@ -1,14 +1,13 @@
-= Cluster Manager board
+= ["Cluster Manager board"]
 :last_updated: 11/18/2019
+:permalink: /:collection/:path.html
+:sidebar: mydoc_sidebar
+:summary: Learn about the Cluster Manager board.
+:toc: false
 
-Learn about the Cluster Manager board.
+The *Cluster Manager* section shows detailed information about a cluster including latency over time, snapshot status, installed release, node functions, and logs.
 
-You can view cluster information from the Admin Console.
-The *System Cluster Pinboard* contains several ThoughtSpot Answers that display latency over time, snapshot status, installed release, node functions, and logs.
-To view this Pinboard, navigate to the Admin Console by clicking on the *Admin* tab from the top navigation bar.
-Select *Cluster* from the side navigation bar that appears.
-
-image::admin-portal-cluster-pinboard.png[Admin Console - Cluster Pinboard]
+image::{{ site.baseurl }}/images/control_center_cluster_mgmt.png[]
 
 Only the *Average Latency Last 2 Weeks (sec)* panel contains a standard ThoughtSpot visualization.
 The other visualizations rely on internal queries that are not accessible.
@@ -16,43 +15,53 @@ You can, however, *Present* or *Copy link* on them.
 
 == Cluster Details
 
-The fields on this visualization have the following meaning:
-[width="100%",options="header",cols="20%,80%"]
-|====================
-| *Field* | Description
-| *Cluster Name*| The name of the cluster defined at installation time.
-| *Cluster ID* | The ID of the cluster set at installation time.
-| *Last Update Time* | Last time the cluster was updated.
-| *Release* | Version of the current release.
-| *Zookeeper Servers* | IP addresses of the Zookeeper servers.
-| *HDFS Name Nodes* | Control nodes for Hadoop Distributed File System (HDFS).
-|====================
+The fields on this visualization have the following meaning:+++<table>++++++<colgroup>++++++<col style="width:35%">++++++</col>+++
+    +++<col style="width:65%">++++++</col>++++++</colgroup>+++
+    +++<tr>++++++<th>+++Field+++</th>+++
+       +++<th>+++Description+++</th>++++++</tr>+++
+    +++<tr>++++++<th>+++Cluster Name+++</th>+++
+       +++<td>+++The name of the cluster defined at installation time.+++</td>++++++</tr>+++
+    +++<tr>++++++<th>+++Cluster ID+++</th>+++
+       +++<td>+++The ID of the cluster set at installation time.+++</td>++++++</tr>+++
+    +++<tr>++++++<th>+++Last Update Time+++</th>+++
+       +++<td>+++Last time the cluster was updated.+++</td>++++++</tr>+++
+    +++<tr>++++++<th>+++Release+++</th>+++
+       +++<td>+++Version of the current release.+++</td>++++++</tr>+++
+    +++<tr>++++++<th>+++Zookeeper Servers+++</th>+++
+       +++<td>+++IP addresses of the Zookeeper servers.+++</td>++++++</tr>+++
+    +++<tr>++++++<th>+++HDFS Name Nodes+++</th>+++
+       +++<td>+++Control nodes for Hadoop Distributed File System (HDFS).+++</td>++++++</tr>++++++</table>+++
 
 == Cluster Logs
 
-The fields on this visualization have the following meaning:
-[width="100%",options="header",cols="10%,90%"]
-|====================
-| *Field* | Description
-| *Time*| A timestamp indicating when an action occurred.
-| *Type* | Type of action.
-| *Release* | Identifies the full release number.
-|====================
+The fields on this visualization have the following meaning:+++<table>++++++<colgroup>++++++<col style="width:35%">++++++</col>+++
+   +++<col style="width:65%">++++++</col>++++++</colgroup>+++
+   +++<tr>++++++<th>+++Field+++</th>+++
+      +++<th>+++Description+++</th>++++++</tr>+++
+   +++<tr>++++++<th>+++Time+++</th>+++
+      +++<td>+++A timestamp indicating when an action occurred.+++</td>++++++</tr>+++
+   +++<tr>++++++<th>+++Type+++</th>+++
+      +++<td>+++Type of action.+++</td>++++++</tr>+++
+   +++<tr>++++++<th>+++Release+++</th>+++
+      +++<td>+++Identifies the full release number.+++</td>++++++</tr>++++++</table>+++
 
 You can also use the `tscli logs` command to review log data from your cluster.
 
 == List of Snapshots
 
 This visualization shows the snapshots _and the backups_ taken on the cluster.
-The fields on this visualization have the following meaning:
-[width="100%",options="header",cols="10%,90%"]
-|====================
-| *Field* | Description
-| **Time **| A timestamp indicating when a snapshot or backup happened occurred.
-| *Name* | Name of the snapshot file. These files are stored in the `/usr/local/scaligent/backup` directory on your cluster.
-| *Reason* | You may also see evidence here of manual backups. For example, you should be sure your cluster is backed up before major events such as upgrades. Contact xref:contact.adoc[ThoughtSpot Support] if you don’t see evidence your cluster is periodically creating snapshots.
-| *Size* | Size of the backup in gigabytes.
-|====================
+The fields on this visualization have the following meaning:+++<table>++++++<colgroup>++++++<col style="width:35%">++++++</col>+++
+   +++<col style="width:65%">++++++</col>++++++</colgroup>+++
+   +++<tr>++++++<th>+++Field+++</th>+++
+      +++<th>+++Description+++</th>++++++</tr>+++
+   +++<tr>++++++<th>+++Time+++</th>+++
+      +++<td>+++A timestamp indicating when a snapshot or backup happened occurred.+++</td>++++++</tr>+++
+   +++<tr>++++++<th>+++Name+++</th>+++
+      +++<td>+++Name of the snapshot file. These files are stored in the `/usr/local/scaligent/backup` directory on your cluster.+++</td>++++++</tr>+++
+   +++<tr>++++++<th>+++Reason+++</th>+++
+      +++<td>+++Identifies the reason the snapshot/backup was created. You should see several period snapshots if your cluster is configured properly. You may also see evidence here of manual backups. For example, you should be sure your cluster is backed up before major events such as upgrades. Contact +++<a href="{{ site.baseurl }}/appliance/contact.html">+++ThoughtSpot Support+++</a>+++ if you don't see evidence your cluster is periodically creating snapshots.+++</td>++++++</tr>+++
+   +++<tr>++++++<th>+++Size+++</th>+++
+      +++<td>+++Size of the backup in gigabytes.+++</td>++++++</tr>++++++</table>+++
 
 == Average Latency Last 2 Weeks (sec)
 
@@ -70,4 +79,4 @@ for database latency (us) > 0
 
 == Related information
 
-xref:tscli-command-ref.adoc#logs[`tscli logs` command]
+link:{{ site.baseurl }}/reference/tscli-command-ref.html#logs[`tscli logs` command]

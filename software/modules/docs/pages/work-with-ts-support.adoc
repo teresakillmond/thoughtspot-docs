@@ -16,12 +16,10 @@ The remote tunnel enables SSH and HTTP access to your ThoughtSpot instance by Th
 This access can be granted and revoked easily, so you can enable it for a troubleshooting session, and then disable it again.
 Before doing this procedure, make sure your company's security policies allow reverse tunneling.
 
-You can set up a reverse tunnel <<remote-support-tscli,using tscli>>, or <<admin-portal,through the Admin Console>>.
-
 NOTE: Before you set up a reverse tunnel, open port `22` in your firewall outgoing rules to add `tunnelrelay.thoughtspot.com` to your list of allowed domains.
 
 [#remote-support-tscli]
-=== Using remote support with tscli
+== Using remote support with tscli
 
 To enable remote support, follow these steps:
 
@@ -64,11 +62,6 @@ You can repeat the steps to start and stop the remote tunnel as needed for futur
 ----
  $ tscli support show-remote
 ----
-
-[#admin-portal]
-=== Configure reverse SSH tunnel with the Admin Console
-
-include::partial$reverse-ssh-tunnel.adoc[]
 
 [#configure-secure-file-server]
 == Configure a secure file server

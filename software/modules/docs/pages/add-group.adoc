@@ -1,9 +1,8 @@
-= Create, edit, or delete a group
+= ["Create, edit, or delete a group"]
 :last_updated: 10/07/2019
 :permalink: /:collection/:path.html
 :sidebar: mydoc_sidebar
-
-ThoughtSpot has intuitive and powerful user group management for assigning privileges, user selection, multi-tier subgroups, default Pinboard assignment, and emailing.
+:summary: ThoughtSpot has intuitive and powerful user group management for assigning privileges, user selection, multi-tier subgroups, default Pinboard assignment, and emailing.
 
 Before adding users, create the groups to which they belong.
 Each group includes a set of privileges for its users.
@@ -14,31 +13,40 @@ Each group includes a set of privileges for its users.
 To create a group and add privileges for the group, follow these steps:
 
 . Log in to ThoughtSpot from a browser.
-. Navigate to the Admin Console by clicking on the *Admin* tab from the top navigation bar.
+. Click the *Admin* icon, on the top navigation bar.
 +
-image::click-admin.png[Admin tab]
+image::{{ site.baseurl }}/images/click-admin.png[Admin tab]
 
-. Select *Groups* from the side navigation bar that appears.
+. In the *Admin* panel, click *User Management*.
 +
-image::admin-portal-groups.png[Admin Console - Groups]
+image::{{ site.baseurl }}/images/admin-user-management.png[Admin > User Management]
 
-. Click the *+ Add Group* button on the upper left-hand side of the list of groups.
+. In the *User Management* section, click *Groups*.
 +
-image::admin-portal-groups-add-group.png[Add a new Group]
+image::{{ site.baseurl }}/images/admin-user-management-groups.png[Manage Groups]
+
+. Click the *+ Add Group* button on the upper right-hand side of the list of groups.
++
+image::{{ site.baseurl }}/images/admin-user-management-add-group.png[Add a new Group]
 
 . In the *Add a new group* modal, enter the details for the new group:
 +
-image::add-group.png[Enter details for the new group]
-+
-[width="100%",options="header",cols="20%,80%"]
-|====================
-|Field|Description
-|Group name|Enter a unique name for the group.
-|Display name|Name of the group as it appears in ThoughtSpot.
-|Sharing visibility|Indicate whether objects can be shared with this group. When set to *SHARABLE*, this group is an option in the *Share* dialog.
-|Description|Optionally, enter a description.
-|Privileges|Check the xref:about-users-groups.adoc#list-of-privileges[privileges] you want to grant to the group. If you add the privilege Has administration privileges to a group, all users in that group can see all the data in ThoughtSpot. Administrators can always see all data sources, and xref:about-row-security.adoc[Row level security] does not apply to them.
-|====================
+image::{{ site.baseurl }}/images/add-group.png[Enter details for the new group]+++<table>++++++<colgroup>++++++<col width="20%">++++++</col>+++
+ +++<col width="80%">++++++</col>++++++</colgroup>+++
+  +++<tr>++++++<th>+++Field+++</th>+++
+    +++<th>+++Description+++</th>++++++</tr>+++
+  +++<tr id="group-name">++++++<th>+++Group name+++</th>+++
+    +++<td>+++Enter a unique name for the group.+++</td>++++++</tr>+++
+  +++<tr id="display-name">++++++<th>+++Display name+++</th>+++
+    +++<td>+++Name of the group as it appears in ThoughtSpot.+++</td>++++++</tr>+++
+  +++<tr id="sharing-visibioity">++++++<th>+++Sharing visibility+++</th>+++
+    +++<td>+++Indicate whether objects can be shared with this group. When set to +++<b>+++SHARABLE+++</b>+++,
+    this group is an option in the +++<b>+++Share+++</b>+++ dialog.+++</td>++++++</tr>+++
+  +++<tr id="description">++++++<th>+++Description+++</th>+++
+    +++<td>+++Optionally, enter a description.+++</td>++++++</tr>+++
+  +++<tr id="privileges">++++++<th>+++Privileges+++</th>+++
+    +++<td>+++Check the <a href="{{"/admin/users-groups/about-users-groups.html#list-of-privileges" | prepend: site.baseurl }}">privileges</a> you want to grant to the group. If you add the privilege +++<b>+++Has administration privileges+++</b>+++ to a group, all users in that group can see all the data in ThoughtSpot. Administrators can always see all data sources, and <a href="{{"/admin/data-security/about-row-security.html#" | prepend: site.baseurl }}">Row level security</a> does not
+    apply to them.+++</td>++++++</tr>++++++</table>+++
 
 . You can also add _<<add-groups,Groups>>_ (these would be the subgroups of the group you are editing), _<<add-users,Users>>_.
 Also, see _<<add-default-pinboard,Default Pinboards>>_.
@@ -51,7 +59,7 @@ You cannot add default Pinboards to a new user group.
 You must create it first, and then edit it to add default Pinboards.
 See *<<change-default-pinboards,Edit a group > Default Pinboards>>*.
 
-image::add-group-pinboards.png[Add a new group > Default Pinboards]
+image::{{ site.baseurl }}/images/add-group-pinboards.png[Add a new group > Default Pinboards]
 
 [#add-groups]
 === Groups
@@ -62,7 +70,7 @@ Follow these steps to assign subgroups to the group:
 . Select the groups you want to add in the list by clicking the box next to the group name.
 . You can also use *Search* to find groups by name.
 
-image::add-group-groups.png[Add a new group > Groups]
+image::{{ site.baseurl }}/images/add-group-groups.png[Add a new group > Groups]
 
 [#add-users]
 === Users
@@ -73,7 +81,7 @@ Follow these steps to assign users to the group:
 . Select the users you want to add in the list by clicking the box next to the user name.
 . You can also use *Search* to find users by name.
 
-image::admin-portal-groups-add-users.png[Add a new group > Users]
+image::{{ site.baseurl }}/images/add-group-groups.png[Add a new group > Users]
 
 [#edit-group]
 == Edit a group
@@ -84,25 +92,29 @@ The new settings apply to all group members.
 To edit an existing group, follow these steps:
 
 . Log in to ThoughtSpot from a browser.
-. Navigate to the Admin Console by clicking on the *Admin* tab from the top navigation bar.
+. Click the *Admin* icon, on the top navigation bar.
 +
-image::click-admin.png[Admin tab]
+image::{{ site.baseurl }}/images/click-admin.png[Admin tab]
 
-. Select *Groups* from the side navigation bar that appears.
+. In the *Admin* panel, click *User Management*.
 +
-image::admin-portal-groups.png[Admin Console - Groups]
+image::{{ site.baseurl }}/images/admin-user-management.png[Admin > User Management]
+
+. In the *User Management* section, click *Groups*.
++
+image::{{ site.baseurl }}/images/admin-user-management-groups.png[Manage Groups]
 
 . Find the group you want to edit in the list, and click its name.
 +
 If you don't immediately see the name of the group, try searching for it.
 +
-image::admin-portal-groups-search.png[Search Groups]
+image::{{ site.baseurl }}/images/edit-group-search.png[Search Groups]
 
 . You can change the _<<group-name,Group name>>_, _<<display-name,Display name>>_, _<<sharing-visibility,Sharing visibility>>_, _<<description,Description>>_, and the selected _<<privileges,Privileges>>_.
 +
 Here, we added the _Can manage data_ privilege.
 +
-image::edit-group.png[Change the details for the group]
+image::{{ site.baseurl }}/images/edit-group.png[Change the details for the group]
 +
 You can also make changes to the _<<change-default-pinboards,Default Pinboards>>_, _<<change-groups,Groups>>_ (these would be the subgroups of the group you are editing), _<<change-users,Users>>_, or _<<change-email,Email>>_.
 
@@ -116,7 +128,7 @@ To assgin default pinboards to groups, follow these steps:
 . Create a group, or choose an existing group.
 Note its name.
 . In the *Pinboards* interface, find the correct Pinboards, and share them with this group.
-See xref:share-pinboards.adoc[Share a Pinboard].
+See link:{{ site.baseurl }}/admin/data-security/share-pinboards.html[Share a Pinboard].
 . Open the Group for editing.
 See <<edit-group,Edit a group>>.
 . Click the *Default Pinboards* tab.
@@ -139,7 +151,7 @@ Follow these steps to change subgroups of the group:
 . Deselect the groups you want to remove from the list by clearing the box next to the group name.
 . Click *Update* to save changes.
 
-image::edit-group-groups.png[Change a group > Groups]
+image::{{ site.baseurl }}/images/edit-group-groups.png[Change a group > Groups]
 
 [#change-users]
 === Users
@@ -152,7 +164,7 @@ Follow these steps to change the users of the group:
 . Deselect the users you want to remove from the list by clearing the box next to the user name.
 . Click *Update* to save changes.
 
-image::edit-group-users.png[Change a group > Users]
+image::{{ site.baseurl }}/images/edit-group-users.png[Change a group > Users]
 
 [#change-email]
 === Email
@@ -169,7 +181,7 @@ Here, we added "Welcome!"
 . To test the email, click "Test welcome email"
 . Click *Update* to save changes.
 
-image::edit-group-email.png[Email for group > Email]
+image::{{ site.baseurl }}/images/edit-group-email.png[Email for group > Email]
 
 [#delete-group]
 == Deleting groups
@@ -177,23 +189,27 @@ image::edit-group-email.png[Email for group > Email]
 To delete existing groups, follow these steps:
 
 . Log in to ThoughtSpot from a browser.
-. Navigate to the Admin Console by clicking on the *Admin* tab from the top navigation bar.
+. Click the *Admin* icon, on the top navigation bar.
 +
-image::click-admin.png[Admin tab]
+image::{{ site.baseurl }}/images/click-admin.png[Admin tab]
 
-. Select *Groups* from the side navigation bar that appears.
+. In the *Admin* panel, click *User Management*.
 +
-image::admin-portal-groups.png[Admin Console - Groups]
+image::{{ site.baseurl }}/images/admin-user-management.png[Admin > User Management]
+
+. In the *User Management* section, click *Groups*.
++
+image::{{ site.baseurl }}/images/admin-user-management-groups.png[Manage Groups]
 
 . Select the groups you plan to delete by clicking the box next to the group name.
 +
 If you don't immediately see the name of the group, try searching for it.
 +
-image::admin-portal-groups-search.png[Search Groups]
+image::{{ site.baseurl }}/images/edit-group-search.png[Search Groups]
 
 . Click *Delete*.
 +
-image::admin-portal-groups-delete.png[Delete Groups]
+image::{{ site.baseurl }}/images/delete-group.png[Delete Groups]
 
 [#list-group-members]
 == List group members
@@ -208,25 +224,29 @@ To add multiple users to a group, you must be on the *Users* interface.
 Follow these steps:
 
 . Log in to ThoughtSpot from a browser.
-. Navigate to the Admin Console by clicking on the *Admin* tab from the top navigation bar.
+. Click the *Admin* icon, on the top navigation bar.
 +
-image::click-admin.png[Admin tab]
+image::{{ site.baseurl }}/images/click-admin.png[Admin tab]
 
-. Select *Groups* from the side navigation bar that appears.
+. In the *Admin* panel, click *User Management*.
 +
-image::admin-portal-users.png[Admin Console - Users]
+image::{{ site.baseurl }}/images/admin-user-management.png[Admin > User Management]
+
+. In the *User Management* section, click *Users*.
++
+image::{{ site.baseurl }}/images/admin-user-management-users.png[Manage Users]
 
 . Select the names of users you plan to add to groups by clicking the box next to the user name.
 +
 If you don't immediately see the user name, try searching for it.
 +
-image::admin-portal-users-search.png[Search Users]
+image::{{ site.baseurl }}/images/edit-user-search.png[Search Users]
 
 . Click the *Add Users to Groups* button on the top of the list of users.
 +
-image::admin-portal-users-add-to-group.png[Add Users to Groups]
+image::{{ site.baseurl }}/images/add-many-users.png[Add Users to Groups]
 
 . In the *Add Users to Groups* interface, select the groups by clicking the box next to the group name.
 . Click *Add*.
 +
-image::add-users-to-groups.png[Choose Groups]
+image::{{ site.baseurl }}/images/add-users-to-groups.png[Choose Groups]

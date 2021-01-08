@@ -41,6 +41,7 @@ For example, the command `tscli access list --type TYPE`, where you want a list 
 
 To view help for a subcommand, type `-h` after the subcommand option:
 
+[source,tscli]
 ----
 tscli [subcommand] -h
 ----
@@ -53,6 +54,7 @@ There are several optional flags that are common to each `tscli` subcommand.
 [#tscli--help]
 === help
 
+[source,tscli]
 ----
 -h, --help
 ----
@@ -63,6 +65,7 @@ This flag lists the specified command's subcommands and their definitions.
 [#tscli--helpfull]
 === helpfull
 
+[source,tscli]
 ----
 --helpfull HELPFUll
 ----
@@ -72,6 +75,7 @@ This flag shows help for all supported commands.
 [#tscli--verbose]
 === verbose
 
+[source,tscli]
 ----
 --verbose
 ----
@@ -82,6 +86,7 @@ By default, logs are written to both the console and log files, with the log fil
 [#tscli--noautoconfig]
 === noautoconfig
 
+[source,tscli]
 ----
 --noautoconfig
 ----
@@ -91,6 +96,7 @@ Prompts y/n response for each question within a command, instead of assuming `ye
 [#tscli--autoconfig]
 === autoconfig
 
+[source,tscli]
 ----
 --autoconfig
 ----
@@ -101,6 +107,7 @@ User may still be prompted for certain inputs. The default is `False`.
 [#tscli--yes]
 === yes
 
+[source,tscli]
 ----
 --yes
 ----
@@ -111,6 +118,7 @@ User may still be prompted for certain inputs. The default is `False`.
 [#tscli--cluster]
 === cluster
 
+[source,tscli]
 ----
 --cluster CLUSTER
 ----
@@ -121,6 +129,7 @@ Used when a cluster is not automatically detected. The default is `False`.
 [#tscli--zoo]
 === zoo
 
+[source,tscli]
 ----
 --zoo ZOO
 ----
@@ -135,6 +144,7 @@ This section lists each subcommand and its syntax.
 [#tscli-access]
 === access
 
+[source,tscli]
 ----
 tscli access [-h] {list}
 ----
@@ -151,6 +161,7 @@ tscli access list::
 [#tscli-alert]
 === alert
 
+[source,tscli]
 ----
 tscli alert [-h] {count,info,list,off,on,refresh,silence,status,unsilence}
 ----
@@ -181,6 +192,7 @@ tscli alert unsilence --name NAME::
 [#tscli-ansible]
 === ansible
 
+[source,tscli]
 ----
 tscli ansible [-h] {checkout,commit} [--local]
 ----
@@ -197,8 +209,9 @@ tscli ansible commit --host HOST::
 [#tscli-backup]
 === backup
 
+[source,tscli]
 ----
-tscli backup [-h] {create,delete,ls}
+tscli backup [-h] {create,delete,ls,restore}
 ----
 
 This subcommand has the following options:
@@ -222,6 +235,7 @@ tscli backup ls::
 [#tscli-backup-policy]
 === backup-policy
 
+[source,tscli]
 ----
 tscli backup-policy [-h] {create,delete,disable,enable,ls,show,status,update}
 ----
@@ -236,7 +250,7 @@ tscli backup-policy create::
   mode {full,light,dataless};; The backup mode. A `FULL` backup is required for restoring a cluster. The default is `full.`
   type;; The backup type. Only `STANDALONE` is supported.
   directory;; The location on the disk to place the backup. You specify an existing directory path as `home/admin/folder`. The `folder` cannot already exist. ThoughtSpot creates the folder when it runs a backup.
-  storage_type {NAS,local,S3};; The type of storage you are using. `NAS` storage is recommended for `FULL` backups.
+  storage_type {NAS,local};; The type of storage you are using. `NAS` storage is recommended for `FULL` backups.
   --config CONFIG;; Specifies the text format of the periodic backup policy config.
 
 tscli backup-policy delete NAME::

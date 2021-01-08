@@ -1,20 +1,19 @@
-= Convert column data type
-:last_updated: 08/26/2020
+= ["Convert column data type"]
+:last_updated: tbd
 :permalink: /:collection/:path.html
 :sidebar: mydoc_sidebar
-
-You can convert the data in a column from one data type to another by issuing a TQL command.
+:summary: You can convert the data in a column from one data type to another by issuing a TQL command.
 
 There are some details you should be aware of when doing a data type conversion.
 
 == Data type conversion behavior
 
-When converting from one data type to another, ThoughtSpot sets any values that it cannot convert to `NULL`.
-If errors occur during data type conversion, the operation terminates.
+When converting from one data type to another, any values that can not be converted will be set to NULL.
+If errors occur during data type conversion, the operation is aborted.
 
 Multiple columns of a single table can be converted using a single TQL command.
 The behavior is transactional.
-So for example, you would issue the following command:
+So for example, you would issue a command like this example:
 
 ----
 ALTER TABLE products
@@ -22,7 +21,7 @@ ALTER TABLE products
    MODIFY COLUMN supplier VARCHAR(4);
 ----
 
-Note that changing data type has implications on the primary key and sharding enforcement.
+Also note that changing data type has implications on the primary key and sharding enforcement.
 For example, changing the data type of a column that is part of the sharding key would lead to a redistribution of data.
 Then imagine that the sharding key column contained the text values `00100`, `0100`, and `100`, which all map to same integer value.
 If this type of a column is changed from a `VARCHAR` to an `INT`, then it would be subject to the upsert behavior on primary keys.
@@ -144,7 +143,7 @@ Because of this, use caution, and check all dependent objects before and after c
 
 To change the data type of a column:
 
-. xref:prep-schema-for-load.adoc#connect-with-tql[Connect to the database with the ThoughtSpot SQL Command Line (TQL)].
+. link:prep-schema-for-load.html#connect-with-tql[Connect to the database with the ThoughtSpot SQL Command Line (TQL)].
 . Issue the command to change the data type using this syntax:
 +
 ----

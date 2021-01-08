@@ -1,12 +1,11 @@
-= How to view a data schema
-:last_updated: 07/27/2019
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
+'''
 
-Use the schema viewer to see tables and worksheets and their relationships.
+title: [How to view a data schema]
 
+last_updated: 07/27/2019
 
-ThoughtSpot has a *Schema Viewer* though which you can examine the database schema.
+toc: true summary: "Use the schema viewer to see tables and worksheets and their relationships.
+" sidebar: mydoc_sidebar permalink: /:collection/:path.html -- ThoughtSpot has a *Schema Viewer* though which you can examine the database schema.
 It is interactive and configurable, so you can see the level of detail that is relevant to your work.
 
 You must have *Admin* privileges to use the *Schema Viewer*.
@@ -15,17 +14,16 @@ You must have *Admin* privileges to use the *Schema Viewer*.
 
 . Click the *Data* tab in the top menu.
 +
-image::click-data.png[]
+image::{{ site.baseurl }}/images/click-data.png[]
 
-. Click the *More* menu image:icon-ellipses.png[more options menu icon], and select *View Schema*.
-+
-image::access_schema_viewer.png[]
+. Click the ellipses icon,  image:{{ site.baseurl }}/images/icon-ellipses.png[more options menu icon], and select *View Schema*.
+
+image::{{ site.baseurl }}/images/access_schema_viewer.png[]
 
 . When the schema appears, you can see that you can control the visible part of the schema.
-+
-image::schema_viewer.png[]
-+
-[cols="10%,90%"]
+
+image::{{ site.baseurl }}/images/schema_viewer.png[]
+
 |===
 | Legend | Action
 
@@ -51,13 +49,12 @@ You can now see the schema for each object for tables, worksheets, or views.
 
 . Click the *Data* tab in the top menu.
 +
-image::click-data.png[]
+image::{{ site.baseurl }}/images/click-data.png[]
 
 . Select from the list of the possible objects:
 +
-image::select-tables.png[]
+image::{{ site.baseurl }}/images/select-tables.png[]
 +
-[cols="10%,90%"]
 |===
 | Legend | Action
 
@@ -73,13 +70,13 @@ image::select-tables.png[]
 
 . From the list of objects, select one.
 Here, we selected the worksheet _West Regional Sales_.
-. At the top of the worksheet, click the *Joins* tab.
+. At the top of the worksheet, click the *Schema* tab.
 +
-image::select-worksheet-schema.png[]
+image::{{ site.baseurl }}/images/select-worksheet-schema.png[]
 
 . The join information and the schema for the worksheet appear.
 +
-image::worksheet-join-schema.png[]
+image::{{ site.baseurl }}/images/worksheet-join-schema.png[]
 
 == Why use the Schema Viewer
 
@@ -100,16 +97,16 @@ specific table or worksheet.
 == How the Schema Viewer shows joins
 
 You can use the Schema Viewer to review your schema and ensure that it was modeled using best practices.
-For example, joins appear in different colors to distinguish their type:
+For example, joins appear in different colors to distinquish their type:
 
-* Generic relationships are in *red*
-* Primary key/ foreign key joins are in *green*
+* Red is used for generic relationships
+* Green is used for primary key/foreign key joins
 
-When viewing a worksheet, you can also see what joins connect the tables: the inner, left outer, right outer, or full outer joins.
+When viewing a worksheet, you can also see what joins connect the tables: the inner, left outer, right outer, or full outer joins
 
-NOTE: Defining a generic relationship in the UI rather than using a primary key/ foreign key join through TQL has no impact on performance.
+{% include note.html content="Defining a generic relationship in the UI rather than using a primary key/ foreign key join through TQL has no impact on performance.
 However, when creating relationships in the UI, you must ensure that you create it in the right direction: many to one.
-To create many-to-many joins, or to create joins using >, <, >=, or \<=, use TQL.
+To create many-to-many joins, or to create joins using >, <, >=, or \<=, use TQL." %}
 
 == Worksheet view
 
@@ -119,7 +116,7 @@ The worksheet schema will show schemas for the tables behind the worksheet, as w
 Click a worksheet, to see it in the Schema Viewer.
 If the schema view is not showing the schema behind the worksheet, double click the tab on the top right of the worksheet object.
 
-image::worksheet_viewer_schema.png[]
+image::{{ site.baseurl }}/images/worksheet_viewer_schema.png[]
 
 The worksheet view shows the following information:
 
@@ -130,11 +127,11 @@ The worksheet view shows the following information:
 * Correct join paths for newly created chasm trap worksheets.
 Chasm trap worksheets created prior to ThoughtSpot version 4.4 do not show the correct join paths.
 
-image::worksheet_viewer.png[]
+image::{{ site.baseurl }}/images/worksheet_viewer.png[]
 
 == Related Information
 
-* xref:add-joins.adoc[Worksheet joins]
-* xref:mod-ws-internal-joins.adoc[Modify joins within a worksheet]
-* xref:change-schema.adoc[Change the schema using TQL]
-* xref:constraints.adoc[Constraints]
+* link:{{ site.baseurl }}/admin/worksheets/add-joins.html[Worksheet joins]
+* link:{{ site.baseurl }}/admin/worksheets/mod-ws-internal-joins.html[Modify joins within a worksheet]
+* link:{{ site.baseurl }}/admin/loading/change-schema.html[Change the schema using TQL]
+* link:{{ site.baseurl }}/admin/loading/constraints.html[Constraints]

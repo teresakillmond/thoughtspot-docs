@@ -1,4 +1,4 @@
-= tsload connector reference
+= tsload service API reference
 :last_updated: 10/21/2020
 
 The tsload connector APIs enable you to load data into ThoughtSpot.
@@ -19,6 +19,7 @@ a| password a| string a| ThoughtSpot password
 
 === Request
 
+[source,tsload connector]
 ----
 POST /ts_dataservice/v1/public/session HTTP/1.1
 Host: client.mydomain.com Accept: application/json Content-type: application/json
@@ -129,6 +130,7 @@ a| `max_reported_parsing_errors`(optional) a| integer a| Maximum number of parsi
 
 ==== Example use of parameters
 
+[source,tsload connector]
 ----
 {
       target : {

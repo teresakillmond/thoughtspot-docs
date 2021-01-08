@@ -1,39 +1,36 @@
-= Embed Pinboard or visualization
-:linkattrs:
-:last_updated: 11/02/2020
+= ["Embed pinboard or visualization"]
+:last_updated: 11/18/2019
+:permalink: /:collection/:path.html
+:sidebar: mydoc_sidebar
+:summary: Learn how to embed a visualization or pinboard in your own Web page.
+:toc: true
 
-Learn how to embed a visualization or Pinboard in your own Web page.
+This page explains, through an example, how to embed a visualization (table or chart) or pinboard from ThoughtSpot in your own static Web page, portal, or application.
 
-This page explains, through an example, how to embed either a ThoughtSpot visualization (table or chart) or a ThoughtSpot Pinboard from ThoughtSpot in your own static Web page, portal, or application.
+To build this sample, you need to have access to a text editor and a ThoughtSpot instance with a visualization.
+You should also have some experience working with Javascript.
 
-To build this sample, you must have access to a text editor and a ThoughtSpot instance with a visualization.
-Experience working with Javascript also helps.
+== Get the link for an entire pinboard or single visualization
 
-== Get the link
-
-You can get the link for an entire Pinboard, or single visualization
-
-This procedure assumes the Pinboard with the visualization you want to embed already exists.
+This procedure assumes the pinboard with the visualization you want to embed already exists.
+If the pinboard or visualization doesn't exist, create it now before continuing.
 
 . Log in to ThoughtSpot from a browser.
 . Navigate to a visualization on the *Pinboard* tab.
-. Open a Pinboard.
-. Copy the URL:
- ** *Pinboard embedding*: click the *More* menu at the level of the Pinboard, image:icon-ellipses.png[more options menu icon], and select *[-] Copy embed link*.
+. Open a pinboard.
+. Copy the URL for the entire pinboard and for a single visualization.
 +
-The format for the link is:
+If the object is a pinboard, click the ellipses icon image:{{ site.baseurl }}/images/icon-ellipses.png[more options menu icon] >  *Copy Link*.
 +
-----
- <protocol>:<host>:<port>/#/embed/viz/<pinboardID>
-----
-
- ** *Vizualization embedding*: click the *More* menu on the visual you plan to embed, image:icon-ellipses.png[more options menu icon], and select *[-] Copy embed link*.
+image::{{ site.baseurl }}/images/embed-link-1.png[]
 +
-The format for the link is:
+The format for the link is:  `<protocol>:<host>:<port>/#/embed/viz/<pinboardID>`
 +
-----
-  <protocol>:<host>:<port>/#/embed/viz/<pinboardID>/<vizualizationId>
-----
+For a vizualization in a pinboard, click the ellipses icon image:{{ site.baseurl }}/images/icon-ellipses.png[more options menu icon] >  *Copy Link*.
++
+image::{{ site.baseurl }}/images/embed-link-2.png[]
++
+The format for the link is:  `<protocol>:<host>:<port>/#/embed/viz/<pinboardID>/<vizualizationId>`
 
 == Edit the test.html file
 
@@ -42,12 +39,19 @@ For this example, you can get a copy of the link:{{ site.baseurl }}/downloads/te
 
 . Create an empty directory called `test`.
 . Save the `test.html` file to the `test` directory.
-. xref:downloads.adoc[Download, window="_blank"] the ThoughtSpot JavaScript library.
+. {blank}
++
+[cols=2*]
+|===
+| <a href="{{"/release/downloads.html"
+| prepend: site.baseurl }}" target="_blank">Download</a> the ThoughtSpot JavaScript library.
+|===
+
 . Place the Javascript library in an `api` directory co-located with the `test.html` file.
 . Edit the `test.html` file in your favorite editor.
 . Scroll down to the `Variables` section (about line 37).
 +
-Here are the fields in the `test.html` file you must edit.
+Here are the fields in the `test.html` file you need to edit.
 +
 [source,JavaScript]
 ----
@@ -116,11 +120,13 @@ Your browser has this information and so when you load the `test.html` page in a
 +
 `+http://localhost:8000/test.html+`
 +
-See if your Pinboard or visualization appears in the browser window.
+You should see something similar to the following:
++
+image::{{ site.baseurl }}/images/embed-3.png[]
 
 . Check the browser console.
 +
-On success, the console reports a message similar to the following:
+Success is appears in the console with a message similar to this:
 +
 ----
  test.html:60 Initialization successful.
@@ -130,13 +136,13 @@ On success, the console reports a message similar to the following:
 
 == Troubleshooting embeds
 
-If your embeds don't load, open the developer tools on your browser, and look for errors in the page loading, usually on the *Console* tab.
-
-You may see an error similar to the following:
+If your embeds don't load, open the developer tools on your browser.
+Look for errors in the page loading, usually on the *Console* tab.
+If you see an error similar to:
 
 ----
 No 'Access-Control-Allow-Origin' header is present on the requested resource.
 ----
 
-This occurs when the cross domain (CORS) setting is incorrect on your ThoughtSpot cluster.
-Contact xref:contact.adoc[ThoughtSpot Support] for more help.
+Typically you see this if the cross domain (CORS) setting was not completed correctly on your ThoughtSpot cluster.
+Contact link:{{ site.baseurl }}/appliance/contact.html[ThoughtSpot Support] for more help.

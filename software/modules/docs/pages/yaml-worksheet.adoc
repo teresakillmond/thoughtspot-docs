@@ -1,34 +1,30 @@
-= Worksheet TSL specification
-:last_updated: 7/1/2020
+= ["Worksheet YAML specification"]
+:last_updated: 12/16/2020
 :permalink: /:collection/:path.html
 :sidebar: mydoc_sidebar
-ThoughtSpot worksheet specification may be exported as a TSL file, modified, and imported into the same or different cluster.
+:summary: ThoughtSpot worksheet specification may be exported as a YAML file, modified, and imported into the same or different cluster.
 
-To work with Scriptable Worksheets in ThoughtSpot, you can download Worksheets to a flat file in `TSL`, ThoughtSpot's Scripting Language, modify it, and subsequently upload this file either to the same cluster, or to a different cluster.
+To work with Scriptable Worksheets in ThoughtSpot, you can download Worksheets to a flat file in `yaml` format, modify it, and subsequently upload this file either to the same cluster, or to a different cluster.
 To learn how to export, change, and update Worksheets, see link:{{ site.baseurl }}/admin/worksheets/worksheet-export.html[Migrate or restore Worksheets].
 
 [#syntax]
-== Syntax of the Worksheet TSL file
+== Syntax of the Worksheet YAML file
 
-The TSL file for Scriptable Worksheets has a specific syntax.
+The YAML file for Scriptable Worksheets has a specific syntax.
 
 See the <<parameters,Parameters>> section for details about the keywords used in this example.
-
-You may not see each of these parameters in your own TSL file, depending on whether each variable is explicitly defined.
-For example, if you do not have any filters on your Worksheet, the `filters` parameter does not appear.
-You can add that variable to the TSL file to specify filters for your Worksheet.
 
 ....
 
 worksheet:
   name: <worksheet_name>
-  description: |-
+  description:
     This is a multi-line description of the worksheet
     Description line 2
   tables:
   - name: <table_name_1>
-  - [alias] : <table_alias>
-  - [fqn] : <GUID_of_table_name>
+    id : <optional_table_id_1>
+    fqn : <optional_GUID_of_table_name_1>
   - name: <table_name_2>
   - name: <table_name_3>
   joins:
@@ -42,7 +38,7 @@ worksheet:
   - id: <table_path_name_1>
     table: <table_name_1>
     join_path:
-    - join:
+    - joinjoin:
       - <join_name_1>
   - id: <table_path_name_2>
     table: <table_name_2>
@@ -68,14 +64,6 @@ worksheet:
     expr: <formula_definition_2>
   - name: <formula_name_3>
     expr: <formula_definition_3>
-  filters:
-  - column: <filtered_column_name_1>
-    oper: <filter_operator>
-    values: <filtered_values>
-    - value 1
-    - value 2
-    - value n
-  - column: <filtered_column_name_2>
   worksheet_columns:
   - name: <column_name_1>
     description: <column_description>
@@ -121,118 +109,49 @@ worksheet:
 ....
 
 [#parameters]
-== Parameters of the Worksheet TSL file
-aggregation::
+== Parameters of Worksheet YAML file
++++<dlentry id="aggregation">+++aggregation::::
 The default aggregation of the worksheet column + Aggregation options depend on the data type.
-+ Possible values: `SUM`, `COUNT`, `AVERAGE`, `MAX`, `MIN`, `COUNT_DISTINCT`, `NONE`, `STD_DEVIATION`, and `VARIANCE` + Default: `SUM`
-alias::  An alternate name for the table
-calendar:: Specifies the calendar used by a date column
-+
-Can be the Gregorian calendar (`default`), a fiscal calendar, or any custom calendar. See xref:set-custom-calendar.adoc[Set up a custom calendar]
-column::  The name of the column being filtered on.
-column_type::  The type of data the column represents + Possible values: `MEASURE` or `ATTRIBUTE` + Default: `MEASURE`
-currency_type::  The source of currency type + One of: +
++ Possible values: `SUM`, `COUNT`, `AVERAGE`, `MAX`, `MIN`, `COUNT_DISTINCT`, `NONE`, `STD_DEVIATION`, and `VARIANCE` + Default: `SUM` ++++</dlentry>++++++<dlentry id="calendar">+++calendar::::
+Specifies the calendar used by a date column + Can be the Gregorian calendar (`default`), a fiscal calendar, or any custom calendar.
++ See link:../setup/set-custom-calendar.html[Set up a custom calendar]+++</dlentry>++++++<dlentry id="column_type">+++column_type::::  The type of data the column represents + Possible values: `MEASURE` or `ATTRIBUTE` + Default: `MEASURE`+++</dlentry>++++++<dlentry id="currency_type">+++currency_type::::  The source of currency type + One of: +
 
 * `is_browser : true` infer the currency data from the locale of your browser
 * `column : <column_name>` extracts the currency information from a specified column
 * `iso_code : <valid_ISO_code>` applies currency based on the ISO code;
 see https://www.iso.org/iso-4217-currency-codes.html[ISO 4217 Currency Codes]
-+
-See xref:set-format-pattern-numbers.adoc#set-currency-type[Set currency type]
-description::  The text that describes an object: a `worksheet`, a `worksheet_column`, and so on.
-destination::  Name of destination table or view of the join
-expr::  The definition of the formula
-filters::  Contains specifications for Worksheet filters.
-format_pattern::  The format pattern string that controls the display of a number, date, or currency column
-+
-See xref:set-format-pattern-numbers.adoc[Set number, date, and currency formats]
-formula_id::  The `id` of the formula that defines the worksheet column
-formulas::  The list of formulas in the worksheet
-+
-Each formula is identified by `name`, the `expr` (expression), and an optional `id` attribute.
-fqn::  A GUID for the table name
-geo_config::  Specifies the geographic information of a column
-+
-One of: +
+
+See link:../data-modeling/set-format-pattern-numbers.html#set-currency-type[Set currency type]+++</dlentry>++++++<dlentry id="description">+++description::::  The text that describes an object: a `worksheet`, a `worksheet_column`, and so on.+++</dlentry>++++++<dlentry id="destination">+++destination::::  Name of destination table or view of the join+++</dlentry>++++++<dlentry id="expr">+++expr::::  The definition of the formula+++</dlentry>++++++<dlentry id="format_pattern">+++format_pattern::::  The format pattern string that controls the display of a number, date, or currency column + See link:../data-modeling/set-format-pattern-numbers.html[Set number, date, and currency formats]+++</dlentry>++++++<dlentry id="formula_id">+++formula_id::::  The `id` of the formula that defines the worksheet column+++</dlentry>++++++<dlentry id="formulas">+++formulas::::  The list of formulas in the worksheet + Each formula is identified by `name`, the `expr` (expression), and an optional `id` attribute.+++</dlentry>++++++<dlentry id="fqn">+++fqn::::
+The table's GUID.
+You can find this string of letters and numbers at the end of the URL for that table.
+For example, in https://<company>.thoughtspot.com/#/data/tables/34226aaa-4bcf-4d6b-9045-24cb1e9437cb, the GUID is 34226aaa-4bcf-4d6b-9045-24cb1e9437cb.+++</dlentry>++++++<dlentry id="geo_config">+++geo_config::::  Specifies the geographic information of a column + One of: +
 
 * `latitue : true` for columns that specify the latitude
 * `longitude : true` for columns that specify the longitude
 * `country : true` for columns that specify the country
-* `region_name` for specifying a region in a country
-+
-Uses two paired parameters: + - `country: <country_name>` + - `region_name: <region_name_in_UI>`, which can be State, Postal Code, District, and so on.
-See xref:model-geo-data.adoc[Add a geographical data setting]
+* `region_name` for specifying a region in a country + Uses two paired parameters: + - `country: <country_name>` + - `region_name: <region_name_in_UI>`, which can be State, Postal Code, District, and so on.
 
-id::  Specifies the id of an object, such as `table_paths`, `formula`.
-index_priority:: A value (1-10) that determines where to rank a column's name and values in the search suggestions
-+
-ThoughtSpot prioritizes columns with higher values. See xref:change-index.adoc#change-a-columns-suggestion-priority[Change a column's suggestion priority].
-index_type::  The indexing option of the worksheet column + Possible values: `DONT_INDEX`, `DEFAULT` (see xref:change-index.adoc#understand-the-default-indexing-behavior[Understand the default indexing behavior]), `PREFIX_ONLY`, `PREFIX_AND_SUBSTRING`, and `PREFIX_AND_WORD_SUBSTRING` + Default: `DEFAULT` See xref:change-index.adoc#index-type[Index Type Values]
-is_additive::  Controls extended aggregate options for attribute columns
-+
-For attribute columns that have a numeric data type (`FLOAT`, `DOUBLE`, or `INTEGER`) or a date data type (`DATE`, `DATETIME`, `TIMESTAMP`, or `TIME`)
-+
-Possible values: `true` or `false` + Default: `true`
-+
-See xref:change-aggreg-additive.adoc#making-an-attribute-column-additive[Making an ATTRIBUTE column ADDITIVE]
-
-is_attribution_dimension:: Controls if the column is an attribution dimension
-+
-Used in managing chasm traps. Possible values: `true` by default, `false` to designate a column as not producing meaningful attributions across a chasm trap
-+
-Default: `true`
-+
-See xref:attributable-dimension.adoc[Change the attribution dimension]
-is_bypass_rls:: Specifies if the worksheet supports bypass of Row-level security (RLS)
-+
-Possible values: `true` or `false` + Default: `false`
-+
-See xref:row-level-security.adoc#privileges-that-allow-users-to-set-or-be-exempt-from-rls[Privileges that allow users to set, or be exempt from, RLS]
-is_hidden::  The visibility of the column + Possible values: `true` to hide the column, `false` not to hide the column
-+
-Default: `false` See xref:change-visibility-synonym.adoc#hide-a-column[Hide a column]
-is_one_to_one::  Specifies the cardinality of the join
-+
-Possible values: `true`, `false` + Default: `false`
-join::  Specific join, used in defining higher-level objects, such as table paths
-+
-Defined as `name` within `joins` definition
-join_path::
+See link:../data-modeling/model-geo-data.html[Add a geographical data setting]+++</dlentry>++++++<dlentry id="id">+++id::::  Specifies the id of an object, such as `table_paths`, `formula`.+++</dlentry>++++++<dlentry id="index_priority">+++index_priority::::
+A value (1-10) that determines where to rank a column's name and values in the search suggestions + ThoughtSpot prioritizes columns with higher values.
++ See link:../data-modeling/change-index.html#change-a-columns-suggestion-priority[Change a column's suggestion priority].+++</dlentry>++++++<dlentry id="index_type">+++index_type::::  The indexing option of the worksheet column + Possible values: `DONT_INDEX`, `DEFAULT` (see link:../data-modeling/change-index.html#understand-the-default-indexing-behavior[Understand the default indexing behavior]), `PREFIX_ONLY`, `PREFIX_AND_SUBSTRING`, and `PREFIX_AND_WORD_SUBSTRING` + Default: `DEFAULT` + See link:../data-modeling/change-index.html#index-type[Index Type Values]+++</dlentry>++++++<dlentry id="is_additive">+++is_additive::::  Controls extended aggregate options for attribute columns + For attribute columns that have a numeric data type (`FLOAT`, `DOUBLE`, or `INTEGER`) or a date data type (`DATE`, `DATETIME`, `TIMESTAMP`, or `TIME`) + Possible values: `true` or `false` + Default: `true` + See link:../data-modeling/change-aggreg-additive.html#making-an-attribute-column-additive[Making an ATTRIBUTE column ADDITIVE]+++</dlentry>++++++<dlentry id="is_attribution_dimension">+++is_attribution_dimension::::
+Controls if the column is an attribution dimension + Used in managing chasm traps.
++ Possible values: `true` by default, `false` to designate a column as not producing meaningful attributions across a chasm trap + Default: `true` + See link:../data-modeling/attributable-dimension.html[Change the attribution dimension]+++</dlentry>++++++<dlentry id="is_bypass_rls">+++is_bypass_rls::::  Specifies if the worksheet supports bypass of Row-level security (RLS) + Possible values: `true` or `false` + Default: `false` + See link:../data-security/row-level-security.html#privileges-that-allow-users-to-set-or-be-exempt-from-rls[Privileges that allow users to set, or be exempt from, RLS]+++</dlentry>++++++<dlentry id="is_hidden">+++is_hidden::::  The visibility of the column + Possible values: `true` to hide the column, `false` not to hide the column + Default: `false` + See link:../data-modeling/change-visibility-synonym.html#hide-a-column[Hide a column]+++</dlentry>++++++<dlentry id="is_one_to_one">+++is_one_to_one::::  Specifies the cardinality of the join + Possible values: `true`, `false` + Default: `false`+++</dlentry>++++++<dlentry id="join">+++join::::  Specific join, used in defining higher-level objects, such as table paths + Defined as `name` within `joins` definition+++</dlentry>++++++<dlentry id="join_path">+++join_path::::
 Specification of a composite join as a list of distinct `join` attributes + These `join` attributes list relevant joins, previously defined in the `joins`, by name.
-+
-Default: `{}`
-join_progressive::  Specifies when to apply joins on a worksheet
-+
-Possible values: `true` when joins are applied only for tables whose columns are included in the search, and `false` for all possible joins + Default: `true` + See xref:progressive-joins.adoc[How the worksheet join rule works]
-joins::  List of joins between tables and views, used by the worksheet + Each join is identified by `name`, and the additional attributes of `source`, `destination`, `type`, and `is_one_to_one.`
-name:: The name of an object.
-Applies to `worksheet`, `table`,`join`, `formula`, and so on.
-oper::
-The operator of the Worksheet filter.
-Accepted operators are `"in"`, `"not in"`, `"between"`, `=<`, `!=`, `+<=+`, `>=`, `>`, or `<`.
-properties::  The list of properties of the worksheet column + Each column can have the following properties, depending on its definition: `column_type`, `aggregation`, `index_type`, `is_hidden`, `index_priority`, `synonyms`, `is_attribution_dimension`, `is_additive`, `calendar`, `format_pattern`, `currency_type`, and `geo_config`.
-source::  Name of source table or view of the join
-synonyms::  Alternate names for the column, used in search
-+
-See xref:change-visibility-synonym.adoc#create-synonyms-for-a-column[Create synonyms for a column]
-table::  Specific table, used in defining higher-level objects, such as table paths + Defined as `name` within `tables` definition
-table_paths::  The list of table paths + Each table path is identified by the `id`, and additional attributes of `table` and `join_path`.
-tables::  List of tables used by the worksheet + Each table is identified by `name`.
-type::  Join type + Possible values: `LEFT_OUTER` for left outer join, `RIGHT_OUTER` for right outer join, `INNER` for inner join, `OUTER` for full outer join + Default: `RIGHT_OUTER`
-values::  The values being filtered (excluded or included) in a Worksheet.
-worksheet::  Top-level container for all object definitions within the worksheet
-worksheet_columns::  The list of columns in the worksheet + Each worksheet is identified by `name`, `description`, `formula_id`, and `properties`.+++</dlentry>+++
++ Default: `{}`+++</dlentry>++++++<dlentry id="join_progressive">+++join_progressive::::  Specifies when to apply joins on a worksheet + Possible values: `true` when joins are applied only for tables whose columns are included in the search, and `false` for all possible joins + Default: `true` + See link:../worksheets/progressive-joins.html[How the worksheet join rule works]+++</dlentry>++++++<dlentry id="joins">+++joins::::  List of joins between tables and views, used by the worksheet + Each join is identified by `name`, and the additional attributes of `source`, `destination`, `type`, and `is_one_to_one.`+++</dlentry>++++++<dlentry id="name">+++name::::
+The name of an object.
+Applies to `worksheet`, `table`,`join`, `formula`, and so on.+++</dlentry>++++++<dlentry id="properties">+++properties::::  The list of properties of the worksheet column + Each column can have the following properties, depending on its definition: `column_type`, `aggregation`, `index_type`, `is_hidden`, `index_priority`, `synonyms`, `is_attribution_dimension`, `is_additive`, `calendar`, `format_pattern`, `currency_type`, and `geo_config`.+++</dlentry>++++++<dlentry id="source">+++source::::  Name of source table or view of the join+++</dlentry>++++++<dlentry id="synonyms">+++synonyms::::  Alternate names for the column, used in search + See link:../data-modeling/change-visibility-synonym.html#create-synonyms-for-a-column[Create synonyms for a column]+++</dlentry>++++++<dlentry id="table">+++table::::  Specific table, used in defining higher-level objects, such as table paths + Defined as `name` within `tables` definition+++</dlentry>++++++<dlentry id="table_paths">+++table_paths::::  The list of table paths + Each table path is identified by the `id`, and additional attributes of `table` and `join_path`.+++</dlentry>++++++<dlentry id="tables">+++tables::::  List of tables used by the worksheet + Each table is identified by `name`.+++</dlentry>++++++<dlentry id="type">+++type::::  Join type + Possible values: `LEFT_OUTER` for left outer join, `RIGHT_OUTER` for right outer join, `INNER` for inner join, `OUTER` for full outer join + Default: `RIGHT_OUTER`+++</dlentry>++++++<dlentry id="worksheet">+++worksheet::::  Top-level container for all object definitions within the worksheet+++</dlentry>++++++<dlentry id="worksheet_columns">+++worksheet_columns::::  The list of columns in the worksheet + Each worksheet is identified by `name`, `description`, `formula_id`, and `properties`.+++</dlentry>+++
 
 [#limitations]
-== Limitations of working with Worksheet TSL files
+== Limitations of working with Worksheet YAML files
 
-There are certain limitations to the changes you can apply by editing a Worksheet through TSL.
+There are certain limitations to the changes you can apply be editing a Worksheet through YAML.
 
 * Formulas and columns can either have a new name, or a new expression.
 You cannot change both, unless migrating or updating the worksheet two times.
-* It is not possible to reverse the join direction in the TSL script.
+* It is not possible to reverse the join direction in the YAML script.
+* It is not possible to include Worksheet filters in the YAML script.
 * You cannot create Scriptable representations of R- or Python-powered visualizations.
 
 == Related Information
 
-* xref:worksheet-export.adoc[Migrate or restore Worksheets]
+* link:{{ site.baseurl }}/admin/worksheets/worksheet-export.html[Migrate or restore Worksheets]

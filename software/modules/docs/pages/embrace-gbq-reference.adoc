@@ -1,23 +1,24 @@
-= ["BigQuery connection reference"]
+= BigQuery connection reference
 :experimental:
-:last_updated: 01/30/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Learn about the fields used to create a BigQuery connection using ThoughtSpot Embrace.
+:linkattrs:
+
+Learn about the fields used to create a BigQuery connection using ThoughtSpot Embrace.
 
 Here is a list of the fields of a BigQuery connection in ThoughtSpot Embrace.
 You need specific information to establish a seamless and secure connection.
 All fields are required, except where noted.
-+++<dlentry id="embrace-gbq-ref-connection-name">+++Connection name::::  Enter a new BigQuery connection name.+++</dlentry>++++++<dlentry id="embrace-gbq-ref-connection-description">+++Connection description::::
-Provide a short description of the connection.
-_(Optional)_+++</dlentry>++++++<dlentry id="embrace-gbq-ref-project-id">+++Project id::::  Enter the project ID associated with the BigQuery database.+++</dlentry>++++++<dlentry id="embrace-gbq-ref-service-account">+++Service account::::  Enter the service account associated with the BigQuery database.+++</dlentry>+++
+
+Connection name:: Enter a new BigQuery connection name.
+Connection description:: Provide a short description of the connection. _(Optional)_
+Project id:: Enter the project ID associated with the BigQuery database.
+Service account:: Enter the service account associated with the BigQuery database.
 
 [#custom-role]
 == Create a custom role
 
 In order to use ThoughtSpot Embrace to query your GBQ database, you must create a custom role with specific permissions and then assign it to  your service account.
 
-. Navigate to https://console.cloud.google.com[console.cloud.google.com], sign in, and select your project.
+. Navigate to https://console.cloud.google.com[console.cloud.google.com,window=_blank], sign in, and select your project.
 . Hover over *IAM & admin*.
 . Click *Roles*.
 . Click *+CREATE ROLE*.
@@ -50,7 +51,7 @@ image::gbq-role-permissions.png[]
 You may already have a service account for GBQ with the proper permissions in place.
 If not, follow these steps to create a service account.
 
-. Navigate to https://console.cloud.google.com[console.cloud.google.com], sign in, and select your project.
+. Navigate to https://console.cloud.google.com[console.cloud.google.com,window=_blank], sign in, and select your project.
 . Click the navigation menu in the upper left, if it is not already open.
 . Hover over *IAM & Admin*.
 . Click *Service Accounts*.
@@ -75,14 +76,14 @@ The key downloads to your computer.
 . When you are ready to add a connection to BigQuery in ThoughtSpot, open the private key file in a text editor, and copy the entire contents of the file.
 image:gbq-key-copy.png[]
 . In the connection details page of your BigQuery connection in ThoughtSpot, paste this key into the *Service account* field.
-+ For details on how to add a connection to BigQuery in ThoughtSpot, see link:{{ site.baseurl }}/data-integrate/embrace/embrace-gbq-add.html[Add a BigQuery connection].
++ For details on how to add a connection to BigQuery in ThoughtSpot, see xref:embrace-gbq-add.adoc[Add a BigQuery connection].
 
 [#share-dataset]
 == Share dataset
 
 To make your dataset available for your Google BigQuery connection in ThoughtSpot, you must share it with your service account in Google BigQuery in an owner role.
 
-. Navigate to https://console.cloud.google.com[console.cloud.google.com], sign in, and select your project.
+. Navigate to https://console.cloud.google.com[console.cloud.google.com,window=_blank], sign in, and select your project.
 . Click the navigation menu in the upper left, if it is not already open.
 . Scroll down in the navigation menu into the BIG DATA section, and click *BigQuery*.
 + Your project should be listed on the left side of the page under the search box.
