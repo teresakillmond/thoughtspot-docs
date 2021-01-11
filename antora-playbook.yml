@@ -1,0 +1,29 @@
+site:
+  title: ThoughtSpot Software
+  url: http://docs.thoughtspot.com/thoughtspot-docs/
+content:
+  sources:
+  # embedding empty credentials in the URL disables the Edit this Page link for any page created from this repository
+  - url: git@github.com:thoughtspot/thoughtspot-docs.git
+    branches: ['6.0', '6.1', '6.2', '6.3']
+    start_paths:
+      - software/
+ui:
+  bundle:
+    url: build/ui-bundle.zip
+  supplemental_files:
+  - path: .nojekyll
+  - path: ui.yml
+    contents: "static_files: [ .nojekyll ]"
+    snapshot: true
+asciidoc:
+  attributes:
+    software: true
+    cloud: false
+    tabs: tabs
+  extensions:
+    - "@djencks/asciidoctor-tabset-block"
+
+output:
+  clean: true
+  dir: build/software
