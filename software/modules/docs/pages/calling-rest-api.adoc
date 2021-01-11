@@ -1,8 +1,7 @@
-= ["Calling the Data REST API"]
+= Calling the Data REST API
 :last_updated: 11/18/2019
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Learn how to call the Data REST API.
+
+Learn how to call the Data REST API.
 
 To call the Data REST API, you can specify a URL using the POST method, passing the ID numbers of the objects from which you want to obtain data.
 
@@ -10,12 +9,14 @@ To call the Data REST API, you can specify a URL using the POST method, passing 
 
 For a pinboard, you can append the ID of your pinboard as a parameter, like this example:
 
+[source]
 ----
 https://<thoughtspot_server>/callosum/v1/tspublic/v1/pinboarddata?id=7752fa9e-db22-415e-bf34-e082c4bc41c3
 ----
 
 To retrieve data from a specific visualization within a pinboard, you would append the ID number of the visualization using the vizid parameter:
 
+[source]
 ----
 https://<thoughtspot_server>/callosum/v1/tspublic/v1/pinboarddata?id=7752fa9e-db22-415e-bf34-e082c4bc41c3&vizid=%5B1e99d70f-c1dc-4a52-9980-cfd4d14ba6d6%5D
 ----
@@ -33,6 +34,7 @@ image::parsed_json_data.png[]
 If you make a call to a specific viz on a pinboard, it will return just one object.
 The JSON object format for the data that is returned from ThoughtSpot is:
 
+[source]
 ----
 {
 vizId1 : {
@@ -69,6 +71,7 @@ These are called link:{{ site.baseurl }}/app-integrate/runtime-filters/about-run
 
 The following example shows a JavaScript function that calls the REST API, gets the results back, and retrieves a single value from the JSON results:
 
+[source]
 ----
 /**
  * Generates headline by making a data API call.
