@@ -1,8 +1,7 @@
 = Flexible aggregation functions
 :last_updated: 11/05/2019
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Use the group_aggregate function in ThoughtSpot to aggregate measures at different granularities than the dimensions used in the search columns.
+
+Use the group_aggregate function in ThoughtSpot to aggregate measures at different granularities than the dimensions used in the search columns.
 
 == How aggregation formulas work
 
@@ -44,7 +43,9 @@ This is particularly useful for comparison analysis.
 To use the groups and filters, specify them using the `query_groups` and `query_filters` keywords, respectively.
 You can also add or exclude groups or filters.
 
-{% include content/flexible-aggregation-best-practices.md %}
+include::partial$flexible-aggregation-best-practices.adoc[]
+
+
 
 == Examples
 
@@ -63,7 +64,8 @@ group_aggregate(sum(revenue), query_groups() - {commit date} + {year(commit date
 This is helpful to include the main query groups that are not known at formula creation time.
 You can use `+/-` to modify the set of groups included from the query.
 
-{% include note.html content="``+/-`` is currently supported only for `query_groups`, not `query_filters`."%}
+NOTE: ``+/-`` is currently supported only for `query_groups`, not `query_filters`.
+
 
 == When group formula results are finer-grained than the search
 
@@ -121,7 +123,7 @@ where the formula `monthly_sales` is written as:
 group_aggregate(sum(revenue), query_groups() + {start_of_month(date)}, {})
 ----
 
-For more extensive examples of using the `group-aggregate` function, we encourage you to see link:{{site.baseurl}}/reference/practice/reaggregation-scenarios.html[Reaggreggation scenarios in practice]
+For more extensive examples of using the `group-aggregate` function, we encourage you to see xref:reaggregation-scenarios.adoc[Reaggreggation scenarios in practice]
 
 == Groups and filters
 
