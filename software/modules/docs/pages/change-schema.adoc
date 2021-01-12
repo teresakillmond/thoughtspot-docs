@@ -1,9 +1,7 @@
 = How to change a schema
 :last_updated: 08/26/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
 
-After you've craeted a schema and loaded data, you may find yourself wishing you'd set things up a little differently. You can make changes, such as changing the primary key, relationships to other tables, and sharding.
+After you've created a schema and loaded data, you may find yourself wishing you'd set things up a little differently. You can make changes, such as changing the primary key, relationships to other tables, and sharding.
 
 Making changes to a schema after data has been loaded and users have created worksheets or pinboards on the tables requires care, so that you don't lose the relationship between the objects created in ThoughtSpot and the underlying tables.
 If you follow the procedures here, your tables will retain their relationships to the objects created on top of them.
@@ -135,8 +133,8 @@ This is useful if the size of your cluster has increased.
 
 To change the sharding on a table:
 
-. link:{{ site.baseurl }}/admin/backup-restore/overview-snapshot.html[Create a manual snapshot].
-. link:prep-schema-for-load.html#connect-with-tql[Connect to the database with the ThoughtSpot SQL Command Line (TQL)].
+. xref:overview-snapshot.adoc[Create a manual snapshot].
+. xref:prep-schema-for-load.adoc#connect-with-tql[Connect to the database with the ThoughtSpot SQL Command Line (TQL)].
 . Issue the command to change the sharding using this syntax:
 +
 ----
