@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["Charts and tables that display a very large number of data values"] | ThoughtSpot Software</title>
+    <title>Understand groups and privileges | ThoughtSpot Software</title>
 <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -790,7 +790,7 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="intro-onboarding.html">Onboarding Users</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item is-current-page" data-depth="3">
     <a class="nav-link" href="about-users-groups.html">Understand groups and privileges</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -1911,80 +1911,338 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Software</a></li>
-    <li><a href="high-cardinality.html">["Charts and tables that display a very large number of data values"]</a></li>
+    <li>Administration</li>
+    <li>Manage users and groups</li>
+    <li><a href="about-users-groups.html">Understand groups and privileges</a></li>
   </ul>
 </nav>
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["Charts and tables that display a very large number of data values"]</h1>
-<div class="sect1">
-<h2 id="_high_cardinality_tables"><a class="anchor" href="#_high_cardinality_tables"></a>High cardinality tables</h2>
+<h1 class="page">Understand groups and privileges</h1>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>ThoughtSpot tables are no longer limited to 1000 rows.
-Now, you can see exactly how many rows your table displays.
-Here, the table has 2318 rows:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/cardinality-table-rows.png" alt="High cardinality table example">
-</div>
+<p>Creating groups and assigning users to them makes privilege management easier.</p>
 </div>
 <div class="paragraph">
-<p>Column summaries are not available for tables with more than 1000 rows.</p>
+<p>Before people can log in and use ThoughtSpot, you need to create a username, a password, and a membership in one or more groups for them.</p>
+</div>
+<div class="paragraph">
+<p>This page describes manual creation of users, groups, and privileges, but you can also manage users through <a href="about-LDAP.html" class="page">LDAP</a> or SAML.
+For information on configuring SAML authentication, see <a href="configure-SAML-with-tscli.html" class="page">Configure SAML</a>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_high_cardinality_charts"><a class="anchor" href="#_high_cardinality_charts"></a>High cardinality charts</h2>
+<h2 id="_privileges_and_groups"><a class="anchor" href="#_privileges_and_groups"></a>Privileges and groups</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>ThoughtSpot charts contain several new features.
-You are no longer limited to 1000 data points.
-When your chart has a very large number of data values, you see a horizontal scroll bar at the bottom.
-The new default maximum number of data points is 20,000.
-You can configure this maximum, up to 35,000.
-To configure the maximum number of data points on a chart, link:{{ site.baseurl }}/appliance/contact.html[contact ThoughtSpot Support].</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/cardinality-chart-scroll-bar.png" alt="High cardinality chart with scroll bar">
-</div>
+<p>Privileges determine what kinds of actions users are allowed to do.
+You assign privileges to groups.
+Then, you create users and assign them to groups.
+This is how you grant users access to different capabilities in ThoughtSpot.</p>
 </div>
 <div class="paragraph">
-<p>If you want to see the whole chart at one time, you can select the <strong>fit to screen</strong> option.
-To <strong>fit to screen</strong>, click the <strong>edit chart configuration</strong> <span class="image"><img src="_images/{{%20site.baseurl%20}}/images/icon-gear-10px.png" alt="icon gear 10px"></span> icon, and click <strong>settings</strong> at the bottom of the chart configuration panel.
-Select <strong>fit to screen</strong>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/cardinality-chart-options.png" alt="High cardinality chart example&#8201;&#8212;&#8201;fit to screen">
-</div>
+<p>Each group includes a set of privileges for its users.
+The privileges a group has determine the actions that its members are allowed to do.
+If a user belongs to more than one group, they will have the highest level of the privileges from all the groups they belong to.
+Plan your groups so that you can use them to assign a common set of privileges to multiple users.
+Good planning will pay off in ease of administration and a better search experience.</p>
 </div>
 <div class="paragraph">
-<p>When you <strong>fit to screen</strong>, you see the whole chart.
-You can easily return to the zoomed-in view, by unselecting the <strong>fit to screen</strong> option.</p>
+<p>There is a default group called <strong>All</strong>, which includes every user in ThoughtSpot.
+When you create a new user, they will be added to the <strong>All</strong> group automatically.
+You cannot delete the <strong>All</strong> group or remove members from it.</p>
 </div>
 <div class="paragraph">
-<p>You can now have more than 40 legend items in your chart.
-If you attempt to link:{{ site.baseurl }}/end-user/search/drag-and-drop.html#slice-with-color[slice with color] using a column that has more than 80 values, the recommended number of values, ThoughtSpot tells you to filter to reduce the number of values, or allows you to <strong>render all</strong>, if the number of values is under 250.</p>
+<p>You can also have a hierarchy of groups.
+That is, groups can belong to (that is, be children of) other groups.
+When using group hierarchies, permissions are inherited from the parent group.
+So if you&#8217;re a member of a sub-group, you would automatically have the privileges of the parent group.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/cardinality-render-all.png" alt="Render all" width="or filter to reduce number of values">
 </div>
+</div>
+<div class="sect1">
+<h2 id="_list_of_privileges"><a class="anchor" href="#_list_of_privileges"></a>List of privileges</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Here are the different privileges, and the capabilities they enable:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Can administer ThoughtSpot</dt>
+<dd>
+<p>Can manage Users and Groups and has view and edit access to all data. Users with this privilege can also download a saved Answer.</p>
+</dd>
+<dt class="hdlist1">Can upload user data</dt>
+<dd>
+<p>Can upload their own data from the application&#8217;s <strong>Data</strong> page using <span class="menuseq"><b class="menu">Actions</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Upload data</b></span>.</p>
+</dd>
+<dt class="hdlist1">Can download data</dt>
+<dd>
+<p>Can download data from search results and pinboards.</p>
+</dd>
+<dt class="hdlist1">Can share with all users</dt>
+<dd>
+<p>Can see the names of and share with users outside of the groups the user belongs to. Members of groups with this privilege can also share with groups marked as <strong>NOT SHARABLE</strong>.</p>
+</dd>
+<dt class="hdlist1">Can manage data</dt>
+<dd>
+<p>Can create worksheets and views. Can create Embrace connections.</p>
+<div class="paragraph">
+<p>Note that to edit a worksheet or a view created by another user, you must have the <strong>Edit</strong> permission on that object, and it must be shared with you.</p>
+</div>
+</dd>
+<dt class="hdlist1">Can use experimental features</dt>
+<dd>
+<p>Can access trial and experimental features that ThoughtSpot makes available to early adopters.</p>
+</dd>
+<dt class="hdlist1">Can invoke Custom R Analysis</dt>
+<dd>
+<p>Can access R scripts to further explore search answers. Includes options to invoke R scripts on visualizations, create and share custom scripts, and share the results of R analysis as answers and pinboards.</p>
+</dd>
+<dt class="hdlist1">Can schedule pinboards</dt>
+<dd>
+<p>Can create pinboard schedules and edit their own scheduled jobs.</p>
+</dd>
+<dt class="hdlist1">Has SpotIQ privilege</dt>
+<dd>
+<p>Can use the SpotIQ feature.</p>
+<div class="paragraph">
+<p>If this privilege is not enabled for the user, but Insights are enabled on the cluster (this is off by default), they can still see "Did you know" SpotIQ insights on the ThoughtSpot home page.</p>
+</div>
+</dd>
+<dt class="hdlist1">Can administer and bypass RLS</dt>
+<dd>
+<p>Users in groups with this privilege (directly or through group inheritance):</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Are exempt from row-level security (RLS) rules.</p>
+</li>
+<li>
+<p>Can add/edit/delete existing RLS rules.</p>
+</li>
+<li>
+<p>Can check or uncheck Bypass RLS on a worksheet.</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
 </div>
 <div class="paragraph">
-<p>If you attempt to <strong>slice with color</strong> using a column that has more than 250 values, ThoughtSpot tells you to filter to reduce the number of values:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/cardinality-filter.png" alt="Filter to reduce number of values">
-</div>
+<p>Your installation configuration may enable or disable the availability of this privilege.
+By default, it is enabled. Administrators or groups with the privilege <strong>Can administer ThoughtSpot</strong> can grant this privilege.</p>
 </div>
 <div class="paragraph">
-<p>ThoughtSpot also warns you if your search contains too many data points, so that you can filter your search.</p>
+<p>Typically, the <strong>ALL</strong> group has a common set of privileges applies such as the <strong>Can upload user data</strong> and/or <strong>Can download data</strong> privileges.</p>
+</div>
+<div class="paragraph">
+<p>Privileges are additive, meaning that if a user belongs to more than one group, they will have the highest level of privileges from among the groups they are a member of.
+They are also inherited from the parent, so that a sub-group gets all the same privileges of its parent, all the way up the group hierarchy.</p>
+</div>
+<div class="paragraph">
+<p>If you add the privilege <strong>Has administration privileges</strong> to a group, note that all users in that group will be able to see all the data in ThoughtSpot.
+Administrators can see all data sources, and <a href="about-row-security.html" class="page">Row level security</a> does not apply to them.</p>
+</div>
+<div class="paragraph">
+<p>Permissions to see and edit tables, worksheets, and pinboards are set when you share them with users and groups, as described in the topic <a href="sharing-security-overview.html" class="page">Data security</a>.</p>
+</div>
+<div class="paragraph">
+<p>The following table shows the intersection of user privilege and ability:
+<table id="matrix" class="wide_table" style="font-size:10px;"><colgroup><col style="width:36%;"></col>
+      <col style="width:4%;"></col>
+      <col style="width:4%;"></col>
+      <col style="width:4%;"></col>
+      <col style="width:4%;"></col>
+      <col style="width:4%;"></col>
+      <col style="width:4%;"></col>
+      <col style="width:4%;"></col>
+      <col style="width:4%;"></col>
+      <col style="width:4%;"></col>
+      <col style="width:4%;"></col>
+      <col style="width:4%;"></col>
+      <col style="width:4%;"></col>
+      <col style="width:4%;"></col>
+      <col style="width:4%;"></col>
+      <col style="width:4%;"></col>
+      <col style="width:4%;"></col></colgroup>
+   <thead><tr><th><div></div></th>
+         <th class="rotate"><div>Create/Edit WS</div></th>
+         <th class="rotate"><div>Create View</div></th>
+         <th class="rotate"><div>Create Embrace Connection</div></th>
+         <th class="rotate"><div>Modify Col. Props.<sup>1</sup></div></th>
+         <th class="rotate"><div>Upload Data</div></th>
+         <th class="rotate"><div>Download Data</div></th>
+         <th class="rotate"><div>Share within Group</div></th>
+         <th class="rotate"><div>Share with all users</div></th>
+         <th class="rotate"><div>Manage RLS rules</div></th>
+         <th class="rotate"><div>CrUD Relationships</div></th>
+         <th class="rotate"><div>Read Relationships</div></th>
+         <th class="rotate"><div>See Hidden Cols</div></th>
+         <th class="rotate"><div>Join with Upload Data</div></th>
+         <th class="rotate"><div>Schema Viewer</div></th>
+         <th class="rotate"><div>Use Scheduler</div></th>
+         <th class="rotate"><div>Use Auto-Analyze</div></th></tr></thead>
+   <tbody><tr><td>Can administer ThoughtSpot</td>
+         <td>Y</td>
+         <td>Y</td>
+         <td>Y</td>
+         <td>Y</td>
+         <td>Y</td>
+         <td>Y</td>
+         <td>Y</td>
+         <td>Y</td>
+         <td>Y</td>
+         <td>Y<sup>2</sup></td>
+         <td>Y</td>
+         <td>Y</td>
+         <td>Y</td>
+         <td>Y</td>
+         <td>Y</td>
+         <td>Y</td></tr>
+      <tr><td><div>Can upload <br></br> user data</div></td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>Y</td>
+         <td>N</td>
+         <td>Y</td>
+         <td>N</td>
+         <td>N</td>
+         <td><div>Y<sup>3</sup></div></td>
+         <td><div>Y<sup>4</sup></div></td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td></tr>
+      <tr><td><div>Can download data</div></td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>Y</td>
+         <td>Y</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td><div>Y<sup>4</sup></div></td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td></tr>
+      <tr><td><div>Can manage data</div></td>
+         <td>Y</td>
+         <td>Y</td>
+         <td>Y</td>
+         <td>Y</td>
+         <td>Y</td>
+         <td>N</td>
+         <td>Y</td>
+         <td>N</td>
+         <td>N</td>
+         <td><div>Y<sup>4</sup></div></td>
+         <td><div>Y<sup>4</sup></div></td>
+         <td><div>Y<sup>5</sup></div></td>
+         <td>Y</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td></tr>
+      <tr><td><div>Can share with <br></br> all users</div></td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>Y</td>
+         <td>Y</td>
+         <td>N</td>
+         <td>N</td>
+         <td><div>Y<sup>4</sup></div></td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td></tr>
+      <tr><td><div>Has SpotIQ privilege</div></td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td><div>Y<sup>4</sup></div></td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>Y</td></tr>
+      <tr><td><div>Can Administer and Bypass RLS</div></td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>Y</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td></tr>
+      <tr><td>None</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>Y</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td><div>Y<sup>4</sup></div></td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td>
+         <td>N</td></tr>
+      <tr><td colspan="16" id="widefootnote" style="font-size: 10px;"><p>Table notes:</p>
+        <ol><li>Applies to non-owners only.</li>
+              <li>Any tables.</li>
+              <li>Author of at least one table in relationship.</li>
+              <li>Only when read permission for columns used in the relationship.</li>
+              <li>With edit permission.</li></ol></td></tr></tbody></table></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_related_information"><a class="anchor" href="#_related_information"></a>Related information</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="add-group.html" class="page">Add a group and set security privileges</a></p>
+</li>
+<li>
+<p><a href="add-user.html" class="page">Add a user</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>

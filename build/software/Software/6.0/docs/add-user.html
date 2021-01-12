@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["Create, edit, or delete a user"] | ThoughtSpot Software</title>
+    <title>Create, edit, or delete a user | ThoughtSpot Software</title>
 <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -586,7 +586,7 @@
     <span class="nav-text">Administration</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#docs:intro.adoc">Introduction to administration</a>
+    <a class="nav-link" href="intro.html">Introduction to administration</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="logins.html">Sign-in credentials for administration</a>
@@ -791,7 +791,7 @@
     <a class="nav-link" href="intro-onboarding.html">Onboarding Users</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:about-users-groups.adoc">Understand groups and privileges</a>
+    <a class="nav-link" href="about-users-groups.html">Understand groups and privileges</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="add-group.html">Create, edit, or delete a group</a>
@@ -1919,9 +1919,12 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["Create, edit, or delete a user"]</h1>
+<h1 class="page">Create, edit, or delete a user</h1>
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph">
+<p>For each unique person who accesses ThoughtSpot, you must create a user account. When you create a user manually in ThoughtSpot, you continue to manage that user in ThoughtSpot.</p>
+</div>
 <div class="paragraph">
 <p>You can create users directly in ThoughtSpot, or import users and user groups through LDAP or similar protocols.</p>
 </div>
@@ -1953,7 +1956,7 @@ The user inherits privileges and permissions directly from the group assignments
 <p>Click the <strong>Admin</strong> icon, on the top navigation bar.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/click-admin.png" alt="Admin tab">
+<img src="_images/click-admin.png" alt="Admin tab">
 </div>
 </div>
 </li>
@@ -1961,7 +1964,7 @@ The user inherits privileges and permissions directly from the group assignments
 <p>In the <strong>Admin</strong> panel, click <strong>User Management</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/admin-user-management.png" alt="Admin &gt; User Management">
+<img src="_images/admin-user-management.png" alt="Admin &gt; User Management">
 </div>
 </div>
 </li>
@@ -1969,7 +1972,7 @@ The user inherits privileges and permissions directly from the group assignments
 <p>In the <strong>User Management</strong> section, click <strong>Users</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/admin-user-management-users.png" alt="Manage Groups">
+<img src="_images/admin-user-management-users.png" alt="Manage Groups">
 </div>
 </div>
 </li>
@@ -1977,14 +1980,14 @@ The user inherits privileges and permissions directly from the group assignments
 <p>Click the <strong>+ Add User</strong> button on the upper right-hand side of the list of users.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/admin-user-management-add-user.png" alt="Add a new User">
+<img src="_images/admin-user-management-add-user.png" alt="Add a new User">
 </div>
 </div>
 </li>
 <li>
 <p>In the <strong>Add a new user</strong> interface, enter the details for the new user:</p>
 <div class="paragraph">
-<p>image::{{ site.baseurl }}/images/add-user.png<span class="Add a new User"><table></span><colgroup><col width="20%"></col>
+<p>image::add-user.png<span class="Add a new User"><table></span><colgroup><col width="20%"></col>
    <col width="10%"></col>
    <col width="70%"></col></colgroup>
   <tr><th>Field</th>
@@ -2003,7 +2006,7 @@ The user inherits privileges and permissions directly from the group assignments
      this user is an option in the <b>Share</b> dialog.</td></tr>
    <tr id="password"><th>Change password</th>
      <td>Yes</td>
-     <td>A password. Your password must contain three of the following: uppercase letters A-Z, lowercase letters a-z, special characters !<mark>$ etc, numbers 0-9. Your password must be at least eight characters long. When you click on the <strong>change password</strong> field, a tooltip appears to tell you these requirements.</td></tr>
+     <td>A password. Your password must contain three of the following: uppercase letters A-Z, lowercase letters a-z, special characters !#$ etc, numbers 0-9. Your password must be at least eight characters long. When you click on the <strong>change password</strong> field, a tooltip appears to tell you these requirements.</td></tr>
    <tr id="confirm_password"><th>Confirm password</th>
      <td>Yes</td>
      <td>Enter the password again.</td></tr>
@@ -2023,7 +2026,7 @@ The user inherits privileges and permissions directly from the group assignments
      <p>Note that if you add the user to a group that has the privilege <b>Has administration privileges</b>, they can see all the data in ThoughtSpot.</p>
      <p>When you create a new user, the groups they belong to define the following attributes for the user:</p>
      <ul><li><strong>Privileges</strong>: the actions they can perform, defined when you <a href="add-group.html">Add a group and set security privileges</a>.</li>
-       <li><strong>Permissions</strong>: the data they can access and view, defined when you consider &lt;a href="{{"/admin/data-security/sharing-security-overview.html</mark>" | prepend: site.baseurl }}"&gt;Data security&lt;/a&gt;.</li></ul>
+       <li><strong>Permissions</strong>: the data they can access and view, defined when you consider &lt;a href="{{"/admin/data-security/sharing-security-overview.html#" | prepend: site.baseurl }}"&gt;Data security&lt;/a&gt;.</li></ul>
      <p>Administrators can see all data sources, and &lt;a href="{{"/admin/data-security/about-row-security.html#" | prepend: site.baseurl }}"&gt;Row level security&lt;/a&gt; does not apply to them.</p></td></tr></table></p>
 </div>
 </li>
@@ -2034,7 +2037,7 @@ The user inherits privileges and permissions directly from the group assignments
 </div>
 <div class="paragraph">
 <p>Note that this process of identifying the user&#8217;s needs contributes to a robust onboarding process.
-See link:{{ site.baseurl }}/end-user/onboarding/intro-onboarding.html#[Onboarding users].</p>
+See <a href="intro-onboarding.html" class="page">Onboarding users</a>.</p>
 </div>
 </div>
 </div>
@@ -2057,7 +2060,7 @@ You can also help users by resetting their password, and evaluating their onboar
 <p>Click the <strong>Admin</strong> icon, on the top navigation bar.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/click-admin.png" alt="Admin tab">
+<img src="_images/click-admin.png" alt="Admin tab">
 </div>
 </div>
 </li>
@@ -2065,7 +2068,7 @@ You can also help users by resetting their password, and evaluating their onboar
 <p>In the <strong>Admin</strong> panel, click <strong>User Management</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/admin-user-management.png" alt="Admin &gt; User Management">
+<img src="_images/admin-user-management.png" alt="Admin &gt; User Management">
 </div>
 </div>
 </li>
@@ -2073,7 +2076,7 @@ You can also help users by resetting their password, and evaluating their onboar
 <p>In the <strong>User Management</strong> section, click <strong>Users</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/admin-user-management-users.png" alt="Manage Groups">
+<img src="_images/admin-user-management-users.png" alt="Manage Groups">
 </div>
 </div>
 </li>
@@ -2084,7 +2087,7 @@ You can also help users by resetting their password, and evaluating their onboar
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/edit-user-search.png" alt="Search Users">
+<img src="_images/edit-user-search.png" alt="Search Users">
 </div>
 </div>
 </li>
@@ -2095,7 +2098,7 @@ You can also help users by resetting their password, and evaluating their onboar
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/edit-user.png" alt="Edit User">
+<img src="_images/edit-user.png" alt="Edit User">
 </div>
 </div>
 <div class="paragraph">
@@ -2115,7 +2118,7 @@ After previewing the user&#8217;s default data source and Pinboards, you may cho
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/edit-user-preview-onboarding.png" alt="Preview onboarding experience">
+<img src="_images/edit-user-preview-onboarding.png" alt="Preview onboarding experience">
 </div>
 </div>
 </div>
@@ -2145,7 +2148,7 @@ After previewing the user&#8217;s default data source and Pinboards, you may cho
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/edit-user-groups.png" alt="Edit User Grouops">
+<img src="_images/edit-user-groups.png" alt="Edit User Grouops">
 </div>
 </div>
 </div>
@@ -2166,7 +2169,7 @@ After previewing the user&#8217;s default data source and Pinboards, you may cho
 <p>Click the <strong>Admin</strong> icon, on the top navigation bar.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/click-admin.png" alt="Admin tab">
+<img src="_images/click-admin.png" alt="Admin tab">
 </div>
 </div>
 </li>
@@ -2174,7 +2177,7 @@ After previewing the user&#8217;s default data source and Pinboards, you may cho
 <p>In the <strong>Admin</strong> panel, click <strong>User Management</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/admin-user-management.png" alt="Admin &gt; User Management">
+<img src="_images/admin-user-management.png" alt="Admin &gt; User Management">
 </div>
 </div>
 </li>
@@ -2182,7 +2185,7 @@ After previewing the user&#8217;s default data source and Pinboards, you may cho
 <p>In the <strong>User Management</strong> section, click <strong>Users</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/admin-user-management-users.png" alt="Manage Groups">
+<img src="_images/admin-user-management-users.png" alt="Manage Groups">
 </div>
 </div>
 </li>
@@ -2193,7 +2196,7 @@ After previewing the user&#8217;s default data source and Pinboards, you may cho
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/edit-user-search.png" alt="Search Users">
+<img src="_images/edit-user-search.png" alt="Search Users">
 </div>
 </div>
 </li>
@@ -2201,7 +2204,7 @@ After previewing the user&#8217;s default data source and Pinboards, you may cho
 <p>Click <strong>Delete</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/delete-users.png" alt="Delete Users">
+<img src="_images/delete-users.png" alt="Delete Users">
 </div>
 </div>
 </li>

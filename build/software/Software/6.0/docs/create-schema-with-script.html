@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>Untitled | ThoughtSpot Software</title>
+    <title>How to write a SQL script | ThoughtSpot Software</title>
 <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -586,7 +586,7 @@
     <span class="nav-text">Administration</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#docs:intro.adoc">Introduction to administration</a>
+    <a class="nav-link" href="intro.html">Introduction to administration</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="logins.html">Sign-in credentials for administration</a>
@@ -791,7 +791,7 @@
     <a class="nav-link" href="intro-onboarding.html">Onboarding Users</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:about-users-groups.adoc">Understand groups and privileges</a>
+    <a class="nav-link" href="about-users-groups.html">Understand groups and privileges</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="add-group.html">Create, edit, or delete a group</a>
@@ -1920,13 +1920,13 @@
 </div>
   <div class="content">
 <article class="doc">
-<hr>
+<h1 class="page">How to write a SQL script</h1>
 <div class="paragraph">
-<p>title: [How to write a SQL script]</p>
+<p>Using a SQL script to create your schema is a recommended best practice.
+This makes it easier to adjust the schema definitions and recreate the schema quickly, if needed.</p>
 </div>
 <div class="paragraph">
-<p>last_updated: tbd summary: "Using a SQL script to create your schema is a recommended best practice.
-This makes it easier to adjust the schema definitions and recreate the schema quickly, if needed." sidebar: mydoc_sidebar permalink: /:collection/:path.html&#8201;&#8212;&#8201;The schema creation script is a text file that contains all the SQL commands to create your schema.
+<p>The schema creation script is a text file that contains all the SQL commands to create your schema.
 Comments should be enclosed in the comment tags /* and */.</p>
 </div>
 <div class="paragraph">
@@ -1980,10 +1980,10 @@ This makes it easier to troubleshoot the script and make changes.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="upload-sql-script.html#">Import a schema (use the SQL editor)</a>.</p>
+<p><a href="upload-sql-script.html" class="page">Import a schema (use the SQL editor)</a>.</p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/admin/setup/logins.html#ssh-to-the-appliance[Log in to the shell], copy your script to your ThoughtSpot instance using scp, and pipe it to TQL:</p>
+<p><a href="logins.html#ssh-to-the-appliance" class="page">Log in to the shell</a>, copy your script to your ThoughtSpot instance using scp, and pipe it to TQL:</p>
 <div class="listingblock">
 <div class="content">
 <pre> $ cat create-schema.sql | tql</pre>

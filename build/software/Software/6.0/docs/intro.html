@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["Charts and tables that display a very large number of data values"] | ThoughtSpot Software</title>
+    <title>Introduction to administration | ThoughtSpot Software</title>
 <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -585,7 +585,7 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Administration</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="intro.html">Introduction to administration</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -1911,82 +1911,77 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Software</a></li>
-    <li><a href="high-cardinality.html">["Charts and tables that display a very large number of data values"]</a></li>
+    <li>Administration</li>
+    <li><a href="intro.html">Introduction to administration</a></li>
   </ul>
 </nav>
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["Charts and tables that display a very large number of data values"]</h1>
-<div class="sect1">
-<h2 id="_high_cardinality_tables"><a class="anchor" href="#_high_cardinality_tables"></a>High cardinality tables</h2>
-<div class="sectionbody">
+<h1 class="page">Introduction to administration</h1>
 <div class="paragraph">
-<p>ThoughtSpot tables are no longer limited to 1000 rows.
-Now, you can see exactly how many rows your table displays.
-Here, the table has 2318 rows:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/cardinality-table-rows.png" alt="High cardinality table example">
-</div>
+<p>This guide covers all topics of special interest to application administrators.</p>
 </div>
 <div class="paragraph">
-<p>Column summaries are not available for tables with more than 1000 rows.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_high_cardinality_charts"><a class="anchor" href="#_high_cardinality_charts"></a>High cardinality charts</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>ThoughtSpot charts contain several new features.
-You are no longer limited to 1000 data points.
-When your chart has a very large number of data values, you see a horizontal scroll bar at the bottom.
-The new default maximum number of data points is 20,000.
-You can configure this maximum, up to 35,000.
-To configure the maximum number of data points on a chart, link:{{ site.baseurl }}/appliance/contact.html[contact ThoughtSpot Support].</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/cardinality-chart-scroll-bar.png" alt="High cardinality chart with scroll bar">
-</div>
+<p>This guide provides information for application administrators, or users with <a href="logins.html" class="page">administrative access privileges</a>.</p>
 </div>
 <div class="paragraph">
-<p>If you want to see the whole chart at one time, you can select the <strong>fit to screen</strong> option.
-To <strong>fit to screen</strong>, click the <strong>edit chart configuration</strong> <span class="image"><img src="_images/{{%20site.baseurl%20}}/images/icon-gear-10px.png" alt="icon gear 10px"></span> icon, and click <strong>settings</strong> at the bottom of the chart configuration panel.
-Select <strong>fit to screen</strong>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/cardinality-chart-options.png" alt="High cardinality chart example&#8201;&#8212;&#8201;fit to screen">
-</div>
+<p>Before addressing the major components of this guide, we recommend that you familiarize yourself with the general top-level <a href="components.html" class="page">architecture</a> of the ThoughtSpot service.</p>
 </div>
 <div class="paragraph">
-<p>When you <strong>fit to screen</strong>, you see the whole chart.
-You can easily return to the zoomed-in view, by unselecting the <strong>fit to screen</strong> option.</p>
+<p>Administrators are responsible for many facets of the ThoughtSpot service.
+They are most frequently in charge of these common processes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#">Installation and setup of ThoughtSpot</a></p>
+</li>
+<li>
+<p><a href="loading-intro.html" class="page">Loading and managing data</a></p>
+</li>
+<li>
+<p><a href="about-users-groups.html" class="page">Managing users and groups</a></p>
+</li>
+<li>
+<p><a href="about-security.html" class="page">Security</a></p>
+</li>
+<li>
+<p><a href="sysadmin-overview.html" class="page">System administration</a></p>
+</li>
+<li>
+<p><a href="choose-strategy.html" class="page">Backup and Restore</a></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>You can now have more than 40 legend items in your chart.
-If you attempt to link:{{ site.baseurl }}/end-user/search/drag-and-drop.html#slice-with-color[slice with color] using a column that has more than 80 values, the recommended number of values, ThoughtSpot tells you to filter to reduce the number of values, or allows you to <strong>render all</strong>, if the number of values is under 250.</p>
+<p>Additionally, administrators are often involved in the following workflows:</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/cardinality-render-all.png" alt="Render all" width="or filter to reduce number of values">
-</div>
-</div>
-<div class="paragraph">
-<p>If you attempt to <strong>slice with color</strong> using a column that has more than 250 values, ThoughtSpot tells you to filter to reduce the number of values:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/cardinality-filter.png" alt="Filter to reduce number of values">
-</div>
-</div>
-<div class="paragraph">
-<p>ThoughtSpot also warns you if your search contains too many data points, so that you can filter your search.</p>
-</div>
-</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="about-data-modeling-intro.html" class="page">Data modeling</a></p>
+</li>
+<li>
+<p><a href="about-worksheets.html" class="page">Using worksheets</a> to simplify search.</p>
+</li>
+<li>
+<p><a href="about-query-on-query.html" class="page">Using views</a> for 'stacked' search;
+note that starting with Release 5.2, you can accomplish some aspects of search stacking by using the <code>IN</code> keyword (See <a href="in-keyword-searches.html" class="page">in keyword searches</a>).</p>
+</li>
+<li>
+<p><a href="#about-query-on-query.html">Enabling SearchIQ</a>[.label.label-beta] <mark>Beta</mark>, ThoughtSpot&#8217;s natural language search.</p>
+</li>
+<li>
+<p><a href="#about-scheduled-pinboards.html">Managing scheduled jobs</a></p>
+</li>
+<li>
+<p><a href="introduction.html" class="page">Monitoring system health</a></p>
+</li>
+<li>
+<p><a href="troubleshooting-intro.html" class="page">Troubleshooting</a></p>
+</li>
+</ul>
 </div>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">

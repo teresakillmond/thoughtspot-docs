@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>Untitled | ThoughtSpot Software</title>
+    <title>How to view a data schema | ThoughtSpot Software</title>
 <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -586,7 +586,7 @@
     <span class="nav-text">Administration</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#docs:intro.adoc">Introduction to administration</a>
+    <a class="nav-link" href="intro.html">Introduction to administration</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="logins.html">Sign-in credentials for administration</a>
@@ -791,7 +791,7 @@
     <a class="nav-link" href="intro-onboarding.html">Onboarding Users</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:about-users-groups.adoc">Understand groups and privileges</a>
+    <a class="nav-link" href="about-users-groups.html">Understand groups and privileges</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="add-group.html">Create, edit, or delete a group</a>
@@ -1919,20 +1919,31 @@
 </div>
   <div class="content">
 <article class="doc">
-<hr>
+<h1 class="page">How to view a data schema</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_accessing_the_schema_viewer_for_all_objects">Accessing the Schema Viewer for all objects</a></li>
+<li><a href="#_accessing_schema_viewer_for_a_single_worksheet_table_or_view">Accessing Schema Viewer for a single worksheet, table, or view</a></li>
+<li><a href="#_why_use_the_schema_viewer">Why use the Schema Viewer</a></li>
+<li><a href="#_how_the_schema_viewer_shows_joins">How the Schema Viewer shows joins</a></li>
+<li><a href="#_worksheet_view">Worksheet view</a></li>
+<li><a href="#_related_information">Related Information</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>title: [How to view a data schema]</p>
+<p>Use the schema viewer to see tables and worksheets and their relationships.</p>
 </div>
 <div class="paragraph">
-<p>last_updated: 07/27/2019</p>
-</div>
-<div class="paragraph">
-<p>toc: true summary: "Use the schema viewer to see tables and worksheets and their relationships.
-" sidebar: mydoc_sidebar permalink: /:collection/:path.html&#8201;&#8212;&#8201;ThoughtSpot has a <strong>Schema Viewer</strong> though which you can examine the database schema.
+<p>ThoughtSpot has a <strong>Schema Viewer</strong> though which you can examine the database schema.
 It is interactive and configurable, so you can see the level of detail that is relevant to your work.</p>
 </div>
 <div class="paragraph">
 <p>You must have <strong>Admin</strong> privileges to use the <strong>Schema Viewer</strong>.</p>
+</div>
+</div>
 </div>
 <div class="sect1">
 <h2 id="_accessing_the_schema_viewer_for_all_objects"><a class="anchor" href="#_accessing_the_schema_viewer_for_all_objects"></a>Accessing the Schema Viewer for all objects</h2>
@@ -1943,18 +1954,18 @@ It is interactive and configurable, so you can see the level of detail that is r
 <p>Click the <strong>Data</strong> tab in the top menu.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/click-data.png" alt="click data">
+<img src="_images/click-data.png" alt="click data">
 </div>
 </div>
 </li>
 <li>
-<p>Click the ellipses icon,  <span class="image"><img src="_images/{{%20site.baseurl%20}}/images/icon-ellipses.png" alt="more options menu icon"></span>, and select <strong>View Schema</strong>.</p>
+<p>Click the <strong>More</strong> icon <span class="image"><img src="_images/icon-ellipses.png" alt="more options menu icon"></span> and select <strong>View Schema</strong>.</p>
 </li>
 </ol>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/access_schema_viewer.png" alt="access schema viewer">
+<img src="_images/access_schema_viewer.png" alt="access schema viewer">
 </div>
 </div>
 <div class="olist arabic">
@@ -1966,7 +1977,7 @@ It is interactive and configurable, so you can see the level of detail that is r
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/schema_viewer.png" alt="schema viewer">
+<img src="_images/schema_viewer.png" alt="schema viewer">
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -2023,7 +2034,7 @@ The schema view focus changes in tandem.</p>
 <p>Click the <strong>Data</strong> tab in the top menu.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/click-data.png" alt="click data">
+<img src="_images/click-data.png" alt="click data">
 </div>
 </div>
 </li>
@@ -2031,7 +2042,7 @@ The schema view focus changes in tandem.</p>
 <p>Select from the list of the possible objects:</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/select-tables.png" alt="select tables">
+<img src="_images/select-tables.png" alt="select tables">
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -2069,7 +2080,7 @@ Here, we selected the worksheet <em>West Regional Sales</em>.</p>
 <p>At the top of the worksheet, click the <strong>Schema</strong> tab.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/select-worksheet-schema.png" alt="select worksheet schema">
+<img src="_images/select-worksheet-schema.png" alt="select worksheet schema">
 </div>
 </div>
 </li>
@@ -2077,7 +2088,7 @@ Here, we selected the worksheet <em>West Regional Sales</em>.</p>
 <p>The join information and the schema for the worksheet appear.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/worksheet-join-schema.png" alt="worksheet join schema">
+<img src="_images/worksheet-join-schema.png" alt="worksheet join schema">
 </div>
 </div>
 </li>
@@ -2111,7 +2122,7 @@ Here, we selected the worksheet <em>West Regional Sales</em>.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can use the Schema Viewer to review your schema and ensure that it was modeled using best practices.
-For example, joins appear in different colors to distinquish their type:</p>
+For example, joins appear in different colors to distinguish their type:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2146,7 +2157,7 @@ If the schema view is not showing the schema behind the worksheet, double click 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/worksheet_viewer_schema.png" alt="worksheet viewer schema">
+<img src="_images/worksheet_viewer_schema.png" alt="worksheet viewer schema">
 </div>
 </div>
 <div class="paragraph">
@@ -2174,7 +2185,7 @@ Chasm trap worksheets created prior to ThoughtSpot version 4.4 do not show the c
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/worksheet_viewer.png" alt="worksheet viewer">
+<img src="_images/worksheet_viewer.png" alt="worksheet viewer">
 </div>
 </div>
 </div>
@@ -2185,16 +2196,16 @@ Chasm trap worksheets created prior to ThoughtSpot version 4.4 do not show the c
 <div class="ulist">
 <ul>
 <li>
-<p>link:{{ site.baseurl }}/admin/worksheets/add-joins.html[Worksheet joins]</p>
+<p><a href="add-joins.html" class="page">Worksheet joins</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/admin/worksheets/mod-ws-internal-joins.html[Modify joins within a worksheet]</p>
+<p><a href="mod-ws-internal-joins.html" class="page">Modify joins within a worksheet</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/admin/loading/change-schema.html[Change the schema using TQL]</p>
+<p><a href="change-schema.html" class="page">Change the schema using TQL</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/admin/loading/constraints.html[Constraints]</p>
+<p><a href="constraints.html" class="page">Constraints</a></p>
 </li>
 </ul>
 </div>
