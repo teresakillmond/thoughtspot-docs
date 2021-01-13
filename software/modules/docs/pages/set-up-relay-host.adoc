@@ -1,5 +1,6 @@
 = Set the relay host for SMTP (email)
 :last_updated: 6/11/2020
+:linkattrs:
 
 ThoughtSpot uses emails to send critical notifications to ThoughtSpot Support. A relay host for SMTP traffic routes the alert and notification emails coming from ThoughtSpot through an SMTP email server.
 
@@ -23,12 +24,14 @@ Use a custom port if port 25 is blocked in your environment.
 +
 To use the default port, run the setup command:
 +
+[source,console]
 ----
  $ tscli smtp set-relayhost <IP_address>
 ----
 +
 To use a custom port instead of port 25, run the setup command, specifying the port you want to use:
 +
+[source,console]
 ----
  $ tscli smtp set-relayhost <IP_address>:<custom_port>
 ----
@@ -37,6 +40,7 @@ If you are on 6.1 rather than 6.1.1, or an earlier version than 6.0.5, link:{{ s
 
 . Verify your settings:
 +
+[source,console]
 ----
  $ tscli smtp show-relayhost
 ----
@@ -54,8 +58,10 @@ NOTE: Add the ThoughtSpot Support alert email, `prod-alerts@thoughtspot.com`, to
 ThoughtSpot Support monitors these alerts to ensure your cluster's health.
 Do not add this email to POC or demo environments.
 
+[source,console]
+----
  $ tscli monitoring set-config --email <prod-alerts@thoughtspot.com>,<your_email>
-
+----
 To send to multiple emails, provide a comma-separated list with no spaces.
 
 [#verify-email]
@@ -65,8 +71,11 @@ Check if the email settings are working properly by using this procedure.
 
 . Log in to the Linux shell using SSH.
 . Try sending an email to yourself by issuing:
-
++
+[source,console]
+----
  $ echo | mail -s Hello <your_email>
+----
 
 . If you receive the email at the address(es) you supplied, email is working correctly.
 
@@ -78,6 +87,8 @@ After you configure SMTP through the Admin Console, use `tscli` to <<configure-e
 
 As you develop your expertise in emails and alerts, we recommend the following ThoughtSpot U course:
 
-* https://training.thoughtspot.com/emails-alerts[Email and Alert Setup]
+* https://training.thoughtspot.com/emails-alerts[Email and Alert Setup,window=_blank]
 
-See other training resources at + https://training.thoughtspot.com/[ThoughtSpot U]
+See other training resources at
++
+https://training.thoughtspot.com/[ThoughtSpot U,window=_blank]

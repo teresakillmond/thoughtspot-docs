@@ -6,8 +6,9 @@ last_updated: tbd summary: "This procedure allows you to test the LDAP connectio
 . Log in to the Linux shell using SSH.
 . Issue the LDAP testing command, supplying the information for the LDAP server you configured, as in this example:
 +
+[source,console]
 ----
- $ ldapsearch -x -h 192.168.2.61 -p 389 -D "testuser@ldap.thoughtspot.com" -W -b "dc=ldap,dc=thoughtspot,dc=com" cn
+$ ldapsearch -x -h 192.168.2.61 -p 389 -D "testuser@ldap.thoughtspot.com" -W -b "dc=ldap,dc=thoughtspot,dc=com" cn
 ----
 
 . Supply the LDAP password when prompted.

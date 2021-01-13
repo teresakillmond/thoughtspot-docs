@@ -1,8 +1,8 @@
 = Configure SSL
 :last_updated: 8/27/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Secure socket layers (SSL) provide authentication and data security when sending data to and from ThoughtSpot.
+:linkattrs:
+
+Secure socket layers (SSL) provide authentication and data security when sending data to and from ThoughtSpot.
 
 You can use your own SSL certificate to secure ThoughtSpot HTTP(S) traffic.
 
@@ -46,14 +46,16 @@ You need a computer you can run Linux commands on, and a recent version of _open
 
 . `ssh` into one of your ThoughtSpot nodes.
 +
+[source,console]
 ----
- ssh admin@<node_IP>
+ssh admin@<node_IP>
 ----
 
 . Run the command to generate a CSR and private key pair:
 +
+[source,console]
 ----
- openssl req -new -newkey rsa:2048 -nodes -out csr.pem -keyout pk.key[-subj "/key1=value1/key2=value with space/"]
+openssl req -new -newkey rsa:2048 -nodes -out csr.pem -keyout pk.key[-subj "/key1=value1/key2=value with space/"]
 ----
 +
 Note the following parameters:
@@ -70,14 +72,16 @@ Follow these steps to generate a CSR with an existing private key:
 
 . `ssh` into one of your ThoughtSpot nodes.
 +
+[source,console]
 ----
- ssh admin@<node_IP>
+ssh admin@<node_IP>
 ----
 
 . Run the command to generate a CSR and private key pair:
 +
+[source,console]
 ----
- openssl req -new -key <private_key_file> -nodes -out csr.pem[-subj "/key1=value1/key2=value with space/"]
+openssl req -new -key <private_key_file> -nodes -out csr.pem[-subj "/key1=value1/key2=value with space/"]
 ----
 +
 Specify the existing private key file.
@@ -99,6 +103,7 @@ NOTE: Do not use a passphrase when creating certificates with ThoughtSpot.
 
 If you are prompted to specify a passphrase, first check if it exists by invoking the following command:
 
+[source,console]
 ----
 openssl rsa -check -in pk.key`
 ----
@@ -116,21 +121,24 @@ This is usually sent to you by email, or available for download.
 
 . Copy the certificate and key files to ThoughtSpot:
 +
+[source,console]
 ----
-   $ scp <key> <certificate> admin@<IP_address>:<certificate-path>
+$ scp <key> <certificate> admin@<IP_address>:<certificate-path>
 ----
 
 . Log in to the Linux shell using SSH.
 . Change to the directory where you copied the files:
 +
+[source,console]
 ----
- $ cd <certificate-path>
+$ cd <certificate-path>
 ----
 
 . To install the certificate, issue the `tscli` command:
 +
+[source,console]
 ----
- $ tscli ssl add-cert <key> <certificate> <IP_address_or_URL>
+$ tscli ssl add-cert <key> <certificate> <IP_address_or_URL>
 ----
 
 . To test that the certificate is correctly installed, sign in to the ThoughtSpot application (see: xref:logins.adoc#sign-in-to-the-thoughtspot-application[sign in to the ThoughtSpot application]).
@@ -148,6 +156,7 @@ To ensure support for TLS version 1.2:
 This can be done in your browser's advanced settings.
 . Log in to the Linux shell using SSH and run command:
 +
+[source,console]
 ----
 tscli ssl tls-status
 ----
@@ -202,14 +211,14 @@ include::partial$ssl-configure.adoc[]
 [#ssl-configure-test]
 == Test the SSL certificate
 
-To test if the certificate is installed correctly, see link:{{ site.baseurl }}/admin/setup/logins.html#sign-in-to-the-thoughtspot-application[Sign in to the ThoughtSpot application].
+To test if the certificate is installed correctly, see xref:logins.adoc#sign-in-to-the-thoughtspot-application[Sign in to the ThoughtSpot application].
 
 == Additional resources
 
 As you develop your expertise in authentication and security, we recommend the following ThoughtSpot U course:
 
-* https://training.thoughtspot.com/authentication-security/610523[Nginx SSL]
+* https://training.thoughtspot.com/authentication-security/610523[Nginx SSL,window=_blank]
 
 See other training resources at
 +
-https://training.thoughtspot.com/[ThoughtSpot U]
+https://training.thoughtspot.com/[ThoughtSpot U,window=_blank]
