@@ -1,7 +1,5 @@
 = How to change a schema
 :last_updated: 08/26/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
 
 After creating the schema and loading data, you may have to change your set up. You can alter the schema by changing the primary key, relationships between tables, and table sharding.
 
@@ -31,10 +29,11 @@ To change the primary key of a table:
 . xref:prep-schema-for-load.adoc#connect-with-tql[Connect to the database with the ThoughtSpot SQL Command Line (TQL)].
 . Drop the existing primary key (if any), by issuing a command like this example:
 +
+[source]
 ----
- TQL> ALTER TABLE "cart"
-      DROP CONSTRAINT
-      PRIMARY KEY;
+TQL> ALTER TABLE "cart"
+     DROP CONSTRAINT
+     PRIMARY KEY;
 ----
 +
 Dropping a primary key can impact existing Worksheets, Answers, and Pinboards.
@@ -42,17 +41,19 @@ The system warns you if dropping a primary key impacts other objects.
 
 . Add a new primary key, if desired:
 +
+[source]
 ----
- TQL> ALTER TABLE "cart"
-      ADD CONSTRAINT
-      PRIMARY KEY ("owner_id");
+TQL> ALTER TABLE "cart"
+    ADD CONSTRAINT
+    PRIMARY KEY ("owner_id");
 ----
 
 . Test that any dependent objects (Pinboards, Worksheets, and so on) are still working correctly.
 . Delete the snapshot you created earlier:
 +
+[source,console]
 ----
- tscli snapshot delete <name>
+$ tscli snapshot delete <name>
 ----
 
 == Change a relationship between tables
@@ -76,44 +77,48 @@ The following examples illustrate several different types of drop operations.
 +
 Drop a foreign key by name, if it was given a name when it was defined:
 +
+[source]
 ----
- TQL> ALTER TABLE
-      "sales_fact"
-      DROP CONSTRAINT
-      "FK_PO_number";
+TQL> ALTER TABLE
+    "sales_fact"
+    DROP CONSTRAINT
+    "FK_PO_number";
 ----
 +
 Drop a relationship by name, if it was given a name when it was defined:
 +
+[source]
 ----
-
- TQL> ALTER TABLE "fruit_dim"
-      DROP RELATIONSHIP "REL_dates";
+TQL> ALTER TABLE "fruit_dim"
+    DROP RELATIONSHIP "REL_dates";
 ----
 +
 Drop the foreign key relationship explicitly, if it doesn't have a name, by referencing the two tables that are joined.
 This drops all foreign keys between the two tables:
 +
+[source]
 ----
- TQL> ALTER TABLE "shipments"
-      DROP CONSTRAINT
-      FOREIGN KEY "orders";
+TQL> ALTER TABLE "shipments"
+    DROP CONSTRAINT
+    FOREIGN KEY "orders";
 ----
 +
 Drop all generic relationships between two tables:
 +
+[source]
 ----
- TQL> ALTER TABLE "wholesale_buys"
-      DROP RELATIONSHIP
-      WITH "retail_sales";
+TQL> ALTER TABLE "wholesale_buys"
+    DROP RELATIONSHIP
+    WITH "retail_sales";
 ----
 
 . Define a new relationship, if you want to, using `+ALTER TABLE...ADD CONSTRAINT...+`
 . Test that any dependent objects (pinboards, worksheets, etc.) perform correctly.
 . Delete the snapshot you created earlier using the command:
 +
+[source,console]
 ----
- tscli snapshot delete <name>
+$ tscli snapshot delete <name>
 ----
 
 == Change sharding on a table
@@ -135,10 +140,11 @@ This is useful if the size of your cluster has increased.
 
 To change the sharding on a table:
 
-. link:{{ site.baseurl }}/admin/backup-restore/overview-snapshot.html[Create a manual snapshot].
-. link:prep-schema-for-load.html#connect-with-tql[Connect to the database with the ThoughtSpot SQL Command Line (TQL)].
+. xref:overview-snapshot.adoc[Create a manual snapshot].
+. xref::prep-schema-for-load.adoc#connect-with-tql[Connect to the database with the ThoughtSpot SQL Command Line (TQL)].
 . Issue the command to change the sharding using this syntax:
 +
+[source]
 ----
 TQL> ALTER TABLE <table>
      [SET DIMENSION | SET FACT
@@ -151,6 +157,7 @@ For example:
 
  ** To make a sharded table into a dimension table (replicated on every node), use:
 +
+[source]
 ----
 ALTER TABLE "products"
    SET DIMENSION;
@@ -158,6 +165,7 @@ ALTER TABLE "products"
 
  ** To make a dimension table into a sharded (fact) table or change the number of shards, use:
 +
+[source]
 ----
 ALTER TABLE "sales"
    SET FACT PARTITION BY HASH (96)
@@ -170,6 +178,7 @@ You do not need to force reload.
 . Test that any dependent objects (pinboards, worksheets, etc.) are still working correctly.
 . Delete the snapshot you created earlier using the command:
 +
+[source,console]
 ----
- tscli snapshot delete <name>
+$ tscli snapshot delete <name>
 ----
