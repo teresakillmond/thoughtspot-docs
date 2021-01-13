@@ -149,13 +149,61 @@ tscli alert list --since 4w
 
 The critical alerts you can encounter in this display are the following:
 
-{% for item in site.data.extract-alerts.alerts %} +   {% if item.type == "CRITICAL" %}
+=== TASK_FLAPPING
 
-* `{{item.id}}`
-+
-*Msg*: `{{item.msg}}`
-+
-{{item.description}}  {% endif %}  {% unless forloop.last %}  {% endunless %} {% endfor %}
+*Msg*: `Task {{.Service}}.{{.Task}} terminated {{._actual_num_occurrences}} times in last {{._earliest_duration_str}}`
+
+*Type*: CRITICAL
+
+This alert is raised when a task is crashing repeatedly. The service is evaluated across the whole cluster. So, if a service crashes 5 times in a day across all nodes in the cluster, this alert is generated.
+
+=== OREO_TERMINATED
+
+*Msg*: `Oreo terminated on machine {{.Machine}}`
+
+*Type*: CRITICAL
+
+This alert is raised when the Oreo daemon on a machine terminates due to an error. This typically happens due to an error accessing Zookeeper, HDFS, or a hardware issue.
+
+=== HDFS_DISK_SPACE
+
+*Msg*: `HDFS has less than {{.Perc}}% space free`
+
+*Type*: CRITICAL
+
+This alert is raised when a HDFS cluster is low on total available disk space.
+
+=== ZK_INACCESSIBLE
+
+*Msg*: `Zookeeper is not accessible`
+
+*Type*: CRITICAL
+
+This alert is raised when Zookeeper is inaccessible.
+
+=== PERIODIC_BACKUP_FLAPPING
+
+*Msg*: `Periodic backup failed {{._actual_num_occurrences}} times in last {{._earliest_duration_str}}`
+
+*Type*: CRITICAL
+
+This alert is raised when a periodic backup failed repeatedly.
+
+=== PERIODIC_SNAPSHOT_FLAPPING
+
+*Msg*: `Periodic snapshot failed {{._actual_num_occurrences}} times in last {{._earliest_duration_str}}`
+
+*Type*: CRITICAL
+
+This alert is raised when a periodic snapshot failed repeatedly.
+
+=== APPLICATION_INVALID_STATE_EXTERNAL
+
+*Msg*: `{{.Service}}.{{.Task}} on {{.Machine}} at location {{.Location}}`
+
+*Type*: CRITICAL
+
+This alert is raised when Application raises invalid state alert.
 
 The possible alert types are `CRITICAL`, `WARNING`, `ERROR`, and `INFO`.
 For a full reference, see the xref:alerts-reference.adoc#[Alert code reference].
