@@ -1,18 +1,10 @@
 = Fixed issues
-:experimental:
-:keywords: fixed issues
 :last_updated: 04/09/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
 
 These are the issues we fixed in recent ThoughtSpot releases.
 
-* <<6-2-1,6.2.1 Fixed issues>>
-* <<6-2,6.2 Fixed issues>>
-* {blank}+++<details>++++++<summary>+++6.1.X Releases+++</summary>+++
-
 * <<6-1-1,6.1.1 Fixed issues>>
-* <<6-1,6.1 Fixed issues>>+++</details>+++
+* <<6-1,6.1 Fixed issues>>
 * {blank}+++<details>++++++<summary>+++6.0.X Releases+++</summary>+++
 
 * <<6-0-5,6.0.5 Fixed issues>>
@@ -52,44 +44,7 @@ These are the issues we fixed in recent ThoughtSpot releases.
 * link:4-5[4.5 Fixed issues]
 * link:4-4[4.4 Fixed issues]+++</details>+++
 
-+++<a id="6-2-1">++++++</a>+++
-
-== 6.2.1 Fixed issues
-
-These are the issues we fixed in ThoughtSpot Release 6.2.1.
-
-* Upgrades to 6.2 could sometimes become stuck or fail.
-* Replay Search incorrectly shows as available when ThoughtSpot is embedded.
-* Style customization page is not available.
-* When ThoughtSpot is embedded, clicking the Follow button enables the navbar.
-* Scrolling a tabular answer resulted causes an error.
-* Growth formula doesn't work when using a custom calendar.
-* Geo Map intermittently displays two different charts for the same query.
-* Copy to clipboard doesn't work in the Admin tab.
-* Choosing a fact table for the purpose of creating a join causes inconsistent sub-queries.
-
-+++<a id="6-2">++++++</a>+++
-
-== 6.2 Fixed issues
-
-These are the issues we fixed in ThoughtSpot Release 6.2.
-
-* Row-level security is not reflected with search tokens and Explore suggestions.
-* Unauthorized access to service URLs in the ThoughtSpot Web UI.
-* Old version of the ThoughtSpot Web UI appears for some users, even though the cluster was upgraded to new version.
-* Global filter on Pinboard in the ThoughtSpot Web UI doesn't work.
-* Users can still access menu:Data[Tables] page, even though the Data tab is hidden from ThoughtSpot Web UI.
-* The time required to execute the TQL delete command increases exponentially, until it no longer works.
-* PDF export from a Pinboard in the ThoughtSpot Web UI doesn't work.
-* The sender's email in notifications is using the default `no-reply@customer.thoughtspot.com ` instead of the `from-email` configured using `tscli smtp`, or the user's email who shares the Pinboard.
-* Regional German names for states in Geo Maps are not allowed.
-* CVE-2020-1938 vulnerability affecting Tomcat versions.
-* ThoughtSpot Web UI displays the date shifted by one day in version 80 of the Google Chrome browser.
-* Version 80 of the Google Chrome browser is not supported by the ThoughtSpot Web app, because cookies for pages in a ThoughtSpot cluster do not have the SameSite attribute, which is required for that browser.
-* ThoughtSpot Web App does not work on on a version later than 5.3 of the Microsoft Edge browser.
-* Pinboards with 25 or more visualizations do not work properly.
-
-+++<a id="6-1-1">++++++</a>+++
+[#6-1-1]
 
 == 6.1.1 Fixed issues
 
@@ -102,7 +57,7 @@ These are the issues we fixed in ThoughtSpot Release 6.1.1.
 * The time required to use TQL to delete data from fact tables increases until the delete is not successful.
 * After upgrade to 6.1, ad sync scripts fail to run.
 * Inconsistent naming of disks causes mounting to fail.
-* The Admin Console fails to load in a cluster, where it loaded before.
+* The admin portal fails to load in a cluster, where it loaded before.
 * An older version of the ThoughtSpot user interface appears, even though cluster is running newer version.
 * Upgrading a cluster from 5.x release to 6.x release is unsuccessful.
 * Sender's email displayed in notifications does not use the from-email configured in `tscli smtp`.
@@ -110,7 +65,7 @@ These are the issues we fixed in ThoughtSpot Release 6.1.1.
 * After upgrade to 5.3.2.CU1, all pinboards using a specific variable (adp) do not work.
 * An administrator is unable to save a worksheet on the first try.
 
-+++<a id="6-1">++++++</a>+++
+[#6-1]
 
 == 6.1 Fixed issues
 
@@ -151,18 +106,18 @@ These are the issues we fixed in ThoughtSpot Release 6.1.
 * When adding a connection in Embrace, not all tables in the external database are displayed.
 * ThoughtSpot TQL does not list tables that don't exist in the default Falcon schema.
 * The date format in a PDF is not correct for the user's locale.
-* Various display issues with Admin Console.
+* Various display issues with Admin Portal.
 * Periodic backups fail after upgrade.
 * Geo maps allow regional German names for states.
 * In ThoughtSpot clusters hosted in Azure, Log rotate does not rotate `large_files`.
 
-+++<a id="6-0-5">++++++</a>+++
+[#6-0-5]
 
 == 6.0.5 Fixed issues
 
 These are the issues we fixed in ThoughtSpot Release 6.0.5.
 
-* When *Copy link* has been disabled, it still appears in the More menu image:icon-ellipses.png[more options menu icon] of pinboards.
+* When *Copy link* has been disabled, it still appears in the More menu image:{{ site.baseurl }}/images/icon-ellipses.png[more options menu icon] of pinboards.
 * The management console is not accessible.
 * A pinboard with an advanced formula can be viewed by an administrator, but not by a regular user they share it with.
 * A cluster that is using a customer logo, still shows the ThoughtSpot logo on downloaded PDFs.
@@ -174,7 +129,7 @@ These are the issues we fixed in ThoughtSpot Release 6.0.5.
 * The *group aggregate* function does not work after upgrade to release 5.3.1.
 * A user who edits a worksheet is not able to save their changes.
 
-+++<a id="6-0-4">++++++</a>+++
+[#6-0-4]
 
 == 6.0.4 Fixed issues
 
@@ -186,7 +141,7 @@ These are the issues we fixed in ThoughtSpot Release 6.0.4.
 * Management console displays incorrect information about SMTP status.
 * Upgrading from release 5.2.3 to 6.0.3 causes HDFS to go into safe mode and cause missing data volumes.
 
-+++<a id="6-0-3">++++++</a>+++
+[#6-0-3]
 
 == 6.0.3 Fixed issue
 
@@ -195,7 +150,7 @@ This is the issue we fixed in ThoughtSpot Release 6.0.3.
 * Dates shown in the ThoughtSpot UI may be offset by one day in version 80 or later of the Google Chrome browser.
 Actual search results are not affected by this issue.
 
-+++<a id="6-0-2">++++++</a>+++
+[#6-0-2]
 
 == 6.0.2 Fixed issues
 
@@ -206,7 +161,7 @@ These are the issues we fixed in ThoughtSpot Release 6.0.2.
 * After upgrade to release 5.3.2, users cannot sign in using SSO.
 * Disk alerts occur when drives are functioning normally.
 
-+++<a id="6-0-1">++++++</a>+++
+[#6-0-1]
 
 == 6.0.1 Fixed issues
 
@@ -224,7 +179,7 @@ These are the issues we fixed in ThoughtSpot Release 6.0.1.
 * The `date` filter of an answer does not work properly when pinned to a pinboard, even after applying the pinboard `date` filter.
 * Scroll and edit options are missing for charts in presentation mode when using the Microsoft Internet Explorer browser.
 
-+++<a id="6-0">++++++</a>+++
+[#6-0]
 
 == 6.0 Fixed issues
 
@@ -233,7 +188,7 @@ These are the issues we fixed in ThoughtSpot Release 6.0.
 * The `tscli cluster download-release` command sometimes did not work correctly.
 * The date dimension attribute was removed from the query for all date aggregations, except for DETAILED.
 
-+++<a id="5-3-2-cu3">++++++</a>+++
+[#5-3-2-cu3]
 
 == 5.3.2 CU3 Fixed issues
 
@@ -246,7 +201,7 @@ These are the issues we fixed in ThoughtSpot Release 5.3.2 CU3.
 * Users cannot sign in to a ThoughtSpot instance through SSO.
 * Changes made to a schema through TQL are not reflected when viewed in the ThoughtSpot UI.
 
-+++<a id="5-3-2-cu2">++++++</a>+++
+[#5-3-2-cu2]
 
 == 5.3.2 CU2 Fixed issue
 
@@ -254,7 +209,7 @@ This is the issue we fixed in ThoughtSpot Release 5.3.2 CU2.
 
 * Visualizations that worked in the past, display an error message.
 
-+++<a id="5-3-2-cu1">++++++</a>+++
+[#5-3-2-cu1]
 
 == 5.3.2 CU1 Fixed issue
 
@@ -262,7 +217,7 @@ This is the issue we fixed in ThoughtSpot Release 5.3.2 CU1.
 
 * Rows that don't exist in TQL appear when filtering in the ThoughtSpot UI.
 
-+++<a id="5-3-2">++++++</a>+++
+[#5-3-2]
 
 == 5.3.2 Fixed issues
 
@@ -277,7 +232,7 @@ These are the issues we fixed in ThoughtSpot Release 5.3.2.
 * Removing a column from a search query increases the number of rows displayed.
 * A search that uses the `group_max` function displays an incorrect result when filtering is applied.
 
-+++<a id="5-3-1">++++++</a>+++
+[#5-3-1]
 
 == 5.3.1 Fixed issues
 
@@ -294,7 +249,7 @@ These are the issues we fixed in ThoughtSpot Release 5.3.1.
 * The Admin > Style Customization page indicates the wrong pixel dimensions required for a wide application logo.
 * Certain HTTP security headers are not implemented.
 
-+++<a id="5-3">++++++</a>+++
+[#5-3]
 
 == 5.3 Fixed issues
 
@@ -336,7 +291,7 @@ These are the issues we fixed in ThoughtSpot Release 5.3.
 
 * A problem where a saved answer cannot be opened when it uses an aggregate function is now fixed.
 
-+++<a id="5-2-3">++++++</a>+++
+[#5-2-3]
 
 == 5.2.3 Fixed issues
 
@@ -349,7 +304,7 @@ These are the issues we fixed in ThoughtSpot Release 5.2.3.
 * An issue where syncing users using the public API does not work is now fixed.
 * A problem where Canadian postal codes do not appear on maps is now fixed.
 
-+++<a id="5-2-2">++++++</a>+++
+[#5-2-2]
 
 == 5.2.2 Fixed issues
 
@@ -362,7 +317,7 @@ These are the issues we fixed in ThoughtSpot Release 5.2.2.
 This problem is now fixed.
 * A problem where the `unique_count_if` aggregate function does not parse an expression is now fixed.
 
-+++<a id="5-2-1">++++++</a>+++
+[#5-2-1]
 
 == 5.2.1 Fixed issues
 
@@ -384,7 +339,7 @@ These are the issues we fixed in ThoughtSpot Release 5.2.1.
 * A problem where scheduled Pinboard emails failed to send to a specific recipient with a valid email address message is now fixed.
 * Embedded Pinboards no longer occasionally display a Pin button.
 
-+++<a id="5-2">++++++</a>+++
+[#5-2]
 
 == 5.2 Fixed issues
 
@@ -397,7 +352,7 @@ These are the issues we fixed in ThoughtSpot Release 5.2.
  ** When sorting by date on the x-axis, the date format no longer changes and the axis no longer disappears.
  ** You can now sort using a sort field that is not in your chart.
 
-+++<a id="5-1-4">++++++</a>+++
+[#5-1-4]
 
 == 5.1.4 Fixed issues
 
@@ -408,7 +363,7 @@ These are the issues we fixed in ThoughtSpot Release 5.1.4.
 * A problem with date filters in the Japanese locale is now fixed.
 * An issue with refreshing materialization of views is now fixed.
 
-+++<a id="5-1-3">++++++</a>+++
+[#5-1-3]
 
 == 5.1.3 Fixed issues
 
@@ -432,7 +387,7 @@ vA problem where using the exclude filter on pinboards causes the wrong results 
 * A problem where the user interface becomes slow during a data load has been fixed.
 * CSVs downloaded by certain row-level-security users are no longer empty.
 
-+++<a id="5-1-2">++++++</a>+++
+[#5-1-2]
 
 == 5.1.2 Fixed issues
 
@@ -446,7 +401,7 @@ This ensures images are fresh during an upgrade.
 * Permissions issues with `tsload` and `tql` are now fixed, so the *thoughtspot* user can load data.
 * Database stability has been improved.
 
-+++<a id="5-1-1">++++++</a>+++
+[#5-1-1]
 
 == 5.1.1 Fixed issues
 
@@ -464,16 +419,16 @@ They are now on by default.
 * Geo Bubble and Geo Heatmap issue where chart displays momentarily and then disappears has been fixed.
 * Zoom on Geo maps can now be done using a mouse scroll wheel.
 
-+++<a id="5-1">++++++</a>+++
+[#5-1]
 
 == 5.1 Fixed issue
 
 We fixed the following issue in ThoughtSpot Release 5.1.
 
-* The X and Y axes were previously flipped on xref:about-bar-charts.html[bar charts and stacked bar charts].
+* The X and Y axes were previously flipped on link:{{ site.baseurl }}/end-user/search/about-bar-charts.html[bar charts and stacked bar charts].
 This has been fixed.
 
-+++<a id="5-0-4">++++++</a>+++
+[#5-0-4]
 
 == 5.0.4 Fixed issue
 
@@ -481,7 +436,7 @@ We fixed the following issue in ThoughtSpot Release 5.0.4.
 
 * Deprecated SSH cryptographic settings are used.
 
-+++<a id="5-0">++++++</a>+++
+[#5-0]
 
 == 5.0 Fixed issues
 
@@ -492,7 +447,7 @@ These are the issues we fixed in ThoughtSpot Release 5.0.
 * Timeouts cause a cluster crash in some cases when a right outer join was used.
 * The space allocation chart does not update.
 
-+++<a id="4-5-1">++++++</a>+++
+[#4-5-1]
 
 == 4.5.1 Fixed issues
 
@@ -534,7 +489,7 @@ The primary things that could be affected:
 * The easiest way to diagnose this would be to check for the inability of the script to log in to the system.
 Please contact ThoughtSpot Support to get guidance on the steps to resolve the issue.
 
-+++<a id="4-5">++++++</a>+++
+[#4-5]
 
 == 4.5 Fixed issues
 
@@ -644,7 +599,7 @@ Turning off `autocomplete` prevents intruders from compromising ThoughtSpot from
 This was fixed, now `tscli alert list` shows alerts display in the cluster's local timezone.
 * The system now validates both the format and the size of profile pictures, previously these were not checked.
 
-+++<a id="4-4">++++++</a>+++
+[#4-4]
 
 == 4.4 Fixed issues
 
@@ -666,7 +621,7 @@ Renaming is no longer required.
 This action no longer causes an error.
 * Some installations saw worksheet performance degrade for worksheets with a large number of columns.
 Users can now set a configuration option to avoid these problems.
-* Previously setting both the browser and the ThoughtSpot profile value failed to display numbers and date formats in the proper locale.
+* Previously setting both the browser and the ThoughSpot profile value failed to display numbers and date formats in the proper locale.
 This problem was corrected.
 Setting the ThoughtSpot profile to the proper locale results in the appropriate display of date and number formats.
 It also causes translated strings to appear in the interface where they exist.
