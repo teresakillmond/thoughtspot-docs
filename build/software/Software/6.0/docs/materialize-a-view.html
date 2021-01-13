@@ -1227,7 +1227,7 @@
     <a class="nav-link" href="logins.html">Login credentials</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#docs:about-JS-API.adoc">Use the JavaScript API</a>
+    <a class="nav-link" href="about-JS-API.html">Use the JavaScript API</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -1920,11 +1920,9 @@
   <div class="content">
 <article class="doc">
 <hr>
+<h1 id="_materialize_a_view" class="sect0"><a class="anchor" href="#_materialize_a_view"></a>Materialize a view</h1>
 <div class="paragraph">
-<p>title: [Materialize a view]</p>
-</div>
-<div class="paragraph">
-<p>last_updated: 11/2/2018 summary: "Learn how to materialize a view to improve its performance." toc: false sidebar: mydoc_sidebar permalink: /:collection/:path.html&#8201;&#8212;&#8201;</p>
+<p>Learn how to materialize a view to improve its performance.</p>
 </div>
 <div class="paragraph">
 <p>To improve the performance of a view, you can materialize it.
@@ -1932,9 +1930,18 @@ This operation computes the data for the view and stores it in memory, just like
 You can expect a 3-6 times performance improvement on a materialized view over a view that is not materialized.
 However, materialized views take up space in memory, so weigh the tradeoffs and benefits of materializing a view ahead of time.</p>
 </div>
-<div class="paragraph">
-<p>{% include note.html content="Row Level Security does not apply to materialized views.
-All users will see the same data when using the materialized view as a data source." %}</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Row Level Security does not apply to materialized views.
+All users will see the same data when using the materialized view as a data source.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>To materialize a view:</p>
@@ -1951,26 +1958,35 @@ All users will see the same data when using the materialized view as a data sour
 <p>Click <strong>Schema</strong>.</p>
 </li>
 <li>
-<p>If needed, link:{{ site.baseurl }}/admin/data-modeling/create-new-relationship.html[add joins].</p>
+<p>If needed, <a href="create-new-relationship.html" class="page">add joins</a>.</p>
 </li>
 <li>
 <p>Under <strong>Materialization</strong>, click <strong>Materialize</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/materialization_dialog_off.png" alt="materialization dialog off">
+<img src="_images/materialization_dialog_off.png" alt="materialization dialog off">
 </div>
 </div>
 </li>
 <li>
-<p>Fill in the details for link:{{ site.baseurl }}/admin/loading/constraints.html[primary key], link:{{ site.baseurl }}/admin/loading/sharding.html[sharding key, and number of shards].</p>
+<p>Fill in the details for <a href="constraints.html" class="page">primary key</a>, <a href="sharding.html" class="page">sharding key, and number of shards</a>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/materialize-details.png" alt="materialize details">
+<img src="_images/materialize-details.png" alt="materialize details">
 </div>
 </div>
-<div class="paragraph">
-<p>{% include note.html content="If you do not fill in the sharding details, the view will be replicated on every node of your cluster.
-If you&#8217;re not sure what to fill in, ask your ThoughtSpot administrator, or follow the links in this step to learn more about sharding." %}</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If you do not fill in the sharding details, the view will be replicated on every node of your cluster.
+If you&#8217;re not sure what to fill in, ask your ThoughtSpot administrator, or follow the links in this step to learn more about sharding.
+</td>
+</tr>
+</table>
 </div>
 </li>
 <li>
@@ -1980,7 +1996,7 @@ If you&#8217;re not sure what to fill in, ask your ThoughtSpot administrator, or
 <p>In the <strong>Schedule data updates</strong> dialog, select an option for <strong>Repeats</strong> (Monthly, Weekly, or Daily).</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/materialized-view-sched-weekly.png" alt="materialized view sched weekly">
+<img src="_images/materialized-view-sched-weekly.png" alt="materialized view sched weekly">
 </div>
 </div>
 <div class="paragraph">
@@ -1991,7 +2007,7 @@ If you&#8217;re not sure what to fill in, ask your ThoughtSpot administrator, or
 <p>Fill in the schedule details:</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/schedule-data-updates-weekly.png" alt="schedule data updates weekly">
+<img src="_images/schedule-data-updates-weekly.png" alt="schedule data updates weekly">
 </div>
 </div>
 </li>
@@ -2003,7 +2019,7 @@ If you&#8217;re not sure what to fill in, ask your ThoughtSpot administrator, or
 Click <strong>Update status</strong> to refresh it.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/materialization-update-status.png" alt="materialization update status">
+<img src="_images/materialization-update-status.png" alt="materialization update status">
 </div>
 </div>
 </li>
@@ -2011,11 +2027,11 @@ Click <strong>Update status</strong> to refresh it.</p>
 <p>When it says <strong>Materialized</strong> your materialized view is ready for search.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/materialization-dialog-on.png" alt="materialization dialog on">
+<img src="_images/materialization-dialog-on.png" alt="materialization dialog on">
 </div>
 </div>
 <div class="paragraph">
-<p>If after some time, the status has not changed to <strong>Materialized</strong>, check the link:{{ site.baseurl }}/admin/loading/materialized-views.html#materialization-status[list of statuses] and corresponding actions to take.</p>
+<p>If after some time, the status has not changed to <strong>Materialized</strong>, check the <a href="materialized-views.html#materialization-status" class="page">list of statuses</a> and corresponding actions to take.</p>
 </div>
 </li>
 </ol>
@@ -2026,19 +2042,19 @@ Click <strong>Update status</strong> to refresh it.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>link:{{ site.baseurl }}/complex-search/about-query-on-query.html[Understand views]</p>
+<p><a href="about-query-on-query.html" class="page">Understand views</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/complex-search/create-aggregated-worksheet.html[Save a search as a view]</p>
+<p><a href="create-aggregated-worksheet.html" class="page">Save a search as a view</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/admin/loading/materialized-views.html[About materialized views]</p>
+<p><a href="materialized-views.html" class="page">About materialized views</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/admin/loading/constraints.html[Constraints]</p>
+<p><a href="constraints.html" class="page">Constraints</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/admin/loading/sharding.html[Sharding]</p>
+<p><a href="sharding.html" class="page">Sharding</a></p>
 </li>
 </ul>
 </div>

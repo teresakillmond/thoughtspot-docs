@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>Set number, date, and currency formats | ThoughtSpot Software</title>
+    <title>Using the JavaScript API | ThoughtSpot Software</title>
 <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -968,7 +968,7 @@
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="model-geo-data.html">Add a geographical data setting</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="4">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="set-format-pattern-numbers.html">Set number, date, currency formats</a>
   </li>
   <li class="nav-item" data-depth="4">
@@ -1226,7 +1226,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="logins.html">Login credentials</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="about-JS-API.html">Use the JavaScript API</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -1911,408 +1911,127 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Software</a></li>
-    <li>Administration</li>
-    <li>Improve search with modeling</li>
-    <li>Data model settings</li>
-    <li><a href="set-format-pattern-numbers.html">Set number, date, currency formats</a></li>
+    <li>Embedding</li>
+    <li><a href="about-JS-API.html">Use the JavaScript API</a></li>
   </ul>
 </nav>
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Set number, date, and currency formats</h1>
+<h1 class="page">Using the JavaScript API</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Learn how to set key formats for column values.</p>
+<p>You can use ThoughtSpot within your own Web application with the ThoughtSpot JavaScript API.</p>
 </div>
 <div class="paragraph">
-<p>You can set number, date, and currency display formats.
-These formats define how these value types display in tables and charts.</p>
+<p>The ThoughtSpot JavaScript API (JS API) enables you to use ThoughtSpot within your own Web application and to perform the following tasks:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Authenticate users to ThoughtSpot</p>
+</li>
+<li>
+<p>Embed ThoughtSpot visualizations in your Web page using the <code>&lt;iframe&gt;</code> HTML tag</p>
+</li>
+<li>
+<p>Supply ThoughtSpot data to your Web page through ThoughtSpot&#8217;s REST APIs</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can download the <a href="downloads.html" class="page">ThoughtSpot JavaScript library</a> from our secure storage server.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_number_formats"><a class="anchor" href="#_number_formats"></a>Number formats</h2>
+<h2 id="browser-support"><a class="anchor" href="#browser-support"></a>Browser Support</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can set a format for how numbers are displayed in tables and charts.
-For example, you can display numbers with a different number of digits after the decimal point, based on the data modeling setting <strong>Format Pattern</strong>.
-You can use any of the supported number formats for delimiters and number of digits to show using <a href="http://docs.oracle.com/javase/7/docs/api/java/text/DecimalFormat.html">Java Decimal Notation</a>.
-Currency symbols are not supported.</p>
+<p>The JS API works in the following browsers:</p>
 </div>
-<div class="paragraph">
-<p>The system has default values which are:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 90%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>#,###</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">For integer data types <code>INT</code> and <code>BIGINT</code>.
-As you can see, these can only contain numbers, alpha characters are not permitted.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>#,###.00</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">for decimal data types <code>DOUBLE</code> and <code>FLOAT</code>.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>These are some examples of formats you can use:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Stored Value</th>
-<th class="tableblock halign-left valign-top">Format Pattern</th>
-<th class="tableblock halign-left valign-top">Display Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">12345.6789</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>#,##0.##</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">12,345.68</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">12345.6789</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>#,##0.###</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">12,345.679</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">12345.6789</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>#,##0.00000</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">12,345.68</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">12345.6789</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>#,##0</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">12,345</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">12345.6789</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>#,##0.00</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">12,345.68</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">12345</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>#,##0.##</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">12,345</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">12345</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>#,##0.00</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">12,345.00</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>&nbsp;</p>
-</div>
-<div class="paragraph">
-<p>You can change the date format used to display a column&#8217;s values <a href="model-data-in-UI.html" class="page">for a single table</a> or, by editing the data model, for link:{{ site.baseurl }}/admin/data-modeling/edit-model-file.html[the entire ThoughtSpot instance].
-Editing the data model file requires that you have administrative privileges.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Decide if the change is for a table or the entire instance.</p>
-</li>
-<li>
-<p>Find the <strong>Format Pattern</strong> for the column.</p>
-<div class="paragraph">
-<p>This is either a column in a single table or a column in the data modeling file.</p>
-</div>
-</li>
-<li>
-<p>In the column, enter the format you want to use.</p>
-</li>
-<li>
-<p>Save your changes.</p>
-<div class="paragraph">
-<p>If you are using a data-modeling file you must upload the new file to your installation.</p>
-</div>
-</li>
-</ol>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Firefox</dt>
+<dd>
+<p>68.x, 69.x, and later</p>
+</dd>
+<dt class="hdlist1">Chrome</dt>
+<dd>
+<p>76.x, 77.x, and later</p>
+</dd>
+<dt class="hdlist1">Internet Explorer</dt>
+<dd>
+<p>11.x, and later</p>
+</dd>
+<dt class="hdlist1">Edge</dt>
+<dd>
+<p>81.0.416.53, and later</p>
+</dd>
+<dt class="hdlist1">Safari</dt>
+<dd>
+<p>13.x, and later</p>
+</dd>
+</dl>
 </div>
 <div class="sect2">
-<h3 id="_profile_based_number_formatting"><a class="anchor" href="#_profile_based_number_formatting"></a>Profile-based number formatting</h3>
+<h3 id="ie-10"><a class="anchor" href="#ie-10"></a>Internet Explorer 10</h3>
 <div class="paragraph">
-<p>Number formatting is set by default based on your ThoughtSpot profile&#8217;s <strong>Preferred locale</strong> setting.
-You can set this value to accommodate your geographic locations.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/profile-locale.png" alt="profile locale">
-</div>
+<p>Microsoft introduced a compatibility mode in Internet Explorer 10, which displays the page using the version of Internet Explorer that is most compatible with that page.
+Because we do not support any version earlier than 11, this feature may break the code.</p>
 </div>
 <div class="paragraph">
-<p>For example, if you are using ThoughtSpot in the US, the number formatting should look like this: <code>xxx,xxx.xx</code>.
-And in Europe, it should look like this: <code>xxx.xxx,xx</code>.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_date_formats"><a class="anchor" href="#_date_formats"></a>Date formats</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Format Pattern</strong> (UI)/ <strong>Format Pattern</strong> (model file) formats for how dates are displayed in tables and charts.
-For example, you can display dates in a standard European or US format based on the data modeling setting <strong>Format Pattern</strong>.
-These are some examples of formats you can use:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Format mask</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>YYYY</code> or <code>yyyy</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">four digit year such as <code>2017</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>YY</code> or <code>yy</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">last two digits of year such as <code>17</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>M</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">month with no leading zero <code>1</code>-<code>12</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>MM</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Two digit month <code>01</code>-<code>12</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>MMM</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Three letter month such as <code>Jan</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>D</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Day of year without a leading zero <code>0</code>-<code>365</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DD</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Day of year with up to one leading zero <code>01</code>-<code>365</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DDD</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Day of year with up to two leading zeroes <code>001</code>-<code>365</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>d</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Day of month with no leading zero <code>1</code>-<code>31</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dd</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Two digit day of month <code>01</code>-<code>31</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>HH</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Two digit <code>24</code> hour representation of hour <code>00</code>-<code>23</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hh</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Two digit <code>12</code> hour representation of hour <code>01</code>-<code>12</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>H</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">24 hour representation of hour with no leading zero <code>0</code>-<code>23</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>h</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">12 hour representation of hour with no leading zero <code>1</code>-<code>12</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mm</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Minutes <code>00</code>-<code>59</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>m</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Minutes with no leading zero <code>0</code>-<code>59</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ss</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Seconds <code>00</code>-<code>59</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>s</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Seconds with no leading zero <code>0</code>-<code>59</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>a</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AM/PM indicator</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Valid delimiters include most non-alphabet characters.
-This includes but is not limited to:</p>
+<p>There are two approaches for forcing the Internet Explorer to emulate the most recent version:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>/</code> (forward slash)</p>
-</li>
-<li>
-<p><code>\</code> (backward slash)</p>
-</li>
-<li>
-<p><code>|</code> (pipe symbol)</p>
-</li>
-<li>
-<p><code>:</code> (colon)</p>
-</li>
-<li>
-<p><code>-</code> (dash)</p>
-</li>
-<li>
-<p><code>_</code> (underscore)</p>
-</li>
-<li>
-<p><code>=</code> (equal sign)</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Examples of valid format masks you can produce for display are as follows:</p>
-</div>
+<p><strong>Add a Custom Response Header</strong>   We recommend this approach because it is more robust, offers more   control, and has a lower risk of introducing a bug to your code.
+in general,   you must set the response header to match the server and the technology.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>MM/dd/yyyy</code></p>
+<p>set the header name to "X-UA-Compatible"</p>
 </li>
 <li>
-<p><code>MMM</code></p>
-</li>
-<li>
-<p><code>DD/MM/yyyy</code></p>
-</li>
-<li>
-<p><code>MM/dd/yyyy HH:mm</code></p>
-</li>
-<li>
-<p><code>DD/MM/yyyy HH:mm</code></p>
+<p>set the value to "IE=Edge"</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>To change the date format used to display a column&#8217;s values <a href="model-data-in-UI.html" class="page">for a single table</a> or, by editing the data model, for <a href="edit-model-file.html" class="page">the entire ThoughtSpot instance</a>.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Decide if the change is for a table or the entire instance.</p>
 </li>
 <li>
-<p>Find the <strong>Format Pattern</strong> for the column.</p>
+<p><strong>Add a Meta Tag</strong>   Add this meta tag as the <em>first</em> tag in the header section of the page:</p>
 <div class="paragraph">
-<p>This is either a column in a single table or a column in the data modeling file.</p>
+<p><code>&lt;meta http-equiv="X-UA-Compatible" content="IE=Edge" \&gt;</code></p>
 </div>
 </li>
-<li>
-<p>In the column, enter the format you want to use.</p>
-</li>
-<li>
-<p>Save your changes.</p>
-<div class="paragraph">
-<p>If you are using a data-modeling file you must upload the new file to your installation.</p>
+</ul>
 </div>
-</li>
-</ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_set_currency_type"><a class="anchor" href="#_set_currency_type"></a>Set currency type</h2>
+<h2 id="cross-origin-http-requests"><a class="anchor" href="#cross-origin-http-requests"></a>Cross-Origin HTTP Requests (CORS)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can set a format for how currencies display in tables and charts when using the ThoughtSpot Data API or embedding.
-For example, you can display currencies in a standard European Euro or US Dollar format, based on the data modeling setting <strong>Currency Type</strong>.</p>
+<p>Collecting user credentials from one application (domain) and sending them to another (such as ThoughtSpot) can present security vulnerabilities such as a phishing attack.
+Cross-origin or cross-domain verification closes this vulnerability.</p>
 </div>
 <div class="paragraph">
-<p>You can change the currency format used to display a column&#8217;s values <a href="model-data-in-UI.html" class="page">for a single table</a>.
-When you specify the currency type of your data in the <strong>Columns</strong> settings, your currency data will only display the correct format and currency code in the embedded use case.
-Currency specific symbols are available in the non-embedded use case as well, but they are not localized.</p>
+<p>When you use the JavaScript API, your client calls ThoughtSpot from your Web page, portal, or application.
+Because your client and ThoughtSpot are on different domains, you must enable cross-origin HTTP requests from your client application to the ThoughtSpot application.
+This protects your data by preventing another actor from using the same URL to embed the visualization in its own Web pages.</p>
 </div>
 <div class="paragraph">
-<p>All users are treated as if they are in <code>en-US</code> locale unless they are in embed mode and their browser configuration tells ThoughtSpot that they are in some other locale.
-For example, <code>100 Polish Zloty</code> appears as <code>100zł</code> to a user in Poland, but without localization enabled, it appears as <code>PLN 100</code>.</p>
+<p>Your cluster&#8217;s CORS configuration controls which domains can use your client code to authorize users.
+It also prevents code copying and deployment on unauthorized sites.
+For example, if your Web site is hosted on the domain <code>example.com</code>, you must enable CORS for that domain.
+Similarly, to test your code locally, you must also add the domain for your local server, such as <code>http://localhost:8080</code>.
+We recommend that you disable the <code>localhost</code> access after you finish testing.</p>
 </div>
 <div class="paragraph">
-<p>This subtle difference can be seen when you use the REST API.
-See the ThoughtSpot Application Integration Guide for more information on the API.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Find the <strong>Currency Type</strong> for the column whose display format you want to change.</p>
-</li>
-<li>
-<p>Click it to open the <strong>Specify Currency Type</strong> menu.</p>
-<div class="imageblock">
-<div class="content">
-<img src="_images/specify_currency_type.png" alt="specify currency type">
-</div>
-</div>
-</li>
-<li>
-<p>Select one of the following ways you would like to change the format.</p>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Option</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Infer From Browser</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Your currency data will be modeled upon the locale of your browser setting.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>From a column</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Your currency data will be modeled upon the existing currency information in the selected column.
-This option is disabled if there is no <code>VARCHAR</code> column to choose from.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Specify ISO Code</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Your currency data will be modeled upon your selection from the available currency code choices.</p></td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>Click <strong>Ok</strong> to save your changes.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_related_information"><a class="anchor" href="#_related_information"></a>Related information</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="about-data-modeling-intro.html" class="page">Model the data for searching</a></p>
+<p>To enable CORS between your client applications and your ThoughtSpot instance, you must work with <a href="contact.html" class="page">ThoughtSpot Support</a>.</p>
 </div>
 </div>
 </div>

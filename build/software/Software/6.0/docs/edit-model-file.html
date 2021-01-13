@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>Untitled | ThoughtSpot Software</title>
+    <title>Edit the system-wide data model | ThoughtSpot Software</title>
 <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -1227,7 +1227,7 @@
     <a class="nav-link" href="logins.html">Login credentials</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#docs:about-JS-API.adoc">Use the JavaScript API</a>
+    <a class="nav-link" href="about-JS-API.html">Use the JavaScript API</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -1919,21 +1919,31 @@
 </div>
   <div class="content">
 <article class="doc">
-<hr>
+<h1 class="page">Edit the system-wide data model</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>title: [Edit the system-wide data model]</p>
-</div>
-<div class="paragraph">
-<p>last_updated: tbd summary: "Edit the modeling file to edit your data settings." sidebar: mydoc_sidebar permalink: /:collection/:path.html&#8201;&#8212;&#8201;</p>
+<p>Edit the modeling file to edit your data settings.</p>
 </div>
 <div class="paragraph">
 <p>When you load data, ThoughtSpot uses defaults for data modeling metadata.
-You change these defaults using the data modeling file if you have access to the <span class="menuseq"><b class="menu">ADMIN</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Data Management</b></span> page.
+You change these defaults using the data modeling file if you have access to the menu:ADMIN[Data Management] page.
 Editing this file allows you to view and edit all the system data columns.
 When you (or your users) add new data to your system, this file changes as it expands to accommodate new data columns.</p>
 </div>
-<div class="paragraph">
-<p>{% include tip.html content="If you just want to change a subset of your data, use the <a href="model-data-in-UI.html#">Change a table&#8217;s data model</a> instead." %}</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you just want to change a subset of your data, use the <a href="model-data-in-UI.html" class="page">Change a table&#8217;s data model</a> instead.
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div>
 <div class="sect1">
 <h2 id="_overview_of_the_modeling_process"><a class="anchor" href="#_overview_of_the_modeling_process"></a>Overview of the modeling process</h2>
@@ -1989,7 +1999,7 @@ Then, you edit it using Microsoft Excel, vi/vim, or a similar text editing tool.
 <p>Click the <strong>ADMIN</strong> tab in the top navigation bar.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/admin_icon.png" alt="admin icon">
+<img src="_images/admin_icon.png" alt="admin icon">
 </div>
 </div>
 </li>
@@ -2000,7 +2010,7 @@ Then, you edit it using Microsoft Excel, vi/vim, or a similar text editing tool.
 <p>Click <strong>Download</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/download_model.png" alt="download model">
+<img src="_images/download_model.png" alt="download model">
 </div>
 </div>
 </li>
@@ -2013,7 +2023,7 @@ Then, you edit it using Microsoft Excel, vi/vim, or a similar text editing tool.
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can make changes to the settings using this procedure.
-To see a list of the changes you can make, see <a href="data-modeling-settings.html#">Data modeling settings</a>.
+To see a list of the changes you can make, see <a href="data-modeling-settings.html" class="page">Data modeling settings</a>.
 You can edit any of the values in the model file, except for those where the words <strong>DoNotModify</strong> appear under the column header.
 To make changes in the model file:</p>
 </div>
@@ -2026,7 +2036,7 @@ To make changes in the model file:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/warning_open_model_excel.png" alt="warning open model excel">
+<img src="_images/warning_open_model_excel.png" alt="warning open model excel">
 </div>
 </div>
 <div class="paragraph">
@@ -2036,7 +2046,7 @@ To make changes in the model file:</p>
 <li>
 <p>Find the column you want to modify.</p>
 <div class="paragraph">
-<p>Descriptions of the meanings of the columns are listed in <a href="data-modeling-settings.html#">Data modeling settings</a>.</p>
+<p>Descriptions of the meanings of the columns are listed in <a href="data-modeling-settings.html" class="page">Data modeling settings</a>.</p>
 </div>
 </li>
 <li>
@@ -2053,7 +2063,7 @@ Click <code>YES</code> to save the file.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/warning_save_model_excel.png" alt="warning save model excel">
+<img src="_images/warning_save_model_excel.png" alt="warning save model excel">
 </div>
 </div>
 <div class="paragraph">
@@ -2082,7 +2092,7 @@ To upload the model file:</p>
 <p>Click <strong>ADMIN</strong>, on the top navigation bar.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/admin_icon.png" alt="admin icon">
+<img src="_images/admin_icon.png" alt="admin icon">
 </div>
 </div>
 </li>
@@ -2093,7 +2103,7 @@ To upload the model file:</p>
 <p>Click <strong>Browse your files</strong> to upload the model.xls file, or drag and drop it in the zone.</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/upload_model.png" alt="upload model">
+<img src="_images/upload_model.png" alt="upload model">
 </div>
 </div>
 <div class="paragraph">
@@ -2120,10 +2130,10 @@ Your new settings will be reflected within a few minutes.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="data-modeling-settings.html#">Data modeling settings</a></p>
+<p><a href="data-modeling-settings.html" class="page">Data modeling settings</a></p>
 </li>
 <li>
-<p><a href="model-data-in-UI.html">Change a table&#8217;s data model</a></p>
+<p><a href="model-data-in-UI.html" class="page">Change a table&#8217;s data model</a></p>
 </li>
 </ul>
 </div>

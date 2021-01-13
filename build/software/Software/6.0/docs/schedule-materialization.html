@@ -1227,7 +1227,7 @@
     <a class="nav-link" href="logins.html">Login credentials</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#docs:about-JS-API.adoc">Use the JavaScript API</a>
+    <a class="nav-link" href="about-JS-API.html">Use the JavaScript API</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -1920,17 +1920,15 @@
   <div class="content">
 <article class="doc">
 <hr>
+<h1 id="_schedule_materialization_refresh_on_a_view" class="sect0"><a class="anchor" href="#_schedule_materialization_refresh_on_a_view"></a>Schedule materialization refresh on a View</h1>
 <div class="paragraph">
-<p>title: [Schedule materialization refresh on a view]</p>
+<p>Learn how to schedule materialization refresh of a View to keep it in sync with the data that makes it up.</p>
 </div>
 <div class="paragraph">
-<p>last_updated: 11/2/2018 summary: "Learn how to schedule materialization refresh of a view to keep it in sync with the data that makes it up." toc: false sidebar: mydoc_sidebar permalink: /:collection/:path.html&#8201;&#8212;&#8201;</p>
+<p>To keep the data in a View up-to-date, you can schedule periodic refreshes from the underlying table(s).</p>
 </div>
 <div class="paragraph">
-<p>To keep the data in a view up-to-date, you can schedule periodic refreshes from the underlying table(s).</p>
-</div>
-<div class="paragraph">
-<p>To schedule materialization of a view:</p>
+<p>To schedule materialization of a View:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1938,7 +1936,7 @@
 <p>To find your view, click <strong>Data</strong> in the top menu, and choose <strong>Views</strong>.</p>
 </li>
 <li>
-<p>Click the name of your view.</p>
+<p>Click the name of your View.</p>
 </li>
 <li>
 <p>Click <strong>Schema</strong>.</p>
@@ -1950,7 +1948,7 @@
 <p>In the <strong>Schedule Data Updates</strong> dialog, select an option for <strong>Repeats</strong> (Monthly, Weekly, or Daily).</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/materialized-view-sched-weekly.png" alt="materialized view sched weekly">
+<img src="_images/materialized-view-sched-weekly.png" alt="materialized view sched weekly">
 </div>
 </div>
 </li>
@@ -1958,7 +1956,7 @@
 <p>Fill in the schedule details:</p>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/schedule-data-updates-weekly.png" alt="schedule data updates weekly">
+<img src="_images/schedule-data-updates-weekly.png" alt="schedule data updates weekly">
 </div>
 </div>
 </li>
@@ -1967,10 +1965,19 @@
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>{% include note.html content="Refresh works only if it is scheduled in the refresh window set for the cluster (default: 8:00 PM - 4:00 AM).
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Refresh works only if it is scheduled in the refresh window set for the cluster (default: 8:00 PM - 4:00 AM).
 Only the start time of the refresh window is configurable using the flag <code>orion.materializationConfig.refreshWindowStartTime</code> which can be set to values such as <code>12:00PM</code> or <code>01:00AM</code> etc.
-Example: To set the cluster window from 2:00 AM to 10:00 AM you can set the flag as <code>orion.materializationConfig.refreshWindowStartTime \"02:00AM\"</code>."%}</p>
+Example: To set the cluster window from 2:00 AM to 10:00 AM you can set the flag as <code>orion.materializationConfig.refreshWindowStartTime \"02:00AM\"</code>.
+</td>
+</tr>
+</table>
 </div>
 <div class="sect1">
 <h2 id="_related_information"><a class="anchor" href="#_related_information"></a>Related Information</h2>
@@ -1978,13 +1985,13 @@ Example: To set the cluster window from 2:00 AM to 10:00 AM you can set the flag
 <div class="ulist">
 <ul>
 <li>
-<p>link:{{ site.baseurl }}/complex-search/about-query-on-query.html[Understand views]</p>
+<p><a href="about-query-on-query.html" class="page">Understand views</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/complex-search/create-aggregated-worksheet.html[Save a search as a view]</p>
+<p><a href="create-aggregated-worksheet.html" class="page">Save a search as a view</a></p>
 </li>
 <li>
-<p>link:{{ site.baseurl }}/admin/loading/materialized-views.html[About materialized views]</p>
+<p><a href="materialized-views.html" class="page">About materialized views</a></p>
 </li>
 </ul>
 </div>

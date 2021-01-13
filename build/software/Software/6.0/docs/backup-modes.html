@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["Understand backup modes"] | ThoughtSpot Software</title>
+    <title>Understand backup modes | ThoughtSpot Software</title>
 <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -1227,7 +1227,7 @@
     <a class="nav-link" href="logins.html">Login credentials</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#docs:about-JS-API.adoc">Use the JavaScript API</a>
+    <a class="nav-link" href="about-JS-API.html">Use the JavaScript API</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -1920,9 +1920,12 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["Understand backup modes"]</h1>
+<h1 class="page">Understand backup modes</h1>
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph">
+<p>Learn about types of backups.</p>
+</div>
 <div class="paragraph">
 <p>A backup is a procedure that stores a snapshot <em>outside</em> of a ThoughtSpot cluster.
 Backups are stored in a directory on a local or network file system.
@@ -1938,14 +1941,23 @@ You can also use a backup to move a cluster from an appliance to a virtual clust
 For manual backups, the system creates a backup using the named snapshot you specify.
 For periodic backups, the system uses the most recent snapshot to create the backup.</p>
 </div>
-<div class="paragraph">
-<p>{% include warning.html content="You should never disable the periodic snapshot system, because backups rely on it.
-For example, if you have disabled the periodic snapshots system and periodic backups are enabled, then the periodic backup may use a very outdated snapshot or it may fail all together." %}</p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+You should never disable the periodic snapshot system, because backups rely on it.
+For example, if you have disabled the periodic snapshots system and periodic backups are enabled, then the periodic backup may use a very outdated snapshot or it may fail all together.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>ThoughtSpot usually stores backups on a link:{{ site.baseurl }}/admin/setup/NAS-mount.html#[NAS (network attached storage) file system] but you can store them on a local disk as well.
-With AWS, you can back up an S3-based cluster link:{{ site.baseurl }}/appliance/aws/aws-backup-restore.html[using an S3 bucket].
-With GCP, you can back up a GCS-based cluster link:{{ site.baseurl }}/appliance/gcp/gcp-backup-restore.html[using a GCS bucket].
+<p>ThoughtSpot usually stores backups on a <a href="NAS-mount.html" class="page">NAS (network attached storage) file system</a> but you can store them on a local disk as well.
+With AWS, you can back up an S3-based cluster <a href="aws-backup-restore.html" class="page">using an S3 bucket</a>.
+With GCP, you can back up a GCS-based cluster <a href="gcp-backup-restore.html" class="page">using a GCS bucket</a>.
 When creating a backup, ThoughtSpot copies a release tarball and several supporting files to a disk you specify.
 Storing these supporting files takes about 10 GB of extra space beyond the backup itself.
 The final backup image is smaller because these extra files are removed after the backup completes successfully.
