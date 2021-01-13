@@ -1,8 +1,10 @@
 '''
 
-title: [Schedule materialization refresh on a view]
+= Schedule materialization refresh on a view
+:last_updated: 11/2/2018
+:toc: false
 
-last_updated: 11/2/2018 summary: "Learn how to schedule materialization refresh of a view to keep it in sync with the data that makes it up." toc: false sidebar: mydoc_sidebar permalink: /:collection/:path.html --
+Learn how to schedule materialization refresh of a view to keep it in sync with the data that makes it up.
 
 To keep the data in a view up-to-date, you can schedule periodic refreshes from the underlying table(s).
 
@@ -14,20 +16,20 @@ To schedule materialization of a view:
 . Under *Materialization*, click the link next to *Update Schedule*.
 . In the *Schedule Data Updates* dialog, select an option for *Repeats* (Monthly, Weekly, or Daily).
 +
-image::{{ site.baseurl }}/images/materialized-view-sched-weekly.png[]
+image::materialized-view-sched-weekly.png[]
 
 . Fill in the schedule details:
 +
-image::{{ site.baseurl }}/images/schedule-data-updates-weekly.png[]
+image::schedule-data-updates-weekly.png[]
 
 . Click *Schedule*.
 
-{% include note.html content="Refresh works only if it is scheduled in the refresh window set for the cluster (default: 8:00 PM - 4:00 AM).
+NOTE: Refresh works only if it is scheduled in the refresh window set for the cluster (default: 8:00 PM - 4:00 AM).
 Only the start time of the refresh window is configurable using the flag `orion.materializationConfig.refreshWindowStartTime` which can be set to values such as `12:00PM` or `01:00AM` etc.
-Example: To set the cluster window from 2:00 AM to 10:00 AM you can set the flag as `orion.materializationConfig.refreshWindowStartTime \"02:00AM\"`."%}
+Example: To set the cluster window from 2:00 AM to 10:00 AM you can set the flag as `orion.materializationConfig.refreshWindowStartTime \"02:00AM\"`.
 
 == Related Information
 
-* link:{{ site.baseurl }}/complex-search/about-query-on-query.html[Understand views]
-* link:{{ site.baseurl }}/complex-search/create-aggregated-worksheet.html[Save a search as a view]
-* link:{{ site.baseurl }}/admin/loading/materialized-views.html[About materialized views]
+* xref:about-query-on-query.adoc[Understand views]
+* xref:create-aggregated-worksheet.adoc[Save a search as a view]
+* xref:materialized-views.adoc[About materialized views]
