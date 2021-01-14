@@ -1,5 +1,5 @@
 = Install ThoughtSpot Clusters on the SMC Appliance
-:last_updated: ["3/3/2020"]
+:last_updated: 3/3/2020
 :linkattrs:
 
 Install your clusters on the SMC appliance.
@@ -46,7 +46,8 @@ Note the following parameters:
 NOTE: You can use another secure copy method, if you prefer a method other than the `scp` command.
 
 . Alternatively, use `tscli fileserver download-release` to download the release bundle.
-+ You must xref:tscli-command-ref.adoc#tscli-fileserver[configure the fileserver] by running `tscli fileserver configure` before you can download the release.
++
+You must xref:tscli-command-ref.adoc#tscli-fileserver[configure the fileserver] by running `tscli fileserver configure` before you can download the release.
 +
 +
 ----
@@ -61,7 +62,8 @@ Note the following parameters:
 For example, `/export/sdb1/TS_TASKS/install/6.0.tar.gz`.
 
 . Verify the checksum to ensure you have the correct release.
-+ Run `md5sum -c <release-number>.tar.gz.MD5checksum`.
++
+Run `md5sum -c <release-number>.tar.gz.MD5checksum`.
 +
 ----
  $ md5sum -c <release-number>.tar.gz.MD5checksum
@@ -77,7 +79,8 @@ Use screen to ensure that your installation does not stop if you lose network co
 ----
 
 . Create the cluster.
-+ Run `tscli cluster create <release-number>`.
++
+Run `tscli cluster create <release-number>`.
 +
 ----
  $ tscli cluster create <release-number>.tar.gz
@@ -187,14 +190,15 @@ Ensure that the cluster is `RUNNING` and that the Database and Search Engine are
 Your output may look something like the above.
 Ensure that all diagnostics show `SUCCESS`.
 
-{% include warning.adoc content="If `tscli cluster check` returns an error, it may suggest you run `tscli storage gc` to resolve the issue.
-If you run `tscli storage gc`, note that it restarts your cluster." %}
+WARNING: If `tscli cluster check` returns an error, it may suggest you run `tscli storage gc` to resolve the issue.
+If you run `tscli storage gc`, note that it restarts your cluster.
 
 [#install-step-3]
 == Step 3. Finalize Installation
 
 After the cluster status changes to "`Ready,`" sign in to the ThoughtSpot application on your browser.
-+ Follow these steps:
++
+Follow these steps:
 
 . Start a browser from your computer.
 . Enter your secure IP information on the address line.
@@ -207,7 +211,7 @@ After the cluster status changes to "`Ready,`" sign in to the ThoughtSpot applic
  ** Click *Advanced*
  ** Click *Proceed*
 . The ThoughtSpot sign-in page appears.
-. In the link:{{ site.baseurl }}/appliance/hardware/smc-cluster-install.adoc#ts-login[ThoughtSpot sign-in window], enter admin credentials, and click *Sign in*.
+. In the xref:smc-cluster-install.adoc#ts-login[ThoughtSpot sign-in window], enter admin credentials, and click *Sign in*.
 If you do not know the admin credentials, ask your network administrator.
 ThoughtSpot recommends changing the default admin password.
 
