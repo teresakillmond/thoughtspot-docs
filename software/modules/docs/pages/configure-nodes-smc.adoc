@@ -1,5 +1,5 @@
 = Configure ThoughtSpot Nodes on the SMC Appliance
-:last_updated: ["1/31/2020"]
+:last_updated: 1/31/2020
 :linkattrs:
 
 Configure your nodes before you can install your cluster(s).
@@ -36,7 +36,8 @@ Follow these steps to determine the configuration status of your appliance.
 
 . SSH into your cluster.
 Run `ssh admin@<nodeIP>`.
-+ Replace `nodeIP` with your specific network information.
++
+Replace `nodeIP` with your specific network information.
 +
 ----
  $ ssh admin@<nodeIP>
@@ -59,14 +60,16 @@ If your status is not READY, continue with the installation process outlined bel
 SSH into your cluster with admin credentials.
 
 . Run the command `ssh admin@<cluster-IP>` or `ssh admin@<hostname>` on the command line.
-+  Replace `clusterIP` or `hostname` with your specific network information.
++
+Replace `clusterIP` or `hostname` with your specific network information.
 +
 ----
  $ ssh admin@<nodeIP>
 ----
 
 . Enter your admin password when prompted.
-+  Ask your network administrator if you don't know the password.
++
+ Ask your network administrator if you don't know the password.
 
 [#node-step-2]
 == Step 2: Change to the `install` directory
@@ -99,7 +102,8 @@ NOTE: Some of the information in the `nodes.config` file may be pre-populated fr
 For example, if you specified an IP address while creating VMs, that IP address might already be present in your `nodes.config` file.
 
 . Fill in the areas specified in xref:parameters-nodesconfig.adoc[Parameters of the nodes.config file] with your specific network information.
-+ If you have additional nodes, complete each node within the nodes.config file in the same way.
++
+If you have additional nodes, complete each node within the nodes.config file in the same way.
 
 Edit only the parts of the nodes.config file that are explicitly discussed in xref:parameters-nodesconfig.adoc[Parameters of `nodes.config`].
 If you delete quotation marks, commas, or other parts of the code, it may cause setup to fail.
@@ -110,7 +114,8 @@ If you delete quotation marks, commas, or other parts of the code, it may cause 
 Configure the nodes in the `nodes.config` file using the `set-config` command.
 
 Run `$ cat nodes.config | tscli cluster set-config` in your terminal.
-+ If the command returns an error, refer to xref:smc-cluster-install.adoc#set-config-error-recovery[set-config error recovery].
++
+If the command returns an error, refer to xref:smc-cluster-install.adoc#set-config-error-recovery[set-config error recovery].
 
 [source,console]
 ----
@@ -130,7 +135,8 @@ Done setting up ThoughtSpot
 == Step 6: Confirm node configuration
 
 Use the `get-config` command to confirm node configuration.
-+ Your output may look similar to the following:
++
+Your output may look similar to the following:
 
 [source,console]
 ----
