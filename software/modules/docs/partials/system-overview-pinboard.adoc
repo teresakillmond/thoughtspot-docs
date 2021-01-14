@@ -14,7 +14,7 @@ The information in these worksheets updates hourly from internal tables that col
 The *more options menu* image:icon-more-10px.png[] for the Answers in this Pinboard contains fewer options than the traditional menu.
 You can *SpotIQ analyst*, *download*, *edit,* or *present* the Answer.
 When you *edit* the Answer, you see the query that ThoughtSpot built the Answer on.
-You can also copy the Answer's embed link, use link:{{ site.baseurl }}/end-user/pinboards/answer-explorer.html[Answer Explorer] on the Answer, or interact with the Answer by link:{{ site.baseurl }}/complex-search/drill-down.html[drilling down].
+You can also copy the Answer's embed link, use xref:answer-explorer.adoc[Answer Explorer] on the Answer, or interact with the Answer by xref:drill-down.adoc[drilling down].
 While you can interact with and change a copied version of the Answer, you cannot save changes to the underlying query.
 
 The following charts, tables, and panels are available on the *System Overview Pinboard*: <<cluster-summary,cluster summary>>, <<relational-data-cache,relational data cache>>, <<relational-search-engine,relational search engine>>, <<critical-alerts,critical alerts>>, <<space-utilization,space utilization>>, <<mau,monthly active users>>, <<monthly-searches,monthly ad-hoc searches>>, <<monthly-pb-views,monthly Pinboard views,>>, <<top-users,top users last month>>, <<top-pinboards,top Pinboards last month>>, <<searches-user,ad-hoc search by user>>, and <<users-today,today's users>>.
@@ -30,31 +30,34 @@ This summary includes the *LAST SNAPSHOT TIME* it reflects whether regular snaps
 This value should update regularly in real time.
 If you do not see it change or empty, you should check your cluster snapshot policy using the `tscli` command:
 
- $ tscli snapshot-policy show
- schedule {
-   period {
-     number: 1
-     unit: HOUR
-   }
-   retention_policy {
-     bucket {
-       time {
-         number: 1
-         unit: HOUR
-       }
-       capacity: 3
-     }
-     bucket {
-       time {
-         number: 4
-         unit: HOUR
-       }
-       capacity: 2
-     }
-   }
-   offset_minutes_from_sunday_midnight: 0
+[source,console]
+----
+$ tscli snapshot-policy show
+schedule {
+ period {
+   number: 1
+   unit: HOUR
  }
- enabled: false
+ retention_policy {
+   bucket {
+     time {
+       number: 1
+       unit: HOUR
+     }
+     capacity: 3
+   }
+   bucket {
+     time {
+       number: 4
+       unit: HOUR
+     }
+     capacity: 2
+   }
+ }
+ offset_minutes_from_sunday_midnight: 0
+}
+enabled: false
+----
 
 You can see this policy is disabled, which is a problem.
 Production clusters should enable the default snapshot policy.
@@ -65,8 +68,11 @@ When you show or enable the snapshot policy, you can see your `tscli` command re
 . Log in to the ThoughtSpot cluster as the `admin` user.
 . Use the `tscli feature` subcommand to display your current configuration.
 +
+[source,console]
 ----
- $ tscli feature get-all-config
+$ tscli feature get-all-config
+----
+----
  +---------------------------------+----------+---------------+
  |              NAME               |  STATUS  | CONFIGURATION |
  +---------------------------------+----------+---------------+
@@ -302,7 +308,7 @@ The query uses the `TS: BI Server` data source.
 This Answer shows the top ThoughtSpot users ranked by number of actions the users performed in the last 30 days.
 The possible user actions include:
 
-{% include content/user-actions.md %}
+include::partial$user-actions.adoc[]
 
 The query underlying this Answer is:
 

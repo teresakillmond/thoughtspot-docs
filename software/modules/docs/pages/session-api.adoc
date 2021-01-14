@@ -23,11 +23,13 @@ Use this API to authenticate and login a user.
 === Request Example
 
 .cURL
+[source]
 ----
 curl -X POST --header 'Content-Type: application/x-www-form-urlencoded' --header 'Accept: application/json' --header 'X-Requested-By: ThoughtSpot' -d 'username=test&password=fhfh2323bbn&rememberme=false' 'https://<instance>/callosum/v1/tspublic/v1/session/login'
 ----
 
 .Request URL
+[source]
 ----
 https://<instance>/callosum/v1/tspublic/v1/session/login
 ----
@@ -51,11 +53,13 @@ The user details are captured from the active user session.
 === Request Example
 
 .cURL
+[source]
 ----
 curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'X-Requested-By: ThoughtSpot' 'https://<instance>/callosum/v1/tspublic/v1/session/logout'
 ----
 
 .Request URL
+[source]
 ----
 https://<instance>/callosum/v1/tspublic/v1/session/logout
 ----
