@@ -1,5 +1,6 @@
 = Mobile FAQ
 :last_updated: 02/28/2020
+:linkattrs:
 
 These are a few frequently asked questions about ThoughtSpot mobile.
 
@@ -45,9 +46,10 @@ There are three possible solutions to this problem:
 
 * Add a valid SSL certificate on the cluster.
 * The customer may be using an internally-generated SSL certificate, which Android/iOS doesn't recognize.
-Use an external certificate-issuing agency, like https://www.digicert.com/[digicert.com/, window="_blank"], to generate a valid SSL certificate.
+Use an external certificate-issuing agency, like https://www.digicert.com/[digicert.com/, window=_blank], to generate a valid SSL certificate.
 * Convert from HTTPS to HTTP connections by running the following `tscli` command for the entire cluster:
 +
+[source]
 ----
 tscli ssl off
 ----

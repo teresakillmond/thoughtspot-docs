@@ -14,6 +14,7 @@ This is done by providing filter information through the URL query parameters.
 This example shows the URL to access a pinboard with a filter.
 Here the Runtime Filter is operating on the column "Color" and will only return values that are equal (EQ) to "red".
 
+[source]
 ----
 http://10.77.144.40:8088/?col1=Color&op1=EQ&val1=red#
 /pinboard/e36ee65e-64be-436b-a29a-22d8998c4fae
@@ -22,6 +23,7 @@ http://10.77.144.40:8088/?col1=Color&op1=EQ&val1=red#
 This example shows the URL for a REST API call with a filter.
 Here the Runtime Filter is operating on the column `Category` and returning values that are equal to `mfgr%2324`.
 
+[source]
 ----
 http://10.77.144.40:8088/callosum/v1/tspublic/v1/pinboarddata?
 id=e36ee65e-64be-436b-a29a-22d8998c4fae&col1=Category
