@@ -33,7 +33,7 @@ Follow the steps in this checklist.
 |===
 
 Refer to your welcome letter from ThoughtSpot to find the link to download the release bundle.
-If you do not have a link, open a support ticket with link:{{ site.baseurl }}/appliance/contact.adoc[ThoughtSpot Support] to request access to the release bundle.
+If you do not have a link, open a support ticket with xref:contact.adoc[ThoughtSpot Support] to request access to the release bundle.
 
 [#cluster-step-1]
 === Step 1: Run the installer
@@ -54,8 +54,8 @@ Note the following parameters:
 NOTE: You can use another secure copy method, if you prefer a method other than the `scp` command.
 
 . Alternatively, use `tscli fileserver download-release` to download the release bundle.
-+ You must xref:tscli-command-ref.adoc#tscli-fileserver[configure the fileserver] by running `tscli fileserver configure` before you can download the release.
 +
+You must xref:tscli-command-ref.adoc#tscli-fileserver[configure the fileserver] by running `tscli fileserver configure` before you can download the release.
 +
 ----
  $ tscli fileserver download-release <release-number> --user <username> --out <release-location>
@@ -69,7 +69,8 @@ Note the following parameters:
 For example, `/export/sdc1/TS_TASKS/install/6.0.tar.gz`.
 
 . Verify the checksum to ensure you have the correct release.
-+ Run `md5sum -c <release-number>.tar.gz.MD5checksum`.
++
+Run `md5sum -c <release-number>.tar.gz.MD5checksum`.
 +
 ----
  $ md5sum -c <release-number>.tar.gz.MD5checksum
@@ -85,8 +86,10 @@ Use screen to ensure that your installation does not stop if you lose network co
 ----
 
 . Create the cluster.
-+ Run `tscli cluster create` to create the cluster.
-+ If you are using a gcs bucket for object storage, include the flag `--enable_cloud_storage=gcs`.
++
+Run `tscli cluster create` to create the cluster.
++
+If you are using a gcs bucket for object storage, include the flag `--enable_cloud_storage=gcs`.
 +
 ----
  $ tscli cluster create <release-number>.tar.gz --enable_cloud_storage=gcs
@@ -106,7 +109,6 @@ As you develop your expertise in GCP cluster installation, we recommend the foll
 * https://training.thoughtspot.com/create-upgrade-patch-a-thoughtspot-cluster/430642[Create a Cluster,window=_blank]
 
 See other training resources at
-+
 https://training.thoughtspot.com/[ThoughtSpot U,window=_blank]
 
 == Related information
