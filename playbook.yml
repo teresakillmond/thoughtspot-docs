@@ -10,7 +10,7 @@ content:
 ui:
   bundle:
     # url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
-    url: build/ui-bundle-software.zip
+    url: ui-bundle/ui2-bundle.zip
   supplemental_files:
   - path: .nojekyll
   - path: ui.yml
@@ -21,8 +21,8 @@ asciidoc:
     software: true
     cloud: false
     tabs: tabs
-#  extensions:
-#    - "@djencks/asciidoctor-tabset-block"
+  extensions:
+    - "@djencks/asciidoctor-tabset-block"
 
 output:
   clean: true
