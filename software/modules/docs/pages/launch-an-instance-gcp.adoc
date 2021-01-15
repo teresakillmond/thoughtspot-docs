@@ -32,7 +32,7 @@ The following topics walk you through this process.
 . Ensure that your *Network Service Tier* on the https://console.cloud.google.com/[Google Cloud Console] is set to *Premium* for the best performance of all your VMs.
 . A ThoughtSpot cluster requires 10 Gb/s bandwidth (or better) between any two nodes.
 You must ensure this _before_ creating a new cluster.
-. Download and fill out the ThoughtSpot link:{{ site.baseurl }}/site-survey.pdf[site survey] to have a quick reference for your networking information.
+. Download and fill out the ThoughtSpot xref:site-survey.pdf[site survey] to have a quick reference for your networking information.
 Ask your network administrator if you need help filling out the site survey.
 
 == Setting up your Google Cloud Storage (GCS) bucket
@@ -53,7 +53,8 @@ If you are not using GCS, skip this step and <<create-an-instance,create an inst
 . Under *Access Control*, select *Uniform* to ensure uniform access to all objects in the storage bucket.
 . Click *CONTINUE*.
 . Do not edit the advanced settings.
-+ Leave Encryption set to *Google-managed key* and do not set a retention policy.
++
+Leave Encryption set to *Google-managed key* and do not set a retention policy.
 . Click *CREATE*.
 
 When you create your instance, make sure you set Storage to *Read Write* access.
@@ -77,7 +78,8 @@ image::gcp-computeenginedash.png[Go to the Compute Engine Dashboard]
 . Select the zone you are creating your region in.
 . Under *Machine type*, select *custom*.
 . Select the number of vCPU cores you need.
-+ Refer to xref:configuration-options.adoc#thoughtspot-gcp-instance-types[ThoughtSpot GCP instance types] to determine the number of vCPU cores your cluster needs.
++
+Refer to xref:configuration-options.adoc#thoughtspot-gcp-instance-types[ThoughtSpot GCP instance types] to determine the number of vCPU cores your cluster needs.
 . Specify your memory requirements and CPU platform.
 Refer to xref:configuration-options.adoc#thoughtspot-gcp-instance-types[ThoughtSpot GCP instance types] to determine the memory your cluster needs.
 +
@@ -273,7 +275,7 @@ Before you can install your ThoughtSpot cluster, an administrator must log in to
 
 == Install cluster
 
-To install your ThoughtSpot cluster, complete the installation process outlined in link:{{ site.baseurl }}/appliance/gcp/installing-gcp.adoc[Installing ThoughtSpot in GCP].
+To install your ThoughtSpot cluster, complete the installation process outlined in xref:installing-gcp.adoc[Installing ThoughtSpot in GCP].
 
 == Additional resources
 
@@ -281,8 +283,9 @@ As you develop your expertise in GCP VM creation, we recommend the following Tho
 
 * https://training.thoughtspot.com/node-network-configuration/430736[Node Configuration: GCP,window=_blank]
 
-See other training resources at + https://training.thoughtspot.com/[ThoughtSpot U,window=_blank]
+See other training resources at https://training.thoughtspot.com/[ThoughtSpot U,window=_blank]
 
 == Related information
 
-https://cloud.google.com/compute/docs/disks/gcs-buckets[Connecting to Google Cloud Storage buckets,window=_blank] + xref:use-data-importer.adoc#loading-data-from-a-gcp-gcs-bucket[Loading data from a GCP GCS bucket]
+https://cloud.google.com/compute/docs/disks/gcs-buckets[Connecting to Google Cloud Storage buckets,window=_blank] +
+xref:use-data-importer.adoc#loading-data-from-a-gcp-gcs-bucket[Loading data from a GCP GCS bucket]
