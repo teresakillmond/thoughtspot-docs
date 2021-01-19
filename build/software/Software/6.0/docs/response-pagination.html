@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>Untitled | ThoughtSpot Software</title>
+    <title>Data REST API pagination | ThoughtSpot Software</title>
 <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -1234,7 +1234,7 @@
     <span class="nav-text">SAML</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:about-SAML-integrations.adoc">About SAML</a>
+    <a class="nav-link" href="about-SAML-integrations.html">About SAML</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="configure-SAML-with-tscli.html">Configure SAML</a>
@@ -1518,10 +1518,10 @@
     <span class="nav-text">GCP</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:configuration-options-gcp.adoc">Configuration options</a>
+    <a class="nav-link" href="configuration-options-gcp.html">Configuration options</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:launch-an-instance-gcp.adoc">Set up ThoughtSpot in GCP</a>
+    <a class="nav-link" href="launch-an-instance-gcp.html">Set up ThoughtSpot in GCP</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="installing-gcp.html">Configure ThoughtSpot nodes in GCP</a>
@@ -1919,13 +1919,21 @@
 </div>
   <div class="content">
 <article class="doc">
-<hr>
+<h1 class="page">Data REST API pagination</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_example">Example</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>title: [Data REST API pagination]</p>
+<p>You can paginate the JSON response that is called from the REST API.
+The order of the data is retained from page to page.</p>
 </div>
 <div class="paragraph">
-<p>last_updated: tbd summary: "You can paginate the JSON response that is called from the REST API.
-The order of the data is retained from page to page." toc: false sidebar: mydoc_sidebar permalink: /:collection/:path.html&#8201;&#8212;&#8201;Given the ability to paginate, you can quickly populate tables and make new REST calls every time you go to the next page of the data on the table.
+<p>Given the ability to paginate, you can quickly populate tables and make new REST calls every time you go to the next page of the data on the table.
 There is significant load time if you want to populate the data table with many rows (greater than 1000) from the Data REST API.</p>
 </div>
 <div class="paragraph">
@@ -1992,6 +2000,8 @@ Calling with <code>pageNumber != 1</code> as the initial call will fail.
 <div class="paragraph">
 <p><code>COMPACT</code> is the default type, and is formatted as follows: <code>['col1', 'col2'] [1, 'a']</code>.
 While <code>FULL</code> is formatted like this: <code>{'col1': 1 'col2': 'a'}</code></p>
+</div>
+</div>
 </div>
 <div class="sect1">
 <h2 id="_example"><a class="anchor" href="#_example"></a>Example</h2>

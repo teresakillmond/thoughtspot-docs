@@ -1234,7 +1234,7 @@
     <span class="nav-text">SAML</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:about-SAML-integrations.adoc">About SAML</a>
+    <a class="nav-link" href="about-SAML-integrations.html">About SAML</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="configure-SAML-with-tscli.html">Configure SAML</a>
@@ -1518,10 +1518,10 @@
     <span class="nav-text">GCP</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:configuration-options-gcp.adoc">Configuration options</a>
+    <a class="nav-link" href="configuration-options-gcp.html">Configuration options</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:launch-an-instance-gcp.adoc">Set up ThoughtSpot in GCP</a>
+    <a class="nav-link" href="launch-an-instance-gcp.html">Set up ThoughtSpot in GCP</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="installing-gcp.html">Configure ThoughtSpot nodes in GCP</a>
@@ -2066,28 +2066,24 @@ For example:</p>
 </li>
 <li>
 <p>changing a sharded table to a replicated (unsharded) table</p>
-</li>
-</ul>
-</div>
 <div class="paragraph">
 <p>By default, ThoughtSpot does not shard dimension tables.</p>
 </div>
 <div class="paragraph">
-<p>+
-To change the partitioning on a table, or to change a dimension table to a sharded table, use ALTER TABLE&#8230;&#8203;SET FACT PARTITION BY HASH&#8230;&#8203;;</p>
+<p>To change the partitioning on a table, or to change a dimension table to a sharded table, use ALTER TABLE&#8230;&#8203;SET FACT PARTITION BY HASH&#8230;&#8203;;</p>
 </div>
 <div class="paragraph">
-<p>+
-To make a sharded table into a dimension table (replicated on every node), use ALTER TABLE&#8230;&#8203;SET DIMENSION;
+<p>To make a sharded table into a dimension table (replicated on every node), use ALTER TABLE&#8230;&#8203;SET DIMENSION;
 command.</p>
 </div>
 <div class="paragraph">
-<p>+
-Examples of this statement:</p>
+<p>Examples of this statement:</p>
+</div>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>+
-<code>ALTER TABLE "sales_fact" SET FACT PARTITION BY HASH (96) KEY   ("PO_number");
+<p><code>ALTER TABLE "sales_fact" SET FACT PARTITION BY HASH (96) KEY   ("PO_number");
 ALTER TABLE "fruit_dim" SET DIMENSION;</code></p>
 </div>
 </li>

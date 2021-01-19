@@ -1234,7 +1234,7 @@
     <span class="nav-text">SAML</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:about-SAML-integrations.adoc">About SAML</a>
+    <a class="nav-link" href="about-SAML-integrations.html">About SAML</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="configure-SAML-with-tscli.html">Configure SAML</a>
@@ -1518,10 +1518,10 @@
     <span class="nav-text">GCP</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:configuration-options-gcp.adoc">Configuration options</a>
+    <a class="nav-link" href="configuration-options-gcp.html">Configuration options</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:launch-an-instance-gcp.adoc">Set up ThoughtSpot in GCP</a>
+    <a class="nav-link" href="launch-an-instance-gcp.html">Set up ThoughtSpot in GCP</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="installing-gcp.html">Configure ThoughtSpot nodes in GCP</a>
@@ -1934,7 +1934,7 @@ If you can, you can run the installer on your local computer.</p>
 </div>
 <div class="paragraph">
 <p>Refer to your welcome letter from ThoughtSpot to find the link to download the release bundle.
-If you do not have a link to download the release bundle, open a support ticket at <a href="#contact.html">ThoughtSpot Support</a> to access the release bundle.</p>
+If you do not have a link to download the release bundle, open a support ticket at <a href="contact.html" class="page">ThoughtSpot Support</a> to access the release bundle.</p>
 </div>
 <div class="paragraph">
 <p>Follow the steps in this checklist to install your cluster.</p>
@@ -1967,7 +1967,8 @@ If you do not have a link to download the release bundle, open a support ticket 
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Copy the downloaded release bundle to <code>/export/sdb1/TS_TASKS/install</code>: +   Run <code>scp &lt;release-number&gt; admin@&lt;hostname&gt;:/export/sdb1/TS_TASKS/install/&lt;file-name&gt;</code>.
+<p>Copy the downloaded release bundle to <code>/export/sdb1/TS_TASKS/install</code>:<br>
+Run <code>scp &lt;release-number&gt; admin@&lt;hostname&gt;:/export/sdb1/TS_TASKS/install/&lt;file-name&gt;</code>.
 Note the following parameters:</p>
 <div class="ulist">
 <ul>
@@ -2002,8 +2003,10 @@ You can use another secure copy method, if you prefer a method other than the <c
 </div>
 </li>
 <li>
-<p>Alternatively, use <code>tscli fileserver download-release</code> to download the release bundle.
-+ You must <a href="#tscli-command-ref.html#tscli-fileserver" class="page unresolved">configure the fileserver</a> by running <code>tscli fileserver configure</code> before you can download the release.</p>
+<p>Alternatively, use <code>tscli fileserver download-release</code> to download the release bundle.</p>
+<div class="paragraph">
+<p>You must <a href="tscli-command-ref.html#tscli-fileserver" class="page">configure the fileserver</a> by running <code>tscli fileserver configure</code> before you can download the release.</p>
+</div>
 </li>
 </ol>
 </div>
@@ -2013,8 +2016,7 @@ You can use another secure copy method, if you prefer a method other than the <c
 </div>
 </div>
 <div class="paragraph">
-<p>+
-Note the following parameters:</p>
+<p>Note the following parameters:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2060,7 +2062,7 @@ Use screen to ensure that your installation does not stop if you lose network co
 </li>
 <li>
 <p>Edit the output using your specific cluster information.
-For more information on this process, refer to <a href="#cluster-create.html">Using the tscli cluster create command</a> and <a href="#parameters-cluster-create.html">Parameters of the <code>cluster create</code> command</a>.</p>
+For more information on this process, refer to <a href="cluster-create.html" class="page">Using the tscli cluster create command</a> and <a href="parameters-cluster-create.html" class="page">Parameters of the <code>cluster create</code> command</a>.</p>
 </li>
 </ol>
 </div>
@@ -2231,7 +2233,7 @@ If you run <code>tscli storage gc</code>, note that it restarts your cluster.
 <p>The ThoughtSpot login page appears.</p>
 </li>
 <li>
-<p>In the <a href="#install-cluster-dell.html#ts-login" class="page unresolved">ThoughtSpot sign-in window</a>, enter admin credentials, and click <strong>Sign in</strong>.
+<p>In the <a href="#ts-login">ThoughtSpot sign-in window</a>, enter admin credentials, and click <strong>Sign in</strong>.
 ThoughtSpot recommends changing the default admin password.</p>
 </li>
 </ol>
@@ -2245,8 +2247,8 @@ ThoughtSpot recommends changing the default admin password.</p>
 <h2 id="_lean_configuration"><a class="anchor" href="#_lean_configuration"></a>Lean configuration</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>(For use with thin provisioning only)</strong> If you have a <a href="#cloud.html#use-small-and-medium-instance-types-when-applicable" class="page unresolved">small or medium instance type</a>, with less than 100GB of data, advanced lean configuration is required before loading any data into ThoughtSpot.
-After installing the cluster, contact <a href="#contact.html">ThoughtSpot Support</a> for assistance with this configuration.</p>
+<p><strong>(For use with thin provisioning only)</strong> If you have a <a href="cloud.html#use-small-and-medium-instance-types-when-applicable" class="page">small or medium instance type</a>, with less than 100GB of data, advanced lean configuration is required before loading any data into ThoughtSpot.
+After installing the cluster, contact <a href="contact.html" class="page">ThoughtSpot Support</a> for assistance with this configuration.</p>
 </div>
 </div>
 </div>
@@ -2319,10 +2321,7 @@ It may look something like the following:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>See other training resources at</p>
-</div>
-<div class="paragraph">
-<p>+
+<p>See other training resources at
 <a href="https://training.thoughtspot.com/">ThoughtSpot U</a></p>
 </div>
 </div>

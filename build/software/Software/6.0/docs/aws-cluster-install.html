@@ -1234,7 +1234,7 @@
     <span class="nav-text">SAML</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:about-SAML-integrations.adoc">About SAML</a>
+    <a class="nav-link" href="about-SAML-integrations.html">About SAML</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="configure-SAML-with-tscli.html">Configure SAML</a>
@@ -1518,10 +1518,10 @@
     <span class="nav-text">GCP</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:configuration-options-gcp.adoc">Configuration options</a>
+    <a class="nav-link" href="configuration-options-gcp.html">Configuration options</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:launch-an-instance-gcp.adoc">Set up ThoughtSpot in GCP</a>
+    <a class="nav-link" href="launch-an-instance-gcp.html">Set up ThoughtSpot in GCP</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="installing-gcp.html">Configure ThoughtSpot nodes in GCP</a>
@@ -1982,7 +1982,7 @@ Follow the steps in this checklist.</p>
 </table>
 <div class="paragraph">
 <p>Refer to your welcome letter from ThoughtSpot to find the link to download the release bundle.
-If you do not have a link, open a support ticket with link:{{ site.baseurl }}/appliance/contact.adoc[ThoughtSpot Support] to request access to the release bundle.</p>
+If you do not have a link, open a support ticket with <a href="contact.html" class="page">ThoughtSpot Support</a> to request access to the release bundle.</p>
 </div>
 <div class="sect2">
 <h3 id="cluster-step-1"><a class="anchor" href="#cluster-step-1"></a>Step 1: Run the installer</h3>
@@ -2025,8 +2025,10 @@ You can use another secure copy method, if you prefer a method other than the <c
 </div>
 </li>
 <li>
-<p>Alternatively, use <code>tscli fileserver download-release</code> to download the release bundle.
-+ You must <a href="tscli-command-ref.html#tscli-fileserver" class="page">configure the fileserver</a> by running <code>tscli fileserver configure</code> before you can download the release.</p>
+<p>Alternatively, use <code>tscli fileserver download-release</code> to download the release bundle.</p>
+<div class="paragraph">
+<p>You must <a href="tscli-command-ref.html#tscli-fileserver" class="page">configure the fileserver</a> by running <code>tscli fileserver configure</code> before you can download the release.</p>
+</div>
 </li>
 </ol>
 </div>
@@ -2053,8 +2055,10 @@ For example, <code>/export/xvdb1/TS_TASKS/install/6.0.tar.gz</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Verify the checksum to ensure you have the correct release.
-+ Run <code>md5sum -c &lt;release-number&gt;.tar.gz.MD5checksum</code>.</p>
+<p>Verify the checksum to ensure you have the correct release.</p>
+<div class="paragraph">
+<p>Run <code>md5sum -c &lt;release-number&gt;.tar.gz.MD5checksum</code>.</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre> $ md5sum -c &lt;release-number&gt;.tar.gz.MD5checksum</pre>
@@ -2074,9 +2078,13 @@ Use screen to ensure that your installation does not stop if you lose network co
 </div>
 </li>
 <li>
-<p>Create the cluster.
-+ Run <code>tscli cluster create</code> to create the cluster.
-+ If you are using an s3 bucket for object storage, include the flag <code>--enable_cloud_storage=s3a</code>.</p>
+<p>Create the cluster.</p>
+<div class="paragraph">
+<p>Run <code>tscli cluster create</code> to create the cluster.</p>
+</div>
+<div class="paragraph">
+<p>If you are using an s3 bucket for object storage, include the flag <code>--enable_cloud_storage=s3a</code>.</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre> $ tscli cluster create &lt;release-number&gt;.tar.gz --enable_cloud_storage=s3a</pre>
@@ -2084,8 +2092,10 @@ Use screen to ensure that your installation does not stop if you lose network co
 </div>
 </li>
 <li>
-<p>Edit the output with your specific cluster information.
-+ For more information on this process, refer to <a href="cluster-create.html" class="page">Using the tscli cluster create command</a> and <a href="parameters-cluster-create.html" class="page">Parameters of the <code>cluster create</code> command</a>.</p>
+<p>Edit the output with your specific cluster information.</p>
+<div class="paragraph">
+<p>For more information on this process, refer to <a href="cluster-create.html" class="page">Using the tscli cluster create command</a> and <a href="parameters-cluster-create.html" class="page">Parameters of the <code>cluster create</code> command</a>.</p>
+</div>
 </li>
 </ol>
 </div>
@@ -2095,8 +2105,11 @@ Use screen to ensure that your installation does not stop if you lose network co
 <div class="paragraph">
 <p>The cluster installer automatically reboots all the nodes after a successful install.
 The <code>firewalld</code> service automatically turns on.
-At this time, the system is rebooting, which may take approximately 15 minutes.
-+   Log in to any node to check the current cluster status:</p>
+At this time, the system is rebooting, which may take approximately 15 minutes.</p>
+</div>
+<div class="paragraph">
+<p>+
+Log in to any node to check the current cluster status:</p>
 </div>
 <div class="listingblock">
 <div class="content">

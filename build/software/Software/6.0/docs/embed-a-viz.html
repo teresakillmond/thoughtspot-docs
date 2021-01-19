@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["Embed pinboard or visualization"] | ThoughtSpot Software</title>
+    <title>Embed pinboard or visualization | ThoughtSpot Software</title>
 <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -1234,7 +1234,7 @@
     <span class="nav-text">SAML</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:about-SAML-integrations.adoc">About SAML</a>
+    <a class="nav-link" href="about-SAML-integrations.html">About SAML</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="configure-SAML-with-tscli.html">Configure SAML</a>
@@ -1518,10 +1518,10 @@
     <span class="nav-text">GCP</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:configuration-options-gcp.adoc">Configuration options</a>
+    <a class="nav-link" href="configuration-options-gcp.html">Configuration options</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:launch-an-instance-gcp.adoc">Set up ThoughtSpot in GCP</a>
+    <a class="nav-link" href="launch-an-instance-gcp.html">Set up ThoughtSpot in GCP</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="installing-gcp.html">Configure ThoughtSpot nodes in GCP</a>
@@ -1919,7 +1919,7 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["Embed pinboard or visualization"]</h1>
+<h1 class="page">Embed pinboard or visualization</h1>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
@@ -1932,6 +1932,9 @@
 </div>
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph">
+<p>Learn how to embed a visualization or pinboard in your own Web page.</p>
+</div>
 <div class="paragraph">
 <p>This page explains, through an example, how to embed a visualization (table or chart) or pinboard from ThoughtSpot in your own static Web page, portal, or application.</p>
 </div>
@@ -1962,22 +1965,22 @@ If the pinboard or visualization doesn&#8217;t exist, create it now before conti
 <li>
 <p>Copy the URL for the entire pinboard and for a single visualization.</p>
 <div class="paragraph">
-<p>If the object is a pinboard, click the ellipses icon <span class="image"><img src="_images/{{%20site.baseurl%20}}/images/icon-ellipses.png" alt="more options menu icon"></span> &gt;  <strong>Copy Link</strong>.</p>
+<p>If the object is a pinboard, click the ellipses icon <span class="image"><img src="_images/icon-ellipses.png" alt="more options menu icon"></span> &gt;  <strong>Copy Link</strong>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/embed-link-1.png" alt="embed link 1">
+<img src="_images/embed-link-1.png" alt="embed link 1">
 </div>
 </div>
 <div class="paragraph">
 <p>The format for the link is:  <code>&lt;protocol&gt;:&lt;host&gt;:&lt;port&gt;/#/embed/viz/&lt;pinboardID&gt;</code></p>
 </div>
 <div class="paragraph">
-<p>For a vizualization in a pinboard, click the ellipses icon <span class="image"><img src="_images/{{%20site.baseurl%20}}/images/icon-ellipses.png" alt="more options menu icon"></span> &gt;  <strong>Copy Link</strong>.</p>
+<p>For a visualization in a pinboard, click the ellipses icon <span class="image"><img src="_images/icon-ellipses.png" alt="more options menu icon"></span> &gt;  <strong>Copy Link</strong>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/embed-link-2.png" alt="embed link 2">
+<img src="_images/embed-link-2.png" alt="embed link 2">
 </div>
 </div>
 <div class="paragraph">
@@ -1993,7 +1996,7 @@ If the pinboard or visualization doesn&#8217;t exist, create it now before conti
 <div class="sectionbody">
 <div class="paragraph">
 <p>You must edit the page in your application or web page where you want to embed a ThoughtSpot pinboard or visualization.
-For this example, you can get a copy of the link:{{ site.baseurl }}/downloads/test.html[test.html] file.</p>
+For this example, you can get a copy of the <a href="http://docs.thoughtspot.com/6.0/release/test.html" target="_blank" rel="noopener">test.html</a> file.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2005,18 +2008,9 @@ For this example, you can get a copy of the link:{{ site.baseurl }}/downloads/te
 </li>
 <li>
 <p></p>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;a href="{{"/release/downloads.html"</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">prepend: site.baseurl }}" target="_blank"&gt;Download&lt;/a&gt; the ThoughtSpot JavaScript library.</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p><a href="http://docs.thoughtspot.com/6.0/release/downloads.html" target="_blank" rel="noopener">Download</a> the ThoughtSpot JavaScript library.</p>
+</div>
 </li>
 <li>
 <p>Place the Javascript library in an <code>api</code> directory co-located with the <code>test.html</code> file.</p>
@@ -2130,7 +2124,7 @@ Your browser has this information and so when you load the <code>test.html</code
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/embed-3.png" alt="embed 3">
+<img src="_images/embed-3.png" alt="embed 3">
 </div>
 </div>
 </li>
@@ -2166,7 +2160,7 @@ If you see an error similar to:</p>
 </div>
 <div class="paragraph">
 <p>Typically you see this if the cross domain (CORS) setting was not completed correctly on your ThoughtSpot cluster.
-Contact link:{{ site.baseurl }}/appliance/contact.html[ThoughtSpot Support] for more help.</p>
+Contact <a href="contact.html" class="page">ThoughtSpot Support</a> for more help.</p>
 </div>
 </div>
 </div>

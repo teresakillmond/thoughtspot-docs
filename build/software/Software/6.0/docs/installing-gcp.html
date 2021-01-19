@@ -1234,7 +1234,7 @@
     <span class="nav-text">SAML</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:about-SAML-integrations.adoc">About SAML</a>
+    <a class="nav-link" href="about-SAML-integrations.html">About SAML</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="configure-SAML-with-tscli.html">Configure SAML</a>
@@ -1518,10 +1518,10 @@
     <span class="nav-text">GCP</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:configuration-options-gcp.adoc">Configuration options</a>
+    <a class="nav-link" href="configuration-options-gcp.html">Configuration options</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:launch-an-instance-gcp.adoc">Set up ThoughtSpot in GCP</a>
+    <a class="nav-link" href="launch-an-instance-gcp.html">Set up ThoughtSpot in GCP</a>
   </li>
   <li class="nav-item is-current-page" data-depth="4">
     <a class="nav-link" href="installing-gcp.html">Configure ThoughtSpot nodes in GCP</a>
@@ -2005,21 +2005,35 @@ Ask your network administrator if you do not know the admin credentials.</p>
 </div>
 </li>
 <li>
-<p>Enter your admin password at the prompt.
-+ Ask your network administrator if you don&#8217;t know the password.</p>
+<p>Enter your admin password at the prompt.</p>
+<div class="paragraph">
+<p>Ask your network administrator if you don&#8217;t know the password.</p>
+</div>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>{% include note.html content="The password does not appear on the screen as you type it." %}</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The password does not appear on the screen as you type it.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
 <h3 id="node-step-2"><a class="anchor" href="#node-step-2"></a>Step 2: Get a template for network configuration</h3>
 <div class="paragraph">
 <p>Run the <code>tscli cluster get-config</code> command to get a template for network configuration for the new cluster.
-Redirect it to the file <code>nodes.config</code>.
-+ You can find more information on this process in the <a href="nodesconfig-example.html" class="page"><code>nodes.config</code> file reference</a>.</p>
+Redirect it to the file <code>nodes.config</code>.</p>
+</div>
+<div class="paragraph">
+<p>+
+You can find more information on this process in the <a href="nodesconfig-example.html" class="page"><code>nodes.config</code> file reference</a>.</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -2029,10 +2043,19 @@ Redirect it to the file <code>nodes.config</code>.
 </div>
 <div class="sect2">
 <h3 id="node-step-3"><a class="anchor" href="#node-step-3"></a>Step 3: Prepare node configuration</h3>
-<div class="paragraph">
-<p>{% include warning.html content="<em>DNS server</em> and <em>IP address</em> values must be set in the cloud backend.
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<em>DNS server</em> and <em>IP address</em> values must be set in the cloud backend.
 It then populates them into the VM configuration.
-If you specify different values during this step, it can create a temporary mismatch and lead to connectivity issues." %}</p>
+If you specify different values during this step, it can create a temporary mismatch and lead to connectivity issues.
+</td>
+</tr>
+</table>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2125,8 +2148,11 @@ It may look something like the following:</p>
 <div class="sect2">
 <h3 id="node-step-5"><a class="anchor" href="#node-step-5"></a>Step 5: Confirm node configuration</h3>
 <div class="paragraph">
-<p>Use the <code>get-config</code> command to confirm node configuration.
-+ Your output may look similar to the following:</p>
+<p>Use the <code>get-config</code> command to confirm node configuration.</p>
+</div>
+<div class="paragraph">
+<p>+
+ Your output may look similar to the following:</p>
 </div>
 <div class="listingblock">
 <div class="content">

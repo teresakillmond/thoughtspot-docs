@@ -1234,7 +1234,7 @@
     <span class="nav-text">SAML</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:about-SAML-integrations.adoc">About SAML</a>
+    <a class="nav-link" href="about-SAML-integrations.html">About SAML</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="configure-SAML-with-tscli.html">Configure SAML</a>
@@ -1518,10 +1518,10 @@
     <span class="nav-text">GCP</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:configuration-options-gcp.adoc">Configuration options</a>
+    <a class="nav-link" href="configuration-options-gcp.html">Configuration options</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:launch-an-instance-gcp.adoc">Set up ThoughtSpot in GCP</a>
+    <a class="nav-link" href="launch-an-instance-gcp.html">Set up ThoughtSpot in GCP</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="installing-gcp.html">Configure ThoughtSpot nodes in GCP</a>
@@ -1980,7 +1980,7 @@ To install ThoughtSpot using RHEL, refer to the <a href="rhel.html" class="page"
 (optional&#8212;&#8203;you can also create one while creating your virtual machines.)</p>
 </li>
 <li>
-<p>Download and fill out the ThoughtSpot link:{{ site.baseurl }}/site-survey.pdf[site survey] to have a quick reference for any networking information you may need to fill out.
+<p>Download and fill out the ThoughtSpot <a href="#site-survey.pdf">site survey</a> to have a quick reference for any networking information you may need to fill out.
 Ask your network administrator if you need help filling out the site survey.</p>
 </li>
 </ol>
@@ -2009,90 +2009,65 @@ Ask your network administrator if you need help filling out the site survey.</p>
 </li>
 <li>
 <p>Specify information under <strong>Basics</strong>.</p>
-<div class="paragraph">
-<p>+
-image::azure-basicsettings.png[Specify information under Basics]</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/azure-basicsettings.png" alt="Specify information under Basics">
 </div>
-<div class="paragraph">
-<p>+</p>
-</div>
-</li>
-</ol>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 100%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>1</strong></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Choose a subscription type from the dropdown menu.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2</strong></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If your company already has a resource group, <em>select existing</em>.
 If not, <em>create new</em>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>3</strong></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specify a name for your virtual machine.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>4</strong></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specify the region in which you are creating the VM.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>5</strong></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Click <strong>Browse all public and private images</strong>, and search for the ThoughtSpot image.
 Choose the <a href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/thoughtspot-inc.thoughtspotvirtualmachine?tab=Overview" target="_blank" rel="noopener">ThoughtSpot Search &amp; AI-driven Analytics (BYOL)</a> image.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>6</strong></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Refer to <a href="#configuration-options.adoc" class="page unresolved">Azure configuration options</a> to choose a size for your VM that works for your cluster needs.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>7</strong></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Select <strong>SSH public key</strong> and specify a username.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>8</strong></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Enter your SSH public key.
 <a href="contact.html" class="page">Contact ThoughtSpot support</a> to obtain a public key, if you do not have one.
 Note that this SSH public key is different from the SSH private key you use later, to ssh into your VM from the command line.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>9</strong></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Choose <strong>allow selected ports</strong>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>10</strong></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Open the necessary Inbound and Outbound ports to ensure that the ThoughtSpot processes do not get blocked.
 See the <a href="#port-requirements">minimum port requirements</a>.</p></td>
 </tr>
 </tbody>
 </table>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
 <li>
 <p>Specify information under <strong>Disks</strong>.</p>
 <div class="imageblock">
@@ -2123,9 +2098,18 @@ Refer to <a href="#configuration-options.adoc#thoughtspot-azure-instance-types.h
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>{% include tip.html content=" The new Standard SSD disk types are only available for particular regions.
-Make sure this disk type is supported in the region you chose for your VM before selecting it." %}</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The new Standard SSD disk types are only available for particular regions.
+Make sure this disk type is supported in the region you chose for your VM before selecting it."
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>See <a href="https://azure.microsoft.com/en-us/blog/preview-standard-ssd-disks-for-azure-virtual-machine-workloads/" target="_blank" rel="noopener">Standard SSD Disks for Virtual Machine workloads</a> for more on SSD disks.
@@ -2228,13 +2212,22 @@ This ensures that the ThoughtSpot processes do not get blocked.</p>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>{% include note.html content="Nodes purchased from Azure must be reachable to each other so that they can communicate and form a distributed environment.
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Nodes purchased from Azure must be reachable to each other so that they can communicate and form a distributed environment.
 ThoughtSpot requires that these ports be accessible between nodes within a cluster.
-Use your discretion about whether to restrict public access or not for all nodes and all ports." %}</p>
+Use your discretion about whether to restrict public access or not for all nodes and all ports.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Refer to link:{{ site.baseurl }}/appliance/firewall-ports.html[network policies] for more information.</p>
+<p>Refer to <a href="firewall-ports.html" class="page">network policies</a> for more information.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2280,14 +2273,10 @@ Select <strong>Networking</strong> from the list on the left side of the screen.
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-If the SSH key is not accepted or lost, it can be reset by going to Reset password under Support
+If the SSH key is not accepted or lost, it can be reset by going to Reset password under Support troubleshooting on the Azure Virtual Machine page. Please note this only works before the cluster had been deployed.
 </td>
 </tr>
 </table>
-</div>
-<div class="paragraph">
-<p>+
-troubleshooting on the Azure Virtual Machine page. Please note this only works before the cluster had been deployed.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">

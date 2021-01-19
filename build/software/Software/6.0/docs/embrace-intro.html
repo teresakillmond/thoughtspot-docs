@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["Embrace overview"] | ThoughtSpot Software</title>
+    <title>Embrace overview | ThoughtSpot Software</title>
 <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -1234,7 +1234,7 @@
     <span class="nav-text">SAML</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:about-SAML-integrations.adoc">About SAML</a>
+    <a class="nav-link" href="about-SAML-integrations.html">About SAML</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="configure-SAML-with-tscli.html">Configure SAML</a>
@@ -1518,10 +1518,10 @@
     <span class="nav-text">GCP</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:configuration-options-gcp.adoc">Configuration options</a>
+    <a class="nav-link" href="configuration-options-gcp.html">Configuration options</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:launch-an-instance-gcp.adoc">Set up ThoughtSpot in GCP</a>
+    <a class="nav-link" href="launch-an-instance-gcp.html">Set up ThoughtSpot in GCP</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="installing-gcp.html">Configure ThoughtSpot nodes in GCP</a>
@@ -1918,7 +1918,7 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["Embrace overview"]</h1>
+<h1 class="page">Embrace overview</h1>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
@@ -1937,6 +1937,9 @@
 </div>
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph">
+<p>Using Embrace, you can perform live queries on external databases.</p>
+</div>
 <div class="paragraph">
 <p>If your company stores source data externally in data warehouses, you can use ThoughtSpot Embrace to directly query that data and use ThoughtSpot&#8217;s analysis and visualization features, without moving the data into ThoughtSpot.</p>
 </div>
@@ -2202,14 +2205,38 @@ Data types not listed here have full support.</p>
 <div class="paragraph">
 <p>The following list captures the specific limitations across the different databases of Embrace.
 Databases not listed here have full support.
-<dlentry>General: all databases::::
-<dlentry>Sample values::::  Embrace does not internationalize sample values in tables.</dlentry><dlentry>Delayed UI rendering::::  For connections with a very large number of tables (on the order of 1000&#8217;s of tables), UI rendering may take a very long time.
-These connections may time out.</dlentry><dlentry>Deleting columns::::  After specifying a connection, columns cannot be deleted from the table.
-Editing a connection makes it possible to add additional columns, but not to remove them.</dlentry></dlentry><dlentry>Google BigQuery::::
-<dlentry>Join support::::  Google BigQuery does not support PK-FK joins.
-Therefore, when using Embrace, you must create joins explicitly in ThoughtSpot.</dlentry><dlentry>Partitioned tables::::  When running a query on a partitioned table with the <strong>Require partition filter option</strong> enabled, you must specify the <code>WHERE</code> clause.
-Without a <code>WHERE</code> clause specified, queries generate an error.
-+ To ensure that the query on such tables honors the partition condition, you must create a worksheet filter in ThoughtSpot.</dlentry></dlentry><dlentry>Azure Synapse::::  Azure Synapse supports up to 10 <code>IF THEN ELSE</code> statements in a single query.</dlentry><dlentry>Azure Synapse does not support foreign keys, so no PK-FK joins can be defined in Synapse.</dlentry></p>
+<dl>
+ <dlentry>
+  <dt>General: all databases</dt>
+  <dd>
+   <dl>
+    <dlentry>
+     <dt>Sample values</dt>
+     <dd>Embrace does not internationalize sample values in tables.</dd></dlentry>
+    <dlentry>
+     <dt>Delayed UI rendering</dt> <dd>For connections with a very large number of tables (on the order of 1000&#8217;s of tables), UI rendering may take a very long time.These connections may time out.</dd></dlentry>
+   <dlentry>
+    <dt>Deleting columns</dt>
+    <dd>After specifying a connection, columns cannot be deleted from the table. Editing a connection makes it possible to add additional columns, but not to remove them.</dd></dlentry>
+   </dl>
+ </dd>
+</dlentry>
+<dlentry>
+  <dt>Google BigQuery</dt>
+  <dd>
+   <dl>
+     <dlentry>
+      <dt>Join support</dt>
+      <dd>Google BigQuery does not support PK-FK joins. Therefore, when using Embrace, you must create joins explicitly in ThoughtSpot.</dd></dlentry>
+     <dlentry>
+      <dt>Partitioned tables</dt>  <dd>When running a query on a partitioned table with the <strong>Require partition filter option</strong> enabled, you must specify the <code>WHERE</code> clause.Without a <code>WHERE</code> clause specified, queries generate an error. <br>
+      To ensure that the query on such tables honors the partition condition, you must create a worksheet filter in ThoughtSpot.</dd></dlentry></dl>
+     </dd>
+    </dlentry>
+    <dlentry>
+     <dt>Azure Synapse</dt>
+     <dd>Azure Synapse supports up to 10 <code>IF THEN ELSE</code> statements in a single query. Azure Synapse does not support foreign keys, so no PK-FK joins can be defined in Synapse.</dd></dlentry>
+</dl></p>
 </div>
 </div>
 </div>
@@ -2220,16 +2247,20 @@ Without a <code>WHERE</code> clause specified, queries generate an error.
 <div class="ulist">
 <ul>
 <li>
-<p><strong>link:{{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-add.html[Add a Snowflake connection]</strong> + Create the connection between ThoughtSpot and tables in an external Snowflake database.</p>
+<p><strong><a href="embrace-snowflake-add.html" class="page">Add a Snowflake connection</a></strong><br>
+Create the connection between ThoughtSpot and tables in an external Snowflake database.</p>
 </li>
 <li>
-<p><strong>link:{{ site.baseurl }}/data-integrate/embrace/embrace-redshift-add.html[Add a Redshift connection]</strong> + Create the connection between ThoughtSpot and tables in an external Amazon RedShift database.</p>
+<p><strong><a href="embrace-redshift-add.html" class="page">Add a Redshift connection</a></strong><br>
+Create the connection between ThoughtSpot and tables in an external Amazon RedShift database.</p>
 </li>
 <li>
-<p><strong>link:{{ site.baseurl }}/data-integrate/embrace/embrace-gbq-add.html[Add a BigQuery connection]</strong> + Create the connection between ThoughtSpot and tables in an external Google BigQuery database.</p>
+<p><strong><a href="embrace-gbq-add.html" class="page">Add a BigQuery connection</a></strong><br>
+Create the connection between ThoughtSpot and tables in an external Google BigQuery database.</p>
 </li>
 <li>
-<p><strong>link:{{ site.baseurl }}/data-integrate/embrace/embrace-synapse-add.html[Add a Synapse connection]</strong> + Create the connection between ThoughtSpot and tables in an external Azure Synapse database.</p>
+<p><strong><a href="embrace-synapse-add.html" class="page">Add a Synapse connection</a></strong><br>
+Create the connection between ThoughtSpot and tables in an external Azure Synapse database.</p>
 </li>
 </ul>
 </div>

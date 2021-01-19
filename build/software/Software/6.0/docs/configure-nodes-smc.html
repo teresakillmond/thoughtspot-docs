@@ -1234,7 +1234,7 @@
     <span class="nav-text">SAML</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:about-SAML-integrations.adoc">About SAML</a>
+    <a class="nav-link" href="about-SAML-integrations.html">About SAML</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="configure-SAML-with-tscli.html">Configure SAML</a>
@@ -1518,10 +1518,10 @@
     <span class="nav-text">GCP</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:configuration-options-gcp.adoc">Configuration options</a>
+    <a class="nav-link" href="configuration-options-gcp.html">Configuration options</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:launch-an-instance-gcp.adoc">Set up ThoughtSpot in GCP</a>
+    <a class="nav-link" href="launch-an-instance-gcp.html">Set up ThoughtSpot in GCP</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="installing-gcp.html">Configure ThoughtSpot nodes in GCP</a>
@@ -1975,8 +1975,10 @@ Follow the steps in this checklist.</p>
 <ol class="arabic">
 <li>
 <p>SSH into your cluster.
-Run <code>ssh admin@&lt;nodeIP&gt;</code>.
-+ Replace <code>nodeIP</code> with your specific network information.</p>
+Run <code>ssh admin@&lt;nodeIP&gt;</code>.</p>
+<div class="paragraph">
+<p>Replace <code>nodeIP</code> with your specific network information.</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre> $ ssh admin@&lt;nodeIP&gt;</pre>
@@ -2013,8 +2015,10 @@ Run <code>ssh admin@&lt;nodeIP&gt;</code>.
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Run the command <code>ssh admin@&lt;cluster-IP&gt;</code> or <code>ssh admin@&lt;hostname&gt;</code> on the command line.
-+  Replace <code>clusterIP</code> or <code>hostname</code> with your specific network information.</p>
+<p>Run the command <code>ssh admin@&lt;cluster-IP&gt;</code> or <code>ssh admin@&lt;hostname&gt;</code> on the command line.</p>
+<div class="paragraph">
+<p>Replace <code>clusterIP</code> or <code>hostname</code> with your specific network information.</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre> $ ssh admin@&lt;nodeIP&gt;</pre>
@@ -2022,8 +2026,12 @@ Run <code>ssh admin@&lt;nodeIP&gt;</code>.
 </div>
 </li>
 <li>
-<p>Enter your admin password when prompted.
-+  Ask your network administrator if you don&#8217;t know the password.</p>
+<p>Enter your admin password when prompted.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Ask your network administrator if you don't know the password.</pre>
+</div>
+</div>
 </li>
 </ol>
 </div>
@@ -2086,8 +2094,10 @@ For example, if you specified an IP address while creating VMs, that IP address 
 </div>
 </li>
 <li>
-<p>Fill in the areas specified in <a href="parameters-nodesconfig.html" class="page">Parameters of the nodes.config file</a> with your specific network information.
-+ If you have additional nodes, complete each node within the nodes.config file in the same way.</p>
+<p>Fill in the areas specified in <a href="parameters-nodesconfig.html" class="page">Parameters of the nodes.config file</a> with your specific network information.</p>
+<div class="paragraph">
+<p>If you have additional nodes, complete each node within the nodes.config file in the same way.</p>
+</div>
 </li>
 </ol>
 </div>
@@ -2104,8 +2114,11 @@ If you delete quotation marks, commas, or other parts of the code, it may cause 
 <p>Configure the nodes in the <code>nodes.config</code> file using the <code>set-config</code> command.</p>
 </div>
 <div class="paragraph">
-<p>Run <code>$ cat nodes.config | tscli cluster set-config</code> in your terminal.
-+ If the command returns an error, refer to <a href="smc-cluster-install.html#set-config-error-recovery" class="page">set-config error recovery</a>.</p>
+<p>Run <code>$ cat nodes.config | tscli cluster set-config</code> in your terminal.</p>
+</div>
+<div class="paragraph">
+<p>+
+If the command returns an error, refer to <a href="smc-cluster-install.html#set-config-error-recovery" class="page">set-config error recovery</a>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2127,8 +2140,11 @@ Done setting up ThoughtSpot</code></pre>
 <h2 id="node-step-6"><a class="anchor" href="#node-step-6"></a>Step 6: Confirm node configuration</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Use the <code>get-config</code> command to confirm node configuration.
-+ Your output may look similar to the following:</p>
+<p>Use the <code>get-config</code> command to confirm node configuration.</p>
+</div>
+<div class="paragraph">
+<p>+
+Your output may look similar to the following:</p>
 </div>
 <div class="listingblock">
 <div class="content">

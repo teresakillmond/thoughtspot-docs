@@ -1234,7 +1234,7 @@
     <span class="nav-text">SAML</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:about-SAML-integrations.adoc">About SAML</a>
+    <a class="nav-link" href="about-SAML-integrations.html">About SAML</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="configure-SAML-with-tscli.html">Configure SAML</a>
@@ -1518,10 +1518,10 @@
     <span class="nav-text">GCP</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:configuration-options-gcp.adoc">Configuration options</a>
+    <a class="nav-link" href="configuration-options-gcp.html">Configuration options</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:launch-an-instance-gcp.adoc">Set up ThoughtSpot in GCP</a>
+    <a class="nav-link" href="launch-an-instance-gcp.html">Set up ThoughtSpot in GCP</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="installing-gcp.html">Configure ThoughtSpot nodes in GCP</a>
@@ -1922,7 +1922,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>ThoughtSpot version 6.0.4 is now available.
+<p>ThoughtSpot version 6.0.5 is now available.
 These release notes include information about new and enhanced features.</p>
 </div>
 <div class="paragraph">
@@ -1930,6 +1930,9 @@ These release notes include information about new and enhanced features.</p>
 </div>
 <div class="ulist">
 <ul>
+<li>
+<p><a href="#6-0-5-new">6.0.5 New Features</a></p>
+</li>
 <li>
 <p><a href="#6-0-4-new">6.0.4 New Features</a></p>
 </li>
@@ -1950,13 +1953,95 @@ These release notes include information about new and enhanced features.</p>
 </div>
 </div>
 <div class="sect1">
+<h2 id="6-0-5-new"><a class="anchor" href="#6-0-5-new"></a>6.0.5 New Features and Functionality</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_set_a_relay_host_for_smtp"><a class="anchor" href="#_set_a_relay_host_for_smtp"></a>Set a relay host for SMTP</h3>
+<div class="paragraph">
+<p>You can now specify a custom port to connect to the SMTP relay host. If you do not specify a port, the system uses the default recommended port, port 25. Use a custom port if port 25 is blocked in your environment.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="set-up-relay-host.html" class="page">Set the relay host for SMTP</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_red_hat_enterprise_linux_rhel"><a class="anchor" href="#_red_hat_enterprise_linux_rhel"></a>Red Hat Enterprise Linux (RHEL)</h3>
+<div class="paragraph">
+<p>Starting with the 6.0.5 release, ThoughtSpot runs with RHEL 7.7 or RHEL 7.8. See <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/7.8_release_notes/index" target="_blank" rel="noopener">RHEL 7.8 Release notes</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_disable_items_in_embedded_thoughtspot"><a class="anchor" href="#_disable_items_in_embedded_thoughtspot"></a>Disable items in embedded ThoughtSpot</h3>
+<div class="paragraph">
+<p>You can now disable any of the following items when ThoughtSpot is embedded:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Share</p>
+</li>
+<li>
+<p>Copy a link</p>
+</li>
+<li>
+<p>Send feedback</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Contact ThoughtSpot support to enable this feature.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_embrace_advanced_configuration"><a class="anchor" href="#_embrace_advanced_configuration"></a>Embrace advanced configuration</h3>
+<div class="paragraph">
+<p>In this release, on the connection details page, you can provide additional key-value pairs that you need to set up the connection to your external data source. Any key-value pairs that you enter must be defined in the external data source. Key-value pairs are case-sensitive.</p>
+</div>
+<div class="paragraph">
+<p>Some examples of key-value pairs for Snowflake, include the following:</p>
+</div>
+<div class="paragraph">
+<p>Setting up a proxy connection:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/snowflake-adv-config-1.png" alt="snowflake adv config 1">
+</div>
+</div>
+<div class="paragraph">
+<p>Applying a filter on the schema:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/snowflake-adv-config-2.png" alt="snowflake adv config 2">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_set_limits_on_the_number_of_rows_that_thoughtspot_loads"><a class="anchor" href="#_set_limits_on_the_number_of_rows_that_thoughtspot_loads"></a>Set limits on the number of rows that ThoughtSpot loads</h3>
+<div class="paragraph">
+<p>In this release, you can now set a limit on the number of rows ThoughtSpot loads initially for visualizations. This can reduce the load time of visualizations that have many rows, and tend to load slowly.</p>
+</div>
+<div class="paragraph">
+<p>Contact ThoughtSpot support to enable this feature.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_openldap_authentication"><a class="anchor" href="#_openldap_authentication"></a>OpenLDAP authentication</h3>
+<div class="paragraph">
+<p>ThoughtSpot now integrates with OpenLDAP for user authentication. LDAP provides security and makes user management more centralized. To enable user authentication through OpenLDAP, <a href="contact.html" class="page">contact ThoughtSpot Support</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="6-0-4-new"><a class="anchor" href="#6-0-4-new"></a>6.0.4 New Features and Functionality</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>For a complete list of issues that we fixed in this release, see <a href="fixed.html#6-0-4" class="page">6.0.4 Fixed issues</a>.</p>
 </div>
 <div class="sect2">
-<h3 id="_red_hat_enterprise_linux_rhel"><a class="anchor" href="#_red_hat_enterprise_linux_rhel"></a>Red Hat Enterprise Linux (RHEL)</h3>
+<h3 id="_red_hat_enterprise_linux_rhel_2"><a class="anchor" href="#_red_hat_enterprise_linux_rhel_2"></a>Red Hat Enterprise Linux (RHEL)</h3>
 <div class="paragraph">
 <p>This release of ThoughtSpot introduces deployment support for <a href="https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux" target="_blank" rel="noopener">RHEL 7.7</a>.
 This decouples the OS and application files we shipped together in previous releases, and gives you the flexibility to run ThoughtSpot on an RHEL 7.7 image that your organization manages internally.
@@ -2126,11 +2211,11 @@ For more information, see <a href="change-the-chart.html" class="page">Changing 
 <div class="ulist">
 <ul>
 <li>
-<p><strong>link:{{ site.baseurl }}/end-user/search/drag-and-drop.html[Add drag-and-drop chips]</strong> automatically when adding new elements in search bar.
+<p><strong><a href="drag-and-drop.html" class="page">Add drag-and-drop chips</a></strong> automatically when adding new elements in search bar.
 These appear on the chart as "Not visualized", and you can move them into the axis area to visualize.</p>
 </li>
 <li>
-<p><strong>link:{{ site.baseurl}}/end-user/search/show-data-labels.html#labels-one[Improve number formatting]</strong> for data labels on the chart marks (bars, bubbles, lines), and on the axes.
+<p><strong><a href="show-data-labels.html#labels-one" class="page">Improve number formatting</a></strong> for data labels on the chart marks (bars, bubbles, lines), and on the axes.
 Can use numbers, percentages, currencies, and specified units, "as is" (auto mode), or change to millions, trillions, and billions (K, M, B).
 Can easily specify the number of decimal places.</p>
 </li>
@@ -2138,16 +2223,16 @@ Can easily specify the number of decimal places.</p>
 <p><strong>Independent control of each measure</strong> in a chart helps you reduce noise by applying labels only where you need it.</p>
 </li>
 <li>
-<p><strong>link:{{ site.baseurl }}/complex-search/change-the-view.html#change-the-date-bucketing-grouping[Simple time bucketing]</strong> lets you change granularity of time series.</p>
+<p><strong><a href="change-the-view.html#change-the-date-bucketing-grouping" class="page">Simple time bucketing</a></strong> lets you change granularity of time series.</p>
 </li>
 <li>
-<p><strong>link:{{ site.baseurl }}/end-user/search/change-chart-colors.html[Intuitive color configuration]</strong> enables you to quickly change color on the element or in the legend.</p>
+<p><strong><a href="change-chart-colors.html" class="page">Intuitive color configuration</a></strong> enables you to quickly change color on the element or in the legend.</p>
 </li>
 <li>
-<p><strong>link:{{ site.baseurl }}/end-user/search/column-renaming.html[Column renaming]</strong> for pivot tables and regular chart tables</p>
+<p><strong><a href="column-renaming.html" class="page">Column renaming</a></strong> for pivot tables and regular chart tables</p>
 </li>
 <li>
-<p><strong>link:{{ site.baseurl }}/end-user/search/about-tables.html#clip-wrap-text[Wrapping and clipping]</strong> of text in a table.</p>
+<p><strong><a href="about-tables.html#clip-wrap-text" class="page">Wrapping and clipping</a></strong> of text in a table.</p>
 </li>
 </ul>
 </div>

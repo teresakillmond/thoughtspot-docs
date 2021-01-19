@@ -1234,7 +1234,7 @@
     <span class="nav-text">SAML</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:about-SAML-integrations.adoc">About SAML</a>
+    <a class="nav-link" href="about-SAML-integrations.html">About SAML</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="configure-SAML-with-tscli.html">Configure SAML</a>
@@ -1518,10 +1518,10 @@
     <span class="nav-text">GCP</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:configuration-options-gcp.adoc">Configuration options</a>
+    <a class="nav-link" href="configuration-options-gcp.html">Configuration options</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:launch-an-instance-gcp.adoc">Set up ThoughtSpot in GCP</a>
+    <a class="nav-link" href="launch-an-instance-gcp.html">Set up ThoughtSpot in GCP</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="installing-gcp.html">Configure ThoughtSpot nodes in GCP</a>
@@ -2004,8 +2004,10 @@ Here is a picture of the back of each appliance.</p>
 <p>Connect to switches <strong>only</strong> the appliances (4 nodes each) that you plan to use in the cluster.</p>
 </li>
 <li>
-<p>You must power off, or disconnect from the switch, all other appliances or nodes.
-+ This prevents accidental configuration of incorrect nodes.</p>
+<p>You must power off, or disconnect from the switch, all other appliances or nodes.</p>
+<div class="paragraph">
+<p>This prevents accidental configuration of incorrect nodes.</p>
+</div>
 </li>
 <li>
 <p>Connect all the nodes that you plan to use in your cluster to a 10G switch.</p>
@@ -2018,8 +2020,11 @@ Here is a picture of the back of each appliance.</p>
 <h2 id="appliance-step-2"><a class="anchor" href="#appliance-step-2"></a>Step 2: Connect IPMI ports</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Connect the IPMI port of each node to the management switch.
-+ See <a href="#haswell-port-location">Haswell port location</a> and <a href="#skylake-port-location">Skylake port location</a>.</p>
+<p>Connect the IPMI port of each node to the management switch.</p>
+</div>
+<div class="paragraph">
+<p>+
+See <a href="#haswell-port-location">Haswell port location</a> and <a href="#skylake-port-location">Skylake port location</a>.</p>
 </div>
 </div>
 </div>
@@ -2063,8 +2068,11 @@ There should be a steady green light for the 100MB/s or 1Gb/s management NIC con
 <p>+</p>
 </div>
 <div class="paragraph">
-<p>After the LEDs are the correct colors, verify that the connection is valid and the nodes are on by pinging the gateway: + Enter <code>ping &lt;default-gateway-IP&gt;</code>.
-+ Ask your network administrator for your default gateway IP if you have not already listed it in your ThoughtSpot <a href="#site-survey.pdf">site survey</a>.</p>
+<p>After the LEDs are the correct colors, verify that the connection is valid and the nodes are on by pinging the gateway: + Enter <code>ping &lt;default-gateway-IP&gt;</code>.</p>
+</div>
+<div class="paragraph">
+<p>+
+Ask your network administrator for your default gateway IP if you have not already listed it in your ThoughtSpot <a href="#site-survey.pdf">site survey</a>.</p>
 </div>
 <div class="listingblock">
 <div class="content">

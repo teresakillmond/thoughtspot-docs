@@ -1234,7 +1234,7 @@
     <span class="nav-text">SAML</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:about-SAML-integrations.adoc">About SAML</a>
+    <a class="nav-link" href="about-SAML-integrations.html">About SAML</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="configure-SAML-with-tscli.html">Configure SAML</a>
@@ -1518,10 +1518,10 @@
     <span class="nav-text">GCP</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:configuration-options-gcp.adoc">Configuration options</a>
+    <a class="nav-link" href="configuration-options-gcp.html">Configuration options</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:launch-an-instance-gcp.adoc">Set up ThoughtSpot in GCP</a>
+    <a class="nav-link" href="launch-an-instance-gcp.html">Set up ThoughtSpot in GCP</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="installing-gcp.html">Configure ThoughtSpot nodes in GCP</a>
@@ -2157,13 +2157,11 @@ For this use case, follow these same steps to create the additional, larger capa
 <col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Setting</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Setting</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value</p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Network mappings</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Select the correct network for your installation.</p></td>
@@ -2179,24 +2177,33 @@ For this use case, follow these same steps to create the additional, larger capa
 </tbody>
 </table>
 <div class="paragraph">
-<p>+
-You should see something similar to the following:</p>
+<p>You should see something similar to the following:</p>
 </div>
-<div class="paragraph">
-<p>+
-image::vmware-adddisk2-1TB.png[]
-. Save your changes.
-. Repeat steps 1-5 to create more hard disks.
-. Power on the VM
-. After the VM is online, run the following command to prepare the HDFS disks:</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/vmware-adddisk2-1TB.png" alt="vmware adddisk2 1TB">
 </div>
-<div class="paragraph">
-<p>+</p>
 </div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Save your changes.</p>
+</li>
+<li>
+<p>Repeat steps 1-5 to create more hard disks.</p>
+</li>
+<li>
+<p>Power on the VM</p>
+</li>
+<li>
+<p>After the VM is online, run the following command to prepare the HDFS disks:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console"> $ sudo /usr/local/scaligent/bin/prepare_disks.sh</code></pre>
 </div>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -2236,10 +2243,7 @@ As a prerequisite:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>See other training resources at</p>
-</div>
-<div class="paragraph">
-<p>+
+<p>See other training resources at
 <a href="https://training.thoughtspot.com/">ThoughtSpot U</a></p>
 </div>
 </div>

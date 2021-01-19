@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>["Configure trusted authentication"] | ThoughtSpot Software</title>
+    <title>Configure trusted authentication | ThoughtSpot Software</title>
 <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -1234,7 +1234,7 @@
     <span class="nav-text">SAML</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:about-SAML-integrations.adoc">About SAML</a>
+    <a class="nav-link" href="about-SAML-integrations.html">About SAML</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="configure-SAML-with-tscli.html">Configure SAML</a>
@@ -1518,10 +1518,10 @@
     <span class="nav-text">GCP</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:configuration-options-gcp.adoc">Configuration options</a>
+    <a class="nav-link" href="configuration-options-gcp.html">Configuration options</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:launch-an-instance-gcp.adoc">Set up ThoughtSpot in GCP</a>
+    <a class="nav-link" href="launch-an-instance-gcp.html">Set up ThoughtSpot in GCP</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="installing-gcp.html">Configure ThoughtSpot nodes in GCP</a>
@@ -1919,7 +1919,7 @@
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">["Configure trusted authentication"]</h1>
+<h1 class="page">Configure trusted authentication</h1>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
@@ -1930,6 +1930,9 @@
 </div>
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph">
+<p>Learn how to configure trusted authentication.</p>
+</div>
 <div class="paragraph">
 <p>If your organization has a trusted authentication server, you can use this server to authenticate users of the embedded ThoughtSpot application.
 After authenticating a user, the trusted authenticator server or service obtains an authentication token from ThoughtSpot on the user&#8217;s behalf.
@@ -1945,7 +1948,7 @@ In this way, the user need only authenticate one time, with the trusted authenti
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/{{%20site.baseurl%20}}/images/authentication.png" alt="authentication">
+<img src="_images/authentication.png" alt="authentication">
 </div>
 </div>
 <div class="paragraph">
@@ -2088,7 +2091,7 @@ Tokens expire in XXX minutes/hours/day.</p>
 <p><code>GET <a href="https://&lt;instance&gt;/callosum/v1/session/login/token?username=&lt;user&gt;&amp;auth_token=&lt;token&gt;&amp;redirect_url=&lt;full-encoded-url-with-auth-token&gt" class="bare">https://&lt;instance&gt;/callosum/v1/session/login/token?username=&lt;user&gt;&amp;auth_token=&lt;token&gt;&amp;redirect_url=&lt;full-encoded-url-with-auth-token&gt</a>;</code></p>
 </div>
 <div class="paragraph">
-<p>If you are using ThoughtSpot embed with objects or pages, you must request  reauthenticate requests for each new object.</p>
+<p>If you are using ThoughtSpot embed with objects or pages, you must request reauthenticate requests for each new object.</p>
 </div>
 </li>
 </ol>

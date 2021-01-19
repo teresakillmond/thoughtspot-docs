@@ -1234,7 +1234,7 @@
     <span class="nav-text">SAML</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:about-SAML-integrations.adoc">About SAML</a>
+    <a class="nav-link" href="about-SAML-integrations.html">About SAML</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="configure-SAML-with-tscli.html">Configure SAML</a>
@@ -1518,10 +1518,10 @@
     <span class="nav-text">GCP</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:configuration-options-gcp.adoc">Configuration options</a>
+    <a class="nav-link" href="configuration-options-gcp.html">Configuration options</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:launch-an-instance-gcp.adoc">Set up ThoughtSpot in GCP</a>
+    <a class="nav-link" href="launch-an-instance-gcp.html">Set up ThoughtSpot in GCP</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="installing-gcp.html">Configure ThoughtSpot nodes in GCP</a>
@@ -2004,8 +2004,10 @@ You can use another secure copy method, if you prefer a method other than the <c
 </div>
 </li>
 <li>
-<p>Alternatively, use <code>tscli fileserver download-release</code> to download the release bundle.
-+ You must <a href="tscli-command-ref.html#tscli-fileserver" class="page">configure the fileserver</a> by running <code>tscli fileserver configure</code> before you can download the release.</p>
+<p>Alternatively, use <code>tscli fileserver download-release</code> to download the release bundle.</p>
+<div class="paragraph">
+<p>You must <a href="tscli-command-ref.html#tscli-fileserver" class="page">configure the fileserver</a> by running <code>tscli fileserver configure</code> before you can download the release.</p>
+</div>
 </li>
 </ol>
 </div>
@@ -2032,8 +2034,10 @@ For example, <code>/export/sdb1/TS_TASKS/install/6.0.tar.gz</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Verify the checksum to ensure you have the correct release.
-+ Run <code>md5sum -c &lt;release-number&gt;.tar.gz.MD5checksum</code>.</p>
+<p>Verify the checksum to ensure you have the correct release.</p>
+<div class="paragraph">
+<p>Run <code>md5sum -c &lt;release-number&gt;.tar.gz.MD5checksum</code>.</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre> $ md5sum -c &lt;release-number&gt;.tar.gz.MD5checksum</pre>
@@ -2053,8 +2057,10 @@ Use screen to ensure that your installation does not stop if you lose network co
 </div>
 </li>
 <li>
-<p>Create the cluster.
-+ Run <code>tscli cluster create &lt;release-number&gt;</code>.</p>
+<p>Create the cluster.</p>
+<div class="paragraph">
+<p>Run <code>tscli cluster create &lt;release-number&gt;</code>.</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre> $ tscli cluster create &lt;release-number&gt;.tar.gz</pre>
@@ -2181,9 +2187,18 @@ Connecting to hosts...
 <p>Your output may look something like the above.
 Ensure that all diagnostics show <code>SUCCESS</code>.</p>
 </div>
-<div class="paragraph">
-<p>{% include warning.adoc content="If <code>tscli cluster check</code> returns an error, it may suggest you run <code>tscli storage gc</code> to resolve the issue.
-If you run <code>tscli storage gc</code>, note that it restarts your cluster." %}</p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+If <code>tscli cluster check</code> returns an error, it may suggest you run <code>tscli storage gc</code> to resolve the issue.
+If you run <code>tscli storage gc</code>, note that it restarts your cluster.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -2191,8 +2206,11 @@ If you run <code>tscli storage gc</code>, note that it restarts your cluster." %
 <h2 id="install-step-3"><a class="anchor" href="#install-step-3"></a>Step 3. Finalize Installation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>After the cluster status changes to &#8220;Ready,&#8221; sign in to the ThoughtSpot application on your browser.
-+ Follow these steps:</p>
+<p>After the cluster status changes to &#8220;Ready,&#8221; sign in to the ThoughtSpot application on your browser.</p>
+</div>
+<div class="paragraph">
+<p>+
+Follow these steps:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2224,7 +2242,7 @@ If you run <code>tscli storage gc</code>, note that it restarts your cluster." %
 <p>The ThoughtSpot sign-in page appears.</p>
 </li>
 <li>
-<p>In the link:{{ site.baseurl }}/appliance/hardware/smc-cluster-install.adoc#ts-login[ThoughtSpot sign-in window], enter admin credentials, and click <strong>Sign in</strong>.
+<p>In the <a href="#ts-login">ThoughtSpot sign-in window</a>, enter admin credentials, and click <strong>Sign in</strong>.
 If you do not know the admin credentials, ask your network administrator.
 ThoughtSpot recommends changing the default admin password.</p>
 </li>
