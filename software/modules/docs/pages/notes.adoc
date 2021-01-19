@@ -1,17 +1,65 @@
 = 6.0 Release Notes
-:last_updated: 04/09/2020
+:last_updated: 01/19/2021
 :linkattrs:
 
-ThoughtSpot version 6.0.4 is now available.
+ThoughtSpot version 6.0.5 is now available.
 These release notes include information about new and enhanced features.
 
 For a complete list of issues that we fixed in this release, see xref:fixed.adoc[Fixed issues]
 
+* <<6-0-5-new,6.0.5 New Features>>
 * <<6-0-4-new,6.0.4 New Features>>
 * <<6-0-2-new,6.0.2 New Features>>
 * <<6-new,6.0 New Features>>
 * <<beta-program,Beta Programs>>
 * <<upgrade-paths,Supported Upgrade Paths>>
+
+[#6-0-5-new]
+== 6.0.5 New Features and Functionality
+
+=== Set a relay host for SMTP
+
+You can now specify a custom port to connect to the SMTP relay host. If you do not specify a port, the system uses the default recommended port, port 25. Use a custom port if port 25 is blocked in your environment.
+
+See xref:set-up-relay-host.adoc[Set the relay host for SMTP].
+
+=== Red Hat Enterprise Linux (RHEL)
+
+Starting with the 6.0.5 release, ThoughtSpot runs with RHEL 7.7 or RHEL 7.8. See https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/7.8_release_notes/index[RHEL 7.8 Release notes,window=_blank].
+
+=== Disable items in embedded ThoughtSpot
+
+You can now disable any of the following items when ThoughtSpot is embedded:
+
+- Share
+- Copy a link
+- Send feedback
+
+Contact ThoughtSpot support to enable this feature.
+
+=== Embrace advanced configuration
+
+In this release, on the connection details page, you can provide additional key-value pairs that you need to set up the connection to your external data source. Any key-value pairs that you enter must be defined in the external data source. Key-value pairs are case-sensitive.
+
+Some examples of key-value pairs for Snowflake, include the following:
+
+Setting up a proxy connection:
+
+image::snowflake-adv-config-1.png[]
+
+Applying a filter on the schema:
+
+image::snowflake-adv-config-2.png[]
+
+=== Set limits on the number of rows that ThoughtSpot loads
+
+In this release, you can now set a limit on the number of rows ThoughtSpot loads initially for visualizations. This can reduce the load time of visualizations that have many rows, and tend to load slowly.
+
+Contact ThoughtSpot support to enable this feature.
+
+=== OpenLDAP authentication
+
+ThoughtSpot now integrates with OpenLDAP for user authentication. LDAP provides security and makes user management more centralized. To enable user authentication through OpenLDAP, xref:contact.adoc[contact ThoughtSpot Support].
 
 [#6-0-4-new]
 == 6.0.4 New Features and Functionality
