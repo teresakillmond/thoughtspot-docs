@@ -1927,6 +1927,9 @@
 <div class="ulist">
 <ul>
 <li>
+<p><a href="#6-0-5">6.0.5 Fixed issues</a></p>
+</li>
+<li>
 <p><a href="#6-0-4">6.0.4 Fixed issues</a></p>
 </li>
 <li>
@@ -2008,13 +2011,61 @@
 <p><details><summary>4.X Releases</summary></p>
 </li>
 <li>
-<p><a href="4-5-1">4.5.1 Fixed issues</a></p>
+<p><a href="#4-5-1">4.5.1 Fixed issues</a></p>
 </li>
 <li>
-<p><a href="4-5">4.5 Fixed issues</a></p>
+<p><a href="#4-5">4.5 Fixed issues</a></p>
 </li>
 <li>
-<p>link:4-4<span class="4.4 Fixed issues"></details></span></p>
+<p>xref:4-4<span class="4.4 Fixed issues"></details></span></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a id="6-0-5"></a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_6_0_5_fixed_issues"><a class="anchor" href="#_6_0_5_fixed_issues"></a>6.0.5 Fixed issues</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>These are the issues we fixed in ThoughtSpot Release 6.0.5.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When <strong>Copy link</strong> has been disabled, it still appears in the More menu <span class="image"><img src="_images/icon-ellipses.png" alt="icon ellipses"></span> of pinboards.</p>
+</li>
+<li>
+<p>The management console is not accessible.</p>
+</li>
+<li>
+<p>A pinboard with an advanced formula can be viewed by an administrator, but not by a regular user they share it with.</p>
+</li>
+<li>
+<p>A cluster that is using a customer logo, still shows the ThoughtSpot logo on downloaded PDFs.</p>
+</li>
+<li>
+<p>Filter values overlap and are unreadable in the filter picker.</p>
+</li>
+<li>
+<p>Attempting to sign in using SSO causes a 500 Internal Server Error.</p>
+</li>
+<li>
+<p>Clusters with many scheduled pinboards cause the Falcon database to be slower than normal.</p>
+</li>
+<li>
+<p>Dates in PDFs are only displayed in the United States date format.</p>
+</li>
+<li>
+<p>The Google Chrome 80 browser is not supported, because cookies for pages in a ThoughtSpot cluster do not have the SameSite attribute, which is required for that browser.</p>
+</li>
+<li>
+<p>The <strong>group aggregate</strong> function does not work after upgrade to release 5.3.1.</p>
+</li>
+<li>
+<p>A user who edits a worksheet is not able to save their changes.</p>
 </li>
 </ul>
 </div>
@@ -2408,10 +2459,14 @@ Actual search results are not affected by this issue.</p>
 </li>
 <li>
 <p>A problem where the Informatica ODBC cannot connect to ThoughtSpot is now fixed.</p>
-<div class="paragraph">
-<p>=== Answers</p>
-</div>
 </li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_answers"><a class="anchor" href="#_answers"></a>Answers</h3>
+<div class="ulist">
+<ul>
 <li>
 <p>A problem where a saved answer cannot be opened when it uses an aggregate function is now fixed.</p>
 </li>
@@ -2641,13 +2696,9 @@ This problem is now fixed.</p>
 <li>
 <p>A normal bar chart in a pinboard which is changed to a stacked bar chart no longer reverts to the normal bar chart after the pinboard is saved, browser is closed, and pinboard is reopened.</p>
 </li>
-</ul>
-</div>
-<div class="paragraph">
-<p>vA problem where using the exclude filter on pinboards causes the wrong results to be displayed is now fixed.</p>
-</div>
-<div class="ulist">
-<ul>
+<li>
+<p>A problem where using the exclude filter on pinboards causes the wrong results to be displayed is now fixed.</p>
+</li>
 <li>
 <p>Usage-based indexing of search has been improved.</p>
 </li>
