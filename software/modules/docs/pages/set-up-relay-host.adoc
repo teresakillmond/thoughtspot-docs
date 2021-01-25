@@ -15,7 +15,7 @@ To set up a relay host:
 . Log in to the Linux shell using SSH.
 . Issue the setup command, providing the IP address of the relay host:
 +
-On ThoughtSpot release 6.1.1 and later, or on release 6.0.5, you can specify a custom port to connect to the relay host.
+Starting with ThoughtSpot release 6.0.5, you can specify a custom port to connect to the relay host.
 If you do not specify a port, the system uses the default recommended port, port 25.
 Use a custom port if port 25 is blocked in your environment.
 +
@@ -31,7 +31,7 @@ To use a custom port instead of port 25, run the setup command, specifying the p
  $ tscli smtp set-relayhost <IP_address>:<custom_port>
 ----
 +
-If you are on 6.1 rather than 6.1.1, or an earlier version than 6.0.5, xref:contact.adoc[contact ThoughtSpot Support] to use a custom port.
+If you are on an earlier version than 6.0.5, xref:contact.adoc[contact ThoughtSpot Support] to use a custom port.
 
 . Verify your settings:
 +
@@ -67,3 +67,11 @@ Check if the email settings are working properly by using this procedure.
  $ echo | mail -s Hello <your_email>
 
 . If you receive the email at the address(es) you supplied, email is working correctly.
+
+== Additional Resources
+
+As you develop your expertise in emails and alerts, we recommend the following ThoughtSpot U course:
+
+- https://training.thoughtspot.com/emails-alerts[Email and Alert Setup]
+
+See other training resources at https://training.thoughtspot.com[ThoughtSpot U].
