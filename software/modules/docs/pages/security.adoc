@@ -1,13 +1,12 @@
 = Data and object security
 :last_updated: 11/15/2019
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: ThoughtSpot provides many features for protecting data.
+
+ThoughtSpot provides many features for protecting data.
 
 == Object Security
 
 Object security controls what content users see within ThoughtSpot.
-Objects are tables, columns in tables, worksheets, pinboards, and saved answers.
+Objects are tables, columns in tables, Worksheets, Pinboards, and saved Answers.
 
 Users gain access to objects when an object owner shares access with them.
 Owners can share with individual users or with entire groups, giving access to everyone within that group.
@@ -18,23 +17,23 @@ This has implications on setting up privileges, and on applying row-level securi
 === Permissive Security Mode
 
 The default Permissive Security mode of ThoughtSpot means that when someone shares an object with you, you can see all the data it uses, regardless of explicit permissions to the parent object data.
-You can see a shared pinboard without having access to its underlying worksheet or table.
+You can see a shared Pinboard without having access to its underlying Worksheet or table.
 
 === Advanced Security Mode
 
 ThoughtSpot's Advanced Security mode is opposite of the default permissive mode.
 Unless the user has explicit permissions to the entire stack of parent objects, they cannot see the data in the child object.
-For example, in a shared pinboard, you can see data only if you have explicit permissions to the relevant columns of the parent worksheet.
-Similarly, you can only see the data in a worksheet to which you have access if you have explicit permissions to its parent table object.
+For example, in a shared Pinboard, you can see data only if you have explicit permissions to the relevant columns of the parent Worksheet.
+Similarly, you can only see the data in a Worksheet to which you have access if you have explicit permissions to its parent table object.
 
 Work with your ThoughtSpot support team to enable the Advanced Security Mode on the relevant clusters.
 
 == Row level security (RLS)
 
 Row level security controls what data a user can see in each shared piece of content.
-Even if a user has access to a worksheet, they can only see rows from the tables they have permission to see.
+Even if a user has access to a Worksheet, they can only see rows from the tables they have permission to see.
 
-RLS applies at the table level, so it automatically extends to all worksheets, saved answers, and pinboards based on that table, every time.
+RLS applies at the table level, so it automatically extends to all Worksheets, saved Answers, and Pinboards based on that table, every time.
 Also, in queries where there are tables with table filters, all joins are always enforced to avoid accidentally allowing users access to data they shouldn't see.
 
 RLS requires three things:
