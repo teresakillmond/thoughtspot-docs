@@ -10,7 +10,7 @@ Make sure you can connect to ThoughtSpot remotely.
 If you can, you can run the installer on your local computer.
 
 Refer to your welcome letter from ThoughtSpot to find the link to download the release bundle.
-If you do not have a link to download the release bundle, open a support ticket at xref:contact.html[ThoughtSpot Support] to access the release bundle.
+If you do not have a link to download the release bundle, open a support ticket at xref:contact.adoc[ThoughtSpot Support] to access the release bundle.
 
 Follow the steps in this checklist to install your cluster.
 
@@ -29,7 +29,8 @@ Follow the steps in this checklist to install your cluster.
 [#install-step-1]
 == Step 1: Run the installer
 
-. Copy the downloaded release bundle to `/export/sdb1/TS_TASKS/install`: +   Run `scp <release-number> admin@<hostname>:/export/sdb1/TS_TASKS/install/<file-name>`.
+. Copy the downloaded release bundle to `/export/sdb1/TS_TASKS/install`: +
+Run `scp <release-number> admin@<hostname>:/export/sdb1/TS_TASKS/install/<file-name>`.
 Note the following parameters:
  ** `release-number` is the release number of your ThoughtSpot installation, such as `6.0`, `5.3`, `5.3.1`, and so on.
  ** `hostname` is your network hostname.
@@ -41,13 +42,14 @@ Ask your network administrator if you do not know your hostname.
 +
 NOTE: You can use another secure copy method, if you prefer a method other than the `scp` command.
 . Alternatively, use `tscli fileserver download-release` to download the release bundle.
-+ You must xref:tscli-command-ref.html#tscli-fileserver[configure the fileserver] by running `tscli fileserver configure` before you can download the release.
++
+You must xref:tscli-command-ref.adoc#tscli-fileserver[configure the fileserver] by running `tscli fileserver configure` before you can download the release.
 +
 +
 ----
  $ tscli fileserver download-release <release-number> --user <username> --out <release-location>
 ----
-+
+
 Note the following parameters:
 
  ** `release-number` is the release number of your ThoughtSpot instance, such as 5.3, 5.3.1, 6.0, and so on.
@@ -78,7 +80,7 @@ Use screen to ensure that your installation does not stop if you lose network co
 ----
 
 . Edit the output using your specific cluster information.
-For more information on this process, refer to xref:cluster-create.html[Using the tscli cluster create command] and xref:parameters-cluster-create.html[Parameters of the `cluster create` command].
+For more information on this process, refer to xref:cluster-create.adoc[Using the tscli cluster create command] and xref:parameters-cluster-create.adoc[Parameters of the `cluster create` command].
 
 The cluster installer automatically reboots all the nodes after the install.
 Wait at least 15 minutes for the installation process to complete.
@@ -202,7 +204,7 @@ After the cluster status changes to `READY`, sign in to the ThoughtSpot applicat
  ** Click *Advanced*
  ** Click *Proceed*
 . The ThoughtSpot login page appears.
-. In the xref:install-cluster-dell.html#ts-login[ThoughtSpot sign-in window], enter admin credentials, and click *Sign in*.
+. In the xref:install-cluster-dell.adoc#ts-login[ThoughtSpot sign-in window], enter admin credentials, and click *Sign in*.
 ThoughtSpot recommends changing the default admin password.
 
 image:ts-login-page.png[ThoughtSpot's sign-in window]
@@ -210,8 +212,8 @@ image:ts-login-page.png[ThoughtSpot's sign-in window]
 
 == Lean configuration
 
-*(For use with thin provisioning only)* If you have a xref:cloud.html#use-small-and-medium-instance-types-when-applicable[small or medium instance type], with less than 100GB of data, advanced lean configuration is required before loading any data into ThoughtSpot.
-After installing the cluster, contact xref:contact.html[ThoughtSpot Support] for assistance with this configuration.
+*(For use with thin provisioning only)* If you have a xref:cloud.adoc#use-small-and-medium-instance-types-when-applicable[small or medium instance type], with less than 100GB of data, advanced lean configuration is required before loading any data into ThoughtSpot.
+After installing the cluster, contact xref:contact.adoc[ThoughtSpot Support] for assistance with this configuration.
 
 include::partial$install-cluster-error-recovery.adoc[]
 
@@ -222,5 +224,4 @@ As you develop your expertise in Dell cluster installation, we recommend the fol
 * https://training.thoughtspot.com/create-upgrade-patch-a-thoughtspot-cluster/430642[Create a Cluster,window=_blank]
 
 See other training resources at
-+
 https://training.thoughtspot.com/[ThoughtSpot U]

@@ -2,6 +2,7 @@
 
 These are the issues we fixed in recent ThoughtSpot Releases.
 
+* <<6-0-5,6.0.5 Fixed issues>>
 * <<6-0-4,6.0.4 Fixed issues>>
 * <<6-0-3,6.0.3 Fixed issue>>
 * <<6-0-2,6.0.2 Fixed issues>>
@@ -34,9 +35,37 @@ These are the issues we fixed in recent ThoughtSpot Releases.
 * <<5-0,5.0 Fixed issues>>+++</details>+++
 * {blank}+++<details>++++++<summary>+++4.X Releases+++</summary>+++
 
-* link:4-5-1[4.5.1 Fixed issues]
-* link:4-5[4.5 Fixed issues]
-* link:4-4[4.4 Fixed issues]+++</details>+++
+* xref:4-5-1[4.5.1 Fixed issues]
+* xref:4-5[4.5 Fixed issues]
+* xref:4-4[4.4 Fixed issues]+++</details>+++
+
++++<a id="6-0-5">++++++</a>+++
+
+== 6.0.5 Fixed issues
+
+These are the issues we fixed in ThoughtSpot Release 6.0.5.
+
+- When *Copy link* has been disabled, it still appears in the *More* menu image:icon-more-10px.png[] of pinboards.
+
+- The management console is not accessible.
+
+- A pinboard with an advanced formula can be viewed by an administrator, but not by a regular user they share it with.
+
+- A cluster that is using a customer logo, still shows the ThoughtSpot logo on downloaded PDFs.
+
+- Filter values overlap and are unreadable in the filter picker.
+
+- Attempting to sign in using SSO causes a 500 Internal Server Error.
+
+- Clusters with many scheduled pinboards cause the Falcon database to be slower than normal.
+
+- Dates in PDFs are only displayed in the United States date format.
+
+- The Google Chrome 80 browser is not supported, because cookies for pages in a ThoughtSpot cluster do not have the SameSite attribute, which is required for that browser.
+
+- The *group aggregate* function does not work after upgrade to release 5.3.1.
+
+- A user who edits a worksheet is not able to save their changes.
 
 +++<a id="6-0-4">++++++</a>+++
 
@@ -194,7 +223,7 @@ These are the issues we fixed in ThoughtSpot Release 5.3.
 
 * An issue where running the `tscli cluster` command causes a failed security check is now fixed.
 * A problem where the Informatica ODBC cannot connect to ThoughtSpot is now fixed.
-+
+
 
 === Answers
 
@@ -285,7 +314,7 @@ These are the issues we fixed in ThoughtSpot Release 5.1.3.
 * Occasional slow navigation between the Answer and Pinboard pages has been fixed.
 * A normal bar chart in a pinboard which is changed to a stacked bar chart no longer reverts to the normal bar chart after the pinboard is saved, browser is closed, and pinboard is reopened.
 
-vA problem where using the exclude filter on pinboards causes the wrong results to be displayed is now fixed.
+* A problem where using the exclude filter on pinboards causes the wrong results to be displayed is now fixed.
 
 * Usage-based indexing of search has been improved.
 * A problem where the `tscli ssl rm-cert` command was used to remove a cert, but did not revert it back to the default cert is now fixed.

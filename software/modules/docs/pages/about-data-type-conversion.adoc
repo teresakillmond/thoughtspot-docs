@@ -1,8 +1,8 @@
-= ["Convert column data type"]
+= Convert column data type
 :last_updated: tbd
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: You can convert the data in a column from one data type to another by issuing a TQL command.
+:linkattrs:
+
+You can convert the data in a column from one data type to another by issuing a TQL command.
 
 There are some details you should be aware of when doing a data type conversion.
 
@@ -27,7 +27,7 @@ Then imagine that the sharding key column contained the text values `00100`, `01
 If this type of a column is changed from a `VARCHAR` to an `INT`, then it would be subject to the upsert behavior on primary keys.
 So, in this example, only one of the three rows would be preserved.
 
-Be aware that data type conversion will preserve the data in the underlying database table, but there is no guarantee that any objects built on top of it (worksheets or pinboards) will be preserved.
+Be aware that data type conversion will preserve the data in the underlying database table, but there is no guarantee that any objects built on top of it (Worksheets or Pinboards) will be preserved.
 This is because you might make a data type change that makes a chart built on top of the table invalid (for example a growth chart would be invalidated if the date column it depends on were changed to a varchar column).
 
 == Supported data type conversions
@@ -73,7 +73,7 @@ ALTER TABLE fruit_sales
    [parsinghint="%Y-%m-%d %H:%M:%S"]
 ----
 
-Finally, convert the column back to VARCHAR:
+Finally, convert the column back to `VARCHAR`:
 
 ----
 ALTER TABLE fruit_sales
@@ -143,7 +143,7 @@ Because of this, use caution, and check all dependent objects before and after c
 
 To change the data type of a column:
 
-. link:prep-schema-for-load.html#connect-with-tql[Connect to the database with the ThoughtSpot SQL Command Line (TQL)].
+. xref:prep-schema-for-load.adoc#connect-with-tql[Connect to the database with the ThoughtSpot SQL Command Line (TQL)].
 . Issue the command to change the data type using this syntax:
 +
 ----

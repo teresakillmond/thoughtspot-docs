@@ -57,7 +57,7 @@ This applies even if 60% of your CPU is above 1000.
 If you feel that you need more than 1000 shards for a given table, consult with your ThoughtSpot contact.
 . *The number of shards should be a multiple of the number of nodes*: To ensure equal distribution of data across all nodes, so that none of your nodes sits idle, the number of shards should be a multiple of the number of nodes.
 So, for a 12-node cluster, for example, a table could have 12, 24, 36, or 48 shards, and so on.
-. *Minimum number of shards*: Because the number of shards should be a multiple of the number of nodes, the mininum number of shards is the number of nodes.
+. *Minimum number of shards*: Because the number of shards should be a multiple of the number of nodes, the minimum number of shards is the number of nodes.
 For a 12-node cluster, you should not have fewer than 12 shards.
 +
 This requirement may be difficult to achieve on large clusters with a high number of nodes.
@@ -123,11 +123,12 @@ PARTITION BY HASH (96) KEY ("customer_id");
 ----
 
 Note the following parameters, specified above as `96` and `"customer_id"`:
-+++<dlentry>+++HASH::::
-Determines the number of shards.
-In this case, `96`.+++</dlentry>++++++<dlentry>+++KEY::::
-Specifies how to assign data into the shards (shard key).
-In this case, `customer_id`.+++</dlentry>+++
++++<dl>++++++<dlentry>++++++<dt>+++HASH+++</dt>+++
++++<dd>+++Determines the number of shards.
+In this case, `96`.+++</dd>++++++</dlentry>+++
++++<dlentry>++++++<dt>+++KEY+++</dt>+++
++++<dd>+++Specifies how to assign data into the shards (shard key).
+In this case, `customer_id`.+++</dd>++++++</dlentry>++++++</dl>+++
 
 The recommended number of shards depends on various factors.
 See <<sharding-guidelines,Table sizes and sharding recommendations>>.
@@ -262,7 +263,7 @@ Instead, use `saleid` and `productid` for more variety.
 This guideline ensures better join performance.
 For example, if you have two tables  and the primary keys are:
 +
-`PRIMARY KEY("saleid,vendorid")` on A +  `PRIMARY KEY("saleid,customerid")` on B
+`PRIMARY KEY("saleid,vendorid")` on A +++<br>+++  `PRIMARY KEY("saleid,customerid")` on B
 +
 Use `saleid` as the shard key when you shard both tables.
 

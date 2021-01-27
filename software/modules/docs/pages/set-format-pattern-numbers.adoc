@@ -16,11 +16,11 @@ The system has default values which are:
 
 [cols="10%,90%""]
 |===
-| `#,###`
+| `\#,###`
 | For integer data types `INT` and `BIGINT`.
 As you can see, these can only contain numbers, alpha characters are not permitted.
 
-| `#,###.00`
+| `\#,###.00`
 | for decimal data types `DOUBLE` and `FLOAT`.
 |===
 
@@ -30,37 +30,37 @@ These are some examples of formats you can use:
 | Stored Value | Format Pattern | Display Value
 
 | 12345.6789
-| `#,##0.##`
+| `\#,\##0.##`
 | 12,345.68
 
 | 12345.6789
-| `#,##0.###`
+| `\#,\##0.\###`
 | 12,345.679
 
 | 12345.6789
-| `#,##0.00000`
+| `\#,##0.00000`
 | 12,345.68
 
 | 12345.6789
-| `#,##0`
+| `\#,##0`
 | 12,345
 
 | 12345.6789
-| `#,##0.00`
+| `\#,##0.00`
 | 12,345.68
 
 | 12345
-| `#,##0.##`
+| `\#,\##0.##`
 | 12,345
 
 | 12345
-| `#,##0.00`
+| `\#,##0.00`
 | 12,345.00
 |===
 
 &nbsp;
 
-You can change the date format used to display a column's values xref:model-data-in-UI.adoc[for a single table] or, by editing the data model, for link:{{ site.baseurl }}/admin/data-modeling/edit-model-file.html[the entire ThoughtSpot instance].
+You can change the date format used to display a column's values xref:model-data-in-UI.adoc[for a single table] or, by editing the data model, for xref:edit-model-file.adoc[the entire ThoughtSpot instance].
 Editing the data model file requires that you have administrative privileges.
 
 . Decide if the change is for a table or the entire instance.

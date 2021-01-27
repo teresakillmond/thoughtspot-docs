@@ -1,9 +1,8 @@
-= ["Embed pinboard or visualization"]
+= Embed pinboard or visualization
 :last_updated: 11/18/2019
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Learn how to embed a visualization or pinboard in your own Web page.
 :toc: true
+
+Learn how to embed a visualization or pinboard in your own Web page.
 
 This page explains, through an example, how to embed a visualization (table or chart) or pinboard from ThoughtSpot in your own static Web page, portal, or application.
 
@@ -20,32 +19,29 @@ If the pinboard or visualization doesn't exist, create it now before continuing.
 . Open a pinboard.
 . Copy the URL for the entire pinboard and for a single visualization.
 +
-If the object is a pinboard, click the ellipses icon image:{{ site.baseurl }}/images/icon-ellipses.png[more options menu icon] >  *Copy Link*.
+If the object is a pinboard, click the *More* icon image:icon-more-10px.png[more options menu icon] >  *Copy Link*.
 +
-image::{{ site.baseurl }}/images/embed-link-1.png[]
+image::embed-link-1.png[]
 +
 The format for the link is:  `<protocol>:<host>:<port>/#/embed/viz/<pinboardID>`
 +
-For a vizualization in a pinboard, click the ellipses icon image:{{ site.baseurl }}/images/icon-ellipses.png[more options menu icon] >  *Copy Link*.
+For a visualization in a pinboard, click the *More* icon image:icon-more-10px.png[more options menu icon] >  *Copy Link*.
 +
-image::{{ site.baseurl }}/images/embed-link-2.png[]
+image::embed-link-2.png[]
 +
 The format for the link is:  `<protocol>:<host>:<port>/#/embed/viz/<pinboardID>/<vizualizationId>`
 
 == Edit the test.html file
 
 You must edit the page in your application or web page where you want to embed a ThoughtSpot pinboard or visualization.
-For this example, you can get a copy of the link:{{ site.baseurl }}/downloads/test.html[test.html] file.
+For this example, you can get a copy of the http://docs.thoughtspot.com/6.0/release/test.html[test.html,window=_blank] file.
 
 . Create an empty directory called `test`.
 . Save the `test.html` file to the `test` directory.
 . {blank}
 +
-[cols=2*]
-|===
-| <a href="{{"/release/downloads.html"
-| prepend: site.baseurl }}" target="_blank">Download</a> the ThoughtSpot JavaScript library.
-|===
+http://docs.thoughtspot.com/6.0/release/downloads.html[Download,window=_blank] the ThoughtSpot JavaScript library.
+
 
 . Place the Javascript library in an `api` directory co-located with the `test.html` file.
 . Edit the `test.html` file in your favorite editor.
@@ -122,7 +118,7 @@ Your browser has this information and so when you load the `test.html` page in a
 +
 You should see something similar to the following:
 +
-image::{{ site.baseurl }}/images/embed-3.png[]
+image::embed-3.png[]
 
 . Check the browser console.
 +
@@ -145,4 +141,4 @@ No 'Access-Control-Allow-Origin' header is present on the requested resource.
 ----
 
 Typically you see this if the cross domain (CORS) setting was not completed correctly on your ThoughtSpot cluster.
-Contact link:{{ site.baseurl }}/appliance/contact.html[ThoughtSpot Support] for more help.
+Contact xref:contact.adoc[ThoughtSpot Support] for more help.

@@ -1,5 +1,6 @@
 = Install the ThoughtSpot application on offline clusters that use RHEL
-last_updated: 8/18/2020
+:last_updated: 8/18/2020
+
 Install ThoughtSpot on RHEL offline clusters
 ---
 Before starting the install, make sure that you completed the xref:rhel-prerequisites.adoc[pre-installation steps].
@@ -101,7 +102,7 @@ ansible-playbook -i hosts.yaml ts.yaml
 
 As the Ansible Playbook runs, it will perform these tasks:
 
-. Trigger the installation of [Yum, Python, and R packages]({{ site.baseurl }}/appliance/rhel/rhel-packages.html).
+. Trigger the installation of xref:rhel-packages.adoc[Yum, Python, and R packages].
 . Configure the local user accounts that the ThoughtSpot application uses
 . Install the ThoughtSpot CLI
 . Configure all the nodes in the ThoughtSpot cluster:

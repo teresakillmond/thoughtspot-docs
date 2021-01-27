@@ -1,17 +1,14 @@
-:experimental:
+= Edit the system-wide data model
+:last_updated: tbd
 
-'''
-
-title: [Edit the system-wide data model]
-
-last_updated: tbd summary: "Edit the modeling file to edit your data settings." sidebar: mydoc_sidebar permalink: /:collection/:path.html --
+Edit the modeling file to edit your data settings.
 
 When you load data, ThoughtSpot uses defaults for data modeling metadata.
 You change these defaults using the data modeling file if you have access to the menu:ADMIN[Data Management] page.
 Editing this file allows you to view and edit all the system data columns.
 When you (or your users) add new data to your system, this file changes as it expands to accommodate new data columns.
 
-{% include tip.html content="If you just want to change a subset of your data, use the link:model-data-in-UI.html#[Change a table's data model] instead." %}
+TIP: If you just want to change a subset of your data, use the xref:model-data-in-UI.adoc#[Change a table's data model] instead.
 
 == Overview of the modeling process
 
@@ -44,17 +41,17 @@ To obtain the model file:
 . Log in to ThoughtSpot from a browser as an Administrator user.
 . Click the *ADMIN* tab in the top navigation bar.
 +
-image::{{ site.baseurl }}/images/admin_icon.png[]
+image::admin_icon.png[]
 
 . Click *Data Management*, then click *Business Data Model*.
 . Click *Download*.
 +
-image::{{ site.baseurl }}/images/download_model.png[]
+image::download_model.png[]
 
 == Edit the file and change the settings
 
 You can make changes to the settings using this procedure.
-To see a list of the changes you can make, see link:data-modeling-settings.html#[Data modeling settings].
+To see a list of the changes you can make, see xref:data-modeling-settings.adoc#[Data modeling settings].
 You can edit any of the values in the model file, except for those where the words *DoNotModify* appear under the column header.
 To make changes in the model file:
 
@@ -62,13 +59,13 @@ To make changes in the model file:
 +
 If you are using Excel, you may see a warning message.
 +
-image::{{ site.baseurl }}/images/warning_open_model_excel.png[]
+image::warning_open_model_excel.png[]
 +
 Click `YES` to proceed.
 
 . Find the column you want to modify.
 +
-Descriptions of the meanings of the columns are listed in link:data-modeling-settings.html#[Data modeling settings].
+Descriptions of the meanings of the columns are listed in xref:data-modeling-settings.adoc#[Data modeling settings].
 
 . Select the value you want to change.
 . Type in the new value.
@@ -77,7 +74,7 @@ Descriptions of the meanings of the columns are listed in link:data-modeling-set
 If you are using Excel, you will see a message.
 Click `YES` to save the file.
 +
-image::{{ site.baseurl }}/images/warning_save_model_excel.png[]
+image::warning_save_model_excel.png[]
 +
 The model file must be saved as UTF-8 encoded.
 If your model file includes  multi-byte characters, edit the file using vi or vim to ensure the file is  saved in the correct format.
@@ -91,12 +88,12 @@ To upload the model file:
 . Log in to ThoughtSpot from a browser as an Administrator user.
 . Click *ADMIN*, on the top navigation bar.
 +
-image::{{ site.baseurl }}/images/admin_icon.png[]
+image::admin_icon.png[]
 
 . Click *Data Management*, then click *Business Data Model*.
 . Click *Browse your files* to upload the model.xls file, or drag and drop it in the zone.
 +
-image::{{ site.baseurl }}/images/upload_model.png[]
+image::upload_model.png[]
 +
 If you receive an error message upon uploading the file, check that it does  not include any multi-byte characters (for example, Japanese or other multi-byte  language characters).
 If it does, you must download the file again and  make your edits using vi or vim.
@@ -110,5 +107,5 @@ Your new settings will be reflected within a few minutes.
 
 == Related information
 
-* link:data-modeling-settings.html#[Data modeling settings]
-* link:model-data-in-UI.html[Change a table's data model]
+* xref:data-modeling-settings.adoc#[Data modeling settings]
+* xref:model-data-in-UI.adoc[Change a table's data model]

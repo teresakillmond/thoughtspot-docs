@@ -1,7 +1,5 @@
 = Configure support services
 :last_updated: 3/4/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
 
 There are several configurations you can set up in your installation to ensure your company's support from ThoughtSpot works smoothly.
 
@@ -11,12 +9,12 @@ There are several configurations you can set up in your installation to ensure y
 You can set up a reverse tunnel to allow ThoughtSpot Support to get access to your ThoughtSpot instance, to perform support-related activities.
 This setup is scalable, more secure, and a much simpler alternative to using a virtual meeting room.
 
-Granting remote support access can streamline troubleshooting activities, because it enables your support agent to work directly on your computer form a secure setting.
+Granting remote support access can streamline troubleshooting activities, because it enables your support agent to work directly on your computer from a secure setting.
 The remote tunnel enables SSH and HTTP access to your ThoughtSpot instance by ThoughtSpot Support.
 This access can be granted and revoked easily, so you can enable it for a troubleshooting session, and then disable it again.
 Before doing this procedure, make sure your company's security policies allow reverse tunneling.
 
-NOTE: Before you set up a reverse tunnel, open port `22` in your firewall outgoing rules to add `tunnelrelay.thoughtspot.com` to your list of allowed domains.
+NOTE: Your ThoughtSpot instance must be able to connect to `tunnelrelay.thoughtspot.com` on TCP port 22. To verify connectivity to this port, run: `telnet tunnelrelay.thoughtspot.com 22`. Without connectivity to port 22, the tunnel will not work.
 
 [#remote-support-tscli]
 == Using remote support with tscli
@@ -162,12 +160,16 @@ To designate the custom feedback contact, follow these steps:
 
 To reset the email to the default (ThoughtSpot support), issue this command:
 
+----
  $ tscli support rm-feedback-email
+----
 
 You can also choose not to send feedback on your system.
 Issue this command:
 
+----
  $ tscli support set-feedback-email ' '
+----
 
 [#find-support-contact]
 == How users find your company's support contact
