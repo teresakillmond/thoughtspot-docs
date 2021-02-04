@@ -674,7 +674,7 @@
     <a class="nav-link" href="work-with-ts-support.html">Configure support services</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:ports.adoc">Network policies</a>
+    <a class="nav-link" href="firewall-ports.html">Network policies</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="about-load-balancer-configuration.html">Configure load balancing and proxies</a>
@@ -2009,7 +2009,7 @@ If you feel that you need more than 1000 shards for a given table, consult with 
 So, for a 12-node cluster, for example, a table could have 12, 24, 36, or 48 shards, and so on.</p>
 </li>
 <li>
-<p><strong>Minimum number of shards</strong>: Because the number of shards should be a multiple of the number of nodes, the mininum number of shards is the number of nodes.
+<p><strong>Minimum number of shards</strong>: Because the number of shards should be a multiple of the number of nodes, the minimum number of shards is the number of nodes.
 For a 12-node cluster, you should not have fewer than 12 shards.</p>
 <div class="paragraph">
 <p>This requirement may be difficult to achieve on large clusters with a high number of nodes.
@@ -2107,11 +2107,12 @@ PARTITION BY HASH (96) KEY ("customer_id");</pre>
 </div>
 <div class="paragraph">
 <p>Note the following parameters, specified above as <code>96</code> and <code>"customer_id"</code>:
-<dlentry>HASH::::
-Determines the number of shards.
-In this case, <code>96</code>.</dlentry><dlentry>KEY::::
-Specifies how to assign data into the shards (shard key).
-In this case, <code>customer_id</code>.</dlentry></p>
+<dl><dlentry><dt>HASH</dt>
+<dd>Determines the number of shards.
+In this case, <code>96</code>.</dd></dlentry>
+<dlentry><dt>KEY</dt>
+<dd>Specifies how to assign data into the shards (shard key).
+In this case, <code>customer_id</code>.</dd></dlentry></dl></p>
 </div>
 <div class="paragraph">
 <p>The recommended number of shards depends on various factors.
@@ -2303,7 +2304,7 @@ Instead, use <code>saleid</code> and <code>productid</code> for more variety.</p
 For example, if you have two tables  and the primary keys are:</p>
 </div>
 <div class="paragraph">
-<p><code>PRIMARY KEY("saleid,vendorid")</code> on A +  <code>PRIMARY KEY("saleid,customerid")</code> on B</p>
+<p><code>PRIMARY KEY("saleid,vendorid")</code> on A <br>  <code>PRIMARY KEY("saleid,customerid")</code> on B</p>
 </div>
 <div class="paragraph">
 <p>Use <code>saleid</code> as the shard key when you shard both tables.</p>

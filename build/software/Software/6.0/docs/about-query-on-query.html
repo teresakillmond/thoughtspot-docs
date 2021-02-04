@@ -674,7 +674,7 @@
     <a class="nav-link" href="work-with-ts-support.html">Configure support services</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:ports.adoc">Network policies</a>
+    <a class="nav-link" href="firewall-ports.html">Network policies</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="about-load-balancer-configuration.html">Configure load balancing and proxies</a>
@@ -1923,7 +1923,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you want to perform a search on top of another search, try saving your search as a view. Then, you can use the saved view as a data source for a new search.</p>
+<p>If you want to perform a search on top of another search, try saving your search as a View. Then, you can use the saved View as a data source for a new search.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1932,7 +1932,7 @@
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Only users with the <strong>Can administrate ThoughtSpot</strong> or the <strong>Can manage data</strong> privilege can create views and link them."
+Only users with the <strong>Can administrate ThoughtSpot</strong> or the <strong>Can manage data</strong> privilege can create Views and link them.
 </td>
 </tr>
 </table>
@@ -1957,12 +1957,12 @@ Views do not support row level security (RLS), so all users of a view can see al
 <div class="paragraph">
 <p>You may have noticed that when you do a search on a data source, ThoughtSpot is only able to aggregate one column by one other column.
 Because of this, you may come across searches you can&#8217;t do in one pass, because they are essentially nested queries.
-But you can create the equivalent of nested queries using a view, which is an answer that you have saved for the purpose of building other searches on top of it.</p>
+But you can create the equivalent of nested queries using a View, which is an answer that you have saved for the purpose of building other searches on top of it.</p>
 </div>
 <div class="paragraph">
-<p>You can use a view just like any other data source.
+<p>You can use a View just like any other data source.
 You can even link it to other sources by defining a relationship.
-When you save an answer as a view, and then use it as a source in a new search, it is similar to doing a nested query in SQL, only much easier to create.</p>
+When you save an answer as a View, and then use it as a source in a new search, it is similar to doing a nested query in SQL, only much easier to create.</p>
 </div>
 </div>
 </div>
@@ -1972,26 +1972,26 @@ When you save an answer as a view, and then use it as a source in a new search, 
 <div class="paragraph">
 <p>Suppose you created a search on the sales fact table that shows the top ten Sales Reps by revenue, for the first quarter.
 Then you want to do some further investigation on that subset of data, such as ranking them by how much they discounted a specific product based on data from the orders fact table.
-Unless you save your first answer as a view, and then search over that view, you cannot get your answers.</p>
+Unless you save your first answer as a View, and then search over that View, you cannot get your answers.</p>
 </div>
 <div class="paragraph">
-<p>Here are the high-level steps for creating and using views:</p>
+<p>Here are the high-level steps for creating and using Views:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Create the first search, and <a href="create-aggregated-worksheet.html" class="page">save it as a view</a>.</p>
+<p>Create the first search, and <a href="create-aggregated-worksheet.html" class="page">save it as a View</a>.</p>
 </li>
 <li>
-<p><a href="create-new-relationship.html" class="page">Create relationships</a> or <a href="constraints.html" class="page">define joins</a> to connect your view with any other data source.</p>
+<p><a href="create-new-relationship.html" class="page">Create relationships</a> or <a href="constraints.html" class="page">define joins</a> to connect your View with any other data source.</p>
 </li>
 <li>
-<p>Create a new search that includes your view and the other sources linked with it.</p>
+<p>Create a new search that includes your View and the other sources linked with it.</p>
 </li>
 <li>
-<p>We recommend that you <a href="about-worksheets.html" class="page">create a new worksheet</a> that includes all these data sources.</p>
+<p>We recommend that you <a href="about-worksheets.html" class="page">create a new Worksheet</a> that includes all these data sources.</p>
 <div class="paragraph">
-<p>Creating a worksheet makes it easier for people to search using your view and any related tables.</p>
+<p>Creating a Worksheet makes it easier for people to search using your View and any related tables.</p>
 </div>
 </li>
 </ol>
@@ -2004,24 +2004,24 @@ Unless you save your first answer as a view, and then search over that view, you
 <div class="ulist">
 <ul>
 <li>
-<p>When creating views, keep in mind the sizing recommendations for worksheets, for the final worksheet that you plan to use in modeling you data.</p>
+<p>When creating Views, keep in mind the sizing recommendations for Worksheets, for the final Worksheet that you plan to use in modeling your data.</p>
 </li>
 <li>
-<p>To be able to join a view with a base table, your installation must be configured to allow this.
-The view cannot have more than 5 tables, and the number of rows in the view cannot exceed 10 million rows.</p>
+<p>To be able to join a View with a base table, your installation must be configured to allow this.
+The View cannot have more than 5 tables, and the number of rows in the View cannot exceed 10 million rows.</p>
 </li>
 <li>
 <p>The order of the objects being linked (joined) matters, because joins are directional.
-The table or view with the foreign key must be in the the first (left) position.
-The table or view with the primary key must be in the second (right) position.</p>
+The table or View with the foreign key must be in the the first (left) position.
+The table or View with the primary key must be in the second (right) position.</p>
 </li>
 <li>
-<p>For best performance, views should have 50 or fewer columns, and no more than 10 million rows.
+<p>For best performance, Views should have 50 or fewer columns, and no more than 10 million rows.
 If your View has more than 10 million rows, consider materializing it.
 If your View has more than 40 million rows, consider sharding it.</p>
 </li>
 <li>
-<p>To improve performance, you can materialize the views.</p>
+<p>To improve performance, you can materialize the Views.</p>
 </li>
 <li>
 <p>You can use an ETL (extract, transform, load) processes to circumvent these limitations.</p>

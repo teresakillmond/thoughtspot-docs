@@ -673,8 +673,8 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="work-with-ts-support.html">Configure support services</a>
   </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:ports.adoc">Network policies</a>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="firewall-ports.html">Network policies</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="about-load-balancer-configuration.html">Configure load balancing and proxies</a>
@@ -1911,7 +1911,8 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Software</a></li>
-    <li>Deploy</li>
+    <li>Administration</li>
+    <li>Installation and setup</li>
     <li><a href="firewall-ports.html">Network policies</a></li>
   </ul>
 </nav>
@@ -1926,7 +1927,7 @@
 </div>
 <div class="paragraph">
 <p>For regular operations and for debugging, there are some ports you must keep open to network traffic from end users.
-Another, larger list of ports must be kept open for network traffic between the nodes in the cluster.</p>
+Another, larger list of ports must be kept open for network traffic between the nodes in the cluster, and for inbound and outbound access to the cluster. ICMP v4 is used for checking the health of the cluster.</p>
 </div>
 </div>
 </div>
@@ -1934,7 +1935,7 @@ Another, larger list of ports must be kept open for network traffic between the 
 <h2 id="_ports_for_operations_and_debugging"><a class="anchor" href="#_ports_for_operations_and_debugging"></a>Ports for operations and debugging</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following ports must be open for requests from users.</p>
+<p>The following ports must be open for requests from your user population.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1996,7 +1997,7 @@ Also used for scp (secure copy).</p></td>
 <div class="paragraph">
 <p>Static ports are used for communication between services within the cluster.
 ThoughtSpot recommends that you open all ports within a cluster.
-This not required, but it will ensure that cluster communication works properly if additional ports are used in a future software release.</p>
+This is not required, but it will ensure that cluster communication works properly if additional ports are used in a future software release.</p>
 </div>
 <div class="paragraph">
 <p>If your organization does not allow you to open all ports, make sure you open the required intracluster ports listed in the following table.
@@ -2778,18 +2779,6 @@ The dynamic ports come from the range of ports that are dynamically allocated by
 <td class="tableblock halign-left valign-top"><p class="tableblock">Secure shell access.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">25 or 587</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SMTP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SMTP or Secure SMTP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">outbound</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All nodes and SMTP relay (provided by customer)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All nodes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Allow outbound access for the IP address of whichever email relay server is in use.
-This is for sending alerts to ThoughtSpot Support.
-+ In ThoughtSpot release 6.1.1 or later, and in release 6.0.5, you can specify a custom port to connect to the relay host, instead of port 25 or 587.
-Refer to <a href="set-up-relay-host.html" class="page">Set the relay host for SMTP</a>.</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">HTTP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">HTTP</p></td>
@@ -2808,15 +2797,6 @@ Refer to <a href="set-up-relay-host.html" class="page">Set the relay host for SM
 <td class="tableblock halign-left valign-top"><p class="tableblock">Port used by NTP service.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">389 or 636</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">LDAP or LDAPS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">outbound</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All nodes and LDAP server, provided by customer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All nodes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Allow outbound access for the IP address of the LDAP server in use.</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
@@ -2824,55 +2804,6 @@ Refer to <a href="set-up-relay-host.html" class="page">Set the relay host for SM
 <td class="tableblock halign-left valign-top"><p class="tableblock">ThoughtSpot Support</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">All nodes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Secure HTTP.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">outbound</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All nodes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">208.83.110.20</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">For transferring files to thoughtspot.egnyte.com.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">outbound</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All nodes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">For transferring product usage data to mixpanel cloud.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">outbound</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">outbound</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All nodes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">je8b47jfif.execute-api.us-east-2.amazonaws.com + s3.us-west-1.amazonaws.com + s3-us-west-1.amazonaws.com + s3.dualstack.us-west-1.amazonaws.com</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">For transferring monitoring data to InfluxCloud.
-(Given address will resolve to point to AWS instances).</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">587 or 25</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SMTP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SMTP or Secure SMTP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">outbound</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All nodes and SMTP relay (provided by customer)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All nodes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Allow outbound access for the IP address of whichever email relay server is in use.
-This is for sending alerts to ThoughtSpot Support.
-+ In ThoughtSpot release 6.1.1 or later, and in release 6.0.5, you can specify a custom port to connect to the relay host, instead of port 25 or 587.
-Refer to <a href="set-up-relay-host.html" class="page">Set the relay host for SMTP</a>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">636 or 389</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">LDAP or LDAPS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">outbound</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All nodes and LDAP server, provided by customer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All nodes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Allow outbound access for the IP address of the LDAP server in use.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2049</p></td>
@@ -2900,6 +2831,82 @@ Refer to <a href="set-up-relay-host.html" class="page">Set the relay host for SM
 <td class="tableblock halign-left valign-top"><p class="tableblock">ThoughtSpot Support</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">All nodes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Port used by ODBC and JDBC drivers when connecting to ThoughtSpot.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2858%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Port</th>
+<th class="tableblock halign-left valign-top">Protocol</th>
+<th class="tableblock halign-left valign-top">Service Name</th>
+<th class="tableblock halign-left valign-top">Direction</th>
+<th class="tableblock halign-left valign-top">Source</th>
+<th class="tableblock halign-left valign-top">Destination</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">outbound</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All nodes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">208.83.110.20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For transferring files to thoughtspot.egnyte.com.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">outbound</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All nodes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For transferring product usage data to mixpanel cloud.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">outbound</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">outbound</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All nodes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">je8b47jfif.execute-api.us-east-2.amazonaws.com</p>
+<p class="tableblock">s3.us-west-1.amazonaws.com</p>
+<p class="tableblock">s3-us-west-1.amazonaws.com</p>
+<p class="tableblock">s3.dualstack.us-west-1.amazonaws.com</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For transferring monitoring data to InfluxCloud.
+(Given address will resolve to point to AWS instances).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">25 or 587</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMTP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMTP or Secure SMTP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">outbound</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All nodes and SMTP relay (provided by customer)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All nodes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allow outbound access for the IP address of whichever email relay server is in use.
+This is for sending alerts to ThoughtSpot Support.</p>
+<p class="tableblock">In ThoughtSpot release 6.1.1 or later, and in release 6.0.5, you can specify a custom port to connect to the relay host, instead of port 25 or 587.
+Refer to <a href="set-up-relay-host.html" class="page">Set the relay host for SMTP</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">389 or 636</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LDAP or LDAPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">outbound</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All nodes and LDAP server, provided by customer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All nodes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allow outbound access for the IP address of the LDAP server in use.</p></td>
 </tr>
 </tbody>
 </table>

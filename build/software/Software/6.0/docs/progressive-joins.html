@@ -674,7 +674,7 @@
     <a class="nav-link" href="work-with-ts-support.html">Configure support services</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:ports.adoc">Network policies</a>
+    <a class="nav-link" href="firewall-ports.html">Network policies</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="about-load-balancer-configuration.html">Configure load balancing and proxies</a>
@@ -1923,10 +1923,10 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The worksheet join rule specifies when to apply joins when searching on a worksheet.</p>
+<p>The Worksheet join rule specifies when to apply joins when searching on a Worksheet.</p>
 </div>
 <div class="paragraph">
-<p>Use the worksheet join rule to specify when to apply joins when a search is done on a worksheet.
+<p>Use the Worksheet join rule to specify when to apply joins when a search is done on a Worksheet.
 You can either apply joins progressively, as each search term is added (recommended), or apply all joins to every search.</p>
 </div>
 </div>
@@ -1935,7 +1935,7 @@ You can either apply joins progressively, as each search term is added (recommen
 <h2 id="_understand_progressive_joins"><a class="anchor" href="#_understand_progressive_joins"></a>Understand progressive joins</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Often, a worksheet includes several dimension tables and a fact table.
+<p>Often, a Worksheet includes several dimension tables and a fact table.
 With progressive joins, if your search only includes terms from the fact table, you can see all of the rows that satisfy your search.
 But as you add terms from dimension tables, the total number of rows shown may be reduced, as the joins to each dimension table are applied.
 It works like this:</p>
@@ -1951,8 +1951,8 @@ It works like this:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>When using <strong>Apply joins progressively</strong>, the number of rows in a search using the worksheet depends on which tables are part of the search.
-The worksheet acts like a materialized view.
+<p>When using <strong>Apply joins progressively</strong>, the number of rows in a search using the Worksheet depends on which tables are part of the search.
+The Worksheet acts like a materialized View.
 This means that it contains the results of a defined query in the form of a table.
 So if a particular dimension table is left out of the search, its joins are not applied.</p>
 </div>
@@ -2012,13 +2012,13 @@ Request edit access from your administrator, or the owner of the Worksheet.</p>
 To do this, you can grant access by creating explicit row level security rules on each of the underlying tables which contain data that row level security should apply to.</p>
 </div>
 <div class="paragraph">
-<p>When creating the row level security rules for a table that&#8217;s part of a worksheet, you aren&#8217;t limited to referencing only the columns in that table.
-You can specify columns from other tables in the worksheet as well, as long as the tables are joined to the table you&#8217;re creating the rule on.
-Then, when creating a worksheet on top of them, the behavior is consistent regardless of the worksheet join rule you choose.
+<p>When creating the row level security rules for a table that&#8217;s part of a Worksheet, you aren&#8217;t limited to referencing only the columns in that table.
+You can specify columns from other tables in the Worksheet as well, as long as the tables are joined to the table you&#8217;re creating the rule on.
+Then, when creating a Worksheet on top of them, the behavior is consistent regardless of the Worksheet join rule you choose.
 Users will never be able to see data they should not, regardless of what their search contains.</p>
 </div>
 <div class="paragraph">
-<p>Imagine you have a worksheet that contains a <code>Sales</code> fact table, and <code>Customer</code> and <code>Product</code> dimensions that are joined on <code>Customer SSN</code> and <code>Product Code</code> columns.
+<p>Imagine you have a Worksheet that contains a <code>Sales</code> fact table, and <code>Customer</code> and <code>Product</code> dimensions that are joined on <code>Customer SSN</code> and <code>Product Code</code> columns.
 In order to secure the <code>Sales</code> table, you can use <code>Customer Name</code> from the <code>Customer</code> column to create a row level security rule.</p>
 </div>
 </div>
@@ -2027,14 +2027,14 @@ In order to secure the <code>Sales</code> table, you can use <code>Customer Name
 <h2 id="_how_joins_are_applied_with_chasm_traps"><a class="anchor" href="#_how_joins_are_applied_with_chasm_traps"></a>How joins are applied with chasm traps</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>When working with worksheets and row level security, you need to understand how joins are applied.
+<p>When working with Worksheets and row level security, you need to understand how joins are applied.
 This is particularly important with chasm trap schemas.
 For chasm trap schemas, if row level security is only set on one of the tables, people could see data they should not see if the scope of their search does not include that table.
-(this protects them from having people see the wrong things if they have chasm trap).</p>
+(This protects them from having people see the wrong things if they have chasm trap.)</p>
 </div>
 <div class="paragraph">
 <p>For chasm trap <em>worksheets</em>, progressive and non-progressive joins do not apply.
-There is an entirely different methodology for how worksheet joins on a chasm trap schema work with row level security.
+There is an entirely different methodology for how Worksheet joins on a chasm trap schema work with row level security.
 So you can safely ignore that setting.</p>
 </div>
 </div>

@@ -674,7 +674,7 @@
     <a class="nav-link" href="work-with-ts-support.html">Configure support services</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:ports.adoc">Network policies</a>
+    <a class="nav-link" href="firewall-ports.html">Network policies</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="about-load-balancer-configuration.html">Configure load balancing and proxies</a>
@@ -1929,13 +1929,13 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Learn how to materialize a view to improve its performance.</p>
+<p>Learn how to materialize a View to improve its performance.</p>
 </div>
 <div class="paragraph">
-<p>To improve the performance of a view, you can materialize it.
-This operation computes the data for the view and stores it in memory, just like a table.
-You can expect a 3-6 times performance improvement on a materialized view over a view that is not materialized.
-However, materialized views take up space in memory, so weigh the tradeoffs and benefits of materializing a view ahead of time.</p>
+<p>To improve the performance of a View, you can materialize it.
+This operation computes the data for the View and stores it in memory, just like a table.
+You can expect a 3-6 times performance improvement on a Materialized View over a View that is not materialized.
+However, materialized Views take up space in memory, so weigh the tradeoffs and benefits of materializing a View ahead of time.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1944,8 +1944,8 @@ However, materialized views take up space in memory, so weigh the tradeoffs and 
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Row Level Security does not apply to materialized views.
-All users will see the same data when using the materialized view as a data source.
+Row Level Security does not apply to Materialized Views.
+All users will see the same data when using the Materialized View as a data source.
 </td>
 </tr>
 </table>
@@ -1956,10 +1956,10 @@ All users will see the same data when using the materialized view as a data sour
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>To find your view, click <strong>Data</strong> in the top menu, and choose <strong>Views</strong>.</p>
+<p>To find your View, click <strong>Data</strong> in the top menu, and choose <strong>Views</strong>.</p>
 </li>
 <li>
-<p>Click the name of your view.</p>
+<p>Click the name of your View.</p>
 </li>
 <li>
 <p>Click <strong>Schema</strong>.</p>
@@ -1989,7 +1989,7 @@ All users will see the same data when using the materialized view as a data sour
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If you do not fill in the sharding details, the view will be replicated on every node of your cluster.
+If you do not fill in the sharding details, the View will be replicated on every node of your cluster.
 If you&#8217;re not sure what to fill in, ask your ThoughtSpot administrator, or follow the links in this step to learn more about sharding.
 </td>
 </tr>
@@ -2023,7 +2023,7 @@ If you&#8217;re not sure what to fill in, ask your ThoughtSpot administrator, or
 </li>
 <li>
 <p>You can see the status of the materialization as it progresses.
-Click <strong>Update status</strong> to refresh it.</p>
+Click <strong>Update Status</strong> to refresh it.</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/materialization-update-status.png" alt="materialization update status">
@@ -2031,7 +2031,7 @@ Click <strong>Update status</strong> to refresh it.</p>
 </div>
 </li>
 <li>
-<p>When it says <strong>Materialized</strong> your materialized view is ready for search.</p>
+<p>When it says <strong>Materialized</strong> your Materialized View is ready for search.</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/materialization-dialog-on.png" alt="materialization dialog on">

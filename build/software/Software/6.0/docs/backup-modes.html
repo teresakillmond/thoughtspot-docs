@@ -674,7 +674,7 @@
     <a class="nav-link" href="work-with-ts-support.html">Configure support services</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:ports.adoc">Network policies</a>
+    <a class="nav-link" href="firewall-ports.html">Network policies</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="about-load-balancer-configuration.html">Configure load balancing and proxies</a>
@@ -1956,8 +1956,6 @@ For example, if you have disabled the periodic snapshots system and periodic bac
 </div>
 <div class="paragraph">
 <p>ThoughtSpot usually stores backups on a <a href="NAS-mount.html" class="page">NAS (network attached storage) file system</a> but you can store them on a local disk as well.
-With AWS, you can back up an S3-based cluster <a href="aws-backup-restore.html" class="page">using an S3 bucket</a>.
-With GCP, you can back up a GCS-based cluster <a href="gcp-backup-restore.html" class="page">using a GCS bucket</a>.
 When creating a backup, ThoughtSpot copies a release tarball and several supporting files to a disk you specify.
 Storing these supporting files takes about 10 GB of extra space beyond the backup itself.
 The final backup image is smaller because these extra files are removed after the backup completes successfully.
@@ -2014,7 +2012,7 @@ Don&#8217;t forget that the backup size can grow over time, so you should occasi
 <p>Users, groups and permissions</p>
 </li>
 <li>
-<p>Objects created by users (pinboards, worksheets, and formulas) with their shares and permissions.</p>
+<p>Objects created by users (Pinboards, Worksheets, and formulas) with their shares and permissions.</p>
 </li>
 <li>
 <p>Data model and row-level security rules.</p>

@@ -674,7 +674,7 @@
     <a class="nav-link" href="work-with-ts-support.html">Configure support services</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:ports.adoc">Network policies</a>
+    <a class="nav-link" href="firewall-ports.html">Network policies</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="about-load-balancer-configuration.html">Configure load balancing and proxies</a>
@@ -1920,12 +1920,19 @@
   <div class="content">
 <article class="doc">
 <h1 class="page">Data and object security</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>ThoughtSpot provides many features for protecting data.</p>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_object_security"><a class="anchor" href="#_object_security"></a>Object Security</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Object security controls what content users see within ThoughtSpot.
-Objects are tables, columns in tables, worksheets, pinboards, and saved answers.</p>
+Objects are tables, columns in tables, Worksheets, Pinboards, and saved Answers.</p>
 </div>
 <div class="paragraph">
 <p>Users gain access to objects when an object owner shares access with them.
@@ -1938,7 +1945,7 @@ This has implications on setting up privileges, and on applying row-level securi
 <h3 id="_permissive_security_mode"><a class="anchor" href="#_permissive_security_mode"></a>Permissive Security Mode</h3>
 <div class="paragraph">
 <p>The default Permissive Security mode of ThoughtSpot means that when someone shares an object with you, you can see all the data it uses, regardless of explicit permissions to the parent object data.
-You can see a shared pinboard without having access to its underlying worksheet or table.</p>
+You can see a shared Pinboard without having access to its underlying Worksheet or table.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1946,8 +1953,8 @@ You can see a shared pinboard without having access to its underlying worksheet 
 <div class="paragraph">
 <p>ThoughtSpot&#8217;s Advanced Security mode is opposite of the default permissive mode.
 Unless the user has explicit permissions to the entire stack of parent objects, they cannot see the data in the child object.
-For example, in a shared pinboard, you can see data only if you have explicit permissions to the relevant columns of the parent worksheet.
-Similarly, you can only see the data in a worksheet to which you have access if you have explicit permissions to its parent table object.</p>
+For example, in a shared Pinboard, you can see data only if you have explicit permissions to the relevant columns of the parent Worksheet.
+Similarly, you can only see the data in a Worksheet to which you have access if you have explicit permissions to its parent table object.</p>
 </div>
 <div class="paragraph">
 <p>Work with your ThoughtSpot support team to enable the Advanced Security Mode on the relevant clusters.</p>
@@ -1960,10 +1967,10 @@ Similarly, you can only see the data in a worksheet to which you have access if 
 <div class="sectionbody">
 <div class="paragraph">
 <p>Row level security controls what data a user can see in each shared piece of content.
-Even if a user has access to a worksheet, they can only see rows from the tables they have permission to see.</p>
+Even if a user has access to a Worksheet, they can only see rows from the tables they have permission to see.</p>
 </div>
 <div class="paragraph">
-<p>RLS applies at the table level, so it automatically extends to all worksheets, saved answers, and pinboards based on that table, every time.
+<p>RLS applies at the table level, so it automatically extends to all Worksheets, saved Answers, and Pinboards based on that table, every time.
 Also, in queries where there are tables with table filters, all joins are always enforced to avoid accidentally allowing users access to data they shouldn&#8217;t see.</p>
 </div>
 <div class="paragraph">

@@ -674,7 +674,7 @@
     <a class="nav-link" href="work-with-ts-support.html">Configure support services</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:ports.adoc">Network policies</a>
+    <a class="nav-link" href="firewall-ports.html">Network policies</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="about-load-balancer-configuration.html">Configure load balancing and proxies</a>
@@ -1929,7 +1929,7 @@
 <div class="paragraph">
 <p>Row level security works at the group level and is configured on tables.
 A table&#8217;s RLS rules also apply to any objects with data from that table.
-So, searches, answers, worksheets, and pinboards that rely on a table&#8217;s data fall under RLS rules.</p>
+So, searches, Answers, Worksheets, and Pinboards that rely on a table&#8217;s data fall under RLS rules.</p>
 </div>
 </div>
 </div>
@@ -1937,24 +1937,24 @@ So, searches, answers, worksheets, and pinboards that rely on a table&#8217;s da
 <h2 id="_worksheet_queries_and_rls"><a class="anchor" href="#_worksheet_queries_and_rls"></a>Worksheet queries and RLS</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You cannot set RLS rules on worksheets, only on tables.
-However, administrators can disable RLS on worksheets that are derived from tables with RLS rules.
-After RLS rules are disabled, users with access to the worksheet can see all its data.</p>
+<p>You cannot set RLS rules on Worksheets, only on tables.
+However, administrators can disable RLS on Worksheets that are derived from tables with RLS rules.
+After RLS rules are disabled, users with access to the Worksheet can see all its data.</p>
 </div>
 <div class="paragraph">
-<p>By default, worksheet queries only take into account RLS rules on tables whose columns appear in the query.
-Other related tables that may underly the worksheet are ignored.
-This means that not all RLS rules on underlying tables are applied when a user queries a worksheet.</p>
+<p>By default, Worksheet queries only take into account RLS rules on tables whose columns appear in the query.
+Other related tables that may underly the Worksheet are ignored.
+This means that not all RLS rules on underlying tables are applied when a user queries a Worksheet.</p>
 </div>
 <div class="paragraph">
-<p>You can configure a stricter application of RLS rules to take into account RLS rules from all the tables underlying the worksheet.
-This is recommended if you have key dimension tables that worksheets rely on but that are not necessarily regularly accessed through query.
+<p>You can configure a stricter application of RLS rules to take into account RLS rules from all the tables underlying the Worksheet.
+This is recommended if you have key dimension tables that Worksheets rely on but that are not necessarily regularly accessed through query.
 To do this, contact ThoughtSpot Customer Support.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_privileges_that_allow_users_to_set_or_be_exempt_from_rls"><a class="anchor" href="#_privileges_that_allow_users_to_set_or_be_exempt_from_rls"></a>Privileges that allow users to set, or be exempt from, RLS</h2>
+<h2 id="privileges-that-allow-users-to-set-or-be-exempt-from-rls"><a class="anchor" href="#privileges-that-allow-users-to-set-or-be-exempt-from-rls"></a>Privileges that allow users to set, or be exempt from, RLS</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Users in the <strong>Administrators</strong> group or with the <strong>Has administration privilege</strong> have full access to everything in the system.
@@ -2074,14 +2074,14 @@ Then, you set a <strong>Row security</strong> on the <code>vendor-purchase</code
 </div>
 <div class="paragraph">
 <p>Only users in <code>Starbucks</code> group see <code>starbucks</code> data and so forth.
-Rules ignore case inconsistencies and spaces are evaluated so <code>round table</code> in the data matches the <code>Round table</code> group but not a group named <code>RoundTable</code> .</p>
+Rules ignore case inconsistencies and spaces are evaluated so <code>round table</code> in the data matches the <code>Round table</code> group but not a group named <code>RoundTable</code>.</p>
 </div>
 <div class="paragraph">
 <p>Rules can be simple or they can incorporate logic such as <code>if/then</code> rules.
 For example, vendors should see their own data but your accounts payable group needs to see all the vendor data:</p>
 </div>
 <div class="paragraph">
-<p>`VENDOR = ts_groups or 'Accounts Payable' = ts_groups `</p>
+<p><code>VENDOR = ts_groups or 'Accounts Payable' = ts_groups</code></p>
 </div>
 <div class="paragraph">
 <p>This rule continues to work as you add data from new vendor or team members to <code>Accounts Payable</code>.
@@ -2127,11 +2127,11 @@ This is true regardless of whether the group membership is direct or indirect (t
 So, only share what you need.</p>
 </div>
 <div class="paragraph">
-<p>When you share, share worksheets.
+<p>When you share, share Worksheets.
 This is a general best practice.
 Worksheets simplify the data environment for end users;
 they only need to choose among a few sources, rather than many tables.
-Also, one worksheet can also  combine data from several tables.</p>
+Also, one Worksheet can also  combine data from several tables.</p>
 </div>
 </li>
 <li>
@@ -2144,8 +2144,8 @@ So, protect your  data by setting row level security wherever you want to keep d
 <li>
 <p>Explicitly grant access for users that should see all rows.</p>
 <div class="paragraph">
-<p>As soon as you define a rule on a table for one group, you prevent access by   all others outside of that group hierarchy.
-Subsequent rules should   specifically add groups that need access.</p>
+<p>As soon as you define a rule on a table for one group, you prevent access by all others outside of that group hierarchy.
+Subsequent rules should specifically add groups that need access.</p>
 </div>
 </li>
 <li>

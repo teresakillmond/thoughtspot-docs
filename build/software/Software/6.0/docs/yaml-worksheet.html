@@ -674,7 +674,7 @@
     <a class="nav-link" href="work-with-ts-support.html">Configure support services</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:ports.adoc">Network policies</a>
+    <a class="nav-link" href="firewall-ports.html">Network policies</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="about-load-balancer-configuration.html">Configure load balancing and proxies</a>
@@ -1923,7 +1923,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>ThoughtSpot worksheet specification may be exported as a YAML file, modified, and imported into the same or different cluster.</p>
+<p>ThoughtSpot Worksheet specification may be exported as a YAML file, modified, and imported into the same or different cluster.</p>
 </div>
 <div class="paragraph">
 <p>To work with Scriptable Worksheets in ThoughtSpot, you can download Worksheets to a flat file in <code>yaml</code> format, modify it, and subsequently upload this file either to the same cluster, or to a different cluster.
@@ -2043,7 +2043,7 @@ To learn how to export, change, and update Worksheets, see <a href="worksheet-ex
 <p><dl>
  <dlentry id="aggregation">
   <dt>aggregation</dt>
-  <dd>The default aggregation of the worksheet column <br>
+  <dd>The default aggregation of the Worksheet column <br>
   Aggregation options depend on the data type.<br>
   Possible values: <code>SUM</code>, <code>COUNT</code>, <code>AVERAGE</code>, <code>MAX</code>, <code>MIN</code>, <code>COUNT_DISTINCT</code>, <code>NONE</code>, <code>STD_DEVIATION</code>, and <code>VARIANCE</code> <br>
   Default: <code>SUM</code> <br></dd></dlentry>
@@ -2081,10 +2081,10 @@ To learn how to export, change, and update Worksheets, see <a href="worksheet-ex
     See <a href="set-format-pattern-numbers.html" class="page">Set number, date, and currency formats</a>. </dd></dlentry>
  <dlentry id="formula_id">
     <dt>formula_id</dt>
-    <dd>The <code>id</code> of the formula that defines the worksheet column</dd></dlentry>
+    <dd>The <code>id</code> of the formula that defines the Worksheet column</dd></dlentry>
  <dlentry id="formulas">
     <dt>formulas</dt>
-    <dd>The list of formulas in the worksheet <br>
+    <dd>The list of formulas in the Worksheet <br>
     Each formula is identified by <code>name</code>, the <code>expr</code> (expression), and an optional <code>id</code> attribute.</dd></dlentry>
  <dlentry id="fqn">
     <dt>fqn</dt>
@@ -2097,7 +2097,7 @@ To learn how to export, change, and update Worksheets, see <a href="worksheet-ex
     One of: <br>
      <ul>
       <li><code>latitude : true</code> for columns that specify the latitude</li>
-      <li><code>longitude</code> : true` for columns that specify the longitude</li>
+      <li><code>longitude : true</code> for columns that specify the longitude</li>
       <li><code>country : true</code> for columns that specify the country</li>
       <li><code>region_name</code> for specifying a region in a country <br>
        Uses two paired parameters: <br>
@@ -2115,7 +2115,7 @@ To learn how to export, change, and update Worksheets, see <a href="worksheet-ex
     See <a href="change-index.html#change-a-columns-suggestion-priority" class="page">Change a column&#8217;s suggestion priority</a>.</dd></dlentry>
   <dlentry id="index_type">
      <dt>index_type</dt>
-     <dd>The indexing option of the worksheet column <br> Possible values: <code>DONT_INDEX</code>, <code>DEFAULT</code> (see <a href="change-index.html#understand-the-default-indexing-behavior" class="page">Understand the default indexing behavior</a>), <code>PREFIX_ONLY</code>, <code>PREFIX_AND_SUBSTRING</code>, and <code>PREFIX_AND_WORD_SUBSTRING</code> <br>
+     <dd>The indexing option of the Worksheet column <br> Possible values: <code>DONT_INDEX</code>, <code>DEFAULT</code> (see <a href="change-index.html#understand-the-default-indexing-behavior" class="page">Understand the default indexing behavior</a>), <code>PREFIX_ONLY</code>, <code>PREFIX_AND_SUBSTRING</code>, and <code>PREFIX_AND_WORD_SUBSTRING</code> <br>
       Default: <code>DEFAULT</code> <br>
       See <a href="change-index.html#index-type" class="page">Index Type Values</a>. </dd></dlentry>
   <dlentry id="is_additive">
@@ -2127,13 +2127,14 @@ To learn how to export, change, and update Worksheets, see <a href="worksheet-ex
     See <a href="change-aggreg-additive.html#making-an-attribute-column-additive" class="page">Making an ATTRIBUTE column ADDITIVE</a>. </dd></dlentry>
   <dlentry id="is_attribution_dimension">
     <dt>is_attribution_dimension</dt>
-    <dd>Controls if the column is an attribution dimension + Used in managing chasm traps. <br>
+    <dd>Controls if the column is an attribution dimension <br>
+     Used in managing chasm traps. <br>
     Possible values: <code>true</code> by default, <code>false</code> to designate a column as not producing meaningful attributions across a chasm trap <br>
     Default: <code>true</code> <br>
     See <a href="attributable-dimension.html" class="page">Change the attribution dimension</a>. </dd></dlentry>
   <dlentry id="is_bypass_rls">
     <dt>is_bypass_rls</dt>
-    <dd>Specifies if the worksheet supports bypass of Row-level security (RLS) <br>
+    <dd>Specifies if the Worksheet supports bypass of Row-level security (RLS) <br>
     Possible values: <code>true</code> or <code>false</code> <br> Default: <code>false</code> <br>
     See <a href="row-level-security.html#privileges-that-allow-users-to-set-or-be-exempt-from-rls" class="page">Privileges that allow users to set, or be exempt from, RLS</a>. </dd></dlentry>
   <dlentry id="is_hidden">
@@ -2160,19 +2161,19 @@ To learn how to export, change, and update Worksheets, see <a href="worksheet-ex
 <div class="paragraph">
 <p><dlentry id="join_progressive">
     <dt>join_progressive</dt>
-    <dd>Specifies when to apply joins on a worksheet <br> Possible values: <code>true</code> when joins are applied only for tables whose columns are included in the search, and <code>false</code> for all possible joins <br>
+    <dd>Specifies when to apply joins on a Worksheet <br> Possible values: <code>true</code> when joins are applied only for tables whose columns are included in the search, and <code>false</code> for all possible joins <br>
     Default: <code>true</code> <br>
     See <a href="progressive-joins.html" class="page">How the worksheet join rule works</a>. </dd></dlentry>
 <dlentry id="joins">
     <dt>joins</dt>
-    <dd>List of joins between tables and views, used by the worksheet <br>
+    <dd>List of joins between tables and Views, used by the Worksheet <br>
     Each join is identified by <code>name</code>, and the additional attributes of <code>source</code>, <code>destination</code>, <code>type</code>, and <code>is_one_to_one.</code></dd></dlentry>
 <dlentry id="name">
     <dt>name</dt>
     <dd>The name of an object. Applies to <code>worksheet</code>, <code>table</code>,<code>join</code>, <code>formula</code>, and so on.</dd></dlentry>
 <dlentry id="properties">
     <dt>properties</dt>
-    <dd>The list of properties of the worksheet column <br>
+    <dd>The list of properties of the Worksheet column <br>
     Each column can have the following properties, depending on its definition: <code>column_type</code>, <code>aggregation</code>, <code>index_type</code>, <code>is_hidden</code>, <code>index_priority</code>, <code>synonyms</code>, <code>is_attribution_dimension</code>, <code>is_additive</code>, <code>calendar</code>, <code>format_pattern</code>, <code>currency_type</code>, and <code>geo_config</code>. </dd></dlentry>
 <dlentry id="source">
     <dt>source</dt>
@@ -2190,7 +2191,7 @@ To learn how to export, change, and update Worksheets, see <a href="worksheet-ex
     Each table path is identified by the <code>id</code>, and additional attributes of <code>table</code> and <code>join_path</code>.</dd></dlentry>
 <dlentry id="tables">
     <dt>tables</dt>
-    <dd>List of tables used by the worksheet <br>
+    <dd>List of tables used by the Worksheet <br>
     Each table is identified by <code>name</code>.</dd></dlentry>
 <dlentry id="type">
     <dt>type</dt>
@@ -2199,10 +2200,10 @@ To learn how to export, change, and update Worksheets, see <a href="worksheet-ex
     Default: <code>RIGHT_OUTER</code></dd></dlentry>
 <dlentry id="worksheet">
     <dt>worksheet</dt>
-    <dd>Top-level container for all object definitions within the worksheet</dd></dlentry>
+    <dd>Top-level container for all object definitions within the Worksheet</dd></dlentry>
 <dlentry id="worksheet_columns">
     <dt>worksheet_columns</dt>
-    <dd>The list of columns in the worksheet <br> Each worksheet is identified by <code>name</code>, <code>description</code>, <code>formula_id</code>, and <code>properties</code>.</dd></dlentry>
+    <dd>The list of columns in the Worksheet <br> Each Worksheet is identified by <code>name</code>, <code>description</code>, <code>formula_id</code>, and <code>properties</code>.</dd></dlentry>
          </dl></p>
 </div>
 </div>
@@ -2217,7 +2218,7 @@ To learn how to export, change, and update Worksheets, see <a href="worksheet-ex
 <ul>
 <li>
 <p>Formulas and columns can either have a new name, or a new expression.
-You cannot change both, unless migrating or updating the worksheet two times.</p>
+You cannot change both, unless migrating or updating the Worksheet two times.</p>
 </li>
 <li>
 <p>It is not possible to reverse the join direction in the YAML script.</p>

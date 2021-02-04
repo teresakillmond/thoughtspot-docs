@@ -674,7 +674,7 @@
     <a class="nav-link" href="work-with-ts-support.html">Configure support services</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:ports.adoc">Network policies</a>
+    <a class="nav-link" href="firewall-ports.html">Network policies</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="about-load-balancer-configuration.html">Configure load balancing and proxies</a>
@@ -1959,10 +1959,10 @@ Date formulas allow you to apply date related functions to your formulas.</p>
 <p>Returns the result of adding the specified number of days to the given date.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>add_days (01/30/2015, 5) = 02/04/2015</code></p>
+<p><code>add_days ( 01/30/2015, 5 ) = 02/04/2015</code></p>
 </div>
 <div class="paragraph">
-<p><code>add_days (invoiced, 30)</code></p>
+<p><code>add_days ( invoiced, 30 )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2041,7 +2041,7 @@ Date formulas allow you to apply date related functions to your formulas.</p>
 <p>Returns the date portion of a given date.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>date (home visit)</code></p>
+<p><code>date ( home visit )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2052,10 +2052,10 @@ Date formulas allow you to apply date related functions to your formulas.</p>
 <p>Returns the number (1-31) of the day of the month for the given date.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>day (01/15/2014) = 15</code></p>
+<p><code>day ( 01/15/2014 ) = 15</code></p>
 </div>
 <div class="paragraph">
-<p><code>day (date ordered)</code></p>
+<p><code>day ( date ordered )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2066,13 +2066,13 @@ Date formulas allow you to apply date related functions to your formulas.</p>
 <p>Returns the number of the day in a quarter for a given date. You can add an optional second parameter to specify whether a 'fiscal' or 'calendar' year is used to calculate the result. The default is 'calendar'.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>day_number_of_quarter (01/30/2015) = 30</code></p>
+<p><code>day_number_of_quarter ( 01/30/2015 ) = 30</code></p>
 </div>
 <div class="paragraph">
 <p>In the following example, May 1st is the start of the fiscal year.</p>
 </div>
 <div class="paragraph">
-<p><code>day_number_of_quarter (01/30/2015, 'fiscal') = 91</code></p>
+<p><code>day_number_of_quarter ( 01/30/2015, 'fiscal' ) = 91</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2083,10 +2083,10 @@ Date formulas allow you to apply date related functions to your formulas.</p>
 <p>Returns the number (1-7) of the day in a week for a given date. Monday is 1, and Sunday is 7.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>day_number_of_week(01/15/2014) = 3</code></p>
+<p><code>day_number_of_week( 01/15/2014 ) = 3</code></p>
 </div>
 <div class="paragraph">
-<p><code>day_number_of_week (shipped)</code></p>
+<p><code>day_number_of_week ( shipped )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2097,7 +2097,7 @@ Date formulas allow you to apply date related functions to your formulas.</p>
 <p>Returns the number (1-366) of the day in a year from a given date. You can add an optional second parameter to specify whether a 'fiscal' or 'calendar' year is used to calculate the result. The default is 'calendar'.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>day_number_of_year (01/30/2015) = 30</code></p>
+<p><code>day_number_of_year ( 01/30/2015 ) = 30</code></p>
 </div>
 <div class="paragraph">
 <p>In the following example, May 1st is the start of the fiscal year.</p>
@@ -2106,7 +2106,7 @@ Date formulas allow you to apply date related functions to your formulas.</p>
 <p><code>day_number_of_year ( 01/30/2015, 'fiscal' ) = 275</code></p>
 </div>
 <div class="paragraph">
-<p><code>day_number_of_year (invoiced)</code></p>
+<p><code>day_number_of_year ( invoiced )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2117,8 +2117,8 @@ Date formulas allow you to apply date related functions to your formulas.</p>
 <p>Returns the day of the week for the given date.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>day_of week (01/30/2015) = Friday</code>
-<code>day_of_week (serviced)</code></p>
+<p><code>day_of week ( 01/30/2015 ) = Friday</code>
+<code>day_of_week ( serviced )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2129,10 +2129,10 @@ Date formulas allow you to apply date related functions to your formulas.</p>
 <p>Subtracts the second date from the first date and returns the result in number of days, rounded down if not exact.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>diff_days (01/15/2014, 01/17/2014) = -2</code></p>
+<p><code>diff_days ( 01/15/2014, 01/17/2014 ) = -2</code></p>
 </div>
 <div class="paragraph">
-<p><code>diff_days (purchased, shipped)</code></p>
+<p><code>diff_days ( purchased, shipped )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2143,10 +2143,10 @@ Date formulas allow you to apply date related functions to your formulas.</p>
 <p>Subtracts the second date from the first date and returns the result in number of seconds.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>diff_time (01/30/2014, 01/31/2014) = -86,400</code></p>
+<p><code>diff_time ( 01/30/2014, 01/31/2014 ) = -86,400</code></p>
 </div>
 <div class="paragraph">
-<p><code>diff_time (clicked, submitted)</code></p>
+<p><code>diff_time ( clicked, submitted )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2157,7 +2157,7 @@ Date formulas allow you to apply date related functions to your formulas.</p>
 <p>Returns the hour of the day for the given date.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>hour_of_day (received)</code></p>
+<p><code>hour_of_day ( received )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2168,10 +2168,24 @@ Date formulas allow you to apply date related functions to your formulas.</p>
 <p>Returns true if the given date falls on a Saturday or Sunday.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>is_weekend (01/31/2015) = true</code></p>
+<p><code>is_weekend ( 01/31/2015 ) = true</code></p>
 </div>
 <div class="paragraph">
-<p><code>is_weekend (emailed)</code></p>
+<p><code>is_weekend ( emailed )</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>month</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Returns the month from the given date.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>month ( 01/15/2014 ) = January</code></p>
+</div>
+<div class="paragraph">
+<p><code>month ( date ordered )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2182,7 +2196,7 @@ Date formulas allow you to apply date related functions to your formulas.</p>
 <p>Returns the number (1-12) of the month from a given date. You can add an optional second parameter to specify whether a 'fiscal' or 'calendar' year is used to calculate the result. The default is 'calendar'.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>month_number (09/20/2014) = 9</code></p>
+<p><code>month_number ( 09/20/2014 ) = 9</code></p>
 </div>
 <div class="paragraph">
 <p>In the following example, May 1st is the start of the fiscal year.</p>
@@ -2191,7 +2205,7 @@ Date formulas allow you to apply date related functions to your formulas.</p>
 <p><code>month_number ( 09/20/2014, 'fiscal' ) = 5</code></p>
 </div>
 <div class="paragraph">
-<p><code>month_number (purchased)</code></p>
+<p><code>month_number ( purchased )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2202,13 +2216,13 @@ Date formulas allow you to apply date related functions to your formulas.</p>
 <p>Returns the month (1-3) number for the given date in a quarter. You can add an optional second parameter to specify whether a 'fiscal' or 'calendar' year is used to calculate the result. The default is 'calendar'.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>month_number_of_quarter (02/20/2018) = 2</code></p>
+<p><code>month_number_of_quarter ( 02/20/2018 ) = 2</code></p>
 </div>
 <div class="paragraph">
 <p>In the following example, May 1st is the start of the fiscal year.</p>
 </div>
 <div class="paragraph">
-<p><code>month_number_of_quarter (02/20/2018,'fiscal' ) = 1</code></p>
+<p><code>month_number_of_quarter ( 02/20/2018,'fiscal' ) = 1</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2230,7 +2244,7 @@ Date formulas allow you to apply date related functions to your formulas.</p>
 <p>Returns the number (1-4) of the quarter associated with the given date. You can add an optional second parameter to specify 'fiscal' or 'calendar' dates. The default is 'calendar'.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>quarter_number ( 04/14/2014) = 2</code></p>
+<p><code>quarter_number ( 04/14/2014 ) = 2</code></p>
 </div>
 <div class="paragraph">
 <p>In the following example, May 1st is the start of the fiscal year.</p>
@@ -2253,7 +2267,7 @@ Date formulas allow you to apply date related functions to your formulas.</p>
 <p><code>start_of_month ( 01/31/2015 ) = Jan FY 2015</code></p>
 </div>
 <div class="paragraph">
-<p><code>start_of_month (shipped)</code></p>
+<p><code>start_of_month ( shipped )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2264,16 +2278,16 @@ Date formulas allow you to apply date related functions to your formulas.</p>
 <p>Returns the date for the first day of the quarter for the given date. You can add an optional second parameter to specify whether a 'fiscal' or 'calendar' year is used to calculate the result. The default is 'calendar'.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>start_of_quarter ( 04/30/2014) = Apr 2014</code></p>
+<p><code>start_of_quarter ( 04/30/2014 ) = Apr 2014</code></p>
 </div>
 <div class="paragraph">
 <p>In the following example, May 1st is the start of the fiscal year.</p>
 </div>
 <div class="paragraph">
-<p><code>start_of_quarter ( 04/30/2014, 'fiscal') = Feb 2014</code></p>
+<p><code>start_of_quarter ( 04/30/2014, 'fiscal' ) = Feb 2014</code></p>
 </div>
 <div class="paragraph">
-<p><code>start_of_quarter (sold)</code></p>
+<p><code>start_of_quarter ( sold )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2287,7 +2301,7 @@ Date formulas allow you to apply date related functions to your formulas.</p>
 <p><code>start_of_week ( 01/31/2020 ) = 01/27/2020</code></p>
 </div>
 <div class="paragraph">
-<p><code>start_of_week (emailed)</code></p>
+<p><code>start_of_week ( emailed )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2298,16 +2312,16 @@ Date formulas allow you to apply date related functions to your formulas.</p>
 <p>Returns the date for the first day of the year for the given date. You can add an optional second parameter to specify whether a 'fiscal' or 'calendar' year is used to calculate the result. The default is 'calendar'.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>start_of_year (04/30/2014) returns Jan 2014</code></p>
+<p><code>start_of_year ( 04/30/2014 ) returns Jan 2014</code></p>
 </div>
 <div class="paragraph">
 <p>In the following example, May 1st is the start of the fiscal year.</p>
 </div>
 <div class="paragraph">
-<p><code>start_of_year (04/30/2014, 'fiscal') returns May 2013</code></p>
+<p><code>start_of_year ( 04/30/2014, 'fiscal' ) returns May 2013</code></p>
 </div>
 <div class="paragraph">
-<p><code>start_of_year (joined)</code></p>
+<p><code>start_of_year ( joined )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2318,10 +2332,10 @@ Date formulas allow you to apply date related functions to your formulas.</p>
 <p>Returns the time portion of a given date.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>time (1/31/2002 10:32) = 10:32</code></p>
+<p><code>time ( 1/31/2002 10:32 ) = 10:32</code></p>
 </div>
 <div class="paragraph">
-<p><code>time (call began)</code></p>
+<p><code>time ( call began )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2343,7 +2357,7 @@ Date formulas allow you to apply date related functions to your formulas.</p>
 <p>Returns the week number for the given date in a month.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>week_number_of_month(03/23/2017) = 3</code></p>
+<p><code>week_number_of_month( 03/23/2017 ) = 3</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2354,13 +2368,13 @@ Date formulas allow you to apply date related functions to your formulas.</p>
 <p>Returns the week number for the given date in a quarter. You can add an optional second parameter to specify whether a 'fiscal' or 'calendar' year is used to calculate the result. The default is 'calendar'.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>week_number_of_quarter (01/31/2020) = 5</code></p>
+<p><code>week_number_of_quarter ( 01/31/2020 ) = 5</code></p>
 </div>
 <div class="paragraph">
 <p>In the following example, May 1st is the start of the fiscal year.</p>
 </div>
 <div class="paragraph">
-<p><code>week_number_of_quarter (05/31/2020, 'fiscal') = 5</code></p>
+<p><code>week_number_of_quarter ( 05/31/2020, 'fiscal' ) = 5</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2371,13 +2385,13 @@ Date formulas allow you to apply date related functions to your formulas.</p>
 <p>Returns the week number for the given date in a year. You can add an optional second parameter to specify whether a 'fiscal' or 'calendar' year is used to calculate the result. The default is 'calendar'.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>week_number_of_year (01/17/2014) = 3</code></p>
+<p><code>week_number_of_year ( 01/17/2014 ) = 3</code></p>
 </div>
 <div class="paragraph">
 <p>In the following example, May 1st is the start of the fiscal year.</p>
 </div>
 <div class="paragraph">
-<p><code>week_number_of_year ( 01/17/2014, 'fiscal') = 38</code></p>
+<p><code>week_number_of_year ( 01/17/2014, 'fiscal' ) = 38</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2388,16 +2402,16 @@ Date formulas allow you to apply date related functions to your formulas.</p>
 <p>Returns the year from a given date. You can add an optional second parameter to specify whether a 'fiscal' or 'calendar' year is used to calculate the result. The default is 'calendar'.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>year (01/15/2014) = 2014</code></p>
+<p><code>year ( 01/15/2014 ) = 2014</code></p>
 </div>
 <div class="paragraph">
 <p>In the following example, May 1st is the start of the fiscal year. Per standard convention, the fiscal year is defined by the year-end date.</p>
 </div>
 <div class="paragraph">
-<p><code>year (12/15/2013, 'fiscal' ) = 2014</code></p>
+<p><code>year ( 12/15/2013, 'fiscal' ) = 2014</code></p>
 </div>
 <div class="paragraph">
-<p><code>year (date ordered)</code></p>
+<p><code>year ( date ordered )</code></p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2419,7 +2433,7 @@ Here are some examples of using date formulas:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The formula for this week is: <code>week ( today () ) - week (date)</code></p>
+<p>The formula for this week is: <code>week ( today () ) - week ( date )</code></p>
 </li>
 <li>
 <p>The formula for last week is: <code>diff_days ( week ( today () ) ) , week ( date ) )</code></p>
@@ -2438,7 +2452,7 @@ Here are some examples of using date formulas:</p>
 <p>Create the formula: <code>this week revenue = sum ( if ( this week ) then revenue else 0 )</code></p>
 </li>
 <li>
-<p>Then create the formula: <code>last week revenue = sum ( if (last week ) then revenue else 0 )</code></p>
+<p>Then create the formula: <code>last week revenue = sum ( if ( last week ) then revenue else 0 )</code></p>
 </li>
 <li>
 <p>Use <a href="about-nested-formulas.html" class="page">nested formulas</a> to calculate the percent increase by creating a parent formula: <code>percent increase = ( ( this week revenue - last week revenue) / last week revenue ) * 100</code></p>
@@ -2449,7 +2463,7 @@ Here are some examples of using date formulas:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_fiscal_and_gregorian_calendars"><a class="anchor" href="#_fiscal_and_gregorian_calendars"></a>Fiscal and Gregorian calendars</h2>
+<h2 id="fiscal-and-gregorian-calendars"><a class="anchor" href="#fiscal-and-gregorian-calendars"></a>Fiscal and Gregorian calendars</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>For the following date formulas, you can further specify either <code>fiscal</code> or Gregorian <code>calendar</code> on which to base date calculations.

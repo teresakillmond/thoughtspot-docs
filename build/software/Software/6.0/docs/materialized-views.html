@@ -674,7 +674,7 @@
     <a class="nav-link" href="work-with-ts-support.html">Configure support services</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:ports.adoc">Network policies</a>
+    <a class="nav-link" href="firewall-ports.html">Network policies</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="about-load-balancer-configuration.html">Configure load balancing and proxies</a>
@@ -1923,7 +1923,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can materialize a view to improve its performance.</p>
+<p>You can materialize a View to improve its performance.</p>
 </div>
 </div>
 </div>
@@ -1931,14 +1931,14 @@
 <h2 id="_introduction_to_materialized_views"><a class="anchor" href="#_introduction_to_materialized_views"></a>Introduction to materialized views</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Views can become slow as your data volume and the number of views stacked on top of one another grow.
-This happens because when doing a search, each view is computed on the fly.
-To improve the performance of a view, you can materialize it.
-Materializing pre-computes the view and stores it in memory, just like a table.
-You can expect a materialized view to be three to six times faster than a view that is not materialized, on average.</p>
+<p>Views can become slow as your data volume and the number of Views stacked on top of one another grow.
+This happens because when doing a search, each View is computed on the fly.
+To improve the performance of a View, you can materialize it.
+Materializing pre-computes the View and stores it in memory, just like a table.
+You can expect a Materialized View to be three to six times faster than a View that is not materialized, on average.</p>
 </div>
 <div class="paragraph">
-<p>To materialize a view, you must have the <a href="about-users-groups.html" class="page"><strong>Can administer ThoughtSpot</strong> privilege</a>.</p>
+<p>To materialize a View, you must have the <a href="about-users-groups.html" class="page"><strong>Can administer ThoughtSpot</strong> privilege</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1947,47 +1947,55 @@ You can expect a materialized view to be three to six times faster than a view t
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The number of materialized views you can create is limited to 50, because materialized views take up space in memory.
-Row Level Security does not apply to materialized views.
-All users will see the same data when using the materialized view as a data source.
+The number of Materialized Views you can create is limited to 50, because Materialized Views take up space in memory.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Row Level Security does not apply to Materialized Views.
+All users will see the same data when using the Materialized View as a data source.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>These are the operations you can do on a view:</p>
+<p>These are the operations you can do on a View:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="materialize-a-view.html" class="page">Materialize a view</a> to improve performance,</p>
+<p><a href="materialize-a-view.html" class="page">Materialize a View</a> to improve performance,</p>
 </li>
 <li>
-<p><a href="dematerialize-a-view.html" class="page">Dematerialize a view</a> to save space, or</p>
+<p><a href="dematerialize-a-view.html" class="page">Dematerialize a View</a> to save space, or</p>
 </li>
 <li>
-<p><a href="refresh-view.html" class="page">Refresh a view</a> to synchronize its data with the latest data load to the underlying tables.</p>
+<p><a href="refresh-view.html" class="page">Refresh a View</a> to synchronize its data with the latest data load to the underlying tables.</p>
 </li>
 <li>
-<p>Check the status of a view.</p>
+<p>Check the status of a View.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>After materializing, a view can have one of three statuses.
-You can see the status of a view by selecting <strong>Data</strong>, clicking on <strong>Views</strong>, and finding your view in the list.
-The status is shown next to the name of your view.</p>
+<p>After materializing, a View can have one of three statuses.
+You can see the status of a View by selecting <strong>Data</strong>, clicking on <strong>Views</strong>, and finding your View in the list.
+The status is shown next to the name of your View.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_materialization_status"><a class="anchor" href="#_materialization_status"></a>Materialization status</h2>
+<h2 id="materialization-status"><a class="anchor" href="#materialization-status"></a>Materialization status</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="#materialization-status"></a></p>
-</div>
-<div class="paragraph">
-<p>A materialized view can be in one of the following states:</p>
+<p>These are the statuses a View can have:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -2017,12 +2025,12 @@ Wait for materialization to finish.</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Materialized</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">View has been materialized into memory.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">You can now search the materialized view.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You can now search the Materialized View.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Stale</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">View has become out of sync with the data in the tables that make it up, usually due to an incremental data load.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Refresh the view by clicking <strong>Refresh Data</strong>*.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Refresh the View by clicking <strong>Refresh Data</strong>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Unknown</p></td>
@@ -2032,7 +2040,7 @@ Wait for materialization to finish.</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Error</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">An error occurred.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Refresh the view by clicking <strong>Refresh Data</strong>*.
+<td class="tableblock halign-left valign-top"><p class="tableblock">Refresh the View by clicking <strong>Refresh Data</strong>.
 Optionally run a report.</p></td>
 </tr>
 </tbody>
@@ -2050,35 +2058,35 @@ Optionally run a report.</p></td>
 <h2 id="_freshness_of_data"><a class="anchor" href="#_freshness_of_data"></a>Freshness of data</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Your view can become stale, if it isn&#8217;t refreshed when the data in the tables used to create it is updated.
+<p>Your View can become stale, if it isn&#8217;t refreshed when the data in the tables used to create it is updated.
 There are two ways to refresh the data:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="refresh-view.html" class="page">Manually refresh data in a view</a></p>
+<p><a href="refresh-view.html" class="page">Manually refresh data in a View</a></p>
 </li>
 <li>
-<p><a href="schedule-materialization.html" class="page">Refresh the view on a schedule</a></p>
+<p><a href="schedule-materialization.html" class="page">Refresh the View on a schedule</a></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Here are some conditions that could lead to a view becoming stale:</p>
+<p>Here are some conditions that could lead to a View becoming stale:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Changes to the view definition</p>
+<p>Changes to the View definition</p>
 </li>
 <li>
-<p>Changes to the fields used in the view</p>
+<p>Changes to the fields used in the View</p>
 </li>
 <li>
-<p>Changes to the join relationships used in the view</p>
+<p>Changes to the join relationships used in the View</p>
 </li>
 <li>
-<p>Change to formulas in the view</p>
+<p>Change to formulas in the View</p>
 </li>
 <li>
 <p>Change the datatypes in the underlying tables</p>
