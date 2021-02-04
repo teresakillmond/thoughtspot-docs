@@ -1,25 +1,26 @@
 = Embed pinboard or visualization
 :last_updated: 11/18/2019
-:toc: true
+:linkattrs:
+:toc: false
 
-Learn how to embed a visualization or pinboard in your own Web page.
+Learn how to embed a visualization or Pinboard in your own Web page.
 
-This page explains, through an example, how to embed a visualization (table or chart) or pinboard from ThoughtSpot in your own static Web page, portal, or application.
+This page explains, through an example, how to embed a visualization (table or chart) or Pinboard from ThoughtSpot in your own static Web page, portal, or application.
 
 To build this sample, you need to have access to a text editor and a ThoughtSpot instance with a visualization.
 You should also have some experience working with Javascript.
 
-== Get the link for an entire pinboard or single visualization
+== Get the link for an entire Pinboard or single visualization
 
-This procedure assumes the pinboard with the visualization you want to embed already exists.
-If the pinboard or visualization doesn't exist, create it now before continuing.
+This procedure assumes the Pinboard with the visualization you want to embed already exists.
+If the Pinboard or visualization doesn't exist, create it now before continuing.
 
 . Log in to ThoughtSpot from a browser.
 . Navigate to a visualization on the *Pinboard* tab.
-. Open a pinboard.
-. Copy the URL for the entire pinboard and for a single visualization.
+. Open a Pinboard.
+. Copy the URL for the entire Pinboard and for a single visualization.
 +
-If the object is a pinboard, click the *More* icon image:icon-more-10px.png[more options menu icon] >  *Copy Link*.
+If the object is a Pinboard, click the *More* icon image:icon-more-10px.png[more options menu icon] >  *Copy Link*.
 +
 image::embed-link-1.png[]
 +
@@ -58,7 +59,7 @@ Here are the fields in the `test.html` file you need to edit.
  var vizualizationId = "VIZUALIZATON_ID";
 ----
 
-. Edit each variable in the section and replace it with the IDs you copied from the pinboard.
+. Edit each variable in the section and replace it with the IDs you copied from the Pinboard.
 +
 For example, your URL may look similar to the following:
 +
@@ -92,7 +93,7 @@ If you do this, you must DNS for the server when you contact Support.
 
 == Test the example page
 
-You are almost ready to view your embedded pinboard and visualization.
+You are almost ready to view your embedded Pinboard and visualization.
 The fastest way to run a webserver and test the code is using Python's `simplehttpserver`.
 If you have Python on your system you already have the `simplehttpserver`.
 
