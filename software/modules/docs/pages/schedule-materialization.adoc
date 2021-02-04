@@ -1,6 +1,5 @@
 = Schedule materialization refresh on a View
 :last_updated: 11/2/2018
-:toc: false
 
 Learn how to schedule materialization refresh of a View to keep it in sync with the data that makes it up.
 
@@ -24,7 +23,7 @@ image::schedule-data-updates-weekly.png[]
 
 NOTE: Refresh works only if it is scheduled in the refresh window set for the cluster (default: 8:00 PM - 4:00 AM).
 Only the start time of the refresh window is configurable using the flag `orion.materializationConfig.refreshWindowStartTime` which can be set to values such as `12:00PM` or `01:00AM` etc.
-Example: To set the cluster window from 2:00 AM to 10:00 AM you can set the flag as `orion.materializationConfig.refreshWindowStartTime \"02:00AM\"`.
+Example: To set the cluster window from 2:00 AM to 10:00 AM you can set the flag as `orion.materializationConfig.refreshWindowStartTime "02:00AM"`.
 
 == Related Information
 
