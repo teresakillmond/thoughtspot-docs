@@ -1,7 +1,8 @@
 = Worksheet YAML specification
 :last_updated: 12/16/2020
+:linkattrs:
 
-ThoughtSpot worksheet specification may be exported as a YAML file, modified, and imported into the same or different cluster.
+ThoughtSpot Worksheet specification may be exported as a YAML file, modified, and imported into the same or different cluster.
 
 To work with Scriptable Worksheets in ThoughtSpot, you can download Worksheets to a flat file in `yaml` format, modify it, and subsequently upload this file either to the same cluster, or to a different cluster.
 To learn how to export, change, and update Worksheets, see xref:worksheet-export.adoc[Migrate or restore Worksheets].
@@ -11,7 +12,7 @@ To learn how to export, change, and update Worksheets, see xref:worksheet-export
 
 The YAML file for Scriptable Worksheets has a specific syntax.
 
-See the <<parameters,Parameters>> section for details about the keywords used in this example.
+See the xref:parameters[Parameters] section for details about the keywords used in this example.
 
 ....
 
@@ -112,7 +113,7 @@ worksheet:
 +++<dl>+++
  +++<dlentry id="aggregation">+++
   +++<dt>+++aggregation+++</dt>+++
-  +++<dd>+++The default aggregation of the worksheet column +++<br>+++
+  +++<dd>+++The default aggregation of the Worksheet column +++<br>+++
   Aggregation options depend on the data type.+++<br>+++
   Possible values: `SUM`, `COUNT`, `AVERAGE`, `MAX`, `MIN`, `COUNT_DISTINCT`, `NONE`, `STD_DEVIATION`, and `VARIANCE` +++<br>+++
   Default: `SUM` +++<br>++++++</dd>++++++</dlentry>+++
@@ -150,10 +151,10 @@ worksheet:
     See xref:set-format-pattern-numbers.adoc[Set number, date, and currency formats]. +++</dd>++++++</dlentry>+++
  +++<dlentry id="formula_id">+++
     +++<dt>+++formula_id+++</dt>+++
-    +++<dd>+++The `id` of the formula that defines the worksheet column+++</dd>++++++</dlentry>+++
+    +++<dd>+++The `id` of the formula that defines the Worksheet column+++</dd>++++++</dlentry>+++
  +++<dlentry id="formulas">+++
     +++<dt>+++formulas+++</dt>+++
-    +++<dd>+++The list of formulas in the worksheet +++<br>+++
+    +++<dd>+++The list of formulas in the Worksheet +++<br>+++
     Each formula is identified by `name`, the `expr` (expression), and an optional `id` attribute.+++</dd>++++++</dlentry>+++
  +++<dlentry id="fqn">+++
     +++<dt>+++fqn+++</dt>+++
@@ -166,7 +167,7 @@ worksheet:
     One of: +++<br>+++
      +++<ul>+++
       +++<li>+++`latitude : true` for columns that specify the latitude+++</li>+++
-      +++<li>+++`longitude` : true` for columns that specify the longitude+++</li>+++
+      +++<li>+++`longitude : true` for columns that specify the longitude+++</li>+++
       +++<li>+++`country : true` for columns that specify the country+++</li>+++
       +++<li>+++`region_name` for specifying a region in a country +++<br>+++
        Uses two paired parameters: +++<br>+++
@@ -184,7 +185,7 @@ worksheet:
     See xref:change-index.adoc#change-a-columns-suggestion-priority[Change a column's suggestion priority].+++</dd>++++++</dlentry>+++
   +++<dlentry id="index_type">+++
      +++<dt>+++index_type+++</dt>+++
-     +++<dd>+++The indexing option of the worksheet column +++<br>+++ Possible values: `DONT_INDEX`, `DEFAULT` (see xref:change-index.adoc#understand-the-default-indexing-behavior[Understand the default indexing behavior]), `PREFIX_ONLY`, `PREFIX_AND_SUBSTRING`, and `PREFIX_AND_WORD_SUBSTRING` +++<br>+++
+     +++<dd>+++The indexing option of the Worksheet column +++<br>+++ Possible values: `DONT_INDEX`, `DEFAULT` (see xref:change-index.adoc#understand-the-default-indexing-behavior[Understand the default indexing behavior]), `PREFIX_ONLY`, `PREFIX_AND_SUBSTRING`, and `PREFIX_AND_WORD_SUBSTRING` +++<br>+++
       Default: `DEFAULT` +++<br>+++
       See xref:change-index.adoc#index-type[Index Type Values]. +++</dd>++++++</dlentry>+++
   +++<dlentry id="is_additive">+++
@@ -196,13 +197,14 @@ worksheet:
     See xref:change-aggreg-additive.adoc#making-an-attribute-column-additive[Making an ATTRIBUTE column ADDITIVE]. +++</dd>++++++</dlentry>+++
   +++<dlentry id="is_attribution_dimension">+++
     +++<dt>+++is_attribution_dimension+++</dt>+++
-    +++<dd>+++Controls if the column is an attribution dimension + Used in managing chasm traps. +++<br>+++
+    +++<dd>+++Controls if the column is an attribution dimension +++<br>+++
+     Used in managing chasm traps. +++<br>+++
     Possible values: `true` by default, `false` to designate a column as not producing meaningful attributions across a chasm trap +++<br>+++
     Default: `true` +++<br>+++
     See xref:attributable-dimension.adoc[Change the attribution dimension]. +++</dd>++++++</dlentry>+++
   +++<dlentry id="is_bypass_rls">+++
     +++<dt>+++is_bypass_rls+++</dt>+++
-    +++<dd>+++Specifies if the worksheet supports bypass of Row-level security (RLS) +++<br>+++
+    +++<dd>+++Specifies if the Worksheet supports bypass of Row-level security (RLS) +++<br>+++
     Possible values: `true` or `false` +++<br>+++ Default: `false` +++<br>+++
     See xref:row-level-security.adoc#privileges-that-allow-users-to-set-or-be-exempt-from-rls[Privileges that allow users to set, or be exempt from, RLS]. +++</dd>++++++</dlentry>+++
   +++<dlentry id="is_hidden">+++
@@ -228,19 +230,19 @@ worksheet:
 
 +++<dlentry id="join_progressive">+++
     +++<dt>+++join_progressive+++</dt>+++
-    +++<dd>+++Specifies when to apply joins on a worksheet +++<br>+++ Possible values: `true` when joins are applied only for tables whose columns are included in the search, and `false` for all possible joins +++<br>+++
+    +++<dd>+++Specifies when to apply joins on a Worksheet +++<br>+++ Possible values: `true` when joins are applied only for tables whose columns are included in the search, and `false` for all possible joins +++<br>+++
     Default: `true` +++<br>+++
     See xref:progressive-joins.adoc[How the worksheet join rule works]. +++</dd>++++++</dlentry>+++
 +++<dlentry id="joins">+++
     +++<dt>+++joins+++</dt>+++
-    +++<dd>+++List of joins between tables and views, used by the worksheet +++<br>+++
+    +++<dd>+++List of joins between tables and Views, used by the Worksheet +++<br>+++
     Each join is identified by `name`, and the additional attributes of `source`, `destination`, `type`, and `is_one_to_one.`+++</dd>++++++</dlentry>+++
 +++<dlentry id="name">+++
     +++<dt>+++name+++</dt>+++
     +++<dd>+++The name of an object. Applies to `worksheet`, `table`,`join`, `formula`, and so on.+++</dd>++++++</dlentry>+++
 +++<dlentry id="properties">+++
     +++<dt>+++properties+++</dt>+++
-    +++<dd>+++The list of properties of the worksheet column +++<br>+++
+    +++<dd>+++The list of properties of the Worksheet column +++<br>+++
     Each column can have the following properties, depending on its definition: `column_type`, `aggregation`, `index_type`, `is_hidden`, `index_priority`, `synonyms`, `is_attribution_dimension`, `is_additive`, `calendar`, `format_pattern`, `currency_type`, and `geo_config`. +++</dd>++++++</dlentry>+++
 +++<dlentry id="source">+++
     +++<dt>+++source+++</dt>+++
@@ -258,7 +260,7 @@ worksheet:
     Each table path is identified by the `id`, and additional attributes of `table` and `join_path`.+++</dd>++++++</dlentry>+++
 +++<dlentry id="tables">+++
     +++<dt>+++tables+++</dt>+++
-    +++<dd>+++List of tables used by the worksheet +++<br>+++
+    +++<dd>+++List of tables used by the Worksheet +++<br>+++
     Each table is identified by `name`.+++</dd>++++++</dlentry>+++
 +++<dlentry id="type">+++
     +++<dt>+++type+++</dt>+++
@@ -267,10 +269,10 @@ worksheet:
     Default: `RIGHT_OUTER`+++</dd>++++++</dlentry>+++
 +++<dlentry id="worksheet">+++
     +++<dt>+++worksheet+++</dt>+++
-    +++<dd>+++Top-level container for all object definitions within the worksheet+++</dd>++++++</dlentry>+++
+    +++<dd>+++Top-level container for all object definitions within the Worksheet+++</dd>++++++</dlentry>+++
 +++<dlentry id="worksheet_columns">+++
     +++<dt>+++worksheet_columns+++</dt>+++
-    +++<dd>+++The list of columns in the worksheet +++<br>+++ Each worksheet is identified by `name`, `description`, `formula_id`, and `properties`.+++</dd>++++++</dlentry>+++
+    +++<dd>+++The list of columns in the Worksheet +++<br>+++ Each Worksheet is identified by `name`, `description`, `formula_id`, and `properties`.+++</dd>++++++</dlentry>+++
          +++</dl>+++
 
 [#limitations]
@@ -279,7 +281,7 @@ worksheet:
 There are certain limitations to the changes you can apply be editing a Worksheet through YAML.
 
 * Formulas and columns can either have a new name, or a new expression.
-You cannot change both, unless migrating or updating the worksheet two times.
+You cannot change both, unless migrating or updating the Worksheet two times.
 * It is not possible to reverse the join direction in the YAML script.
 * It is not possible to include Worksheet filters in the YAML script.
 * You cannot create Scriptable representations of R- or Python-powered visualizations.
