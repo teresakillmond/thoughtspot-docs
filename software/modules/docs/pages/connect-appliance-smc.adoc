@@ -41,6 +41,7 @@ Here is a picture of the back of each appliance.
 image:smc-haswell-location-ports-new.png[Haswell port location]
 // {% include image.adoc file="smc-haswell-location-ports-new.png" title="Haswell port location" alt="The data and management ports are on the back of the SMC Haswell appliance." caption="Haswell port location" %}
 
+[#skylake-port-location]
 image:smc-appliance-skylake-location-ports.png[Skylake port location]
 // {% include image.adoc file="smc-appliance-skylake-location-ports.png" title="Skylake port location" alt="The data and management ports are on the back of the SMC Skylake appliance." caption="Skylake port location" %}
 
@@ -54,7 +55,7 @@ This prevents accidental configuration of incorrect nodes.
 == Step 2: Connect IPMI ports
 
 Connect the IPMI port of each node to the management switch.
-+
+
 See xref:connect-appliance-smc.adoc#haswell-port-location[Haswell port location] and xref:connect-appliance-smc.adoc#skylake-port-location[Skylake port location].
 
 [#appliance-step-3]
@@ -66,6 +67,7 @@ see xref:connect-appliance-smc.adoc#smc-appliance-power-button[Appliance Power B
 There is one power button for each node.
 The images below show two of the four power buttons.
 
+[#smc-appliance-power-button]
 |===
 | Haswell Appliance | &#32; &#32; &#32; | Skylake Appliance
 
@@ -76,10 +78,11 @@ The images below show two of the four power buttons.
 
 Check the health of the NIC by inspecting your appliance's LEDs.
 There should be a steady green light for the 100MB/s or 1Gb/s management NIC connection, a steady amber or orange light for the 10G/s connection, and a blinking LED on both NICs to indicate live traffic.
-+
 
-After the LEDs are the correct colors, verify that the connection is valid and the nodes are on by pinging the gateway: + Enter `ping <default-gateway-IP>`.
-+
+
+After the LEDs are the correct colors, verify that the connection is valid and the nodes are on by pinging the gateway: +
+Enter `ping <default-gateway-IP>`.
+
 Ask your network administrator for your default gateway IP if you have not already listed it in your ThoughtSpot xref:site-survey.pdf[site survey].
 
 ----
