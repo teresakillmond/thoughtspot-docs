@@ -7,8 +7,8 @@ Learn how to install ThoughtSpot clusters in Azure.
 
 Before you can install your ThoughtSpot clusters in Azure, complete these prerequisites.
 
-. *Review configuration options* Refer to xref:configuration-options.adoc[Azure configuration options] for detailed instance specs.
-. *Create the instance* Refer to xref:launch-an-instance.adoc[Set up Azure for ThoughtSpot] to create and launch your instance.
+. *Review configuration options* Refer to xref:configuration-options-azure.adoc[Azure configuration options] for detailed instance specs.
+. *Create the instance* Refer to xref:launch-an-instance-azure.adoc[Set up Azure for ThoughtSpot] to create and launch your instance.
 . *Review required ports* Refer to xref:firewall-ports.adoc[Network Policies] to view the required ports for successful operation of ThoughtSpot.
 . *Configure nodes* Refer to xref:installing-azure.adoc[Configure ThoughtSpot nodes in Azure] to configure your nodes.
 
@@ -46,15 +46,16 @@ If you do not have a link, open a support ticket with xref:contact.adoc[ThoughtS
 +
 Note the following parameters:
 
- ** `release-number` is the release number of your ThoughtSpot instance, such as 5.3, 6.0, and so on.
- ** `hostname` is your specific hostname.
- ** `file-name` is the name of the tarball file on your local computer.
+** `release-number` is the release number of your ThoughtSpot instance, such as 5.3, 6.0, and so on.
+** `hostname` is your specific hostname.
+** `file-name` is the name of the tarball file on your local computer.
 
 +
 NOTE: You can use another secure copy method, if you prefer a method other than the `scp` command.
 
 . Alternatively, use `tscli fileserver download-release` to download the release bundle.
-+ You must xref:tscli-command-ref.adoc#tscli-fileserver[configure the fileserver] by running `tscli fileserver configure` before you can download the release.
++
+You must xref:tscli-command-ref.adoc#tscli-fileserver[configure the fileserver] by running `tscli fileserver configure` before you can download the release.
 +
 [source,console]
 ----
@@ -88,11 +89,15 @@ Use screen to ensure that your installation does not stop if you lose network co
 ----
 
 . Manually update tscli.
-
++
+[source,console]
+----
  $ tar -C /usr/local/scaligent -zxpf <release-number>.tar.gz './bin/tscli'
+----
 
 . Create the cluster.
-+ Run `tscli cluster create` to create the cluster.
++
+Run `tscli cluster create` to create the cluster.
 +
 [source,console]
 ----
@@ -106,7 +111,6 @@ For more information on this process, refer to xref:cluster-create.adoc[Using th
 The cluster installer automatically reboots all the nodes after a successful install.
 The `firewalld` service automatically turns on.
 At this time, the system is rebooting, which may take approximately 15 minutes.
-+
 
 . Log in to any node to check the current cluster status:
 +
@@ -235,12 +239,14 @@ Follow these steps:
 ----
 
 . If you don't have a security certificate for ThoughtSpot, you must bypass the security warning:
+
  ** Click *Advanced*
  ** Click *Proceed*
 . The ThoughtSpot sign-in page appears.
 . In the <<ts-login,ThoughtSpot sign-in window>>, enter admin credentials, and click *Sign in*.
 ThoughtSpot recommends changing the default admin password.
 
+[#ts-login]
 image:ts-login-page.png[ThoughtSpot's sign-in window]
 // {% include image.adoc file="ts-login-page.png" title="ThoughtSpot's sign-in window" alt="Sign in to ThoughtSpot. Enter Username, Password, and click Sign in. You may select the Remember me option." caption="ThoughtSpot's sign-in window" %}
 
