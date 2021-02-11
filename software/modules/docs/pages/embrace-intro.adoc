@@ -31,40 +31,72 @@ It's easy to apply transformations and filter the data also.
 * Save significant time and money by avoiding ETL pipelines.
 * Connect to multiple external databases.
 
+== New features in 6.0
+
++++<script src="https://fast.wistia.com/embed/medias/1n7ei0tqr4.jsonp" async>++++++</script>+++
++++<script src="https://fast.wistia.com/assets/external/E-v1.js" async>++++++</script>+++
++++<span class="wistia_embed wistia_async_1n7ei0tqr4 popover=true popoverAnimateThumbnail=true popoverBorderColor=4E55FD popoverBorderWidth=2" style="display:inline-block;height:252px;position:relative;width:450px">++++++&nbsp;++++++</span>+++
+
 == Limitations
 
 === Feature availability in Embrace
 
-The following matrix compares the features that are available in our internal high-performance database, Falcon, and the ones available in Embrace:+++<table>++++++<tbody>++++++<tr>++++++<th>+++Feature Name+++</th>+++
-+++<th>+++Falcon+++</th>+++
-+++<th>+++Embrace+++</th>++++++</tr>+++
-+++<tr>++++++<td>+++Simple Search and Complex searches:+++<br>++++++</br>+++Versus, Inline Subquerying, Growth+++</td>+++
-+++<td>+++&check;+++</td>+++
-+++<td>+++&check;+++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Search Suggestions for column names and values+++</td>+++
-+++<td>+++&check;+++</td>+++
-+++<td>+++&check;+++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Headlines that summarize tables+++</td>+++
-+++<td>+++&check;+++</td>+++
-+++<td>+++&check;+++</td>++++++</tr>+++
-+++<tr>++++++<td>+++All chart types and configurations+++</td>+++
-+++<td>+++&check;+++</td>+++
-+++<td>+++&check;+++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Spot IQ: Instant insights, Did you know?,+++<br>++++++</br>+++Pinboard insights, Analyze+++</td>+++
-+++<td>+++&check;+++</td>+++
-+++<td>+++&cross;+++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Monitor+++</td>+++
-+++<td>+++&check;+++</td>+++
-+++<td>+++&cross;+++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Table and Column remapping through Scriptability+++</td>+++
-+++<td>+++&cross;+++</td>+++
-+++<td>+++&check;+++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Custom calendar+++</td>+++
-+++<td>+++&check;+++</td>+++
-+++<td>+++&cross;+++</td>++++++</tr>+++
-+++<tr>++++++<td>+++Materialized view+++</td>+++
-+++<td>+++&check;+++</td>+++
-+++<td>+++&cross;+++</td>++++++</tr>++++++</tbody>++++++</table>+++
+The following matrix compares the features that are available in our internal high-performance database, Falcon, and the ones available in Embrace:
++++<table>+++
+ +++<tbody>+++
+  +++<tr>+++
+   +++<th>+++Feature Name+++</th>+++
+   +++<th>+++Falcon+++</th>+++
+   +++<th>+++Embrace+++</th>+++
+  +++</tr>+++
+   +++<tr>+++
+    +++<td>+++Simple Search and Complex searches:+++<br>+++
+    Versus, Inline Subquerying, Growth+++</td>+++
+    +++<td>+++&check;+++</td>+++
+    +++<td>+++&check;+++</td>+++
+  +++</tr>+++
+  +++<tr>+++
+   +++<td>+++Search Suggestions for column names and values+++</td>+++
+   +++<td>+++&check;+++</td>+++
+   +++<td>+++&check;+++</td>+++
+  +++</tr>+++
+  +++<tr>+++
+   +++<td>+++Headlines that summarize tables+++</td>+++
+   +++<td>+++&check;+++</td>+++
+   +++<td>+++&check;+++</td>+++
+  +++</tr>+++
+  +++<tr>+++
+   +++<td>+++All chart types and configurations+++</td>+++
+   +++<td>+++&check;+++</td>+++
+   +++<td>+++&check;+++</td>+++
+  +++</tr>+++
+  +++<tr>+++
+   +++<td>+++Spot IQ: Instant insights, Did you know?,+++<br>+++Pinboard insights, Analyze+++</td>+++
+   +++<td>+++&check;+++</td>+++
+   +++<td>+++&cross;+++</td>+++
+  +++</tr>+++
+  +++<tr>+++
+   +++<td>+++Monitor+++</td>+++
+   +++<td>+++&check;+++</td>+++
+   +++<td>+++&cross;+++</td>+++
+  +++</tr>+++
+  +++<tr>+++
+   +++<td>+++Table and Column remapping through Scriptability+++</td>+++
+   +++<td>+++&cross;+++</td>+++
+   +++<td>+++&check;+++</td>+++
+  +++</tr>+++
+  +++<tr>+++
+   +++<td>+++Custom calendar+++</td>+++
+   +++<td>+++&check;+++</td>+++
+   +++<td>+++&cross;+++</td>+++
+  +++</tr>+++
+  +++<tr>+++
+   +++<td>+++Materialized View+++</td>+++
+   +++<td>+++&check;+++</td>+++
+   +++<td>+++&cross;+++</td>+++
+  +++</tr>+++
+ +++</tbody>+++
++++</table>+++
 
 === Function availability in Embrace
 
@@ -72,7 +104,10 @@ The following matrix compares the specific function support across the different
 Functions not listed here have full support.
 
 |===
-| Function | Snowflake | Amazon + Redshift | Google + BigQuery | Azure + Synapse
+| Function | Snowflake | Amazon +
+ Redshift | Google +
+ BigQuery | Azure +
+ Synapse
 
 | `SOUNDS_LIKE`
 | &cross;
@@ -135,7 +170,10 @@ The following matrix captures the specific data type support limitations across 
 Data types not listed here have full support.
 
 |===
-| Data Type + | Snowflake + | Amazon + Redshift | Google + BigQuery | Azure + Synapse
+| Data Type | Snowflake | Amazon +
+ Redshift | Google +
+ BigQuery | Azure +
+ Synapse
 
 | `BINARY`
 | &cross;
@@ -187,7 +225,7 @@ Databases not listed here have full support.
      +++<dt>+++Sample values+++</dt>+++
      +++<dd>+++Embrace does not internationalize sample values in tables.+++</dd>++++++</dlentry>+++
     +++<dlentry>+++
-     +++<dt>+++Delayed UI rendering+++</dt>+++ +++<dd>+++For connections with a very large number of tables (on the order of 1000's of tables), UI rendering may take a very long time.These connections may time out.+++</dd>++++++</dlentry>+++
+     +++<dt>+++Delayed UI rendering+++</dt>+++ +++<dd>+++For connections with a very large number of tables (on the order of 1000's of tables), UI rendering may take a very long time. These connections may time out.+++</dd>++++++</dlentry>+++
    +++<dlentry>+++
     +++<dt>+++Deleting columns+++</dt>+++
     +++<dd>+++After specifying a connection, columns cannot be deleted from the table. Editing a connection makes it possible to add additional columns, but not to remove them.+++</dd>++++++</dlentry>+++
@@ -202,13 +240,13 @@ Databases not listed here have full support.
       +++<dt>+++Join support+++</dt>+++
       +++<dd>+++Google BigQuery does not support PK-FK joins. Therefore, when using Embrace, you must create joins explicitly in ThoughtSpot.+++</dd>++++++</dlentry>+++
      +++<dlentry>+++
-      +++<dt>+++Partitioned tables+++</dt>+++  +++<dd>+++When running a query on a partitioned table with the *Require partition filter option* enabled, you must specify the `WHERE` clause.Without a `WHERE` clause specified, queries generate an error. +++<br>+++
+      +++<dt>+++Partitioned tables+++</dt>+++  +++<dd>+++When running a query on a partitioned table with the *Require partition filter option* enabled, you must specify the `WHERE` clause. Omitting the `WHERE` clause throws an error. +++<br>+++
       To ensure that the query on such tables honors the partition condition, you must create a worksheet filter in ThoughtSpot.+++</dd>++++++</dlentry>++++++</dl>+++
      +++</dd>+++
     +++</dlentry>+++
     +++<dlentry>+++
      +++<dt>+++Azure Synapse+++</dt>+++
-     +++<dd>+++Azure Synapse supports up to 10 `IF THEN ELSE` statements in a single query. Azure Synapse does not support foreign keys, so no PK-FK joins can be defined in Synapse.+++</dd>++++++</dlentry>+++
+     +++<dd>+++Azure Synapse supports up to 10 `IF THEN ELSE` statements in a single query.+++</dd>++++++</dlentry>+++
 +++</dl>+++
 
 == Next steps
