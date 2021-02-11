@@ -1796,7 +1796,55 @@
     <a class="nav-link" href="intro-reference.html">About this reference</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="keywords.html">Keyword reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-ja-JP.html">日本語: Japanese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-zh-CN.html">中文 (简体): Chinese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-de-DE.html">Deutsche: German Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-es-US.html">Español (Latinoamérica): Spanish Latin American Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-es-ES.html">Español (España): Spanish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fr-CA.html">Français (Canada): French Canadian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fr-FR.html">Français (France): French Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-pt-BR.html">Português (Brasil): Portuguese Brazilian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-pt-PT.html">Português (Portugal): Portuguese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-it-IT.html">Italiano: Italian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-da-DK.html">Dansk: Danish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fi-FI.html">Suomi: Finnish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-sv-SE.html">Svenska: Swedish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-nb-NO.html">Norsk: Norwegian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-nl-NL.html">Nederland: Dutch Keyword reference</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="sql-cli-commands.html">TQL reference</a>
@@ -1930,10 +1978,10 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><strong>Review configuration options</strong> Refer to <a href="#configuration-options.adoc" class="page unresolved">Azure configuration options</a> for detailed instance specs.</p>
+<p><strong>Review configuration options</strong> Refer to <a href="configuration-options-azure.html" class="page">Azure configuration options</a> for detailed instance specs.</p>
 </li>
 <li>
-<p><strong>Create the instance</strong> Refer to <a href="#launch-an-instance.adoc" class="page unresolved">Set up Azure for ThoughtSpot</a> to create and launch your instance.</p>
+<p><strong>Create the instance</strong> Refer to <a href="launch-an-instance-azure.html" class="page">Set up Azure for ThoughtSpot</a> to create and launch your instance.</p>
 </li>
 <li>
 <p><strong>Review required ports</strong> Refer to <a href="firewall-ports.html" class="page">Network Policies</a> to view the required ports for successful operation of ThoughtSpot.</p>
@@ -2018,8 +2066,10 @@ You can use another secure copy method, if you prefer a method other than the <c
 </div>
 </li>
 <li>
-<p>Alternatively, use <code>tscli fileserver download-release</code> to download the release bundle.
-+ You must <a href="tscli-command-ref.html#tscli-fileserver" class="page">configure the fileserver</a> by running <code>tscli fileserver configure</code> before you can download the release.</p>
+<p>Alternatively, use <code>tscli fileserver download-release</code> to download the release bundle.</p>
+<div class="paragraph">
+<p>You must <a href="tscli-command-ref.html#tscli-fileserver" class="page">configure the fileserver</a> by running <code>tscli fileserver configure</code> before you can download the release.</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console"> $ tscli fileserver download-release &lt;release-number&gt; --user &lt;username&gt; --out &lt;release-location&gt;</code></pre>
@@ -2068,15 +2118,17 @@ Use screen to ensure that your installation does not stop if you lose network co
 </li>
 <li>
 <p>Manually update tscli.</p>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>$ tar -C /usr/local/scaligent -zxpf &lt;release-number&gt;.tar.gz './bin/tscli'</pre>
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console"> $ tar -C /usr/local/scaligent -zxpf &lt;release-number&gt;.tar.gz './bin/tscli'</code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>Create the cluster.
-+ Run <code>tscli cluster create</code> to create the cluster.</p>
+<p>Create the cluster.</p>
+<div class="paragraph">
+<p>Run <code>tscli cluster create</code> to create the cluster.</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console"> $ tscli cluster create &lt;release-number&gt;.tar.gz</code></pre>
@@ -2271,7 +2323,7 @@ ThoughtSpot recommends changing the default admin password.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
+<div id="ts-login" class="paragraph">
 <p><span class="image"><img src="_images/ts-login-page.png" alt="ThoughtSpot&#8217;s sign-in window"></span></p>
 </div>
 </div>
