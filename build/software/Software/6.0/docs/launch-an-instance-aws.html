@@ -1796,7 +1796,55 @@
     <a class="nav-link" href="intro-reference.html">About this reference</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="keywords.html">Keyword reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-ja-JP.html">日本語: Japanese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-zh-CN.html">中文 (简体): Chinese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-de-DE.html">Deutsche: German Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-es-US.html">Español (Latinoamérica): Spanish Latin American Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-es-ES.html">Español (España): Spanish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fr-CA.html">Français (Canada): French Canadian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fr-FR.html">Français (France): French Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-pt-BR.html">Português (Brasil): Portuguese Brazilian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-pt-PT.html">Português (Portugal): Portuguese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-it-IT.html">Italiano: Italian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-da-DK.html">Dansk: Danish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fi-FI.html">Suomi: Finnish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-sv-SE.html">Svenska: Swedish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-nb-NO.html">Norsk: Norwegian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-nl-NL.html">Nederland: Dutch Keyword reference</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="sql-cli-commands.html">TQL reference</a>
@@ -2003,27 +2051,16 @@ You must specify an AMI when you launch an instance in AWS.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The ThoughtSpot AMI has specific applications on a CentOS-based image.
+<p>The ThoughtSpot AMI has specific applications on a base image.
 The AMI includes the EBS volumes necessary to install ThoughtSpot in AWS.
 When you launch an EC2 instance from this image, it automatically sizes and provisions the EBS volumes.
 The base AMI includes 200 GB (xvda), 2X400 GB (xvdb), and SSD (gp2).
 It contains the maximum number of disks to handle a fully loaded VM.</p>
 </div>
-<div class="sect2">
-<h3 id="rhel-ami"><a class="anchor" href="#rhel-ami"></a>RHEL AMI</h3>
 <div class="paragraph">
 <p>This guide explains how to deploy ThoughtSpot on AWS, using ThoughtSpot&#8217;s CentOS-based image.
-You can also deploy ThoughtSpot on AWS using Red Hat Enterprise Linux (RHEL), allowing you to run ThoughtSpot on an RHEL 7.7 or 7.8 image that your organization manages internally.
-To install ThoughtSpot using RHEL, choose your own RHEL-based image on the AWS console, instead of ThoughtSpot&#8217;s image, and refer to the <a href="rhel.html" class="page">RHEL deployment guide</a> after you launch your virtual machines.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="al2-ami"><a class="anchor" href="#al2-ami"></a>Amazon Linux 2 AMI</h3>
-<div class="paragraph">
-<p>This guide explains how to deploy ThoughtSpot on AWS, using ThoughtSpot&#8217;s CentOS-based image.
-You can also deploy ThoughtSpot on AWS using Amazon Linux 2, allowing you to run ThoughtSpot on an Amazon Linux 2 image that your organization manages internally.
-To install ThoughtSpot using Amazon Linux 2, choose your own Amazon Linux 2-based image on the AWS console, instead of ThoughtSpot&#8217;s image, and refer to the <a href="#amazon-linux-2/al2-overview.adoc" class="page unresolved">Amazon Linux 2 deployment guide</a> after you launch your virtual machines.</p>
-</div>
+Starting with version 6.0.4, you can also deploy ThoughtSpot on AWS using Red Hat Enterprise Linux (RHEL), allowing you to run ThoughtSpot on an RHEL image that your organization manages internally.
+To install ThoughtSpot using RHEL, refer to the <a href="rhel.html" class="page">RHEL deployment guide</a>.</p>
 </div>
 </div>
 </div>
@@ -2080,12 +2117,12 @@ For details, see <a href="#ami">Choose VM instances</a>.</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#10063;</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">AWS security groups.
-For required open ports, see <a href="#ports.adoc" class="page unresolved">Network ports</a>.</p></td>
+For required open ports, see <a href="firewall-ports.html" class="page">Network ports</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#10063;</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">AWS VM instances.
-For instance type recommendations, see <a href="#configuration-options.adoc#ts-aws-instance-types" class="page unresolved">ThoughtSpot AWS instance types</a>.</p></td>
+For instance type recommendations, see <a href="configuration-options-aws.html#ts-aws-instance-types" class="page">ThoughtSpot AWS instance types</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#10063;</p></td>
@@ -2128,13 +2165,37 @@ Refer to the chart below to find the AMI you should use, depending on your relea
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">thoughtspot-image-20191031-8ae15008336-prod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ami-06276ece42ed96994</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N. California</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.0.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">thoughtspot-image-20191031-8ae15008336-prod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ami-06276ece42ed96994</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N. California</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.0.2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">thoughtspot-image-20191031-8ae15008336-prod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ami-06276ece42ed96994</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N. California</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.0.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">thoughtspot-image-20200304-8b8c7b0e56a-prod</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ami-09079fee8bc0543fc</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">N. California</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6.1.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.0.4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">thoughtspot-image-20200304-8b8c7b0e56a-prod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ami-09079fee8bc0543fc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N. California</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.0.5</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">thoughtspot-image-20200304-8b8c7b0e56a-prod</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ami-09079fee8bc0543fc</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">N. California</p></td>
@@ -2168,7 +2229,7 @@ Once the copy is complete, you can return to your own region.
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Choose the appropriate EC2 instance type: See <a href="#configuration-options.adoc#ts-aws-instance-types" class="page unresolved">ThoughtSpot AWS instance types</a> for help choosing the correct instance type for your cluster.</p>
+<p>Choose the appropriate EC2 instance type: See <a href="configuration-options-aws.html#ts-aws-instance-types" class="page">ThoughtSpot AWS instance types</a> for help choosing the correct instance type for your cluster.</p>
 </li>
 <li>
 <p>Networking requirements: 10 GbE network bandwidth is needed between the VMs.
@@ -2182,7 +2243,7 @@ Add all nodes in the same placement group.</p>
 </li>
 <li>
 <p>Determine the number of EC2 instances you need: Based on the datasets, this number will vary.
-Refer to <a href="#configuration-options.adoc#ts-aws-instance-types" class="page unresolved">ThoughtSpot AWS instance types</a> for recommended nodes for a given data size.</p>
+Refer to <a href="configuration-options-aws.html#ts-aws-instance-types" class="page">ThoughtSpot AWS instance types</a> for recommended nodes for a given data size.</p>
 </li>
 </ol>
 </div>
@@ -2313,7 +2374,7 @@ Ensure that you select the ThoughtSpot AMI listed <a href="#ami">above</a>, whic
 </li>
 <li>
 <p>On the <strong>Choose an Instance Type</strong> page, select a ThoughtSpot-supported instance type.
-(See <a href="#configuration-options.adoc#ts-aws-instance-types" class="page unresolved">ThoughtSpot AWS instance types</a>.)</p>
+(See <a href="configuration-options-aws.html#ts-aws-instance-types" class="page">ThoughtSpot AWS instance types</a>.)</p>
 </li>
 <li>
 <p>Click <strong>Next: Configure Instance Details</strong>.</p>
@@ -2327,15 +2388,11 @@ ThoughtSpot sets up the instances to be in the same ThoughtSpot cluster.</p>
 Create a new IAM role that provides read/write access to the specific bucket, and select it.
 For details on that, click <strong>Create new IAM role</strong>.</p>
 </div>
-<div class="paragraph">
-<p><strong>AWS Systems Manager Agent</strong>: If you plan to use the <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.adoc" target="_blank" rel="noopener">AWS SSM agent</a> as an alternative to SSH, create a new IAM role with an SSM policy to grant AWS SSM permission to perform actions on your instances.
-Refer to <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/setup-instance-profile.adoc" target="_blank" rel="noopener">Create an IAM instance profile for Systems Manager</a>.</p>
-</div>
 </li>
 <li>
 <p>Click <strong>Next: Add Storage</strong>.
 Add the required storage based on your instance type (either EBS volumes or S3), and the amount of data you are deploying.
-For specific storage requirements, refer to <a href="#configuration-options.adoc#ts-aws-instance-types" class="page unresolved">ThoughtSpot AWS instance types</a>.</p>
+For specific storage requirements, refer to <a href="configuration-options-aws.html#ts-aws-instance-types" class="page">ThoughtSpot AWS instance types</a>.</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/aws-add-storage.png" alt="aws add storage">
@@ -2394,10 +2451,10 @@ This tag allows you to identify your instance more easily.</p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<strong>Security setting for ThoughtSpot</strong>
-* The VMs need intragroup security, i.e.
+<strong>Security setting for ThoughtSpot</strong><br>
+ * The VMs need intragroup security, i.e.
 every VM in a cluster must be accessible from one another.
-For easier configuration, ThoughtSpot recommends that you enable full access between VMs in a cluster.
+For easier configuration, ThoughtSpot recommends that you enable full access between VMs in a cluster.<br>
 * Additionally, more ports must be opened on the VM to provide data staging capabilities to your network.
 Check ThoughtSpot&#8217;s Network ports documentation to determine the minimum required ports you must open for your ThoughtSpot appliance.
 </td>
@@ -2405,8 +2462,7 @@ Check ThoughtSpot&#8217;s Network ports documentation to determine the minimum r
 </table>
 </div>
 <div class="paragraph">
-<p>+
-Refer to <a href="#ports.adoc" class="page unresolved">Network ports</a>.</p>
+<p>Refer to <a href="firewall-ports.html" class="page">Network ports</a>.</p>
 </div>
 </li>
 <li>
@@ -2452,10 +2508,7 @@ After it starts, it appears on the EC2 console.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>See other training resources at</p>
-</div>
-<div class="paragraph">
-<p>+
+<p>See other training resources at
 <a href="https://training.thoughtspot.com/">ThoughtSpot U</a></p>
 </div>
 </div>

@@ -1796,7 +1796,55 @@
     <a class="nav-link" href="intro-reference.html">About this reference</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="keywords.html">Keyword reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-ja-JP.html">日本語: Japanese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-zh-CN.html">中文 (简体): Chinese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-de-DE.html">Deutsche: German Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-es-US.html">Español (Latinoamérica): Spanish Latin American Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-es-ES.html">Español (España): Spanish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fr-CA.html">Français (Canada): French Canadian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fr-FR.html">Français (France): French Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-pt-BR.html">Português (Brasil): Portuguese Brazilian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-pt-PT.html">Português (Portugal): Portuguese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-it-IT.html">Italiano: Italian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-da-DK.html">Dansk: Danish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fi-FI.html">Suomi: Finnish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-sv-SE.html">Svenska: Swedish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-nb-NO.html">Norsk: Norwegian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-nl-NL.html">Nederland: Dutch Keyword reference</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="sql-cli-commands.html">TQL reference</a>
@@ -1923,10 +1971,8 @@
 <h1 class="page">Set up ThoughtSpot in GCP</h1>
 <div id="preamble">
 <div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>Set up your GCP virtual machines.</pre>
-</div>
+<div class="paragraph">
+<p>Set up your GCP virtual machines.</p>
 </div>
 <div class="paragraph">
 <p>After you determine your configuration options, set up your virtual machines (VMs).
@@ -1948,7 +1994,7 @@ We will share ThoughtSpot&#8217;s GCP project with them so they can use the cont
 </div>
 <div class="paragraph">
 <p>This guide explains how to deploy ThoughtSpot on GCP, using ThoughtSpot&#8217;s CentOS-based image.
-You can also deploy ThoughtSpot on GCP using Red Hat Enterprise Linux (RHEL), allowing you to run ThoughtSpot on an RHEL 7.7 or 7.8 image that your organization manages internally.
+Starting with version 6.0.4, you can also deploy ThoughtSpot on GCP using Red Hat Enterprise Linux (RHEL), allowing you to run ThoughtSpot on an RHEL image that your organization manages internally.
 To install ThoughtSpot using RHEL, refer to the <a href="rhel.html" class="page">RHEL deployment guide</a>.</p>
 </div>
 </div>
@@ -2092,12 +2138,12 @@ If you are not using GCS, skip this step and <a href="#create-an-instance">creat
 <li>
 <p>Select the number of vCPU cores you need.</p>
 <div class="paragraph">
-<p>Refer to <a href="#configuration-options.adoc#thoughtspot-gcp-instance-types" class="page unresolved">ThoughtSpot GCP instance types</a> to determine the number of vCPU cores your cluster needs.</p>
+<p>Refer to <a href="configuration-options-gcp.html#thoughtspot-gcp-instance-types" class="page">ThoughtSpot GCP instance types</a> to determine the number of vCPU cores your cluster needs.</p>
 </div>
 </li>
 <li>
 <p>Specify your memory requirements and CPU platform.
-Refer to <a href="#configuration-options.adoc#thoughtspot-gcp-instance-types" class="page unresolved">ThoughtSpot GCP instance types</a> to determine the memory your cluster needs.</p>
+Refer to <a href="configuration-options-gcp.html#thoughtspot-gcp-instance-types" class="page">ThoughtSpot GCP instance types</a> to determine the memory your cluster needs.</p>
 <div class="paragraph">
 <p>Your configuration may look something like the following, but with your specific information.</p>
 </div>
@@ -2185,7 +2231,23 @@ If so, use that image.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6.2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">thoughtspot-image-20191029-9ff82de0a41-prod</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.0.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">thoughtspot-image-20191029-9ff82de0a41-prod</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.0.2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">thoughtspot-image-20191029-9ff82de0a41-prod</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.0.3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">thoughtspot-image-20200307-812f10fafca-prod</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.0.4</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">thoughtspot-image-20200307-812f10fafca-prod</p></td>
 </tr>
 </tbody>
@@ -2250,9 +2312,9 @@ Click <strong>Select</strong> to save the boot disk configuration.</p>
 </li>
 <li>
 <p>Attach two 1 TB SSD drives for data storage.
-Refer to <a href="#configuration-options.adoc#vms-with-persistent-disk-only-storage" class="page unresolved">SSD-only persistent storage</a>.
+Refer to <a href="configuration-options-gcp.html#vms-with-persistent-disk-only-storage" class="page">SSD-only persistent storage</a>.
 If you are using GCS, attach only 1 SSD drive, with 500 GB instead of 1 TB.
-Refer to <a href="#configuration-options.adoc#vms-with-persistent-disk-and-google-cloud-storage" class="page unresolved">GCS and SSD persistent storage</a>.</p>
+Refer to <a href="configuration-options-gcp.html#vms-with-persistent-disk-and-google-cloud-storage" class="page">GCS and SSD persistent storage</a>.</p>
 <div class="paragraph">
 <p>a.
 Click the <strong>Disks</strong> tab, and click <strong>Add new disk</strong>.</p>
@@ -2268,7 +2330,7 @@ Click the <strong>Disks</strong> tab, and click <strong>Add new disk</strong>.</
 <div class="paragraph">
 <p>b.
 Configure the following settings for each disk.
-Refer to <a href="#configuration-options.adoc#vms-with-persistent-disk-and-google-cloud-storage" class="page unresolved">ThoughtSpot GCP instance types</a> to determine the size in GB when you have GCS.
+Refer to <a href="configuration-options-gcp.html#vms-with-persistent-disk-and-google-cloud-storage" class="page">ThoughtSpot GCP instance types</a> to determine the size in GB when you have GCS.
 Ensure the disks have read/write access.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -2370,7 +2432,7 @@ See Google&#8217;s <a href="https://cloud.google.com/vpc/docs/using-firewalls" t
 <div class="paragraph">
 <p>Open the following ports between the User/ETL server and ThoughtSpot nodes.
 This ensures that the ThoughtSpot processes do not get blocked.
-Refer to <a href="#ports.adoc#required-ports-for-cluster-communication" class="page unresolved">Network ports</a> for more information on what ports to open for intracluster operation, so that your clusters can communicate.</p>
+Refer to <a href="firewall-ports.html#required-ports-for-cluster-communication" class="page">Network ports</a> for more information on what ports to open for intracluster operation, so that your clusters can communicate.</p>
 </div>
 <div class="paragraph">
 <p>The minimum ports needed are:</p>

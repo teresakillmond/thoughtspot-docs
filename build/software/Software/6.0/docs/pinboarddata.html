@@ -1796,7 +1796,55 @@
     <a class="nav-link" href="intro-reference.html">About this reference</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="keywords.html">Keyword reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-ja-JP.html">日本語: Japanese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-zh-CN.html">中文 (简体): Chinese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-de-DE.html">Deutsche: German Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-es-US.html">Español (Latinoamérica): Spanish Latin American Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-es-ES.html">Español (España): Spanish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fr-CA.html">Français (Canada): French Canadian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fr-FR.html">Français (France): French Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-pt-BR.html">Português (Brasil): Portuguese Brazilian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-pt-PT.html">Português (Portugal): Portuguese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-it-IT.html">Italiano: Italian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-da-DK.html">Dansk: Danish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fi-FI.html">Suomi: Finnish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-sv-SE.html">Svenska: Swedish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-nb-NO.html">Norsk: Norwegian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-nl-NL.html">Nederland: Dutch Keyword reference</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="sql-cli-commands.html">TQL reference</a>
@@ -1923,19 +1971,19 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can retrieve the data in a pinboard or other ThoughtSpot visualization.</p>
+<p>You can retrieve the data in a Pinboard or other ThoughtSpot visualization.</p>
 </div>
 <div class="paragraph">
-<p>This API enables you to retrieve the data of a pinboard or visualization from the ThoughtSpot system.
+<p>This API enables you to retrieve the data of a Pinboard or visualization from the ThoughtSpot system.
 You may want to visualize the following:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Fetch all the visualization objects on a pinboard.</p>
+<p>Fetch all the visualization objects on a Pinboard.</p>
 </li>
 <li>
-<p>Fetch a specific or a group of visualizations on a pinboard.</p>
+<p>Fetch a specific or a group of visualizations on a Pinboard.</p>
 </li>
 </ul>
 </div>
@@ -1974,29 +2022,29 @@ You may want to visualize the following:</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>vizid</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">(Optional) The visualization id(s) on a pinboard. Use this parameter to fetch a specific visualization on a pinboard. The syntax is:</p>
-<p class="tableblock">["4fdf9d2c-6f34-4e3b-9fa6-bd0ca69676e1", "&#8230;&#8203;&#8230;&#8203;"]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(Optional) The visualization id(s) on a Pinboard. Use this parameter to fetch a specific visualization on a Pinboard. The syntax is:</p>
+<p class="tableblock"><code>["4fdf9d2c-6f34-4e3b-9fa6-bd0ca69676e1", "&#8230;&#8203;&#8230;&#8203;"]</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>batchsize</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The batch size for loading of pinboard objects. The system default is -1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The batch size for loading of Pinboard objects. The system default is <code>-1</code>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>pagenumber</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The system default is -1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The system default is <code>-1</code>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>offset</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The system default is -1. Alternately, set the offset using the following code:</p>
-<p class="tableblock">1-based indexingOffset = (pageNumber - 1) * batchSize</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The system default is <code>-1</code>. Alternately, set the offset using the following code:</p>
+<p class="tableblock"><code>1-based indexingOffset = (pageNumber - 1) * batchSize</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>formattype</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Valid values are COMPACT or FULL JSON. The system default is COMPACT.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Valid values are <code>COMPACT</code> or <code>FULL</code> JSON. The system default is <code>COMPACT</code>.</p></td>
 </tr>
 </tbody>
 </table>

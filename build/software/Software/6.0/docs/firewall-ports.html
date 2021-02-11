@@ -1796,7 +1796,55 @@
     <a class="nav-link" href="intro-reference.html">About this reference</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="keywords.html">Keyword reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-ja-JP.html">日本語: Japanese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-zh-CN.html">中文 (简体): Chinese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-de-DE.html">Deutsche: German Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-es-US.html">Español (Latinoamérica): Spanish Latin American Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-es-ES.html">Español (España): Spanish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fr-CA.html">Français (Canada): French Canadian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fr-FR.html">Français (France): French Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-pt-BR.html">Português (Brasil): Portuguese Brazilian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-pt-PT.html">Português (Portugal): Portuguese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-it-IT.html">Italiano: Italian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-da-DK.html">Dansk: Danish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fi-FI.html">Suomi: Finnish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-sv-SE.html">Svenska: Swedish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-nb-NO.html">Norsk: Norwegian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-nl-NL.html">Nederland: Dutch Keyword reference</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="sql-cli-commands.html">TQL reference</a>
@@ -1932,7 +1980,7 @@ Another, larger list of ports must be kept open for network traffic between the 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_ports_for_operations_and_debugging"><a class="anchor" href="#_ports_for_operations_and_debugging"></a>Ports for operations and debugging</h2>
+<h2 id="_required_ports_for_operations_and_debugging"><a class="anchor" href="#_required_ports_for_operations_and_debugging"></a>Required ports for operations and debugging</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The following ports must be open for requests from your user population.</p>
@@ -1992,8 +2040,13 @@ Also used for scp (secure copy).</p></td>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_ports_for_intracluster_network_operations"><a class="anchor" href="#_ports_for_intracluster_network_operations"></a>Ports for intracluster network operations</h2>
+<h2 id="_network_ports"><a class="anchor" href="#_network_ports"></a>Network ports</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>This reference lists the potential ports to open when setting up your security group.</p>
+</div>
+<div class="sect2">
+<h3 id="_ports_for_intracluster_network_operations"><a class="anchor" href="#_ports_for_intracluster_network_operations"></a>Ports for intracluster network operations</h3>
 <div class="paragraph">
 <p>Static ports are used for communication between services within the cluster.
 ThoughtSpot recommends that you open all ports within a cluster.
@@ -2740,10 +2793,8 @@ The dynamic ports come from the range of ports that are dynamically allocated by
 </tbody>
 </table>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_ports_for_inbound_and_outbound_cluster_access"><a class="anchor" href="#_ports_for_inbound_and_outbound_cluster_access"></a>Ports for inbound and outbound cluster access</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_required_ports_for_inbound_and_outbound_cluster_access"><a class="anchor" href="#_required_ports_for_inbound_and_outbound_cluster_access"></a>Required ports for inbound and outbound cluster access</h3>
 <div class="paragraph">
 <p>ThoughtSpot uses static ports for inbound and outbound access to the cluster.</p>
 </div>
@@ -2813,15 +2864,6 @@ The dynamic ports come from the range of ports that are dynamically allocated by
 <td class="tableblock halign-left valign-top"><p class="tableblock">ThoughtSpot Support</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">All nodes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Port used by NFS.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">9000</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DataFlow</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bidirectional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All users&#8217; IP address</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Node that runs DataFlow</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Port used for accessing DataFlow</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">12345</p></td>
@@ -2896,7 +2938,7 @@ The dynamic ports come from the range of ports that are dynamically allocated by
 <td class="tableblock halign-left valign-top"><p class="tableblock">All nodes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Allow outbound access for the IP address of whichever email relay server is in use.
 This is for sending alerts to ThoughtSpot Support.</p>
-<p class="tableblock">In ThoughtSpot release 6.1.1 or later, and in release 6.0.5, you can specify a custom port to connect to the relay host, instead of port 25 or 587.
+<p class="tableblock">Starting with release 6.0.5, you can specify a custom port to connect to the relay host, instead of port 25 or 587.
 Refer to <a href="set-up-relay-host.html" class="page">Set the relay host for SMTP</a>.</p></td>
 </tr>
 <tr>
@@ -2911,10 +2953,8 @@ Refer to <a href="set-up-relay-host.html" class="page">Set the relay host for SM
 </tbody>
 </table>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_ports_for_intelligent_platform_management_interface_ipmi"><a class="anchor" href="#_ports_for_intelligent_platform_management_interface_ipmi"></a>Ports for Intelligent Platform Management Interface (IPMI)</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_required_ports_for_intelligent_platform_management_interface_ipmi"><a class="anchor" href="#_required_ports_for_intelligent_platform_management_interface_ipmi"></a>Required ports for Intelligent Platform Management Interface (IPMI)</h3>
 <div class="paragraph">
 <p>ThoughtSpot uses static ports for out-of-band IPMI communications between the cluster and ThoughtSpot support.</p>
 </div>
@@ -2969,6 +3009,7 @@ Refer to <a href="set-up-relay-host.html" class="page">Set the relay host for SM
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 </article>

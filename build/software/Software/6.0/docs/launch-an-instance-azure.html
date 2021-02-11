@@ -1796,7 +1796,55 @@
     <a class="nav-link" href="intro-reference.html">About this reference</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="keywords.html">Keyword reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-ja-JP.html">日本語: Japanese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-zh-CN.html">中文 (简体): Chinese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-de-DE.html">Deutsche: German Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-es-US.html">Español (Latinoamérica): Spanish Latin American Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-es-ES.html">Español (España): Spanish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fr-CA.html">Français (Canada): French Canadian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fr-FR.html">Français (France): French Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-pt-BR.html">Português (Brasil): Portuguese Brazilian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-pt-PT.html">Português (Portugal): Portuguese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-it-IT.html">Italiano: Italian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-da-DK.html">Dansk: Danish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fi-FI.html">Suomi: Finnish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-sv-SE.html">Svenska: Swedish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-nb-NO.html">Norsk: Norwegian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-nl-NL.html">Nederland: Dutch Keyword reference</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="sql-cli-commands.html">TQL reference</a>
@@ -1923,10 +1971,8 @@
 <h1 class="page">Set up ThoughtSpot in Azure</h1>
 <div id="preamble">
 <div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>After you determine your configuration options, you must set up your virtual machines using a ThoughtSpot image for Azure.</pre>
-</div>
+<div class="paragraph">
+<p>After you determine your configuration options, you must set up your virtual machines using a ThoughtSpot image for Azure.</p>
 </div>
 </div>
 </div>
@@ -1951,7 +1997,7 @@ When you are ready to obtain the password, contact <a href="contact.html" class=
 </div>
 <div class="paragraph">
 <p>This guide explains how to deploy ThoughtSpot on Microsoft Azure, using ThoughtSpot&#8217;s CentOS-based image.
-You can also deploy ThoughtSpot on Azure using Red Hat Enterprise Linux (RHEL), allowing you to run ThoughtSpot on an RHEL 7.7 or 7.8 image that your organization manages internally.
+Starting with version 6.0.4, you can also deploy ThoughtSpot on Azure using Red Hat Enterprise Linux (RHEL), allowing you to run ThoughtSpot on an RHEL image that your organization manages internally.
 To install ThoughtSpot using RHEL, refer to the <a href="rhel.html" class="page">RHEL deployment guide</a>.</p>
 </div>
 </div>
@@ -2044,7 +2090,7 @@ Choose the <a href="https://azuremarketplace.microsoft.com/en-us/marketplace/app
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>6</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Refer to <a href="#configuration-options.adoc" class="page unresolved">Azure configuration options</a> to choose a size for your VM that works for your cluster needs.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Refer to <a href="configuration-options-azure.html" class="page">Azure configuration options</a> to choose a size for your VM that works for your cluster needs.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>7</strong></p></td>
@@ -2090,7 +2136,7 @@ ThoughtSpot recommends the Premium SSD disks.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>2</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Click <strong>Create and attach a new disk</strong>.
 Add two data disks.
-Refer to <a href="#configuration-options.adoc#thoughtspot-azure-instance-types.html" class="page unresolved">Azure configuration options</a> to see what size they should be.</p></td>
+Refer to <a href="configuration-options-azure.html#thoughtspot-azure-instance-types.html" class="page">Azure configuration options</a> to see what size they should be.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>3</strong></p></td>
@@ -2106,7 +2152,7 @@ Refer to <a href="#configuration-options.adoc#thoughtspot-azure-instance-types.h
 </td>
 <td class="content">
 The new Standard SSD disk types are only available for particular regions.
-Make sure this disk type is supported in the region you chose for your VM before selecting it."
+Make sure this disk type is supported in the region you chose for your VM before selecting it.
 </td>
 </tr>
 </table>
@@ -2254,55 +2300,35 @@ Select <strong>Networking</strong> from the list on the left side of the screen.
 </div>
 </li>
 <li>
-<p>In a terminal application, connect to the VM through SSH.</p>
+<p>In a terminal application, connect to the VM through SSH. Enter the private key provided for the admin user.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>You must file a support ticket to obtain this private key; it is necessary for the first login.</p>
 </li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Log in as the user specified in the previous steps and use the private key that belongs to the public key specified for that user.</p>
-</div>
+<li>
+<p>This key is different from the credentials, or the public keys supplied in earlier steps, which do not work in this context.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">   $ ssh -i &lt;path_to_private_key&gt; &lt;the_user_specified_when_created_the_vm&gt;@&lt;public_VM_IP&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">   $ ssh -i &lt;path_to_private_key&gt; admin@&lt;public_VM_IP&gt;</code></pre>
 </div>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-If the SSH key is not accepted or lost, it can be reset by going to Reset password under Support troubleshooting on the Azure Virtual Machine page. Please note this only works before the cluster had been deployed.
-</td>
-</tr>
-</table>
+</li>
+</ul>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
 <li>
 <p>Update the password for both the <code>admin</code> and the <code>thoughtspot</code> users.</p>
 <div class="paragraph">
 <p>The command prompts you to type in a new password, and then to confirm the password.</p>
 </div>
-</li>
-</ol>
-</div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ sudo passwd admin</code></pre>
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ sudo passwd admin
+Changing password for user admin
+$ sudo passwd thoughtspot
+Changing password for user thoughtspot</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p><code>Changing password for user admin</code></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ sudo passwd thoughtspot</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><code>Changing password for user thoughtspot</code></p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -2317,8 +2343,7 @@ Your private key does not work after initial installation.
 </tr>
 </table>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
 <li>
 <p>Update the file <code>/etc/hosts</code> with all the node IP addresses for the other VMs that will be part of the ThoughtSpot cluster.</p>
 </li>
@@ -2358,22 +2383,26 @@ Your private key does not work after initial installation.
 <ol class="arabic">
 <li>
 <p>Unmount the temporary disk by issuing the following command:</p>
-</li>
-</ol>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ sudo umount /mnt/resource</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>+
-WARNING: The <code>/mnt/resource</code> disk, which is mounted on the <code>/dev/sdb</code> disk, is temporary.
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+The <code>/mnt/resource</code> disk, which is mounted on the <code>/dev/sdb</code> disk, is temporary.
 Any data on it will be wiped if the VM is shut down.
-You must unmount the <code>/mnt/resource</code> disk.</p>
+You must unmount the <code>/mnt/resource</code> disk.
+</td>
+</tr>
+</table>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
 <li>
 <p>Prepare the disks /dev/sdc and /dev/sdd for ThoughtSpot by issuing the following command:</p>
 <div class="admonitionblock warning">
@@ -2389,28 +2418,20 @@ Any data on it will be wiped if the VM is shut down.
 </tr>
 </table>
 </div>
-</li>
-</ol>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console"> $ sudo /usr/local/scaligent/bin/prepare_disks.sh /dev/sdc /dev/sdd</code></pre>
 </div>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
 <li>
 <p>Check the disks' status by issuing the following command:</p>
-</li>
-</ol>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console"> $ df -h</code></pre>
 </div>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
 <li>
 <p>Repeat the steps in this section for each node in your cluster.</p>
 </li>
@@ -2445,9 +2466,9 @@ So when updating these files, keep a backup to copy after any subsequent cluster
 </li>
 <li>
 <p>Update the VM&#8217;s hostname:</p>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>$ sudo hostnamectl set-hostname &lt;HOSTNAME&gt;</pre>
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console"> $ sudo hostnamectl set-hostname &lt;HOSTNAME&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2460,10 +2481,12 @@ So when updating these files, keep a backup to copy after any subsequent cluster
 </div>
 </li>
 <li>
-<p>Create <code>/etc/sysconfig/network-scripts/ifcfg-eth0</code>:</p>
-<div class="literalblock">
+<p>Update <code>/etc/sysconfig/network-scripts/ifcfg-eth0</code> with the IP and hostname:</p>
+<div class="listingblock">
 <div class="content">
-<pre>$ sudo sh -c 'echo "DEVICE=eth0" &gt; /etc/sysconfig/network-scripts/ifcfg-eth0'</pre>
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ sudo vi /etc/sysconfig/network-scripts/ifcfg-eth0
+
+DEVICE=eth0 ONBOOT=yes BOOTPROTO=dhcp HWADDR=&lt;Add eth0 MAC&gt; TYPE=Ethernet USERCTL=no PEERDNS=yes IPV6INIT=no</code></pre>
 </div>
 </div>
 </li>
@@ -2498,10 +2521,7 @@ This command allows the root user to retain read/write permissions, and grants r
 </ul>
 </div>
 <div class="paragraph">
-<p>See other training resources at</p>
-</div>
-<div class="paragraph">
-<p>+
+<p>See other training resources at
 <a href="https://training.thoughtspot.com/" target="_blank" rel="noopener">ThoughtSpot U</a></p>
 </div>
 </div>

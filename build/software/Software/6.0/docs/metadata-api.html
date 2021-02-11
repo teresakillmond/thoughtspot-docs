@@ -1796,7 +1796,55 @@
     <a class="nav-link" href="intro-reference.html">About this reference</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="keywords.html">Keyword reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-ja-JP.html">日本語: Japanese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-zh-CN.html">中文 (简体): Chinese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-de-DE.html">Deutsche: German Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-es-US.html">Español (Latinoamérica): Spanish Latin American Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-es-ES.html">Español (España): Spanish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fr-CA.html">Français (Canada): French Canadian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fr-FR.html">Français (France): French Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-pt-BR.html">Português (Brasil): Portuguese Brazilian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-pt-PT.html">Português (Portugal): Portuguese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-it-IT.html">Italiano: Italian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-da-DK.html">Dansk: Danish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fi-FI.html">Suomi: Finnish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-sv-SE.html">Svenska: Swedish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-nb-NO.html">Norsk: Norwegian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-nl-NL.html">Nederland: Dutch Keyword reference</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="sql-cli-commands.html">TQL reference</a>
@@ -1927,7 +1975,7 @@
 </div>
 <div class="paragraph">
 <p>The Metadata APIs enable you to fetch metadata details for various objects in the ThoughtSpot system.
-For example, you may want to see the visualization headers of a particular answer or a pinboard.</p>
+For example, you may want to see the visualization headers of a particular answer or a Pinboard.</p>
 </div>
 </div>
 </div>
@@ -1936,7 +1984,7 @@ For example, you may want to see the visualization headers of a particular answe
 <div class="sectionbody">
 <div class="paragraph">
 <p>Use this API to list the visualization headers from the ThoughtSpot system.
-The expected output includes a list of objects, each with information about the visualizations of the given pinboard or an answer.</p>
+The expected output includes a list of objects, each with information about the visualizations of the given Pinboard or an Answer.</p>
 </div>
 <div class="sect2">
 <h3 id="_resource_url"><a class="anchor" href="#_resource_url"></a>Resource URL</h3>
@@ -1961,9 +2009,9 @@ The expected output includes a list of objects, each with information about the 
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>id</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ID of a particular answer or a pinboard.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of a particular Answer or a Pinboard.</p></td>
 </tr>
 </tbody>
 </table>
@@ -2058,31 +2106,31 @@ The expected output includes a list of objects, each with information about the 
 <div class="ulist">
 <ul>
 <li>
-<p>QUESTION_ANSWER_BOOK</p>
+<p><code>QUESTION_ANSWER_BOOK</code></p>
 </li>
 <li>
-<p>PINBOARD_ANSWER_BOOK</p>
+<p><code>PINBOARD_ANSWER_BOOK</code></p>
 </li>
 <li>
-<p>QUESTION_ANSWER_SHEET</p>
+<p><code>QUESTION_ANSWER_SHEET</code></p>
 </li>
 <li>
-<p>PINBOARD_ANSWER_SHEET</p>
+<p><code>PINBOARD_ANSWER_SHEET</code></p>
 </li>
 <li>
-<p>LOGICAL_COLUMN</p>
+<p><code>LOGICAL_COLUMN</code></p>
 </li>
 <li>
-<p>LOGICAL_TABLE</p>
+<p><code>LOGICAL_TABLE</code></p>
 </li>
 <li>
-<p>LOGICAL_RELATIONSHIP</p>
+<p><code>LOGICAL_RELATIONSHIP</code></p>
 </li>
 <li>
-<p>TAG</p>
+<p><code>TAG</code></p>
 </li>
 <li>
-<p>DATA_SOURCE</p>
+<p><code>DATA_SOURCE</code></p>
 </li>
 </ul>
 </div></div></td>
@@ -2096,21 +2144,33 @@ The expected output includes a list of objects, each with information about the 
 <div class="ulist">
 <ul>
 <li>
-<p>ONE_TO_ONE_LOGICAL</p>
+<p><code>ONE_TO_ONE_LOGICAL</code></p>
 </li>
 <li>
-<p>WORKSHEET</p>
+<p><code>WORKSHEET</code></p>
 </li>
 <li>
-<p>PRIVATE_WORKSHEET</p>
+<p><code>PRIVATE_WORKSHEET</code></p>
 </li>
 <li>
-<p>USER_DEFINED</p>
+<p><code>USER_DEFINED</code></p>
 </li>
 <li>
-<p>AGGR_WORKSHEET</p>
+<p><code>AGGR_WORKSHEET</code></p>
 </li>
 </ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This parameter only applies to the <code>LOGICAL_TABLE</code> type.
+</td>
+</tr>
+</table>
 </div></div></td>
 </tr>
 <tr>
@@ -2122,16 +2182,14 @@ The expected output includes a list of objects, each with information about the 
 <div class="ulist">
 <ul>
 <li>
-<p>ALL</p>
+<p><code>ALL</code></p>
 </li>
 <li>
-<p>MY</p>
+<p><code>MY</code></p>
 </li>
 <li>
-<p>FAVORITE</p>
-</li>
-<li>
-<p>REQUESTED</p>
+<p><code>FAVORITE</code>
+*` REQUESTED`</p>
 </li>
 </ul>
 </div></div></td>
@@ -2145,22 +2203,22 @@ The expected output includes a list of objects, each with information about the 
 <div class="ulist">
 <ul>
 <li>
-<p>DEFAULT</p>
+<p><code>DEFAULT</code></p>
 </li>
 <li>
-<p>NAME</p>
+<p><code>NAME</code></p>
 </li>
 <li>
-<p>DISPLAY_NAME</p>
+<p><code>DISPLAY_NAME</code></p>
 </li>
 <li>
-<p>AUTHOR</p>
+<p><code>AUTHOR</code></p>
 </li>
 <li>
-<p>CREATED</p>
+<p><code>CREATED</code></p>
 </li>
 <li>
-<p>MODIFIED</p>
+<p><code>MODIFIED</code></p>
 </li>
 </ul>
 </div></div></td>
@@ -2174,10 +2232,10 @@ The expected output includes a list of objects, each with information about the 
 <div class="ulist">
 <ul>
 <li>
-<p>Choose true to set ascending order</p>
+<p>Choose <code>true</code> to set ascending order</p>
 </li>
 <li>
-<p>Choose false to set descending order</p>
+<p>Choose <code>false</code> to set descending order</p>
 </li>
 </ul>
 </div></div></td>
@@ -2186,14 +2244,14 @@ The expected output includes a list of objects, each with information about the 
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>offset</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The batch offset to fetch the page headers. The system default is -1 that implies first page.</p>
+<p>The batch offset to fetch the page headers. The system default is <code>-1</code> that implies first page.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>batchsize</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The batch size of the object. A value of -1 implies no pagination.</p>
+<p>The batch size of the object. A value of <code>-1</code> implies no pagination.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2207,7 +2265,7 @@ The expected output includes a list of objects, each with information about the 
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>pattern</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>A pattern to match for object name. Use % for wildcard match.</p>
+<p>A pattern to match for object name. Use <code>%</code> for wildcard match.</p>
 </div></div></td>
 </tr>
 <tr>

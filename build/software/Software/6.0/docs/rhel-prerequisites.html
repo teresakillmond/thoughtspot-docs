@@ -1796,7 +1796,55 @@
     <a class="nav-link" href="intro-reference.html">About this reference</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="keywords.html">Keyword reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-ja-JP.html">日本語: Japanese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-zh-CN.html">中文 (简体): Chinese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-de-DE.html">Deutsche: German Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-es-US.html">Español (Latinoamérica): Spanish Latin American Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-es-ES.html">Español (España): Spanish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fr-CA.html">Français (Canada): French Canadian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fr-FR.html">Français (France): French Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-pt-BR.html">Português (Brasil): Portuguese Brazilian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-pt-PT.html">Português (Portugal): Portuguese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-it-IT.html">Italiano: Italian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-da-DK.html">Dansk: Danish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fi-FI.html">Suomi: Finnish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-sv-SE.html">Svenska: Swedish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-nb-NO.html">Norsk: Norwegian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-nl-NL.html">Nederland: Dutch Keyword reference</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="sql-cli-commands.html">TQL reference</a>
@@ -1988,16 +2036,16 @@ Please refer to the relevant deployment sections in our documentation for the ex
 <p>ThoughtSpot-certified hardware appliance manufactured by <a href="installing-the-smc.html" class="page">SMC</a></p>
 </li>
 <li>
-<p><a href="#configuration-options.adoc" class="page unresolved">Amazon Web Services (AWS) EC2</a></p>
+<p><a href="configuration-options-aws.html" class="page">Amazon Web Services (AWS) EC2</a></p>
 </li>
 <li>
-<p><a href="#configuration-options.adoc" class="page unresolved">Google Cloud Platform (GCP)</a></p>
+<p><a href="configuration-options-gcp.html" class="page">Google Cloud Platform (GCP)</a></p>
 </li>
 <li>
 <p><a href="vmware-intro.html" class="page">VMware</a></p>
 </li>
 <li>
-<p><a href="#configuration-options.adoc" class="page unresolved">Microsoft Azure</a></p>
+<p><a href="configuration-options-azure.html" class="page">Microsoft Azure</a></p>
 </li>
 </ul>
 </div>
@@ -2056,7 +2104,7 @@ Allocate at least 50GB to /tmp</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Export partition</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SSD (root drive)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Stores ThoughtSpot objects, hdfs logs, service logs, and so on</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">service logs, and so on	100GB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100GB</p></td>
 </tr>
 </tbody>
 </table>
@@ -2102,14 +2150,22 @@ If Linux kernel version is not 3.10.0-1127.19.1, you may run into unexpected nod
 <div class="paragraph">
 <p><strong>Repositories</strong></p>
 </div>
-<div class="ulist">
+<div id="yum-repositories" class="ulist">
 <ul>
 <li>
 <p><strong>Yum repositories</strong>: you must enable the following Yum repositories in your cluster: <code>epel</code>, <code>nux-desktop</code>, <code>pgdg95</code>, <code>rhel</code>, <code>rhel-optional</code>, <code>rhel-extras</code>.</p>
 </li>
+</ul>
+</div>
+<div id="python-repositories" class="ulist">
+<ul>
 <li>
 <p><strong>Python repository</strong>: for Python, ensure the machine is able to reach the <code>PyPI</code> repository located at <a href="https://pypi.python.org/" class="bare">https://pypi.python.org/</a>.</p>
 </li>
+</ul>
+</div>
+<div id="r-repositories" class="ulist">
+<ul>
 <li>
 <p><strong>R repository</strong>: for R, ensure the machine is able to reach the <code>CRAN</code> repository located at <a href="https://cran.rstudio.com/" class="bare">https://cran.rstudio.com/</a>.</p>
 </li>
@@ -2121,14 +2177,14 @@ If Linux kernel version is not 3.10.0-1127.19.1, you may run into unexpected nod
 <div class="paragraph">
 <p>If you cannot access the RHEL repositories, there is no mirror repository in your organization, or you are unable to access Yum, Python, or R repositories, please <a href="contact.html" class="page">contact ThoughtSpot Support</a>.</p>
 </div>
-<div class="paragraph">
+<div id="official-repositories" class="paragraph">
 <p><strong>Official package repositories</strong></p>
 </div>
 <div class="paragraph">
 <p>If the hosts of your ThoughtSpot cluster can access external repositories, either directly or through a proxy, your cluster is online.
 You can then proceed to download <a href="#yum-repositories">Yum</a>, <a href="#python-repositories">Python</a>, and <a href="#r-repositories">R</a> package repositories.</p>
 </div>
-<div class="paragraph">
+<div id="mirror-repositories" class="paragraph">
 <p><strong>Internal mirror repository</strong></p>
 </div>
 <div class="paragraph">

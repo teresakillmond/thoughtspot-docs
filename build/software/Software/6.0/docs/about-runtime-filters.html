@@ -1796,7 +1796,55 @@
     <a class="nav-link" href="intro-reference.html">About this reference</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="keywords.html">Keyword reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-ja-JP.html">日本語: Japanese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-zh-CN.html">中文 (简体): Chinese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-de-DE.html">Deutsche: German Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-es-US.html">Español (Latinoamérica): Spanish Latin American Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-es-ES.html">Español (España): Spanish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fr-CA.html">Français (Canada): French Canadian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fr-FR.html">Français (France): French Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-pt-BR.html">Português (Brasil): Portuguese Brazilian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-pt-PT.html">Português (Portugal): Portuguese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-it-IT.html">Italiano: Italian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-da-DK.html">Dansk: Danish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fi-FI.html">Suomi: Finnish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-sv-SE.html">Svenska: Swedish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-nb-NO.html">Norsk: Norwegian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-nl-NL.html">Nederland: Dutch Keyword reference</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="sql-cli-commands.html">TQL reference</a>
@@ -1923,11 +1971,11 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Use runtime filters to filter an embedded answer or pinboard.</p>
+<p>Use runtime filters to filter an embedded Answer or Pinboard.</p>
 </div>
 <div class="paragraph">
-<p>Runtime filters allow you to filter an answer or pinboard through parameters you pass in the URL to filter the data that is returned.
-You can use them with the data API or with embedding of answers or pinboards.</p>
+<p>Runtime filters allow you to filter an Answer or Pinboard through parameters you pass in the URL to filter the data that is returned.
+You can use them with the data API or with embedding of Answers or Pinboards.</p>
 </div>
 </div>
 </div>
@@ -1939,7 +1987,7 @@ You can use them with the data API or with embedding of answers or pinboards.</p
 This is done by providing filter information through the URL query parameters.</p>
 </div>
 <div class="paragraph">
-<p>This example shows the URL to access a pinboard with a filter.
+<p>This example shows the URL to access a Pinboard with a filter.
 Here the Runtime Filter is operating on the column "Color" and will only return values that are equal (EQ) to "red".</p>
 </div>
 <div class="listingblock">
@@ -1960,13 +2008,13 @@ id=e36ee65e-64be-436b-a29a-22d8998c4fae&amp;col1=Category
 </div>
 </div>
 <div class="paragraph">
-<p>ThoughtSpot will try to find a matching column from the pinboard or visualization being accessed, using the <code>col</code> field as <code>name</code>.
+<p>ThoughtSpot will try to find a matching column from the Pinboard or visualization being accessed, using the <code>col</code> field as <code>name</code>.
 You can add any number of filter sets by incrementing the parameters (e.g.
 <code>col2</code>, <code>op2</code>, and <code>val2</code>, etc.) For operators that support more than one value you can pass <code>val1=foo&amp;val1=bar</code>, etc.</p>
 </div>
 <div class="paragraph">
-<p>If the pinboard or answer you&#8217;re filtering already has one or more filters applied, the Runtime Filter(s) will act as an <code>AND</code> condition.
-This means that the data returned must meet the conditions of all filters - those supplied in the runtime filter, and those included in the pinboard or visualization itself.</p>
+<p>If the Pinboard or Answer you&#8217;re filtering already has one or more filters applied, the Runtime Filter(s) will act as an <code>AND</code> condition.
+This means that the data returned must meet the conditions of all filters - those supplied in the runtime filter, and those included in the Pinboard or visualization itself.</p>
 </div>
 </div>
 </div>
@@ -2024,23 +2072,23 @@ When a user makes a selection, you would then pass it as a Runtime Filter, and t
 </div>
 </div>
 <div class="sect1">
-<h2 id="_limitations_of_runtime_filters"><a class="anchor" href="#_limitations_of_runtime_filters"></a>Limitations of runtime filters</h2>
+<h2 id="limitations-of-runtime-filters"><a class="anchor" href="#limitations-of-runtime-filters"></a>Limitations of runtime filters</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Runtime Filters do not work directly on top of tables.
-You must create a worksheet if you want to use Runtime Filters.
-This means that the pinboard or visualization on which you apply a runtime filter must be created on top of a worksheet.</p>
+You must create a Worksheet if you want to use Runtime Filters.
+This means that the Pinboard or visualization on which you apply a runtime filter must be created on top of a Worksheet.</p>
 </div>
 <div class="paragraph">
-<p>If the worksheet was created from an answer (it is an aggregated worksheet), Runtime Filters will only work if the answer was formed using a single worksheet.
-If the answer from which the worksheet was created includes raw tables or joins multiple worksheets, you won&#8217;t be able to use Runtime Filters on it.
+<p>If the Worksheet was created from an Answer (it is an aggregated Worksheet), Runtime Filters will only work if the answer was formed using a single Worksheet.
+If the Answer from which the Worksheet was created includes raw tables or joins multiple Worksheets, you won&#8217;t be able to use Runtime Filters on it.
 This is because of the join path ambiguity that could result.</p>
 </div>
 <div class="paragraph">
-<p>Runtime Filters do not allow you to apply "`having" filters using a URL.</p>
+<p>Runtime Filters do not allow you to apply &#8220;having&#8221; filters using a URL.</p>
 </div>
 <div class="paragraph">
-<p>You cannot apply a Runtime Filter on a pinboard or visualization built on tables whose schema includes a chasm trap.
+<p>You cannot apply a Runtime Filter on a Pinboard or visualization built on tables whose schema includes a chasm trap.
 See the ThoughtSpot Administrator Guide for details on chasm traps and how ThoughtSpot handles them.</p>
 </div>
 </div>

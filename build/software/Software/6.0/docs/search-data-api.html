@@ -1796,7 +1796,55 @@
     <a class="nav-link" href="intro-reference.html">About this reference</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="keywords.html">Keyword reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-ja-JP.html">日本語: Japanese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-zh-CN.html">中文 (简体): Chinese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-de-DE.html">Deutsche: German Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-es-US.html">Español (Latinoamérica): Spanish Latin American Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-es-ES.html">Español (España): Spanish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fr-CA.html">Français (Canada): French Canadian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fr-FR.html">Français (France): French Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-pt-BR.html">Português (Brasil): Portuguese Brazilian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-pt-PT.html">Português (Portugal): Portuguese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-it-IT.html">Italiano: Italian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-da-DK.html">Dansk: Danish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fi-FI.html">Suomi: Finnish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-sv-SE.html">Svenska: Swedish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-nb-NO.html">Norsk: Norwegian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-nl-NL.html">Nederland: Dutch Keyword reference</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="sql-cli-commands.html">TQL reference</a>
@@ -1923,6 +1971,9 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
+<p>To use the data retrieved from a search query programmatically, you can first query this data using the ThoughtSpot Search Data API.</p>
+</div>
+<div class="paragraph">
 <p>It is often difficult to programmatically use the result set of a query that runs in the ThoughtSpot UI search  bar.  To use the data that we retrieve from a query programmatically, you can use ThoughtSpot Search Data API.</p>
 </div>
 <div class="paragraph">
@@ -1934,7 +1985,7 @@
 <h2 id="_resource_url"><a class="anchor" href="#_resource_url"></a>Resource URL</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><code>post/tspublic/v1/searchdata</code></p>
+<p><code>post</code>/tspublic/v1/searchdata</p>
 </div>
 </div>
 </div>
@@ -1964,27 +2015,27 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>data_source_guid</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The GUID of the data source, either a worksheet, a view, or a table.</p>
-<p class="tableblock">Example: ["4fdf9d2c-6f34-4e3b-9fa6-bd0ca69676e1"]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The GUID of the data source, either a Worksheet, a View, or a table.</p>
+<p class="tableblock">Example: [<code>"4fdf9d2c-6f34-4e3b-9fa6-bd0ca69676e1"</code>]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>batchsize</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The batch size for loading search objects.</p>
-<p class="tableblock">The system default is -1.</p></td>
+<p class="tableblock">The system default is <code>-1</code>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">pagenumber</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pagenumber</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Alternate way to specify 1-based offset:</p>
 <p class="tableblock"><code>indexingOffset = (pageNumber - 1) * batchSize</code></p>
-<p class="tableblock">The system default is -1.</p></td>
+<p class="tableblock">The system default is <code>-1</code>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">offset</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>offset</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specify a 1-based offset.</p>
-<p class="tableblock">The system default is -1.</p></td>
+<p class="tableblock">The system default is <code>-1</code>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>formattype</code></p></td>
@@ -2006,29 +2057,29 @@
 <dl>
 <dt class="hdlist1">Column</dt>
 <dd>
-<p>Columns must be enclosed in square brackets, [ ].</p>
+<p>Columns must be enclosed in square brackets, <code>[ ]</code>.</p>
 </dd>
 </dl>
 </div>
 <div class="paragraph">
-<p><strong>Example</strong> In the query revenue by ship mode, both revenue and ship mode are columns. A valid query for the API is:</p>
+<p><strong>Example</strong> In the query <code>revenue by ship mode</code>, both <code>revenue</code> and <code>ship mode</code> are columns. A valid query for the API is:</p>
 </div>
-<div class="listingblock">
+<div class="literalblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>[revenue] by [ship mode]</code></pre>
+<pre>[revenue] by [ship mode]</pre>
 </div>
 </div>
 <div id="Operator" class="dlist">
 <dl>
 <dt class="hdlist1">Operator</dt>
 <dd>
-<p>ThoughtSpot supports various operators such as =, !=, &gt;, &gt;=, &#8656;, &lt;, contains, not contains, and so on. Use these operators in the API query in the same manner as in the UI.</p>
+<p>ThoughtSpot supports various operators such as <code>=</code>, <code>!=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>&#8656;</code>, <code>&lt;</code>, <code>contains</code>, <code>not contains</code>, and so on. Use these operators in the API query in the same manner as in the UI.</p>
 <div class="paragraph">
-<p><strong>Example</strong> Specify revenue over 1000, and limit ship mode to 'air':</p>
+<p><strong>Example</strong> Specify <code>revenue</code> over 1000, and limit <code>ship mode</code> to 'air':</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>[revenue] &gt; 1000 [ship mode] = ‘air’</code></pre>
+<pre>[revenue] &gt; 1000 [ship mode] = ‘air’</pre>
 </div>
 </div>
 </dd>
@@ -2038,24 +2089,24 @@
 <dl>
 <dt class="hdlist1">Value</dt>
 <dd>
-<p>String (text) and date values must be enclosed within quotes, ’ ’. Do not use quotes for numeric values, except for dates.</p>
+<p>String (text) and date values must be enclosed within quotes, <code>’ ’</code>. Do not use quotes for numeric values, except for dates.</p>
 <div class="paragraph">
-<p>When using multiple values, separate them by a comma, ,.</p>
+<p>When using multiple values, separate them by a comma, <code>,</code>.</p>
 </div>
 <div class="paragraph">
-<p><strong>Example</strong> When a ThoughtSpot UI query is revenue top 2 ship mode, the equivalent API query is:</p>
+<p><strong>Example</strong> When a ThoughtSpot UI query is <code>revenue top 2 ship mode</code>, the equivalent API query is:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>[revenue] top 2 [ship mode]</code></pre>
+<pre>[revenue] top 2 [ship mode]</pre>
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Example</strong> When a ThoughtSpot UI query is revenue ship mode = air, the equivalent API query is:</p>
+<p><strong>Example</strong> When a ThoughtSpot UI query is <code>revenue ship mode = air</code>, the equivalent API query is:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>[revenue] [ship mode] = ‘air’</code></pre>
+<pre>[revenue] [ship mode] = ‘air’</pre>
 </div>
 </div>
 </dd>
@@ -2065,72 +2116,82 @@
 <dl>
 <dt class="hdlist1">Date Bucket</dt>
 <dd>
-<p>In the ThoughtSpot UI, when there are several date columns, users can bind date bucket tokens to a specific column. When using the API, this binding between the date column and the date bucket must be made explicit. The column with which the date bucket is bound, and the date bucket token, must be separated by a period, ..</p>
+<p>In the ThoughtSpot UI, when there are several date columns, users can bind date bucket tokens to a specific column. When using the API, this binding between the date column and the date bucket must be made explicit. The column with which the date bucket is bound, and the date bucket token, must be separated by a period, <code>.</code>.</p>
 <div class="paragraph">
-<p>Single word date buckets can be expressed as is. Multi-word date buckets must be enclosed within quotes.</p>
+<p>Single word date buckets can be expressed <em>as is</em>. Multi-word date buckets must be enclosed within quotes.</p>
 </div>
 <div class="paragraph">
-<p><strong>Example</strong> When a ThoughtSpot UI query is revenue commit date monthly, and if monthly is bound to commit date, the equivalent API query is:</p>
+<p><strong>Example</strong> When a ThoughtSpot UI query is <code>revenue commit date monthly</code>, and if <code>monthly</code> is bound to <code>commit date</code>, the equivalent API query is:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>[revenue] [commit date].monthly</code></pre>
+<pre>[revenue] [commit date].monthly</pre>
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Example</strong> When a ThoughtSpot UI query is revenue day of week = 5, and if day of week is bound to commit date, the equivalent API query is:</p>
+<p><strong>Example</strong> When a ThoughtSpot UI query is <code>revenue day of week = 5</code>, and if <code>day of week</code> is bound to <code>commit date</code>, the equivalent API query is:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>[revenue] [commit date].'day of week' = 5</code></pre>
+<pre>[revenue] [commit date].'day of week' = 5</pre>
 </div>
-</div>
-</dd>
-<dt class="hdlist1">Keyword</dt>
-<dd>
-<p>Use keywords in the API query in the same manner as in the UI.</p>
-<div class="paragraph">
-<p><strong>Example</strong> When a ThoughtSpot UI query uses keywords growth of and sort by, the equivalent API query is:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>growth of [revenue] by [commit date]</code></pre>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">Calendar</dt>
-<dd>
-<p>You can specify a custom calendar in the query. Use the calendar.calendar_name format explicitly.</p>
-<div class="paragraph">
-<p>When the calendar name contains multiple words, these words must be enclosed in single quotes.</p>
-</div>
-<div class="paragraph">
-<p><strong>Example</strong> When a ThoughtSpot UI query is revenue by commit date fiscal, where the name of the calendar is fiscal, the equivalent API query is:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>[revenue] by [commit date] calendar.fiscal</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Example When a ThoughtSpot UI query is revenue by commit date my calendar, where the name of the calendar is my calendar, the equivalent API query is:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>[revenue] by [commit date] calendar.'my calendar'</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>== Request example</p>
 </div>
 </dd>
 </dl>
 </div>
+<div id="Keyword" class="dlist">
+<dl>
+<dt class="hdlist1">Keyword</dt>
+<dd>
+<p>Use keywords in the API query in the same manner as in the UI.</p>
+<div class="paragraph">
+<p><strong>Example</strong> When a ThoughtSpot UI query uses keywords <code>growth of</code> and <code>sort by</code>, the equivalent API query is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>growth of [revenue] by [commit date]</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<div id="Calendar" class="dlist">
+<dl>
+<dt class="hdlist1">Calendar</dt>
+<dd>
+<p>You can specify a custom calendar in the query. Use the <code>calendar.<em>calendar_name</em></code> format explicitly.</p>
+<div class="paragraph">
+<p>When the calendar name contains multiple words, these words must be enclosed in single quotes.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example</strong> When a ThoughtSpot UI query is <code>revenue by commit date fiscal</code>, where the name of the calendar is <code>fiscal</code>, the equivalent API query is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[revenue] by [commit date] calendar.fiscal</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Example</strong> When a ThoughtSpot UI query is <code>revenue by commit date my calendar</code>, where the name of the calendar is <code>my calendar</code>, the equivalent API query is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[revenue] by [commit date] calendar.'my calendar'</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_request_example"><a class="anchor" href="#_request_example"></a>Request example</h2>
+<div class="sectionbody">
 <div class="sect2">
 <h3 id="_curl_compact"><a class="anchor" href="#_curl_compact"></a>cURL - COMPACT</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'X-Requested-By: ThoughtSpot' 'https://&lt;instance&gt;/callosum/v1/tspublic/v1/searchdata?query_string=%5Bsales%5D%20%5Bstore%20region%5D&amp;data_source_guid=06517bd1-84c0-4bc6-bd09-f57af52e8316&amp;batchsize=-1&amp;pagenumber=-1&amp;offset=-1&amp;formattype=COMPACT'</code></pre>
+<pre>curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'X-Requested-By: ThoughtSpot' 'https://&lt;instance&gt;/callosum/v1/tspublic/v1/searchdata?query_string=%5Bsales%5D%20%5Bstore%20region%5D&amp;data_source_guid=06517bd1-84c0-4bc6-bd09-f57af52e8316&amp;batchsize=-1&amp;pagenumber=-1&amp;offset=-1&amp;formattype=COMPACT'</pre>
 </div>
 </div>
 </div>
@@ -2138,7 +2199,7 @@
 <h3 id="_request_url_compact"><a class="anchor" href="#_request_url_compact"></a>Request URL - COMPACT</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>https://&lt;instance&gt;/callosum/v1/tspublic/v1/searchdata?query_string=%5Bsales%5D%20%5Bstore%20region%5D&amp;data_source_guid=06517bd1-84c0-4bc6-bd09-f57af52e8316&amp;batchsize=-1&amp;pagenumber=-1&amp;offset=-1&amp;formattype=COMPACT</code></pre>
+<pre>https://&lt;instance&gt;/callosum/v1/tspublic/v1/searchdata?query_string=%5Bsales%5D%20%5Bstore%20region%5D&amp;data_source_guid=06517bd1-84c0-4bc6-bd09-f57af52e8316&amp;batchsize=-1&amp;pagenumber=-1&amp;offset=-1&amp;formattype=COMPACT</pre>
 </div>
 </div>
 </div>
@@ -2146,7 +2207,7 @@
 <h3 id="_curl_full"><a class="anchor" href="#_curl_full"></a>cURL - FULL</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'X-Requested-By: ThoughtSpot' 'https://&lt;instance&gt;/callosum/v1/tspublic/v1/searchdata?query_string=%5Bsales%5D%20%5Bstore%20region%5D&amp;data_source_guid=06517bd1-84c0-4bc6-bd09-f57af52e8316&amp;batchsize=-1&amp;pagenumber=-1&amp;offset=-1&amp;formattype=FULL’</code></pre>
+<pre>curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'X-Requested-By: ThoughtSpot' 'https://&lt;instance&gt;/callosum/v1/tspublic/v1/searchdata?query_string=%5Bsales%5D%20%5Bstore%20region%5D&amp;data_source_guid=06517bd1-84c0-4bc6-bd09-f57af52e8316&amp;batchsize=-1&amp;pagenumber=-1&amp;offset=-1&amp;formattype=FULL’</pre>
 </div>
 </div>
 </div>
@@ -2154,7 +2215,7 @@
 <h3 id="_request_url_full"><a class="anchor" href="#_request_url_full"></a>Request URL - FULL</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>https://&lt;instance&gt;/callosum/v1/tspublic/v1/searchdata?query_string=%5Bsales%5D%20%5Bstore%20region%5D&amp;data_source_guid=06517bd1-84c0-4bc6-bd09-f57af52e8316&amp;batchsize=-1&amp;pagenumber=-1&amp;offset=-1&amp;formattype=FULL</code></pre>
+<pre>https://&lt;instance&gt;/callosum/v1/tspublic/v1/searchdata?query_string=%5Bsales%5D%20%5Bstore%20region%5D&amp;data_source_guid=06517bd1-84c0-4bc6-bd09-f57af52e8316&amp;batchsize=-1&amp;pagenumber=-1&amp;offset=-1&amp;formattype=FULL</pre>
 </div>
 </div>
 </div>
@@ -2165,7 +2226,7 @@
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>{
+<pre>{
   "columnNames": [
     "Store Region",
     "Total Sales"
@@ -2197,7 +2258,7 @@
   "rowCount": 5,
   "pageSize": 100000,
   "offset": 0
-}</code></pre>
+}</pre>
 </div>
 </div>
 </div>
@@ -2216,37 +2277,27 @@
 <p>In a Web Browser tab, navigate to the following address, and log in as admin user:</p>
 <div class="literalblock">
 <div class="content">
-<pre>```
-https://&lt;instance&gt;/
-```</pre>
+<pre>https://&lt;instance&gt;/</pre>
 </div>
 </div>
 </li>
 <li>
-<p>In the top navigation, click <strong>Data</strong>.</p>
+<p>In the top navigation, click <strong>Data</strong>.
+Alternatively, navigate to the following address:</p>
 <div class="literalblock">
 <div class="content">
-<pre>Alternatively, navigate to the following address:</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>```
-https://&lt;instance&gt;/#/data/tables/
-```</pre>
+<pre>https://&lt;instance&gt;/#/data/tables/</pre>
 </div>
 </div>
 </li>
 <li>
-<p>Select a data source that you plan to query: a worksheet, a table, or a view.</p>
+<p>Select a data source that you plan to query: a Worksheet, a table, or a View.</p>
 </li>
 <li>
-<p>In the address bar of the Web Browse, note the GUID of the selected data source; it is the last string of the address.  For example, in the following address string, the GUID is <code>9d93a6b8-ca3a-4146-a1a1-e908b71b963f</code>:</p>
+<p>In the address bar of the Web Browser, note the GUID of the selected data source; it is the last string of the address.  For example, in the following address string, the GUID is <code>9d93a6b8-ca3a-4146-a1a1-e908b71b963f</code>:</p>
 <div class="literalblock">
 <div class="content">
-<pre>```
-https://&lt;instance&gt;/#/data/tables/9d93a6b8-ca3a-4146-a1a1-e908b71b963f
-```</pre>
+<pre>https://&lt;instance&gt;/#/data/tables/9d93a6b8-ca3a-4146-a1a1-e908b71b963f</pre>
 </div>
 </div>
 </li>
@@ -2264,18 +2315,14 @@ https://&lt;instance&gt;/#/data/tables/9d93a6b8-ca3a-4146-a1a1-e908b71b963f
 <p>In another browser, navigate to the following address:</p>
 <div class="literalblock">
 <div class="content">
-<pre>```
-https://&lt;instance&gt;/external/swagger/#!/tspublic%2Fv1/searchData
-```</pre>
+<pre>https://&lt;instance&gt;/external/swagger/#!/tspublic%2Fv1/searchData</pre>
 </div>
 </div>
 </li>
 <li>
 <p>Click on <code>POST /tspublic/v1/searchdataTS</code>.</p>
-<div class="literalblock">
-<div class="content">
-<pre>The parameter interface appears.</pre>
-</div>
+<div class="paragraph">
+<p>The parameter interface appears.</p>
 </div>
 </li>
 <li>
@@ -2287,10 +2334,8 @@ https://&lt;instance&gt;/external/swagger/#!/tspublic%2Fv1/searchData
 </li>
 <li>
 <p><code>data_source_guid</code> is the identifier you  obtained earlier, in <a href="#get-guid">Determine the GUID of the data sources</a>.</p>
-<div class="literalblock">
-<div class="content">
-<pre>You can leave other parameters at their default value.</pre>
-</div>
+<div class="paragraph">
+<p>You can leave other parameters at their default value.</p>
 </div>
 </li>
 </ul>
@@ -2298,10 +2343,8 @@ https://&lt;instance&gt;/external/swagger/#!/tspublic%2Fv1/searchData
 </li>
 <li>
 <p>Click <strong>Try it out!</strong>, and note the results.</p>
-<div class="literalblock">
-<div class="content">
-<pre>You may wish to check that the same query, when you run it in the ThoughtSpot UI search bar (with slightly different syntax), returns the same data.</pre>
-</div>
+<div class="paragraph">
+<p>You may wish to check that the same query, when you run it in the ThoughtSpot UI search bar (with slightly different syntax), returns the same data.</p>
 </div>
 </li>
 </ol>
@@ -2322,18 +2365,18 @@ https://&lt;instance&gt;/external/swagger/#!/tspublic%2Fv1/searchData
 </li>
 <li>
 <p>All Column names in the data source must have <strong>unique names</strong> that also pass the "case insensitivity" test.</p>
-<div class="literalblock">
-<div class="content">
-<pre>  For example, Columns `[Revenue]` and `[revenue]` are not unique.
-- Column names cannot contain square brackets, `[` or `]`.</pre>
+<div class="paragraph">
+<p>For example, Columns <code>[Revenue]</code> and <code>[revenue]</code> are not unique.</p>
 </div>
-</div>
+</li>
+<li>
+<p>Column names cannot contain square brackets, <code>[</code> or <code>]</code>.</p>
 </li>
 <li>
 <p>Values must be enclosed in quotes, <code>‘’</code>, but they cannot contain quotes.</p>
 </li>
 <li>
-<p>The API does not support <strong>in-query formula</strong> definitions. To use a formula, first create it on the worksheet or a table using the ThoughtSpot UI, and then use the named formula inside the API query.</p>
+<p>The API does not support <strong>in-query formula</strong> definitions. To use a formula, first create it on the Worksheet or a table using the ThoughtSpot UI, and then use the named formula inside the API query.</p>
 </li>
 <li>
 <p>Users must be <strong>authenticated</strong> and have <strong>read access</strong> to the data source.</p>

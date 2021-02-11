@@ -1796,7 +1796,55 @@
     <a class="nav-link" href="intro-reference.html">About this reference</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="keywords.html">Keyword reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-ja-JP.html">日本語: Japanese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-zh-CN.html">中文 (简体): Chinese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-de-DE.html">Deutsche: German Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-es-US.html">Español (Latinoamérica): Spanish Latin American Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-es-ES.html">Español (España): Spanish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fr-CA.html">Français (Canada): French Canadian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fr-FR.html">Français (France): French Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-pt-BR.html">Português (Brasil): Portuguese Brazilian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-pt-PT.html">Português (Portugal): Portuguese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-it-IT.html">Italiano: Italian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-da-DK.html">Dansk: Danish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fi-FI.html">Suomi: Finnish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-sv-SE.html">Svenska: Swedish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-nb-NO.html">Norsk: Norwegian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-nl-NL.html">Nederland: Dutch Keyword reference</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="sql-cli-commands.html">TQL reference</a>
@@ -1940,10 +1988,10 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><strong>Review configuration options</strong> Refer to <a href="#configuration-options.adoc" class="page unresolved">AWS configuration options</a> for detailed instance specs.</p>
+<p><strong>Review configuration options</strong> Refer to <a href="configuration-options-aws.html" class="page">AWS configuration options</a> for detailed instance specs.</p>
 </li>
 <li>
-<p><strong>Create the instance</strong> Refer to <a href="#launch-an-instance.adoc" class="page unresolved">Set up AWS for ThoughtSpot</a> to create and launch your instance.</p>
+<p><strong>Create the instance</strong> Refer to <a href="launch-an-instance-aws.html" class="page">Set up AWS for ThoughtSpot</a> to create and launch your instance.</p>
 </li>
 <li>
 <p><strong>Review required ports</strong> Refer to <a href="firewall-ports.html" class="page">Network policies</a> to view the required ports for successful operation of ThoughtSpot.</p>
@@ -1996,8 +2044,10 @@ Ask your network administrator if you do not know the admin credentials.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Run <code>ssh admin@&lt;nodeIP&gt;</code>.
-+ Replace <code>nodeIP</code> with your specific network information.</p>
+<p>Run <code>ssh admin@&lt;nodeIP&gt;</code>.</p>
+<div class="paragraph">
+<p>Replace <code>nodeIP</code> with your specific network information.</p>
+</div>
 <div class="literalblock">
 <div class="content">
 <pre>$ ssh admin@&lt;nodeIP&gt;</pre>
@@ -2032,8 +2082,7 @@ The password does not appear on the screen as you type it.
 Redirect it to the file <code>nodes.config</code>.</p>
 </div>
 <div class="paragraph">
-<p>+
-You can find more information on this process in the <a href="nodesconfig-example.html" class="page"><code>nodes.config</code> file reference</a>.</p>
+<p>You can find more information on this process in the <a href="nodesconfig-example.html" class="page"><code>nodes.config</code> file reference</a>.</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -2081,8 +2130,10 @@ Some of the information in the <code>nodes.config</code> file may be pre-populat
 </div>
 </li>
 <li>
-<p>Fill in the areas specified in <a href="parameters-nodesconfig.html" class="page">Parameters of the nodes.config file</a> with your specific network information.
-+ If you have additional nodes, complete each node within the nodes.config file in the same way.</p>
+<p>Fill in the areas specified in <a href="parameters-nodesconfig.html" class="page">Parameters of the nodes.config file</a> with your specific network information.</p>
+<div class="paragraph">
+<p>If you have additional nodes, complete each node within the nodes.config file in the same way.</p>
+</div>
 </li>
 </ol>
 </div>
@@ -2122,27 +2173,28 @@ It may look something like the following:</p>
 </div>
 </li>
 <li>
-<p>Run the configuration command: <code>$ cat nodes.config | tscli cluster set-config</code>.
-+ If the command returns an error, refer to <a href="#set-config-error-recovery">set-config error recovery</a>.
-+  After you run the node configuration command, your output appears similar to the following:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console"> $ cat nodes.config | tscli cluster set-config</code></pre>
+<p>Run the configuration command: <code>$ cat nodes.config | tscli cluster set-config</code>.</p>
+<div class="paragraph">
+<p>If the command returns an error, refer to <a href="#set-config-error-recovery">set-config error recovery</a>.</p>
 </div>
-</div>
-</li>
-</ol>
+<div class="paragraph">
+<p>After you run the node configuration command, your output appears similar to the following:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre> Connecting to local node-scout
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console"> $ cat nodes.config | tscli cluster set-config
+
+ Connecting to local node-scout
  Setting up hostnames for all nodes
  Setting up networking interfaces on all nodes
  Setting up hosts file on all nodes
  Setting up NTP Servers
  Setting up Timezone
- Done setting up ThoughtSpot</pre>
+ Done setting up ThoughtSpot</code></pre>
 </div>
+</div>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect2">
@@ -2151,17 +2203,13 @@ It may look something like the following:</p>
 <p>Use the <code>get-config</code> command to confirm node configuration.</p>
 </div>
 <div class="paragraph">
-<p>+
- Your output may look similar to the following:</p>
+<p>Your output may look similar to the following:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ tscli cluster get-config</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>{
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ tscli cluster get-config
+
+{
   "ClusterId": "",
   "ClusterName": "",
   "DataNetmask": "255.255.252.0",
@@ -2185,7 +2233,7 @@ It may look something like the following:</p>
   	}
 	}
   }
-}</pre>
+}</code></pre>
 </div>
 </div>
 </div>
@@ -2220,11 +2268,13 @@ Please retry or contact support.</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Restart the node-scout service with the following command:</p>
+<p>Restart the node-scout service with the following set of commands:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console"> $ sudo systemctl restart node-scout</code></pre>
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console"> $ sudo vim /etc/systemd/system/node-scout.service
+ $ sudo systemctl daemon-reload
+ $ sudo systemctl restart node-scout</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2232,12 +2282,12 @@ Please retry or contact support.</pre>
 Your output should specify that the node-scout service is active.
 It may look something like the following:</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>$ sudo systemctl status node-scout
-  ● node-scout.service - Setup Node Scout service
-    Loaded: loaded (/etc/systemd/system/node-scout.service; enabled; vendor preset: disabled)
-    Active: active (running) since Fri 2019-12-06 13:56:29 PST; 4s ago</pre>
+<pre> $ sudo systemctl status node-scout
+   ● node-scout.service - Setup Node Scout service
+     Loaded: loaded (/etc/systemd/system/node-scout.service; enabled; vendor preset: disabled)
+     Active: active (running) since Fri 2019-12-06 13:56:29 PST; 4s ago</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2268,10 +2318,7 @@ It may look something like the following:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>See other training resources at</p>
-</div>
-<div class="paragraph">
-<p>+
+<p>See other training resources at
 <a href="https://training.thoughtspot.com/" target="_blank" rel="noopener">ThoughtSpot U</a></p>
 </div>
 </div>
@@ -2285,7 +2332,7 @@ It may look something like the following:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#nodesconfig-example">The nodes.config file</a></p>
+<p><a href="nodesconfig-example.html" class="page">The nodes.config file</a></p>
 </li>
 <li>
 <p><a href="parameters-nodesconfig.html" class="page">Parameters of the nodes.config file</a></p>

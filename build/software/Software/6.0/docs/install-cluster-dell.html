@@ -1796,7 +1796,55 @@
     <a class="nav-link" href="intro-reference.html">About this reference</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="keywords.html">Keyword reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-ja-JP.html">日本語: Japanese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-zh-CN.html">中文 (简体): Chinese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-de-DE.html">Deutsche: German Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-es-US.html">Español (Latinoamérica): Spanish Latin American Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-es-ES.html">Español (España): Spanish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fr-CA.html">Français (Canada): French Canadian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fr-FR.html">Français (France): French Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-pt-BR.html">Português (Brasil): Portuguese Brazilian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-pt-PT.html">Português (Portugal): Portuguese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-it-IT.html">Italiano: Italian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-da-DK.html">Dansk: Danish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fi-FI.html">Suomi: Finnish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-sv-SE.html">Svenska: Swedish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-nb-NO.html">Norsk: Norwegian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-nl-NL.html">Nederland: Dutch Keyword reference</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="sql-cli-commands.html">TQL reference</a>
@@ -1986,9 +2034,6 @@ Ask your network administrator if you do not know your hostname.</p>
 <pre>$ scp &lt;release-number&gt;.tar.gz admin@&lt;hostname&gt;:/export/sdb1/TS_TASKS/install/&lt;file-name&gt;</pre>
 </div>
 </div>
-</li>
-</ul>
-</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -2002,13 +2047,13 @@ You can use another secure copy method, if you prefer a method other than the <c
 </table>
 </div>
 </li>
+</ul>
+</div>
+</li>
 <li>
 <p>Alternatively, use <code>tscli fileserver download-release</code> to download the release bundle.</p>
 <div class="paragraph">
 <p>You must <a href="tscli-command-ref.html#tscli-fileserver" class="page">configure the fileserver</a> by running <code>tscli fileserver configure</code> before you can download the release.</p>
-</div>
-</li>
-</ol>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2029,11 +2074,15 @@ You can use another secure copy method, if you prefer a method other than the <c
 <li>
 <p><code>release-location</code> is the location path of the release bundle on your local machine.
 For example, <code>/export/sdb1/TS_TASKS/install/6.0.tar.gz</code>.</p>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
+</ul>
+</div>
+</li>
 <li>
-<p>Verify the checksum to ensure you have the correct release.
-+ Run <code>md5sum -c &lt;release-number&gt;.tar.gz.MD5checksum</code>.</p>
+<p>Verify the checksum to ensure you have the correct release.</p>
+<div class="paragraph">
+<p>Run <code>md5sum -c &lt;release-number&gt;.tar.gz.MD5checksum</code>.</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre> $ md5sum -c &lt;release-number&gt;.tar.gz.MD5checksum</pre>
@@ -2065,9 +2114,6 @@ Use screen to ensure that your installation does not stop if you lose network co
 For more information on this process, refer to <a href="cluster-create.html" class="page">Using the tscli cluster create command</a> and <a href="parameters-cluster-create.html" class="page">Parameters of the <code>cluster create</code> command</a>.</p>
 </li>
 </ol>
-</div>
-</li>
-</ul>
 </div>
 <div class="paragraph">
 <p>The cluster installer automatically reboots all the nodes after the install.
@@ -2200,8 +2246,10 @@ If you run <code>tscli storage gc</code>, note that it restarts your cluster.
 <h2 id="install-step-3"><a class="anchor" href="#install-step-3"></a>Step 3: Finalize installation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>After the cluster status changes to <code>READY</code>, sign in to the ThoughtSpot application on your browser.
-+ Follow these steps:</p>
+<p>After the cluster status changes to <code>READY</code>, sign in to the ThoughtSpot application on your browser.</p>
+</div>
+<div class="paragraph">
+<p>Follow these steps:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2238,7 +2286,7 @@ ThoughtSpot recommends changing the default admin password.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
+<div id="ts-login" class="paragraph">
 <p><span class="image"><img src="_images/ts-login-page.png" alt="ThoughtSpot&#8217;s sign-in window"></span></p>
 </div>
 </div>
@@ -2273,11 +2321,13 @@ Please retry or contact support.</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Restart the node-scout service with the following command:</p>
+<p>Restart the node-scout service with the following set of commands:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console"> $ sudo systemctl restart node-scout</code></pre>
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console"> $ sudo vim /etc/systemd/system/node-scout.service
+ $ sudo systemctl daemon-reload
+ $ sudo systemctl restart node-scout</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2285,12 +2335,12 @@ Please retry or contact support.</pre>
 Your output should specify that the node-scout service is active.
 It may look something like the following:</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>$ sudo systemctl status node-scout
-  ● node-scout.service - Setup Node Scout service
-    Loaded: loaded (/etc/systemd/system/node-scout.service; enabled; vendor preset: disabled)
-    Active: active (running) since Fri 2019-12-06 13:56:29 PST; 4s ago</pre>
+<pre> $ sudo systemctl status node-scout
+   ● node-scout.service - Setup Node Scout service
+     Loaded: loaded (/etc/systemd/system/node-scout.service; enabled; vendor preset: disabled)
+     Active: active (running) since Fri 2019-12-06 13:56:29 PST; 4s ago</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2322,7 +2372,7 @@ It may look something like the following:</p>
 </div>
 <div class="paragraph">
 <p>See other training resources at
-<a href="https://training.thoughtspot.com/">ThoughtSpot U</a></p>
+<a href="https://training.thoughtspot.com/">ThoughtSpot U</a>.</p>
 </div>
 </div>
 </div>

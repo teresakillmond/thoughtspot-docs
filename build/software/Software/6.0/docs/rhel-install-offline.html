@@ -1796,7 +1796,55 @@
     <a class="nav-link" href="intro-reference.html">About this reference</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="keywords.html">Keyword reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-ja-JP.html">日本語: Japanese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-zh-CN.html">中文 (简体): Chinese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-de-DE.html">Deutsche: German Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-es-US.html">Español (Latinoamérica): Spanish Latin American Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-es-ES.html">Español (España): Spanish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fr-CA.html">Français (Canada): French Canadian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fr-FR.html">Français (France): French Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-pt-BR.html">Português (Brasil): Portuguese Brazilian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-pt-PT.html">Português (Portugal): Portuguese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-it-IT.html">Italiano: Italian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-da-DK.html">Dansk: Danish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fi-FI.html">Suomi: Finnish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-sv-SE.html">Svenska: Swedish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-nb-NO.html">Norsk: Norwegian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-nl-NL.html">Nederland: Dutch Keyword reference</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="sql-cli-commands.html">TQL reference</a>
@@ -1923,9 +1971,10 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Install ThoughtSpot on RHEL offline clusters
----
-Before starting the install, make sure that you completed the <a href="rhel-prerequisites.html" class="page">pre-installation steps</a>.</p>
+<p>Install ThoughtSpot on RHEL offline clusters</p>
+</div>
+<div class="paragraph">
+<p>Before starting the install, make sure that you completed the <a href="rhel-prerequisites.html" class="page">pre-installation steps</a>.</p>
 </div>
 <div class="paragraph">
 <p>In an offline cluster, the hosts cannot connect to the public repositories to download the required packages. Instead, you must download the packages from your organization’s mirror repository to each host. Otherwise, the steps for installing on offline clusters are practically the same as the steps for installing on online cluster.</p>
@@ -1996,7 +2045,7 @@ Before starting the install, make sure that you completed the <a href="rhel-prer
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Obtain the Ansible tarball by joining our RHEL Early Access program, and email us your Ansible request. Download it to your local machine.</p>
+<p>Obtain the Ansible tarball by joining our RHEL Early Access program, and email us your <a href="mailto:early_access@thoughtspot.com?subject=RHEL%2520Early%2520Access%2520Program%2520Ansible%2520File%2520Request">Ansible request</a>. Download it to your local machine.</p>
 </li>
 <li>
 <p>Unzip the Ansible tarball, to see the following files and directories on your local machine:</p>
@@ -2009,7 +2058,7 @@ Before starting the install, make sure that you completed the <a href="rhel-prer
 <dt class="hdlist1">hosts.sample</dt>
 <dt class="hdlist1">prod_image</dt>
 <dd>
-<p>This directory contains the ThoughtSpot tools and tscli, the ThoughtSpot CLI binary.</p>
+<p>This directory contains the ThoughtSpot tools and <code>tscli</code>, the ThoughtSpot CLI binary.</p>
 </dd>
 <dt class="hdlist1">README.md</dt>
 <dd>
@@ -2023,18 +2072,15 @@ Before starting the install, make sure that you completed the <a href="rhel-prer
 <dd>
 <p>The tools that are necessary to compile the instructions you define in the Ansible Playbook, the source code, into executables that can run on your device. The toolchain includes a compiler, a linker, and run-time libraries.</p>
 </dd>
-<dt class="hdlist1">ts-new.yaml</dt>
+<dt class="hdlist1">ts-rhel-new.yaml</dt>
 <dd>
-<p>The Ansible Playbook for new installations. Note that this is called <code>ts-rhel-new.yaml</code> in ThoughtSpot release 6.1. It is <code>ts-new.yaml</code> in releases 6.1.1 and later.</p>
+<p>The Ansible Playbook for new installations.</p>
 </dd>
-<dt class="hdlist1">ts-update.yaml</dt>
+<dt class="hdlist1">ts-rhel-update.yaml</dt>
 <dd>
-<p>The Ansible Playbook for updates. Note that this is called ts-rhel-update.yaml in ThoughtSpot release 6.1. It is <code>ts-update.yaml</code> in releases 6.1.1 and later.</p>
+<p>The Ansible Playbook for updates.</p>
 </dd>
-<dt class="hdlist1">ts.yaml</dt>
-<dd>
-<p>Note that this is called <code>ts-rhel.yaml</code> in ThoughtSpot release 6.1. It is <code>ts-yaml</code> in releases 6.1.1 and later.</p>
-</dd>
+<dt class="hdlist1">ts-rhel.yaml</dt>
 <dt class="hdlist1">yum.repos.d</dt>
 <dd>
 <p>This directory contains information about the yum repo used by the cluster.</p>
@@ -2043,7 +2089,7 @@ Before starting the install, make sure that you completed the <a href="rhel-prer
 </div>
 </li>
 <li>
-<p>Copy the Ansible inventory file hosts.sample to hosts.yaml, and using a text editor of your choice, update the file to include your host configuration:</p>
+<p>Copy the Ansible inventory file <code>hosts.sample</code> to <code>hosts.yaml</code>, and using a text editor of your choice, update the file to include your host configuration:</p>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">hosts</dt>
@@ -2094,7 +2140,7 @@ Before starting the install, make sure that you completed the <a href="rhel-prer
 </dd>
 <dt class="hdlist1">ssh_user</dt>
 <dd>
-<p>The ssh_user must exist on the ThoughtSpot host, and it must have sudo privileges.</p>
+<p>The <code>ssh_user</code> must exist on the ThoughtSpot host, and it must have <code>sudo</code> privileges.</p>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">On-premise deployments</dt>
@@ -2114,7 +2160,7 @@ Before starting the install, make sure that you completed the <a href="rhel-prer
 </dd>
 <dt class="hdlist1">ssh_private_key</dt>
 <dd>
-<p>Add the private key for ssh access to the hosts.yaml file. You can use an existing key pair, or generate a new key pair in the Ansible Control server.
+<p>Add the private key for <code>ssh</code> access to the <code>hosts.yaml</code> file. You can use an existing key pair, or generate a new key pair in the Ansible Control server.
 Run the following command to verify that the Ansible Control Server can connect to the hosts over <code>ssh</code>:</p>
 <div class="listingblock">
 <div class="content">
@@ -2124,8 +2170,8 @@ Run the following command to verify that the Ansible Control Server can connect 
 </dd>
 <dt class="hdlist1">ssh_public_key</dt>
 <dd>
-<p>Add the public key to the ssh authorized_keys file for each host, and add the private key to the hosts.yaml file. You can use an existing key pair, or generate a new key pair in the Ansible Control server.
-Run the following command to verify that the Ansible Control Server can connect to the hosts over ssh:</p>
+<p>Add the public key to the <code>ssh authorized_keys</code> file for each host, and add the private key to the <code>hosts.yaml</code> file. You can use an existing key pair, or generate a new key pair in the Ansible Control server.
+Run the following command to verify that the Ansible Control Server can connect to the hosts over <code>ssh</code>:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>ansible -m ping -i hosts.yaml all</code></pre>
@@ -2204,7 +2250,7 @@ This release of ThoughtSpot does not support proxy credentials to authenticate t
 <p>Format and create export partitions, if they do not exist</p>
 </li>
 <li>
-<p>Format the data disks</p>
+<p>Format the data disks, and run <code>prepare disks</code></p>
 </li>
 </ul>
 </div>
@@ -2236,13 +2282,13 @@ This release of ThoughtSpot does not support proxy credentials to authenticate t
 <p><a href="inthebox.html" class="page">Hardware appliance</a></p>
 </li>
 <li>
-<p><a href="#configuration-options.adoc" class="page unresolved">Amazon Web Services (AWS) EC2</a></p>
+<p><a href="configuration-options-aws.html" class="page">Amazon Web Services (AWS) EC2</a></p>
 </li>
 <li>
-<p><a href="#configuration-options.adoc" class="page unresolved">Microsoft Azure</a></p>
+<p><a href="configuration-options-azure.html" class="page">Microsoft Azure</a></p>
 </li>
 <li>
-<p><a href="#configuration-options.adoc" class="page unresolved">Google Cloud Platform (GCP)</a></p>
+<p><a href="configuration-options-gcp.html" class="page">Google Cloud Platform (GCP)</a></p>
 </li>
 <li>
 <p><a href="vmware-intro.html" class="page">VMware</a></p>
