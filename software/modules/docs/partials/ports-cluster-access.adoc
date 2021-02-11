@@ -1,4 +1,4 @@
-== Ports for inbound and outbound cluster access
+=== Required ports for inbound and outbound cluster access
 
 ThoughtSpot uses static ports for inbound and outbound access to the cluster.
 
@@ -44,14 +44,6 @@ ThoughtSpot uses static ports for inbound and outbound access to the cluster.
 | ThoughtSpot Support
 | All nodes
 | Port used by NFS.
-
-| 9000
-| HTTP
-| DataFlow
-| bidirectional
-| All users`' IP address
-| Node that runs DataFlow
-| Port used for accessing DataFlow
 
 | 12345
 | TCP
@@ -105,7 +97,7 @@ s3.dualstack.us-west-1.amazonaws.com
 | Allow outbound access for the IP address of whichever email relay server is in use.
 This is for sending alerts to ThoughtSpot Support.
 
-In ThoughtSpot release 6.1.1 or later, and in release 6.0.5, you can specify a custom port to connect to the relay host, instead of port 25 or 587.
+Starting with release 6.0.5, you can specify a custom port to connect to the relay host, instead of port 25 or 587.
 Refer to xref:set-up-relay-host.adoc[Set the relay host for SMTP].
 
 | 389 or 636

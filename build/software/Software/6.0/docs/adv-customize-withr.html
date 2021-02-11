@@ -674,7 +674,7 @@
     <a class="nav-link" href="work-with-ts-support.html">Configure support services</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:ports.adoc">Network policies</a>
+    <a class="nav-link" href="firewall-ports.html">Network policies</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="about-load-balancer-configuration.html">Configure load balancing and proxies</a>
@@ -1923,6 +1923,9 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
+<p>Learn about R customizations.</p>
+</div>
+<div class="paragraph">
 <p>Admins and users with the <strong>Has SpotIQ</strong> privilege can run an R script.</p>
 </div>
 <div class="paragraph">
@@ -1979,8 +1982,8 @@ Should you need a third binding, you would use  <code>.param2</code> and so fort
 </div>
 <div class="paragraph">
 <p>The output of the script is either PNG or CSV.
-This example script uses <code><mark>output_csv</mark></code> to emit data in a CSV (tabular) format.
-Use <code><mark>output_png</mark></code> to emit data in PNG format.</p>
+This example script uses <code>#output_csv#</code> to emit data in a CSV (tabular) format.
+Use <code>#output_png#</code> to emit data in PNG format.</p>
 </div>
 <div class="paragraph">
 <p>Presently, error reporting is limited for R scripts in SpotIQ.
@@ -2036,7 +2039,7 @@ This example uses <strong>Sporting Goods Retail Worksheet</strong> data.</p>
 <p>This script binds <code>.param0</code> to <code>Sales</code> and <code>.param1</code> to the <code>Store Zip Code</code>  column.</p>
 </div>
 <div class="paragraph">
-<p>You can see from the script that the output should be PNG  (<code><mark>output_png</mark></code>).</p>
+<p>You can see from the script that the output should be PNG  (<code>#output_png#</code>).</p>
 </div>
 </li>
 <li>
@@ -2099,7 +2102,7 @@ write.csv(df, file=#output_file#, row.names=FALSE);</pre>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="tscli-command-ref.html#rpackage" class="page">tscli rpackage</a></p>
+<p><a href="tscli-command-ref.html#tscli-rpackage" class="page">tscli rpackage</a></p>
 </li>
 </ul>
 </div>

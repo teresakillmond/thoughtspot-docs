@@ -674,7 +674,7 @@
     <a class="nav-link" href="work-with-ts-support.html">Configure support services</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:ports.adoc">Network policies</a>
+    <a class="nav-link" href="firewall-ports.html">Network policies</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="about-load-balancer-configuration.html">Configure load balancing and proxies</a>
@@ -1935,7 +1935,7 @@
 This setup is scalable, more secure, and a much simpler alternative to using a virtual meeting room.</p>
 </div>
 <div class="paragraph">
-<p>Granting remote support access can streamline troubleshooting activities, because it enables your support agent to work directly on your computer form a secure setting.
+<p>Granting remote support access can streamline troubleshooting activities, because it enables your support agent to work directly on your computer from a secure setting.
 The remote tunnel enables SSH and HTTP access to your ThoughtSpot instance by ThoughtSpot Support.
 This access can be granted and revoked easily, so you can enable it for a troubleshooting session, and then disable it again.
 Before doing this procedure, make sure your company&#8217;s security policies allow reverse tunneling.</p>
@@ -1947,7 +1947,7 @@ Before doing this procedure, make sure your company&#8217;s security policies al
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Before you set up a reverse tunnel, open port <code>22</code> in your firewall outgoing rules to add <code>tunnelrelay.thoughtspot.com</code> to your list of allowed domains.
+Your ThoughtSpot instance must be able to connect to <code>tunnelrelay.thoughtspot.com</code> on TCP port 22. To verify connectivity to this port, run: <code>telnet tunnelrelay.thoughtspot.com 22</code>. Without connectivity to port 22, the tunnel will not work.
 </td>
 </tr>
 </table>
@@ -2182,18 +2182,18 @@ To designate the custom feedback contact, follow these steps:</p>
 <div class="paragraph">
 <p>To reset the email to the default (ThoughtSpot support), issue this command:</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>$ tscli support rm-feedback-email</pre>
+<pre> $ tscli support rm-feedback-email</pre>
 </div>
 </div>
 <div class="paragraph">
 <p>You can also choose not to send feedback on your system.
 Issue this command:</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>$ tscli support set-feedback-email ' '</pre>
+<pre> $ tscli support set-feedback-email ' '</pre>
 </div>
 </div>
 </div>

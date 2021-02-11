@@ -1,5 +1,6 @@
 = RHEL installation prerequisites
 :last_updated: 6/30/2020
+:linkattrs:
 
 Prepare the system and ThoughtSpot clusters for installation.
 
@@ -42,10 +43,10 @@ Please refer to the relevant deployment sections in our documentation for the ex
 
 * ThoughtSpot-certified hardware appliance manufactured by xref:installing-dell.adoc[DELL]
 * ThoughtSpot-certified hardware appliance manufactured by xref:installing-the-smc.adoc[SMC]
-* xref:configuration-options.adoc[Amazon Web Services (AWS) EC2]
-* xref:configuration-options.adoc[Google Cloud Platform (GCP)]
+* xref:configuration-options-aws.adoc[Amazon Web Services (AWS) EC2]
+* xref:configuration-options-gcp.adoc[Google Cloud Platform (GCP)]
 * xref:vmware-intro.adoc[VMware]
-* xref:configuration-options.adoc[Microsoft Azure]
+* xref:configuration-options-azure.adoc[Microsoft Azure]
 
 [#partition-hosts]
 == Partition the hosts
@@ -62,7 +63,7 @@ the partition requirements are therefore somewhat different when compared to the
 | Export partition | SSD (root drive) | Stores ThoughtSpot objects, hdfs logs, service logs, and so on |200GB
 .2+| Hosts on ThoughtSpot-certified hardware appliances | OS partition | SSD (root drive) | Root partition for OS, /tmp |80GB
 Allocate at least 50GB to /tmp
-| Export partition | SSD (root drive) | Stores ThoughtSpot objects, hdfs logs, service logs, and so on | service logs, and so on	100GB
+| Export partition | SSD (root drive) | Stores ThoughtSpot objects, hdfs logs, service logs, and so on |	100GB
 |====================
 
 [#install-rhel]
@@ -90,21 +91,26 @@ WARNING: If Linux kernel version is not 3.10.0-1127.19.1, you may run into unexp
 
 *Repositories*
 
+[#yum-repositories]
 * *Yum repositories*: you must enable the following Yum repositories in your cluster: `epel`, `nux-desktop`, `pgdg95`, `rhel`, `rhel-optional`, `rhel-extras`.
 
+[#python-repositories]
 * *Python repository*: for Python, ensure the machine is able to reach the `PyPI` repository located at https://pypi.python.org/.
 
+[#r-repositories]
 * *R repository*: for R, ensure the machine is able to reach the `CRAN` repository located at https://cran.rstudio.com/.
 
 Make sure that you can download RHEL packages to all hosts, either from the <<official-repositories,official package repositories>>, or from a <<mirror-repositories,mirror repository>> owned and managed by your organization.
 
 If you cannot access the RHEL repositories, there is no mirror repository in your organization, or you are unable to access Yum, Python, or R repositories, please xref:contact.adoc[contact ThoughtSpot Support].
 
+[#official-repositories]
 *Official package repositories*
 
 If the hosts of your ThoughtSpot cluster can access external repositories, either directly or through a proxy, your cluster is online.
 You can then proceed to download <<yum-repositories,Yum>>, <<python-repositories,Python>>, and <<r-repositories,R>> package repositories.
 
+[#mirror-repositories]
 *Internal mirror repository*
 
 If the hosts of your ThoughtSpot cluster have access to an internal repository that mirrors the public repositories, copy the <<yum-repositories,Yum>>, <<python-repositories,Python>>, and <<r-repositories,R>> package repositories to your hosts.

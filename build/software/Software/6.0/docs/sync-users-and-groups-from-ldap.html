@@ -674,7 +674,7 @@
     <a class="nav-link" href="work-with-ts-support.html">Configure support services</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:ports.adoc">Network policies</a>
+    <a class="nav-link" href="firewall-ports.html">Network policies</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="about-load-balancer-configuration.html">Configure load balancing and proxies</a>
@@ -2113,51 +2113,51 @@ It also deletes any other entities created in the ThoughtSpot system from this L
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--ts_hostport &lt;ts_hostport&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--ts_hostport &lt;ts_hostport&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ThoughtSpot cluster host port. Default port is 8088.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--disable_ssl</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--disable_ssl</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Controls the communication between the sync script and the ThoughtSpot cluster. It disables SSL communications between the script and the cluster ONLY, and prevents the need to provide SSL certs during the script execution in order to create users and groups.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--ts_uname</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ThoughtSpot cluster username. The admin user is usually used.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--ts_uname</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ThoughtSpot cluster username. The <code>admin</code> user is usually used.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--ts_pass</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--ts_pass</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ThoughtSpot cluster password.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--ldap_hostport</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--ldap_hostport</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">AD/LDAP server port that is queried. Default is 389.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--ldap_uname</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--ldap_uname</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Username for the LDAP/AD server.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--ldap_pass &lt;ldap_password&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--ldap_pass &lt;ldap_password&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Password for the LDAP/AD server.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--sync</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Syncs users and groups which match the basedn and filter_str queries to your ThoughtSpot cluster.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--sync</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Syncs users and groups which match the <code>basedn</code> and <code>filter_str</code> queries to your ThoughtSpot cluster.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--purge</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--purge</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Purges any users that exist in ThoughtSpot, but not in AD.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--basedn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--basedn</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Place in the directory that will be searched for users.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--filter_str</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--filter_str</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Further filters results from your base DN.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--include_nontree_members</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--include_nontree_members</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Includes group members from LDAP/AD even if they do not belong to the current subtree that is being synced.</p></td>
 </tr>
 </tbody>

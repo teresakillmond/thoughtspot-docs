@@ -674,7 +674,7 @@
     <a class="nav-link" href="work-with-ts-support.html">Configure support services</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:ports.adoc">Network policies</a>
+    <a class="nav-link" href="firewall-ports.html">Network policies</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="about-load-balancer-configuration.html">Configure load balancing and proxies</a>
@@ -1926,7 +1926,7 @@
 <p>Worksheets are flat tables created by joining columns from a set of one or more tables or imported datasets.</p>
 </div>
 <div class="paragraph">
-<p>After <a href="about-data-modeling-intro.html" class="page">modeling your data</a>, create worksheets to make searching easier.
+<p>After <a href="about-data-modeling-intro.html" class="page">modeling your data</a>, create Worksheets to make searching easier.
 For example, a sales executive might need to search for information about retail sales.
 This data might be contained in several tables (sales, customers, products, stores, etc.), with foreign key relationships between them.
 An administrator who is familiar with the data model can create a retail sales worksheet, that combines all of the related fact and dimension tables into a single, easy-to-use view, and share it with the sales executive.
@@ -1939,8 +1939,8 @@ This provides access to the data without requiring an understanding of how it is
 <div class="sectionbody">
 <div class="paragraph">
 <p>Users are often unfamiliar with tables and how they are related to one another.
-A worksheet groups multiple related tables together in a logical way.
-You might use a worksheet for these reasons:</p>
+A Worksheet groups multiple related tables together in a logical way.
+You might use a Worksheet for these reasons:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1965,11 +1965,11 @@ You might use a worksheet for these reasons:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Typically, you create one worksheet for each set of fact and dimension tables.
+<p>Typically, you create one Worksheet for each set of fact and dimension tables.
 For example, you may have a sales fact table and an inventory fact table.
 Each of these fact tables shares common dimensions like date, region, and store.
-In this scenario, you would create two worksheets: sales and inventory.
-The following diagram depicts the workflow for creating the sales worksheet.</p>
+In this scenario, you would create two Worksheets: sales and inventory.
+The following diagram depicts the workflow for creating the sales Worksheet.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1977,22 +1977,22 @@ The following diagram depicts the workflow for creating the sales worksheet.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The process for creating a worksheet is:</p>
+<p>The process for creating a Worksheet is:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Decide which tables to use for the worksheet.</p>
+<p>Decide which tables to use for the Worksheet.</p>
 </li>
 <li>
 <p><a href="#create-worksheet">Create a new Worksheet</a>.
-If the worksheet already exists in another cluster, you can migrate it <a href="worksheet-export.html#worksheet-migrate" class="page">using a flat <code>TSL</code> file</a>.</p>
+If the Worksheet already exists in another cluster, you can migrate it <a href="worksheet-export.html#worksheet-migrate" class="page">using a flat <code>yaml</code> file</a>.</p>
 </li>
 <li>
-<p>Add sources (tables) to the worksheet.</p>
+<p>Add sources (tables) to the Worksheet.</p>
 </li>
 <li>
-<p>Choose the <a href="progressive-joins.html" class="page">worksheet join rule</a>.</p>
+<p>Choose the <a href="progressive-joins.html" class="page">Worksheet join rule</a>.</p>
 </li>
 <li>
 <p>Select the columns to include.</p>
@@ -2004,13 +2004,13 @@ If the worksheet already exists in another cluster, you can migrate it <a href="
 <p>Optionally <a href="create-formula.html" class="page">create formulas</a>.</p>
 </li>
 <li>
-<p>Optionally <a href="create-ws-filter.html" class="page">create worksheet filters</a>.</p>
+<p>Optionally <a href="create-ws-filter.html" class="page">create Worksheet filters</a>.</p>
 </li>
 <li>
-<p>Save the worksheet.</p>
+<p>Save the Worksheet.</p>
 </li>
 <li>
-<p><a href="share-worksheets.html" class="page">Share the worksheet with groups or users</a>.</p>
+<p><a href="share-worksheets.html" class="page">Share the Worksheet with groups or users</a>.</p>
 </li>
 </ol>
 </div>
@@ -2020,7 +2020,10 @@ If the worksheet already exists in another cluster, you can migrate it <a href="
 <h2 id="create-worksheet"><a class="anchor" href="#create-worksheet"></a>Create a worksheet</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To create a new worksheet:</p>
+<p>Create a Worksheet to make the data easy for users to search. This process includes adding a new Worksheet, after which you will choose the data sources to include in it.</p>
+</div>
+<div class="paragraph">
+<p>To create a new Worksheet:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2028,7 +2031,7 @@ If the worksheet already exists in another cluster, you can migrate it <a href="
 <p>Click <strong>Data</strong>, on the top navigation bar.</p>
 </li>
 <li>
-<p>Click the ellipsis icon <span class="image"><img src="_images/icon-ellipses.png" alt="more options menu icon"></span>, and select <strong>Create worksheet</strong>.</p>
+<p>Click the <strong>More</strong> menu icon <span class="image"><img src="_images/icon-more-10px.png" alt="more options menu icon"></span>, and select <strong>Create worksheet</strong>.</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/worksheet-create.png" alt="Create a worksheet">
@@ -2043,16 +2046,16 @@ If the worksheet already exists in another cluster, you can migrate it <a href="
 </div>
 </div>
 <div class="sect1">
-<h2 id="worksheet-sources-columns"><a class="anchor" href="#worksheet-sources-columns"></a>Add sources and columns to a worksheet</h2>
+<h2 id="worksheet-sources-columns"><a class="anchor" href="#worksheet-sources-columns"></a>Add sources and columns to a Worksheet</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>After creating a worksheet, you need to add the sources that contain the data.
+<p>After creating a Worksheet, you need to add the sources that contain the data.
 A source is another name for a table.
 The sources you choose are typically related to one another by foreign keys.</p>
 </div>
 <div class="paragraph">
-<p>To add sources to your worksheet, follow these steps.
-The worksheet creation UI also guides you through the process.</p>
+<p>To add sources to your Worksheet, follow these steps.
+The Worksheet creation UI also guides you through the process.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2065,7 +2068,7 @@ The worksheet creation UI also guides you through the process.</p>
 </div>
 </li>
 <li>
-<p>Check the box next to each of the sources you want to include in the worksheet.
+<p>Check the box next to each of the sources you want to include in the Worksheet.
 You can search for specific Views, imported data, or tables.
 You can also select every data source that has a specific sticker, like <strong>Retail</strong>.</p>
 <div class="paragraph">
@@ -2078,18 +2081,18 @@ You can also select every data source that has a specific sticker, like <strong>
 </div>
 </li>
 <li>
-<p>Choose the <a href="progressive-joins.html" class="page">worksheet join rule</a>.
+<p>Choose the <a href="progressive-joins.html" class="page">Worksheet join rule</a>.
 Either <strong>apply joins progressively</strong> or <strong>apply all joins</strong>.
 Applying joins progressively speeds up performance.</p>
 </li>
 <li>
-<p>If you want to disable <a href="row-level-security.html" class="page">Row Level Security</a> for this worksheet, check the checkbox to disable it.</p>
+<p>If you want to disable <a href="row-level-security.html" class="page">Row Level Security</a> for this Worksheet, check the checkbox to disable it.</p>
 </li>
 <li>
 <p>Click <strong>CLOSE</strong> to save your changes.</p>
 </li>
 <li>
-<p>Expand the table names under <strong>Sources</strong> and select the columns to add to the worksheet, by doing any of the following:</p>
+<p>Expand the table names under <strong>Sources</strong> and select the columns to add to the Worksheet, by doing any of the following:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -2109,7 +2112,7 @@ If you are working with two tables that should be related, but are not, you can 
 </div>
 </li>
 <li>
-<p>(Optional) <a href="mod-ws-internal-joins.html" class="page">Modify the join types</a> within the worksheet.</p>
+<p>(Optional) <a href="mod-ws-internal-joins.html" class="page">Modify the join types</a> within the Worksheet.</p>
 </li>
 <li>
 <p>(Optional) <a href="#tcreate-formula.adoc" class="page unresolved">Create formulas</a>.</p>
@@ -2118,10 +2121,10 @@ If you are working with two tables that should be related, but are not, you can 
 <p>(Optional) <a href="create-ws-filter.html" class="page">Create worksheet filters</a>.</p>
 </li>
 <li>
-<p>Click the more menu icon <span class="image"><img src="_images/icon-ellipses.png" alt="more options menu icon"></span>, and select <strong>Save</strong>.</p>
+<p>Click the <strong>More</strong> menu icon <span class="image"><img src="_images/icon-more-10px.png" alt="more options menu icon"></span>, and select <strong>Save</strong>.</p>
 </li>
 <li>
-<p>In the Save Worksheet window, enter a name and description for your worksheet and click <strong>SAVE</strong>.</p>
+<p>In the Save Worksheet window, enter a name and description for your Worksheet and click <strong>SAVE</strong>.</p>
 </li>
 <li>
 <p>(Optional) Click each column name and enter a more user-friendly name for searching.
@@ -2136,7 +2139,7 @@ You can tab through the list of columns to rename them quickly.</p>
 </div>
 </li>
 <li>
-<p>Click the ellipsis icon <span class="image"><img src="_images/icon-ellipses.png" alt="more options menu icon"></span>, and select <strong>Save</strong>.</p>
+<p>Click the <strong>More</strong> icon <span class="image"><img src="_images/icon-more-10px.png" alt="more options menu icon"></span>, and select <strong>Save</strong>.</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/worksheet-create-save.png" alt="Save your worksheet">
@@ -2144,7 +2147,7 @@ You can tab through the list of columns to rename them quickly.</p>
 </div>
 </li>
 <li>
-<p><a href="share-worksheets.html" class="page">Share your worksheet</a>, if you want other people to be able to use it.</p>
+<p><a href="share-worksheets.html" class="page">Share your Worksheet</a>, if you want other people to be able to use it.</p>
 </li>
 </ol>
 </div>
@@ -2158,7 +2161,7 @@ You can tab through the list of columns to rename them quickly.</p>
 <li>
 <p><strong><a href="progressive-joins.html" class="page">How the worksheet join rule works</a></strong></p>
 <div class="paragraph">
-<p>Use the worksheet join rule to specify when to apply joins when a search is done on a worksheet.
+<p>Use the Worksheet join rule to specify when to apply joins when a search is done on a Worksheet.
 You can either apply joins progressively, as each search term is added (recommended), or apply all joins to every search.</p>
 </div>
 </li>

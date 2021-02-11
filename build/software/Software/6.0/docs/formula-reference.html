@@ -674,7 +674,7 @@
     <a class="nav-link" href="work-with-ts-support.html">Configure support services</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:ports.adoc">Network policies</a>
+    <a class="nav-link" href="firewall-ports.html">Network policies</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="about-load-balancer-configuration.html">Configure load balancing and proxies</a>
@@ -1955,7 +1955,7 @@ An individual formula is constructed from <em>n</em> combination of operators an
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>and</code></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Returns true when both conditions are true, otherwise returns false.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns <code>true</code> when both conditions are <code>true</code>, otherwise returns <code>false</code>.</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>(1 = 1) and (3 &gt; 2) = true</code></p>
 </div>
@@ -1988,20 +1988,20 @@ Not available for row-level security (RLS) formulas.
 <p><code>ifnull</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Returns the first value if it is not null, otherwise returns the second value.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ifnull (cost, 'unknown')</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ifnull (cost, 'unknown')</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>isnull</code></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Returns true if the value is null.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns <code>true</code> if the value is <code>null</code>.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>isnull (phone)</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>not</code></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Returns true if the condition is false, otherwise returns false.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns <code>true</code> if the condition is <code>false</code>, otherwise returns <code>false</code>.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>not (3 &gt; 2) = false</code></p>
 <p class="tableblock"><code>not (state = 'texas')</code></p></td>
 </tr>
@@ -2009,7 +2009,7 @@ Not available for row-level security (RLS) formulas.
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>or</code></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Returns true when either condition is true, otherwise returns false.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns <code>true</code> when either condition is <code>true</code>, otherwise returns <code>false</code>.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>(1 = 5) or (3 &gt; 2) = true</code></p>
 <p class="tableblock"><code>state = 'california' or state ='oregon'</code></p></td>
 </tr>
@@ -2284,8 +2284,8 @@ See <a href="aggregation-flexible.html" class="page">Flexible aggregation functi
 <p><code>to_date</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Accepts a date represented as an integer or text string, and a second string parameter that can include strptime date formatting elements.
-Replaces all the valid strptime date formatting elements with their string counterparts and returns the result.
+<p>Accepts a date represented as an integer or text string, and a second string parameter that can include <code>strptime</code> date formatting elements.
+Replaces all the valid <code>strptime</code> date formatting elements with their string counterparts and returns the result.
 Does not accept epoch formatted dates as input.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -2297,7 +2297,7 @@ Does not accept epoch formatted dates as input.</p>
 <p><code>to_double</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Returns the input as a double data type.</p>
+<p>Returns the input as a <code>double</code> data type.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>to_double ('3.14') = 3.14</code></p>
@@ -2366,10 +2366,10 @@ Does not accept epoch formatted dates as input.</p>
 <p>Returns the result of adding the specified number of days to the given date.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>add_days (01/30/2015, 5) = 02/04/2015</code></p>
+<p><code>add_days ( 01/30/2015, 5 ) = 02/04/2015</code></p>
 </div>
 <div class="paragraph">
-<p><code>add_days (invoiced, 30)</code></p>
+<p><code>add_days ( invoiced, 30 )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2448,7 +2448,7 @@ Does not accept epoch formatted dates as input.</p>
 <p>Returns the date portion of a given date.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>date (home visit)</code></p>
+<p><code>date ( home visit )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2459,10 +2459,10 @@ Does not accept epoch formatted dates as input.</p>
 <p>Returns the number (1-31) of the day of the month for the given date.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>day (01/15/2014) = 15</code></p>
+<p><code>day ( 01/15/2014 ) = 15</code></p>
 </div>
 <div class="paragraph">
-<p><code>day (date ordered)</code></p>
+<p><code>day ( date ordered )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2473,13 +2473,13 @@ Does not accept epoch formatted dates as input.</p>
 <p>Returns the number of the day in a quarter for a given date. You can add an optional second parameter to specify whether a 'fiscal' or 'calendar' year is used to calculate the result. The default is 'calendar'.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>day_number_of_quarter (01/30/2015) = 30</code></p>
+<p><code>day_number_of_quarter ( 01/30/2015 ) = 30</code></p>
 </div>
 <div class="paragraph">
 <p>In the following example, May 1st is the start of the fiscal year.</p>
 </div>
 <div class="paragraph">
-<p><code>day_number_of_quarter (01/30/2015, 'fiscal') = 91</code></p>
+<p><code>day_number_of_quarter ( 01/30/2015, 'fiscal' ) = 91</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2490,10 +2490,10 @@ Does not accept epoch formatted dates as input.</p>
 <p>Returns the number (1-7) of the day in a week for a given date. Monday is 1, and Sunday is 7.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>day_number_of_week(01/15/2014) = 3</code></p>
+<p><code>day_number_of_week( 01/15/2014 ) = 3</code></p>
 </div>
 <div class="paragraph">
-<p><code>day_number_of_week (shipped)</code></p>
+<p><code>day_number_of_week ( shipped )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2504,7 +2504,7 @@ Does not accept epoch formatted dates as input.</p>
 <p>Returns the number (1-366) of the day in a year from a given date. You can add an optional second parameter to specify whether a 'fiscal' or 'calendar' year is used to calculate the result. The default is 'calendar'.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>day_number_of_year (01/30/2015) = 30</code></p>
+<p><code>day_number_of_year ( 01/30/2015 ) = 30</code></p>
 </div>
 <div class="paragraph">
 <p>In the following example, May 1st is the start of the fiscal year.</p>
@@ -2513,7 +2513,7 @@ Does not accept epoch formatted dates as input.</p>
 <p><code>day_number_of_year ( 01/30/2015, 'fiscal' ) = 275</code></p>
 </div>
 <div class="paragraph">
-<p><code>day_number_of_year (invoiced)</code></p>
+<p><code>day_number_of_year ( invoiced )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2524,8 +2524,8 @@ Does not accept epoch formatted dates as input.</p>
 <p>Returns the day of the week for the given date.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>day_of week (01/30/2015) = Friday</code>
-<code>day_of_week (serviced)</code></p>
+<p><code>day_of week ( 01/30/2015 ) = Friday</code>
+<code>day_of_week ( serviced )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2536,10 +2536,10 @@ Does not accept epoch formatted dates as input.</p>
 <p>Subtracts the second date from the first date and returns the result in number of days, rounded down if not exact.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>diff_days (01/15/2014, 01/17/2014) = -2</code></p>
+<p><code>diff_days ( 01/15/2014, 01/17/2014 ) = -2</code></p>
 </div>
 <div class="paragraph">
-<p><code>diff_days (purchased, shipped)</code></p>
+<p><code>diff_days ( purchased, shipped )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2550,10 +2550,10 @@ Does not accept epoch formatted dates as input.</p>
 <p>Subtracts the second date from the first date and returns the result in number of seconds.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>diff_time (01/30/2014, 01/31/2014) = -86,400</code></p>
+<p><code>diff_time ( 01/30/2014, 01/31/2014 ) = -86,400</code></p>
 </div>
 <div class="paragraph">
-<p><code>diff_time (clicked, submitted)</code></p>
+<p><code>diff_time ( clicked, submitted )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2564,7 +2564,7 @@ Does not accept epoch formatted dates as input.</p>
 <p>Returns the hour of the day for the given date.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>hour_of_day (received)</code></p>
+<p><code>hour_of_day ( received )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2575,10 +2575,24 @@ Does not accept epoch formatted dates as input.</p>
 <p>Returns true if the given date falls on a Saturday or Sunday.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>is_weekend (01/31/2015) = true</code></p>
+<p><code>is_weekend ( 01/31/2015 ) = true</code></p>
 </div>
 <div class="paragraph">
-<p><code>is_weekend (emailed)</code></p>
+<p><code>is_weekend ( emailed )</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>month</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Returns the month from the given date.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>month ( 01/15/2014 ) = January</code></p>
+</div>
+<div class="paragraph">
+<p><code>month ( date ordered )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2589,7 +2603,7 @@ Does not accept epoch formatted dates as input.</p>
 <p>Returns the number (1-12) of the month from a given date. You can add an optional second parameter to specify whether a 'fiscal' or 'calendar' year is used to calculate the result. The default is 'calendar'.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>month_number (09/20/2014) = 9</code></p>
+<p><code>month_number ( 09/20/2014 ) = 9</code></p>
 </div>
 <div class="paragraph">
 <p>In the following example, May 1st is the start of the fiscal year.</p>
@@ -2598,7 +2612,7 @@ Does not accept epoch formatted dates as input.</p>
 <p><code>month_number ( 09/20/2014, 'fiscal' ) = 5</code></p>
 </div>
 <div class="paragraph">
-<p><code>month_number (purchased)</code></p>
+<p><code>month_number ( purchased )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2609,13 +2623,13 @@ Does not accept epoch formatted dates as input.</p>
 <p>Returns the month (1-3) number for the given date in a quarter. You can add an optional second parameter to specify whether a 'fiscal' or 'calendar' year is used to calculate the result. The default is 'calendar'.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>month_number_of_quarter (02/20/2018) = 2</code></p>
+<p><code>month_number_of_quarter ( 02/20/2018 ) = 2</code></p>
 </div>
 <div class="paragraph">
 <p>In the following example, May 1st is the start of the fiscal year.</p>
 </div>
 <div class="paragraph">
-<p><code>month_number_of_quarter (02/20/2018,'fiscal' ) = 1</code></p>
+<p><code>month_number_of_quarter ( 02/20/2018,'fiscal' ) = 1</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2637,7 +2651,7 @@ Does not accept epoch formatted dates as input.</p>
 <p>Returns the number (1-4) of the quarter associated with the given date. You can add an optional second parameter to specify 'fiscal' or 'calendar' dates. The default is 'calendar'.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>quarter_number ( 04/14/2014) = 2</code></p>
+<p><code>quarter_number ( 04/14/2014 ) = 2</code></p>
 </div>
 <div class="paragraph">
 <p>In the following example, May 1st is the start of the fiscal year.</p>
@@ -2660,7 +2674,7 @@ Does not accept epoch formatted dates as input.</p>
 <p><code>start_of_month ( 01/31/2015 ) = Jan FY 2015</code></p>
 </div>
 <div class="paragraph">
-<p><code>start_of_month (shipped)</code></p>
+<p><code>start_of_month ( shipped )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2671,16 +2685,16 @@ Does not accept epoch formatted dates as input.</p>
 <p>Returns the date for the first day of the quarter for the given date. You can add an optional second parameter to specify whether a 'fiscal' or 'calendar' year is used to calculate the result. The default is 'calendar'.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>start_of_quarter ( 04/30/2014) = Apr 2014</code></p>
+<p><code>start_of_quarter ( 04/30/2014 ) = Apr 2014</code></p>
 </div>
 <div class="paragraph">
 <p>In the following example, May 1st is the start of the fiscal year.</p>
 </div>
 <div class="paragraph">
-<p><code>start_of_quarter ( 04/30/2014, 'fiscal') = Feb 2014</code></p>
+<p><code>start_of_quarter ( 04/30/2014, 'fiscal' ) = Feb 2014</code></p>
 </div>
 <div class="paragraph">
-<p><code>start_of_quarter (sold)</code></p>
+<p><code>start_of_quarter ( sold )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2694,7 +2708,7 @@ Does not accept epoch formatted dates as input.</p>
 <p><code>start_of_week ( 01/31/2020 ) = 01/27/2020</code></p>
 </div>
 <div class="paragraph">
-<p><code>start_of_week (emailed)</code></p>
+<p><code>start_of_week ( emailed )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2705,16 +2719,16 @@ Does not accept epoch formatted dates as input.</p>
 <p>Returns the date for the first day of the year for the given date. You can add an optional second parameter to specify whether a 'fiscal' or 'calendar' year is used to calculate the result. The default is 'calendar'.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>start_of_year (04/30/2014) returns Jan 2014</code></p>
+<p><code>start_of_year ( 04/30/2014 ) returns Jan 2014</code></p>
 </div>
 <div class="paragraph">
 <p>In the following example, May 1st is the start of the fiscal year.</p>
 </div>
 <div class="paragraph">
-<p><code>start_of_year (04/30/2014, 'fiscal') returns May 2013</code></p>
+<p><code>start_of_year ( 04/30/2014, 'fiscal' ) returns May 2013</code></p>
 </div>
 <div class="paragraph">
-<p><code>start_of_year (joined)</code></p>
+<p><code>start_of_year ( joined )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2725,10 +2739,10 @@ Does not accept epoch formatted dates as input.</p>
 <p>Returns the time portion of a given date.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>time (1/31/2002 10:32) = 10:32</code></p>
+<p><code>time ( 1/31/2002 10:32 ) = 10:32</code></p>
 </div>
 <div class="paragraph">
-<p><code>time (call began)</code></p>
+<p><code>time ( call began )</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2750,7 +2764,7 @@ Does not accept epoch formatted dates as input.</p>
 <p>Returns the week number for the given date in a month.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>week_number_of_month(03/23/2017) = 3</code></p>
+<p><code>week_number_of_month( 03/23/2017 ) = 3</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2761,13 +2775,13 @@ Does not accept epoch formatted dates as input.</p>
 <p>Returns the week number for the given date in a quarter. You can add an optional second parameter to specify whether a 'fiscal' or 'calendar' year is used to calculate the result. The default is 'calendar'.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>week_number_of_quarter (01/31/2020) = 5</code></p>
+<p><code>week_number_of_quarter ( 01/31/2020 ) = 5</code></p>
 </div>
 <div class="paragraph">
 <p>In the following example, May 1st is the start of the fiscal year.</p>
 </div>
 <div class="paragraph">
-<p><code>week_number_of_quarter (05/31/2020, 'fiscal') = 5</code></p>
+<p><code>week_number_of_quarter ( 05/31/2020, 'fiscal' ) = 5</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2778,13 +2792,13 @@ Does not accept epoch formatted dates as input.</p>
 <p>Returns the week number for the given date in a year. You can add an optional second parameter to specify whether a 'fiscal' or 'calendar' year is used to calculate the result. The default is 'calendar'.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>week_number_of_year (01/17/2014) = 3</code></p>
+<p><code>week_number_of_year ( 01/17/2014 ) = 3</code></p>
 </div>
 <div class="paragraph">
 <p>In the following example, May 1st is the start of the fiscal year.</p>
 </div>
 <div class="paragraph">
-<p><code>week_number_of_year ( 01/17/2014, 'fiscal') = 38</code></p>
+<p><code>week_number_of_year ( 01/17/2014, 'fiscal' ) = 38</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2795,16 +2809,16 @@ Does not accept epoch formatted dates as input.</p>
 <p>Returns the year from a given date. You can add an optional second parameter to specify whether a 'fiscal' or 'calendar' year is used to calculate the result. The default is 'calendar'.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>year (01/15/2014) = 2014</code></p>
+<p><code>year ( 01/15/2014 ) = 2014</code></p>
 </div>
 <div class="paragraph">
 <p>In the following example, May 1st is the start of the fiscal year. Per standard convention, the fiscal year is defined by the year-end date.</p>
 </div>
 <div class="paragraph">
-<p><code>year (12/15/2013, 'fiscal' ) = 2014</code></p>
+<p><code>year ( 12/15/2013, 'fiscal' ) = 2014</code></p>
 </div>
 <div class="paragraph">
-<p><code>year (date ordered)</code></p>
+<p><code>year ( date ordered )</code></p>
 </div></div></td>
 </tr>
 </tbody>

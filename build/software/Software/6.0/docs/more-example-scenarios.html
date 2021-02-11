@@ -674,7 +674,7 @@
     <a class="nav-link" href="work-with-ts-support.html">Configure support services</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:ports.adoc">Network policies</a>
+    <a class="nav-link" href="firewall-ports.html">Network policies</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="about-load-balancer-configuration.html">Configure load balancing and proxies</a>
@@ -1923,10 +1923,10 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>It&#8217;s not always easy to know when you need to use a view, but these are some common scenarios.</p>
+<p>It&#8217;s not always easy to know when you need to use a View, but these are some common scenarios.</p>
 </div>
 <div class="paragraph">
-<p>Here are four common examples of when you would want to use a view.</p>
+<p>Here are four common examples of when you would want to use a View.</p>
 </div>
 </div>
 </div>
@@ -1945,8 +1945,8 @@ A single search can do only one level of aggregation.</p>
 </div>
 <div class="paragraph">
 <p>However, a search can calculate the initial sum and filter within it to get the highest value customers.
-Then you can save that result as a view.
-Joining the view to some other tables, like the customer dimension, allows you to do the count and other similar analyses using the view along with the other tables.</p>
+Then you can save that result as a View.
+Joining the View to some other tables, like the customer dimension, allows you to do the count and other similar analyses using the View along with the other tables.</p>
 </div>
 </div>
 </div>
@@ -1961,12 +1961,12 @@ Joining the view to some other tables, like the customer dimension, allows you t
 You might create a search to find customers who bought product A, but did not buy product B.</p>
 </div>
 <div class="paragraph">
-<p>First, you would have to perform searches for total sales by customer for both A and B, and create views for both.
-Then join these two views back in an outer join looking for conditions where the A and B join values are null.</p>
+<p>First, you would have to perform searches for total sales by customer for both A and B, and create Views for both.
+Then join these two Views back in an outer join looking for conditions where the A and B join values are null.</p>
 </div>
 <div class="paragraph">
 <p>This example could also be solved in a single search by using <a href="conditional-sum.html" class="page">conditional formulas</a> to determine the desired group (or cohort) of customers as defined by their buying behavior, and then doing the analysis on this group.
-But the performance will be better if you do this using a view, and then <a href="materialized-views.html" class="page">materialize the view</a>.</p>
+But the performance will be better if you do this using a View, and then <a href="materialized-views.html" class="page">materialize the View</a>.</p>
 </div>
 </div>
 </div>
@@ -1978,8 +1978,8 @@ But the performance will be better if you do this using a view, and then <a href
 </div>
 <div class="paragraph">
 <p>If you do a lot of your analysis in the aggregate, like at the quarterly level, you may be challenged when trying to combine this aggregated data from different sources.
-For example, you may want to combine three different quarterly views from SalesForce - Pipeline, Bookings, and Sales Activity to create a comprehensive analysis of each region&#8217;s performance.
-Joining the quarterly views together in a worksheet enables you to do this type of analysis easily.</p>
+For example, you may want to combine three different quarterly Views from SalesForce - Pipeline, Bookings, and Sales Activity to create a comprehensive analysis of each region&#8217;s performance.
+Joining the quarterly Views together in a worksheet enables you to do this type of analysis easily.</p>
 </div>
 </div>
 </div>
@@ -1993,7 +1993,7 @@ Joining the quarterly views together in a worksheet enables you to do this type 
 <p>You may have a table with separate columns for people&#8217;s first name and last name.
 You could use a concat formula to create a single column with first name, a space, and last name.
 But using this formula could make performance slow, since that column would always be calculated on the fly when searching.
-In this case, creating a view using the concatenate formula and materializing it will improve performance when searching this data.</p>
+In this case, creating a View using the concatenate formula and materializing it will improve performance when searching this data.</p>
 </div>
 </div>
 </div>

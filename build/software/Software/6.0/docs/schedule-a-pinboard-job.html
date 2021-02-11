@@ -674,7 +674,7 @@
     <a class="nav-link" href="work-with-ts-support.html">Configure support services</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:ports.adoc">Network policies</a>
+    <a class="nav-link" href="firewall-ports.html">Network policies</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="about-load-balancer-configuration.html">Configure load balancing and proxies</a>
@@ -1921,15 +1921,15 @@
 <article class="doc">
 <h1 class="page">Schedule a pinboard job</h1>
 <div class="paragraph">
-<p>You can schedule a pinboard job for any pinboard by using the Add a schedule prompt page.</p>
+<p>You can schedule a Pinboard job for any Pinboard by using the Add a schedule prompt page.</p>
 </div>
 <div class="paragraph">
-<p>You can add multiple schedules with different configurations for a single pinboard.
-However, each job is limited to one pinboard schedule.
-To add a schedule, you must either be an administrator or have the schedule pinboard privilege, and at least edit-only and view-only access to the pinboard.</p>
+<p>You can add multiple schedules with different configurations for a single Pinboard.
+However, each job is limited to one Pinboard schedule.
+To add a schedule, you must either be an administrator or have the <strong>Schedule Pinboard</strong> privilege, and at least edit-only and view-only access to the Pinboard.</p>
 </div>
 <div class="paragraph">
-<p>To schedule a pinboard:</p>
+<p>To schedule a Pinboard:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1945,10 +1945,10 @@ To add a schedule, you must either be an administrator or have the schedule pinb
 </div>
 </li>
 <li>
-<p>Select the pinboard you want to create a schedule for.</p>
+<p>Select the Pinboard you want to create a schedule for.</p>
 </li>
 <li>
-<p>Click the More icon <span class="image"><img src="_images/icon-ellipses.png" alt="more options menu icon"></span> and select <strong>Manage schedules</strong> to view all of the schedules set for the pinboard.</p>
+<p>Click the <strong>More</strong> icon <span class="image"><img src="_images/icon-more-10px.png" alt="more options menu icon"></span> and select <strong>Manage schedules</strong> to view all of the schedules set for the Pinboard.</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/view_schedules.png" alt="view schedules">
@@ -1963,7 +1963,7 @@ To add a schedule, you must either be an administrator or have the schedule pinb
 </div>
 </div>
 <div class="paragraph">
-<p>On the <strong>Add a Schedule</strong> page, you create a new schedule for your pinboard.</p>
+<p>On the <strong>Add a Schedule</strong> page, you create a new schedule for your Pinboard.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1987,11 +1987,11 @@ To add a schedule, you must either be an administrator or have the schedule pinb
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Repeats</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">You can rebuild a pinboard every n minutes, hourly, daily, weekly, or monthly. For some of these, you can also choose specific times of the day or days of the week. Make sure to note the Server time zone which is the timezone which will be used.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You can rebuild a Pinboard every <em>n</em> minutes, hourly, daily, weekly, or monthly. For some of these, you can also choose specific times of the day or days of the week. Make sure to note the <strong>Server time zone</strong> which is the timezone which will be used.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provide a short name for this schedule, Monthly Report Source is an example of a good name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provide a short name for this schedule, <code>Monthly Report Source</code> is an example of a good name.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
@@ -1999,16 +1999,16 @@ To add a schedule, you must either be an administrator or have the schedule pinb
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CSV files provide all data for tables, with one attachment per table. Use CSV files to perform further analysis offline. PDF files show all visualizations in the pinboard. Each chart takes up a whole page in the file, while only the first 100 rows of a table are included. Use PDF files to skim the data.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CSV files provide all data for tables, with one attachment per table. Use CSV files to perform further analysis offline. PDF files show all visualizations in the Pinboard. Each chart takes up a whole page in the file, while only the first 100 rows of a table are included. Use PDF files to skim the data.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Gating condition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Write a statement that returns a single boolean value (true or false). For example, sum (revenue) &gt; 100 is a valid condition but is_weekend (commit_date) is not. You can use any valid formula in your statement. Other than checking your formula syntax, ThoughtSpot does not validate your formula returns a single boolean.</p>
-<p class="tableblock">At the scheduled time, ThoughtSpot checks the gating condition, and, if the condition returns true, processes the pinboard. For a list of valid formulas, see the <a href="formula-reference.html" class="page">Formula function reference</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Write a statement that returns a single boolean value (true or false). For example, <code>sum (revenue) &gt; 100</code> is a valid condition but <code>is_weekend (commit_date)</code> is not. You can use any valid formula in your statement. Other than checking your formula syntax, ThoughtSpot does not validate your formula returns a single boolean.</p>
+<p class="tableblock">At the scheduled time, ThoughtSpot checks the gating condition, and, if the condition returns true, processes the Pinboard. For a list of valid formulas, see the <a href="formula-reference.html" class="page">Formula function reference</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Recipients</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">You are limited to 1000 recipients per job. You can add Users or groups to enter ThoughtSpot users or groups. Use Emails to add recipients that are not ThoughtSpot users. Your ThoughtSpot admin must set these email domains as allowed domains. Contact ThoughtSpot Support to add allowed domains.</p>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You are limited to 1000 recipients per job. You can add <strong>Users or groups</strong> to enter ThoughtSpot users or groups. Use <strong>Emails</strong> to add recipients that are not ThoughtSpot users. Your ThoughtSpot admin must set these email domains as allowed domains. Contact ThoughtSpot Support to add allowed domains.</p>
 <p class="tableblock">If you experience problems with sending email, your cluster may not have SMTP enabled. Contact your system administrator to resolve this issue.</p></td>
 </tr>
 </tbody>

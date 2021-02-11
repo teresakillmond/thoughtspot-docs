@@ -674,7 +674,7 @@
     <a class="nav-link" href="work-with-ts-support.html">Configure support services</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:ports.adoc">Network policies</a>
+    <a class="nav-link" href="firewall-ports.html">Network policies</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="about-load-balancer-configuration.html">Configure load balancing and proxies</a>
@@ -1923,7 +1923,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can export an entire ThoughtSpot worksheet in a flat-file format. After optional modification, you can migrate it to a different cluster, or restore it to the same cluster.</p>
+<p>You can export an entire ThoughtSpot Worksheet in a flat-file format. After optional modification, you can migrate it to a different cluster, or restore it to the same cluster.</p>
 </div>
 <div class="paragraph">
 <p>In ThoughtSpot, you can download Worksheets to a flat file in <code>YAML</code>, modify the file, and subsequently upload this file either to the same cluster, or to a different cluster.</p>
@@ -1940,10 +1940,7 @@
 <p><strong>Implementing metadata changes outside ThoughtSpot UI</strong>, such as replacing the underlying tables for the entire table, or replacing a single column from one table with a column in another table</p>
 </li>
 <li>
-<p><strong>Making bulk changes</strong>, such as mass renaming of objects defined by the worksheets, and managing duplicates</p>
-</li>
-<li>
-<p><strong>Reusing existing objects to build new objects</strong>, such as building two very similar objects based on a similar, pre-existing object.</p>
+<p><strong>Making bulk changes</strong>, such as mass renaming of objects defined by the Worksheets, and managing duplicates</p>
 </li>
 </ul>
 </div>
@@ -1952,32 +1949,16 @@
 <div class="sect1">
 <h2 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Export</th>
-<th class="tableblock halign-left valign-top">Import</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Can view</strong> permission on the Worksheet and all underlying tables.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">When not overwriting an existing Worksheet, you must have the <strong>can manage data</strong> permission.
-If updating a previously existing Worksheet, you must have the <strong>can manage data</strong> permission and <strong>can edit</strong> permission for the Worksheet.</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>You must have <strong>Edit</strong> permissions for the Worksheet.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="worksheet-export"><a class="anchor" href="#worksheet-export"></a>Export Worksheet</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To export a worksheet, follow these steps:</p>
+<p>To export a Worksheet, follow these steps:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1985,15 +1966,15 @@ If updating a previously existing Worksheet, you must have the <strong>can manag
 <p>Click <strong>Data</strong> on the top navigation bar.</p>
 </li>
 <li>
-<p>Click the name of the worksheet you want to edit.</p>
+<p>Click the name of the Worksheet you want to edit.</p>
 </li>
 <li>
-<p>Click the ellipsis <span class="image"><img src="_images/icon-ellipses.png" alt="more options menu"></span> (more options) menu in the upper-right side of the screen.</p>
+<p>Click the <strong>More</strong> menu icon <span class="image"><img src="_images/icon-more-10px.png" alt="more options menu"></span> in the upper-right side of the screen.</p>
 </li>
 <li>
 <p>From the menu, select <strong>Export Worksheet</strong>.</p>
 <div class="paragraph">
-<p>Here, we are downloading the <em>Sales</em> worksheet.</p>
+<p>Here, we are downloading the <em>Sales</em> Worksheet.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -2002,9 +1983,9 @@ If updating a previously existing Worksheet, you must have the <strong>can manag
 </div>
 </li>
 <li>
-<p>The worksheet downloads into your default directory.</p>
+<p>The Worksheet downloads into your default directory.</p>
 <div class="paragraph">
-<p>You can access the downloaded <code>*.YAML</code> file, named for your worksheet either through the file system manager, or by clicking on the name of the downloaded file in the left bottom corner of your Internet browser.</p>
+<p>You can access the downloaded <code>*.YAML</code> file, named for your Worksheet either through the file system manager, or by clicking on the name of the downloaded file in the left bottom corner of your Internet browser.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -2029,7 +2010,7 @@ See <a href="yaml-worksheet.html" class="page">YAML Worksheet specification</a> 
 <h2 id="worksheet-update"><a class="anchor" href="#worksheet-update"></a>Update a Worksheet</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To update an existing worksheet, follow these steps:</p>
+<p>To update an existing Worksheet, follow these steps:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2037,15 +2018,15 @@ See <a href="yaml-worksheet.html" class="page">YAML Worksheet specification</a> 
 <p>Click <strong>Data</strong> on the top navigation bar.</p>
 </li>
 <li>
-<p>Click the name of the worksheet you want to edit.</p>
+<p>Click the name of the Worksheet you want to edit.</p>
 </li>
 <li>
-<p>Click the More <span class="image"><img src="_images/icon-ellipses.png" alt="more options menu"></span> menu in the upper-right side of the screen.</p>
+<p>Click the <strong>More</strong> menu icon <span class="image"><img src="_images/icon-more-10px.png" alt="more options menu"></span> in the upper-right side of the screen.</p>
 </li>
 <li>
 <p>From the menu, select <strong>Update Worksheet from file</strong>.</p>
 <div class="paragraph">
-<p>Here, we are uploading the edited <em>Sales</em> worksheet.</p>
+<p>Here, we are uploading the edited <em>Sales</em> Worksheet.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -2102,13 +2083,13 @@ See <a href="yaml-worksheet.html" class="page">YAML Worksheet specification</a> 
 </div>
 </li>
 <li>
-<p>Navigate to the cluster you want to add the worksheet to.</p>
+<p>Navigate to the cluster you want to add the Worksheet to.</p>
 </li>
 <li>
 <p>Click <strong>Data</strong> on the top navigation bar.</p>
 </li>
 <li>
-<p>Click the More <span class="image"><img src="_images/icon-ellipses.png" alt="more options menu"></span> menu in the upper-right side of the screen.</p>
+<p>Click the <strong>More</strong> menu icon <span class="image"><img src="_images/icon-more-10px.png" alt="more options menu"></span> in the upper-right side of the screen.</p>
 </li>
 <li>
 <p>Select <strong>Create worksheet from file</strong>.</p>

@@ -674,7 +674,7 @@
     <a class="nav-link" href="work-with-ts-support.html">Configure support services</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:ports.adoc">Network policies</a>
+    <a class="nav-link" href="firewall-ports.html">Network policies</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="about-load-balancer-configuration.html">Configure load balancing and proxies</a>
@@ -1938,7 +1938,7 @@ Whether you are changing data modeling settings using the modeling file or the W
 <h2 id="_modeling_settings"><a class="anchor" href="#_modeling_settings"></a>Modeling settings</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following index includes mutable data modeling settings that you can apply to columns, both tables and worksheets.</p>
+<p>The following index includes mutable data modeling settings that you can apply to columns, both tables and Worksheets.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -2010,7 +2010,7 @@ By Default, all columns are included in SpotIQ.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the format of currencies in a column.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="attributable-dimension.html#">Attribution Dimension</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="attributable-dimension.html" class="page">Attribution Dimension</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Only applies to tables that join over a <a href="chasm-trap.html" class="page">Chasm Trap</a>.
 Designates whether the tables depend on this column for attribution.
 You cannot change the attribution dimension in the modeling file.
@@ -2038,22 +2038,22 @@ Important for configuring SearchIQ <span class="label label-beta">Beta</span>.</
 <h2 id="_data_modeling_best_practices"><a class="anchor" href="#_data_modeling_best_practices"></a>Data modeling best practices</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>As a best practice, make any data modeling settings in the table when you will be creating multiple worksheets that use that table.
-This way, you won&#8217;t have to make the same settings in each worksheet.
-The settings will be inherited when you create worksheets that uses columns from the table.</p>
+<p>As a best practice, make any data modeling settings in the table when you will be creating multiple Worksheets that use that table.
+This way, you won&#8217;t have to make the same settings in each Worksheet.
+The settings will be inherited when you create Worksheets that uses columns from the table.</p>
 </div>
 <div class="paragraph">
-<p>If you have settings that only apply in the context of a particular worksheet, make those settings in the worksheet rather than in the underlying table(s).</p>
+<p>If you have settings that only apply in the context of a particular Worksheet, make those settings in the Worksheet rather than in the underlying table(s).</p>
 </div>
 <div class="paragraph">
-<p>Note that if you make your settings at the table level, and then create a worksheet that uses columns from the table, the settings are inherited from the table at the point in time that the worksheet is created.
-If you then go back and change the settings at the table level, your changes will not be reflected in the worksheet.</p>
+<p>Note that if you make your settings at the table level, and then create a Worksheet that uses columns from the table, the settings are inherited from the table at the point in time that the Worksheet is created.
+If you then go back and change the settings at the table level, your changes will not be reflected in the Worksheet.</p>
 </div>
 <div class="paragraph">
-<p>If you want the worksheet to have the changes you made at the table level, you must drop those columns from the worksheet and re-add them.
-Then save the worksheet.
-At this point, the new settings will be used in the worksheet.
-Note that any saved answers or pinboards based on the worksheet may display differently because of your changes.
+<p>If you want the Worksheet to have the changes you made at the table level, you must drop those columns from the Worksheet and re-add them.
+Then save the Worksheet.
+At this point, the new settings will be used in the Worksheet.
+Note that any saved Answers or Pinboards based on the Worksheet may display differently because of your changes.
 For example, if you&#8217;ve changed the GeoMap setting from "None" to "Country", you will now see a map where before you might have seen a table.</p>
 </div>
 </div>

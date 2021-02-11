@@ -674,7 +674,7 @@
     <a class="nav-link" href="work-with-ts-support.html">Configure support services</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:ports.adoc">Network policies</a>
+    <a class="nav-link" href="firewall-ports.html">Network policies</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="about-load-balancer-configuration.html">Configure load balancing and proxies</a>
@@ -2009,9 +2009,14 @@ IPSec is supported in ThoughtSpot software versions starting from 4.5.1.4
 If any failure occurs during node removal, IPSec would need to re-enabled by using the following command: <code>tscli ipsec enable</code>.</p>
 </li>
 <li>
-<p><strong>Manually enable/disable IPSec on a single node(if any IPSec related failure occurs on that node)</strong>: + Manually enable and start strongSwan: +     <code>sudo systemctl enable strongswan</code> +     <code>sudo systemctl start strongswan</code></p>
+<p><strong>Manually enable/disable IPSec on a single node(if any IPSec related failure occurs on that node)</strong>:<br>
+Manually enable and start strongSwan:<br>
+     <code>sudo systemctl enable strongswan</code><br>
+     <code>sudo systemctl start strongswan</code></p>
 <div class="paragraph">
-<p>Manually stop and disable strongSwan: +     <code>sudo systemctl stop strongswan</code> +     <code>sudo systemctl disable strongswan</code></p>
+<p>Manually stop and disable strongSwan:<br>
+     <code>sudo systemctl stop strongswan</code><br>
+     <code>sudo systemctl disable strongswan</code></p>
 </div>
 <div class="admonitionblock note">
 <table>

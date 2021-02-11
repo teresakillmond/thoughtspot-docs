@@ -674,7 +674,7 @@
     <a class="nav-link" href="work-with-ts-support.html">Configure support services</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:ports.adoc">Network policies</a>
+    <a class="nav-link" href="firewall-ports.html">Network policies</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="about-load-balancer-configuration.html">Configure load balancing and proxies</a>
@@ -1923,28 +1923,28 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>All jobs on your cluster will appear on the Jobs Management page. You can also view jobs for individual pinboards under the pinboard Actions dropdown.</p>
+<p>All jobs on your cluster will appear on the Jobs Management page. You can also view jobs for individual Pinboards under the Pinboard Actions dropdown.</p>
 </div>
 <div class="paragraph">
-<p>The <strong>Jobs Management</strong> page found on the <strong>Admin</strong> section in the ThoughtSpot web application allows you to create and manage jobs, namely scheduled pinboards.
-Scheduled pinboards should help with preparing for recurrent meetings, when reviewing the same pinboard is necessary.
+<p>The <strong>Jobs Management</strong> page found on the <strong>Admin</strong> section in the ThoughtSpot web application allows you to create and manage jobs, namely scheduled Pinboards.
+Scheduled Pinboards should help with preparing for recurrent meetings, when reviewing the same Pinboard is necessary.
 They should also be useful when you have metrics you want to monitor at a consistent interval, like daily or monthly sales targets.</p>
 </div>
 <div class="paragraph">
-<p>You can get pinboards emailed to you on a regular basis and do analysis offline.
-This introduces an additional format for you to consume and share pinboards with others, including those who don&#8217;t have a ThoughtSpot account.</p>
+<p>You can get Pinboards emailed to you on a regular basis and do analysis offline.
+This introduces an additional format for you to consume and share Pinboards with others, including those who don&#8217;t have a ThoughtSpot account.</p>
 </div>
 <div class="paragraph">
-<p>Run <code>tscli scheduled-pinboards enable</code> to enable scheduled pinboards on your cluster.</p>
+<p>Run <code>tscli scheduled-pinboards enable</code> to enable scheduled Pinboards on your cluster.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_scheduled_pinboard_creators"><a class="anchor" href="#_scheduled_pinboard_creators"></a>Scheduled pinboard creators</h2>
+<h2 id="_scheduled_pinboard_creators"><a class="anchor" href="#_scheduled_pinboard_creators"></a>Scheduled Pinboard creators</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Administrators and users with can schedule pinboard privilege can schedule and manage pinboard jobs.
-These scheduled pinboard creators must have at least edit-only and view-only rights to the pinboard they want to share.</p>
+<p>Administrators and users with <strong>can schedule pinboard</strong> privilege can schedule and manage Pinboard jobs.
+These scheduled Pinboard creators must have at least edit-only and view-only rights to the Pinboard they want to share.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -1953,7 +1953,7 @@ These scheduled pinboard creators must have at least edit-only and view-only rig
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-It is recommended that admins carefully choose who to give can schedule pinboard privilege to, since there is a possible security hole where a user with limited access can get a pinboard email with all access data.
+It is recommended that admins carefully choose who to give can schedule Pinboard privilege to, since there is a possible security hole where a user with limited access can get a Pinboard email with all access data.
 </td>
 </tr>
 </table>
@@ -1964,20 +1964,20 @@ It is recommended that admins carefully choose who to give can schedule pinboard
 <h2 id="_row_level_security"><a class="anchor" href="#_row_level_security"></a>Row level security</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The scheduled pinboards respect row level security rules.
-This means if the recipients are users in ThoughtSpot, then they can only see data based on their own access to the pinboard.
-If the user does not have at least view-only access to the pinboard, then they will not see anything in the email.
-However, if the recipients are from outside of the cluster, then they will have access to the dataset of the pinboard based on the sender&#8217;s permissions.</p>
+<p>The scheduled Pinboards respect row level security rules.
+This means if the recipients are users in ThoughtSpot, then they can only see data based on their own access to the Pinboard.
+If the user does not have at least view-only access to the Pinboard, then they will not see anything in the email.
+However, if the recipients are from outside of the cluster, then they will have access to the dataset of the Pinboard based on the sender&#8217;s permissions.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_scheduled_pinboard_formats"><a class="anchor" href="#_scheduled_pinboard_formats"></a>Scheduled pinboard formats</h2>
+<h2 id="_scheduled_pinboard_formats"><a class="anchor" href="#_scheduled_pinboard_formats"></a>Scheduled Pinboard formats</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The pinboard visualizations are attached to the scheduled email as CSV or PDF files.
-Saved configurations such as pinboard filters are applied to the attachments.
-Refer to the table to see how the pinboard data is represented in each file format.</p>
+<p>The Pinboard visualizations are attached to the scheduled email as CSV or PDF files.
+Saved configurations such as Pinboard filters are applied to the attachments.
+Refer to the table to see how the Pinboard data is represented in each file format.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1996,7 +1996,7 @@ Refer to the table to see how the pinboard data is represented in each file form
 <td class="tableblock halign-left valign-top"><p class="tableblock">The PDF file gets data for all visualizations.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The email has n CSV attachments, where there are n table visualizations in the pinboard.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The email has n CSV attachments, where there are n table visualizations in the Pinboard.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The email has only one attachment file, which includes every visualization on its own page.</p></td>
 </tr>
 <tr>
@@ -2004,9 +2004,9 @@ Refer to the table to see how the pinboard data is represented in each file form
 <td class="tableblock halign-left valign-top"><p class="tableblock">Table visualizations include only the first 100 rows.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">In the case of a corrupted pinboard: no email is sent.
+<td class="tableblock halign-left valign-top"><p class="tableblock">In the case of a corrupted Pinboard: no email is sent.
 An error message indicating failure to export data is visible on the Admin Jobs Management page.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">In the case of a corrupted pinboard: the PDF attachment has empty/error screenshots.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In the case of a corrupted Pinboard: the PDF attachment has empty/error screenshots.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">In the case of a corrupted visualization: an email with the visualizations whose data can be exported is sent.
@@ -2019,7 +2019,7 @@ An error message indicating visualization export error is visible on the Jobs Ma
 <p>The size of each email is limited to 25 MB, which matches most email services size limitations.</p>
 </div>
 <div class="paragraph">
-<p>And the total number of recipients for a scheduled pinboard job cannot exceed the default of 1000.</p>
+<p>And the total number of recipients for a scheduled Pinboard job cannot exceed the default of 1000.</p>
 </div>
 </div>
 </div>
@@ -2027,7 +2027,7 @@ An error message indicating visualization export error is visible on the Jobs Ma
 <h2 id="_related_information"><a class="anchor" href="#_related_information"></a>Related information</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For information on creating a pinboard, see the <a href="schedule-a-pinboard-job.html" class="page">Schedule a pinboard job</a>.</p>
+<p>For information on creating a Pinboard, see the <a href="schedule-a-pinboard-job.html" class="page">Schedule a Pinboard job</a>.</p>
 </div>
 </div>
 </div>

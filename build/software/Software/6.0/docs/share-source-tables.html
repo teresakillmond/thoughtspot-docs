@@ -674,7 +674,7 @@
     <a class="nav-link" href="work-with-ts-support.html">Configure support services</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:ports.adoc">Network policies</a>
+    <a class="nav-link" href="firewall-ports.html">Network policies</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="about-load-balancer-configuration.html">Configure load balancing and proxies</a>
@@ -1942,12 +1942,12 @@ For column level security, share only specific columns.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Use caution when sharing tables, because any objects created from that table will have dependencies on it and its underlying structure.
-Objects created from tables can include worksheets, Views, Answers, and Pinboards.
+Objects created from tables can include Worksheets, Views, Answers, and Pinboards.
 This means that if a user wants to drop or modify a table, any object that depends upon it must be edited or removed first, to remove the dependency.</p>
 </div>
 <div class="paragraph">
 <p>For this reason, it is a best practice to only grant the <strong>Edit</strong> permission on a table to a small number of users.
-If you want to prevent shares from also revealing the columns regardless of where it appears (worksheets, answers, and pinboards), you can ask <a href="contact.html" class="page">ThoughtSpot Support</a> to enable a stricter behavior.</p>
+If you want to prevent shares from also revealing the columns regardless of where it appears (Worksheets, Answers, and Pinboards), you can ask <a href="contact.html" class="page">ThoughtSpot Support</a> to enable a stricter behavior.</p>
 </div>
 <div class="paragraph">
 <p>You can share a table <a href="#share-datatab">from the <strong>Data</strong> tab</a>, or <a href="#share-dataset">from within the table</a> that you want to share.</p>
@@ -1958,7 +1958,7 @@ If you want to prevent shares from also revealing the columns regardless of wher
 <h2 id="share-datatab"><a class="anchor" href="#share-datatab"></a>Share from the Data tab</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To share a table, worksheet, or View from the <strong>Data</strong> tab, follow these steps.</p>
+<p>To share a table, Worksheet, or View from the <strong>Data</strong> tab, follow these steps.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2014,7 +2014,7 @@ You must input the users or groups with whom you want to share for each column.
 <h2 id="share-dataset"><a class="anchor" href="#share-dataset"></a>Share from within the dataset</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To share a table, worksheet, or View from within the dataset, follow these steps.</p>
+<p>To share a table, Worksheet, or View from within the dataset, follow these steps.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2022,17 +2022,19 @@ You must input the users or groups with whom you want to share for each column.
 <p>Navigate to the dataset you want to share.</p>
 </li>
 <li>
-<p>Click the ellipsis icon <span class="image"><img src="_images/icon-ellipses.png" alt="more options menu icon"></span>, and then click <strong>Share</strong>.</p>
+<p>Click the <strong>More</strong> icon <span class="image"><img src="_images/icon-more-10px.png" alt="more options menu icon"></span>, and then click <strong>Share</strong>.</p>
 <div class="paragraph">
 <p><span class="image"><img src="_images/sharing-data-in-dataset.png" alt="Share the data"></span></p>
 </div>
 </li>
 <li>
-<p>Select the users or groups with whom you want to share.
-+  You can only share the entire dataset.
+<p>Select the users or groups with whom you want to share.</p>
+<div class="paragraph">
+<p>You can only share the entire dataset.
 You cannot share individual columns.
 To share individual columns, share a table <a href="#share-datatab">from the <strong>Data</strong> tab</a>.
 You cannot share individual columns for worksheets or Views.</p>
+</div>
 </li>
 <li>
 <p><a href="#specify-permissions">Specify permissions</a>.</p>

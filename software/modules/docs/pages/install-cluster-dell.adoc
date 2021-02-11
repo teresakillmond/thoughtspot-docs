@@ -41,24 +41,26 @@ Ask your network administrator if you do not know your hostname.
 
 +
 NOTE: You can use another secure copy method, if you prefer a method other than the `scp` command.
+
++
 . Alternatively, use `tscli fileserver download-release` to download the release bundle.
 +
 You must xref:tscli-command-ref.adoc#tscli-fileserver[configure the fileserver] by running `tscli fileserver configure` before you can download the release.
 +
-+
 ----
  $ tscli fileserver download-release <release-number> --user <username> --out <release-location>
 ----
-
++
 Note the following parameters:
 
  ** `release-number` is the release number of your ThoughtSpot instance, such as 5.3, 5.3.1, 6.0, and so on.
  ** `username` is the username for the fileserver that you set up earlier, when configuring the fileserver.
  ** `release-location` is the location path of the release bundle on your local machine.
 For example, `/export/sdb1/TS_TASKS/install/6.0.tar.gz`.
-
++
 . Verify the checksum to ensure you have the correct release.
-+ Run `md5sum -c <release-number>.tar.gz.MD5checksum`.
++
+Run `md5sum -c <release-number>.tar.gz.MD5checksum`.
 +
 ----
  $ md5sum -c <release-number>.tar.gz.MD5checksum
@@ -191,7 +193,8 @@ If you run `tscli storage gc`, note that it restarts your cluster.
 == Step 3: Finalize installation
 
 After the cluster status changes to `READY`, sign in to the ThoughtSpot application on your browser.
-+ Follow these steps:
+
+Follow these steps:
 
 . Start a browser from your computer.
 . Enter your secure IP information on the address line.
@@ -199,7 +202,7 @@ After the cluster status changes to `READY`, sign in to the ThoughtSpot applicat
 ----
  https://<IP-address>
 ----
-
++
 . If you don't have a security certificate for ThoughtSpot, you must bypass the security warning to proceed:
  ** Click *Advanced*
  ** Click *Proceed*
@@ -207,6 +210,7 @@ After the cluster status changes to `READY`, sign in to the ThoughtSpot applicat
 . In the xref:install-cluster-dell.adoc#ts-login[ThoughtSpot sign-in window], enter admin credentials, and click *Sign in*.
 ThoughtSpot recommends changing the default admin password.
 
+[#ts-login]
 image:ts-login-page.png[ThoughtSpot's sign-in window]
 // {% include image.html file="ts-login-page.png" title="ThoughtSpot's sign-in window" alt="Log in to ThoughtSpot. Enter Username, Password, and click Sign in. You may select Remember me option." caption="ThoughtSpot's sign-in window" %}
 
@@ -224,4 +228,4 @@ As you develop your expertise in Dell cluster installation, we recommend the fol
 * https://training.thoughtspot.com/create-upgrade-patch-a-thoughtspot-cluster/430642[Create a Cluster,window=_blank]
 
 See other training resources at
-https://training.thoughtspot.com/[ThoughtSpot U]
+https://training.thoughtspot.com/[ThoughtSpot U].

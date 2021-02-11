@@ -674,7 +674,7 @@
     <a class="nav-link" href="work-with-ts-support.html">Configure support services</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:ports.adoc">Network policies</a>
+    <a class="nav-link" href="firewall-ports.html">Network policies</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="about-load-balancer-configuration.html">Configure load balancing and proxies</a>
@@ -1923,6 +1923,9 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
+<p>Secure socket layers (SSL) provide authentication and data security when sending data to and from ThoughtSpot.</p>
+</div>
+<div class="paragraph">
 <p>You can use your own SSL certificate to secure ThoughtSpot HTTP(S) traffic.</p>
 </div>
 </div>
@@ -1970,7 +1973,7 @@ If you do not have this certificate, you have the following options:</p>
 <p>To add SSL and enable HTTPS in ThoughtSpot, generate the <a href="#csr">Certificate Signing Request (CSR)</a> and obtain the <a href="#ssl-certificate-chain">SSL certificate chain</a> and the <a href="#key">private key</a>.</p>
 </div>
 <div class="paragraph">
-<p>You can then configure SSL <a href="#ssl-configure-tscli">using tscli</a> or <a href="#admin-portal">through the Admin Console</a>, and then <a href="#ssl-configure-test">test the SSL certificate</a>.</p>
+<p>You can then <a href="#ssl-configure-tscli">configure SSL using tscli</a> and <a href="#ssl-configure-test">test the SSL certificate</a>.</p>
 </div>
 <div class="sect2">
 <h3 id="csr"><a class="anchor" href="#csr"></a>Certificate Signing Request</h3>
@@ -1983,7 +1986,7 @@ Therefore, ThoughtSpot recommends that its customers generate their own CSRs.</p
 Most often, you generate a CSR and a new private key <a href="#csr-new-private-key">at the same time</a>.
 If you already have a private key, <a href="#csr-existing-private-key">use it to generate a CSR</a>.</p>
 </div>
-<div class="paragraph">
+<div id="csr-new-private-key" class="paragraph">
 <p>Follow these steps to generate a CSR and a private key.
 You need a computer you can run Linux commands on, and a recent version of <em>openssl</em>.</p>
 </div>
@@ -2028,7 +2031,7 @@ Alternatively, you can skip this flag, and <code>openssl</code> prompts you to e
 </li>
 </ol>
 </div>
-<div class="paragraph">
+<div id="csr-existing-private-key" class="paragraph">
 <p>If you already have a private key, you can use it to generate a CSR.
 Follow these steps to generate a CSR with an existing private key:</p>
 </div>
@@ -2087,7 +2090,7 @@ Do not use a passphrase when creating certificates with ThoughtSpot.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>openssl rsa -check -in pk.key`</pre>
+<pre>openssl rsa -check -in pk.key</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2217,7 +2220,7 @@ This can be done in your browser&#8217;s advanced settings.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>You can retrieve these from the ThoughtSpot web server (not against the load balancer) by running the following command on any ThoughtSpot node:     `     nmap --script ssl-enum-ciphers -p 443 &lt;ThoughtSpot_node_IP_address&gt;    `</p>
+<p>You can retrieve these from the ThoughtSpot web server (not against the load balancer) by running the following command on any ThoughtSpot node:     <code>nmap --script ssl-enum-ciphers -p 443 &lt;ThoughtSpot_node_IP_address&gt;</code></p>
 </div>
 <div class="paragraph">
 <p>You must ensure that your load balancer supports these ciphers.
@@ -2231,6 +2234,22 @@ If your load balancer cannot support these ciphers, <a href="contact.html" class
 <div class="sectionbody">
 <div class="paragraph">
 <p>To test if the certificate is installed correctly, see <a href="logins.html#sign-in-to-the-thoughtspot-application" class="page">Sign in to the ThoughtSpot application</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_additional_resources"><a class="anchor" href="#_additional_resources"></a>Additional Resources</h3>
+<div class="paragraph">
+<p>As you develop your expertise in authentication and security, we recommend the following ThoughtSpot U course:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://training.thoughtspot.com/authentication-security/610523">Nginx SSL</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>See other training resources at <a href="https://training.thoughtspot.com">ThoughtSpot U</a>.</p>
+</div>
 </div>
 </div>
 </div>

@@ -674,7 +674,7 @@
     <a class="nav-link" href="work-with-ts-support.html">Configure support services</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:ports.adoc">Network policies</a>
+    <a class="nav-link" href="firewall-ports.html">Network policies</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="about-load-balancer-configuration.html">Configure load balancing and proxies</a>
@@ -1954,7 +1954,7 @@ For example, you search for revenue and cost and want to calculate profit in you
 <div class="ulist">
 <ul>
 <li>
-<p>revenue of this_soap versus all_soaps (Comparative filter)</p>
+<p>revenue of this_soap versus all_soaps (comparative filter)</p>
 </li>
 <li>
 <p>tax as a percentage of revenue (derivative)</p>
@@ -2037,8 +2037,7 @@ For example, you search for revenue and cost and want to calculate profit in you
 <p><code>sum_if(region=’west’, revenue)</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Takes a measure and one or more attributes. Returns the average of the measure grouped by the attribute(s).
-    group_average (revenue, customer region)</p>
+<p>Only aggregate the revenue for the values corresponding to west region.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2046,8 +2045,7 @@ For example, you search for revenue and cost and want to calculate profit in you
 <p><code>count_if(region =’west’, region)</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Takes a measure and one or more attributes. Returns the count of the measure grouped by the attribute(s).
-    group_count (revenue, customer region)</p>
+<p>Only aggregate the region for the values corresponding to west region.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2055,8 +2053,7 @@ For example, you search for revenue and cost and want to calculate profit in you
 <p><code>count_if(revenue &gt; 100, red)</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Takes a measure and one or more attributes. Returns the count of the measure grouped by the attribute(s).
-    group_count (revenue, customer region)</p>
+<p>Count the number of times red appears when revenue was greater than 100 (row-level revenue data, not aggregated).</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2095,7 +2092,7 @@ The basic format of a comparison search is:</p>
 <p><code>revenue region last 10 years vs all</code></p>
 </div>
 <div class="paragraph">
-<p>Try this syntax on using the <a href="{{site.baseurl}}/downloads/Superstore.csv">Superstore</a> example data.
+<p>Try this syntax on using the <a href="https://docs.thoughtspot.com/downloads/Superstore.csv">Superstore</a> example data.
 The first <code>vs</code> example compares two segments with a single search token:</p>
 </div>
 <div class="imageblock">
@@ -2143,7 +2140,7 @@ You can use the <code>all</code> keyword to break out the segments and avoid gro
 <p><code>sales staples file caddy vs all monthly</code> answers what the share of sales belonging to the file caddy by month</p>
 </li>
 <li>
-<p><code>sales (germany ariel vs laundry) july 2017 time</code> answers what is the category share of Germany Ariel for July 17?</p>
+<p><code>sales (germany ariel vs laundry) july 2017 time</code> answers what is the category share of Germany Ariel for July 2017?</p>
 </li>
 </ul>
 </div>

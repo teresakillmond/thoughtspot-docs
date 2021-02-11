@@ -674,7 +674,7 @@
     <a class="nav-link" href="work-with-ts-support.html">Configure support services</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#docs:ports.adoc">Network policies</a>
+    <a class="nav-link" href="firewall-ports.html">Network policies</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="about-load-balancer-configuration.html">Configure load balancing and proxies</a>
@@ -1922,6 +1922,9 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
+<p>Learn how to log into ThoughtSpot.</p>
+</div>
+<div class="paragraph">
 <p>You can access ThoughtSpot through SSH at the command prompt, and from a Web browser.</p>
 </div>
 </div>
@@ -1949,23 +1952,23 @@ Contact your ThoughtSpot support team to get the passwords.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Shell user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>admin</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">For work that requires sudo or root privileges
-Not for application login</p>
-<p class="tableblock">Logs for this user are in <code>/usr/local/scaligent/logs</code> directory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code id="admin">admin</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For work that requires sudo or root privileges.</p>
+<p class="tableblock">Not for application login.</p>
+<p class="tableblock">Logs for this user are in <code>/usr/local/scaligent/logs</code> directory.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Shell user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>thoughtspot</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">For command-line work that does not sudo or root privileges.
-Can use <code>tsload</code>, <code>tql</code>, and check the cluster status.</p>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code id="thoughtspot">thoughtspot</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For command-line work that does not require sudo or root privileges.</p>
+<p class="tableblock">Can use <code>tsload</code>, <code>tql</code>, and check the cluster status.</p>
 <p class="tableblock">Not for application login.</p>
-<p class="tableblock">Logs for this user are in <code>/tmp</code> directory</p></td>
+<p class="tableblock">Logs for this user are in <code>/tmp</code> directory.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Application user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>tsadmin</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Access through a Web browser</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Access through a Web browser.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1990,7 +1993,7 @@ After authenticating, either user can use and and all of the following utilities
 </div>
 </div>
 <div class="sect1">
-<h2 id="_ssh_to_the_appliance"><a class="anchor" href="#_ssh_to_the_appliance"></a>SSH to the appliance</h2>
+<h2 id="ssh-to-the-appliance"><a class="anchor" href="#ssh-to-the-appliance"></a>SSH to the appliance</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To perform basic administration such as checking network connectivity, starting and stopping services, and setting up email, log in remotely as the Linux administrator user "admin".
@@ -2014,17 +2017,19 @@ The default SSH port (22) will be used.</p>
 </div>
 </li>
 <li>
-<p>Enter the password for the admin user.
-+  ThoughtSpot provides a default password for both the <code>admin</code> and <code>thoughtspot</code> shell users.
+<p>Enter the password for the admin user.</p>
+<div class="paragraph">
+<p>ThoughtSpot provides a default password for both the <code>admin</code> and <code>thoughtspot</code> shell users.
 ThoughtSpot recommends that you change the passwords for both these users on first login.
 Follow your company&#8217;s policies on password security.</p>
+</div>
 </li>
 </ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_sign_in_to_the_thoughtspot_application"><a class="anchor" href="#_sign_in_to_the_thoughtspot_application"></a>Sign in to the ThoughtSpot application</h2>
+<h2 id="sign-in-to-the-thoughtspot-application"><a class="anchor" href="#sign-in-to-the-thoughtspot-application"></a>Sign in to the ThoughtSpot application</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To set up and explore your data, access the ThoughtSpot application from a standard Web browser, using a username and password.</p>

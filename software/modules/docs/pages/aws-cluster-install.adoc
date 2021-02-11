@@ -8,9 +8,9 @@ Learn how to install ThoughtSpot clusters in AWS.
 
 Before you can install your ThoughtSpot clusters in AWS, complete these prerequisites.
 
-. *Review configuration options* Refer to xref:configuration-options.adoc[AWS configuration options] for detailed instance specs.
-. *Create the instance* Refer to xref:launch-an-instance.adoc[Set up AWS for ThoughtSpot] to create and launch your instance.
-. *Review required ports* Refer to xref:ports.adoc[Network ports] to view the required ports for successful operation of ThoughtSpot.
+. *Review configuration options* Refer to xref:configuration-options-aws.adoc[AWS configuration options] for detailed instance specs.
+. *Create the instance* Refer to xref:launch-an-instance-aws.adoc[Set up AWS for ThoughtSpot] to create and launch your instance.
+. *Review required ports* Refer to xref:firewall-ports.adoc[Network ports] to view the required ports for successful operation of ThoughtSpot.
 . *Configure nodes* Refer to xref:installing-aws.adoc[Configure ThoughtSpot nodes in AWS] to configure your nodes.
 
 [#cluster-install]
@@ -61,7 +61,7 @@ You must xref:tscli-command-ref.adoc#tscli-fileserver[configure the fileserver] 
 ----
  $ tscli fileserver download-release <release-number> --user <username> --out <release-location>
 ----
-+
+
 Note the following parameters:
 
  ** `release-number` is the release number of your ThoughtSpot instance, such as 5.3, 5.3.1, 6.0, and so on.
@@ -230,6 +230,7 @@ Follow these steps:
 . In the <<ts-login,ThoughtSpot sign-in window>>, enter admin credentials, and click *Sign in*.
 ThoughtSpot recommends changing the default admin password.
 
+[#ts-login]
 image::ts-login-page.png[ThoughtSpot's sign-in window]
 // {% include image.adoc file="ts-login-page.png" title="ThoughtSpot's sign-in window" alt="Sign in to ThoughtSpot. Enter Username, Password, and click Sign in. You may select the Remember me option." caption="ThoughtSpot's sign-in window" %}
 
@@ -245,14 +246,13 @@ As you develop your expertise in AWS cluster installation, we recommend the foll
 * https://training.thoughtspot.com/create-upgrade-patch-a-thoughtspot-cluster/430642[Create a Cluster,window=_blank]
 
 See other training resources at
-+
-https://training.thoughtspot.com/[ThoughtSpot U]
+https://training.thoughtspot.com/[ThoughtSpot U].
 
 == Related information
 
 Use these references for successful installation and administration of ThoughtSpot:
 
-* xref:nodesconfig-example[The nodes.config file]
+* xref:nodesconfig-example.adoc[The nodes.config file]
 * xref:parameters-nodesconfig.adoc[Parameters of the nodes.config file]
 * xref:cluster-create.adoc[Using the tscli cluster create command]
 * xref:parameters-cluster-create.adoc[Parameters of the cluster create command]

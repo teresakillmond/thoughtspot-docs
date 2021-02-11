@@ -11,7 +11,7 @@ Before you can install your ThoughtSpot clusters in VMware, complete these prere
 . *Download the OVF* Download the https://thoughtspot.egnyte.com/dl/iWvEqo76Pr/[Open Virtualization Format,window=_blank] (OVF) file.
 . *Review configuration overview* Refer to xref:vmware-intro.adoc[VMware configuration overview] for detailed instance specs.
 . *Create the instance* Refer to xref:vmware-setup.adoc[Set up VMware for ThoughtSpot] to create and launch your instance.
-. *Review required ports* Refer to xref:ports.adoc[Network ports] to view the required ports for successful operation of ThoughtSpot.
+. *Review required ports* Refer to xref:firewall-ports.adoc[Network ports] to view the required ports for successful operation of ThoughtSpot.
 . *Configure nodes* Refer to xref:installing-vmware.adoc[Configure ThoughtSpot nodes in VMware] to configure your nodes.
 
 [#cluster-install]
@@ -70,7 +70,8 @@ Note the following parameters:
 For example, `/export/sdb1/TS_TASKS/install/6.0.tar.gz`.
 
 . Verify the checksum to ensure you have the correct release.
-+ Run `md5sum -c <release-number>.tar.gz.MD5checksum`.
++
+Run `md5sum -c <release-number>.tar.gz.MD5checksum`.
 +
 ----
  $ md5sum -c <release-number>.tar.gz.MD5checksum
@@ -107,7 +108,7 @@ As you develop your expertise in VMware cluster installation, we recommend the f
 * https://training.thoughtspot.com/create-upgrade-patch-a-thoughtspot-cluster/430642[Create a Cluster,window=_blank]
 
 See other training resources at
-https://training.thoughtspot.com/[ThoughtSpot U]
+https://training.thoughtspot.com/[ThoughtSpot U].
 
 == Related information
 
