@@ -1,6 +1,7 @@
 = Configure SSL
 :experimental:
 :last_updated: 8/27/2020
+:linkattrs:
 
 Secure socket layers (SSL) provide authentication and data security when sending data to and from ThoughtSpot.
 
@@ -44,14 +45,16 @@ You need a computer you can run Linux commands on, and a recent version of _open
 
 . `ssh` into one of your ThoughtSpot nodes.
 +
+[source]
 ----
- ssh admin@<node_IP>
+ssh admin@<node_IP>
 ----
 
 . Run the command to generate a CSR and private key pair:
 +
+[source]
 ----
- openssl req -new -newkey rsa:2048 -nodes -out csr.pem -keyout pk.key[-subj "/key1=value1/key2=value with space/"]
+openssl req -new -newkey rsa:2048 -nodes -out csr.pem -keyout pk.key[-subj "/key1=value1/key2=value with space/"]
 ----
 +
 Note the following parameters:
@@ -68,14 +71,16 @@ Follow these steps to generate a CSR with an existing private key:
 
 . `ssh` into one of your ThoughtSpot nodes.
 +
+[source]
 ----
- ssh admin@<node_IP>
+ssh admin@<node_IP>
 ----
 
 . Run the command to generate a CSR and private key pair:
 +
+[source]
 ----
- openssl req -new -key <private_key_file> -nodes -out csr.pem[-subj "/key1=value1/key2=value with space/"]
+openssl req -new -key <private_key_file> -nodes -out csr.pem[-subj "/key1=value1/key2=value with space/"]
 ----
 +
 Specify the existing private key file.
@@ -96,7 +101,7 @@ It cannot be password-protected, or passphrase-protected.
 NOTE: Do not use a passphrase when creating certificates with ThoughtSpot.
 
 If you are prompted to specify a passphrase, first check if it exists by invoking the following command:
-
+[console]
 ----
 openssl rsa -check -in pk.key`
 ----
@@ -137,17 +142,17 @@ EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH
 You can retrieve these from the ThoughtSpot web server (not against the load balancer) by running the following command on any ThoughtSpot node:     `     nmap --script ssl-enum-ciphers -p 443 <ThoughtSpot_node_IP_address>    `
 
 You must ensure that your load balancer supports these ciphers.
-If your load balancer cannot support these ciphers, link:{{ site.baseurl }}/appliance/contact.html[contact ThoughtSpot Support].
+If your load balancer cannot support these ciphers, xref:contact.adoc[contact ThoughtSpot Support].
 
 [#ssl-configure-test]
 == Test the SSL certificate
 
-To test if the certificate is installed correctly, see link:{{ site.baseurl }}/admin/setup/logins.html#sign-in-to-the-thoughtspot-application[Sign in to the ThoughtSpot application].
+To test if the certificate is installed correctly, see xref:logins.adoc#sign-in-to-the-thoughtspot-application[Sign in to the ThoughtSpot application].
 
 == Additional resources
 
 As you develop your expertise in authentication and security, we recommend the following ThoughtSpot U course:
 
-* https://training.thoughtspot.com/authentication-security/610523[Nginx SSL]
+* https://training.thoughtspot.com/authentication-security/610523[Nginx SSL,window=_blank]
 
-See other training resources at https://training.thoughtspot.com/[ThoughtSpot U]
+See other training resources at https://training.thoughtspot.com/[ThoughtSpot U,window=_blank]

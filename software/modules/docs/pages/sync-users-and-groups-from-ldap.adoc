@@ -28,8 +28,9 @@ For example, `DC=ldap,DC=thoughtspot,DC=com`
 
 * The Python synchronization script, in case you want to modify it or create your own, is here:
 +
+[source]
 ----
-  /usr/local/scaligent/release/callosum/utilities/ldap_sync_python_api/syncUsersAndGroups.py
+/usr/local/scaligent/release/callosum/utilities/ldap_sync_python_api/syncUsersAndGroups.py
 ----
 
 == Fetch users and groups from LDAP with Active Directory
@@ -51,8 +52,9 @@ To run the LDAP sync script in interactive mode:
 . Log in to the Linux shell using SSH.
 . Run the command to start the script:
 +
+[source]
 ----
- python3 syncUsersAndGroups.py interactive
+python3 syncUsersAndGroups.py interactive
 ----
 
 . Answer the prompts using the information you collected above.
@@ -93,6 +95,7 @@ This prompt is asking if you would like to include group members even if they do
 +
 Issue the Python script commands, supplying all this information, following this format example:
 +
+[source]
 ----
  python3 syncUsersAndGroups.py script \
  –-ts_hostport <ts_hostport> \

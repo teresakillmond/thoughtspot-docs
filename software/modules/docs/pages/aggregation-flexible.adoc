@@ -1,8 +1,7 @@
 = Flexible aggregation functions
 :last_updated: 11/05/2019
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Use the group_aggregate function in ThoughtSpot to aggregate measures at different granularities than the dimensions used in the search columns.
+
+Use the group_aggregate function in ThoughtSpot to aggregate measures at different granularities than the dimensions used in the search columns.
 
 == How aggregation formulas work
 
@@ -28,7 +27,7 @@ The result of this search shows total revenue for each ship mode:
 | sea transport
 |===
 
-The aggregation formulas are described in link:aggregation-formulas.html#[Overview of aggregate formulas].
+The aggregation formulas are described in xref:aggregation-formulas.adoc[Overview of aggregate formulas].
 
 == About flexible aggregation
 
@@ -44,18 +43,18 @@ This is particularly useful for comparison analysis.
 To use the groups and filters, specify them using the `query_groups` and `query_filters` keywords, respectively.
 You can also add or exclude groups or filters.
 
-{% include content/flexible-aggregation-best-practices.md %}
+include::partial$flexible-aggregation-best-practices.adoc[]
 
 == Examples
 
 For a search on `revenue monthly ship mode`, you can add a formula to calculate yearly revenue by ship mode:
-
+[source]
 ----
 group_aggregate(sum(revenue), {ship mode, year(commit date)}, {})
 ----
 
 The same formula can also be written using `query_groups()` and `query_filters()` as following:
-
+[source]
 ----
 group_aggregate(sum(revenue), query_groups() - {commit date} + {year(commit date)}, {})
 ----
@@ -63,7 +62,7 @@ group_aggregate(sum(revenue), query_groups() - {commit date} + {year(commit date
 This is helpful to include the main query groups that are not known at formula creation time.
 You can use `+/-` to modify the set of groups included from the query.
 
-{% include note.html content="``+/-`` is currently supported only for `query_groups`, not `query_filters`."%}
+NOTE: ``+/-`` is currently supported only for `query_groups`, not `query_filters`.
 
 == When group formula results are finer-grained than the search
 
@@ -82,8 +81,9 @@ For example, in this search we've added the keyword *min* just before our formul
 +
 where, the `monthly_sales` formula is written as:
 +
+[source]
 ----
-   group_aggregate(sum(revenue), {start_of_month(date)}, {})
+group_aggregate(sum(revenue), {start_of_month(date)}, {})
 ----
 
 * You can create a separate formula, such as in this search for:
@@ -92,6 +92,7 @@ where, the `monthly_sales` formula is written as:
 +
 where, the `min_monthly_sales` formula is written as:
 +
+[source]
 ----
 min(monthly_sales)
 ----
@@ -116,20 +117,20 @@ An example of this is this search:
 *ship mode min monthly_sales*
 
 where the formula `monthly_sales` is written as:
-
+[source]
 ----
 group_aggregate(sum(revenue), query_groups() + {start_of_month(date)}, {})
 ----
 
-For more extensive examples of using the `group-aggregate` function, we encourage you to see link:{{site.baseurl}}/reference/practice/reaggregation-scenarios.html[Reaggreggation scenarios in practice]
+For more extensive examples of using the `group-aggregate` function, we encourage you to see xref:reaggregation-scenarios.adoc[Reaggreggation scenarios in practice]
 
 == Groups and filters
 
-Flexible group aggregate formulas allow for flexibility in both link:about-pinned-measures.html#[groupings] and link:filtered-agg-forms.html#[filters].
+Flexible group aggregate formulas allow for flexibility in both xref:about-pinned-measures.adoc[groupings] and xref:filtered-agg-forms.adoc[filters].
 The formulas give you the ability to specify only groupings or only filters.
 
 == Related information
 
-* For more examples of flexible aggregation, see the link:{{site.baseurl}}/reference/practice/formula-reference.html#group_aggregate[group_aggregate] function in the link:{{site.baseurl}}/reference/formula-reference.html[Formula function reference].
-* To learn about aggregation formulas in general, see link:aggregation-formulas.html#[Overview of aggregate formulas] and link:about-pinned-measures.html#[Group aggregation functions]
-* To learn about how the `group-aggregate` function can be used within your business practice, we encourage you to see link:{{site.baseurl}}/reference/practice/reaggregation-scenarios.html[Reaggregation scenarios in practice]
+* For more examples of flexible aggregation, see the xref:formula-reference.adoc#group_aggregate[group_aggregate] function in the xref:formula-reference.adoc[Formula function reference].
+* To learn about aggregation formulas in general, see xref:aggregation-formulas.adoc[Overview of aggregate formulas] and xref:about-pinned-measures.adoc[Group aggregation functions]
+* To learn about how the `group-aggregate` function can be used within your business practice, we encourage you to see xref:reaggregation-scenarios.adoc[Reaggregation scenarios in practice]

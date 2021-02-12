@@ -26,8 +26,9 @@ image::r-load-list-of-scripts.png[]
 +
 Note that the output file type must match the script.
 +
-For example, if you select one of the ThoughtSpot provided time series  scripts, the comment at the top of the script provides guidance on what  columns to select.
+For example, if you select one of the ThoughtSpot provided time series  scripts, the comment at the top of the script provides guidance on which columns to select.
 +
+[source]
 ----
  # NOTE: Only two columns are needed for this analysis.
  # The first column should represent some date column
@@ -35,8 +36,9 @@ For example, if you select one of the ThoughtSpot provided time series  scripts,
 ----
 +
 Also, scroll through the script to identify whether it's coded to produce  graphical (PNG) or tabular (CSV) output.
-The time series scripts are both set up  to produce graphical output, as indicated by a line like this at the end of the  scripts.
+The time series scripts are both set up  to produce graphical output, as indicated by a line like this at the end of the scripts.
 +
+[source]
 ----
  png(#output_file#, width=1000);
  print(img);
@@ -69,7 +71,7 @@ You can find his full presentation on Custom R Scripts and demo at https://commu
 
 Consider this script, found on this website of http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html[Top 50 ggplot2 Visualizations - The Master List (With Full R Code)].
 A direct link to this script is http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html#Diverging%20Bars[here].
-
+[source]
 ----
 library(ggplot2)
 theme_set(theme_bw())
@@ -97,7 +99,7 @@ You can modify the script above to support the phone sales use case discussed in
 
 In this script, `mtcars` is replaced with references to our phone sales (`df$Sales`) and `car name` is replaced with `Device Name` both from the column data in the search example used in the webinar demo.
 The script uses the ThoughtSpot _data frame_ object (`df`), and adds two lines at the end to specify output type as a `png` image.
-
+[source]
 ----
 library(ggplot2)
 theme_set(theme_bw())

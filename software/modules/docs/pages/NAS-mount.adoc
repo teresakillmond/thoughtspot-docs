@@ -1,8 +1,8 @@
 = Configure NAS file system
 :last_updated: 11/16/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Some operations, like backup, restore, and data loading, require either reading or writing very large files. You can mount a network attached storage (NAS) file system to support these operations. Your NAS storage can be in the drive format you choose.
+:linkattrs:
+
+Some operations, like backup, restore, and data loading, require either reading or writing very large files. You can mount a network attached storage (NAS) file system to support these operations. Your NAS storage can be in the drive format you choose.
 
 [#mount-nas]
 == About NAS mount
@@ -36,6 +36,7 @@ To mount a NAS file system using the tscli, follow these steps:
 . Mount the directory to the file system by issuing the appropriate command:
  ** Example for an NFS (Network File System) directory:
 +
+[source]
 ----
 tscli nas mount-nfs --server storageservername.file.yourdomain.net
    --path_on_server <path>  /tsdev-backup --mount_point /export/BACKUPS/
@@ -47,6 +48,7 @@ NOTE: Other command-line options are available to forward to the command (defaul
  ** Example for a CIFS (Common Internet File System) directory.
 Use `1001` for the `uid` and `gid`, as in the example:
 +
+[source]
 ----
 tscli nas mount-cifs --server storageservername.file.yourdomain.net
   --path_on_server /tsdev-backup --mount_point /export/BACKUPS/
@@ -57,6 +59,7 @@ NOTE: Other command-line options are available to forward to the `mount.cifs` co
 . Use the mounted file system by referring to its mount point.
 . When you are finished with it, you can optionally unmount the NAS file system:
 +
+[source]
 ----
  tscli nas unmount --dir <directory>
 ----
@@ -65,8 +68,8 @@ NOTE: Other command-line options are available to forward to the `mount.cifs` co
 
 As you develop your expertise in NAS mounts, we recommend the following ThoughtSpot U course:
 
-* https://training.thoughtspot.com/nas-mount[NAS Mount]
+* https://training.thoughtspot.com/nas-mount[NAS Mount,window=_blank]
 
 See other training resources at
 +
-https://training.thoughtspot.com/[ThoughtSpot U]
+https://training.thoughtspot.com/[ThoughtSpot U,window=_blank]
