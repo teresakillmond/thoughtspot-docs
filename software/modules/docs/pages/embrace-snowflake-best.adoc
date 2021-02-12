@@ -115,14 +115,14 @@ The system returns the results of this query as a table that represents all fore
 foreign_schema:: The name of the foreign schema
 foreign_table:: The name of the foreign table
 foreign_constraint:: The name of the foreign key constraint
-rel:: The relationship symbol that indicates the direction of the joi
+rel:: The relationship symbol that indicates the direction of the join
 referenced_schema:: The name of the referenced schema
 
 To search multi-table Snowflake data in ThoughtSpot, you must explicitly create joins.
 
 There are two ways to do this:
 
-. ThoughtSpot recommends that you add the necessary foreign key constraints by creating a join in Snowflake. We demonstrate how you can do in xref:embrace-snowflake-best.adoc#join-snowflake[Create joins in Snowflake].
+. ThoughtSpot recommends that you add the necessary foreign key constraints by creating a join in Snowflake. We demonstrate how you can do in xref:join-snowflake[Create joins in Snowflake].
 +
 For in-depth information from Snowflake, see https://docs.snowflake.net/manuals/sql-reference/sql/create-table-constraint.html[CREATE or ALTER TABLE … CONSTRAINT,window=_blank].
 
@@ -174,7 +174,7 @@ outoflineFK :=
     [ RELY | NORELY ]
 ----
 
-[#add-fk-snowflake"]
+[#add-fk-snowflake]
 **Example 1: adding a foreign key in Snowflake**
 
 For example, you can add a foreign key to Retail Sales schema in Snowflake by running the following `ALTER TABLE` statement. Also, contrast it with xref:add-fk-thoughtspot[Example 2]:
