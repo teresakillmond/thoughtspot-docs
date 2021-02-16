@@ -4,7 +4,7 @@
 You can configure Security Assertion Markup Language (SAML) using ThoughtSpot's command line interface, tscli.
 
 ThoughtSpot enables you to use the Security Assertion Markup Language (SAML) to authenticate users.
-You can set up SAML through the shell on the ThoughtSpot instance using a `tscli` based configurator. It is configured to work using service provided by an Identity Provider (IDP).
+You can set up SAML through the shell on the ThoughtSpot instance using a `tscli`-based configurator. It is configured to work using service provided by an Identity Provider (IDP).
 
 [#prerequisites]
 == Configuration prerequisites
@@ -37,7 +37,7 @@ Before configuring SAML, collect the following information:
 
 [#ts-service-address]
 === ThoughtSpot service address
-DNS name of the load balancer _front-end_ for multi-node ThoughtSpot cluseters, or of the ThoughtSpot _server_ for a single-node ThoughtSpot cluster. If you do not have the DNS name, you can use the front-end IP address. Using the DNS name instead of the IP address is a best practice.
+DNS name of the load balancer _front-end_ for multi-node ThoughtSpot clusters, or of the ThoughtSpot _server_ for a single-node ThoughtSpot cluster. If you do not have the DNS name, you can use the front-end IP address. Using the DNS name instead of the IP address is a best practice.
 
 [#ts-service-port]
 === Service port
@@ -73,8 +73,9 @@ If 'y', then ThoughtSpot local/internal users (including local administrative us
 [#saml-configure-tscli]
 == Configure SAML using tscli
 
-Use this procedure to set up SAML on ThoughtSpot for user authentication.
-Note that this configuration persists across software updates, so you do not have to reapply it if you update to a newer release of ThoughtSpot.
+NOTE: This configuration persists across software updates, so you do not have to reapply it if you update to a newer release of ThoughtSpot.
+
+To set up SAML for user authentication, follow these steps:
 
 . Log in to the Linux shell using SSH.
 . Execute the `saml configure` command to launch the interactive SAML configuration:
@@ -83,8 +84,8 @@ Note that this configuration persists across software updates, so you do not hav
  tscli saml configure
 ----
 
-. Complete the configurator prompts with the information you gathered in <<prerequisites,Configuration prerequisites>>.
-. When the configuration is complete, open a Web browser and go to the ThoughtSpot login page.
+. Complete the configurator prompts with the information you gathered in xref:prerequisites[Configuration prerequisites].
+. When the configuration is complete, open a Web browser and navigate to the ThoughtSpot login page.
 It should now show the SSO option.
 
 === Additional resources
