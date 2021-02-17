@@ -1,9 +1,10 @@
 = Install the ODBC driver on Windows
 :experimental:
+:linkattrs:
 
 Use this procedure to obtain the Microsoft Windows ODBC driver and install it.
 
-ThoughtSpot's ODBC connection relies on the xref:https://www.simba.com/products/SEN/doc/Client-Server_user_guide/content/clientserver/configuringsimbaclientodbc/simbaclientodbcunix.htm[SimbaEngine X SDK,window="_blank"] to connect through ODBC or JDBC to ThoughtSpot's remote data stores.
+ThoughtSpot's ODBC connection relies on the link:https://www.simba.com/products/SEN/doc/Client-Server_user_guide/content/clientserver/configuringsimbaclientodbc/simbaclientodbcunix.htm[SimbaEngine X SDK,window="_blank"] to connect through ODBC or JDBC to ThoughtSpot's remote data stores.
 The instructions on this page explain how to configure the Simba ODBC driver on a Windows workstation.
 
 Make sure you have read the overview material in the xref:about-odbc.adoc[ODBC driver overview].
@@ -12,7 +13,7 @@ This workstation is the same machine where you plan to run your ETL activities.
 == Prerequisites
 
 These instructions include directions to use the `ssh` command.
-Make sure your Windows workstation is equipped with a tool xref:https://www.putty.org/[such as Putty,window="_blank"] for making `ssh` connections to your ThoughtSpot server.
+Make sure your Windows workstation is equipped with a tool link:https://www.putty.org/[such as Putty,window="_blank"] for making `ssh` connections to your ThoughtSpot server.
 
 The ODBC driver for Windows requires Visual C{pp} Redistributable for Visual Studio 2013.
 You are prompted to install it during installation of the driver if it isn't already installed.
@@ -23,7 +24,7 @@ To check if this Microsoft tool is already installed, search for it on your work
 
 image::odbc-windows-search-0.png[]
 
-If it isn't installed, make sure you xref:https://www.microsoft.com/en-us/download/details.aspx?id=40784[download and install it,window="_blank"] before continuing.
+If it isn't installed, make sure you link:https://www.microsoft.com/en-us/download/details.aspx?id=40784[download and install it,window="_blank"] before continuing.
 
 == Check the ThoughtSpot IP and the simba_server status
 
@@ -116,7 +117,7 @@ image::odbc-configure-dialog.png[]
 | Custom Property | Value
 
 | `SCHEMA`
-| `falcon_default_schema` is the default
+| `falcon_default_schema` is the default.
 
 | `UID`
 | The username of a user with data management privilege.
@@ -128,11 +129,11 @@ image::odbc-configure-dialog.png[]
 You don't have to use the ThoughtSpot default schema.
 You can specify your own.
 We recommend that you define a default schema.
-Otherwise, you must supply a schema  every time you use the ODBC driver.
-Moreover, without a schema (or if the  schema is not present), the ODBC driver returns an error that states that the schema  could not be found.
+Otherwise, you must supply a schema every time you use the ODBC driver.
+Moreover, without a schema (or if the schema is not present), the ODBC driver returns an error that states that the schema could not be found.
 +
 Similarly, adding the `UID` and `PWD` properties are not required.
-If you  don't add them, you are prompted to supply them each time you connect.
+If you don't add them, you are prompted to supply them each time you connect.
 +
 When you are done, your options should look similar to the following:
 +

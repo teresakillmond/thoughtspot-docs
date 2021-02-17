@@ -30,13 +30,13 @@ image::synapse-editconnection.png[Edit connection]
 . On the Synapse connection details page, make any changes needed, and then click *Continue*.
 . Expand the database table drop-down menu, and select the tables and columns you want to add.
 +
-image:redshift-edittables.png[Select tables and columns]
+image::redshift-edittables.png[Select tables and columns]
 // ![]({{ site.baseurl }}/images/connection-update.png "Edit connection dialog box")
 
 . Click *Update*, and then click *Confirm* to save the updated connection detail.
 
 To remove a table from a connection, delete it from the connection details page.
-For more information, see xref:embrace-synapse-modify.adoc#deleting-a-table-from-a-synapse-connection[Deleting a table].
+For more information, see xref:deleting-a-table-from-a-synapse-connection[Deleting a table].
 
 == Remapping a Synapse connection
 
@@ -66,6 +66,7 @@ image::synapse-yaml.png[Edit the yaml file]
 
 . Finally, click *Browse your files*, and upload your edited mapping file to update the mapping of your connection.
 
+[#deleting-a-table-from-a-synapse-connection]
 == Deleting a table from a Synapse connection
 
 ThoughtSpot checks for dependencies whenever you try to remove a table in a connection.
@@ -87,8 +88,9 @@ image::synapse-deletetable.png[Delete a connection table]
 +
 If you attempt to delete a table with dependent objects, the operation is blocked.
 A _Cannot delete_ window appears, with a list of links to dependent objects.
-See xref:embrace-synapse-modify.adoc#deleting-a-table-with-dependent-objects[Deleting a table with dependent objects].
+See xref:deleting-a-table-with-dependent-objects[Deleting a table with dependent objects].
 
+[#deleting-a-table-with-dependent-objects]
 === Deleting a table with dependent objects
 
 * In the _Cannot delete_ window, click the link for each object to modify or delete it.
@@ -98,7 +100,7 @@ When all dependencies are removed, you can delete the table.
 image::synapse-demoremapping.png[Dependent objects warning]
 
 You can also click the name of a table and then click the linked objects to see a list of dependent objects with links.
-The list shows the names of the dependent objects (worksheets, pinboards or answers), and the columns they use from that table.
+The list shows the names of the dependent objects (Worksheets, Pinboards or Answers), and the columns they use from that table.
 You can use this information to determine the impact of changing the structure of the data source or to see how widely used it is.
 Click a dependent object to modify or delete it.
 
@@ -114,7 +116,7 @@ To delete a connection:
 . Check the box next to the connection you want to delete.
 . Click *Delete*, and then click *Delete* again to confirm.
 +
-image:synapse-deleteconnection.png[Delete a connection] -->
+image::synapse-deleteconnection.png[Delete a connection]
 +
 If you attempt to delete a connection with dependent objects, the operation is blocked, and a "Cannot delete" warning appears with a list of dependent objects with links.
 +
