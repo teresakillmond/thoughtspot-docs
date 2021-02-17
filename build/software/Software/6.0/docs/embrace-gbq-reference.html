@@ -1717,7 +1717,7 @@
     <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="troubleshooting-intro.html">Troubleshooting data integrations</a>
+    <a class="nav-link" href="troubleshooting-intro-data-int.html">Troubleshooting data integrations</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="enable-ODBC-log.html">Enable ODBC logs</a>
@@ -1982,115 +1982,21 @@ All fields are required, except where noted.</p>
 <dl>
 <dt class="hdlist1">Connection name</dt>
 <dd>
-<p>Enter a new BigQuery connection name.</p>
+<p>Enter a new BigQuery connection name. Mandatory field.</p>
 </dd>
 <dt class="hdlist1">Connection description</dt>
 <dd>
-<p>Provide a short description of the connection. <em>(Optional)</em></p>
+<p>Provide a short description of the connection. Optional field.</p>
 </dd>
 <dt class="hdlist1">Project id</dt>
 <dd>
-<p>Enter the project ID associated with the BigQuery database.</p>
+<p>Enter the project ID associated with the BigQuery database. Mandatory field.</p>
 </dd>
 <dt class="hdlist1">Service account</dt>
 <dd>
-<p>Enter the service account associated with the BigQuery database.</p>
+<p>Enter the service account associated with the BigQuery database. Mandatory field.</p>
 </dd>
 </dl>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="custom-role"><a class="anchor" href="#custom-role"></a>Create a custom role</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>In order to use ThoughtSpot Embrace to query your GBQ database, you must create a custom role with specific permissions and then assign it to  your service account.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Navigate to <a href="https://console.cloud.google.com" target="_blank" rel="noopener">console.cloud.google.com</a>, sign in, and select your project.</p>
-</li>
-<li>
-<p>Hover over <strong>IAM &amp; admin</strong>.</p>
-</li>
-<li>
-<p>Click <strong>Roles</strong>.</p>
-</li>
-<li>
-<p>Click <strong>+CREATE ROLE</strong>.</p>
-</li>
-<li>
-<p>On the Create Role page, do the following:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Enter a title (or keep the existing one).</p>
-</li>
-<li>
-<p>(Optional) Enter a description.</p>
-</li>
-<li>
-<p>Create an ID (or keep the existing one).</p>
-</li>
-<li>
-<p>Select a Role launch stage.</p>
-</li>
-<li>
-<p>Click <strong>+ADD PERMISSIONS</strong>.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>In the Add permissions window, select the following permissions:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>bigquery.config.get</p>
-</li>
-<li>
-<p>bigquery.datasets.getIamPolicy</p>
-</li>
-<li>
-<p>bigquery.jobs.create</p>
-</li>
-<li>
-<p>bigquery.jobs.list</p>
-</li>
-<li>
-<p>bigquery.savedqueries.get</p>
-</li>
-<li>
-<p>bigquery.savedqueries.list</p>
-</li>
-<li>
-<p>bigquery.tables.get</p>
-</li>
-<li>
-<p>bigquery.tables.getData</p>
-</li>
-<li>
-<p>bigquery.tables.list</p>
-</li>
-<li>
-<p>resourcemanager.projects.get</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/gbq-role-permissions.png" alt="gbq role permissions">
-</div>
-</div>
-</li>
-<li>
-<p>Click <strong>ADD</strong>.</p>
-</li>
-<li>
-<p>Click <strong>CREATE</strong>.</p>
-</li>
-</ol>
 </div>
 </div>
 </div>
@@ -2104,7 +2010,7 @@ If not, follow these steps to create a service account.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Navigate to <a href="https://console.cloud.google.com" target="_blank" rel="noopener">console.cloud.google.com</a>, sign in, and select your project.</p>
+<p>Navigate to <a href="https://console.cloud.google.com" target="_blank" rel="noopener">console.cloud.google.com</a>, and sign in.</p>
 </li>
 <li>
 <p>Click the navigation menu in the upper left, if it is not already open.</p>
@@ -2135,75 +2041,23 @@ If not, follow these steps to create a service account.</p>
 </div>
 </li>
 <li>
-<p>On the Service account permissions page, click <strong>Select a role</strong>, choose <strong>Custom</strong>, and select the custom role you created in <a href="#custom-role">Create a custom role</a>.</p>
+<p>Specify permissions. Under <strong>Select a role</strong>, choose <span class="menuseq"><b class="menu">BigQuery</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">BigQuery Data Viewer</b></span>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/gbq-serviceaccountpermissions.png" alt="Specify permissions">
+</div>
+</div>
 </li>
 <li>
-<p>Click <strong>CONTINUE</strong>.</p>
-</li>
-<li>
-<p>On the Create service account page, click <strong>+ CREATE KEY</strong>.</p>
+<p>On the next screen, click <strong>+ CREATE KEY</strong>.</p>
 </li>
 <li>
 <p>For <strong>Key type</strong>, choose <strong>JSON</strong>.</p>
 </li>
 <li>
 <p>Click <strong>CREATE</strong>.
-The key downloads to your computer.
-+ When the download is complete, the message: "Private key saved to your computer" appears.</p>
-</li>
-<li>
-<p>Make note of the name of the filename, so you can find it on your computer, and then click <strong>CLOSE</strong>.</p>
-</li>
-<li>
-<p>When you are ready to add a connection to BigQuery in ThoughtSpot, open the private key file in a text editor, and copy the entire contents of the file.
-<span class="image"><img src="_images/gbq-key-copy.png" alt="gbq key copy"></span></p>
-</li>
-<li>
-<p>In the connection details page of your BigQuery connection in ThoughtSpot, paste this key into the <strong>Service account</strong> field.
-+ For details on how to add a connection to BigQuery in ThoughtSpot, see <a href="embrace-gbq-add.html" class="page">Add a BigQuery connection</a>.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="share-dataset"><a class="anchor" href="#share-dataset"></a>Share dataset</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>To make your dataset available for your Google BigQuery connection in ThoughtSpot, you must share it with your service account in Google BigQuery in an owner role.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Navigate to <a href="https://console.cloud.google.com" target="_blank" rel="noopener">console.cloud.google.com</a>, sign in, and select your project.</p>
-</li>
-<li>
-<p>Click the navigation menu in the upper left, if it is not already open.</p>
-</li>
-<li>
-<p>Scroll down in the navigation menu into the BIG DATA section, and click <strong>BigQuery</strong>.
-+ Your project should be listed on the left side of the page under the search box.</p>
-</li>
-<li>
-<p>Click your project to reveal its available datasets.</p>
-</li>
-<li>
-<p>Click the dataset that you want to share.</p>
-</li>
-<li>
-<p>Click <strong>SHARE DATASET</strong>.</p>
-</li>
-<li>
-<p>Click <strong>Owner</strong> to reveal the complete list of project owners.</p>
-</li>
-<li>
-<p>In the Add members box, enter the member email address of the service account you want to share the dataset with.</p>
-</li>
-<li>
-<p>Click <strong>Select a role</strong>, select <span class="menuseq"><b class="menu">Project</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Owner</b></span>, and click <strong>Add</strong>.</p>
-</li>
-<li>
-<p>Click <strong>Done</strong>.</p>
+The key downloads to your computer.<br>
+Copy and paste this key under <strong>Service account</strong> when connecting to Google BigQuery in ThoughtSpot.</p>
 </li>
 </ol>
 </div>

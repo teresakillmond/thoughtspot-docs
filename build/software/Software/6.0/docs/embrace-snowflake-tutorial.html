@@ -1717,7 +1717,7 @@
     <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="troubleshooting-intro.html">Troubleshooting data integrations</a>
+    <a class="nav-link" href="troubleshooting-intro-data-int.html">Troubleshooting data integrations</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="enable-ODBC-log.html">Enable ODBC logs</a>
@@ -1981,7 +1981,7 @@
 <p>If there are no table joins in your Snowflake connection, you can easily create them in ThoughtSpot.</p>
 </div>
 <div class="paragraph">
-<p>The following example shows how the table joins were created in the Sales table of the Retail Sales worksheet, available in your <strong>try.thoughtspot.com</strong> account created through Snowflake Partner Connect.</p>
+<p>The following example shows how the table joins were created in the Sales table of the Retail Sales Worksheet, available in your <strong>try.thoughtspot.com</strong> account created through Snowflake Partner Connect.</p>
 </div>
 </div>
 </div>
@@ -2171,7 +2171,7 @@ Now you will add the other joins.</p>
 <div class="sect2">
 <h3 id="_searching_joined_tables"><a class="anchor" href="#_searching_joined_tables"></a>Searching joined tables</h3>
 <div class="paragraph">
-<p>You can easily search the joined tables, without having to create a worksheet.</p>
+<p>You can easily search the joined tables, without having to create a Worksheet.</p>
 </div>
 <div class="paragraph">
 <p>To search the joined tables, do the following:</p>
@@ -2193,7 +2193,8 @@ Now you will add the other joins.</p>
 <p><span class="image"><img src="_images/date-in-dates.png" alt="date in dates"></span></p>
 </div>
 <div class="paragraph">
-<p>The search results look like this: + <span class="image"><img src="_images/snow-search-results.png" alt="snow search results"></span></p>
+<p>The search results look like this:<br>
+<span class="image"><img src="_images/snow-search-results.png" alt="snow search results"></span></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2242,9 +2243,10 @@ For the purposes of this example, we&#8217;re using monthly as the date, from th
 <div class="paragraph">
 <p>In the following example, the <em>Sales_Dollar_Amount</em> column was renamed to Sales and the synonyms of <em>Revenue</em> and <em>Dollars</em> were added.</p>
 </div>
-<div class="paragraph">
-<p>+
-<span class="image"><img src="_images/snow-model-best.png" alt="snow model best"></span></p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/snow-model-best.png" alt="snow model best">
+</div>
 </div>
 <div class="paragraph">
 <p>These are just a couple of examples of things you can do.</p>
@@ -2259,10 +2261,10 @@ For the purposes of this example, we&#8217;re using monthly as the date, from th
 <h2 id="_creating_a_worksheet"><a class="anchor" href="#_creating_a_worksheet"></a>Creating a worksheet</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A worksheet is a curated dataset built for ad-hoc analysis, that allows you to translate data from a database into the language of your business users.</p>
+<p>A Worksheet is a curated dataset built for ad-hoc analysis, that allows you to translate data from a database into the language of your business users.</p>
 </div>
 <div class="paragraph">
-<p>Examples of things you can do in a worksheet include:</p>
+<p>Examples of things you can do in a Worksheet include:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2278,7 +2280,7 @@ For the purposes of this example, we&#8217;re using monthly as the date, from th
 </ul>
 </div>
 <div class="paragraph">
-<p>The worksheet based on the Sales table on <strong>try.thoughtspot.com</strong> was created by doing the following:</p>
+<p>The Worksheet based on the Sales table on <strong>try.thoughtspot.com</strong> was created by doing the following:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2314,32 +2316,57 @@ This ensures that the search uses only the tables that are required.</p>
 <p>In the Data view, click the name of the Customers table to reveal all of the columns in that table.</p>
 </li>
 <li>
-<p>Double-click each column from the Customers table that you want to include in the worksheet.</p>
+<p>Double-click each column from the Customers table that you want to include in the Worksheet.</p>
 <div class="paragraph">
-<p>Include these columns:
- <strong> Customer_Type
- </strong> Customer Name
- <strong> Customer_Gender
- </strong> Customer Region
- <strong> Customer State
- </strong> Customer City
- <strong> Customer Zip Code
- </strong> Customer County</p>
-</div>
-</li>
-<li>
-<p>Use the same process to select columns from the other tables to include in the worksheet.</p>
-<div class="paragraph">
-<p>From the Dates table, include this column:</p>
+<p>Include these columns:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Date</p>
-<div class="paragraph">
-<p>From the Products table, include these columns:</p>
+<p>Customer_Type</p>
+</li>
+<li>
+<p>Customer Name</p>
+</li>
+<li>
+<p>Customer_Gender</p>
+</li>
+<li>
+<p>Customer Region</p>
+</li>
+<li>
+<p>Customer State</p>
+</li>
+<li>
+<p>Customer City</p>
+</li>
+<li>
+<p>Customer Zip Code</p>
+</li>
+<li>
+<p>Customer County</p>
+</li>
+</ul>
 </div>
 </li>
+<li>
+<p>Use the same process to select columns from the other tables to include in the Worksheet.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>From the Dates table, include this column:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Date</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>From the Products table, include these columns:</p>
+<div class="ulist">
+<ul>
 <li>
 <p>Product_Description</p>
 </li>
@@ -2348,10 +2375,14 @@ This ensures that the search uses only the tables that are required.</p>
 </li>
 <li>
 <p>Department_Description</p>
-<div class="paragraph">
-<p>From the Sales table, include these columns:</p>
+</li>
+</ul>
 </div>
 </li>
+<li>
+<p>From the Sales table, include these columns:</p>
+<div class="ulist">
+<ul>
 <li>
 <p>Sales_Dollar_Amount</p>
 </li>
@@ -2360,10 +2391,14 @@ This ensures that the search uses only the tables that are required.</p>
 </li>
 <li>
 <p>Gross_Profit_Dollar_Amount</p>
-<div class="paragraph">
-<p>From the Stores table, include these columns:</p>
+</li>
+</ul>
 </div>
 </li>
+<li>
+<p>From the Stores table, include these columns:</p>
+<div class="ulist">
+<ul>
 <li>
 <p>Store_Name</p>
 </li>
@@ -2391,7 +2426,7 @@ This ensures that the search uses only the tables that are required.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-As a best practice, you would not select a key from a table when creating a worksheet, because you would not want to search for the key.
+As a best practice, you would not select a key from a table when creating a Worksheet, because you would not want to search for the key.
 </td>
 </tr>
 </table>
@@ -2400,8 +2435,11 @@ As a best practice, you would not select a key from a table when creating a work
 </ul>
 </div>
 </li>
+</ol>
+</div>
+</li>
 <li>
-<p>Click the pencil icon <span class="image"><img src="_images/icon-edit-20px.png" alt="edit icon"></span> next to the current name of your worksheet, enter the name <strong>Retail Sales</strong>, and click <strong>Done</strong>.</p>
+<p>Click the pencil icon <span class="image"><img src="_images/icon-edit-20px.png" alt="edit icon"></span> next to the current name of your Worksheet, enter the name <strong>Retail Sales</strong>, and click <strong>Done</strong>.</p>
 <div class="paragraph">
 <p><span class="image"><img src="_images/partner-connect-worksheet-title.png" alt="partner connect worksheet title"></span></p>
 </div>
@@ -2412,7 +2450,7 @@ As a best practice, you would not select a key from a table when creating a work
 <p><span class="image"><img src="_images/partner-connect-worksheet-save.png" alt="partner connect worksheet save"></span></p>
 </div>
 <div class="paragraph">
-<p>Now, let&#8217;s add a percent gross margin formula to the worksheet.</p>
+<p>Now, let&#8217;s add a percent gross margin formula to the Worksheet.</p>
 </div>
 </li>
 <li>
@@ -2436,20 +2474,20 @@ As a best practice, you would not select a key from a table when creating a work
 </div>
 </div>
 </li>
-</ol>
-</div>
-</li>
 <li>
 <p>Click <strong>Save</strong>.</p>
 <div class="paragraph">
 <p><span class="image"><img src="_images/partner-connect-worksheet-formula.png" alt="partner connect worksheet formula"></span></p>
 </div>
 </li>
-<li>
-<p>Save the worksheet with the formula added, by clicking the more options icon <span class="image"><img src="_images/icon-more-10px.png" alt="more options menu icon"></span>, and selecting <strong>Save</strong>.</p>
+</ol>
+</div>
 </li>
 <li>
-<p>Click <strong>Data</strong>, and click the Retail Sales worksheet.</p>
+<p>Save the Worksheet with the formula added, by clicking the more options icon <span class="image"><img src="_images/icon-more-10px.png" alt="more options menu icon"></span>, and selecting <strong>Save</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Data</strong>, and click the Retail Sales Worksheet.</p>
 </li>
 <li>
 <p>In the Columns view, make sure that the % Gross Margin formula has the following settings:</p>
@@ -2468,14 +2506,14 @@ As a best practice, you would not select a key from a table when creating a work
 </div>
 </li>
 <li>
-<p>Save the worksheet with the updated formula settings, by clicking the more options icon <span class="image"><img src="_images/icon-more-10px.png" alt="more options menu icon"></span>, and selecting <strong>Save</strong>.</p>
+<p>Save the Worksheet with the updated formula settings, by clicking the more options icon <span class="image"><img src="_images/icon-more-10px.png" alt="more options menu icon"></span>, and selecting <strong>Save</strong>.</p>
 </li>
 </ol>
 </div>
 <div class="sect2">
 <h3 id="_best_practices_for_worksheets"><a class="anchor" href="#_best_practices_for_worksheets"></a>Best practices for worksheets</h3>
 <div class="paragraph">
-<p>The best practices for data modeling also apply to worksheets.</p>
+<p>The best practices for data modeling also apply to Worksheets.</p>
 </div>
 <div class="paragraph">
 <p>The example here includes:</p>
@@ -2500,15 +2538,15 @@ As a best practice, you would not select a key from a table when creating a work
 <div class="sect2">
 <h3 id="_adding_a_currency_and_geo_map_to_a_worksheet"><a class="anchor" href="#_adding_a_currency_and_geo_map_to_a_worksheet"></a>Adding a currency and geo map to a worksheet</h3>
 <div class="paragraph">
-<p>To further enhance the usability of a worksheet, you can add a specific currency type to monetary values, and a geographic map to regions in your data.</p>
+<p>To further enhance the usability of a Worksheet, you can add a specific currency type to monetary values, and a geographic map to regions in your data.</p>
 </div>
 <div class="paragraph">
-<p>Using the Retail Sales worksheet example, here&#8217;s how geo maps and currency could be added:</p>
+<p>Using the Retail Sales Worksheet example, here&#8217;s how geo maps and currency could be added:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Click <strong>Data</strong>, and click the <strong>Retail Sales</strong> worksheet.</p>
+<p>Click <strong>Data</strong>, and click the <strong>Retail Sales</strong> Worksheet.</p>
 </li>
 <li>
 <p>In the Columns view, find the Sales column and click <strong>None</strong> in the Currency Type column.</p>
@@ -2531,7 +2569,7 @@ As a best practice, you would not select a key from a table when creating a work
 <li>
 <p>Click <strong>Save Changes</strong>.</p>
 <div class="paragraph">
-<p>Now that both currency and geographic types are set, you can see those changes reflected when you search the Retail Sales worksheet.</p>
+<p>Now that both currency and geographic types are set, you can see those changes reflected when you search the Retail Sales Worksheet.</p>
 </div>
 </li>
 <li>
@@ -2541,7 +2579,7 @@ As a best practice, you would not select a key from a table when creating a work
 <p>Click <strong>Choose sources</strong>.</p>
 </li>
 <li>
-<p>Deselect any tables previously selected (if needed), select only the <strong>Retail Sales</strong> worksheet, and click <strong>Close</strong>.</p>
+<p>Deselect any tables previously selected (if needed), select only the <strong>Retail Sales</strong> Worksheet, and click <strong>Close</strong>.</p>
 </li>
 <li>
 <p>In the search bar, enter: <strong>sales</strong> <strong>store state</strong> and press tab.</p>

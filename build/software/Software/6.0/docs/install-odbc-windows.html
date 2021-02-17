@@ -1717,7 +1717,7 @@
     <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="troubleshooting-intro.html">Troubleshooting data integrations</a>
+    <a class="nav-link" href="troubleshooting-intro-data-int.html">Troubleshooting data integrations</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="enable-ODBC-log.html">Enable ODBC logs</a>
@@ -1975,7 +1975,7 @@
 <p>Use this procedure to obtain the Microsoft Windows ODBC driver and install it.</p>
 </div>
 <div class="paragraph">
-<p>ThoughtSpot&#8217;s ODBC connection relies on the <a href="#https://www.simba.com/products/SEN/doc/Client-Server_user_guide/content/clientserver/configuringsimbaclientodbc/simbaclientodbcunix.htm">SimbaEngine X SDK</a> to connect through ODBC or JDBC to ThoughtSpot&#8217;s remote data stores.
+<p>ThoughtSpot&#8217;s ODBC connection relies on the <a href="https://www.simba.com/products/SEN/doc/Client-Server_user_guide/content/clientserver/configuringsimbaclientodbc/simbaclientodbcunix.htm" target="_blank" rel="noopener">SimbaEngine X SDK</a> to connect through ODBC or JDBC to ThoughtSpot&#8217;s remote data stores.
 The instructions on this page explain how to configure the Simba ODBC driver on a Windows workstation.</p>
 </div>
 <div class="paragraph">
@@ -1989,7 +1989,7 @@ This workstation is the same machine where you plan to run your ETL activities.<
 <div class="sectionbody">
 <div class="paragraph">
 <p>These instructions include directions to use the <code>ssh</code> command.
-Make sure your Windows workstation is equipped with a tool <a href="#https://www.putty.org/">such as Putty</a> for making <code>ssh</code> connections to your ThoughtSpot server.</p>
+Make sure your Windows workstation is equipped with a tool <a href="https://www.putty.org/" target="_blank" rel="noopener">such as Putty</a> for making <code>ssh</code> connections to your ThoughtSpot server.</p>
 </div>
 <div class="paragraph">
 <p>The ODBC driver for Windows requires Visual C&#43;&#43; Redistributable for Visual Studio 2013.
@@ -2009,7 +2009,7 @@ You are prompted to install it during installation of the driver if it isn&#8217
 </div>
 </div>
 <div class="paragraph">
-<p>If it isn&#8217;t installed, make sure you <a href="#https://www.microsoft.com/en-us/download/details.aspx?id=40784">download and install it</a> before continuing.</p>
+<p>If it isn&#8217;t installed, make sure you <a href="https://www.microsoft.com/en-us/download/details.aspx?id=40784" target="_blank" rel="noopener">download and install it</a> before continuing.</p>
 </div>
 </div>
 </div>
@@ -2028,20 +2028,12 @@ You are prompted to install it during installation of the driver if it isn&#8217
 <p>Verify the node IP(s).</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ tscli node ls</code></pre>
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ tscli node ls
+172.18.231.17
+172.18.231.18</code></pre>
 </div>
 </div>
 </li>
-</ol>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>172.18.231.17
-172.18.231.18</pre>
-</div>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
 <li>
 <p>Make a note of each IP;
 there may be more than one.</p>
@@ -2247,7 +2239,7 @@ Typically, this user is a user with data management or administrative privileges
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>SCHEMA</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>falcon_default_schema</code> is the default</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>falcon_default_schema</code> is the default.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>UID</code></p></td>
@@ -2263,12 +2255,12 @@ Typically, this user is a user with data management or administrative privileges
 <p>You don&#8217;t have to use the ThoughtSpot default schema.
 You can specify your own.
 We recommend that you define a default schema.
-Otherwise, you must supply a schema  every time you use the ODBC driver.
-Moreover, without a schema (or if the  schema is not present), the ODBC driver returns an error that states that the schema  could not be found.</p>
+Otherwise, you must supply a schema every time you use the ODBC driver.
+Moreover, without a schema (or if the schema is not present), the ODBC driver returns an error that states that the schema could not be found.</p>
 </div>
 <div class="paragraph">
 <p>Similarly, adding the <code>UID</code> and <code>PWD</code> properties are not required.
-If you  don&#8217;t add them, you are prompted to supply them each time you connect.</p>
+If you don&#8217;t add them, you are prompted to supply them each time you connect.</p>
 </div>
 <div class="paragraph">
 <p>When you are done, your options should look similar to the following:</p>

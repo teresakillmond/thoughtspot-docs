@@ -1717,7 +1717,7 @@
     <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="troubleshooting-intro.html">Troubleshooting data integrations</a>
+    <a class="nav-link" href="troubleshooting-intro-data-int.html">Troubleshooting data integrations</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="enable-ODBC-log.html">Enable ODBC logs</a>
@@ -1971,9 +1971,6 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The ThoughtSpot connection drivers support a limited set of SQL commands.</p>
-</div>
-<div class="paragraph">
 <p>The ODBC and JDBC drivers support a limited set of SQL commands.
 When developing software that uses a ThoughtSpot ODBC driver, use this reference of supported commands.
 This reference is intended for developers using other tools (ETL, etc.) to connect to ThoughtSpot through the ODBC or JDBC driver.</p>
@@ -1993,10 +1990,10 @@ ThoughtSpot displays <code>VARCHAR</code> fields using lower case, regardless of
 </div>
 </div>
 <div class="sect1">
-<h2 id="_supported_commands"><a class="anchor" href="#_supported_commands"></a>Supported commands</h2>
+<h2 id="_odbc"><a class="anchor" href="#_odbc"></a>ODBC</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>These SQL commands are supported for ODBC and JDBC:</p>
+<p>These SQL commands are supported for ODBC:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2010,138 +2007,6 @@ The table is replicated on each node.</p>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-SQL hljs" data-lang="SQL">  CREATE TABLE country_dim (id_number int, country varchar, CONSTRAINT PRIMARY KEY (id_number));</code></pre>
 </div>
-</div>
-</li>
-<li>
-<p><code>CREATE DATABASE</code></p>
-<div class="paragraph">
-<p>Creates a database.
-For example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-SQL hljs" data-lang="SQL">  CREATE DATABASE "fruit_database";</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p><code>CREATE SCHEMA</code></p>
-<div class="paragraph">
-<p>Creates a schema within the current database.
-For example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-SQL hljs" data-lang="SQL">  CREATE SCHEMA "fruit_schema";</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p><code>ALTER TABLE &lt;table&gt; ADD|DROP|RENAME COLUMN &lt;column&gt;</code></p>
-<div class="paragraph">
-<p>Alters a table to add, drop, or rename a column.</p>
-</div>
-<div class="paragraph">
-<p>When you add a column to an existing table, you must provide a default value to use for existing rows.
-For example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-SQL hljs" data-lang="SQL">  ALTER TABLE "cart" ADD COLUMN "nickname" varchar(255) DEFAULT 'no nickname';</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-SQL hljs" data-lang="SQL">  ALTER TABLE "cart" DROP COLUMN "nickname";</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-SQL hljs" data-lang="SQL">  ALTER TABLE "sales" ADD CONSTRAINT PRIMARY KEY ("PO_number");</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p><code>ALTER TABLE &lt;table&gt; DROP CONSTRAINT PRIMARY KEY;</code></p>
-<div class="paragraph">
-<p>Drops the primary key from a table.</p>
-</div>
-<div class="paragraph">
-<p>Note that if you then add a new primary key, the same upsert behavior will be applied as with adding any primary key.
-This can result in data deletion, so make sure you understand how the upsert will affect your data ahead of time.
-For example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-SQL hljs" data-lang="SQL">  ALTER TABLE "sales" DROP CONSTRAINT PRIMARY KEY;</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-SQL hljs" data-lang="SQL">  ALTER TABLE "sales" ADD CONSTRAINT PRIMARY KEY ("PO_number");</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p><code>ALTER TABLE &lt;table&gt; DROP [CONSTRAINT | RELATIONSHIP] &lt;name&gt;;</code></p>
-<div class="paragraph">
-<p>Drops the named foreign key or relationship between two tables.
-For example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-SQL hljs" data-lang="SQL">  ALTER TABLE "sales_fact" DROP CONSTRAINT "FK_PO_number";</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-SQL hljs" data-lang="SQL">  ALTER TABLE "fruit_dim" DROP RELATIONSHIP "REL_dates";</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p><code>ALTER TABLE &lt;table&gt; [SET DIMENSION | SET FACT [PARTITION BY HASH [(&lt;shards&gt;)] [KEY(&lt;column&gt;)]]]</code></p>
-<div class="paragraph">
-<p>Changes the partitioning on a table by doing one of:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>re-sharding a sharded table</p>
-</li>
-<li>
-<p>changing a replicated table to a sharded table</p>
-</li>
-<li>
-<p>changing a sharded table to a replicated (unsharded) table</p>
-<div class="paragraph">
-<p>By default, ThoughtSpot does not shard dimension tables.</p>
-</div>
-<div class="paragraph">
-<p>To change the partitioning on a table, or to change a dimension table to a sharded table, use ALTER TABLE&#8230;&#8203;SET FACT PARTITION BY HASH&#8230;&#8203;;</p>
-</div>
-<div class="paragraph">
-<p>To make a sharded table into a dimension table (replicated on every node), use ALTER TABLE&#8230;&#8203;SET DIMENSION;
-command.</p>
-</div>
-<div class="paragraph">
-<p>Examples of this statement:</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><code>ALTER TABLE "sales_fact" SET FACT PARTITION BY HASH (96) KEY   ("PO_number");
-ALTER TABLE "fruit_dim" SET DIMENSION;</code></p>
-</div>
-</li>
-<li>
-<p><code>ALTER TABLE &lt;table&gt; MODIFY COLUMN &lt;column&gt; &lt;new_data_type&gt;;</code></p>
-<div class="paragraph">
-<p>Changes the data type of a column.
-This can have implications on sharding and primary key behavior.
-See <a href="about-data-type-conversion.html#concept_u2t_clg_wv" class="page">About data type conversion</a>.
-For example:   <code>ALTER TABLE fact100 MODIFY COLUMN product_id int;</code></p>
 </div>
 </li>
 <li>
@@ -2179,146 +2044,15 @@ Example: You could remove all data for sales before a certain date to free up sp
 </div>
 </div>
 </li>
-<li>
-<p><code>TRUNCATE TABLE &lt;table&gt;</code></p>
-<div class="paragraph">
-<p>Removes all data from a table, but preserves its metadata, including all GUIDs, relationships, etc.
-This can be used to force a new schema for a table without losing the metadata.</p>
-</div>
-<div class="paragraph">
-<p>However, this operation removes all existing data from the table and must be used with caution.
-You must reload the data following a TRUNCATE, or all dependent objects (worksheets and pinboards) in ThoughtSpot will become invalid.
-For example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-SQL hljs" data-lang="SQL">  TRUNCATE TABLE "location";</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p><code>DROP DATABASE &lt;database&gt;</code></p>
-<div class="paragraph">
-<p>Drops a database and all of its schemas and tables.
-For example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-SQL hljs" data-lang="SQL">  DROP DATABASE "fruit_database";</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p><code>DROP SCHEMA &lt;schema&gt;</code></p>
-<div class="paragraph">
-<p>Drops a schema within the current database, and drops all of the tables in the schema.
-For example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-SQL hljs" data-lang="SQL">  DROP SCHEMA "fruit_schema";</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p><code>DROP TABLE &lt;table&gt;</code></p>
-<div class="paragraph">
-<p>Drops a table.
-For example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-SQL hljs" data-lang="SQL">  DROP TABLE "location";</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p><code>SHOW DATABASES</code></p>
-<div class="paragraph">
-<p>Lists all available databases.</p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-SQL hljs" data-lang="SQL">  SHOW DATABASES;</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p><code>SHOW SCHEMAS</code></p>
-<div class="paragraph">
-<p>Lists all schemas within the current database.
-For example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-SQL hljs" data-lang="SQL">  SHOW SCHEMAS;</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p><code>SHOW TABLES</code></p>
-<div class="paragraph">
-<p>Lists all tables within the current database by schema.
-For example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-SQL hljs" data-lang="SQL">  SHOW TABLES;</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p><code>SHOW TABLE &lt;table&gt;</code></p>
-<div class="paragraph">
-<p>Lists all the columns for a table.
-For example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-SQL hljs" data-lang="SQL">  SHOW TABLE "locations";</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p><code>SCRIPT SERVER</code></p>
-<div class="paragraph">
-<p>Generates the TQL schema for all tables in all databases on the server.
-For example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-SQL hljs" data-lang="SQL">  SCRIPT SERVER;</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p><code>SCRIPT DATABASE &lt;database&gt;</code></p>
-<div class="paragraph">
-<p>Generates the TQL schema for all tables in a database.
-For example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-SQL hljs" data-lang="SQL">  SCRIPT DATABASE "fruit_database";</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p><code>SCRIPT TABLE &lt;table&gt;</code></p>
-<div class="paragraph">
-<p>Generates the TQL schema for a table.
-For example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-SQL hljs" data-lang="SQL">  SCRIPT TABLE "vendor";</code></pre>
-</div>
-</div>
-</li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_jdbc"><a class="anchor" href="#_jdbc"></a>JDBC</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>TRUNCATE</code> is not supported. Instead, use <code>DELETE FROM TABLE</code> which is functionally equivalent to "truncate table" in terms of table compression and so forth.</p>
 </div>
 </div>
 </div>

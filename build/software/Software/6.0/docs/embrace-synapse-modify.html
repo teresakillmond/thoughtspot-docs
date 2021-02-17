@@ -1717,7 +1717,7 @@
     <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="troubleshooting-intro.html">Troubleshooting data integrations</a>
+    <a class="nav-link" href="troubleshooting-intro-data-int.html">Troubleshooting data integrations</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="enable-ODBC-log.html">Enable ODBC logs</a>
@@ -2035,8 +2035,10 @@
 </li>
 <li>
 <p>Expand the database table drop-down menu, and select the tables and columns you want to add.</p>
-<div class="paragraph">
-<p><span class="image"><img src="_images/redshift-edittables.png" alt="Select tables and columns"></span></p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/redshift-edittables.png" alt="Select tables and columns">
+</div>
 </div>
 </li>
 <li>
@@ -2109,7 +2111,7 @@ ThoughtSpot recommends that you check the dependencies before and after you rema
 </div>
 </div>
 <div class="sect1">
-<h2 id="_deleting_a_table_from_a_synapse_connection"><a class="anchor" href="#_deleting_a_table_from_a_synapse_connection"></a>Deleting a table from a Synapse connection</h2>
+<h2 id="deleting-a-table-from-a-synapse-connection"><a class="anchor" href="#deleting-a-table-from-a-synapse-connection"></a>Deleting a table from a Synapse connection</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>ThoughtSpot checks for dependencies whenever you try to remove a table in a connection.
@@ -2154,7 +2156,7 @@ See <a href="#deleting-a-table-with-dependent-objects">Deleting a table with dep
 </ol>
 </div>
 <div class="sect2">
-<h3 id="_deleting_a_table_with_dependent_objects"><a class="anchor" href="#_deleting_a_table_with_dependent_objects"></a>Deleting a table with dependent objects</h3>
+<h3 id="deleting-a-table-with-dependent-objects"><a class="anchor" href="#deleting-a-table-with-dependent-objects"></a>Deleting a table with dependent objects</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2172,7 +2174,7 @@ See <a href="#deleting-a-table-with-dependent-objects">Deleting a table with dep
 </div>
 <div class="paragraph">
 <p>You can also click the name of a table and then click the linked objects to see a list of dependent objects with links.
-The list shows the names of the dependent objects (worksheets, pinboards or answers), and the columns they use from that table.
+The list shows the names of the dependent objects (Worksheets, Pinboards or Answers), and the columns they use from that table.
 You can use this information to determine the impact of changing the structure of the data source or to see how widely used it is.
 Click a dependent object to modify or delete it.</p>
 </div>
@@ -2202,8 +2204,10 @@ Because of this, you must delete all of the sources and tasks that use that conn
 </li>
 <li>
 <p>Click <strong>Delete</strong>, and then click <strong>Delete</strong> again to confirm.</p>
-<div class="paragraph">
-<p><span class="image"><img src="_images/synapse-deleteconnection.png" alt="Delete a connection"></span> -&#8594;</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/synapse-deleteconnection.png" alt="Delete a connection">
+</div>
 </div>
 <div class="paragraph">
 <p>If you attempt to delete a connection with dependent objects, the operation is blocked, and a "Cannot delete" warning appears with a list of dependent objects with links.</p>
