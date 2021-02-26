@@ -81,7 +81,9 @@ This flag shows help for all supported commands.
 ----
 
 Turns verbose logging on for the console.
-By default, logs are written to both the console and log files, with the log files containing the highest verbosity log messages. The default is `false`.
+By default, logs are written to both the console and log files, with the log files containing the highest verbosity log messages.
+
+The default is `false`.
 
 [#tscli--noautoconfig]
 === noautoconfig
@@ -91,7 +93,9 @@ By default, logs are written to both the console and log files, with the log fil
 --noautoconfig
 ----
 
-Prompts y/n response for each question within a command, instead of assuming `yes`. The default is `True`.
+Prompts y/n response for each question within a command, instead of assuming `yes`.
+
+The default is `True`.
 
 [#tscli--autoconfig]
 === autoconfig
@@ -102,7 +106,9 @@ Prompts y/n response for each question within a command, instead of assuming `ye
 ----
 
 Automatically configures properties of the cluster whenever possible.
-User may still be prompted for certain inputs. The default is `False`.
+User may still be prompted for certain inputs.
+
+The default is `False`.
 
 [#tscli--yes]
 === yes
@@ -113,7 +119,9 @@ User may still be prompted for certain inputs. The default is `False`.
 ----
 
 Automatically configures properties of the cluster when possible.
-User may still be prompted for certain inputs. The default is `False`.
+User may still be prompted for certain inputs.
+
+The default is `False`.
 
 [#tscli--cluster]
 === cluster
@@ -124,7 +132,9 @@ User may still be prompted for certain inputs. The default is `False`.
 ----
 
 Name of the cluster.
-Used when a cluster is not automatically detected. The default is `False`.
+Used when a cluster is not automatically detected.
+
+The default is `False`.
 
 [#tscli--zoo]
 === zoo
@@ -183,7 +193,7 @@ This subcommand has the following options:
 `tscli alert refresh`::
   Refreshes alert metadata on the cluster.
 `tscli alert silence --name _NAME_`::
-  Silences the alert with `NAME`, such as `DISK_ERROR`. Silenced alerts are still recorded in postgres, but emails are not sent out.
+  Silences the alert with `NAME`. For example, `DISK_ERROR`. Silenced alerts are still recorded in postgres, but emails are not sent out.
 tscli alert status::
   Shows the status of cluster alerts.
 tscli alert unsilence --name NAME::
@@ -202,9 +212,12 @@ This subcommand has the following options:
 `tscli ansible checkout --host _HOST_`::
   Checks out Ansible playbook with the target `HOST` that is running the `ts_ansible` service.
 `tscli ansible commit --host _HOST_`::
-  Commits Ansible playbooks with the target `HOST` that is running the `ts_ansible service`. Use this subcommand to install and configure third-party software on the ThoughtSpot cluster. For details, see these articles:
-  * xref:about-secure-monitor-sw.adoc[About third party security and monitoring software]
-  * xref:install-secure-monitor-sw.adoc[Installing third party security and monitoring software]
+  Commits Ansible playbooks with the target `HOST` that is running the `ts_ansible service`.
+
+Use this subcommand to install and configure third-party software on the ThoughtSpot cluster. For details, see these articles:
+
+  - xref:about-secure-monitor-sw.adoc[About third party security and monitoring software]
+  - xref:install-secure-monitor-sw.adoc[Installing third party security and monitoring software]
 
 [#tscli-backup]
 === backup
@@ -218,21 +231,30 @@ This subcommand has the following options:
 
 `tscli backup create [-h] [--mode {full,light,dataless}] [--type {full,incremental}] [--base BASE]`
 
-`[--storage_type {local,nas,cloud}] [--remote] [--no-orion-master] name out`::
-  Pulls a snapshot and saves it as a backup. You must specify the snapshot name, `name`, and also the backup directory, `out`. The command has the following optional parameters:
-  `--mode {full,light,dataless}`;; Mode of backups. The default is `full`.
+`[--storage_type {local,nas,cloud}] [--remote] [--no-orion-master]`::
+  Pulls a snapshot and saves it as a backup, with these parameters:
+  `--mode {full,light,dataless}`;; Mode of backups.
+The default is `full`.
   `--type`;; Type of backup. Only `STANDALONE` is supported.
-  `--base _BASE_`;; Based snapshot name for incremental backup. Because `incremental` is not implemented, neither is this option. There is no default setting.
-  `--storage_type {local,nas,cloud}`;;  Storage type of output directory. The default setting is `local`.
-  `--remote`;; Takes backup through Orion. The default setting is `True`.
-  `--no-orion-master`;; Determines whether Orion is available during backup. The default is `False`.
-  `--bucket_name _BUCKET_NAME_`;; The name of the s3/gcs bucket to create the backup. The platform depends on the storage type of the cluster. You must specify `--storage_type` as `cloud`.
-  `--staging_dir _STAGING_DIR_`;; Used for staging hdfs data in cloud based backups. No effect in non-cloud based backups. You must specify `--storage_type` as `cloud`.
+  `--base _BASE_`;; Based snapshot name for incremental backup. Because `incremental` is not implemented, neither is this option.
+There is no default setting.
+  `--storage_type {local,nas}`;;  Storage type of output directory.
+The default setting is `local`.
+  `--remote`;; Takes backup through orion master.
+  The default setting is `True`.
+  `--no-orion-master`;; Determines whether orion master is available during backup. The default is `False`.
 
 `tscli backup delete _ID_`::
   Deletes the backup with the specified ID.
 `tscli backup ls`::
   Lists all periodic backups taken by the system. This command only shows periodic backups, not manual backups.
+`tscli backup restore`::
+Restores cluster using backup, with the following parameters:
+`--release _RELEASE_`;; Restore the cluster on a specific release number.
+`--disable__rotate_keys`;; Disables cluster rotate key configurations. The default is `False.`
+`--enable_cloud_storage`;; Enables object storage, on the specified platform, either `s3a` or `gcs`. For example, run `tscli backup restore --enable_cloud_storage=s3a` to enable AWS S3 object storage.
+`--heterogeneous`;; Should be set for heterogeneous clusters. The default is `False`.
+
 
 [#tscli-backup-policy]
 === backup-policy
@@ -249,9 +271,9 @@ This subcommand has the following options:
 `tscli backup-policy create`::
   Prompts an editor for you to edit the parameters of a new periodic backup policy, with the following parameters:
   `name`;; Specify a name for your backup.
-  `mode {full,light,dataless}`;; The backup mode. A `FULL` backup is required for restoring a cluster. The default is `full.`
+  `mode {full,light,dataless}`;; The backup mode. A `FULL` backup is required for restoring a cluster.+++<br>+++The default is `full.`
   `type`;; The backup type. Only `STANDALONE` is supported.
-  `directory`;; The location on the disk to place the backup. You specify an existing directory path as `home/admin/folder`. The `folder` cannot already exist. ThoughtSpot creates the folder when it runs a backup.
+  `directory`;; The location on the disk to place the backup. You specify an existing directory path, but the folder (the last part of the path: `home/admin/folder`) must not already exist. ThoughtSpot creates the folder when it runs a backup.
   `storage_type {NAS,local}`;; The type of storage you are using. `NAS` storage is recommended for `FULL` backups.
   `--config _CONFIG_`;; Specifies the text format of the periodic backup policy config.
 
@@ -312,8 +334,8 @@ This subcommand has the following options:
   `--end_date _END_DATE_`;; The end date for the custom calendar, in the form `mm/dd/yyyy`.
   `--calendar_type {MONTH_OFFSET,4-4-5,4-5-4,5-4-4}`;; The type of custom calendar. The default is `MONTH_OFFSET`.
   `--month_offset {January,February,March,April,May,June,July,August,September,October,November,December}`;; The month offset that starts the year, if the calendar is the `MONTH_OFFSET` type. The default is `January`.
-  `--start_day_of_week _DAY_OF_WEEK_`;; The day for starting the week. The default is `Sunday`.
-  `--quarter_name_prefix _QUARTER_NAME_PREFIX_`;; The string for the prefix to the quarter.
+  `--start_day_of_week`;; The day for starting the week. The default is `Sunday`.
+  `--quarter_name_prefix`;; The string for the prefix to the quarter.
   `--year_name_prefix _YEAR_NAME_PREFIX_`;; The string for the prefix to the year.
   `--username _USERNAME_`;; The admin username for ThoughtSpot login.
 
@@ -335,7 +357,7 @@ This subcommand has the following options:
 [#tscli-callhome]
 === callhome
 
-Provides usage statistics to ThoughtSpot.
+Provides usage statistics to ThoughtSpot by uploading the callhome bundle data daily into Egnyte.
 
 ----
 tscli callhome [-h] {disable,enable,generate-bundle}
@@ -344,14 +366,13 @@ tscli callhome [-h] {disable,enable,generate-bundle}
 This subcommand has the following options:
 
 `tscli callhome enable --customer_name _CUSTOMER_NAME_`::
-  Enables the callhome feature. This feature is enabled by default.
-  `--customer_name _CUSTOMER_NAME_`;; The parameter `customer_name` takes the form `Shared/CUSTOMER_NAME/stats`.
+  Enables the callhome feature. This feature is enabled by default.+++<br>+++ The parameter `customer_name` takes the form `Shared/CUSTOMER_NAME/stats`.
 `tscli callhome disable`::
   Turns off the callhome feature.
 `tscli callhome generate-bundle [--d D] [--since SINCE]`::
   Generates the callhome stats `*.tar` file, with the following parameters:
   `--d _D_`;; Destination folder for the `*.tar` file. There is no default setting.
-  `--since _SINCE_`;; Grabs `callhome` data from the specified time window, in the past. This should be a human-readable duration string, such as `4h` (4 hours), `30m` (30 minutes), `1d` (1 day). This option generates a `*.tar` file of the cluster metrics and writes it to the specified directory. Here, `SINCE` is how many days back the file must start. There is no default setting
+  `--since _SINCE_`;; Grabs `callhome` data from the specified time window in the past.+++<br>+++ This should be a human-readable duration string, such as `4h` (4 hours), `30m` (30 minutes), `1d` (1 day).+++<br>+++ This option generates a `*.tar` file of the cluster metrics and writes it to the specified directory. Here, `_SINCE_` is how many days back the file must start. +++<br>+++There is no default setting
 
 [#tscli-cassandra]
 === cassandra
@@ -381,11 +402,9 @@ tscli cluster [-h] {abort-update,bucket-migrate,bucket-name,check,create,downloa
 
 This subcommand has the following options:
 
+`tscli cluster abort-reinstall-os`:: Aborts in-progress reinstall.
 `tscli cluster abort-update`::
   Aborts an ongoing cluster update, if safe.
-`tscli cluster bucket-migrate`::
-  Migrates the cluster to use another S3/GCS bucket, also migrating the data from the current s3 bucket to the new bucket. This command has the following optional parameter:
-  `--name _NAME_`;; Name of the new bucket.
 `tscli cluster bucket-name`::
   Returns the name of the s3 bucket associated with the cluster, if there is one.
 `tscli cluster check [--path PATH] [--includes INCLUDES] [--retry RETRY] [--localhost] [--disable-events]`::
@@ -397,7 +416,7 @@ This subcommand has the following options:
   `--disable-events`;; Disables raising configuration events. The default is `False`.
 
 `tscli cluster create _release_`::
-  Creates a new cluster from the release file specified by adding the release number. Used by ThoughtSpot Support when installing a new cluster. For example, `tscli cluster create 6.3.1.tar.gz`. This command has the following parameters:
+  Creates a new cluster from the release file specified by adding the release number. +++<br>+++Used by ThoughtSpot Support when installing a new cluster. For example, `tscli cluster create 5.3.2.tar.gz`. +++<br>+++This command has the following parameters:
   `--disable_rotate_keys`;; Disables cluster rotate key configuration. The default is `False`.
   `--enable_cloud_storage {s3a,gcs}`;; Determines whether to enable Cloud Storage setup, and which storage format to use.
   `heterogeneous`;; Should be set for heterogeneous clusters. The default is `False`.
@@ -406,7 +425,7 @@ This subcommand has the following options:
   Downloads the specified release to the Hadoop Distributed File Sytem (HDFS) for a subsequent upgrade.
 
 `tscli cluster get-config`::
-  Gets current cluster network and time configuration. Prints JSON configuration to `stdout`. If the system cannot be connected to all interfaces, the command returns an error but continues to function. This command has the following parameters:
+  Gets current cluster network and time configuration. Prints JSON configuration to `stdout`. +++<br>+++If the system cannot be connected to all interfaces, the command returns an error but continues to function.+++<br>+++ This command has the following parameters:
   `--local`;; Gets the config for the local host only. The default is `False`.
   `--nodes NODES`;; A comma-separated list of specified nodes.
 
@@ -417,25 +436,28 @@ This subcommand has the following options:
   Lists the releases downloaded to the cluster.
 
 `tscli cluster load _backupdir_`::
-  Loads the state from a specified backup directory onto an existing cluster. This command has the following parameters:
-  `--reuse_cluster _CLUSTER_`;; Add this parameter to reuse the cluster service configs, instead of restoring from the backup directory.
-  `--cloud_data_dir _CLOUD_DATA_DIR_`;; Add this parameter to specify the cloud path to the restore.
+  Loads the state from a specified backup directory onto an existing cluster. Add `--reuse_cluster` to reuse the cluster service configs rather than restoring from the backup directory.
+
+ `tscli cluster reinstall-os`:: Reinstalls OS on all nodes of the cluster, with the following parameters:
+ `--secondary _SECONDARY_`;; A secondary drive for reinstall. The default is `sdd`.
+ `--stdin`;; Command to take JSON configuration from stdin.
 
 `tscli cluster restore --release _RELEASE backupdir_`::
-  Restores a cluster on the specified release number using the backup in the specified directory, `backupdir`. If you are restoring from a data-less backup, you must supply the release tarball for the corresponding software release. This command has the following parameters:
+  Restores a cluster on the specified release number using the backup in the specified directory, `backupdir`. If you are restoring from a data-less backup, you must supply the release tarball for the corresponding software release. +++<br>+++This command has the following parameters:
   `--disable_rotate_keys`;; Disables cluster rotate key configurations. The default is `False`.
   `--enable_cloud_storage {s3a,gcs}`;; Determines whether to enable Cloud Storage setup. For example, run `tscli cluster restore --enable_cloud_storage=s3a` to enable AWS S3 object storage.
   `--heterogeneous`;; Must be set for heterogeneous clusters. The default is `False`.
+
+`tscli cluster resume-reinstall-os`:: Resumes in-progress reinstall.
 
 `tscli cluster resume-update`::
   Resumes in-progress updates, with the following parameter:
   `--ignore_if_unhealthy`;; Comma-separated list of node IPs on which upgrade is not attempted if they are found to be unhealthy. If a node outside of this list is found unhealthy, the upgrade is aborted.
 
 `tscli cluster set-config`::
-  Sets cluster network and time configuration. Takes JSON configuration from `stdin`. This subcommand has the following parameters:
+  Sets cluster network and time configuration. Takes JSON configuration from `stdin`. +++<br>+++This subcommand has the following parameters:
   `--ipv4-only`;; Only use ipv4 for node communication. Requires passing ipMap in config unless no-network-change is also specified. The default is `False`.
   `--no-network-change`;; This flag ensures that a change made with set-config does not update network settings. The default is `False`.
-  `--allow_network_gateway_mismatch`;; Allows a network and gateway mismatch. The default is `False`.
 
 `tscli cluster set-min-resource-spec`::
   Sets the minimum resource configuration of the cluster, with the following parameter:
@@ -456,7 +478,7 @@ This subcommand has the following options:
 `tscli cluster status`::
   Gives the status of the cluster, including release number, date last updated, number of nodes, pending tables time, and services status. This subcommand has the following parameters:
   `--mode {basic,service,table,full,reinstall-os}`;; Specifies the kind of status message you want.
-  `--tail`::  Prints the details of creation and update progress. The default is `False`.
+  `--tail`;;  Prints the details of creation and update progress. The default is `False`.
   `--no-orion`;; Runs checks not related to orion. The default is `False`.
   `--includes _INCLUDES_`;; The name of the service, either falcon or sage.
 
@@ -489,7 +511,7 @@ This subcommand has the following option:
 
 `tscli command run _COMMAND_`::
   This subcommand has the following parameters:
-  `--nodes _NODES_`;; Space-separated IPs of nodes where to run the command. The default setting is `all`.
+  `--nodes _NODES_`;; Space-separated IPs of nodes on which to run the command. The default setting is `all`.
   `--dest_dir _DEST_DIR_`;; Directory to save the files that contain the output from each node. This is a mandatory parameter.
   `--copyfirst _COPYFIRST_`;; Command to copy the executable to required nodes first. The default setting is `False`.
   `--timeout _TIMEOUT_`;; Timeout waiting for the command to finish. The default setting is `60`.
@@ -571,7 +593,7 @@ tscli event [-h] {list}
 This subcommand and its options manage event notifications. This subcommand has the following option:
 
 `tscli event list [-h] [--include _INCLUDE_] [--since _SINCE_] [--from _FROM_] [--to _TO_] [--limit _LIMIT_] [--detail] [--summary_contains _SUMMARY_CONTAINS_] [--detail_contains _DETAIL_CONTAINS_] [--attributes _ATTRIBUTES_]`::
-  The `event list ` subcommand accepts these optional flags:
+  The `event list` subcommand accepts these optional flags:
   `--include _INCLUDE_`;; Options are all, config, and notification. The default is `config`.
   `--since _SINCE_`;; Grabs events from the specified time window. Should be a human readable duration string, such as `4h` (4 hours), `30m` (30 minutes), or `1d` (1 day).
   `--from _FROM_`;; Specifies the starting point for the time window to grab events from. Must be of the form `yyyymmdd-HH:MM`.
@@ -605,10 +627,10 @@ tscli fileserver [-h] {configure,download-release,purge-config,show-config,uploa
 This subcommand has the following options:
 
 `tscli fileserver configure [-h] --user _USER_ [--password _PASSWORD_]`::
-  Configures the secure file server username and password for file upload/download, and the call home feature. You only have to issue this command one time, to set up the connection to the secure file server. Reissue this command if the password changes. The parameter `PASSWORD` is optional. If a password is not specified, the system prompts the user to enter it.
+  Configures the secure file server username and password for file upload/download, and the call home feature. +++<br>+++You only have to issue this command one time, to set up the connection to the secure file server. Reissue this command if the password changes. +++<br>+++The parameter `PASSWORD` is optional. If a password is not specified, you will be prompted to enter it.
 
 `tscli fileserver download-release [-h] [--user _USER_] [--password _PASSWORD_] [--url _URL_] [--md5 _MD5_] [--out _OUT_] release`::
-  Downloads the specified release file, including its checksum, and verifies the integrity of release bundle. You must specify the exact release number, such as `6.3.1`. Before using this command for the first time, you must set up the file server connection using `tscli fileserver configure`.  You can then work with a member of the ThoughtSpot Support team because a privileged `user` and a corresponding `password` must be specified to download releases.  This command has the following parameters:
+  Downloads the specified release file, including its checksum, and verifies the integrity of release bundle. +++<br>+++You must specify the exact release number, such as `5.1.3`. +++<br>+++Before using this command for the first time, you must set up the file server connection using `tscli fileserver configure`.  You can then work with a member of the ThoughtSpot Support team because a privileged `user` and a corresponding `password` must be specified to download releases.  This command has the following parameters:
   `--user _USER_`;; The fileserver username.
   `--password _PASSWORD_`;; The fileserver password.
   `--url _URL_`;; Url from where the release needs to be downloaded.
@@ -622,7 +644,7 @@ This subcommand has the following options:
   Shows the file server configuration.
 
 `tscli fileserver upload [-h] [--user _USER_] [--password _PASSWORD_] --file_name _FILE_NAME_ --server_dir_path _SERVER_DIR_PATH_`::
-  Uploads the specified file to the specified directory on the secure file server. You may optionally specify the `user` and `password` to bypass the credentials specified when configuring the file server connection with `tscli fileserver configure`. Before using this command for the first time, you must set up the file server connection using `tscli fileserver configure`. This command uses the following flags:
+  Uploads the specified file to the specified directory on the secure file server. +++<br>+++You may optionally specify the `user` and `password` to bypass the credentials specified when configuring the file server connection with `tscli fileserver configure`. Before using this command for the first time, you must set up the file server connection using `tscli fileserver configure`. +++<br>+++This command uses the following flags:
   `--user _USER_`;; Username of the fileserver.
   `--password _PASSWORD_`;; Password of the fileserver. This is required and the command prompts you for it if you do not supply it.
   `--file_name _FILE_NAME_`;; Local file to upload.
@@ -638,7 +660,7 @@ tscli firewall [-h] {close-ports,disable,enable,open-ports,status}
 This subcommand has the following options:
 
 `tscli firewall close-ports --ports _PORTS_`::
-  Closes specified ports through firewall on all nodes. Accepts a comma-separated list of ports. Only closes ports that were previously opened using `open-ports`, and ignores ports that were not opened with `open-port`, or closed ports. Some essential ports are always kept open, such as `ssh`; they are not affected by this command or by `open-ports`.
+  Closes specified ports through firewall on all nodes. +++<br>+++Accepts a comma-separated list of ports. Only closes ports that were previously opened using `open-ports`, and ignores ports that were not opened with `open-port`, or closed ports. +++<br>+++Some essential ports are always kept open, such as `ssh`; they are not affected by this command or by `open-ports`.
 
 `tscli firewall disable`::
   Disables firewall.
@@ -647,7 +669,7 @@ This subcommand has the following options:
   Enables firewall.
 
 `tscli firewall open-ports --ports _PORTS_`::
-  Opens specified ports through a firewall on all nodes. Accepts a comma-separated list of ports. Ignores open ports. Some essential ports are always kept open, such as `ssh`; they are not affected by this command or by `close-ports`.
+  Opens specified ports through a firewall on all nodes.+++<br>+++ Accepts a comma-separated list of ports.+++<br>+++ Ignores open ports.+++<br>+++ Some essential ports are always kept open, such as `ssh`; they are not affected by this command or by `close-ports`.
 
 `tscli firewall status`::
   Shows whether firewall is currently enabled or disabled.
@@ -713,26 +735,26 @@ Manages the logging behavior.
 This subcommand has the following options:
 
 `tscli logs collect [-h] [--include _INCLUDE_] [--exclude _EXCLUDE_] [--since _SINCE_] [--from _FROM_] [--to _TO_] [--out _OUT_] [--maxsize _MAXSIZE_] [--sizeonly] [--nodes _NODES_]`::
-  Extracts logs from the cluster. Does not include any logs that were dropped because of log rotation. This subcommand has the following parameters:
-  `--include _INCLUDE_`;; Specifies a comma-separated list of logs to include. Each entry is either a "selector" or a glob for matching files. Selectors must be among: `all`, `orion`, `system`, `ts`. Anything starting with `/` is assumed to be a glob pattern, and it is interpreted through `find(1)`. Other entries are ignored. Put single quotes around the param value to prevent undesired glob expansion. The default is `all`.
-  `--exclude _EXCLUDE_`;; Comma separated list of logs to exclude. Applies to the list selected by `--include`. Params are interpreted just like in `--include`.
+  Extracts logs from the cluster. Does not include any logs that were dropped because of log rotation.+++<br>+++ This subcommand has the following parameters:
+  `--include _INCLUDE_`;; Specifies a comma-separated list of logs to include. Each entry is either a "selector" or a glob for matching files. Selectors must be among: `all`, `orion`, `system`, `ts`. Anything starting with `/` is assumed to be a glob pattern, and it is interpreted through `find(1)`. Other entries are ignored. Put single quotes around the param value to prevent undesired glob expansion.+++<br>+++ The default is `all`.
+  `--exclude _EXCLUDE_`;; comma-separated list of logs to exclude. Applies to the list selected by `--include`. Params are interpreted just like in `--include`.
   `--since _SINCE_`;; Grabs logs from the specified time window in the past. Should be a human-readable duration string, such as `4h` (4 hours), `30m` (30 minutes), `1d` (1 day).
   `--from _FROM_`;; Timestamp where collection begins; must be of the form `yyyymmdd-HH:MM`.
   `--to _TO_`;; Timestamp where collection ends; must be of the form `yyyymmdd-HH:MM`.
   `--out _OUT_`;; Tarball path for writing logs from each node. The default setting is `/tmp/logs.tar.gz`.
   `--maxsize _MAXSIZE_`;; Only fetch logs if size is smaller than this value. Can be specified in megabytes or gigabytes, such as `100MB`, `10GB`.
   `--sizeonly`;; Do not collect logs. Just report the size. The default setting is `False`.
-  `--nodes _NODES_`;; Comma separated list of nodes from where to collect logs. Skip this to use all nodes.
+  `--nodes _NODES_`;; Comma-separated list of nodes from where to collect logs. Skip this to use all nodes.
 
 `tscli logs runcmd [-h] --cmd CMD [--include _INCLUDE_] [--exclude _EXCLUDE_] [--since _SINCE_] [--from _FROM_] [--to _TO_] [--outfile _OUTFILE_] [--outdir _OUTDIR_] [--cmd_infmt _CMD_INFMT_] [--cmd_outfmt _CMD_OUTFMT_] [--nodes _NODES_]`::
-  Runs a Unix command on logs in the cluster matching the given constraints. Results are reported as text dumped to standard out, the specified output file, or as tarballs dumped into the specified directory. Accepts these optional flags:
+  Runs a Unix command on logs in the cluster matching the given constraints. Results are reported as text dumped to standard out, the specified output file, or as tarballs dumped into the specified directory. +++<br>+++Accepts these optional flags:
   `--cmd _CMD_`;; Unix-Command to run on the selected logs. Use single quotes to escape spaces and other common characters. Note the language used to specify CMDSTR has the following rules:
 
     * A logfile and its corresponding result file can be referred to by the keywords `SRCFILE` and `DSTFILE`. For example, `cp SRCFILE DSTFILE`.
     * Without any reference to `DSTFILE` in CMDSTR, `DSTFILE` will be appended to CMDSTR for output redirection. For example, `du -sch SRCFILE` gets auto-translated to `du -sch SRCFILE > DSTFILE`.
     * Without any reference to `SRCFILE`, the contents of the log are streamed to CMDSTR by pipe. For example, `tail -n100 | grep ERROR` gets auto-translated to `cat SRCFILE | tail -n100 |     grep ERROR > DSTFILE`.
-  `--include _INCLUDE_`;; Comma-separated list of logs to include. Each entry is either a "selector" or a glob for matching files. Selectors must be one of `all`, `orion`, `system`, or `ts`. Anything that starts with `/` (forward slash) is assumed to be a glob pattern and interpreted through `find(1)`. Other entries are ignored. Use single quotes around the parameter value to prevent undesired glob expansion. The default setting is `all`.
-  `--exclude _EXCLUDE_`;; Comma separated list of logs to exclude. Applies to the list selected by `--include`. Parameters are interpreted just like in `--include`.
+  `--include _INCLUDE_`;; Comma-separated list of logs to include. Each entry is either a "selector" or a glob for matching files. +++<br>+++Selectors must be one of `all`, `orion`, `system`, or `ts`. +++<br>+++Anything that starts with `/` (forward slash) is assumed to be a glob pattern and interpreted through `find(1)`. Other entries are ignored. +++<br>+++Use single quotes around the parameter value to prevent undesired glob expansion. The default setting is `all`.
+  `--exclude _EXCLUDE_`;; Comma-separated list of logs to exclude. Applies to the list selected by `--include`. Parameters are interpreted just like in `--include`.
   `--since _SINCE_`;; Grabs logs from the specified time window in the past. Should be a human-readable duration string, such as `4h` (4 hours), `30m` (30 minutes), or `1d` (1 day).
   `--from _FROM_`;; Timestamp where collection begins; must be of the form `yyyymmdd-HH:MM`.
   `--to _TO_`;; Timestamp where collection ends; must be of the form `yyyymmdd-HH:MM`.
@@ -776,7 +798,7 @@ This subcommand has the following options:
 
 `tscli monitoring set-config [-h] [--email _EMAIL_] [--clear_email] [--heartbeat_interval _HEARTBEAT_INTERVAL_] [--heartbeat_disable]`::
   Sets the monitoring configuration. The `monitoring` subcommand accepts the following optional flags:
-  `--email _EMAIL_`;; Comma separated list (no spaces) of email addresses where the cluster sends monitoring information.
+  `--email _EMAIL_`;; Comma-separated list (no spaces) of email addresses where the cluster sends monitoring information.
   `--clear_email`;; Disables monitoring emails by clearing email configuration. The default is `False`.
   `--heartbeat_interval _HEARTBEAT_INTERVAL_`;; Specify a heartbeat email generation interval in seconds. The interval should be greater than 0.
   `--heartbeat_disable`;; Disables heartbeat email generation. The default is `False`.
@@ -797,7 +819,7 @@ This subcommand has the following options:
   Lists mounts managed by NAS mounter service.
 
 `tscli nas mount-cifs [-h] --server _SERVER_ [--path_on_server _PATH_ON_SERVER_] --mount_point _MOUNT_POINT_ --username _USERNAME_ --password _PASSWORD_ [--uid _UID_] [--gid _GID_] [--options _OPTIONS_]`::
-  Mounts a CIFS device on all nodes. Accepts the following optional flags:
+  Mounts a CIFS device on all nodes. +++<br>+++Accepts the following optional flags:
   `--server _SERVER_`;; IP address or DNS name of CIFS service. For example, `10.20.30.40`.
   `--path_on_server _PATH_ON_SERVER_`;; Filesystem path on the CIFS source server to mount NAS. For example, `/a`. The default setting is `/` (forward slash).
   `--mount_point _MOUNT_POINT_`;; Directory on all cluster nodes where the NFS filesystem should be mounted on the target. If this directory does not exist, the command creates it. If this directory already exists, the command uses it for mounting. For example, `/mnt/external`.
@@ -808,7 +830,7 @@ This subcommand has the following options:
   `--options _OPTIONS_`;; Other command-line options to forward to the `mount.cifs` command. The default setting is `noexec`.
 
 `tscli nas mount-nfs [-h] [--server _SERVER_] [--path_on_server _PATH_ON_SERVER_] [--mount_point _MOUNT_POINT_] [--options _OPTIONS_] [--protocol {nfs,nfs4}]`::
-  Mounts the NFS filesystem on all nodes. Accepts the following optional flags:
+  Mounts the NFS filesystem on all nodes. +++<br>+++Accepts the following optional flags:
   `--server _SERVER_`;; IP address or DNS name of NFS service. For example, `10.20.30.40`.
   `--path_on_server _PATH_ON_SERVER_`;; Filesystem path on the NFS source server. For example, `/a/b/c/d`. The default setting is `/`.
   `--mount_point _MOUNT_POINT_`;; Directory on all cluster nodes of the target system. If this directory does not exist, the command creates it. If this directory already exists, the command uses it for mounting. For example, `/mnt/external`.
@@ -822,7 +844,7 @@ This subcommand has the following options:
 === node
 
 ----
-tscli node [-h] {check,ls,status}
+tscli node [-h] {check,ls,reinstall-os,resume-reinstall-os,status}
 ----
 
 This subcommand has the following options:
@@ -836,10 +858,14 @@ This subcommand has the following options:
   Lists all nodes in the cluster, with the following parameter:
   `--type {all,healthy,not-healthy}`;; Filters by node state. The default setting is `all`.
 
-`tscli node status`::
-  Get Node status for the operation specified by mode, with the following parameters:
-  `--mode { reinstall-os}`;; Mode for running node status.
-  `--tail`;; Prints the details of create and update progress. The default is `False`.
+  `tscli node reinstall-os [-h] [--secondary _SECONDARY_] [--cluster]`::
+  Reinstalls OS on a node. +++<br>+++ Accepts the following flags:
+  `--secondary _SECONDARY_`;; Secondary drive for reinstall. The default setting is `sdd`.
+  `--cluster`;; Use this flag to specify if the node is part of a cluster. The default setting is `False`.
+
+`tscli node resume-reinstall-os`::
+Resumes in-progress reinstall.
+
 
 [#tscli-notification]
 === notification
@@ -1035,9 +1061,17 @@ This subcommand has the following options:
   Sets the specified `relayhost` for SMTP (email) sent from the cluster. Accepts the following flag:
   `--force _FORCE_`;; Set even if relay host is not accessible. The default setting is `False`.
 
-  * On ThoughtSpot release 6.1.1 or later, and on release 6.0.5, you can specify a custom port to connect to the relay host. If you do not specify a port, the system uses the default recommended port, port 25. Use a custom port if port 25 is blocked in your environment.
-  * To use the default port, run the setup command normally: `$ tscli smtp set-relayhost IP_address`. To use a custom port instead of port 25, run the setup command, specifying the port you want to use: `$ tscli smtp set-relayhost IP_address:custom_port`.
-  * If you are on 6.1 rather than 6.1.1, or an a version earlier than 6.0.5, contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support,window="_blank"] to help you set up a custom port.
+Starting with release 6.0.5, you can specify a custom port to connect to the relay host. If you do not specify a port, the system uses the default recommended port, port 25. Use a custom port if port 25 is blocked in your environment.
+
+To use the default port, run the setup command normally:
+
+`$ tscli smtp set-relayhost IP_address`
+
+To use a custom port instead of port 25, run the setup command, specifying the port you want to use:
+
+`$ tscli smtp set-relayhost IP_address:custom_port`
+
+If you are on a version earlier than 6.0.5, contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support,window="_blank"] to use a custom port.
 
 `tscli smtp set-saslcredentials`::
   Sets SASL credentials and enables SMTP AUTH.
@@ -1075,8 +1109,6 @@ This subcommand has the following options:
   `storage_type {local,nas}`;; Storage type of output directory. The default is `local`.
   `--remote`;; Takes backup through orion master. The default is `False`.
   `--no-orion-master`;; Specifies whether orion master is available during backup. The default is `False`.
-  `--bucket_name _BUCKET_NAME_`;; The name of the s3/gcs bucket to create the backup. The platform depends on the storage type of the cluster. You must specify `--storage_type` as `cloud`.
-  `--staging_dir _STAGING_DIR_`;; Used for staging hdfs data in cloud based backups. No effect in non-cloud based backups. You must specify `--storage_type` as `cloud`.
 
 `tscli snapshot create [-h] _name reason ttl_`::
   Creates a new snapshot with the specified `name` and `reason`. This command does not accept `.` (periods). It does accept `-` (dashes or hyphens). The `ttl` parameter is the number of days after which this snapshot is automatically deleted. A value of `-1` disables automatic deletion.
@@ -1169,6 +1201,7 @@ This subcommand has the following options:
 `tscli ssl add-valid-hosts [-h] _VALID_HOSTS_`::
   Enables host validation for the specified host(s). Helps improve security. This feature is for all customers that have or are planning to enable SSL. Multiple hosts must be separated by a comma (,).
 
+Examples:
   * To ensure that the valid host is *cluster1.corp.example.com*, run the command `tscli ssl add-valid-hosts cluster1.corp.example.com`.
   * To allow all hosts that have the suffix *corp.example.com*, run the command `tscli ssl add-valid-hosts *.corp.example.com`. Use the wild card within the hostname.
   * To allow multiple valid hosts, such as both **.corp.example.com* and *cluster1*, run the command `tscli ssl add-valid-hosts *.corp.thoughtspot.com,cluster1`.
@@ -1209,39 +1242,25 @@ tscli sssd {clear-sudo-group,disable,disable-openldap,enable,enable-openldap,set
 
 This subcommand uses system security services daemon (SSSD), and has the following options:
 
-[#tscli-sssd-clear-sudo-group]
-`tscli sssd clear-sudo-group _ACTIVE_DIRECTORY_GROUP_NAME_`::
-  Clears a specified AD sudo group so that they no longer have `sudo` permissions.
-
-[#tscli-sssd-disable]
-`tscli sssd disable`::
-  Disables Active Directory access. Leaves identity domain and removes AD sudo group.
-
-[#tscli-sssd-disable-openldap]
-`tscli sssd disable-openldap`::
-  Disables OpenLDAP integration.
-
-NOTE: If you mapped your OpenLDAP admin user to ThoughtSpot's local admin user through the Ansible playbook while deploying ThoughtSpot on RHEL, do not run this command. If you ran `tscli sssd enable-openldap` and also mapped your OpenLDAP admin user to ThoughtSpot's local admin user through the Ansible playbook, contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support,window="_blank"].
-
 [#tscli-sssd-enable]
 `tscli sssd enable --user _USER_ --domain _DOMAIN_`::
   Enables system Active Directory (AD) user access on a single node. Prompts for password credentials. The user must have permission to join a computer or VM to the domain. This subcommand has the following parameters:
   `--user _USER_`;; You must specify the user to receive access.
   `--domain _DOMAIN_`::  You must specify the domain.
 
-[#tscli-sssd-enable-openldap]
-`tscli sssd enable-openldap`::
-  Connects to your OpenLDAP server and allows users to SSH into your ThoughtSpot cluster with their LDAP credentials, without using the fully qualified domain name.
-
-NOTE: If you mapped your OpenLDAP admin user to ThoughtSpot's local admin user through the Ansible playbook while deploying ThoughtSpot on RHEL, do not run this command.
-
-This subcommand has the following parameters:
-  `--server_base_dn _SERVER_BASE_DN_`;; Specify the LDAP server base distinguished name, in the form _dc=<optional_subdomain>,dc=<domain>,dc=<top-level-domain>_, such as _dc=thoughtspot,dc=com_.
-  `--server_uri _SERVER_URI_`;; Specify the LDAP server uniform resource identifier, in the form _ldap://<ldap_server_IP>_.
+[#tscli-sssd-disable]
+`tscli sssd disable`::
+Disables Active Directory access. Leaves identity domain and removes AD sudo group.
 
 [#tscli-sssd-set-sudo-group]
 `tscli sssd set-sudo-group _ACTIVE_DIRECTORY_GROUP_NAME_`::
-  Allows `sudo` permissions for a specified AD group. For more about setting up Active Directory access, see xref:active-directory-based-access.adoc[Enable Active Directory based access].
+Allows `sudo` permissions for a specified AD group.
+
+[#tscli-sssd-clear-sudo-group]
+`tscli sssd clear-sudo-group _ACTIVE_DIRECTORY_GROUP_NAME_`::
+Clears a specified AD sudo group so that they no longer have `sudo` permissions.
+
+For more about setting up Active Directory access, see xref:active-directory-based-access.adoc[Enable Active Directory based access].
 
 [#tscli-storage]
 === storage
@@ -1274,7 +1293,7 @@ The `storage gc` subcommand accepts these optional flags:
   `--localhost_only`;; Only removes the logs on the local host. If not specified, the command acts on the entire cluster.
 
 `tscli storage df [--mode disk|hdfs]`::
-  Checks the disk usage on the relevant mounts. Returns output similar to the Linux system command `df -h directory`.
+  Checks the disk usage on the relevant mounts. Returns output similar to the Linux system command `df -h _directory_`.
 
 [#tscli-support]
 === support
@@ -1291,7 +1310,9 @@ This subcommand has the following options:
 
 `tscli support bundle [-h] [--include _INCLUDE_] [--exclude _EXCLUDE_] [--list_selectors] [--since _SINCE_] [--from _FROM_] [--to _TO_] [--out _OUT_] [--nodes _NODES_]`::
   This subcommand specifies the support bundle. It uses the following flags:
-  `--include _INCLUDE_`;; Comma-separated list of selectors to include. Each entry is either a "selector" or a glob for matching files. To see the list of valid selectors, run this command with `--list_selectors`. You may also specify `all` to get all selectors and logs, and `basic` to get only the basic selectors. Selectors can be used for logs collection: `all`, `orion`, `system`, `ts`, or the name of a service. Anything that starts with `/` (forward slash) is assumed to be a glob pattern, and is interpreted through `find(1)`. Other entries are ignored. Use single quotes around the parameter value to prevent undesired glob expansion. Use `all` to collect all selectors and all logs. The default setting is `all_but_logs`.
+  `--include _INCLUDE_`;; Comma-separated list of selectors to include. Each entry is either a "selector" or a glob for matching files. To see the list of valid selectors, run this command with `--list_selectors`. You may also specify `all` to get all selectors and logs, and `basic` to get only the basic selectors. +++<br>+++Selectors can be used for logs collection: `all`, `orion`, `system`, `ts`, or the name of a service. +++<br>+++Anything that starts with `/` (forward slash) is assumed to be a glob pattern, and is interpreted through `find(1)`. Other entries are ignored. +
+TIP: Use single quotes around the parameter value to prevent undesired glob expansion. Use `all` to collect all selectors and all logs. The default setting is `all_but_logs`.
+
   `--exclude _EXCLUDE_`;; Comma-separated list of selectors to exclude. Applies to the list selected by `--include`. Parameters are interpreted in the same manner as in `--include`. Use the special keyword `logs` to exclude logs collection altogether. There is no default setting.
   `--list_selectors`;; Lists the selectors available for `--include` and `--exclude`, and then exits. The default setting is `False`.
   `--since _SINCE_`;; Grabs logs from the specified time window. Should be a human-readable duration string, such as `4h` (4 hours), `30m` (30 minutes), `1d` (1 day). There is no default setting.
