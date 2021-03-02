@@ -2064,7 +2064,10 @@ This flag lists the specified command&#8217;s subcommands and their definitions.
 </div>
 <div class="paragraph">
 <p>Turns verbose logging on for the console.
-By default, logs are written to both the console and log files, with the log files containing the highest verbosity log messages. The default is <code>false</code>.</p>
+By default, logs are written to both the console and log files, with the log files containing the highest verbosity log messages.</p>
+</div>
+<div class="paragraph">
+<p>The default is <code>false</code>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2075,7 +2078,10 @@ By default, logs are written to both the console and log files, with the log fil
 </div>
 </div>
 <div class="paragraph">
-<p>Prompts y/n response for each question within a command, instead of assuming <code>yes</code>. The default is <code>True</code>.</p>
+<p>Prompts y/n response for each question within a command, instead of assuming <code>yes</code>.</p>
+</div>
+<div class="paragraph">
+<p>The default is <code>True</code>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2087,7 +2093,10 @@ By default, logs are written to both the console and log files, with the log fil
 </div>
 <div class="paragraph">
 <p>Automatically configures properties of the cluster whenever possible.
-User may still be prompted for certain inputs. The default is <code>False</code>.</p>
+User may still be prompted for certain inputs.</p>
+</div>
+<div class="paragraph">
+<p>The default is <code>False</code>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2099,7 +2108,10 @@ User may still be prompted for certain inputs. The default is <code>False</code>
 </div>
 <div class="paragraph">
 <p>Automatically configures properties of the cluster when possible.
-User may still be prompted for certain inputs. The default is <code>False</code>.</p>
+User may still be prompted for certain inputs.</p>
+</div>
+<div class="paragraph">
+<p>The default is <code>False</code>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2111,7 +2123,10 @@ User may still be prompted for certain inputs. The default is <code>False</code>
 </div>
 <div class="paragraph">
 <p>Name of the cluster.
-Used when a cluster is not automatically detected. The default is <code>False</code>.</p>
+Used when a cluster is not automatically detected.</p>
+</div>
+<div class="paragraph">
+<p>The default is <code>False</code>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2222,7 +2237,7 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 </dd>
 <dt class="hdlist1"><code>tscli alert silence --name <em>NAME</em></code></dt>
 <dd>
-<p>Silences the alert with <code>NAME</code>, such as <code>DISK_ERROR</code>. Silenced alerts are still recorded in postgres, but emails are not sent out.</p>
+<p>Silences the alert with <code>NAME</code>. For example, <code>DISK_ERROR</code>. Silenced alerts are still recorded in postgres, but emails are not sent out.</p>
 </dd>
 <dt class="hdlist1">tscli alert status</dt>
 <dd>
@@ -2253,7 +2268,13 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 </dd>
 <dt class="hdlist1"><code>tscli ansible commit --host <em>HOST</em></code></dt>
 <dd>
-<p>Commits Ansible playbooks with the target <code>HOST</code> that is running the <code>ts_ansible service</code>. Use this subcommand to install and configure third-party software on the ThoughtSpot cluster. For details, see these articles:</p>
+<p>Commits Ansible playbooks with the target <code>HOST</code> that is running the <code>ts_ansible service</code>.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Use this subcommand to install and configure third-party software on the ThoughtSpot cluster. For details, see these articles:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -2263,9 +2284,6 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 <p><a href="install-secure-monitor-sw.html" class="page">Installing third party security and monitoring software</a></p>
 </li>
 </ul>
-</div>
-</dd>
-</dl>
 </div>
 </div>
 <div class="sect2">
@@ -2283,14 +2301,15 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><code>[--storage_type {local,nas,cloud}] [--remote] [--no-orion-master] name out</code></dt>
+<dt class="hdlist1"><code>[--storage_type {local,nas,cloud}] [--remote] [--no-orion-master]</code></dt>
 <dd>
-<p>Pulls a snapshot and saves it as a backup. You must specify the snapshot name, <code>name</code>, and also the backup directory, <code>out</code>. The command has the following optional parameters:</p>
+<p>Pulls a snapshot and saves it as a backup, with these parameters:</p>
 <div class="dlist">
 <dl>
 <dt class="hdlist1"><code>--mode {full,light,dataless}</code></dt>
 <dd>
-<p>Mode of backups. The default is <code>full</code>.</p>
+<p>Mode of backups.
+The default is <code>full</code>.</p>
 </dd>
 <dt class="hdlist1"><code>--type</code></dt>
 <dd>
@@ -2298,27 +2317,22 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 </dd>
 <dt class="hdlist1"><code>--base <em>BASE</em></code></dt>
 <dd>
-<p>Based snapshot name for incremental backup. Because <code>incremental</code> is not implemented, neither is this option. There is no default setting.</p>
+<p>Based snapshot name for incremental backup. Because <code>incremental</code> is not implemented, neither is this option.
+There is no default setting.</p>
 </dd>
-<dt class="hdlist1"><code>--storage_type {local,nas,cloud}</code></dt>
+<dt class="hdlist1"><code>--storage_type {local,nas}</code></dt>
 <dd>
-<p>Storage type of output directory. The default setting is <code>local</code>.</p>
+<p>Storage type of output directory.
+The default setting is <code>local</code>.</p>
 </dd>
 <dt class="hdlist1"><code>--remote</code></dt>
 <dd>
-<p>Takes backup through Orion. The default setting is <code>True</code>.</p>
+<p>Takes backup through orion master.
+The default setting is <code>True</code>.</p>
 </dd>
 <dt class="hdlist1"><code>--no-orion-master</code></dt>
 <dd>
-<p>Determines whether Orion is available during backup. The default is <code>False</code>.</p>
-</dd>
-<dt class="hdlist1"><code>--bucket_name <em>BUCKET_NAME</em></code></dt>
-<dd>
-<p>The name of the s3/gcs bucket to create the backup. The platform depends on the storage type of the cluster. You must specify <code>--storage_type</code> as <code>cloud</code>.</p>
-</dd>
-<dt class="hdlist1"><code>--staging_dir <em>STAGING_DIR</em></code></dt>
-<dd>
-<p>Used for staging hdfs data in cloud based backups. No effect in non-cloud based backups. You must specify <code>--storage_type</code> as <code>cloud</code>.</p>
+<p>Determines whether orion master is available during backup. The default is <code>False</code>.</p>
 </dd>
 </dl>
 </div>
@@ -2330,6 +2344,30 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 <dt class="hdlist1"><code>tscli backup ls</code></dt>
 <dd>
 <p>Lists all periodic backups taken by the system. This command only shows periodic backups, not manual backups.</p>
+</dd>
+<dt class="hdlist1"><code>tscli backup restore</code></dt>
+<dd>
+<p>Restores cluster using backup, with the following parameters:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>--release <em>RELEASE</em></code></dt>
+<dd>
+<p>Restore the cluster on a specific release number.</p>
+</dd>
+<dt class="hdlist1"><code>--disable__rotate_keys</code></dt>
+<dd>
+<p>Disables cluster rotate key configurations. The default is <code>False.</code></p>
+</dd>
+<dt class="hdlist1"><code>--enable_cloud_storage</code></dt>
+<dd>
+<p>Enables object storage, on the specified platform, either <code>s3a</code> or <code>gcs</code>. For example, run <code>tscli backup restore --enable_cloud_storage=s3a</code> to enable AWS S3 object storage.</p>
+</dd>
+<dt class="hdlist1"><code>--heterogeneous</code></dt>
+<dd>
+<p>Should be set for heterogeneous clusters. The default is <code>False</code>.</p>
+</dd>
+</dl>
+</div>
 </dd>
 </dl>
 </div>
@@ -2360,7 +2398,7 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 </dd>
 <dt class="hdlist1"><code>mode {full,light,dataless}</code></dt>
 <dd>
-<p>The backup mode. A <code>FULL</code> backup is required for restoring a cluster. The default is <code>full.</code></p>
+<p>The backup mode. A <code>FULL</code> backup is required for restoring a cluster.<br>The default is <code>full.</code></p>
 </dd>
 <dt class="hdlist1"><code>type</code></dt>
 <dd>
@@ -2368,7 +2406,7 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 </dd>
 <dt class="hdlist1"><code>directory</code></dt>
 <dd>
-<p>The location on the disk to place the backup. You specify an existing directory path as <code>home/admin/folder</code>. The <code>folder</code> cannot already exist. ThoughtSpot creates the folder when it runs a backup.</p>
+<p>The location on the disk to place the backup. You specify an existing directory path, but the folder (the last part of the path: <code>home/admin/folder</code>) must not already exist. ThoughtSpot creates the folder when it runs a backup.</p>
 </dd>
 <dt class="hdlist1"><code>storage_type {NAS,local}</code></dt>
 <dd>
@@ -2509,11 +2547,11 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 <dd>
 <p>The month offset that starts the year, if the calendar is the <code>MONTH_OFFSET</code> type. The default is <code>January</code>.</p>
 </dd>
-<dt class="hdlist1"><code>--start_day_of_week <em>DAY_OF_WEEK</em></code></dt>
+<dt class="hdlist1"><code>--start_day_of_week</code></dt>
 <dd>
 <p>The day for starting the week. The default is <code>Sunday</code>.</p>
 </dd>
-<dt class="hdlist1"><code>--quarter_name_prefix <em>QUARTER_NAME_PREFIX</em></code></dt>
+<dt class="hdlist1"><code>--quarter_name_prefix</code></dt>
 <dd>
 <p>The string for the prefix to the quarter.</p>
 </dd>
@@ -2590,7 +2628,7 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 <div class="sect2">
 <h3 id="tscli-callhome"><a class="anchor" href="#tscli-callhome"></a>callhome</h3>
 <div class="paragraph">
-<p>Provides usage statistics to ThoughtSpot.</p>
+<p>Provides usage statistics to ThoughtSpot by uploading the callhome bundle data daily into Egnyte.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2604,15 +2642,7 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 <dl>
 <dt class="hdlist1"><code>tscli callhome enable --customer_name <em>CUSTOMER_NAME</em></code></dt>
 <dd>
-<p>Enables the callhome feature. This feature is enabled by default.</p>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><code>--customer_name <em>CUSTOMER_NAME</em></code></dt>
-<dd>
-<p>The parameter <code>customer_name</code> takes the form <code>Shared/CUSTOMER_NAME/stats</code>.</p>
-</dd>
-</dl>
-</div>
+<p>Enables the callhome feature. This feature is enabled by default.<br> The parameter <code>customer_name</code> takes the form <code>Shared/CUSTOMER_NAME/stats</code>.</p>
 </dd>
 <dt class="hdlist1"><code>tscli callhome disable</code></dt>
 <dd>
@@ -2629,7 +2659,7 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 </dd>
 <dt class="hdlist1"><code>--since <em>SINCE</em></code></dt>
 <dd>
-<p>Grabs <code>callhome</code> data from the specified time window, in the past. This should be a human-readable duration string, such as <code>4h</code> (4 hours), <code>30m</code> (30 minutes), <code>1d</code> (1 day). This option generates a <code>*.tar</code> file of the cluster metrics and writes it to the specified directory. Here, <code>SINCE</code> is how many days back the file must start. There is no default setting</p>
+<p>Grabs <code>callhome</code> data from the specified time window in the past.<br> This should be a human-readable duration string, such as <code>4h</code> (4 hours), <code>30m</code> (30 minutes), <code>1d</code> (1 day).<br> This option generates a <code>*.tar</code> file of the cluster metrics and writes it to the specified directory. Here, <code><em>SINCE</em></code> is how many days back the file must start. <br>There is no default setting</p>
 </dd>
 </dl>
 </div>
@@ -2695,21 +2725,13 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 </div>
 <div class="dlist">
 <dl>
+<dt class="hdlist1"><code>tscli cluster abort-reinstall-os</code></dt>
+<dd>
+<p>Aborts in-progress reinstall.</p>
+</dd>
 <dt class="hdlist1"><code>tscli cluster abort-update</code></dt>
 <dd>
 <p>Aborts an ongoing cluster update, if safe.</p>
-</dd>
-<dt class="hdlist1"><code>tscli cluster bucket-migrate</code></dt>
-<dd>
-<p>Migrates the cluster to use another S3/GCS bucket, also migrating the data from the current s3 bucket to the new bucket. This command has the following optional parameter:</p>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><code>--name <em>NAME</em></code></dt>
-<dd>
-<p>Name of the new bucket.</p>
-</dd>
-</dl>
-</div>
 </dd>
 <dt class="hdlist1"><code>tscli cluster bucket-name</code></dt>
 <dd>
@@ -2745,7 +2767,7 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 </dd>
 <dt class="hdlist1"><code>tscli cluster create <em>release</em></code></dt>
 <dd>
-<p>Creates a new cluster from the release file specified by adding the release number. Used by ThoughtSpot Support when installing a new cluster. For example, <code>tscli cluster create 6.3.1.tar.gz</code>. This command has the following parameters:</p>
+<p>Creates a new cluster from the release file specified by adding the release number. <br>Used by ThoughtSpot Support when installing a new cluster. For example, <code>tscli cluster create 5.3.2.tar.gz</code>. <br>This command has the following parameters:</p>
 <div class="dlist">
 <dl>
 <dt class="hdlist1"><code>--disable_rotate_keys</code></dt>
@@ -2769,7 +2791,7 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 </dd>
 <dt class="hdlist1"><code>tscli cluster get-config</code></dt>
 <dd>
-<p>Gets current cluster network and time configuration. Prints JSON configuration to <code>stdout</code>. If the system cannot be connected to all interfaces, the command returns an error but continues to function. This command has the following parameters:</p>
+<p>Gets current cluster network and time configuration. Prints JSON configuration to <code>stdout</code>. <br>If the system cannot be connected to all interfaces, the command returns an error but continues to function.<br> This command has the following parameters:</p>
 <div class="dlist">
 <dl>
 <dt class="hdlist1"><code>--local</code></dt>
@@ -2793,23 +2815,27 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 </dd>
 <dt class="hdlist1"><code>tscli cluster load <em>backupdir</em></code></dt>
 <dd>
-<p>Loads the state from a specified backup directory onto an existing cluster. This command has the following parameters:</p>
+<p>Loads the state from a specified backup directory onto an existing cluster. Add <code>--reuse_cluster</code> to reuse the cluster service configs rather than restoring from the backup directory.</p>
+</dd>
+<dt class="hdlist1"><code>tscli cluster reinstall-os</code></dt>
+<dd>
+<p>Reinstalls OS on all nodes of the cluster, with the following parameters:</p>
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><code>--reuse_cluster <em>CLUSTER</em></code></dt>
+<dt class="hdlist1"><code>--secondary <em>SECONDARY</em></code></dt>
 <dd>
-<p>Add this parameter to reuse the cluster service configs, instead of restoring from the backup directory.</p>
+<p>A secondary drive for reinstall. The default is <code>sdd</code>.</p>
 </dd>
-<dt class="hdlist1"><code>--cloud_data_dir <em>CLOUD_DATA_DIR</em></code></dt>
+<dt class="hdlist1"><code>--stdin</code></dt>
 <dd>
-<p>Add this parameter to specify the cloud path to the restore.</p>
+<p>Command to take JSON configuration from stdin.</p>
 </dd>
 </dl>
 </div>
 </dd>
 <dt class="hdlist1"><code>tscli cluster restore --release <em>RELEASE backupdir</em></code></dt>
 <dd>
-<p>Restores a cluster on the specified release number using the backup in the specified directory, <code>backupdir</code>. If you are restoring from a data-less backup, you must supply the release tarball for the corresponding software release. This command has the following parameters:</p>
+<p>Restores a cluster on the specified release number using the backup in the specified directory, <code>backupdir</code>. If you are restoring from a data-less backup, you must supply the release tarball for the corresponding software release. <br>This command has the following parameters:</p>
 <div class="dlist">
 <dl>
 <dt class="hdlist1"><code>--disable_rotate_keys</code></dt>
@@ -2827,6 +2853,10 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 </dl>
 </div>
 </dd>
+<dt class="hdlist1"><code>tscli cluster resume-reinstall-os</code></dt>
+<dd>
+<p>Resumes in-progress reinstall.</p>
+</dd>
 <dt class="hdlist1"><code>tscli cluster resume-update</code></dt>
 <dd>
 <p>Resumes in-progress updates, with the following parameter:</p>
@@ -2841,7 +2871,7 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 </dd>
 <dt class="hdlist1"><code>tscli cluster set-config</code></dt>
 <dd>
-<p>Sets cluster network and time configuration. Takes JSON configuration from <code>stdin</code>. This subcommand has the following parameters:</p>
+<p>Sets cluster network and time configuration. Takes JSON configuration from <code>stdin</code>. <br>This subcommand has the following parameters:</p>
 <div class="dlist">
 <dl>
 <dt class="hdlist1"><code>--ipv4-only</code></dt>
@@ -2851,10 +2881,6 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 <dt class="hdlist1"><code>--no-network-change</code></dt>
 <dd>
 <p>This flag ensures that a change made with set-config does not update network settings. The default is <code>False</code>.</p>
-</dd>
-<dt class="hdlist1"><code>--allow_network_gateway_mismatch</code></dt>
-<dd>
-<p>Allows a network and gateway mismatch. The default is <code>False</code>.</p>
 </dd>
 </dl>
 </div>
@@ -2896,14 +2922,10 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 <dd>
 <p>Specifies the kind of status message you want.</p>
 </dd>
-</dl>
-</div>
-</dd>
 <dt class="hdlist1"><code>--tail</code></dt>
 <dd>
 <p>Prints the details of creation and update progress. The default is <code>False</code>.</p>
-<div class="dlist">
-<dl>
+</dd>
 <dt class="hdlist1"><code>--no-orion</code></dt>
 <dd>
 <p>Runs checks not related to orion. The default is <code>False</code>.</p>
@@ -2984,7 +3006,7 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 <dl>
 <dt class="hdlist1"><code>--nodes <em>NODES</em></code></dt>
 <dd>
-<p>Space-separated IPs of nodes where to run the command. The default setting is <code>all</code>.</p>
+<p>Space-separated IPs of nodes on which to run the command. The default setting is <code>all</code>.</p>
 </dd>
 <dt class="hdlist1"><code>--dest_dir <em>DEST_DIR</em></code></dt>
 <dd>
@@ -3196,7 +3218,7 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 <dl>
 <dt class="hdlist1"><code>tscli event list [-h] [--include <em>INCLUDE</em>] [--since <em>SINCE</em>] [--from <em>FROM</em>] [--to <em>TO</em>] [--limit <em>LIMIT</em>] [--detail] [--summary_contains <em>SUMMARY_CONTAINS</em>] [--detail_contains <em>DETAIL_CONTAINS</em>] [--attributes <em>ATTRIBUTES</em>]</code></dt>
 <dd>
-<p>The `event list ` subcommand accepts these optional flags:</p>
+<p>The <code>event list</code> subcommand accepts these optional flags:</p>
 <div class="dlist">
 <dl>
 <dt class="hdlist1"><code>--include <em>INCLUDE</em></code></dt>
@@ -3282,11 +3304,11 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 <dl>
 <dt class="hdlist1"><code>tscli fileserver configure [-h] --user <em>USER</em> [--password <em>PASSWORD</em>]</code></dt>
 <dd>
-<p>Configures the secure file server username and password for file upload/download, and the call home feature. You only have to issue this command one time, to set up the connection to the secure file server. Reissue this command if the password changes. The parameter <code>PASSWORD</code> is optional. If a password is not specified, the system prompts the user to enter it.</p>
+<p>Configures the secure file server username and password for file upload/download, and the call home feature. <br>You only have to issue this command one time, to set up the connection to the secure file server. Reissue this command if the password changes. <br>The parameter <code>PASSWORD</code> is optional. If a password is not specified, you will be prompted to enter it.</p>
 </dd>
 <dt class="hdlist1"><code>tscli fileserver download-release [-h] [--user <em>USER</em>] [--password <em>PASSWORD</em>] [--url <em>URL</em>] [--md5 <em>MD5</em>] [--out <em>OUT</em>] release</code></dt>
 <dd>
-<p>Downloads the specified release file, including its checksum, and verifies the integrity of release bundle. You must specify the exact release number, such as <code>6.3.1</code>. Before using this command for the first time, you must set up the file server connection using <code>tscli fileserver configure</code>.  You can then work with a member of the ThoughtSpot Support team because a privileged <code>user</code> and a corresponding <code>password</code> must be specified to download releases.  This command has the following parameters:</p>
+<p>Downloads the specified release file, including its checksum, and verifies the integrity of release bundle. <br>You must specify the exact release number, such as <code>5.1.3</code>. <br>Before using this command for the first time, you must set up the file server connection using <code>tscli fileserver configure</code>.  You can then work with a member of the ThoughtSpot Support team because a privileged <code>user</code> and a corresponding <code>password</code> must be specified to download releases.  This command has the following parameters:</p>
 <div class="dlist">
 <dl>
 <dt class="hdlist1"><code>--user <em>USER</em></code></dt>
@@ -3322,7 +3344,7 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 </dd>
 <dt class="hdlist1"><code>tscli fileserver upload [-h] [--user <em>USER</em>] [--password <em>PASSWORD</em>] --file_name <em>FILE_NAME</em> --server_dir_path <em>SERVER_DIR_PATH</em></code></dt>
 <dd>
-<p>Uploads the specified file to the specified directory on the secure file server. You may optionally specify the <code>user</code> and <code>password</code> to bypass the credentials specified when configuring the file server connection with <code>tscli fileserver configure</code>. Before using this command for the first time, you must set up the file server connection using <code>tscli fileserver configure</code>. This command uses the following flags:</p>
+<p>Uploads the specified file to the specified directory on the secure file server. <br>You may optionally specify the <code>user</code> and <code>password</code> to bypass the credentials specified when configuring the file server connection with <code>tscli fileserver configure</code>. Before using this command for the first time, you must set up the file server connection using <code>tscli fileserver configure</code>. <br>This command uses the following flags:</p>
 <div class="dlist">
 <dl>
 <dt class="hdlist1"><code>--user <em>USER</em></code></dt>
@@ -3361,7 +3383,7 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 <dl>
 <dt class="hdlist1"><code>tscli firewall close-ports --ports <em>PORTS</em></code></dt>
 <dd>
-<p>Closes specified ports through firewall on all nodes. Accepts a comma-separated list of ports. Only closes ports that were previously opened using <code>open-ports</code>, and ignores ports that were not opened with <code>open-port</code>, or closed ports. Some essential ports are always kept open, such as <code>ssh</code>; they are not affected by this command or by <code>open-ports</code>.</p>
+<p>Closes specified ports through firewall on all nodes. <br>Accepts a comma-separated list of ports. Only closes ports that were previously opened using <code>open-ports</code>, and ignores ports that were not opened with <code>open-port</code>, or closed ports. <br>Some essential ports are always kept open, such as <code>ssh</code>; they are not affected by this command or by <code>open-ports</code>.</p>
 </dd>
 <dt class="hdlist1"><code>tscli firewall disable</code></dt>
 <dd>
@@ -3373,7 +3395,7 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 </dd>
 <dt class="hdlist1"><code>tscli firewall open-ports --ports <em>PORTS</em></code></dt>
 <dd>
-<p>Opens specified ports through a firewall on all nodes. Accepts a comma-separated list of ports. Ignores open ports. Some essential ports are always kept open, such as <code>ssh</code>; they are not affected by this command or by <code>close-ports</code>.</p>
+<p>Opens specified ports through a firewall on all nodes.<br> Accepts a comma-separated list of ports.<br> Ignores open ports.<br> Some essential ports are always kept open, such as <code>ssh</code>; they are not affected by this command or by <code>close-ports</code>.</p>
 </dd>
 <dt class="hdlist1"><code>tscli firewall status</code></dt>
 <dd>
@@ -3480,16 +3502,16 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 <dl>
 <dt class="hdlist1"><code>tscli logs collect [-h] [--include <em>INCLUDE</em>] [--exclude <em>EXCLUDE</em>] [--since <em>SINCE</em>] [--from <em>FROM</em>] [--to <em>TO</em>] [--out <em>OUT</em>] [--maxsize <em>MAXSIZE</em>] [--sizeonly] [--nodes <em>NODES</em>]</code></dt>
 <dd>
-<p>Extracts logs from the cluster. Does not include any logs that were dropped because of log rotation. This subcommand has the following parameters:</p>
+<p>Extracts logs from the cluster. Does not include any logs that were dropped because of log rotation.<br> This subcommand has the following parameters:</p>
 <div class="dlist">
 <dl>
 <dt class="hdlist1"><code>--include <em>INCLUDE</em></code></dt>
 <dd>
-<p>Specifies a comma-separated list of logs to include. Each entry is either a "selector" or a glob for matching files. Selectors must be among: <code>all</code>, <code>orion</code>, <code>system</code>, <code>ts</code>. Anything starting with <code>/</code> is assumed to be a glob pattern, and it is interpreted through <code>find(1)</code>. Other entries are ignored. Put single quotes around the param value to prevent undesired glob expansion. The default is <code>all</code>.</p>
+<p>Specifies a comma-separated list of logs to include. Each entry is either a "selector" or a glob for matching files. Selectors must be among: <code>all</code>, <code>orion</code>, <code>system</code>, <code>ts</code>. Anything starting with <code>/</code> is assumed to be a glob pattern, and it is interpreted through <code>find(1)</code>. Other entries are ignored. Put single quotes around the param value to prevent undesired glob expansion.<br> The default is <code>all</code>.</p>
 </dd>
 <dt class="hdlist1"><code>--exclude <em>EXCLUDE</em></code></dt>
 <dd>
-<p>Comma separated list of logs to exclude. Applies to the list selected by <code>--include</code>. Params are interpreted just like in <code>--include</code>.</p>
+<p>comma-separated list of logs to exclude. Applies to the list selected by <code>--include</code>. Params are interpreted just like in <code>--include</code>.</p>
 </dd>
 <dt class="hdlist1"><code>--since <em>SINCE</em></code></dt>
 <dd>
@@ -3517,14 +3539,14 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 </dd>
 <dt class="hdlist1"><code>--nodes <em>NODES</em></code></dt>
 <dd>
-<p>Comma separated list of nodes from where to collect logs. Skip this to use all nodes.</p>
+<p>Comma-separated list of nodes from where to collect logs. Skip this to use all nodes.</p>
 </dd>
 </dl>
 </div>
 </dd>
 <dt class="hdlist1"><code>tscli logs runcmd [-h] --cmd CMD [--include <em>INCLUDE</em>] [--exclude <em>EXCLUDE</em>] [--since <em>SINCE</em>] [--from <em>FROM</em>] [--to <em>TO</em>] [--outfile <em>OUTFILE</em>] [--outdir <em>OUTDIR</em>] [--cmd_infmt <em>CMD_INFMT</em>] [--cmd_outfmt <em>CMD_OUTFMT</em>] [--nodes <em>NODES</em>]</code></dt>
 <dd>
-<p>Runs a Unix command on logs in the cluster matching the given constraints. Results are reported as text dumped to standard out, the specified output file, or as tarballs dumped into the specified directory. Accepts these optional flags:</p>
+<p>Runs a Unix command on logs in the cluster matching the given constraints. Results are reported as text dumped to standard out, the specified output file, or as tarballs dumped into the specified directory. <br>Accepts these optional flags:</p>
 <div class="dlist">
 <dl>
 <dt class="hdlist1"><code>--cmd <em>CMD</em></code></dt>
@@ -3546,11 +3568,11 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 </dd>
 <dt class="hdlist1"><code>--include <em>INCLUDE</em></code></dt>
 <dd>
-<p>Comma-separated list of logs to include. Each entry is either a "selector" or a glob for matching files. Selectors must be one of <code>all</code>, <code>orion</code>, <code>system</code>, or <code>ts</code>. Anything that starts with <code>/</code> (forward slash) is assumed to be a glob pattern and interpreted through <code>find(1)</code>. Other entries are ignored. Use single quotes around the parameter value to prevent undesired glob expansion. The default setting is <code>all</code>.</p>
+<p>Comma-separated list of logs to include. Each entry is either a "selector" or a glob for matching files. <br>Selectors must be one of <code>all</code>, <code>orion</code>, <code>system</code>, or <code>ts</code>. <br>Anything that starts with <code>/</code> (forward slash) is assumed to be a glob pattern and interpreted through <code>find(1)</code>. Other entries are ignored. <br>Use single quotes around the parameter value to prevent undesired glob expansion. The default setting is <code>all</code>.</p>
 </dd>
 <dt class="hdlist1"><code>--exclude <em>EXCLUDE</em></code></dt>
 <dd>
-<p>Comma separated list of logs to exclude. Applies to the list selected by <code>--include</code>. Parameters are interpreted just like in <code>--include</code>.</p>
+<p>Comma-separated list of logs to exclude. Applies to the list selected by <code>--include</code>. Parameters are interpreted just like in <code>--include</code>.</p>
 </dd>
 <dt class="hdlist1"><code>--since <em>SINCE</em></code></dt>
 <dd>
@@ -3664,7 +3686,7 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 <dl>
 <dt class="hdlist1"><code>--email <em>EMAIL</em></code></dt>
 <dd>
-<p>Comma separated list (no spaces) of email addresses where the cluster sends monitoring information.</p>
+<p>Comma-separated list (no spaces) of email addresses where the cluster sends monitoring information.</p>
 </dd>
 <dt class="hdlist1"><code>--clear_email</code></dt>
 <dd>
@@ -3706,7 +3728,7 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 </dd>
 <dt class="hdlist1"><code>tscli nas mount-cifs [-h] --server <em>SERVER</em> [--path_on_server <em>PATH_ON_SERVER</em>] --mount_point <em>MOUNT_POINT</em> --username <em>USERNAME</em> --password <em>PASSWORD</em> [--uid <em>UID</em>] [--gid <em>GID</em>] [--options <em>OPTIONS</em>]</code></dt>
 <dd>
-<p>Mounts a CIFS device on all nodes. Accepts the following optional flags:</p>
+<p>Mounts a CIFS device on all nodes. <br>Accepts the following optional flags:</p>
 <div class="dlist">
 <dl>
 <dt class="hdlist1"><code>--server <em>SERVER</em></code></dt>
@@ -3746,7 +3768,7 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 </dd>
 <dt class="hdlist1"><code>tscli nas mount-nfs [-h] [--server <em>SERVER</em>] [--path_on_server <em>PATH_ON_SERVER</em>] [--mount_point <em>MOUNT_POINT</em>] [--options <em>OPTIONS</em>] [--protocol {nfs,nfs4}]</code></dt>
 <dd>
-<p>Mounts the NFS filesystem on all nodes. Accepts the following optional flags:</p>
+<p>Mounts the NFS filesystem on all nodes. <br>Accepts the following optional flags:</p>
 <div class="dlist">
 <dl>
 <dt class="hdlist1"><code>--server <em>SERVER</em></code></dt>
@@ -3783,7 +3805,7 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 <h3 id="tscli-node"><a class="anchor" href="#tscli-node"></a>node</h3>
 <div class="listingblock">
 <div class="content">
-<pre>tscli node [-h] {check,ls,status}</pre>
+<pre>tscli node [-h] {check,ls,reinstall-os,resume-reinstall-os,status}</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3819,21 +3841,25 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 </dl>
 </div>
 </dd>
-<dt class="hdlist1"><code>tscli node status</code></dt>
+<dt class="hdlist1"><code>tscli node reinstall-os [-h] [--secondary <em>SECONDARY</em>] [--cluster]</code></dt>
 <dd>
-<p>Get Node status for the operation specified by mode, with the following parameters:</p>
+<p>Reinstalls OS on a node. <br> Accepts the following flags:</p>
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><code>--mode { reinstall-os}</code></dt>
+<dt class="hdlist1"><code>--secondary <em>SECONDARY</em></code></dt>
 <dd>
-<p>Mode for running node status.</p>
+<p>Secondary drive for reinstall. The default setting is <code>sdd</code>.</p>
 </dd>
-<dt class="hdlist1"><code>--tail</code></dt>
+<dt class="hdlist1"><code>--cluster</code></dt>
 <dd>
-<p>Prints the details of create and update progress. The default is <code>False</code>.</p>
+<p>Use this flag to specify if the node is part of a cluster. The default setting is <code>False</code>.</p>
 </dd>
 </dl>
 </div>
+</dd>
+<dt class="hdlist1"><code>tscli node resume-reinstall-os</code></dt>
+<dd>
+<p>Resumes in-progress reinstall.</p>
 </dd>
 </dl>
 </div>
@@ -4222,23 +4248,32 @@ Contact <a href="https://community.thoughtspot.com/customers/s/contactsupport" t
 <dt class="hdlist1"><code>--force <em>FORCE</em></code></dt>
 <dd>
 <p>Set even if relay host is not accessible. The default setting is <code>False</code>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>On ThoughtSpot release 6.1.1 or later, and on release 6.0.5, you can specify a custom port to connect to the relay host. If you do not specify a port, the system uses the default recommended port, port 25. Use a custom port if port 25 is blocked in your environment.</p>
-</li>
-<li>
-<p>To use the default port, run the setup command normally: <code>$ tscli smtp set-relayhost IP_address</code>. To use a custom port instead of port 25, run the setup command, specifying the port you want to use: <code>$ tscli smtp set-relayhost IP_address:custom_port</code>.</p>
-</li>
-<li>
-<p>If you are on 6.1 rather than 6.1.1, or an a version earlier than 6.0.5, contact <a href="https://community.thoughtspot.com/customers/s/contactsupport" target="_blank" rel="noopener">ThoughtSpot Support</a> to help you set up a custom port.</p>
-</li>
-</ul>
-</div>
 </dd>
 </dl>
 </div>
 </dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Starting with release 6.0.5, you can specify a custom port to connect to the relay host. If you do not specify a port, the system uses the default recommended port, port 25. Use a custom port if port 25 is blocked in your environment.</p>
+</div>
+<div class="paragraph">
+<p>To use the default port, run the setup command normally:</p>
+</div>
+<div class="paragraph">
+<p><code>$ tscli smtp set-relayhost IP_address</code></p>
+</div>
+<div class="paragraph">
+<p>To use a custom port instead of port 25, run the setup command, specifying the port you want to use:</p>
+</div>
+<div class="paragraph">
+<p><code>$ tscli smtp set-relayhost IP_address:custom_port</code></p>
+</div>
+<div class="paragraph">
+<p>If you are on a version earlier than 6.0.5, contact <a href="https://community.thoughtspot.com/customers/s/contactsupport" target="_blank" rel="noopener">ThoughtSpot Support</a> to use a custom port.</p>
+</div>
+<div class="dlist">
+<dl>
 <dt class="hdlist1"><code>tscli smtp set-saslcredentials</code></dt>
 <dd>
 <p>Sets SASL credentials and enables SMTP AUTH.</p>
@@ -4313,14 +4348,6 @@ Contact <a href="https://community.thoughtspot.com/customers/s/contactsupport" t
 <dt class="hdlist1"><code>--no-orion-master</code></dt>
 <dd>
 <p>Specifies whether orion master is available during backup. The default is <code>False</code>.</p>
-</dd>
-<dt class="hdlist1"><code>--bucket_name <em>BUCKET_NAME</em></code></dt>
-<dd>
-<p>The name of the s3/gcs bucket to create the backup. The platform depends on the storage type of the cluster. You must specify <code>--storage_type</code> as <code>cloud</code>.</p>
-</dd>
-<dt class="hdlist1"><code>--staging_dir <em>STAGING_DIR</em></code></dt>
-<dd>
-<p>Used for staging hdfs data in cloud based backups. No effect in non-cloud based backups. You must specify <code>--storage_type</code> as <code>cloud</code>.</p>
 </dd>
 </dl>
 </div>
@@ -4496,20 +4523,17 @@ Contact <a href="https://community.thoughtspot.com/customers/s/contactsupport" t
 <dt class="hdlist1"><code>tscli ssl add-valid-hosts [-h] <em>VALID_HOSTS</em></code></dt>
 <dd>
 <p>Enables host validation for the specified host(s). Helps improve security. This feature is for all customers that have or are planning to enable SSL. Multiple hosts must be separated by a comma (,).</p>
-<div class="ulist">
-<ul>
-<li>
-<p>To ensure that the valid host is <strong>cluster1.corp.example.com</strong>, run the command <code>tscli ssl add-valid-hosts cluster1.corp.example.com</code>.</p>
-</li>
-<li>
-<p>To allow all hosts that have the suffix <strong>corp.example.com</strong>, run the command <code>tscli ssl add-valid-hosts *.corp.example.com</code>. Use the wild card within the hostname.</p>
-</li>
-<li>
-<p>To allow multiple valid hosts, such as both <strong>*.corp.example.com</strong> and <strong>cluster1</strong>, run the command <code>tscli ssl add-valid-hosts *.corp.thoughtspot.com,cluster1</code>.</p>
-</li>
-</ul>
-</div>
 </dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Examples:
+  * To ensure that the valid host is <strong>cluster1.corp.example.com</strong>, run the command <code>tscli ssl add-valid-hosts cluster1.corp.example.com</code>.
+  * To allow all hosts that have the suffix <strong>corp.example.com</strong>, run the command <code>tscli ssl add-valid-hosts <strong>.corp.example.com</code>. Use the wild card within the hostname.
+  * To allow multiple valid hosts, such as both *</strong>.corp.example.com* and <strong>cluster1</strong>, run the command <code>tscli ssl add-valid-hosts *.corp.thoughtspot.com,cluster1</code>.</p>
+</div>
+<div class="dlist">
+<dl>
 <dt class="hdlist1"><code>tscli ssl clear-min-tls-version [-h]</code></dt>
 <dd>
 <p>Clears any customizations for the minimum TLS version to support.</p>
@@ -4559,42 +4583,6 @@ Contact <a href="https://community.thoughtspot.com/customers/s/contactsupport" t
 <div class="paragraph">
 <p>This subcommand uses system security services daemon (SSSD), and has the following options:</p>
 </div>
-<div id="tscli-sssd-clear-sudo-group" class="dlist">
-<dl>
-<dt class="hdlist1"><code>tscli sssd clear-sudo-group <em>ACTIVE_DIRECTORY_GROUP_NAME</em></code></dt>
-<dd>
-<p>Clears a specified AD sudo group so that they no longer have <code>sudo</code> permissions.</p>
-</dd>
-</dl>
-</div>
-<div id="tscli-sssd-disable" class="dlist">
-<dl>
-<dt class="hdlist1"><code>tscli sssd disable</code></dt>
-<dd>
-<p>Disables Active Directory access. Leaves identity domain and removes AD sudo group.</p>
-</dd>
-</dl>
-</div>
-<div id="tscli-sssd-disable-openldap" class="dlist">
-<dl>
-<dt class="hdlist1"><code>tscli sssd disable-openldap</code></dt>
-<dd>
-<p>Disables OpenLDAP integration.</p>
-</dd>
-</dl>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If you mapped your OpenLDAP admin user to ThoughtSpot&#8217;s local admin user through the Ansible playbook while deploying ThoughtSpot on RHEL, do not run this command. If you ran <code>tscli sssd enable-openldap</code> and also mapped your OpenLDAP admin user to ThoughtSpot&#8217;s local admin user through the Ansible playbook, contact <a href="https://community.thoughtspot.com/customers/s/contactsupport" target="_blank" rel="noopener">ThoughtSpot Support</a>.
-</td>
-</tr>
-</table>
-</div>
 <div id="tscli-sssd-enable" class="dlist">
 <dl>
 <dt class="hdlist1"><code>tscli sssd enable --user <em>USER</em> --domain <em>DOMAIN</em></code></dt>
@@ -4615,38 +4603,32 @@ If you mapped your OpenLDAP admin user to ThoughtSpot&#8217;s local admin user t
 </dd>
 </dl>
 </div>
-<div id="tscli-sssd-enable-openldap" class="dlist">
+<div id="tscli-sssd-disable" class="dlist">
 <dl>
-<dt class="hdlist1"><code>tscli sssd enable-openldap</code></dt>
+<dt class="hdlist1"><code>tscli sssd disable</code></dt>
 <dd>
-<p>Connects to your OpenLDAP server and allows users to SSH into your ThoughtSpot cluster with their LDAP credentials, without using the fully qualified domain name.</p>
+<p>Disables Active Directory access. Leaves identity domain and removes AD sudo group.</p>
 </dd>
 </dl>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If you mapped your OpenLDAP admin user to ThoughtSpot&#8217;s local admin user through the Ansible playbook while deploying ThoughtSpot on RHEL, do not run this command.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>This subcommand has the following parameters:
-  <code>--server_base_dn <em>SERVER_BASE_DN</em></code>;; Specify the LDAP server base distinguished name, in the form <em>dc=&lt;optional_subdomain&gt;,dc=&lt;domain&gt;,dc=&lt;top-level-domain&gt;</em>, such as <em>dc=thoughtspot,dc=com</em>.
-  <code>--server_uri <em>SERVER_URI</em></code>;; Specify the LDAP server uniform resource identifier, in the form <em>ldap://&lt;ldap_server_IP&gt;</em>.</p>
 </div>
 <div id="tscli-sssd-set-sudo-group" class="dlist">
 <dl>
 <dt class="hdlist1"><code>tscli sssd set-sudo-group <em>ACTIVE_DIRECTORY_GROUP_NAME</em></code></dt>
 <dd>
-<p>Allows <code>sudo</code> permissions for a specified AD group. For more about setting up Active Directory access, see <a href="active-directory-based-access.html" class="page">Enable Active Directory based access</a>.</p>
+<p>Allows <code>sudo</code> permissions for a specified AD group.</p>
 </dd>
 </dl>
+</div>
+<div id="tscli-sssd-clear-sudo-group" class="dlist">
+<dl>
+<dt class="hdlist1"><code>tscli sssd clear-sudo-group <em>ACTIVE_DIRECTORY_GROUP_NAME</em></code></dt>
+<dd>
+<p>Clears a specified AD sudo group so that they no longer have <code>sudo</code> permissions.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>For more about setting up Active Directory access, see <a href="active-directory-based-access.html" class="page">Enable Active Directory based access</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -4700,7 +4682,7 @@ If you mapped your OpenLDAP admin user to ThoughtSpot&#8217;s local admin user t
 <dl>
 <dt class="hdlist1"><code>tscli storage df [--mode disk|hdfs]</code></dt>
 <dd>
-<p>Checks the disk usage on the relevant mounts. Returns output similar to the Linux system command <code>df -h directory</code>.</p>
+<p>Checks the disk usage on the relevant mounts. Returns output similar to the Linux system command <code>df -h <em>directory</em></code>.</p>
 </dd>
 </dl>
 </div>
@@ -4731,7 +4713,19 @@ If you mapped your OpenLDAP admin user to ThoughtSpot&#8217;s local admin user t
 <dl>
 <dt class="hdlist1"><code>--include <em>INCLUDE</em></code></dt>
 <dd>
-<p>Comma-separated list of selectors to include. Each entry is either a "selector" or a glob for matching files. To see the list of valid selectors, run this command with <code>--list_selectors</code>. You may also specify <code>all</code> to get all selectors and logs, and <code>basic</code> to get only the basic selectors. Selectors can be used for logs collection: <code>all</code>, <code>orion</code>, <code>system</code>, <code>ts</code>, or the name of a service. Anything that starts with <code>/</code> (forward slash) is assumed to be a glob pattern, and is interpreted through <code>find(1)</code>. Other entries are ignored. Use single quotes around the parameter value to prevent undesired glob expansion. Use <code>all</code> to collect all selectors and all logs. The default setting is <code>all_but_logs</code>.</p>
+<p>Comma-separated list of selectors to include. Each entry is either a "selector" or a glob for matching files. To see the list of valid selectors, run this command with <code>--list_selectors</code>. You may also specify <code>all</code> to get all selectors and logs, and <code>basic</code> to get only the basic selectors. <br>Selectors can be used for logs collection: <code>all</code>, <code>orion</code>, <code>system</code>, <code>ts</code>, or the name of a service. <br>Anything that starts with <code>/</code> (forward slash) is assumed to be a glob pattern, and is interpreted through <code>find(1)</code>. Other entries are ignored.<br></p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Use single quotes around the parameter value to prevent undesired glob expansion. Use <code>all</code> to collect all selectors and all logs. The default setting is <code>all_but_logs</code>.
+</td>
+</tr>
+</table>
+</div>
 </dd>
 <dt class="hdlist1"><code>--exclude <em>EXCLUDE</em></code></dt>
 <dd>
