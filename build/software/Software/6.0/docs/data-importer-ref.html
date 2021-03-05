@@ -1717,7 +1717,7 @@
     <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="troubleshooting-intro.html">Troubleshooting data integrations</a>
+    <a class="nav-link" href="troubleshooting-intro-data-int.html">Troubleshooting data integrations</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="enable-ODBC-log.html">Enable ODBC logs</a>
@@ -2008,7 +2008,7 @@ This reference section lists all the flags that can be used to modify the behavi
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>--target_table &lt;table&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the tables that you want to load into the database.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">into the database.	The tables must exist in the database specified by <code>--target_database</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The tables must exist in the database specified by <code>--target_database</code>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>--empty_target</code></p></td>
@@ -2028,17 +2028,17 @@ This reference section lists all the flags that can be used to modify the behavi
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>--date_format &lt;date_formatmask&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the format string for date values.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The default format is yearmonthday e.g. “Dec 30th, 2001” and is represented as 20011230. Use the date format specifications supported in the strptime (<a href="http://man7.org/linux/man-pages/man3/strptime.3.html" class="bare">http://man7.org/linux/man-pages/man3/strptime.3.html</a>) library function.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The default format is yearmonthday e.g. “Dec 30th, 2001” and is represented as 20011230. Use the date format specifications supported in the <a href="http://man7.org/linux/man-pages/man3/strptime.3.html">strptime library function</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>--date_time_format &lt;date_formatmask&gt; &lt;time_formatmask&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the format string for datetime values.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The default is yearmonthday hour:minute:second e.g. Dec 30th, 2001 1:15:12 and is represented as 20011230 01:15:12. Use the datetime format specifications supported in the strptime (<a href="http://man7.org/linux/man-pages/man3/strptime.3.html" class="bare">http://man7.org/linux/man-pages/man3/strptime.3.html</a>) library function.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The default is yearmonthday hour:minute:second e.g. Dec 30th, 2001 1:15:12 and is represented as 20011230 01:15:12. Use the datetime format specifications supported in the <a href="http://man7.org/linux/man-pages/man3/strptime.3.html">strptime library function</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>--time_format &lt;time_formatmask&gt;</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;time_formatmask&gt;	Specifies the format string for time values.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The default is hour:minute:second. Use the time format specifications supported in the <a href="http://man7.org/linux/man-pages/man3/strptime.3.html" target="_blank" rel="noopener">strptime</a>library function.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the format string for time values.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The default is hour:minute:second. Use the time format specifications supported in the <a href="http://man7.org/linux/man-pages/man3/strptime.3.html">strptime library function</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">--v=[0|1|2|3</p></td>

@@ -1717,7 +1717,7 @@
     <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="troubleshooting-intro.html">Troubleshooting data integrations</a>
+    <a class="nav-link" href="troubleshooting-intro-data-int.html">Troubleshooting data integrations</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="enable-ODBC-log.html">Enable ODBC logs</a>
@@ -1974,7 +1974,7 @@
 <p>Use this procedure to obtain the Linux ODBC driver and install it.</p>
 </div>
 <div class="paragraph">
-<p>ThoughtSpot&#8217;s ODBC connection relies on the <a href="#https://www.simba.com/products/SEN/doc/Client-Server_user_guide/content/clientserver/configuringsimbaclientodbc/simbaclientodbcunix.htm">SimbaEngine X SDK</a> to connect through ODBC or JDBC to ThoughtSpot&#8217;s remote data stores.
+<p>ThoughtSpot&#8217;s ODBC connection relies on the <a href="https://www.simba.com/products/SEN/doc/Client-Server_user_guide/content/clientserver/configuringsimbaclientodbc/simbaclientodbcunix.htm" target="_target">SimbaEngine X SDK</a> to connect through ODBC or JDBC to ThoughtSpot&#8217;s remote data stores.
 The instructions on this page explain how to configure the Simba ODBC driver on a Linux workstation.</p>
 </div>
 <div class="paragraph">
@@ -1998,20 +1998,12 @@ This workstation is the same machine where you plan to run your ETL activities.<
 <p>Verify the node IP(s).</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ tscli node ls</code></pre>
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ tscli node ls
+172.18.231.17
+172.18.231.18</code></pre>
 </div>
 </div>
 </li>
-</ol>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>172.18.231.17
-172.18.231.18</pre>
-</div>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
 <li>
 <p>Make a note of each IP;
 there may be more than one.</p>
@@ -2078,7 +2070,7 @@ there may be more than one.</p>
 <p>Take a moment to examine the contents of the new directory.</p>
 <div class="paragraph">
 <p>The structure contains a Simba client library, supporting libraries and  setup files for two different architectures.
-It also continues error  messages for multiple languages.</p>
+It also continues error messages for multiple languages.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2125,7 +2117,7 @@ It also continues error  messages for multiple languages.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The <code>linux/Setup</code> directory contains the key ODBC configuration files and  sample Simba client configurations you can use later in this procedure.</p>
+<p>The <code>linux/Setup</code> directory contains the key ODBC configuration files and sample Simba client configurations you can use later in this procedure.</p>
 </div>
 </li>
 <li>
@@ -2142,8 +2134,8 @@ It also continues error  messages for multiple languages.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>In previous examples, the workstation is a 64 bit workstation.
-Your  workstation may be 32-bit.
+<p>In previous examples, the workstation is a 64-bit workstation.
+Your workstation may be 32-bit.
 You can use this architecture information in the  procedures that follow.</p>
 </div>
 </li>
@@ -2204,7 +2196,7 @@ unixODBC.x86_64 : A complete ODBC driver manager for Linux</pre>
 <p>Install the appropriate package for your architecture.</p>
 <div class="paragraph">
 <p>In this case the command installs the tools for a 64-bit architecture.
-A 32-bit package needs the  <code>unixODBC.i686</code> package.</p>
+A 32-bit package needs the <code>unixODBC.i686</code> package.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2294,9 +2286,9 @@ A 32-bit package needs the  <code>unixODBC.i686</code> package.</p>
 </li>
 <li>
 <p>Copy the <code>odbc.ini</code> file to the <code>/etc</code> directory.</p>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>$ cp ~/linux/Setup/odbc.ini  /etc</pre>
+<pre> $ cp ~/linux/Setup/odbc.ini  /etc</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2312,7 +2304,7 @@ A 32-bit package needs the  <code>unixODBC.i686</code> package.</p>
 </div>
 </li>
 <li>
-<p>Copy the hidden <code>.simba.quickstart.ini ` file to the `/etc</code> directory, renaming it in the process to <code>simbaclient.ini</code>.</p>
+<p>Copy the hidden <code>.simba.quickstart.ini</code> file to the <code>/etc</code> directory, renaming it in the process to <code>simbaclient.ini</code>.</p>
 <div class="listingblock">
 <div class="content">
 <pre> $ cp ~/linux/Setup/.simba.quickstart.ini  /etc/simbaclient.ini</pre>
@@ -2357,8 +2349,7 @@ A 32-bit package needs the  <code>unixODBC.i686</code> package.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Edit the <code>/etc/simbaclient.ini</code> file with your favorite editor.
-2.</p>
+<p>Edit the <code>/etc/simbaclient.ini</code> file with your favorite editor.</p>
 </li>
 <li>
 <p>Change the <code>ErrorMessagesPath</code> property to point to the location where you unzipped the client.</p>
@@ -2467,9 +2458,9 @@ For example, for the 64-bit ODBC driver:</p>
 <h2 id="_edit_the_odbc_ini_file"><a class="anchor" href="#_edit_the_odbc_ini_file"></a>Edit the odbc.ini file</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <code>odbc.ini</code> file is a registry and configuration file for ODBC DSNs (Data  Source Names).
-This file relies on the drivers registered in the  <code>/etc/odbcinst.ini</code> file.
-Depending on your workstation architecture, you  configure the 32-bit or 64-bit driver.</p>
+<p>The <code>odbc.ini</code> file is a registry and configuration file for ODBC DSNs (Data Source Names).
+This file relies on the drivers registered in the <code>/etc/odbcinst.ini</code> file.
+Depending on your workstation architecture, you configure the 32-bit or 64-bit driver.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2505,7 +2496,7 @@ Depending on your workstation architecture, you  configure the 32-bit or 64-bit 
 <li>
 <p>Do not edit the port number, leave it as <code>12345</code>.</p>
 <div class="paragraph">
-<p>When you are done, your entry will look similar to the following (this  example is for the 64-bit ODBC driver):</p>
+<p>When you are done, your entry will look similar to the following (this example is for the 64-bit ODBC driver):</p>
 </div>
 <div class="listingblock">
 <div class="content">

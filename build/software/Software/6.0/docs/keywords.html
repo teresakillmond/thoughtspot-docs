@@ -1717,7 +1717,7 @@
     <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="troubleshooting-intro.html">Troubleshooting data integrations</a>
+    <a class="nav-link" href="troubleshooting-intro-data-int.html">Troubleshooting data integrations</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="enable-ODBC-log.html">Enable ODBC logs</a>
@@ -2059,22 +2059,6 @@ You can also see this list of keywords and examples from within the help center.
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>top n <em>measure1</em> by <em>attribute|measure2</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Calculates top <strong>n</strong>, then sorts the top items by another measure or attribute.
-Contrast with <a href="#top-n">top n</a> (swaps the order of operations)</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><code>top 10</code></strong> sales rep revenue by profit margin</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>bottom <em>n</em></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -2083,8 +2067,10 @@ Contrast with <a href="#top-n">top n</a> (swaps the order of operations)</p>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong>bottom 25</strong> customer by revenue for each sales rep
-<strong>bottom</strong> revenue average</p>
+<p><strong>bottom 25</strong> customer by revenue for each sales rep</p>
+</li>
+<li>
+<p><strong>bottom</strong> revenue average</p>
 </li>
 <li>
 <p><strong>bottom</strong> revenue by state</p>
@@ -2275,7 +2261,7 @@ When using the <strong>top</strong> or <strong>bottom</strong> keywords without 
 <p>growth of … by … yearly</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code><strong>growth of</strong> sales <strong>by</strong> receipt date closed <strong>yearly</strong></code></p>
+<p><code><strong>growth of</strong> sales <strong>by</strong> date closed <strong>yearly</strong></code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2595,7 +2581,7 @@ When using the <strong>top</strong> or <strong>bottom</strong> keywords without 
 <p><em>n</em> quarters for each year</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>last 2 quarters for each year</code></p>
+<p><code><strong>last 2 quarters</strong> for each year</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2672,7 +2658,7 @@ When using the <strong>top</strong> or <strong>bottom</strong> keywords without 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>year</p>
+<p><em>year</em></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>revenue by product <strong>2014</strong> product name contains snowboard</code></p>
@@ -2841,7 +2827,7 @@ When using the <strong>top</strong> or <strong>bottom</strong> keywords without 
 <p>similar to</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>`	course name <strong>similar to</strong> 'hand'`</p>
+<p><code>course name <strong>similar to</strong> 'hand'</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -2983,7 +2969,7 @@ When using the <strong>top</strong> or <strong>bottom</strong> keywords without 
 <p>&gt;</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>sum sale amount by visitor by product for last year sale amount &gt; 2000</code></p>
+<p><code>sum sale amount by visitor by product for last year sale amount <strong>&gt;</strong> 2000</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -3225,25 +3211,6 @@ Must match last attribute before keyword with first attribute inside subsearch.<
 <p><code>product name 2014 product name <strong>in</strong> (product name 2013) sales</code></p>
 </li>
 </ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>attribute</em> not in (<em>attribute subsearch</em>)</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Relative complement of two sets
-Must match last attribute before keyword with first attribute inside subsearch.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><code>product name 2014 product name <strong>not in</strong> (product name 2013) sales</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Find sales for all products ordered in 2014 that were not ordered in 2013</p>
 </div></div></td>
 </tr>
 </tbody>

@@ -1717,7 +1717,7 @@
     <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="troubleshooting-intro.html">Troubleshooting data integrations</a>
+    <a class="nav-link" href="troubleshooting-intro-data-int.html">Troubleshooting data integrations</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="enable-ODBC-log.html">Enable ODBC logs</a>
@@ -1972,6 +1972,7 @@
 <ul class="sectlevel1">
 <li><a href="#_how_it_works">How it works</a></li>
 <li><a href="#_key_benefits">Key benefits</a></li>
+<li><a href="#_new_features_in_6_0">New features in 6.0</a></li>
 <li><a href="#_limitations">Limitations</a>
 <ul class="sectlevel2">
 <li><a href="#_feature_availability_in_embrace">Feature availability in Embrace</a></li>
@@ -2052,41 +2053,77 @@ It&#8217;s easy to apply transformations and filter the data also.</p>
 </div>
 </div>
 <div class="sect1">
+<h2 id="_new_features_in_6_0"><a class="anchor" href="#_new_features_in_6_0"></a>New features in 6.0</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><script src="https://fast.wistia.com/embed/medias/1n7ei0tqr4.jsonp" async></script>
+<script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+<span class="wistia_embed wistia_async_1n7ei0tqr4 popover=true popoverAnimateThumbnail=true popoverBorderColor=4E55FD popoverBorderWidth=2" style="display:inline-block;height:252px;position:relative;width:450px">&nbsp;</span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_limitations"><a class="anchor" href="#_limitations"></a>Limitations</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_feature_availability_in_embrace"><a class="anchor" href="#_feature_availability_in_embrace"></a>Feature availability in Embrace</h3>
 <div class="paragraph">
-<p>The following matrix compares the features that are available in our internal high-performance database, Falcon, and the ones available in Embrace:<table><tbody><tr><th>Feature Name</th>
-<th>Falcon</th>
-<th>Embrace</th></tr>
-<tr><td>Simple Search and Complex searches:<br></br>Versus, Inline Subquerying, Growth</td>
-<td>&check;</td>
-<td>&check;</td></tr>
-<tr><td>Search Suggestions for column names and values</td>
-<td>&check;</td>
-<td>&check;</td></tr>
-<tr><td>Headlines that summarize tables</td>
-<td>&check;</td>
-<td>&check;</td></tr>
-<tr><td>All chart types and configurations</td>
-<td>&check;</td>
-<td>&check;</td></tr>
-<tr><td>Spot IQ: Instant insights, Did you know?,<br></br>Pinboard insights, Analyze</td>
-<td>&check;</td>
-<td>&cross;</td></tr>
-<tr><td>Monitor</td>
-<td>&check;</td>
-<td>&cross;</td></tr>
-<tr><td>Table and Column remapping through Scriptability</td>
-<td>&cross;</td>
-<td>&check;</td></tr>
-<tr><td>Custom calendar</td>
-<td>&check;</td>
-<td>&cross;</td></tr>
-<tr><td>Materialized view</td>
-<td>&check;</td>
-<td>&cross;</td></tr></tbody></table></p>
+<p>The following matrix compares the features that are available in our internal high-performance database, Falcon, and the ones available in Embrace:
+<table>
+ <tbody>
+  <tr>
+   <th>Feature Name</th>
+   <th>Falcon</th>
+   <th>Embrace</th>
+  </tr>
+   <tr>
+    <td>Simple Search and Complex searches:<br>
+    Versus, Inline Subquerying, Growth</td>
+    <td>&check;</td>
+    <td>&check;</td>
+  </tr>
+  <tr>
+   <td>Search Suggestions for column names and values</td>
+   <td>&check;</td>
+   <td>&check;</td>
+  </tr>
+  <tr>
+   <td>Headlines that summarize tables</td>
+   <td>&check;</td>
+   <td>&check;</td>
+  </tr>
+  <tr>
+   <td>All chart types and configurations</td>
+   <td>&check;</td>
+   <td>&check;</td>
+  </tr>
+  <tr>
+   <td>Spot IQ: Instant insights, Did you know?,<br>Pinboard insights, Analyze</td>
+   <td>&check;</td>
+   <td>&cross;</td>
+  </tr>
+  <tr>
+   <td>Monitor</td>
+   <td>&check;</td>
+   <td>&cross;</td>
+  </tr>
+  <tr>
+   <td>Table and Column remapping through Scriptability</td>
+   <td>&cross;</td>
+   <td>&check;</td>
+  </tr>
+  <tr>
+   <td>Custom calendar</td>
+   <td>&check;</td>
+   <td>&cross;</td>
+  </tr>
+  <tr>
+   <td>Materialized View</td>
+   <td>&check;</td>
+   <td>&cross;</td>
+  </tr>
+ </tbody>
+</table></p>
 </div>
 </div>
 <div class="sect2">
@@ -2103,16 +2140,17 @@ Functions not listed here have full support.</p>
 <col style="width: 20%;">
 <col style="width: 20%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Function</th>
-<th class="tableblock halign-left valign-top">Snowflake</th>
-<th class="tableblock halign-left valign-top">Amazon + Redshift</th>
-<th class="tableblock halign-left valign-top">Google + BigQuery</th>
-<th class="tableblock halign-left valign-top">Azure + Synapse</th>
-</tr>
-</thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Function</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Snowflake</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amazon<br>
+ Redshift</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Google<br>
+ BigQuery</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Azure<br>
+ Synapse</p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>SOUNDS_LIKE</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
@@ -2193,16 +2231,17 @@ Data types not listed here have full support.</p>
 <col style="width: 20%;">
 <col style="width: 20%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Data Type<br></th>
-<th class="tableblock halign-left valign-top">Snowflake<br></th>
-<th class="tableblock halign-left valign-top">Amazon + Redshift</th>
-<th class="tableblock halign-left valign-top">Google + BigQuery</th>
-<th class="tableblock halign-left valign-top">Azure + Synapse</th>
-</tr>
-</thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Snowflake</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amazon<br>
+ Redshift</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Google<br>
+ BigQuery</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Azure<br>
+ Synapse</p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>BINARY</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&cross;</p></td>
@@ -2262,7 +2301,7 @@ Databases not listed here have full support.
      <dt>Sample values</dt>
      <dd>Embrace does not internationalize sample values in tables.</dd></dlentry>
     <dlentry>
-     <dt>Delayed UI rendering</dt> <dd>For connections with a very large number of tables (on the order of 1000&#8217;s of tables), UI rendering may take a very long time.These connections may time out.</dd></dlentry>
+     <dt>Delayed UI rendering</dt> <dd>For connections with a very large number of tables (on the order of 1000&#8217;s of tables), UI rendering may take a very long time. These connections may time out.</dd></dlentry>
    <dlentry>
     <dt>Deleting columns</dt>
     <dd>After specifying a connection, columns cannot be deleted from the table. Editing a connection makes it possible to add additional columns, but not to remove them.</dd></dlentry>
@@ -2277,13 +2316,13 @@ Databases not listed here have full support.
       <dt>Join support</dt>
       <dd>Google BigQuery does not support PK-FK joins. Therefore, when using Embrace, you must create joins explicitly in ThoughtSpot.</dd></dlentry>
      <dlentry>
-      <dt>Partitioned tables</dt>  <dd>When running a query on a partitioned table with the <strong>Require partition filter option</strong> enabled, you must specify the <code>WHERE</code> clause.Without a <code>WHERE</code> clause specified, queries generate an error. <br>
+      <dt>Partitioned tables</dt>  <dd>When running a query on a partitioned table with the <strong>Require partition filter option</strong> enabled, you must specify the <code>WHERE</code> clause. Omitting the <code>WHERE</code> clause throws an error. <br>
       To ensure that the query on such tables honors the partition condition, you must create a worksheet filter in ThoughtSpot.</dd></dlentry></dl>
      </dd>
     </dlentry>
     <dlentry>
      <dt>Azure Synapse</dt>
-     <dd>Azure Synapse supports up to 10 <code>IF THEN ELSE</code> statements in a single query. Azure Synapse does not support foreign keys, so no PK-FK joins can be defined in Synapse.</dd></dlentry>
+     <dd>Azure Synapse supports up to 10 <code>IF THEN ELSE</code> statements in a single query.</dd></dlentry>
 </dl></p>
 </div>
 </div>

@@ -1717,7 +1717,7 @@
     <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="troubleshooting-intro.html">Troubleshooting data integrations</a>
+    <a class="nav-link" href="troubleshooting-intro-data-int.html">Troubleshooting data integrations</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="enable-ODBC-log.html">Enable ODBC logs</a>
@@ -2007,20 +2007,12 @@ The connection will be made between a new ThoughtSpot Table Input and Output obj
 <p>Verify the node IP(s).</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ tscli node ls</code></pre>
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ tscli node ls
+172.18.231.17
+172.18.231.18</code></pre>
 </div>
 </div>
 </li>
-</ol>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>172.18.231.17
-172.18.231.18</pre>
-</div>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
 <li>
 <p>Make a note of each IP;
 there may be more than one.</p>
@@ -2048,7 +2040,7 @@ This will ensure that the drivers picked up at runtime.</p>
 <p>Log in to the local machine where you have alredy installed the Pentaho Data Integration (PDI) client.</p>
 </li>
 <li>
-<p>Click <a href="downloads.html" class="page"><strong>Here</strong></a> to download the JDBC driver.</p>
+<p>Click <a href="downloads.html" class="page"><strong>here</strong></a> to download the JDBC driver.</p>
 </li>
 <li>
 <p>Click <strong>JDBC Driver</strong> to download the file <code>thoughtspot_jdbc&lt;version&gt;.jar</code>.</p>
@@ -2125,7 +2117,7 @@ It is also known as the Kettle project.</p>
 </div>
 </li>
 <li>
-<p>Double-click the <strong>CSV File Input</strong> icon to open the <strong>CSV Input</strong> dialog .</p>
+<p>Double-click the <strong>CSV File Input</strong> icon to open the <strong>CSV Input</strong> dialog.</p>
 </li>
 <li>
 <p>Name the <strong>Step</strong>.</p>
@@ -2188,7 +2180,7 @@ Click <strong>OK</strong> to start the transformation in preview.</p>
 <li>
 <p>Examine the preview data, then click <strong>Close</strong>.</p>
 <div class="paragraph">
-<p>You may want to verify that you are able to read the data using the SQL   query from ThoughtSpot.</p>
+<p>You may want to verify that you are able to read the data using the SQL query from ThoughtSpot.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -2271,6 +2263,9 @@ Click <strong>OK</strong> to start the transformation in preview.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Custom Driver Class Name</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>com.simba.client.core.jdbc4.JDBC4Driver</code></p>
+</div>
+<div class="paragraph">
+<p>Ensure that there are no leading or trailing spaces.</p>
 </div></div></td>
 </tr>
 <tr>
