@@ -75,16 +75,20 @@ It is also important the the `username` is a match for a `username` on the Thoug
 +
 `POST https://<instance>/callosum/v1/session/auth/token`
 +
-This post takes the following parameters:+++<table>++++++<tr>++++++<th>+++Parameter+++</th>+++
-     +++<th>+++Description+++</th>++++++</tr>+++
-   +++<tr>++++++<td>++++++<code>+++secret_key+++</code>++++++</td>+++
-     +++<td>+++A required +++<code>+++formData+++</code>+++ parameter containing a string which is the authentication token provide by the ThoughtSpot server.+++</td>++++++</tr>+++
-   +++<tr>++++++<td>++++++<code>+++username+++</code>++++++</td>+++
-     +++<td>+++A required +++<code>+++formData+++</code>+++ parameter containing a string which is the user's +++<code>+++username+++</code>+++ on ThoughtSpot.+++</td>++++++</tr>+++
-   +++<tr>++++++<td>++++++<code>+++access_level+++</code>++++++</td>+++
-     +++<td>+++A required +++<code>+++formData+++</code>+++ parameter containing one of +++<code>+++FULL+++</code>+++ or +++<code>+++REPORT_BOOK_VIEW+++</code>+++.+++</td>++++++</tr>+++
-   +++<tr>++++++<td>++++++<code>+++id+++</code>++++++</td>+++
-     +++<td>+++An optional +++<code>+++formData+++</code>+++ parameter containing a ThoughtSpot object identifier. This is only required if you specified +++<code>+++REPORT_BOOK_VIEW+++</code>+++ for the +++<code>+++access_level+++</code>+++ parameter.+++</td>++++++</tr>++++++</table>+++
+This post takes the following parameters:
++
+++++
+<table><tr><th>Parameter</th>
+     <th>Description</th></tr>
+   <tr><td><code>secret_key</code></td>
+     <td>A required <code>formData</code> parameter containing a string which is the authentication token provide by the ThoughtSpot server.</td></tr>
+   <tr><td><code>username</code></td>
+     <td>A required <code>formData</code> parameter containing a string which is the user's <code>username</code> on ThoughtSpot.</td></tr>
+   <tr><td><code>access_level</code></td>
+     <td>A required <code>formData</code> parameter containing one of <code>FULL</code> or <code>REPORT_BOOK_VIEW</code>.</td></tr>
+   <tr><td><code>id</code></td>
+     <td>An optional <code>formData</code> parameter containing a ThoughtSpot object identifier. This is only required if you specified <code>REPORT_BOOK_VIEW</code> for the <code>access_level</code> parameter.</td></tr></table>
+++++
 
 . The trusted authenticator server is responsible for managing this token.
 +
