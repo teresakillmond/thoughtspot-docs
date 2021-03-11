@@ -6,7 +6,7 @@ Learn how to fix the problem when your search results contain too many blanks.
 
 If you find that your search results contain too many blanks when your data source is a worksheet, there is a simple adjustment you can make to fix this.
 
-If you find that the charts and tables built on a worksheet contain a large number of null values (which display as \{blank} in the web browser), you can fix this by changing the link:{{ site.baseurl }}/admin/worksheets/about-inclusion-rule.html#[inclusion rule] for the worksheet.
+If you find that the charts and tables built on a worksheet contain a large number of null values (which display as \{blank} in the web browser), you can fix this by changing the xref:inclusion-rule.adoc[inclusion rule] for the worksheet.
 
 An inclusion rule that specifies *Exclude Empty Rows (Inner Join)* will reduce the number of null values in the result.
 Imagine a worksheet that includes data about a retail grocery store.
@@ -34,6 +34,6 @@ So for every product that has never been sold in a particular store, you can see
 This may be what you want to see, in which case, you can leave the worksheet as is, and choose *Exclude* for the \{blank} values in your table or chart, whenever you don't want to see them.
 
 However, in may cases, including all the \{blank} values could confuse end users.
-So if you encounter this problem, you can link:{{ site.baseurl }}/admin/worksheets/change-inclusion-rule.html#[edit the worksheet, and change the inclusion rule] to *Exclude Empty Rows (Inner Join)*.
+So if you encounter this problem, you can xref:change-inclusion-rule.adoc[edit the worksheet, and change the inclusion rule] to *Exclude Empty Rows (Inner Join)*.
 Now when searching for "store name" and "product name" on the worksheet, users will not be overwhelmed by null values.
 They'll only see the rows where a particular product has been sold in a particular store.

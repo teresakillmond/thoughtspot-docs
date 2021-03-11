@@ -1,117 +1,153 @@
 = 6.3 Release Notes
 :experimental:
-:last_updated: 10/18/2020
-
+:last_updated: 01/29/2021
 :redirect_from: /6.3.0/release/notes.html", "/6.3.0.CU1/release/notes.html
 
+ThoughtSpot version 6.3 is now available. These release notes include information about new and enhanced features.
 
-
-ThoughtSpot version 6.3 is now available.
-These release notes include information about new and enhanced features.
-
-For a complete list of issues that we fixed in this release, see link:{{ site.baseurl }}/release/fixed.html[Fixed issues].
+For a complete list of issues that we fixed in this release, see xref:fixed.adoc[Fixed issues].
 
 * <<6-3-new,6.3 New Features>>
  ** <<6-3-analyst,For the Analyst>>
  ** <<6-3-business-user,For the Business User>>
  ** <<6-3-data-engineer,For the Data Engineer>>
  ** <<6-3-it-ops-engineer,For the IT Ops Engineer>>
-// * [Beta Programs](#beta-program)
 * <<upgrade-paths,Supported Upgrade Paths>>
 
 [#6-3-new]
 == 6.3 New Features and Functionality
 
-For a complete list of issues that we fixed in this release, see link:{{ site.baseurl }}/release/fixed.html#6-3[6.3 Fixed issues].
+For a complete list of issues that we fixed in this release, see xref:fixed.adoc#6-3[6.3 Fixed issues].
 
+[#6-3-analyst]
 === For the Analyst
-+++<dlentry id="geomaps">+++Geomaps::::  ThoughtSpot now supports link:{{ site.baseurl }}/reference/geomap-reference.html[GeoMap] visualizations for this new locale:
+[#geomaps]
+Geomaps::
+  ThoughtSpot now supports xref:geomap-reference.adoc[GeoMap] visualizations for this new locale:
++
+*Netherlands*: Province, Municipality, Postcode
 
-* *Netherlands*: Province, Municipality, Postcode+++</dlentry>++++++<dlentry id="scriptability">+++Scriptability::::
-This release introduces expanded support for link:{{ site.baseurl }}/admin/scriptability/scriptability-overview.html[exporting and importing ThoughtSpot objects].
-Pinboard and Answer Scriptability is now GA.
-You can also export, import, and update the following newly scriptable objects:
-
+[#scriptability]
+Scriptability::
+This release introduces expanded support for xref:scriptability.adoc[exporting and importing ThoughtSpot objects]. Pinboard and Answer Scriptability is now GA. You can also export, import, and update the following newly scriptable objects:
++
 * Views
 * Tables
++
+NOTE:: ThoughtSpot Scripting Language is now called xref:tml.adoc[ThoughtSpot Modeling Language].
 
-ThoughtSpot Scripting Language is now called link:{{ site.baseurl }}/admin/scriptability/tml.html[ThoughtSpot Modeling Language].+++</dlentry>++++++<dlentry id="linked-filters">+++Linked Pinboard filters::::
-You can now create one filter that filters visualizations based on multiple Worksheets by linking the Worksheet columns, at the Pinboard level.
+[#linked-filters]
+Linked Pinboard filters::
+  You can now create one filter that filters visualizations based on multiple Worksheets by linking the Worksheet columns, at the Pinboard level.
++
 This is useful when you have a Pinboard built on multiple Worksheets, and you would like to filter on columns that are functionally the same, but exist in multiple Worksheets.
-Refer to link:{{ site.baseurl }}/complex-search/linked-filters.html[Linked Pinboard filters].+++</dlentry>++++++<dlentry id="selective-filters">+++Selective Pinboard filters::::
-You can now configure Pinboard filters to apply to specific visualizations that you choose.
-This is useful when you would like to filter some, but not all, visualizations in a Pinboard.
-Refer to link:{{ site.baseurl }}/complex-search/selective-filters.html[Selective Pinboard filters].+++</dlentry>+++
+Refer to xref:linked-filters.adoc[Linked Pinboard filters].
 
+[#selective-filters]
+Selective Pinboard filters::
+  You can now configure Pinboard filters to apply to specific visualizations that you choose.
++
+This is useful when you would like to filter some, but not all, visualizations in a Pinboard. Refer to xref:selective-filters.adoc[Selective Pinboard filters].
+
+[#6-3-business-user]
 === For the Business User
-+++<dlentry id="monitor">+++Monitor::::  The Monitor suite of features, some of which were introduced in earlier releases as Beta, are now generally available by default.+++</dlentry>++++++<dlentry id="mobile-improvements">+++Mobile app updates::::  ThoughtSpot mobile supports more features that were previously available only through the ThoughtSpot Web app, including:
 
+[#monitor]
+Monitor::
+  The Monitor suite of features, some of which were introduced in earlier releases as Beta, are now generally available by default.
+
+[#mobile-improvements]
+Mobile app updates::
+  ThoughtSpot mobile supports more features that were previously available only through the ThoughtSpot Web app, including:
++
 * Deep linking
 * Drill down
++
+See xref:notes-mobile.adoc[ThoughtSpot mobile release notes] and xref:use-mobile.adoc[ThoughtSpot Mobile overview] for detailed information.
 
-See link:{{ site.baseurl }}/admin/mobile/notes-mobile.html[ThoughtSpot mobile release notes] and link:{{ site.baseurl }}/admin/mobile/use-mobile.html[ThoughtSpot Mobile overview] for detailed information.+++</dlentry>++++++<dlentry id="pivot-table">+++Pivot table enhancements::::
-This release includes enhancements to link:{{ site.baseurl }}/complex-search/about-pivoting-a-table.html[Pivot tables].
-You can now:
-
+[#pivot-table]
+Pivot table enhancements::
+  This release includes enhancements to xref:pivoting-a-table.adoc[Pivot tables]. You can now:
++
 * *Drill down* on values in pivot tables
 * *Show underlying data* for values in pivot tables
-* *SpotIQ analyze* values in pivot tables+++</dlentry>+++
+* *SpotIQ analyze* values in pivot tables
 
+[#6-3-data-engineer]
 === For the Data Engineer
-+++<dlentry id="dataflow">+++DataFlow::::  *New connection types* + In this release, DataFlow expands support to the following connection types:
 
-* <a href="{{"/data-integrate/dataflow/dataflow-apache-parquet.html" | prepend: site.baseurl}}">Apache Parquet</a>
-* <a href="{{"/data-integrate/dataflow/dataflow-databricks-delta-lake.html" | prepend: site.baseurl}}">Databricks Delta Lake</a>
-* <a href="{{"/data-integrate/dataflow/dataflow-denodo.html" | prepend: site.baseurl}}">Denodo</a>
-* <a href="{{"/data-integrate/dataflow/dataflow-jdbc.html" | prepend: site.baseurl}}">JDBC</a>
-* <a href="{{"/data-integrate/dataflow/dataflow-rest-api.html" | prepend: site.baseurl}}">REST API</a>
-* <a href="{{"/data-integrate/dataflow/dataflow-sas.html" | prepend: site.baseurl}}">SAS</a>  *Transformations* + In all DataFlow database connections, you can now add row-level formulas that use native database functions to transform your data as it loads into ThoughtSpot.+++</dlentry>++++++<dlentry id="embrace">+++Embrace::::
-In this release, Embrace adds support for SpotIQ analyze.
-Now you can analyze any answer, pinboard vizualization, or data source to generate instant insights, by clicking the SpotIQ analyze button image:../images/icon-lightbulb.png[spotiq analyze icon].
-Embrace now supports security passthrough for Snowflake and Google BigQuery using OAuth for authentication and authorization.
-This feature is in beta for this release.
-Contact ThoughtSpot support for assistance.+++</dlentry>+++
+[#dataflow]
+DataFlow::
+  New connection types;; In this release, DataFlow expands support to the following connection types:
++
+* xref:dataflow-apache-parquet.adoc[Apache Parquet]
+* xref:dataflow-databricks-delta-lake.adoc[Databricks Delta Lake]
+* xref:dataflow-denodo.adoc[Denodo]
+* xref:dataflow-jdbc.adoc[JDBC]
+* xref:dataflow-rest-api.adoc[REST API]
+* xref:dataflow-sas.adoc[SAS]
 
+  Transformations;; In all DataFlow database connections, you can now add row-level formulas that use native database functions to transform your data as it loads into ThoughtSpot.
+
+[#embrace]
+Embrace::
+  SpotIQ Analyze;; In this release, Embrace adds support for SpotIQ analyze. Now you can analyze any answer, pinboard vizualization, or data source to generate instant insights, by clicking the SpotIQ analyze button image:../images/icon-lightbulb.png[spotiq analyze icon].
+
+  Security Passthrough;; Embrace now supports security passthrough for *Snowflake* and *Google BigQuery* using OAuth for authentication and authorization. This feature is in beta for this release. Contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support,window="_blank"] for assistance.
+
+[#6-3-it-ops-engineer]
 === For the IT Ops Engineer
-+++<dlentry id="entry">+++Advanced lean mode for cloud deployments:::: For ThoughtSpot customers who want to deploy their AWS, Azure, and GCP instances with lower data sizes, this release brings enhancements to advanced lean mode configuration.
+
+[#entry]
+Advanced lean mode for cloud deployments::
+  For ThoughtSpot customers who want to deploy their AWS, Azure, and GCP instances with lower data sizes, this release brings enhancements to advanced lean mode configuration.
++
 You can now configure lean mode yourself using tscli commands.
 No need to contact ThoughtSpot.
-For details, see link:{{ site.baseurl }}/appliance/cloud.html#reducing-your-cloud-infrastructure-costs[Use small and medium instance types].+++</dlentry>++++++<dlentry id="open-ldap-auth">+++OpenLDAP authentication::::
-ThoughtSpot now integrates with OpenLDAP for user authentication.
-LDAP provides security and makes user management more centralized.
-To enable user authentication through OpenLDAP, link:{{ site.baseurl }}/appliance/contact.html[contact ThoughtSpot Support].
-This feature also exists in ThoughtSpot release 6.0.5.+++</dlentry>++++++<dlentry id="open-ldap-admin-user">+++OpenLDAP admin user::::
-ThoughtSpot now supports using your company's OpenLDAP admin user to SSH into your cluster(s) as an admin, instead of using the local ThoughtSpot admin user, which has sudo privileges.
-This feature is only applicable to ThoughtSpot clusters run on an link:{{ site.baseurl }}/appliance/rhel/rhel.html[RHEL image].
-Refer to link:{{ site.baseurl }}/appliance/rhel/rhel-install-online.html#ldap_admin_user[Install the ThoughtSpot application on online clusters that use RHEL] to learn how to add the three OpenLDAP admin user parameters to your Ansible playbook.+++</dlentry>++++++<dlentry id="admin-console">+++Admin Console enhancements::::
-This release reorganizes the Admin Console, to make it cleaner and more intuitive.
+For details, see xref:cloud.adoc#reducing-your-cloud-infrastructure-costs[Use small and medium instance types].
+
+[#open-ldap-auth]
+OpenLDAP authentication::
+  ThoughtSpot now integrates with OpenLDAP for user authentication. LDAP provides security and makes user management more centralized.  To enable user authentication through OpenLDAP, contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support,window="_blank"].
++
+We also made this feature available in ThoughtSpot release 6.0.5.
+
+[#open-ldap-admin-user]
+OpenLDAP admin user::
+  ThoughtSpot now supports using your company's OpenLDAP admin user to SSH into your cluster(s) as an admin, instead of using the local ThoughtSpot admin user, which has sudo privileges.
++
+This feature is only applicable to ThoughtSpot clusters that run on an xref:rhel.html[RHEL image]. Refer to xref:rhel-install-online.adoc#ldap_admin_user[Install the ThoughtSpot application on online clusters that use RHEL] to learn how to add the three OpenLDAP admin user parameters to your Ansible playbook.
+
+[#admin-console]
+Admin Console enhancements::
+  This release reorganizes the Admin Console, to make it cleaner and more intuitive.
++
 This includes the following changes:
-
-* The *System Overview Pinboard* in the Admin Console has been deprecated.
-You can find visualizations from it on the link:{{ site.baseurl }}/admin/admin-portal/system-cluster-pinboard.html[System Cluster Pinboard] and the link:{{ site.baseurl }}/admin/admin-portal/system-alerts-pinboard.html[System Alerts Pinboard].
++
+* The *System Overview Pinboard* in the Admin Console has been deprecated. You can find visualizations from it on the xref:admin-portal-system-cluster-pinboard.adoc[System Cluster Pinboard] and the xref:admin-portal-system-alerts-pinboard.adoc[System Alerts Pinboard].
 * The *Total Capacity* visualization is now in the *System Cluster Pinboard*.
-* The visualizations about user activity that appeared in the *System Overview Pinboard* now appear in the new link:{{ site.baseurl }}/admin/admin-portal/user-adoption-pinboard.html[User Adoption Pinboard].
+* The visualizations about user activity that appeared in the *System Overview Pinboard* now appear in the new xref:admin-portal-user-adoption-pinboard.adoc[User Adoption Pinboard].
 * The *Relational Data Cache* and *Relational Search Engine* panels that appeared in the *System Overview Pinboard* now appear in menu:Data[Usage > Data].
-* Many of the visualizations that appeared in the *System Overview Pinboard* appear in the link:{{ site.baseurl }}/admin/system-monitor/overview.html[System Information and Usage Pinboard].
-* The *Configuration Events* panel that appeared in the *System Overview Pinboard* now appears in the link:{{ site.baseurl }}/admin/admin-portal/system-alerts-pinboard.html[System Alerts Pinboard].+++</dlentry>++++++<dlentry id="user-adoption-perfomance-tracking-pinboard">+++User adoption and performance Pinboards::::
-This release of ThoughtSpot contains two new default Pinboards for administrators.
-Use the User Adoption Pinboard in the Admin Console to understand how your ThoughtSpot users are interacting with ThoughtSpot, and how your user adoption is changing over time.
-Use the Performance Tracking Pinboard, accessible from the *Pinboards* tab, to understand how your ThoughtSpot cluster is performing.
-Refer to link:{{ site.baseurl }}/admin/admin-portal/user-adoption-pinboard.html[User Adoption Pinboard] and link:{{ site.baseurl }}/admin/system-monitor/performance-tracking.html[Performance Tracking Pinboard].+++</dlentry>++++++<dlentry id="ease-of-installation">+++RHEL and Amazon Linux 2 ease of installation:::: This release of ThoughtSpot makes it easier to deploy ThoughtSpot on an link:{{ site.baseurl }}/appliance/amazon-linux-2/al2-overview.html[Amazon Linux 2] or link:{{ site.baseurl }}/appliance/rhel/rhel.html[RHEL image].
+* Many of the visualizations that appeared in the *System Overview Pinboard* appear in the xref:system-info-usage.adoc[System Information and Usage Pinboard].
+* The *Configuration Events* panel that appeared in the *System Overview Pinboard* now appears in the xref:admin-portal-system-alerts-pinboard.adoc[System Alerts Pinboard].
 
-* You can now use a Terraform, Puppet, or Chef template, or an Ansible tarball, to install OS packages, dependencies, and the ThoughtSpot CLI (tscli), and configure your cluster.
-Previously, you could only use an Ansible tarball or Terraform template.
+[#user-adoption-perfomance-tracking-pinboard]
+User adoption and performance Pinboards::
+  This release of ThoughtSpot contains two new default Pinboards for administrators.
++
+* Use the *User Adoption Pinboard* in the *Admin Console* to understand how your ThoughtSpot users are interacting with ThoughtSpot, and how your user adoption is changing over time.
+* Use the Performance Tracking Pinboard, accessible from the *Pinboards* tab, to understand how your ThoughtSpot cluster performs.
++
+See the xref:admin-portal-user-adoption-pinboard.adoc[User Adoption Pinboard] and xref:performance-tracking.adoc[Performance Tracking Pinboard].
+
+[#ease-of-installation]
+RHEL and Amazon Linux 2 ease of installation::
+  This release of ThoughtSpot makes it easier to deploy ThoughtSpot on an xref:al2-overview.adoc[Amazon Linux 2] or xref:rhel.adoc[RHEL image] platform.
++
+* You can now use a Terraform, Puppet, or Chef template, or an Ansible tarball, to install OS packages, dependencies, and the ThoughtSpot CLI (tscli), and configure your cluster. Previously, you could only use an Ansible tarball or Terraform template.
 * You now only need 20 GB on the root drive for yum packages and system logs, and 200 GB for ThoughtSpot installation.
 * You can now deploy ThoughtSpot on RHEL version 7.9.
-You can no longer deploy ThoughtSpot on RHEL version 7.7.+++</dlentry>+++
-
-////
-{: id="beta-program"}
-## Beta Programs
-
-If you are interested in seeing some of our newest features, we want to add you to our testing group. ThoughtSpot is looking for people with all levels of experience: end-users, analysts, administrators, configurators, and so on.
-We like to have a diversity of experience and perspective, and want to hear from you. Because we strive for excellence, we will partner with you to adjust the final details of our offerings based on your feedback.
-////
+You can no longer deploy ThoughtSpot on RHEL version 7.7.
 
 [#upgrade-paths]
 == Supported Upgrade Paths
@@ -126,5 +162,5 @@ This includes any hotfixes or customer patches on these branches.
 If you are running a different version, you must do a multiple pass upgrade.
 First, upgrade to version 6.1.x, or version 6.2.x, and then to the 6.3 release.
 
-{% include note.html content="To successfully upgrade your ThoughtSpot cluster, all user profiles must include a valid email address.
-Without valid email addresses, the upgrade is blocked." %}
+NOTE: To successfully upgrade your ThoughtSpot cluster, all user profiles must include a valid email address.
+Without valid email addresses, the upgrade is blocked.

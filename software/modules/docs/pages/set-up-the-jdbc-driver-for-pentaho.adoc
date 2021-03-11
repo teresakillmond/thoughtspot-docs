@@ -1,10 +1,9 @@
+= Set up the JDBC driver for Pentaho
+:last_updated: 02/11/2021
+:linkattrs:
 :experimental:
 
-'''
-
-title: [Set up the JDBC driver for Pentaho]
-
-last_updated: 11/19/2019 summary: "Use Pentaho to create a JDBC connection to ThoughtSpot." sidebar: mydoc_sidebar permalink: /:collection/:path.html --
+Use Pentaho to create a JDBC connection to ThoughtSpot.
 
 You can use the Pentaho Data Integration (PDI) to create a JDBC connection.
 The Pentaho Data Integration (PDI) suite is a comprehensive data integration and business analytics platform.
@@ -22,7 +21,7 @@ The connection will be made between a new ThoughtSpot Table Input and Output obj
 
 == Check the ThoughtSpot IP and the simba_server status
 
-{% include content/simba-server-start.md %}
+include::partial$simba-server-start.adoc[]
 
 == Install the Simba drivers in the Pentaho directories
 
@@ -30,7 +29,7 @@ Before starting the Pentaho Data Integration (PDI) client and creating the conne
 This will ensure that the drivers picked up at runtime.
 
 . Log in to the local machine where you have alredy installed the Pentaho Data Integration (PDI) client.
-. Click link:{{ site.baseurl }}/release/downloads.html[*Here*] to download the JDBC driver.
+. Click xref:downloads.adoc[*Here*] to download the JDBC driver.
 . Click *JDBC Driver* to download the file `thoughtspot_jdbc<version>.jar`.
 . Copy the `thoughtspot_jdbc<version>.jar` file to the following directories:
  ** `<Pentaho_install_dir>/server/data-integration-server/tomcat/webapps/pentaho-di/WED-INF/lib/`
@@ -115,24 +114,23 @@ image::table_output_pentaho.png[]
 +
 image::new_connection_pentaho.png[]
 
-. Enter or select the following information in the Database Connection dialog:+++<table>++++++<tr>++++++<th>+++Field+++</th>+++
-    +++<th>+++Description+++</th>++++++</tr>+++
- +++<tr>++++++<th>+++Connection Name+++</th>+++
-    +++<td>+++Any string.+++</td>++++++</tr>+++
- +++<tr>++++++<th>+++Connection Type+++</th>+++
-    +++<td>+++Generic database+++</td>++++++</tr>+++
- +++<tr>++++++<th>+++Access+++</th>+++
-    +++<td>+++Native (JDBC)+++</td>++++++</tr>+++
- +++<tr>++++++<th>+++Custom Connection URL+++</th>+++
-    +++<td>++++++<code>+++jdbc:simba://SERVER_IP:12345;Database=DATABASE_or_SCHEMA_NAME+++</code>+++</code>
-    +++<p>+++The IP is a node in your ThoughtSpot cluster. The name or schema of the database you want to connect to. Use TQL to create a database name if needed. Ensure that there are no leading or trailing spaces.+++</p>++++++</td>++++++</tr>+++
- +++<tr>++++++<th>+++Custom Driver Class Name+++</th>+++
-    +++<td>++++++<code>+++com.simba.client.core.jdbc4.JDBC4Driver+++</code>+++
-    +++<p>+++Ensure that there are no leading or trailing spaces.+++</p>++++++</td>++++++</tr>+++
- +++<tr>++++++<th>+++User Name+++</th>+++
-    +++<td>+++A ThoughtSpot username. If you leave this empty, you are prompted for it at connection time. This user should have **Data Management** privileges on ThoughtSpot.+++</td>++++++</tr>+++
- +++<tr>++++++<th>+++Password+++</th>+++
-    +++<td>+++The password for the **User Name**. If you leave this empty, you are prompted for it at connection time.+++</td>++++++</tr>++++++</table>+++
+. Enter or select the following information in the Database Connection dialog:
++
+Connection Name:: Any string
+Connection Type:: Generic database
+Access:: Native (JDBC)
+Custom Connection URL:: The IP is a node in your ThoughtSpot cluster. The name or schema of the database to which you are connecting.
++
+Use TQL to create a database name if needed. Ensure that there are no leading or trailing spaces.
+  Syntax;; `jdbc:simba://SERVER_IP:12345;Database=DATABASE_or_SCHEMA_NAME`
+Custom Driver Class Name::
+  Ensure that there are no leading or trailing spaces.
+  Syntax:: `com.simba.client.core.jdbc4.JDBC4Driver`
+User Name::
+  A ThoughtSpot username. If you leave this empty, you are prompted for it at connection time. This user should have **Data Management** privileges on ThoughtSpot.
+Password::
+  The password for the **User Name**. If you leave this empty, you are prompted for it at connection time.
+
 +
 image::database_connection_pentaho.png[]
 . Click *Test* to test your database connection.

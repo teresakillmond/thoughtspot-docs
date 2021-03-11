@@ -12,7 +12,7 @@ There are several ways you can view audit log information in ThoughtSpot.
 You can see recent events in the Control Center or view more detailed audit logs using tscli.
 Administrators can view audit logs of configuration changes users have made to ThoughtSpot in these ways:
 
-* Monitor events from the link:{{ site.baseurl }}/admin/system-monitor/monitor-pinboards.html#[Control Center].
+* Monitor events from the xref:monitor-pinboards.adoc[Control Center].
 * Generate audit log reports through the `tscli` command.
 
 You can access an audit log of cluster events through tscli.
@@ -21,6 +21,7 @@ You can also access information on cluster updates, configurations, data loading
 Use the `tscli event list` command to return an audit list of events from the cluster.
 The syntax is:
 
+[source]
 ----
 tscli event list
    [--include <all|config|notification>]
@@ -39,44 +40,50 @@ tscli event list
 
 Optional parameters are:
 
-|===
-| Parameter | Description
+`--include`::
+  Specifies the type of events to include, and can be `all`, `config`, or `notification`.
 
-| `--include`
-| Specifies the type of events to include, and can be `all`, `config`, or `notification`.
+`--detail`::
+vvReturns the events in a detail format rather than a tabular summary, which is the default.
 
-| `--detail`
-| Returns the events in a detail format rather than a tabular summary, which is the default.
-
-| `+--summary_contains <'string1' \| 'string2' ...>+`
-| Specifies a string to check for in the event summary.
+`--summary_contains <'string1' \| 'string2' ...>`::
+  Specifies a string to check for in the event summary.
++
 Enclose strings in single quotes, and separate multiple strings with &pipe;.
++
 Events that match all specified strings will be returned.
 
-| `+--detail_contains <'string1'\| 'string2' ...>+`
-| Specifies a string to check for in the detail.
+`--detail_contains <'string1'\| 'string2' ...>`::
+  Specifies a string to check for in the detail.
++
 Enclose strings in single quotes, and separate multiple strings with `\|` (pipe symbol).
++
 Events that match all specified strings will be returned.
 
-| `+--attributes <key1='value1' &pipe;
-key2='value2' ...>+`
-| Specifies attributes to match as key=value pairs.
+`--attributes <key1='value1' &pipe; key2='value2' ...>`::
+  Specifies attributes to match as key=value pairs.
++
 Separate multiple attributes with `\|` (pipe symbol).
++
 Events that match all specified key/value pairs will be returned.
++
 Put single quotes around the value(s).
-|===
 
 And a time window made up of either:
 
-* `--since <hours,minutes,days>` is a time in the past for where the event audit begins, ending at the present time.
+* `--since <hours,minutes,days>`, which is a time in the past for where the event audit begins, ending at the present time.
++
 Specify a human readable duration string, e.g.
++
 4h (4 hours), 30m (30 minutes), 1d (1 day).
 
 Or both:
 
 * `--from <yyyymmdd-HH:MM>` is a timestamp for where to begin the event audit.
++
 It must be of the form: yyyymmdd-HH:MM.
 * `--to <yyyymmdd-HH:MM>` is a timestamp for where to end the event audit.
++
 It must be of the form: yyyymmdd-HH:MM.
 
 To get audit logs:
@@ -105,4 +112,4 @@ You can view installed Linux packages at any time, along with the version number
 
 == Third-party security software for security, governance, and monitoring of ThoughtSpot
 
-You can install supported link:{{ site.baseurl}}/admin/data-security/about-secure-monitor-sw.html#[third-party security and monitoring software] on a ThoughtSpot cluster.
+You can install supported xref:secure-monitor-sw.adoc[third-party security and monitoring software] on a ThoughtSpot cluster.

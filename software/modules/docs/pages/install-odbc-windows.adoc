@@ -1,15 +1,14 @@
-:pp: {plus}{plus}
+= Install the ODBC driver on Windows
+:last_updated: 02/04/2021
+:linkattrs:
+:experimental:
 
-'''
-
-title: [Install the ODBC driver on Windows]
-
-last_updated: tbd summary: "Use this procedure to obtain the Microsoft Windows ODBC driver and install it." sidebar: mydoc_sidebar permalink: /:collection/:path.html --
+Use this procedure to obtain the Microsoft Windows ODBC driver and install it.
 
 ThoughtSpot's ODBC connection relies on the https://www.simba.com/products/SEN/doc/Client-Server_user_guide/content/clientserver/configuringsimbaclientodbc/simbaclientodbcunix.htm[SimbaEngine X SDK] to connect through ODBC or JDBC to ThoughtSpot's remote data stores.
 The instructions on this page explain how to configure the Simba ODBC driver on a Windows workstation.
 
-Make sure you have read the overview material in the link:{{ site.baseurl }}/data-integrate/clients/about-odbc.html#[ODBC driver overview].
+Make sure you have read the overview material in the xref:odbc.adoc[ODBC driver overview].
 This workstation is the same machine where you plan to run your ETL activities.
 
 == Prerequisites
@@ -30,13 +29,13 @@ If it isn't installed, make sure you https://www.microsoft.com/en-us/download/de
 
 == Check the ThoughtSpot IP and the simba_server status
 
-{% include content/simba-server-start.md %}
+include::partial$simba-server-start.adoc[]
 
 == Download the driver
 
 On the workstation where you want to connect from, do the following:
 
-. Navigate to the link:{{ site.baseurl }}/release/downloads.html#[*Downloads*] page.
+. Navigate to the xref:downloads.adoc[*Downloads*] page.
 . Download the *ODBC Driver for Windows*.
 . Unzip the file you downloaded at a convenient location on your workstation.
 +
@@ -154,5 +153,5 @@ Now, you are ready to begin using the connection you've configured.
 
 == Related information
 
-* link:{{ site.baseurl}}/data-integrate/troubleshooting/enable-ODBC-log.html[Enable ODBC logs].
-* link:{{ site.baseurl}}/data-integrate/clients/multiple-sources-windows.html[Configure multiple connections on Windows].
+* xref:odbc-enable-log.adoc[Enable ODBC logs].
+* xref:multiple-sources-windows.adoc[Configure multiple connections on Windows].

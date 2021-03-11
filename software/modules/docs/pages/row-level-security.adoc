@@ -1,9 +1,10 @@
-'''
+= How rule-based RLS works
+:last_updated: 12/31/2020
+:linkattrs:
 
-title: [How rule-based RLS works]
+Use rule-based RLS to restrict a group's access to data.
 
-last_updated: tbd summary: "Use rule-based RLS to restrict a group's access to data.
-Users see only accessible row data." sidebar: mydoc_sidebar permalink: /:collection/:path.html -- Row level security works at the group level and is configured on tables.
+Users see only accessible row data.  Row level security works at the group level and is configured on tables.
 A table's RLS rules also apply to any objects with data from that table.
 So, searches, answers, worksheets, and pinboards that rely on a table's data fall under RLS rules.
 
@@ -43,7 +44,7 @@ This behavior is true regardless of whether the privilege is from a direct group
 
 An RLS rule evaluates against two system variables:
 
-{% include content/func-variables.md %}
+include::partial$func-variables.adoc[]
 
 ThoughtSpot filters a table's rows by evaluating a rule against the authenticated user.
 
@@ -139,6 +140,6 @@ So, err on the side of simple rules rather than complex rules with a lot of logi
 
 == Related information
 
-* To learn the procedure you follow for setting a rule, link:{{ site.baseurl }}/admin/data-security/set-rls.html#[Set RLS rules]
-* For a list of operators and functions you can use to build RLS rules see link:{{ site.baseurl }}/reference/rls-rule-builder-reference.html#[Row level security rules reference].
-* For information on bypassing rules on a worksheet, see link:{{ site.baseurl}}/admin/worksheets/change-inclusion-rule.html#[Change inclusion, join, or RLS for a worksheet].
+* To learn the procedure you follow for setting a rule, xref:set-rls.adoc[Set RLS rules]
+* For a list of operators and functions you can use to build RLS rules see xref:rls-rule-builder-reference.adoc[Row level security rules reference].
+* For information on bypassing rules on a worksheet, see xref:change-inclusion-rule.adoc[Change inclusion, join, or RLS for a worksheet].

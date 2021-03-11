@@ -1,6 +1,7 @@
 = Configure ThoughtSpot nodes in AWS
-:last_updated: 2/27/2020
-
+:last_updated: 01/02/2021
+:experimental:
+:linkatrrs:
 
 Prepare to install your ThoughtSpot cluster by configuring nodes.
 
@@ -9,41 +10,31 @@ Before you can install a ThoughtSpot cluster in AWS, you must configure your nod
 [#installation-prerequisites]
 == Installation Prerequisites
 
-Ensure the successful creation of the virtual machines (VMs) before you install the ThoughtSpot cluster in AWS:
-
-. *Review configuration options* Refer to link:{{ site.baseurl }}/appliance/aws/configuration-options.html[AWS configuration options] for detailed instance specs.
-. *Create the instance* Refer to link:{{ site.baseurl }}/appliance/aws/launch-an-instance.html[Set up AWS for ThoughtSpot] to create and launch your instance.
-. *Review required ports* Refer to link:{{ site.baseurl }}/appliance/ports.html[Network ports] to view the required ports for successful operation of ThoughtSpot.
+[options="interactive"]
+.Ensure the successful creation of the virtual machines (VMs) before you install the ThoughtSpot cluster in AWS:
+* [ ] xref:aws-configuration-options.adoc[1. Review AWS configuration options] for detailed instance specs.
+* [ ] xref:aws-launch-instance.adoc[2. Set up AWS for ThoughtSpot] to create and launch your instance.
+* [ ] xref:ports.adoc[3. Review Network ports documentation] to view the required ports for successful operation of ThoughtSpot.
 
 [#configure-nodes]
 == Configure Nodes
 
 After creating the instance, you must configure the nodes.
-Follow the steps in this checklist.
 
-[cols=2*]
-|===
-| &#10063;
-| <<node-step-1,Step 1: Log in to your cluster>>
+[options="interactive"]
+.Follow the steps in this checklist.
+* [ ] xref:node-step-1[Step 1: Log in to your cluster]
+* [ ] xref:node-step-2[Step 2: Get a template for node configuration]
+* [ ] xref:node-step-3[Step 3: Prepare node configuration]
+* [ ] xref:node-step-4[Step 4: Configure the nodes]
+* [ ] xref:node-step-5[Step 5: Confirm node configuration]
 
-| &#10063;
-| <<node-step-2,Step 2: Get a template for node configuration>>
-
-| &#10063;
-| <<node-step-3,Step 3: Prepare node configuration>>
-
-| &#10063;
-| <<node-step-4,Step 4: Configure the nodes>>
-
-| &#10063;
-| <<node-step-5,Step 5: Confirm node configuration>>
-|===
-
-{% include content/install/configure-nodes-steps1through5.md %}{: id="node-step-1"}
+[#node-step-1]
+include::partial$configure-nodes-steps1through5.adoc[]
 
 == Install ThoughtSpot software
 
-Next, link:{{ site.baseurl }}/appliance/aws/aws-cluster-install.html[install your ThoughtSpot clusters].
+Next, xref:aws-cluster-install.adoc[install your ThoughtSpot clusters].
 
 == Additional resources
 
@@ -53,14 +44,14 @@ As you develop your expertise in network configuration, we recommend the followi
 
 See other training resources at + https://training.thoughtspot.com/[<img src="{{ "/images/ts-u.png" | prepend: site.baseurl }}" alt="ThoughtSpot U">]
 
-{% include content/install/install-cluster-error-recovery.md %}
+include::partial$install-cluster-error-recovery.adoc[]
 
 == Related information
 
 Use these references for successful installation and administration of ThoughtSpot:
 
-* link:{{ site.baseurl }}/appliance/hardware/nodesconfig-example[The nodes.config file]
-* link:{{ site.baseurl }}/appliance/hardware/parameters-nodesconfig.html[Parameters of the nodes.config file]
-* link:{{ site.baseurl }}/appliance/hardware/cluster-create.html[Using the tscli cluster create command]
-* link:{{ site.baseurl }}/appliance/hardware/parameters-cluster-create.html[Parameters of the cluster create command]
-* link:{{ site.baseurl }}/appliance/contact.html[Contact Support]
+* xref:nodesconfig-example.adoc[The nodes.config file]
+* xref:parameters-nodesconfig.adoc[Parameters of the nodes.config file]
+* xref:hardware/cluster-create.adoc[Using the tscli cluster create command]
+* xref:parameters-cluster-create.adoc[Parameters of the cluster create command]
+* Contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support,window="_blank"].

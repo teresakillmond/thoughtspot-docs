@@ -1,9 +1,9 @@
 = ThoughtSpot Tutorials for Snowflake Partner Connect
-:last_updated: 12/21/2020
-
+:last_updated: 02/02/2021
+:linkattrs:
+:experimental:
 
 Explore these tutorials to learn how to model your data after connecting to your Snowflake database.
-:toc: true
 
 When you create a connection to Snowflake in ThoughtSpot, any data modeling or table joins are inherited automatically.
 
@@ -37,8 +37,8 @@ image::snow-add-join.png[]
 . Enter the name _Product_Key - Product_Key_, a description for your join (optional), and click *Next*.
 + image:snow-add-join-name.png[]
 +
-{% include note.html content="You can use any name you want.
-The names we've chosen for this tutorial match those in the actual schema for this dataset on try.thoughtspot.com." %}
+NOTE: You can use any name you want.
+The names we've chosen for this tutorial match those in the actual schema for this dataset on try.thoughtspot.com.
 +
 The first join is created.
 Now you will add the other joins.
@@ -93,8 +93,8 @@ To search the joined tables, do the following:
 +
 The search results look like this: + image:snow-search-results.png[]
 +
-{% include note.html content="When Monthly is a native keyword, it will work on any timestamp.
-For the purposes of this example, we're using monthly as the date, from the Dates table." %}
+NOTE: When Monthly is a native keyword, it will work on any timestamp.
+For the purposes of this example, we're using monthly as the date, from the Dates table.
 
 . To confirm that the search is honoring the table joins, click the Query details icon image:icon-information-20px.png[query details icon], to the right of the chart.
 + image:partner-connect-query-details.png[]
@@ -113,7 +113,7 @@ In the following example, the _Sales_Dollar_Amount_ column was renamed to Sales 
 
 These are just a couple of examples of things you can do.
 
-For more information about data modeling, see: link:{{ site.baseurl }}/admin/data-modeling/data-modeling-settings.html[Overview of data modeling settings]
+For more information about data modeling, see: xref:data-modeling-settings.adoc[Overview of data modeling settings]
 
 == Creating a worksheet
 
@@ -181,7 +181,7 @@ From the Stores table, include these columns:
  ** Store_County + image:partner-connect-columns-worksheet.png[]
 
 +
-{% include note.html content="As a best practice, you would not select a key from a table when creating a worksheet, because you would not want to search for the key." %}
+NOTE: As a best practice, you would not select a key from a table when creating a worksheet, because you would not want to search for the key.
 
 . Click the pencil icon image:icon-edit-20px.png[edit icon] next to the current name of your worksheet, enter the name *Retail Sales*, and click *Done*.
 . Click the more options icon image:icon-ellipses.png[more options menu icon], and select *Save*.
@@ -254,7 +254,7 @@ Now in the search results, you can see labels with the state name and total sale
 
 == Related information
 
-* link:{{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-partner.html[ThoughtSpot in Snowflake Partner Connect]
-* link:{{ site.baseurl }}/data-integrate/embrace/embrace-intro.html[Embrace overview]
-* link:{{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-add.html[Add a Snowflake connection]
-* link:{{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-modify.html[Modify a Snowflake connection]
+* xref:embrace-snowflake-partner.adoc[ThoughtSpot in Snowflake Partner Connect]
+* xref:embrace.adoc[Embrace overview]
+* xref:embrace-snowflake-add.adoc[Add a Snowflake connection]
+* xref:embrace-snowflake-modify.adoc[Modify a Snowflake connection]

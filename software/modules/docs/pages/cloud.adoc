@@ -1,34 +1,28 @@
 = Cloud overview
-:last_updated: 1/9/2019
-
-
-You can deploy ThoughtSpot on several cloud providers.
-
-ThoughtSpot can currently be deployed in the following cloud provider environments:
-
-* link:{{ site.baseurl }}/appliance/aws/configuration-options.html[Amazon Web Services (AWS) EC2]
-* link:{{ site.baseurl }}/appliance/azure/configuration-options.html[Microsoft Azure]
-* link:{{ site.baseurl }}/appliance/gcp/configuration-options.html[Google Cloud Platform (GCP)]
+:last_updated: 01/06/2021
+:linkattrs:
+:experimental:
 
 The ThoughtSpot cloud deployment consists of cloud compute (VM) instances and an underlying persistent storage layer.
 The number of instances required for a cloud deployment is based on the size of the data that needs to be analyzed in ThoughtSpot.
 The instances act as a distributed cluster of nodes to serve query responses.
 
-|===
-|  | AWS | Azure | GCP
+You can deploy ThoughtSpot in the following cloud environments:
 
-| *Compute*****
-| Virtual machines deployed in your + AWS VPC
-| Virtual machines in your + Azure VNET
-| Virtual machines in your + GCP VPC
+* xref:aws-configuration-options.adoc[Amazon Web Services (AWS) EC2]
++
+Compute:: Virtual machines deployed in your AWS VPC
+Persistent storage:: Deployment options: Elastic Block Storage, or S3 + Elastic Block Storage
 
-| *Persistent + storage*****
-| Deployment options: + 1.
-Elastic Block Storage + 2.
-S3 + Elastic Block Storage
-| Premium SSD Managed Disks
-| Zonal SSD persistent disk
-|===
+* xref:azure-configuration-options.adoc[Microsoft Azure]
++
+Compute:: Virtual machines in your Azure VNET
+Persistent storage:: Premium SSD Managed Disks
+
+* xref:gcp-configuration-options.adoc[Google Cloud Platform (GCP)]
++
+Compute:: Virtual machines in your GCP VPC
+Persistent storage:: Zonal SSD persistent disk
 
 image::cloud-vm-storage.svg[]
 
@@ -38,9 +32,9 @@ To determine the number of instances and the persistent storage requirements to 
 
 Refer to the following guidelines for how to set up ThoughtSpot on each cloud service:
 
-* link:{{ site.baseurl }}/appliance/aws/configuration-options.html#thoughtspot-aws-instance-types[AWS instance types]
-* link:{{ site.baseurl }}/appliance/azure/configuration-options.html#thoughtspot-azure-instance-types[Azure instance types]
-* link:{{ site.baseurl }}/appliance/gcp/configuration-options.html#thoughtspot-gcp-instance-types[GCP instance types]
+* xref:aws-configuration-options.adoc[Amazon Web Services (AWS) EC2]
+* xref:azure-configuration-options.adoc[Microsoft Azure]
+* xref:gcp-configuration-options.adoc[Google Cloud Platform (GCP)]
 
 == Reducing your cloud infrastructure costs
 
@@ -64,7 +58,7 @@ Examples:
  ** To configure your instance with the "medium" data size, run: `tscli config-mode lean [-h] --type medium`
 
 +
-{% include note.html content="If you decide later you want to disable advanced lean mode, use `default`." %}
+NOTE: If you decide later you want to disable advanced lean mode, use `default`.
 
 === Shut down and restart your cluster
 

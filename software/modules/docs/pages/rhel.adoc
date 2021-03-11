@@ -1,6 +1,7 @@
 = RHEL Deployment Overview
-:last_updated: 7/22/2020
-
+:last_updated: 01/03/2021
+:linkattrs:
+:experimental:
 
 Run ThoughtSpot on your own internally managed RedHat Enterprise Linux (RHEL) 7.8 or 7.9 image.
 
@@ -8,27 +9,21 @@ You have the flexibility to run ThoughtSpot on an RHEL 7.8 or 7.9 image that you
 
 ThoughtSpot certifies RHEL 7.8 and 7.9 on the following platforms:
 
-* Bare metal deployments on the two ThoughtSpot-certified hardware appliances: link:{{ site.baseurl }}/appliance/hardware/installing-dell.html[DELL] and link:{{ site.baseurl }}/appliance/hardware/installing-the-smc.html[SMC]
-* Cloud deployments: link:{{ site.baseurl }}/appliance/aws/configuration-options.html[Amazon Web Services (AWS) EC2], link:{{ site.baseurl }}/appliance/azure/configuration-options.html[Microsoft Azure], and link:{{ site.baseurl }}/appliance/gcp/configuration-options.html[Google Cloud Platform (GCP)]
-* link:{{ site.baseurl }}/appliance/vmware/vmware-intro.html[VMware]
+* Bare metal deployments on the two ThoughtSpot-certified hardware appliances: xref:installing-dell.adoc[DELL] and xref:installing-smc.adoc[SMC]
+* Cloud deployments: xref:aws-configuration-options.adoc[Amazon Web Services (AWS) EC2], xref:azure-configuration-options.adoc[Microsoft Azure], and xref:gcp-configuration-options.adoc[Google Cloud Platform (GCP)]
+* xref:vmware-intro.adoc[VMware]
 
-Follow these steps to deploy ThoughtSpot through RHEL:
+[options="interactive"]
+.Follow these steps to deploy ThoughtSpot through RHEL:
+* [ ] xref:rhel-prerequisites.adoc[1. Complete installation prerequisites]
+* [ ] xref:rhel-ts-artifacts.adoc[2. Get ThoughtSpot artifacts]
+* [ ] xref:rhel-install-online.adoc[3. Install ThoughtSpot in RHEL online clusters], or + xref:rhel-install-offline.adoc[Install ThoughtSpot in RHEL offline clusters]
 
-[cols=2*]
-|===
-| &#10063;
-| link:{{ site.baseurl }}/appliance/rhel/rhel-prerequisites.html[Complete installation prerequisites]
+[options="interactive"]
+.Additionally, learn how you can:
+* [ ] xref:rhel-upgrade.adoc[4. Upgrade ThoughtSpot for RHEL to a new release]
+* [ ] xref:rhel-add-node.adoc[5.Add a new node to an existing ThoughtSpot cluster in RHEL]
 
-| &#10063;
-| link:{{ site.baseurl }}/appliance/rhel/rhel-ts-artifacts.html[Get ThoughtSpot artifacts]
-
-| &#10063;
-| link:{{ site.baseurl }}/appliance/rhel/rhel-install-online.html[Install ThoughtSpot in RHEL online clusters], or + link:{{ site.baseurl }}/appliance/rhel/rhel-install-offline.html[Install ThoughtSpot in RHEL offline clusters]
-|===
-
-Additionally, learn how you can:
-
-* link:{{ site.baseurl }}/appliance/rhel/rhel-upgrade.html[Upgrade ThoughtSpot for RHEL to a new release]
-* link:{{ site.baseurl }}/appliance/rhel/rhel-add-node.html[Add a new node to an existing ThoughtSpot cluster in RHEL]
-
-Finally, to see what additional 3rd-party Yum, Python, and R packages your ThoughtSpot installation includes by default, see link:{{ site.baseurl }}/appliance/rhel/rhel-packages.html[Packages installed with ThoughtSpot for RHEL]
+[options="interactive"]
+.Finally, to see what additional 3rd-party Yum, Python, and R packages your ThoughtSpot installation includes by default, see:
+* [ ] xref:rhel-packages.adoc[6. Packages installed with ThoughtSpot for RHEL]

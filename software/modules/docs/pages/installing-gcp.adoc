@@ -1,6 +1,7 @@
 = Configure ThoughtSpot nodes in GCP
-:last_updated: 2/27/2020
-
+:last_updated: 01/02/2021
+:linkattrs:
+:experimental:
 
 Prepare to install your ThoughtSpot cluster by configuring nodes.
 
@@ -9,43 +10,33 @@ Before you can install a ThoughtSpot cluster in GCP, you must configure your nod
 [#installation-prerequisites]
 == Installation Prerequisites
 
-Ensure the successful creation of the virtual machines (VMs) before you install the ThoughtSpot cluster in GCP.
+[options="interactive"]
+.Ensure the successful creation of the virtual machines (VMs) before you install the ThoughtSpot cluster in GCP:
+* [ ] xref:gcp-configuration-options.adoc[1. Review GCP configuration options] for detailed instance specs.
+* [ ] xref:ports.adoc[2. Review network ports] to view the required ports for successful operation of ThoughtSpot.
+* [ ] xref:gcp-launch-instance.adoc[3. Set up GCP for ThoughtSpot] to create and launch your instance.
 
-. *Review configuration options* Refer to link:{{ site.baseurl }}/appliance/gcp/configuration-options.html[GCP configuration options] for detailed instance specs.
-. *Create the instance* Refer to link:{{ site.baseurl }}/appliance/gcp/launch-an-instance.html[Set up GCP for ThoughtSpot] to create and launch your instance.
-. *Review required ports* Refer to link:{{ site.baseurl }}/appliance/ports.html[Network ports] to view the required ports for successful operation of ThoughtSpot.
 
 [#configure-nodes]
 == Configure Nodes
 
 After creating the instance, you must configure the nodes.
-Follow the steps in this checklist.
 
-[cols=2*]
-|===
-| &#10063;
-| <<node-step-1,Step 1: Log in to your cluster>>
+[options="interactive"]
+.Follow the steps in this checklist:
+* [ ] xref:node-step-1[Step 1: Log in to your cluster]
+* [ ] xref:node-step-2[Step 2: Get a template for network configuration]
+* [ ] xref:node-step-3[Step 3: Prepare node configuration]
+* [ ] xref:node-step-4[Step 4: Configure the nodes]
+* [ ] xref:node-step-5[Step 5: Confirm node configuration]
 
-| &#10063;
-| <<node-step-2,Step 2: Get a template for network configuration>>
-
-| &#10063;
-| <<node-step-3,Step 3: Prepare node configuration>>
-
-| &#10063;
-| <<node-step-4,Step 4: Configure the nodes>>
-
-| &#10063;
-| <<node-step-5,Step 5: Confirm node configuration>>
-|===
-
-{% include content/install/configure-nodes-steps1through5.md %}
+include::partial$configure-nodes-steps1through5.adoc[]
 
 == Install ThoughtSpot software
 
-Next, link:{{ site.baseurl }}/appliance/gcp/gcp-cluster-install.html[install your ThoughtSpot clusters].
+Next, xref:gcp-cluster-install.html[install your ThoughtSpot clusters].
 
-{% include content/install/install-cluster-error-recovery.md %}
+include::partial$install-cluster-error-recovery.adoc[]
 
 == Additional resources
 
@@ -59,8 +50,8 @@ See other training resources at + https://training.thoughtspot.com/[<img src="{{
 
 Use these references for successful installation and administration of ThoughtSpot.
 
-* link:{{ site.baseurl }}/appliance/hardware/nodesconfig-example[The nodes.config file]
-* link:{{ site.baseurl }}/appliance/hardware/parameters-nodesconfig.html[Parameters of the nodes.config file]
-* link:{{ site.baseurl }}/appliance/hardware/cluster-create.html[Using the tscli cluster create command]
-* link:{{ site.baseurl }}/appliance/hardware/parameters-cluster-create.html[Parameters of the cluster create command]
-* link:{{ site.baseurl }}/appliance/contact.html[Contact Support]
+* xref:nodesconfig-example.adoc[The nodes.config file]
+* xref:parameters-nodesconfig.adoc[Parameters of the nodes.config file]
+* xref:cluster-create.adoc[Using the tscli cluster create command]
+* xref:parameters-cluster-create.adoc[Parameters of the cluster create command]
+* Contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support,window="_blank"].

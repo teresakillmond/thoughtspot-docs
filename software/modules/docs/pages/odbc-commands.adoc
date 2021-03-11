@@ -1,12 +1,13 @@
-'''
+= Supported SQL commands
+:last_updated: 02/04/2021
+:linkattrs:
+:experimental:
 
-title: [Supported SQL commands]
-
-summary: "The ThoughtSpot connection drivers support a limited set of SQL commands." sidebar: mydoc_sidebar permalink: /:collection/:path.html -- The ODBC and JDBC drivers support a limited set of SQL commands.
+The ThoughtSpot connection drivers support a limited set of SQL commands.  The ODBC and JDBC drivers support a limited set of SQL commands.
 When developing software that uses a ThoughtSpot ODBC driver, use this reference of supported commands.
 This reference is intended for developers using other tools (ETL, etc.) to connect to ThoughtSpot through the ODBC or JDBC driver.
 
-{% include note.html content="ThoughtSpot displays `VARCHAR` fields using lower case, regardless of what the original casing of your loaded data is." %}
+NOTE: ThoughtSpot displays `VARCHAR` fields using lower case, regardless of what the original casing of your loaded data is.
 
 == Supported commands
 
@@ -112,7 +113,7 @@ ALTER TABLE "fruit_dim" SET DIMENSION;`
 +
 Changes the data type of a column.
 This can have implications on sharding and primary key behavior.
-See link:{{ site.baseurl }}https:/admin/loading/about-data-type-conversion.html#concept_u2t_clg_wv[About data type conversion].
+See xref:data-type-conversion.adoc#concept_u2t_clg_wv[About data type conversion].
 For example:   `ALTER TABLE fact100 MODIFY COLUMN product_id int;`
 
 * `INSERT`

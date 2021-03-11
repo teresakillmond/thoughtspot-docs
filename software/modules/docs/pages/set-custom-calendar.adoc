@@ -79,10 +79,10 @@ Example (on Mac OS):    `scp admin@172.18.144.217:/home/admin/my_calendar.csv /U
 No other formats are supported.
  ** The Quarter column must display the correct quarter number for each day of the year.
 +
-{% include note.html content="By default, a generated calendar displays quarter numbers based on the Gregorian calendar (which starts on January 1st).
+NOTE: By default, a generated calendar displays quarter numbers based on the Gregorian calendar (which starts on January 1st).
 If your custom calendar begins any other date, you must adjust the quarter numbers to align with your calendar.
 For example: If your custom calendar begins on April 1st, the calendar would incorrectly show April, May and June as quarter 2.
-You would need to correct this to indicate those months are quarter 1 and correct the subsequent months to have the correct quarter." %}
+You would need to correct this to indicate those months are quarter 1 and correct the subsequent months to have the correct quarter.
 
  ** (Optional) To enhance searchability, ThoughtSpot recommends adding a "`Q`" before each quarter number.
 Example: *Q1*.
@@ -93,9 +93,9 @@ If adapting the calendar to different language, use the appropriate letter in pl
 Example calendar with the fiscal year beginning on April 1:  image:custom_cal.png[]
 . Save your calendar template as a UTF-encoded .csv file with UNIX line breaks.
 +
-{% include note.html content="Saving the file with UNIX line breaks, ensures there are no carriage returns ({caret}M characters) in the file which prevent you from using your calendar in ThoughtSpot.
+NOTE: Saving the file with UNIX line breaks, ensures there are no carriage returns ({caret}M characters) in the file which prevent you from using your calendar in ThoughtSpot.
 Microsoft Excel, for example, adds carriage returns.
-The easiest way to remove carriage returns is to open your .csv file in a text editor, and save it as a .csv with UNIX line breaks." %}
+The easiest way to remove carriage returns is to open your .csv file in a text editor, and save it as a .csv with UNIX line breaks.
 
 === Add the custom calendar to your cluster
 
@@ -124,7 +124,7 @@ If you don't set your custom calendar as the default for your cluster, you must 
 . On the DATA page, click the name of a worksheet, table or view in which you want to use your custom calendar.
 . Under COLUMN NAME, find a column that uses the DATE or DATE_TIME data type where you want to use your custom calendar and scroll right until you see the CALENDAR TYPE column.
 +
-{% include note.html content="The column must use the DATE or DATE_TIME data type." %}
+NOTE: The column must use the DATE or DATE_TIME data type.
 
 . In the CALENDAR TYPE column for the column(s) you chose, double-click the existing calendar name, and then select your custom calendar.
 . Click *Save Changes*.

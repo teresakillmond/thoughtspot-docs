@@ -1,10 +1,9 @@
 = Manage suggestion indexing
+:last_updated: 01/10/2021
+:linkattrs:
 :experimental:
-:last_updated: 11/19/2020
-
 
 ThoughtSpot dynamically indexes Search bar suggestions for column names and values.
-:toc: true
 
 When a user searches in the *Search* bar, ThoughtSpot supplies the user with suggestions for column names and their column values.
 The *COLUMN NAME* and any *SYNONYMS* appear in *Search* suggestions.
@@ -41,8 +40,8 @@ The system behavior when the *INDEX TYPE* is *DEFAULT* is as follows:
 The exceptions are columns with *COLUMN TYPE* of `MEASURE` and columns with *DATA TYPE* of `DATE`.
 * Columns that contain data values with large amount of free-form strings, that is, a length is greater than 50 words, are indexed as `PREFIX_ONLY` by default.
 +
-{% include warning.html content="If a column has a very large free text values, ThoughtSpot recommends you keep `DEFAULT` or set `DONT_INDEX`.
-Other settings indexing on these values may generate confusing suggestions." %}
+WARNING: If a column has a very large free text values, ThoughtSpot recommends you keep `DEFAULT` or set `DONT_INDEX`.
+Other settings indexing on these values may generate confusing suggestions.
 
 * Short strings (like a `firstname` column) are indexed using `PREFIX_AND_SUBSTRING` by default, which indexes both prefix and substrings.
 * If a column is using has a _cardinality_ &ndash;
@@ -69,42 +68,41 @@ If you need to, you can work with ThoughtSpot Support or your Customer Success E
 
 You can change a column's *INDEX TYPE* in the menu:Data[Tables > Columns] page or in the *Index* value in the modeling file.
 
-The values you can set for *INDEX TYPE* are:+++<table id="index-type">++++++<colgroup>++++++<col style="width:30%">++++++</col>+++
-    +++<col style="width:70%">++++++</col>++++++</colgroup>+++
-  +++<tbody>++++++<tr>++++++<th>+++Index type+++</th>+++
-    +++<th>+++Description+++</th>++++++</tr>+++
-    +++<tr>++++++<td>++++++<code class="highlighter-rouge">+++DEFAULT+++</code>++++++</td>+++
-      +++<td>+++The default behavior applies to all +++<code class="highlighter-rouge">+++ATTRIBUTE+++</code>+++ columns that are not +++<code class="highlighter-rouge">+++DATE+++</code>+++ types. +++<code class="highlighter-rouge">+++PREFIX_AND_SUBSTRING+++</code>+++ for short values and +++<code class="highlighter-rouge">+++PREFIX_ONLY+++</code>+++ for long values and free-form text.+++</td>++++++</tr>+++
-    +++<tr>++++++<td>++++++<code class="highlighter-rouge">+++DONT_INDEX+++</code>++++++</td>+++
-      +++<td>+++Prevents indexing on the column values. The column doesn't appear in search suggestions.+++</td>++++++</tr>+++
-    +++<tr>++++++<td>++++++<code class="highlighter-rouge">+++PREFIX_AND_SUBSTRING+++</code>++++++</td>+++
-      +++<td>+++Allows full indexing such that prefix and sub-string search both work for the column values.+++</td>++++++</tr>+++
-    +++<tr>++++++<td>++++++<code class="highlighter-rouge">+++PREFIX_AND_WORD_SUBSTRING+++</code>++++++</td>+++
-      +++<td>+++Allows indexing such that only prefix search works for each word of a multi-word string, for the column values.+++</td>++++++</tr>+++
-    +++<tr>++++++<td>++++++<code class="highlighter-rouge">+++PREFIX_ONLY+++</code>++++++</td>+++
-      +++<td>+++Allows indexing such that only prefix search works for the column values.+++</td>++++++</tr>++++++</tbody>++++++</table>+++
+The values you can set for *INDEX TYPE* are:
+
+`DEFAULT`::
+  The default behavior applies to all `ATTRIBUTE` columns that are not `DATE` type, `PREFIX_AND_SUBSTRING` for short values,  `PREFIX_ONLY` for long values, and free-form text.
+
+`DONT_INDEX`::
+  Prevents indexing on the column values. The column doesn't appear in search suggestions.
+
+`PREFIX_AND_SUBSTRING`::
+  Allows full indexing such that prefix and sub-string search both work for the column values.
+
+`PREFIX_AND_WORD_SUBSTRING`::
+  Allows indexing such that only prefix search works for each word of a multi-word string, for the column values.
+
+`PREFIX_ONLY`::
+  Allows indexing such that only prefix search works for the column values.
 
 Consider a column in which there are four values `ThoughtSpot`, `Thought`, `Spot` and `Thought Spot`.
 If you search for `sp`, depending on the setting for indexing, the column value search result suggestions will vary:
 
-|===
-| Index field value | Search bar suggestions
+`DEFAULT`::
+  `ThoughtSpot`, `Spot`, and `Thought Spot`
 
-| `DEFAULT`
-| `ThoughtSpot`, `Spot` and `Thought Spot`
+`DONT_INDEX`::
+  No suggestions.
 
-| `DONT_INDEX`
-| No suggestions.
+`PREFIX_AND_SUBSTRING`::
+ `ThoughtSpot`, `Spot`, and `Thought Spot`
 
-| `PREFIX_AND_SUBSTRING`
-| `ThoughtSpot`, `Spot` and `Thought Spot`
+`PREFIX_ONLY`::
+  `Spot`
 
-| `PREFIX_ONLY`
-| `Spot`
+`PREFIX_AND_WORD_SUBSTRING`::
+  `Spot` and `Thought Spot`
 
-| `PREFIX_AND_WORD_SUBSTRING`
-| `Spot` and `Thought Spot`
-|===
 
 To change a value in the application UI:
 
@@ -141,5 +139,5 @@ If you are using the model file, locate the *Index* cell, and enter the priority
 
 == Related information
 
-* link:{{ site.baseurl }}/admin/data-modeling/about-data-modeling-intro.html[Model the data for searching]
-* link:{{ site.baseurl}}/end-user/search/recent-searches.html#usage-based-ranking[Usage based rankings (UBR)].
+* xref:data-modeling-intro.adoc[Model the data for searching]
+* xref:recent-searches.adoc#usage-based-ranking[Usage based rankings (UBR)].

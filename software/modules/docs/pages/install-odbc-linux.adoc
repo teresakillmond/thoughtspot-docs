@@ -1,23 +1,26 @@
-'''
+= Install the ODBC Driver on Linux
+:last_updated: 02/04/2021
+:linkattrs:
+:experimental:
 
-title: [Install the ODBC Driver on Linux]
+Use this procedure to obtain the Linux ODBC driver and install it.
 
-last_updated: tbd summary: "Use this procedure to obtain the Linux ODBC driver and install it." sidebar: mydoc_sidebar permalink: /:collection/:path.html -- ThoughtSpot's ODBC connection relies on the https://www.simba.com/products/SEN/doc/Client-Server_user_guide/content/clientserver/configuringsimbaclientodbc/simbaclientodbcunix.htm[SimbaEngine X SDK] to connect through ODBC or JDBC to ThoughtSpot's remote data stores.
+ThoughtSpot's ODBC connection relies on the https://www.simba.com/products/SEN/doc/Client-Server_user_guide/content/clientserver/configuringsimbaclientodbc/simbaclientodbcunix.htm[SimbaEngine X SDK] to connect through ODBC or JDBC to ThoughtSpot's remote data stores.
 The instructions on this page explain how to configure the Simba ODBC driver on a Linux workstation.
 
-Make sure you have read the overview material in the link:{{ site.baseurl }}/data-integrate/clients/about-odbc.html#[ODBC driver overview].
+Make sure you have read the overview material in the xref:odbc.adoc[ODBC driver overview].
 This workstation is the same machine where you plan to run your ETL activities.
 
 == Check the ThoughtSpot IP and the simba_server status
 
-{% include content/simba-server-start.md %}
+include::partial$simba-server-start.adoc[]
 
 == Install the Simba client
 
 On your workstation, where you want to connect from, do the following to get the ODBC driver:
 
 . Open a browser on your workstation.
-. Navigate to the link:{{ site.baseurl }}/release/downloads.html#[*Downloads*] page.
+. Navigate to the xref:downloads.adoc[*Downloads*] page.
 . Click *ODBC Driver for Linux* to download the driver.
 . Open a terminal on your workstation.
 . Change directory to the location where you downloaded the file.
@@ -111,9 +114,9 @@ The procedures on this page rely on the unixODBC tools to test your configuratio
 If you are experienced with ODBC and want to skip this, you can.
 Simply substitute your preferred mechanism in the subsequent procedures where references are made to the unixODBC tools.
 
-{% include warning.html content="Your ThoughtSpot installation contains a version of the unixODBC tools.
+WARNING: Your ThoughtSpot installation contains a version of the unixODBC tools.
 These tools are incompatible with CentOS.
-Do not use these tools if you are performing this procedure on your ThoughtSpot server." %}
+Do not use these tools if you are performing this procedure on your ThoughtSpot server.
 
 . Search for the unixODBC tools on your system.
 +

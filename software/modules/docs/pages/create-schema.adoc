@@ -1,9 +1,11 @@
-'''
+= Overview of schema building
+:last_updated: 02/01/2021
+:linkattrs:
+:experimental:
 
-title: [Overview of schema building]
+Before you can load data into ThoughtSpot, you must build a database schema to receive it.
 
-last_updated: tbd summary: "Before you can load data into ThoughtSpot, you must build a database schema to receive it.
-" sidebar: mydoc_sidebar permalink: /:collection/:path.html -- You can build a schema by writing a SQL script that creates the objects in your schema.
+You can build a schema by writing a SQL script that creates the objects in your schema.
 ThoughtSpot provides the ThoughtSpot SQL Command Line (TQL) for creating, viewing, and managing a schema using SQL.
 Your script can use any statements that are supported in ThoughtSpot SQL Command Line (TQL).
 The TQL syntax is similar to the SQL used in other relational databases, but with some important differences.
@@ -17,8 +19,8 @@ You can upload an your SQL script directly through the browser in the ThoughtSpo
 You can edit the script or add to it right within the browser, too.
 The steps to build a schema through the browser are:
 
-. link:create-schema-with-script.html#[Write a SQL script to create the schema]
-. link:upload-sql-script.html#[Import a schema (use the SQL editor)]
+. link:create-schema-with-script.adoc[Write a SQL script to create the schema]
+. link:upload-sql-script.adoc[Import a schema (use the SQL editor)]
 
 == Use TQL on the SQL command line
 
@@ -31,21 +33,32 @@ At the prompt, type `h` or `help` to see a list of supported commands.
 
 The steps to build a schema using TQL include:
 
-. link:prep-schema-for-load.html#connect-with-tql[Connect to the database with the ThoughtSpot SQL Command Line (TQL)].
-. link:create-schema-with-script.html#[Write a SQL script to create the schema].
+. xref:prep-schema-for-load.adoc#connect-with-tql[Connect to the database with the ThoughtSpot SQL Command Line (TQL)].
+. xref:create-schema-with-script.adoc[Write a SQL script to create the schema].
 . Type your SQL commands on the command line, terminating each command with a semicolon (;).
 +
 Commands can span multiple lines.
 ThoughtSpot supports a limited number of SQL commands, plus some custom SQL extensions.
 For example, you can specify the number of shards and the distribution key as part of the CREATE TABLE syntax.
-A full list of supported SQL in TQL is available in the link:{{ site.baseurl }}/reference/sql-cli-commands.html[TQL reference].
+A full list of supported SQL in TQL is available in the xref:sql-cli-commands.adoc[TQL reference].
 
 == Where to go next
 
-* *link:{{ site.baseurl }}/admin/loading/prep-schema-for-load.html[Connect with TCL and create a schema]* + Having examined the structure of the data to be loaded and become familiar with the ThoughtSpot SQL Command Line (TQL), you are now ready to create the schema.
-* *link:{{ site.baseurl }}/admin/loading/create-schema-with-script.html[Write a SQL script to create the schema]* + Using a SQL script to create your schema is a recommended best practice.
+* *xref:prep-schema-for-load.adoc[Connect with TCL and create a schema]*
++
+Having examined the structure of the data to be loaded and become familiar with the ThoughtSpot SQL Command Line (TQL), you are now ready to create the schema.
+* *xref:create-schema-with-script.adoc[Write a SQL script to create the schema]*
++
+Using a SQL script to create your schema is a recommended best practice.
++
 This makes it easier to adjust the schema definitions and recreate the schema quickly, if needed.
-* *link:{{ site.baseurl }}/admin/loading/create-schema-example.html[Schema creation examples]* + These examples demonstrate the steps involved in creating a schema using the ThoughtSpot SQL Command Line (TQL).
+* *xref:create-schema-example.adoc[Schema creation examples]*
++
+These examples demonstrate the steps involved in creating a schema using the ThoughtSpot SQL Command Line (TQL).
++
 After the schema is created, you can load data into it with ThoughtSpot Loader.
-* *link:{{ site.baseurl }}/admin/loading/upload-sql-script.html[Upload and run a SQL script)]* + You can run a SQL script to create your database schema through the browser, without having to log in to the shell on the ThoughtSpot instance.
+* *xref:upload-sql-script.adoc[Upload and run a SQL script)]*
++
+You can run a SQL script to create your database schema through the browser, without having to log in to the shell on the ThoughtSpot instance.
++
 You can edit the script and run it directly in the browser to create the schema.

@@ -1,15 +1,15 @@
 = Work with snapshots
 :last_updated: 12/9/2020
-
 :redirect_from: /6.3.0/admin/backup-restore/overview-snapshot.html", "/6.3.0.CU1/admin/backup-restore/overview-snapshot.html
+:linkattrs:
 
 A snapshot is a point-in-time image of your running cluster. You can use a snapshot to restore the cluster to a specific point in time. In this section, we describe how to work with the default snapshot configuration that is enabled on every cluster, and how to make manual snapshots.
-:toc: true
+
 
 To work with snapshots, use the `tscli` command line interface.
 
-{% include warning.html content="Backups rely on the snapshot system, so you must never disable the periodic snapshot system.
-If you disable periodic snapshots and enable periodic backups, the backups either fail or use an outdated snapshot." %}
+WARNING: Backups rely on the snapshot system, so you must never disable the periodic snapshot system.
+If you disable periodic snapshots and enable periodic backups, the backups either fail or use an outdated snapshot.
 
 [#manual-snapshot]
 == About manual snapshots
@@ -20,11 +20,11 @@ You must clear them to create new snapshots.
 You can delete a snapshot <<admin-portal-delete,from the Admin Console>>.
 
 ThughtSpot generates a snapshot in approximately 20 seconds, depending on the size of the cluster.
-To restore from a snapshot, contact link:{{ site.baseurl }}/admin/misc/contact.html#[ThoughtSpot Support].
+To restore from a snapshot, contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support,window="_blank"].
 
-{% include note.html content="During an upgrade, all snapshots from the previous version of ThoughtSpot become manual snapshots." %}
+NOTE: During an upgrade, all snapshots from the previous version of ThoughtSpot become manual snapshots.
 
-{% include content/admin-portal/snapshot-manage.md %}
+include::partial$snapshot-manage.adoc[]
 
 [#snapshot-tscli]
 == Create a snapshot using tscli
@@ -120,10 +120,10 @@ For detailed information about understanding the schedule, see link:how-to-creat
 [#snapshot-policy-update]
 === Update the snapshot policy
 
-Do not change the default policy, unless it is recommended by link:{{ site.baseurl }}/admin/misc/contact.html#[ThoughtSpot Support].
+Do not change the default policy, unless it is recommended by https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support,window="_blank"].
 
-{% include note.html content="Your policy must hold no more than 20 snapshots at any time.
-Exceeding this number impacts cluster performance." %}
+NOTE: Your policy must hold no more than 20 snapshots at any time.
+Exceeding this number impacts cluster performance.
 
 To update your current periodic snapshot policy, follow these steps:
 

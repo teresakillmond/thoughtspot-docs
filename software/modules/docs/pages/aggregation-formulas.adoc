@@ -1,6 +1,7 @@
 = Overview of aggregate formulas
-:last_updated: 11/23/2020
-
+:last_updated: 02/01/2021
+:linkattrs:
+:experimental:
 
 Learn about aggregate formulas.
 
@@ -17,7 +18,7 @@ Standard formulas use functions like:
 * `multiply`
 * `divide`
 * `contains`
-* `+if...then...else+`
+* `+ if...then...else +`
 
 Aggregation formulas combine rows together and return a single result for a group of rows.
 Some examples of functions you find in aggregation formulas are:
@@ -37,18 +38,21 @@ image::formula-asst-aggregate.png[]
 Some more advanced aggregation functions are widely used in business intelligence, since they provide better insight into data.
 Some of the more advanced aggregation functions are:
 
-* link:about-pinned-measures.html#[Group aggregation functions] apply a specific aggregate to a value, and group the results by an attribute in the data.
-* link:about-cumulative-formulas.html#[Cumulative functions] measure from the start of your data to the current point.
-They're often applied on time-based data.
-* link:about-moving-formulas.html#[Moving formulas] measure within a window (usually time-based) that you define.
+* xref:pinned-measures.adoc[Group aggregation functions] apply a specific aggregate to a value, and group the results by an attribute in the data.
+* xref:cumulative-formulas.adoc[Cumulative functions] measure from the start of your data to the current point. We often use the for time-based data.
+* xref:moving-formulas.adoc[Moving formulas] measure within a window (usually time-based) that you define.
 
-Data from any rows that are not included in the search result will not be incorporated, and you cannot create a filter on aggregated data.
+[NOTE]
+====
+* ThoughtSpot does not include data from rows that are not in the search result in the aggregation.
+* You cannot create a filter on aggregated data.
+====
 
 == Flexible aggregation
 
 The `group_aggregate` function makes it possible to aggregate measures at granularities that are different from the dimensions or column groupings used in the search.
 
-See link:aggregation-flexible.html#[Flexible aggregation] to learn more about working with this formula.
+See xref:aggregation-flexible.adoc[Flexible aggregation] to learn more about working with this formula.
 
 == Using division with aggregation in a search
 
@@ -105,5 +109,5 @@ Rather than add that formula to every search, you can create a filter at the Wor
 
 To add an aggregated formula to a Worksheet, follow these steps:
 
-. link:{{ site.baseurl }}/admin/worksheets/create-formula.html[Create an aggregate formula in a Worksheet]
-. link:{{ site.baseurl }}/admin/worksheets/create-ws-filter.html[Add the formula to Worksheet as a filter], and specify conditions in which it should apply.
+. xref:create-formula.adoc[Create an aggregate formula in a Worksheet]
+. xref:create-ws-filter.adoc[Add the formula to Worksheet as a filter], and specify conditions in which it should apply.

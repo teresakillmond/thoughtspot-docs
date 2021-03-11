@@ -1,15 +1,16 @@
-'''
+= Upload and run a SQL script
+:last_updated: 12/31/2020
+:linkattrs:
+:experimental:
 
-title: [Upload and run a SQL script]
-
-last_updated: 12/8/2020 summary: "You can import a schema through the Web browser, allowing you to run your SQL script without SSH access for the cluster." sidebar: mydoc_sidebar permalink: /:collection/:path.html --
+You can import a schema through the Web browser, allowing you to run your SQL script without SSH access for the cluster.
 
 You can run a SQL script to create your database schema and relationships or joins through the browser, without having to log into the shell on the ThoughtSpot instance.
 You can edit the script and run it directly in the browser to create the schema.
 Note that you must have the *can manage data* permission and *admin* privileges to upload schemas.
 Use this feature for the following actions:
 
-* link:create-schema-with-script.html#[Create the SQL script ahead of time], and <<upload-schema,use the browser to run it>>.
+* link:create-schema-with-script.adoc[Create the SQL script ahead of time], and <<upload-schema,use the browser to run it>>.
 * <<write-schema,Use the *Write TQL* interface>> to type your SQL directly into the browser.
 * Use the *Write TQL* interface as an interactive SQL editor, to make changes to an existing schema.
 
@@ -53,7 +54,7 @@ image::upload-schema-write-tql.png[Write TQL]
 . After you select *Write TQL*, you enter the SQL editor.
 You can write your script for schema and relationship creation in this editor.
 +
-{% include note.html content="You cannot copy and paste an existing SQL script into the SQL editor." %}
+NOTE: You cannot copy and paste an existing SQL script into the SQL editor.
 +
 When you finish writing a line, click the *+* icon to insert a new line below.
 +
