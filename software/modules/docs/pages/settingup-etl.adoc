@@ -1,8 +1,7 @@
-= ["Set up ThoughtSpot Data Connect"]
+= Set up ThoughtSpot Data Connect
 :last_updated: 11/19/2019
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Set up Data Connect with tscli.
+
+Set up Data Connect with tscli.
 
 The ThoughtSpot team will assist you in the initial setup and configuration of ThoughtSpot Data Connect.
 You must provide the credentials for logging in to the various data sources you want to connect to.
@@ -23,15 +22,16 @@ Enable ThoughtSpot Data Connect by completing the following steps:
 +
 The process will take a couple of minutes:
 +
+[source]
 ----
- tscli etl enable-lw
- --admin_username <admin_user>
- --username <Informatica_user>
- --thoughtspot_url <URL>
- --org_id <informatica_org_id>
- [--pin_to <IP_address>]
- [--proxy_host <proxy_server_hostname>]
- [--proxy_port <proxy_server_port>]
+tscli etl enable-lw
+--admin_username <admin_user>
+--username <Informatica_user>
+--thoughtspot_url <URL>
+--org_id <informatica_org_id>
+[--pin_to <IP_address>]
+[--proxy_host <proxy_server_hostname>]
+[--proxy_port <proxy_server_port>]
 ----
 +
 If you want to use HTTPS with your URL, you must use a signed certificate.
@@ -48,8 +48,9 @@ The commands `--proxy_host <proxy_server_hostname>` and `--proxy_port+++<proxy_s
 
 . You may change your user password using the following `tscli` command:
 +
+[source]
 ----
- `tscli etl change-password --admin_username <admin_user> --username <Informatica_user>`
+`tscli etl change-password --admin_username <admin_user> --username <Informatica_user>`
 ----
 
 Now, you can log in to ThoughtSpot, and begin using ThoughtSpot Data Connect.

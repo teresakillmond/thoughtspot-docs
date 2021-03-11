@@ -1,8 +1,7 @@
-= ["Add a column to an existing data source"]
+= Add a column to an existing data source
 :last_updated: tbd
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Add a column to an existing data source.
+
+Add a column to an existing data source.
 
 You can add a column to an existing data source using this procedure.
 This will work even if the data load has already been run in the past.
@@ -26,14 +25,16 @@ The procedure to make this change to an existing data source has two main parts:
 . Log in to the Linux shell using SSH.
 . Launch TQL.
 +
+[source,console]
 ----
- $ tql
+$ tql
 ----
 
 . Designate the database:
 +
+[source]
 ----
- TQL> use <database_name>;
+TQL> use <database_name>;
 ----
 
 . Find the name of the table you want to change.You can use the TQL command `SHOW TABLES;` to see a list of tables.
@@ -42,17 +43,19 @@ To see the current sharding on the table, use `SCRIPT TABLE <table_name>;`
 
 . Issue the command to change the data type of a column using this syntax:
 +
+[source]
 ----
- TQL> ALTER TABLE <schema>.<table>
-      MODIFY COLUMN <column> <new_data_type>;
+TQL> ALTER TABLE <schema>.<table>
+    MODIFY COLUMN <column> <new_data_type>;
 ----
 +
 For example, to change "account_id" with data type INT to data type VARCHAR:
 +
+[source]
 ----
- TQL> ALTER TABLE foodmart.account
-      ADD COLUMN account_id VARCHAR(10)
-      DEFAULT '';
+TQL> ALTER TABLE foodmart.account
+    ADD COLUMN account_id VARCHAR(10)
+    DEFAULT '';
 ----
 +
 You must use the fully qualified name of the old table when adding the column through TQL.
@@ -60,8 +63,9 @@ To find that you can look at the DDL for the data source job itself.
 
 . Run the `SCRIPT TABLE` command to get the new DDL to create the table.
 +
+[source]
 ----
- TQL> SCRIPT TABLE <table>;
+TQL> SCRIPT TABLE <table>;
 ----
 +
 Copy the output of the command.
@@ -69,7 +73,7 @@ This includes the fully qualified table name of the ThoughtSpot table and the co
 Replace any VARCHAR(<number) column definitions with VARCHAR(0), to match the DDL that Data Connect generates.
 This is the DDL that you will use in your new data source.
 
-. link:{{ site.baseurl }}/data-connect/setup/adding-data-source.html#[Create a new data source.]Be sure to choose the correct columns to match the new target table columns definitions.
+. xref:adding-data-source.adoc[Create a new data source.]Be sure to choose the correct columns to match the new target table columns definitions.
 When you reach the step about editing the generated schema DDL, paste in the DDL that was output by the `SCRIPT TABLE` command.
 . Run the data load and verify that everything is working as it should be.
-. If the old data source was running as a recurring load, link:stop-scheduled-job.html[stop it from running].
+. If the old data source was running as a recurring load, xref:stop-scheduled-job.adoc[stop it from running].
