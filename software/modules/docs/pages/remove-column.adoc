@@ -1,8 +1,7 @@
-= ["Remove a column from an existing data source"]
+= Remove a column from an existing data source
 :last_updated: 11/18/2019
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Learn how to remove a column from an existing data source.
+
+Learn how to remove a column from an existing data source.
 
 You can remove a column from a data source, even if its data load has been run in the past, by using this procedure.
 The procedure to make this change to an existing data source has two main parts:
@@ -16,14 +15,16 @@ This will allow you to revert back to the prior state if you make an error, or s
 . Log in to the Linux shell using SSH.
 . Launch TQL.
 +
+[source]
 ----
- $ tql
+$ tql
 ----
 
 . Designate the database:
 +
+[source]
 ----
- TQL> use <database_name>;
+TQL> use <database_name>;
 ----
 
 . Find the name of the table you want to change.You can use the TQL command `SHOW TABLES;` to see a list of tables.
@@ -32,16 +33,18 @@ To see the current sharding on the table, use `SCRIPT TABLE <table_name>;`
 
 . Issue the command to remove the column from the table using this syntax:
 +
+[source]
 ----
- TQL> ALTER TABLE <schema>.<table>
-      DROP COLUMN <column>;
+TQL> ALTER TABLE <schema>.<table>
+    DROP COLUMN <column>;
 ----
 +
 For example, to drop the column "account_id" from the table "account" in the schema "foodmart":
 +
+[source]
 ----
- TQL> ALTER TABLE foodmart.account
-      DROP COLUMN account_id;
+TQL> ALTER TABLE foodmart.account
+    DROP COLUMN account_id;
 ----
 +
 You must use the fully qualified name of the old table when adding the column through TQL.
@@ -49,8 +52,9 @@ To find that you can look at the DDL for the data source job itself.
 
 . Run the `SCRIPT TABLE` command to get the new DDL to create the table.
 +
+[source]
 ----
- TQL> SCRIPT TABLE <table>;
+TQL> SCRIPT TABLE <table>;
 ----
 +
 Copy the output of the command.
@@ -58,8 +62,8 @@ This includes the fully qualified table name of the ThoughtSpot table and the co
 Replace any `VARCHAR(<number)` column definitions with `VARCHAR(0)`, to match the DDL that Data Connect generates.
 This is the DDL that you will use in your new data source.
 
-. link:{{ site.baseurl }}/data-connect/setup/adding-data-source.html#[Create a new data source.].
+. xref:adding-data-source.adoc[Create a new data source.].
 Be sure to choose the correct columns to match the new target table columns definitions.
 When you reach the step about editing the generated schema DDL, paste in the DDL that was output by the `SCRIPT TABLE` command.
 . Run the data load and verify that everything is working as it should be.
-. If the old data source was running as a recurring load, link:stop-scheduled-job.html[stop it from running].
+. If the old data source was running as a recurring load, xref:stop-scheduled-job.adoc[stop it from running].
