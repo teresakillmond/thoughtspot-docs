@@ -1,17 +1,20 @@
 = Install ThoughtSpot clusters in AWS
-:last_updated: 2/26/2020
-
+:last_updated: 01/02/2021
+:experimental:
+:linkattrs:
 
 Learn how to install ThoughtSpot clusters in AWS.
 
 == Prerequisites
 
-Before you can install your ThoughtSpot clusters in AWS, complete these prerequisites.
 
-. *Review configuration options* Refer to link:{{ site.baseurl }}/appliance/aws/configuration-options.html[AWS configuration options] for detailed instance specs.
-. *Create the instance* Refer to link:{{ site.baseurl }}/appliance/aws/launch-an-instance.html[Set up AWS for ThoughtSpot] to create and launch your instance.
-. *Review required ports* Refer to link:{{ site.baseurl }}/appliance/ports.html[Network ports] to view the required ports for successful operation of ThoughtSpot.
-. *Configure nodes* Refer to link:{{ site.baseurl }}/appliance/aws/installing-aws.html[Configure ThoughtSpot nodes in AWS] to configure your nodes.
+[options="interactive"]
+.Before you install your ThoughtSpot clusters in AWS, complete these prerequisites.
+
+* [ ] xref:aws-configuration-options.adoc[1. Review AWS configuration options] for detailed instance specifications.
+* [ ] xref:aws-launch-instance.adoc[2. Create and launch an AWS instance].
+* [ ] xref:ports.adoc[3. Review required network ports] for successful operation of ThoughtSpot.
+* [ ] xref:installing-aws.adoc[4. Configure ThoughtSpot nodes in AWS] to configure your nodes.
 
 [#cluster-install]
 == Install ThoughtSpot Software
@@ -20,20 +23,14 @@ Install the cluster using the ThoughtSpot software release bundle.
 The estimated installation time is one hour.
 Follow the steps in this checklist.
 
-[cols=2*]
-|===
-| &#10063;
-| <<cluster-step-1,Step 1: Run the installer>>
+* [ ] xref:cluster-step-1[Step 1: Run the installer]
 
-| &#10063;
-| <<cluster-step-2,Step 2: Check cluster health>>
+* [ ] xref:cluster-step-2[Step 2: Check cluster health]
 
-| &#10063;
-| <<cluster-step-3,Step 3: Finalize installation>>
-|===
+* [ ] xref:cluster-step-3[Step 3: Finalize installation]
 
 Refer to your welcome letter from ThoughtSpot to find the link to download the release bundle.
-If you do not have a link, open a support ticket with link:{{ site.baseurl }}/appliance/contact.html[ThoughtSpot Support] to request access to the release bundle.
+If you do not have a link, open a support ticket with https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support,window="_blank"] to request access to the release bundle.
 
 [#cluster-step-1]
 === Step 1: Run the installer
@@ -46,15 +43,18 @@ If you do not have a link, open a support ticket with link:{{ site.baseurl }}/ap
 +
 Note the following parameters:
 
- ** `release-number` is the release number of your ThoughtSpot instance, such as 5.3, 6.0, and so on.
- ** `hostname` is your specific hostname.
- ** `file-name` is the name of the tarball file on your local computer.
+`release-number`::
+  is the release number of your ThoughtSpot instance, such as 5.3, 6.0, and so on.
+`hostname`::
+  is your specific hostname.
+`file-name`::
+  is the name of the tarball file on your local computer.
 
 +
-{% include note.html content="You can use another secure copy method, if you prefer a method other than the `scp` command." %}
+NOTE: You can use another secure copy method, if you prefer a method other than the `scp` command.
 
 . Alternatively, use `tscli fileserver download-release` to download the release bundle.
-+ You must link:{{ site.baseurl }}/reference/tscli-command-ref.html#tscli-fileserver[configure the fileserver] by running `tscli fileserver configure` before you can download the release.
++ You must xref:tscli-command-ref.adoc#tscli-fileserver[configure the fileserver] by running `tscli fileserver configure` before you can download the release.
 +
 +
 ----
@@ -63,10 +63,12 @@ Note the following parameters:
 +
 Note the following parameters:
 
- ** `release-number` is the release number of your ThoughtSpot instance, such as 5.3, 5.3.1, 6.0, and so on.
- ** `username` is the username for the fileserver that you set up earlier, when configuring the fileserver.
- ** `release-location` is the location path of the release bundle on your local machine.
-For example, `/export/xvdb1/TS_TASKS/install/6.0.tar.gz`.
+`release-number`::
+  is the release number of your ThoughtSpot instance, such as 5.3, 5.3.1, 6.0, and so on.
+`username`::
+  is the username for the fileserver that you set up earlier, when configuring the fileserver.
+`release-location`::
+  is the location path of the release bundle on your local machine. For example, `/export/xvdb1/TS_TASKS/install/6.0.tar.gz`.
 
 . Verify the checksum to ensure you have the correct release.
 + Run `md5sum -c <release-number>.tar.gz.MD5checksum`.
@@ -77,7 +79,7 @@ For example, `/export/xvdb1/TS_TASKS/install/6.0.tar.gz`.
 +
 Your output says `ok` if you have the correct release.
 
-. Launch a https://linux.die.net/man/1/screen[screen] session.
+. Launch a https://linux.die.net/man/1/screen[screen,window="_blank"] session.
 Use screen to ensure that your installation does not stop if you lose network connectivity.
 +
 ----
@@ -93,7 +95,7 @@ Use screen to ensure that your installation does not stop if you lose network co
 ----
 
 . Edit the output with your specific cluster information.
-+ For more information on this process, refer to link:{{ site.baseurl }}/appliance/hardware/cluster-create.html[Using the tscli cluster create command] and link:{{ site.baseurl }}/appliance/hardware/parameters-cluster-create.html[Parameters of the `cluster create` command].
++ For more information on this process, refer xref:cluster-create.adoc[Using the tscli cluster create command] and xref:parameters-cluster-create.adoc[Parameters of the `cluster create` command].
 
 The cluster installer automatically reboots all the nodes after a successful install.
 The `firewalld` service automatically turns on.
@@ -201,8 +203,8 @@ Ensure that the cluster is `RUNNING` and that the Database and Search Engine are
 Your output may look something like the above.
 Ensure that all diagnostics show `SUCCESS`.
 
-{% include warning.html content="If `tscli cluster check` returns an error, it may suggest you run `tscli storage gc` to resolve the issue.
-If you run `tscli storage gc`, note that it restarts your cluster." %}
+WARNING: If `tscli cluster check` returns an error, it may suggest you run `tscli storage gc` to resolve the issue.
+If you run `tscli storage gc`, note that it restarts your cluster.
 
 [#cluster-step-3]
 === Step 3: Finalize installation
@@ -218,18 +220,17 @@ Follow these steps:
 ----
 
 . If you don't have a security certificate for ThoughtSpot, you must bypass the security warning:
- ** Click *Advanced*
- ** Click *Proceed*
+ ** Click *Advanced*.
+ ** Click *Proceed*.
 . The ThoughtSpot sign-in page appears.
 . In the <<ts-login,ThoughtSpot sign-in window>>, enter admin credentials, and click *Sign in*.
 ThoughtSpot recommends changing the default admin password.
 
 image:ts-login-page.png[ThoughtSpot's sign-in window]
-// {% include image.html file="ts-login-page.png" title="ThoughtSpot's sign-in window" alt="Sign in to ThoughtSpot. Enter Username, Password, and click Sign in. You may select the Remember me option." caption="ThoughtSpot's sign-in window" %}
 
 == Lean configuration
 
-*(For use with thin provisioning only)* If you have a link:{{ site.baseurl }}/appliance/cloud.html#use-small-and-medium-instance-types-when-applicable[small or medium instance type], with less than 100GB of data, advanced lean configuration is required before loading any data into ThoughtSpot.
+*For use with thin provisioning only:* If you have a xref:cloud.adoc#use-small-and-medium-instance-types-when-applicable[small or medium instance type], with less than 100GB of data, you must use advanced lean configuration before loading any data into ThoughtSpot.
 After installing the cluster, configure advanced lean mode.
 
 To configure advanced lean mode, do the following:
@@ -239,11 +240,11 @@ To configure advanced lean mode, do the following:
 +
 Examples:
 
- ** To configure your instance with the "small" data size, run: `tscli config-mode lean [-h] --type small`
- ** To configure your instance with the "medium" data size, run: `tscli config-mode lean [-h] --type medium`
+ ** To configure your instance with the "small" data size, run: `tscli config-mode lean [-h] --type small`.
+ ** To configure your instance with the "medium" data size, run: `tscli config-mode lean [-h] --type medium`.
 
 +
-{% include note.html content="If you decide later you want to disable advanced lean mode, use `default`." %}
+NOTE: If you decide later you want to disable advanced lean mode, use `default`.
 
 == Additional resources
 
@@ -257,8 +258,8 @@ See other training resources at + https://training.thoughtspot.com/[<img src="{{
 
 Use these references for successful installation and administration of ThoughtSpot:
 
-* link:{{ site.baseurl }}/appliance/hardware/nodesconfig-example[The nodes.config file]
-* link:{{ site.baseurl }}/appliance/hardware/parameters-nodesconfig.html[Parameters of the nodes.config file]
-* link:{{ site.baseurl }}/appliance/hardware/cluster-create.html[Using the tscli cluster create command]
-* link:{{ site.baseurl }}/appliance/hardware/parameters-cluster-create.html[Parameters of the cluster create command]
-* link:{{ site.baseurl }}/appliance/contact.html[Contact Support]
+* xref:nodesconfig-example.adoc[The nodes.config file]
+* xref:parameters-nodesconfig.adoc[Parameters of the nodes.config file]
+* xref:cluster-create.adoc[Using the tscli cluster create command]
+* xref:parameters-cluster-create.adoc[Parameters of the cluster create command]
+* Contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support,window="_blank"]

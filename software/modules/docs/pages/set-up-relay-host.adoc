@@ -35,7 +35,7 @@ To use a custom port instead of port 25, run the setup command, specifying the p
  $ tscli smtp set-relayhost <IP_address>:<custom_port>
 ----
 +
-If you are on 6.1 rather than 6.1.1, or an earlier version than 6.0.5, link:{{ site.baseurl }}/appliance/contact.html[contact ThoughtSpot Support] to use a custom port.
+If you are on 6.1 rather than 6.1.1, or an earlier version than 6.0.5, contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support,window="_blank"] to use a custom port.
 
 . Verify your settings:
 +
@@ -52,9 +52,9 @@ ThoughtSpot sends alerts to the email address specified during installation.
 If you do not specify an email address, you do not receive any alerts.
 To add an email to receive alerts, issue the following command.
 
-{% include note.html content="Add the ThoughtSpot Support alert email, `prod-alerts@thoughtspot.com`, to allow ThoughtSpot Support to receive alerts.
+NOTE: Add the ThoughtSpot Support alert email, `prod-alerts@thoughtspot.com`, to allow ThoughtSpot Support to receive alerts.
 ThoughtSpot Support monitors these alerts to ensure your cluster's health.
-Do not add this email to POC or demo environments." %}
+Do not add this email to POC or demo environments.
 
  $ tscli monitoring set-config --email <prod-alerts@thoughtspot.com>,<your_email>
 
@@ -72,7 +72,7 @@ Check if the email settings are working properly by using this procedure.
 
 . If you receive the email at the address(es) you supplied, email is working correctly.
 
-{% include content/admin-portal/smtp-configure.md %}
+include::partial$smtp-configure.adoc[]
 
 After you configure SMTP through the Admin Console, use `tscli` to <<configure-email,configure an email to receive monitoring alerts>> and <<verify-email,verify the relay with an email>>.
 

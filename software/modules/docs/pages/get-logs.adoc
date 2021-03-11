@@ -1,6 +1,7 @@
 = Get your configuration and logs
-:last_updated: 11/18/2019
-
+:last_updated: 02/19/2021
+:linkattrs:
+:experimental:
 
 Two main troubleshooting tools are getting a log bundle and understanding your cluster configuration.
 
@@ -66,7 +67,7 @@ syslog, upstart, mail logs, etc.
  ** `ts` collects all logs from the ThoughtSpot application.
 This includes falcon, sage, orion core (cluster management), etc.
  ** `orion` collects all orion logs including cluster management, hdfs, zookeeper, etc.
-Detailed syntax and options are listed in the link:{{ site.baseurl }}/reference/tscli-command-ref.html#[tscli command reference].
+Detailed syntax and options are listed in the xref:tscli-command-ref.adoc[tscli command reference].
 
 == Examples
 
@@ -99,5 +100,5 @@ Pass all the entries in `--include` starting with `/` to find(1), and all entrie
  $ tscli logs collect --include system,orion --exclude *hadoop*,*zookeeper* --since 2h
 
 The above command collects all system and all orion logs, but excludes hadoop (hdfs) and zookeeper logs.
-See link:{{ site.baseurl }}/admin/troubleshooting/upload-logs-egnyte.html[Upload logs to ThoughtSpot Support] about using a secure file sever to collect log files or other files needed for troubleshooting.
+See xref:upload-logs-egnyte.adoc[Upload logs to ThoughtSpot Support] about using a secure file sever to collect log files or other files needed for troubleshooting.
 You can easily send log files to this file serve directly from the ThoughtSpot instance.

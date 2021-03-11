@@ -1,9 +1,9 @@
 = System pinboards
-:last_updated: 11/18/2019
-
+:last_updated: 02/11/2021
+:linkattrs:
+:experimental:
 
 ThoughtSpot provides several pinboards that help with system monitoring.
-
 
 There are several system monitoring pinboards in ThoughtSpot that provide answers for system status and resource usage questions.
 The information in these pinboards are updated hourly from internal data sources that collect monitoring statistics.
@@ -23,30 +23,36 @@ To view these system pinboards:
 . Search for the Pinboard you would like to view.
 You can view the *System Cluster Pinboard*, the *System Alert Pinboard*, and the *User Adoption Pinboard* from the Admin Console.
 
-== Summary of system pinboards+++<table>++++++<colgroup>++++++<col style="width:35%">++++++</col>+++
-   +++<col style="width:65%">++++++</col>++++++</colgroup>+++
-   +++<tr>++++++<th>+++Pinboard+++</th>+++
-      +++<th>+++Description+++</th>++++++</tr>+++
-   +++<tr>++++++<td>++++++<code class="highlighter-rouge">+++Learn how to use ThoughtSpot+++</code>++++++</td>+++
-      +++<td>+++Contains search replays created in the system.+++</td>++++++</tr>+++
-   +++<tr>++++++<td>++++++<code class="highlighter-rouge">+++TS Stats: Alert Detail+++</code>++++++</td>+++
-      +++<td>+++Combines alerts, notification events, and configuration events boards.+++</td>++++++</tr>+++
-   +++<tr>++++++<td>++++++<code class="highlighter-rouge">+++TS Stats: Cluster Detail+++</code>++++++</td>+++
-      +++<td>+++Contains cluster details, logs, snapshots, and latency data.+++</td>++++++</tr>+++
-   +++<tr>++++++<td>++++++<code class="highlighter-rouge">+++TS Stats: System Information and Usage+++</code>++++++</td>+++
-      +++<td>+++Replicates the +++<strong>+++Admin > System Health > Overview+++</strong>+++ page.+++</td>++++++</tr>+++
-   +++<tr>++++++<td>++++++<code class="highlighter-rouge">+++TS Stats: Latency Visualizations+++</code>++++++</td>+++
-      +++<td>+++Latency on servers and +++<a href="#" data-toggle="tooltip" data-original-title="{% for entry in site.data.glossary.entries %}{% if entry.word == "impression" %}{{ entry.definition }}{% endif %}{% endfor %}
-">+++impression+++</a>+++ counts. This data comes from the +++<code>+++TS: BI Server+++</code>+++ worksheet.+++</td>++++++</tr>+++
-   +++<tr>++++++<td>++++++<code class="highlighter-rouge">+++TS Stats: Table Status+++</code>++++++</td>+++
-      +++<td>+++Replicates the +++<strong>+++Data+++</strong>+++ board.+++</td>++++++</tr>+++
-   +++<tr>++++++<td>++++++<code class="highlighter-rouge">+++User Adoption+++</code>++++++</td>+++
-      +++<td>+++Contains information on how your ThoughtSpot users are interacting with ThoughtSpot, and how your user adoption is changing over time. Refer to +++<a href="{{ site.baseurl }}/admin/admin-portal/user-adoption-pinboard.html">+++User Adoption Pinboard+++</a>+++.+++</td>++++++</tr>+++
-   +++<tr>++++++<td>++++++<code class="highlighter-rouge">+++Performance Tracking+++</code>++++++</td>+++
-      +++<td>+++Contains information on how your ThoughtSpot cluster is performing. Refer to +++<a href="{{ site.baseurl }}/admin/system-monitor/performance-tracking.html">+++Performance Tracking Pinboard+++</a>+++.+++</td>++++++</tr>++++++</table>+++
+== Summary of system pinboards
 
-== About deprecated boards
+Learn how to use ThoughtSpot::
+  Contains search replays created in the system.
 
-The deprecated boards (`TS status: Usage - Deprecated` and `TS StaTS: Queries -- Deprecated`) are there to support older installations.
-New installations should not use or rely on deprecated boards.
-Older installations that have used these boards in some way should use the new boards and remove any dependencies.
+TS Stats: Alert Detail::
+  Combines alerts, notification events, and configuration events boards.
+
+TS Stats: Cluster Detail::
+  Contains cluster details, logs, snapshots, and latency data.
+
+TS Stats: System Information and Usage::
+  Replicates the *Admin > System Health > Overview* page.
+
+TS Stats: Latency Visualizations::
+  Latency on servers and impression counts. This data comes from the TS: BI Server worksheet.
+
+TS Stats: Table Status::
+  Replicates the *Data* board.
+
+User Adoption::
+      Contains information on how your ThoughtSpot users are interacting with ThoughtSpot, and how your user adoption is changing over time. Refer to xref:admin-portal-user-adoption-pinboard.adoc[User Adoption Pinboard].
+
+Performance Tracking::
+  Contains information on how your ThoughtSpot cluster is performing. Refer to xref:performance-tracking.adoc[Performance Tracking Pinboard].
+
+== About deprecated system pinboards
+
+The deprecated system pinboards (`TS status: Usage - Deprecated` and `TS StaTS: Queries -- Deprecated`) are there to support older installations.
+
+New installations should not use or rely on deprecated pinboards.
+
+Older installations that use these pinboards should start using the new pinboards and remove any dependencies.

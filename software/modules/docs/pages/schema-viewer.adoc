@@ -3,7 +3,7 @@
 
 
 Use the schema viewer to see tables and worksheets and their relationships.
-:toc: true
+
 
 ThoughtSpot has a *Schema Viewer* though which you can examine the database schema.
 It is interactive and configurable, so you can see the level of detail that is relevant to your work.
@@ -98,9 +98,9 @@ For example, joins appear in different colors to distinguish their type:
 
 When viewing a worksheet, you can also see what joins connect the tables: the inner, left outer, right outer, or full outer joins.
 
-{% include note.html content="Defining a generic relationship in the UI rather than using a primary key/ foreign key join through TQL has no impact on performance.
+NOTE: Defining a generic relationship in the UI rather than using a primary key/ foreign key join through TQL has no impact on performance.
 However, when creating relationships in the UI, you must ensure that you create it in the right direction: many to one.
-To create many-to-many joins, or to create joins using >, <, >=, or \<=, use TQL." %}
+To create many-to-many joins, or to create joins using >, <, >=, or \<=, use TQL.
 
 == Worksheet view
 
@@ -125,7 +125,7 @@ image::worksheet_viewer.png[]
 
 == Related Information
 
-* link:{{ site.baseurl }}/admin/worksheets/add-joins.html[Worksheet joins]
-* link:{{ site.baseurl }}/admin/worksheets/mod-ws-internal-joins.html[Modify joins within a worksheet]
-* link:{{ site.baseurl }}/admin/loading/change-schema.html[Change the schema using TQL]
-* link:{{ site.baseurl }}/admin/loading/constraints.html[Constraints]
+* xref:add-joins.adoc[Worksheet joins]
+* xref:mod-ws-internal-joins.adoc[Modify joins within a worksheet]
+* xref:change-schema.adoc[Change the schema using TQL]
+* xref:constraints.adoc[Constraints]

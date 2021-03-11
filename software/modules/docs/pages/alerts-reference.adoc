@@ -9,7 +9,7 @@ This reference identifies the messages that can appear in the menu:TS Stats: Sys
 
 == Informational alerts
 
-{% for item in site.data.extract-alerts.alerts %} +   {% if item.type == "INFO" %}
+{% for item in site.data.extract-alerts.alerts %} +   {% if item.type == "INFO.
 
 === {{item.id}}
 
@@ -21,7 +21,7 @@ This reference identifies the messages that can appear in the menu:TS Stats: Sys
 
 == Errors
 
-{% for item in site.data.extract-alerts.alerts %} +   {% if item.type == "ERROR" %}
+{% for item in site.data.extract-alerts.alerts %} +   {% if item.type == "ERROR.
 
 === {{item.id}}
 
@@ -33,7 +33,7 @@ This reference identifies the messages that can appear in the menu:TS Stats: Sys
 
 == Warnings
 
-{% for item in site.data.extract-alerts.alerts %} +   {% if item.type == "WARNING" %}
+{% for item in site.data.extract-alerts.alerts %} +   {% if item.type == "WARNING.
 
 === {{item.id}}
 
@@ -45,7 +45,7 @@ This reference identifies the messages that can appear in the menu:TS Stats: Sys
 
 == Critical alerts
 
-{% for item in site.data.extract-alerts.alerts %} +   {% if item.type == "CRITICAL" %}
+{% for item in site.data.extract-alerts.alerts %} +   {% if item.type == "CRITICAL.
 
 === {{item.id}}
 

@@ -1,6 +1,7 @@
 = Scriptability
-:last_updated: 12/17/2020
-
+:last_updated: 01/16/2021
+:linkattrs:
+:experimental:
 
 Use Scriptability to export and import Worksheets, Views, Tables, Pinboards, SpotIQ results, and Answers in a human-readable format.
 
@@ -20,47 +21,59 @@ The Scriptability feature supports several scenarios that you may encounter:
 Depending on how you want to use Scriptability, there are several workflows you can follow:
 
 . *Edit and update an existing object in the same cluster*: You can either
- ** <<export-object,export>> the object(s), edit the object(s) by modifying its link:{{ site.baseurl }}/admin/scriptability/tml.html[ThoughtSpot Modeling Language] (`TML`) representation, and <<update-object,import>> the updated file(s) to modify the existing object _or_
+ ** <<export-object,export>> the object(s), edit the object(s) by modifying its xref:tml.adoc[ThoughtSpot Modeling Language] (`TML`) representation, and <<update-object,import>> the updated file(s) to modify the existing object _or_
  ** edit the object(s) using the <<edit-tml,in-app `TML` editor>> and publish the updated file(s).
 . *Migrate an existing object from one cluster to a new cluster*: <<export-object,export>> the object(s) and <<migrate-object,import>> the updated file(s) to the new cluster.
 . *Edit and migrate an existing object from one cluster to a new cluster*: You can either
- ** <<export-object,export>> the object(s), edit the object(s) by modifying its link:{{ site.baseurl }}/admin/scriptability/tml.html[ThoughtSpot Modeling Language] (`TML`) representation, and <<migrate-object,import>> the updated file(s) to the new cluster _or_
+ ** <<export-object,export>> the object(s), edit the object(s) by modifying its xref:tml.adoc[ThoughtSpot Modeling Language] (`TML`) representation, and <<migrate-object,import>> the updated file(s) to the new cluster _or_
  ** edit the object(s) using the <<edit-tml,in-app `TML` editor>>, publish the updated file(s), <<export-object,export>> the object(s), and <<migrate-object,import>> the updated file(s) to the new cluster.
 Note that this workflow changes the object(s) in both clusters.
 
 == Prerequisites
 
-Refer to the following tables for required permissions for importing and exporting Pinboards, SpotIQ results, Answers, Worksheets, Tables, and Views.
+Examine the permission requirements for xref:import[Importing] and xref:export[Exporting] ThoughtSpot artifacts: Pinboards, SpotIQ results, Answers, Worksheets, Tables, and Views.
 
-*Import*
+[#import]
+=== Import prerequisites
 
-|===
-| Import and create a new object without importing its dependents | Import and create a new object and its dependents | Import and update an existing object without dependents | Import and update an existing object with dependents
-
-| The dependents must already exist in the cluster.
+Import and create a new object without importing its dependents::
+  The dependents must already exist in the cluster.
++
 You must have *view* permissions for the first-level dependent.
++
 For example, if you import a Pinboard that is built on a Worksheet that is built on a table, you must have *view* permission for the Worksheet.
++
 When importing a new Worksheet or View, you must have the *can manage data* permission.
-| *Can manage data*, if the object or any of its dependents is a Worksheet or View.
-| *Edit* permission on the existing object.
+
+Import and create a new object and its dependents::
+  *Can manage data*, if the object or any of its dependents is a Worksheet or View.
+
+Import and update an existing object without dependents::
+  *Edit* permission on the existing object.
++
 The dependents must already exist in the cluster.
++
 You must have *view* permissions for the first-level dependent.
++
 When importing a Worksheet or View, you must have the *can manage data* permission.
-| *Edit* permission on the existing object(s).
+
+Import and update an existing object with dependents::
+  *Edit* permission on the existing object(s).
++
 *Can manage data*, if the object or any of its dependents is a Worksheet or View.
-|===
 
-*Export*
+[#export]
+=== Export prerequisites
 
-|===
-| Export with dependents | Export without dependents
 
-| *View* permission on the object and all dependents.
-| *View* permission on the object and its first-level dependents.
-|===
+Export with dependents::
+  *View* permission on the object and all dependents.
 
-{% include note.html content="If you have a permissions issue with a particular object when you export multiple objects, or an object and its dependents, the complete export does not fail.
-The individual object does not export, and you receive an error message about this failure in the `Manifest` file in the zip file." %}
+Export without dependents::
+  *View* permission on the object and its first-level dependents.
+
+NOTE: If you have a permissions issue with a particular object when you export multiple objects, or an object and its dependents, the complete export does not fail.
+The individual object does not export, and you receive an error message about this failure in the `Manifest` file inside the zip file.
 
 [#export-object]
 == Export an object
@@ -107,7 +120,7 @@ The zip file still exports, even if an individual object's export fails.
 You can edit the `TML` file in one of two ways.
 You can <<export-object,export>> the object(s) and edit the file(s) in any text editor, before you import it.
 Or, you can use the <<itself-editor,in-app `TML` editor>> to edit, validate, and publish the object(s).
-Refer to link:{{ site.baseurl }}/admin/scriptability/tml.html[ThoughtSpot Modeling Language] for information on syntax in the TML files.
+Refer to xref:tml.adoc[ThoughtSpot Modeling Language] for information on syntax in the TML files.
 
 [#tml-editor]
 == Edit, validate, and publish objects using the TML editor
@@ -127,9 +140,9 @@ image::scriptability-edit-tml-object-page.png[Edit TML - object list page]
 image::scriptability-edit-tml-object.png[Edit TML from object]
 
 . The TML editor opens.
-Edit the TML file(s), using the syntax specified in link:{{ site.baseurl }}/admin/scriptability/tml.html[ThoughtSpot Modeling Language].
+Edit the TML file(s), using the syntax specified in xref:tml.adoc[ThoughtSpot Modeling Language].
 Note that SpotIQ results are in the form of Pinboards.
-Refer to link:{{ site.baseurl }}/admin/scriptability/tml.html#syntax-pinboards[Pinboard TML] to edit a SpotIQ TML file.
+Refer to xref:tml.adoc#syntax-pinboards[Pinboard TML] to edit a SpotIQ TML file.
 +
 The TML editor has the following functions under the top menu:
 
@@ -148,7 +161,7 @@ You can also click on a word or parameter in the TML editor, and the editor high
 *Show/Hide errors* toggles the *Errors* sidebar on and off.
 The *Errors* sidebar does not appear until after you Validate a file, if there are errors in it.
  ** *Help*: Documentation.
-This links to the link:{{ site.baseurl }}/admin/scriptability/tml.html[ThoughtSpot Modeling Language] documentation.
+This links to the xref:tml.aodc[ThoughtSpot Modeling Language] documentation.
 
 . When you finish editing the TML file(s), select *Validate* in the top right corner.
 You must validate each file individually.
@@ -173,7 +186,7 @@ image::scriptability-tsl-editor-publish-status.png[Open the object or return to 
 == Update an object
 
 You can overwrite an existing Worksheet, View, Table, Answer, Pinboard, or SpotIQ result, by downloading the `TML` file, making any necessary changes, and then re-uploading the `TML` file.
-To update SpotApps, or collections of objects packaged together as a zip file, refer to link:{{ site.baseurl }}/admin/scriptability/app-templates.html[SpotApps].
+To update SpotApps, or collections of objects packaged together as a zip file, refer to xref:app-templates.adoc[SpotApps].
 
 You can also update an object using the <<tml-editor,TML editor>>.
 
@@ -208,7 +221,7 @@ You can open the object(s) that you imported, or click *Done* to return to the m
 == Migrate an object
 
 To migrate an Answer, Pinboard, SpotIQ result, View, or Worksheet from one cluster to another, follow these steps.
-To migrate SpotApps, or collections of objects packaged together as a zip file, refer to link:{{ site.baseurl }}/admin/scriptability/app-templates.html[SpotApps].
+To migrate SpotApps, or collections of objects packaged together as a zip file, refer to xref:app-templates.adoc[SpotApps].
 Note that you cannot create a new Table using Scriptability.
 You can only update existing Tables.
 
@@ -259,4 +272,4 @@ You can only import .zip files that you exported from ThoughtSpot: either an obj
 
 == Related information
 
-* link:{{ site.baseurl }}/admin/scriptability/tml.html[ThoughtSpot Modeling Language]
+xref:tml.adoc[ThoughtSpot Modeling Language]

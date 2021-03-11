@@ -1,48 +1,38 @@
 = Connect the SMC appliance
-:last_updated: 1/31/2020
-
+:last_updated: 01/02/2021
+:linkattrs:
+:experimental:
 
 Connect the SMC appliance before you can deploy ThoughtSpot.
 
 After you rack and stack the appliance, it is time to configure it.
-If necessary, review the link:{{ site.baseurl }}/appliance/hardware/inthebox.html[Hardware Appliance Overview].
-Follow the steps in this checklist.
+If necessary, review the xref:inthebox.adoc[Hardware Appliance Overview].
 
-[cols=2*]
-|===
-| &#10063;
-| <<appliance-step-1,Step 1: Connect switches to 10GbE ports>>
-
-| &#10063;
-| <<appliance-step-2,Step 2: Connect IPMI ports>>
-
-| &#10063;
-| <<appliance-step-3,Step 3: Turn on nodes>>
-
-| &#10063;
-| <<appliance-step-4,Step 4: Log in>>
-|===
+[options="interactive"]
+Follow the steps in this checklist:
+* [ ] xref:appliance-step-1[Step 1: Connect switches to 10GbE ports]
+* [ ] xref:appliance-step-2[Step 2: Connect IPMI port]
+* [ ] xref:appliance-step-3[Step 3: Turn on nodes]
+* [ ] xref:appliance-step-4[Step 4: Log in]
 
 [#appliance-step-1]
 == Step 1: Connect switches to 10GbE ports
 
-Connect the 10GbE port of each node, as illustrated in link:{{ site.baseurl }}/appliance/hardware/connect-appliance-smc.html#haswell-port-location[Haswell port location] and link:{{ site.baseurl }}/appliance/hardware/connect-appliance-smc.html#skylake-port-location[Skylake port location], to the 10GbE switches on your own rack, using either fiber or DAC cables.
+Connect the 10GbE port of each node, as illustrated in xref:connect-appliance-smc.adoc#haswell-port-location[Haswell port location] and xref:connect-appliance-smc.adoc#skylake-port-location[Skylake port location], to the 10GbE switches on your own rack, using either fiber or DAC cables.
 
-Refer to the link:{{ site.baseurl }}/appliance/hardware/cable-networking.html[Cable reference] for information on the cable types:
+Refer to the xref:cable-networking.adoc[Cable reference] for information on the cable types:
 
-* link:{{ site.baseurl }}/appliance/hardware/cable-networking.html#fiber-cables[Fiber Cables]
-* link:{{ site.baseurl }}/appliance/hardware/cable-networking.html#dac-cables[DAC Cables]
+* xref:cable-networking.adoc#fiber-cables[Fiber Cables]
+* xref:cable-networking.adoc#dac-cables[DAC Cables]
 
-{% include note.html content="Ask your hardware vendor for more details about what they supply and what you need to buy." %}
+NOTE: Ask your hardware vendor for more details about what they supply and what you need to buy.
 
 Depending on which version of the SMC appliance you have, Haswell or Skylake, your 10GbE ports are in a different spot on the back of the appliance.
 Here is a picture of the back of each appliance.
 
 image:smc-haswell-location-ports-new.png[Haswell port location]
-// {% include image.html file="smc-haswell-location-ports-new.png" title="Haswell port location" alt="The data and management ports are on the back of the SMC Haswell appliance." caption="Haswell port location" %}
 
 image:smc-appliance-skylake-location-ports.png[Skylake port location]
-// {% include image.html file="smc-appliance-skylake-location-ports.png" title="Skylake port location" alt="The data and management ports are on the back of the SMC Skylake appliance." caption="Skylake port location" %}
 
 * Connect to switches *only* the appliances (4 nodes each) that you plan to use in the cluster.
 * You must power off, or disconnect from the switch, all other appliances or nodes.
@@ -53,13 +43,13 @@ image:smc-appliance-skylake-location-ports.png[Skylake port location]
 == Step 2: Connect IPMI ports
 
 Connect the IPMI port of each node to the management switch.
-+ See link:{{ site.baseurl }}/appliance/hardware/connect-appliance-smc.html#haswell-port-location[Haswell port location] and link:{{ site.baseurl }}/appliance/hardware/connect-appliance-smc.html#skylake-port-location[Skylake port location].
++ See xref:connect-appliance-smc.adoc#haswell-port-location[Haswell port location] and xref:connect-appliance-smc.adoc#skylake-port-location[Skylake port location].
 
 [#appliance-step-3]
 == Step 3: Turn on nodes
 
 Turn on the power to the nodes by pressing the power button;
-see link:{{ site.baseurl }}/appliance/hardware/connect-appliance-smc.html#smc-appliance-power-button[Appliance Power Button].
+see xref:connect-appliance-smc.adoc#smc-appliance-power-button[Appliance Power Button].
 
 There is one power button for each node.
 The images below show two of the four power buttons.
@@ -77,7 +67,7 @@ There should be a steady green light for the 100MB/s or 1Gb/s management NIC con
 +
 
 After the LEDs are the correct colors, verify that the connection is valid and the nodes are on by pinging the gateway: + Enter `ping <default-gateway-IP>`.
-+ Ask your network administrator for your default gateway IP if you have not already listed it in your ThoughtSpot link:{{ site.baseurl }}/site-survey.pdf[site survey].
++ Ask your network administrator for your default gateway IP if you have not already listed it in your ThoughtSpot xref:site-survey.pdf[site survey].
 
 ----
     $ ping <default-gateway-IP>
@@ -94,4 +84,4 @@ If you do not know the admin credentials, ask your network administrator.
 
 == Configure nodes
 
-Next, link:{{ site.baseurl }}/appliance/hardware/configure-nodes-smc.html[configure nodes.]
+Next, xref:configure-nodes-smc.adoc[configure nodes.]

@@ -3,7 +3,7 @@
 
 
 Learn how to configure automatic periodic backups.
-:toc: true
+
 
 You can configure ThoughtSpot to backup automatically at specified times.
 The policy allows you to control the type, frequency, retention periods (first-in-first-out), and output location for a periodic backup.
@@ -11,7 +11,7 @@ The policy allows you to control the type, frequency, retention periods (first-i
 A periodic backup uses the same steps as creating a backup manually.
 However, you do not have to specify a snapshot name.
 The system uses the most recent snapshot.
-You can backup to a local file system, link:{{ site.baseurl }}/admin/setup/NAS-mount.html#[mount a NAS (network attached storage) file system] to hold the backup, or link:{{ site.baseurl }}/appliance/aws/aws-backup-restore.html[back up to an S3 bucket].
+You can backup to a local file system, xref:nas-mount.adoc[mount a NAS (network attached storage) file system] to hold the backup, or xref:aws-backup-restore.adoc[back up to an S3 bucket].
 A NAS file system is recommended.
 Make sure you have adequate space to store the number of backups you want to archive.
 
@@ -49,11 +49,11 @@ enabled: true (you only need this parameter if your storage_type is S3)
 bucket_name: "your-S3-bucket-name-in-quotes" (You only need this parameter if your storage_type is S3. The bucket name must be in quotes.)
 ----
 
-{% include note.html content="To periodically back up your cluster to an S3 bucket, specify `S3` for the `storage_type`, and include the `enabled` and `bucket_name` parameters." %}
+NOTE: To periodically back up your cluster to an S3 bucket, specify `S3` for the `storage_type`, and include the `enabled` and `bucket_name` parameters.
 
 == Before you begin
 
-Before creating a policy, make sure you have read link:how-to-create-a-schedule.html[Understand backup/snapshot schedules] for information on configuring a `schedule` element.
+Before creating a policy, make sure you have read xref:how-to-create-a-schedule.adoc[Understand backup/snapshot schedules] for information on configuring a `schedule` element.
 In addition, you must specify the following parameters:
 
 |===
@@ -65,7 +65,7 @@ In addition, you must specify the following parameters:
 | `mode`
 | The backup mode.
 `FULL` backups are necessary for restoring a cluster.
-See link:backup-modes.html[understand backup modes] for details on each backup mode.
+See xref:backup-modes.adoc[understand backup modes] for details on each backup mode.
 
 | `type`
 | Only `STANDALONE` is supported.

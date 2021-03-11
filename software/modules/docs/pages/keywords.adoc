@@ -1,96 +1,74 @@
 = Keyword reference
-:last_updated: 11/19/2019
-
-:redirect_from: /6.3.0/reference/keywords.html", "/6.3.0.CU1/reference/keywords.html
+:last_updated: 03/10/2021
+:linkattrs:
+:experimental:
+:redirect_from: /6.3.0/reference/keywords.adoc", "/6.3.0.CU1/reference/keywords.adoc
 
 Use keywords to help define a search.
-:toc: true
 
-You can use keywords when asking a question to help define your search.
-This reference lists the various keywords.
-You can also see this list of keywords and examples from within the help center.
+[NOTE]
+====
+* This content is still under review, and may have incremental changes until this message is removed.
+* You can use keywords when asking a question to help define your search.
+====
 
 == Keywords in Other Languages
 
-Currently, we offer the following keyword translations.
+Currently, we offer the following keyword languages:
 
-////
-| [日本語]({{ site.baseurl }}/reference/keywords-ja-JP.html) | [Deutsche]({{ site.baseurl }}/reference/keywords-de-DE.html) |
+* xref:keywords-zh-CN.adoc[Chinese (Simplified), 中文 (简体)]
+* xref:keywords-da-DK.adoc[Danish, Dansk]
+* xref:keywords-nl-NL.adoc[Dutch, Nederland]
+* xref:keywords-fi-FI.adoc[Finnish, Suomi]
+* xref:keywords-en-US.adoc[English (American)]
+* xref:keywords-fr-FR.adoc[French, Français (France)]
+* xref:keywords-fr-CA.adoc[French (Canadian), Français (Canada)]
+* xref:keywords-de-DE.adoc[German, Deutsche]
+* xref:keywords-it-IT.adoc[Italian, Italiano]
+* xref:keywords-ja-JP.adoc[Japanese, 日本語]
+* xref:keywords-nb-NO.adoc[Norwegian, Norsk]
+* xref:keywords-pt-PT.adoc[Portuguese, Português (Portugal)]
+* xref:keywords-pt-BR.adoc[Portuguese (Brazil), Português (Brasil)]
+* xref:keywords-es-ES.adoc[Spanish, Español (España)]
+* xref:keywords-es-US.adoc[Spanish, Español (Latinoamérica)]
+* xref:keywords-sv-SE.adoc[Swedish, Svenska]
 
- | **[日本語]({{ site.baseurl }}/reference/keywords-ja-JP.html)** |   | **[中文 (简体)]({{ site.baseurl }}/reference/keywords-translate/keywords-zh-CN.html)** | **[Deutsche]({{ site.baseurl }}/reference/keywords-de-DE.html)** | **[Español (latín)]({{ site.baseurl }}/reference/keywords-es-US.html)** | **[Français (Canada)]({{ site.baseurl }}/reference/keywords-fr-CA.html)** | **[Français (France)]({{ site.baseurl }}/reference/keywords-fr-FR.html)** | **[Português (Brasil)]({{ site.baseurl }}/reference/keywords-pt-BR.html)** |
-////
-
-[cols=5*]
-|===
-| link:{{ site.baseurl }}/reference/keywords-ja-JP.html[日本語]
-| link:{{ site.baseurl }}/reference/keywords-zh-CN.html[中文 (简体)]
-| link:{{ site.baseurl }}/reference/keywords-de-DE.html[Deutsche]
-| link:{{ site.baseurl }}/reference/keywords-es-US.html[Español (Latinoamérica)]
-| link:{{ site.baseurl }}/reference/keywords-es-ES.html[Español (España)]
-
-| link:{{ site.baseurl }}/reference/keywords-fr-CA.html[Français (Canada)]
-| link:{{ site.baseurl }}/reference/keywords-fr-FR.html[Français (France)]
-| link:{{ site.baseurl }}/reference/keywords-pt-BR.html[Português (Brasil)]
-| link:{{ site.baseurl }}/reference/keywords-pt-PT.html[Português (Portugal)]
-| link:{{ site.baseurl }}/reference/keywords-it-IT.html[Italiano]
-
-| link:{{ site.baseurl }}/reference/keywords-da-DK.html[Dansk]
-| link:{{ site.baseurl }}/reference/keywords-fi-FI.html[Suomi]
-| link:{{ site.baseurl }}/reference/keywords-sv-SE.html[Svenska]
-| link:{{ site.baseurl }}/reference/keywords-nb-NO.html[Norsk]
-| link:{{ site.baseurl }}/reference/keywords-nl-NL.html[Nederland]
-|===
-
-Also, see the topic on how to set link:{{ site.baseurl }}/end-user/introduction/about-user.html[locale preferences in your user profile] to control language, date, and number formats on the ThoughtSpot UI.
+To control language, date, and number formats on the ThoughtSpot UI, see how to set xref:user.adoc[locale preferences in your user profile].
 
 == General
 
-{% include content/keywords-general.md %}
+include::partial$keywords-general.adoc[]
 
 == Date
 
-{% include content/keywords-date.md %}
+include::partial$keywords-date.adoc[]
 
 == Time
 
-{% include content/keywords-time.md %}
+include::partial$keywords-time.adoc[]
 
 == Text
 
-{% include content/keywords-text.md %}
+include::partial$keywords-text.adoc[]
 
-Starting with release 6.3, when you use more than one `begins with` or `ends with` keyword in a search or formula on the same column, ThoughtSpot returns your results using an `OR` condition, instead of an `AND` condition.
-When you use a combination of `begins with` and `ends with`, ThoughtSpot still returns your results using an `AND` condition.
-When using multiple `begins with` on different columns, ThoughtSpot returns results using an `AND` condition.
-
-For example, if you search for `state name begins with "V" state name begins with "C"`, your results are Virginia, Vermont, California, and Connecticut.
-If you search for `state name begins with V state name ends with T`, your only result is Vermont.
+include::partial$keywords/begins-with_note.adoc[]
 
 == Number
 
-{% include content/keywords-number.md %}
+include::partial$keywords-number.adoc[]
 
 == Comparative
 
-{% include content/keywords-comparative.md %}
+include::partial$keywords-comparative.adoc[]
 
 == Location
 
-{% include content/keywords-location.md %}
+include::partial$keywords-location.adoc[]
 
 == Period
 
-{% include content/keywords-period.md %}
+include::partial$keywords-period.adoc[]
 
 == In / Not in
 
-{% include content/keywords-in.md %}
-
-Starting with release 6.2, searches with the `in` keyword do not include \{null} values.
-To include these \{null} values, create a formula for the relevant attribute in your search, to convert \{null} values to 'unknown,' or some similar word.
-
-////
-## Help
-
-{% include content/keywords-help.md %}
-////
+include::partial$keywords-in.adoc[]

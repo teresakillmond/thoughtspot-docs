@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-<!--     <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>Formula function reference :: ThoughtSpot Software</title>
-    <meta name="generator" content="Antora 2.3.3">
-    <link rel="stylesheet" href="../../../_/css/site.css">
-    <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
-<link rel="icon" href="../../../favicon.ico" type="image/x-icon">
- -->
-<!-- begin couchbase banner logic -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Formula function reference | ThoughtSpot Software</title>
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
-    <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
-<link rel="icon" href="../../../favicon.ico" type="image/x-icon">
-<!-- end couchbase banner logic -->
+<!--  <link rel="stylesheet" href="../../../_/css/vendor/docsearch.min.css"> -->
+      <!-- fetched from https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css -->
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../../../_/css/site-extra.css">
+<link rel="stylesheet" href="../../../_/css/docsearch.min.css">
+<!-- fetched from https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css -->
+<link rel="icon" href="../../../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../../../_'</script>
+<link rel="icon" href="../../../_/img/favicon.ico" type="image/x-icon">
   </head>
   <body class="article">
 <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> -->
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-<a class="navbar-item" href="../../.."><img src="../../../_/img/company_logo_white.svg" alt="ThoughtSpot logo" height="47.42" width="158"/></a>
+<!-- <a class="navbar-item" href="../../.."><img src="../../../_/img/company_logo_white.svg" alt="ThoughtSpot logo" height="47.42" width="158"/></a> -->
+<a class="navbar-item" href="https://docs-thoughtspot-com.netlify.app/software/6.2/"><img src="../../../_/img/company_logo_white.svg" alt="ThoughtSpot logo" height="47.42" width="158"/></a>
+<div class="navbar-item search hide-for-print">
+  <div id="search" class="field has-filter">
+    <input class="query" type="text" placeholder="Search the docs">
+<!--    <label class="filter checkbox">
+      <input type="checkbox" data-facet-filter="component:Software"> In this project
+    </label> -->
+  </div>
+</div>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -47,10 +51,9 @@
         </div>
         <!-- <a class="navbar-item" href="#">Home</a> -->
 <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link" href="#">Products</a>
+        <a class="navbar-link" href="#">Software</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="https://antora-cloud.netlify.app/">Cloud</a>
-            <a class="navbar-item" href="#">Mobile</a>
+            <a class="navbar-item" href="https://cloud-docs.thoughtspot.com/">Cloud</a>
           </div>
         </div>
       <!--  <div class="navbar-item has-dropdown is-hoverable">
@@ -90,7 +93,7 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="#docs:in-release.adoc">About this release</a>
+    <span class="nav-text">About our product releases</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="notes.html">Release notes</a>
@@ -101,47 +104,49 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="downloads.html">Downloads</a>
   </li>
-</ul>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="release-schedule-concurrent.html">Release schedule</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="release-maintenance.html">Release support and maintenance</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="0">
-<ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="#docs:in-users.adoc">Users</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="introduction.html">Introduction</a>
+    <a class="nav-link" href="#docs:introduction.adoc">Introduction</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="#docs:getting-started.">Getting Started</a>
+    <a class="nav-link" href="getting-started.html">Getting Started</a>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#docs:incormaation-center.adoc">Information Center</a>
+  </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="user-onboarding-experience.html">User onboarding experience</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="about-navigating-thoughtspot.html">Finding your way around</a>
+    <a class="nav-link" href="navigating-thoughtspot.html">Finding your way around</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="accessing.html">ThoughtSpot browser access</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="getting-started.html">Information Center</a>
+    <a class="nav-link" href="user.html">Your user preferences</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="about-user.html">Your user preferences</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="stickers.html">Use stickers to organize</a>
+    <a class="nav-link" href="tags.html">Use tags to organize</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="#docs:privileges.adoc">Privileges</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="about-privileges-end-user.html">Understanding privileges</a>
+    <a class="nav-link" href="privileges-end-user.html">Understanding privileges</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="pinboard-granular-permission.html">Granular access to pinboards</a>
@@ -152,10 +157,10 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="#docs:search.adoc">Use search</a>
+    <a class="nav-link" href="search.html">Use search</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="about-starting-a-new-search.html">What are searches and answers?</a>
+    <a class="nav-link" href="starting-a-new-search.html">What are searches and answers?</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -165,16 +170,16 @@
     <a class="nav-link" href="start-a-new-search.html">Start a new search</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="about-choosing-sources.html">Choose a data source</a>
+    <a class="nav-link" href="choosing-sources.html">Choose a data source</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="about-the-search-bar.html">Search bar features</a>
+    <a class="nav-link" href="the-search-bar.html">Search bar features</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="recent-searches.html">Search suggestions</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="about-attributes-and-measures.html">Search results and column types</a>
+    <a class="nav-link" href="attributes-and-measures.html">Search results and column types</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="data-refresh-time.html">Last data refresh time</a>
@@ -183,10 +188,7 @@
     <a class="nav-link" href="work-with-answers.html">Work with Answers</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="scriptability-answer.html">Migrate or restore Answers</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="tsl-answer.html">Answer TSL specification</a>
+    <a class="nav-link" href="tml-answers.html">Model, migrate, or restore Answers</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="ask-an-expert.html">Ask an expert</a>
@@ -203,14 +205,14 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="about-tables.html">Results that are tables</a>
+    <a class="nav-link" href="tables.html">Results that are tables</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="#docs:use-keywords-search.adoc">Use keywords in search</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="about-keyword-searches.html">Overview of keyword searches</a>
+    <a class="nav-link" href="keyword-searches.html">Overview of keyword searches</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="period-searches.html">Time series analysis</a>
@@ -231,7 +233,7 @@
     <a class="nav-link" href="#docs:work-with-filters.adoc">Work with filters</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="about-filters.html">Understand filters</a>
+    <a class="nav-link" href="filters.html">Understand filters</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="filter-from-column-headers.html">Add a filter to a table</a>
@@ -246,7 +248,7 @@
     <a class="nav-link" href="delete-a-filter.html">Delete a filter</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="about-filters-for-null.html">Filter on null, blank, or empty values</a>
+    <a class="nav-link" href="filters-for-null.html">Filter on null, blank, or empty values</a>
   </li>
 </ul>
   </li>
@@ -284,20 +286,20 @@
     <a class="nav-link" href="#docs:work-with-charts.adoc">Work with charts</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="about-charts.html">Understand charts</a>
+    <a class="nav-link" href="charts.html">Understand charts</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="#docs:chart-types.adoc">Chart types</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="about-column-charts.html">Column charts</a>
+    <a class="nav-link" href="column-charts.html">Column charts</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="about-bar-charts.html">Bar charts</a>
+    <a class="nav-link" href="bar-charts.html">Bar charts</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="about-line-charts.html">Line charts</a>
+    <a class="nav-link" href="line-charts.html">Line charts</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="pie-charts.html">Pie charts</a>
@@ -306,37 +308,37 @@
     <a class="nav-link" href="area-charts.html">Area charts</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="about-scatter-charts.html">Scatter charts</a>
+    <a class="nav-link" href="scatter-charts.html">Scatter charts</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="about-bubble-charts.html">Bubble charts</a>
+    <a class="nav-link" href="bubble-charts.html">Bubble charts</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="about-pareto-charts.html">Pareto charts</a>
+    <a class="nav-link" href="pareto-charts.html">Pareto charts</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="about-waterfall-charts.html">Waterfall charts</a>
+    <a class="nav-link" href="waterfall-charts.html">Waterfall charts</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="about-treemap-charts.html">Treemap charts</a>
+    <a class="nav-link" href="treemap-charts.html">Treemap charts</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="line-column-charts.html">Line column charts</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="about-funnel-charts.html">Funnel charts</a>
+    <a class="nav-link" href="#docs:funnel-charts.adoc">Funnel charts</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="about-geo-charts.html">Geo charts</a>
+    <a class="nav-link" href="geo-charts.html">Geo charts</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="about-pivoting-a-table.html">Pivot table</a>
+    <a class="nav-link" href="pivoting-a-table.html">Pivot table</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="about-sankey-charts.html">Sankey charts</a>
+    <a class="nav-link" href="sankey-charts.html">Sankey charts</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="about-radar-charts.html">Radar charts</a>
+    <a class="nav-link" href="radar-charts.html">Radar charts</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="candlestick-charts.html">Candlestick charts</a>
@@ -417,16 +419,16 @@
     <a class="nav-link" href="aggregation-formulas.html">Overview of aggregate formulas</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="about-cumulative-formulas.html">Cumulative functions</a>
+    <a class="nav-link" href="cumulative-formulas.html">Cumulative functions</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="about-moving-formulas.html">Moving functions</a>
+    <a class="nav-link" href="moving-formulas.html">Moving functions</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="aggregation-flexible.html">Flexible aggregation functions (group aggregate and filters)</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="about-pinned-measures.html">Grouping functions</a>
+    <a class="nav-link" href="pinned-measures.html">Grouping functions</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="filtered-agg-forms.html">Filtered aggregation functions</a>
@@ -446,20 +448,17 @@
     <a class="nav-link" href="conditional-sum.html">Formula operators</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="about-nested-formulas.html">Nested formulas</a>
+    <a class="nav-link" href="nested-formulas.html">Nested formulas</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="about-formula-support-for-chasm-trap-schemas.html">Formulas for chasm traps</a>
+    <a class="nav-link" href="formula-support-for-chasm-trap-schemas.html">Formulas for chasm traps</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Use pinboards</span>
+    <a class="nav-link" href="pinboards.html">Use pinboards</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="about-pinboards.html">Basic pinboard usage</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="follow-pinboard.html">Follow a pinboard</a>
   </li>
@@ -470,19 +469,25 @@
     <a class="nav-link" href="pinboard-filters.html">Pinboard filters</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="linked-filters.html">Linked Pinboard filters</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="selective-filters.html">Selective Pinboard filters</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="answer-explorer.html">Answer Explorer</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="schedule-a-pinboard-job.html">Schedule a pinboard job</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="about-showing-underlying-data-from-within-a-pinboard.html">Search actions within a pinboard</a>
+    <a class="nav-link" href="showing-underlying-data-from-within-a-pinboard.html">Search actions within a pinboard</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="copy-a-pinboard.html">Copy a pinboard</a>
+    <a class="nav-link" href="pinboard-copy.html">Copy a pinboard</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="copy-link-for-a-pinboard.html">Copy a pinboard or visualization link</a>
+    <a class="nav-link" href="pinboard-link-copy.html">Copy a pinboard or visualization link</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="reset-a-visualization.html">Reset a pinboard or visualization</a>
@@ -494,10 +499,7 @@
     <a class="nav-link" href="download-pinboard-pdf.html">Download as PDF</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="scriptability-pinboard.html">Migrate or restore Pinboards</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="tsl-pinboard.html">Pinboard TSL specification</a>
+    <a class="nav-link" href="tml-pinboards.html">Model, migrate, or restore Pinboards</a>
   </li>
 </ul>
   </li>
@@ -506,7 +508,7 @@
     <span class="nav-text">Use custom R scripts</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="about-r-in-thoughtspot.html">About R in ThoughtSpot</a>
+    <a class="nav-link" href="r-in-thoughtspot.html">About R in ThoughtSpot</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="create-r-scripts.html">Create and share R scripts</a>
@@ -515,17 +517,14 @@
     <a class="nav-link" href="run-prebuilt-r-scripts.html">Run prebuilt R scripts on answers</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="save-and-share-r-answers.html">Save and share R visualizations</a>
+    <a class="nav-link" href="r-answers-save-share.html">Save and share R visualizations</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">SpotIQ</span>
+    <a class="nav-link" href="whatisspotiq.html">SpotIQ</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="whatisspotiq.html">What is SpotIQ</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="special-topics.html">Best practices</a>
   </li>
@@ -536,7 +535,7 @@
     <a class="nav-link" href="comparative-analysis.html">Comparative Analysis</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="customization.html">Custom SpotIQ analysis</a>
+    <a class="nav-link" href="#docs:customization.adoc">Custom SpotIQ analysis</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="adv-customize-withr.html">Advanced R customizations</a>
@@ -551,16 +550,10 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Work with data</span>
+    <a class="nav-link" href="data-intro-end-user.html">Work with data</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="data-intro-end-user.html">Understand data sources</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="generate-flat-file.html">Create and load CSV files</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="append-data-from-a-web-browser.html">Append data through the UI</a>
+    <a class="nav-link" href="data-import-ui.html">Append data through the UI</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="view-your-data-profile.html">View a data profile</a>
@@ -570,11 +563,8 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Share your work</span>
+    <a class="nav-link" href="sharing-for-end-users.html">Share your work</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="sharing-for-end-users.html">About sharing</a>
-  </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="share-pinboards.html">Share a pinboard</a>
   </li>
@@ -595,42 +585,21 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Use SearchIQ</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="about-searchiq.html">About SearchIQ</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="use-searchiq.html">Use SearchIQ for natural searches</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="teach-searchiq.html">Teach SearchIQ your language</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="what-you-can-find-in-the-help-center.html">More help and support</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Administration</span>
+    <a class="nav-link" href="administration.html">Administration</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="intro.html">Introduction to administration</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="logins.html">Sign-in credentials for administration</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Understand the architecture</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="components.html">Architectural components</a>
-  </li>
+<ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="data-caching.html">Data caching</a>
   </li>
@@ -638,7 +607,7 @@
     <a class="nav-link" href="authentication.html">Authentication frameworks</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="security.html">Data and object security</a>
+    <a class="nav-link" href="security-data-object.html">Data and object security</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="performance.html">Performance considerations</a>
@@ -650,67 +619,64 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Admin Console</span>
+    <a class="nav-link" href="admin-portal.html">Admin Console</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="admin-portal.html">Overview</a>
+    <a class="nav-link" href="admin-portal-users.html">Managing users</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="users.html">Managing users</a>
+    <a class="nav-link" href="admin-portal-groups.html">Managing groups</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="groups.html">Managing groups</a>
+    <a class="nav-link" href="admin-portal-authentication-local.html">Local authentication</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="authentication-local.html">Local authentication</a>
+    <a class="nav-link" href="admin-portal-authentication-saml.html">Authentication through SAML</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="authentication-saml.html">Authentication through SAML</a>
+    <a class="nav-link" href="admin-portal-authentication-active-directory.html">Authentication through Active Directory</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="authentication-active-directory.html">Authentication through Active Directory</a>
+    <a class="nav-link" href="admin-portal-ssl-configure.html">Configure SSL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="ssl-configure.html">Configure SSL</a>
+    <a class="nav-link" href="admin-portal-reverse-ssh-tunnel.html">Configure a reverse SSH tunnel</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="reverse-ssh-tunnel.html">Configure a reverse SSH tunnel</a>
+    <a class="nav-link" href="admin-portal-smtp-configure.html">Set the relay host for SMTP (email)</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="smtp-configure.html">Set the relay host for SMTP (email)</a>
+    <a class="nav-link" href="admin-portal-customize-help.html">Customize ThoughtSpot Help</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="customize-help.html">Customize ThoughtSpot Help</a>
+    <a class="nav-link" href="admin-portal-customize-actions-menu.html">Customize actions</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="customize-actions-menu.html">Customize actions</a>
+    <a class="nav-link" href="admin-portal-style-customization.html">Style customization</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="style-customization.html">Style customization</a>
+    <a class="nav-link" href="admin-portal-nas-mount-configure.html">Configure NAS for backup storage</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="nas-mount-configure.html">Configure NAS for backup storage</a>
+    <a class="nav-link" href="admin-portal-snapshot-manage.html">Manage and create snapshots</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="snapshot-manage.html">Manage and create snapshots</a>
+    <a class="nav-link" href="admin-portal-system-cluster-pinboard.html">System Cluster Pinboard</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="system-overview-pinboard.html">System Overview Pinboard</a>
+    <a class="nav-link" href="admin-portal-system-alerts-pinboard.html">System Alerts Pinboard</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="system-cluster-pinboard.html">System Cluster Pinboard</a>
+    <a class="nav-link" href="admin-portal-user-adoption-pinboard.html">User Adoption Pinboard</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="system-alerts-pinboard.html">System Alerts Pinboard</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="available-update.html">Available cluster updates</a>
+    <a class="nav-link" href="admin-portal-available-update.html">Available cluster updates</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Installation and setup</span>
+    <a class="nav-link" href="installation.html">Installation and setup</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="setup-intro.html">About installation and upgrades</a>
@@ -734,26 +700,23 @@
     <a class="nav-link" href="internal-auth.html">Configure internal authentication</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="SSL-config.html">Configure SSL</a>
+    <a class="nav-link" href="ssl-config.html">Configure SSL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="configure-SAML-with-tscli.html">Configure SAML</a>
+    <a class="nav-link" href="saml-configure-tscli.html">Configure SAML</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="active-directory-based-access.html">Enable SSH through Active Directory</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Integrate LDAP</span>
+    <a class="nav-link" href="ldap.html">Integrate LDAP</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="about-LDAP.html">About LDAP integration</a>
+    <a class="nav-link" href="ldap-config-ad.html">Configure authentication through Active Directory</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="LDAP-config-AD.html">Configure authentication through Active Directory</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="add-SSL-for-LDAP.html">Add the SSL certificate for LDAP</a>
+    <a class="nav-link" href="ldap-ssl.html">Add the SSL certificate for LDAP</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="test-ldap.html">Test the LDAP configuration</a>
@@ -764,7 +727,7 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="NAS-mount.html">Configure NAS file system</a>
+    <a class="nav-link" href="nas-mount.html">Configure NAS file system</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="set-up-monitoring.html">Set up monitoring</a>
@@ -776,10 +739,10 @@
     <a class="nav-link" href="ports.html">Network ports</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="about-load-balancer-configuration.html">Configure load balacing and proxies</a>
+    <a class="nav-link" href="load-balancer-configuration.html">Configure load balacing and proxies</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="customize-help.html">Customize ThoughtSpot Help</a>
+    <a class="nav-link" href="#docs:customize-help.adoc">Customize ThoughtSpot Help</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="customize-style.html">Customize look and feel</a>
@@ -788,13 +751,10 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Load and manage data</span>
+    <a class="nav-link" href="loading-intro.html">Load and manage data</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="loading-intro.html">Introduction to data management</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="about-case-configuration.html">Configure casing</a>
+    <a class="nav-link" href="case-configuration.html">Configure casing</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="load-from-web-browser.html">Load CSV files with the UI</a>
@@ -804,11 +764,8 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Plan the schema</span>
+    <a class="nav-link" href="plan-schema.html">Plan the schema</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="plan-schema.html">About schema planning</a>
-  </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="datatypes.html">Data types</a>
   </li>
@@ -825,11 +782,8 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Build the schema</span>
+    <a class="nav-link" href="create-schema.html">Build the schema</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="create-schema.html">Schema building overview</a>
-  </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="prep-schema-for-load.html">Connect with TQL and create a schema</a>
   </li>
@@ -846,13 +800,10 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Change the schema</span>
+    <a class="nav-link" href="change-schema.html">Change the schema</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="change-schema.html">How to change a schema</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="about-data-type-conversion.html">Convert column data type</a>
+    <a class="nav-link" href="data-type-conversion.html">Convert column data type</a>
   </li>
 </ul>
   </li>
@@ -887,13 +838,13 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Manage users and groups</span>
+    <a class="nav-link" href="users-groups.html">Manage users and groups</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="intro-onboarding.html">Onboarding users</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="about-users-groups.html">Understand groups and privileges</a>
+    <a class="nav-link" href="groups-privileges.html">Understand groups and privileges</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="add-group.html">Create, edit, or delete a group</a>
@@ -911,7 +862,7 @@
     <span class="nav-text">Security</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="about-security.html">Overview of security features</a>
+    <a class="nav-link" href="security.html">Overview of security features</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
@@ -921,7 +872,7 @@
     <a class="nav-link" href="audit-logs.html">Tools and processes</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="about-secure-monitor-sw.html">About third-party software</a>
+    <a class="nav-link" href="secure-monitor-sw.html">About third-party software</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="install-secure-monitor-sw.html">Installing third-party software</a>
@@ -960,11 +911,8 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Row level security (RLS)</span>
+    <a class="nav-link" href="row-security.html">Row level security (RLS)</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="about-row-security.html">About row level security (RLS)</a>
-  </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="row-level-security.html">How rule-based RLS works</a>
   </li>
@@ -983,11 +931,8 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">System administration</span>
+    <a class="nav-link" href="sysadmin-overview.html">System administration</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="sysadmin-overview.html">Overview of system administration</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="send-logs-to-administrator.html">Send logs when reporting problems</a>
   </li>
@@ -1001,11 +946,8 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Backup and restore</span>
+    <a class="nav-link" href="choose-strategy.html">Backup and restore</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="choose-strategy.html">Understand the backup strategies</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="how-to-create-a-schedule.html">Understand backup/snapshot schedules</a>
   </li>
@@ -1014,11 +956,8 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Work with backups</span>
+    <a class="nav-link" href="backup-modes.html">Backup modes</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="backup-modes.html">Understand backup modes</a>
-  </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="take-backup.html">Create a manual backup</a>
   </li>
@@ -1034,24 +973,18 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Improve search with modeling</span>
+    <a class="nav-link" href="data-modeling-intro.html">Improve search with modeling</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="about-data-modeling-intro.html">About data modeling</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="model-data-in-UI.html">Change a table&#8217;s data model</a>
+    <a class="nav-link" href="model-data-ui.html">Change a table&#8217;s data model</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="edit-model-file.html">Edit the system-wide data model</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Data model settings</span>
+    <a class="nav-link" href="data-modeling-settings.html">Data model settings</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="data-modeling-settings.html">Overview of the setttings</a>
-  </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="change-column-basics.html">Set column name, description, and type</a>
   </li>
@@ -1083,11 +1016,8 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Link tables using relationships</span>
+    <a class="nav-link" href="relationships.html">Link tables using relationships</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="about-relationships.html">Link tables using relationships</a>
-  </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="create-new-relationship.html">Create a relationship</a>
   </li>
@@ -1095,7 +1025,7 @@
     <a class="nav-link" href="delete-relationship.html">Delete a relationship</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="stickers-concept.html">Use stickers</a>
+    <a class="nav-link" href="tags-concept.html">Use tags</a>
   </li>
 </ul>
   </li>
@@ -1106,7 +1036,7 @@
     <span class="nav-text">Worksheets: Improve Search</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="about-worksheets.html">Create and use worksheets</a>
+    <a class="nav-link" href="worksheets.html">Create and use worksheets</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="edit-worksheet.html">Edit a worksheet</a>
@@ -1133,20 +1063,17 @@
     <a class="nav-link" href="delete-worksheet.html">Delete Worksheets or Tables</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="worksheet-export.html">Migrate or restore Worksheets</a>
+    <a class="nav-link" href="tml-worksheets.html">Model, migrate, or restore Worksheets</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="yaml-worksheet.html">Worksheet TSL specification</a>
+    <a class="nav-link" href="#docs:yaml-worksheet.adoc">Worksheet TSL specification</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Work with Views</span>
+    <a class="nav-link" href="query-on-query.html">Work with Views</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="about-query-on-query.html">Understand views</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="create-aggregated-worksheet.html">Save a search as a view</a>
   </li>
@@ -1169,34 +1096,22 @@
     <a class="nav-link" href="refresh-view.html">Refresh a view</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="tml-views.html">Model, migrate, or restore Views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="schedule-materialization.html">Schedule view refreshes</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Scriptability</span>
+    <span class="nav-text">Migrating TS objects, Scriptability, and TML</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="scriptability.html">Overview</a>
+    <a class="nav-link" href="scriptability.html">Scriptability</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="worksheet-export.html">Migrate or restore worksheets</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="yaml-worksheet.html">Worksheet TSL specification</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="scriptability-pinboard.html">Migrate or restore pinboards</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="tsl-pinboard.html">Pinboard TSL specification</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="scriptability-answer.html">Migrate or restore answers</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="tsl-answer.html">Answer TSL specification</a>
+    <a class="nav-link" href="tml.html">TML: ThoughtSpot Modeling Language</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="app-templates.html">SpotApps</a>
@@ -1205,58 +1120,22 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Set up SearchIQ</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="enable-searchiq.html">Enable SearchIQ</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="searchiq-optimize.html">Optimize SearchIQ</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">SearchIQ Optimization steps</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="searchiq-optimize-columns.html">Enabling columns in SearchIQ</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="searchiq-optimize-experts.html">Add experts for SearchIQ</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="searchiq-optimize-train.html">Train SearchIQ</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="set-entity-category.html">Set entitiy categories for SearchIQ</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="searchiq-mappings.html">Change SearchIQ mappings</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
     <span class="nav-text">Managed scheduled jobs</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="about-scheduled-pinboards.html">Job management (scheduled pinboards)</a>
+    <a class="nav-link" href="scheduled-pinboards.html">Job management (scheduled Pinboards)</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="scheduled-pinboards-management.html">Scheduled pinboards management</a>
+    <a class="nav-link" href="scheduled-pinboards-management.html">Scheduled Pinboards management</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Monitoring</span>
+    <a class="nav-link" href="system-monitor.html">System monitoring</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="intro-monitoring.html">Introduction to monitoring</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="overview.html">Overview board</a>
+    <a class="nav-link" href="#docs:overview.adoc">Overview board</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="data.html">Data board</a>
@@ -1268,7 +1147,7 @@
     <a class="nav-link" href="alerts-events.html">Alerts and Events board</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="worksheets.html">System worksheets</a>
+    <a class="nav-link" href="worksheets-system.html">System Worksheets</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="monitor-pinboards.html">System Pinboards</a>
@@ -1276,15 +1155,15 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="falcon-monitor.html">Falcon monitoring Pinboards</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#docs:system-monitor-performance-tracking.adoc">Performance Tracking Pinboard</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Troubleshooting</span>
+    <a class="nav-link" href="troubleshooting-intro.html">Troubleshooting</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="troubleshooting-intro.html">About troubleshooting</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="get-logs.html">Get logs</a>
   </li>
@@ -1321,11 +1200,8 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Mobile</span>
+    <a class="nav-link" href="use-mobile.html">Mobile</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="use-mobile.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="deploy-mobile.html">Deploy</a>
   </li>
@@ -1339,11 +1215,8 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Embedding</span>
+    <a class="nav-link" href="intro-embedding.html">Embedding</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="intro-embedding.html">Introduction to Embedding</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="login-console.html">Log into the Linux shell using SSH</a>
   </li>
@@ -1351,20 +1224,17 @@
     <a class="nav-link" href="logins.html">Login credentials</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="about-JS-API.html">Use the JavaScript API</a>
+    <a class="nav-link" href="js-api.html">Use the JavaScript API</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">SAML</span>
+    <a class="nav-link" href="saml-integration.html">SAML</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="about-SAML-integrations.html">About SAML</a>
+    <a class="nav-link" href="saml-configure-tscli.html">Configure SAML</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="configure-SAML-with-tscli.html">Configure SAML</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="configure-SAML-siteminder.html">Configure CA SiteMinder</a>
+    <a class="nav-link" href="saml-configure-siteminder.html">Configure CA SiteMinder</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="integrate-ADFS.html">Configure Active Directory Federated Services</a>
@@ -1373,11 +1243,8 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">REST API</span>
+    <a class="nav-link" href="data-api.html">REST API</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="about-data-api.html">About the REST API</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="calling-rest-api.html">Calling the REST API</a>
   </li>
@@ -1397,19 +1264,16 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Embed ThoughtSpot</span>
+    <a class="nav-link" href="embedding.html">Embed ThoughtSpot</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="about-embedding-viz.html">Understand embedding</a>
+    <a class="nav-link" href="embed-viz.html">Embed Pinboard or visualization</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="embed-a-viz.html">Embed Pinboard or visualization</a>
+    <a class="nav-link" href="js-api-enable.html">Authentication flow with embed</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="enable-JS-API.html">Authentication flow with embed</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="about-full-embed.html">Full application embedding</a>
+    <a class="nav-link" href="embed-full.html">Full application embedding</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="trusted-authentication.html">Configure trusted authentication</a>
@@ -1418,11 +1282,8 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Runtime Filters</span>
+    <a class="nav-link" href="runtime-filters.html">Runtime Filters</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="about-runtime-filters.html">About Runtime Filters</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="apply-runtime-filter.html">Apply a Runtime Filter</a>
   </li>
@@ -1433,11 +1294,8 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Style Customization</span>
+    <a class="nav-link" href="perform-style-customization.html">Style Customization</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="perform-style-customization.html">Customize the application style</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="upload-application-logos.html">Upload application logos</a>
   </li>
@@ -1457,11 +1315,8 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">API Reference</span>
+    <a class="nav-link" href="public-api-reference.html">API Reference</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="public-api-reference.html">Introduction</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="pinboarddata.html">Pinboard Data API</a>
   </li>
@@ -1489,18 +1344,12 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Deploy</span>
+    <a class="nav-link" href="deployment-sw.html">Software Deployment</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="welcome-intro.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Amazon Linux 2 Support</span>
+    <a class="nav-link" href="al2-overview.html">Amazon Linux 2 deplopyments</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="al2-overview.html">Amazon Linux 2 overview</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="al2-prerequisites.html">Amazon Linux 2 prerequisites</a>
   </li>
@@ -1526,11 +1375,8 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">RHEL Support</span>
+    <a class="nav-link" href="rhel.html">RHEL Support</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel.html">RHEL overview</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="rhel-prerequisites.html">RHEL prerequisites</a>
   </li>
@@ -1550,24 +1396,18 @@
     <a class="nav-link" href="rhel-add-node.html">Add new nodes to clusters on RHEL</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="inthebox.html">Packages installed with RHEL</a>
+    <a class="nav-link" href="rhel-packages.html">Packages installed with RHEL</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Hardware appliance</span>
+    <a class="nav-link" href="inthebox.html">Hardware appliance</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="rhel-packages.html">Hardware appliance overview</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Deploying on the SMC appliance</span>
+    <a class="nav-link" href="installing-smc.html">Deploying on the SMC appliance</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="installing-the-smc.html">Deploying on the SMC appliance</a>
-  </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="prerequisites-smc.html">Prerequisites</a>
   </li>
@@ -1587,11 +1427,8 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Deploying on the Dell appliance</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="installing-dell.html">Deploying on the Dell appliance</a>
-  </li>
+<ul class="nav-list">
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="prerequisites-dell.html">Prerequisites</a>
   </li>
@@ -1616,20 +1453,14 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Cloud</span>
+    <a class="nav-link" href="cloud.html">Cloud deployment</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="cloud.html">Cloud overview</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">AWS</span>
+    <a class="nav-link" href="aws-configuration-options.html">Cloud deployment on AWS</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="configuration-options-aws.html">Configuration options</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="launch-an-instance-aws.html">Set up AWS resources for ThoughtSpot</a>
+    <a class="nav-link" href="aws-launch-instance.html">Set up AWS resources for ThoughtSpot</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="aws-prepare-vms.html">Prepare AWS VMs for ThoughtSpot</a>
@@ -1650,13 +1481,10 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Azure</span>
+    <a class="nav-link" href="azure-configuration-options.html">Cloud deployment on Microsoft Azure</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="configuration-options-azure.html">Configuration options</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="launch-an-instance-azure.html">Set up ThoughtSpot in Azure</a>
+    <a class="nav-link" href="azure-launch-instance.html">Set up ThoughtSpot in Azure</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="installing-azure.html">Configure ThoughtSpot nodes in Azure</a>
@@ -1668,13 +1496,10 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">GCP</span>
+    <a class="nav-link" href="gcp-configuration-options.html">Cloud deployment on GCP</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="configuration-options-gcp.html">Configuration options</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="launch-an-instance-gcp.html">Set up ThoughtSpot in GCP</a>
+    <a class="nav-link" href="gcp-launch-instance.html">Set up ThoughtSpot in GCP</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="installing-gcp.html">Configure ThoughtSpot nodes in GCP</a>
@@ -1691,11 +1516,8 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">VMware</span>
+    <a class="nav-link" href="vmware-intro.html">VMware deployment</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="vmware-intro.html">Configuration overview</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="vmware-setup.html">Set up ThoughtSpot in VMware</a>
   </li>
@@ -1717,18 +1539,12 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Embrace</span>
+    <a class="nav-link" href="#docs:embrace-intro.adoc">Embrace</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="embrace-intro.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Snowflake</span>
+    <a class="nav-link" href="embrace-snowflake.html">Snowflake in Embrace</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="embrace-snowflake.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="embrace-snowflake-add.html">Add a connection</a>
   </li>
@@ -1743,11 +1559,8 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Snowflake Partner Connect</span>
+    <a class="nav-link" href="embrace-snowflake-partner.html">Snowflake Partner Connect</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="embrace-snowflake-partner.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="embrace-snowflake-tutorial.html">Tutorials</a>
   </li>
@@ -1757,11 +1570,8 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Amazon Redshift</span>
+    <a class="nav-link" href="embrace-redshift.html">Amazon Redshift in Embrace</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="embrace-redshift.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="embrace-redshift-add.html">Add a connection</a>
   </li>
@@ -1778,11 +1588,8 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Google BigQuery</span>
+    <a class="nav-link" href="embrace-gbq.html">Google BigQuery in Embrace</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="embrace-gbq.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="embrace-gbq-add.html">Add a connection</a>
   </li>
@@ -1796,11 +1603,8 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Azure Synapse</span>
+    <a class="nav-link" href="embrace-synapse.html">Azure Synapse in Embrace</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="embrace-synapse.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="embrace-synapse-add.html">Add a connection</a>
   </li>
@@ -1814,11 +1618,8 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Teradata</span>
+    <a class="nav-link" href="embrace-teradata.html">Teradata in Embrace</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="embrace-teradata.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="embrace-teradata-add.html">Add a connection</a>
   </li>
@@ -1832,11 +1633,8 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">SAP HANA</span>
+    <a class="nav-link" href="embrace-hana.html">SAP HANA in Embrace</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="embrace-hana.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="embrace-hana-add.html">Add a connection</a>
   </li>
@@ -1852,11 +1650,8 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Dataflow</span>
+    <a class="nav-link" href="dataflow.html">Dataflow</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="dataflow.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="dataflow-key-features.html">Key features</a>
   </li>
@@ -1871,18 +1666,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Database Connections</span>
+    <a class="nav-link" href="dataflow-databases.html">Database Connections</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="dataflow-databases.html">Supported database connections</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Amazon Aurora</span>
+    <a class="nav-link" href="dataflow-amazon-aurora.html">Amazon Aurora in DataFlow</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-amazon-aurora.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="dataflow-amazon-aurora-add.html">Connect</a>
   </li>
@@ -1896,11 +1685,8 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Amazon Redshift</span>
+    <a class="nav-link" href="dataflow-amazon-redshift.html">Amazon Redshift in DataFlow</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-amazon-redshift.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="dataflow-amazon-redshift-add.html">Connect</a>
   </li>
@@ -1914,11 +1700,8 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Azure Synapse</span>
+    <a class="nav-link" href="dataflow-azure-synapse.html">Azure Synapse in DataFlow</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-azure-synapse.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="dataflow-azure-synapse-add.html">Connect</a>
   </li>
@@ -1932,11 +1715,8 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Cassandra</span>
+    <a class="nav-link" href="dataflow-cassandra.html">Cassandra in DataFlow</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-cassandra.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="dataflow-cassandra-add.html">Connect</a>
   </li>
@@ -1950,11 +1730,38 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Google BigQuery</span>
+    <a class="nav-link" href="dataflow-databricks-delta-lake.html">Databricks Delta Lake in DataFlow</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-google-bigquery.html">Overview</a>
+    <a class="nav-link" href="dataflow-databricks-delta-lake-add.html">Connect</a>
   </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="dataflow-databricks-delta-lake-sync.html">Sync</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="dataflow-databricks-delta-lake-reference.html">Reference</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="dataflow-denodo.html">Denodo in DataFlow</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="dataflow-denodo-add.html">Connect</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="dataflow-denodo-sync.html">Sync</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="dataflow-denodo-reference.html">Reference</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="dataflow-google-bigquery.html">Google BigQuery in DataFlow</a>
+<ul class="nav-list">
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="dataflow-google-bigquery-add.html">Connect</a>
   </li>
@@ -1968,11 +1775,8 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Hive</span>
+    <a class="nav-link" href="dataflow-hive.html">Hive in DataFlow</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-hive.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="dataflow-hive-add.html">Connect</a>
   </li>
@@ -1986,11 +1790,8 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">IBM Db2</span>
+    <a class="nav-link" href="dataflow-ibm-db2.html">IBM Db2 in DataFlow</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-ibm-db2.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="dataflow-ibm-db2-add.html">Connect</a>
   </li>
@@ -2004,11 +1805,23 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">MariaDB</span>
+    <a class="nav-link" href="dataflow-jdbc.html">JDBC in DataFlow</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-mariadb.html">Overview</a>
+    <a class="nav-link" href="dataflow-jdbc-add.html">Connect</a>
   </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="dataflow-jdbc-sync.html">Sync</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="dataflow-jdbc-reference.html">Reference</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="dataflow-mariadb.html">MariaDB in DataFlow</a>
+<ul class="nav-list">
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="dataflow-mariadb-add.html">Connect</a>
   </li>
@@ -2022,11 +1835,8 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">MongoDB</span>
+    <a class="nav-link" href="dataflow-mongodb.html">MongoDB in DataFlow</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-mongodb.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="dataflow-mongodb-add.html">Connect</a>
   </li>
@@ -2040,11 +1850,8 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">MySQL</span>
+    <a class="nav-link" href="dataflow-mysql.html">MySQL in DataFlow</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-mysql.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="dataflow-mysql-add.html">Connect</a>
   </li>
@@ -2058,11 +1865,8 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Netezza</span>
+    <a class="nav-link" href="dataflow-netezza.html">Netezza in DataFlow</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-netezza.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="dataflow-netezza-add.html">Connect</a>
   </li>
@@ -2076,11 +1880,8 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Oracle</span>
+    <a class="nav-link" href="dataflow-oracle.html">Oracle in DataFlow</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-oracle.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="dataflow-oracle-add.html">Connect</a>
   </li>
@@ -2094,11 +1895,8 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">PostgreSQL</span>
+    <a class="nav-link" href="dataflow-postgresql.html">PostgreSQL in DataFlow</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-postgresql.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="dataflow-postgresql-add.html">Connect</a>
   </li>
@@ -2112,11 +1910,8 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Presto</span>
+    <a class="nav-link" href="dataflow-presto.html">Presto in DataFlow</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-presto.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="dataflow-presto-add.html">Connect</a>
   </li>
@@ -2130,11 +1925,23 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">SAP Adaptive Server Enterprise</span>
+    <a class="nav-link" href="dataflow-sas.html">SAS in DataFlow</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-sap-adaptive-server-enterprise.html">Overview</a>
+    <a class="nav-link" href="dataflow-sas-add.html">Connect</a>
   </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="dataflow-sas-sync.html">Sync</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="dataflow-sas-reference.html">Reference</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="dataflow-sap-adaptive-server-enterprise.html">SAP Adaptive Server Enterprise in DataFlow</a>
+<ul class="nav-list">
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="dataflow-sap-adaptive-server-enterprise-add.html">Connect</a>
   </li>
@@ -2148,11 +1955,8 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">SAP HANA</span>
+    <a class="nav-link" href="dataflow-sap-hana.html">SAP HANA in DataFlow</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-sap-hana.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="dataflow-sap-hana-add.html">Connect</a>
   </li>
@@ -2164,112 +1968,91 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">SAP SQL Anywhere</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-sap-sql-anywhere.html">Overview</a>
+</ul>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="dataflow-sap-sql-anywhere.html">SAP SQL Anywhere in DataFlow</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="dataflow-sap-sql-anywhere-add.html">Connect</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="dataflow-sap-sql-anywhere-sync.html">Sync</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="dataflow-sap-sql-anywhere-reference.html">Reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#docs:dataflow-sap-sql-server.adoc">SQL Server in DataFlow</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">SQL Server</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:dataflow-sap-sql-server.adoc">Overview</a>
-  </li>
-  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="#docs:dataflow-sap-sql-server-add.adoc">Connect</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="#docs:dataflow-sap-sql-server-sync.adoc">Sync</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="#docs:dataflow-sap-sql-server-reference.adoc">Reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="dataflow-snowflake.html">Snowflake in DataFlow</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Snowflake</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-snowflake.html">Overview</a>
-  </li>
-  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="dataflow-snowflake-add.html">Connect</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="dataflow-snowflake-sync.html">Sync</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="dataflow-snowflake-reference.html">Reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="dataflow-splice-machine.html">Splice Machine in DataFlow</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Splice Machine</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-splice-machine.html">Overview</a>
-  </li>
-  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="dataflow-splice-machine-add.html">Connect</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="dataflow-splice-machine-sync.html">Sync</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="dataflow-splice-machine-reference.html">Reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="dataflow-teradata.html">Teradata in DataFlow</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Teradata</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-teradata.html">Overview</a>
-  </li>
-  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="dataflow-teradata-add.html">Connect</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="dataflow-teradata-sync.html">Sync</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="dataflow-teradata-reference.html">Reference</a>
-  </li>
-</ul>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">File System Connections</span>
+    <a class="nav-link" href="dataflow-filesystems.html">File System Connections</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="dataflow-filesystems.html">Supported file system connections</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Amazon S3</span>
+    <a class="nav-link" href="dataflow-amazon-s3.html">Amazon S3 in DataFlow</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-amazon-s3.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="dataflow-amazon-s3-add.html">Connect</a>
   </li>
@@ -2283,11 +2066,23 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Azure Blob Storage</span>
+    <a class="nav-link" href="dataflow-apache-parquet.html">Apache Parquet in DataFlow</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-azure-blob-storage.html">Overview</a>
+    <a class="nav-link" href="dataflow-apache-parquet-add.html">Connect</a>
   </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="dataflow-apache-parquet-sync.html">Sync</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="dataflow-apache-parquet-reference.html">Reference</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="dataflow-azure-blob-storage.html">Azure Blob Storage in DataFlow</a>
+<ul class="nav-list">
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="dataflow-azure-blob-storage-add.html">Connect</a>
   </li>
@@ -2301,11 +2096,8 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Flat Files</span>
+    <a class="nav-link" href="dataflow-files.html">Flat Files in DataFlow</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-files.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="dataflow-files-add.html">Connect</a>
   </li>
@@ -2319,11 +2111,8 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Google Cloud Storage</span>
+    <a class="nav-link" href="dataflow-google-cloud-storage.html">Google Cloud Storage in DataFlow</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-google-cloud-storage.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="dataflow-google-cloud-storage-add.html">Connect</a>
   </li>
@@ -2337,11 +2126,8 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">HDFS</span>
+    <a class="nav-link" href="dataflow-hdfs.html">HDFS in DataFlow</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-hdfs.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="dataflow-hdfs-add.html">Connect</a>
   </li>
@@ -2357,18 +2143,12 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Application Connections</span>
+    <a class="nav-link" href="dataflow-applications.html">Application Connections</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="dataflow-applications.html">Supported application connections</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Salesforce</span>
+    <a class="nav-link" href="dataflow-salesforce.html">Salesforce in DataFlow</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dataflow-salesforce.html">Overview</a>
-  </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="dataflow-salesforce-add.html">Connect</a>
   </li>
@@ -2378,17 +2158,26 @@
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="dataflow-salesforce-reference.html">Sync</a>
   </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="dataflow-rest-api.html">REST APIs in DataFlow</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="dataflow-rest-api-add.html">Connect</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="dataflow-rest-api-sync.html">Sync</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="dataflow-rest-api-reference.html">Reference</a>
+  </li>
 </ul>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Administration</span>
+    <a class="nav-link" href="dataflow-administration.html">Administration of DataFlow</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="dataflow-administration.html">Administration overview</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="dataflow-user-management.html">Manage DataFlow users</a>
   </li>
@@ -2401,28 +2190,19 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Data Integration</span>
+    <a class="nav-link" href="introduction-data-integration.html">Data Integration</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="introduction-data-integration.html">Introduction to Data Integration</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="jdbc-odbc-prereqs.html">JDBC and ODBC setup prerequisites</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">ODBC driver client</span>
+    <a class="nav-link" href="odbc.html">ODBC driver client</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="about-odbc.html">ODBC driver overview</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">ODBC on Windows</span>
+    <a class="nav-link" href="install-odbc-windows.html">ODBC on Windows</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="install-odbc-windows.html">Install the ODBC driver on Windows</a>
-  </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="multiple-sources-windows.html">Configure multiple connections on Windows</a>
   </li>
@@ -2444,11 +2224,8 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">JDBC driver client</span>
+    <a class="nav-link" href="jdbc-driver.html">JDBC driver client</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="about-jdbc-driver.html">JDBC driver overview</a>
-  </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="use-jdbc-driver.html">Use the JDBC driver</a>
   </li>
@@ -2459,16 +2236,13 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Troubleshooting</span>
+    <a class="nav-link" href="troubleshooting-intro.html">Troubleshooting data integrations</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="troubleshooting-intro.html">Troubleshooting data integrations</a>
+    <a class="nav-link" href="odbc-enable-log.html">Enable ODBC logs</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="enable-ODBC-log.html">Enable ODBC logs</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="JDBC-logging.html">Enable JDBC logs</a>
+    <a class="nav-link" href="jdbc-logging.html">Enable JDBC logs</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="schema-not-found.html">Schema not found error with ODBC</a>
@@ -2493,15 +2267,6 @@
   </li>
 </ul>
   </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Disaster Recovery</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="about-disaster-recovery.html">About disaster recovery</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="disk-failure.html">Disk failure</a>
   </li>
@@ -2513,16 +2278,13 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Cluster replacement</span>
+    <a class="nav-link" href="cluster-replacement.html">Cluster replacement</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="cluster-replacement.html">Overview of cluster replacement</a>
+    <a class="nav-link" href="#docs:NAS-mount.adoc">Mount a NAS file system</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="NAS-mount.html">Mount a NAS file system</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="set-up-DR-config.html">Configure disaster recovery</a>
+    <a class="nav-link" href="dr-config.html">Configure disaster recovery</a>
   </li>
 </ul>
   </li>
@@ -2530,16 +2292,70 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Reference</span>
+    <a class="nav-link" href="intro-reference.html">Reference</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="intro-reference.html">About this reference</a>
-  </li>
-  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="keywords.html">Keyword reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-zh-CN.html">中文 (简体): Chinese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-da-DK.html">Dansk: Danish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-nl-NL.html">Nederland: Dutch Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fi-FI.html">Suomi: Finnish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-en-US.html">English (American) Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fr-FR.html">Français (France): French Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-fr-CA.html">Français (Canada): French Canadian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-de-DE.html">Deutsche: German Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-it-IT.html">Italiano: Italian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-ja-JP.html">日本語: Japanese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-nb-NO.html">Norsk: Norwegian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-pt-PT.html">Português (Portugal): Portuguese Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-pt-BR.html">Português (Brasil): Portuguese Brazilian Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-es-ES.html">Español (España): Spanish Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-es-US.html">Español (Latinoamérica): Spanish Latin American Keyword reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keywords-sv-SE.html">Svenska: Swedish Keyword reference</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="sql-cli-commands.html">TQL reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="tql-service-api-ref.html">TQL service reference</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="data-importer-ref.html">tsload flag reference</a>
@@ -2650,12 +2466,15 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Software</a></li>
-    <li>Reference</li>
+    <li><a href="intro-reference.html">Reference</a></li>
     <li><a href="formula-reference.html">Formula function reference</a></li>
   </ul>
 </nav>
 </div>
   <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
 <article class="doc">
 <h1 class="page">Formula function reference</h1>
 <div id="preamble">
@@ -2676,8 +2495,141 @@ An individual formula is constructed from <em>n</em> combination of operators an
 <div class="sect1">
 <h2 id="operators"><a class="anchor" href="#operators"></a>Operators</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>{% include content/operators.md %}</p>
+<div id="and" class="dlist">
+<dl>
+<dt class="hdlist1"><code>and</code></dt>
+<dd>
+<p>Returns <code>true</code> when both conditions are <code>true</code>, otherwise returns <code>false</code>.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>(1 = 1) and (3 &gt; 2) = true
+lastname = 'smith' and state ='texas'</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Not available for row-level security (RLS) formulas.
+</td>
+</tr>
+</table>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="if-then-else" class="dlist">
+<dl>
+<dt class="hdlist1"><code>if&#8230;&#8203;then&#8230;&#8203;else</code></dt>
+<dd>
+<p>Conditional operator.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>if (3 &gt; 2) then 'bigger' else 'not bigger'
+if (cost &gt; 500) then 'flag' else 'approve'</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="ifnull" class="dlist">
+<dl>
+<dt class="hdlist1"><code>ifnull</code></dt>
+<dd>
+<p>Returns the first value if it is not <code>null</code>, otherwise returns the second value.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Example</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>ifnull (cost, 'unknown')</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="isnull" class="dlist">
+<dl>
+<dt class="hdlist1"><code>isnull</code></dt>
+<dd>
+<p>Returns <code>true</code> if the value is <code>null</code>.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Example</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>isnull (phone)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="not" class="dlist">
+<dl>
+<dt class="hdlist1"><code>not</code></dt>
+<dd>
+<p>Returns <code>true</code> if the condition is <code>false</code>, otherwise returns <code>false</code>.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>not (3 &gt; 2) = false
+not (state = 'texas')</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="or" class="dlist">
+<dl>
+<dt class="hdlist1"><code>or</code></dt>
+<dd>
+<p>Returns <code>true</code> when either condition is <code>true</code>, otherwise returns <code>false</code>.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>(1 = 5) or (3 &gt; 2) = true
+state = 'california' or state ='oregon'</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
 </div>
 </div>
 </div>
@@ -2687,8 +2639,418 @@ An individual formula is constructed from <em>n</em> combination of operators an
 <div class="paragraph">
 <p>Use the following functions to aggregate data.</p>
 </div>
+<div id="average" class="dlist">
+<dl>
+<dt class="hdlist1">average</dt>
+<dd>
+<p>Returns the average of all the values of a column.</p>
 <div class="paragraph">
-<p>{% include content/aggregate.md %}</p>
+<p><code>average (revenue)</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="average_if" class="dlist">
+<dl>
+<dt class="hdlist1">average_if</dt>
+<dd>
+<p>Returns the average of all the columns that meet a given criteria.</p>
+<div class="paragraph">
+<p><code>average_if(city = "San Francisco", revenue)</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="count" class="dlist">
+<dl>
+<dt class="hdlist1">count</dt>
+<dd>
+<p>Returns the number of rows in the table containing the column.</p>
+<div class="paragraph">
+<p><code>count (product)</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="count_if" class="dlist">
+<dl>
+<dt class="hdlist1">count_if</dt>
+<dd>
+<p>Returns the number of rows in the table containing the column.</p>
+<div class="paragraph">
+<p><code>count_if(region =&#8217;west&#8217;, region)</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="cumulative_average" class="dlist">
+<dl>
+<dt class="hdlist1">cumulative_average</dt>
+<dd>
+<p>Takes a measure and one or more attributes. Returns the average of the measure, accumulated by the attribute(s) in the order specified.</p>
+<div class="paragraph">
+<p><code>cumulative_average (revenue, order date, state)</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="cumulative_max" class="dlist">
+<dl>
+<dt class="hdlist1">cumulative_max</dt>
+<dd>
+<p>Takes a measure and one or more attributes. Returns the maximum of the measure, accumulated by the attribute(s) in the order specified.</p>
+<div class="paragraph">
+<p><code>cumulative_max (revenue, state)</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="cumulative_min" class="dlist">
+<dl>
+<dt class="hdlist1">cumulative_min</dt>
+<dd>
+<p>Takes a measure and one or more attributes. Returns the minimum of the measure, accumulated by the attribute(s) in the order specified.</p>
+<div class="paragraph">
+<p><code>cumulative_min (revenue, campaign)</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="cumulative_sum" class="dlist">
+<dl>
+<dt class="hdlist1">cumulative_sum</dt>
+<dd>
+<p>Takes a measure and one or more attributes. Returns the sum of the measure, accumulated by the attribute(s) in the order specified.</p>
+<div class="paragraph">
+<p><code>cumulative_sum (revenue, order date)</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="group_aggregate" class="dlist">
+<dl>
+<dt class="hdlist1">group_aggregate</dt>
+<dd>
+<p>  Takes a measure and optional attributes and filters. Used
+to aggregate measures with different granularities and filters than the columns used in the search. Commonly used in comparison analysis.</p>
+<div class="paragraph">
+<p>This formula takes the following form:</p>
+</div>
+<div class="paragraph">
+<p><code>group_aggregate (&lt;aggregation(measure)&gt;, &lt;groupings&gt;, &lt;filters&gt;)</code></p>
+</div>
+<div class="paragraph">
+<p>Define lists using curly brackets, <code>{ }</code>. Optional list functions <code>query_groups</code> or <code>query_filters</code> specify the lists or filters used in the original search. Use <code>+</code> (plus) and <code>-</code> (minus) to add or exclude specific columns for query groups.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="aggregation-flexible.html" class="page">Flexible aggregation functions</a>.</p>
+</div>
+<div class="paragraph">
+<p><code>group_aggregate (sum (revenue), {ship mode, date}, {} )</code></p>
+</div>
+<div class="paragraph">
+<p><code>group_aggregate (sum (revenue), {ship mode , date}, {day_of_week (date) = 'friday'} )</code></p>
+</div>
+<div class="paragraph">
+<p>`group_aggregate (sum (revenue), query_groups(), query_filters() ) `</p>
+</div>
+<div class="paragraph">
+<p><code>group_aggregate (sum (revenue), query_groups() + {date}, query_filters() )</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="group_average" class="dlist">
+<dl>
+<dt class="hdlist1">group_average</dt>
+<dd>
+<p>Takes a measure and one or more attributes. Returns the average of the measure grouped by the attribute(s).</p>
+<div class="paragraph">
+<p><code>group_average (revenue, customer region, state)</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="group_count" class="dlist">
+<dl>
+<dt class="hdlist1">group_count</dt>
+<dd>
+<p>Takes a measure and one or more attributes. Returns the count of the measure grouped by the attribute(s).</p>
+<div class="paragraph">
+<p><code>group_count (revenue, customer region)</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="group_max" class="dlist">
+<dl>
+<dt class="hdlist1">group_max</dt>
+<dd>
+<p>Takes a measure and one or more attributes. Returns the maximum of the measure grouped by the attribute(s).</p>
+<div class="paragraph">
+<p><code>group_max (revenue, customer region)</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="group_min" class="dlist">
+<dl>
+<dt class="hdlist1">group_min</dt>
+<dd>
+<p>Takes a measure and one or more attributes. Returns the minimum of the measure grouped by the attribute(s).</p>
+<div class="paragraph">
+<p><code>group_min (revenue, customer region)</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="group_stddev" class="dlist">
+<dl>
+<dt class="hdlist1">group_stddev</dt>
+<dd>
+<p>Takes a measure and one or more attributes. Returns the standard deviation of the measure grouped by the attribute(s).</p>
+<div class="paragraph">
+<p><code>group_stddev (revenue, customer region)</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="group_sum" class="dlist">
+<dl>
+<dt class="hdlist1">group_sum</dt>
+<dd>
+<p>Takes a measure and one or more attributes. Returns the sum of the measure grouped by the attribute(s).</p>
+<div class="paragraph">
+<p><code>group_sum (revenue, customer region)</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="group_unique_count" class="dlist">
+<dl>
+<dt class="hdlist1">group_unique_count</dt>
+<dd>
+<p>Takes a measure and one or more attributes. Returns the unique count of the measure grouped by the attribute(s).</p>
+<div class="paragraph">
+<p><code>group_unique_count (product , supplier)</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="group_variance" class="dlist">
+<dl>
+<dt class="hdlist1">group_variance</dt>
+<dd>
+<p>Takes a measure and one or more attributes. Returns the variance of the measure grouped by the attribute(s).</p>
+<div class="paragraph">
+<p><code>group_variance (revenue, customer region)</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="max" class="dlist">
+<dl>
+<dt class="hdlist1">max</dt>
+<dd>
+<p>Returns the maximum value of a column.</p>
+<div class="paragraph">
+<p><code>max (sales)</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="max_if" class="dlist">
+<dl>
+<dt class="hdlist1">max_if</dt>
+<dd>
+<p>Returns the maximum value among columns that meet a criteria.</p>
+<div class="paragraph">
+<p><code>max_if( (revenue &gt; 10) , customer region )</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="min" class="dlist">
+<dl>
+<dt class="hdlist1">min</dt>
+<dd>
+<p>Returns the minimum value of a column.</p>
+<div class="paragraph">
+<p><code>min (revenue)</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="min-if" class="dlist">
+<dl>
+<dt class="hdlist1">min_if</dt>
+<dd>
+<p>Returns the minimum value among columns that meet a criteria.</p>
+<div class="paragraph">
+<p><code>min_if( (revenue &lt; 10) , customer region )</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="moving_average" class="dlist">
+<dl>
+<dt class="hdlist1">moving_average</dt>
+<dd>
+<p>Takes a measure, two integers to define the window to aggregate over, and one or more attributes. The window is (current - Num1&#8230;&#8203;Current + Num2) with both end points being included in the window. For example, &#8220;1,1&#8221; will have a window size of 3. To define a window that begins before Current, specify a negative number for Num2. Returns the average of the measure over the given window. The attributes are the ordering columns used to compute the moving average.</p>
+<div class="paragraph">
+<p><code>moving_average (revenue, 2, 1, customer region)</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="moving_max" class="dlist">
+<dl>
+<dt class="hdlist1">moving_max</dt>
+<dd>
+<p>Takes a measure, two integers to define the window to aggregate over, and one or more attributes. The window is (current - Num1&#8230;&#8203;Current + Num2) with both end points being included in the window. For example, &#8220;1,1&#8221; will have a window size of 3. To define a window that begins before Current, specify a negative number for Num2. Returns the maximum of the measure over the given window. The attributes are the ordering columns used to compute the moving maximum.</p>
+<div class="paragraph">
+<p><code>moving_max (complaints, 1, 2, store name)</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="moving_min" class="dlist">
+<dl>
+<dt class="hdlist1">moving_min</dt>
+<dd>
+<p>Takes a measure, two integers to define the window to aggregate over, and one or more attributes. The window is (current - Num1&#8230;&#8203;Current + Num2) with both end points being included in the window. For example, &#8220;1,1&#8221; will have a window size of 3. To define a window that begins before Current, specify a negative number for Num2. Returns the minimum of the measure over the given window. The attributes are the ordering columns used to compute the moving minimum.</p>
+<div class="paragraph">
+<p><code>moving_min (defects, 3, 1, product)</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="moving_sum" class="dlist">
+<dl>
+<dt class="hdlist1">moving_sum</dt>
+<dd>
+<p>Takes a measure, two integers to define the window to aggregate over, and one or more attributes. The window is (current - Num1&#8230;&#8203;Current + Num2) with both end points being included in the window. For example, &#8220;1,1&#8221; will have a window size of 3. To define a window that begins before Current, specify a negative number for Num2. Returns the sum of the measure over the given window. The attributes are the ordering columns used to compute the moving sum.</p>
+<div class="paragraph">
+<p><code>moving_sum (revenue, 1, 1, order date)</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="rank" class="dlist">
+<dl>
+<dt class="hdlist1">rank</dt>
+<dd>
+<p>Returns the rank for the current row. Identical values receive an identical rank. Takes an aggregate input for the first argument. The second argument specifies the order, <code>'asc' | 'desc'</code>.</p>
+<div class="paragraph">
+<p><code>rank (sum (revenue) , 'asc' )</code></p>
+</div>
+<div class="paragraph">
+<p><code>rank (sum (revenue) , '`desc' )</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="rank_percentile" class="dlist">
+<dl>
+<dt class="hdlist1">rank_percentile</dt>
+<dd>
+<p>Returns the percentile rank for the current row. Identical values are assigned an identical percentile rank. Takes an aggregate input for the first argument. The second argument specifies the order, <code>'asc' | 'desc'</code>.</p>
+<div class="paragraph">
+<p><code>rank_percentile (sum (revenue) , 'asc' )</code></p>
+</div>
+<div class="paragraph">
+<p><code>rank_percentile (sum (revenue) , 'desc' )</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="stddev" class="dlist">
+<dl>
+<dt class="hdlist1">stddev</dt>
+<dd>
+<p>Returns the standard deviation of all values of a column.</p>
+<div class="paragraph">
+<p><code>stddev (revenue)</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="stddev_if" class="dlist">
+<dl>
+<dt class="hdlist1">stddev_if</dt>
+<dd>
+<p>Returns a standard deviation values filtered to meet a specific criteria.</p>
+<div class="paragraph">
+<p><code>stddev_if( (revenue &gt; 10) , (revenue/10.0) )</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="sum" class="dlist">
+<dl>
+<dt class="hdlist1">sum</dt>
+<dd>
+<p>Returns the sum of all the values of a column.</p>
+<div class="paragraph">
+<p><code>sum (revenue)</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="sum_if" class="dlist">
+<dl>
+<dt class="hdlist1">sum_if</dt>
+<dd>
+<p>Returns sum values filtered by a specific criteria.</p>
+<div class="paragraph">
+<p><code>sum_if(region=&#8217;west&#8217;, revenue)</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="unique_count" class="dlist">
+<dl>
+<dt class="hdlist1">unique count</dt>
+<dd>
+<p>Returns the number of unique values of a column.</p>
+<div class="paragraph">
+<p><code>unique count (customer)</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="unique_count_if" class="dlist">
+<dl>
+<dt class="hdlist1">unique_count_if</dt>
+<dd>
+<p>Returns the number of unique values of a column provided it meets a criteria.</p>
+<div class="paragraph">
+<p><code>unique_count_if( (revenue &gt; 10) , order date )</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="variance" class="dlist">
+<dl>
+<dt class="hdlist1">variance</dt>
+<dd>
+<p>Returns the variance of all the values of a column.</p>
+<div class="paragraph">
+<p><code>variance (revenue)</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="variance_if" class="dlist">
+<dl>
+<dt class="hdlist1">variance_if</dt>
+<dd>
+<p>Returns the variance of all the values of a column provided it meets a criteria..</p>
+<div class="paragraph">
+<p><code>variance_if( (revenue &gt; 10) , (revenue/10.0) )</code></p>
+</div>
+</dd>
+</dl>
 </div>
 </div>
 </div>
@@ -2701,16 +3063,905 @@ An individual formula is constructed from <em>n</em> combination of operators an
 <div class="paragraph">
 <p>ThoughtSpot does not support <em>date</em> data type conversion.</p>
 </div>
+<div id="to_bool" class="dlist">
+<dl>
+<dt class="hdlist1"><code>to_bool</code></dt>
+<dd>
+<p>Returns the input as a <code>boolean<code> data type (</code>true`</code> or <code>false</code>).</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>to_bool (0) = false
+to_bool (married)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="to_date" class="dlist">
+<dl>
+<dt class="hdlist1"><code>to_date</code></dt>
+<dd>
+<p>Accepts a date represented as an integer or text string, and a second string parameter that can include <code>strptime</code> date formatting elements.</p>
 <div class="paragraph">
-<p>{% include content/conversion-func.md %}</p>
+<p>Replaces all the valid strptime date formatting elements with their string counterparts and returns the result.</p>
+</div>
+<div class="paragraph">
+<p>Does not accept epoch-formatted dates as input.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>to_date (date_sold, '%Y-%m-%d')</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="to_double" class="dlist">
+<dl>
+<dt class="hdlist1"><code>to_double</code></dt>
+<dd>
+<p>Returns the input as a <code>double</code> data type.</td></p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>to_double ('3.14') = 3.14
+to_double (revenue * .01)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="to_integer" class="dlist">
+<dl>
+<dt class="hdlist1"><code>to_integer</code></dt>
+<dd>
+<p>Returns the input as an integer.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>to_integer ('45') + 1 = 46
+to_integer (price + tax - cost)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="to_string" class="dlist">
+<dl>
+<dt class="hdlist1"><code>to_string</code></dt>
+<dd>
+<p>Returns the input as a text string. To convert a date data type to a string data type, specify the date format to use.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>to_string (45 + 1) = '46'
+to_string (revenue - cost)
+to_string (date,('%m/%d/%y'))</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="date-functions"><a class="anchor" href="#date-functions"></a>Date functions</h2>
 <div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#add_days">add_days</a></p>
+</li>
+<li>
+<p><a href="#add_minutes">add_minutes</a></p>
+</li>
+<li>
+<p><a href="#add_months">add_months</a></p>
+</li>
+<li>
+<p><a href="#add_seconds">add_seconds</a></p>
+</li>
+<li>
+<p><a href="#add_weeks">add_weeks</a></p>
+</li>
+<li>
+<p><a href="#add_years">add_years</a></p>
+</li>
+<li>
+<p><a href="#date">date</a></p>
+</li>
+<li>
+<p><a href="#day">day</a></p>
+</li>
+<li>
+<p><a href="#day_number_of_quarter">day_number_of_quarter</a></p>
+</li>
+<li>
+<p><a href="#day_number_of_week">day_number_of_week</a></p>
+</li>
+<li>
+<p><a href="#day_number_of_year">day_number_of_year</a></p>
+</li>
+<li>
+<p><a href="#day_of_week">day_of_week</a></p>
+</li>
+<li>
+<p><a href="#diff_days">diff_days</a></p>
+</li>
+<li>
+<p><a href="#diff_time">diff_time</a></p>
+</li>
+<li>
+<p><a href="#hour_of_day">hour_of_day</a></p>
+</li>
+<li>
+<p><a href="#is_weekend">is_weekend</a></p>
+</li>
+<li>
+<p><a href="#month">month</a></p>
+</li>
+<li>
+<p><a href="#month_number">month_number</a></p>
+</li>
+<li>
+<p><a href="#month_number_of_quarter">month_number_of_quarter</a></p>
+</li>
+<li>
+<p><a href="#now">now</a></p>
+</li>
+<li>
+<p><a href="#quarter_number">quarter_number</a></p>
+</li>
+<li>
+<p><a href="#start_of_month">start_of_month</a></p>
+</li>
+<li>
+<p><a href="#start_of_quarter">start_of_quarter</a></p>
+</li>
+<li>
+<p><a href="#start_of_week">start_of_week</a></p>
+</li>
+<li>
+<p><a href="#start_of_year">start_of_year</a></p>
+</li>
+<li>
+<p><a href="#time">time</a></p>
+</li>
+<li>
+<p><a href="#today">today</a></p>
+</li>
+<li>
+<p><a href="#week_number_of_month">week_number_of_month</a></p>
+</li>
+<li>
+<p><a href="#week_number_of_quarter">week_number_of_quarter</a></p>
+</li>
+<li>
+<p><a href="#week_number_of_year">week_number_of_year</a></p>
+</li>
+<li>
+<p><a href="#year">year</a></p>
+</li>
+</ul>
+</div>
+<div id="add_days" class="dlist">
+<dl>
+<dt class="hdlist1"><code>add_days</code></dt>
+<dd>
+<p>Returns the result of adding the specified number of days to the given date.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>add_days (01/30/2015, 5) = 02/04/2015
+add_days (invoiced, 30)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="add_minutes" class="dlist">
+<dl>
+<dt class="hdlist1"><code>add_minutes</code></dt>
+<dd>
+<p>Returns the result of adding the specified number of minutes to the given date, datetime, or time.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>add_minutes ( 01/30/2015 00:10:20 , 5 ) = 01/30/2015 00:15:20
+add_minutes ( invoiced , 30 )</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="add_months" class="dlist">
+<dl>
+<dt class="hdlist1"><code>add_months</code></dt>
+<dd>
+<p>Returns the result of adding the specified number of months to the given date.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>add_months ( 01/30/2015, 5 ) = 06/30/2015
+add_months ( invoiced_date , 5 )</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="add_seconds" class="dlist">
+<dl>
+<dt class="hdlist1"><code>add_seconds</code></dt>
+<dd>
+<p>Returns the result of adding the specified number of seconds to the given date/ datetime/ time.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>add_seconds ( 01/30/2015 00:00:00, 5 ) = 06/30/2015 00:00:05
+add_seconds ( invoiced_date , 5 )</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="add_weeks" class="dlist">
+<dl>
+<dt class="hdlist1"><code>add_weeks</code></dt>
+<dd>
+<p>Returns the result of adding the specified number of weeks to the given date.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>add_weeks ( 01/30/2015, 2 ) = 02/13/2015
+add_weeks ( invoiced_date , 2 )</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="add_years" class="dlist">
+<dl>
+<dt class="hdlist1"><code>add_years</code></dt>
+<dd>
+<p>Returns the result of adding the specified number of years to the given date.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>add_years ( 01/30/2015, 5 ) = 01/30/2020
+add_years ( invoiced_date , 5 )</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="date" class="dlist">
+<dl>
+<dt class="hdlist1"><code>date</code></dt>
+<dd>
+<p>Returns the date portion of a date.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>date (home visit)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="day" class="dlist">
+<dl>
+<dt class="hdlist1"><code>day</code></dt>
+<dd>
+<p>Returns the number (1-31) of the day of the month for a date.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>day (01/15/2014) = 15
+day (date ordered)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="day_number_of_quarter" class="dlist">
+<dl>
+<dt class="hdlist1"><code>day_number_of_quarter</code></dt>
+<dd>
+<p>Returns the number of the day in a quarter for a date. You can add an optional second parameter to specify whether a 'fiscal' or 'calendar' year is used to calculate the result. The default is 'calendar'.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>day_number_of_quarter (01/30/2015) = 30
+day_number_of_quarter (01/30/2015, 'fiscal') = 91  // May 1 is start of fiscal year</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="day_number_of_week" class="dlist">
+<dl>
+<dt class="hdlist1"><code>day_number_of_week</code></dt>
+<dd>
+<p>Returns the number (1-7) of the day in a week for a date. Monday is 1, and Sunday is 7.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>day_number_of_week(01/15/2014) = 3
+day_number_of_week (shipped)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="day_number_of_year" class="dlist">
+<dl>
+<dt class="hdlist1"><code>day_number_of_year</code></dt>
+<dd>
+<p>Returns the number (1-366) of the day in a year from a date. You can add an optional second parameter to specify whether a 'fiscal' or 'calendar' year is used to calculate the result.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Default</dt>
+<dd>
+<p>'calendar'</p>
+</dd>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>day_number_of_year (01/30/2015) = 30
+day_number_of_year ( 01/30/2015, 'fiscal' ) = 275 // May 1 is start of fiscal year
+day_number_of_year (invoiced)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="day_of_week" class="dlist">
+<dl>
+<dt class="hdlist1"><code>day_of_week</code></dt>
+<dd>
+<p>Returns the day of the week for the given date.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>day_of week (01/30/2015) = Friday
+day_of_week (serviced)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="diff_days" class="dlist">
+<dl>
+<dt class="hdlist1"><code>diff_days</code></dt>
+<dd>
+<p>Subtracts the second date from the first date and returns the result in number of days, rounded down if not exact.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>diff_days (01/15/2014, 01/17/2014) = -2
+diff_days (purchased, shipped)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="diff_time" class="dlist">
+<dl>
+<dt class="hdlist1"><code>diff_time</code></dt>
+<dd>
+<p>Subtracts the second date from the first date and returns the result in number of seconds.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>diff_time (01/30/2014, 01/31/2014) = -86,400
+diff_time (clicked, submitted)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="hour_of_day" class="dlist">
+<dl>
+<dt class="hdlist1"><code>hour_of_day</code></dt>
+<dd>
+<p>Returns the hour of the day for the given date.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>hour_of_day (received)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="is_weekend" class="dlist">
+<dl>
+<dt class="hdlist1"><code>is_weekend</code></dt>
+<dd>
+<p>Returns <code>true</code> if the date is a Saturday or a Sunday.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>is_weekend (01/31/2015) = true
+is_weekend (emailed)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="month" class="dlist">
+<dl>
+<dt class="hdlist1"><code>month</code></dt>
+<dd>
+<p>Returns the month from the date.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>month (01/15/2014) = January
+month (date ordered)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="month_number" class="dlist">
+<dl>
+<dt class="hdlist1"><code>month_number</code></dt>
+<dd>
+<p>Returns the number (1-12) of the month from a given date. You can add an optional second parameter to specify whether a 'fiscal' or 'calendar' year is used to calculate the result.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Default</dt>
+<dd>
+<p>'calendar'</p>
+</dd>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>month_number (09/20/2014) = 9
+month_number ( 09/20/2014, 'fiscal' ) = 5 // May 1 is start of fiscal year
+month_number (purchased)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="month_number_of_quarter" class="dlist">
+<dl>
+<dt class="hdlist1"><code>month_number_of_quarter</code></dt>
+<dd>
+<p>Returns the month (1-3) number for the given date in a quarter. You can add an optional second parameter to specify whether a 'fiscal' or 'calendar' year is used to calculate the result.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Default</dt>
+<dd>
+<p>'calendar'</p>
+</dd>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>month_number_of_quarter (02/20/2018) = 2</pre>
+</div>
+</div>
 <div class="paragraph">
-<p>{% include content/date-func.md %}</p>
+<p>In the following example, May 1st is the start of the fiscal year.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>month_number_of_quarter (02/20/2018,'fiscal' ) = 1</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="now" class="dlist">
+<dl>
+<dt class="hdlist1"><code>now</code></dt>
+<dd>
+<p>Returns the current timestamp.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>now ()</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="quarter_number" class="dlist">
+<dl>
+<dt class="hdlist1"><code>quarter_number</code></dt>
+<dd>
+<p>Returns the number (1-4) of the quarter associated with the date. You can add an optional second parameter to specify 'fiscal' or 'calendar' dates.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Default</dt>
+<dd>
+<p>'calendar'</p>
+</dd>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>quarter_number ( 04/14/2014) = 2
+quarter_number ( 04/14/2014, 'fiscal' ) = 4 // May 1 is start of fiscal year
+quarter_number ( shipped )</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="start_of_month" class="dlist">
+<dl>
+<dt class="hdlist1"><code>start_of_month</code></dt>
+<dd>
+<p>Returns <code>MMM yyyy</code> for the first day of the month. Your installation configuration can override this setting so that it returns a different format, such as <code>MM/dd/yyyy</code>. Speak with your ThoughtSpot administrator for information on doing this.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>start_of_month ( 01/31/2015 ) = Jan FY 2015
+start_of_month (shipped)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="start_of_quarter" class="dlist">
+<dl>
+<dt class="hdlist1"><code>start_of_quarter</code></dt>
+<dd>
+<p>Returns the date for the first day of the quarter for the date. You can add an optional second parameter to specify whether a 'fiscal' or 'calendar' year is used to calculate the result.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Default</dt>
+<dd>
+<p>'calendar'</p>
+</dd>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>start_of_quarter ( 04/30/2014) = Apr 2014
+start_of_quarter ( 04/30/2014, 'fiscal') = Feb 2014    // May 1 is the start of the fiscal year
+start_of_quarter (sold)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="start_of_week" class="dlist">
+<dl>
+<dt class="hdlist1"><code>start_of_week</code></dt>
+<dd>
+<p>Returns the date for the first day of the week for the given date.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>start_of_week ( 01/31/2020 ) = 01/27/2020
+start_of_week (emailed)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="start_of_year" class="dlist">
+<dl>
+<dt class="hdlist1"><code>start_of_year</code></dt>
+<dd>
+<p>Returns the date for the first day of the year for the date. You can add an optional second parameter to specify whether a 'fiscal' or 'calendar' year is used to calculate the result. The default is 'calendar'.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>start_of_year (04/30/2014) returns Jan 2014
+start_of_year (04/30/2014, 'fiscal')    // May 1 is start of fiscal year
+start_of_year (joined)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="time" class="dlist">
+<dl>
+<dt class="hdlist1"><code>time</code></dt>
+<dd>
+<p>Returns the time portion of a date.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>time (1/31/2002 10:32) = 10:32
+time (call began)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="today" class="dlist">
+<dl>
+<dt class="hdlist1"><code>today</code></dt>
+<dd>
+<p>Returns the current date.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>today ()</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="week_number_of_month" class="dlist">
+<dl>
+<dt class="hdlist1"><code>week_number_of_month</code></dt>
+<dd>
+<p>Returns the week number for the date in a month.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>week_number_of_month(03/23/2017) = 3</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="week_number_of_quarter" class="dlist">
+<dl>
+<dt class="hdlist1"><code>week_number_of_quarter</code></dt>
+<dd>
+<p>Returns the week number for the given date in a quarter. You can add an optional second parameter to specify whether a 'fiscal' or 'calendar' year is used to calculate the result.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Default</dt>
+<dd>
+<p>'calendar'</p>
+</dd>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>week_number_of_quarter (01/31/2020) = 5
+week_number_of_quarter (05/31/2020, 'fiscal') = 5   // May 1 is start of fiscal year</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="week_number_of_year" class="dlist">
+<dl>
+<dt class="hdlist1"><code>week_number_of_year</code></dt>
+<dd>
+<p>Returns the week number for the date in a year. You can add an optional second parameter to specify whether a 'fiscal' or 'calendar' year is used to calculate the result.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Default</dt>
+<dd>
+<p>'calendar'</p>
+</dd>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>week_number_of_year (01/17/2014) = 3
+week_number_of_year ( 01/17/2014, 'fiscal') = 38.  // May 1 is start of fiscal year</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="year" class="dlist">
+<dl>
+<dt class="hdlist1"><code>year</code></dt>
+<dd>
+<p>Returns the year from a given date. You can add an optional second parameter to specify whether a 'fiscal' or 'calendar' year is used to calculate the result. The default is 'calendar'.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>year (01/15/2014) = 2014
+year (12/15/2013, 'fiscal' ) = 2014.  // May 1 is start of fiscal year
+year (date ordered)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
 </div>
 </div>
 </div>
@@ -2720,48 +3971,1235 @@ An individual formula is constructed from <em>n</em> combination of operators an
 <div class="paragraph">
 <p>These functions can be used with text and numeric data types.</p>
 </div>
-<div class="paragraph">
-<p>{% include content/mixed-func.md %}</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#equal">=</a></p>
+</li>
+<li>
+<p><a href="#greater-or-equal">&gt;=</a></p>
+</li>
+<li>
+<p><a href="#greater">&gt;, greater than</a></p>
+</li>
+<li>
+<p><a href="#greatest">greatest</a></p>
+</li>
+<li>
+<p><a href="#least">least</a></p>
+</li>
+<li>
+<p><a href="#less-or-equal">&#8656;, less or equal</a></p>
+</li>
+<li>
+<p><a href="#less">&lt;, less than</a></p>
+</li>
+<li>
+<p><a href="#not_equal">!=</a></p>
+</li>
+</ul>
+</div>
+<div id="equal" class="dlist">
+<dl>
+<dt class="hdlist1">=</dt>
+<dd>
+<p>Returns <code>true</code> if the first value is equal to the second value.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>2 = 2 = true
+revenue = 1000000</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="greater" class="dlist">
+<dl>
+<dt class="hdlist1">&gt;</dt>
+<dd>
+<p>Returns true if the first value is greater than the second value.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>3 &gt; 2 = true
+revenue &gt; 1000000</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="greater-or-equal" class="dlist">
+<dl>
+<dt class="hdlist1">&gt;=</dt>
+<dd>
+<p>Returns true if the first value is greater than or equal to the second value.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>3 &gt;= 2 = true
+revenue &gt;= 1000000</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="greatest" class="dlist">
+<dl>
+<dt class="hdlist1">greatest</dt>
+<dd>
+<p>Returns the larger of the values.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>greatest (20, 10) = 20
+greatest (q1 revenue, q2 revenue)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="least" class="dlist">
+<dl>
+<dt class="hdlist1">least</dt>
+<dd>
+<p>Returns the smaller of the values.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>least (20, 10) = 10
+least (q1 revenue, q2 revenue)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="less" class="dlist">
+<dl>
+<dt class="hdlist1">&lt;</dt>
+<dd>
+<p>Returns true if the first value is less than the second value.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>3 &lt; 2 = false
+revenue &lt; 1000000</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="less-or-equal" class="dlist">
+<dl>
+<dt class="hdlist1">&#8656;</dt>
+<dd>
+<p>Returns true if the first value is less than or equal to the second value.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>1 &lt;= 2 = true
+revenue &lt;= 1000000</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="not_equal" class="dlist">
+<dl>
+<dt class="hdlist1">!=</dt>
+<dd>
+<p>Returns true if the first value is not equal to the second value.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>3 != 2 = true
+revenue != 1000000</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="number-functions"><a class="anchor" href="#number-functions"></a>Number functions</h2>
 <div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#multiply">*</a></p>
+</li>
+<li>
+<p><a href="#add">+</a></p>
+</li>
+<li>
+<p><a href="#subtract">-</a></p>
+</li>
+<li>
+<p><a href="#divide">/</a></p>
+</li>
+<li>
+<p><a href="#power">power</a></p>
+</li>
+<li>
+<p><a href="#abs">abs</a></p>
+</li>
+<li>
+<p><a href="#acos">acos</a></p>
+</li>
+<li>
+<p><a href="#asin">asin</a></p>
+</li>
+<li>
+<p><a href="#atan">atan</a></p>
+</li>
+<li>
+<p><a href="#atan2">atan2</a></p>
+</li>
+<li>
+<p><a href="#cbrt">cbrt</a></p>
+</li>
+<li>
+<p><a href="#ceil">ceil</a></p>
+</li>
+<li>
+<p><a href="#cos">cos</a></p>
+</li>
+<li>
+<p><a href="#cube">cube</a></p>
+</li>
+<li>
+<p><a href="#exp">exp</a></p>
+</li>
+<li>
+<p><a href="#exp2">exp2</a></p>
+</li>
+<li>
+<p><a href="#floor">floor</a></p>
+</li>
+<li>
+<p><a href="#ln">ln</a></p>
+</li>
+<li>
+<p><a href="#log10">log10</a></p>
+</li>
+<li>
+<p><a href="#log2">log2</a></p>
+</li>
+<li>
+<p><a href="#mod">mod</a></p>
+</li>
+<li>
+<p><a href="#pow">pow</a></p>
+</li>
+<li>
+<p><a href="#random">random</a></p>
+</li>
+<li>
+<p><a href="#round">round</a></p>
+</li>
+<li>
+<p><a href="#safe_divide">safe_divide</a></p>
+</li>
+<li>
+<p><a href="#sign">sign</a></p>
+</li>
+<li>
+<p><a href="#sin">sin</a></p>
+</li>
+<li>
+<p><a href="#spherical_distance">spherical_distance</a></p>
+</li>
+<li>
+<p><a href="#sq">sq</a></p>
+</li>
+<li>
+<p><a href="#sqrt">sqrt</a></p>
+</li>
+<li>
+<p><a href="#tan">tan</a></p>
+</li>
+</ul>
+</div>
+<div id="multiply" class="dlist">
+<dl>
+<dt class="hdlist1">&#42; (multiply)</dt>
+<dd>
+<p>Returns the result of multiplying two numbers.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>3 * 2 = 6
+price * taxrate</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="add" class="dlist">
+<dl>
+<dt class="hdlist1">&#43; (add)</dt>
+<dd>
+<p>Returns the result of adding two numbers.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>1 + 2 = 3
+price + shipping</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="subtract" class="dlist">
+<dl>
+<dt class="hdlist1">&#8722; (subtract)</dt>
+<dd>
+<p>Returns the result of subtracting the second number from the first number.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>3 - 2 = 1
+revenue - tax</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="divide" class="dlist">
+<dl>
+<dt class="hdlist1">/ (divide)</dt>
+<dd>
+<p>Returns the result of dividing the first number by the second number.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>6 / 3 = 2
+markup / retail price</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="power" class="dlist">
+<dl>
+<dt class="hdlist1">^</dt>
+<dd>
+<p>Returns the first number raised to the power of the second number.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>3 {caret} 2 = 9
+width {caret} 2</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="abs" class="dlist">
+<dl>
+<dt class="hdlist1">abs</dt>
+<dd>
+<p>Returns the absolute value of a number.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>abs (-10) = 10
+abs (profit)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="acos" class="dlist">
+<dl>
+<dt class="hdlist1">acos</dt>
+<dd>
+<p>Returns the inverse cosine, in degrees.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>acos (0.5) = 60
+acos (cos-satellite-angle)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="asin" class="dlist">
+<dl>
+<dt class="hdlist1">asin</dt>
+<dd>
+<p>Returns the inverse sine, in degrees.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>asin (0.5) = 30
+asin (sin-satellite-angle)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="atan" class="dlist">
+<dl>
+<dt class="hdlist1">atan</dt>
+<dd>
+<p>Returns the inverse tangent, in degrees.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>atan (1) = 45
+atan (tan-satellite-angle)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="atan2" class="dlist">
+<dl>
+<dt class="hdlist1">atan2</dt>
+<dd>
+<p>Returns the inverse tangent, in degrees.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>atan2 (10, 10) = 45
+atan2 (longitude, latitude)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="cbrt" class="dlist">
+<dl>
+<dt class="hdlist1">cbrt</dt>
+<dd>
+<p>Returns the cube root of a number.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>cbrt (27) = 3
+cbrt (volume)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="ceil" class="dlist">
+<dl>
+<dt class="hdlist1">ceil</dt>
+<dd>
+<p>Returns the rounded up integer value of a fraction.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>ceil (5.9) = 6
+ceil (growth rate)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="cos" class="dlist">
+<dl>
+<dt class="hdlist1">cos</dt>
+<dd>
+<p>Returns the cosine of an angle that is specified in degrees.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>cos (63) = 0.45
+cos (beam angle)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="cube" class="dlist">
+<dl>
+<dt class="hdlist1">cube</dt>
+<dd>
+<p>Returns the cube of a number, or the number to the 3rd power.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>cube (3) = 27
+cube (length)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="exp" class="dlist">
+<dl>
+<dt class="hdlist1">exp</dt>
+<dd>
+<p>Returns Euler&#8217;s number (~2.718) raised to a power specified by the number.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>exp (2) = 7.38905609893
+exp (growth)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="exp2" class="dlist">
+<dl>
+<dt class="hdlist1">exp2</dt>
+<dd>
+<p>Returns 2 raised to a power specified by the number.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>exp2 (3) = 8
+exp2 (growth)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="floor" class="dlist">
+<dl>
+<dt class="hdlist1">floor</dt>
+<dd>
+<p>Returns the rounded down integer value of a fraction.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>floor (5.1) = 5
+floor (growth rate)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="ln" class="dlist">
+<dl>
+<dt class="hdlist1">ln</dt>
+<dd>
+<p>Returns the natural logarithm of a number.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>ln (7.38905609893) = 2
+ln (distance)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="log10" class="dlist">
+<dl>
+<dt class="hdlist1">log10</dt>
+<dd>
+<p>Returns the base 10 logarithm of a number.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>log10 (100) = 2
+log10 (volume)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="log2" class="dlist">
+<dl>
+<dt class="hdlist1">log2</dt>
+<dd>
+<p>Returns the base 2 logarithm, or the binary logarithm, of a number.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>log2 (32) = 5
+log2 (volume)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="mod" class="dlist">
+<dl>
+<dt class="hdlist1">mod</dt>
+<dd>
+<p>Returns the remainder of a division of the first number by the second number.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>mod (8, 3) = 2
+mod ( revenue , quantity )</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="pow" class="dlist">
+<dl>
+<dt class="hdlist1">pow</dt>
+<dd>
+<p>Returns the first number raised to the power of the second number.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>pow (5, 2) = 25
+pow (width, 2)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="random" class="dlist">
+<dl>
+<dt class="hdlist1">random</dt>
+<dd>
+<p>Returns a random number between 0 and 1.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>random ( ) = .457718
+random ( )</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="round" class="dlist">
+<dl>
+<dt class="hdlist1">round</dt>
+<dd>
+<p>Returns the first number rounded to the second number (the default is 1).</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>round (35.65, 10) = 40
+round (battingavg, 100)
+round (48.67, .1) = 48.7</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="safe_divide" class="dlist">
+<dl>
+<dt class="hdlist1">safe_divide</dt>
+<dd>
+<p>Returns the result of dividing the first number by the second.</p>
 <div class="paragraph">
-<p>{% include content/number-func.md %}</p>
+<p>If the second number is 0, returns 0 instead of NaN (not a number).
+Examples;;</p>
+</div>
+<div class="paragraph">
+<p>+</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>safe_divide (12, 0) = 0
+safe_divide (total_cost, units)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<div id="sign" class="dlist">
+<dl>
+<dt class="hdlist1">sign</dt>
+<dd>
+<p>Returns +1 if the number is greater than zero, -1 if less than zero, 0 if zero.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>sign (-250) = -1
+sign (growth rate)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="sin" class="dlist">
+<dl>
+<dt class="hdlist1">sin</dt>
+<dd>
+<p>Returns the sine of an angle that is specified in degrees.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>sin (35) = 0.57
+sin (beam angle)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="spherical_distance" class="dlist">
+<dl>
+<dt class="hdlist1">spherical_distance</dt>
+<dd>
+<p>Returns the distance, in km, between two points on Earth, as defined by their latitude and longitude.</p>
+<div class="paragraph">
+<p>The order of parameters is: <code>lat1</code>, <code>long1</code>, <code>lat2</code>, <code>long2</code>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>spherical_distance (
+  37.465191, -122.153617,
+  37.421962, -122.142174) = 4,961.96
+
+spherical_distance (
+  start_latitude, start_longitude,
+  end_latitude, end_longitude)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="sq" class="dlist">
+<dl>
+<dt class="hdlist1">sq</dt>
+<dd>
+<p>Returns the square of a numeric value, or the number to the power of 2.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>sq (9) = 81
+sq (width)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="sqrt" class="dlist">
+<dl>
+<dt class="hdlist1">sqrt</dt>
+<dd>
+<p>Returns the square root of a number, or the number to the power of 1/2.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>sqrt (9) = 3
+sqrt (area)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="tan" class="dlist">
+<dl>
+<dt class="hdlist1">tan</dt>
+<dd>
+<p>Returns the tangent of an angle that is specified in degrees.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>tan (35) = 0.7
+tan (beam angle)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="text-functions"><a class="anchor" href="#text-functions"></a>Text functions</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>{% include content/text-func.md %}</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#concat">concat</a></p>
+</li>
+<li>
+<p><a href="#contains">contains</a></p>
+</li>
+<li>
+<p><a href="#edit_distance">edit_distance</a></p>
+</li>
+<li>
+<p><a href="#edit_distance_with_cap">edit_distance_with_cap</a></p>
+</li>
+<li>
+<p><a href="#similar_to">similar_to</a></p>
+</li>
+<li>
+<p><a href="#similarity">similarity</a></p>
+</li>
+<li>
+<p><a href="#spells_like">spells_like</a></p>
+</li>
+<li>
+<p><a href="#strlen">strlen</a></p>
+</li>
+<li>
+<p><a href="#strpos">strpos</a></p>
+</li>
+<li>
+<p><a href="#substr">substr</a></p>
+</li>
+</ul>
+</div>
+<div id="concat" class="dlist">
+<dl>
+<dt class="hdlist1"><code>concat</code></dt>
+<dd>
+<p>Returns two or more values as a concatenated text string. Use single quotes around each literal string, not double quotes.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>concat ( 'hay' , 'stack' ) = 'haystack'
+concat (title, ' ', first_name , ' ', last_name)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="contains" class="dlist">
+<dl>
+<dt class="hdlist1"><code>contains</code></dt>
+<dd>
+<p>Returns true if the first string contains the second string, otherwise returns false.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>contains ('broomstick', 'room') = true
+contains (product, 'trial version')</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="edit_distance" class="dlist">
+<dl>
+<dt class="hdlist1"><code>edit_distance</code></dt>
+<dd>
+<p>Accepts two text strings. Returns the edit distance (minimum number of operations required to transform one string into the other) as an integer. Works with strings under 1023 characters.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>edit_distance ('attorney', 'atty') = 4
+edit_distance (color, 'red')</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="edit_distance_with_cap" class="dlist">
+<dl>
+<dt class="hdlist1"><code>edit_distance_with_cap</code></dt>
+<dd>
+<p>Accepts two text strings and an integer to specify the upper limit cap for the edit distance (minimum number of operations required to transform one string into the other). If the edit distance is less than or equal to the specified cap, returns the edit distance. If it is higher than the cap, returns the cap plus 1. Works with strings under 1023 characters.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>edit_distance_with_cap ('pokemon go', 'minecraft pixelmon', 3) = 4
+edit_distance_with_cap (event, 'burning man', 3)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="similar_to" class="dlist">
+<dl>
+<dt class="hdlist1"><code>similar_to</code></dt>
+<dd>
+<p>Accepts a document text string and a search text string. Returns true if relevance score (0-100) of the search string with respect to the document is greater than or equal to 20. Relevance is based on edit distance, number of words in the query, and length of words in the query which are present in the document.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>similar_to ('hello world', 'hello swirl') = true
+similar_to (current team, drafted by)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="similarity" class="dlist">
+<dl>
+<dt class="hdlist1"><code>similarity</code></dt>
+<dd>
+<p>Accepts a document text string and a search text string. Returns the relevance score (0-100) of the search string with respect to the document. Relevance is based on edit distance, number of words in the query, and length of words in the query which are present in the document. If the two strings are an exact match, returns 100.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>similarity ('where is the burning man concert', 'burning man') = 46
+similarity (tweet1, tweet2)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="spells_like" class="dlist">
+<dl>
+<dt class="hdlist1"><code>spells_like</code></dt>
+<dd>
+<p>Accepts two text strings. Returns true if they are spelled similarly and false if they are not. Works with strings under 1023 characters.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>spells_like ('thouhgtspot', 'thoughtspot') = true
+spells_like (studio, distributor)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="strlen" class="dlist">
+<dl>
+<dt class="hdlist1"><code>strlen</code></dt>
+<dd>
+<p>Returns the length of the text.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>strlen ('smith') = 5
+strlen (lastname)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="strpos" class="dlist">
+<dl>
+<dt class="hdlist1"><code>strpos</code></dt>
+<dd>
+<p>Returns the numeric position (starting from 0) of the first occurrence of the second string in the first string, or -1 if not found.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>strpos ('haystack_with_needles', 'needle') = 14
+strpos (complaint, 'lawyer')</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="substr" class="dlist">
+<dl>
+<dt class="hdlist1"><code>substr</code></dt>
+<dd>
+<p>Returns the portion of the given string, beginning at the location specified (starting from 0), and of the given length.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>substr ('persnickety', 3, 7) = snicket
+substr (lastname, 0, 5)</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
 </div>
 </div>
 </div>
 </article>
-<aside class="toc sidebar" data-title="Contents" data-levels="2">
-  <div class="toc-menu"></div>
-</aside>
   </div>
 </main>
 </div>
 <footer class="footer">
-              <span>&copy;2020 ThoughtSpot, Inc. All rights reserved.</span>
+  <div class="container">
+      <span>&copy;2021 ThoughtSpot, Inc. All rights reserved.</span>
+  </div>
 </footer>
 <script src="../../../_/js/site.js"></script>
-<script async src="../../../_/js/vendor/highlight.js"></script>
-<script async src="../../../_/js/vendor/bootstrap.js"></script>
-<script async src="../../../_/js/vendor/jquery.js"></script>
-<script async src="../../../_/js/vendor/tab.js"></script>
-<script async src="../../../_/js/vendor/docsearch.min.js"></script>
-<!-- <script async src="../../../_/js/vendor/tippy.js"></script> -->
-<!-- <script async src="../../../_/js/vendor/popper.js"></script> -->
+<script src="../../../_/js/vendor/highlight.js"></script>
+<script src="../../../_/js/vendor/jquery.js"></script>
+<script src="../../../_/js/vendor/bootstrap.js"></script>
+<script src="../../../_/js/vendor/tab.js"></script>
+<!--<script async src="../../../_/js/vendor/docsearch.min.js"></script>-->
+ <script src="../../../_/js/vendor/tippy.js"></script>
+<!-- <script async src="../../../_/js/vendor/popper.js"></script>-->
 
-<script src="https://unpkg.com/@popperjs/core@2"></script>
-<script src="https://unpkg.com/tippy.js@6"></script>
+<!--<script src="https://unpkg.com/@popperjs/core@2"></script>-->
+<!--<script src="https://unpkg.com/tippy.js@6"></script>-->
 <script>
 tippy('button', {content: 'tooltip'});
 </script>
@@ -2837,5 +5275,23 @@ tippy('button', {content: 'tooltip'});
 
 $("a[title]").tooltips();
 </script>
+<!-- <script src="../../../_/js/vendor/docsearch.min.js"></script> -->
+<!-- fetched from https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js -->
+<!-- <script>
+function focusSearchInput () { document.querySelector('#search-input').focus() }
+var search = docsearch({
+  appId: '9620DZGKNX',
+  apiKey: '4c6267f047b661dae26a702919adc0b1',
+  indexName: 'search-manager',
+  inputSelector: '#search-input',
+  autocompleteOptions: { hint: false, keyboardShortcuts: ['s'] },
+  algoliaOptions: { hitsPerPage: 10 }
+}).autocomplete
+search.on('autocomplete:closed', function () { search.autocomplete.setVal() })
+focusSearchInput()
+window.addEventListener('load', focusSearchInput)
+</script> -->
+
+<script async id="search-script" src="../../../_/js/vendor/docsearch.js" data-app-id="9620DZGKNX" data-api-key="4c6267f047b661dae26a702919adc0b1" data-index-name="search-manager" data-stylesheet="../../../_/css/vendor/docsearch.css"></script>
   </body>
 </html>

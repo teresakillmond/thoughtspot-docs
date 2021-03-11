@@ -1,6 +1,7 @@
 = Configure SSL
-:last_updated: 8/27/2020
-
+:last_updated: 01/15/2021
+:linkattrs:
+:experimental:
 :redirect_from: /6.3.0/admin/setup/SSL-config.html", "/6.3.0.CU1/admin/setup/SSL-config.html
 
 Secure socket layers (SSL) provide authentication and data security when sending data to and from ThoughtSpot.
@@ -58,13 +59,14 @@ You need a computer you can run Linux commands on, and a recent version of _open
 ----
 +
 Note the following parameters:
-
- ** ThoughtSpot supports a 2048 or 4096 bit key.
- ** `subj`: a common subject.
-Logically equivalent to the `-dname` property of _keytool_.
-Alternatively, you can skip this flag, and `openssl` prompts you to enter this information interactively.
- ** Optionally, run `add-multivalue-rdn` to allow multiple values to be set for the same key.
- ** Run `man req` for more details.
++
+key bits:: ThoughtSpot supports both 2048 and 4096 bit keys.
++
+subj:: A common subject. Logically equivalent to the `-dname` property of _keytool_. Alternatively, you can skip this flag, and `openssl` prompts you to enter this information interactively.
++
+add-multivalue-rdn:: Optionally, run `add-multivalue-rdn` to allow multiple values to be set for the same key.
++
+man req:: Run `man req` for more details.
 
 If you already have a private key, you can use it to generate a CSR.
 Follow these steps to generate a CSR with an existing private key:
@@ -96,7 +98,7 @@ The certificate chain may contain a series of certificates, with the root certif
 The private key must also be in compatible PEM format.
 It cannot be password-protected, or passphrase-protected.
 
-{% include note.html content="Do not use a passphrase when creating certificates with ThoughtSpot." %}
+NOTE: Do not use a passphrase when creating certificates with ThoughtSpot.
 
 If you are prompted to specify a passphrase, first check if it exists by invoking the following command:
 
@@ -134,7 +136,7 @@ This is usually sent to you by email, or available for download.
  $ tscli ssl add-cert <key> <certificate> <IP_address_or_URL>
 ----
 
-. To test that the certificate is correctly installed, sign in to the ThoughtSpot application (https://docs.thoughtspot.com/6.0/admin/setup/logins.html#sign-in-to-the-thoughtspot-application).
+. To test that the certificate is correctly installed, sign in to the xref:logins.adoc#ts-app[ThoughtSpot application].
 +
 You should see that the application's URL begins with `https://`.
 
@@ -192,17 +194,21 @@ The cipher string would be as follows:
 EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH
 ----
 
-You can retrieve these from the ThoughtSpot web server (not against the load balancer) by running the following command on any ThoughtSpot node:     `     nmap --script ssl-enum-ciphers -p 443 <ThoughtSpot_node_IP_address>    `
+You can retrieve these from the ThoughtSpot web server (not against the load balancer) by running the following command on any ThoughtSpot node:
++
+```
+nmap --script ssl-enum-ciphers -p 443 <ThoughtSpot_node_IP_address>
+```
 
 You must ensure that your load balancer supports these ciphers.
-If your load balancer cannot support these ciphers, link:{{ site.baseurl }}/appliance/contact.html[contact ThoughtSpot Support].
+If your load balancer cannot support these ciphers, contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support,window="_blank"].
 
-{% include content/admin-portal/ssl-configure.md %}
+include::partial$ssl-configure.adoc[]
 
 [#ssl-configure-test]
 == Test the SSL certificate
 
-To test if the certificate is installed correctly, see link:{{ site.baseurl }}/admin/setup/logins.html#sign-in-to-the-thoughtspot-application[Sign in to the ThoughtSpot application].
+To test if the certificate is installed correctly, see xref:logins.adoc#sign-in-to-the-thoughtspot-application[Sign in to the ThoughtSpot application].
 
 == Additional resources
 

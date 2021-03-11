@@ -1,38 +1,47 @@
 = Percent (simple number) calculations
-:last_updated: 3/26/2020
-
+:last_updated: 02/19/2021
+:linkattrs:
+:experimental:
 
 Learn about simple number calculations.
 
 You can use simple number functions to perform useful percent calculations on your data.
-Simple number functions include addition, subtraction, multiplication, and division.+++<table>++++++<colgroup>++++++<col style="width:10%">++++++</col>+++
-      +++<col style="width:45%">++++++</col>+++
-      +++<col style="width:45%">++++++</col>++++++</colgroup>+++
-   +++<thead class="thead" style="text-align:left;">++++++<tr>++++++<th>+++Function+++</th>+++
-         +++<th>+++Description+++</th>+++
-         +++<th>+++Examples+++</th>++++++</tr>++++++</thead>+++
-   +++<tbody class="tbody">++++++<tr>++++++<td>+++&#42;+++</td>+++
-         +++<td>+++Returns the result of multiplying both numbers.+++</td>+++
-         +++<td>++++++<ul>++++++<li>++++++<code>+++3 * 2 = 6+++</code>++++++</li>+++
-               +++<li>++++++<code>+++price * taxrate+++</code>++++++</li>++++++</ul>++++++</td>++++++</tr>+++
-      +++<tr>++++++<td>+++++++</td>+++
-         +++<td>+++Returns the result of adding both numbers.+++</td>+++
-         +++<td>++++++<ul>++++++<li>++++++<code>+++1 + 2 = 3+++</code>++++++</li>+++
-               +++<li>++++++<code>+++price + shipping+++</code>++++++</li>++++++</ul>++++++</td>++++++</tr>+++
-      +++<tr>++++++<td>+++-+++</td>+++
-         +++<td>+++Returns the result of subtracting the second number from the first.+++</td>+++
-         +++<td>++++++<ul>++++++<li>++++++<code>+++3 - 2 = 1+++</code>++++++</li>+++
-               +++<li>++++++<code>+++revenue - tax+++</code>++++++</li>++++++</ul>++++++</td>++++++</tr>+++
-      +++<tr>++++++<td class="entry row-nocellborder" headers="d15914e33 ">+++/+++</td>+++
-         +++<td class="entry row-nocellborder" headers="d15914e36 ">+++Returns the result of dividing the first number by the second.+++</td>+++
-         +++<td class="entry cellrowborder" headers="d15914e39 ">++++++<ul>++++++<li>++++++<code>+++6 / 3 = 2+++</code>++++++</li>+++
-               +++<li>++++++<code>+++markup / retail price+++</code>++++++</li>++++++</ul>++++++</td>++++++</tr>++++++</tbody>++++++</table>+++
+Simple number functions include addition, subtraction, multiplication, and division.
+
+[horizontal]
+&#42;::
+  Multiplication; returns the result of multiplying two numbers.
++
+`3 * 2 = 6`
++
+`price * taxrate`
+
+&#43;::
+  Addition; returns the result of adding two numbers.
++
+`1 + 2 = 3`
++
+`price + shipping`
+
+&#45;::
+  Subtraction; returns the result of subtracting the second number from the first.
++
+`3 - 2 = 1`
++
+`revenue - tax`
+
+&#47;::
+  Division; returns the result of dividing the first number by the second.
++
+`6 / 3 = 2`
++
+`markup / retail price`
 
 == Calculate percentages
 
 Calculating percentages is useful when you want to see, for example, the percentage of revenue that each retail department generates (gifts, bakery, canned goods, etc.).
 
-Create a formula called `Percent Revenue` in the link:{{ site.baseurl }}/complex-search/how-to-add-formula.html[*Formula Assistant*]:
+Create a formula called `Percent Revenue` in the xref:how-to-add-formula.adoc[*Formula Assistant*]:
 
 `( sum ( revenue ) / group_sum ( revenue ) ) * 100`
 

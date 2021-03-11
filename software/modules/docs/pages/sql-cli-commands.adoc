@@ -1,324 +1,504 @@
 = TQL reference
-:last_updated: 2/25/2020
-
-
-Learn the TQL commands.
+:last_updated: 02/20/2021
+:linkattrs:
+:experimental:
 
 TQL is the ThoughtSpot language for entering SQL commands.
-This reference lists TQL commands you can use to do things like creating a schema or verifying a data load.
+This reference lists TQL commands you can use to create a schema, verify a data load, and more.
 
 == About using TQL
 
-You can use TQL either link:{{ site.baseurl }}/admin/loading/upload-sql-script.html#[through the ThoughtSpot application's web interface] or the link:{{ site.baseurl }}/reference/sql-cli-commands.html#[command line interface] in the Linux shell.
+You can use TQL either xref:upload-sql-script.adoc[through the ThoughtSpot application's web interface] or the xref:sql-cli-commands.adoc[command line interface] in the Linux shell.
 
-Use  `--query_results_apply_top_row_count <number>` flag to limit the number of result rows returned by a query.
+Use  `--query_results_apply_top_row_count <number>` flag to limit the number of result rows that a query returns.
+
 For example:
 
-`$ tql --query_results_apply_top_row_count 100`
+----
+$ tql --query_results_apply_top_row_count 100`
+----
 
-As a best practice, you should enclose object names (database, schema, table, and column) in double quotes, and column values in single quotes.
-When referring to objects using fully qualified object names, the syntax is:
+As a best practice, recommend that you enclose object names (database, schema, table, and column) in double quotes, and use single quotes for column values.
+
+When referring to objects using fully qualified object names, use the following syntax:
 
 ----
 "database"."schema"."table"
 ----
 
-To get help on SQL when using TQL,  enter `help` on the command line.
+To get help with SQL when using TQL,  enter `help` on the command line.
 
-You can use TQL to view and modify schemas and data in tables.
-Remember to add a semicolon after each command.
-Commands are not case sensitive but are capitalized here for readability.
+You can use TQL to view and modify schemas and data in tables. Remember to add a semicolon after each command.
 
-{% include note.html content="Worksheets and pinboards in ThoughtSpot are dependent upon the data in the underlying tables.
-Use caution when modifying tables directly.
-If you change or remove a schema on which those objects rely, the objects could become invalid." %}
+TIP: Commands are not case-sensitive; we capitalized them here here for readability.
 
-== View schemas and data+++<table>++++++<colgroup>++++++<col style="width:25%">++++++</col>+++
-      +++<col style="width:75%">++++++</col>++++++</colgroup>+++
-   +++<thead>++++++<tr>++++++<th>+++Syntax+++</th>+++
-         +++<th>+++Description+++</th>++++++</tr>++++++</thead>+++
-   +++<tbody>++++++<tr>++++++<td>++++++<code>+++SHOW DATABASES+++</code>++++++</td>+++
-         +++<td>+++Lists all available databases.
+CAUTION: Worksheets and pinboards in ThoughtSpot depend on the data in the underlying tables. Be careful when modifying tables directly. If you change or remove a schema on which objects rely, the objects may become invalid.
 
-         +++<p>+++Examples:+++</p>+++
-            +++<p>++++++<code>+++SHOW DATABASES;+++</code>++++++</p>++++++</td>++++++</tr>+++
-      +++<tr>++++++<td>++++++<p>++++++<code>+++USE <database>+++</code>++++++</p>++++++</td>+++
-         +++<td>+++Switches the context to the specified database. This is required if queries
-            do not use fully qualified names (database.schema.table) for specifying
-            tables.
-         +++<p>+++Examples:+++</p>+++
-            +++<p>++++++<code>+++USE "fruit_database";+++</code>++++++</p>++++++</td>++++++</tr>+++
-      +++<tr>++++++<td>++++++<code>+++SHOW SCHEMAS+++</code>++++++</td>+++
-         +++<td>++++++<p>+++Lists all schemas within the current database. For example:+++</p>+++
-            +++<p>++++++<code>+++SHOW SCHEMAS;+++</code>++++++</p>++++++</td>++++++</tr>+++
-      +++<tr>++++++<td>++++++<p>++++++<code>+++SHOW TABLES+++</code>++++++</p>++++++</td>+++
-         +++<td>++++++<p>+++Lists all tables within the current database by schema. For example:+++</p>+++
-            +++<p>++++++<code>+++SHOW TABLES;+++</code>++++++</p>++++++</td>++++++</tr>+++
-      +++<tr>++++++<td>++++++<p>++++++<code>+++SHOW TABLE <table>+++</code>++++++</p>++++++</td>+++
-         +++<td>++++++<p>+++Lists all the columns for a table. For example:+++</p>+++
-            +++<p>++++++<code>+++SHOW TABLE "locations";+++</code>++++++</p>++++++</td>++++++</tr>+++
-      +++<tr>++++++<td>++++++<p>++++++<code>+++SCRIPT SERVER+++</code>++++++</p>++++++</td>+++
-         +++<td>++++++<p>+++Generates the TQL schema for all tables in all databases on the
-            server. For example:+++</p>+++
-            +++<p>++++++<code>+++SCRIPT SERVER;+++</code>++++++</p>++++++</td>++++++</tr>+++
-      +++<tr>++++++<td>++++++<p>++++++<code>+++SCRIPT DATABASE <database>+++</code>++++++</p>++++++</td>+++
-         +++<td>++++++<p>+++Generates the TQL schema for all tables in a database. For example:+++</p>+++
-            +++<p>++++++<code>+++SCRIPT DATABASE "fruit_database";+++</code>++++++</p>++++++</td>++++++</tr>+++
-      +++<tr>++++++<td>++++++<p>++++++<code>+++SCRIPT TABLE <table>+++</code>++++++</p>++++++</td>+++
-         +++<td>++++++<p>+++Generates the TQL schema for a table. For example:+++</p>+++
-            +++<p>++++++<code>+++SCRIPT TABLE "vendor";+++</code>++++++</p>++++++</td>++++++</tr>+++
-      +++<tr>++++++<td>++++++<p>++++++<code>+++SELECT
-   <cols_or_expr>
-   FROM <table_list>
-   [WHERE <predicates>]
-   [GROUP BY <expr>]
-   [ORDER BY <expr>]+++</code>++++++</p>++++++</td>+++
-         +++<td>+++Shows specified set of table data.
-            +++<p>+++If you do not specify the TOP number of
-               rows to select, the top 50 rows will be returned by default. The number of rows
-               to return can be set using the [.ph]#TQL# command line flag:+++</p>+++
-            +++<p>++++++<code>+++--query_results apply_top_row_count+++</code>++++++</p>+++
-            +++<p>+++You can use the following aggregation functions:+++</p>+++
-            +++<ul>++++++<li>++++++<code>+++sum+++</code>++++++</li>+++
-               +++<li>++++++<code>+++count+++</code>++++++</li>+++
-               +++<li>++++++<code>+++count distinct+++</code>++++++</li>+++
-               +++<li>++++++<code>+++stddev+++</code>++++++</li>+++
-               +++<li>++++++<code>+++avg+++</code>++++++</li>+++
-               +++<li>++++++<code>+++variance+++</code>++++++</li>+++
-               +++<li>++++++<code>+++min+++</code>++++++</li>+++
-               +++<li>++++++<code>+++max+++</code>++++++</li>++++++</ul>+++
-            +++<div>+++You can use the following date functions:
-               +++<ul>++++++<li>++++++<code>+++absyear+++</code>++++++</li>+++
-                  +++<li>++++++<code>+++absmonth+++</code>++++++</li>+++
-                  +++<li>++++++<code>+++absday+++</code>++++++</li>+++
-                  +++<li>++++++<code>+++absquarter+++</code>++++++</li>+++
-                  +++<li>++++++<code>+++date+++</code>++++++</li>+++
-                  +++<li>++++++<code>+++time+++</code>++++++</li>++++++</ul>++++++</div>+++
-          +++<p>+++For example:+++</p>+++
-+++<p>++++++<code>+++SELECT TOP 10 "quantity" FROM "sales_fact";+++</code>++++++</p>+++
-+++<p>++++++<code>+++SELECT COUNT(&#42;) FROM "vendor";+++</code>++++++</p>+++
-+++<p>++++++<code>+++SELECT "vendor", SUM("quantity") FROM "sales_fact" GROUP BY "vendor";+++</code>++++++</p>+++
-+++<p>++++++<code>+++SELECT "vendor", SUM("amount") FROM "vendor", "sales_fact"
-     WHERE "sales_fact"."vendorid" = "vendor"."vendorid"
-     AND "amount" > 100 GROUP BY "vendor" ORDER BY "amount" DESC;+++</code>++++++</p>+++
-+++<p>++++++<code>+++SELECT "vendor", SUM("quantity") FROM "sales_fact"
-GROUP BY "vendor" LIMIT 10;+++</code>++++++</p>++++++</td>++++++</tr>++++++</tbody>++++++</table>+++
+== View schemas and data
 
-== Schema creation+++<table>++++++<colgroup>++++++<col style="width:25%">++++++</col>+++
-      +++<col style="width:75%">++++++</col>++++++</colgroup>+++
-   +++<thead>++++++<tr>++++++<th>+++Syntax+++</th>+++
-         +++<th>+++Description+++</th>++++++</tr>++++++</thead>+++
-   +++<tbody>++++++<tr>++++++<td>++++++<p>++++++<code>+++CREATE DATABASE
-            <database>+++</code>++++++</p>++++++</td>+++
-         +++<td>++++++<p>+++Creates a database. For example:+++</p>+++
-            +++<p>++++++<code>+++CREATE DATABASE "fruit_database";+++</code>++++++</p>++++++</td>++++++</tr>+++
-      +++<tr>++++++<td>++++++<p>++++++<code>+++CREATE SCHEMA <schema>+++</code>++++++</p>++++++</td>+++
-         +++<td>++++++<p>+++Creates a schema within the current database. For example:+++</p>+++
-            +++<p>++++++<code>+++CREATE SCHEMA "fruit_schema";+++</code>++++++</p>++++++</td>++++++</tr>+++
-      +++<tr>++++++<td>++++++<p>++++++<code>+++CREATE TABLE <table> (<column_definitions>
-            [<constraints>]) [PARTITION BY HASH (<number>) [KEY
-            ("<column>")]])+++</code>++++++</p>++++++</td>+++
-         +++<td>++++++<p>+++Creates a table with the specified column definitions and constraints.+++</p>+++
-            +++<p>+++Use +++<code>+++PARTITION BY HASH+++</code>+++ to shard a table across all nodes. If no +++<code>+++KEY+++</code>+++ is specified, the table will be randomly sharded.+++</p>+++
-            +++<p>+++Do not specify relationship constraints (+++<code>+++FOREIGN KEY+++</code>+++
-               or +++<code>+++RELATIONSHIP+++</code>+++) in the +++<code>+++CREATE TABLE+++</code>+++
-               statement. Instead, define these using +++<code>+++ALTER TABLE+++</code>+++
-               statements at the end of your TQL script, after
-               creating your tables. This method guarantees that tables are created
-               before they are referenced in the constraint definitions. For example:+++</p>+++
-            +++<p>++++++<code>+++CREATE TABLE "vendor" ("vendorid" int, "name" varchar(255));+++</code>++++++</p>+++
-+++<p>++++++<code>+++CREATE TABLE "sales_fact" ("saleid" int, "locationid" int, "vendorid" int,
-"quantity" int, "sale_amount" double, "fruitid" int,
-CONSTRAINT PRIMARY KEY("saleid")) PARTITION BY HASH(96) KEY ("saleid");+++</code>++++++</p>++++++</td>++++++</tr>++++++</tbody>++++++</table>+++
+The following commands enable you view schemas and data:
 
-== Schema modification+++<table>++++++<colgroup>++++++<col style="width:25%">++++++</col>+++
-      +++<col style="width:75%">++++++</col>++++++</colgroup>+++
-   +++<thead>++++++<tr>++++++<th>+++Syntax+++</th>+++
-         +++<th>+++Description+++</th>++++++</tr>++++++</thead>+++
-   +++<tbody>++++++<tr>++++++<td>++++++<p>++++++<code>+++DROP DATABASE
-         <database>+++</code>++++++</p>++++++</td>+++
-      +++<td>++++++<p>+++Drops a database and all of its schemas and tables. For example:+++</p>+++
-         +++<p>++++++<code>+++DROP DATABASE "fruit_database";+++</code>++++++</p>++++++</td>++++++</tr>+++
-   +++<tr>++++++<td>++++++<p>++++++<code>+++DROP SCHEMA <schema>+++</code>++++++</p>++++++</td>+++
-      +++<td>++++++<p>+++Drops a schema within the current database, and drops all of the tables in
-         the schema. For example:+++</p>+++
-         +++<p>++++++<code>+++DROP SCHEMA "fruit_schema";+++</code>++++++</p>++++++</td>++++++</tr>+++
-   +++<tr>++++++<td>++++++<p>++++++<code>+++DROP TABLE <table>+++</code>++++++</p>++++++</td>+++
-      +++<td>++++++<p>+++Drops a table. For example:+++</p>+++
-         +++<p>++++++<code>+++DROP TABLE "location";+++</code>++++++</p>++++++</td>++++++</tr>+++
-   +++<tr>++++++<td>++++++<code>+++TRUNCATE TABLE
-         <table>+++</code>++++++</td>+++
-      +++<td>++++++<p>+++Removes all data from a table, but preserves its metadata, including all
-         GUIDs, relationships, etc. This can be used to force a new schema for a table
-         without losing the metadata.+++</p>+++
-         +++<p>+++However, this operation removes all existing data
-            from the table and must be used with caution. You must reload the data following
-            a +++<code>+++TRUNCATE+++</code>+++, or all dependent objects (worksheets and pinboards) in [.ph]#ThoughtSpot# will become invalid. For example:+++</p>+++
-         +++<p>++++++<code>+++TRUNCATE TABLE "location";+++</code>++++++</p>++++++</td>++++++</tr>+++
-   +++<tr>++++++<td>++++++<p>++++++<code>+++ALTER TABLE <table> ADD|DROP|RENAME COLUMN
-         <column>+++</code>++++++</p>++++++</td>+++
-      +++<td>+++Alters a table to add, drop, or rename a column.
-         +++<p>+++When you add a column to
-            an existing table, you must provide a default value to use for existing
-            rows. For example:+++</p>+++
-+++<p>++++++<code>+++ALTER TABLE "cart" ADD COLUMN "nickname" varchar(255) DEFAULT 'no
-nickname';+++</code>++++++</p>+++
-+++<p>++++++<code>+++ALTER TABLE "cart" DROP COLUMN "nickname";+++</code>++++++</p>+++
-+++<p>++++++<code>+++ALTER TABLE "cart" RENAME COLUMN "nickname" TO "shortname";+++</code>++++++</p>++++++</td>++++++</tr>+++
-   +++<tr>++++++<td>++++++<p>++++++<code>+++ALTER TABLE <table> DROP CONSTRAINT PRIMARY KEY;+++</code>++++++</p>++++++</td>+++
-      +++<td>++++++<p>+++Drops the primary key from a table.+++</p>+++
-         +++<p>+++Note that if you then add a new
-            primary key, the same upsert behavior will be applied as with adding any primary
-            key. This can result in data deletion, so make sure you understand how the
-            upsert will affect your data ahead of time.
-            For example:+++</p>+++
-         +++<p>++++++<code>+++ALTER TABLE "sales" DROP CONSTRAINT PRIMARY KEY;+++</code>++++++</p>+++
-         +++<p>++++++<code>+++ALTER TABLE "sales" ADD CONSTRAINT PRIMARY KEY ("PO_number");+++</code>++++++</p>++++++</td>++++++</tr>+++
-   +++<tr>++++++<td>++++++<p>++++++<code>+++ALTER TABLE <table> DROP [CONSTRAINT | RELATIONSHIP]
-       <name>;+++</code>++++++</p>++++++</td>+++
-      +++<td>++++++<p>+++Drops the named foreign key or relationship between two tables. For example:+++</p>+++
-         +++<p>++++++<code>+++ALTER TABLE "sales_fact" DROP CONSTRAINT "FK_PO_number";+++</code>++++++</p>+++
-        +++<p>++++++<code>+++ALTER TABLE "fruit_dim" DROP RELATIONSHIP "REL_dates";+++</code>++++++</p>++++++</td>++++++</tr>+++
-   +++<tr>++++++<td>++++++<p>++++++<code>+++ALTER TABLE <table> [SET DIMENSION | SET FACT [PARTITION BY
-         HASH [(<shards>)] [KEY(<column>)]]]+++</code>++++++</p>++++++</td>+++
-      +++<td>++++++<div>++++++<p>+++Changes the partitioning on a table by doing one of:+++</p>+++
-            +++<ul class="ul" id="reference_cbc_fx4_j4__ul_egx_4jg_wv">++++++<li>+++re-sharding a sharded table+++</li>+++
-               +++<li>+++changing a replicated table to a sharded table+++</li>+++
-               +++<li>+++changing a sharded table to a replicated (unsharded) table+++</li>++++++</ul>+++
-            +++<p>+++By default, ThoughtSpot does not shard dimension tables.+++</p>++++++</div>+++
-         +++<p>+++To change the partitioning on a table, or to change a dimension table to a
-            sharded table, use +++<code>+++ALTER TABLE\...SET FACT PARTITION BY HASH\...;+++</code>++++++</p>+++
-         +++<p>+++To make a sharded table into a dimension table (replicated on every node),  use
-            +++<code>+++ALTER TABLE\...SET DIMENSION;+++</code>+++ command.+++</p>+++
-         +++<p>+++Examples of this statement:+++</p>+++
-         +++<p>++++++<code>+++ALTER TABLE "sales_fact" SET FACT PARTITION BY HASH (96) KEY
-         ("PO_number");
-         ALTER TABLE "fruit_dim" SET DIMENSION;+++</code>++++++</p>++++++</td>++++++</tr>+++
-   +++<tr>++++++<td>++++++<p>++++++<code align="left">+++ALTER TABLE <table> MODIFY COLUMN <column>
-<new_data_type>;+++</code>++++++</p>++++++</td>+++
-      +++<td>++++++<p>+++Changes the data type of a column. This can have implications on sharding and
-            primary key behavior. See <a href="{{"/admin/loading/about-data-type-conversion.html#concept_u2t_clg_wv" | prepend: site.baseurl}}"> About data type conversion</a>. For example:+++</p>+++
-         +++<p>++++++<code>+++ALTER TABLE fact100 MODIFY COLUMN product_id int;+++</code>++++++</p>++++++</td>++++++</tr>++++++</tbody>++++++</table>+++
+* xref:show-databases[SHOW DATABASES]
+* xref:use-database[USE <database>]
+* xref:show-schemas[SHOW SCHEMAS]
+* xref:show-tables[SHOW TABLES]
+* xref:show-table[SHOW TABLE <table>]
+* xref:script-server[SCRIPT SERVER]
+* xref:script-database[SCRIPT DATABASE <database>]
+* xref:script-table[SCRIPT TABLE <table>]
+* xref:select-from-where-group-order[SELECT <cols_or_expr> FROM <table_list> [WHERE <predicates>&#93; &#91;GROUP BY <expr>&#93; &#91;ORDER BY <expr>&#93;]
 
-== Modify data+++<table>++++++<colgroup>++++++<col style="width:25%">++++++</col>+++
-      +++<col style="width:75%">++++++</col>++++++</colgroup>+++
-   +++<thead>++++++<tr>++++++<th>+++Syntax+++</th>+++
-         +++<th>+++Description+++</th>++++++</tr>++++++</thead>+++
-   +++<tbody>++++++<tr>++++++<td>++++++<p>++++++<code>+++INSERT INTO <table> VALUES \...+++</code>++++++</p>++++++</td>+++
-         +++<td>++++++<p>+++Inserts values into a table. Only use this for testing. Do not use +++<code>+++INSERT+++</code>+++ on
-            a production system. For example:+++</p>+++
+[#show-databases]
+`SHOW DATABASES`:: Lists all available databases.
+Example;;
++
+----
+SHOW DATABASES;
+----
 
-            +++<p>++++++<code>+++INSERT INTO "vendor" VALUES ('helen rose', 'jacob norse', 'eileen ruff',
-'manny gates');+++</code>++++++</p>++++++</td>++++++</tr>+++
-      +++<tr>++++++<td>++++++<p>++++++<code align="left">+++ALTER TABLE <table> SET LOAD PRIORITY <value>
-   <new_data_type>;+++</code>++++++</p>++++++</td>+++
-         +++<td>++++++<p>+++Sets the load priority for a table. Load priority determines the order in which a table is loaded on a cluster restart. You can set any value from +++<code>+++1-100+++</code>+++. The system default for all tables is +++<code>+++50+++</code>+++. For example:+++</p>+++
-            +++<p>++++++<code>+++ALTER TABLE 'sales_facts' SET LOAD PRIORITY 1;+++</code>++++++</p>++++++</td>++++++</tr>+++
-      +++<tr>++++++<td>++++++<p>++++++<code>+++UPDATE <table> \... SET \... [WHERE \...]+++</code>++++++</p>++++++</td>+++
-         +++<td>++++++<p>+++Updates rows in a table that match optionally provided predicates. Predicates
-            have the form +++<code>+++column = value+++</code>+++ connected by the +++<code>+++AND+++</code>+++ keyword. Sets the column values
-            to the specified values. For example:+++</p>+++
-            +++<p>++++++<code>+++UPDATE "location" SET "borough" = 'staten island', "city" = 'new york'
-WHERE "borough" = 'staten isl' AND city = 'NY';+++</code>++++++</p>++++++</td>++++++</tr>+++
-      +++<tr>++++++<td>++++++<p>++++++<code>+++DELETE FROM <table> [WHERE\...]+++</code>++++++</p>++++++</td>+++
-         +++<td>++++++<p>+++Deletes rows from a table that match optionally provided predicates.
-            Predicates have the form +++<code>+++column = value+++</code>+++ connected by the +++<code>+++AND+++</code>+++ keyword. When specifying dates, use +++<a href="https://www.epochconverter.com/">+++epoch values+++</a>+++. Other date formats can result in error and unwanted deletion of data from the table.
-         For example.+++</p>+++
+[#use-database]
+`USE <database>`:: Switches the context to the specified database. This is required if queries do not use fully-qualified names (database.schema.table) for specifying tables.
+Example;;
++
+----
+USE "fruit_database";
+----
 
-+++<p>++++++<code>+++DELETE FROM "vendor" WHERE "name" = 'Joey Smith' AND "vendorid" =
-'19463';+++</code>++++++</p>++++++</td>++++++</tr>++++++</tbody>++++++</table>+++
+[#show-schemas]
+`SHOW SCHEMAS`:: Lists all schemas within the current database.
+Example;;
++
+----
+SHOW SCHEMAS;
+----
+
+[#show-tables]
+`SHOW TABLES`:: Lists all tables within the current database by schema.
+Example;;
++
+----
+SHOW TABLES;
+----
+
+[#show-table]
+`SHOW TABLE <table>`:: Lists all the columns for a table.
+Example;;
++
+----
+SHOW TABLE "locations";
+----
+
+[#script-server]
+`SCRIPT SERVER`:: Generates the TQL schema for all tables in all databases on the server.
+Example;;
++
+----
+SCRIPT SERVER;
+----
+
+[#script-database]
+`SCRIPT DATABASE <database>`:: Generates the TQL schema for all tables in a database.
+Example;;
++
+----
+SCRIPT DATABASE "fruit_database";
+----
+
+[#script-table]
+`SCRIPT TABLE <table>`:: Generates the TQL schema for a table.
+Example;;
++
+----
+SCRIPT TABLE "vendor";
+----
+
+[#select-from-where-group-order]
+`SELECT <cols_or_expr> FROM <table_list> [WHERE <predicates>] [GROUP BY <expr>] [ORDER BY <expr>]`:: Shows specified set of table data.
++
+If you do not specify the TOP number of rows to select, the top 50 rows will be returned by default. The number of rows to return can be set using the [.ph]#TQL# command line flag:
++
+----
+--query_results apply_top_row_count`
+----
++
+You can use the following *aggregation* functions:  `sum`, `count`, `count distinct`, `stddev`, `avg`, `variance`, `min`, and `max`.
++
+You can use the following *date* functions:
+ `absyear`, `absmonth`, `absday`, `absquarter`, `date`,
+ and `time`.
+
+Examples;;
++
+----
+SELECT TOP 10 "quantity"
+  FROM "sales_fact";
+
+SELECT COUNT(&#42;)
+  FROM "vendor";
+
+SELECT "vendor", SUM("quantity")
+  FROM "sales_fact"
+  GROUP BY "vendor";
+
+SELECT "vendor", SUM("amount")
+  FROM "vendor", "sales_fact"
+  WHERE "sales_fact"."vendorid" = "vendor"."vendorid"
+  AND "amount" > 100
+  GROUP BY "vendor"
+  ORDER BY "amount" DESC;
+
+SELECT "vendor", SUM("quantity")
+  FROM "sales_fact"
+  GROUP BY "vendor" LIMIT 10;
+----
+
+== Schema creation
+
+The following commands enable you to create schemas:
+
+* xref:create-database[CREATE DATABASE <database>]
+* xref:create-schema[CREATE SCHEMA <schema>]
+* xref:create-table[CREATE TABLE <table> (<column_definitions> &#91;<constraints>&#93;) &#91;PARTITION BY HASH (<number>) &#91;KEY ("<column>")&#93;&#93;)]
+
+[#create-database]
+`CREATE DATABASE <database>`:: Creates a database.
++
+Example;;
++
+----
+CREATE DATABASE "fruit_database";
+----
+
+[#create-schema]
+`CREATE SCHEMA <schema>`:: Creates a schema within the current database.
++
+Example;;
++
+----
+CREATE SCHEMA "fruit_schema";
+----
+
+[#create-table]
+`CREATE TABLE <table> (<column_definitions> [<constraints>]) [PARTITION BY HASH (<number>) [KEY ("<column>")]])`:: Creates a table with the specified column definitions and constraints.
++
+Use `PARTITION BY HASH` to shard a table across all nodes. If you do not specify a `KEY`, the table shards randomly.
++
+Do not specify relationship constraints (`FOREIGN KEY` or `RELATIONSHIP`) in the `CREATE TABLE` statement. Instead, define these using `ALTER TABLE` statements at the end of the TQL script, after creating the tables. This guarantees that tables are created before they are referenced in the constraint definitions.
++
+Examples;;
++
+----
+CREATE TABLE "vendor" (
+  "vendorid" int,
+  "name" varchar(255));
+
+CREATE TABLE "sales_fact" (
+  "saleid" int,
+  "locationid" int,
+  "vendorid" int,
+  "quantity" int,
+  "sale_amount" double,
+  "fruitid" int,
+  CONSTRAINT PRIMARY KEY("saleid")
+  )
+  PARTITION BY HASH(96)
+  KEY ("saleid");
+----
+
+== Schema modification
+
+The following commands enable you to modify schemas:
+
+* xref:drop-database[DROP DATABASE <database>]
+* xref:drop-schema[DROP SCHEMA <schema>]
+* xref:drop-table[DROP TABLE <table>]
+* xref:truncate-table[TRUNCATE TABLE <table>]
+* xref:alter-table[ALTER TABLE <table> ADD|DROP|RENAME COLUMN <column>]
+* xref:drop-pk[ALTER TABLE <table> DROP CONSTRAINT PRIMARY KEY]
+* xref:drop-fk[ALTER TABLE <table> DROP [CONSTRAINT | RELATIONSHIP&#93; <name>]
+* xref:change-partitions[ALTER TABLE <table> &#91;SET DIMENSION | SET FACT &#91;PARTITION BY  HASH &#91;(<shards>)&#93; &#91;KEY(<column>)&#93;&#93;&#93;]
+* xref:change-data-type[ALTER TABLE <table> MODIFY COLUMN <column> <new_data_type>]
+
+
+[#drop-database]
+`DROP DATABASE <database>`:: Drops a database and all of its schemas and tables.
++
+Example;;
++
+----
+DROP DATABASE "fruit_database";
+----
+
+[#drop-schema]
+`DROP SCHEMA <schema>`:: Drops a schema within the current database, and drops all of the tables in the schema.
++
+Example;;
++
+----
+DROP SCHEMA "fruit_schema";
+----
+
+[#drop-table]
+`DROP TABLE <table>`:: Drops a table.
++
+Example;;
++
+----
+DROP TABLE "location";
+----
+
+[#truncate-table]
+`TRUNCATE TABLE <table>`:: Removes all data from a table, but preserves its metadata, including all GUIDs, relationships, and so on. Use this command to force a new schema for a table  without losing the metadata.
++
+CAUTION: This operation removes all existing data from the table. You must reload the data after a `TRUNCATE` command, or all dependent objects (worksheets and pinboards) in [.ph]#ThoughtSpot# become invalid.
+
+Example;;
++
+----
+TRUNCATE TABLE "location";
+----
+
+[#alter-table]
+`ALTER TABLE <table> ADD|DROP|RENAME COLUMN <column>`:: Alters a table to add, drop, or rename a column.
++
+When you add a column to an existing table, you must provide a default value to use for existing rows.
++
+Examples;;
++
+----
+ALTER TABLE "cart"
+  ADD COLUMN "nickname" varchar(255)
+  DEFAULT 'no nickname';
+
+ALTER TABLE "cart"
+  DROP COLUMN "nickname";
+
+ALTER TABLE "cart"
+  RENAME COLUMN "nickname" TO "shortname";
+----
+
+[#drop-pk]
+`ALTER TABLE <table> DROP CONSTRAINT PRIMARY KEY`:: Drops the primary key from a table.
++
+CAUTION: If you add a new primary key, the same upsert behavior applies as adding any primary key. This can result in data deletion. Be sure to understand how the upsert affects your data before dropping or adding primary keys.
+
+Examples;;
++
+----
+ALTER TABLE "sales" DROP CONSTRAINT PRIMARY KEY;
+
+ALTER TABLE "sales" ADD CONSTRAINT PRIMARY KEY ("PO_number");
+----
+
+[#drop-fk]
+`ALTER TABLE <table> DROP [CONSTRAINT | RELATIONSHIP] <name>`:: Drops the named foreign key or relationship between two tables.
+Examples;;
++
+----
+ALTER TABLE "sales_fact"
+  DROP CONSTRAINT "FK_PO_number";`
+
+ALTER TABLE "fruit_dim"
+  DROP RELATIONSHIP "REL_dates";
+----
+
+[#change-partitions]
+`ALTER TABLE <table> [SET DIMENSION | SET FACT [PARTITION BY HASH [(<shards>)] [KEY(<column>)]]]`:: Changes the partitioning on a table by doing one of the following:
++
+* re-sharding a sharded table
+* changing a replicated table to a sharded table
+* changing a sharded table to a replicated (unsharded) table
++
+By default, ThoughtSpot does not shard dimension tables.
++
+To change the partitioning on a table, or to change a dimension table to a sharded table, use the `ALTER TABLE\...SET FACT PARTITION BY HASH\...;` command.
++
+To make a sharded table into a dimension table (replicated on every node),  use the `ALTER TABLE\...SET DIMENSION;` command.
++
+Examples;;
++
+----
+ALTER TABLE "sales_fact"
+  SET FACT PARTITION BY HASH (96)
+  KEY ("PO_number");
+
+ALTER TABLE "fruit_dim"
+  SET DIMENSION;
+----
+
+[#change-data-type]
+ALTER TABLE <table> MODIFY COLUMN <column> <new_data_type>`:: Changes the data type of a column. This can have implications on sharding and primary key behavior. See xref:data-type-conversion.adoc"[About data type conversion].
+Example;;
++
+----
+ALTER TABLE fact100
+  MODIFY COLUMN product_id int;
+----
+
+== Modify data
+
+The following commands enable you to modify data:
+
+* xref:insert-values[INSERT INTO <table> VALUES \...]
+* xref:set-load-priority[
+ALTER TABLE <table> SET LOAD PRIORITY <value> <new_data_type>]
+* xref:update-rows[UPDATE <table> \... SET \... [WHERE \...&#93;]
+* xref:delete-from-table[DELETE FROM <table> [WHERE\...&#93;]
+
+[#insert-values]
+`INSERT INTO <table> VALUES \...`::
+  Inserts values into a table. Only use this for testing. Do not use `INSERT` on a production system.
+Example;;
++
+----
+INSERT INTO "vendor"
+  VALUES ('helen rose', 'jacob norse', 'eileen ruff', 'manny gates');
+----
+
+[#set-load-priority]
+`ALTER TABLE <table> SET LOAD PRIORITY <value> <new_data_type>`:: Sets the load priority for a table. Load priority determines the order in which a table is loaded on a cluster restart. You can set any value from `1-100`. The system default for all tables is `50`.
+
+Example;;
++
+----
+ALTER TABLE 'sales_facts'
+  SET LOAD PRIORITY 1;
+----
+
+[#update-rows]
+`UPDATE <table> \... SET \... [WHERE \...]`:: Updates rows in a table that match optionally provided predicates. Predicates have the form `column = value` connected by the `AND` keyword. Sets the column values to the specified values.
+Example;;
++
+----
+UPDATE "location"
+  SET "borough" = 'staten island', "city" = 'new york'
+  WHERE "borough" = 'staten isl' AND city = 'NY';
+----
+
+[#delete-from-table]
+`DELETE FROM <table> [WHERE\...]`:: Deletes rows from a table that match optional predicates. Predicates have the form `column = value` connected by the `AND` keyword. When specifying dates, use use the epoch form. See https://www.epochconverter.com/[epoch converter, window=“_blank”]. Other date formats can result in errors and incorrect data deletion from the table.
+Example;;
++
+----
+DELETE FROM "vendor"
+  WHERE "name" = 'Joey Smith'
+  AND "vendorid" ='19463';
+----
 
 == Constraints and relationships
 
-Constraints and relationships in ThoughtSpot are used to define the relationships between tables (how they can be joined).
-However, constraints are not enforced, as they would be in a transactional database.
-You can define the following constraints when creating a table with `CREATE TABLE`, or add them to an existing table using the `ADD CONSTRAINT` syntax:+++<table>++++++<colgroup>++++++<col style="width:25%">++++++</col>+++
-      +++<col style="width:75%">++++++</col>++++++</colgroup>+++
-   +++<thead>++++++<tr>++++++<th>+++Syntax+++</th>+++
-         +++<th>+++Description+++</th>++++++</tr>++++++</thead>+++
-   +++<tbody>++++++<tr>++++++<td>+++PRIMARY KEY+++</td>+++
-         +++<td>+++Designates a unique, non-null value as the primary key for a table. This can
-            be one column or a combination of columns. If values are not unique, an upsert
-               will be performed if a row includes a primary key that is already present in the
-               data. Some examples:
-            </p>
-+++<p>++++++<code>+++CREATE TABLE "schools" ( "schoolID" varchar(15), "schoolName"
-varchar(255), "schoolCity" varchar(55), "schoolState" varchar(55), "schoolNick"
-varchar(55), CONSTRAINT PRIMARY KEY ("schoolID") ) ;+++</code>++++++</p>+++
-+++<p>++++++<code>+++ALTER TABLE "cart" ADD CONSTRAINT PRIMARY KEY ("cart_id");+++</code>++++++</p>+++
-+++<p>++++++<code>+++ALTER TABLE "cart" DROP CONSTRAINT PRIMARY KEY "cart_id";+++</code>++++++</p>++++++</td>++++++</tr>+++
-      +++<tr>++++++<td>+++FOREIGN KEY+++</td>+++
-         +++<td>++++++<p>+++Defines a relationship where the value(s) in the table are used to join to a
-            second table. Uses an equality operator. The foreign key must match the primary
-            key of the table that is referenced in number, column type, and order of
-            columns.+++</p>+++
-            +++<p>+++When creating a foreign key, give it a name. You can reference the
-               foreign key name later, if you want to remove it.+++</p>+++
-+++<p>+++Examples of this statement:+++</p>+++
-+++<p>++++++<code>+++ALTER TABLE "batting" ADD CONSTRAINT "FK_player" FOREIGN KEY ("playerID")
-REFERENCES "players" ("playerID");+++</code>++++++</p>+++
+ThoughtSpot uses constraints and relationships to define the relationships between tables, and specify how they can be joined. However, it does not enforce the constraints, because they are in a transactional database.
 
-+++<p>++++++<code>+++ALTER TABLE "batting" ADD CONSTRAINT "FK_lg_team" FOREIGN KEY ("lgID" ,"teamID")
-REFERENCES "teams" ("lgID" ,"teamID");+++</code>++++++</p>+++
+You can define the following constraints when creating a table with `CREATE TABLE`, or add them to an existing table using the `ADD CONSTRAINT` syntax:
 
-+++<p>++++++<code>+++ALTER TABLE "shipment" ADD CONSTRAINT "FK_PO_vendor" FOREIGN KEY ("po_number",
-"vendor") REFERENCES "orders" ("po_number", "vendor");+++</code>++++++</p>+++
+* xref:pk[PRIMARY KEY]
+* xref:fk[FOREIGN KEY]
+* xref:relationship[RELATIONSHIP]
 
-+++<p>++++++<code>+++ALTER TABLE "shipment" DROP CONSTRAINT "FK_PO_vendor";+++</code>++++++</p>++++++</td>++++++</tr>+++
-      +++<tr>++++++<td>+++RELATIONSHIP+++</td>+++
-         +++<td>++++++<p>+++Defines a relationship where the value(s) in the table can be used to join to
-            a second table, using an equality condition (required) and one or more range
-            conditions (optional). These conditions act like a WHERE clause when the two
-            tables are joined. They are applied using AND logic, such that all conditions must
-            be met for a row to be included.+++</p>+++
-            +++<p>+++You may add multiple relationships between
-               tables. When creating a relationship, give it a name. You can reference
-               the relationship name later, if you want to remove it.+++</p>+++
-            +++<p>+++Examples of this statement:+++</p>+++
-            +++<p>++++++<code>+++ALTER TABLE "wholesale_buys" ADD RELATIONSHIP "REL_fruit" WITH
-"retail_sales" AS "wholesale_buys"."fruit" = "retail_sales"."fruit" AND
-("wholesale_buys"."date_order" < "retail_sales"."date_sold" AND
-"retail_sales"."date_sold" < "wholesale_buys"."expire_date");+++</code>++++++</p>+++
+[#pk]
+`PRIMARY KEY`:: Designates a unique, non-null value as the primary key for a table. This can be one column or a combination of columns. If values are not unique, an upsert will be performed if a row includes a primary key that is already present in the data.
 
-+++<p>++++++<code>+++ALTER TABLE "wholesale_buys" DROP RELATIONSHIP "REL_fruit";+++</code>++++++</p>++++++</td>++++++</tr>+++
-      +++<tr>++++++<td>++++++</td>++++++</tr>++++++</tbody>++++++</table>+++
+Examples;;
++
+----
+CREATE TABLE "schools" (
+  "schoolID" varchar(15),
+  "schoolName" varchar(255),
+  "schoolCity" varchar(55),
+  "schoolState" varchar(55),
+  "schoolNick" varchar(55),
+  CONSTRAINT PRIMARY KEY ("schoolID") ) ;
 
-=== Permitted joins and necessary permissions
+ALTER TABLE "cart"
+  ADD CONSTRAINT PRIMARY KEY ("cart_id");
 
-See this matrix for information about which joins you can create, and what permissions these joins require.
+ALTER TABLE "cart"
+  DROP CONSTRAINT PRIMARY KEY "cart_id";
+----
 
-{% include content/joins-matrix.md %}
+[#fk]
+`FOREIGN KEY`:: Defines a relationship where the value(s) in the table are used to join to a second table. Uses an equality operator. The foreign key must match the primary key of the table that is referenced in number, column type, and order of columns.
++
+When creating a foreign key, give it a name. You can reference the foreign key name later, if you want to remove it.
+
+Examples;;
++
+----
+ALTER TABLE "batting"
+  ADD CONSTRAINT "FK_player" FOREIGN KEY ("playerID")
+  REFERENCES "players" ("playerID");`
+
+ALTER TABLE "batting"
+  ADD CONSTRAINT "FK_lg_team" FOREIGN KEY ("lgID" ,"teamID")
+  REFERENCES "teams" ("lgID" ,"teamID");
+
+ALTER TABLE "shipment"
+  ADD CONSTRAINT "FK_PO_vendor" FOREIGN KEY ("po_number", "vendor")
+  REFERENCES "orders" ("po_number", "vendor");
+
+ALTER TABLE "shipment"
+  DROP CONSTRAINT "FK_PO_vendor";
+----
+
+[#relationship]
+`RELATIONSHIP`:: Defines a relationship where the value(s) in the first table can join to a second table, using a _required_ equality condition and one or more _optional_ range conditions. These conditions act like a `WHERE` clause when the two tables are joined. The conditions combine using `AND` logic; all conditions must be met for a row to be in the result.
++
+You may add multiple relationships between tables. When creating a relationship, name it. You can reference the relationship by name later, if you want to remove it.
+
+Examples;;
++
+----
+ALTER TABLE "wholesale_buys"
+  ADD RELATIONSHIP "REL_fruit"
+  WITH "retail_sales"
+  AS "wholesale_buys"."fruit" = "retail_sales"."fruit"
+  AND ("wholesale_buys"."date_order" < "retail_sales"."date_sold"
+  AND "retail_sales"."date_sold" < "wholesale_buys"."expire_date");
+
+ALTER TABLE "wholesale_buys"
+  DROP RELATIONSHIP "REL_fruit";
+----
+
+== Permitted joins and necessary permissions
+
+include::partial$joins-matrix.adoc[]
 
 == Data types
 
-ThoughtSpot supports a simplified list of data types:+++<table>++++++<colgroup>++++++<col style="width:25%">++++++</col>+++
-      +++<col style="width:25%">++++++</col>+++
-      +++<col style="width:50%">++++++</col>++++++</colgroup>+++
-   +++<thead>++++++<tr>++++++<th>+++Syntax+++</th>+++
-         +++<th>+++Description+++</th>+++
-         +++<th>+++Examples+++</th>++++++</tr>++++++</thead>+++
-   +++<tbody>++++++<tr>++++++<td>+++Character+++</td>+++
-         +++<td>++++++<ul class="ul" id="reference_cbc_fx4_j4__d109e35">++++++<li>+++VARCHAR(+++<em class="ph i">+++n+++</em>+++)+++</li>++++++</ul>++++++</td>+++
-         +++<td>+++Specify the maximum number of characters, as in VARCHAR(255). The size limit is 64MB for
-            VARCHAR values.+++</td>++++++</tr>+++
-      +++<tr>++++++<td>+++Floating point+++</td>+++
-         +++<td>++++++<ul class="ul" id="reference_cbc_fx4_j4__d109e47">++++++<li>+++DOUBLE+++</li>+++
-               +++<li>+++FLOAT+++</li>++++++</ul>++++++</td>+++
-         +++<td>+++DOUBLE is recommended.+++</td>++++++</tr>+++
-      +++<tr>++++++<td>+++Boolean+++</td>+++
-         +++<td>++++++<ul class="ul" id="reference_cbc_fx4_j4__d109e58">++++++<li>+++BOOL+++</li>++++++</ul>++++++</td>+++
-         +++<td>+++Can be +++<code class="ph codeph">+++true+++</code>+++ or +++<code class="ph codeph">+++false+++</code>+++.+++</td>++++++</tr>+++
-      +++<tr>++++++<td>+++Integer+++</td>+++
-         +++<td>++++++<ul class="ul" id="reference_cbc_fx4_j4__d109e73">++++++<li>+++INT+++</li>+++
-               +++<li>+++BIGINT+++</li>++++++</ul>++++++</td>+++
-         +++<td>+++INT holds 32 bits.
-            +++<p>+++BIGINT holds 64 bits.+++</p>++++++</td>++++++</tr>+++
-      +++<tr>++++++<td>+++Date or time+++</td>+++
-         +++<td>++++++<ul class="ul" id="reference_cbc_fx4_j4__d109e86">++++++<li>+++DATE+++</li>+++
-               +++<li>+++DATETIME+++</li>+++
-               +++<li>+++TIMESTAMP+++</li>+++
-               +++<li>+++TIME+++</li>++++++</ul>++++++</td>+++
-         +++<td>++++++<p>+++DATETIME, TIMESTAMP, and TIME are stored at the granularity of seconds+++</p>+++.
-            +++<p>+++TIMESTAMP is
-               identical to DATETIME, but is included for syntax
-               compatibility.+++</p>++++++</td>++++++</tr>++++++</tbody>++++++</table>+++
+ThoughtSpot supports a simplified list of data types:
+
+* xref:character[Character]
+* xref:floating-point[Floating point]
+* xref:boolean[Boolean]
+* xref:integer[Integer]
+* xref:date-time[Date or time]
+
+[#character]
+Character:: `VARCHAR(_n_)`
++
+Specify the maximum number of characters, as in `VARCHAR(255)`. The size limit is 64MB for `VARCHAR` values.
+
+[#floating-point]
+Floating point::
++
+* `DOUBLE` ThoughtSpot recommends that you use `DOUBLE`.
+* `FLOAT`
+
+[#boolean]
+Boolean:: `BOOL`
++
+Can be `true` or `false`.
+
+[#integer]
+Integer::
++
+* `INT` holds 32 bits
+* `BIGINT` holds 64 bits
+
+[#date-time]
+Date or time::
++
+* `DATE`
+* `DATETIME` is stored at the granularity of seconds.
+* `TIMESTAMP` is stored at the granularity of seconds. Identical to `DATETIME`, here for syntax compatibility.
+* `TIME` is stored at the granularity of seconds.

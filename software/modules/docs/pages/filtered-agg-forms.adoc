@@ -1,8 +1,9 @@
-'''
+= Filtered aggregation functions
+:last_updated: 02/03/2021
+:linkattrs:
+:experimental:
 
-title: [Filtered aggregation functions]
-
-last_updated: tbd toc: true summary: "You can create a filtered aggregation in the search bar." sidebar: mydoc_sidebar permalink: /:collection/:path.html --
+You can create a filtered aggregation in the search bar.
 
 Filters are useful for queries where the results should reflect a new, filtered value.
 On this page you learn about comparative versus derivative filters, and the functions, and the keywords that you can use with them.
@@ -48,16 +49,14 @@ ThoughtSpot functional library will include the following functions:
 * `vs`
 * `all`
 
-The following table illustrates some examples of these functions in use:+++<table>++++++<colgroup>++++++<col style="width:30%">++++++</col>+++
-      +++<col style="width:70%">++++++</col>++++++</colgroup>+++
-   +++<thead class="thead" style="text-align:left;">++++++<tr>++++++<th>+++Function+++</th>+++
-         +++<th>+++Examples+++</th>++++++</tr>++++++</thead>+++
-  +++<tr>++++++<td>++++++<code>+++sum_if(region=`'west`', revenue)+++</code>++++++</td>+++
-    +++<td>+++Only aggregate the revenue for the values corresponding to west region.+++</td>++++++</tr>+++
-  +++<tr>++++++<td>++++++<code>+++count_if(region =`'west`', region)+++</code>++++++</td>+++
-    +++<td>+++Only aggregate the region for the values corresponding to west region.+++</td>++++++</tr>+++
-  +++<tr>++++++<td>++++++<code>+++count_if(revenue > 100, red)+++</code>++++++</td>+++
-    +++<td>+++Count the number of times red appears when revenue was greater than 100 (row level revenue data, not aggregated).+++</td>++++++</tr>++++++</table>+++
+Consideer the following examples of these functions:
+
+`sum_if(region='west', revenue)`::
+  Aggregates only the revenue for the values that correspond to the _west_ region.
+`count_if(region ='west', region)`::
+  Aggregates only the region for the values that correspond to the _west_ region.
+`count_if(revenue > 100, red)`::
+  Counts the number of times _red_ appears when revenue is greater than `100` (row-level revenue data, not aggregated).
 
 A condition can have multiple filters like `sales region = west OR region = east`.
 You can also just type a value such as `east` as in `sales east` as a filter.
@@ -80,7 +79,7 @@ For example:
 
 `revenue region last 10 years vs all`
 
-Try this syntax on using the link:{{site.baseurl}}/downloads/superstore.csv[superstore] example data.
+Try this syntax on using the xref:superstore.csv[superstore] example data.
 The first `vs` example compares two segments with a single search token:
 
 image::vs-ex-1.png[]

@@ -1,6 +1,7 @@
 = Set up high availability for AWS
-:last_updated: 12/10/2019
-
+:last_updated: 02/02/2021
+:linkattrs:
+:experimental:
 
 This article explains how to set up High Availability (HA) for your ThoughtSpot cluster using the AWS Elastic File System (EFS).
 
@@ -10,10 +11,11 @@ This article explains how to set up High Availability (HA) for your ThoughtSpot 
 Follow these steps to set up High Availability (HA) for your ThoughtSpot cluster using the AWS Elastic File System (EFS).
 
 . Create an EFS File System that spans across different availability zones, and across different subnets.
-Refer to AWS documentation on https://docs.aws.amazon.com/efs/latest/ug/getting-started.html?shortFooter=true[creating an EFS File System].
++
+Refer to AWS documentation on https://docs.aws.amazon.com/efs/latest/ug/getting-started.html?shortFooter=true[creating an EFS File System,window="_blank"].
 . Create two ThoughtSpot clusters in each availability zone and in the subnets, where the new file system is.
 . Change the IP addresses of the cluster, if necessary.
-. Create an EFS +++<customizable_name>+++directory in the `/home/admin` path.+++</customizable_name>+++
+. Create an EFS `<customizable_name>` directory in the `/home/admin` path.
 . Issue the following command to mount the new file system.
 +
 Modify the fields as necessary for your installation.
@@ -51,6 +53,7 @@ tscli backup create --mode full --type full
 . Take down the first cluster instances.
 . On the second cluster, delete the existing cluster.
 . Create a new cluster by restoring from the first cluster backup.
++
 This is accessible from the EFS mount point.
 +
 ----
@@ -62,6 +65,6 @@ Your cluster is now successfully restored to the second cluster from the backup 
 [#replace-cluster]
 == Replace a cluster
 
-For information on how to recover from infrastructure failure scenarios, see: link:{{ site.baseurl }}/disaster-recovery/cluster-replacement.html[Cluster replacement].
+For information on how to recover from infrastructure failure scenarios, see: xref:cluster-replacement.adoc[Cluster replacement].
 
-{% include note.html content="At this time, ThoughtSpot does not support AWS Auto Scaling or deployment across AWS availability zones or regions." %}
+NOTE: At this time, ThoughtSpot does not support AWS Auto Scaling or deployment across AWS availability zones or regions.

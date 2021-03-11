@@ -1,6 +1,7 @@
 = Create, edit, or delete a group
-:last_updated: 12/08/2020
-
+:last_updated: 01/15/2021
+:linkattrs:
+:experimental:
 
 ThoughtSpot has intuitive and powerful user group management for assigning privileges, user selection, multi-tier subgroups, default Pinboard assignment, and emailing.
 
@@ -21,22 +22,28 @@ image::admin-portal-groups.png[Admin Console - Groups]
 . Click the *+ Add Group* button on the upper left-hand side of the list of groups.
 . In the *Add a new group* modal, enter the details for the new group:
 +
-image::add-group.png[Enter details for the new group]+++<table>++++++<colgroup>++++++<col width="20%">++++++</col>+++
- +++<col width="80%">++++++</col>++++++</colgroup>+++
-  +++<tr>++++++<th>+++Field+++</th>+++
-    +++<th>+++Description+++</th>++++++</tr>+++
-  +++<tr id="group-name">++++++<th>+++Group name+++</th>+++
-    +++<td>+++Enter a unique name for the group.+++</td>++++++</tr>+++
-  +++<tr id="display-name">++++++<th>+++Display name+++</th>+++
-    +++<td>+++Name of the group as it appears in ThoughtSpot.+++</td>++++++</tr>+++
-  +++<tr id="sharing-visibioity">++++++<th>+++Sharing visibility+++</th>+++
-    +++<td>+++Indicate whether objects can be shared with this group. When set to +++<b>+++SHARABLE+++</b>+++,
-    this group is an option in the +++<b>+++Share+++</b>+++ dialog.+++</td>++++++</tr>+++
-  +++<tr id="description">++++++<th>+++Description+++</th>+++
-    +++<td>+++Optionally, enter a description.+++</td>++++++</tr>+++
-  +++<tr id="privileges">++++++<th>+++Privileges+++</th>+++
-    +++<td>+++Check the <a href="{{"/admin/users-groups/about-users-groups.html#list-of-privileges" | prepend: site.baseurl }}">privileges</a> you want to grant to the group. If you add the privilege +++<b>+++Has administration privileges+++</b>+++ to a group, all users in that group can see all the data in ThoughtSpot. Administrators can always see all data sources, and <a href="{{"/admin/data-security/about-row-security.html#" | prepend: site.baseurl }}">Row level security</a> does not
-    apply to them.+++</td>++++++</tr>++++++</table>+++
+image::add-group.png[Enter details for the new group]
++
+[#group-name]
+Group name::
+  Enter a unique name for the group.
++
+[#display-name]
+Display name::
+  Name of the group as it appears in ThoughtSpot.
++
+[#sharing-visibioity]
+Sharing visibility::
+  Indicate whether objects can be shared with this group. When set to *SHARABLE*,
+    this group is an option in the *Share* dialog.
++
+[#description]
+Description::
+  Optionally, enter a description.
++
+[#privileges]
+Privileges::
+    Check the xref:groups-privileges.adoc#list-of-privileges[privileges] you want to grant to the group. If you add the privilege *Has administration privileges* to a group, all users in that group can see all the data in ThoughtSpot. Administrators can always see all data sources, and xref:row-security.adoc[Row level security] does not apply to them.
 
 . You can also add _<<add-groups,Groups>>_ (these would be the subgroups of the group you are editing), _<<add-users,Users>>_.
 Also, see _<<add-default-pinboard,Default Pinboards>>_.
@@ -109,7 +116,7 @@ To assgin default pinboards to groups, follow these steps:
 . Create a group, or choose an existing group.
 Note its name.
 . In the *Pinboards* interface, find the correct Pinboards, and share them with this group.
-See link:{{ site.baseurl }}/admin/data-security/share-pinboards.html[Share a Pinboard].
+See xref:share-pinboards.adoc[Share a Pinboard].
 . Open the Group for editing.
 See <<edit-group,Edit a group>>.
 . Click the *Default Pinboards* tab.
@@ -205,7 +212,7 @@ image::admin-portal-users.png[Admin Console - Users]
 +
 If you don't immediately see the user name, try searching for it.
 
-. Click the *Add Users to Groups* button on the top of the list of users.
+. Click *Add Users to Groups* at the top of the list of users.
 +
 image::admin-portal-users-add-to-group.png[Add Users to Groups]
 

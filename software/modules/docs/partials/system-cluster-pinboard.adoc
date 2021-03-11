@@ -38,53 +38,56 @@ It tracks  total used space, which consists of raw uncompressed data, including 
 
 == Cluster Details
 
-The fields on this visualization have the following meaning:+++<table>++++++<colgroup>++++++<col style="width:35%">++++++</col>+++
-    +++<col style="width:65%">++++++</col>++++++</colgroup>+++
-    +++<tr>++++++<th>+++Field+++</th>+++
-       +++<th>+++Description+++</th>++++++</tr>+++
-    +++<tr>++++++<th>+++Cluster Name+++</th>+++
-       +++<td>+++The name of the cluster defined at installation time.+++</td>++++++</tr>+++
-    +++<tr>++++++<th>+++Cluster ID+++</th>+++
-       +++<td>+++The ID of the cluster set at installation time.+++</td>++++++</tr>+++
-    +++<tr>++++++<th>+++Last Update Time+++</th>+++
-       +++<td>+++Last time the cluster was updated.+++</td>++++++</tr>+++
-    +++<tr>++++++<th>+++Release+++</th>+++
-       +++<td>+++Version of the current release.+++</td>++++++</tr>+++
-    +++<tr>++++++<th>+++Zookeeper Servers+++</th>+++
-       +++<td>+++IP addresses of the Zookeeper servers.+++</td>++++++</tr>+++
-    +++<tr>++++++<th>+++HDFS Name Nodes+++</th>+++
-       +++<td>+++Control nodes for Hadoop Distributed File System (HDFS).+++</td>++++++</tr>++++++</table>+++
+The fields on this visualization have the following meaning:
+
+Cluster Name::
+  The name of the cluster defined at installation time.
+
+Cluster ID::
+  The ID of the cluster set at installation time.
+
+Last Update Time::
+  Last time the cluster was updated.
+
+Release::
+  Version of the current release.
+
+Zookeeper Servers::
+  IP addresses of the Zookeeper servers.
+
+HDFS Name Nodes::
+  Control nodes for Hadoop Distributed File System (HDFS).
 
 == Cluster Logs
 
-The fields on this visualization have the following meaning:+++<table>++++++<colgroup>++++++<col style="width:35%">++++++</col>+++
-   +++<col style="width:65%">++++++</col>++++++</colgroup>+++
-   +++<tr>++++++<th>+++Field+++</th>+++
-      +++<th>+++Description+++</th>++++++</tr>+++
-   +++<tr>++++++<th>+++Time+++</th>+++
-      +++<td>+++A timestamp indicating when an action occurred.+++</td>++++++</tr>+++
-   +++<tr>++++++<th>+++Type+++</th>+++
-      +++<td>+++Type of action.+++</td>++++++</tr>+++
-   +++<tr>++++++<th>+++Release+++</th>+++
-      +++<td>+++Identifies the full release number.+++</td>++++++</tr>++++++</table>+++
+The fields on this visualization have the following meaning:
+
+Time::
+  A timestamp indicating when an action occurred.
+
+Type::
+  Type of action.
+
+Release::
+  Identifies the full release number.
 
 You can also use the `tscli logs` command to review log data from your cluster.
 
 == List of Snapshots
 
 This visualization shows the snapshots _and the backups_ taken on the cluster.
-The fields on this visualization have the following meaning:+++<table>++++++<colgroup>++++++<col style="width:35%">++++++</col>+++
-   +++<col style="width:65%">++++++</col>++++++</colgroup>+++
-   +++<tr>++++++<th>+++Field+++</th>+++
-      +++<th>+++Description+++</th>++++++</tr>+++
-   +++<tr>++++++<th>+++Time+++</th>+++
-      +++<td>+++A timestamp indicating when a snapshot or backup happened occurred.+++</td>++++++</tr>+++
-   +++<tr>++++++<th>+++Name+++</th>+++
-      +++<td>+++Name of the snapshot file. These files are stored in the `/usr/local/scaligent/backup` directory on your cluster.+++</td>++++++</tr>+++
-   +++<tr>++++++<th>+++Reason+++</th>+++
-      +++<td>+++Identifies the reason the snapshot/backup was created. You should see several period snapshots if your cluster is configured properly. You may also see evidence here of manual backups. For example, you should be sure your cluster is backed up before major events such as upgrades. Contact +++<a href="{{ site.baseurl }}/appliance/contact.html">+++ThoughtSpot Support+++</a>+++ if you don't see evidence your cluster is periodically creating snapshots.+++</td>++++++</tr>+++
-   +++<tr>++++++<th>+++Size+++</th>+++
-      +++<td>+++Size of the backup in gigabytes.+++</td>++++++</tr>++++++</table>+++
+The fields on this visualization have the following meaning:
+
+Time::
+  A timestamp indicating when a snapshot or backup happened occurred.
+
+Name::
+  Name of the snapshot file. These files are stored in the `/usr/local/scaligent/backup` directory on your cluster.
+
+Reason::
+  Identifies the reason the snapshot/backup was created. You should see several period snapshots if your cluster is configured properly. You may also see evidence here of manual backups. For example, you should be sure your cluster is backed up before major events such as upgrades. Contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support,window="_blank"] if you don't see evidence your cluster is periodically creating snapshots.
+Size::
+  Size of the backup in gigabytes.
 
 == Average Latency Last 2 Weeks (sec)
 

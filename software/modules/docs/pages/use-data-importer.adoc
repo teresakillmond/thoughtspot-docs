@@ -1,11 +1,11 @@
 = Import CSV files with tsload
-:last_updated: 12/8/2020
-
+:last_updated: 01/20/2021
+:linkattrs:
+:experimental:
 
 Use the <code>tsload</code> command to import data from a CSV file.
 
-{% include access.html content="To add data into the system, you must have the required permissions.
-Initially, only the `Admin` user has that level of access." %}
+IMPORTANT: To add data into the system, you must have the required permissions. Initially, only the `Admin` user has that level of access.
 
 Use ThoughtSpot Loader (`tsload`) to load data from a CSV text file into an existing table in ThoughtSpot.
 ThoughtSpot Loader (`tsload`) is a common way to import data.
@@ -14,14 +14,14 @@ When using `tsload`, you can load larger datasets and make the loading process r
 The `tsload` command accepts flags that enable you to specify column and row separators, date or timestamp formats, null value representations, and similar parameters.
 Many of these options have defaults that you can override.
 
-Before importing data, you need to link:create-schema.html#[build the schema].
+Before importing data, you need to xref:create-schema.adoc[build the schema].
 
 After importing data, you can see it in the *Data* tab.
 
 == ThoughtSpot Loader
 
 To use ThoughtSpot Loader, type the command `tsload` followed by the appropriate flags.
-You can see the list of the flags it accepts in the link:{{ site.baseurl }}/reference/data-importer-ref.html#[ThoughtSpot Loader flag reference], or by issuing `tsload -help` on the command line.
+You can see the list of the flags it accepts in the xref:data-importer-ref.adoc[ThoughtSpot Loader flag reference], or by issuing `tsload -help` on the command line.
 
 The `tsload` feature supports both full and incremental data loads.
 For incremental loads, it performs an upsert (insert or update).
@@ -128,8 +128,12 @@ If you do not supply the `--s3a_bucket_name`, `tsload` prompts you to enter it.
  $ tsload --source_file "/s3a/default/<my_file_in_aws>"
         --target_database "<my_database_in_ThoughtSpot>" --target_table "<my_table_in_the_database_in_ThoughtSpot>" --s3a_bucket_name <bucket_name>
 +
-{% include important.html content="--source_file should contain the file path inside the bucket and *_must_* be prefixed by `/s3a/default`.
-For example, to load from a file named "`directory/file.csv`", the --source_file should be "`/s3a/default/directory/file.csv`"." %}
+[IMPORTANT]
+====
+`--source_file` must contain the file path inside the bucket, and it must have the prefix `/s3a/default`.
+
+For example, to load from a file named `directory/file.csv`, the `--source_file` is `/s3a/default/directory/file.csv`.
+====
 +
 This example imports the CSV file `teams.csv` into the table `teams` in the database `temp`:
 
@@ -161,7 +165,7 @@ If you have data in `.csv` format stored in a GCS bucket, you can load it direct
 
 You can assign a read-only role to your ThoughtSpot GCP instance(s) so the instance(s) can access the GCS bucket from which you want to load the data.
 This eliminates the need to enter the GCP GCS credentials when loading your data.
-For details, refer to the storage setting detailed in the GCP link:{{ site.baseurl }}/appliance/gcp/launch-an-instance.html#create-an-instance[Create an instance] section.
+For details, refer to the storage setting detailed in the GCP xref:gcp-launch-instance.adoc#create-an-instance[Create an instance] section.
 
 If you are using GCS for persistent storage, you already assigned the *Set access for each API* scope to your instance and specified *Full* storage access, so you do *_not_* need to complete this step in order to load data with GCS.
 

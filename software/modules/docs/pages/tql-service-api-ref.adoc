@@ -1,6 +1,7 @@
 = TQL service reference
-:last_updated: 09/10/2020
-
+:last_updated: 02/20/2021
+:linkattrs:
+:experimental:
 
 The TQL service APIs enable you to query the ThoughtSpot TQL cli from a remote machine.
 
@@ -28,12 +29,14 @@ The following API is provided for reference.
 
 ===== POST request
 
+[source,console]
 ----
 /callosum/v1/session/login
 ----
 
 ===== Input
 
+[source,json]
 ----
 {
 	"username": "<thoughtspot user name>",
@@ -43,6 +46,7 @@ The following API is provided for reference.
 
 ===== Output
 
+[source,json]
 ----
 Status: 200 OK
 Set-cookie: <token>
@@ -50,8 +54,9 @@ Set-cookie: <token>
 
 === Input/output structure
 
-Following proto structure is proposed for API input and output.
+Following proto-structure is proposed for API input and output.
 
+[source,hjson]
 ----
 // The context in which the query is to be executed. This can be altered by the
 // execution of the query. E.g., a "USE db_name;" query can change the database,
@@ -342,6 +347,7 @@ message DynamicAutocompleteResponse {
 
 ===== POST request
 
+[source,console]
 ----
 /ts_dataservice/v1/public/tql/query
 ----
@@ -350,12 +356,14 @@ message DynamicAutocompleteResponse {
 
 ====== Request header
 
+[source,console]
 ----
 JSESSIONID=<token>
 ----
 
 ====== Request body
 
+[source,json]
 ----
 {
 	"context": {
@@ -385,6 +393,7 @@ The request body is a JSON representation of the "ExecuteQueryRequest", shown ab
 
 ===== Output
 
+[source,json]
 ----
 Status:   200 OK
 
@@ -438,6 +447,7 @@ The output is a JSON representation of the "ExecuteQueryResponse", shown above.
 
 ====== Multipart file upload API
 
+[source,console]
 ----
 /ts_dataservice/v1/public/tql/script
 ----
@@ -446,6 +456,7 @@ The output is a JSON representation of the "ExecuteQueryResponse", shown above.
 
 ====== Request header
 
+[source,console]
 ----
 JSESSIONID=<token>
 ----
@@ -455,6 +466,7 @@ JSESSIONID=<token>
 TQL script file is uploaded.
 Requests will have the flag passing mechanism too.
 
+[source,json]
 ----
 {
 	"context": {
@@ -484,6 +496,7 @@ The output is a JSON representation of the "ExecuteSqlScriptRequest", shown abov
 
 ===== GET request
 
+[source,console]
 ----
 /ts_dataservice/v1/public/tql/tokens/static
 ----
@@ -492,12 +505,14 @@ The output is a JSON representation of the "ExecuteSqlScriptRequest", shown abov
 
 ====== Request header
 
+[source,console]
 ----
 JSESSIONID=<token>
 ----
 
 ===== Output
 
+[source,json]
 ----
 {
 	"tokens": abs", "absday", ... ]
@@ -512,6 +527,7 @@ The output is a JSON representation of the "StaticAutocompleteResponse", shown a
 
 ===== GET request
 
+[source,console]
 ----
 /ts_dataservice/v1/public/tql/tokens/dynamic
 ----
@@ -520,6 +536,7 @@ The output is a JSON representation of the "StaticAutocompleteResponse", shown a
 
 ====== Request header
 
+[source,console]
 ----
 JSESSIONID=<token>
 ----
@@ -534,6 +551,7 @@ Server side code is written so that the in-memory data-structure lookup is organ
 
 ===== Output
 
+[source,json]
 ----
 {
 	"server_schema_version": "163",
@@ -549,6 +567,7 @@ The output is a JSON representation of the "DynamicAutocompleteResponse", shown 
 
 ===== GET request
 
+[source,console]
 ----
 /ts_tqlservice/v1/public/schema_version
 ----
@@ -557,12 +576,14 @@ The output is a JSON representation of the "DynamicAutocompleteResponse", shown 
 
 ====== Request header
 
+[source,console]
 ----
 JSESSIONID=<token>
 ----
 
 ===== Output
 
+[source,json]
 ----
 {
 	"context": {
@@ -576,7 +597,3 @@ JSESSIONID=<token>
 A python client is developed on top of TQL Service APIs.
 The code is available in the developer git repository.
 Contact ThoughtSpot for details.
-
-== Related information
-
-[TBD]

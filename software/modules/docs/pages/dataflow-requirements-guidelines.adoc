@@ -1,16 +1,17 @@
 = DataFlow requirements and guidelines
-:last_updated: 08/24/2020
-
+:last_updated: 02/04/2021
+:linkattrs:
+:experimental:
 :redirect_from: /data-integrate/dataflow/dataflow-best-practices.html
 
 Here are some requirements and guidelines for working with DataFlow.
 
-
 == Requirements
 
-* You must open port 9000.
-See link:{{ site.baseurl }}/appliance/ports.html[Network ports].
-* Allocate minimum disk space of approximately 5 GB in the `/etc/thoughtspot/` directory.
+[options="interactive"]
+.Your organization has the following setup:
+* [ ] Access ThoughtSpot Dataflow at `https://thoughtspot.<customerName>.com/dataflow/`.
+* [ ] Minimum disk space allocation of approximately 5 GB in the `/etc/thoughtspot/` directory.
 
 == Guidelines
 
@@ -22,10 +23,7 @@ Modify column datatypes.
 Add and remove primary and foreign keys.
  ** `CREATE DATABASE`
  ** `CREATE SCHEMA`
- ** `+DELETE FROM <table> [WHERE...]+`
- ** `+UPDATE <table> ...
-SET ...
-[WHERE ...]+`
+ ** `DELETE FROM <table> [WHERE...]`
+ ** `UPDATE <table> ... SET ... [WHERE ...]`
 
-+
-For details on these TQL commands, see the link:{{ site.baseurl }}/reference/sql-cli-commands.html[TQL reference].
+For details on these TQL commands, see the xref:sql-cli-commands.adoc[TQL reference].

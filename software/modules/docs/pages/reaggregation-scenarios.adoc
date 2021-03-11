@@ -12,7 +12,7 @@ We provide them to demonstrate to you how the function works, and the scenarios 
 * <<average-period-value-semi-additive-numbers-1,Scenario 3: Average period value for semi-additive numbers I>>
 * <<average-period-value-semi-additive-numbers-2,Scenario 4: Average period value for semi-additive numbers II>>
 
-{% include content/flexible-aggregation-best-practices.md %}
+include::partial$flexible-aggregation-best-practices.adoc[]
 
 [#supplier-tendering]
 == Scenario 1: Supplier tendering by job
@@ -26,7 +26,7 @@ We want to see high numbers, which indicate that many suppliers bid on the job, 
 
 === Valid solution
 
-{% include content/intro-valid-solution.md %}
+include::partial$intro-valid-solution.adoc[]
 
 ....
 
@@ -63,7 +63,7 @@ So, if the sum of tendered responses is greater than 1, then the result returns 
 
 === Non-Aggregated Result
 
-{% include content/intro-non-aggregated.md %}
+include::partial$intro-non-aggregated.adoc[]
 
 In the following scenario, the next statement is the conditional `if` clause.
 Because of this, the overall expression does not reaggregate.
@@ -104,7 +104,7 @@ The join ensures that a single rate value returns each day for each transaction 
 
 === Valid solution
 
-{% include content/intro-valid-solution.md %}
+include::partial$intro-valid-solution.adoc[]
 
 ----
 sum(group_aggregate (sum(loans)*average (rate),
@@ -149,7 +149,7 @@ Note that the default aggregation setting does not reaggregate the result set.
 
 === Non-Aggregated Result
 
-{% include content/intro-non-aggregated.md %}
+include::partial$intro-non-aggregated.adoc[]
 
 In the following scenario, the formula assumes that the default aggregation applies.
 Here, the result returns 1 row for each `transaction currency`.
@@ -171,7 +171,7 @@ In this scenario, we have daily position values for home loans, and therefore ca
 
 === Valid solution
 
-{% include content/intro-valid-solution.md %}
+include::partial$intro-valid-solution.adoc[]
 
 ----
 average(group_aggregate(sum(loan balance),
@@ -222,7 +222,7 @@ This table includes the expected `date` column, and `days_in_period` column that
 
 === Valid solution
 
-{% include content/intro-valid-solution.md %}
+include::partial$intro-valid-solution.adoc[]
 
 The following code _in the denominator definition_ returns the total number of days for the period, regardless whether there are transactions, or what filters apply:
 
