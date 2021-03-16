@@ -4,22 +4,23 @@
 
 The Home and Favorite Pinboards Tool is a Python script that allows you to use the ThoughtSpot Web APIs to do the following:
 
-- Set a Pinboard as the Home Pinboard in the Mobile App for all users in a user group.
-- Add Pinboard(s) to favorites for all users of ThoughtSpot.
-- Remove Pinboard(s) from favorites for all users of ThoughtSpot.
+- Set a Pinboard as the Home Pinboard for all users in a user group of the ThoughtSpot Mobile App.
+- Add Pinboard(s) to favorites for all users in a user group of a ThoughtSpot instance.
+- Remove Pinboard(s) from favorites for all users in a user group of a ThoughtSpot instance.
 
 == Prerequisites
 
-- Python 3.0
+- Python 3
 - Mac OS X, Linux, or Windows
-
+- User must have *admin* privilege on the ThoughtSpot instance
++
 NOTE: Web APIs are not public.
 
 == Installing the script
 
 To install the script:
 
-. Download the source zip file and decompress it. #WHERE DO THEY DOWNLOAD IT?#
+. Download the source zip file and decompress it.
 . Open a terminal/cmd window, and run:
 +
 [source]
@@ -31,8 +32,8 @@ python setup.py install
 
 ----
 configure_pinboards [-h] [--ts_url TS_URL] [--username USERNAME] [--password PASSWORD]
-                       [--disable_ssl] [--action ACTION] [--category PINBOARD_CATEGORY]
-                       [--user_group USER_GROUP_NAME] [--grant_permission] [--remove_permission]
+                       [--disable_ssl] [--action ACTION] [--category CATEGORY]
+                       [--user_group USER_GROUP] [--grant_permission] [--remove_permission]
                        [--pinboards PINBOARDS]
 ----
 
@@ -42,16 +43,17 @@ configure_pinboards [-h] [--ts_url TS_URL] [--username USERNAME] [--password PAS
 [cols="30,70%",options="header"]
 |====================
 | Argument | Description
-a| `--ts_url TS_URL` | `TS_URL` is the URL to your ThoughtSpot instance, e.g. *\https://myserver*
-a| `--username USERNAME` | `USERNAME` is the username of the user.
-a| `--password PASSWORD` | `PASSWORD` is the password of the user.
-a| `--action ACTION` | Supported values for `ACTION` are `*set*`, `*add*`, and `*remove*`. Use `*set*` to
+a| `--ts_url TS_URL` | `TS_URL` is the URL or hostname of your ThoughtSpot instance, e.g. *\https://myserver*
+a| `--username USERNAME` | `USERNAME` is the username of the user running the script.
+a| `--password PASSWORD` | `PASSWORD` is the password of the user running the script.
+a| `--action ACTION` | `ACTION` is the action to perform. Use `*set*` to
                         set the home pinboard. Use `*add*` or `*remove*` to add or remove pinboards in user favorites.
-a| `--category CATEGORY` | Supported values are `*home*`, or `*favorites*`. Choose 'home' to execute
-                        action on home pinboard. Choose 'favorites' to execute action on user
-                        favorites
-a|`--user_group USER_GROUP`  | `USER_GROUP` is the name of the user group to which to execute the specified action.
-a|`--pinboards PINBOARDS`  | `PINBOARDS` is a list of comma separated pinboard ID(s). For setting the Home Pinboard you must specify only one
+a| `--category CATEGORY` a| `CATEGORY` is the item on which to perform the action. Choose `*home*` to set the home pinboard for all mobile users. Choose `*favourites*` to add pinboards to user
+                        favorites.
+
+NOTE: When adding pinboards to user favorites, you must use the spelling `*favourites*`.
+a|`--user_group USER_GROUP`  | `USER_GROUP` is the name of the user group to which to apply the specified action.
+a|`--pinboards PINBOARDS`  | `PINBOARDS` is a list of comma-separated pinboard ID(s). For setting the Home Pinboard, you must specify only one
                         pinboard ID.
 |====================
 
@@ -62,10 +64,12 @@ a|`--pinboards PINBOARDS`  | `PINBOARDS` is a list of comma separated pinboard I
 | Argument | Description
 a| `-h, --help` | Shows the help message and exit.
 a| `--disable_ssl` | Ignores SSL errors.
-a| `--grant_permission` | Grants permissions to users of the specified user group
+a| `--grant_permission` | Grants permissions to users in the specified user group
                       who do not have permissions to the specified pinboard(s). (Otherwise, skips the
                       specified action for such user.)
-a| `--remove_permission` | Removes permissions of users of the specified user group. NOTE: Applicable only for remove favorites user action.
+a| `--remove_permission` a| Removes permissions from users in the specified user group.
+
+NOTE: This applies only to removing pinboards from user favorites.
 |====================
 
 == Using the script
@@ -104,7 +108,7 @@ python3 -m pinboard.configure_pinboards --ts_url http://172.18.2.39:8088 --usern
 
 Removes given pinboards from User Favorites for all users of given user group in a ThoughtSpot cluster.
 
-==== Command syntax: #FAVORITE OR FAVOURITE?# #Note: I normally change British spellings in our docs to the American version, but if your script uses the spelling of "Favourite", I'd be worried about breaking it if I change category value name to "Favorite". In talking to Vikas, he thought it might be possible for you to change it use/support "Favorite". Let me know if this is possible.#
+==== Command syntax:
 [source]
 ----
 python3 -m pinboard.configure_pinboards --ts_url <URL of ThoughtSpot instance> --username <ThoughtSpot username> --password <ThoughtSpot password> --action remove --category favourites --user_group <user group name> --pinboards <pinboard IDs>
