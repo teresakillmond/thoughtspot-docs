@@ -326,7 +326,7 @@
     <a class="nav-link" href="line-column-charts.html">Line column charts</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:funnel-charts.adoc">Funnel charts</a>
+    <a class="nav-link" href="funnel-charts.html">Funnel charts</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="geo-charts.html">Geo charts</a>
@@ -812,7 +812,7 @@
     <span class="nav-text">Load bulk data</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="use-data-importer.html">Import CSV files with tsload</a>
+    <a class="nav-link" href="tsload-import-csv.html">Import CSV files with tsload</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="load-with-script.html">Use a script</a>
@@ -2292,7 +2292,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="intro-reference.html">Reference</a>
+    <a class="nav-link" href="reference.html">Reference</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -2358,10 +2358,16 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="data-importer-ref.html">tsload flag reference</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="tsload.html">tsload reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="tsload-api.html">tsload connector API reference</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="tsload-service-api-ref.html">tsload connector reference</a>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="tsload-api-flags.html">tsload flag reference</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="tscli-command-ref.html">tscli command reference</a>
@@ -2466,7 +2472,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Software</a></li>
-    <li><a href="intro-reference.html">Reference</a></li>
+    <li><a href="reference.html">Reference</a></li>
     <li><a href="tscli-command-ref.html">tscli command reference</a></li>
   </ul>
 </nav>
@@ -2486,10 +2492,26 @@
 <p>The command returns <code>0</code> code on success, and a non-zero exit code on failure.
 The <code>tscli</code> command logs errors to the <code>stderr</code> directory.</p>
 </div>
+<div class="paragraph">
+<p>This section has the following content:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#tscli-command-how-to">Using the tscli command</a></p>
+</li>
+<li>
+<p><a href="#tscli-optional-flags">Optional flags for tscli</a></p>
+</li>
+<li>
+<p><a href="#tscli-subcommands">Subcommands for the tscli command</a></p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="tscli-command-how-to"><a class="anchor" href="#tscli-command-how-to"></a>How to use the tscli command</h2>
+<h2 id="tscli-command-how-to"><a class="anchor" href="#tscli-command-how-to"></a>Using the tscli command</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The <code>tscli</code> command has the following syntax:</p>
@@ -2545,10 +2567,38 @@ For example, the command <code>tscli access list --type TYPE</code>, where you w
 <h2 id="tscli-optional-flags"><a class="anchor" href="#tscli-optional-flags"></a>tscli optional flags</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>There are several optional flags that are common to each <code>tscli</code> subcommand.</p>
+<p>There are several optional flags that are common to each <code>tscli</code> subcommand:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#tscli-flag-help">help</a></p>
+</li>
+<li>
+<p><a href="#tscli-flag-helpfull">helpfull</a></p>
+</li>
+<li>
+<p><a href="#tscli-flag-verbose">verbose</a></p>
+</li>
+<li>
+<p><a href="#tscli-flag-noautoconfig">noautoconfig</a></p>
+</li>
+<li>
+<p><a href="#tscli-flag-autoconfig">autoconfig</a></p>
+</li>
+<li>
+<p><a href="#tscli-flag-yes">yes</a></p>
+</li>
+<li>
+<p><a href="#tscli-flag-cluster">cluster</a></p>
+</li>
+<li>
+<p><a href="#tscli-flag-zoo">zoo</a></p>
+</li>
+</ul>
 </div>
 <div class="sect2">
-<h3 id="tscli--help"><a class="anchor" href="#tscli--help"></a>help</h3>
+<h3 id="tscli-flag-help"><a class="anchor" href="#tscli-flag-help"></a>help</h3>
 <div class="listingblock">
 <div class="content">
 <pre>-h, --help</pre>
@@ -2560,7 +2610,7 @@ This flag lists the specified command&#8217;s subcommands and their definitions.
 </div>
 </div>
 <div class="sect2">
-<h3 id="tscli--helpfull"><a class="anchor" href="#tscli--helpfull"></a>helpfull</h3>
+<h3 id="tscli-flag-helpfull"><a class="anchor" href="#tscli-flag-helpfull"></a>helpfull</h3>
 <div class="listingblock">
 <div class="content">
 <pre>--helpfull HELPFUll</pre>
@@ -2571,7 +2621,7 @@ This flag lists the specified command&#8217;s subcommands and their definitions.
 </div>
 </div>
 <div class="sect2">
-<h3 id="tscli--verbose"><a class="anchor" href="#tscli--verbose"></a>verbose</h3>
+<h3 id="tscli-flag-verbose"><a class="anchor" href="#tscli-flag-verbose"></a>verbose</h3>
 <div class="listingblock">
 <div class="content">
 <pre>--verbose</pre>
@@ -2583,7 +2633,7 @@ By default, logs are written to both the console and log files, with the log fil
 </div>
 </div>
 <div class="sect2">
-<h3 id="tscli--noautoconfig"><a class="anchor" href="#tscli--noautoconfig"></a>noautoconfig</h3>
+<h3 id="tscli-flag-noautoconfig"><a class="anchor" href="#tscli-flag-noautoconfig"></a>noautoconfig</h3>
 <div class="listingblock">
 <div class="content">
 <pre>--noautoconfig</pre>
@@ -2594,7 +2644,7 @@ By default, logs are written to both the console and log files, with the log fil
 </div>
 </div>
 <div class="sect2">
-<h3 id="tscli--autoconfig"><a class="anchor" href="#tscli--autoconfig"></a>autoconfig</h3>
+<h3 id="tscli-flag-autoconfig"><a class="anchor" href="#tscli-flag-autoconfig"></a>autoconfig</h3>
 <div class="listingblock">
 <div class="content">
 <pre>--autoconfig</pre>
@@ -2606,7 +2656,7 @@ User may still be prompted for certain inputs. The default is <code>False</code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="tscli--yes"><a class="anchor" href="#tscli--yes"></a>yes</h3>
+<h3 id="tscli-flag-yes"><a class="anchor" href="#tscli-flag-yes"></a>yes</h3>
 <div class="listingblock">
 <div class="content">
 <pre>--yes</pre>
@@ -2618,7 +2668,7 @@ User may still be prompted for certain inputs. The default is <code>False</code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="tscli--cluster"><a class="anchor" href="#tscli--cluster"></a>cluster</h3>
+<h3 id="tscli-flag-cluster"><a class="anchor" href="#tscli-flag-cluster"></a>cluster</h3>
 <div class="listingblock">
 <div class="content">
 <pre>--cluster CLUSTER</pre>
@@ -2630,7 +2680,7 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 </div>
 </div>
 <div class="sect2">
-<h3 id="tscli-zoo"><a class="anchor" href="#tscli-zoo"></a>zoo</h3>
+<h3 id="tscli-flag-zoo"><a class="anchor" href="#tscli-flag-zoo"></a>zoo</h3>
 <div class="listingblock">
 <div class="content">
 <pre>--zoo ZOO</pre>
@@ -2643,10 +2693,143 @@ Used when a cluster is not automatically detected. The default is <code>False</c
 </div>
 </div>
 <div class="sect1">
-<h2 id="tscli-subcommands"><a class="anchor" href="#tscli-subcommands"></a>tscli subcommands</h2>
+<h2 id="tscli-subcommands"><a class="anchor" href="#tscli-subcommands"></a>Subcommands of the tscli command</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section lists each subcommand and its syntax.</p>
+<p>This section lists each subcommand of the tscli command, and its syntax:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#tscli-access">access</a></p>
+</li>
+<li>
+<p><a href="#tscli-alert">alert</a></p>
+</li>
+<li>
+<p><a href="#tscli-ansible">ansible</a></p>
+</li>
+<li>
+<p><a href="#tscli-backup">backup</a></p>
+</li>
+<li>
+<p><a href="#tscli-backup-policy">backup-policy</a></p>
+</li>
+<li>
+<p><a href="#tscli-calendar">calendar</a></p>
+</li>
+<li>
+<p><a href="#tscli-callhome">callhome</a></p>
+</li>
+<li>
+<p><a href="#tscli-cassandra">cassandra</a></p>
+</li>
+<li>
+<p><a href="#tscli-cluster">cluster</a></p>
+</li>
+<li>
+<p><a href="#tscli-command">command</a></p>
+</li>
+<li>
+<p><a href="#tscli-config-mode">config-mode</a></p>
+</li>
+<li>
+<p><a href="#tscli-dataflow">dataflow</a></p>
+</li>
+<li>
+<p><a href="#tscli-dr-mirror">dr-mirror</a></p>
+</li>
+<li>
+<p><a href="#tscli-event">event</a></p>
+</li>
+<li>
+<p><a href="#tscli-feature">feature</a></p>
+</li>
+<li>
+<p><a href="#tscli-fileserver">fileserver</a></p>
+</li>
+<li>
+<p><a href="#tscli-firewall">firewall</a></p>
+</li>
+<li>
+<p><a href="#tscli-hdfs">hdfs</a></p>
+</li>
+<li>
+<p><a href="#tscli-ipsec">ipsec</a></p>
+</li>
+<li>
+<p><a href="#tscli-ldap">ldap</a></p>
+</li>
+<li>
+<p><a href="#tscli-logs">logs</a></p>
+</li>
+<li>
+<p><a href="#tscli-map-tiles">map-tiles</a></p>
+</li>
+<li>
+<p><a href="#tscli-monitoring">monitoring</a></p>
+</li>
+<li>
+<p><a href="#tscli-nas">nas</a></p>
+</li>
+<li>
+<p><a href="#tscli-nitro-switch">nitro-switch</a></p>
+</li>
+<li>
+<p><a href="#tscli-node">node</a></p>
+</li>
+<li>
+<p><a href="#tscli-notification">notification</a></p>
+</li>
+<li>
+<p><a href="#tscli-onboarding">onboarding</a></p>
+</li>
+<li>
+<p><a href="#tscli-patch">patch</a></p>
+</li>
+<li>
+<p><a href="#tscli-rpackage">rpackage</a></p>
+</li>
+<li>
+<p><a href="#tscli-saml">saml</a></p>
+</li>
+<li>
+<p><a href="#tscli-scheduled-pinboards">scheduled-pinboards</a></p>
+</li>
+<li>
+<p><a href="#tscli-set">set</a></p>
+</li>
+<li>
+<p><a href="#tscli-smtp">smtp</a></p>
+</li>
+<li>
+<p><a href="#tscli-snapshot">snapshot</a></p>
+</li>
+<li>
+<p><a href="#tscli-snapshot-policy">snapshot-policy</a></p>
+</li>
+<li>
+<p><a href="#tscli-socialproof">socialproof</a></p>
+</li>
+<li>
+<p><a href="#tscli-ssl">ssl</a></p>
+</li>
+<li>
+<p><a href="#tscli-sssd">sssd</a></p>
+</li>
+<li>
+<p><a href="#tscli-storage">storage</a></p>
+</li>
+<li>
+<p><a href="#tscli-support">support</a></p>
+</li>
+<li>
+<p><a href="#tscli-tokenauthentication">tokenauthentication</a></p>
+</li>
+<li>
+<p><a href="#tscli-update">update</a></p>
+</li>
+</ul>
 </div>
 <div class="sect2">
 <h3 id="tscli-access"><a class="anchor" href="#tscli-access"></a>access</h3>

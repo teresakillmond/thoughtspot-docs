@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>Import CSV files with tsload | ThoughtSpot Software</title>
+    <title>tsload reference | ThoughtSpot Software</title>
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
 <!--  <link rel="stylesheet" href="../../../_/css/vendor/docsearch.min.css"> -->
@@ -326,7 +326,7 @@
     <a class="nav-link" href="line-column-charts.html">Line column charts</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:funnel-charts.adoc">Funnel charts</a>
+    <a class="nav-link" href="funnel-charts.html">Funnel charts</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="geo-charts.html">Geo charts</a>
@@ -811,8 +811,8 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Load bulk data</span>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="4">
-    <a class="nav-link" href="use-data-importer.html">Import CSV files with tsload</a>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tsload-import-csv.html">Import CSV files with tsload</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="load-with-script.html">Use a script</a>
@@ -2292,7 +2292,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="intro-reference.html">Reference</a>
+    <a class="nav-link" href="reference.html">Reference</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -2357,11 +2357,17 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="data-importer-ref.html">tsload flag reference</a>
+  <li class="nav-item is-current-page" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="tsload.html">tsload reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="tsload-api.html">tsload connector API reference</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="tsload-service-api-ref.html">tsload connector reference</a>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="tsload-api-flags.html">tsload flag reference</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="tscli-command-ref.html">tscli command reference</a>
@@ -2466,10 +2472,8 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Software</a></li>
-    <li><a href="administration.html">Administration</a></li>
-    <li><a href="loading-intro.html">Load and manage data</a></li>
-    <li>Load bulk data</li>
-    <li><a href="use-data-importer.html">Import CSV files with tsload</a></li>
+    <li><a href="reference.html">Reference</a></li>
+    <li><a href="tsload.html">tsload reference</a></li>
   </ul>
 </nav>
 </div>
@@ -2478,425 +2482,19 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Import CSV files with tsload</h1>
-<div id="preamble">
-<div class="sectionbody">
+<h1 class="page">tsload reference</h1>
 <div class="paragraph">
-<p>Use the &lt;code&gt;tsload&lt;/code&gt; command to import data from a CSV file.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-To add data into the system, you must have the required permissions. Initially, only the <code>Admin</code> user has that level of access.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Use ThoughtSpot Loader (<code>tsload</code>) to load data from a CSV text file into an existing table in ThoughtSpot.
-ThoughtSpot Loader (<code>tsload</code>) is a common way to import data.
-When using <code>tsload</code>, you can load larger datasets and make the loading process repeatable through scripting.</p>
-</div>
-<div class="paragraph">
-<p>The <code>tsload</code> command accepts flags that enable you to specify column and row separators, date or timestamp formats, null value representations, and similar parameters.
-Many of these options have defaults that you can override.</p>
-</div>
-<div class="paragraph">
-<p>Before importing data, you need to <a href="create-schema.html" class="page">build the schema</a>.</p>
-</div>
-<div class="paragraph">
-<p>After importing data, you can see it in the <strong>Data</strong> tab.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_thoughtspot_loader"><a class="anchor" href="#_thoughtspot_loader"></a>ThoughtSpot Loader</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>To use ThoughtSpot Loader, type the command <code>tsload</code> followed by the appropriate flags.
-You can see the list of the flags it accepts in the <a href="data-importer-ref.html" class="page">ThoughtSpot Loader flag reference</a>, or by issuing <code>tsload -help</code> on the command line.</p>
-</div>
-<div class="paragraph">
-<p>The <code>tsload</code> feature supports both full and incremental data loads.
-For incremental loads, it performs an upsert (insert or update).
-If an incoming row has the same primary key as an existing row, it updates the existing row with new values.</p>
-</div>
-<div class="paragraph">
-<p>You can integrate <code>tsload</code> into your ETL environment for more automated data loads.
-Most ETL tools enable you to write target data into files, and support scripted post-transformation actions that include loading data into ThoughtSpot.</p>
-</div>
-<div class="sect2">
-<h3 id="_load_data_using_tsload"><a class="anchor" href="#_load_data_using_tsload"></a>Load data using tsload</h3>
-<div class="paragraph">
-<p>To manually load data into ThoughtSpot, follow these steps.</p>
-</div>
-<div class="paragraph">
-<p>You can also save the <code>tsload</code> commands to a script, for reuse.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Log in to the Linux shell using SSH.</p>
-<div class="literalblock">
-<div class="content">
-<pre>$ ssh admin@&lt;cluster-IP&gt;</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Change to the directory that contains the staged CSV files.</p>
-<div class="literalblock">
-<div class="content">
-<pre>$ cd &lt;directory&gt;</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Use the following syntax to invoke <code>tsload</code>, specifying the appropriate flags, and your data source file:</p>
-<div class="literalblock">
-<div class="content">
-<pre>$ tsload --target_database=&lt;my_database&gt;
-       --target_table=&lt;my_table&gt; --alsologtostderr
-       --empty_target --source_file=&lt;my_file.csv&gt; --v 1
-       --field_separator="separator_char"</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>This example imports the CSV file <code>ssbm_customer.csv</code> into the table CUSTOMER:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>$ tsload --target_database=SAMPLE_DB
-       --target_table=CUSTOMER --alsologtostderr
-       --empty_target --source_file=ssbm_customer.csv
-       --v 1 --field_separator "|"</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Once <code>tsload</code> starts processing the data, you can see messages that indicate the progress.
-When the load is complete, you can see two summary messages: <code>source summary</code> and <code>load summary</code>.</p>
-<div class="listingblock">
-<div class="content">
-<pre> Started processing data row
- Source has 32 data rows, ignored row count 0
- Waiting for rows to commit...(please wait)
-
- Source summary
- --------------
- Data source:                     ssbm_customer.csv
- Source data format:              csv
- Header row?:                     no
- Tokenizer Options:               escape_char: "" field_separator: "|" enclosing_char: "\""
- Date format:                     %Y%m%d
- Date time format:                %Y%m%d %H:%M:%S
- Flexible mode?:                  no
-
- Load summary
- ------------
- Target table:                    CUSTOMER
- Should empty target?:            yes
- Status:                          Successful
- Rows total:                      32
- Rows successfully loaded:        30
- Rows failed to load:             0
- Rows duplicate/omitted:          2
- % of Rows successfully loaded:   93.75 %
- Load Rate (MB/s):                0.00 MB/s
- Load Rate (Rows/s):              3.53 Rows/s
- Start time (Wallclock):          Tue Jan 29 09:09:07
- End time (Wallclock):            Tue Jan 29 09:09:08
- Total load time = 1.13 seconds = 0.02 minutes = 0.00 hours
- Data size = 50 bytes = 0.06 KB = 0.00 MB</pre>
-</div>
-</div>
-</li>
-<li>
-<p>In the load summary, check the <strong>Rows duplicate/omitted</strong> number.</p>
-<div class="paragraph">
-<p>This indicates the number of rows (if any) that <code>tsload</code> did not load because they did not satisfy the table constraints.
-A common cause of this would be a duplicate primary key.
-If <code>tsload</code> omitted any rows, review your CSV file, make the required adjustments, and then load it again.</p>
-</div>
-<div class="paragraph">
-<p>In the example above, <code>tsload</code> omitted two rows.
-This data needs to be cleaned and reloaded.</p>
-</div>
-</li>
-<li>
-<p>After correctly loading your file, repeat this process to load data from any additional CSV files.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_loading_data_from_an_aws_s3_bucket"><a class="anchor" href="#_loading_data_from_an_aws_s3_bucket"></a>Loading data from an AWS S3 bucket</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>If you have data in <code>.csv</code> format stored in an AWS bucket, you can load it directly to ThoughtSpot.</p>
-</div>
-<div class="sect2">
-<h3 id="_assigning_s3_read_only_role_to_your_ec2_instance"><a class="anchor" href="#_assigning_s3_read_only_role_to_your_ec2_instance"></a>Assigning S3 read-only role to your EC2 instance</h3>
-<div class="paragraph">
-<p>If your cluster is on version 5.3.1 or later, you can assign an S3 read-only role to your ThoughtSpot EC2 instance(s) so the instance(s) can access the S3 bucket from which you want to load the data.
-This eliminates the need to enter the AWS S3 credentials when loading your data.
-For details, see: <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html">Using an IAM Role to Grant Permissions to Applications Running on Amazon EC2 Instances</a> in Amazon&#8217;s AWS documentation.</p>
-</div>
-<div class="paragraph">
-<p>If you are using S3 for persistent storage, and assigned the <em>ec2rolewithfulls3access</em> IAM role to your instance, you do <strong><em>not</em></strong> need to complete this step in order to load data with S3.</p>
-</div>
-<div class="paragraph">
-<p>If you already configured the IAM role, you do not need to supply the <code>--s3a_access_key</code>, <code>--s3a_secret_key</code> and <code>--s3a_region</code> parameters when loading data with <code>tsload</code>.</p>
-</div>
-<div class="paragraph">
-<p>To load data from an AWS S3 bucket, do the following:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Log in to the Linux shell of your AWS instance using SSH.</p>
-</li>
-<li>
-<p>Use the following syntax to invoke <code>tsload</code>, specifying the appropriate flags and your data source file.
-If you do not supply the <code>--s3a_bucket_name</code>, <code>tsload</code> prompts you to enter it.</p>
-<div class="literalblock">
-<div class="content">
-<pre>$ tsload --source_file "/s3a/default/&lt;my_file_in_aws&gt;"
-       --target_database "&lt;my_database_in_ThoughtSpot&gt;" --target_table "&lt;my_table_in_the_database_in_ThoughtSpot&gt;" --s3a_bucket_name &lt;bucket_name&gt;</pre>
-</div>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p><code>--source_file</code> must contain the file path inside the bucket, and it must have the prefix <code>/s3a/default</code>.</p>
-</div>
-<div class="paragraph">
-<p>For example, to load from a file named <code>directory/file.csv</code>, the <code>--source_file</code> is <code>/s3a/default/directory/file.csv</code>.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>This example imports the CSV file <code>teams.csv</code> into the table <code>teams</code> in the database <code>temp</code>:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>$ tsload --source_file "/aws/default/teams.csv"
-       --target_database "temp" --target_table "teams"</pre>
-</div>
-</div>
-</li>
-<li>
-<p>After running the <code>tsload</code> command, you are prompted to enter additional AWS S3 information:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>AWS S3a bucket name</p>
-<div class="paragraph">
-<p>If you have no IAM role configured, you must enter the following information as well:</p>
-</div>
-</li>
-<li>
-<p>AWS S3a region</p>
-</li>
-<li>
-<p>AWS S3a access key</p>
-</li>
-<li>
-<p>AWS S3a secret key</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Optionally, these four pieces of information can be inserted at the beginning of the command (in step 2), using the following flags:<br></p>
+<p>The tsload approach for data load has two primary references:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>--s3a_bucket_name "&lt;Name of bucket that contains the source CSV file&gt;"</code><br></p>
+<p><a href="tsload-api.html" class="page">tsload connector API refrence</a></p>
 </li>
 <li>
-<p><code>--s3a_region "&lt;Region where the bucket is located&gt;"</code><br></p>
-</li>
-<li>
-<p><code>--s3a_access_key "&lt;AWS S3 access key&gt;"</code><br></p>
-</li>
-<li>
-<p><code>--s3a_secret_key "&lt;AWS S3 secret key&gt;"</code><br></p>
+<p><a href="tsload-api-flags.html" class="page">tsload flag reference</a></p>
 </li>
 </ul>
-</div>
-</li>
-<li>
-<p>After the processing begins, progress messages appear, and then source and load summary messages after the load is complete.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_loading_data_from_a_gcp_gcs_bucket"><a class="anchor" href="#_loading_data_from_a_gcp_gcs_bucket"></a>Loading data from a GCP GCS bucket</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>If you have data in <code>.csv</code> format stored in a GCS bucket, you can load it directly to ThoughtSpot.</p>
-</div>
-<div class="sect2">
-<h3 id="_assigning_gcs_read_only_role_to_your_gcp_instance"><a class="anchor" href="#_assigning_gcs_read_only_role_to_your_gcp_instance"></a>Assigning GCS read-only role to your GCP instance</h3>
-<div class="paragraph">
-<p>You can assign a read-only role to your ThoughtSpot GCP instance(s) so the instance(s) can access the GCS bucket from which you want to load the data.
-This eliminates the need to enter the GCP GCS credentials when loading your data.
-For details, refer to the storage setting detailed in the GCP <a href="gcp-launch-instance.html#create-an-instance" class="page">Create an instance</a> section.</p>
-</div>
-<div class="paragraph">
-<p>If you are using GCS for persistent storage, you already assigned the <strong>Set access for each API</strong> scope to your instance and specified <strong>Full</strong> storage access, so you do <strong><em>not</em></strong> need to complete this step in order to load data with GCS.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_create_the_database_and_table"><a class="anchor" href="#_create_the_database_and_table"></a>Create the database and table</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Log in to the Linux shell of your GCP instance using SSH.</p>
-</li>
-<li>
-<p>Invoke TQL:</p>
-<div class="listingblock">
-<div class="content">
-<pre> $ tql
-
- TQL&gt;</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Create the database:</p>
-<div class="listingblock">
-<div class="content">
-<pre> TQL&gt; CREATE DATABASE temp;</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Connect to the database:</p>
-<div class="listingblock">
-<div class="content">
-<pre> TQL&gt; USE temp;</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Create the table</p>
-<div class="listingblock">
-<div class="content">
-<pre> TQL&gt; create table teams (id int, name VARCHAR(255));
- TQL&gt; exit;</pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_load_data"><a class="anchor" href="#_load_data"></a>Load data</h3>
-<div class="paragraph">
-<p>Use the following syntax to invoke <code>tsload</code>, specifying the appropriate flags and your data source file:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ tsload --source_file /gs/default/team.csv
-       --target_database temp
-       --target_table teams
-       --bucket_name "my_gcs_bucket"
-       --has_header_row 2&gt;/dev/null
-
-$ Header row read successfully
-Source has 2 data rows, has header row, ignored row count 0
-Waiting for rows to commit...(please wait)
-Source summary
---------------
-Data source:                 /gs/default/team.csv
-Source data format           csv
-Header row?                  yes
-Tokenizer Options:           escape_char: "" field_separator: "," enclosing_char: "\"" null_value: "(null)" trailing_field_separator: false
-Date format:                 %Y%m%d
-Date time format:            %Y%m%d %H:%M:%S
-Flexible mode?               no
-Load summary
-------------
-Target table:                teams
-Should empty target?         no
-Status:                      Successful
-Rows total:                  2
-Rows successfully loaded:    2
-Rows failed to load:         0
-% of Rows successfully loaded: 100.00 %
-Load Rate (MB/s):             0.00 MB/s
-Load Rate (Rows/s):           1.13 Rows/s
-Start time (Wallclock):       Wed Oct 30 23:30:11
-End time (Wallclock):         Wed Oct 30 23:30:13
-Total load time = 1.78 seconds = 0.03 minutes = 0.00 hours
-Data size = 19 bytes = 0.02 KB = 0.00 MB</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_verify_the_table_contents"><a class="anchor" href="#_verify_the_table_contents"></a>Verify the table contents</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Invoke TQL:</p>
-<div class="listingblock">
-<div class="content">
-<pre> $ tql
-
- TQL&gt;</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Connect to the database:</p>
-<div class="listingblock">
-<div class="content">
-<pre> TQL&gt; USE temp;</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Show the table data:</p>
-<div class="listingblock">
-<div class="content">
-<pre>TQL&gt; select * from teams;</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Table contents are displayed:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>id|name
--------
-1|sameer
-2|sandeep</pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
 </div>
 </article>
   </div>

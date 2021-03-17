@@ -8,8 +8,14 @@ The ThoughtSpot command line interface, or tscli, is an administration interface
 The command returns `0` code on success, and a non-zero exit code on failure.
 The `tscli` command logs errors to the `stderr` directory.
 
+This section has the following content:
+
+* xref:tscli-command-how-to[Using the tscli command]
+* xref:tscli-optional-flags[Optional flags for tscli]
+* xref:tscli-subcommands[Subcommands for the tscli command]
+
 [#tscli-command-how-to]
-== How to use the tscli command
+== Using the tscli command
 
 The `tscli` command has the following syntax:
 
@@ -54,9 +60,18 @@ tscli [subcommand] -h
 [#tscli-optional-flags]
 == tscli optional flags
 
-There are several optional flags that are common to each `tscli` subcommand.
+There are several optional flags that are common to each `tscli` subcommand:
 
-[#tscli--help]
+* xref:tscli-flag-help[help]
+* xref:tscli-flag-helpfull[helpfull]
+* xref:tscli-flag-verbose[verbose]
+* xref:tscli-flag-noautoconfig[noautoconfig]
+* xref:tscli-flag-autoconfig[autoconfig]
+* xref:tscli-flag-yes[yes]
+* xref:tscli-flag-cluster[cluster]
+* xref:tscli-flag-zoo[zoo]
+
+[#tscli-flag-help]
 === help
 
 ----
@@ -66,7 +81,7 @@ There are several optional flags that are common to each `tscli` subcommand.
 Shows help for a command.
 This flag lists the specified command's subcommands and their definitions.
 
-[#tscli--helpfull]
+[#tscli-flag-helpfull]
 === helpfull
 
 ----
@@ -75,7 +90,7 @@ This flag lists the specified command's subcommands and their definitions.
 
 This flag shows help for all supported commands.
 
-[#tscli--verbose]
+[#tscli-flag-verbose]
 === verbose
 
 ----
@@ -85,7 +100,7 @@ This flag shows help for all supported commands.
 Turns verbose logging on for the console.
 By default, logs are written to both the console and log files, with the log files containing the highest verbosity log messages. The default is `false`.
 
-[#tscli--noautoconfig]
+[#tscli-flag-noautoconfig]
 === noautoconfig
 
 ----
@@ -94,7 +109,7 @@ By default, logs are written to both the console and log files, with the log fil
 
 Prompts y/n response for each question within a command, instead of assuming `yes`. The default is `True`.
 
-[#tscli--autoconfig]
+[#tscli-flag-autoconfig]
 === autoconfig
 
 ----
@@ -104,7 +119,7 @@ Prompts y/n response for each question within a command, instead of assuming `ye
 Automatically configures properties of the cluster whenever possible.
 User may still be prompted for certain inputs. The default is `False`.
 
-[#tscli--yes]
+[#tscli-flag-yes]
 === yes
 
 ----
@@ -114,7 +129,7 @@ User may still be prompted for certain inputs. The default is `False`.
 Automatically configures properties of the cluster when possible.
 User may still be prompted for certain inputs. The default is `False`.
 
-[#tscli--cluster]
+[#tscli-flag-cluster]
 === cluster
 
 ----
@@ -124,7 +139,7 @@ User may still be prompted for certain inputs. The default is `False`.
 Name of the cluster.
 Used when a cluster is not automatically detected. The default is `False`.
 
-[#tscli-zoo]
+[#tscli-flag-zoo]
 === zoo
 
 ----
@@ -134,9 +149,53 @@ Used when a cluster is not automatically detected. The default is `False`.
 List of Zookeeper servers, comma-separated. Used when a cluster is not detected automatically.
 
 [#tscli-subcommands]
-== tscli subcommands
+== Subcommands of the tscli command
 
-This section lists each subcommand and its syntax.
+This section lists each subcommand of the tscli command, and its syntax:
+
+* xref:tscli-access[access]
+* xref:tscli-alert[alert]
+* xref:tscli-ansible[ansible]
+* xref:tscli-backup[backup]
+* xref:tscli-backup-policy[backup-policy]
+* xref:tscli-calendar[calendar]
+* xref:tscli-callhome[callhome]
+* xref:tscli-cassandra[cassandra]
+* xref:tscli-cluster[cluster]
+* xref:tscli-command[command]
+* xref:tscli-config-mode[config-mode]
+* xref:tscli-dataflow[dataflow]
+* xref:tscli-dr-mirror[dr-mirror]
+* xref:tscli-event[event]
+* xref:tscli-feature[feature]
+* xref:tscli-fileserver[fileserver]
+* xref:tscli-firewall[firewall]
+* xref:tscli-hdfs[hdfs]
+* xref:tscli-ipsec[ipsec]
+* xref:tscli-ldap[ldap]
+* xref:tscli-logs[logs]
+* xref:tscli-map-tiles[map-tiles]
+* xref:tscli-monitoring[monitoring]
+* xref:tscli-nas[nas]
+* xref:tscli-nitro-switch[nitro-switch]
+* xref:tscli-node[node]
+* xref:tscli-notification[notification]
+* xref:tscli-onboarding[onboarding]
+* xref:tscli-patch[patch]
+* xref:tscli-rpackage[rpackage]
+* xref:tscli-saml[saml]
+* xref:tscli-scheduled-pinboards[scheduled-pinboards]
+* xref:tscli-set[set]
+* xref:tscli-smtp[smtp]
+* xref:tscli-snapshot[snapshot]
+* xref:tscli-snapshot-policy[snapshot-policy]
+* xref:tscli-socialproof[socialproof]
+* xref:tscli-ssl[ssl]
+* xref:tscli-sssd[sssd]
+* xref:tscli-storage[storage]
+* xref:tscli-support[support]
+* xref:tscli-tokenauthentication[tokenauthentication]
+* xref:tscli-update[update]
 
 [#tscli-access]
 === access
