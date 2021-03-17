@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
-    <title>tsload flag reference | ThoughtSpot Software</title>
+    <title>tsload connector reference | ThoughtSpot Software</title>
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
 <!--  <link rel="stylesheet" href="../../../_/css/vendor/docsearch.min.css"> -->
@@ -326,7 +326,7 @@
     <a class="nav-link" href="line-column-charts.html">Line column charts</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#docs:funnel-charts.adoc">Funnel charts</a>
+    <a class="nav-link" href="funnel-charts.html">Funnel charts</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="geo-charts.html">Geo charts</a>
@@ -812,7 +812,7 @@
     <span class="nav-text">Load bulk data</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="use-data-importer.html">Import CSV files with tsload</a>
+    <a class="nav-link" href="tsload-import-csv.html">Import CSV files with tsload</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="load-with-script.html">Use a script</a>
@@ -2292,7 +2292,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="intro-reference.html">Reference</a>
+    <a class="nav-link" href="reference.html">Reference</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -2357,11 +2357,17 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="data-importer-ref.html">tsload flag reference</a>
-  </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="tsload-service-api-ref.html">tsload connector reference</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="tsload.html">tsload reference</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="tsload-api.html">tsload connector API reference</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="tsload-api-flags.html">tsload flag reference</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="tscli-command-ref.html">tscli command reference</a>
@@ -2466,8 +2472,9 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Software</a></li>
-    <li><a href="intro-reference.html">Reference</a></li>
-    <li><a href="data-importer-ref.html">tsload flag reference</a></li>
+    <li><a href="reference.html">Reference</a></li>
+    <li><a href="tsload.html">tsload reference</a></li>
+    <li><a href="tsload-api.html">tsload connector API reference</a></li>
   </ul>
 </nav>
 </div>
@@ -2476,181 +2483,971 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">tsload flag reference</h1>
+<h1 class="page">tsload connector reference</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can modify the behavior of tsload with flags.</p>
-</div>
-<div class="paragraph">
-<p>For recurring data loads and for scripting loads, use <code>tsload</code> (the ThoughtSpot Loader).
-This reference section lists all the flags that can be used to modify the behavior of <code>tsload</code>.</p>
+<p>The tsload connector APIs enable you to load data into ThoughtSpot.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_general_tsload_flags"><a class="anchor" href="#_general_tsload_flags"></a>General tsload flags</h2>
+<h2 id="_login"><a class="anchor" href="#_login"></a>Login</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Use this API to authenticate and log in a user.
+<strong>Login</strong> establishes a session with the ThoughtSpot ETL HTTP server.
+The authentication requires a username and password.</p>
+</div>
+<div class="sect2">
+<h3 id="_request_parameters"><a class="anchor" href="#_request_parameters"></a>Request Parameters</h3>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">--target_database &lt;database&gt;</dt>
+<dt class="hdlist1">username</dt>
 <dd>
-<p>Specifies the pre-existing target database into which tsload should load the data.</p>
+<p>ThoughtSpot username</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Data type</dt>
+<dd>
+<p>string</p>
 </dd>
-<dt class="hdlist1">--target_schema &lt;schema&gt;</dt>
-<dd>
-<p>Specifies the target schema. Default is <code>falcon_default_schema</code>.</p>
-</dd>
-<dt class="hdlist1">--target_table &lt;table&gt;</dt>
-<dd>
-<p>Specifies the tables that you want to load into the database.</p>
-<div class="paragraph">
-<p>The tables must exist in the database specified by <code>--target_database</code>.</p>
+</dl>
 </div>
 </dd>
-<dt class="hdlist1">--empty_target</dt>
+<dt class="hdlist1">password</dt>
 <dd>
-<p>Specifies that any data in the target table is to be removed before the new data is loaded.</p>
-<div class="paragraph">
-<p>If supplied, any rows that exist in the table specified by <code>--target_database</code> and <code>--target table</code> will be deleted before this data load.</p>
-</div>
-<div class="paragraph">
-<p>To perform an &#8220;upsert&#8221; on the existing data, omit this flag or specify <code>--noempty_target</code>.</p>
+<p>ThoughtSpot password</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Data type</dt>
+<dd>
+<p>string</p>
+</dd>
+</dl>
 </div>
 </dd>
-<dt class="hdlist1">--max_ignored_rows &lt;number&gt;</dt>
-<dd>
-<p>Specifies the maximum number of rows that can be ignored if they fail to load.</p>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_request"><a class="anchor" href="#_request"></a>Request</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>POST /ts_dataservice/v1/public/session HTTP/1.1
+Host: client.mydomain.com Accept: application/json Content-type: application/json
+{
+"username":"&lt;thoughtspot user name&gt;",
+"password":"&lt;thoughtspot password&gt;"
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_response"><a class="anchor" href="#_response"></a>Response</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>Status: 200 OK
+Set-cookie: token</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_example_failure_responses"><a class="anchor" href="#_example_failure_responses"></a>Example failure responses</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Status: 401 UNAUTHORIZED
+Unable to verify user. Please login again.</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Status: 500 INTERNAL SERVER ERROR
+error code = INTERNAL, message = Couldn't resolve the authentication service.</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the cookie is not passed in subsequent calls, then requests fail.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_startload"><a class="anchor" href="#_startload"></a>StartLoad</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>If the number of ignored rows exceeds this limit, the load will be aborted.</p>
+<p>After <strong>login</strong>, you use this API start the data load operation.
+The API call to be used here is &#8220;/ts_dataservice/v1/public/loads&#8221;.
+If the load is initiated successfully, the cycle ID, and the load balancer IP are returned.
+Once complete, you use <strong>Load</strong> to start the actual data load.</p>
+</div>
+<div class="sect2">
+<h3 id="_request_parameters_2"><a class="anchor" href="#_request_parameters_2"></a>Request Parameters</h3>
+<div class="sect3">
+<h4 id="_target"><a class="anchor" href="#_target"></a>Target</h4>
+<div class="paragraph">
+<p>Specification of the target. This D`B/Schema/Table` must exist on the destination ThoughtSpot system.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>database</code></dt>
+<dd>
+<p>Database in ThoughtSpot</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Data type</dt>
+<dd>
+<p>string</p>
+</dd>
+</dl>
 </div>
 </dd>
-<dt class="hdlist1">--bad_records_file &lt;path_to_file&gt;/&lt;file_name&gt;</dt>
+<dt class="hdlist1"><code>schema</code></dt>
 <dd>
-<p>Specifies the file to use for storing rows that failed to load.</p>
-<div class="paragraph">
-<p>Input rows that do not conform to the defined schema in ThoughtSpot will be ignored and inserted into this file.</p>
+<p>(optional) Schema in ThoughtSpot</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Data type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default value</dt>
+<dd>
+<p>falcon_default_schema</p>
+</dd>
+</dl>
 </div>
 </dd>
-<dt class="hdlist1">--date_format &lt;date_formatmask&gt;</dt>
+<dt class="hdlist1"><code>table</code></dt>
 <dd>
-<p>Specifies the format string for date values. The default format is <code>yearmonthday</code>.</p>
-<div class="paragraph">
-<p>For example <code>Dec 30th, 2001</code> is represented as <code>20011230</code>. Use the date format specifications supported in the <a href="http://man7.org/linux/man-pages/man3/strptime.3.html" target="_blank" rel="noopener">strptime library function</a>.</p>
+<p>Table in ThoughtSpot</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Data type</dt>
+<dd>
+<p>string</p>
+</dd>
+</dl>
 </div>
 </dd>
-<dt class="hdlist1">--date_time_format &lt;date_formatmask&gt; &lt;time_formatmask&gt;</dt>
-<dd>
-<p>Specifies the format string for datetime values. The default is <code>yearmonthday hour:minute:second</code>.</p>
+</dl>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_format"><a class="anchor" href="#_format"></a>Format</h4>
 <div class="paragraph">
-<p>For example <code>Dec 30th, 2001 1:15:12</code> is represented as <code>20011230 01:15:12</code>. Use the datetime format specifications supported in the <a href="http://man7.org/linux/man-pages/man3/strptime.3.html" target="_blank" rel="noopener">strptime library function</a>.</p>
+<p>Format specifiers for parsing the input data.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>type</code></dt>
+<dd>
+<p>(optional) Input format; Either <code>csv</code> or <code>delimited</code>.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Data type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<p><code>csv</code></p>
+</dd>
+</dl>
 </div>
 </dd>
-<dt class="hdlist1">--time_format &lt;time_formatmask&gt;</dt>
+<dt class="hdlist1"><code>field_separator</code></dt>
 <dd>
-<p>Specifies the format string for time values.</p>
-<div class="paragraph">
-<p>The default is <code>hour:minute:second</code>. Use the time format specifications supported in the <a href="http://man7.org/linux/man-pages/man3/strptime.3.html" target="_blank" rel="noopener">strptime library function</a>.</p>
+<p>(optional) Field separator character in source data.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Data type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<p>"," (comma)</p>
+</dd>
+</dl>
 </div>
 </dd>
-<dt class="hdlist1">--v=[0|1|2|3</dt>
+<dt class="hdlist1"><code>trailing_field_separator</code></dt>
 <dd>
-<p>Specifies the verbosity of log messages.</p>
-<div class="paragraph">
-<p>Provide a value for verbosity level. By default, verbosity is set to the minimum, which is 0. This value is similar to a volume control. At higher levels your log receives more messages and that log more frequently.</p>
-</div>
-<div class="paragraph">
-<p>This is used for debugging. You should not change this value unless instructed by <a href="https://community.thoughtspot.com/customers/s/contactsupport" target="_blank" rel="noopener">ThoughtSpot Support</a>.</p>
+<p>(optional) <code>True</code> if input data has trailing field separator, <code>false</code> otherwise.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Data type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<p><code>false</code></p>
+</dd>
+</dl>
 </div>
 </dd>
-<dt class="hdlist1">--skip_second_fraction</dt>
+<dt class="hdlist1"><code>enclosing_character</code></dt>
 <dd>
-<p>Skips fractional seconds when loading data.</p>
+<p>(optional) The enclosing character in csv source format. This option applies only to <code>csv</code> format.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Data type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<p>"\" (backslash)</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1"><code>escape_character</code></dt>
+<dd>
+<p>(optional) Escape character in source data. This applies only to delimited data format. This option is ignored for other data sources.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Data type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<p>"" (null)</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1"><code>null_value</code></dt>
+<dd>
+<p>(optional) Escape character in source data. This applies only to delimited data format. This option is ignored for other data sources.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Data type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<p>"" (null)</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1"><code>has_header_row</code></dt>
+<dd>
+<p>(optional)  <code>True</code> if input data file has header row, <code>false</code> otherwise.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Data type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<p><code>false</code></p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1"><code>flexible</code></dt>
+<dd>
+<p>(optional) Whether input data file exactly matches target schema.</p>
 <div class="paragraph">
-<p>If supplied, the upserts logic may be affected, especially if the date time being loaded is a primary key, and the data has millisecond granularity. Load the data twice, first time as a string with a primary key, and again with second granularity date time. There is no support to store fractional seconds in the ThoughtSpot system.</p>
+<p>When <code>true</code>, attempts to load like this:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>If there are extra columns in the input file, the system discards them.</p>
+</li>
+<li>
+<p>If there are fewer columns in the input file, the syste  fills the missing columns using <code>null</code> values.</p>
+<div class="paragraph">
+<p>When <code>false</code>, the load proceeds if input data file exactly matches the target schema.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Data type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Default value</dt>
+<dd>
+<p>false</p>
+</dd>
+</dl>
+</div>
+</li>
+</ol>
 </div>
 </dd>
 </dl>
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_file_loading_tsload_flags"><a class="anchor" href="#_file_loading_tsload_flags"></a>File loading tsload flags</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_date_time"><a class="anchor" href="#_date_time"></a>date_time</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>converted_to_epoch</code></dt>
+<dd>
+<p>(optional) Whether date or datetime fields are already converted to epoch in source CSV. This option is ignored for other source types.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Data type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<p><code>true</code></p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1"><code>date_time_format</code></dt>
+<dd>
+<p>(optional) Format string for datetime values. Default is  System accepts date time format specifications supported in strptime datetime library.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Data type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<p>"%Y%m%d %H:%M:%S" (yearmonthday hour:minute:second)</p>
+</dd>
+<dt class="hdlist1">Example</dt>
+<dd>
+<p>December 30, 2001 1:15:12 is <code>20011230 01:15:12</code></p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">date_format</dt>
+<dd>
+<p>(optional) Format string for date values. System accepts date format specifications supported in strptime datetime library.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Data type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<p>"%Y%m%d" (<code>yearmonthday</code>)</p>
+</dd>
+<dt class="hdlist1">Example</dt>
+<dd>
+<p>December 30, 2001 is <code>20011230</code></p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1"><code>time_format</code></dt>
+<dd>
+<p>(optional) Format string for time values. Default is <code>hour:minute:second</code>. System accepts time format specifications supported in <code>strptime datetime</code> library.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Data type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<p>"%H:%M:%S" (<code>hour:minute:second</code>)</p>
+</dd>
+<dt class="hdlist1">Example</dt>
+<dd>
+<p>1:15:12 is <code>01:15:12</code></p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1"><code>skip_second_fraction</code></dt>
+<dd>
+<p>(optional) When <code>true</code>, skip fractional part of seconds: milliseconds, microseconds, or nanoseconds from either datetime or time values if that level of granularity is present in the source data.</p>
 <div class="paragraph">
-<p>The following flags are used when loading data from an input file:</p>
+<p>This option is ignored for other source types.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Skipping fractional components from input data can have a negative impact when upserting data because non-unique fractional values for same time or datetime values can incorrectly replace valid rows.
+</td>
+</tr>
+</table>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">--source_file &lt;path_to_file&gt;/&lt;file_name&gt;</dt>
+<dt class="hdlist1">Data type</dt>
 <dd>
-<p>Specifies the location of the file to be loaded.</p>
+<p>boolean</p>
 </dd>
-<dt class="hdlist1">--source_data_format [csv|delimited]</dt>
+<dt class="hdlist1">Default</dt>
 <dd>
-<p>Specifies the data file format.</p>
-<div class="paragraph">
-<p>This is optional. The default is csv.</p>
-</div>
+<p><code>false</code></p>
 </dd>
-<dt class="hdlist1">--field_separator "&lt;delimiter&gt;"</dt>
-<dd>
-<p>Specifies the field delimiter used in the input file.</p>
-</dd>
-<dt class="hdlist1">--trailing_field_separator</dt>
-<dd>
-<p>Specifies that the field separator appears after every field, including the last field per row.</p>
-<div class="paragraph">
-<p>Example row with trailing field separator: a,b,c,. The default is false.</p>
-</div>
-</dd>
-<dt class="hdlist1">--null_value "&lt;null_representation&gt;"</dt>
-<dd>
-<p>Specifies how null values are represented in the input file.</p>
-<div class="paragraph">
-<p>These values will be converted to NULL upon loading.</p>
-</div>
-</dd>
-<dt class="hdlist1">--date_converted_to_epoch [true|false]</dt>
-<dd>
-<p>Specifies whether the &#8220;date&#8221; or &#8220;datetime&#8221; values in the input file are represented as epoch values.</p>
-</dd>
-<dt class="hdlist1">--boolean_representation [true_false | 1_0 | T_F | Y_N]</dt>
-<dd>
-<p>Specifies the format in which boolean values are represented in the input file.</p>
-<div class="paragraph">
-<p>The default is T_F. You can also use this flag to specify other values. For example, if your data used Y for true and NULL for false, you could specify <code>`--boolean_representation Y_NULL</code>.</p>
-</div>
-</dd>
-<dt class="hdlist1">--has_header_row</dt>
-<dd>
-<p>Indicates that the input file contains a header row.</p>
-<div class="paragraph">
-<p>If supplied, column names in the header row are used to match column names in the target table in ThoughtSpot. If not supplied, the first row of the file is loaded as data, the same as all subsequent rows.</p>
-</div>
-</dd>
-<dt class="hdlist1">--escape_character "&lt;character&gt;"</dt>
-<dd>
-<p>Specifies the escape character used in the input file.</p>
-<div class="paragraph">
-<p>If no value is specified, the default is "`(double quotes).</p>
-</div>
-</dd>
-<dt class="hdlist1">--enclosing_character "&lt;character&gt;"</dt>
-<dd>
-<p>Specifies the enclosing character used in the input file.</p>
-<div class="paragraph">
-<p>If the enclosing character is double quotes, you need to escape it, as in this example: <code>--enclosing_character "\""</code></p>
-</div>
-</dd>
-<dt class="hdlist1">--use_bit_boolean_values = [true | false]</dt>
-<dd>
-<p>Specifies how boolean values are represented in the input file.</p>
-<div class="paragraph">
-<p>If supplied, the input CSV file uses a bit for boolean values, so the false value is represented as <code>0x0</code> and true as <code>0x1</code>. If omitted or set to false, boolean values are assumed to be T_F, unless you specify something else using the flag <code>--boolean_representation [true_false | 1_0 | T_F | Y_N]</code>.</p>
+</dl>
 </div>
 </dd>
 </dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_boolean"><a class="anchor" href="#_boolean"></a>boolean</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>use_bit_values</code></dt>
+<dd>
+<p>(optional) If true, the source <code>csv</code> uses one bit for boolean values.</p>
+<div class="paragraph">
+<p>If <code>false</code>, boolean values are interpreted using the flag <code>boolean_representation</code>.</p>
+</div>
+<div class="paragraph">
+<p>This option is valid for <code>csv</code> only, ad ignored for other types.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>False</code> is represented as <code>0x0</code></p>
+</li>
+<li>
+<p><code>True</code> is represented as 0x1.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Data type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<p>false</p>
+</dd>
+</dl>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1"><code>true_format</code></dt>
+<dd>
+<p>(optional) Represents True for boolean values in input.</td></p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Data type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<p>T</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1"><code>false_format</code></dt>
+<dd>
+<p>(optional) Represents False for boolean values in input.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Data type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<p>F</p>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_load_options"><a class="anchor" href="#_load_options"></a>load_options</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">empty_target</dt>
+<dd>
+<p>(optional) If <code>true</code>, current rows in the target table or file are dropped before loading new data. If <code>false</code>, current rows are appended to target table or file.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Data type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<p>false</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1"><code>max_ignored_rows</code></dt>
+<dd>
+<p>(optional) Maximum number of rows that can be ignored for successful load. If number of ignored rows exceeds this limit, the load is aborted.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Data type</dt>
+<dd>
+<p>integer</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<p>0</p>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_advanced_options"><a class="anchor" href="#_advanced_options"></a>advanced_options</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>max_reported_parsing_errors</code></dt>
+<dd>
+<p>(optional) Maximum number of parsing errors to report back along with the status.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Data type</dt>
+<dd>
+<p>integer</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<p>100</p>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_example_using_parameters"><a class="anchor" href="#_example_using_parameters"></a>Example: using parameters</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+      target : {
+          database : "&lt;DB_NAME&gt;",
+          schema : "falcon_default_schema",
+          table : "&lt;TABLE_NAME&gt;"
+      },
+      format : {
+          type : "CSV",
+          field_separator : ",",
+          trailing_field_separator : false,
+          enclosing_character : "\"",
+          escape_character : "",
+          null_value : "(null)",
+
+          date_time : {
+              converted_to_epoch : false,
+              date_time_format : "%Y%m%d %H:%M:%S",
+              date_format : "%Y%m%d",
+              time_format : "%H:%M:%S",
+              skip_second_fraction : false
+          }
+          boolean : {
+              use_bit_values : false,
+              true_format : "T",
+              false_format : "F"
+          }
+          has_header_row : false,
+          flexible : false
+    },
+    load_options : {
+        empty_target : false,
+        max_ignored_rows : 0,
+    },
+    advanced_options : {
+        max_reported_parsing_errors : 100
+    }
+  }</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_request_2"><a class="anchor" href="#_request_2"></a>Request</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>curl -i -X POST -b 'JSESSIONID=&lt;GUID-XYZ&gt;' -d '{"target_database": "&lt;DB1&gt;", "target_schema": "&lt;SCHEMA1&gt;", "target_table": "&lt;TABLE1&gt;", "field_separator": ",", "empty_target": false}' https://&lt;TS_CLUSTER&gt;:8442/ts_dataservice/v1/public/loads</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_response_2"><a class="anchor" href="#_response_2"></a>Response</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>Status: 202 Accepted
+Content-Type: text/plain
+Content-Length: xx
+{
+  "node_address": {
+    "host": "host",
+    "port": port
+  },
+  "cycle_id": "cycle_id"
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_example_failure_responses_2"><a class="anchor" href="#_example_failure_responses_2"></a>Example: failure responses</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Status: 401 UNAUTHORIZED
+Unable to verify user. Please login again.</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Status: 403 FORBIDDEN
+User does not have required privileges. Please contact your administrator.</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Status: 401 UNAUTHORIZED
+Unable to verify user. Please login again.</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Status: 500 INTERNAL SERVER ERROR
+error code = INTERNAL, message = Couldn't resolve the authentication service.</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_load"><a class="anchor" href="#_load"></a>Load</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use this API to load your data.</p>
+</div>
+<div class="paragraph">
+<p>+
+You can load data in multiple chunks for the same cycle ID.
+All data is uploaded directly to the ThoughtSpot cluster, unless you issue a commit load.</p>
+</div>
+<div class="sect2">
+<h3 id="_request_3"><a class="anchor" href="#_request_3"></a>Request</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">POST /ts_dataservice/v1/public/loads/cycle_id
+Cookie: &lt;token&gt;
+Content-Type: multipart/form-data; boundary=bndry
+--bndry
+Content-Disposition: form-data; name="file"; filename="sample.csv"
+
+&lt;CSV Data&gt;
+--bndry--</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+We only support multipart form/data.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_response_3"><a class="anchor" href="#_response_3"></a>Response</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Status: 202 Accepted
+Content-Type: text/plain
+Content-Length: xx
+Connection: Close
+Upload Complete.</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_example_failure_responses_3"><a class="anchor" href="#_example_failure_responses_3"></a>Example: failure responses</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Status: 401 UNAUTHORIZED
+Unable to verify user. Please login again.</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Status: 403 FORBIDDEN
+User does not have required privileges. Please contact your administrator.</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Status: 400 BAD REQUEST
+Unable to find table in Falcon. Cannot load data.</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Status: 400 BAD REQUEST
+Cycle_id=[cycle_id] does not exist.</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Status: 400 BAD REQUEST
+Cannot not connect to falcon_manager.</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Status: 500 INTERNAL SERVER ERROR
+error code = INTERNAL, message = Couldn't resolve the authentication service.</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_commitload"><a class="anchor" href="#_commitload"></a>CommitLoad</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After the data load  completes, use the <strong>CommitLoad</strong> command to commit data load into the Falcon database.</p>
+</div>
+<div class="sect2">
+<h3 id="_request_4"><a class="anchor" href="#_request_4"></a>Request</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>POST /ts_dataservice/v1/public/loads/cycle_id/commit
+Cookie: &lt;token&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_response_4"><a class="anchor" href="#_response_4"></a>Response</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>Status: 202 Accepted
+Content-Type: text/plain
+Content-Length: xx
+Commit load cycle request made.</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_example_failure_responses_4"><a class="anchor" href="#_example_failure_responses_4"></a>Example: failure responses</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Status: 401 UNAUTHORIZED
+Unable to verify user. Please login again.</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Status: 403 FORBIDDEN
+User does not have required privileges. Please contact your administrator.</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Status: 500 INTERNAL SERVER ERROR
+Commit load cycle failed. Error ending load. Unknown cycle_id 'cycle_id'</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_abortload"><a class="anchor" href="#_abortload"></a>AbortLoad</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use this API to stop loading data.</p>
+</div>
+<div class="sect2">
+<h3 id="_request_5"><a class="anchor" href="#_request_5"></a>Request</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">POST /ts_dataservice/v1/public/loads/cycle_id/cancel
+Cookie: token</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_response_5"><a class="anchor" href="#_response_5"></a>Response</h3>
+<div class="listingblock">
+<div class="content">
+<pre>Status: 200 OK
+Content-Type: text/plain
+Content-Length: xx</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_example_failure_responses_5"><a class="anchor" href="#_example_failure_responses_5"></a>Example: failure responses</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Status: 401 UNAUTHORIZED
+Unable to verify user. Please login again.</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Status: 403 FORBIDDEN
+User does not have required privileges. Please contact your administrator.</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Status: 500 INTERNAL SERVER ERROR
+error code = INTERNAL, message = Couldn't resolve the authentication service.</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_status_of_load"><a class="anchor" href="#_status_of_load"></a>Status of load</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the api to get the current status of a load.</p>
+</div>
+<div class="sect2">
+<h3 id="_request_6"><a class="anchor" href="#_request_6"></a>Request</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">GET /ts_dataservice/v1/loads/cycle_id
+Cookie: token</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_response_6"><a class="anchor" href="#_response_6"></a>Response</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Status: 200 OK
+Content-Type: text/plain
+Content-Length: xx</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_example_failure_responses_6"><a class="anchor" href="#_example_failure_responses_6"></a>Example failure responses</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Status: 401 UNAUTHORIZED
+Unable to verify user. Please login again.</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Status: 403 FORBIDDEN
+User does not have required privileges. Please contact your administrator.</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Status: 500 INTERNAL SERVER ERROR
+error code = INTERNAL, message = Couldn't resolve the authentication service.</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_data_load_status_check_logic"><a class="anchor" href="#_data_load_status_check_logic"></a>Data load status check logic</h3>
+<div class="paragraph">
+<p>You can run the following code to validate that the data load is complete:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">while (true) {
+if (status != OK) {
+   // print status.message() as the error.
+} else if (internal_stage == DONE) {
+   // Data load is successful
+} else {
+   // poll again for data load status
+}
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bad_records"><a class="anchor" href="#_bad_records"></a>Bad records</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use this api to view the bad records file data.</p>
+</div>
+<div class="sect2">
+<h3 id="_response_7"><a class="anchor" href="#_response_7"></a>Response</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Status: 200 OK
+Content-Type: text/plain
+Content-Length: xx
+Bad Records file data</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_example_failure_responses_7"><a class="anchor" href="#_example_failure_responses_7"></a>Example failure responses</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Status: 401 UNAUTHORIZED
+Unable to verify user. Please login again.</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Status: 403 FORBIDDEN
+User does not have required privileges. Please contact your administrator.</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Status: 500 INTERNAL SERVER ERROR
+Node does not exist: /tmp/cycle_id.bad_record</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Status: 500 INTERNAL SERVER ERROR
+error code = INTERNAL, message = Couldn't resolve the authentication service.</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_related_information"><a class="anchor" href="#_related_information"></a>Related information</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="load-with-tsload.html" class="page">Use the tsload connector to load data</a></p>
 </div>
 </div>
 </div>

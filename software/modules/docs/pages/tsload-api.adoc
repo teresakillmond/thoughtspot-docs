@@ -5,6 +5,16 @@
 
 The tsload connector APIs enable you to load data into ThoughtSpot.
 
+The tsload connector supports the following APIs:
+* xref:login[Login]
+* xref:start-load[StartLoad]
+* xref:load[Load]
+* xref:commit-load[CommitLoad]
+* xref:abort-load[AbortLoad]
+* xref:status-load[Status of load]
+* xref:bad-records[Bad Records]
+
+[#login]
 == Login
 
 Use this API to authenticate and log in a user.
@@ -47,6 +57,7 @@ include::partial$status-codes/500-authentication.adoc[]
 
 NOTE: If the cookie is not passed in subsequent calls, then requests fail.
 
+[#start-load]
 == StartLoad
 
 After *login*, you use this API start the data load operation.
@@ -258,6 +269,7 @@ include::partial$status-codes/202-json-code.adoc[]
 
 [source, console]
 include::partial$status-codes/401.adoc[]
+
 [source, console]
 include::partial$status-codes/403.adoc[]
 
@@ -267,10 +279,11 @@ include::partial$status-codes/400-invalid-params.adoc[]
 [source, console]
 include::partial$status-codes/500-authentication.adoc[]
 
+[#load]
 == Load
 
 Use this API to load your data.
-+
+
 You can load data in multiple chunks for the same cycle ID.
 All data is uploaded directly to the ThoughtSpot cluster, unless you issue a commit load.
 
@@ -315,6 +328,7 @@ include::partial$status-codes/400-falcon-manager.adoc[]
 [source, console]
 include::partial$status-codes/500-authentication.adoc[]
 
+[#commit-load]
 == CommitLoad
 
 After the data load  completes, use the *CommitLoad* command to commit data load into the Falcon database.
@@ -343,7 +357,7 @@ include::partial$status-codes/403.adoc[]
 [source, console]
 include::partial$status-codes/500-load-cycle.adoc[]
 
-
+[#abort-load]
 == AbortLoad
 
 Use this API to stop loading data.
@@ -357,7 +371,6 @@ Cookie: token
 ----
 
 === Response
-
 
 include::partial$status-codes/200-plain.adoc[]
 
@@ -417,6 +430,7 @@ if (status != OK) {
 }
 ----
 
+[#bad-records]
 == Bad records
 
 Use this api to view the bad records file data.
