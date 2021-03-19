@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+{{> head defaultPageTitle='Untitled'}}
+  </head>
+  <body class="home{{#with (or page.attributes.role page.role)}} {{{this}}}{{/with}}">
+{{> header}}
+{{> body-branch-home}}
+{{> footer}}
+  </body>
+</html>
