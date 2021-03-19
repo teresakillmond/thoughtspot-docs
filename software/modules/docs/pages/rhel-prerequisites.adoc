@@ -1,17 +1,16 @@
 = RHEL installation prerequisites
-:last_updated: 01/03/2020
+:last_updated: 1/19/2020
 :linkattrs:
 :experimenal:
 
 [options="interactive"]
 .Prepare the system and ThoughtSpot clusters for installation:
 * [ ] xref:set-up-hosts[1. Set up hosts for the ThoughtSpot cluster]
-* [ ] xref:partition-hosts[2. Partition the hostsv]
+* [ ] xref:partition-hosts[2. Partition the hosts]
 * [ ] xref:install-rhel[3. Install RHEL version 7.8 or 7.9 on all hosts]
 * [ ] xref:linux-kernel-version[4. Ensure that your Linux kernel is on version 3.10.0-1127.19.1]
 * [ ] xref:enable-hosts[5. Enable the hosts to download RHEL packages]
 * [ ] xref:enable-ansible[6. Enable an Ansible Control Server]
-* [ ] xref:disable-selinux[7. Disable SELinux]
 
 [#set-up-hosts]
 == Set up hosts for the ThoughtSpot cluster
@@ -65,12 +64,15 @@ WARNING: If your Linux kernel version is not 3.10.0-1127.19.1, you may run into 
 
 *Repositories*
 
+[#yum-repository]
 Yum repositories::
   You must enable the following Yum repositories in your cluster: `epel`, `nux-desktop`, `pgdg95`, `rhel`, `rhel-optional`, `rhel-extras`.
 
+[#python-repository]
 Python repository::
   For Python, ensure the machine is able to reach the `PyPI` repository located at https://pypi.python.org/.
 
+[#r-repository]
 R repository::
   For R, ensure the machine is able to reach the `CRAN` repository located at https://cran.rstudio.com/.
 
@@ -92,9 +94,3 @@ If the hosts of your ThoughtSpot cluster have access to an internal repository t
 
 Configure an Ansible Control Server, on a separate host, to run the Ansible playbook that ThoughtSpot supplies.
 You must install both `rsync` and Ansible on the Ansible Control Server host.
-
-[#disable-selinux]
-== Disable SELinux or run it in permissive mode
-
-ThoughtSpot does not support policies that enforce SELinux.
-We recommend that you disable SELinux, or run it in permissive mode.
