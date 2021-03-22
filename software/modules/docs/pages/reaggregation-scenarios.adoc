@@ -31,9 +31,9 @@ include::partial$intro-valid-solution.adoc[]
 ....
 
 
-sum(group_aggregate(if(sum(# trades tendered ) > 1) then 1 else 0, 
-                    query_groups() + {claimid, packageid}, 
-                    query_filters())) 
+sum(group_aggregate(if(sum(# trades tendered ) > 1) then 1 else 0,
+                    query_groups() + {claimid, packageid},
+                    query_filters()))
 ....
 
 image::supplier-tender-job-1.png[Supplier tendering by job, aggregated result]
@@ -108,8 +108,8 @@ include::partial$intro-valid-solution.adoc[]
 
 ----
 sum(group_aggregate (sum(loans)*average (rate),
-                     query_groups () + {transaction_currency}, 
-                     query_filters () )) 
+                     query_groups () + {transaction_currency},
+                     query_filters () ))
 ----
 
 The following search and resulting response returns the dollar value for each year, for each target reporting currency.
@@ -156,7 +156,7 @@ Here, the result returns 1 row for each `transaction currency`.
 
 ----
 group_aggregate (sum(loans )*average (rate ),
-                 query_groups() + {transaction_currency}, 
+                 query_groups() + {transaction_currency},
                  query_filters())
 ----
 
@@ -176,7 +176,7 @@ include::partial$intro-valid-solution.adoc[]
 ----
 average(group_aggregate(sum(loan balance),
                         query_groups() + {date(balance date)},
-                        query_filters())) 
+                        query_filters()))
 ----
 
 image::avg-period-non-additive-1-1.png[Average period value semi-additive numbers, aggregated result]
@@ -244,7 +244,7 @@ We require the entire period, so there are no filters.
 +
 Note that the `date` keywords _yearly_, _quarterly_, _monthly_, and _weekly_&nbsp;apply because we use the same column in both the search and the aggregation function.
 So, the function will result in the following output when it runs with the _yearly_ keyword in search:
-+
+
 |===
 | Year | Result
 
