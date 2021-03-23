@@ -25,7 +25,7 @@ Example:;; 1234
 [#dataflow-mysql-conn-user]
 User::
 Specify the user id that will be used to connect to the MySQL system.
-This user should have necessary privileges to access the data in the databases. Mandatory field. 
+This user should have necessary privileges to access the data in the databases. Mandatory field.
 Example:;; userdi
 [#dataflow-mysql-conn-password]
 Password:: Specify the password for the App User. Mandatory field.
@@ -69,6 +69,8 @@ Specifies the parameters passed with the `tsload` command, in addition to the co
 The format for these parameters is: +
  `--<param_1_name> <optional_param_1_value>` +
   `--<param_2_name> <optional_param_2_value>` Optional field.
-  Example:;; --max_ignored_rows 0
-  Valid Values:;; --null_value "" --escape_character "" --max_ignored_rows 0
-  Default:;; --max_ignored_rows 0
+  Example:;; `--max_ignored_rows 0`
+  Valid Values:;; `--null_value ""` +
+  `--escape_character ""` +
+  `--max_ignored_rows 0`
+  Default:;; `--max_ignored_rows 0`
