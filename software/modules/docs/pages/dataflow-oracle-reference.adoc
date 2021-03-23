@@ -31,7 +31,7 @@ Example:;; userdi
 Password:: Specify the password for the User. Mandatory field.
 Example:;; pswrd234%!
 [#dataflow-oracle-conn-service-name]
-Service name:: Service name is the TNS alias that you give when you remotely connect to your database. This Service name is recorded in Tnsnames.ora file on your clients. It can be the same as SID and you can also give it any other name you want. Mandatory field. 
+Service name:: Service name is the TNS alias that you give when you remotely connect to your database. This Service name is recorded in Tnsnames.ora file on your clients. It can be the same as SID and you can also give it any other name you want. Mandatory field.
 Example:;; idxdb03
 [#dataflow-oracle-conn-version]
 Version:: Specify the Oracle version being connected to. Optional field.
@@ -84,6 +84,9 @@ Specifies the parameters passed with the `tsload` command, in addition to the co
 The format for these parameters is: +
  `--<param_1_name> <optional_param_1_value>` +
   `--<param_2_name> <optional_param_2_value>` Optional field.
-  Example:;; --max_ignored_rows 0
-  Valid Values:;; --user "dbuser" --password "$DIWD" --target_database "ditest" --target_schema "falcon_schema"
-  Default:;; --max_ignored_rows 0
+  Example:;; `--max_ignored_rows 0`
+  Valid Values:;; `--user "dbuser"` +
+  `--password "$DIWD"` +
+  `--target_database "ditest"` +
+  `--target_schema "falcon_schema"`
+  Default:;; `--max_ignored_rows 0`
