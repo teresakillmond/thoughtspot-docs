@@ -1,5 +1,6 @@
 = Google BigQuery Prerequisites
 :experimental:
+:linkattrs:
 :last_updated: 03/25/2021
 
 [#custom-role]
@@ -59,13 +60,13 @@ image::gcp-createserviceaccount.png[Create your service account]
 . On the Create service account page, click *+ CREATE KEY*.
 . For *Key type*, choose *JSON*.
 . Click *CREATE*.
-The key downloads to your computer.
-+ When the download is complete, the message: "Private key saved to your computer" appears.
+The key downloads to your computer. +
+ When the download is complete, the message: "Private key saved to your computer" appears.
 . Make note of the name of the filename, so you can find it on your computer, and then click *CLOSE*.
 . When you are ready to add a connection to BigQuery in ThoughtSpot, open the private key file in a text editor, and copy the entire contents of the file.
 image:gbq-key-copy.png[]
-. In the connection details page of your BigQuery connection in ThoughtSpot, paste this key into the *Service account* field.
-+ For details on how to add a connection to BigQuery in ThoughtSpot, see xref:embrace-gbq-add.adoc[Add a BigQuery connection].
+. In the connection details page of your BigQuery connection in ThoughtSpot, paste this key into the *Service account* field. +
+ For details on how to add a connection to BigQuery in ThoughtSpot, see xref:embrace-gbq-add.adoc[Add a BigQuery connection].
 
 [#share-dataset]
 == Share dataset
@@ -74,8 +75,8 @@ To make your dataset available for your Google BigQuery connection in ThoughtSpo
 
 . Navigate to https://console.cloud.google.com[console.cloud.google.com], sign in, and select your project.
 . Click the navigation menu in the upper left, if it is not already open.
-. Scroll down in the navigation menu into the BIG DATA section, and click *BigQuery*.
-+ Your project should be listed on the left side of the page under the search box.
+. Scroll down in the navigation menu into the BIG DATA section, and click *BigQuery*. +
+ Your project should be listed on the left side of the page under the search box.
 . Click your project to reveal its available datasets.
 . Click the dataset that you want to share.
 . Click *SHARE DATASET*.
