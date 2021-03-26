@@ -50,17 +50,15 @@ Driver::
   Type;; DSN or Driver
 
 IdleTimeout::
-  The time to wait for a response from the server, in seconds. This property is optional, but SimbaClient will wait indefinitely for SimbaServer to respond to a request made to the server unless you specify a timeout period.
-+
+  The time to wait for a response from the server, in seconds. This property is optional, but SimbaClient will wait indefinitely for SimbaServer to respond to a request made to the server unless you specify a timeout period. +
 `IdleTimeout` specifies how many seconds that SimbaClient will wait before aborting the attempt and returning to the application with an error. This timeout corresponds to ODBC's `CONNECTION_TIMEOUT` property and is only used when more specific timeouts, such as `QUERY_TIMEOUT` or `LOGIN_TIMEOUT` aren't applicable.
 
   Type;; DSN
 
 Locale::
-  The connection locale. If this value is set, it overrides the driver-wide locale. For example, the driver-wide locale could be `en-US`. If the client would prefer `fr-CA`, it can set the connection locale to `fr-CA`.
-+
+  The connection locale. If this value is set, it overrides the driver-wide locale. For example, the driver-wide locale could be `en-US`. If the client would prefer `fr-CA`, it can set the connection locale to `fr-CA`. +
 Values are composed of a 2-letter language code (in lower case), and an optional 2-letter country code (in upper case). If the country code is specified, it must be separated from the language code by a hyphen (-).
-  Type;; DSN
+Type;; DSN
 
 LoginTimeout::
   The timeout, in seconds, to wait for a response from the server when attempting to log in. A value of 0 means no timeout. The default value is 60.
