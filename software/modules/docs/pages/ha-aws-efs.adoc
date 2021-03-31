@@ -10,7 +10,7 @@ This article explains how to set up High Availability (HA) for your ThoughtSpot 
 Follow these steps to set up High Availability (HA) for your ThoughtSpot cluster using the AWS Elastic File System (EFS).
 
 . Create an EFS File System that spans across different availability zones, and across different subnets.
-Refer to AWS documentation on https://docs.aws.amazon.com/efs/latest/ug/getting-started.adoc?shortFooter=true[creating an EFS File System].
+Refer to AWS documentation on https://docs.aws.amazon.com/efs/latest/ug/getting-started.adoc?shortFooter=true[creating an EFS File System,window=_blank].
 . Create two ThoughtSpot clusters in each availability zone and in the subnets, where the new file system is.
 . Change the IP addresses of the cluster, if necessary.
 . Create an EFS +++<customizable_name>+++directory in the `/home/admin` path.+++</customizable_name>+++

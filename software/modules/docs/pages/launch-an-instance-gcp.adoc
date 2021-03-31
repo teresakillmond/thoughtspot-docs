@@ -2,8 +2,6 @@
 :last_updated: 5/7/2020
 :linkattrs:
 
- Set up your GCP virtual machines.
-
 After you determine your configuration options, set up your virtual machines (VMs).
 ThoughtSpot will share the ThoughtSpot base image for booting the VMs and some other aspects of system setup with you on https://console.cloud.google.com[the GCP platform,window=_blank].
 
@@ -29,7 +27,7 @@ The following topics walk you through this process.
 
 == Prerequisites
 
-. Ensure that your *Network Service Tier* on the https://console.cloud.google.com/[Google Cloud Console] is set to *Premium* for the best performance of all your VMs.
+. Ensure that your *Network Service Tier* on the https://console.cloud.google.com/[Google Cloud Console,window=_blank] is set to *Premium* for the best performance of all your VMs.
 . A ThoughtSpot cluster requires 10 Gb/s bandwidth (or better) between any two nodes.
 You must ensure this _before_ creating a new cluster.
 . Download and fill out the ThoughtSpot link:{attachmentsdir}/site-survey.pdf[site survey] to have a quick reference for your networking information.
@@ -77,9 +75,9 @@ image::gcp-computeenginedash.png[Go to the Compute Engine Dashboard]
 . Select the zone you are creating your region in.
 . Under *Machine type*, select *custom*.
 . Select the number of vCPU cores you need.
-+ Refer to xref:configuration-options.adoc#thoughtspot-gcp-instance-types[ThoughtSpot GCP instance types] to determine the number of vCPU cores your cluster needs.
++ Refer to xref:configuration-options-gcp.adoc#thoughtspot-gcp-instance-types[ThoughtSpot GCP instance types] to determine the number of vCPU cores your cluster needs.
 . Specify your memory requirements and CPU platform.
-Refer to xref:configuration-options.adoc#thoughtspot-gcp-instance-types[ThoughtSpot GCP instance types] to determine the memory your cluster needs.
+Refer to xref:configuration-options-gcp.adoc#thoughtspot-gcp-instance-types[ThoughtSpot GCP instance types] to determine the memory your cluster needs.
 +
 Your configuration may look something like the following, but with your specific information.
 +
@@ -162,9 +160,9 @@ Click *Select* to save the boot disk configuration.
 image::gcp-6-save-boot-disk-expand-mgmt.png[Advanced configuration options]
 
 . Attach two 1 TB SSD drives for data storage.
-Refer to xref:configuration-options.adoc#vms-with-persistent-disk-only-storage[SSD-only persistent storage].
+Refer to xref:configuration-options-gcp.adoc#vms-with-persistent-disk-only-storage[SSD-only persistent storage].
 If you are using GCS, attach only 1 SSD drive, with 500 GB instead of 1 TB.
-Refer to xref:configuration-options.adoc#vms-with-persistent-disk-and-google-cloud-storage[GCS and SSD persistent storage].
+Refer to xref:configuration-options-gcp.adoc#vms-with-persistent-disk-and-google-cloud-storage[GCS and SSD persistent storage].
 +
 a.
 Click the *Disks* tab, and click *Add new disk*.
@@ -175,7 +173,7 @@ Unselect the *Deletion rule*, to prevent potential loss of data if your instance
 +
 b.
 Configure the following settings for each disk.
-Refer to xref:configuration-options.adoc#vms-with-persistent-disk-and-google-cloud-storage[ThoughtSpot GCP instance types] to determine the size in GB when you have GCS.
+Refer to xref:configuration-options-gcp.adoc#vms-with-persistent-disk-and-google-cloud-storage[ThoughtSpot GCP instance types] to determine the size in GB when you have GCS.
 Ensure the disks have read/write access.
 +
 [cols="20%,80%"]
@@ -258,14 +256,16 @@ Before you can install your ThoughtSpot cluster, an administrator must log in to
 
 . Open a terminal application on your machine and ssh into one of your VMs.
 +
+[source]
 ----
- ssh admin@<VM-IP>
+ssh admin@<VM-IP>
 ----
 
 . Run `sudo /usr/local/scaligent/bin/prepare_disks.sh`.
 +
+[source,console]
 ----
- $ sudo /usr/local/scaligent/bin/prepare_disks.sh
+$ sudo /usr/local/scaligent/bin/prepare_disks.sh
 ----
 
 . Configure the VM based on the site-survey.
@@ -273,7 +273,7 @@ Before you can install your ThoughtSpot cluster, an administrator must log in to
 
 == Install cluster
 
-To install your ThoughtSpot cluster, complete the installation process outlined in link:{{ site.baseurl }}/appliance/gcp/installing-gcp.adoc[Installing ThoughtSpot in GCP].
+To install your ThoughtSpot cluster, complete the installation process outlined in xref:installing-gcp.adoc[Installing ThoughtSpot in GCP].
 
 == Additional resources
 
