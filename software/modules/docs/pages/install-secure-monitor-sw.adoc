@@ -11,8 +11,11 @@ This procedure shows how to install supported xref:about-secure-monitor-sw.adoc[
 . Log in to the Linux shell using SSH.
 . Issue the `tscli ansible checkout` command, specifying a temporary directory, for example:
 +
+[source,console]
 ----
- $ tscli ansible checkout
+$ tscli ansible checkout
+----
+----
  Checking out playbooks successfully in /tmp/111895937.
 ----
 
@@ -34,13 +37,17 @@ Otherwise, push it will go to centralized storage, and your changes will apply t
 
  ** To apply your changes globally to all nodes in the cluster, issue the command:
 
-
- $ tscli ansible commit
+[source,console]
+----
+$ tscli ansible commit
+----
 
  ** To apply your changes on the local node only, issue the command:
 
-
- $ tscli ansible commit --local
+[source,console]
+----
+$ tscli ansible commit --local
+----
 +
 This commits your changes.
 If there is a problem with the configuration.

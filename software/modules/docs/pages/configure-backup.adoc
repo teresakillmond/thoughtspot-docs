@@ -19,7 +19,7 @@ This is the format for a backup policy.
 Note that the command populates several parameters with their defaults.
 The default `mode` is `FULL`, the `type` is `STANDALONE`, and the `storage_type` is `NAS`.
 You can change the `mode` and `storage_type`, and you must specify a `directory` and a `name`.
-
+[source]
 ----
 name: "name_for_backup"
 param {
@@ -97,8 +97,9 @@ To configure periodic backups using the tscli:
 
 . Log in to the Linux shell using SSH.
 +
+[source,console]
 ----
- $ ssh admin@<cluster-IP>
+$ ssh admin@<cluster-IP>
 ----
 
 . Find a directory with enough disk space to support the `retention_policy number` you configure.
@@ -107,8 +108,9 @@ You can use `df -h` to see free disk space and `tscli snapshot ls` to view exist
 
 . Use the `tscli backup-policy create` command.
 +
+[source,console]
 ----
- $ tscli backup-policy create
+$ tscli backup-policy create
 ----
 +
 The command opens a `vi` editor for you to configure the backup policy.

@@ -41,8 +41,9 @@ Redirect it to the file `nodes.config`.
 . Add your specific network information for the nodes in the `nodes.config` file, as demonstrated in the xref:nodesconfig-example.adoc#autodiscovery-of-one-node-example[autodiscovery of one node example].
 Run `vim nodes.config` to edit the file.
 +
+[source,console]
 ----
- $ vim nodes.config
+$ vim nodes.config
 ----
 +
 NOTE: Some of the information in the `nodes.config` file may be pre-populated from earlier steps.
@@ -66,7 +67,8 @@ If the command returns an error, refer to xref:install-cluster-dell.adoc#set-con
 [source,console]
 ----
 $ cat nodes.config | tscli cluster set-config
-
+----
+----
 Connecting to local node-scout
 Setting up hostnames for all nodes
 Setting up networking interfaces on all nodes
@@ -85,7 +87,8 @@ Use the `get-config` command to confirm node configuration.
 [source,console]
 ----
 $ tscli cluster get-config
-
+----
+----
 {
   "ClusterId": "",
   "ClusterName": "",
