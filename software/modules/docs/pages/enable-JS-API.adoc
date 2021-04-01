@@ -29,19 +29,19 @@ To authenticate with SSO:
 . xref:downloads.adoc[Download, window="_blank"] the ThoughtSpot JavaScript library.
 . Include the library file into your web page's `<head>` section:
 +
-[source]
+[source,HTML]
 ----
- <head>
- <script type=”text/javascript” src=”<protocol><your.thoughtspot.domain>/js/api/api.min.js”>
- ...
- </head>
+<head>
+<script type=”text/javascript” src=”<protocol><your.thoughtspot.domain>/js/api/api.min.js”>
+...
+</head>
 ----
 
 . From your application code, authenticate to ThoughtSpot by calling to the `window.thoughtspot.initialize` method.
 +
 For example:
 +
-[source]
+[source,JavaScript]
 ----
  <script type=”text/javascript”>
      thoughtspotHost = <hostname_or_ip_w/o_http>
