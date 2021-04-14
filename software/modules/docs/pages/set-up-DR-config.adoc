@@ -48,12 +48,14 @@ The primary appliance contains the cluster you are protecting with the recovery 
 
 . Create a directory to act as your _mount_point_.
 +
+[source]
 ----
 sudo mkdir <mount_point>
 ----
 
 . Set the directory owner to `admin`.
 +
+[source]
 ----
 sudo chown -R admin:admin <mount_point>
 ----
@@ -83,12 +85,14 @@ The configuration of the mount point should be identical on both machines.
 
 . Test the configuration by creating a file as the `admin` user.
 +
+[source]
 ----
 touch <mount_point>/testfile
 ----
 
 . Return to the primary server and make sure you can edit the file.
 +
+[source]
 ----
 touch <mount_point>/testfile
 ----
@@ -118,12 +122,13 @@ Use the `<name>` from the policy you created in the previous step.
 . SSH into the secondary recovery appliance.
 . Use the `tscli dr-mirror` subcommand to start the mirror cluster.
 +
+[source]
 ----
 tscli dr-mirror start
 ----
 
 . Verify that the cluster has started running in mirror mode
-
+[source]
 ----
    tscli dr-mirror status
 ----
@@ -142,18 +147,21 @@ WARNING: You should perform this procedure under the supervision of ThoughtSpot 
 . SSH into the secondary cluster.
 . Stop the mirror cluster.
 +
+[source]
 ----
 tscli dr-mirror stop
 ----
 
 . Verify the mirror has stopped.
 +
+[source]
 ----
 tscli dr-mirror status
 ----
 
 . Start the new primary cluster.
 +
+[source]
 ----
 tscli cluster start
 ----
