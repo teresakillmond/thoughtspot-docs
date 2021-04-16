@@ -1,8 +1,19 @@
 = Add an Amazon Redshift connection
 :last_updated: 1/29/2020
+:linkattrs:
 
 Once ThoughtSpot Embrace is enabled, you can add a connection to a Redshift database.
 This allows you to perform a live query of the external database to create answers and pinboards, without having to bring the data into ThoughtSpot.
+
+== Enabling SSL in Amazon Redshift
+
+If you need to create a secure connection to Amazon Redshift, you must edit the _parameter group_ assigned to your Redshift cluster and enable the _require_SSL_ flag.
+
+To enable *FIPS-compliant SSL* mode, set both the _use_fips_ssl_ parameter and the _require_SSL_ parameter to true in the parameter group that is associated with your Redshift cluster.
+
+For more information, see https://docs.aws.amazon.com/redshift/latest/mgmt/connecting-ssl-support.html[Connect using SSL, window=_blank] in Amazon’s Redshift documentation.
+
+== Adding a Redshift connection
 
 To add a new connection to Redshift:
 
@@ -24,14 +35,16 @@ image:redshift-connectiondetails.png[Enter connection details]
 +
 Refer to the xref:embrace-redshift-reference.adoc[Redshift connection reference] for more information on each of the specific attributes you must enter for your connection.
 
-. (Optional) Provide additional key-value pairs that you need to set up your connection to Redshift, by doing the following:
+. (Optional) If you enabled SSL in your Redshift cluster, you must do the following:
  ** Click the *Advanced Config* menu to reveal the *Key* and *Value* fields.
- ** Enter your key and value information.
- ** To add more keys and values, click the plus sign (+), and enter them.
-
+ ** For Key, enter *SSL*.
+ ** For Value, enter *True*.
++
+To add more keys and values, click the plus sign (+), and enter them.
 +
 NOTE: Any key-value pairs that you enter must be defined in your Redshift data source.
 Key-value pairs are case-sensitive.
+
 . Click *Continue*.
 . Select tables (on the left) and the columns from each table (on the right), and then click *Create connection*.
 +
