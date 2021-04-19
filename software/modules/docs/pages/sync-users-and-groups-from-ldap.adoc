@@ -120,6 +120,12 @@ The bottom half of the preceding command targets subtrees under the DC called Te
 +
 It also deletes any other entities created in the ThoughtSpot system from this LDAP system that are not currently being synced.
 
+. When the ThoughtSpot search engine finishes indexing, your new users should appear in the ThoughtSpot application. To check if the ThoughtSpot search engine is indexing, run the following command:
++
+```
+tscli cluster status
+```
+
 === Command-line switches for `syncUsersAndGroups.py`
 
 Note the command-line switches available to use with the `syncUsersAndGroups` python script.
