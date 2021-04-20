@@ -14,7 +14,7 @@ image::r-icon-marketspot.png[]
 +
 From here, you have options to write a custom script, or load a pre-built or ThoughtSpot provided script.
 
-. In the Analyze dialog, click the *More* icon image:icon-ellipses.png[more options menu icon] next to the *Custom R Script* panel, and choose *Load*.
+. In the Analyze dialog, click the More icon image:icon-ellipses.png[more options menu icon] next to the *Custom R Script* panel, and choose *Load*.
 +
 image::r-load-prebuilt.png[]
 +
@@ -69,7 +69,7 @@ You can find his full presentation on Custom R Scripts and demo at https://commu
 
 Consider this script, found on this website of http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html[Top 50 ggplot2 Visualizations - The Master List (With Full R Code)].
 A direct link to this script is http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html#Diverging%20Bars[here].
-
+[source]
 ----
 library(ggplot2)
 theme_set(theme_bw())
@@ -97,7 +97,7 @@ You can modify the script above to support the phone sales use case discussed in
 
 In this script, `mtcars` is replaced with references to our phone sales (`df$Sales`) and `car name` is replaced with `Device Name` both from the column data in the search example used in the webinar demo.
 The script uses the ThoughtSpot _data frame_ object (`df`), and adds two lines at the end to specify output type as a `png` image.
-
+[source]
 ----
 library(ggplot2)
 theme_set(theme_bw())
