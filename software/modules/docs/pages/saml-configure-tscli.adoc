@@ -1,12 +1,15 @@
 = Configure SAML
-:last_updated: 01/03/2021
+:last_updated: 04/21/2021
 :linkattrs:
 :experimental:
+:redirect_from: /6.3.0/app-integrate/SAML/configure-SAML-with-tscli.html
 
 You can configure Security Assertion Markup Language (SAML) using ThoughtSpot's command line interface, tscli.
 
-ThoughtSpot can use Security Assertion Markup Language (SAML) to authenticate users.
-You can set up SAML through the shell on the ThoughtSpot instance xref:tscli[using a `tscli` based configurator] or xref:admin-portal[through the Admin Console].
+ThoughtSpot enables you to use Security Assertion Markup Language (SAML) to authenticate users.
+You can set up SAML through the shell on the ThoughtSpot instance xref:saml-configure-tscli[using a `tscli` based configurator] or xref:admin-portal[through the Admin Console]. It is configured to work using service provided by an Identity Provider (IdP).
+
+Popular Identity Providers that ThoughtSpot supports include https://developer.okta.com/docs/guides/build-sso-integration/saml2/overview/[Okta, window=_blank], https://docs.microsoft.com/en-us/powerapps/maker/portals/configure/configure-saml2-settings-azure-ad[Azure Active Directory, window=_blank], https://docs.pingidentity.com/bundle/solution-guides/page/ozz1597769517562.html[PingFederate, window=_blank], https://docs.microsoft.com/en-us/powerapps/maker/portals/configure/configure-saml2-settings[Microsoft AD FS, window=_blank], and https://developers.onelogin.com/quickstart/saml[Onelogin, window=_blank]. This is not an exhaustive list. To determine if ThoughtSpot supports your preferred IdP, talk to your ThoughtSpot contact. Refer to your Identity Provider’s SAML documentation for specific information on setting up SAML with that IdP.
 
 [options="interactive"]
 .Before configuring SAML, you need this information:
@@ -23,7 +26,7 @@ This configurator checks if the users internal authentication must be set.
 +
 This internal mechanism authenticates `tsadmin` and other ThoughtSpot local users. Set it to `true` by default to let local system/admin users through the front end.
 
-[#tscli]
+[#saml-configure-tscli]
 == Configure SAML using tscli
 
 Use this procedure to set up SAML on ThoughtSpot for user authentication.
