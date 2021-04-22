@@ -1,5 +1,5 @@
 = Set up ThoughtSpot in VMware
-:last_updated: 02/02/2021
+:last_updated: 04/22/2021
 :linkattrs:
 :experimental:
 
@@ -83,9 +83,7 @@ image::vmware-loading.png[]
 
 == Add hard disks to the VM
 
-In production deployments, ThoughtSpot requires you to have three 2TB HDFS disks on HDD (3 x 2TB).
-+
-Follow these steps to create the additional, larger capacity disks.
+In production deployments, ThoughtSpot requires you to have three 2TB HDFS disks on HDD (3 x 2TB). Refer to xref:vmware-intro.adoc#supported-configurations[Supported configurations]. For this use case, follow these steps to create the additional, larger capacity disks.
 
 . Edit the VM you just created.
 +
@@ -98,18 +96,19 @@ image::vmware-adddisk1.png[]
 The new disk appears as a new row under the only existing SSD row.
 
 . Click the *New Hard disk* to expand the detailed configuration options.
-. For a proof of concept, set the options as follows. For production deployments, set the size to 2TB.
+. Set the options as follows.
 +
-size:: 1 TB
+size:: 2 TB
 Location:: Use the *Browse* button to select the hard disk store.
-+ image::vmware-adddisk3.png[]
++
+image::vmware-adddisk3.png[]
 Thin provisioned:: Check this option.
 +
 You should see something similar to the following:
 +
-image::vmware-adddisk2-1TB.png[]
+image::vmware-adddisk-2-tb.png[]
 . Save your changes.
-. Repeat steps 1-5 to create additional hard disks.
+. Repeat steps 1-5 to create additional hard disks. ThoughtSpot requires 3 hard disks for a production environment.
 . Power on the VM.
 . After the VM is online, run the following command to prepare the HDFS disks:
 +
