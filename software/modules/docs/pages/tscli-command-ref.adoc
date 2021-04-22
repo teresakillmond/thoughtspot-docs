@@ -1,5 +1,5 @@
 = tscli command reference
-:last_updated: 12/25/2020
+:last_updated: 04/22/2021
 :linkattrs:
 :experimental:
 
@@ -809,9 +809,11 @@ tscli map-tiles enable --offline --tar __TAR__ --md5 __MD5__
 ----
 +
 This command has the following parameters:
-  --offline;; Specifies that you are using `maptiles` tar from a local disk. Use during offline enablement of map-tiles. The default setting is `False`.
-  --tar TAR;; Specified tar file for map-tiles. Use during offline enablement of map-tiles.
-  --md5 MD5;;  Specified md5 file for map-tiles. Use during offline enablement of map-tiles.
+  --offline;; Specifies that you are using `maptiles` tarball from a local disk, rather than downloading from the internet. Use during offline enablement of map-tiles. You must specify the location of the `--tar` and `--md5` on your machine.
+  You must download the https://tsengg-geodata.s3.amazonaws.com/raster-osm-jpg.tar.gz[tarball, window=_blank] and https://tsengg-geodata.s3.amazonaws.com/md5[md5, window=_blank] before you run this command.
+  The default setting is `False`.
+  --tar TAR;; Specified tar file for map-tiles. Use during offline enablement of map-tiles. Download the tarball https://tsengg-geodata.s3.amazonaws.com/raster-osm-jpg.tar.gz[here, window=_blank].
+  --md5 MD5;;  Specified md5 file for map-tiles. Use during offline enablement of map-tiles. Download the md5 https://tsengg-geodata.s3.amazonaws.com/md5[md5, window=_blank].
 
 tscli map-tiles disable::
   Disables map-tiles functionality.
