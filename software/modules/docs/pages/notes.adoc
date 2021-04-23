@@ -1,23 +1,68 @@
 = 6.3 Release Notes
 :experimental:
 :last_updated: 01/29/2021
-:redirect_from: /6.3.0/release/notes.html", "/6.3.0.CU1/release/notes.html
+:linkattrs:
+:redirect_from: /6.3.0/release/notes.html", "/6.3.0.CU1/release/notes.html, /6.3.1/release/notes.html
 
-ThoughtSpot version 6.3 is now available. These release notes include information about new and enhanced features.
+ThoughtSpot version 6.3.1 is now available. These release notes include information about new and enhanced features.
 
 For a complete list of issues that we fixed in this release, see xref:fixed.adoc[Fixed issues].
+
+* <<6-3-1-new,6.3.1 New Features>>
+* <<6-3-new,6.3 New Features>>
+* <<upgrade-paths,Supported Upgrade Paths>>
+
+[#6-3-1-new]
+== 6.3.1 New Features and Functionality
+
+For a complete list of issues that we fixed in this release, see xref:fixed.adoc#6-3-1[Fixed issues].
+
+* <<6-3-1-new,6.3.1 New Features>>
+** <<6-3-1-analyst,For the Analyst>>
+** <<6-3-1-business-user,For the Business User>>
+** <<6-3-1-data-engineer,For the Data Engineer>>
+** <<6-3-1-it-ops-engineer,For the IT Ops Engineer>>
+
+[#6-3-1-analyst]
+=== For the Analyst
+[#simplified-join-creation]
+Simplified join creation::
+  This release makes creating and editing joins from a table more flexible and intuitive. Our new joins interface allows you to define and edit a join's type and cardinality at the table level, where previously this was only possible at the Worksheet level. Refer to xref:add-joins.adoc[Table joins].
+
+[#6-3-1-business-user]
+=== For the Business User
+[#internet-explorer]
+Deprecation of Internet Explorer::
+  ThoughtSpot browser support for Internet Explorer is now deprecated. Refer to xref:accessing.adoc[ThoughtSpot browser access] for a list of supported browsers.
+
+[#information-center]
+Information Center::
+  ThoughtSpot has a new Information Center, accessible from the help icon image:icon-help-10px[] next to your profile on the top navigation bar. This new help menu contains many useful resources, including a navigation overview, several training videos, and links to more help across the ThoughtSpot product, community, training, and documentation. Refer to xref:what-you-can-find-in-the-help-center.adoc[More help and support].
+
+[#6-3-1-data-engineer]
+=== For the Data Engineer
+[#embrace]
+Embrace::
+  Embrace now supports Oracle Autonomous Database [.label.label-beta]#Beta#. This feature is in beta and disabled by default. To enable this feature, contact xref:contact.adoc[ThoughtSpot Support].
+
+  Embrace now supports security passthrough for Snowflake using OAuth for authentication and authorization. For more information, see xref:embrace-snowflake-add.adoc[Snowflake].
+
+[#6-3-1-it-ops-engineer]
+=== For the IT Ops Engineer
+[consumption-based-pricing]
+Consumption-based pricing::
+  ThoughtSpot now offers consumption, or usage, based pricing. Refer to xref:consumption-pricing.adoc[Consumption-based pricing] and the xref:consumption-pricing-faq.adoc[Consumption pricing FAQ]. To compare consumption- and capacity-based pricing, refer to https://www.thoughtspot.com/pricing[ThoughtSpot pricing, window=_blank].
+
+[#6-3-new]
+== 6.3 New Features and Functionality
+
+For a complete list of issues that we fixed in this release, see xref:fixed.adoc#6-3[6.3 Fixed issues].
 
 * <<6-3-new,6.3 New Features>>
  ** <<6-3-analyst,For the Analyst>>
  ** <<6-3-business-user,For the Business User>>
  ** <<6-3-data-engineer,For the Data Engineer>>
  ** <<6-3-it-ops-engineer,For the IT Ops Engineer>>
-* <<upgrade-paths,Supported Upgrade Paths>>
-
-[#6-3-new]
-== 6.3 New Features and Functionality
-
-For a complete list of issues that we fixed in this release, see xref:fixed.adoc#6-3[6.3 Fixed issues].
 
 [#6-3-analyst]
 === For the Analyst
@@ -51,10 +96,6 @@ This is useful when you would like to filter some, but not all, visualizations i
 
 [#6-3-business-user]
 === For the Business User
-
-[#monitor]
-Monitor::
-  The Monitor suite of features, some of which were introduced in earlier releases as Beta, are now generally available by default.
 
 [#mobile-improvements]
 Mobile app updates::
@@ -144,15 +185,16 @@ See the xref:admin-portal-user-adoption-pinboard.adoc[User Adoption Pinboard] an
 RHEL and Amazon Linux 2 ease of installation::
   This release of ThoughtSpot makes it easier to deploy ThoughtSpot on an xref:al2-overview.adoc[Amazon Linux 2] or xref:rhel.adoc[RHEL image] platform.
 +
-* You can now use a Terraform, Puppet, or Chef template, or an Ansible tarball, to install OS packages, dependencies, and the ThoughtSpot CLI (tscli), and configure your cluster. Previously, you could only use an Ansible tarball or Terraform template.
+* You can now use a Terraform, or Chef template, or an Ansible tarball, to install OS packages, dependencies, and the ThoughtSpot CLI (tscli), and configure your cluster. Previously, you could only use an Ansible tarball or Terraform template.
 * You now only need 20 GB on the root drive for yum packages and system logs, and 200 GB for ThoughtSpot installation.
 * You can now deploy ThoughtSpot on RHEL version 7.9.
 You can no longer deploy ThoughtSpot on RHEL version 7.7.
+* If your organization performs automation with a different configuration management tool, you can use the template ThoughtSpot developed for automation with Terraform. You can obtain this template from our https://github.com/thoughtspot/community-tools/tree/master/ThoughtSpot_Cloud_deployments/AWS/template_Homogeneous_cluster_ssm[Github repository, window=_blank]. ThoughtSpot provides templates for alternative tools only as generic guidelines. You should review the templates before using them and make sure that they are safe to use in your organization. In no way can ThoughtSpot be held responsible for any issue arising from their use.
 
 [#upgrade-paths]
 == Supported Upgrade Paths
 
-If you are running one of the following versions, you can upgrade to the 6.2 release directly:
+If you are running one of the following versions, you can upgrade to the 6.3 release directly:
 
 * 6.1.x to 6.3
 * 6.2.x to 6.3

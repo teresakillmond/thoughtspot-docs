@@ -1,12 +1,15 @@
 = Configure SAML
-:last_updated: 01/03/2021
+:last_updated: 04/21/2021
 :linkattrs:
 :experimental:
+:redirect_from: /6.3.0/app-integrate/SAML/configure-SAML-with-tscli.html
 
 You can configure Security Assertion Markup Language (SAML) using ThoughtSpot's command line interface, tscli.
 
-ThoughtSpot can use Security Assertion Markup Language (SAML) to authenticate users.
-You can set up SAML through the shell on the ThoughtSpot instance xref:tscli[using a `tscli` based configurator] or xref:admin-portal[through the Admin Console].
+ThoughtSpot enables you to use Security Assertion Markup Language (SAML) to authenticate users.
+You can set up SAML through the shell on the ThoughtSpot instance xref:saml-configure-tscli[using a `tscli` based configurator] or xref:admin-portal[through the Admin Console]. It is configured to work using service provided by an Identity Provider (IdP).
+
+Popular Identity Providers that ThoughtSpot supports include https://developer.okta.com/docs/guides/build-sso-integration/saml2/overview/[Okta, window=_blank], https://docs.microsoft.com/en-us/powerapps/maker/portals/configure/configure-saml2-settings-azure-ad[Azure Active Directory, window=_blank], https://docs.pingidentity.com/bundle/solution-guides/page/ozz1597769517562.html[PingFederate, window=_blank], https://docs.microsoft.com/en-us/powerapps/maker/portals/configure/configure-saml2-settings[Microsoft AD FS, window=_blank], and https://developers.onelogin.com/quickstart/saml[Onelogin, window=_blank]. This is not an exhaustive list. To determine if ThoughtSpot supports your preferred IdP, talk to your ThoughtSpot contact. Refer to your Identity Provider’s SAML documentation for specific information on setting up SAML with that IdP.
 
 [options="interactive"]
 .Before configuring SAML, you need this information:
@@ -14,16 +17,17 @@ You can set up SAML through the shell on the ThoughtSpot instance xref:tscli[usi
 * [ ] 2. Port of the server where your ThoughtSpot instance is running, such as `443`
 * [ ] 3. Protocol, or the authentication mechanism for ThoughtSpot: `http` or `https`
 * [ ] 4. Unique service name used as the unique key by IDP to identify the client, such as `urn:thoughtspot:callosum:saml`
-* [ ] 5. Allowed skew time, which is the time after authentication response is rejected and sent back from the IDP; `86400` is a popular choice.\
+* [ ] 5. Allowed skew time, which is the time after authentication response is rejected and sent back from the IDP; `86400` is a popular choice.
 * [ ] 6. The absolute path to identity provider's metadata file, typically called `idp-meta.xml` or similar.
 +
 You must have this to persist the configuration over upgrades. We recommend that you set it up on persistent/HA storage (NAS volumes), or in the same absolute path on all nodes in the cluster.
+* [ ] 7. ThoughtSpot's metadata file, `spring_saml_metadata.xml`. To download this file, navigate to `https://<hostname-or-IP>/callosum/v1/saml/metadata`. The file automatically downloads.
 +
 This configurator checks if the users internal authentication must be set.
 +
-This internal mechanism authenticates `tsadmin` and other ThoughtSpot local users. Set it to `true` by default to let local system/admin users through the front end.
+This internal mechanism is used to authenticate `tsadmin` and other ThoughtSpot local users. Set it to `true` by default to let local system/admin users through the front end.
 
-[#tscli]
+[#saml-configure-tscli]
 == Configure SAML using tscli
 
 Use this procedure to set up SAML on ThoughtSpot for user authentication.
@@ -36,7 +40,7 @@ Note that this configuration persists across software updates, so you do not hav
  tscli saml configure
 ----
 
-. Complete the configurator prompts with the information you gathered above.
+. Complete the configurator prompts with the information and files you gathered above.
 . When the configuration is complete, open a Web browser and go to the ThoughtSpot login page.
 It should now show the Single Sign On option.
 
