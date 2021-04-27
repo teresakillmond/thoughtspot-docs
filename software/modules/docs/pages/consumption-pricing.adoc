@@ -1,8 +1,7 @@
 = Consumption-based pricing
 :last_updated: 04/09/2021
-:summary: ThoughtSpot’s consumption-based licensing model lets you license ThoughtSpot based on usage of the ThoughtSpot product.
 :linkattrs:
-:permalink: /:collection/:path.html
+:experimental:
 
 ThoughtSpot’s consumption-based licensing model lets you license ThoughtSpot based on your users' usage of the ThoughtSpot product. When you purchase a consumption-based ThoughtSpot license, ThoughtSpot bills you based on xref:credits[credits]. The ThoughtSpot consumption licensing model is available for both ThoughtSpot Cloud and for Embrace software deployment on your cloud platform.
 
@@ -24,6 +23,7 @@ Usage minutes refer to the number of minutes of ThoughtSpot usage. Each user's u
 image::consumption-example.png[Usage minutes example]
 
 == User activity that incurs usage minutes
+
 User activity is defined as any user-triggered (initiated) action in ThoughtSpot, starting from the time the action is initiated until the time that the results of the action(s) are visible to the user in the product. This includes any time spent by ThoughtSpot in processing the user-triggered action in order to present the results to the user. User activity is measured in xref:usage-minutes[usage minutes].
 
 User activity that incurs usage minutes includes any user interaction with the product, such as:
@@ -34,11 +34,13 @@ User activity that incurs usage minutes includes any user interaction with the p
     ** Triggering user-initiated SpotIQ analyses
     ** Setup and configuration actions in the product (such as those performed in the **Admin** section of the product or other such parts of the product)
     ** Uploads, downloads, sharing, triggering the sending of emails from within the product
+
 * Browser actions (such as refreshing the page or using the **forward** or **back** buttons)
 * Any scrolling in the product that triggers updates to objects or content being viewed
     For example, if a user is scrolling through a Pinboard, initially it displays only a subset of the charts that can fit on the screen. This counts as initial user activity. At any point, if the user scrolls through the Pinboard, resulting in ThoughtSpot loading and displaying additional charts in that Pinboard for the first time, this counts as additional user activity.
 
 == Using the ThoughtSpot consumption licensing model with Embrace software
+
 You do not have to be on ThoughtSpot Cloud to use the consumption-based pricing model. To use the consumption pricing model with Embrace software that you have deployed in your own cloud environment, you must:
 
 . Allow ThoughtSpot to gather product usage information from your cluster. This usage information will be gathered on a periodic basis (daily) from your environment. Usage information is gathered from ThoughtSpot clusters using a secure SSL connection (TLS encrypted).
@@ -47,6 +49,7 @@ You do not have to be on ThoughtSpot Cloud to use the consumption-based pricing 
 NOTE: Usage information is collected only for the purposes of measuring credit consumption. Your usage information is secured and isolated inside our cloud environment.
 
 == Monitor your consumption
+
 You can monitor your credit consumption with the Credit Usage Pinboard, a new default admin-only Pinboard with data from the new Credit Usage Worksheet. You can access this Pinboard by searching for it on the **Pinboards** page.
 
 image::consumption-usage-pinboard.png[Credit Usage Pinboard]
