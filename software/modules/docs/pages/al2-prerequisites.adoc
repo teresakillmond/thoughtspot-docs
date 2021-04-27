@@ -1,5 +1,5 @@
 = Amazon Linux 2 installation prerequisites
-:last_updated: 01/02/2021
+:last_updated: 04/22/2021
 :linkattrs:
 :experimental:
 
@@ -13,6 +13,8 @@ Prepare the system and ThoughtSpot clusters for installation.
 * [ ] xref:enable-hosts[4. Enable the hosts to download Amazon Linux 2 packages]
 * [ ] xref:enable-ansible[5. Enable an Ansible Control Server]
 * [ ] xref:disable-selinux[6. Disable SELinux or run it in permissive mode]
+* [ ] xref:tmp-permission[7. Ensure tmp has permission 777]
+* [ ] xref:etc-sudoers[8. Remove Defaults requiretty from /etc/sudoers]
 
 [#set-up-hosts]
 == Set up hosts for the ThoughtSpot cluster
@@ -42,6 +44,7 @@ Ensure that all ThoughtSpot hosts meet the following partition and sizing requir
 All drives must be SSDs.
 
 . At least 20 GB available on the root drive, for yum packages and system logs.
+. At least 50 GI available for `/tmp`.
 . At least 200 GB for ThoughtSpot installation, either on a secondary drive or as a separate partition on the root drive.
 +
 NOTE: This drive must be separate from the data drive(s).
@@ -53,7 +56,9 @@ NOTE: This drive must be separate from the data drive(s).
 
 [#yum-repository]
 Yum repositories::
-  You must enable the following Yum repositories in your cluster: `epel`, `nux-desktop`, `google-cloud-sdk`, and `azure-cli`.
+  You must enable the following Yum repositories in your cluster: +
+  6.3 and earlier;; `epel`, `nux-desktop`, `google-cloud-sdk`, and `azure-cli`.
+  6.3.1 and later;; `epel`, `google-cloud-sdk`, and `azure-cli`.
 
 [#python-repository]
 Python repository::
@@ -85,6 +90,16 @@ You must install both `rsync` and Ansible on the Ansible Control Server host.
 
 ThoughtSpot does not support policies that enforce SELinux.
 We recommend that you disable SELinux, or run it in permissive mode.
+
+[#tmp-permission]
+== Ensure tmp has permission 777
+
+The `/tmp` directory must have `777` permission.
+
+[#etc-sudoers]
+== Remove Defaults requiretty from /etc/sudoers
+
+The `/etc/sudoers` file must not have the `Defaults requiretty` line. This line can cause cluster creation to fail.
 
 == Next steps
 
