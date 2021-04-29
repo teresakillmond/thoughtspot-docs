@@ -37,7 +37,7 @@ Service port for ThoughtSpot instance, typically TCP/443.
 [#ts-service-name]
 === Unique service name
 
-The unique key ThoughtSpot uses to identify IDP service.
+The unique key ThoughtSpot uses to identify IDP service. You may know this as the _Entity ID_.
 Set by the ThoughtSpot Support Team.
 
 The key has the following format: `urn:thoughtspot:callosum:saml`.
@@ -53,7 +53,7 @@ Usually set to `3600` seconds.
 === IDP Metadata XML File
 
 This file is provided by the IDP.
-The absolute path to the `idp-meta.xml` file is needed for one-time configuration.
+The absolute path to the `idp-meta.xml` file is needed for one-time configuration. If your IDP needs an Assertion Consumer Service URL to create the metadata file, use `https://<hostname_or_IP>/callosum/v1/saml/SSO`.
 
 [#auto-add]
 === Automatically add SAML users to Thoughtspot: (yes/no)
