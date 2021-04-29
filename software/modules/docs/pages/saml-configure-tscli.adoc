@@ -16,9 +16,9 @@ Popular Identity Providers that ThoughtSpot supports include https://developer.o
 * [ ] 1. Domain name for ThoughtSpot service, such as `thoughtspot.ts-customer.com`
 * [ ] 2. Port of the server where your ThoughtSpot instance is running, such as `443`
 * [ ] 3. Protocol, or the authentication mechanism for ThoughtSpot: `http` or `https`
-* [ ] 4. Unique service name used as the unique key by IDP to identify the client, such as `urn:thoughtspot:callosum:saml`
+* [ ] 4. Unique service name used as the unique key by IDP to identify the client, such as `urn:thoughtspot:callosum:saml`. You may know this as the _Entity ID_.
 * [ ] 5. Allowed skew time, which is the time after authentication response is rejected and sent back from the IDP; `86400` is a popular choice.
-* [ ] 6. The absolute path to identity provider's metadata file, typically called `idp-meta.xml` or similar.
+* [ ] 6. The absolute path to identity provider's metadata file, typically called `idp-meta.xml` or similar. If your IDP needs an Assertion Consumer Service URL to create the metadata file, use `https://<hostname_or_IP>/callosum/v1/saml/SSO`.
 +
 You must have this to persist the configuration over upgrades. We recommend that you set it up on persistent/HA storage (NAS volumes), or in the same absolute path on all nodes in the cluster.
 * [ ] 7. ThoughtSpot's metadata file, `spring_saml_metadata.xml`. To download this file, navigate to `https://<hostname-or-IP>/callosum/v1/saml/metadata`. The file automatically downloads.
