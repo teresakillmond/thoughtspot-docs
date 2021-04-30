@@ -1,7 +1,5 @@
 = Work with snapshots
 :last_updated: 3/10/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
 
 A snapshot is a point-in-time image of your running cluster. You can use a snapshot to restore the cluster to a specific point in time. In this section, we describe how to work with the default snapshot configuration that is enabled on every cluster, and how to make manual snapshots.
 
@@ -39,11 +37,13 @@ Note that snapshot names must not exceed 44 characters.
 If you specify `ttl` as `4`, the system deletes the snapshot after four days.
 
 +
+[source,console]
 ----
- $ tscli snapshot create <name> <reason> <ttl>
+$ tscli snapshot create <name> <reason> <ttl>
 ----
 . Check that the snapshot was created successfully by checking the directory listing:
 +
+[source,console]
 ----
  $ tscli snapshot ls
 ----
@@ -65,6 +65,7 @@ To view your current periodic snapshot policy, follow these steps:
 
 . Log in to the Linux shell using SSH.
 +
+[source,console]
 ----
  $ ssh admin@<cluster-IP>
 ----
@@ -76,46 +77,48 @@ It retains the snapshots from the previous three 4-hour intervals, and two snaps
 Here, ThoughtSpot retains 7 periodic snapshots overall.
 For detailed information about understanding the schedule, see xref:how-to-create-a-schedule.adoc[Understand backup/snapshot schedules].
 
- $ tscli snapshot-policy show
- schedule {
-   period {
-     number: 1
-     unit: HOUR
-   }
-   retention_policy {
-     bucket {
-       time {
-         number: 1
-         unit: HOUR
-       }
-       capacity: 3
-     }
-     bucket {
-       time {
-         number: 4
-         unit: HOUR
-       }
-       capacity: 4
-     }
-     bucket {
-       time {
-         number: 1
-         unit: DAY
-       }
-       capacity: 4
-     }
-     bucket {
-       time {
-         number: 1
-         unit: WEEK
-       }
-       capacity: 2
-     }
-   }
-   offset_minutes_from_sunday_midnight: 0
+[source,console]
+----
+$ tscli snapshot-policy show
+schedule {
+ period {
+   number: 1
+   unit: HOUR
  }
- enabled: true
-
+ retention_policy {
+   bucket {
+     time {
+       number: 1
+       unit: HOUR
+     }
+     capacity: 3
+   }
+   bucket {
+     time {
+       number: 4
+       unit: HOUR
+     }
+     capacity: 4
+   }
+   bucket {
+     time {
+       number: 1
+       unit: DAY
+     }
+     capacity: 4
+   }
+   bucket {
+     time {
+       number: 1
+       unit: WEEK
+     }
+     capacity: 2
+   }
+ }
+ offset_minutes_from_sunday_midnight: 0
+}
+enabled: true
+----
 [#snapshot-policy-update]
 === Update the snapshot policy
 
@@ -128,14 +131,16 @@ To update your current periodic snapshot policy, follow these steps:
 
 . Log in to the Linux shell using SSH.
 +
+[source,console]
 ----
- $ ssh admin@<cluster-IP>
+$ ssh admin@<cluster-IP>
 ----
 
 . Enter `tscli snapshot-policy update`.
 +
+[source,console]
 ----
- $ tscli snapshot-policy update
+$ tscli snapshot-policy update
 ----
 
 . In the editor, make changes to the current policy, and save them.
@@ -150,14 +155,16 @@ To disable your current periodic snapshot policy, follow these steps:
 
 . Log in to the Linux shell using SSH.
 +
+[source,console]
 ----
- $ ssh admin@<cluster-IP>
+$ ssh admin@<cluster-IP>
 ----
 
 . Enter `tscli snapshot-policy disable`.
 +
+[source,console]
 ----
- $ tscli snapshot-policy disable
+$ tscli snapshot-policy disable
 ----
 
 [#snapshot-policy-enable]
@@ -167,12 +174,14 @@ To enable a specific periodic snapshot policy, follow these steps:
 
 . Log in to the Linux shell using SSH.
 +
+[source,console]
 ----
- $ ssh admin@<cluster-IP>
+$ ssh admin@<cluster-IP>
 ----
 
 . Enter `tscli snapshot-policy enable`.
 +
+[source,console]
 ----
- $ tscli snapshot-policy disable
+$ tscli snapshot-policy disable
 ----

@@ -27,11 +27,13 @@ NOTE: You cannot transfer objects to or from the system user or the administrati
 === Request Example
 
 .cURL
+[source]
 ----
 curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'X-Requested-By: ThoughtSpot' 'https://<instance>/callosum/v1/tspublic/v1/user/transfer/ownership?fromUserName=guest&toUserName=guest1'
 ----
 
 .Request URL
+[source]
 ----
 https://<instance>/callosum/v1/tspublic/v1/user/transfer/ownership?fromUserName=guest&toUserName=guest1
 ----
@@ -88,11 +90,13 @@ When true, this flag removes any deleted users or groups.
 === Request Example
 
 .cURL
+[source]
 ----
 curl -X POST --header 'Content-Type: application/x-www-form-urlencoded' --header 'Accept: application/json' -d 'applyChanges=false' 'https://<instance>/callosum/v1/tspublic/v1/user/sync'
 ----
 
 .Request URL
+[source]
 ----
 https://<instance>/callosum/v1/tspublic/v1/user/sync
 ----
@@ -111,6 +115,7 @@ you may omit it from the input.
 
 Set `visibility` to `NON_SHARABLE` if you do not want users to be able to link:{{ site.baseurl }}/admin/users-groups/add-user.html#sharing-visibility[share objects] with users in this group.
 
+[source]
 ----
 [
   { "name": "Customer Success",
@@ -180,11 +185,13 @@ Use this API to change the password of a user.
 === Request Example
 
 .cURL
+[source]
 ----
 curl -X POST --header 'Content-Type: application/x-www-form-urlencoded' --header 'Accept: application/json' --header 'X-Requested-By: ThoughtSpot' -d 'name=guest¤tpassword=test&password=foobarfoobar' 'https://<instance>/callosum/v1/tspublic/v1/user/updatepassword'
 ----
 
 .Request URL
+[source]
 ----
 https://<instance>/callosum/v1/tspublic/v1/user/updatepassword
 ----

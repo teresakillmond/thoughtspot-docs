@@ -1,5 +1,6 @@
 = Best practices for Embrace with Snowflake
 :last_updated: 01/15/2020
+:linkattrs:
 
 You can connect to Snowflake using ThoughtSpot Embrace, and start searching your data. This article contains helpful pointers on data modeling.
 
@@ -33,11 +34,11 @@ To create a view from a Snowflake table that contains JSON, follow these steps:
 
 . Issue the `CREATE VIEW` statement.
 
-   See [CREATE VIEW Syntax](https://docs.snowflake.net/manuals/sql-reference/sql/create-view.html#syntax).
+   See https://docs.snowflake.net/manuals/sql-reference/sql/create-view.html#syntax[CREATE VIEW Syntax, window=_blank].
 
    The following example uses the sample `WEATHER` data from the **Snowflake Free Trial** sample data:
 
-   ```
+----
 CREATE <strong>json_weather_data_view</strong> as
 SELECT
   v:time::timestamp as observation_time,
@@ -57,17 +58,17 @@ SELECT
   v:wind.speed::float as wind_speed
 FROM json_weather_data
 WHERE city_id = 5128638;
-   ```
+----
 
 . Query the new view in Snowflake.
 
    The following example demonstrates how you can query the view <code><strong>json_weather_data_view</strong></code> created in the previous step:
 
-   ```
+----
    SELECT * FROM json_weather_data_view
 WHERE date_trunc('month',observation_time) = '2018-01-01'
 LIMIT 20;
-   ```
+----
 
 . In ThoughtSpot Embrace, add a connection to Snowflake, specifically to the view you created.
 
@@ -87,7 +88,7 @@ In Snowflake, you can query the schema to get a list of its existing foreign key
 
 To determine which foreign keys already exist in your Snowflake schema, issue the following `SELECT ... AS` statement:
 
-```
+----
 select
   fk_tco.table_schema as foreign_schema,
   fk_tco.table_name as foreign_table,
@@ -110,7 +111,7 @@ order by
   fk_tco.table_schema,
   fk_tco.table_name;
 
-```
+----
 
 The system returns the results of this query as a table that represents all foreign keys in the database, ordered by schema name and by name of the foreign table. The table has the following columns:
 
@@ -148,15 +149,13 @@ There are two ways to do this:
 
 To add a foreign key constraint in Snowflake, you must issue the following `ALTER TABLE` statement:
 
-<pre>
+----
 ALTER TABLE &lt;table_name&gt; ADD { outoflineUniquePK | outoflineFK }
-</pre>
+----
 
-<dl>
-  <dlentry>
-    <dt>outoflineUniquePK</dt>
-    <dd>The primary key in the relationship, with the following definition:<br>
-    <pre>outoflineUniquePK ::=
+outoflineUniquePK:: The primary key in the relationship, with the following definition:
+----
+    outoflineUniquePK ::=
   [ CONSTRAINT &lt;constraint_name&gt;> ]
   { UNIQUE | PRIMARY KEY } ( &lt;col_name&gt;> [ , &lt;col_name&gt; , ... ] )
   [ [ NOT ] ENFORCED ]
@@ -164,42 +163,39 @@ ALTER TABLE &lt;table_name&gt; ADD { outoflineUniquePK | outoflineFK }
   [ INITIALLY { DEFERRED | IMMEDIATE } ]
   [ ENABLE | DISABLE ]
   [ VALIDATE | NOVALIDATE ]
-  [ RELY | NORELY ]</pre>
-    </dd>
-  </dlentry>
-  <dlentry>
-    <dt>outoflineFK</dt>
-    <dd>The foreign key in the relationship, with the following definition:<br>
-      <pre>outoflineFK :=
-    [ CONSTRAINT &lt;constraint_name&gt; ]
-    FOREIGN KEY ( &lt;col_namev [ , &lt;col_name&gt; , ... ] )
-    REFERENCES &lt;ref_table_name&gt; [ ( &lt;ref_col_name&gt; [ , &lt;ref_col_name&gt; , ... ] ) ]
-    [ MATCH { FULL | SIMPLE | PARTIAL } ]
-    [ ON [ UPDATE { CASCADE | SET NULL | SET DEFAULT | RESTRICT | NO ACTION } ]
-         [ DELETE { CASCADE | SET NULL | SET DEFAULT | RESTRICT | NO ACTION } ] ]
-    [ [ NOT ] ENFORCED ]
-    [ [ NOT ] DEFERRABLE ]
-    [ INITIALLY { DEFERRED | IMMEDIATE } ]
-    [ ENABLE | DISABLE ]
-    [ VALIDATE | NOVALIDATE ]
-    [ RELY | NORELY ]</pre>
-    </dd>
-  </dlentry>
-</dl>
+  [ RELY | NORELY ]
+----
+
+outoflineFK:: The foreign key in the relationship, with the following definition:
+----
+    outoflineFK :=
+  [ CONSTRAINT &lt;constraint_name&gt; ]
+  FOREIGN KEY ( &lt;col_namev [ , &lt;col_name&gt; , ... ] )
+  REFERENCES &lt;ref_table_name&gt; [ ( &lt;ref_col_name&gt; [ , &lt;ref_col_name&gt; , ... ] ) ]
+  [ MATCH { FULL | SIMPLE | PARTIAL } ]
+  [ ON [ UPDATE { CASCADE | SET NULL | SET DEFAULT | RESTRICT | NO ACTION } ]
+       [ DELETE { CASCADE | SET NULL | SET DEFAULT | RESTRICT | NO ACTION } ] ]
+  [ [ NOT ] ENFORCED ]
+  [ [ NOT ] DEFERRABLE ]
+  [ INITIALLY { DEFERRED | IMMEDIATE } ]
+  [ ENABLE | DISABLE ]
+  [ VALIDATE | NOVALIDATE ]
+  [ RELY | NORELY ]
+----
 
 [#add-fk-snowflake"]
 **Example 1: adding a foreign key in Snowflake**
 
 For example, you can add a foreign key to Retail Sales schema in Snowflake by running the following `ALTER TABLE` statement. Also, contrast it with [Example 2](#add-fk-thoughtspot):
 
-```
+----
 ALTER TABLE "HO_RETAIL"."PUBLIC"."HO_Retail_Sales_Fact"
   ADD FOREIGN KEY ("Date_Key" )
   REFERENCES "HO_RETAIL"."PUBLIC"."HO_Date_Dimension"
   MATCH FULL
   ON UPDATE NO ACTION
   ON DELETE NO ACTION;
-```
+----
 
 [#add-fk-thoughtspot]
 **Example 2: adding a foreign key in ThoughtSpot**
