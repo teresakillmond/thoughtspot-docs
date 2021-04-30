@@ -3,10 +3,10 @@
 :last_updated: 01/20/2021
 :experimental:
 
-Install ThoughtSpot on Amazon Linux 2 offline clusters."
+Install ThoughtSpot on Amazon Linux 2 offline clusters.
 Before starting the install, complete the xref:al2-prerequisites.adoc[pre-installation steps].
 
-If you are using the https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html[AWS SSM agent, window="_blank] as an alternative to SSH, you must run the Ansible playbook and all commands on the __SSM console__. Ensure that your nodes have the right IAM roles for executing SSM scripts, and that they have access to your S3 bucket, if you are using S3.
+If you are using the https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html[AWS SSM agent, window=_blank] as an alternative to SSH, you must run the Ansible playbook and all commands on the __SSM console__. Ensure that your nodes have the right IAM roles for executing SSM scripts, and that they have access to your S3 bucket, if you are using S3.
 
 In an offline cluster, the hosts cannot connect to the public repositories to download the required packages. Instead, you must download the packages from your organization’s mirror repository to each host. Otherwise, the steps for installing on offline clusters are practically the same as the steps for installing on online cluster.
 
@@ -48,7 +48,7 @@ python3_pkgs:: This contains all the xref:al2-packages.adoc#pip3[python 3 packag
 python_pkgs:: This contains all the xref:al2-packages.adoc#pip2[python 2 packages].
 README.md:: Basic information for the unzipped file.
 r_pkgs:: This contains all the xref:al2-packages.adoc[R packages].
-rpm_gpg:: This directory contains the https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2rl_verify.html[GPG keys, window="_blank"] that authenticate the public repository.
+rpm_gpg:: This directory contains the https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2rl_verify.html[GPG keys, window=_blank] that authenticate the public repository.
 run_offline.sh:: This script installs the Yum, R, and Python packages.
 toolchain:: The tools that are necessary to compile the instructions you define in the Ansible Playbook, the source code, into executables that can run on your device. The toolchain includes a compiler, a linker, and run-time libraries.
 ts-new.yaml:: The Ansible Playbook for new installations.
