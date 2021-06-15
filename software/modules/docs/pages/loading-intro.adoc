@@ -55,6 +55,8 @@ You can use ODBC and JDBC drivers to connect to ThoughtSpot. ODBC and JDBC clien
 
 You can connect to ThoughtSpot using third party tools like SSIS. Here, you don't need to define a schema to accept the data load.
 
+WARNING: Use secondary disks or your NAS bucket for dataloads. Do NOT use the primary disk, at locations such as `/tmp`, `/home/admin` or `/export/home/admin`.
+
 == Related Information
 
 * xref:data-import-ui.adoc[Load CSV files with the UI]
