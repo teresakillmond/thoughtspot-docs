@@ -2,7 +2,7 @@
 
 The `TML` file for scriptable tables has a specific syntax.
 
-See the xref:parameters[TML paramters] for details about the keywords used in this example.
+See the xref:parameters[TML parameters] for details about the keywords used in this example.
 
 You may not see each of these parameters in your own TML files, depending on whether each variable is explicitly defined.
 For example, if you did not define any conditional formatting, the `conditional_formatting` variable does not appear.
@@ -21,8 +21,6 @@ table:
   columns:
   - name: <column_name_1>
     db_column_name: <database_column_name>
-    is_primary_key: [true | false]
-    is_foreign_key: [true | false]
     data_type: [ BOOL | VARCHAR | DOUBLE | FLOAT | INT32 | INT64 | DATE | TIME ]
     properties:
       column_type: [ MEASURE | ATTRIBUTE ]
