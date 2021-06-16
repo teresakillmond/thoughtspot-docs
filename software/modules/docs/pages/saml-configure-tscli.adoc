@@ -1,8 +1,8 @@
 = Configure SAML
-:last_updated: 04/21/2021
+:last_updated: 06/15/2021
 :linkattrs:
 :experimental:
-:redirect_from: /6.3.0/app-integrate/SAML/configure-SAML-with-tscli.html", "/6.3.0.CU1/app-integrate/SAML/configure-SAML-with-tscli.html", "/6.3.1.CU1/app-integrate/SAML/configure-SAML-with-tscli.html
+:redirect_from: /6.3.0/app-integrate/SAML/configure-SAML-with-tscli.html", "/app-integrate/SAML/configure-SAML-with-tscli.html", "/6.3.0.CU1/admin/ts-cloud/authentication-integration.html", "/6.3.0/admin/ts-cloud/authentication-integration.html", "/6.3.1/admin/ts-cloud/authentication-integration.html", "/6.3.1/admin/ts-cloud/authentication-integration.html", "/6.3.1.CU1/admin/ts-cloud/authentication-integration.html", "/admin/ts-cloud/authentication-integration.html", "/6.3.0.CU1/app-integrate/SAML/configure-SAML-with-tscli.html", "/6.3.1.CU1/app-integrate/SAML/configure-SAML-with-tscli.html
 
 You can configure Security Assertion Markup Language (SAML) using ThoughtSpot's command line interface, tscli.
 
@@ -21,7 +21,6 @@ Popular Identity Providers that ThoughtSpot supports include https://developer.o
 * [ ] 6. The absolute path to identity provider's metadata file, typically called `idp-meta.xml` or similar. If your IDP needs an Assertion Consumer Service URL to create the metadata file, use `https://<hostname_or_IP>/callosum/v1/saml/SSO`.
 +
 You must have this to persist the configuration over upgrades. We recommend that you set it up on persistent/HA storage (NAS volumes), or in the same absolute path on all nodes in the cluster.
-* [ ] 7. ThoughtSpot's metadata file, `spring_saml_metadata.xml`. To download this file, navigate to `https://<hostname-or-IP>/callosum/v1/saml/metadata`. The file automatically downloads.
 +
 This configurator checks if the users internal authentication must be set.
 +
@@ -41,8 +40,11 @@ Note that this configuration persists across software updates, so you do not hav
 ----
 
 . Complete the configurator prompts with the information and files you gathered above.
-. When the configuration is complete, open a Web browser and go to the ThoughtSpot login page.
-It should now show the Single Sign On option.
+. When the configuration is complete, download ThoughtSpot's metadata file, `spring_saml_metadata.xml`. This file contains the public key you need if you want to encrypt your SAML assertions. To download this file, navigate to `https://<hostname-or-IP>/callosum/v1/saml/metadata`. The file automatically downloads.
+. Upload or copy the contents of the `spring_saml_metadata.xml` to your IdP server.
+. Open a Web browser and go to the ThoughtSpot login page.
+   It should now show the Single Sign On option.
+
 
 [#admin-portal]
 == Configure SAML using the Admin Console
