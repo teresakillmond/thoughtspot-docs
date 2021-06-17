@@ -16,7 +16,7 @@ NOTE: If you configure authentication through SAML, you cannot also configure au
 
 6. Fill in the parameters with the information you collected in the xref:prerequisites[Configuration prerequisites].
 
-7. When the configuration is complete, download ThoughtSpot's metadata file, `spring_saml_metadata.xml`. To download this file, navigate to `https://<hostname-or-IP>/callosum/v1/saml/metadata`. The file automatically downloads.
+7. When the configuration is complete, download ThoughtSpot's metadata file, `spring_saml_metadata.xml`. This file contains the public key you need if you want to encrypt your SAML assertions. To download this file, navigate to `https://<hostname-or-IP>/callosum/v1/saml/metadata`. The file automatically downloads.
 
 NOTE: ThoughtSpot adds external users, or users that authenticate through SAML or Active Directory, to the *all* group by default. This group has no privileges. You must manually assign users to ThoughtSpot groups to give them privileges, such as *can upload user data*, or *can manage data*.
 
