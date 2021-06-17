@@ -102,6 +102,8 @@ Then, if the production cluster fails, the backup cluster can be drafted to take
 
 Details on this architecture, and instructions on setting it up, are available in the xref:disaster-recovery.adoc[ThoughtSpot Disaster Recovery Guide].
 
+WARNING: Use secondary disks or your NAS bucket for backups and snapshots. Do NOT use the primary disk, at locations such as `/tmp`, `/home/admin` or `/export/home/admin`.
+
 == Additional resources
 
 As you develop your expertise in backups and snapshots, we recommend the following ThoughtSpot U course:
