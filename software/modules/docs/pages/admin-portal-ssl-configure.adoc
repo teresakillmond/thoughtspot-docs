@@ -41,6 +41,7 @@ You can generate a CSR in several ways.
 Most often, you generate a CSR and a new private key <<csr-new-private-key,at the same time>>.
 If you already have a private key, <<csr-existing-private-key,use it to generate a CSR>>.
 
+[#csr-new-private-key]
 Follow these steps to generate a CSR and a private key.
 You need a computer you can run Linux commands on, and a recent version of _openssl_.
 
@@ -65,6 +66,7 @@ Alternatively, you can skip this flag, and `openssl` prompts you to enter this i
  ** Optionally, run `add-multivalue-rdn` to allow multiple values to be set for the same key.
  ** Run `man req` for more details.
 
+[#csr-existing-private-key]
 If you already have a private key, you can use it to generate a CSR.
 Follow these steps to generate a CSR with an existing private key:
 
@@ -147,7 +149,7 @@ If your load balancer cannot support these ciphers, contact https://community.th
 [#ssl-configure-test]
 == Test the SSL certificate
 
-To test if the certificate is installed correctly, see xref:logins.adoc#sign-in-to-the-thoughtspot-application[Sign in to the ThoughtSpot application].
+To test if the certificate is installed correctly, see xref:logins.adoc#ts-app[Sign in to the ThoughtSpot application].
 
 == Additional resources
 
