@@ -9,6 +9,7 @@ Learn about the fields used to create an Google BigQuery connection with Thought
 Here is a list of the fields for a Cassandra connection in ThoughtSpot DataFlow.
 You need specific information to establish a seamless and secure connection.
 
+[#connection-properties]
 == Connection properties
 [#dataflow-google-bigquery-conn-project-id]
 Project id:: The identification number given to particular project, always unique. Mandatory field.
@@ -18,7 +19,7 @@ Authentication type:: It can be either Service Account or Access Tokens. Mandato
 Example:;; Service Account
 Valid Values:;; Service Account, Access Token
 Default:;; Service Account
-[#dataflow-google-bigquery-conn-service-account-key/access-token]
+[#dataflow-google-bigquery-conn-service-account-key-access-token]
 Service account key/access Token:: Provide the Service Account key when authentication type is selected as Service account and token when access token is selected as authentication type. Mandatory field.
 Example:;; ABCDEFGH245HIJK
 [#dataflow-google-bigquery-conn-query-priority]
@@ -35,23 +36,24 @@ Host:: Specify the hostname or the IP address of the BigQuery system.
 Optional field. +
  For proxy authentication only.
  Example:;; www.example.com
- [#dataflow-google-bigquery-conn-port]
+[#dataflow-google-bigquery-conn-port]
  Port:: Specify the port associated to the BigQuery system.
 Optional field. +
  For proxy authentication only.
  Example:;; 1234
- [#dataflow-google-bigquery-conn-protocol]
+[#dataflow-google-bigquery-conn-protocol]
  Protocol:: It can be either http or https.
 Optional field. +
  For proxy authentication only.
  Example:;; http
  Valid Values:;; http, https
  Default:;; http
- [#dataflow-google-bigquery-conn-jdbc-options]
+[#dataflow-google-bigquery-conn-jdbc-options]
  JDBC options:: Specify the options associated with the JDBC URL. Optional field.
  Example:;; `jdbc:sqlserver://[serverName[\instanceName][:portNumber]]`
  Other notes:;; Advanced configuration
 
+[#sync-properties]
 == Sync properties
 [#dataflow-google-bigquery-sync-column-delimiter]
 Column delimiter:: Specify the column delimiter character. Mandatory field.
