@@ -9,6 +9,7 @@ Learn about the fields used to create an Apache Parquet connection with ThoughtS
 Here is a list of the fields for an Apache Parquet connection in ThoughtSpot DataFlow.
 You need specific information to establish a seamless and secure connection.
 
+[#connection-properties]
 == Connection properties
 [#dataflow-apache-parquet-conn-connection-name]
 Connection name:: Name your connection. Mandatory field.
@@ -71,6 +72,7 @@ Optional field. +
  Example:;; !hello
  Other notes:;; Advanced configuration
 
+[#sync-properties]
 == Sync properties
 [#dataflow-apache-parquet-sync-enclosing-character]
 Enclosing character:: Specify if the text columns in the source data needs to be enclosed in quotes. Optional field.
@@ -91,7 +93,7 @@ During the data load, the column value matching this string will be loaded as nu
 Example:;; NULL
 Valid Values:;; Any string literal
 Default:;; NULL
-[#dataflow-apache-parquet-sync-data-style]
+[#dataflow-apache-parquet-sync-date-style]
 Date style:: Specifies how to interpret the date format. Optional field.
 Example:;; YMD
 Valid Values:;; `YMD`, `MDY`, `DMY`, `DMONY`, `MONDY`, `Y2MD`, `MDY2`, `DMY2`, `DMONY2`, and `MONDY2`
