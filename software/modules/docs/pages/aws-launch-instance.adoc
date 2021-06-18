@@ -15,7 +15,7 @@ After you determine your configuration options, you must set up your virtual mac
 * [ ] xref:s3-bucket-setup[3. Set up your Amazon S3 bucket (optional)]
 * [ ] xref:aws-ts-setup-cluster[4. Set up your ThoughtSpot cluster in AWS]
 * [ ] xref:security-groups[5. Configure security groups]
-* [ ] xref:ecurity-groups[6. Open the required network ports] for communication for the nodes in your cluster and end users.
+* [ ] xref:network-ports[6. Open the required network ports] for communication for the nodes in your cluster and end users.
 * [ ] xref:prepare-vms[7. Prepare the VMs]
 
 [#prerequisites-ami]
@@ -209,6 +209,7 @@ TIP: Security settings for ThoughtSpot
 ** The VMs must have intragroup security: every VM in a cluster must be accessible to all clusters. For easier configuration, ThoughtSpot recommends that you enable full access between VMs in a cluster.
 ** You must open more ports on the VM to provide data staging capabilities to your network. Check ThoughtSpot's Network ports documentation to determine the minimum required ports you must open for your ThoughtSpot appliance.
 +
+[#network-ports]
 Refer to xref:ports.adoc[Network ports].
 
 . Click *Review and Launch*.
