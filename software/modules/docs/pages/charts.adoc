@@ -37,78 +37,81 @@ image::chartconfig-choosevisualization.png[Click 'change visualization' to choos
 * Hovering over a chart type icon tell you what columns you require before you can use it.
 ====
 
-* *xref:column-charts.adoc[Column charts]*
+* *xref:chart-column.adoc[Column charts]*
 +
 The column chart is one of ThoughtSpot's simplest, yet most versatile chart types. The column chart is often the chosen default chart type, and displays data as vertical columns.
 
-* *xref:column-charts.adoc#stacked-columns[Stacked columns]*
+* *xref:chart-column.adoc#stacked-columns[Stacked columns]*
 +
 The stacked column combines the different secondary dimensions into a single column, stacking them.
 +
 NOTE: The dimensions retain their relative size and color.
 
-* *xref:bar-charts.adoc[Bar charts]*
+* *xref:chart-bar.adoc[Bar charts]*
 +
 The bar chart is nearly identical to the column chart. The primary difference is that it displays data as horizontal bars.
-* *xref:bar-charts.adoc#stacked-bar-charts[Stacked bar charts]* + Just like stacked columns, stacked bars combine the different secondary dimensions into a single stacked bar.
-* *xref:line-charts.adoc[Line charts]*
+* *xref:chart-bar-stacked.adoc[Stacked bar charts]* + Just like stacked columns, stacked bars combine the different secondary dimensions into a single stacked bar.
+* *xref:chart-line.adoc[Line charts]*
 +
 Like the column chart, the line chart is one of ThoughtSpot's simplest, yet most versatile chart types.
 +
 More often than not the line chart will be chosen as your default chart type.
-* *xref:pie-charts.adoc[Pie charts]*
+* *xref:chart-pie.adoc[Pie charts]*
 +
 The pie chart is a classic chart type that displays your search in a circle.
 The pie chart ThoughtSpot shows is in the shape of a doughnut.
-* *xref:area-charts.adoc[Area charts]*
+* *xref:chart-area.adoc[Area charts]*
 +
 The area chart is based on the line chart, but has filled in regions.
-* *xref:area-charts.adoc#stacked-area-charts[Stacked area charts]*
+* *xref:chart-area-stacked.adoc[Stacked area charts]*
 +
 This option stacks the values of one dimension on top of the other, enabling you to clearly see the relative volume of data under the line.
 +
 Contrast this with the presentation in the area chart, where data for different overlaps.
-* *xref:scatter-charts.adoc[Scatter charts]*
+* *xref:chart-scatter.adoc[Scatter charts]*
 +
 The scatter chart is useful for finding correlations or outliers in your data.
-* *xref:bubble-charts.adoc[Bubble charts]*
+* *xref:chart-bubble.adoc[Bubble charts]*
 +
 The bubble chart displays three dimensions of data with each containing a set of values.
-* *xref:pareto-charts.adoc[Pareto charts]*
+* *xref:chart-pareto.adoc[Pareto charts]*
 +
 The pareto chart is a type of chart that contains both columns and a special type of line chart.
-* *xref:waterfall-charts.adoc[Waterfall charts]*
+* *xref:chart-waterfall.adoc[Waterfall charts]*
 +
 The waterfall chart is used to show how an initial value is affected by a series of intermediate positive or negative values.
-* *xref:treemap-charts.adoc[Treemap charts]*
+* *xref:chart-treemap.adoc[Treemap charts]*
 +
 The treemap chart displays hierarchical data as a set of nested rectangles.
-* *xref:geo-charts.adoc#heatmap-charts[Heatmap charts]*
+* *xref:chart-heatmap.adoc[]*
 +
 The heatmap chart displays individual data values in a matrix following a color scale.
-* *xref:line-column-charts.adoc[Line column charts]*
+* *xref:chart-line-column.adoc[Line column charts]*
 +
 The line column chart combines the column and line charts.
-* *xref:funnel-charts.adoc[Funnel charts]*
+* *xref:chart-line-column-stacked.adoc[Stacked line column charts]*
++
+The stacked line column chart combines line and stacked column charts.
+* *xref:chart-funnel.adoc[Funnel charts]*
 +
 The funnel chart shows a process with progressively decreasing proportions amounting to 100 percent in total.
-* *xref:geo-charts.adoc[Geo charts]*
+* *xref:chart-geo-area.adoc[Geo charts]*
 +
-There are three geo charts that let you visualize geographical data in ThoughtSpot: Area, Bubble, and Heatmap.
-* *xref:pivoting-a-table.adoc[Pivot tables]*
+There are three geo charts that let you visualize geographical data in ThoughtSpot: xref:chart-geo-area.adoc[area], xref:chart-geo-bubble.adoc[bubble], and xref:chart-geo-heatmap.adoc[heatmap].
+* *xref:chart-pivot-table.adoc[Pivot tables]*
 +
 Pivot tables in ThoughtSpot use the well known drag-and-drop interface.
 +
 Creating a pivot table enables exploring alternate visualization of data in a wide table.
 +
 The basic idea is that some data is easier to consume when laid out horizontally, while others, vertically.
-* *xref:sankey-charts.adoc[Sankey charts]*
+* *xref:chart-sankey.adoc[Sankey charts]*
 +
 Sankey charts show a flow from one set of values to another, usually with visual emphasis (brighter colors or larger bandwidths) for comparison of the values (e.g., top cities in terms of sales might be emphasized).
-* *xref:radar-charts.adoc[Radar charts]*
+* *xref:chart-radar.adoc[Radar charts]*
 +
 Radar charts display multivariate data on a two-dimensional chart of three or more quantitative variables that plot on axes (spokes) that originate at the same point.
-* *xref:candlestick-charts.adoc[Candlestick charts]*
+* *xref:chart-candlestick.adoc[Candlestick charts]*
 +
 Candlestick charts efficiently collapse financial information, such as price movements on a single day, into a unified representation.
 +
@@ -125,8 +128,8 @@ image::chartconfig-multiplemeasures.png[Stacked column chart example: multiple m
 
 The following charts support multiple measures on the y-axis:
 
-* Column
-* Stacked Column
+* xref:docs:chart-column[]
+* xref:docs:Stacked Column
 * Bar
 * Stacked Bar
 * Line
