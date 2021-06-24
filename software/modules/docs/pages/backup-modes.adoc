@@ -57,7 +57,7 @@ Lightweight backups contain everything that makes up a cluster:
 * Objects created by users (pinboards, worksheets, and formulas) with their shares and permissions.
 * Data model and row-level security rules.
 
-Lightweight backups do *not* contain data loaded through ThoughtSpot Loader (`tsload`), ODBC/JDBC drivers, and Data Connect.
+Lightweight backups do *not* contain data loaded through ThoughtSpot Loader (`tsload`), or ODBC/JDBC drivers.
 The expectation is that data loaded by `tsload` is from external sources and so can be re-loaded after the cluster is restored.
 An exception is if these mechanisms were used to load data into tables that were first created through CSV import (that is, a user first loaded the tables using the UI).
 In this case, the data, like the tables they were loaded into, are saved.
