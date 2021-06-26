@@ -12,6 +12,7 @@ For tables, a column's *INDEX TYPE* controls whether and how ThoughtSpot suggest
 Additionally, ThoughtSpot uses a column's *INDEX PRIORITY* value to determine where to rank a column's name and values in the search suggestions.
 These values impact ThoughtSpot's dynamically calculated usage based ranking (UBR).
 
+[#search-suggestions]
 == Example of Search suggestion behavior
 
 The following example illustrates how searching for `promotion_last_name` and then the letter `t` causes the system to suggest several ways of completing the `t` in the search:
@@ -28,6 +29,7 @@ Managing search suggestions through *INDEX TYPE* and *INDEX PRIORITY* is importa
 Properly configured suggestions can decrease "noise" in the suggestion list.
 Increasing the visibility of important columns is helpful for new or intermittent ThoughtSpot users.
 
+[#default-indexing]
 == Understand the default indexing behavior for tables and Views
 
 ThoughtSpot has a system default *INDEX TYPE* behavior for search suggestions for table and View values.
@@ -52,6 +54,7 @@ greater than 10 million, it is not indexed.
 
 If a column's *INDEX TYPE* is _not_ *DEFAULT* and the column's cardinality is greater than 30 million, ThoughtSpot does not index the column.
 
+[#high-cardinality]
 === High cardinality and performance
 
 A column's cardinality can impact indexing.
@@ -62,16 +65,19 @@ High cardinality is relative to other considerations.
 In some cases, columns with fewer than 10 million rows but with columns containing long strings can cause performance problems with memory.
 If you have concerns or questions, your ThoughtSpot Customer Success Engineer can help you determine appropriate cardinality thresholds for your ThoughtSpot installation.
 
+[#configure-cluster-defaults]
 === Configure your own cluster defaults
 
 If you need to, you can work with ThoughtSpot Support or your Customer Success Engineer to configure new cluster defaults.
 
+[#worksheet-indexing]
 == Understand the indexing behavior for Worksheets
 
 For Worksheets, you can only choose whether or not to index the column. You cannot choose an index type. When viewing a Worksheet, toggle the **SUGGEST VALUES IN SEARCH** option on or off.
 
 image::worksheet-search-indexing.png[Worksheet search indexing]
 
+[#overide-system-default-column]
 == Override the system default on a column
 
 You can change a column's *INDEX TYPE* in the menu:Data[Tables > Columns] page or in the *Index* value in the modeling file.
@@ -111,7 +117,6 @@ If you search for `sp`, depending on the setting for indexing, the column value 
 `PREFIX_AND_WORD_SUBSTRING`::
   `Spot` and `Thought Spot`
 
-
 To change a value in the application UI:
 
 . Open a worksheet or table from the *Data* page.
@@ -121,6 +126,7 @@ To change a value in the application UI:
 
 If you are using the model file, locate the *Index* cell, and enter the *INDEX TYPE* you want to use.
 
+[#column-suggestion-priority]
 == Change a column's suggestion priority
 
 A column's *INDEX PRIORITY* determines the order or rank in which it and its values appear in the search dropdown.

@@ -9,6 +9,7 @@ Users see only accessible row data.  Row level security works at the group level
 A table's RLS rules also apply to any objects with data from that table.
 So, searches, answers, worksheets, and pinboards that rely on a table's data fall under RLS rules.
 
+[#worksheets-queries-rls]
 == Worksheet queries and RLS
 
 You cannot set RLS rules on worksheets, only on tables.
@@ -23,6 +24,7 @@ You can configure a stricter application of RLS rules to take into account RLS r
 This is recommended if you have key dimension tables that worksheets rely on but that are not necessarily regularly accessed through query.
 To do this, contact ThoughtSpot Customer Support.
 
+[#exempt-rls]
 == Privileges that allow users to set, or be exempt from, RLS
 
 Users in the *Administrators* group or with the *Has administration privilege* have full access to everything in the system.
@@ -41,6 +43,7 @@ Members of groups with *Can Administer and Bypass RLS*:
 
 This behavior is true regardless of whether the privilege is from a direct group membership or indirect (through a group hierarchy).
 
+[#rls-rule-examples]
 == Examples of RLS rules
 
 An RLS rule evaluates against two system variables:
