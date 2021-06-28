@@ -29,7 +29,7 @@ You might create a search to find customers who bought product A, but did not bu
 First, you would have to perform searches for total sales by customer for both A and B, and create views for both.
 Then join these two views back in an outer join looking for conditions where the A and B join values are null.
 
-This example could also be solved in a single search by using xref:conditional-sum.adoc[conditional formulas] to determine the desired group (or cohort) of customers as defined by their buying behavior, and then doing the analysis on this group.
+This example could also be solved in a single search by using xref:formulas-logical-operations.adoc[conditional formulas] to determine the desired group (or cohort) of customers as defined by their buying behavior, and then doing the analysis on this group.
 But the performance will be better if you do this using a view, and then xref:materialized-views.adoc[materialize the view].
 
 == Example 3
