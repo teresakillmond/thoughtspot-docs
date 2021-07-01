@@ -11,6 +11,7 @@ If you follow the procedures here, your tables will retain their relationships t
 TIP: Always take a snapshot of your database before making any schema changes.
 This snapshot allows you to revert back to the prior state if you make an error, or something doesn't work as you expected after the schema change.
 
+[#primary-key]
 == Change the primary key for a table
 
 Use this procedure to change the primary key for a table.
@@ -28,7 +29,7 @@ Any dependent objects, like Pinboards or Worksheets, remain intact.
 To change the primary key of a table:
 
 . xref:overview-snapshot.adoc[Create a manual snapshot].
-. xref:prep-schema-for-load.adoc#connect-with-tql[Connect to the database with the ThoughtSpot SQL Command Line (TQL)].
+. xref:schema-prepare.adoc#tql[Connect to the database with the ThoughtSpot SQL Command Line (TQL)].
 . Drop the existing primary key (if any), by issuing a command like this example:
 +
 ----
@@ -56,6 +57,7 @@ The system warns you if dropping a primary key impacts other objects.
  tscli snapshot delete <name>
 ----
 
+[#relationship]
 == Change a relationship between tables
 
 Use this procedure to remove a relationship between tables or define a new one.
@@ -68,7 +70,7 @@ Any dependent objects (pinboards or worksheets) will remain intact.
 To change the relationship between tables:
 
 . xref:overview-snapshot.adoc[Create a manual snapshot].
-. xref:prep-schema-for-load.adoc#connect-with-tql[Connect to the database with the ThoughtSpot SQL Command Line (TQL)].
+. xref:schema-prepare.adoc#tql[Connect to the database with the ThoughtSpot SQL Command Line (TQL)].
 . Issue the command to drop the existing relationship
 +
 Before dropping a relationship TQL checks for and then warns of any dependent objects.
@@ -118,7 +120,7 @@ Drop all generic relationships between two tables:
  tscli snapshot delete <name>
 ----
 
-[#change-sharding-on-a-table]
+[#sharding]
 == Change sharding on a table
 
 You can change the sharding on a table or remove it altogether (creating a replicated table) using this procedure.
@@ -139,7 +141,7 @@ This is useful if the size of your cluster has increased.
 To change the sharding on a table:
 
 . xref:overview-snapshot.adoc[Create a manual snapshot].
-. xref:prep-schema-for-load.adoc#connect-with-tql[Connect to the database with the ThoughtSpot SQL Command Line (TQL)].
+. xref:schema-prepare.adoc#tql[Connect to the database with the ThoughtSpot SQL Command Line (TQL)].
 . Issue the command to change the sharding using this syntax:
 +
 ----

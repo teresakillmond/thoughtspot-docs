@@ -1,4 +1,4 @@
-= Schema planning concepts
+= Plan the schema
 :last_updated: 11/15/2019
 :experimental:
 :linkatrrs:
@@ -43,6 +43,7 @@ Make note of this information for each table:
 
 Here's what you must take into account in your TQL for creating each table, based on these properties:
 
+[cols="10,10,15,~"]
 |===
 | Table type | Table size | To be joined with | Schema recommendations
 
@@ -77,13 +78,19 @@ Has a primary key.
 Primary key must be the same as the distribution key.
 |===
 
-== Where to go next
+== Next steps
 
-* *xref:datatypes.adoc[Data types]* + ThoughtSpot supports the common data types.
+* *xref:data-types.adoc[Data types]*
++
+ThoughtSpot supports the common data types.
 Compare these with the data types you want to load, and do any necessary conversion ahead of loading the data.
-* *xref:constraints.adoc[Constraints]* + Constraints include primary keys, foreign keys, and relationships.
+* *xref:constraints.adoc[Constraints]*
++
+Constraints include primary keys, foreign keys, and relationships.
 Relationships allow you to create a generic relationship for use when you want to join tables that don't have a primary key/foreign key relationship.
-* *xref:sharding.adoc[Sharding]* + For the best performance, you should split (or shard) very large tables across nodes.
-If you have a large dimension table, you might choose to co-shard it with the fact table it will be joined with.
-* *xref:chasm-trap.adoc[Chasm traps]* + In a complex schema, you may have a fact table with no relationship to another fact table, except that each contains a foreign key to a shared dimension table.
-This is known as a chasm trap, and ThoughtSpot can handle it!
+* *xref:sharding.adoc[Sharding]*
++
+For the best performance, you should split (or shard) very large tables across nodes.  If you have a large dimension table, you might choose to co-shard it with the fact table it will be joined with.
+* *xref:chasm-trap.adoc[Chasm traps]*
++
+In a complex schema, you may have a fact table with no relationship to another fact table, except that each contains a foreign key to a shared dimension table. This is known as a chasm trap, and ThoughtSpot can handle it!
