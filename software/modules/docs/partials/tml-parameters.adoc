@@ -261,7 +261,7 @@ One of:
   `column : <column_name>`;; extracts the currency information from a specified column
   `iso_code : <valid_ISO_code>`;; applies currency based on the ISO code;
 +
-See https://www.iso.org/iso-4217-currency-codes.html[ISO 4217 Currency Codes,window="_blank"] and xref:set-format-pattern-numbers.adoc#set-currency-type[Set currency type] for more information.
+See https://www.iso.org/iso-4217-currency-codes.html[ISO 4217 Currency Codes,window="_blank"] and xref:data-modeling-patterns.adoc#set-currency-type[Set currency type] for more information.
 
 [#custom_name]
 custom_name::
@@ -318,7 +318,7 @@ filters::
 format_pattern::
   The format pattern string that controls the display of a number, date, or currency column.
 +
-See xref:set-format-pattern-numbers.adoc[Set number, date, and currency formats]
+See xref:data-modeling-patterns.adoc[Set number, date, and currency formats]
 
 [#formulas]
 formulas::
@@ -349,7 +349,7 @@ Uses two paired parameters:
 - `country: __<country_name>__`
 - `region_name: __<region_name_in_UI>__`; can be State, Postal Code, District, and so on.
 
-See xref:model-geo-data.adoc[Add a geographical data setting]
+See xref:data-modeling-geo-data.adoc[Add a geographical data setting]
 
 [#guid]
 guid::
@@ -386,17 +386,17 @@ index_priority::
 +
 ThoughtSpot prioritizes columns with higher values.
 +
-See xref:change-index.adoc#column-suggestion-priority[Change a column's suggestion priority].
+See xref:data-modeling-index.adoc#column-suggestion-priority[Change a column's suggestion priority].
 
 [#index_type]
 index_type::
   The indexing option of the Worksheet, View, or table column.
 +
-Possible values: `DONT_INDEX`, `DEFAULT` (see xref:change-index.adoc#default-indexing[Understand the default indexing behavior]), `PREFIX_ONLY`, `PREFIX_AND_SUBSTRING`, and `PREFIX_AND_WORD_SUBSTRING`
+Possible values: `DONT_INDEX`, `DEFAULT` (see xref:data-modeling-index.adoc#default-indexing[Understand the default indexing behavior]), `PREFIX_ONLY`, `PREFIX_AND_SUBSTRING`, and `PREFIX_AND_WORD_SUBSTRING`
 +
 Default: `DEFAULT`
 +
-See xref:change-index.adoc#overide-system-default-column[Index Type Values]
+See xref:data-modeling-index.adoc#overide-system-default-column[Index Type Values]
 
 [#is_additive]
 is_additive::
@@ -408,7 +408,7 @@ Possible values: `true` or `false`.
 +
 Default: `true`.
 +
-See xref:change-aggreg-additive.adoc#make-attribute-additive[Making an ATTRIBUTE column ADDITIVE].
+See xref:data-modeling-aggreg-additive.adoc#make-attribute-additive[Making an ATTRIBUTE column ADDITIVE].
 
 [#is_attribution_dimension]
 is_attribution_dimension::
@@ -420,7 +420,7 @@ Possible values: `true` by default, `false` to designate a column as not produci
 +
 Default: `true`
 +
-See xref:attributable-dimension.adoc[Change the attribution dimension]
+See xref:data-modeling-attributable-dimension.adoc[Change the attribution dimension]
 
 [#is_bypass_rls]
 is_bypass_rls::
@@ -439,7 +439,7 @@ is_hidden::
 Possible values: `true` to hide the column, `false` not to hide the column +
 Default: `false`
 +
-See xref:change-visibility-synonym.adoc#hide-column[Hide a column]
+See xref:data-modeling-visibility.adoc[]
 
 [#is_one_to_one]
 is_one_to_one::
@@ -600,7 +600,7 @@ Refer to xref:spotiq-data-model-preferences.adoc[Set columns to exlude from Spot
 synonyms::
   Alternate names for the column, used in search
 +
-See xref:change-visibility-synonym.adoc#create-synonym[Create synonyms for a column]
+See xref:data-modeling-synonym.adoc[]
 
 [#table]
 table::

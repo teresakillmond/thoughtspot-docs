@@ -1,5 +1,5 @@
 = Connect with TQL and create a schema
-:last_updated: 11/15/2019
+:last_updated: 06/30/2021
 :experimental:
 :linkatrrs:
 
@@ -8,7 +8,7 @@ Learn about TQL, ThoughtSpot's SQL command line.
 To perform administrative tasks directly in the database, you will use the ThoughtSpot SQL Command Line (TQL).
 TQL supports many, but not all, common SQL commands.
 
-[#connect-with-tql]
+[#tql]
 == Connect with TQL
 
 Before connecting with TQL, you need:
@@ -29,15 +29,16 @@ To connect to TQL:
 
 . Enter your SQL command, followed by a semicolon (`;`).
 
+[#sql]
 == Enter a SQL script
 
 Having examined the structure of the data to be loaded and become familiar with the ThoughtSpot SQL Command Line (TQL), you are now ready to create the schema.
 
-This method is a good way to get familiar with TQL and how to create database objects, but when creating a schema in a production system, you will most likely xref:create-schema-with-script.adoc[Write a SQL script to create the schema].
+This method is a good way to get familiar with TQL and how to create database objects, but when creating a schema in a production system, you will most likely xref:schema-script.adoc[Write a SQL script to create the schema].
 
 To create the schema directly in TQL:
 
-. <<connect-with-tql, Connect to the database with the ThoughtSpot SQL Command Line (TQL)>>.
+. <<tql, Connect to the database with the ThoughtSpot SQL Command Line (TQL)>>.
 . If the database you will be using does not exist, create it now:
 +
 ----
@@ -56,7 +57,7 @@ To create the schema directly in TQL:
  TQL> CREATE SCHEMA my_schema;
 ----
 
-. Issue a `CREATE TABLE` command for each table you will create, using the information in xref:plan-schema.adoc[Plan the schema].
+. Issue a `CREATE TABLE` command for each table you are creating, using the information in xref:schema-plan.adoc[Plan the schema].
 +
 TIP: Foreign key declaration within a `CREATE TABLE` will show the table created even if there are problems with the foreign key.
 Therefore, it is good practice to also issue a separate `ALTER TABLE ADD CONSTRAINT FOREIGN KEY` command.

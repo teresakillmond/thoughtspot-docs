@@ -10,26 +10,28 @@ Use this procedure to synchronize your ThoughtSpot system with an LDAP server th
 Before synchronizing users and groups, xref:ldap-config-ad.adoc[set up integration with LDAP using Active Directory].
 Then, collect the following information:
 
-* IP address and port of the server where your ThoughtSpot instance is running.
+IP address, port::
+IP address and port of the server where your ThoughtSpot instance is running.
 +
 This hostport must be in the following format:
 +
 `http(s)://<host>:<port>` or `http(s)://<domain>`
-
-* Administrator login username and password for your ThoughtSpot instance.
-* URL of the LDAP server, or hostport.
+Administrator::
+Administrator login username and password for your ThoughtSpot instance.
+URL::
+URL of the LDAP server, or hostport.
 +
 For example, `ldap://192.168.2.48:389`
-
-* Login username and password for the LDAP system.
+Username/password::
+Login username and password for the LDAP system.
 +
 An example `username` would be `moo_100@ldap.thoughtspot.com`.
-
-* Distinguished Name (DN) for the base to start searching for users in the LDAP system. For example,
+DN::
+Distinguished Name (DN) for the base to start searching for users in the LDAP system. For example,
 +
 `DC=ldap,DC=thoughtspot,DC=com`
-
-* The Python synchronization script, in case you want to modify it or create your own, is in the following directory:
+Synchronization script::
+The Python synchronization script, in case you want to modify it or create your own, is in the following directory:
 +
 `/usr/local/scaligent/release/callosum/utilities/ldap_sync_python_api/syncUsersAndGroups.py`
 
@@ -122,58 +124,74 @@ It also deletes any other entities created in the ThoughtSpot system from this L
 
 . When the ThoughtSpot search engine finishes indexing, your new users should appear in the ThoughtSpot application. To check if the ThoughtSpot search engine is indexing, run the following command:
 +
-```
+----
 tscli cluster status
-```
+----
 
 === Command-line switches for `syncUsersAndGroups.py`
 
 Note the command-line switches available to use with the `syncUsersAndGroups` python script.
 
+[#ts_hostport]
 `--ts_hostport <ts_hostport>`::
   ThoughtSpot cluster host port. Default port is `8088`.
 
+[#disable_ssl]
 `--disable_ssl`::
   Controls the communication between the sync script and the ThoughtSpot cluster. It disables SSL communications between the script and the cluster ONLY. The purpose of this is to create users and groups without the necessity of SSL certs during the execution of the script.
 
+[#ts_uname]
 `--ts_uname`::
   ThoughtSpot cluster username. The `admin` username is common.
 
+[#ts_pass]
 `--ts_pass`::
   ThoughtSpot cluster password.
 
+[#ldap_hostport]
 `--ldap_hostport`::
   AD/LDAP server port that is queried. Default is `389`.
 
+[#ldap_uname]
 `--ldap_uname`::
   Username for the LDAP/AD server.
 
+[#ldap_pass]
 `--ldap_pass <ldap_password>`::
   Password for the LDAP/AD server.
 
+[#sync]
 `--sync`::
   Syncs users and groups that match the `basedn` and `filter_str` queries to the ThoughtSpot cluster.
 
+[#purge]
 `--purge`::
   Purges any users that exist in ThoughtSpot, but not in AD.
 
+[#basedn]
 `--basedn`::
   Place in the directory that is searched for users.
 
+[#filter_str]
 `--filter_str`::
   Further filter results from the base DN.
 
+[#include_nontree_members]
 `--include_nontree_members`::
   Includes group members from LDAP/AD, even if they do not belong to the current subtree, which is being synced.
 
+[#user_identifier]
 `--user_identifier <user_identifier>`::
   User name identifier key for creating users or sync.
 
+[#authdomain_identifier]
 `--authdomain_identifier <authdomain_identifier>`::
   Override domain name to append to the user identifier in the user name.
 
+[#email_identifier]
 `--email_identifier <email_identifier>`::
   Email identifier key for creating users or sync.
 
+[#debug]
 `--debug`::
   Provides additional logs in case of failure or other errors.
