@@ -60,7 +60,7 @@ Following proto-structure is proposed for API input and output.
 ----
 // The context in which the query is to be executed. This can be altered by the
 // execution of the query. E.g., a "USE db_name;" query can change the database,
-// and an "ALTER TABLE table_name ...;" query can change the version, etc. The
+// and an "ALTER TABLE table_name ...;" query can change the version, and so on. The
 // server must respond back with the new context.
 message QueryContext {
    // Schema name to use in case statements have empty schema.
@@ -326,7 +326,7 @@ message ExecuteSqlScriptResponse {
 }
 
 message StaticAutocompleteResponse {
-  // List of tokens that are specific to the language, e.g. SELECT, WHERE etc.
+  // List of tokens that are specific to the language, e.g. SELECT, WHERE and so on.
   repeated string tokens = 1;
 }
 
