@@ -19,29 +19,17 @@ You can control how aggregation works in your data.
 Your data may contain a column with a numeric data type that you have defined as an `ATTRIBUTE` rather than a `MEASURE`.
 For example, you may have `ATTRIBUTE` column with an `INTEGER` data type that represents age.
 Typically, these columns have an *ADDITIVE* setting of `NO`.
-Within a search result that contains data from this column, the options for each column on the left side of the screen includes:
-
-* *UNIQUE COUNT OF*
-* *TOTAL COUNT OF*
+Within a search result that contains data from this column, the options for each column on the left side of the screen includes *UNIQUE COUNT OF* and *TOTAL COUNT OF*.
 
 image::model_additive_model_false_options.png[]
 
 To display extended aggregate view options, you must set *ADDITIVE* to `YES` on these `ATTRIBUTE` columns.
 This option is only possible on columns that have a numeric data type (`FLOAT`, `DOUBLE` or `INTEGER`) or a date data type (`DATE`, `DATETIME`, `TIMESTAMP`, or `TIME`).
-After you make this change, these additional view options are offered:
-
-* *TOTAL OF*
-* *AVG OF*
-* *STD DEVIATION OF*
-* *VARIANCE OF*
-* *TOTAL COUNT OF*
-* *UNIQUE COUNT OF*
-* *MIN OF*
-* *MAX OF*
+After you make this change, ThoughtSpot offers these additional view options:  *TOTAL OF*, *AVG OF*, *STD DEVIATION OF*, *VARIANCE OF*, *TOTAL COUNT OF*, *UNIQUE COUNT OF*, *MIN OF*, and *MAX OF*.
 
 image::model_additive_model_true_options.png[]
 
-To change this setting:
+To change this setting, follow these steps:
 
 . Find the column whose *ADDITIVE* setting you want to change
 . Select the *ADDITIVE* toggle.
@@ -60,38 +48,27 @@ Setting this default can make combining data more intuitive and faster.
 You can change *AGGREGATION* to one of the supported aggregation types.
 To extend the available aggregation actions, set *ADDITIVE* on these columns to `YES` (`TRUE`).
 
-|===
-| Aggregate type | Description
+Note the available aggregation options:
 
-| *NONE*
-| Does no aggregation.
+NONE::  Does no aggregation.
 This is the default for `ATTRIBUTE` type columns.
 
-| *SUM*
-| Adds the values together and returns the total.
+SUM:: Adds the values together and returns the total.
 This is the default for `MEASURE` type columns.
 
-| *AVERAGE*
-| Calculates the average of all the values.
+AVERAGE:: Calculates the average of all the values.
 
-| *MIN*
-| Calculates the minimum value.
+MIN:: Calculates the minimum value.
 
-| *MAX*
-| Calculates the maximum value.
+MAX:: Calculates the maximum value.
 
-| *STD_DEVIATION*
-| Calculates the standard deviation of all the values.
+STD_DEVIATION:: Calculates the standard deviation of all the values.
 
-| *VARIANCE*
-| Calculates the variance of all the values.
+VARIANCE:: Calculates the variance of all the values.
 
-| *COUNT*
-| Calculates the total number of values.
+COUNT:: Calculates the total number of values.
 
-| *COUNT_DISTINCT*
-| Calculates the total number of distinct values.
-|===
+COUNT_DISTINCT:: Calculates the total number of distinct values.
 
 Keep in mind that not all `MEASURE` data should be aggregated.
 Consider a table containing data about athletes on a sports team.
@@ -111,4 +88,4 @@ If using the modeling file, use the *AggregationType* setting.
 
 == Related information
 
-xref:data-modeling.adoc[Model the data for searching]
+xref:data-modeling.adoc[]

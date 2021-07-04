@@ -77,8 +77,9 @@ You want to give your vendors the ability to see trends in company purchases.
 You give vendor personnel access to ThoughtSpot _and_ add them to self-titled vendor groups.
 So, all users from the Starbucks vendor are in the `Starbucks` group and all users from `round table` are in the `Round Table` group.
 Then, you set a *Row security* on the `vendor-purchase` table as follows:
-
-`VENDOR = ts_groups`
+----
+VENDOR = ts_groups
+----
 
 Only users in `Starbucks` group see `starbucks` data and so forth.
 Rules ignore case inconsistencies and spaces are evaluated so `round table` in the data matches the `Round table` group but not a group named `RoundTable` .
@@ -144,6 +145,6 @@ So, err on the side of simple rules rather than complex rules with a lot of logi
 
 == Related information
 
-* To learn the procedure you follow for setting a rule, xref:set-rls.adoc[Set RLS rules]
+* To learn the procedure you follow for setting a rule, xref:security-rls-implement.adoc[Set RLS rules]
 * For a list of operators and functions you can use to build RLS rules see xref:rls-rule-builder-reference.adoc[Row level security rules reference].
-* For information on bypassing rules on a worksheet, see xref:workssheet-inclusion.adoc[Change inclusion, join, or RLS for a worksheet].
+* For information on bypassing rules on a worksheet, see xref:worksheet-inclusion.adoc[Change inclusion, join, or RLS for a worksheet].

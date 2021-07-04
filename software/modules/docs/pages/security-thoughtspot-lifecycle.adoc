@@ -25,7 +25,7 @@ To list all the installed packages, see <<checking-os-package-versions,Checking 
 
 === Third-Party Software (Middleware)
 
-Third party software used includes Java, Boost C{pp} libraries, Google protocol buffers, etc.
+Third party software used includes Java, Boost C{pp} libraries, Google protocol buffers, and so on.
 These are software components necessary for operation of the ThoughtSpot application.
 ThoughtSpot only uses software licensed for distribution.
 
@@ -96,7 +96,7 @@ No Internet or repository access is required for this, the update is applied dir
 Specifically, all nodes running ThoughtSpot are required to have two root partitions on their boot drive of which one of them is booted from at any given time.
 During installation or update, the Operating System image contained in the release tarball is copied into the second currently-unused root partition and the system switches to it through a reboot.
 
-[checking-os-package-versions]
+[#checking-os-package-versions]
 === Checking OS Package Versions
 
 The following command run from any ThoughtSpot node will indicate versions of all installed packages:
@@ -146,16 +146,18 @@ We recommend customers to wait for the next regular release for receiving securi
 However, should a critical vulnerability be discovered in the interim, ThoughtSpot can push out a new patch release containing the required patches, if available upstream.
 
 ThoughtSpot targets a three week or less cadence for generating patch releases for all supported release branches.
-Timeline for the new release and patching depends on availability of the patch upstream (e.g., not all vulnerabilities in Linux are immediately fixed) and qualification (ThoughtSpot qualifies each build on each supported cloud and on-prem platform).
+The timeline for the new release and patching depends on availability of the patch upstream (not all vulnerabilities in Linux are fixed immediately) and qualification (ThoughtSpot qualifies each build on each supported cloud and on-prem platform).
 If a fix is unavailable upstream at the moment, customers and ThoughtSpot support can work together to identify potential workarounds.
 
+[#secure-storage]
 == Storage Security
 
 === Encryption at Rest
 
-* On-prem: Not supported yet
-* Cloud: Supported on AWS (See +++<font color="#0000EE">+++https://aws.amazon.com/+++</font>+++), GCP (See +++<font color="#0000EE">+++https://cloud.google.com/%2F%5D+++</font>+++), Azure (See +++<font color="#0000EE">+++https://azure.microsoft.com/en-us/+++</font>+++)
+* On-prem: Not supported
+* Cloud: Supported on https://aws.amazon.com[AWS^], https://cloud.google.com/%2F%5D[GCP^], and https://azure.microsoft.com/en-us/[Azure^].
 
 === Secure Erase
 
-Current erase guide (See +++<font color="#0000EE">+++https://thoughtspot.egnyte.com/dl/E1eYDyfotL/SOP-520-0007-00-User-Data-Removal.pdf_+++</font>+++)
+See the https://thoughtspot.egnyte.com/dl/E1eYDyfotL/SOP-520-0007-00-User-Data-Removal.pdf[User Data Removal guide^].
+
