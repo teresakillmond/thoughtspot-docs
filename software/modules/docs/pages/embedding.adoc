@@ -15,16 +15,22 @@ Regardless of the simplicity or complexity of your client application, its infra
 This library allows you to authenticate to ThoughtSpot and load specific objects.
 
 There are different methods for embedding ThoughtSpot into a client application:
-+++<dlentry>+++Full::::
+
+Full embed::
 Embeds the entire ThoughtSpot application including menu bars.
-Full navigation is supported.+++</dlentry>++++++<dlentry>+++Page-level::::
++
+Full navigation is supported
+Page-level embed::
 Embeds pages without the menus bars or page-level navigation.
 This is useful where you want to limit the inclusion to a portion of ThoughtSpot.
-For example, you may only embed the *Search* or the *Answers* page.+++</dlentry>++++++<dlentry>+++Object-level embedding::::
++
+For example, you may only embed the *Search* or the *Answers* page.
+
+Object-level embed::
 Embed a single visualization in your application.
-Content is created in ThoughtSpot and then that content is embedded.
-The content is rendered within an `iframe`.
-This returns a JSON object that includes the underlying data.+++</dlentry>+++
+Create content in ThoughtSpot, and then embed it.
++
+Use `iframe` elements for inserting ThoughtSpot visualizations. This returns a JSON object that includes the underlying data.
 
 You can also use the ThoughtSpot data APIs to request data from ThoughtSpot.
 
