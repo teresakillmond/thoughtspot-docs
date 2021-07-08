@@ -15,7 +15,7 @@ Choose a data type for each column from the list of supported data types:
 
 [#text]
 Character or Text::
-  `VARCHAR(*n*)`
+[#varchar]`VARCHAR(*n*)`
 +
 Specify the maximum number of characters, as in `VARCHAR(255)`.
 +
@@ -25,19 +25,21 @@ WARNING: If you have `VARCHAR` data that exceeds the 64MB limit, the entire load
 
 [#decimal]
 Floating point or Decimal::
-  `DOUBLE` or `FLOAT`
+[#double]`DOUBLE` or
+[#float]`FLOAT`
 +
 We recommend that you use `DOUBLE`, because it has a range of 15 digits, `1.7E +/- 308`.
 
 [#boolean]
 Boolean::
-  `BOOL`
+[#bool]`BOOL`
 +
 Can be `true` or `false`.
 
 [#integer]
 Integer::
-  `INT` or `BIGINT`
+[#int]`INT` or
+[#bigint]`BIGINT`
 +
 `INT` holds 32 bits. It has a range of `-2,147,483,648` to `2,147,483,647`.
 +
@@ -45,7 +47,10 @@ Integer::
 
 [#date]
 Date or time::
-  `DATE`, `DATETIME`, `TIMESTAMP`, `TIME`
+[#date]`DATE`,
+[#datetime]`DATETIME`,
+[#timestamp]`TIMESTAMP`, or
+[#time]`TIME`
 +
 ThoughtSpot stores `DATETIME`, `TIMESTAMP`, and `TIME` at the granularity of seconds. `TIMESTAMP` is identical to `DATETIME`; we include it for syntax compatibility.
 
@@ -103,20 +108,20 @@ These data types can be designated as geographical data, which enables them to b
 [#country]
 Country::
   Countries, such as United States:
-+
-* `long name`: United States
-* `name_sort`: United States of America
-* `abbreviation`: U.S.A.
-* `adm0_a3`: USA
-* `adm0_a3_is`: USA
-* `adm0_a3_us`: USA
-* `admin`: United States of America
-* `brk_a3`: USA
-* `brk_name`: United States
-* `formal_en`: United States of America
-* `iso_a2`: US
-* `iso_a3`: USA
-* `iso_n3`: 840
+[horizontal]
+ `long name`::: United States
+`name_sort`::: United States of America
+`abbreviation`::: U.S.A.
+`adm0_a3`::: USA
+`adm0_a3_is`::: USA
+`adm0_a3_us`::: USA
+`admin`::: United States of America
+`brk_a3`::: USA
+`brk_name`::: United States
+`formal_en`::: United States of America
+`iso_a2`::: US
+`iso_a3`::: USA
+`iso_n3`::: 840
 
 [#sub]
 Sub-nation region::
@@ -168,7 +173,6 @@ Latitude::
 Here are some examples of *Latitude*, which you must use with *Longitude*:
 +
 * 37.421023
-+
 * -1.282911
 
 [#longitude]
@@ -178,5 +182,4 @@ Longitude::
 Here are some examples of *Longitude*, which you must use with *Latitude*:
 +
 * 122.142103
-+
 * -103.848865

@@ -5,26 +5,26 @@
 
 Prepare the system and ThoughtSpot clusters for installation.
 
-[options="interactive"]
-.These are the general steps for installing ThoughtSpot on Amazon Linux 2:
-* [ ] xref:set-up-hosts[1. Set up hosts for the ThoughtSpot cluster]
-* [ ] xref:aws-ssm[2.(Optional) Set up AWS Systems Manager Agent]
-* [ ] xref:partition-hosts[3. Partition the hosts]
-* [ ] xref:enable-hosts[4. Enable the hosts to download Amazon Linux 2 packages]
-* [ ] xref:enable-ansible[5. Enable an Ansible Control Server]
-* [ ] xref:disable-selinux[6. Disable SELinux or run it in permissive mode]
-* [ ] xref:tmp-permission[7. Ensure tmp has permission 777]
-* [ ] xref:etc-sudoers[8. Remove Defaults requiretty from /etc/sudoers]
+These are the general steps for installing ThoughtSpot on Amazon Linux 2:
+
+[cols="5,~",grid=none,frame=none]
+|===
+| &#10063; | xref:set-up-hosts[1. Set up hosts for the ThoughtSpot cluster]
+| &#10063; | xref:aws-ssm[2. (Optional) Set up AWS Systems Manager Agent]
+| &#10063; | xref:partition-hosts[3. Partition the hosts]
+| &#10063; | xref:enable-hosts[4. Enable the hosts to download Amazon Linux 2 packages]
+| &#10063; | xref:enable-ansible[5. Enable an Ansible Control Server]
+| &#10063; | xref:disable-selinux[6. Disable SELinux or run it in permissive mode]
+| &#10063; | xref:tmp-permission[7. Ensure tmp has permission 777]
+| &#10063; | xref:etc-sudoers[8. Remove Defaults requiretty from /etc/sudoers]
+|===
 
 [#set-up-hosts]
 == Set up hosts for the ThoughtSpot cluster
 
 Set up hosts for the ThoughtSpot cluster on Amazon Web Services.
 
-. Refer to xref:aws-configuration-options.adoc[AWS configuration options] for the exact specification for the hosts:
- ** CPU
- ** memory
- ** disks
+. Refer to xref:aws-configuration-options.adoc[AWS configuration options] for the exact specification for the hosts in regard to CPU, memory, and disks.
 . Refer to xref:aws-launch-instance.adoc[Set up AWS resources for ThoughtSpot] to create and launch your AWS virtual machines.
 
 [#aws-ssm]

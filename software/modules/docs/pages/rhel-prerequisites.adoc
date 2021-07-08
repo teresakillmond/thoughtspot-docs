@@ -3,17 +3,20 @@
 :linkattrs:
 :experimenal:
 
-[options="interactive"]
-.Prepare the system and ThoughtSpot clusters for installation:
-* [ ] xref:set-up-hosts[1. Set up hosts for the ThoughtSpot cluster]
-* [ ] xref:partition-hosts[2. Partition the hostsv]
-* [ ] xref:install-rhel[3. Install RHEL version 7.8 or 7.9 on all hosts]
-* [ ] xref:linux-kernel-version[4. Ensure that your Linux kernel is on the correct version]
-* [ ] xref:enable-hosts[5. Enable the hosts to download RHEL packages]
-* [ ] xref:enable-ansible[6. Enable an Ansible Control Server]
-* [ ] xref:disable-selinux[7. Disable SELinux]
-* [ ] xref:tmp-permission[8. Ensure tmp has permission 777]
-* [ ] xref:etc-sudoers[9. Remove Defaults requiretty from /etc/sudoers]
+Prepare the system and ThoughtSpot clusters for installation:
+
+[cols="5,~",grid=none,frame=none]
+|===
+| &#10063; | xref:set-up-hosts[1. Set up hosts for the ThoughtSpot cluster]
+| &#10063; | xref:partition-hosts[2. Partition the hostsv]
+| &#10063; | xref:install-rhel[3. Install RHEL version 7.8 or 7.9 on all hosts]
+| &#10063; | xref:linux-kernel-version[4. Ensure that your Linux kernel is on the correct version]
+| &#10063; | xref:enable-hosts[5. Enable the hosts to download RHEL packages]
+| &#10063; | xref:enable-ansible[6. Enable an Ansible Control Server]
+| &#10063; | xref:disable-selinux[7. Disable SELinux]
+| &#10063; | xref:tmp-permission[8. Ensure tmp has permission 777]
+| &#10063; | xref:etc-sudoers[9. Remove Defaults requiretty from /etc/sudoers]
+|===
 
 [#set-up-hosts]
 == Set up hosts for the ThoughtSpot cluster
@@ -21,8 +24,8 @@
 Set up hosts for the ThoughtSpot cluster on your chosen platform.
 Please refer to the relevant deployment sections in our documentation for the exact specification for the hosts: CPU, memory, and disks.
 
-* ThoughtSpot-certified hardware appliance manufactured by xref:installing-dell.adoc[DELL]
-* ThoughtSpot-certified hardware appliance manufactured by xref:installing-smc.adoc[SMC]
+* ThoughtSpot-certified hardware appliance manufactured by xref:dell.adoc[DELL]
+* ThoughtSpot-certified hardware appliance manufactured by xref:smc.adoc[SMC]
 * xref:aws-configuration-options.adoc[Amazon Web Services (AWS) EC2]
 * xref:gcp-configuration-options.adoc[Google Cloud Platform (GCP)]
 * xref:azure-configuration-options.adoc[Microsoft Azure]
@@ -37,7 +40,7 @@ All drives must be SSDs.
 . At least 20 GB available on the root drive, for yum packages and system logs.
 . At least 50 GB available for `/tmp`.
 . At least 200 GB for ThoughtSpot installation, either on a secondary drive or as a separate partition on the root drive.
-For ThoughtSpot-certified hardware platforms, xref:installing-dell.adoc[Dell] and xref:installing-smc.adoc[Super Micro Computer], you must use a secondary drive because the root drive has a limit of 200 GB.
+For ThoughtSpot-certified hardware platforms, xref:dell.adoc[Dell] and xref:smc.adoc[Super Micro Computer], you must use a secondary drive because the root drive has a limit of 200 GB.
 +
 NOTE: This drive must be separate from the data drive(s).
 

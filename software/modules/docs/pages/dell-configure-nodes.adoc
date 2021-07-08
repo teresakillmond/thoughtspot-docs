@@ -8,12 +8,15 @@ Configure ThoughtSpot nodes on your Dell appliance.
 After you connect the appliance, a command line appears on your console.
 Configure the nodes on this command line.
 
-[options="interactive"]
-.Follow the steps in this checklist:
-* [ ] xref:node-step-1[Step 1: Get a template for network configuration]
-* [ ] xref:node-step-2[Step 2: Prepare node configuration]
-* [ ] xref:node-step-3[Step 3: Configure the nodes]
-* [ ] xref:node-step-4[Step 4: Confirm node configuration]
+Follow the steps in this checklist:
+
+[cols="5,~",grid=none,frame=none]
+|===
+| &#10063; | xref:node-step-1[Step 1: Get a template for network configuration]
+| &#10063; | xref:node-step-2[Step 2: Prepare node configuration]
+| &#10063; | xref:node-step-3[Step 3: Configure the nodes]
+| &#10063; | xref:node-step-4[Step 4: Confirm node configuration]
+|===
 
 [#node-step-1]
 == Step 1: Get a template for network configuration
@@ -33,8 +36,9 @@ Redirect it to the file `nodes.config`.
 . Add your specific network information for the nodes in the `nodes.config` file, as demonstrated in the xref:nodesconfig-example.adoc#autodiscovery-of-one-node-example[autodiscovery of one node example].
 Run `vim nodes.config` to edit the file.
 +
+[source,bash]
 ----
- $ vim nodes.config
+$ vim nodes.config
 ----
 +
 NOTE: Some of the information in the `nodes.config` file may be pre-populated from earlier steps. For example, if you specified an IP address while creating VMs, that IP address might already be present in your `nodes.config` file.
@@ -53,10 +57,11 @@ If you delete quotation marks, commas, or other parts of the code, it may cause 
 Configure the nodes in the `nodes.config` file using the `set-config` command.
 
 Run `$ cat nodes.config | tscli cluster set-config` in your terminal.
-+ If the command returns an error, refer to xref:install-cluster-dell.adoc#set-config-error-recovery[set-config error recovery].
++
+If the command returns an error, refer to xref:dell-cluster-install.adoc#set-config-error-recovery[set-config error recovery].
 
 
-[source,console]
+[source,bash]
 ----
 $ cat nodes.config | tscli cluster set-config
 
@@ -76,7 +81,7 @@ Use the `get-config` command to confirm node configuration.
 
 Your output may look similar to the following:
 
-[source,console]
+[source,bash]
 ----
 $ tscli cluster get-config
 
@@ -117,4 +122,4 @@ See other training resources at + https://training.thoughtspot.com/[<img src="{{
 
 == Install your cluster
 
-Next, xref:install-cluster-dell.adoc[install your cluster.]
+Next, xref:dell-cluster-install.adoc[install your cluster.]
