@@ -11,29 +11,29 @@ When the Ansible playbook runs, it automatically installs them.
 ThoughtSpot works with the latest version of each package; see the minimum supported version.
 
 [#yum]
-== Yum RPM packages
-
-These are the required packages, and the minimum supported version.
-
-include::partial$yum-rpm-packages.adoc[]
-
 [#pip2]
-== Python 2 packages
-
-These are the required packages, and the minimum supported version.
-
-include::partial$pip2-rpm-packages.adoc[]
-
 [#pip3]
-== Python 3 packages
-
-These are the required packages, and the minimum supported version.
-
-include::partial$pip3-rpm-packages.adoc[]
-
 [#r]
-== R packages
-
-These are the required packages, and the minimum supported version.
-
+[tabset]
+====
+Yum RPM packages;;
++
+--
+include::partial$yum-rpm-packages.adoc[]
+--
+Python 2 packages;;
++
+--
+include::partial$pip2-rpm-packages.adoc[]
+--
+Python 3 packages;;
++
+--
+include::partial$pip3-rpm-packages.adoc[]
+--
+R packages;;
++
+--
 include::partial$r-rpm-packages.adoc[]
+--
+====

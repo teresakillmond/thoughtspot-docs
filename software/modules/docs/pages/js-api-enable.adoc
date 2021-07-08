@@ -30,19 +30,19 @@ The `onAuthExpiration` is only available if you have at least one ThoughtSpot vi
 
 . Include the library file in your web page's `<head>` section:
 +
-[source,console]
+[source,html]
 ----
- <head>
-   <script type=”text/javascript” src=”<protocol><your.thoughtspot.domain>/js/api/api.min.js”>
+<head>
+  <script type=”text/javascript” src=”<protocol><your.thoughtspot.domain>/js/api/api.min.js”>
    ...
- </head>
+</head>
 ----
 
 . From your application code, authenticate to ThoughtSpot by calling to the `window.thoughtspot.initialize` method.
 +
 For example:
 +
-[source,console]
+[source,text]
 ----
  <script type=”text/javascript”>
      thoughtspotHost = <hostname_or_ip_w/o_http>

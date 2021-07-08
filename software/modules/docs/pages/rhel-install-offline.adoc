@@ -3,8 +3,8 @@
 :experimental:
 :linkattrs:
 
-Install ThoughtSpot on RHEL offline clusters
----
+Install ThoughtSpot on RHEL offline clusters.
+
 Before starting the install, make sure that you completed the xref:rhel-prerequisites.adoc[pre-installation steps].
 
 In an offline cluster, the hosts cannot connect to the public repositories to download the required packages. Instead, you must download the packages from your organization’s mirror repository to each host. Otherwise, the steps for installing on offline clusters are practically the same as the steps for installing on online cluster.
@@ -20,12 +20,15 @@ Before you build the ThoughtSpot cluster and install the ThoughtSpot application
    - checks that customization scripts can execute on the nodes
    - checks that the partitions meet minimum size requirements
 
-[options="interactive"]
-.Here are the general steps for installing offline:
-* [ ] xref:configure-ansible[1. Configure the Ansible Playbook]
-* [ ] xref:redirect-mirror[2. Redirect the mirror repository]
-* [ ] xref:run-ansible[2. Run the Ansible Playbook]
-* [ ] xref:install-thoughtspot[3. Install ThoughtSpot]
+Here are the general steps for installing offline:
+
+[cols="5,~",grid=none,frame=none]
+|===
+| &#10063; | xref:configure-ansible[1. Configure the Ansible Playbook]
+| &#10063; | xref:redirect-mirror[2. Redirect the mirror repository]
+| &#10063; | xref:run-ansible[2. Run the Ansible Playbook]
+| &#10063; | xref:install-thoughtspot[3. Install ThoughtSpot]
+|===
 
 [#configure-ansible]
 == Configure the Ansible Playbook
@@ -206,7 +209,7 @@ Your hosts are ready for installing the ThoughtSpot application.
 
 Refer to the ThoughtSpot documentation for the detailed steps to install the ThoughtSpot cluster for each deployment platform:
 
-- xref:inthebox.adoc[Hardware appliance]
+- xref:hardware-appliance.adoc[Hardware appliance]
 - xref:aws-configuration-options.adoc[Amazon Web Services (AWS) EC2]
 - xref:azure-configuration-options.adoc[Microsoft Azure]
 - xref:gcp-configuration-options.adoc[Google Cloud Platform (GCP)]

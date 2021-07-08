@@ -18,7 +18,7 @@ A ThoughtSpot deployment consists of the following high level software systems:
 All ThoughtSpot physical appliances, virtual machines (VMs) and public cloud images come pre-installed with CentOS 7.
 The https://www.centos.org/[CentOS] distribution of Linux is owned by https://www.redhat.com/en[RedHat] and closely tracks versions of RedHat Enterprise Linux (RHEL).
 
-ThoughtSpot uses the minimal install of CentOS 7 with the addition of a few software packages (e.g.
+ThoughtSpot uses the minimal install of CentOS 7 with the addition of a few software packages (for example,
 Python) needed for ThoughtSpot operations.
 The most notable change to the installation is to the Linux kernel, which is sourced from the current long term stable kernel version instead of the default included in CentOS 7 (kernel-lt package).
 To list all the installed packages, see <<checking-os-package-versions,Checking Package Versions>>.
@@ -112,8 +112,8 @@ The exact same process used during installation is also applied during upgrades.
 The previous OS image on a node gets replaced by the new image carried in the release tarball.
 
 Only some releases may patch the Operating System, not all.
-Typically, all major and minor releases (e.g.
-4.4, 4.5, 4.5.1, 5.0) upgrade OS patches, whereas only some patch releases (e.g.
+Typically, all major and minor releases (for example,
+4.4, 4.5, 4.5.1, 5.0) upgrade OS patches, whereas only some patch releases (for example,
 4.4.1.4) contain OS patches.
 
 === Distributed Clusters and Failure Handling
@@ -130,7 +130,7 @@ Installation or upgrade of ThoughtSpot deployments automatically upgrades all th
 
 == Security Scanning and Patching Process
 
-The ThoughtSpot Security team continuously scans security bulletins for new vulnerabilities discovered in included OS packages (e.g., Linux Kernel, libc) and third party software (e.g., Java).
+The ThoughtSpot Security team continuously scans security bulletins for new vulnerabilities discovered in included OS packages (for example, Linux Kernel, libc) and third party software (for example, Java).
 Additionally, weekly scans are done for all release branches using Qualys with the following additional modules enabled: Vulnerability Management, Web App Scanning.
 The security scans discover vulnerabilities at all layers: OS, third-party software, as well as ThoughtSpot application binaries and configuration.
 Additionally, ThoughtSpot periodically scans all source code for third-party software as well as ThoughtSpot's proprietary code base for vulnerabilities or unsafe usage using SourceClear.

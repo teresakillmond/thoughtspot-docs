@@ -13,11 +13,13 @@ If you can, you can run the installer on your local computer.
 Refer to your welcome letter from ThoughtSpot to find the link to download the release bundle.
 If you do not have a link to download the release bundle, open a support ticket at https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support,window="_blank"] to access the release bundle.
 
-[options="interactive"]
-.Follow the steps in this checklist to install your cluster:
-* [ ] xref:install-step-1[Step 1: Run the installer]
-* [ ] xref:install-step-2[Step 2: Check cluster health]
-* [ ] xref:install-step-3[Step 3: Finalize installation]
+Follow the steps in this checklist to install your cluster:
+[cols="5,~",grid=none,frame=none]
+|===
+| &#10063; | xref:install-step-1[Step 1: Run the installer]
+| &#10063; | xref:install-step-2[Step 2: Check cluster health]
+| &#10063; | xref:install-step-3[Step 3: Finalize installation]
+|===
 
 [#install-step-1]
 == Step 1: Run the installer
@@ -34,19 +36,22 @@ Note the following parameters of the `scp` command:
   is your network hostname; ask your network administrator if you do not know your hostname.
 `file-name`::
   is the name of the tarball file on your local computer.
-
- $ scp <release-number>.tar.gz admin@<hostname>:/export/sdb1/TS_TASKS/install/<file-name>
-
 +
-If you prefer a method other than the `scp` command, use `tscli fileserver download-release` to download the release bundle.
-+ You must xref:tscli-command-ref.html#tscli-fileserver[configure the fileserver] by running `tscli fileserver configure` before you can download the release.
-+
+[source,bash]
 ----
- $ tscli fileserver download-release <release-number> --user <username> --out <release-location>
+$ scp <release-number>.tar.gz admin@<hostname>:/export/sdb1/TS_TASKS/install/<file-name>
+----
+. *[Alternative]* If you prefer a method other than the `scp` command, use `tscli fileserver download-release` to download the release bundle.
++
+You must xref:tscli-command-ref.html#tscli-fileserver[configure the fileserver] by running `tscli fileserver configure` before you can download the release.
++
+[source,bash]
+----
+$ tscli fileserver download-release <release-number> --user <username> --out <release-location>
 ----
 +
 Note the following parameters of the command:
-
++
 `release-number`::
   is the release number of your ThoughtSpot instance, such as 5.3, 5.3.1, 6.0, and so on.
 `username`::
@@ -57,8 +62,9 @@ Note the following parameters of the command:
 . Verify the checksum to ensure you have the correct release.
 + Run `md5sum -c <release-number>.tar.gz.MD5checksum`.
 +
+[source,bash]
 ----
- $ md5sum -c <release-number>.tar.gz.MD5checksum
+$ md5sum -c <release-number>.tar.gz.MD5checksum
 ----
 +
 Your output says `ok` if you have the correct release.
@@ -66,16 +72,18 @@ Your output says `ok` if you have the correct release.
 . Launch a https://linux.die.net/man/1/screen[screen,window="_blank"] session.
 Use screen to ensure that your installation does not stop if you lose network connectivity.
 +
+[source,bash]
 ----
- $ screen -S DEPLOYMENT
+$ screen -S DEPLOYMENT
 ----
 
 . Take a machine snapshot prior to the release deployment, as a best practice.
 
 . Create the cluster using `tscli cluster create <release-number>`.
 +
+[source,bash]
 ----
- $ tscli cluster create <release.number>.tar.gz
+$ tscli cluster create <release.number>.tar.gz
 ----
 
 . Edit the output using your specific cluster information.
@@ -93,7 +101,7 @@ After you install the cluster, check its status using the `tscli cluster status`
 
 Your output may look something like the following:
 
-[source,console]
+[source,bash]
 ----
 $ tscli cluster status
 Cluster: RUNNING
@@ -124,6 +132,11 @@ Number of tables in WILL_NOT_INDEX state: 0
 
 Ensure that the cluster is `RUNNING` and that the Database and Search Engine are `READY`.
 
+Your output may look something like the following listing.
+Ensure that all diagnostics show `SUCCESS`.
+
+[source,bash]
+----
  $ tscli cluster check
  Connecting to hosts...
  [Wed Jan  8 23:15:47 2020] START Diagnosing ssh
@@ -179,11 +192,9 @@ Ensure that the cluster is `RUNNING` and that the Database and Search Engine are
    InsecureRequestWarning)
  [Wed Jan  8 23:16:12 2020] SUCCESS
  ################################################################################
+----
 
-Your output may look something like the above.
-Ensure that all diagnostics show `SUCCESS`.
-
-WARNING: If `tscli cluster check` returns an error, it may suggest you run `tscli storage gc` to resolve the issue.
+CAUTION: If `tscli cluster check` returns an error, it may suggest you run `tscli storage gc` to resolve the issue.
 If you run `tscli storage gc`, note that it restarts your cluster.
 
 [#install-step-3]
@@ -195,6 +206,7 @@ After the cluster status changes to `READY`, sign in to the ThoughtSpot applicat
 . Start a browser from your computer.
 . Enter your secure IP information on the address line.
 +
+[source,bash]
 ----
  https://<IP-address>
 ----
@@ -203,7 +215,7 @@ After the cluster status changes to `READY`, sign in to the ThoughtSpot applicat
  ** Click *Advanced*
  ** Click *Proceed*
 . The ThoughtSpot login page appears.
-. In the xref:install-cluster-dell.adoc#ts-login[ThoughtSpot sign-in window], enter admin credentials, and click *Sign in*.
+. In the <<ts-login,ThoughtSpot sign-in window>>, enter admin credentials, and click *Sign in*.
 ThoughtSpot recommends changing the default admin password.
 
 [#ts-login]

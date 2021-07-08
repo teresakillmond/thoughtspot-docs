@@ -20,18 +20,18 @@ This procedure assumes the Pinboard with the visualization you want to embed alr
 . Navigate to a visualization on the *Pinboard* tab.
 . Open a Pinboard.
 . Copy the URL:
- ** *Pinboard embedding*: click the *More* menu at the level of the Pinboard, image:icon-ellipses.png[more options menu icon], and select *[-] Copy embed link*.
 +
-The format for the link is:
+Pinboard embedding::
+Click the *More* menu at the level of the Pinboard, image:icon-ellipses.png[more options menu icon], and select *[-] Copy embed link*. The format for the link is:
 +
+[source,html]
 ----
 <protocol>:<host>:<port>/#/embed/viz/<pinboardID>
 ----
 
- ** *Vizualization embedding*: click the *More* menu on the visual you plan to embed, image:icon-ellipses.png[more options menu icon], and select *[-] Copy embed link*.
+Vizualization embedding:: click the *More* menu on the visual you plan to embed, image:icon-ellipses.png[more options menu icon], and select *[-] Copy embed link*. The format for the link is:
 +
-The format for the link is:
-+
+[source,html]
 ----
 <protocol>:<host>:<port>/#/embed/viz/<pinboardID>/<vizualizationId>
 ----
@@ -50,7 +50,7 @@ For this example, you can get a copy of the xref:test.html[test.html] file.
 +
 Here are the fields in the `test.html` file you must edit.
 +
-[source,JavaScript]
+[source,java]
 ----
  var protocol = "THOUGHTSPOT_PROTOCOL";
  var hostPort = "HOST_PORT";
@@ -63,11 +63,14 @@ Here are the fields in the `test.html` file you must edit.
 +
 For example, your URL may look similar to the following:
 +
-`http://172.18.202.35:8088/#/embed/viz/061457a2-27bc-43a9-9754-0cd873691bf0/9985fccf-b28d-4262-b54b-29619a38348e+`
+[source,html]
+----
+http://172.18.202.35:8088/#/embed/viz/061457a2-27bc-43a9-9754-0cd873691bf0/9985fccf-b28d-4262-b54b-29619a38348e+`
+----
 +
 This is a link copied from an individual visualization, the result in the file is:
 +
-[source,JavaScript]
+[source,java]
 ----
  var protocol = "http";
  var hostPort = "172.18.202.35:8088";
@@ -76,7 +79,7 @@ This is a link copied from an individual visualization, the result in the file i
  var vizualizationId = "9985fccf-b28d-4262-b54b-29619a38348e";
 ----
 +
-The protocol (`http` or `https`) of your client and your ThoughtSpot instance  should match.
+The protocol (`http` or `https`) of your client and your ThoughtSpot instance must match.
 You can use this identifier in the next part.
 
 . Save your changes and close the `test.html` file.
@@ -108,8 +111,9 @@ Your browser has this information and so when you load the `test.html` page in a
 . Change to your `test` directory.
 . Start the `simplehttpserver` web server.
 +
+[source,python]
 ----
-  python -m SimpleHTTPServer 8000
+python -m SimpleHTTPServer 8000
 ----
 
 . Open your browser's *Developer* tools.
@@ -123,10 +127,11 @@ See if your Pinboard or visualization appears in the browser window.
 +
 On success, the console reports a message similar to the following:
 +
+[source,bash]
 ----
- test.html:60 Initialization successful.
- test.html:113 http://172.18.202.35:8088/#/embed/viz/061457a2-27bc-43a9-9754-0cd873691bf0
- test.html:129 http://172.18.202.35:8088/#/embed/viz/061457a2-27bc-43a9-9754-0cd873691bf0/9985fccf-b28d-4262-b54b-29619a38348e
+test.html:60 Initialization successful.
+test.html:113 http://172.18.202.35:8088/#/embed/viz/061457a2-27bc-43a9-9754-0cd873691bf0
+test.html:129 http://172.18.202.35:8088/#/embed/viz/061457a2-27bc-43a9-9754-0cd873691bf0/9985fccf-b28d-4262-b54b-29619a38348e
 ----
 
 == Troubleshooting embeds
@@ -135,9 +140,10 @@ If your embeds don't load, open the developer tools on your browser, and look fo
 
 You may see an error similar to the following:
 
+[source,bash]
 ----
 No 'Access-Control-Allow-Origin' header is present on the requested resource.
 ----
 
-This occurs when the cross domain (CORS) setting is incorrect on your ThoughtSpot cluster.
+This occurs when the cross-domain (CORS) setting is incorrect on your ThoughtSpot cluster.
 Contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support] for more help.
