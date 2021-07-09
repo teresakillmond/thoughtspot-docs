@@ -24,9 +24,12 @@ Storage type:: Choose the Storage type: _Azure Blob Storage_ (default) or _Data 
 Account:: Azure Storage has an address that includes our unique account name which is a combination of the account name and the Azure Storage blob endpoint forms the base address for the objects in your storage account. Mandatory field.
 Example:;; userdi
 [#dataflow-azure-blob-storage-conn-authentication-type]
-Authentication type:: This supports two types of authentication methods: Azure account key: Choose to authenticate based on access keys and other parameters to produce an encrypted signature string that is passed on the request in the Authorization header. Shared access signatures (SAS): Choose to grant fine-grained access to resources in your storage account with specified permissions and over a specified time interval. Mandatory field.
+Authentication type:: This supports two types of authentication methods:
+Azure account key:;; Choose to authenticate based on access keys and other parameters to produce an encrypted signature string that is passed on the request in the Authorization header.
+Shared access signatures (SAS):;; Choose to grant fine-grained access to resources in your storage account with specified permissions and over a specified time interval. Mandatory field.
 Example:;; Azure account key
-Valid Values:;; Azure account key Shared access signature
+Valid Values:;; Azure account key +
+Shared access signature
 [#dataflow-azure-blob-storage-conn-key]
 Key:: The 512-bit access key generated while creating storage account. Mandatory field.
 Example:;; ABCDEFGH245HIJK
@@ -37,13 +40,15 @@ Example:;; container
 [#sync-properties]
 == Sync properties
 [#dataflow-azure-blob-storage-sync-file-name]
-File name:: Specify name of the file Mandatory field.
+File name:: Specify name of the file. +
+Mandatory field.
 Example:;; testfile.csv
 Valid Values:;; Any string literal
-Default:;; The name of the file used to create sync
+Default:;; The name of the file used to create sync.
 Other notes:;; To specify wildcard pattern use `*` character in the file name
 [#dataflow-azure-blob-storage-sync-column-delimiter]
-Column delimiter:: Specifies the delimiter between the columns in the source file. Mandatory field.
+Column delimiter:: Specifies the delimiter between the columns in the source file. +
+Mandatory field.
 Example:;; ,
 Valid Values:;; Any printable ASCII character or decimal value for ASCII character
 Default:;; The delimiter specified in sync
@@ -117,7 +122,8 @@ Default:;; 0
 TS load options::
 Specify additional parameters passed with the `tsload` command.
 The format for these parameters is: +
-`--<param_1_name> <optional_param_1_value>` Optional field.
+`--<param_1_name> <optional_param_1_value>` +
+Optional field.
 Example:;; `--max_ignored_rows 0`
 Valid Values:;;
 `--null_value ""` +

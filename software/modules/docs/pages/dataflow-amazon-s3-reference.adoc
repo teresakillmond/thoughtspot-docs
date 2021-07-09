@@ -38,7 +38,8 @@ Specify the bucket. +
 File name:: Specify the name of the file. Mandatory field.
 Example:;; PRODUCT.csv
 Valid Values:;; Any string literal
-Default:;; File name for sync. Other notes:;; To specify wildcard pattern, use `*`.
+Default:;; File name for sync.
+Other notes:;; To specify wildcard pattern, use `*`.
 [#dataflow-amazon-s3-sync-enable-archive-on-success]
 Enable archive on success:: Specify if must archive file after operation succeeds. Optional field.
 Example:;; No
@@ -125,7 +126,8 @@ TS load options::
 Specifies the parameters passed with the `tsload` command, in addition to the commands already included by the application.
 The format for these parameters is: +
  `--<param_1_name> <optional_param_1_value>` +
-  `--<param_2_name> <optional_param_2_value>` Optional field.
+  `--<param_2_name> <optional_param_2_value>` +
+  Optional field.
 Example:;; `--max_ignored_rows 0`
 Valid Values:;;
  `--null_value ""` +
@@ -133,7 +135,8 @@ Valid Values:;;
   `--max_ignored_rows 0`
 Default:;; `--max_ignored_rows 0`
 [#dataflow-amazon-s3-sync-boolean-representation]
-Boolean representation:: Specifies the representation of data in the boolean field Optional field.
+Boolean representation:: Specifies the representation of data in the boolean field. +
+Optional field.
 Example:;; true_false
 Valid Values:;; true_false, T_F, 1_0, T_NULL
 Default:;; true_false
