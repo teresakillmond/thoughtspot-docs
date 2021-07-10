@@ -5,6 +5,14 @@
 
 You can use network attached storage to support backup/restore and data loading.
 
+'''
+> **ThoughtSpot Training**
+>
+> * For best results when configuring NAS for backups, we recommend that you take the following ThoughtSpot U course: https://training.thoughtspot.com/nas-mount[NAS Mount^].
+> * See other training resources at https://training.thoughtspot.com/[ThoughtSpot U^].
+
+'''
+
 include::partial$mount-nas.adoc[]
 
 You can mount NAS through the xref:admin-portal.adoc[Admin Console], or <<mount-nas-tscli,using tscli>>.
@@ -20,6 +28,7 @@ To mount a NAS file system using the tscli, follow these steps:
 . Mount the directory to the file system by issuing the appropriate command:
  ** Example for an NFS (Network File System) directory:
 +
+[source,bash]
 ----
 tscli nas mount-nfs --server storageservername.file.yourdomain.net
    --path_on_server <path>  /tsdev-backup --mount_point /export/BACKUPS/
@@ -31,6 +40,7 @@ NOTE: Other command-line options are available to forward to the command (defaul
  ** Example for a CIFS (Common Internet File System) directory.
 Use `1001` for the `uid` and `gid`, as in the example:
 +
+[source,bash]
 ----
 tscli nas mount-cifs --server storageservername.file.yourdomain.net
   --path_on_server /tsdev-backup --mount_point /export/BACKUPS/
@@ -41,14 +51,7 @@ NOTE: Other command-line options are available to forward to the `mount.cifs` co
 . Use the mounted file system by referring to its mount point.
 . When you are finished with it, you can optionally unmount the NAS file system:
 +
+[source,bash]
 ----
  tscli nas unmount --dir <directory>
 ----
-
-== Additional resources
-
-As you develop your expertise in NAS mounts, we recommend the following ThoughtSpot U course:
-
-* https://training.thoughtspot.com/nas-mount[NAS Mount]
-
-See other training resources at + https://training.thoughtspot.com/[<img src="{{ "/images/ts-u.png" | prepend: site.baseurl }}" alt="ThoughtSpot U">]

@@ -5,14 +5,25 @@
 
 Learn how to install ThoughtSpot clusters in Azure.
 
+'''
+> **ThoughtSpot Training**
+>
+> * For best results when installing ThoughtSpot on Azure, we recommend that you take the following ThoughtSpot U course: https://training.thoughtspot.com/create-upgrade-patch-a-thoughtspot-cluster/430642[Create a Cluster^].
+> * See other training resources at https://training.thoughtspot.com/[ThoughtSpot U^].
+
+'''
+
 == Prerequisites
 
-[options="interactive"]
-.Before you can install your ThoughtSpot clusters in Azure, complete these prerequisites.
-* [ ] xref:azure-configuration-options.adoc[1. Review Azure configuration options] for detailed instance specs
-* [ ] xref:azure-launch-instance.adoc[2. Set up Azure for ThoughtSpot] to create and launch your instance
-* [ ] xref:ports.adoc[3. Review required network ports] for successful operation of ThoughtSpot
-* [ ] xref:installing-azure.adoc[4. Configure ThoughtSpot nodes in Azure]
+Before you can install your ThoughtSpot clusters in Azure, complete these prerequisites.
+
+[cols="5,~",grid=none,frame=none]
+|===
+| &#10063; | xref:azure-configuration-options.adoc[1. Review Azure configuration options] for detailed instance specs
+| &#10063; | xref:azure-launch-instance.adoc[2. Set up Azure for ThoughtSpot] to create and launch your instance
+| &#10063; | xref:ports.adoc[3. Review required network ports] for successful operation of ThoughtSpot
+| &#10063; | xref:installing-azure.adoc[4. Configure ThoughtSpot nodes in Azure]
+|===
 
 [#cluster-install]
 == Install ThoughtSpot Software
@@ -20,22 +31,27 @@ Learn how to install ThoughtSpot clusters in Azure.
 Install the cluster using the ThoughtSpot software release bundle.
 The estimated installation time is one hour.
 
-[options="interactive"]
-.Follow the steps in this checklist:
-* [ ] xref:cluster-step-1[Step 1: Run the installer]
-* [ ] xref:cluster-step-2[Step 2: Check cluster health]
-* [ ] xref:cluster-step-3[Step 3: Finalize installation]
+Follow the steps in this checklist:
+
+[cols="5,~",grid=none,frame=none]
+|===
+| &#10063; | <<cluster-step-1,Step 1: Run the installer>>
+| &#10063; | <<cluster-step-2,Step 2: Check cluster health>>
+| &#10063; | <<cluster-step-3,Step 3: Finalize installation>>
+|===
 
 Refer to your welcome letter from ThoughtSpot to find the link to download the release bundle.
-If you do not have a link, open a support ticket with https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support,window="_blank"] to request access to the release bundle.
+If you do not have a link, open a support ticket with https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support^] to request access to the release bundle.
 
 [#cluster-step-1]
 === Step 1: Run the installer
 
-. Copy the downloaded release bundle to `/export/sdc1/TS_TASKS/install` using the following command:
+. Copy the downloaded release bundle to the `/export/sdc1/TS_TASKS/install` directory, using the following command:
 +
+[source,bash]
 ----
- $ scp <release-number>.tar.gz admin@<hostname>:/export/sdc1/TS_TASKS/install/<file-name>
+$ scp <release-number>.tar.gz
+admin@<hostname>:/export/sdc1/TS_TASKS/install/<file-name>
 ----
 +
 Note the following parameters:
@@ -51,8 +67,10 @@ Note the following parameters:
 NOTE: You can use another secure copy method, if you prefer a method other than the `scp` command.
 
 . Alternatively, use `tscli fileserver download-release` to download the release bundle.
-+ You must xref:tscli-command-ref.adoc#tscli-fileserver[configure the fileserver] by running `tscli fileserver configure` before you can download the release.
 +
+You must xref:tscli-command-ref.adoc#tscli-fileserver[configure the fileserver] by running `tscli fileserver configure` before you can download the release.
++
+[source,bash]
 ----
  $ tscli fileserver download-release <release-number> --user <username> --out <release-location>
 ----
@@ -67,32 +85,38 @@ Note the following parameters:
   is the location path of the release bundle on your local machine. For example, `/export/sdc1/TS_TASKS/install/6.0.tar.gz`.
 
 . Verify the checksum to ensure you have the correct release.
-+ Run `md5sum -c <release-number>.tar.gz.MD5checksum`.
 +
+Run `md5sum -c <release-number>.tar.gz.MD5checksum`.
++
+[source,bash]
 ----
- $ md5sum -c <release-number>.tar.gz.MD5checksum
+$ md5sum -c <release-number>.tar.gz.MD5checksum
 ----
 +
 Your output says `ok` if you have the correct release.
 
-. Launch a https://linux.die.net/man/1/screen[screen,window="_blank"] session.
+. Launch a https://linux.die.net/man/1/screen[screen^] session.
 Use screen to ensure that your installation does not stop if you lose network connectivity.
 +
+[source,bash]
 ----
- $ screen -S DEPLOYMENT
+$ screen -S DEPLOYMENT
 ----
 
-. Manually update tscli.
-
- $ tar -C /usr/local/scaligent -zxpf <release-number>.tar.gz './bin/tscli'
+. Manually update `tscli`.
++
+[source,bash]
+$ tar -C /usr/local/scaligent -zxpf <release-number>.tar.gz './bin/tscli'
 
 . Take a machine snapshot prior to the release deployment, as a best practice.
 
 . Create the cluster.
-+ Run `tscli cluster create` to create the cluster.
 +
+Run `tscli cluster create` to create the cluster.
++
+[source,bash]
 ----
- $ tscli cluster create <release-number>.tar.gz
+$ tscli cluster create <release-number>.tar.gz
 ----
 
 . Edit the output with your specific cluster information.
@@ -105,8 +129,9 @@ At this time, the system is rebooting, which may take approximately 15 minutes.
 
 . Log in to any node to check the current cluster status:
 +
+[source,bash]
 ----
- $ tscli cluster status
+$ tscli cluster status
 ----
 
 [#cluster-step-2]
@@ -116,7 +141,7 @@ After the cluster installs, check its status using the `tscli cluster status` co
 
 Your output may look similar to the following:
 
-[source,console]
+[source,bash]
 ----
 $ tscli cluster status
 Cluster: RUNNING
@@ -147,6 +172,11 @@ Number of tables in WILL_NOT_INDEX state: 0
 
 Ensure that the cluster is `RUNNING` and that the Database and Search Engine are `READY`.
 
+Your output may look something like the following listing.
+Ensure that all diagnostics show `SUCCESS`.
+
+[source,bash]
+----
  $ tscli cluster check
  Connecting to hosts...
  [Wed Jan  8 23:15:47 2020] START Diagnosing ssh
@@ -202,11 +232,9 @@ Ensure that the cluster is `RUNNING` and that the Database and Search Engine are
    InsecureRequestWarning)
  [Wed Jan  8 23:16:12 2020] SUCCESS
  ################################################################################
+----
 
-Your output may look something like the above.
-Ensure that all diagnostics show `SUCCESS`.
-
-WARNING: If `tscli cluster check` returns an error, it may suggest you run `tscli storage gc` to resolve the issue.
+CAUTION: If `tscli cluster check` returns an error, it may suggest you run `tscli storage gc` to resolve the issue.
 If you run `tscli storage gc`, note that it restarts your cluster.
 
 [#cluster-step-3]
@@ -218,17 +246,21 @@ Follow these steps:
 . Start a browser from your computer.
 . Enter your secure IP information on the address line.
 +
+[source,bash]
 ----
- https://<IP-address>
+https://<IP-address>
 ----
 
 . If you don't have a security certificate for ThoughtSpot, you must bypass the security warning:
- ** Click *Advanced*
- ** Click *Proceed*
++
+Click *Advanced*.
++
+Click *Proceed*.
 . The ThoughtSpot sign-in page appears.
 . In the <<ts-login,ThoughtSpot sign-in window>>, enter admin credentials, and click *Sign in*.
++
 ThoughtSpot recommends changing the default admin password.
-
++
 [#ts-login]
 image:ts-login-page.png[ThoughtSpot's sign-in window]
 
@@ -249,20 +281,12 @@ Examples:
 
 +
 NOTE: If you decide later you want to disable advanced lean mode, use `default`.
-== Additional resources
-
-As you develop your expertise in Azure cluster installation, we recommend the following ThoughtSpot U course:
-
-* https://training.thoughtspot.com/create-upgrade-patch-a-thoughtspot-cluster/430642[Create a Cluster]
-
-See other training resources at + https://training.thoughtspot.com/[<img src="{{ "/images/ts-u.png" | prepend: site.baseurl }}" alt="ThoughtSpot U">]
 
 '''
 > **Related information**
 >
-> Use these references for successful installation and administration of ThoughtSpot:
 > * xref:nodesconfig-example.adoc[The nodes.config file]
 > * xref:parameters-nodesconfig.adoc[Parameters of the nodes.config file]
 > * xref:cluster-create.adoc[Using the tscli cluster create command]
 > * xref:parameters-cluster-create.adoc[Parameters of the cluster create command]
-> * Contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support,window="_blank"].
+> * Contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support^].
