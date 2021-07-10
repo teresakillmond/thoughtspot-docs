@@ -5,13 +5,21 @@
 
 Install your ThoughtSpot cluster(s) on your Dell appliance.
 
+'''
+> **ThoughtSpot Training**
+>
+> * For best results in setting up ThoughtSpot on a Dell appliance, we recommend that you take the following ThoughtSpot U course: https://training.thoughtspot.com/create-upgrade-patch-a-thoughtspot-cluster/430642[Create a Cluster^].
+> * See other training resources at https://training.thoughtspot.com/[ThoughtSpot U^].
+
+'''
+
 Install the cluster using the ThoughtSpot software release bundle.
 Installation takes approximately one hour.
 Make sure you can connect to ThoughtSpot remotely.
 If you can, you can run the installer on your local computer.
 
 Refer to your welcome letter from ThoughtSpot to find the link to download the release bundle.
-If you do not have a link to download the release bundle, open a support ticket at https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support,window="_blank"] to access the release bundle.
+If you do not have a link to download the release bundle, open a support ticket at https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support^] to access the release bundle.
 
 Follow the steps in this checklist to install your cluster:
 [cols="5,~",grid=none,frame=none]
@@ -69,7 +77,7 @@ $ md5sum -c <release-number>.tar.gz.MD5checksum
 +
 Your output says `ok` if you have the correct release.
 
-. Launch a https://linux.die.net/man/1/screen[screen,window="_blank"] session.
+. Launch a https://linux.die.net/man/1/screen[screen^] session.
 Use screen to ensure that your installation does not stop if you lose network connectivity.
 +
 [source,bash]
@@ -224,14 +232,7 @@ image:ts-login-page.png[ThoughtSpot's sign-in window]
 == Lean configuration
 
 *For use with thin provisioning only:* If you have a xref:deploying-cloud.adoc#small-medium[small or medium instance type], with less than 100GB of data, you must use advanced lean configuration before loading any data into ThoughtSpot.
-After installing the cluster, contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support,window="_blank"] for assistance with this configuration.
+After installing the cluster, contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support^] for assistance with this configuration.
 
 include::partial$install-cluster-error-recovery.adoc[]
 
-== Additional resources
-
-As you develop your expertise in Dell cluster installation, we recommend the following ThoughtSpot U course:
-
-* https://training.thoughtspot.com/create-upgrade-patch-a-thoughtspot-cluster/430642[Create a Cluster]
-
-See other training resources at + https://training.thoughtspot.com/[<img src="{{ "/images/ts-u.png" | prepend: site.baseurl }}" alt="ThoughtSpot U">]

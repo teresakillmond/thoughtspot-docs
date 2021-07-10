@@ -810,10 +810,10 @@ tscli map-tiles enable --offline --tar __TAR__ --md5 __MD5__
 +
 This command has the following parameters:
   --offline;; Specifies that you are using `maptiles` tarball from a local disk, rather than downloading from the internet. Use during offline enablement of map-tiles. You must specify the location of the `--tar` and `--md5` on your machine.
-  You must download the https://tsengg-geodata.s3.amazonaws.com/raster-osm-jpg.tar.gz[tarball, window=_blank] and https://tsengg-geodata.s3.amazonaws.com/md5[md5, window=_blank] before you run this command.
+  You must download the https://tsengg-geodata.s3.amazonaws.com/raster-osm-jpg.tar.gz[tarball^] and https://tsengg-geodata.s3.amazonaws.com/md5[md5^] before you run this command.
   The default setting is `False`.
-  --tar TAR;; Specified tar file for map-tiles. Use during offline enablement of map-tiles. Download the tarball https://tsengg-geodata.s3.amazonaws.com/raster-osm-jpg.tar.gz[here, window=_blank].
-  --md5 MD5;;  Specified md5 file for map-tiles. Use during offline enablement of map-tiles. Download the md5 https://tsengg-geodata.s3.amazonaws.com/md5[md5, window=_blank].
+  --tar TAR;; Specified tar file for map-tiles. Use during offline enablement of map-tiles. Download the tarball https://tsengg-geodata.s3.amazonaws.com/raster-osm-jpg.tar.gz[here^].
+  --md5 MD5;;  Specified md5 file for map-tiles. Use during offline enablement of map-tiles. Download the md5 https://tsengg-geodata.s3.amazonaws.com/md5[md5^].
 
 tscli map-tiles disable::
   Disables map-tiles functionality.
@@ -1057,7 +1057,7 @@ tscli scheduled-pinboards status [-h]::
   Shows the status of scheduled Pinboards for the cluster.
 
 NOTE: When you enable scheduled Pinboards, you should also configure a list of intended email domains.
-Contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support,window="_blank"]  for help on how to configure this list.
+Contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support^]  for help on how to configure this list.
 
 [#tscli-set]
 === set
@@ -1118,7 +1118,7 @@ tscli smtp set-relayhost [-h] [--force FORCE] relayhost::
 
   * On ThoughtSpot release 6.1.1 or later, and on release 6.0.5, you can specify a custom port to connect to the relay host. If you do not specify a port, the system uses the default recommended port, port 25. Use a custom port if port 25 is blocked in your environment.
   * To use the default port, run the setup command normally: `$ tscli smtp set-relayhost IP_address`. To use a custom port instead of port 25, run the setup command, specifying the port you want to use: `$ tscli smtp set-relayhost IP_address:custom_port`.
-  * If you are on 6.1 rather than 6.1.1, or an a version earlier than 6.0.5, contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support,window="_blank"] to help you set up a custom port.
+  * If you are on 6.1 rather than 6.1.1, or an a version earlier than 6.0.5, contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support^] to help you set up a custom port.
 
 tscli smtp set-saslcredentials::
   Sets SASL credentials and enables SMTP AUTH.
@@ -1325,7 +1325,7 @@ tscli sssd disable::
 tscli sssd disable-openldap::
   Disables OpenLDAP integration.
 
-NOTE: If you mapped your OpenLDAP admin user to ThoughtSpot's local admin user through the Ansible playbook while deploying ThoughtSpot on RHEL, do not run this command. If you ran `tscli sssd enable-openldap` and also mapped your OpenLDAP admin user to ThoughtSpot's local admin user through the Ansible playbook, contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support,window="_blank"].
+NOTE: If you mapped your OpenLDAP admin user to ThoughtSpot's local admin user through the Ansible playbook while deploying ThoughtSpot on RHEL, do not run this command. If you ran `tscli sssd enable-openldap` and also mapped your OpenLDAP admin user to ThoughtSpot's local admin user through the Ansible playbook, contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support^].
 
 [#tscli-sssd-enable]
 tscli sssd enable --user USER --domain DOMAIN::

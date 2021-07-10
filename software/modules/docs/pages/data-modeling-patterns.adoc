@@ -11,7 +11,7 @@ These formats define how these value types display in tables and charts.
 
 You can set a format for how numbers are displayed in tables and charts.
 For example, you can display numbers with a different number of digits after the decimal point, based on the data modeling setting *Format Pattern*.
-You can use any of the supported number formats for delimiters and number of digits to show using http://docs.oracle.com/javase/7/docs/api/java/text/DecimalFormat.html[Java Decimal Notation,window="_blank"].
+You can use any of the supported number formats for delimiters and number of digits to show using http://docs.oracle.com/javase/7/docs/api/java/text/DecimalFormat.html[Java Decimal Notation^].
 Currency symbols are not supported.
 
 The system has default values which are:
@@ -78,7 +78,7 @@ These are some examples of formats you can use:
 
 include::partial$data-modeling-strings.adoc[]
 
-You can change the date format used to display a column's values xref:model-data-ui.adoc[for a single table or Worksheet] or, by editing the data model, for xref:edit-model-file.adoc[the entire ThoughtSpot instance]. To edit the data model file, you must have administrative privileges. To change the date format, follow these steps:
+You can change the date format used to display a column's values xref:model-data-ui.adoc[for a single table or Worksheet] or, by editing the data model, for the xref:edit-model-file.adoc[entire ThoughtSpot instance]. To edit the data model file, you must have administrative privileges. To change the date format, follow these steps:
 
 . Decide if the change is for a specific table or Worksheet, or for the entire instance.
 . Find the *Format Pattern* for the column.
@@ -115,19 +115,14 @@ image::specify_currency_type.png[]
 
 . Select one of the following ways you would like to change the format.
 +
-|===
-| Option | Description
+Infer From Browser:: Your currency data is modeled based on the locale of your browser setting.
 
-| *Infer From Browser*
-| Your currency data will be modeled upon the locale of your browser setting.
-
-| *From a column*
-| Your currency data will be modeled upon the existing currency information in the selected column.
+From a column:: Your currency data will be modeled upon the existing currency information in the selected column.
++
 This option is disabled if there is no `VARCHAR` column to choose from.
 
-| *Specify ISO Code*
-| Your currency data will be modeled upon your selection from the available currency code choices.
-|===
+Specify ISO Code:: Your currency data will be modeled upon your selection from the available currency code choices.
+
 
 . Click *Ok* to save your changes.
 

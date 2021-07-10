@@ -7,6 +7,14 @@ Secure socket layers (SSL) provide authentication and data security when sending
 
 You can use your own SSL certificate to secure ThoughtSpot HTTP(S) traffic.
 
+'''
+> **ThoughtSpot Training**
+>
+> * For best resutls with authentication and security, we recommend the following ThoughtSpot U course: xref:https://training.thoughtspot.com/authentication-security/610523[Nginx SSL^].
+> * See other training resources at https://training.thoughtspot.com/[ThoughtSpot U^].
+
+'''
+
 [#ssl-about]
 == About SSL
 
@@ -143,19 +151,9 @@ nmap --script ssl-enum-ciphers -p 443 <ThoughtSpot_node_IP_address>
 ----
 
 You must ensure that your load balancer supports these ciphers.
-If your load balancer cannot support these ciphers, contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support, window=_blank].
+If your load balancer cannot support these ciphers, contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support^].
 
 [#ssl-configure-test]
 == Test the SSL certificate
 
 To test if the certificate is installed correctly, see xref:admin-sign-in.adoc#tsadmin[Sign in to the ThoughtSpot application].
-
-== Additional resources
-
-As you develop your expertise in authentication and security, we recommend the following ThoughtSpot U course:
-
-* xref:https://training.thoughtspot.com/authentication-security/610523[Nginx SSL, window=_blank]
-
-See other training resources at
-
-image::ts-u.png[link="https://training.thoughtspot.com/" alt="ThoughtSpot U"]
