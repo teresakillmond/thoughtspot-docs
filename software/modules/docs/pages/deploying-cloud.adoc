@@ -2,6 +2,7 @@
 :last_updated: 01/06/2021
 :linkattrs:
 :experimental:
+:redirect_from: /appliance/cloud.html
 
 The ThoughtSpot cloud deployment consists of cloud compute (VM) instances and an underlying persistent storage layer.
 The number of instances required for a cloud deployment is based on the size of the data that needs to be analyzed in ThoughtSpot.
@@ -49,8 +50,10 @@ Advanced lean mode configuration is required before any data can be loaded onto 
 
 To configure advanced lean mode, do the following:
 
-. SSH as admin into your ThoughtSpot cluster, using the following syntax: + `ssh admin@<cluster-ip-address or hostname>`.
-. Run the advanced lean mode configuration using the following syntax: + `tscli config-mode lean [-h] --type {small,medium,default}`.
+. SSH as admin into your ThoughtSpot cluster, using the following syntax: +
+ `ssh admin@<cluster-ip-address or hostname>`.
+. Run the advanced lean mode configuration using the following syntax: +
+ `tscli config-mode lean [-h] --type {small,medium,default}`.
 +
 Examples:
 
@@ -78,7 +81,7 @@ Wait until you see the message: "`Done stopping cluster`"
 . When you are ready to use ThoughtSpot again, start up your node VMs.
 . Restart your cluster by running:  `$ tscli cluster start`
 +
-You should see the message: `"Started pre-existing cluster`"
+You should see the message: "`Started pre-existing cluster`"
 +
 Depending on the size of your cluster, you may need to wait several minutes before the system is fully usable again.
 For massive clusters with hundreds of GBs of data, this time to readiness may be several hours.
@@ -89,7 +92,7 @@ Make sure you budget for this startup time to ensure that the system is fully op
 +
 The following messages are displayed to indicate your cluster is up and running:
 +
-[soruce,bash]
+[source,bash]
 ----
 Cluster: RUNNING
 Database: READY
@@ -101,4 +104,4 @@ Search Engine: READY
 
 You can automate your deployment using the free tools in the https://github.com/thoughtspot/community-tools/tree/master/ThoughtSpot_Cloud_deployments[ThoughtSpot Cloud Deployment GitHub repository^].
 
-For more information about automating your cloud deployment, read our blong on https://www.thoughtspot.com/thoughtspot-blog/deploying-thoughtspot-cloud-using-terraform-and-ansible[Deploying ThoughtSpot in the Cloud Using Terraform and Ansible^].
+For more information about automating your cloud deployment, read our blog on https://www.thoughtspot.com/thoughtspot-blog/deploying-thoughtspot-cloud-using-terraform-and-ansible[Deploying ThoughtSpot in the Cloud Using Terraform and Ansible^].
