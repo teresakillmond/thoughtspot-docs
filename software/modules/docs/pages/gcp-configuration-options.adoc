@@ -5,8 +5,12 @@
 
 ThoughtSpot can be deployed using several different GCP instance types. ThoughtSpot can be deployed in your GCP environment by deploying compute (VM) instances in your VPC, as well as an underlying persistent storage infrastructure. Currently two configuration modes are supported by ThoughtSpot:
 
-* Mode 1: Compute VMs + SSD Persistent Disk storage-only
-* Mode 2: Compute VMs + SSD Persistent Disk and Google Cloud Storage (GCS).
+Mode 1:: Compute VMs
++
+SSD Persistent Disk storage-only
+Mode 2:: Compute VMs
++
+SSD Persistent Disk and Google Cloud Storage (GCS).
 
 For more information about Persistent Storage, see https://cloud.google.com/compute/docs/disks/#pdspecs[Zonal Persistent SSD disks] in Google's Cloud documentation.
 
@@ -25,9 +29,11 @@ When choosing an instance type, ensure that it uses Intel CPUs.
 
 image::persistent-storage-ssd.svg[]
 
+:table-caption!:
+.Persistent Disk storage: recommended capacity and volume, based on user data capacity, on a "per VM" basis
+[cols="15h,15,10,~,25",options="header"]
 |===
-| Per VM user data capacity | Instance type | CPU/RAM | Recommended per-VM + Zonal Persistent SSD Disk volume | Required boot volume capacity
-
+| User data capacityfootnote:pvm[per VM] | Instance type | CPU/RAM | Zonal Persistent SSD Disk volume:pvm[] | Required boot volume
 | 208 GB
 | n1-highmem-64
 | 64/416
@@ -64,7 +70,11 @@ image::persistent-storage-ssd.svg[]
 
 image::persistent-storage-ssd-gcs.svg[]
 
+:table-caption!:
+.Persistent Disk and Google Cloud storage: recommended capacity and volume, based on user data capacity, on a "per VM" basis
+[cols="15h,15,10,~,25",options="header"]
 |===
+| User data capacityfootnote:pvm[] | Instance type | CPU/RAM | Zonal Persistent SSD Disk volume:pvm[] | Required boot volume
 | Per VM user data capacity | Instance type | CPU/RAM | Recommended per-VM + Zonal Persistent SSD Disk volume | Required boot volume capacity
 
 | 208 GB

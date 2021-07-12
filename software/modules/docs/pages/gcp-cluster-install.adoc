@@ -22,7 +22,7 @@ Before you can install your ThoughtSpot clusters in GCP, complete these prerequi
 | &#10063; | xref:gcp-configuration-options.adoc[1. Review GCP configuration options] for detailed instance specs.
 | &#10063; | xref:gcp-launch-instance.adoc[2. Set up ThoughtSpot in GCP] to create and launch your instance.
 | &#10063; | xref:ports.adoc[3. Review Network ports] to view the required ports for successful operation of ThoughtSpot.
-| &#10063; | xref:installing-gcp.adoc[4. Configure ThoughtSpot nodes in GCP] to configure your nodes.
+| &#10063; | xref:gcp-installing.adoc[4. Configure ThoughtSpot nodes in GCP] to configure your nodes.
 |===
 
 [#cluster-install]
@@ -123,13 +123,33 @@ After installing the cluster, configure advanced lean mode.
 
 To configure advanced lean mode, do the following:
 
-. SSH as admin into your ThoughtSpot cluster, using the following syntax: + `ssh admin@<cluster-ip-address or hostname>`.
-. Run the advanced lean mode configuration using the following syntax: + `tscli config-mode lean [-h] --type {small,medium,default}`.
+. SSH as admin into your ThoughtSpot cluster, using the following syntax:
++
+[source,bash]
+----
+ssh admin@<cluster-ip-address or hostname>
+----
+. Run the advanced lean mode configuration using the following syntax:
++
+[source,bash]
+----
+tscli config-mode lean [-h] --type {small,medium,default}
+----
 +
 Examples:
-
- ** To configure your instance with the "small" data size, run: `tscli config-mode lean [-h] --type small`
- ** To configure your instance with the "medium" data size, run: `tscli config-mode lean [-h] --type medium`
++
+Configure the instance for "small" data size::
++
+[source,bash]
+----
+size, run: `tscli config-mode lean [-h] --type small
+----
+Configure the instance for "medium" data size::
++
+[source,bash]
+----
+tscli config-mode lean [-h] --type medium
+----
 
 +
 NOTE: If you decide later you want to disable advanced lean mode, use `default`.
@@ -137,7 +157,6 @@ NOTE: If you decide later you want to disable advanced lean mode, use `default`.
 '''
 > **Related information**
 >
-> Use these references for successful installation and administration of ThoughtSpot:
 > * xref:nodesconfig-example.adoc[The nodes.config file]
 > * xref:parameters-nodesconfig.adoc[Parameters of the nodes.config file]
 > * xref:cluster-create.adoc[Using the tscli cluster create command]

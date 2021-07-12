@@ -18,10 +18,10 @@ Learn how to install ThoughtSpot clusters in VMware.
 Before you can install your ThoughtSpot clusters in VMware, complete these prerequisites.
 
 . *Download the OVF* Download the https://thoughtspot.egnyte.com/dl/iWvEqo76Pr/[Open Virtualization Format^] (OVF) file.
-. *Review configuration overview* Refer to xref:vmware-intro.adoc[VMware configuration overview] for detailed instance specs.
+. *Review configuration overview* Refer to xref:vmware.adoc[VMware configuration overview] for detailed instance specs.
 . *Create the instance* Refer to xref:vmware-setup.adoc[Set up VMware for ThoughtSpot] to create and launch your instance.
 . *Review required ports* Refer to xref:ports.adoc[Network ports] to view the required ports for successful operation of ThoughtSpot.
-. *Configure nodes* Refer to xref:installing-vmware.adoc[Configure ThoughtSpot nodes in VMware] to configure your nodes.
+. *Configure nodes* Refer to xref:vmware-installing.adoc[Configure ThoughtSpot nodes in VMware] to configure your nodes.
 
 [#cluster-install]
 == Install ThoughtSpot Software
@@ -29,11 +29,14 @@ Before you can install your ThoughtSpot clusters in VMware, complete these prere
 Install the cluster using the ThoughtSpot software release bundle.
 The estimated installation time is one hour.
 
-[options="interactive"]
-.Follow the steps in this checklist:
-* [ ] xref:cluster-step-1[1. Run the installer]
-* [ ] xref:cluster-step-2[2. Check cluster health]
-* [ ] xref:cluster-step-3[3. Finalize installation]
+Follow the steps in this checklist:
+
+[cols="5,~",grid=none,frame=none]
+|===
+| &#10063; | <<cluster-step-1,1. Run the installer>>
+| &#10063; | <<cluster-step-2,2. Check cluster health>>
+| &#10063; | <<cluster-step-3,3. Finalize installation>>
+|===
 
 Refer to your welcome letter from ThoughtSpot to find the link to download the release bundle.
 If you do not have a link, open a support ticket with https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support^] to request access to the release bundle.
@@ -43,8 +46,9 @@ If you do not have a link, open a support ticket with https://community.thoughts
 
 . Copy the downloaded release bundle to `/export/sdb1/TS_TASKS/install` using the following command:
 +
+[source,bash]
 ----
- $ scp <release-number>.tar.gz admin@<hostname>:/export/sdb1/TS_TASKS/install/<file-name>
+$ scp <release-number>.tar.gz admin@<hostname>:/export/sdb1/TS_TASKS/install/<file-name>
 ----
 +
 The `scp` command uses the following parameters:
@@ -60,9 +64,10 @@ The `scp` command uses the following parameters:
 NOTE: You can use another secure copy method, if you prefer a method other than the `scp` command.
 
 . Alternatively, use `tscli fileserver download-release` to download the release bundle.
-+ You must xref:tscli-command-ref.adoc#tscli-fileserver[configure the fileserver] by running `tscli fileserver configure` before you can download the release.
 +
+You must xref:tscli-command-ref.adoc#tscli-fileserver[configure the fileserver] by running `tscli fileserver configure` before you can download the release.
 +
+[source,bash]
 ----
  $ tscli fileserver download-release <release-number> --user <username> --out <release-location>
 ----
@@ -77,10 +82,12 @@ The command has the following parameters:
   is the location path of the release bundle on your local machine. For example, `/export/sdb1/TS_TASKS/install/6.0.tar.gz`.
 
 . Verify the checksum to ensure you have the correct release.
-+ Run `md5sum -c <release-number>.tar.gz.MD5checksum`.
 +
+Run `md5sum -c <release-number>.tar.gz.MD5checksum`.
++
+[source,bash]
 ----
- $ md5sum -c <release-number>.tar.gz.MD5checksum
+$ md5sum -c <release-number>.tar.gz.MD5checksum
 ----
 +
 Your output says `ok` if you have the correct release.
@@ -88,8 +95,10 @@ Your output says `ok` if you have the correct release.
 . Launch a https://linux.die.net/man/1/screen[screen^] session.
 Use screen to ensure that your installation does not stop if you lose network connectivity.
 +
+[source,bash]
+
 ----
- $ screen -S DEPLOYMENT
+$ screen -S DEPLOYMENT
 ----
 
 . Take a machine snapshot prior to the release deployment, as a best practice.
@@ -97,8 +106,9 @@ Use screen to ensure that your installation does not stop if you lose network co
 . Create the cluster.
 + Run `tscli cluster create` to create the cluster.
 +
+[source,bash]
 ----
- $ tscli cluster create <release-number>.tar.gz
+$ tscli cluster create <release-number>.tar.gz
 ----
 
 include::partial$cluster-steps1through3.adoc[]
@@ -111,7 +121,6 @@ After installing the cluster, contact https://community.thoughtspot.com/customer
 '''
 > **Related information**
 >
-> Use these references for successful installation and administration of ThoughtSpot:
 > * xref:nodesconfig-example.adoc[The nodes.config file]
 > * xref:parameters-nodesconfig.adoc[Parameters of the nodes.config file]
 > * xref:cluster-create.adoc[Using the tscli cluster create command]

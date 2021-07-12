@@ -14,9 +14,10 @@ The following ports must be open for requests from users.
 // |4001|HTTP|Falcon worker HTTP|bidirectional|Administrator IP addresses|All nodes|Port used to debug the data cache.|
 // |4251|HTTP|Sage master HTTP|bidirectional|Administrator IP addresses|All nodes|Port used to debug the search engine.|
 
+[options="header"]
 |===
 | Port | Protocol | Service Name | Direction | Source | Destination | Description
-
+[#port-22]
 | 22
 | SSH
 | SSH
@@ -25,7 +26,7 @@ The following ports must be open for requests from users.
 | All nodes
 | Secure shell access.
 Also used for scp (secure copy).
-
+[#port-443]
 | 443
 | HTTPS
 | HTTPS
@@ -33,7 +34,7 @@ Also used for scp (secure copy).
 | All users IP addresses
 | All nodes
 | Secure HTTP.
-
+[#port-12345]
 | 12345
 | TCP
 | Simba
