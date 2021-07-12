@@ -4,20 +4,22 @@
 :linkattrs:
 :redirect_from: /data-integrate/dataflow/dataflow-cassandra-sync.html
 
-
-
 After using ThoughtSpot DataFlow to establish a connection to a Cassandra database, you can create automatic data updates, to seamlessly refresh your data.
 
 include::partial$sync-for-databases.adoc[]
 
 . Specify the sync properties for Cassandra:
- ** xref:dataflow-cassandra-reference.adoc#dataflow-cassandra-sync-column-delimiter[Column delimiter] +
+ ** xref:dataflow-cassandra-reference.adoc#dataflow-cassandra-sync-column-delimiter[Column delimiter]
+ +
   Specify the column delimiter character.
- ** xref:dataflow-cassandra-reference.adoc#dataflow-cassandra-sync-enclosing-character[Enclosing character] +
+ ** xref:dataflow-cassandra-reference.adoc#dataflow-cassandra-sync-enclosing-character[Enclosing character]
+ +
  Specify if the text columns in the source data needs to be enclosed in quotes.
- ** xref:dataflow-cassandra-reference.adoc#dataflow-cassandra-sync-escape-character[Escape character] +
+ ** xref:dataflow-cassandra-reference.adoc#dataflow-cassandra-sync-escape-character[Escape character]
+ +
  Specify the escape character if using a text qualifier in the source data.
- ** xref:dataflow-cassandra-reference.adoc#dataflow-cassandra-sync-ts-load-options[TS load options] +
+ ** xref:dataflow-cassandra-reference.adoc#dataflow-cassandra-sync-ts-load-options[TS load options]
+ +
  Specify the parameters passed with the `tsload` command, in addition to the commands already included by the application.
 
 +

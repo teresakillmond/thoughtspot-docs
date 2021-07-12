@@ -29,15 +29,15 @@ Based on this testing, ThoughtSpot recommends the following _minimum specificati
 
 When choosing an instance type, ensure that it uses Intel CPUs.
 
-[width="100%",options="header"]
-|==========
-| Per VM user data capacity | CPU/RAM | Data disk | Required root volume capacity
-
+:table-caption!:
+.Supported VMware configurations: Recommended capacity and volume, based on user data capacity, on a "per VM" basis
+[cols="20h,20,20,~",options="header"]
+|===
+| User data capacityfootnote:pvm[per VM] | CPU/RAM | Data disk | Required boot volumefootnote:pvm[]
 | 20 GB | 16/128 GB | 2 x 400 GB | 200 GB for each node
 | 100 GB | 32/256 GB | 2 X 400 GB | 200 GB for each node
 | 256 GB | 72/512 GB | 3 X 2 TB | 200 GB for each node
-
-|==========
+|===
 
 NOTE: All cores must be hyperthreaded. All configurations require a 200 GB SSD boot disk.
 
@@ -48,10 +48,10 @@ Locally-attached storage provides the best performance.
 
 SAN can be used, but must comply with the following requirements:
 
-* 136 MBps minimum random read bandwidth
-* 240 random IOPS (~4ms seek latency)
+Random read bandwidth:: 136 MBps minimum
+Seek latency:: 240 random IOPS (~4ms)
 
-NAS/NFS is not supported since its latency is so high that it tends to be unreliable.
+ThoughtSpot does not support NAS/NFS because its latency is very high, and it tends to be unreliable.
 
 All virtualization hosts should have VMware vSphere Hypervisor (ESXi) 6.5 installed.
 
@@ -61,9 +61,3 @@ OVF is a platform-independent, efficient, extensible, and open packaging distrib
 
 The ThoughtSpot VM configuration uses thin provisioning and sets the recommended reserved memory, among other important specifications.
 You can obtain these files from https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support^].
-
-== Questions or comments?
-
-We hope your experience with ThoughtSpot is excellent.
-Please let us know how it goes, and what we can do to make it better.
-You can contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support^].
