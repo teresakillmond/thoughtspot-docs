@@ -58,91 +58,22 @@ include::partial$sql/use-database.adoc[]
 include::partial$sql/show-schemas.adoc[]
 
 [#show-tables]
-`SHOW TABLES`:: Lists all tables within the current database by schema.
-Example;;
-+
-[source]
-----
-SHOW TABLES;
-----
+include::partial$sql/show-tables.adoc[]
 
 [#show-table]
-`SHOW TABLE <table>`:: Lists all the columns for a table.
-Example;;
-+
-[source]
-----
-SHOW TABLE "locations";
-----
+include::partial$sql/show-table.adoc[]
 
 [#script-server]
-`SCRIPT SERVER`:: Generates the TQL schema for all tables in all databases on the server.
-Example;;
-+
-[source]
-----
-SCRIPT SERVER;
-----
+include::partial$sql/script-server.adoc[]
 
 [#script-database]
-`SCRIPT DATABASE <database>`:: Generates the TQL schema for all tables in a database.
-Example;;
-+
-[source]
-----
-SCRIPT DATABASE "fruit_database";
-----
+include::partial$sql/script-database.adoc[]
 
 [#script-table]
-`SCRIPT TABLE <table>`:: Generates the TQL schema for a table.
-Example;;
-+
-[source]
-----
-SCRIPT TABLE "vendor";
-----
+include::partial$sql/script-table.adoc[]
 
 [#select-from-where-group-order]
-`SELECT <cols_or_expr> FROM <table_list> [WHERE <predicates>] [GROUP BY <expr>] [ORDER BY <expr>]`:: Shows specified set of table data.
-+
-If you do not specify the TOP number of rows to select, the top 50 rows will be returned by default. The number of rows to return can be set using the [.ph]#TQL# command line flag:
-+
-[source]
-----
---query_results apply_top_row_count`
-----
-+
-You can use the following *aggregation* functions:  `sum`, `count`, `count distinct`, `stddev`, `avg`, `variance`, `min`, and `max`.
-+
-You can use the following *date* functions:
- `absyear`, `absmonth`, `absday`, `absquarter`, `date`,
- and `time`.
-
-Examples;;
-+
-[source]
-----
-SELECT TOP 10 "quantity"
-  FROM "sales_fact";
-
-SELECT COUNT(&#42;)
-  FROM "vendor";
-
-SELECT "vendor", SUM("quantity")
-  FROM "sales_fact"
-  GROUP BY "vendor";
-
-SELECT "vendor", SUM("amount")
-  FROM "vendor", "sales_fact"
-  WHERE "sales_fact"."vendorid" = "vendor"."vendorid"
-  AND "amount" > 100
-  GROUP BY "vendor"
-  ORDER BY "amount" DESC;
-
-SELECT "vendor", SUM("quantity")
-  FROM "sales_fact"
-  GROUP BY "vendor" LIMIT 10;
-----
+include::partial$sql/select-from-where-group-order.adoc[]
 
 == Schema creation
 
@@ -153,230 +84,76 @@ The following commands enable you to create schemas:
 * <<create-table,CREATE TABLE <table> (<column_definitions> &#91;<constraints>&#93;) &#91;PARTITION BY HASH (<number>) &#91;KEY ("<column>")&#93;&#93;)]>>
 
 [#create-database]
-`CREATE DATABASE <database>`:: Creates a database.
-+
-Example;;
-+
-[source]
-----
-CREATE DATABASE "fruit_database";
-----
+include::partial$sql/create-database.adoc[]
 
 [#create-schema]
-`CREATE SCHEMA <schema>`:: Creates a schema within the current database.
-+
-Example;;
-+
-----
-CREATE SCHEMA "fruit_schema";
-----
+include::partial$sql/create-schema.adoc[]
 
 [#create-table]
-`CREATE TABLE <table> (<column_definitions> [<constraints>]) [PARTITION BY HASH (<number>) [KEY ("<column>")]])`:: Creates a table with the specified column definitions and constraints.
-+
-Use `PARTITION BY HASH` to shard a table across all nodes. If you do not specify a `KEY`, the table shards randomly.
-+
-Do not specify relationship constraints (`FOREIGN KEY` or `RELATIONSHIP`) in the `CREATE TABLE` statement. Instead, define these using `ALTER TABLE` statements at the end of the TQL script, after creating the tables. This guarantees that tables are created before they are referenced in the constraint definitions.
-+
-Examples;;
-+
-----
-CREATE TABLE "vendor" (
-  "vendorid" int,
-  "name" varchar(255));
-
-CREATE TABLE "sales_fact" (
-  "saleid" int,
-  "locationid" int,
-  "vendorid" int,
-  "quantity" int,
-  "sale_amount" double,
-  "fruitid" int,
-  CONSTRAINT PRIMARY KEY("saleid")
-  )
-  PARTITION BY HASH(96)
-  KEY ("saleid");
-----
+include::partial$sql/create-table.adoc[]
 
 == Schema modification
 
 The following commands enable you to modify schemas:
 
-* xref:drop-database[DROP DATABASE <database>]
-* xref:drop-schema[DROP SCHEMA <schema>]
-* xref:drop-table[DROP TABLE <table>]
-* xref:truncate-table[TRUNCATE TABLE <table>]
-* xref:alter-table[ALTER TABLE <table> ADD|DROP|RENAME COLUMN <column>]
-* xref:drop-pk[ALTER TABLE <table> DROP CONSTRAINT PRIMARY KEY]
-* xref:drop-fk[ALTER TABLE <table> DROP [CONSTRAINT | RELATIONSHIP&#93; <name>]
-* xref:change-partitions[ALTER TABLE <table> &#91;SET DIMENSION | SET FACT &#91;PARTITION BY  HASH &#91;(<shards>)&#93; &#91;KEY(<column>)&#93;&#93;&#93;]
-* xref:change-data-type[ALTER TABLE <table> MODIFY COLUMN <column> <new_data_type>]
-
+* <<drop-database,DROP DATABASE <database&#62;>>
+* <<drop-schema,DROP SCHEMA <schema&#62;>>
+* <<drop-table,DROP TABLE <table&#62;>>
+* <<truncate-table,TRUNCATE TABLE <table&#62;>>
+* <<alter-table,ALTER TABLE <table> ADD|DROP|RENAME COLUMN <column&#62;>>
+* <<drop-pk,ALTER TABLE <table> DROP CONSTRAINT PRIMARY KEY>>
+* <<drop-fk,ALTER TABLE <table> DROP [CONSTRAINT | RELATIONSHIP&#93; <name&#62;>>
+* <<change-partitions,ALTER TABLE <table> &#91;SET DIMENSION | SET FACT &#91;PARTITION BY  HASH &#91;(<shards>)&#93; &#91;KEY(<column>)&#93;&#93;&#93;>>
+* <<change-data-type,ALTER TABLE <table> MODIFY COLUMN <column> <new_data_type>]>>
 
 [#drop-database]
-`DROP DATABASE <database>`:: Drops a database and all of its schemas and tables.
-+
-Example;;
-+
-----
-DROP DATABASE "fruit_database";
-----
+include::partial$sql/drop-database.adoc[]
 
 [#drop-schema]
-`DROP SCHEMA <schema>`:: Drops a schema within the current database, and drops all of the tables in the schema.
-+
-Example;;
-+
-----
-DROP SCHEMA "fruit_schema";
-----
+include::partial$sql/drop-schema.adoc[]
 
 [#drop-table]
-`DROP TABLE <table>`:: Drops a table.
-+
-Example;;
-+
-----
-DROP TABLE "location";
-----
+include::partial$sql/drop-table.adoc[]
 
 [#truncate-table]
-`TRUNCATE TABLE <table>`:: Removes all data from a table, but preserves its metadata, including all GUIDs, relationships, and so on. Use this command to force a new schema for a table  without losing the metadata.
-+
-CAUTION: This operation removes all existing data from the table. You must reload the data after a `TRUNCATE` command, or all dependent objects (worksheets and pinboards) in [.ph]#ThoughtSpot# become invalid.
-
-Example;;
-+
-----
-TRUNCATE TABLE "location";
-----
+include::partial$sql/truncate-table.adoc[]
 
 [#alter-table]
-`ALTER TABLE <table> ADD|DROP|RENAME COLUMN <column>`:: Alters a table to add, drop, or rename a column.
-+
-When you add a column to an existing table, you must provide a default value to use for existing rows.
-+
-Examples;;
-+
-----
-ALTER TABLE "cart"
-  ADD COLUMN "nickname" varchar(255)
-  DEFAULT 'no nickname';
-
-ALTER TABLE "cart"
-  DROP COLUMN "nickname";
-
-ALTER TABLE "cart"
-  RENAME COLUMN "nickname" TO "shortname";
-----
+include::partial$sql/alter-table.adoc[]
 
 [#drop-pk]
-`ALTER TABLE <table> DROP CONSTRAINT PRIMARY KEY`:: Drops the primary key from a table.
-+
-CAUTION: If you add a new primary key, the same upsert behavior applies as adding any primary key. This can result in data deletion. Be sure to understand how the upsert affects your data before dropping or adding primary keys.
-
-Examples;;
-+
-----
-ALTER TABLE "sales" DROP CONSTRAINT PRIMARY KEY;
-
-ALTER TABLE "sales" ADD CONSTRAINT PRIMARY KEY ("PO_number");
-----
+include::partial$sql/drop-pk.adoc[]
 
 [#drop-fk]
-`ALTER TABLE <table> DROP [CONSTRAINT | RELATIONSHIP] <name>`:: Drops the named foreign key or relationship between two tables.
-Examples;;
-+
-----
-ALTER TABLE "sales_fact"
-  DROP CONSTRAINT "FK_PO_number";`
-
-ALTER TABLE "fruit_dim"
-  DROP RELATIONSHIP "REL_dates";
-----
+include::partial$sql/drop-fk.adoc[]
 
 [#change-partitions]
-`ALTER TABLE <table> [SET DIMENSION | SET FACT [PARTITION BY HASH [(<shards>)] [KEY(<column>)]]]`:: Changes the partitioning on a table by doing one of the following:
-+
-* re-sharding a sharded table
-* changing a replicated table to a sharded table
-* changing a sharded table to a replicated (unsharded) table
-+
-By default, ThoughtSpot does not shard dimension tables.
-+
-To change the partitioning on a table, or to change a dimension table to a sharded table, use the `ALTER TABLE\...SET FACT PARTITION BY HASH\...;` command.
-+
-To make a sharded table into a dimension table (replicated on every node),  use the `ALTER TABLE\...SET DIMENSION;` command.
-+
-Examples;;
-+
-----
-ALTER TABLE "sales_fact"
-  SET FACT PARTITION BY HASH (96)
-  KEY ("PO_number");
-
-ALTER TABLE "fruit_dim"
-  SET DIMENSION;
-----
+include::partial$sql/change-partitions.adoc[]
 
 [#change-data-type]
-ALTER TABLE <table> MODIFY COLUMN <column> <new_data_type>`:: Changes the data type of a column. This can have implications on sharding and primary key behavior. See xref:data-type-conversion.adoc[About data type conversion].
-Example;;
-+
-----
-ALTER TABLE fact100
-  MODIFY COLUMN product_id int;
-----
+include::partial$sql/change-data-type.adoc[]
 
 == Modify data
 
 The following commands enable you to modify data:
 
-* xref:insert-values[INSERT INTO <table> VALUES \...]
-* xref:set-load-priority[
-ALTER TABLE <table> SET LOAD PRIORITY <value> <new_data_type>]
-* xref:update-rows[UPDATE <table> \... SET \... [WHERE \...&#93;]
-* xref:delete-from-table[DELETE FROM <table> [WHERE\...&#93;]
+* <<insert-values,INSERT INTO <table> VALUES \...>>
+* <<set-load-priority,
+ALTER TABLE <table> SET LOAD PRIORITY <value> <new_data_type&#62;>>
+* <<update-rows,UPDATE <table> \... SET \... [WHERE \...&#93;>>
+* <<delete-from-table,DELETE FROM <table> [WHERE\...&#93;>>
 
 [#insert-values]
-`INSERT INTO <table> VALUES \...`::
-  Inserts values into a table. Only use this for testing. Do not use `INSERT` on a production system.
-Example;;
-+
-----
-INSERT INTO "vendor"
-  VALUES ('helen rose', 'jacob norse', 'eileen ruff', 'manny gates');
-----
+include::partial$sql/insert-values.adoc[]
 
 [#set-load-priority]
-`ALTER TABLE <table> SET LOAD PRIORITY <value> <new_data_type>`:: Sets the load priority for a table. Load priority determines the order in which a table is loaded on a cluster restart. You can set any value from `1-100`. The system default for all tables is `50`.
-
-Example;;
-+
-----
-ALTER TABLE 'sales_facts'
-  SET LOAD PRIORITY 1;
-----
+include::partial$sql/set-load-priority.adoc[]
 
 [#update-rows]
-`UPDATE <table> \... SET \... [WHERE \...]`:: Updates rows in a table that match optionally provided predicates. Predicates have the form `column = value` connected by the `AND` keyword. Sets the column values to the specified values.
-Example;;
-+
-----
-UPDATE "location"
-  SET "borough" = 'staten island', "city" = 'new york'
-  WHERE "borough" = 'staten isl' AND city = 'NY';
-----
+include::partial$sql/update-rows.adoc[]
 
 [#delete-from-table]
-`DELETE FROM <table> [WHERE\...]`:: Deletes rows from a table that match optional predicates. Predicates have the form `column = value` connected by the `AND` keyword. When specifying dates, use use the epoch form. See https://www.epochconverter.com/[epoch converter^]. Other date formats can result in errors and incorrect data deletion from the table.
-Example;;
-+
-----
-DELETE FROM "vendor"
-  WHERE "name" = 'Joey Smith'
-  AND "vendorid" ='19463';
-----
+include::partial$sql/delete-from-table.adoc[]
 
 == Constraints and relationships
 
@@ -384,73 +161,18 @@ ThoughtSpot uses constraints and relationships to define the relationships betwe
 
 You can define the following constraints when creating a table with `CREATE TABLE`, or add them to an existing table using the `ADD CONSTRAINT` syntax:
 
-* xref:pk[PRIMARY KEY]
-* xref:fk[FOREIGN KEY]
-* xref:relationship[RELATIONSHIP]
+* <<pk,PRIMARY KEY>>
+* <<fk,FOREIGN KEY>>
+* <<relationship,RELATIONSHIP>>
 
 [#pk]
-`PRIMARY KEY`:: Designates a unique, non-null value as the primary key for a table. This can be one column or a combination of columns. If values are not unique, an upsert will be performed if a row includes a primary key that is already present in the data.
-
-Examples;;
-+
-----
-CREATE TABLE "schools" (
-  "schoolID" varchar(15),
-  "schoolName" varchar(255),
-  "schoolCity" varchar(55),
-  "schoolState" varchar(55),
-  "schoolNick" varchar(55),
-  CONSTRAINT PRIMARY KEY ("schoolID") ) ;
-
-ALTER TABLE "cart"
-  ADD CONSTRAINT PRIMARY KEY ("cart_id");
-
-ALTER TABLE "cart"
-  DROP CONSTRAINT PRIMARY KEY "cart_id";
-----
+include::partial$sql/pk.adoc[]
 
 [#fk]
-`FOREIGN KEY`:: Defines a relationship where the value(s) in the table are used to join to a second table. Uses an equality operator. The foreign key must match the primary key of the table that is referenced in number, column type, and order of columns.
-+
-When creating a foreign key, give it a name. You can reference the foreign key name later, if you want to remove it.
-
-Examples;;
-+
-----
-ALTER TABLE "batting"
-  ADD CONSTRAINT "FK_player" FOREIGN KEY ("playerID")
-  REFERENCES "players" ("playerID");`
-
-ALTER TABLE "batting"
-  ADD CONSTRAINT "FK_lg_team" FOREIGN KEY ("lgID" ,"teamID")
-  REFERENCES "teams" ("lgID" ,"teamID");
-
-ALTER TABLE "shipment"
-  ADD CONSTRAINT "FK_PO_vendor" FOREIGN KEY ("po_number", "vendor")
-  REFERENCES "orders" ("po_number", "vendor");
-
-ALTER TABLE "shipment"
-  DROP CONSTRAINT "FK_PO_vendor";
-----
+include::partial$sql/fk.adoc[]
 
 [#relationship]
-`RELATIONSHIP`:: Defines a relationship where the value(s) in the first table can join to a second table, using a _required_ equality condition and one or more _optional_ range conditions. These conditions act like a `WHERE` clause when the two tables are joined. The conditions combine using `AND` logic; all conditions must be met for a row to be in the result.
-+
-You may add multiple relationships between tables. When creating a relationship, name it. You can reference the relationship by name later, if you want to remove it.
-
-Examples;;
-+
-----
-ALTER TABLE "wholesale_buys"
-  ADD RELATIONSHIP "REL_fruit"
-  WITH "retail_sales"
-  AS "wholesale_buys"."fruit" = "retail_sales"."fruit"
-  AND ("wholesale_buys"."date_order" < "retail_sales"."date_sold"
-  AND "retail_sales"."date_sold" < "wholesale_buys"."expire_date");
-
-ALTER TABLE "wholesale_buys"
-  DROP RELATIONSHIP "REL_fruit";
-----
+include::partial$sql/relationship.adoc[]
 
 == Permitted joins and necessary permissions
 
@@ -460,11 +182,11 @@ include::partial$joins-matrix.adoc[]
 
 ThoughtSpot supports a simplified list of data types:
 
-* xref:character[Character]
-* xref:floating-point[Floating point]
-* xref:boolean[Boolean]
-* xref:integer[Integer]
-* xref:date-time[Date or time]
+* <<character,Character>>
+* <<floating-point,Floating point>>
+* <<boolean,Boolean>>
+* <<integer,Integer>>
+* <<date-time,Date or time>>
 
 [#character]
 Character:: `VARCHAR(_n_)`
