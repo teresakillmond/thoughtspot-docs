@@ -6,28 +6,33 @@
 Learn how to troubleshoot ODBC connections.
 
 If you need more information in order to troubleshoot ODBC connections, you can enable logging for ODBC on the workstation you use for connecting to ThoughtSpot.
+
 There are two points where you can enable logging:
 
-* the workstation where you run your ETL activities
-* the server where the Simba service is running
+[#workstation]
+* The *workstation* where you run your ETL activities
+[#server]
+* The *server* where the Simba service runs
 
-On both workstation and servers, the verbosity of the log is controlled by the `LogLevel` property.
-This property can be one of the following:
+[#loglevel]
+On both workstation and servers, the *LogLevel* property controls the verbosity of the log. This property can be one of the following:
 
-* `0` or `LOG_OFF`: no logging occurs
-* `1` or `LOG_FATAL`: only log fatal errors
-* `2` or `LOG_ERROR`: log all errors
-* `3` or `LOG_WARNING`: log all errors and warnings
-* `4` or `LOG_INFO`: log all errors, warnings, and informational messages
-* `5` or `LOG_DEBUG`: log method entry and exit points and parameter values for debugging
-* `6` or `LOG_TRACE`: log all method entry points
+[horizontal]
+`0` or `LOG_OFF`:: no logging occurs
+`1` or `LOG_FATAL`:: only log fatal errors
+`2` or `LOG_ERROR`:: log all errors
+`3` or `LOG_WARNING`:: log all errors and warnings
+`4` or `LOG_INFO`:: log all errors, warnings, and informational messages
+* `5` or `LOG_DEBUG`:: log method entry and exit points and parameter values for debugging
+* `6` or `LOG_TRACE`:: log all method entry points
 
 Larger values include the information from lessor values.
-For example, if you set `3` or `LOG_WARNING`, you log all warnings _and_ all errors.
+For example, if you set the LogLevel to `3` or `LOG_WARNING`, you log all warnings _and_ all errors.
 
+[#windows]
 == Enable ODBC logs on a Windows workstation
 
-To enable ODBC logs on Windows:
+To enable ODBC logs on Windows, follow these steps:
 
 . Open the *ODBC Data Source Administrator* and select the *System DSN* tab.
 . Select your ThoughtSpot data source and click *Configure*.
@@ -50,6 +55,7 @@ image::odbc_logs_4.png[]
 . Run the ODBC load.
 . Locate the log file that was generated, and send it to ThoughtSpot Support with a description of the problem.
 
+[#linux]
 == Enable ODBC logs on a Linux workstation
 
 To enable logging on Linux, follow these instructions:
@@ -70,6 +76,7 @@ Acceptable values are from 1 to 6 with 6 being the most verbose.
 The log will be written here.
 Your file will look similar to the following: Example for Linux 64-bit:
 +
+[source]
 ----
 [ThoughtSpot]
 Description = ThoughtSpot 64-bit ODBC Driver
@@ -88,6 +95,7 @@ SCHEMA = # Set the default schema to connect to
 . Save and close the file.
 . To test the configuration, run the ODBC load and review the log files.
 
+[#simba]
 == Control logs from the Simba server
 
 You may want to collect logs from the Simba service.
@@ -96,13 +104,17 @@ Do the following to procedure on every ThoughtSpot node running the Simba servic
 . SSH into the ThoughtSpot node.
 . Edit the `/etc/thoughtspot/linux.ini` file.
 +
+[source]
 ----
  ...
  [Driver]
 
- ## Note that this default DriverManagerEncoding of UTF-32 is for iODBC. unixODBC uses UTF-16 by default.
- ## If unixODBC was compiled with -DSQL_WCHART_CONVERT, then UTF-32 is the correct value.
- ## Execute 'odbc_config --cflags' to determine if you need UTF-32 or UTF-16 on unixODBC
+## Note that this default DriverManagerEncoding of UTF-32
+## is for iODBC. unixODBC uses UTF-16 by default.
+## If unixODBC was compiled with -DSQL_WCHART_CONVERT,
+## then UTF-32 is the correct value.
+## Execute 'odbc_config --cflags' to determine if you need
+## UTF-32 or UTF-16 on unixODBC
  DriverManagerEncoding=UTF-32
  DriverLocale=en-US
  ErrorMessagesPath=/usr/home/linux/ErrorMessages/
