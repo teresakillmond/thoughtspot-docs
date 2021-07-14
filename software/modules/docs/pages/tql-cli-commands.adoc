@@ -6,14 +6,13 @@
 TQL is the ThoughtSpot language for entering SQL commands.
 This reference lists TQL commands you can use to create a schema, verify a data load, and more.
 
-== About using TQL
-
-You can use TQL either xref:schema-upload.adoc[through the ThoughtSpot application's web interface] or the xref:sql-cli-commands.adoc[command line interface] in the Linux shell.
+You can use TQL either xref:schema-upload.adoc[through the ThoughtSpot application's web interface] or the xref:tql-cli-commands.adoc[command line interface] in the Linux shell.
 
 Use  `--query_results_apply_top_row_count <number>` flag to limit the number of result rows that a query returns.
 
 For example:
 
+[source,bash]
 ----
 $ tql --query_results_apply_top_row_count 100`
 ----
@@ -22,6 +21,7 @@ As a best practice, recommend that you enclose object names (database, schema, t
 
 When referring to objects using fully qualified object names, use the following syntax:
 
+[source]
 ----
 "database"."schema"."table"
 ----
@@ -38,44 +38,30 @@ CAUTION: Worksheets and pinboards in ThoughtSpot depend on the data in the under
 
 The following commands enable you view schemas and data:
 
-* xref:show-databases[SHOW DATABASES]
-* xref:use-database[USE <database>]
-* xref:show-schemas[SHOW SCHEMAS]
-* xref:show-tables[SHOW TABLES]
-* xref:show-table[SHOW TABLE <table>]
-* xref:script-server[SCRIPT SERVER]
-* xref:script-database[SCRIPT DATABASE <database>]
-* xref:script-table[SCRIPT TABLE <table>]
-* xref:select-from-where-group-order[SELECT <cols_or_expr> FROM <table_list> [WHERE <predicates>&#93; &#91;GROUP BY <expr>&#93; &#91;ORDER BY <expr>&#93;]
+* <<show-databases,SHOW DATABASES>>
+* <<use-database,USE <database&#62;>>
+* <<show-schemas,SHOW SCHEMAS>>
+* <<show-tables,SHOW TABLES>>
+* <<show-table,SHOW TABLE <table&#62;>>
+* <<script-server,SCRIPT SERVER>>
+* <<script-database,SCRIPT DATABASE <database>>>
+* <<script-table,SCRIPT TABLE <table&#62;>>
+* <<select-from-where-group-order,SELECT <cols_or_expr> FROM <table_list>,WHERE <predicates>&#93; &#91;GROUP BY <expr>&#93; &#91;ORDER BY <expr>&#93;>>
 
 [#show-databases]
-`SHOW DATABASES`:: Lists all available databases.
-Example;;
-+
-----
-SHOW DATABASES;
-----
+include::partial$sql/show-databases.adoc[]
 
 [#use-database]
-`USE <database>`:: Switches the context to the specified database. This is required if queries do not use fully-qualified names (database.schema.table) for specifying tables.
-Example;;
-+
-----
-USE "fruit_database";
-----
+include::partial$sql/use-database.adoc[]
 
 [#show-schemas]
-`SHOW SCHEMAS`:: Lists all schemas within the current database.
-Example;;
-+
-----
-SHOW SCHEMAS;
-----
+include::partial$sql/show-schemas.adoc[]
 
 [#show-tables]
 `SHOW TABLES`:: Lists all tables within the current database by schema.
 Example;;
 +
+[source]
 ----
 SHOW TABLES;
 ----
@@ -84,6 +70,7 @@ SHOW TABLES;
 `SHOW TABLE <table>`:: Lists all the columns for a table.
 Example;;
 +
+[source]
 ----
 SHOW TABLE "locations";
 ----
@@ -92,6 +79,7 @@ SHOW TABLE "locations";
 `SCRIPT SERVER`:: Generates the TQL schema for all tables in all databases on the server.
 Example;;
 +
+[source]
 ----
 SCRIPT SERVER;
 ----
@@ -100,6 +88,7 @@ SCRIPT SERVER;
 `SCRIPT DATABASE <database>`:: Generates the TQL schema for all tables in a database.
 Example;;
 +
+[source]
 ----
 SCRIPT DATABASE "fruit_database";
 ----
@@ -108,6 +97,7 @@ SCRIPT DATABASE "fruit_database";
 `SCRIPT TABLE <table>`:: Generates the TQL schema for a table.
 Example;;
 +
+[source]
 ----
 SCRIPT TABLE "vendor";
 ----
@@ -117,6 +107,7 @@ SCRIPT TABLE "vendor";
 +
 If you do not specify the TOP number of rows to select, the top 50 rows will be returned by default. The number of rows to return can be set using the [.ph]#TQL# command line flag:
 +
+[source]
 ----
 --query_results apply_top_row_count`
 ----
@@ -129,6 +120,7 @@ You can use the following *date* functions:
 
 Examples;;
 +
+[source]
 ----
 SELECT TOP 10 "quantity"
   FROM "sales_fact";
@@ -156,15 +148,16 @@ SELECT "vendor", SUM("quantity")
 
 The following commands enable you to create schemas:
 
-* xref:create-database[CREATE DATABASE <database>]
-* xref:create-schema[CREATE SCHEMA <schema>]
-* xref:create-table[CREATE TABLE <table> (<column_definitions> &#91;<constraints>&#93;) &#91;PARTITION BY HASH (<number>) &#91;KEY ("<column>")&#93;&#93;)]
+* <<create-database,CREATE DATABASE <database&gt;>>
+* <<create-schema,CREATE SCHEMA <schema&gt;>>
+* <<create-table,CREATE TABLE <table> (<column_definitions> &#91;<constraints>&#93;) &#91;PARTITION BY HASH (<number>) &#91;KEY ("<column>")&#93;&#93;)]>>
 
 [#create-database]
 `CREATE DATABASE <database>`:: Creates a database.
 +
 Example;;
 +
+[source]
 ----
 CREATE DATABASE "fruit_database";
 ----
