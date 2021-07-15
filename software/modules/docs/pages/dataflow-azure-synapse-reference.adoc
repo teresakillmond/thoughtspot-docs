@@ -84,11 +84,4 @@ Mandatory field. +
  Valid Values:;; Any numeric value
  Default:;; 1000
 [#dataflow-azure-synapse-sync-ts-load-options]
- TS load options::
-Specify additional parameters passed with the `tsload` command.
-The format for these parameters is: +
- `--<param_1_name> <optional_param_1_value>` Optional field.
- Example:;; `--max_ignored_rows 0`
- Valid Values:;;
-  `--null_value, `--escape_character`, `--max_ignored_rows 0`
-Default:;; `--max_ignored_rows 0`
+include::partial$dataflow/ts-load-options.adoc[]

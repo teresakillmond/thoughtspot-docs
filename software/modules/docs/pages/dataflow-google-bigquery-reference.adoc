@@ -84,15 +84,4 @@ Example:;; FALSE
 Valid Values:;; TRUE
 Default:;; FALSE
 [#dataflow-google-bigquery-sync-ts-load-options]
-TS load options::
-Specifies the parameters passed with the `tsload` command, in addition to the commands already included by the application.
-The format for these parameters is: +
- `--<param_1_name> <optional_param_1_value>` +
-  `--<param_2_name> <optional_param_2_value>` +
-Optional field.
-  Example:;; `--max_ignored_rows 0`
-  Valid Values:;;
-   `--null_value ""` +
-    `--escape_character ""` +
-     `--max_ignored_rows 0`
-Default:;; `--max_ignored_rows 0`
+include::partial$dataflow/ts-load-options.adoc[]

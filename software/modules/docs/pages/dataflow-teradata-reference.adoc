@@ -11,34 +11,53 @@ You need specific information to establish a seamless and secure connection.
 
 [#connection-properties]
 == Connection properties
-[#dataflow-teradata-conn-connection-properties]
-Connection Properties:: Name your connection. Mandatory field.
+[#dataflow-teradata-conn-connection-name]
+Connection name:: Name your connection.
++
+Mandatory field.
++
 Example:;; TeradataConnection
 [#dataflow-teradata-conn-connection-type]
-Connection type:: Choose the Teradata connection type. Mandatory field.
+Connection type:: Choose the Teradata connection type.
++
+Mandatory field.
++
 Example:;; Teradata
 [#dataflow-teradata-conn-host]
-Host:: Specify the hostname or the IP address of the Teradata system. Mandatory field.
+Host:: Specify the hostname or the IP address of the Teradata system.
++
+Mandatory field.
++
 Example:;; www.example.com
 [#dataflow-teradata-conn-port]
-Port:: Specify the port associated to the Teradata system. Mandatory field.
+Port:: Specify the port associated to the Teradata system.
++
+Mandatory field.
++
 Example:;; 1234
 [#dataflow-teradata-conn-user]
 User::
 Specify the user id that will be used to connect to the Teradata system.
-This user should have necessary privileges to access the data in the databases. Mandatory field.
+This user should have necessary privileges to access the data in the databases.
++
+Mandatory field.
++
 Example:;; userdi
 [#dataflow-teradata-conn-password]
-Password:: Specify the password for the User. Mandatory field.
+Password:: Specify the password for the User.
++
+Mandatory field.
++
 Example:;; pswrd234%!
 [#dataflow-teradata-conn-version]
-Version:: Specify the version of Teradata you are using. Optional field.
+Version:: Specify the version of Teradata you are using.
++
+Optional field.
++
 Example:;; 14.2
 Other notes:;; Advanced configuration.
 [#dataflow-teradata-conn-jdbc-options]
-JDBC options:: Specify the options associated with the JDBC URL. Optional field.
-Example:;; `jdbc:sqlserver://[serverName[\instanceName][:portNumber]]`
-Other notes:;; Advanced configuration.
+include::partial$dataflow/jdbc-options.adoc[]
 
 [#sync-properties]
 == Sync properties
@@ -78,15 +97,4 @@ Example:;; 1000
 Valid Values:;; Any numeric value
 Default:;; 1000
 [#dataflow-teradata-sync-ts-load-options]
-TS load options::
-Specifies the parameters passed with the `tsload` command, in addition to the commands already included by the application.
-The format for these parameters is: +
- `--<param_1_name> <optional_param_1_value>` +
-  `--<param_2_name> <optional_param_2_value>` +
-Optional field.
-  Example:;; `--max_ignored_rows 0`
-  Valid Values:;; `--user "dbuser"` +
-  `--password "$DIWD"` +
-  `--target_database "ditest"` +
-  `--target_schema "falcon_schema"`
-  Default:;; `--max_ignored_rows 0`
+include::partial$dataflow/ts-load-options.adoc[]
