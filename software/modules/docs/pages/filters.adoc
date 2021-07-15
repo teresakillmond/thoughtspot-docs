@@ -1,6 +1,7 @@
 = Understanding filters
 :last_updated: 04/19/2021
 :linkattrs:
+:redirect_from: /complex-search/about-filters.html
 :experimental:
 
 Filters narrow down your search result to only include the data you want to see.
@@ -73,6 +74,8 @@ This allows you to easily search a large list of filters repeatedly.
 == Cascading filters
 
 ThoughtSpot applies a specific logic to objects with more than one filter. For example, you may have a Worksheet-level filter, such as `country=US`. While searching on that Worksheet, you might want to add filters for specific cities. By default, ThoughtSpot limits your possible filter values to cities in the United States, since you have a Worksheet-level `US` filter. The first filter you apply on an object always limits the available filter values you see for your second and third filters, and so on. This is because if you have a `country=US` filter, and try to add on a `city=Paris,France` filter, for example, this results in *no data found*.
+
+=== Show all possible values
 
 When you access the filters modal in a search by selecting the **filter** icon image:icon-filter-10px.png[], you see an option to **Show all possible values**. This option relates to cascading filters. When you add a second filter to a search, ThoughtSpot only shows you values within the first filter you added. You may want to see all possible values without removing the first filter.
 
