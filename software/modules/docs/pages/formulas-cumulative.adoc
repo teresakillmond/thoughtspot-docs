@@ -47,6 +47,10 @@ Example:::
 cumulative_sum (revenue, order date)
 ----
 
+You may have attributes in your search that are not part of the cumulative formula. The cumulative formula resets its results for different values of any attribute that is not part of your cumulative formula. For example, with a cumulative formula of `cumulative_sum (revenue, order date)`, if your search includes the attribute `market segment`, the cumulative sum formula aggregates the revenue by date separately for different market segments. For example:
+
+image::cumulative-sum-note-example.png[Cumulative sum example]
+
 [#cumulative_sum_example]
 == Calculate a cumulative sum
 This example demonstrates using the `cumulative_sum` formula, also known as a running total. To use the cumulative function in a search:
@@ -61,7 +65,7 @@ image::create_formula_in_answer.png[create formula in answer]
 
 . Enter the `cumulative_sum` formula, providing a measure and one or more attributes.
 +
-This example returns the sum of revenue, accumulated by the commit date.
+This example returns the sum of yearly income, accumulated by the date.
 +
 image::cumulative_sum_formula.png[cumulative sum formula]
 . Name the formula by clicking its title and typing a new name.
