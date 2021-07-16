@@ -21,12 +21,14 @@ Ask your network administrator if you do not know your hostname.
  ** `file-name` is the name of the tarball file on your local machine.
 For example:
 +
+[source]
 ----
  $ scp 6.0.tar.gz admin@ThoughtSpot:/home/admin/TS-tarball.
 ----
 +
 ThoughtSpot recommends that you start the session using https://linux.die.net/man/1/screen[screen], so you do not lose your progress if you lose your connection at any point.
 +
+[source]
 ----
  $ scp <release-number> admin@<hostname>:/home/admin/<file-name>
 ----
@@ -35,10 +37,12 @@ ThoughtSpot recommends that you start the session using https://linux.die.net/ma
 If you are using an s3 or GCS bucket for object storage, include the flag `--enable_cloud_storage=s3` or `--enable_cloud_storage=gcs`.
 GCS is GCP's object storage, and s3 is AWS's object storage.
 +
+[source]
 ----
  $ tscli cluster create 6.0.tar.gz --enable_cloud_storage=s3
 ----
 +
+[source]
 ----
  $ tscli cluster create 6.0.tar.gz --enable_cloud_storage=gcs
 ----

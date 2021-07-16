@@ -13,7 +13,7 @@ To enable AD access on the entire cluster, enable AD access on each node.
 You must similarly configure all new nodes that you subsequently add to the cluster.
 
 To enable system AD user access, issue the xref:tscli-command-ref.adoc#tscli-sssd-enable[tscli sssd enable] command:
-
+[source]
 ----
 tscli sssd enable --user <USER> --domain <DOMAIN>
 ----
@@ -31,7 +31,7 @@ To set AD group `sudo` access for the entire cluster, you must run the command o
 You must similarly configure all new nodes that you subsequently add to the cluster.
 
 To enable `sudo` permissions for AD group, issue the xref:tscli-command-ref.adoc#tscli-sssd-set-sudo-group[tscli sssd set-sudo-group] command:
-
+[source]
 ----
 tscli sssd set-sudo-group <ACTIVE_DIRECTORY_GROUP_NAME>
 ----
@@ -43,7 +43,7 @@ To clear access for the entire cluster, you must run the command on each node.
 You must similarly configure all new nodes that you subsequently add to the cluster.
 
 To clear `sudo` permissions for the AD group, issue the xref:tscli-command-ref.adoc#tscli-sssd-clear-sudo-group[tscli sssd clear-sudo-group] command:
-
+[source]
 ----
 tscli sssd clear-sudo-group <ACTIVE_DIRECTORY_GROUP_NAME>
 ----
@@ -53,7 +53,7 @@ tscli sssd clear-sudo-group <ACTIVE_DIRECTORY_GROUP_NAME>
 You can disable AD access, individually on each node of the cluster.
 
 To disable system AD user access, issue the xref:tscli-command-ref.adoc#tscli-sssd-disable[tscli sssd disable] command:
-
+[source]
 ----
 tscli sssd disable
 ----

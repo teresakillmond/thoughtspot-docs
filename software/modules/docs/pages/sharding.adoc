@@ -116,6 +116,7 @@ It is sometimes called _Horizontal partitioning_.
 The term _sharding_ is particular to situations where data is distributed not only among tables, but also across nodes in the system.
 To create a sharded table, add the `PARTITION BY HASH ( )` clause to your `CREATE TABLE` statement.
 
+[source]
 ----
 TQL> CREATE TABLE
 ...
@@ -138,6 +139,7 @@ This increases memory usage, since you are storing multiple copies of the same t
 
 If you want to use a table's primary key as the shard key, specify that the table is to be partitioned by `HASH` on the primary key, as in this example:
 
+[source]
 ----
 TQL> CREATE TABLE "supplier" (
   "s_suppkey" BIGINT,
@@ -164,12 +166,14 @@ This shard key *_must_* be a subset of the primary key.
 
 *_DO_*
 
+[source]
 ----
 ...
 CONSTRAINT PRIMARY KEY("saleid,vendorid”))
 PARTITION BY HASH(n) KEY ("saleid");
 ----
 
+[source]
 ----
 ...
 CONSTRAINT PRIMARY KEY("saleid,vendorid”))

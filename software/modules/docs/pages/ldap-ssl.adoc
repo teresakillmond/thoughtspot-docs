@@ -19,6 +19,7 @@ To add the SSL certificate for LDAP:
 This is usually sent by email or available for download.
 . Copy the certificate to ThoughtSpot:
 +
+[source]
 ----
  $ scp <certificate> admin@<IP_address>:<path>
 ----
@@ -26,12 +27,14 @@ This is usually sent by email or available for download.
 . Log in to the Linux shell using SSH.
 . Change directories to where you copied the certificate:
 +
+[source]
 ----
  $ cd <path>
 ----
 
 . Run the command to configure SSL for LDAP, designating an alias for this certificate using the `<name>` parameter:
 +
+[source]
 ----
  $ tscli ldap add-cert <name> <certificate>
 ----
