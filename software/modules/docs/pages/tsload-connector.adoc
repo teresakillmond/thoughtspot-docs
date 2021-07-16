@@ -30,8 +30,9 @@ Contact ThoughtSpot support for assistance with this step.
 +
 NOTE: For clusters created in version 6.2 or later, certificates are bound to tsload connector by default.
 
-. Check if the *etl_http_server*, responsible for tsload connector, is accessible by pinging it: +++<button id="ping-tsload" title="Copy" onclick="sayCopied(this.id)" type="button" class="btn btn-copy" data-clipboard-text="curl -i https://localhost:8442/ts_dataservice/v1/public/ping">+++image:[]Copy &#128203;+++</button>+++
+. Check if the *etl_http_server*, responsible for tsload connector, is accessible by pinging it:
 +
+[source]
 ----
 curl -i https://localhost:8442/ts_dataservice/v1/public/ping
 HTTP/1.1 200 OK
@@ -57,6 +58,7 @@ This `cycle_id` determines the load-session corresponding to the given load para
 All the successive calls will need to use this cycle_id as a parameter, including the getStatus.
  ** LoadDataParam JSON
 +
+[source]
 ----
 {
 "target": {
@@ -105,6 +107,7 @@ In reality, this could be a post-call with data directly instead of a file.
 * *getStatus*: Returns the status of the load at that time
  ** *getStatus JSON*
 +
+[source]
 ----
 {
 	"buffered_data": "0 Bytes",
