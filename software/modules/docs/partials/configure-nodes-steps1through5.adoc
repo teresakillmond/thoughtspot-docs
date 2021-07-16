@@ -5,7 +5,8 @@ Log in to your cluster with admin credentials from Terminal on a Mac or a termin
 Ask your network administrator if you do not know the admin credentials.
 
 . Run `ssh admin@<nodeIP>`.
-+ Replace `nodeIP` with your specific network information.
++
+Replace `nodeIP` with your specific network information.
 +
 [source,bash]
 ----
@@ -13,7 +14,8 @@ $ ssh admin@<nodeIP>
 ----
 
 . Enter your admin password at the prompt.
-+ Ask your network administrator if you don't know the password.
++
+Ask your network administrator if you don't know the password.
 
 NOTE: The password does not appear on the screen as you type it.
 
@@ -82,8 +84,10 @@ $ sudo systemctl status firewalld
 ----
 
 . Run the configuration command: `$ cat nodes.config | tscli cluster set-config`.
-+ If the command returns an error, refer to xref:set-config-error-recovery[set-config error recovery].
-+  After you run the node configuration command, your output appears similar to the following:
++
+If the command returns an error, refer to xref:set-config-error-recovery[set-config error recovery].
++
+After you run the node configuration command, your output appears similar to the following:
 +
 [source,bash]
 ----
