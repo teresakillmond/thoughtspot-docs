@@ -54,10 +54,14 @@ Mandatory field. +
  Example:;; userdi
  Default:;; simple
 [#dataflow-hive-conn-password]
-Password:: Specify the password.
-Optional field. +
- For simple, LDAP authentication only.
- Example:;; pswrd234%!
+Password:: Specify the password for the User.
++
+Optional field.
++
+Example:;; _pswrd234%!_
++
+Note:;; For simple, LDAP authentication only.
+
 [#dataflow-hive-conn-trust-store]
 Trust store:: Specify the trust store name for authentication.
 Mandatory field. +
@@ -214,8 +218,7 @@ Example:;; 8190
 Yarn timeline webapp version:: Specify the version associated with the yarn timeline service web application. Mandatory field.
 Example:;; v1
 [#dataflow-hive-conn-jdbc-options]
-JDBC options:: Specify the options associated with the JDBC URL. Optional field.
-Example:;; `jdbc:sqlserver://[serverName[\instanceName][:portNumber]]`
+include::partial$dataflow/jdbc-options.adoc[]
 
 [#sync-properties]
 == Sync properties

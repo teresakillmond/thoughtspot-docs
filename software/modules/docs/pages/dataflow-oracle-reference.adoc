@@ -29,8 +29,8 @@ Specify the user id that will be used to connect to the Oracle system.
 This user should have necessary privileges to access the data in the databases. Mandatory field.
 Example:;; userdi
 [#dataflow-oracle-conn-password]
-Password:: Specify the password for the User. Mandatory field.
-Example:;; pswrd234%!
+include::partial$dataflow/password.adoc[]
+
 [#dataflow-oracle-conn-service-name]
 Service name:: Service name is the TNS alias that you give when you remotely connect to your database. This Service name is recorded in Tnsnames.ora file on your clients. It can be the same as SID and you can also give it any other name you want. Mandatory field.
 Example:;; idxdb03
@@ -39,9 +39,7 @@ Version:: Specify the Oracle version being connected to. Optional field.
 Example:;; 11.x
 Other notes:;; Advanced configuration.
 [#dataflow-oracle-conn-jdbc-options]
-JDBC options:: Specify the options associated with the JDBC URL. Optional field.
-Example:;; `jdbc:sqlserver://[serverName[\instanceName][:portNumber]]`
-Other notes:;; Advanced configuration.
+include::partial$dataflow/jdbc-options.adoc[]
 
 [#sync-properties]
 == Sync properties

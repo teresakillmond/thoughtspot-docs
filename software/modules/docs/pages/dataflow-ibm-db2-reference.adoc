@@ -34,8 +34,8 @@ Specify the user to connect to IBM Db2.
 This user must have data access privileges. Mandatory field.
 Example:;; userdi
 [#dataflow-ibm-db2-conn-password]
-Password:: Specify the password. Mandatory field.
-Example:;; pswrd234%!
+include::partial$dataflow/password.adoc[]
+
 [#dataflow-ibm-db2-conn-database]
 Database:: Collection of information that is organized so that it can be easily accessed, managed and updated. Mandatory field.
 Example:;; database
@@ -53,9 +53,7 @@ A standardized code in which characters are represented for computer storage and
 Select either ASCII or EBCDIC. Optional field.
 Example:;; ASCII
 [#dataflow-ibm-db2-conn-jdbc-options]
-JDBC options:: Specify the options associated with the JDBC URL. Optional field.
-Example:;; `jdbc:sqlserver://[serverName[\instanceName][:portNumber]]`
-Other notes:;; Advanced configuration.
+include::partial$dataflow/jdbc-options.adoc[]
 
 [#sync-properties]
 == Sync properties

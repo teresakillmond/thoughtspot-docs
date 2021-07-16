@@ -29,16 +29,14 @@ Specify the user id that will be used to connect to the MariaDB system.
 This user should have necessary privileges to access the data in the databases. Mandatory field.
 Example:;; userdi
 [#dataflow-mariadb-conn-password]
-Password:: Specify the password for the User. Mandatory field.
-Example:;; pswrd234%!
+include::partial$dataflow/password.adoc[]
+
 [#dataflow-mariadb-conn-database-version]
 Database version:: Specify the MariaDB version being connected to. Optional field.
 Example:;; 10.3
 Other notes:;; These are under Advanced configuration.
 [#dataflow-mariadb-conn-jdbc-options]
-JDBC options:: Specify the options associated with the JDBC URL. Optional field.
-Example:;; `jdbc:sqlserver://[serverName[\instanceName][:portNumber]]`
-Other notes:;; Advanced configuration.
+include::partial$dataflow/jdbc-options.adoc[]
 
 [#sync-properties]
 == Sync properties

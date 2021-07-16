@@ -56,10 +56,8 @@ Mandatory field. +
  For remote location files only.
  Example:;; userdi
 [#dataflow-apache-parquet-conn-password]
-Password:: Specify the password. +
-Optional field. +
- For remote location files only, when using password authentication.
- Example:;; pswrd234%!
+include::partial$dataflow/password-optional.adoc[]
+
 [#dataflow-apache-parquet-conn-key-file]
 Key file:: Specify the key file and its fully qualified path. +
 Mandatory field. +
@@ -140,7 +138,7 @@ Example:;; UFT-8
 Valid Values:;; ISO-8859-1, UTF-16, UTF-16BE, WINDOWS-1252
 Default:;; UFT-8
 [#dataflow-apache-parquet-sync-tsload-options]
-TS load options::
+
 include::partial$dataflow/ts-load-options.adoc[]
 [#dataflow-apache-parquet-sync-boolean-representation]
 Boolean representation:: Specifies the representation of data in the boolean field. +

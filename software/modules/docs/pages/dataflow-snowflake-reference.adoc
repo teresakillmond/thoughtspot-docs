@@ -23,8 +23,8 @@ Specify the user to connect to Snowflake.
 This user must have data access privileges to the databases. Mandatory field.
 Example:;; user1
 [#dataflow-snowflake-conn-password]
-Password:: Specify the password. Mandatory field.
-Example:;; pswrd234%!
+include::partial$dataflow/password.adoc[]
+
 [#dataflow-snowflake-conn-account]
 Account:: Specify the account to connect to the Snowflake database. Mandatory field.
 Example:;; example_account
@@ -34,9 +34,7 @@ Example:;; Developer
 Valid Values:;; Developer, Operator, Business Analyst, Public, Scheduler Read, Scheduler Write, Scheduler Execute
 Default:;; Public
 [#dataflow-snowflake-conn-jdbc-options]
-JDBC options:: Specify the options associated with the JDBC URL. Optional field.
-Example:;; `jdbc:sqlserver://[serverName[\instanceName][:portNumber]]`
-Other notes:;; Advanced configuration.
+include::partial$dataflow/jdbc-options.adoc[]
 [#dataflow-snowflake-conn-warehouse]
 Warehouse:: Choose the warehouse of databases. Mandatory field.
 Example:;; demo_wh

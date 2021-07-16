@@ -29,15 +29,13 @@ Specify the user id that will be used to connect to the SAP HANA system.
 This user should have necessary privileges to access the data in the databases. Mandatory field.
 Example:;; userdi
 [#dataflow-sap-hana-conn-password]
-Password:: Specify the password for the User. Mandatory field.
-Example:;; pswrd234%!
+include::partial$dataflow/password.adoc[]
+
 [#dataflow-sap-hana-conn-database]
 Database:: Collection of information that is organized so that it can be easily accessed, managed and updated. Mandatory field.
 Example:;; SYSTEMDB
 [#dataflow-sap-hana-conn-jdbc-options]
-JDBC options:: Specify the options associated with the JDBC URL. Optional field.
-Example:;; `jdbc:sqlserver://[serverName[\instanceName][:portNumber]]`
-Other notes:;; Advanced configuration
+include::partial$dataflow/jdbc-options.adoc[]
 
 [#sync-properties]
 == Sync properties
