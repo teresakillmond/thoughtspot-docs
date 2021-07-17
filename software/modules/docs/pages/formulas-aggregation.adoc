@@ -67,12 +67,14 @@ The administrator can change the default aggregation that gets applied through a
 
 For example, this search would typically return a sum of total sales by department:
 
+[source]
 ----
 sum sales department
 ----
 
 This search would return an average of sales by month:
 
+[source]
 ----
 average sales monthly
 ----
@@ -83,6 +85,7 @@ This is best understood by using a real world example.
 Suppose you want to calculate the gross margin by department for a grocery store.
 The formula for gross margin is:
 
+[source]
 ----
 profit / sales
 ----
@@ -96,6 +99,7 @@ image::formula_gross_margin_no_sum.png[]
 
 Instead, you'd need to use a formula that uses the order of operations you want:
 
+[source]
 ----
 sum (profit) / sum (sales)
 ----

@@ -8,6 +8,7 @@ Cumulative formulas are aggregate formulas.
 
 Cumulative formulas allow you to calculate the average, max, min, or sum or your data over time. Although we usually talk about cumulative formulas over time, you can use them over any other sequential data. Each of the cumulative formulas accepts a measure and one or more optional grouping by an attribute (like region or department):
 
+[source]
 ----
 formula (measure, [attribute, attribute, ...])
 ----
@@ -19,6 +20,7 @@ The cumulative formulas are:
 cumulative_average::
 Takes a measure and one or more attributes. Returns the average of the measure, accumulated by the attribute(s) in the order specified.
 Example:::
+[source]
 ----
 cumulative_average (revenue, order date, state)
 ----
@@ -27,6 +29,7 @@ cumulative_average (revenue, order date, state)
 cumulative_max::
 Takes a measure and one or more attributes. Returns the maximum of the measure, accumulated by the attribute(s) in the order specified.
 Example:::
+[source]
 ----
 cumulative_max (revenue, state)
 ----
@@ -35,17 +38,23 @@ cumulative_max (revenue, state)
 cumulative_min::
 Takes a measure and one or more attributes. Returns the minimum of the measure, accumulated by the attribute(s) in the order specified.
 Example:::
+[source]
 ----
 cumulative_min (revenue, campaign)
 ----
 
 [#cumulative_sum]
-cumulative_sum:::
+cumulative_sum::
 Takes a measure and one or more attributes. Returns the sum of the measure, accumulated by the attribute(s) in the order specified.
 Example:::
+[source]
 ----
 cumulative_sum (revenue, order date)
 ----
+
+You may have attributes in your search that are not part of the cumulative formula. The cumulative formula resets its results for different values of any attribute that is not part of your cumulative formula. For example, with a cumulative formula of `cumulative_sum (revenue, order date)`, if your search includes the attribute `market segment`, the cumulative sum formula aggregates the revenue by date separately for different market segments. For example:
+
+image::cumulative-sum-note-example.png[Cumulative sum example]
 
 [#cumulative_sum_example]
 == Calculate a cumulative sum
@@ -61,7 +70,7 @@ image::create_formula_in_answer.png[create formula in answer]
 
 . Enter the `cumulative_sum` formula, providing a measure and one or more attributes.
 +
-This example returns the sum of revenue, accumulated by the commit date.
+This example returns the sum of yearly income, accumulated by the date.
 +
 image::cumulative_sum_formula.png[cumulative sum formula]
 . Name the formula by clicking its title and typing a new name.

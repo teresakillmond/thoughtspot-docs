@@ -56,6 +56,7 @@ To run the LDAP sync script in interactive mode, follow these steps:
 . Log in to the Linux shell using SSH.
 . Run the command to start the script:
 +
+[source]
 ----
  python3 syncUsersAndGroups.py interactive
 ----
@@ -85,12 +86,14 @@ For example:
 +
 Answering this prompt is optional. If left blank, the system uses the default value `'(CN=*)'`:
 +
+[source]
 ----
 Filter string to apply to the search: `(|(CN=TestGroupAlpha)(CN=TestGroupBeta))`
 ----
 +
 The following prompt  asks if you would like to include group members even if they do not belong to the current sub tree that is being synced:
 +
+[source]
 ----
 Apply sync recursively, i.e. Iterates through group members and creates member groups, users and relationships in a recursive way. (y/n): n
 ----

@@ -55,12 +55,14 @@ You need a computer you can run Linux commands on, and a recent version of _open
 
 . `ssh` into one of your ThoughtSpot nodes.
 +
+[source]
 ----
  ssh admin@<node_IP>
 ----
 
 . Run the command to generate a CSR and private key pair:
 +
+[source]
 ----
  openssl req -new -newkey rsa:2048 -nodes -out csr.pem -keyout pk.key[-subj "/key1=value1/key2=value with space/
 ----
@@ -80,12 +82,14 @@ Follow these steps to generate a CSR with an existing private key:
 
 . `ssh` into one of your ThoughtSpot nodes.
 +
+[source]
 ----
  ssh admin@<node_IP>
 ----
 
 . Run the command to generate a CSR and private key pair:
 +
+[source]
 ----
  openssl req -new -key <private_key_file> -nodes -out csr.pem[-subj "/key1=value1/key2=value with space/
 ----
@@ -108,7 +112,7 @@ It cannot be password-protected, or passphrase-protected.
 NOTE: Do not use a passphrase when creating certificates with ThoughtSpot.
 
 If you are prompted to specify a passphrase, first check if it exists by invoking the following command:
-
+[source]
 ----
 openssl rsa -check -in pk.key`
 ----
@@ -123,7 +127,7 @@ include::partial$ssl-configure.adoc[]
 When enabling SSL support on a load balancer's server-side SSL client profile, make sure to add support for the following ciphers to ensure compatibility between the load balancer and ThoughtSpot.
 
 The following ciphers are currently supported:
-
+[source]
 ----
 |   TLSv1.2:
 |     ciphers:
@@ -141,12 +145,13 @@ The following ciphers are currently supported:
 ----
 
 The cipher string would be as follows:
-
+[source]
 ----
 EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH
 ----
 
 You can retrieve these from the ThoughtSpot web server (not against the load balancer) by running the following command on any ThoughtSpot node:
+[source]
 ----
 nmap --script ssl-enum-ciphers -p 443 <ThoughtSpot_node_IP_address>
 ----

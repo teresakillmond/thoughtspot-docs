@@ -58,6 +58,7 @@ CSV output is rendered back as a simple table in ThoughtSpot, PNG output is rend
 This is an example of a basic R script that generates CSV data.
 (The `df` variable name must be lower case, as shown.)
 
+[source]
 ----
 write.csv(df,  #output_file#)
 ----
@@ -74,6 +75,7 @@ image::r-basic-table-search-result.png[]
 
 This is an example of a basic R script that generates PNG data as output.
 
+[source]
 ----
 png(#output_file#)
 plot(.param0, .param1)
@@ -109,6 +111,7 @@ You can click these icons in the R script dialog to get more options:
 
 This script loads the `ggplot2` visualization package, labels the columns inside of the ThoughtSpot generated data frame object (`df`), and runs a K-Means clustering algorithm.
 
+[source]
 ----
 library(ggplot2)
 
@@ -124,6 +127,7 @@ image::r-custom-script-png.png[]
 
 You can run another R script directly on this result to get CSV results:
 
+[source]
 ----
 kmeansOutput <- kmeans(df[1:2], 3, nstart = 20);
 df$Cluster <- as.factor(kmeansOutput$cluster);

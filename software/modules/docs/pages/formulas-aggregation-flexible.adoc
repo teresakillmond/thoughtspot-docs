@@ -53,6 +53,7 @@ include::partial$flexible-aggregation-best-practices.adoc[]
 
 For a search on `revenue monthly ship mode`, you can add a formula to calculate yearly revenue by ship mode:
 
+[source]
 ----
 group_aggregate(
   sum(revenue),
@@ -63,6 +64,7 @@ group_aggregate(
 
 The same formula can also be written using `query_groups()` and `query_filters()` as following:
 
+[source]
 ----
 group_aggregate(
   sum(revenue),
@@ -93,6 +95,7 @@ For example, in this search we've added the keyword *min* just before our formul
 +
 where, the `monthly_sales` formula is written as:
 +
+[source]
 ----
 group_aggregate(
   sum(revenue),
@@ -107,6 +110,7 @@ group_aggregate(
 +
 where, the `min_monthly_sales` formula is written as:
 +
+[source]
 ----
 min(monthly_sales)
 ----
@@ -132,6 +136,7 @@ An example of this is this search:
 
 where the formula `monthly_sales` is written as:
 
+[source]
 ----
 group_aggregate(
   sum(revenue),

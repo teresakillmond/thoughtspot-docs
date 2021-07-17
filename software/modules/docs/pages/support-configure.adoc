@@ -35,18 +35,21 @@ Provide the cluster name of the cluster for which you want to enable remote supp
 You only need to do this one time, when you are enabling the tunnel for the very  first time.
 After that, this setting persists when you start and stop the  remote tunnel.
 +
+[source]
 ----
  $ tscli support set-remote --addr tunnelrelay.thoughtspot.com --user ubuntu
 ----
 
 . Test that the setting is configured:
 +
+[source]
 ----
  $ tscli support show-remote
 ----
 
 . Enable the remote tunnel:
 +
+[source]
 ----
  $ tscli support start-remote
 ----
@@ -54,6 +57,7 @@ After that, this setting persists when you start and stop the  remote tunnel.
 . Contact ThoughtSpot Support (https://docs.thoughtspot.com/latest/admin/misc/contact.html) and test your setup.
 . After your remote session with ThoughtSpot Support is over, turn the remote tunnel off until you need to use it again:
 +
+[source]
 ----
  $ tscli support stop-remote
 ----
@@ -62,6 +66,7 @@ You can repeat the steps to start and stop the remote tunnel as needed for futur
 
 . Ensure that the remote tunnel is disabled:
 +
+[source]
 ----
  $ tscli support show-remote
 ----
@@ -90,6 +95,7 @@ To configure the connection to the secure file server, follow these steps:
 . Log in to the Linux shell using SSH.
 . Issue the command to configure the file server:
 +
+[source]
 ----
  $ tscli fileserver configure --user <user_name> [--password <password>]
 ----
@@ -111,6 +117,7 @@ You can disable call home in by doing the following:
 . Log in to the ThoughtSpot server as `admin` user.
 . Use the `tscli` command to disable.
 +
+[source]
 ----
  $ tscli callhome disable
 ----
@@ -127,18 +134,21 @@ To designate the custom support contact, follow these steps:
 . Log in to the Linux shell using SSH.
 . Issue the `tscli` command to set the email address:
 +
+[source]
 ----
  $ tscli support set-admin-email <email_address>
 ----
 
 . Issue the `tscli` command to set the phone number:
 +
+[source]
 ----
  $ tscli support set-admin-phone <phone_number>
 ----
 
 . If you need to reset both of these to the default (ThoughtSpot Support), issue these commands:
 +
+[source]
 ----
  $ tscli support rm-admin-email
  $ tscli support rm-admin-phone
@@ -158,12 +168,14 @@ To designate the custom feedback contact, follow these steps:
 . Log in to the Linux shell using SSH.
 . To set the feedback email address, issue this command:
 +
+[source]
 ----
  $ tscli support set-feedback-email <email_address>
 ----
 
 . Verify the email address is set:
 +
+[source]
 ----
  $ tscli support show-feedback-email
 ----

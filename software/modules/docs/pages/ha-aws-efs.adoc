@@ -20,6 +20,7 @@ Refer to AWS documentation on https://docs.aws.amazon.com/efs/latest/ug/getting-
 +
 Modify the fields as necessary for your installation.
 +
+[source]
 ----
 sudo mount -t nfs -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,
                      noresvport fs-f756f1ee.efs.us-west-1.amazonaws.com:/ /home/admin/efs/
@@ -27,18 +28,21 @@ sudo mount -t nfs -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retr
 
 . Modify permissions to ensure that all clusters with EFS mount points have read and write permissions.
 +
+[source]
 ----
 chmod 777 /home/admin/efs
 ----
 
 . On the first cluster, create a snapshot on to the EFS mount point, and back it up.
 +
+[source]
 ----
 tscli snapshot create EfsTest HA 2
 ----
 
 . Create a backup on the cluster.
 +
+[source]
 ----
 tscli backup create --mode full --type full
                     --storage_type local EfsTest /home/admin/efs/Efs-backup
@@ -46,6 +50,7 @@ tscli backup create --mode full --type full
 
 . Ensure that the backup is successful, and that it can be accessed from all clusters where EFS is mounted, by listing all backups and looking for the new one.
 +
+[source]
 ----
   tscli backup ls
 ----
@@ -56,6 +61,7 @@ tscli backup create --mode full --type full
 +
 This is accessible from the EFS mount point.
 +
+[source]
 ----
 tscli cluster restore /home/admin/EFS/Efs-backup
 ----
