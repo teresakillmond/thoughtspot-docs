@@ -42,92 +42,24 @@ The following sections contain the supported and recommended instance types for 
 === AWS
 ==== VMs with EBS-only persistent storage
 
-include::partial$aws-ebs-only-storage.adoc[]
-
-[width="100%",cols=5*,options=header]
-|===
-| Per VM user data capacity
-| Instance type
-| CPU/RAM
-| Recommended per-VM EBS volume
-| Required boot volume capacity
-
-| Up to 1B rows
-| r5.4xlarge, r4.4xlarge
-| 16/122, 16/128
-| 2X 400 GB
-| 200 GB for each node
-
-| Up to 4B rows
-| r5.8xlarge
-| 32/244, 32/256
-| 2X 400 GB
-|　200 GB for each node
-
-| 4B+ rows
-| r5.16xlarge
-| 64/488, 64/512
-| 2x 1 TB
-| 200 GB for each node
-|===
+include::partial$aws-ebs-only-storage-embrace.adoc[]
 
 ==== VMs with EBS and S3 persistent storage
 
-include::partial$aws-ebs-s3-storage.adoc[]
-
-[width="100%",cols=5*,options=header]
-|===
-| Per VM user data capacity | Instance type | CPU/RAM | Recommended per-VM EBS volume | Required boot volume capacity
-
-| Up to 1B rows| r5.4xlarge, r4.4xlarge | 16/122, 16/128 | 1x 500 GB | 200 GB for each node
-
-| Up to 4B rows | r5.8xlarge | 32/244, 32/256 | 1x 500 GB | 200 GB for each node
-
-| 4B+ rows | r5.16xlarge | 64/488, 64/512 | 1x 500 GB | 200 GB for each node
-|===
+include::partial$aws-ebs-s3-storage-embrace.adoc[]
 
 === Azure
 
-include::partial$azure-storage.adoc[]
-
-[width="100%",cols=5*,options=header]
-|===
-| Per VM user data capacity | Instance type | CPU/RAM a| Recommended per-VM +
-Premium SSD Managed Disk volume | Required boot volume capacity
-
-| Up to 1B rows | E16s_v3 | 16/128 | 2X 400 GB | 200 GB for each node
-| Up to 4B rows | E32s_v3 | 32/256 | 2X 400 GB | 200 GB for each node
-| 4B+ rows | E64s_v3 | 64/432 | 2x1 TB | 200 GB for each node
-|===
+include::partial$azure-storage-embrace.adoc[]
 
 === GCP
 ==== VMs with Persistent Disk-only storage
 
-include::partial$gcp-persistent-only-storage.adoc[]
-
-[width="100%",cols=5*,options=header]
-|===
-| Per VM user data capacity | Instance type | CPU/RAM a| Recommended per-VM +
-Zonal Persistent SSD Disk volume | Required boot volume capacity
-
-| Up to 1B rows | n1-highmem-16 | 16/122 | 2X 400 GB | 200 GB for each node
-| Up to 4B rows | n1-highmem-32 | 32/208 | 2X 400 GB | 200 GB for each node
-| 4B+ rows | n1-highmem-64 | 64/416 | 2x 1 TB | 200 GB for each node
-|===
+include::partial$gcp-persistent-only-storage-embrace.adoc[]
 
 ==== VMs with Persistent Disk and Google Cloud storage
 
-include::partial$gcp-persistent-cloud-storage.adoc[]
-
-[width="100%",cols=5*,options=header]
-|===
-| Per VM user data capacity | Instance type | CPU/RAM a| Recommended per-VM +
-Zonal Persistent SSD Disk volume | Required boot volume capacity
-
-| Up to 1B rows | n1-highmem-16 | 16/122 | 1X 500 GB | 200 GB for each node
-| Up to 4B rows | n1-highmem-32 | 32/208 | 1X 500 GB | 200 GB for each node
-| 4B+ rows | n1-highmem-64 | 64/416 | 1X 500 GB | 200 GB for each node
-|===
+include::partial$gcp-persistent-cloud-storage-embrace.adoc[]
 
 == Limitations
 
