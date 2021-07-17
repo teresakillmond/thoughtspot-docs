@@ -8,6 +8,7 @@ Cumulative formulas are aggregate formulas.
 
 Cumulative formulas allow you to calculate the average, max, min, or sum or your data over time. Although we usually talk about cumulative formulas over time, you can use them over any other sequential data. Each of the cumulative formulas accepts a measure and one or more optional grouping by an attribute (like region or department):
 
+[source]
 ----
 formula (measure, [attribute, attribute, ...])
 ----
@@ -19,6 +20,7 @@ The cumulative formulas are:
 cumulative_average::
 Takes a measure and one or more attributes. Returns the average of the measure, accumulated by the attribute(s) in the order specified.
 Example:::
+[source]
 ----
 cumulative_average (revenue, order date, state)
 ----
@@ -27,6 +29,7 @@ cumulative_average (revenue, order date, state)
 cumulative_max::
 Takes a measure and one or more attributes. Returns the maximum of the measure, accumulated by the attribute(s) in the order specified.
 Example:::
+[source]
 ----
 cumulative_max (revenue, state)
 ----
@@ -35,14 +38,16 @@ cumulative_max (revenue, state)
 cumulative_min::
 Takes a measure and one or more attributes. Returns the minimum of the measure, accumulated by the attribute(s) in the order specified.
 Example:::
+[source]
 ----
 cumulative_min (revenue, campaign)
 ----
 
 [#cumulative_sum]
-cumulative_sum:::
+cumulative_sum::
 Takes a measure and one or more attributes. Returns the sum of the measure, accumulated by the attribute(s) in the order specified.
 Example:::
+[source]
 ----
 cumulative_sum (revenue, order date)
 ----

@@ -11,7 +11,8 @@ Learn the parameters of the tscli cluster create command.
 To install your appliance, you must install the cluster.
 
 . *Copy the release tarball* In your Terminal (Apple) or using https://winscp.net/eng/index.php[Winscp] (Windows application), copy the downloaded release tarball to /home/admin/ and run the cluster installer as shown below.
-+ Run the secure copy command: `scp <release-number> admin@<hostname>:/home/admin/<file-name>`.
++
+Run the secure copy command: `scp <release-number> admin@<hostname>:/home/admin/<file-name>`.
 Note the following parameters: +
  ** `release-number` is the version of ThoughtSpot you have on your cluster, such as `6.0` or `5.3`.
 `release-number` is of the form `0.0.tar.gz`.
@@ -20,23 +21,28 @@ Ask your network administrator if you do not know your hostname.
  ** `file-name` is the name of the tarball file on your local machine.
 For example:
 +
+[source]
 ----
  $ scp 6.0.tar.gz admin@ThoughtSpot:/home/admin/TS-tarball.
 ----
 +
 ThoughtSpot recommends that you start the session using https://linux.die.net/man/1/screen[screen], so you do not lose your progress if you lose your connection at any point.
 +
+[source]
 ----
  $ scp <release-number> admin@<hostname>:/home/admin/<file-name>
 ----
 . *Run the `cluster create` command* Run `tscli cluster create <release-number>` in your terminal.
-+ If you are using an s3 or GCS bucket for object storage, include the flag `--enable_cloud_storage=s3` or `--enable_cloud_storage=gcs`.
++
+If you are using an s3 or GCS bucket for object storage, include the flag `--enable_cloud_storage=s3` or `--enable_cloud_storage=gcs`.
 GCS is GCP's object storage, and s3 is AWS's object storage.
 +
+[source]
 ----
  $ tscli cluster create 6.0.tar.gz --enable_cloud_storage=s3
 ----
 +
+[source]
 ----
  $ tscli cluster create 6.0.tar.gz --enable_cloud_storage=gcs
 ----

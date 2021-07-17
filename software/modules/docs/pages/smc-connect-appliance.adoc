@@ -41,8 +41,8 @@ image:smc-haswell-location-ports-new.png[Haswell port location]
 image:smc-appliance-skylake-location-ports.png[Skylake port location]
 
 * Connect to switches *only* the appliances (4 nodes each) that you plan to use in the cluster.
-* You must power off, or disconnect from the switch, all other appliances or nodes.
-+ This prevents accidental configuration of incorrect nodes.
+* You must power off, or disconnect from the switch, all other appliances or nodes. +
+ This prevents accidental configuration of incorrect nodes.
 * Connect all the nodes that you plan to use in your cluster to a 10G switch.
 
 [#appliance-step-2]
@@ -73,8 +73,9 @@ Check the health of the NIC by inspecting your appliance's LEDs.
 There should be a steady green light for the 100MB/s or 1Gb/s management NIC connection, a steady amber or orange light for the 10G/s connection, and a blinking LED on both NICs to indicate live traffic.
 
 
-After the LEDs are the correct colors, verify that the connection is valid and the nodes are on by pinging the gateway: + Enter `ping <default-gateway-IP>`.
-+ Ask your network administrator for your default gateway IP if you have not already listed it in your ThoughtSpot link:{attachmentsdir}/site-survey.pdf[site survey].
+After the LEDs are the correct colors, verify that the connection is valid and the nodes are on by pinging the gateway: +
+ Enter `ping <default-gateway-IP>`. +
+ Ask your network administrator for your default gateway IP if you have not already listed it in your ThoughtSpot link:{attachmentsdir}/site-survey.pdf[site survey].
 
 [source]
 ----
