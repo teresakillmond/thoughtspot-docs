@@ -11,7 +11,10 @@ Use this API to authenticate and login a user.
 
 === Resource URL
 
+[source]
+----
 `post` /tspublic/v1/session/login
+----
 
 === Request Parameters
 
@@ -30,11 +33,15 @@ Use this API to authenticate and login a user.
 === Request Example
 
 .cURL
+
+[source]
 ----
 curl -X POST --header 'Content-Type: application/x-www-form-urlencoded' --header 'Accept: application/json' --header 'X-Requested-By: ThoughtSpot' -d 'username=test&password=fhfh2323bbn&rememberme=false' 'https://<instance>/callosum/v1/tspublic/v1/session/login'
 ----
 
 .Request URL
+
+[source]
 ----
 https://<instance>/callosum/v1/tspublic/v1/session/login
 ----
@@ -53,16 +60,23 @@ The user details are captured from the active user session.
 
 === Resource URL
 
+[source]
+----
 `post` /tspublic/v1/session/logout
+----
 
 === Request Example
 
 .cURL
+
+[source]
 ----
 curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'X-Requested-By: ThoughtSpot' 'https://<instance>/callosum/v1/tspublic/v1/session/logout'
 ----
 
 .Request URL
+
+[source]
 ----
 https://<instance>/callosum/v1/tspublic/v1/session/logout
 ----
@@ -73,26 +87,3 @@ https://<instance>/callosum/v1/tspublic/v1/session/logout
 Not applicable
 204 - Successful logout
 ----
-
-////
-## Error Codes
-<table>
-   <colgroup>
-      <col style="width:20%" />
-      <col style="width:60%" />
-      <col style="width:20%" />
-   </colgroup>
-   <thead class="thead" style="text-align:left;">
-      <tr>
-         <th>Error Code</th>
-         <th>Description</th>
-         <th>HTTP Code</th>
-      </tr>
-   </thead>
-   <tbody>
-   <tr> <td><code>10000</code></td>  <td>Internal server error.</td> <td><code>500</code></td></tr>
-    <tr> <td><code>10002</code></td>  <td>Bad request. Invalid parameter values.</td> <td><code>400</code></td></tr>
-    <tr> <td><code>10003</code></td>  <td>Login or logout failure. Unauthorized.</td><td><code>401</code></td></tr>
-  </tbody>
-</table>
-////
