@@ -13,7 +13,10 @@ You may want to visualize the following:
 
 == Resource URL
 
+[source]
+----
 `post` /tspublic/v1/pinboarddata
+----
 
 == Request Parameters
 
@@ -41,29 +44,34 @@ You may want to visualize the following:
 +
 Alternately, set the offset using the following code:
 +
-`1-based indexingOffset = (pageNumber - 1) * batchSize`
+----
+1-based indexingOffset = (pageNumber - 1) * batchSize`
+----
   Data type;; integer
 
 `formattype`::
    Data type;; string
-   Valid values;;
-     * `COMPACT` JSON (system default)
-     * `FULL` JSON
+   Valid values;; `COMPACT` JSON (system default), `FULL` JSON
 
 == Request Example
 
 .cURL
+
+[source]
 ----
 curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'X-Requested-By: ThoughtSpot' 'https://<instance>/callosum/v1/tspublic/v1/pinboarddata?id=f4533461-caa5-4efa-a189-13815ab86770&batchsize=-1&pagenumber=-1&offset=-1&formattype=COMPACT'
 ----
 
 .Request URL
+
+[source]
 ----
 https://<instance>/callosum/v1/tspublic/v1/pinboarddata?id=f4533461-caa5-4efa-a189-13815ab86770&batchsize=-1&pagenumber=-1&offset=-1&formattype=COMPACT
 ----
 
 == Response Example
 
+[source]
 ----
 {
   "4fdf9d2c-6f34-4e3b-9fa6-bd0ca69676e1": {
@@ -93,26 +101,3 @@ https://<instance>/callosum/v1/tspublic/v1/pinboarddata?id=f4533461-caa5-4efa-a1
   }
 }
 ----
-
-////
-## Error Codes
-
-<table>
-   <colgroup>
-      <col style="width:20%" />
-      <col style="width:60%" />
-      <col style="width:20%" />
-   </colgroup>
-   <thead class="thead" style="text-align:left;">
-      <tr>
-         <th>Error Code</th>
-         <th>Description</th>
-         <th>HTTP Code</th>
-      </tr>
-   </thead>
-   <tbody>
-    <tr> <td><code>10002</code></td>  <td>Bad request. Invalid parameter values.</td> <td><code>400</code></td></tr>
-    <tr> <td><code>10000</code></td>  <td>Internal server error. Malformed JSON Exception.</td><td><code>500</code></td></tr>
-  </tbody>
-</table>
-////

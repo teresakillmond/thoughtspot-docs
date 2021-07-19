@@ -15,7 +15,10 @@ NOTE: To refresh a materialized view, you must have the xref:groups-privileges.a
 
 == Resource URL
 
+[source]
+----
 `post` /tspublic/v1/materialization/refreshview/\{id}
+----
 
 == Request Parameters
 
@@ -26,11 +29,15 @@ NOTE: To refresh a materialized view, you must have the xref:groups-privileges.a
 == Request Example
 
 .cURL
+
+[source]
 ----
 curl -X POST --header 'Content-Type: */*' --header 'Accept: application/json' --header 'X-Requested-By: ThoughtSpot' 'https://<instance>/callosum/v1/tspublic/v1/materialization/refreshview/e27f3c1c-a9cd-4996-9029-097449cd6f60'
 ----
 
 .Request URL
+
+[source]
 ----
 https://<instance>/callosum/v1/tspublic/v1/materialization/refreshview/e27f3c1c-a9cd-4996-9029-097449cd6f60
 ----
@@ -41,26 +48,3 @@ https://<instance>/callosum/v1/tspublic/v1/materialization/refreshview/e27f3c1c-
 Not applicable
 204 - Refresh submitted
 ----
-
-////
-## Error Codes
-
-<table>
-   <colgroup>
-   <col style="width:20%" />
-   <col style="width:60%" />
-   <col style="width:20%" />
-   </colgroup>
-   <thead class="thead" style="text-align:left;">
-      <tr>
-         <th>Error Code</th>
-         <th>Description</th>
-         <th>HTTP Code</th>
-      </tr>
-   </thead>
-   <tbody>
-    <tr> <td><code>10002</code></td>  <td>Bad request. Invalid parameter values.</td> <td><code>400</code></td></tr>
-    <tr> <td><code>10000</code></td>  <td>Internal server error.</td><td><code>500</code></td></tr>
-  </tbody>
-</table>
-////

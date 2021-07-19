@@ -15,7 +15,10 @@ The expected output includes a list of objects, each with information about the 
 
 === Resource URL
 
-`get` /tspublic/v1/metadata/listvizheaders
+[source]
+----
+get /tspublic/v1/metadata/listvizheaders
+----
 
 === Request Parameters
 
@@ -26,17 +29,22 @@ The expected output includes a list of objects, each with information about the 
 === Request Example
 
 .cURL
+
+[source]
 ----
 curl -X GET --header 'Accept: application/json' --header 'X-Requested-By: ThoughtSpot' 'https://<instance>/callosum/v1/tspublic/v1/metadata/listvizheaders?id=97begg839e-71b6-42ad-a980-20c38b4d6db5'
 ----
 
 .Request URL
+
+[source]
 ----
 https://<instance>/callosum/v1/tspublic/v1/metadata/listvizheaders?id=97be839e-71b6-42ggad-a980-20c38b4d6db5
 ----
 
 === Response Example
 
+[source]
 ----
 [
   {
@@ -75,23 +83,17 @@ Use this API to fetch a comprehensive list of metadata headers of a specific obj
 
 === Resource URL
 
+[source]
+----
 `get` /tspublic/v1/metadata/listobjectheaders
+----
 
 === Request Parameters
 
 `type`::
   Specifies the metadata object type.
   Data type;; string
-  Valid values;;
-    * `QUESTION_ANSWER_BOOK`
-    * `PINBOARD_ANSWER_BOOK`
-    * `QUESTION_ANSWER_SHEET`
-    * `PINBOARD_ANSWER_SHEET`
-    * `LOGICAL_COLUMN`
-    * `LOGICAL_TABLE`
-    * `LOGICAL_RELATIONSHIP`
-    * `TAG`
-    * `DATA_SOURCE`
+  Valid values;; `QUESTION_ANSWER_BOOK`, `PINBOARD_ANSWER_BOOK`, `QUESTION_ANSWER_SHEET`, `PINBOARD_ANSWER_SHEET`, `LOGICAL_COLUMN`, `LOGICAL_TABLE`, `LOGICAL_RELATIONSHIP`, `TAG`, `DATA_SOURCE`
 
 `subtypes`::
   Specifies the sub-types of metadata object.
@@ -100,32 +102,17 @@ NOTE: This parameter only applies to the `LOGICAL_TABLE` type.
 
 +
 Data type;; string
-Valid values;;
-    * `ONE_TO_ONE_LOGICAL`
-    * `WORKSHEET`
-    * `PRIVATE_WORKSHEET`
-    * `USER_DEFINED`
-    * `AGGR_WORKSHEET`
+Valid values;; `ONE_TO_ONE_LOGICAL`, `WORKSHEET`, `PRIVATE_WORKSHEET`, `USER_DEFINED`, `AGGR_WORKSHEET`
 
 `category`::
   Specifies the metadata object category.
   Data type;; string
-  Valid values;;
-    * `ALL`
-    * `MY`
-    * `FAVORITE`
-    * `REQUESTED`
+  Valid values;; `ALL`, `MY`, `FAVORITE`, `REQUESTED`
 
 `sort`::
   Sort order of returned headers.
   Data type;; string
-  Valid values;;
-    * `DEFAULT`
-    * `NAME`
-    * `DISPLAY_NAME`
-    * `AUTHOR`
-    * `CREATED`
-    * `MODIFIED`
+  Valid values;; `DEFAULT`, `NAME`, `DISPLAY_NAME`, `AUTHOR`, `CREATED`, `MODIFIED`
 
 `sortascending`::
   A flag to specify the sort order.
@@ -167,21 +154,26 @@ Valid values;;
 `auto_created`::
   A flag that indicates whether to list auto-created objects only. A value of null signifies return all.
   Data type;; boolean
-  
+
 === Request Example
 
 .cURL
+
+[source]
 ----
 curl -X GET --header 'Accept: application/json' --header 'X-Requested-By: ThoughtSpot' 'https://<instance>/callosum/v1/tspublic/v1/metadata/listobjectheaders?type=PINBOARD_ANSWER_BOOK&subtypes=WORKSHEET&category=ALL&sort=CREATED&offset=-1'
 ----
 
 .Request URL
+
+[source]
 ----
 https://<instance>/callosum/v1/tspublic/v1/metadata/listobjectheaders?type=PINBOARD_ANSWER_BOOK&subtypes=WORKSHEET&category=ALL&sort=CREATED&offset=-1
 ----
 
 === Response Example
 
+[source]
 ----
 [
   {
@@ -220,24 +212,3 @@ https://<instance>/callosum/v1/tspublic/v1/metadata/listobjectheaders?type=PINBO
   }
 ]
 ----
-
-////
-## Error Codes
-<table>
-   <colgroup>
-      <col style="width:20%" />
-      <col style="width:60%" />
-      <col style="width:20%" />
-   </colgroup>
-   <thead class="thead" style="text-align:left;">
-      <tr>
-         <th>Error Code</th>
-         <th>Description</th>
-         <th>HTTP Code</th>
-      </tr>
-   </thead>
-   <tbody>
-    <tr> <td><code>10002</code></td>  <td>Bad request. Invalid parameter values i.e., wrong pinboard ID.</td> <td><code>400</code></td></tr>
-  </tbody>
-</table>
-////

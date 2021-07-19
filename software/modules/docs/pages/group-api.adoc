@@ -15,7 +15,10 @@ All the data sources which the `ALL_GROUP` group has permissions to are download
 
 === Resource URL
 
+[source]
+----
 `post` /tspublic/v1/group/addprivilege
+----
 
 === Request Parameters
 
@@ -35,11 +38,15 @@ All the data sources which the `ALL_GROUP` group has permissions to are download
 === Request Example
 
 .cURL
+
+[source]
 ----
 curl -X POST --header 'Content-Type: application/x-www-form-urlencoded' --header 'Accept: application/json' --header 'X-Requested-By: ThoughtSpot' -d 'privilege=DATADOWNLOADING&groupNames=ALL_GROUP' 'https://<instance>/callosum/v1/tspublic/v1/group/addprivilege'
 ----
 
 .Request URL
+
+[source]
 ----
 https://<instance>/callosum/v1/tspublic/v1/group/addprivilege
 ----
@@ -57,7 +64,10 @@ Use this API to delete a `DATADOWNLOADING` or `USERDATAUPLOADING` privilege from
 
 === Resource URL
 
+[source]
+----
 `post` /tspublic/v1/group/removeprivilege
+----
 
 === Request Parameters
 
@@ -69,7 +79,7 @@ Use this API to delete a `DATADOWNLOADING` or `USERDATAUPLOADING` privilege from
     * `USERDATAUPLOADING` privilege.
 
 `groupNames`::
-  Specifies a group name from where to delete the privilege. 
+  Specifies a group name from where to delete the privilege.
   Data type;; string
   Valid value;;
     * `ALL_GROUP` group.
@@ -77,11 +87,15 @@ Use this API to delete a `DATADOWNLOADING` or `USERDATAUPLOADING` privilege from
 === Request Example
 
 .cURL
+
+[source]
 ----
 curl -X POST --header 'Content-Type: application/x-www-form-urlencoded' --header 'Accept: application/json' --header 'X-Requested-By: ThoughtSpot' -d 'privilege=USERDATAUPLOADING&groupNames=ALL_GROUP' 'https://<instance>/callosum/v1/tspublic/v1/group/removeprivilege'
 ----
 
 .Request URL
+
+[source]
 ----
 https://<instance>/callosum/v1/tspublic/v1/group/removeprivilege
 ----
@@ -92,26 +106,3 @@ https://<instance>/callosum/v1/tspublic/v1/group/removeprivilege
 Not applicable
 204 - Success
 ----
-
-////
-## Error Codes
-
-<table>
-   <colgroup>
-      <col style="width:20%" />
-      <col style="width:60%" />
-      <col style="width:20%" />
-   </colgroup>
-   <thead class="thead" style="text-align:left;">
-      <tr>
-         <th>Error Code</th>
-         <th>Description</th>
-         <th>HTTP Code</th>
-      </tr>
-   </thead>
-   <tbody>
-    <tr> <td><code>10003</code></td>  <td>Authentication token of type could not be authenticated by any configured realms.  Use valid realm that can authenticate these tokens.</td> <td><code>401</code></td></tr>
-
-  </tbody>
-</table>
-////
