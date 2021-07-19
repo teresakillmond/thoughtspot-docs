@@ -82,13 +82,14 @@ Refer to xref:parameters-cluster-create.adoc[Parameters of the tscli cluster cre
 
 
 [#run-installer]
-=== Run the Installer
+== Run the Installer
 
 Your `tscli cluster create` output may look something like the following <<hardware,hardware installation>> or <<cloud-gcs,cloud installation, with GCS object storage>>.
 
 [#hardware]
-.Output for a hardware installation.
-
+.Click to see output for a hardware installation.
+[%collapsible]
+====
 [source]
 ----
 [admin@jessi-gcs-test ~]$ tscli cluster create 6.0-145.tar.gz
@@ -167,9 +168,12 @@ Successfully recorded install event
 Successfully deleted deployer service
 2019-11-03 21:40:02,917 Cannot check for enabled status of unknown service: deploy
 ----
+====
 
 [#cloud-gcs]
-.Otput for a cloud installation, with GCS object storage
+.Click to see otput for a cloud installation, with GCS object storage
+[%collapsible]
+====
 [source]
 ----
 admin@jessi-gcs-test ~]$ tscli cluster create ./6.0-145.tar.gz  --enable_cloud_storage gcs
@@ -250,7 +254,7 @@ Successfully recorded install event
 Successfully deleted deployer service
 2019-11-03 22:11:54,571 Cannot check for enabled status of unknown service: deploy
 ----
-
+====
 '''
 > **Related information**
 >
