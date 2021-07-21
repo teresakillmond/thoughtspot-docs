@@ -4,28 +4,56 @@
 :redirect_from: /appliance/consumption-pricing.html
 :experimental:
 
-ThoughtSpot’s consumption-based licensing model lets you license ThoughtSpot based on your users' usage of the ThoughtSpot product. When you purchase a consumption-based ThoughtSpot license, ThoughtSpot bills you based on xref:credits[credits]. The ThoughtSpot consumption licensing model is available for both ThoughtSpot Cloud and for Embrace software deployment on your cloud platform.
+ThoughtSpot’s consumption-based licensing model lets you license ThoughtSpot based on your organization's utilization of the ThoughtSpot product. When you purchase a consumption-based ThoughtSpot license, ThoughtSpot bills you based on xref:credits[credits].
 
 Refer to the xref:consumption-pricing-faq.adoc[Consumption pricing FAQ] for more information. To learn about each of ThoughtSpot's pricing options, refer to https://www.thoughtspot.com/pricing[ThoughtSpot pricing^].
 
+[#rights-obligtons]
+== Using the ThoughtSpot consumption licensing model with Embrace software
+
+We originally introduced the consumption-based pricing model in our ThoughtSpot Cloud offering. You can now use the consumption pricing model when you deploy ThoughtSpot Software in your own cloud environment, and use Embrace connections to your data.
+
+You must allow ThoughtSpot to gather usage information from your cluster environment daily. We use a secure TLS-encrypted SSL connection to gather this information, and use it solely for the purpose of measuring credit consumption.
+
+Additionally, you must allow ThoughtSpot to serve usage information to you, for full visibility and accurate reporting of in-product usage and credit consumption. To accomplish this, ThoughtSpot creates an Embrace JDBC connection to your cluster, and uses TLS-encrypted SSL transport protocol to serve this data. This usage information is secure and isolated inside our cloud environment.
+
+The following points outline the necessary prerequisites to licensing and using ThoughtSpot based on consumption level.
+
+Supported deployments::
+The ThoughtSpot consumption licensing model is available for both xref:https://cloud-docs.thoughtspot.com/[ThoughtSpot Cloud], and for ThoughtSpot Software deployments that use xref:embrace.adoc[Embrace] to connect to data.
++
+Consumption pricing *does not apply* to ThoughtSpot Software deployments that use the ThoughtSpot Falcon database, where you import/maintain data using xref:dataflow.adoc[DataFlow] or another ETL tool.
+
+Supported releases::
+In the 6.3.1 SW release, ThoughtSpot consumption pricing is available only on single-node clusters.
++
+Starting with the 6.3.1CU1 release, ThoughtSpot makes consumption pricing available for all multi-node deployments.
+
+Mandatory ports::
+ThoughtSpot requires for organizations that subscribe to usage-based pricing to open the following ports. Failure to open these ports prevents you from using the consumption-based license.
+Port 443;;; The outbound port to the IP address that we provide at the time of licensing; we use this to collect usage data.
+Port 5439;;; The inbound port from the IP address that we provide at the time of licensing; we use this to send you credit consumption data.
+
 [#credits]
 == Credits
-You purchase and consume credits with the consumption model. A credit is a unit of measure.  Usage of ThoughtSpot, measured in xref:usage-minutes[usage minutes], consumes credits. Examples of user activity that consume credits include a user performing a search in ThoughtSpot, viewing or editing Pinboards or answers, creating and editing worksheets, or making any administrative changes or setup. Each user actively using ThoughtSpot consumes credits, even if they are using the product at the same time. You consume 1 credit for each usage minute. ThoughtSpot refers to this as *credit consumption rate* or *credit burn rate.*
+You purchase and consume credits within the consumption model. A credit is a unit of measure.  When members of your organization utilize ThoughtSpot, we measure xref:usage-minutes[usage minutes], which consume available credits. Examples of user activity that consume credits include a user performing a search in ThoughtSpot, viewing or editing pinboards or answers, creating and editing worksheets, making any administrative changes, or changing setup configuration. Each user who actively uses ThoughtSpot consumes credits, even if they are using the product at the same time. Each usage minute is equivalent to consuming one (1) credit. ThoughtSpot refers to this as *credit consumption rate* or *credit burn rate.*
 
 [#usage-minutes]
 == Usage minutes
-Usage minutes refer to the number of minutes of ThoughtSpot usage. Each user's usage minutes are calculated separately. Usage minutes are calculated in the following ways:
+Usage minutes refer to the number of minutes that the members of your organization use ThoughtSpot. We calculate each user's usage minutes separately.
 
-* Any user activity in the application kicks off a 10 minute usage block.
-* Any additional user activity within that 10 minutes does not drive additional consumption and the whole session will be charged at 10 minutes.
-* The first click after the initial 10 minute window ends, initiates a second 10 minute session.
-* Each user’s usage is counted separately.
+We calculate usage minutes in the following manner:
+
+* Any user activity in the application kicks off a 10-minute usage block.
+* Any additional user activity within that 10 minutes does not drive additional consumption; and we charge the whole session at 10 minutes.
+* The first click after the initial 10-minute time period ends initiates a second 10-minute session.
+* We calculate each user’s activity separately.
 
 image::consumption-example.png[Usage minutes example]
 
 == User activity that incurs usage minutes
 
-User activity is defined as any user-triggered (initiated) action in ThoughtSpot, starting from the time the action is initiated until the time that the results of the action(s) are visible to the user in the product. This includes any time spent by ThoughtSpot in processing the user-triggered action in order to present the results to the user. User activity is measured in xref:usage-minutes[usage minutes].
+We define user activity as any user-triggered (initiated) action in ThoughtSpot, starting from the time the user initiates the action, until the time that the results of the action(s) become visible to the user of the product. This includes any time used by ThoughtSpot to process the user-triggered action in order to present the results to the user. We measure user activity in xref:usage-minutes[usage minutes].
 
 User activity that incurs usage minutes includes any user interaction with the product, such as:
 
@@ -37,25 +65,17 @@ User activity that incurs usage minutes includes any user interaction with the p
     ** Uploads, downloads, sharing, triggering the sending of emails from within the product
 
 * Browser actions (such as refreshing the page or using the **forward** or **back** buttons)
-* Any scrolling in the product that triggers updates to objects or content being viewed
-    For example, if a user is scrolling through a Pinboard, initially it displays only a subset of the charts that can fit on the screen. This counts as initial user activity. At any point, if the user scrolls through the Pinboard, resulting in ThoughtSpot loading and displaying additional charts in that Pinboard for the first time, this counts as additional user activity.
-
-== Using the ThoughtSpot consumption licensing model with Embrace software
-
-You do not have to be on ThoughtSpot Cloud to use the consumption-based pricing model. To use the consumption pricing model with Embrace software that you have deployed in your own cloud environment, you must:
-
-. Allow ThoughtSpot to gather product usage information from your cluster. This usage information will be gathered on a periodic basis (daily) from your environment. Usage information is gathered from ThoughtSpot clusters using a secure SSL connection (TLS encrypted).
-. Allow ThoughtSpot to serve usage information for accurate in-product usage visibility of credits consumed via a ThoughtSpot-created Embrace connection on your cluster. The Embrace connection is a JDBC connection that uses SSL for transport (TLS encrypted).
-
-NOTE: Usage information is collected only for the purposes of measuring credit consumption. Your usage information is secured and isolated inside our cloud environment.
+* Any scrolling in the product that triggers object or content updates
++
+For example, if a user is scrolling through a Pinboard, initially it displays only a subset of the charts that can fit on the screen. This counts as initial user activity. At any point, if the user scrolls through the Pinboard, resulting in ThoughtSpot loading and displaying additional charts in that Pinboard for the first time, this counts as additional user activity.
 
 == Monitor your consumption
 
-You can monitor your credit consumption with the Credit Usage Pinboard, a new default admin-only Pinboard with data from the new Credit Usage Worksheet. You can access this Pinboard by searching for it on the **Pinboards** page.
+You can monitor your credit consumption through the *Credit Usage pinboard*, a new default admin-only pinboard that shows data we collect to monitor credit usage consumption. You can access this Pinboard by searching for it on the **Pinboards** page.
 
 image::consumption-usage-pinboard.png[Credit Usage Pinboard]
 
-The Credit Usage Pinboard contains useful visualizations and headlines you can use to monitor your consumption. You can also search the data yourself, using the Credit Usage Worksheet, and create your own Answers and Pinboards.
+The Credit Usage pinboard contains useful visualizations and headlines you can use to monitor your consumption. You can also search the data yourself, using the Credit Usage Worksheet, and create your own Answers and Pinboards.
 
 The Credit Usage Pinboard contains the following visualizations and headlines:
 
@@ -69,3 +89,90 @@ The Credit Usage Pinboard contains the following visualizations and headlines:
 * Monthly Credits Consumed, with Unique Users
 * Weekly Credits Consumed, with Unique Users, Last 8 Weeks
 * Month of Year Credit Usage, by User GUID
+
+== Consumption pricing FAQ
+
+. *What is the consumption-based-pricing model?*
++
+The consumption-based-pricing model provides you with an option to license ThoughtSpot based on usage.
+. *Is consumption-based pricing only an option for ThoughtSpot Cloud?*
++
+We license both ThoughtSpot Software in Embrace mode and ThoughtSpot Cloud through two pricing options: based on capacity, and based on credit (usage minute) consumption.
+. *What is the unit of consumption within the consumption pricing model?*
++
+In the Consumption pricing model, you purchase and consume "`credits`".
+. *What consumes credits?*
++
+Usage of ThoughtSpot (based on "`usage minutes`") consumes credits.
+. *At what rate are credits consumed?*
++
+We draw-down 1 credit for each "`usage minute`".
+We also use the terms "`Credit burn rate`" and "`Credit consumption rate`".
+. *How are usage minutes calculated?*
++
+We calculate usage minutes in the following manner:
++
+** Any user activity in the application kicks off a 10 minute usage block.
+** Any additional user activity within that 10 minutes does not drive additional consumption, and the whole session is charged at 10 minutes.
+** The first click that follows the initial 10-minute window initiates another 10-minute session, and so on.
+** We count each user's usage separately.
+. *Is the usage time measured for each cluster, or for each user?*
++
+We count each user's usage separately.
++
+For example, if 10 users are using ThoughtSpot for the same 10 minutes, we count 100 minutes of usage.
+. *What starts and stops the clock on "`usage minutes`"?*
++
+Any user action or activity within the ThoughtSpot application starts the usage clock, with a minimum 10-minute duration. Consider the examples of Users A and B:
++
+image:consumption-example.png[]
++
+User A;; If the usage continues longer than the first 10-minute interval, the second 10-minute interval starts immediately after the first interval concludes. If the user activity ceases within a 10-minute time interval, then restarts and lasts past the end of the current 10-minute time interval, it triggers the subsequent time interval.
+User B;; If the usage ends within this first 10-minute block, the clock stops. The next click in the product after the initial 10-minute block starts the next 10-minute billable interval.
+. *What is user activity?* +
+User activity is any user-triggered (user-initiated) action in ThoughtSpot, starting from the time the action begins until the time that the results of the action(s) appear to the user in the Product.
++
+This includes any time that the ThoughtSpot service or application processes the user-triggered action, so it can present the results to the user.
+. *What kinds of user actions or activity count towards consumption?*
++
+User activity that counts towards consumption usage includes any user interaction within the product, such as:
++
+** Clicking on any interactive elements inside the ThoughtSpot product page (User Interface) such as menu items, search boxes, tabs, buttons, icons and other user interface artifacts.
++
+Some examples are:
++
+*** Performing searches on data or search-related actions such as explore, filters, drill-down, showing underlying data, and other related actions.
+*** Creating, editing, updating deleting or interacting with answers, pinboards, worksheets, tables, views and other objects.
+*** Triggering user-initiated SpotIQ analyses.
+*** Setup and configuration actions in ThoughtSpot, such as those performed in the "`Admin`" section of the product.
+*** Uploads, downloads, sharing, triggering the sending of emails from within the product.
+** Browser actions such as refresh, forward, and back buttons.
+** Any scrolling in the product that triggers updates to objects or content being viewed.
+*** For example, if a user is scrolling through a Pinboard, initially it displays only a subset of the charts that can fit on the screen.
+This is counted as initial user activity.
+At any point, if the user scrolls through the Pinboard and this results in additional charts in that Pinboard that are loaded and displayed for the first time, this would count as additional user activity.
+
+. *What kinds of user actions/activity do not count toward consumption?* +
+The following do not count toward consumption:
+
+** The only click that does not count as user activity is clicking *Sign out*.
+** Any action that happens outside the product or is not user-triggered inside the product is not considered user activity.
+For example the system sending out a scheduled pinboard, a user viewing receiving emails generated by ThoughtSpot based on actions such as scheduled pinboards, welcome or other kinds of emails, emails that sent out as a result of "`Following`" metrics in the product do not count as user activity.
+_(However, If the user logs in to the product as a result of these emails, that will start user activity)_.
+** Any non-user-initiated activity in the system does not count as "`user activity`".
+This includes automatically triggered SpotIQ analyses, indexing or other non-user-initiated queries against external warehouses and any other background processes or daemons that are not a result of an explicit user triggered action.
+** Any scrolling on ThoughtSpot product pages that does not update any content on the page does not count towards consumption.
+
+. *Will users consume credits if they leave a tab open?* +
+No.
+. *Does "`Admin`" work count towards "`usage time`"?* +
+Yes, any user activity within the application is counted towards usage time including work done by "`Admin`" users or clicking on the "`Admin`" tab.
+. *Are minutes consumed during implementation and training prior to go-live?*  +
+Yes.
+. *Will I be able to track usage in the product?* +
+At this time, ThoughtSpot will provide you periodic updates of usage.
+We plan to make it possible to track usage inside the product in future releases.
+. *Can I have both consumption pricing and capacity pricing?* +
+In order for you to have both pricing models, you must have multiple clusters with each cluster having a discreet pricing model.
++
+One cluster cannot be licensed as both consumption and capacity.
