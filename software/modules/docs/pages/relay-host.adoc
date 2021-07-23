@@ -1,5 +1,5 @@
 = Set the relay host for SMTP (email)
-:last_updated: 6/11/2020
+:last_updated: 7/23/2021
 :redirect_from: /6.3.0/admin/setup/set-up-relay-host.html", "/6.3.0.CU1/admin/setup/set-up-relay-host.html", "/6.3.1.CU1/admin/setup/set-up-relay-host.html", "/admin/setup/set-up-relay-host.html
 :experimental:
 :linkattrs:
@@ -56,6 +56,35 @@ If you are on 6.1 rather than 6.1.1, or an earlier version than 6.0.5, contact h
 ----
 
 . Verify that email is working.
+
+=== Configure an email to send alerts
+
+. Log in to the Linux shell using SSH.
+
+. Specify the domain of the email address you would like emails to come from. In `example@company.com`, this command specifies `company`.
++
+[source,bash]
+----
+ $ tscli smtp set-mailname <mailname>
+----
+
+. Specify the name of the email address you would like emails to come from. In `example@company.com`, this command specifies `example`.
++
+[source,bash]
+----
+ $ tscli smtp set-mailfromname <mailfromname>
+----
+
+=== Configure SMTP authentication
+
+. Log in to the Linux shell using SSH.
+
+. If SMTP authentication is required, you must specify a username and password. Skip this step if SMTP authentication is not required.
++
+[source,bash]
+----
+ $ tscli smtp set-saslcredentials
+----
 
 [#configure-email]
 === Configure an email to receive alerts
