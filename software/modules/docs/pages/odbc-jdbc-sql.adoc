@@ -287,10 +287,10 @@ SCRIPT DATABASE "fruit_database";
 
 [#script-table]
 SCRIPT TABLE <table>::
-  Generates the TQL schema for a table.
+  Generates the TQL schema for a specified table. Use the physical table name, not the logical table name from the ThoughtSpot UI.
 Example:;;
 +
 [source, sql]
 ----
-SCRIPT TABLE "vendor";
+SCRIPT TABLE "physical-table-name";
 ----
