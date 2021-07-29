@@ -84,6 +84,11 @@ This includes automatically triggered SpotIQ analyses, indexing or other non-use
 
 == Monitor your consumption
 
+ThoughtSpot maintains user activity data in a relational database to make it available for reporting in the ThoughtSpot product. ThoughtSpot instances that are hosted in your on-premises/cloud provider environment must connect to this relational database through an Embrace connection in order to access information about consumption usage. This Embrace connection is created by ThoughtSpot support personnel as part of the setup for consumption pricing on ThoughtSpot Software instances (Software on-premises installations). The connection uses Transport Layer Security (TLS) on port 5439 as a secure channel to query the cluster-specific consumption data.
+
+IMPORTANT: When using consumption pricing with Embrace in ThoughtSpot Software, you must ensure your cluster can connect to `redshift-pricing.thoughtspot.cloud` on TCP port 5439. Access to this port is *required* for an on-prem cluster that uses consumption pricing.
+
+
 You can monitor your credit consumption through the *Credit Usage pinboard*, a new default admin-only pinboard that shows data we collect to monitor credit usage consumption. You can access this Pinboard by searching for it on the **Pinboards** page.
 
 image::consumption-usage-pinboard.png[Credit Usage Pinboard]
