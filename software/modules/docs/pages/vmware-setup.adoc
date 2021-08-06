@@ -20,7 +20,7 @@ NOTE: We do not support older versions of ESXi because of hardware/driver incomp
 For each hardware node, you must do the following:
 
 * Complete the prerequisites
-* Use the ThoughtSpot Open Virtualization Format (OVF) file to create a virtual machine (VM)
+* Use the ThoughtSpot Open Virtualization Appliance (OVA) file to create a virtual machine (VM)
 * Add hard disks to the VM
 
 This guide explains how to deploy ThoughtSpot on VMware, using ThoughtSpot's CentOS-based image.
@@ -57,19 +57,21 @@ Your VMware administrator must disable VMware DRS.
 Ask your network administrator if you need help filling out the site survey.
 |===
 
-== Use the OVF to Create a VM
+== Use the OVA to Create a VM
 
-. *https://thoughtspot.egnyte.com/dl/iWvEqo76Pr/[Download]* the `ThoughtSpot OVF` to a location on an accessible disk.
+. Download the https://thoughtspot.egnyte.com/dl/LPOSJr8Cdd[ThoughtSpot OVA^] file to a location on an accessible disk. The OVA file contains the OVF and the VMDK.
+
+. Download the https://thoughtspot.egnyte.com/dl/MaovnPnHqF[md5^], which you can use later to ensure the OVA file is on the correct version, and not corrupted.
 . Log in to the ESXi web portal.
 . Select menu:Virtual Machines[Create/Register VM].
 +
-The system displays the dialog for selecting an OVF template.
+The system displays the dialog for selecting an OVA template.
 +
-image::vmware-ovf.png[]
+image::vmware-ova.png[ThoughtSpot OVA]
 
 . Select menu:Creation type[deploy a virtual machine from an OVF or OVA].
 Click *Next*.
-. Upload the ThoughtSpot OVF and click *Next*.
+. Upload the ThoughtSpot OVA and click *Next*. The OVA contains both the OVF and the VMDK, so you only have to upload one file.
 +
 The system prompts you to select storage.
 
