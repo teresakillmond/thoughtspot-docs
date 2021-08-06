@@ -2,14 +2,18 @@
 
 The `TML` file for Scriptable Views has a specific syntax.
 
-See the xref:parameters[TML paramters] for details about the keywords used in this example.
+See the xref:parameters[TML parameters] for details about the keywords used in this example.
 
 You may not see each of these parameters in your own TML files, depending on whether each variable is explicitly defined.
 For example, if you did not define any conditional formatting, the `conditional_formatting` variable does not appear.
 You can add that variable in the TML file to specify conditional formatting.
 
-....
+Refer to <<syntax-joins,join syntax>> for more information on the functionality and syntax of Worksheet, View, and table joins in TML.
 
+NOTE: If you edit the joins in the View TML file, you are only editing the joins for that specific View. You are not editing the joins at the table level. To modify table-level joins, you must edit the source table's TML file.
+
+....
+guid: <view_guid>
 view:
   name: <view_name>
   description:
@@ -19,17 +23,17 @@ view:
     identity:
     - id: <table_id_1>
       name: <table_name_1>
-      fqn: <optional_table_GUID_1>
+      fqn: <optional_table_guid_1>
     identity:
     - id: <table_id_n>
       name: <table_name_n>
-      fqn: <optional_table_GUID_n>
+      fqn: <optional_table_guid_n>
   joins:
   - name: <join_name_1>
     source: <source_table_name>
     destination: <destination_table_name>
     type: [RIGHT_OUTER | LEFT_OUTER | INNER | OUTER]
-    on: <on_string>
+    on: <join_expression_string>
     is_one_to_one: [ false | true ]
   table_paths:
   - id: <table_path_name_1>
@@ -56,6 +60,7 @@ view:
     - value 1
     - value 2
   - column: <filtered_column_name_n>
+  search_query: <query_string>
   view_columns:
   - name: <column_name_1>
     description: <optional_column_description>
@@ -98,6 +103,4 @@ view:
     description: <column_description>
     column_id: <column_id_2>
     ...
-  query: <query_string>
-guid: <view_guid>
 ....
