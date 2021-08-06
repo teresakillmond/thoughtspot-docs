@@ -1,5 +1,5 @@
 = Scriptability
-:last_updated: 01/16/2021
+:last_updated: 08/06/2021
 :linkattrs:
 :redirect_from: /admin/scriptability/scriptability.html
 :experimental:
@@ -212,6 +212,7 @@ image::scriptability-worksheet-update-browse.png[Find the Worksheet TML file]
 . If you constructed the file correctly, the *Import* interface displays a _Validation successful_ message.
 You can now import the file.
 . If you uploaded a `.zip` file with multiple objects, you can unselect any files in the `.zip` file you do not want to upload.
+. The *Import* interface recognizes that an object with this GUID already exists in the system, and asks if you would like to create a new object, or update the existing one. Select *Update existing [object]*.
 . Click *Import selected files*.
 . The *Import Status* screen displays the status of the objects you imported.
 You can open the object(s) that you imported, or click *Done* to return to the main object page.
@@ -257,17 +258,7 @@ You can open the object(s) that you imported, or click *Done* to return to the m
 
 There are certain limitations to the changes you can apply by editing a Worksheet, Answer, Table, View, Pinboard, or SpotIQ result through TML.
 
-* Formulas and columns can either have a new name, or a new expression.
-You cannot change both, unless migrating or updating the worksheet two times.
-* It is not possible to reverse the join direction in the TML script.
-* You cannot create new tables using Scriptability.
-You can only update existing tables.
-* You can only change logical tables using Scriptability.
-You cannot change the physical version of the table that exists in a database.
-When you change the `column_name`, for example, the name changes in the application, but not in the physical table in the database.
-* You cannot import manually compressed .zip files.
-You can only import .zip files that you exported from ThoughtSpot: either an object and its associated data sources, or multiple objects of the same type that you exported from the object list page.
-* You cannot create Scriptable representations of R- or Python-powered visualizations.
+include::partial$scriptability-limitations.adoc[]
 
 '''
 > **Related information**
