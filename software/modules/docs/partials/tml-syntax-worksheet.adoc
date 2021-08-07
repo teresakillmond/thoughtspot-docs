@@ -8,8 +8,12 @@ You may not see each of these parameters in your own TML files, depending on whe
 For example, if you do not have any filters on your Worksheet, the `filters` parameter does not appear.
 You can add that variable to the TML file to specify filters for your Worksheet.
 
-....
+Refer to <<syntax-joins,join syntax>> for more information on the functionality and syntax of Worksheet, View, and table joins in TML.
 
+NOTE: If you edit the joins in the Worksheet TML file, you are only editing the joins for that specific Worksheet. You are not editing the joins at the table level. To modify table-level joins, you must edit the source table's TML file.
+
+....
+guid: <worksheet_guid>
 worksheet:
   name: <worksheet_name>
   description:
@@ -17,8 +21,8 @@ worksheet:
     Description line 2
   tables:
   - name: <table_name_1>
-    id : <optional_table_id_1>
-    fqn : <optional_GUID_of_table_name_1>
+    id : <optional_table_id>
+    fqn : <optional_GUID_of_table_name>
   - name: <table_name_2>
   - name: <table_name_n>
   joins:
@@ -26,7 +30,7 @@ worksheet:
     source: <source_table_name>
     destination: <destination_table_name>
     type: [RIGHT_OUTER | LEFT_OUTER | INNER | OUTER]
-    on: <on_string>
+    on: <join_expression_string>
     is_one_to_one: [ false | true ]
   - ...
   table_paths:
@@ -111,5 +115,4 @@ worksheet:
   properties:
     is_bypass_rls: [ true | false ]
     join_progressive: [ true | false ]
-guid: <worksheet_guid>
 ....
