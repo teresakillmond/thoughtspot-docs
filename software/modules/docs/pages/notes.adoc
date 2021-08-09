@@ -2,7 +2,8 @@
 :experimental:
 :last_updated: 06/06/2021
 :linkattrs:
-:redirect_from: "/7.0/release/notes.html", "/7.0.0.CU1/release/notes.html", "/7.0.1/release/notes.html", "/release/notes.html", "/7.0.0.mar.sw/release/notes.html"
+:redirect_from: "/release/notes.html", "/7.0/release/notes.html", "/7.0.0.CU1/release/notes.html", "/7.0.1/release/notes.html", "/release/notes.html", "/7.0.0.mar.sw/release/notes.html"
+
 
 ThoughtSpot version 7.0.1 is now available. These release notes include information about new and enhanced features.
 
@@ -39,6 +40,7 @@ xref:search-assist-coach.adoc[Search Assist Coach] enables Analysts, or anyone w
 Search Assist::
 xref:search-assist.adco[Search Assist] introduces new users to ThoughtSpot’s Search experience by walking them through simple search scenarios on your company’s data. It demonstrates how anyone can get answers to their data questions by typing in the Search bar. Worksheet owners can use xref:search-assist-coach.adoc[Search Assist Coach] to create these sample search queries on your company’s data.
 
+
 [#search-on-enter]
 Search on enter experience::
 The default search experience is now *Search on enter*. This means that you can add new tokens to the search bar, or remove them, without altering your existing search, until you press the *Enter* key on your keyboard, or select *Go* to the right of the search bar.
@@ -47,12 +49,17 @@ You may need to press *Enter* or *Go* to ensure that ThoughtSpot updates your se
 +
 image::search-on-enter.gif[Search on enter]
 
+
 [#data-engineer-7-0-1]
 === For the Data Engineer
 
 [#embrace]
 Embrace::
 Embrace now supports Databricks [.label.label-beta]#Beta#. Because this feature is in Beta, it is disabled by default. To enable Databricks, contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support^].
+
+[#saml-mail-field]
+SAML configuration::
+  When configuring SAML authentication for ThoughtSpot, it is now mandatory to map the `mail` attribute in the IDP metadata file to the email address of the user. If your company cannot meet this requirement, xref:support-contact.adoc[contact ThoughtSpot support]. For more information, refer to xref:saml.adoc[Configure SAML].
 
 [#new-7-0]
 == 7.0 New Features and Functionality

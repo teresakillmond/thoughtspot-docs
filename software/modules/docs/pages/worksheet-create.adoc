@@ -50,6 +50,10 @@ Applying joins progressively speeds up performance.
 +
 Note that after you add a column, non-related tables (those without a primary/foreign key relationship) become hidden.
 If you are working with two tables that should be related, but are not, you can xref:relationships.adoc[add a relationship between them].
+
++
+NOTE: ThoughtSpot supports multiple join paths for worksheets. For example, you may have a fact table joined to a dimension table more than once. When adding attribute columns from that dimension table to your worksheet, ThoughtSpot prompts you to choose which join path you would like to use for that column. To use multiple join paths, select that attribute again, modify the name, and choose the other join path when ThoughtSpot prompts you to select one.
+
 . (Optional) xref:join-worksheet-edit.adoc[Modify the join types] within the worksheet.
 . (Optional) xref:worksheet-formula.adoc[].
 . (Optional) xref:worksheet-filter.adoc[Create worksheet filters].

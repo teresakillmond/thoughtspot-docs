@@ -1,9 +1,9 @@
-= Install the ThoughtSpot application on offline clusters that use RHEL
-:last_updated: 8/18/2020
+= Install the ThoughtSpot application on offline clusters that use RHEL or OEL
+:last_updated: 8/6/2021
 :experimental:
 :linkattrs:
 
-Install ThoughtSpot on RHEL offline clusters.
+Install ThoughtSpot on RHEL or OEL offline clusters.
 
 Before starting the install, make sure that you completed the xref:rhel-prerequisites.adoc[pre-installation steps].
 
@@ -11,7 +11,7 @@ In an offline cluster, the hosts cannot connect to the public repositories to do
 
 Before you build the ThoughtSpot cluster and install the ThoughtSpot application on the hosts, you must run the Ansible playbook. The TS Ansible playbook prepares your clusters in the following manner:
 
-- Ansible installs the required packages: YAML, Python, and R packages; see xref:rhel-packages.adoc[Packages installed with ThoughtSpot for RHEL].
+- Ansible installs the required packages: YAML, Python, and R packages; see xref:rhel-packages.adoc[Packages installed with ThoughtSpot for RHEL and OEL].
 - It creates and configures local user accounts for ThoughtSpot:
    - `admin` user has full administrative functionality
    - `thoughtspot` user can load data in the application
@@ -218,9 +218,9 @@ Your hosts are ready for installing the ThoughtSpot application.
 
 Refer to the ThoughtSpot documentation for the detailed steps to install the ThoughtSpot cluster for each deployment platform:
 
-- xref:hardware-appliance.adoc[Hardware appliance]
+- [*_RHEL only_*] xref:hardware-appliance.adoc[Hardware appliance]
 - xref:aws-configuration-options.adoc[Amazon Web Services (AWS) EC2]
-- xref:azure-configuration-options.adoc[Microsoft Azure]
+- [*_RHEL only_*] xref:azure-configuration-options.adoc[Microsoft Azure]
 - xref:gcp-configuration-options.adoc[Google Cloud Platform (GCP)]
 - xref:vmware.adoc[VMware]
 
