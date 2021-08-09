@@ -6,22 +6,23 @@ When you edit the information in the <<joins,joins>> section of the TML for a Wo
 
 When you edit the information in the <<joins_with,joins_with>> section of the TML for a table, you edit the join information for the source table, the destination table, and any dependents, such as Worksheets and Views. Note that you can only edit joins for which the table is the source table.
 
-== Worksheet and View join Syntax
+== Worksheet and View join syntax
 
 For Worksheets and Views, the join syntax is the following:
 
+[subs=+macros]
 ....
-joins:
-- name: <join_name_1>
-  source: <source_table_name>
-  destination: <destination_table_name>
-  type: [RIGHT_OUTER | LEFT_OUTER | INNER | OUTER]
-  on: <join_expression_string>
-  is_one_to_one: [ false | true ]
-table_paths:
-- id: <table_path_name_1>
-  table: <table_name_1>
-  join_path:
+<<joins,joins>>:
+- <<name,name>>: <join_name_1>
+  <<source,source>>: <source_table_name>
+  <<destination,destination>>: <destination_table_name>
+  <<type,type>>: [RIGHT_OUTER | LEFT_OUTER | INNER | OUTER]
+  <<on,on>>: <join_expression_string>
+  <<is_one_to_one,is_one_to_one>>: [ false | true ]
+<<table_paths,table_paths>>:
+- <<id,id>>: <table_path_name_1>
+  <<table,table>>: <table_name_1>
+  <<join_path,join_path>>:
   - {}
 ....
 
@@ -39,18 +40,19 @@ Worksheet and View joins have the following limitation:
 
 === Table join syntax
 
+[subs=+macros]
 ....
-joins_with:
-- name: <join_name_1>
-  description: <optional_join_description_1>
-  destination:
-    name: <destination_table_name_1>
-    fqn: <optional_table_guid_1>
-  on: <join_expression_string_1>
-  type: [RIGHT_OUTER | LEFT_OUTER | INNER | OUTER]
-  is_one_to_one: [ false | true ]
-  name: <join_name_2>
-  name: <join_name_n>
+<<joins_with,joins_with>>:
+- <<name,name>>: <join_name_1>
+  <<description,description>>: <optional_join_description_1>
+  <<destination,destination>>:
+    <<name,name>>: <destination_table_name_1>
+    <<fqn,fqn>>: <optional_table_guid_1>
+  <<on,on>>: <join_expression_string_1>
+  <<type,type>>: [RIGHT_OUTER | LEFT_OUTER | INNER | OUTER]
+  <<is_one_to_one,is_one_to_one>>: [ false | true ]
+  <<name,name>>: <join_name_2>
+  <<name,name>>: <join_name_n>
 ....
 
 === Table join functionality and limitations
