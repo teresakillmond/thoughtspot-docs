@@ -14,81 +14,81 @@ NOTE: If you edit the joins in the View TML file, you are only editing the joins
 
 [subs=+macros]
 ....
-guid: <view_guid>
-view:
-  name: <view_name>
-  description:
+<<guid,guid>>: <view_guid>
+<<view,view>>:
+  <<name,name>>: <view_name>
+  <<description,description>>:
     This is a multi-line description of the View.
     Description line 2
-  tables:
-    identity:
-    - id: <table_id_1>
-      name: <table_name_1>
-      fqn: <optional_table_guid_1>
-    identity:
-    - id: <table_id_n>
-      name: <table_name_n>
-      fqn: <optional_table_guid_n>
-  joins:
-  - name: <join_name_1>
-    source: <source_table_name>
-    destination: <destination_table_name>
-    type: [RIGHT_OUTER | LEFT_OUTER | INNER | OUTER]
-    on: <join_expression_string>
-    is_one_to_one: [ false | true ]
-  table_paths:
-  - id: <table_path_name_1>
-    table: <table_name_1>
-    join_path:
+  <<tables,tables>>:
+    <<identity,identity>>:
+    - <<id,id>>: <table_id_1>
+      <<name,name>>: <table_name_1>
+      <<fqn,fqn>>: <optional_table_guid_1>
+    <<identity,identity>>:
+    - <<id,id>>: <table_id_n>
+      <<name,name>>: <table_name_n>
+      <<fqn,fqn>>: <optional_table_guid_n>
+  <<joins,joins>>:
+  - <<name,name>>: <join_name_1>
+    <<source,source>>: <source_table_name>
+    <<destination,destination>>: <destination_table_name>
+    <<type,type>>: [RIGHT_OUTER | LEFT_OUTER | INNER | OUTER]
+    <<on,on>>: <join_expression_string>
+    <<is_one_to_one,is_one_to_one>>: [ false | true ]
+  <<table_paths,table_paths>>:
+  - <<id,id>>: <table_path_name_1>
+    <<table,table>>: <table_name_1>
+    <<join_path,join_path>>:
     - {}
-  formulas:
-  - id: <formula_id_1>
-    name: <formula_name_1>
-    expr: <formula_definition_1>
-    properties: <formula_properties_1>
-      column_type: [ MEASURE | ATTRIBUTE ]
-      data_type: [ BOOL | VARCHAR | DOUBLE | FLOAT | INT | BIGINT | DATE | DATETIME | TIMESTAMP | TIME ]
-      aggregation: [ SUM | COUNT | AVERAGE | MAX | MIN |
+  <<formulas,formulas>>:
+  - <<id,id>>: <formula_id_1>
+    <<name,name>>: <formula_name_1>
+    <<expr,expr>>: <formula_definition_1>
+    <<properties,properties>>: <formula_properties_1>
+      <<column_type,column_type>>: [ MEASURE | ATTRIBUTE ]
+      <<data_type,data_type>>: [ BOOL | VARCHAR | DOUBLE | FLOAT | INT | BIGINT | DATE | DATETIME | TIMESTAMP | TIME ]
+      <<aggregation,aggregation>>: [ SUM | COUNT | AVERAGE | MAX | MIN |
                          COUNT_DISTINCT | NONE | STD_DEVIATION | VARIANCE]
-  - id: <formula_id_n>
-    name: <formula_name_n>
-    expr: <formula_definition_n>
-    properties: <formula_properties_n>
-  filters:
-  - column: <filtered_column_name_1>
-    oper: <filter_operator>
-    values: <filtered_values>
+  - <<id,id>>: <formula_id_n>
+    <<name,name>>: <formula_name_n>
+    <<expr,expr>>: <formula_definition_n>
+    <<properties,properties>>: <formula_properties_n>
+  <<filters,filters>>:
+  - <<column,column>>: <filtered_column_name_1>
+    <<oper,oper>>: <filter_operator>
+    <<values,values>>: <filtered_values>
     - value 1
     - value 2
-  - column: <filtered_column_name_n>
-  search_query: <query_string>
-  view_columns:
-  - name: <column_name_1>
-    description: <optional_column_description>
-    column_id: <column_id_1>
-    phrase: <phrase_string_1>
-    properties:
-      column_type: [ MEASURE | ATTRIBUTE ]
-      aggregation: [ SUM | COUNT | AVERAGE | MAX | MIN |
+  - <<column,column>>: <filtered_column_name_n>
+  <<search_query,search_query>>: <query_string>
+  <<view_columns,view_columns>>:
+  - <<name,name>>: <column_name_1>
+    <<description,description>>: <optional_column_description>
+    <<column_id,column_id>>: <column_id_1>
+    <<phrase,phrase>>: <phrase_string_1>
+    <<properties,properties>>:
+      <<column_type,column_type>>: [ MEASURE | ATTRIBUTE ]
+      <<aggregation,aggregation>>: [ SUM | COUNT | AVERAGE | MAX | MIN |
                      COUNT_DISTINCT | NONE | STD_DEVIATION | VARIANCE]
-      index_type: [ DONT_INDEX | DEFAULT | PREFIX_ONLY |
+      <<index_type,index_type>>: [ DONT_INDEX | DEFAULT | PREFIX_ONLY |
                     PREFIX_AND_SUBSTRING | PREFIX_AND_WORD_SUBSTRING ]
- 	    index_priority: <index_priority>
-      synonyms :
+ 	    <<index_priority,index_priority>>: <index_priority>
+      <<synonyms,synonyms>> :
              <synonym_1>
              <synonym_2>
-      is_attribution_dimension : [true | false]
-      is_additive : [ true | false ]
-      calendar : [ default | calendar_name ]
-      format_pattern : <format_pattern_string>
-      currency_type :
+      <<is_attribution_dimension,is_attribution_dimension>> : [true | false]
+      <<is_additive,is_additive>> : [ true | false ]
+      <<calendar,calendar>> : [ default | calendar_name ]
+      <<format_pattern,format_pattern>> : <format_pattern_string>
+      <<currency_type,currency_type>> :
         is_browser : true
           OR
         column : <column_name>
           OR
         iso_code : <valid_ISO_code>
-      is_hidden: [ true | false ]
-      geo_config :
+      <<is_hidden,is_hidden>> : [ true | false ]
+      <<geo_config,geo_config>> :
         latitude : true
           OR
         longitude : true
@@ -98,10 +98,10 @@ view:
         region_name:
         - country : <name_supported_country>
         - region_name : <region_name_in_UI>
-      spotiq_preference: <spotiq_preference_string>
-      search_iq_preferred: [ true | false ]
-    name: <column_name_2>
-    description: <column_description>
-    column_id: <column_id_2>
+      <<spotiq_preference,spotiq_preference>> : <spotiq_preference_string>
+      <<search_iq_preferred,search_iq_preferred>> : [ true | false ]
+    <<name,name>> : <column_name_2>
+    <<description,description>> : <column_description>
+    <<column_id,column_id>> : <column_id_2>
     ...
 ....
