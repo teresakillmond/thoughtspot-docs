@@ -803,7 +803,7 @@ tscli map-tiles [-h] {disable,enable,status}
 
 This subcommand has the following options:
 
-tscli map-tiles enable [-h] [--offline] [--tar TAR] [--md5 MD5]::
+tscli map-tiles enable [-h] [--online] [--offline] [--tar TAR] [--md5 MD5]::
   Enables ThoughtSpot's map tiles. Used when constructing geo map charts.
 +
 If you don't have internet access, you must download the map tiles tar and md5 files, and append the clause `--offline --tar __TAR__ --md5 __MD5__` to the `tscli map-tiles enable` command:
@@ -813,6 +813,10 @@ tscli map-tiles enable --offline --tar __TAR__ --md5 __MD5__
 ----
 +
 This command has the following parameters:
++
+  --online;; Downloads `maptiles` from the internet. +
+  The default setting is `True`. +
+  This subcommand is *_not_* available in ThoughtSpot versions 6.3.1 and later.
   --offline;; Specifies that you are using `maptiles` tarball from a local disk, rather than downloading from the internet. Use during offline enablement of map-tiles. You must specify the location of the `--tar` and `--md5` on your machine.
   You must download the https://tsengg-geodata.s3.amazonaws.com/raster-osm-jpg.tar.gz[tarball^] and https://tsengg-geodata.s3.amazonaws.com/md5[md5^] before you run this command.
   The default setting is `False`.
@@ -1335,7 +1339,7 @@ NOTE: If you mapped your OpenLDAP admin user to ThoughtSpot's local admin user t
 tscli sssd enable --user USER --domain DOMAIN::
   Enables system Active Directory (AD) user access on a single node. Prompts for password credentials. The user must have permission to join a computer or VM to the domain. This subcommand has the following parameters:
   --user USER;; You must specify the user to receive access.
-  --domain DOMAIN::  You must specify the domain.
+  --domain DOMAIN;;  You must specify the domain.
 
 [#tscli-sssd-enable-openldap]
 tscli sssd enable-openldap::
@@ -1353,7 +1357,7 @@ This subcommand has the following parameters:
 
 [#tscli-sssd-set-sudo-group]
 tscli sssd set-sudo-group sudo_group::
-  Allows `sudo` permissions for the specified user __`sudo_group`. For more about setting up Active Directory access, see xref:active-directory.adoc[Enable Active Directory based access].
+  Allows `sudo` permissions for the specified user `sudo_group`. For more about setting up Active Directory access, see xref:active-directory.adoc[Enable Active Directory based access].
 
 [#tscli-storage]
 === storage
@@ -1363,14 +1367,15 @@ tscli storage [-h] {gc,df}
 ----
 
 This subcommand has the following options:
+
 tscli storage gc [-h] [--log_age LOG_AGE] [--force] [--localhost_only]::  Garbage collects unused storage.
-
++
 Before issuing this command, you must stop the cluster using `tscli     cluster stop`.
-
++
 After garbage collection finishes, you can restart the cluster with `tscli cluster start`.
-
++
 This command frees space in the following directories:
-
++
  /tmp
      /usr/local/scaligent/logs/
      /export/logs/orion
@@ -1378,7 +1383,7 @@ This command frees space in the following directories:
      /export/logs/hadoop
      /export/logs/zookeeper
      cores
-
++
 The `storage gc` subcommand accepts these optional flags:
 
   --log_age LOG_AGE;; Deletes logs older than a specified number of hours. Use a non-zero value, because zero deletes all temporary files, including the ones that are closed temporarily while passing from one component to the next. The default setting is `4`.
