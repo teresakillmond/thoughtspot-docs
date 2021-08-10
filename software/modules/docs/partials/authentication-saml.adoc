@@ -23,7 +23,7 @@ NOTE: If you configure authentication through SAML, you cannot also configure au
 
 6. Fill in the parameters with the information you collected in the xref:prerequisites[Configuration prerequisites].
 
-7. When the configuration is complete, download ThoughtSpot's metadata file, `spring_saml_metadata.xml`. This file contains the public key you need if you want to encrypt your SAML assertions. To download this file, navigate to `https://<hostname-or-IP>/callosum/v1/saml/metadata`. The file automatically downloads.
+7. When the configuration is complete, download ThoughtSpot's metadata file, `spring_saml_metadata.xml`. This file contains the public key you need if you want to encrypt your SAML assertions. To download this file, navigate to `\https://<hostname-or-IP>/callosum/v1/saml/metadata`. The file automatically downloads.
 
 NOTE: ThoughtSpot adds external users, or users that authenticate through SAML or Active Directory, to the *all* group by default. This group has no privileges. You must manually assign users to ThoughtSpot groups to give them privileges, such as *can upload user data*, or *can manage data*.
 
@@ -35,7 +35,7 @@ ThoughtSpot supports SAML authentication with several identity and access manage
 
 To determine if ThoughtSpot supports your preferred IdP, xref:support-contact.adoc[contact ThoughtSpot support].
 
-Complete your configuration of the IdP using the IdP's SAML documentation. Upload or copy the contents of the `spring_saml_metadata.xml` to your IdP server. If you did not download the `spring_saml_metadata.xml` file, navigate to `https://<your_ThoughtSpot_hostname-or-IP>/callosum/v1/saml/metadata`. The file automatically downloads.
+Complete your configuration of the IdP using the IdP's SAML documentation. Upload or copy the contents of the `spring_saml_metadata.xml` to your IdP server. If you did not download the `spring_saml_metadata.xml` file, navigate to `\https://<your_ThoughtSpot_hostname-or-IP>/callosum/v1/saml/metadata`. The file automatically downloads.
 
 NOTE: When configuring SAML 2.0, make sure you map the SAML user attributes to appropriate fields. For example, you must map the SAML user’s username to the NameId attribute in OneLogin. Similarly, in Okta, you must map the username to userPrincipalName. You must also map the email address of the user to the mail attribute, and optionally map the display name you would like to use to displayName. Starting in ThoughtSpot version 6.3.1, it is mandatory to fill out the mail field. If your company cannot meet this requirement, xref:support-contact.adoc[contact ThoughtSpot support]. If your IdP does not allow you to import the IdP metadata XML file, you must map these values manually.
 
