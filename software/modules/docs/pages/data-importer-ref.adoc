@@ -36,6 +36,7 @@ The following flags are used when loading data from an input file:
 | `--null_value "<null_representation>"` | Specifies how null values are represented in the input file. | These values will be converted to NULL upon loading.
 | `--date_converted_to_epoch [true\|false]` | Specifies whether the “date” or “datetime” values in the input file are represented as epoch values. |
 | `--boolean_representation [true_false \| 1_0 \| T_F \| Y_N]`  | Specifies the format in which boolean values are represented in the input file. | The default is T_F. You can also use this flag to specify other values. For example, if your data used Y for true and NULL for false, you could specify: `--boolean_representation Y_NULL`
+| `--format_file` | Specifies the filepath that describes the formats for the columns you are importing. |
 | `--has_header_row` | Indicates that the input file contains a header row. | If supplied, column names in the header row are used to match column names in the target table in ThoughtSpot. If not supplied, the first row of the file is loaded as data, the same as all subsequent rows.
 |`--escape_character "<character>"`  | Specifies the escape character used in the input file. | If no value is specified, the default is “(double quotes).
 | `--enclosing_character "<character>"` | Specifies the enclosing character used in the input file. | If the enclosing character is double quotes, you need to escape it, as in this example: --enclosing_character "\""
