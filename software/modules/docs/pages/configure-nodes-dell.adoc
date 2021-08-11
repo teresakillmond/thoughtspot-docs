@@ -49,10 +49,13 @@ NOTE: Some of the information in the `nodes.config` file may be pre-populated fr
 For example, if you specified an IP address while creating VMs, that IP address might already be present in your `nodes.config` file.
 
 . Fill in the areas specified in xref:parameters-nodesconfig.adoc[Parameters of the nodes.config file] with your specific network information.
-+ If you have additional nodes, complete each node within the nodes.config file in the same way.
-
++
+If you have additional nodes, complete each node within the nodes.config file in the same way.
++
 Do not edit any part of the `nodes.config` file except the sections described in xref:parameters-nodesconfig.adoc[Parameters of the nodes.config file].
 If you delete quotation marks, commas, or other parts of the code, it may cause setup to fail.
+
+. Update the file `/etc/hosts` with all the node IP addresses and hostnames for the other VMs that will be part of the ThoughtSpot cluster.
 
 [#node-step-3]
 == Step 3: Configure the nodes
@@ -80,7 +83,7 @@ Done setting up ThoughtSpot
 == Step 4: Confirm node configuration
 
 Use the `get-config` command to confirm node configuration.
-+ Your output may look similar to the following:
+Your output may look similar to the following:
 
 [source,console]
 ----
