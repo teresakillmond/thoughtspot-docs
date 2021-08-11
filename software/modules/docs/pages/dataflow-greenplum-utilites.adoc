@@ -9,11 +9,15 @@ You can use the Greenplum client to customize connections in DataFlow.
 Follow these steps to install the Greenplum client:
 
 . Download the appropriate installer package for your platform from the following site.
-The package name has the following form: `pacgreenplum-loaders-<version>-PLATFORM.bin.zip`.
 +
+The package name has the following form:
+`pacgreenplum-loaders-<version>-PLATFORM.bin.zip`.
++
+----
 https://network.pivotal.io/products/pivotal-gpdb#/releases/837931/file_groups/3218
+----
+. Select the Greenplum Client for RHEL 7.
 +
-Select the Greenplum Client for RHEL 7.
 This downloads the RPM file.
 
 . Install the Greenplum client using `yum`.
@@ -26,20 +30,20 @@ This installs the utility on the path `/usr/local/greenplum-db-clients-<version>
 
 . To access `gpfdist` and `gpload` commands from DataFlow, create symlinks in the `/usr/bin` path.
 +
-``` #sudo ln -s /usr/local/greenplum-db-clients-+++<version>+++/bin/gpload /usr/bin/gpload+++</version>+++
+----
+#sudo ln -s /usr/local/greenplum-db-clients-<version>/bin/gpload /usr/bin/gpload</version>
 
-#sudo ln -s /usr/local/greenplum-db-clients-+++<version>+++/bin/gpfdist /usr/bin/gpfdist+++</version>+++
-
+#sudo ln -s /usr/local/greenplum-db-clients-<version>/bin/gpfdist /usr/bin/gpfdist</version>
 ----
 
-4.	Verify the installation by running the `gpfdist` command.
+. Verify the installation by running the `gpfdist` command.
++
 ----
-
 #gpfdist
-
 ----
 
-5. Restart the DataFlow service.
+. Restart the DataFlow service.
++
 ----
-
-#tscli --adv service restart dataflow ```
+#tscli --adv service restart dataflow
+----
