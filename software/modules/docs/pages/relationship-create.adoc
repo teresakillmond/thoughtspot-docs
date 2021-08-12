@@ -6,8 +6,6 @@
 
 Learn how to define joins between a table, View, or Worksheet and another table, View, or Worksheet.
 
-== About joins
-
 A join combines columns from one or more sources in your data by using matching values. By defining relationships between your sources, you create a new, richer set of data that you can use to answer your business questions.
 Choose a column to join on that both tables contain (for example,
 employee ID or product key).
@@ -16,7 +14,7 @@ This process creates a xref:constraints.adoc[generic join] between the table or 
 NOTE: If you want to create a primary key/foreign key relationship, you need to xref:constraints.adoc[use TQL] rather than the web interface.
 
 [#join-type]
-=== Join types
+== Join types
 
 ThoughtSpot supports the following join types: Inner, Left Outer, Right Outer, and Full Outer. You can choose a join type when creating or editing a join through the ThoughtSpot web interface.
 
@@ -31,7 +29,7 @@ Right outer joins return results for all values from Table 2, and any matching v
 Full outer joins return results for all values from either Table 1 or Table 2.
 
 [#join-cardinality]
-=== Join cardinality
+== Join cardinality
 
 When creating the join, you must also identify its *cardinality*: Many:1, 1:Many, or 1:1.
 
@@ -43,7 +41,8 @@ A 1:1 cardinality defines a join where one value in the origin table corresponds
 
 You must create a join between columns in two data sources that contain the same data type, with the same meaning. That is, they must represent the same data. Normally, you can make this kind of link from a fact table column to a column in a dimension table that uniquely identifies a logical entity in your data such as Employee ID for a person, Product ID for a product, or Date Key for a specific date in a date lookup table.
 
-=== Possible joins
+[#possible-joins]
+== Possible joins
 
 You must have either the xref:groups-privileges.adoc[*Can administer ThoughtSpot* or the *Can manage data* privilege] to create a join relationship.
 If you're not an administrator, you also need edit permissions on the table, View, or Worksheet.
@@ -124,6 +123,7 @@ image:worksheet-join-dialog.png[Worksheet join dialog]
 
 ThoughtSpot allows you to edit the name, join type, and cardinality through the Web interface. To change the columns that define a join, you must delete the join and create a new one.
 
+[#table-join-modify]
 === Editing a join from a table
 
 To edit a join between tables:
@@ -145,6 +145,7 @@ image:edit-join-page.png[Edit table join page]
 . Make the desired changes to the name, type, or cardinality of the join.
 . Click *Save*.
 
+[#worksheet-join-modify]
 === Editing a join from a Worksheet or View
 
 To edit a join from a Worksheet or View:
@@ -160,7 +161,8 @@ image:edit-join-window.png[Edit worksheet join]
 . Make the desired changes to the join type or cardinality.
 . Click *Save*.
 
-=== Deleting a join
+[#delete-join]
+== Deleting a join
 
 To delete a join:
 
