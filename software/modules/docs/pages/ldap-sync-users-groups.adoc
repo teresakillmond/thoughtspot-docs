@@ -156,12 +156,6 @@ Note the command-line switches available to use with the `syncUsersAndGroups` py
 `--ldap_hostport`::
   AD/LDAP server port that is queried. Default is `389`.
 
-[#ldap_type]
-`--ldap_type`::
-Specifies if you are using Active Directory (AD) or OpenLdap.
-+
-The default is `AD`.
-
 [#ldap_uname]
 `--ldap_uname`::
   Username for the LDAP/AD server.
@@ -176,15 +170,7 @@ The default is `AD`.
 
 [#purge]
 `--purge`::
-  Purges any users or groups that exist in ThoughtSpot, but not in AD.
-
-[#purge-users]
-`--purge_users`::
-Purges any users that exist in ThoughtSpot, but not in AD.
-
-[#purge-groups]
-`--purge_groups`::
-Purges any groups that exist in ThoughtSpot, but not in AD.
+  Purges any users that exist in ThoughtSpot, but not in AD.
 
 [#basedn]
 `--basedn`::
@@ -213,17 +199,3 @@ Purges any groups that exist in ThoughtSpot, but not in AD.
 [#debug]
 `--debug`::
   Provides additional logs in case of failure or other errors.
-
-[#member-str]
-`--member-str`::
-Provide the member string for AD or OpenLdap.
-+
-The default is `member`.
-
-[#upsert_group]
-`--upsert_group`::
-Upserts groups during sync. By default, this script only inserts, but does not update.
-
-[#upsert_user]
-`--upsert_user`::
-Upserts users during sync. By default, this script only inserts, but does not update.
