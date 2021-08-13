@@ -1,11 +1,12 @@
 = Sync users and groups from LDAP
-:last_updated: 9/23/2020
+:last_updated: 8/12/2021
+:linkattrs:
 
 Use this procedure to synchronize your ThoughtSpot system with an LDAP server through Active Directory.
 
 == Prerequisites
 
-Before synchronizing users and groups, link:{{ site.baseurl }}/admin/setup/LDAP-config-AD.html[set up integration with LDAP using Active Directory].
+Before synchronizing users and groups, xref:LDAP-config-AD.adoc[set up integration with LDAP using Active Directory].
 Then, collect the following information:
 
 * IP address and port of the server where your ThoughtSpot instance is running.
@@ -38,7 +39,7 @@ There are two ways for you to fetch users and groups from LDAP and populate them
 
 * Run the synchronization script in interactive mode, which walks you through the process (shown here).
 * Create your own Python script by using the ThoughtSpot Python APIs.
-If you need details on the Python APIs, link:{{ site.baseurl }}/appliance/contact.html[contact ThoughtSpot Support].
+If you need details on the Python APIs, xref:contact.adoc[contact ThoughtSpot Support].
 If you choose this method, you can run the script periodically using a cron job.
 
 NOTE: When you run the synchronization script, you perform a one-time sync.
@@ -117,6 +118,12 @@ Issue the Python script commands, supplying all this information, following this
 The bottom half of the preceding command targets sub trees under the DC called TestGroupAlpha and TestGroupBeta, and iterates through them recursively to create/sync users, groups, and their relationships in the ThoughtSpot system.
 It also deletes any other entities created in the ThoughtSpot system from this LDAP system that are not currently being synced.
 
+. When the ThoughtSpot search engine finishes indexing, your new users should appear in the ThoughtSpot application. To check if the ThoughtSpot search engine is indexing, run the following command:
+
+----
+ tscli cluster status
+----
+
 === `syncUsersAndGroups.py` command-line switches
 
 The following table provides a description of each command-line switch available for the `syncUsersAndGroups` python script.
@@ -138,4 +145,5 @@ The following table provides a description of each command-line switch available
 |--user_identifier <user_identifier>|User name identifier key for user creation or sync.
 |--authdomain_identifier <authdomain_identifier>|Override domain name to be appended to user identifier in user name.
 |--email_identifier <email_identifier>|Email identifier key for user creation or sync.
+|--debug|Provides additional logs in case of failure or other errors.
 |====================
