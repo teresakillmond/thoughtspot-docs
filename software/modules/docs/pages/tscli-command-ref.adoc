@@ -1,5 +1,5 @@
 = tscli command reference
-:last_updated: 12/25/2020
+:last_updated: 08/12/2021
 :linkattrs:
 
 The ThoughtSpot command line interface, or tscli, is an administration interface for the cluster. Use `tscli` to take snapshots (backups) of data, to apply updates, to stop and to start services, and to view information about the system. This reference defines each subcommand.
@@ -480,6 +480,21 @@ tscli command run COMMAND::
   --dest_dir DEST_DIR;; Directory to save the files that contain the output from each node. This is a mandatory parameter.
   --copyfirst COPYFIRST;; Command to copy the executable to required nodes first. The default setting is `False`.
   --timeout TIMEOUT;; Timeout waiting for the command to finish. The default setting is `60`.
+
+[#tscli-dataflow]
+=== dataflow
+
+----
+tscli dataflow [-h] {disable,enable}
+----
+
+This subcommand has the following options:
+
+tscli dataflow disable::
+Disables the xref:dataflow.adoc[DataFlow] service on the cluster.
+
+tscli dataflow enable::
+Enables the xref:dataflow.adoc[DataFlow]service on the cluster, with token authentication.
 
 [#tscli-dr-mirror]
 === dr-mirror
