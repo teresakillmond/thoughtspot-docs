@@ -1,11 +1,14 @@
 = Configure SAML
 :last_updated: 8/11/2021
-:redirect_from: /app-integrate/SAML/configure-SAML-with-tscli.html", "/admin/ts-cloud/authentication-integration.html", "/admin/setup/configure-SAML-with-tscli.html
+:linkattrs:
+:page_aliases: /app-integrate/SAML/configure-SAML-with-tscli.adoc, /admin/ts-cloud/authentication-integration.adoc, /admin/setup/configure-SAML-with-tscli.adoc
 
 You can configure Security Assertion Markup Language (SAML) using ThoughtSpot's command line interface, tscli.
 
 ThoughtSpot enables you to use the Security Assertion Markup Language (SAML) to authenticate users.
-You can set up SAML through the shell on the ThoughtSpot instance using a `tscli`-based configurator. It is configured to work using service provided by an Identity Provider (IDP).
+You can set up SAML through the shell on ThoughtSpot <<saml-configure-tscli,using a `tscli`-based configurator>>, or <<admin-portal,through the Admin Console>>. It is configured to work using service provided by an Identity Provider (IDP).
+
+Popular Identity Providers that ThoughtSpot supports include https://developer.okta.com/docs/guides/build-sso-integration/saml2/overview/[Okta], https://docs.microsoft.com/en-us/powerapps/maker/portals/configure/configure-saml2-settings-azure-ad[Azure Active Directory], https://docs.pingidentity.com/bundle/solution-guides/page/ozz1597769517562.html[PingFederate], https://docs.microsoft.com/en-us/powerapps/maker/portals/configure/configure-saml2-settings[Microsoft AD FS], and https://developers.onelogin.com/quickstart/saml[Onelogin]. This is not an exhaustive list. To determine if ThoughtSpot supports your preferred IdP, talk to your ThoughtSpot contact. Refer to your Identity Provider’s SAML documentation for specific information on setting up SAML with that IdP.
 
 [#prerequisites]
 == Configuration prerequisites
@@ -60,6 +63,8 @@ Usually set to `3600` seconds.
 [#metadata-xml-file]
 === IDP Metadata XML File
 This file is provided by the IDP. The absolute path to the `idp-meta.xml` file is needed for one-time configuration.
+
+If your IdP provider does not allow you to import the IDP metadata XML file, you must map values manually. Map the `username` attribute to `NameId` and the `email` attribute to `mail`.
 
 [#auto-add]
 === Automatically add SAML users to ThoughtSpot: (yes/no)
