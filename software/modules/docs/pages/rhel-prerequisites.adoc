@@ -1,35 +1,30 @@
 = RHEL installation prerequisites
-:last_updated: 6/30/2020
+:last_updated: 8/16/2021
 
 Prepare the system and ThoughtSpot clusters for installation.
 
 [width="100%",options="header",cols="5%,95%"]
 |===
 | &#10063;
-| <<set-up-hosts,1.
-Set up hosts for the ThoughtSpot cluster>>
+| <<set-up-hosts,1. Set up hosts for the ThoughtSpot cluster>>
 
 | &#10063;
-| <<partition-hosts,2.
-Partition the hosts>>
+| <<partition-hosts,2. Partition the hosts>>
 
 | &#10063;
-| <<install-rhel,3.
-Install RHEL version 7.7 or 7.8 on all hosts>>
+| <<install-rhel,3. Install RHEL version 7.7 or 7.8 on all hosts>>
 
 | &#10063;
-| <<linux-kernel-version,4.
-Ensure that your Linux kernel is on version 3.10.0-1127.19.1>>
+| <<linux-kernel-version,4. Ensure that your Linux kernel is on version 3.10.0-1127.19.1>>
 
 | &#10063;
-| <<enable-hosts,5.
-Enable the hosts to download RHEL packages>>
+| <<enable-hosts,5. Enable the hosts to download RHEL packages>>
 
 | &#10063;
-| <<enable-ansible,6.
-Enable an Ansible Control Server>>
+| <<enable-ansible,6. Enable an Ansible Control Server>>
 
 | &#10063;
+
 | <<disable-selinux,7.
 Disable SELinux>>
 
@@ -131,8 +126,11 @@ We recommend that you disable SELinux, or run it in permissive mode.
 
 [#tmp-permission]
 == Ensure tmp has permission 777
+
 The `/tmp` directory must have the `777` permission.
 
 [#etc-sudoers]
 == Remove Defaults requiretty from /etc/sudoers
+
 The `/etc/sudoers` file must not have the `Defaults requiretty` line. This line can cause cluster creation to fail.
+
