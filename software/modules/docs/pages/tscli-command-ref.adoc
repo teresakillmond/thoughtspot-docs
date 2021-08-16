@@ -408,7 +408,7 @@ tscli cluster load backupdir::
 tscli cluster restore --release RELEASE backupdir::
   Restores a cluster on the specified release number using the backup in the specified directory, `backupdir`. If you are restoring from a data-less backup, you must supply the release tarball for the corresponding software release. This command has the following parameters:
   --disable_rotate_keys;; Disables cluster rotate key configurations. The default is `False`.
-  --enable_cloud_storage {s3a,gcs};; Determines whether to enable Cloud Storage setup. For example, run `tscli cluster restore --enable_cloud_storage=s3a` to enable AWS S3 object storage.
+  --enable_cloud_storage {s3a,gcs};; Determines whether to enable Cloud Storage setup. For example, run `tscli cluster restore --enable_cloud_storage s3a` to enable AWS S3 object storage.
   --heterogeneous;; Must be set for heterogeneous clusters. The default is `False`.
 
 tscli cluster resume-update::
