@@ -38,20 +38,20 @@ scp <release-number> admin@<hostname>:/home/admin/<file-name>
 ----
 . *Run the `tscli cluster create` command*: Run `tscli cluster create <release-number>` in your terminal.
 +
-If you are using an S3 or GCS bucket for object storage, include the flag `--enable_cloud_storage=s3` or `--enable_cloud_storage=gcs`. GCS is GCP's object storage, and s3 is AWS's object storage.
+If you are using an S3 or GCS bucket for object storage, include the flag `--enable_cloud_storage s3a` or `--enable_cloud_storage gcs`. GCS is GCP's object storage, and s3a is AWS's object storage.
 +
 s3 example:
 +
 [source,tscli]
 ----
-tscli cluster create 6.0.tar.gz --enable_cloud_storage=s3
+tscli cluster create 6.0.tar.gz --enable_cloud_storage s3a
 ----
 +
 GCS example:
 +
 [source,tscli]
 ----
-tscli cluster create 6.0.tar.gz --enable_cloud_storage=gcs
+tscli cluster create 6.0.tar.gz --enable_cloud_storage gcs
 ----
 
 . *Specify your installation information*: Fill out the cluster name, cluster ID, email alert preferences and the IP's of the nodes at the prompts specified in xref:parameters-cluster-create.adoc[Parameters of the tscli cluster create command].

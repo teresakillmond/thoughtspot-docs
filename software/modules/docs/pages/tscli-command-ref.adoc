@@ -252,7 +252,7 @@ The default setting is `local`.
 Restores cluster using backup, with the following parameters:
 `--release _RELEASE_`;; Restore the cluster on a specific release number.
 `--disable__rotate_keys`;; Disables cluster rotate key configurations. The default is `False.`
-`--enable_cloud_storage`;; Enables object storage, on the specified platform, either `s3a` or `gcs`. For example, run `tscli backup restore --enable_cloud_storage=s3a` to enable AWS S3 object storage.
+`--enable_cloud_storage`;; Enables object storage, on the specified platform, either `s3a` or `gcs`. For example, run `tscli backup restore --enable_cloud_storage s3a` to enable AWS S3 object storage.
 `--heterogeneous`;; Should be set for heterogeneous clusters. The default is `False`.
 
 
@@ -445,7 +445,7 @@ This subcommand has the following options:
 `tscli cluster restore --release _RELEASE backupdir_`::
   Restores a cluster on the specified release number using the backup in the specified directory, `backupdir`. If you are restoring from a data-less backup, you must supply the release tarball for the corresponding software release. +++<br>+++This command has the following parameters:
   `--disable_rotate_keys`;; Disables cluster rotate key configurations. The default is `False`.
-  `--enable_cloud_storage {s3a,gcs}`;; Determines whether to enable Cloud Storage setup. For example, run `tscli cluster restore --enable_cloud_storage=s3a` to enable AWS S3 object storage.
+  `--enable_cloud_storage {s3a,gcs}`;; Determines whether to enable Cloud Storage setup. For example, run `tscli cluster restore --enable_cloud_storage s3a` to enable AWS S3 object storage.
   `--heterogeneous`;; Must be set for heterogeneous clusters. The default is `False`.
 
 `tscli cluster resume-reinstall-os`:: Resumes in-progress reinstall.
