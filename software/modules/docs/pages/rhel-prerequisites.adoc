@@ -24,13 +24,17 @@ Prepare the system and ThoughtSpot clusters for installation.
 | <<enable-ansible,6. Enable an Ansible Control Server>>
 
 | &#10063;
-| <<disable-selinux,7. Disable SELinux>>
+
+| <<disable-selinux,7.
+Disable SELinux>>
 
 | &#10063;
-| <<tmp-permission,8. Ensure tmp has permission 777>>
+| <<tmp-permission,8.
+Ensure tmp has permission 777>>
 
 | &#10063;
-| <<etc-sudoers,9. Remove Defaults requiretty from /etc/sudoers>>
+| <<etc-sudoers,9.
+Remove Defaults requiretty from /etc/sudoers>>
 |===
 
 [#set-up-hosts]
@@ -129,3 +133,4 @@ The `/tmp` directory must have the `777` permission.
 == Remove Defaults requiretty from /etc/sudoers
 
 The `/etc/sudoers` file must not have the `Defaults requiretty` line. This line can cause cluster creation to fail.
+
