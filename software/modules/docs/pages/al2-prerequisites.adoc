@@ -1,5 +1,5 @@
 = Amazon Linux 2 installation prerequisites
-:last_updated: 6/11/2020
+:last_updated: 8/16/2021
 :linkattrs:
 
 Prepare the system and ThoughtSpot clusters for installation.
@@ -7,28 +7,28 @@ Prepare the system and ThoughtSpot clusters for installation.
 [cols="5%,95%"]
 |===
 | &#10063;
-| <<set-up-hosts,1.
-Set up hosts for the ThoughtSpot cluster>>
+| <<set-up-hosts,1. Set up hosts for the ThoughtSpot cluster>>
 
 | &#10063;
-| <<aws-ssm,2.
-[Optional] Set up AWS Systems Manager Agent>>
+| <<aws-ssm,2. [Optional] Set up AWS Systems Manager Agent>>
 
 | &#10063;
-| <<partition-hosts,3.
-Partition the hosts>>
+| <<partition-hosts,3. Partition the hosts>>
 
 | &#10063;
-| <<enable-hosts,4.
-Enable the hosts to download Amazon Linux 2 packages>>
+| <<enable-hosts,4. Enable the hosts to download Amazon Linux 2 packages>>
 
 | &#10063;
-| <<enable-ansible,5.
-Enable an Ansible Control Server>>
+| <<enable-ansible,5. Enable an Ansible Control Server>>
 
 | &#10063;
-| <<disable-selinux,6.
-Disable SELinux or run it in permissive mode>>
+| <<disable-selinux,6. Disable SELinux or run it in permissive mode>>
+
+| &#10063;
+| <<tmp-permission,7. Ensure tmp has permission 777>>
+
+| &#10063;
+| <<etc-sudoers,8. Remove Defaults requiretty from /etc/sudoers>>
 |===
 
 [#set-up-hosts]
@@ -99,6 +99,16 @@ You must install both `rsync` and Ansible on the Ansible Control Server host.
 
 ThoughtSpot does not support policies that enforce SELinux.
 We recommend that you disable SELinux, or run it in permissive mode.
+
+[#tmp-permission]
+== Ensure tmp has permission 777
+
+The `/tmp` directory must have the `777` permission.
+
+[#etc-sudoers]
+== Remove Defaults requiretty from /etc/sudoers
+
+The `/etc/sudoers` file must not have the `Defaults requiretty` line. This line can cause cluster creation to fail.
 
 == Next steps
 
