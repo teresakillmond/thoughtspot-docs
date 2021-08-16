@@ -32,6 +32,14 @@ Enable an Ansible Control Server>>
 | &#10063;
 | <<disable-selinux,7.
 Disable SELinux>>
+
+| &#10063;
+| <<tmp-permission,8.
+Ensure tmp has permission 777>>
+
+| &#10063;
+| <<etc-sudoers,9.
+Remove Defaults requiretty from /etc/sudoers>>
 |===
 
 [#set-up-hosts]
@@ -120,3 +128,13 @@ You must install both `rsync` and Ansible on the Ansible Control Server host.
 
 ThoughtSpot does not support policies that enforce SELinux.
 We recommend that you disable SELinux, or run it in permissive mode.
+
+[#tmp-permission]
+== Ensure tmp has permission 777
+
+The `/tmp` directory must have the `777` permission.
+
+[#etc-sudoers]
+== Remove Defaults requiretty from /etc/sudoers
+
+The `/etc/sudoers` file must not have the `Defaults requiretty` line. This line can cause cluster creation to fail.
