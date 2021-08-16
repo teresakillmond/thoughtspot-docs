@@ -90,11 +90,11 @@ $ screen -S DEPLOYMENT
 
 . Create the cluster.
 + Run `tscli cluster create` to create the cluster.
-+ If you are using an s3 bucket for object storage, include the flag `--enable_cloud_storage=s3a`.
++ If you are using an s3 bucket for object storage, include the flag `--enable_cloud_storage s3aa`.
 +
 [source,console]
 ----
-$ tscli cluster create <release-number>.tar.gz --enable_cloud_storage=s3a
+$ tscli cluster create <release-number>.tar.gz --enable_cloud_storage s3aa
 ----
 
 . Edit the output with your specific cluster information.
