@@ -20,14 +20,15 @@ This has implications on setting up privileges, and on applying row-level securi
 The default Permissive Security mode of ThoughtSpot means that when someone shares an object with you, you can see all the data it uses, regardless of explicit permissions to the parent object data.
 You can see a shared pinboard without having access to its underlying worksheet or table.
 
+[#advanced-security-mode]
 === Advanced Security Mode
 
-ThoughtSpot's Advanced Security mode is opposite of the default permissive mode.
+ThoughtSpot's Advanced Security mode is the opposite of the default permissive mode.
 Unless the user has explicit permissions to the entire stack of parent objects, they cannot see the data in the child object.
 For example, in a shared pinboard, you can see data only if you have explicit permissions to the relevant columns of the parent worksheet.
 Similarly, you can only see the data in a worksheet to which you have access if you have explicit permissions to its parent table object.
 
-Work with your ThoughtSpot support team to enable the Advanced Security Mode on the relevant clusters.
+Work with your ThoughtSpot support team to enable the <<advanced-security-mode,Advanced Security Mode>>, which allows table dependents (such as Worksheets, Pinboards, and Answers) to inherit a table's CLS.
 
 == Row level security (RLS)
 
