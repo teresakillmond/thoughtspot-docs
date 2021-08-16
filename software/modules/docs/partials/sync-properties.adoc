@@ -13,6 +13,8 @@ To find the correct functions for the condition, click *Expression editor*, use 
 Sync mode::
 Choose the sync mode, either *Append* or *Overwrite*. +
 Mandatory field.
++
+NOTE: For Append or Overwrite, when the table has a *primary key*, ThoughtSpot uses UPSERT to update the new rows to the table.
 [#append]
 Append::
 This option adds new rows to the table.
@@ -21,3 +23,4 @@ Overwrite::
 This option removes all existing rows, and then adds new rows to the table.
 . Save your work by clicking *Save*. +
 Alternatively, click *Save and sync now* to save your work and sync data at the same time.
+primary key.
