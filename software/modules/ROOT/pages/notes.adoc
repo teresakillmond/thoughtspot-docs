@@ -1,0 +1,149 @@
+= 6.1 Release Notes
+:last_updated: 06/22/2020
+:linkattrs:
+
+ThoughtSpot version 6.1.1 is now available.
+These release notes include information about new and enhanced features.
+
+For a complete list of issues that we fixed in this release, see xref:fixed.adoc[Fixed issues].
+
+* <<6-1-1-new,6.1.1 New Features>>
+* <<early-access,Early Access Programs>>
+* <<beta-program,Beta Programs>>
+* <<upgrade-paths,Supported Upgrade Paths>>
+
+[#6-1-1-new]
+== 6.1.1 New Features and Functionality
+
+For a complete list of issues that we fixed in this release, see xref:fixed.adoc#6-1-1[6.1.1 Fixed issues].
+
+=== Amazon Linux 2
+
+This release of ThoughtSpot introduces deployment support for https://aws.amazon.com/amazon-linux-2/[Amazon Linux 2,window=_blank].
+This decouples the OS and application files we shipped together in previous releases, and gives you the flexibility to run ThoughtSpot on an Amazon Linux 2 image that your organization manages internally.
+ThoughtSpot certifies Amazon Linux 2 on the AWS platform.
+To deploy ThoughtSpot on Amazon Linux 2, you must have the Ansible tarball;
+you can obtain the tarball through your ThoughtSpot contact.
+For more information, see the xref:al2-overview.adoc[Amazon Linux 2 Deployment Overview].
+
+=== Charts and tables with a very large number of data values
+
+ThoughtSpot now supports charts and tables with more than 1000 data values.
+You can easily understand how much of the data your chart or table displays.
+
+* Your search in table form can now have more than 1000 rows.
+* Your charts now come with a horizontal scroll bar, to support up to 35,000 data points.
+* You can have up to 250 distinct legend items on a chart.
+
+See xref:high-cardinality.adoc[Charts and tables with a very large number of data values].
+
+=== Tsload as a service
+
+This release introduces a new option for loading data in bulk, called tsload as a service.
+The tsload service is a collection of APIs that allow you to directly, and more quickly load your data into the ThoughtSpot Falcon database.
+For more information, see xref:load-with-tsload.adoc[Use the tsload service to load data].
+
+[#6-1-new]
+== 6.1 New Features and Functionality
+
+For a complete list of issues that we fixed in this release, see xref:fixed.adoc#6-1[6.1 Fixed issues].
+
+=== Updating ThoughtSpot UI through CDN
+
+Starting with this release, you can configure automatic updates of the front end of the ThoughtSpot application by uploading from CDN (Amazon Cloudfront).
+This enables your organization to get many new features of ThoughtSpot and get many critical bug fixes without experiencing the traditional upgrade downtime.
+
+UI auto-update is in the Early Access phase.
+Please contact us if you are interested in participating in the mailto:early_access@thoughtspot.com[UI Update Early Access Program,UI Update Early Access Program Request].
+
+=== Back up and restore ThoughtSpot AWS and GCP clusters using cloud storage
+
+With AWS, you can back up and restore an S3-based cluster using an S3 bucket.
+With GCP, you can back up and restore a GCS-based cluster using a GCS bucket.
+
+For details, see:
+
+* xref:aws-backup-restore.adoc[Back up and restore an AWS cluster using S3]
+* xref:gcp-backup-restore.adoc[Back up and restore a GCP cluster using GCS]
+
+=== Geo map support for Norway and Switzerland
+
+For details, see: xref:geomap-reference.adoc[Geo Map reference]
+
+=== New SQL commands for ODBC and JDBC drivers
+
+For developers creating tools to connect to ThoughtSpot through the ODBC or JDBC driver, the following new commands are available:
+
+* `ALTER TABLE`
+* `CREATE DATABASE`
+* `CREATE SCHEMA`
+* `DROP`
+* `SCRIPT`
+* `SHOW`
+* `TRUNCATE`
+
+For details, see: xref:odbc-commands.adoc[Supported SQL commands].
+
+=== Embrace advanced configuration
+
+In this release, on the connection details page, you can provide additional key-value pairs that you need to set up the connection to your external data source.
+Any key-value pairs that you enter must be defined in the external data source.
+Key-value pairs are case-sensitive.
+
+Some examples of key-value pairs for Snowflake, include the following:
+
+Setting up a proxy connection:
+
+image::snowflake-adv-config-1.png[]
+
+Applying a filter on the schema:
+
+image::snowflake-adv-config-2.png[]
+
+=== Upgrade to Python 3
+
+Starting with this release, ThoughtSpot uses Python 3 packages.
+For example, to invoke the `syncUsersAndGroups.py` script the script, you must now use the `python3` command;
+see xref:sync-users-and-groups-from-ldap.adoc[Sync users and groups from LDAP].
+
+[#early-access]
+== Early Access Programs
+
+=== UI update
+
+Please contact us if you are interested in participating in the mailto:early_access@thoughtspot.com[UI Update Early Access Program,UI Update Early Access Program Request].
+
+=== RHEL support
+
+RHEL support is in the Early Access phase.
+To deploy ThoughtSpot on RHEL, you must have the Ansible tarball;
+please contact us if you are interested in participating in the mailto:early_access@thoughtspot.com[RHEL Early Access Program,RHEL Early Access Program Request].
+For more information, see xref:rhel.adoc[RHEL Deployment Overview].
+
+[#beta-program]
+== Beta Programs
+
+If you are interested in seeing some of our newest features, we want to add you to our testing group.
+ThoughtSpot is looking for people with all levels of experience: end-users, analysts, administrators, configurators, and so on.
+We like to have a diversity of experience and perspective, and want to hear from you.
+Because we strive for excellence, we will partner with you to adjust the final details of our offerings based on your feedback.
+
+=== Monitor
+
+Please contact us if you are interested in participating in the mailto:BetaProgram@thoughtspot.com[Monitor Beta Program,Monitor Beta Program Request], for monitoring selected metrics over time.
+
+[#upgrade-paths]
+== Supported Upgrade Paths
+
+If you are running one of the following versions, you can upgrade to the 6.1.1 release directly:
+
+* 5.3.x to 6.1.1
+* 6.0.x to 6.1.1
+
+This includes any hotfixes or customer patches on these branches.
+
+If you are running a different version, you must do a multiple pass upgrade.
+First, upgrade to version 5.3.x, or version 6.0.x, and then to the 6.1.1 release.
+
+NOTE: To successfully upgrade your ThoughtSpot cluster, all user profiles must include a valid email address.
+Without valid email addresses, the upgrade is blocked.
