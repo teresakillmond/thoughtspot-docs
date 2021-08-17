@@ -64,14 +64,14 @@ Note that the size of the root drive on appliances is limited to 200GB;
 the partition requirements are therefore somewhat different when compared to the other environments.
 
 [width="100%",options="header",cols=5*]
-|====================
-| Platform |Partition|Drive type|Description|Minimum size
-.2+| Hosts in AWS, GCP, Azure, and VMWare | OS partition | SSD (root drive) | Root partition for OS, /tmp| 100GB Allocate at least 50GB to /tmp
-| Export partition | SSD (root drive) | Stores ThoughtSpot objects, hdfs logs, service logs, and so on |200GB
-.2+| Hosts on ThoughtSpot-certified hardware appliances | OS partition | SSD (root drive) | Root partition for OS, /tmp |80GB
+|===
+| Platform | Partition | Drive type | Description | Minimum size
+.2+| Hosts in AWS, GCP, Azure, and VMWare | OS partition | SSD (root drive) | Root partition for OS, /tmp | 100GB Allocate at least 50GB to /tmp
+| Export partition | SSD (root drive) | Stores ThoughtSpot objects, hdfs logs, service logs, and so on | 200GB
+.2+| Hosts on ThoughtSpot-certified hardware appliances | OS partition | SSD (root drive) | Root partition for OS, /tmp | 80GB
 Allocate at least 50GB to /tmp
-| Export partition | SSD (root drive) | Stores ThoughtSpot objects, hdfs logs, service logs, and so on | service logs, and so on	100GB
-|====================
+| Export partition | SSD (root drive) | Stores ThoughtSpot objects, hdfs logs, service logs, and so on | service logs, and so on	| 100GB
+|===
 
 [#install-rhel]
 == Install RHEL on hosts
@@ -88,7 +88,7 @@ RHEL 7.7 and 7.8 used to come with a Linux kernel of version 3.10.x, which has a
 The default Linux kernel version for RHEL 7.7 and 7.8 is now 3.10.0-1127.19.1.
 However, you may have an older RHEL 7.7 or 7.8, with a Linux kernel of version 3.10.x.
 You must upgrade to 3.10.0-1127.19.1.
-If you have trouble upgrading your Linux kernel to version 3.10.0-1127.19.1, link:{{ site.baseurl }}/appliance/contact.adoc[contact ThoughtSpot Support].
+If you have trouble upgrading your Linux kernel to version 3.10.0-1127.19.1, xref:contact.adoc[contact ThoughtSpot Support].
 This is a requirement for *_all_* platforms: appliance, cloud, and VMware.
 
 WARNING: If Linux kernel version is not 3.10.0-1127.19.1, you may run into unexpected node reboots and possible loss of data.

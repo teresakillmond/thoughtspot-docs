@@ -112,7 +112,7 @@ ALTER TABLE "fruit_dim" SET DIMENSION;`
 +
 Changes the data type of a column.
 This can have implications on sharding and primary key behavior.
-See link:{{ site.baseurl }}https:/admin/loading/about-data-type-conversion.html#concept_u2t_clg_wv[About data type conversion].
+See xref:about-data-type-conversion.adoc#concept_u2t_clg_wv[About data type conversion].
 For example:   `ALTER TABLE fact100 MODIFY COLUMN product_id int;`
 
 * `INSERT`
@@ -133,7 +133,7 @@ Example: You could remove all data for sales before a certain date to free up sp
   DELETE FROM country_dim;
 ----
 
-* `SELECT <cols_or_expression> FROM <table_list> [WHERE <predicates>] [GROUP BY <expressions>]``[ORDER BY <expressions>]`
+* `SELECT <cols_or_expression> FROM <table_list> [WHERE <predicates>] [GROUP BY <expressions>]` `[ORDER BY <expressions>]`
 +
 Fetches the specified set of table data.
 +
