@@ -24,16 +24,22 @@ If backups fill up this storage, other components will suffer.
 
 Thoughtspot supports shared storage by mounting NFS or CIFS/Samba based volumes.
 Before you begin, make sure you know if the shared volume is Samba or NAS volume.
-To find out, use the `telnet` command.+++<table>++++++<tr>++++++<td>+++Telnet confirms NFS+++</td>+++
-    +++<td>+++Telnet confirms  Samba+++</td>++++++</tr>+++
-  +++<tr>++++++<td>++++++<pre>+++$ telnet,2049
+To find out, use the `telnet` command.
+
+[options="header"]
+|===
+| Telnet confirms NFS | Telnet confirms  Samba
+
+a| `$ telnet,2049
     Trying 192.168.2.216\...
     Connected to 192.168.2.216.
-    Escape character is '{caret}]'.+++</pre>++++++</td>+++
-    +++<td>++++++<pre>+++$ telnet,445
+    Escape character is '{caret}]'.`
+
+a| `$ telnet,445
     Trying 192.168.2.216\...
     Connected to 192.168.2.216.
-    Escape character is '{caret}]'+++</pre>+++.+++</td>++++++</tr>++++++</table>+++
+    Escape character is '{caret}]'.`
+|===
 
 == Configure and test your shared volume
 
@@ -60,20 +66,22 @@ sudo chown -R admin:admin <mount_point>
 . Use the `tscli nas` subcommand to create a NAS mount on all of the cluster nodes.
 Run `tscli nas mount-nfs` or `tscli nas mount-cifs`.
 +
-Use the command-line help (`tscli nas -h`) or the documentation to view all the link:{{ site.baseurl }}/reference/tscli-command-ref.html#nas[nas subcommand options].
-Below are some samples to help you:+++<table>++++++<tr>++++++<th colspan="2">+++Example invocations+++</th>++++++</tr>+++
-+++<tr>++++++<th>+++Samba share:+++</th>+++
-+++<td>++++++<code>+++tscli nas mount-cifs --server 192.168.4.216 --path_on_server /bigstore_share --mount_point /mnt --username admin --password sambashare --uid 1001 --gid 1001+++</code>++++++</td>++++++</tr>+++
-+++<tr>++++++<th>+++Samba share with Windows AD authentication+++</th>+++
-+++<td>++++++<code>+++tscli nas mount-cifs --server 172.27.1.75 --path_on_server /elc --mount_point /home/admin/etl/external_datadir --username COMPANYCO/thoughtspot_svc --password 'ts123PDI!' --uid 1001 --gid 1001+++</code>++++++</td>++++++</tr>+++
-+++<tr>++++++<th>+++NFS+++</th>+++
-+++<td>++++++<code>+++tscli nas mount-nfs --server 192.168.4.132 --path_on_server /data/toolchain --mount_point /mnt+++</code>++++++</td>++++++</tr>++++++</table>+++
+Use the command-line help (`tscli nas -h`) or the documentation to view all the xref:tscli-command-ref.adoc#nas[nas subcommand options].
+Below are some samples to help you:
+
+Example invocations::
+Samba share:;;
+`tscli nas mount-cifs --server 192.168.4.216 --path_on_server /bigstore_share --mount_point /mnt --username admin --password sambashare --uid 1001 --gid 1001`
+Samba share with Windows AD authentication:;;
+`tscli nas mount-cifs --server 172.27.1.75 --path_on_server /elc --mount_point /home/admin/etl/external_datadir --username COMPANYCO/thoughtspot_svc --password 'ts123PDI!' --uid 1001 --gid 1001`
+NFS:;;
+`tscli nas mount-nfs --server 192.168.4.132 --path_on_server /data/toolchain --mount_point /mnt`
 
 . Log into the target machine.
 . Ensure that the target machine is running a ThoughtSpot cluster.
 Note that the clusters on the primary and target machines do not need to be on the same ThoughtSpot version.
 +
-If a cluster is not running on the target machine, link:{{ site.baseurl }}/appliance/contact.html[contact ThoughtSpot Support] to create a cluster.
+If a cluster is not running on the target machine, xref:contact.adoc[contact ThoughtSpot Support] to create a cluster.
 
 . Repeat steps 3-5 on the target machine.
 +
@@ -104,7 +112,7 @@ When choosing times and frequencies for periodic backups, you should choose a re
 Do not schedule backups too close together, since a backup cannot start when another backup is still running.
 Avoid backing up when the system is experiencing a heavy load, such as peak usage or a large data load.
 +
-If you are unfamiliar with the policy format, see link:{{ site.baseurl }}/admin/backup-restore/configure-backup.html[Configure periodic backups].
+If you are unfamiliar with the policy format, see xref:configure-backup.adoc[Configure periodic backups].
 
 . Write and save the file to store your configuration.
 +

@@ -18,11 +18,11 @@ NOTE: You cannot transfer objects to or from the system user or the administrati
 
 === Request Parameters
 [width="100%",options="header",cols="20%,15%,65%"]
-|====================
+|===
 | Query Parameter | Data Type | Description
 | `fromUserName` | string | Username to transfer from.
 | `toUserName` | string | Username to transfer to.
-|====================
+|===
 
 === Request Example
 
@@ -113,7 +113,7 @@ Here, `test1` user belongs to two groups - `Customer Success` and `Marketing`.
 `All` is a default group to which every user belongs;
 you may omit it from the input.
 
-Set `visibility` to `NON_SHARABLE` if you do not want users to be able to link:{{ site.baseurl }}/admin/users-groups/add-user.html#sharing-visibility[share objects] with users in this group.
+Set `visibility` to `NON_SHARABLE` if you do not want users to be able to xref:add-user.adoc#sharing-visibility[share objects] with users in this group.
 
 [source]
 ----
@@ -175,12 +175,12 @@ Use this API to change the password of a user.
 
 === Request Parameters
 [width="100%",options="header",cols="20%,15%,65%"]
-|====================
+|===
 | Form Parameter | Data Type | Description
 | `name` | string | The current password of the user.
 | `currentpassword` | string | Username to transfer to.
 | `password` | string | A new password of the user.
-|====================
+|===
 
 === Request Example
 
@@ -208,7 +208,7 @@ Not applicable
 Use this API to get a list of all users, groups, and their inter-dependencies in the form of principal objects.
 A typical principal object contains the following properties:
 [width="100%",options="header",cols="25%,75%"]
-|====================
+|===
 | Property | Description
 | `name` | Name of the principal.
 
@@ -227,7 +227,7 @@ This field, in conjunction with whether the object is a user or group, is used t
 
 In subsequent update, the user password is not updated even if it changes in the source system.
 |`groupNames` | Group names that a principal belongs to. Groups and users can belong to other groups.
-|====================
+|===
 
 === Resource URL
 

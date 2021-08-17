@@ -1,8 +1,7 @@
-= ["Add a new data source"]
+= Add a new data source
 :last_updated: 11/19/2019
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: When you enable ThoughtSpot Data Connect, you can add a new data source.
+
+When you enable ThoughtSpot Data Connect, you can add a new data source.
 
 Now that you've enabled ThoughtSpot Data Connect, you will be able to add a new data source.
 Data sources are the source systems from which you want to import data and schedule repeat data loads.
@@ -32,7 +31,7 @@ Then click *Test & Create*:
 image::lightweight_etl_create_new_connection.png[]
 
 +
-Refer to the link:{{ site.baseurl }}/data-connect/reference/data-connect-connection-credentials.html#[Data Connect connectors reference] for more information on each of the specific attributes you must enter into the dialog box.
+Refer to the xref:data-connect-connection-credentials.adoc[Data Connect connectors reference] for more information on each of the specific attributes you must enter into the dialog box.
 . Choose the tables you wish to load from the list of *Available Tables*.
 +
 Only the first 200 objects that occur alphabetically are listed per schema.
@@ -89,7 +88,7 @@ If you are loading into new or empty tables, or if you want to delete any data t
 
 . If you want to specify repeat data loads, create a loading schedule.
 +
-image::lightweight_etl_schedule.png[]
+image:lightweight_etl_schedule.png[]
 
 . If you want to receive an email notification letting you know when your data load completes, select *Enable email notifications for data load tasks.*
 +
@@ -107,12 +106,12 @@ This feature is not available if Informatica Cloud Services is still in use.
 . Click *Import*.
 . If you want to view or change the SQL DDL (data definition language) that will create the target table, click *here*.
 +
-image::data_connect_edit_schema.png[]
+image:data_connect_edit_schema.png[]
 
 . Review and edit the schema as necessary.
 Click *Load* to load the tables.
 +
-image::data_connect_edit_schema_view.png[]
+image:data_connect_edit_schema_view.png[]
 
 . Click *Load*.
 

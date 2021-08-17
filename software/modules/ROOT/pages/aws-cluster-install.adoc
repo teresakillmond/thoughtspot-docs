@@ -1,5 +1,5 @@
 = Install ThoughtSpot clusters in AWS
-:last_updated: ["2/26/2020"]
+:last_updated: 2/26/2020
 :linkattrs:
 
 Learn how to install ThoughtSpot clusters in AWS.
@@ -33,7 +33,7 @@ Follow the steps in this checklist.
 |===
 
 Refer to your welcome letter from ThoughtSpot to find the link to download the release bundle.
-If you do not have a link, open a support ticket with link:{{ site.baseurl }}/appliance/contact.adoc[ThoughtSpot Support] to request access to the release bundle.
+If you do not have a link, open a support ticket with xref:contact.adoc[ThoughtSpot Support] to request access to the release bundle.
 
 [#cluster-step-1]
 === Step 1: Run the installer
@@ -98,8 +98,9 @@ Use screen to ensure that your installation does not stop if you lose network co
 The cluster installer automatically reboots all the nodes after a successful install.
 The `firewalld` service automatically turns on.
 At this time, the system is rebooting, which may take approximately 15 minutes.
-+   Log in to any node to check the current cluster status:
-
++
+Log in to any node to check the current cluster status:
++
 ----
     $ tscli cluster status
 ----
@@ -141,7 +142,7 @@ Number of tables in WILL_NOT_INDEX state: 0
 ----
 
 Ensure that the cluster is `RUNNING` and that the Database and Search Engine are `READY`.
-
+----
  $ tscli cluster check
  Connecting to hosts...
  [Wed Jan  8 23:15:47 2020] START Diagnosing ssh
@@ -197,7 +198,7 @@ Ensure that the cluster is `RUNNING` and that the Database and Search Engine are
    InsecureRequestWarning)
  [Wed Jan  8 23:16:12 2020] SUCCESS
  ################################################################################
-
+----
 Your output may look something like the above.
 Ensure that all diagnostics show `SUCCESS`.
 

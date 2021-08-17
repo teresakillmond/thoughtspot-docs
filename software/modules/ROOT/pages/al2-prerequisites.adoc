@@ -7,36 +7,28 @@ Prepare the system and ThoughtSpot clusters for installation.
 [cols="5%,95%"]
 |===
 | &#10063;
-| <<set-up-hosts,1.
-Set up hosts for the ThoughtSpot cluster>>
+| <<set-up-hosts,1. Set up hosts for the ThoughtSpot cluster>>
 
 | &#10063;
-| <<aws-ssm,2.
-[Optional] Set up AWS Systems Manager Agent>>
+| <<aws-ssm,2. [Optional] Set up AWS Systems Manager Agent>>
 
 | &#10063;
-| <<partition-hosts,3.
-Partition the hosts>>
+| <<partition-hosts,3. Partition the hosts>>
 
 | &#10063;
-| <<enable-hosts,4.
-Enable the hosts to download Amazon Linux 2 packages>>
+| <<enable-hosts,4. Enable the hosts to download Amazon Linux 2 packages>>
 
 | &#10063;
-| <<enable-ansible,5.
-Enable an Ansible Control Server>>
+| <<enable-ansible,5. Enable an Ansible Control Server>>
 
 | &#10063;
-| <<disable-selinux,6.
-Disable SELinux or run it in permissive mode>>
+| <<disable-selinux,6. Disable SELinux or run it in permissive mode>>
 
 | &#10063;
-| <<tmp-permission,7.
-Ensure tmp has permission 777>>
+| <<tmp-permission,7. Ensure tmp has permission 777>>
 
 | &#10063;
-| <<etc-sudoers,8.
-Remove Defaults requiretty from /etc/sudoers>>
+| <<etc-sudoers,8. Remove Defaults requiretty from /etc/sudoers>>
 |===
 
 [#set-up-hosts]
@@ -66,11 +58,11 @@ Refer to https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-man
 
 As you create VMs, ensure that all ThoughtSpot hosts have the following partitions on the root drive.
 [width="100%",options="header"]
-|====================
+|===
 | Partition | Drive type | Description | Minimum size
 | *OS partition* | SSD (root drive) | Root partition for OS, /tmp | Allocate at least 50GB to /tmp
 | *Export partition* | SSD (root drive) | Stores ThoughtSpot objects, hdfs logs, service logs, and so on | 200GB
-|====================
+|===
 
 [#enable-hosts]
 == Enable the hosts to download Amazon Linux 2 packages
@@ -85,7 +77,7 @@ As you create VMs, ensure that all ThoughtSpot hosts have the following partitio
 
 Make sure that you can download Amazon Linux 2 packages to all hosts, either from the <<official-repositories,official package repositories>>, or from a <<mirror-repositories,mirror repository>> owned and managed by your organization.
 
-If you cannot access the Amazon Linux 2 repositories, there is no mirror repository in your organization, or you are unable to access Yum, Python, or R repositories, please link:{{ site.baseurl }}/appliance/contact.html[contact ThoughtSpot Support].
+If you cannot access the Amazon Linux 2 repositories, there is no mirror repository in your organization, or you are unable to access Yum, Python, or R repositories, please xref:contact.adoc[contact ThoughtSpot Support].
 
 *Official package repositories*
 
