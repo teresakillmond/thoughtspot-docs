@@ -199,10 +199,14 @@ The cipher string would be as follows:
 EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH
 ----
 
-You can retrieve these from the ThoughtSpot web server (not against the load balancer) by running the following command on any ThoughtSpot node:     `     nmap --script ssl-enum-ciphers -p 443 <ThoughtSpot_node_IP_address>    `
+You can retrieve these from the ThoughtSpot web server (not against the load balancer) by running the following command on any ThoughtSpot node:
+
+----
+nmap --script ssl-enum-ciphers -p 443 <ThoughtSpot_node_IP_address>
+----
 
 You must ensure that your load balancer supports these ciphers.
-If your load balancer cannot support these ciphers, link:{{ site.baseurl }}/appliance/contact.html[contact ThoughtSpot Support].
+If your load balancer cannot support these ciphers, xref:contact.html[contact ThoughtSpot Support].
 
 include::partial$ssl-configure.adoc[]
 
@@ -210,7 +214,7 @@ include::partial$ssl-configure.adoc[]
 [#ssl-configure-test]
 == Test the SSL certificate
 
-To test if the certificate is installed correctly, see link:{{ site.baseurl }}/admin/setup/logins.html#sign-in-to-the-thoughtspot-application[Sign in to the ThoughtSpot application].
+To test if the certificate is installed correctly, see xref:logins.html#sign-in-to-the-thoughtspot-application[Sign in to the ThoughtSpot application].
 
 == Additional resources
 
