@@ -16,7 +16,7 @@ Supported operating systems for the ODBC driver are:
 
 To ensure compatibility, always use the ODBC driver with the same version number as the ThoughtSpot instance to which you are connecting.
 You can make a secure ODBC connection to the ThoughtSpot database by configuring a user and password combination with the driver.
-For detailed information about connection parameters, see the link:{{ site.baseurl }}/data-integrate/reference/simba-settings.html#[ODBC and JDBC configuration properties]
+For detailed information about connection parameters, see the xref:simba-settings.adoc[ODBC and JDBC configuration properties]
 
 == Supported Data Types
 
@@ -42,7 +42,9 @@ In this mode, ThoughtSpot _assumes_ that the incoming data matches exactly with 
 Alternatively, you can explicitly require that ThoughtSpot match the source data types exactly and, if it can't find a match, it returns an error and the data load fails.
 In this mode, for example, if the target ThoughtSpot data type for a column is INT, the source data type for that column must be INT in order for the data load to succeed.
 
-By toggling _*strict*_ and _*permissive*_ `true` and `false` options, you can configure settings along a scale of behavior between the permissive, automatic approach and the strictness of the "must match" approach.+++<table>++++++<tr style="background-color:white;">++++++<th colspan="2" rowspan="2">++++++</th>+++
+By toggling _*strict*_ and _*permissive*_ `true` and `false` options, you can configure settings along a scale of behavior between the permissive, automatic approach and the strictness of the "must match" approach.
+
++++<table>++++++<tr style="background-color:white;">++++++<th colspan="2" rowspan="2">++++++</th>+++
     +++<th colspan="2" style="background-color:white;">+++Strictness+++</th>++++++</tr>+++
   +++<tr style="background-color:white;border-bottom:1pt solid black;">++++++<td>+++true+++</td>+++
     +++<td>+++false+++</td>++++++</tr>+++
