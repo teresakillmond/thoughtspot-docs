@@ -123,12 +123,12 @@ PARTITION BY HASH (96) KEY ("customer_id");
 ----
 
 Note the following parameters, specified above as `96` and `"customer_id"`:
-+++<dl>++++++<dlentry>++++++<dt>+++HASH+++</dt>+++
-+++<dd>+++Determines the number of shards.
-In this case, `96`.+++</dd>++++++</dlentry>+++
-+++<dlentry>++++++<dt>+++KEY+++</dt>+++
-+++<dd>+++Specifies how to assign data into the shards (shard key).
-In this case, `customer_id`.+++</dd>++++++</dlentry>++++++</dl>+++
+HASH::
+Determines the number of shards.
+In this case, `96`.
+KEY::
+Specifies how to assign data into the shards (shard key).
+In this case, `customer_id`.
 
 The recommended number of shards depends on various factors.
 See <<sharding-guidelines,Table sizes and sharding recommendations>>.
@@ -263,7 +263,8 @@ Instead, use `saleid` and `productid` for more variety.
 This guideline ensures better join performance.
 For example, if you have two tables  and the primary keys are:
 +
-`PRIMARY KEY("saleid,vendorid")` on A +++<br>+++  `PRIMARY KEY("saleid,customerid")` on B
+`PRIMARY KEY("saleid,vendorid")` on A +
+  `PRIMARY KEY("saleid,customerid")` on B
 +
 Use `saleid` as the shard key when you shard both tables.
 
