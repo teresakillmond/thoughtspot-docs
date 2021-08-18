@@ -43,29 +43,20 @@ Alternatively, you can explicitly require that ThoughtSpot match the source data
 In this mode, for example, if the target ThoughtSpot data type for a column is INT, the source data type for that column must be INT in order for the data load to succeed.
 
 By toggling _*strict*_ and _*permissive*_ `true` and `false` options, you can configure settings along a scale of behavior between the permissive, automatic approach and the strictness of the "must match" approach.
-+++<table>+++
- +++<tr style="background-color:white;">+++
-  +++<th colspan="2" rowspan="2">++++++</th>+++
-  +++<th colspan="2" style="background-color:white;">+++Strictness+++</th>+++
- +++</tr>+++
-+++<tr style="background-color:white;border-bottom:1pt solid black;">+++
- +++<td>+++true+++</td>+++
- +++<td>+++false+++</td>+++
-+++</tr>+++
- +++<tr style="background-color:white;">+++
-  +++<th rowspan="2" style="valign:middle;background-color:white;">+++
-   +++<div class="vert">+++Permissiveness+++</div>+++
-  +++</th>+++
-    +++<td>+++true+++</td>+++
-    +++<td>+++Data types are inferred and automatically converted. ThoughtSpot returns an error in cases where the data conversion is not possible. +++<br>+++Data load fails in its entirety if any data contains mismatches. You must correct the problem in the source data and try the load again.+++</td>+++
-    +++<td>+++Data types are inferred and automatically converted. No error is thrown even if source and target data types don't match. Data load continues even when the source and target data types don't match. This means your data load may contain data types that you do not intend or that are not helpful. You are responsible for checking and validating the data in this case.+++</td>+++
-  +++</tr>+++
-  +++<tr>+++
-   +++<td>+++false+++</td>+++
-   +++<td>+++The source and target data types must match. If any data contains mismatches, ThoughtSpot returns an error to the client a data load fails in its entirety. You must correct the problem in the source data and try the load again.+++<br>+++This is the strictest configuration.+++</td>+++
-  +++<td>+++No data types are inferred and conversion does not check for matches. This is the most permissive configuration.+++</td>+++
-  +++</tr>+++
-+++</table>+++
+Strictness = `true`, Permissiveness = `true`::
+  Data types are inferred and automatically converted. ThoughtSpot returns an error in cases where the data conversion is not possible. Data load fails in its entirety if any data contains mismatches. You must correct the problem in the source data and try the load again.
+
+Strictness = `true`, Permissiveness = `false`::
+The source and target data types must match. If any data contains mismatches, ThoughtSpot returns an error to the client a data load fails in its entirety. You must correct the problem in the source data and try the load again.
++
+This is the strictest configuration.
+
+Strictness = `false`, Permissiveness = `true`::
+  Data types are inferred and automatically converted. No error is thrown even if source and target data types don’t match. Data load continues even when the source and target data types don’t match. This means your data load may contain data types that you do not intend or that are not helpful. You are responsible for checking and validating the data in this case.
+
+Strictness = `false`, Permissiveness = `false`::
+  No data types are inferred and conversion does not check for matches. This is the most permissive configuration.
+
 
 Your customer support engineer can assist you in configuring custom ODBC behavior.
 Regardless of the configuration you choose, you must validate that the results of data loading _as they appear_ in ThoughtSpot are what you require.
