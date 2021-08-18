@@ -45,6 +45,7 @@ This summary includes the *LAST SNAPSHOT TIME* it reflects whether regular snaps
 This value should update regularly in real time.
 If you do not see it change or empty, you should check your cluster snapshot policy using the `tscli` command:
 
+----
  $ tscli snapshot-policy show
  schedule {
    period {
@@ -70,7 +71,7 @@ If you do not see it change or empty, you should check your cluster snapshot pol
    offset_minutes_from_sunday_midnight: 0
  }
  enabled: false
-
+----
 You can see this policy is disabled, which is a problem.
 Production clusters should enable the default snapshot policy.
 When you show or enable the snapshot policy, you can see your `tscli` command reflected in the *Configuration Events* panel on this same page.
@@ -349,14 +350,13 @@ The query uses the `TS: BI Server` data source.
 == Configuration Events
 
 This system answer displays recent events that changed the configuration of the system.
-This panel displays configuration events related to:+++<table>++++++<colgroup>++++++<col width="25%">++++++</col>+++
-    +++<col width="60%">++++++</col>++++++</colgroup>+++
-      +++<tbody>++++++<tr>++++++<th>+++Cluster Configuration+++</th>+++
-        +++<td>+++Reports configuration actions from the +++<code>+++tscli+++</code>+++ and +++<code>+++tql+++</code>+++ commands.+++</td>++++++</tr>+++
-       +++<tr>++++++<th>+++Metadata Management+++</th>+++
-        +++<td>+++Events related to metadata such as column names, column visibility, column and data definition, column rank and so forth.+++</td>++++++</tr>+++
-       +++<tr>++++++<th>+++User Management+++</th>+++
-        +++<td>+++Events related to creating, updating, or adding new users and groups.+++</td>++++++</tr>++++++</tbody>++++++</table>+++
+This panel displays configuration events related to:
+Cluster Configuration::
+Reports configuration actions from the `tscli` and `tql` commands.
+Metadata Management::
+Events related to metadata such as column names, column visibility, column and data definition, column rank and so forth.
+User Management::
+Events related to creating, updating, or adding new users and groups.
 
 For a more detailed list, including the user that issued a command, you can use the `tscli event list` command.
 Administrators can `ssh` into the cluster and specify a time period or even a type of command to include.
