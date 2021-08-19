@@ -77,34 +77,27 @@ sudo /usr/local/scaligent/bin/prepare_disks.sh.
 `hosts`::
     Add the IP addresses or hostnames of all hosts in the ThoughtSpot cluster.
 
-`admin_uid`::
-    The admin user ID parameter.
-
-    On-premise deployments;;
-      Use the default values.
-    AWS;;
-      Use the default values.
-    GCP;;
-      Add values that are not currently in use. To determine what values your system uses already, run the following command:
+`user_uid`::
+Specify the user ID for the user who will set up the node. The default is `1081`.
++
+If you do not use the default, add values that are not currently in use. To determine what values your system uses already, run the following command:
 +
 [source]
 ----
 cat /etc/passwd | cut -d ":" -f3-4| sort
 ----
 
-`admin_gid`::
-  The admin user group ID.
-  On-premise deployments;;
-    Use the default values.
-  AWS;;
-    Use the default values.
-  GCP;;
-    Add values that are not currently in use. To determine what values your system uses already, run the following command:
+`user_gid`::
+Specify the user group ID for the user who will set up the node. The default is `1081`.
++
+If you do not use the default, add values that are not currently in use. To determine what values your system uses already, run the following command:
 +
 [source]
 ----
 cat /etc/passwd | cut -d ":" -f3-4| sort
 ----
+`username`::
+Specify the username for the user who will set up the node. The default is `admin`.
 [#ldap_admin_user]
 `ldap_admin_user`::
 *[optional]* One of three parameters required to enable users to use their OpenLDAP admin user to SSH as an admin, instead of using the local ThoughtSpot admin user, which has sudo privileges. Specify the OpenLDAP admin user, in the form _example@company.com_. You must include all 3 of the LDAP parameters (`ldap_admin_user`, `ldap_server_uri`, `ldap_server_base`), or none of them. If you include 1 or 2, the playbook fails.
