@@ -42,6 +42,17 @@ ThoughtSpot now supports the migration and editing of tables with xref:security-
 [#it-ops-engineer-7-1]
 === For the IT Ops Engineer
 
+[#new-admin-privileges]
+New admin privileges [.label.label-beta]#Beta#::
+This release introduces new administrator privileges that separate the abilities of the administrator into 4 specific privileges. For example, you can allow certain users to create and manage users, while not allowing them to manage SAML integration or other advanced settings. These new administrator privileges do not provide access to all data in ThoughtSpot, unlike the *Can administer ThoughtSpot* privilege. Users with the new privileges can only see data that others share with them. The *Can administer ThoughtSpot* privilege, which encompasses all 4 new administrator privileges, still appears as an option by default. To remove it, xref:support-contact.adoc[contact ThoughtSpot Support]. The 4 new privileges are:
++
+- *Can manage users*: Can create, delete, and edit users.
+- *Can manage privileges*: Can create, delete, and edit groups. This includes the group's name, sharing visibility, and privileges.
+- *Can operate application*: Can configure local and SAML authentication. Can manage application settings: search, SpotIQ, and onboarding advanced settings, style and help customization. Can view scheduled maintenance.
+- *Can see system information*: Can view all default admin data, including system worksheets and pinboards.
++
+This feature is in [.label.label-beta]#Beta# and off by default. To enable it, xref:support-contact.adoc[contact ThoughtSpot Support].
+
 [#rhel]
 RHEL ease of installation::
 You can now configure a specific admin username for the user who sets up the nodes when deploying on RHEL. Previously, you had to use the default `admin` username, the `1081` uid, and the `1081` gid.
