@@ -104,34 +104,27 @@ sudo /usr/local/scaligent/bin/prepare_disks.sh
 `hosts`::
   Add the IP addresses or hostnames of all hosts in the ThoughtSpot cluster.
 
-`admin_uid`::
-  The admin user ID parameter.
-  On-premise deployments;;
-      Use the default values.
-  AWS;;
-      Use the default values.
-  GCP;;
-      Add values that are not currently in use. To determine what values your system uses already, run the following command:
+`user_uid`::
+Specify the user ID for the user who will set up the node. The default is `1081`.
++
+If you do not use the default, add values that are not currently in use. To determine what values your system uses already, run the following command:
 +
 [source]
 ----
 cat /etc/passwd | cut -d ":" -f3-4| sort
 ----
 
-`admin_gid`::
-  The admin user group ID.
-  On-premise deployments;;
-    Use the default values.
-  AWS;;
-    Use the default values.
-  GCP;;
-    Add values that are not currently in use. To determine what values your system uses already, run the following command:
+`user_gid`::
+Specify the user group ID for the user who will set up the node. The default is `1081`.
++
+If you do not use the default, add values that are not currently in use. To determine what values your system uses already, run the following command:
 +
 [source]
 ----
 cat /etc/passwd | cut -d ":" -f3-4| sort
 ----
-
+`username`::
+Specify the username for the user who will set up the node. The default is `admin`.
 `ssh_user`::
   The `ssh_user` must exist on the ThoughtSpot host, and it must have `sudo` privileges.
   On-premise deployments;;
