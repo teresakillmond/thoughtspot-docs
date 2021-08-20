@@ -108,5 +108,24 @@ The Credit Usage Pinboard contains the following visualizations and headlines:
 * Weekly Credits Consumed, with Unique Users, Last 8 Weeks
 * Month of Year Credit Usage, by User GUID
 
+Use the visualizations on this pinboard to monitor your consumption. For example, you may notice that a certain user consumes most of your credits, or that there was a spike during a certain time window. You can then use the new default answers to <<user-activity,analyze user activity and event details>>.
+
+[#user-activity]
+=== Analyze user activity and event details
+
+ThoughtSpot provides 2 default system answers to help you track and analyze your credit consumption. These answers allow you to dive deeper into the credit consumption and activities of a specific user, or over a specific time window.
+
+Follow these best practices for the 2 new answers, _Sample Answer - Credit usage details_ and _Credit usage from Charging Records_.
+
+. Examine the Credit Usage pinboard to determine a user or time window of interest. For example, you may notice that a certain user consumes most of your credits, or that there was a spike during a certain time window.
+
+. Determine how you want to investigate this credit consumption:
++
+- *Sample Answer - Credit usage details*: This answer is ideal for looking into object-level details, such as the objects a user accessed and the actions they performed on those objects.
+- *Credit usage from Charging Records*: Use this answer to learn more about API-level details. You can map activities and credit consumption to specific API calls.
+
+. Use the built-in filters on these answers to narrow down your search to the user and time window of interest. You must edit the time window filter in the search bar, using this syntax: `Timestamp >= mm/dd/yyyy hh:mm:ss Timestamp <= mm/dd/yyyy hh:mm:ss`. ThoughtSpot filters the answer to only show data in between the two dates you specify. Select a user to filter by, and for the _Sample Answer - Credit usage details_ answer, optionally select a user action filter.
+
+
 == Consumption data storage
 ThoughtSpot stores your consumption data and keeps it secure. A dedicated Amazon S3 bucket is set up to store the user activity CSV files temporarily. Then, the S3 data is uploaded to a searchable data store (Amazon Redshift). There is an S3 bucket prefix for each customer and a unique key for each customer to encrypt it. The encryption key is stored in AWS KMS. As part of the pricing configuration, the customer cluster is configured with an access key to have access to the S3 bucket prefix unique to the cluster. ThoughtSpot deploys and maintains an Amazon Redshift database to load the consumption pricing data. Every customer cluster that is enabled for consumption pricing gets access to only that cluster’s consumption pricing data. A unique database user is created in Redshift and configured in the customer cluster as part of the pricing configuration. This results in a unique Embrace connection per customer cluster to the ThoughtSpot manager consumption pricing database (Redshift). This is used to view the consumption pricing related reports in the customer's ThoughtSpot instance.
