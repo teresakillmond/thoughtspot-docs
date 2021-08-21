@@ -98,6 +98,12 @@ a| <<filters,filters>>
 
 <<layout,layout>>
 
+<<lesson_plan_string,lesson_plan_string>>
+
+<<lesson_plans,lesson_plans>>
+
+<<lesson_id,lesson_id>>
+
 <<locked,locked>>
 
 <<max,max>>
@@ -511,6 +517,18 @@ joins_with::
 [#layout]
 layout::
   Specifies the Pinboard layout, in the order that a `visualization_id` is listed.
+
+[#lesson_plan_string]
+lesson_plan_string::
+A string that represents the fully disambiguated search query used in a xref:search-assist-coach.adoc[Search Assist Coach] lesson on a Worksheet. For example, `"What is the [Quantity] of items from [Customer Nation].'egypt' per [Datekey].'day of week' by [Color] ?"`. Refer to xref:search-data-api.adoc[Components of a Search Query] to understand syntax.
+
+[#lesson_plans]
+lesson_plans::
+A list of xref:search-assist-coach.adoc[] lessons for the Worksheet.
+
+[#lesson_id]
+lesson_id::
+The id of the xref:search-assist-coach.adoc[Search Assist Coach] lesson. For example, the first lesson to appear to users has an id of `0`, the next lesson has an id of `1`, and so on.
 
 [#locked]
 locked::

@@ -30,8 +30,11 @@ Here are the most significant new features and improvements in the 7.1 Software 
 [#analyst-7-1]
 === For the Analyst
 
-TML for tables with row-level security::
-ThoughtSpot now supports the migration and editing of tables with xref:security-rls-concept.adoc[row level security (RLS)] using xref:tml.adoc#syntax-tables[TML].
+Scriptability::
+
++
+- *TML for tables with row-level security*: ThoughtSpot now supports the migration and editing of tables with xref:security-rls-concept.adoc[row level security (RLS)] using xref:tml.adoc#syntax-tables[TML].
+- *Scriptable worksheets with Search Assist Coach lessons*: You can now use TML to import, export, and update Worksheets with xref:search-assist-coach.adoc[] lessons. See xref:tml.adoc#syntax-worksheets[Syntax of the worksheet TML file].
 
 [#business-user-7-1]
 === For the Business User
@@ -41,6 +44,14 @@ ThoughtSpot now supports the migration and editing of tables with xref:security-
 
 [#it-ops-engineer-7-1]
 === For the IT Ops Engineer
+
+[#search-spotiq]
+Manage advanced search and SpotIQ settings::
+You can now manage advanced search and SpotIQ settings from the Admin Console. You can configure column indexing and enable or disable SpotIQ Analyze and column summaries. Refer to xref:admin-portal-search-spotiq-settings.adoc[Manage search and SpotIQ settings].
+
+[#email-onboarding]
+Manage email and onboarding settings::
+You can manage certain advanced settings for your organization from the Admin Console. You can customize welcome emails, scheduled emails, and the workflow that allows users to sign up for ThoughtSpot from the login page. Refer to xref:admin-portal-onboarding-email-settings.adoc[Manage email and onboarding settings].
 
 [#new-admin-privileges]
 New admin privileges [.label.label-beta]#Beta#::
@@ -58,6 +69,19 @@ RHEL ease of installation::
 You can now configure a specific admin username for the user who sets up the nodes when deploying on RHEL. Previously, you had to use the default `admin` username, the `1081` uid, and the `1081` gid.
 +
 Refer to xref:rhel-install-online.adoc[] and xref:rhel-install-offline.adoc[].
+
+[#product-usage-worksheet]
+Product Usage worksheet::
+This release introduces a new default worksheet for monitoring product usage. The Product Usage worksheet contains data on the following topics:
+- Specifies what existing worksheets, tables, and views users search on and create objects from, and what those objects are
+- Lists what actions users complete in the product
+- Lists the underlying data sources for any object
+- Lists any object's dependents
+
+You can search on this worksheet, or create pinboards based on it, to monitor your users' interaction with the product. To access this worksheet, search for Product Usage worksheet from the Data tab, or add it as a source while searching data.
+
+This worksheet is the underlying source for the xref:object-usage-pinboard.adoc[Object Usage pinboard].
+
 
 [#upgrade-paths]
 == Supported Upgrade Paths
