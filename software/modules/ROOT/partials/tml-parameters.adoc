@@ -98,6 +98,12 @@ a| <<filters,filters>>
 
 <<layout,layout>>
 
+<<lesson_plan_string,lesson_plan_string>>
+
+<<lesson_plans,lesson_plans>>
+
+<<lesson_id,lesson_id>>
+
 <<locked,locked>>
 
 <<max,max>>
@@ -122,7 +128,11 @@ a| <<phrase,phrase>>
 
 <<range,range>>
 
+<<rls_rules,rls_rules>>
+
 <<rule,rule>>
+
+<<rules,rules>>
 
 <<schema,schema>>
 
@@ -314,7 +324,7 @@ excluded_visualizations::
 
 [#expr]
 expr::
-  The definition of the formula
+  The definition of the formula or row level security (RLS) rule. For RLS rules, the syntax for variables in TML should be the same as the syntax of the variables in the rule on the table.
 
 [#filters]
 filters::
@@ -376,7 +386,7 @@ id::
 For Answers, `id` refers to how the column appears in the query.
 For example, if you sorted by `Quarter` in your search, from the `Commit Date` column, the `id` of the column is `Quarter(Commit Date)`.
 +
-Refer to xref:search-data-api.adoc#components[Components of a Search Query] to understand syntax.
+//Refer to xref:search-data-api.adoc#components[Components of a Search Query] to understand syntax.
 +
 For formulas within Answers, `id` refers to the display name of the formula.
 +
@@ -508,6 +518,19 @@ joins_with::
 layout::
   Specifies the Pinboard layout, in the order that a `visualization_id` is listed.
 
+[#lesson_plan_string]
+lesson_plan_string::
+A string that represents the fully disambiguated search query used in a xref:search-assist-coach.adoc[Search Assist Coach] lesson on a Worksheet. For example, `"What is the [Quantity] of items from [Customer Nation].'egypt' per [Datekey].'day of week' by [Color] ?"`.
+//Refer to xref:search-data-api.adoc[Components of a Search Query] to understand syntax.
+
+[#lesson_plans]
+lesson_plans::
+A list of xref:search-assist-coach.adoc[] lessons for the Worksheet.
+
+[#lesson_id]
+lesson_id::
+The id of the xref:search-assist-coach.adoc[Search Assist Coach] lesson. For example, the first lesson to appear to users has an id of `0`, the next lesson has an id of `1`, and so on.
+
 [#locked]
 locked::
   The 'automatically select my chart' option in the UI.
@@ -524,11 +547,11 @@ min::
 [#name]
 name::
   The name of an object.
-Applies to `worksheet`, `table`,`joins`, `formula`, `answer`, `pinboard`, `view`, `table`, `connection`, `destination`, and so on.
+Applies to `worksheet`, `table`,`joins`, `formula`, `rls_rules`, `answer`, `pinboard`, `view`, `table`, `connection`, `destination`, and so on.
 +
 For Answers, `name` refers to how the column appears in the query.
 For example, if you sorted by `Quarter` in your search, from the `Commit Date` column, the `name` of the column is `Quarter(Commit Date)`.
-Refer to xref:search-data-api.adoc#components[Components of a Search Query] to understand syntax.
+//Refer to xref:search-data-api.adoc#components[Components of a Search Query] to understand syntax.
 
 [#on]
 on::
@@ -572,9 +595,17 @@ This is the 'fill chart' option in the UI.
 range::
   Range for the conditional formatting to apply to, with a specified `min` and `max`.
 
+[#rls_rules]
+rls_rules::
+A container for the full definition of xref:security-rls-concept.adoc[row level security] rules for the table.
+
 [#rule]
 rule::
-  A conditional formatting rule.
+A conditional formatting rule.
+
+[#rules]
+rules::
+A container for the names and expressions of xref:security-rls-concept.adoc[row level security] rules for the table.
 
 [#schema]
 schema::
@@ -583,7 +614,7 @@ schema::
 [#search_query]
 search_query::
   A string that represents the fully disambiguated search query.
-Refer to xref:search-data-api.adoc#components[Components of a Search Query] to understand syntax.
+//Refer to xref:search-data-api.adoc#components[Components of a Search Query] to understand syntax.
 
 [#show_headline]
 show_headline::
@@ -634,7 +665,7 @@ Each table path is identified by the `id`, and additional attributes of `table` 
 
 [#tables]
 tables::
-  List of tables used by the Worksheet or Answer.
+  List of tables used by the Worksheet, Answer, or table RLS rule.
 +
 Each table is identified by `name`.
 

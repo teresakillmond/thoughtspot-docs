@@ -177,10 +177,13 @@
 *** xref:admin-portal-authentication-active-directory.adoc[Authentication through Active Directory]
 *** xref:admin-portal-ssl-configure.adoc[Configure SSL]
 *** xref:admin-portal-reverse-ssh-tunnel.adoc[Configure a reverse SSH tunnel]
+*** xref:login-console.adoc[Log into the Linux shell using SSH]
 *** xref:admin-portal-smtp-configure.adoc[Set the relay host for SMTP (email)]
 *** xref:admin-portal-customize-help.adoc[Customize ThoughtSpot Help]
-*** xref:admin-portal-customize-actions-menu.adoc[Customize actions]
+//*** xref:admin-portal-customize-actions-menu.adoc[Customize actions] (remove)
 *** xref:admin-portal-style-customization.adoc[Style customization]
+*** xref:admin-portal-onboarding-email-settings.adoc[Email and onboarding settings]
+*** xref:admin-portal-search-spotiq-settings.adoc[Search and SpotIQ settings]
 *** xref:admin-portal-nas-mount-configure.adoc[]
 *** xref:admin-portal-snapshot-manage.adoc[Manage and create snapshots]
 *** xref:admin-portal-system-cluster-pinboard.adoc[System Cluster Pinboard]
@@ -188,12 +191,12 @@
 *** xref:admin-portal-user-adoption-pinboard.adoc[User Adoption Pinboard]
 *** xref:admin-portal-available-update.adoc[Available cluster updates]
 
-** xref:customization.adoc[Style Customization]
-*** xref:customize-logo.adoc[Upload application logos]
-*** xref:customize-fonts.adoc[Set chart and table visualization fonts]
-*** xref:customize-background.adoc[Choose a background color]
-*** xref:customize-color-palettes.adoc[Select chart color palettes]
-*** xref:customize-footer-text.adoc[Change the footer text]
+//** xref:admin-portal-style-customization.adoc[Style Customization]
+//*** xref:customize-logo.adoc[Upload application logos]
+//*** xref:customize-fonts.adoc[Set chart and table visualization fonts]
+//*** xref:customize-background.adoc[Choose a background color]
+//*** xref:customize-color-palettes.adoc[Select chart color palettes]
+//*** xref:customize-footer-text.adoc[Change the footer text]
 
 ** xref:sysadmin-overview.adoc[System administration]
 *** xref:send-logs-to-administrator.adoc[Send logs when reporting problems]
@@ -215,8 +218,9 @@
 *** xref:system-alerts-events.adoc[Alerts and Events board]
 *** xref:system-worksheet.adoc[System Worksheets]
 *** xref:system-pinboards.adoc[System Pinboards]
-*** xref:falcon-monitor.adoc[Falcon monitoring Pinboards]
-*** xref:performance-tracking.adoc[Performance Tracking Pinboard]
+*** xref:falcon-monitor.adoc[Falcon monitoring pinboards]
+*** xref:performance-tracking.adoc[Performance tracking pinboard]
+*** xref:object-usage-pinboard.adoc[Object usage pinboard]
 
 ** xref:troubleshooting.adoc[Troubleshooting]
 *** xref:troubleshooting-logs.adoc[Get logs]
@@ -254,13 +258,16 @@
 ** xref:internal-auth.adoc[Configure internal authentication]
 ** xref:ssl.adoc[Configure SSL]
 ** xref:saml.adoc[Configure SAML]
+*** xref:saml-integration.adoc[SAML]
+*** xref:saml-configure-siteminder.adoc[Configure CA SiteMinder]
+*** xref:active-directory-federated-services.adoc[Configure Active Directory Federated Services]
 ** xref:active-directory.adoc[Enable SSH through Active Directory]
 ** xref:ldap.adoc[Integrate LDAP]
-*** xref:LDAP-config-AD.adoc[Configure authentication through Active Directory]
+*** xref:ldap-config-ad.adoc[Configure authentication through Active Directory]
 *** xref:ldap-ssl.adoc[Add the SSL certificate for LDAP]
 *** xref:ldap-test.adoc[Test the LDAP configuration]
 *** xref:ldap-sync-users-groups.adoc[Sync users and groups from LDAP]
-** xref:NAS-mount.adoc[Configure NAS file system]
+** xref:nas-mount.adoc[Configure NAS file system]
 ** xref:monitoring-setup.adoc[Set up monitoring]
 ** xref:support-configure.adoc[Configure support services]
 ** xref:ports.adoc[Network ports]
@@ -368,28 +375,27 @@
 ** xref:mobile-faq.adoc[FAQ]
 ** xref:notes-mobile.adoc[Release notes]
 
-* xref:embedding-overview.adoc[Embedding]
-** xref:login-console.adoc[Log into the Linux shell using SSH]
-** xref:admin-sign-in.adoc[]
-** xref:js-api.adoc[Use the JavaScript API]
-** xref:saml-integration.adoc[SAML]
-*** xref:saml.adoc[Configure SAML]
-*** xref:saml-configure-siteminder.adoc[Configure CA SiteMinder]
-*** xref:active-directory-federated-services.adoc[Configure Active Directory Federated Services]
-** xref:data-api.adoc[]
-*** xref:data-api-calling.adoc[Calling the REST API]
-*** xref:data-api-pagination.adoc[REST API pagination]
-*** xref:data-api-get.adoc[Use the Data REST API to get data]
-*** xref:data-api-search.adoc[Use the Embedded Search API]
-*** xref:data-api-push.adoc[Use the Data Push API]
-** xref:embedding.adoc[Embed ThoughtSpot]
-*** xref:embed-viz.adoc[Embed Pinboard or visualization]
-*** xref:js-api-enable.adoc[Authentication flow with embed]
-*** xref:embed-full.adoc[Full application embedding]
-*** xref:trusted-authentication.adoc[Configure trusted authentication]
-** xref:runtime-filters.adoc[Runtime Filters]
-*** xref:runtime-filter-apply.adoc[Apply a Runtime Filter]
-*** xref:runtime-filter-operators.adoc[Runtime Filter Operators]
+//* xref:embedding-overview.adoc[Embedding] (remove)
+//** xref:login-console.adoc[Log into the Linux shell using SSH] (moved)
+//** xref:js-api.adoc[Use the JavaScript API] (remove)
+//** xref:saml-integration.adoc[SAML] (moved)
+//*** xref:saml.adoc[Configure SAML] (moved)
+//*** xref:saml-configure-siteminder.adoc[Configure CA SiteMinder] (moved)
+//*** xref:active-directory-federated-services.adoc[Configure Active Directory Federated Services] (moved)
+* xref:data-api.adoc[]
+** xref:data-api-calling.adoc[Calling the REST API]
+** xref:data-api-pagination.adoc[REST API pagination]
+//** xref:data-api-get.adoc[Use the Data REST API to get data] (remove)
+//** xref:data-api-search.adoc[Use the Embedded Search API]
+//** xref:data-api-push.adoc[Use the Data Push API]
+//** xref:embedding.adoc[Embed ThoughtSpot] (remove)
+//*** xref:embed-viz.adoc[Embed Pinboard or visualization] (remove)
+//*** xref:js-api-enable.adoc[Authentication flow with embed] (remove)
+//*** xref:embed-full.adoc[Full application embedding] (remove)
+//*** xref:trusted-authentication.adoc[Configure trusted authentication] (remove)
+* xref:runtime-filters.adoc[Runtime Filters]
+** xref:runtime-filter-apply.adoc[Apply a Runtime Filter]
+** xref:runtime-filter-operators.adoc[Runtime Filter Operators]
 
 * xref:deployment-sw.adoc[Software Deployment]
 ** xref:al2.adoc[Amazon Linux 2 deployments]
@@ -550,7 +556,7 @@
 **** xref:dataflow-mysql-add.adoc[Connect]
 **** xref:dataflow-mysql-sync.adoc[Sync]
 **** xref:dataflow-mysql-reference.adoc[Reference]
-*** xref:dataflow memsql.adoc[Memsql in DataFlow]
+*** xref:dataflow-memsql.adoc[Memsql in DataFlow]
 **** xref:dataflow-memsql-add.adoc[Connect]
 **** xref:dataflow-memsql-sync.adoc[Sync data]
 **** xref:dataflow-memsql-reference.adoc[Reference]
@@ -686,6 +692,7 @@
 ** xref:data-types.adoc[]
 
 ** xref:public-api-reference.adoc[API Reference]
+////
 *** xref:pinboard-data-api.adoc[Pinboard Data API]
 *** xref:metadata-api.adoc[Metadata API]
 *** xref:session-api.adoc[Session API]
@@ -693,6 +700,7 @@
 *** xref:group-api.adoc[Group API]
 *** xref:materialization-api.adoc[Materialization API]
 *** xref:search-data-api.adoc[Search Data API]
+////
 ** xref:tql-cli-commands.adoc[TQL reference]
 *** xref:tql-service-api-ref.adoc[TQL service reference]
 
