@@ -125,6 +125,13 @@ cat /etc/passwd | cut -d ":" -f3-4| sort
 ----
 `username`::
 Specify the username for the user who will set up the node. The default is `admin`.
+[#ldap_admin_user]
+`ldap_admin_user`::
+*[optional]* One of three parameters required to enable users to use their OpenLDAP admin user to SSH as an admin, instead of using the local ThoughtSpot admin user, which has sudo privileges. Specify the OpenLDAP admin user, in the form _example@company.com_. You must include all 3 of the LDAP parameters (`ldap_admin_user`, `ldap_server_uri`, `ldap_server_base`), or none of them. If you include 1 or 2, the playbook fails.
+`ldap_server_uri`::
+*[optional]* One of three parameters required to enable users to use their OpenLDAP admin user to SSH as an admin, instead of using the local ThoughtSpot admin user, which has sudo privileges. Specify the LDAP server uniform resource identifier, in the form _ldap://<ldap_server_IP>_. You must include all 3 of the LDAP parameters (`ldap_admin_user`, `ldap_server_uri`, `ldap_server_base`), or none of them. If you include 1 or 2, the playbook fails.
+`ldap_server_base`::
+*[optional]* One of three parameters required to enable users to use their OpenLDAP admin user to SSH as an admin, instead of using the local ThoughtSpot admin user, which has sudo privileges. Specify the LDAP server base distinguished name, in the form _dc=<optional_subdomain>_,_dc=<domain>_,_dc=<top-level-domain>_, such as _dc=thoughtspot_,_dc=com_. You must include all 3 of the LDAP parameters (`ldap_admin_user`, `ldap_server_uri`, `ldap_server_base`), or none of them. If you include 1 or 2, the playbook fails.
 `ssh_user`::
   The `ssh_user` must exist on the ThoughtSpot host, and it must have `sudo` privileges.
   On-premise deployments;;
