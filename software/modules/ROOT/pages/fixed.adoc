@@ -18,8 +18,8 @@ These are the issues we fixed in recent ThoughtSpot releases.
 * Color picker is disabled after running a query, opening the chart configurator, and clicking a measure.
 * Measure-only optimization does not work in a fan trap query.
 * Querying using the TQL service APIs incorrectly generates results in scientific format.
-* Quarterly keyword does not work correctly for an Embrace connection.
-* OAuth with Snowflake in an Embrace connection does not work with AppleConnect.
+* Quarterly keyword does not work correctly in connections.
+* OAuth with Snowflake in connections does not work with AppleConnect.
 * Visualizations occasionally do not load after upgrade to 6.3.1.CU1
 * Some joins aren't visible in a worksheet, even though they are visible at the table level.
 * The list in the Manage experts window extends below the **Done** button, so that new users cannot be added.
@@ -28,7 +28,7 @@ These are the issues we fixed in recent ThoughtSpot releases.
 * Formulas that contain an aggregate median function do not work properly when an additional measure is used.
 * The color of the legend or column in a chart cannot be changed.
 * Maps downloaded using the Microsoft Edge browser display a white image.
-* Tables in an Embrace connection are not indexed.
+* Tables in a connection are not indexed.
 * Excluding a group in a group_aggregate formula of a Worksheet does not work.
 * Saving or editing a formula on certain worksheets does not work.
 --
@@ -39,7 +39,7 @@ These are the issues we fixed in recent ThoughtSpot releases.
 * Scheduled pinboards with row-level security enabled, send incorrect PDF attachments to some users.
 * Users who have completed the onboarding process, see the onboarding page every time they sign in to ThoughtSpot.
 * Queries show a measure as being *grouped by*, rather than *summed*, which causes incorrect results.
-* Embrace generates incorrect joins in RedShift SQL.
+* Connections generate incorrect joins in RedShift SQL.
 * Editing any filter generates an error.
 * German letters ä, ö, and ü are not supported in usernames.
 * A missing sysctl parameter causes pinboard exports to not work.
@@ -112,12 +112,12 @@ These are the issues we fixed in recent ThoughtSpot releases.
 * Attempting to enable SSSD by running: tscli enable sssd --user USER --domain DOMAIN causes an error.
 * Using a calculated field with the Rank() function causes an error.
 * Uploading a data column name adds an invisible character to the column name, which causes search to not work.
-* Though all the schemas and tables are visible, data retrieval with an Embrace SAP Hana connection fails.
+* Though all the schemas and tables are visible, data retrieval with a SAP Hana connection fails.
 * A specific Pinboard filter blocks an entire Pinboard from loading.
 * When creating a DataFlow TeraData connection, the preview screen is very slow.
 * Simba Server receives 500 errors during data loads, causing sporadic load failures.
 * Editing a filter causes an error.
-* When creating an Embrace RedShift connection, incorrect joins are generated in the RedShift SQL.
+* When creating a RedShift connection, incorrect joins are generated in the RedShift SQL.
 * Cluster upgrades fail due to a gap in the edit log for HDFS, causing it to get stuck in standby mode.
 * Conditional formatting prohibits the use of hex color #000000 from being used to color a table cell.
 --
@@ -137,7 +137,7 @@ These are the issues we fixed in recent ThoughtSpot releases.
 * As a result of strict CLS, users can access tables that they shouldn't be able to access when selecting a source in a worksheet.
 * Growth formula does not work when using a custom calendar.
 * ThoughtSpot main navigation bar displays even when `primaryNavHidden=true`.
-* Attribute views, analytic views, and calculation views are not accessible through Embrace SAP HANA connections.
+* Attribute views, analytic views, and calculation views are not accessible through SAP HANA connections.
 * "[.code]``[object Object]``" displays in the description field after editing a view.
 * Search suggestions don't display column values.
 * The select data source option is not available for Search.
@@ -276,7 +276,7 @@ cookies for pages in a ThoughtSpot cluster do not have the new SameSite attribut
 * Non-admin users are unable to search for a newly added column in the worksheet.
 * Colors of slices in pie chart change when you filter on the pie chart.
 * Total labels in a Stacked Bar chart do not account for negative amounts.
-* When adding a connection in Embrace, not all tables in the external database are displayed.
+* When adding a connection, not all tables in the external database are displayed.
 * ThoughtSpot TQL does not list tables that don't exist in the default Falcon schema.
 * The date format in a PDF is not correct for the user's locale.
 * Various display issues with Admin Console
