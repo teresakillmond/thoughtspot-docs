@@ -98,12 +98,6 @@ a| <<filters,filters>>
 
 <<layout,layout>>
 
-<<lesson_plan_string,lesson_plan_string>>
-
-<<lesson_plans,lesson_plans>>
-
-<<lesson_id,lesson_id>>
-
 <<locked,locked>>
 
 <<max,max>>
@@ -257,7 +251,7 @@ conditional_formatting::
 
 [#connection]
 connection::
-  A way to identify the external data warehouse connection that the table resides in. To add tables or columns to an Embrace connection, you must specify this parameter.
+  A way to identify the external data warehouse connection that the table resides in. To add tables or columns to an external connection, you must specify this parameter.
 
 [#currency_type]
 currency_type::
@@ -386,7 +380,7 @@ id::
 For Answers, `id` refers to how the column appears in the query.
 For example, if you sorted by `Quarter` in your search, from the `Commit Date` column, the `id` of the column is `Quarter(Commit Date)`.
 +
-//Refer to xref:search-data-api.adoc#components[Components of a Search Query] to understand syntax.
+Refer to xref:search-data-api.adoc#components[Components of a Search Query] to understand syntax.
 +
 For formulas within Answers, `id` refers to the display name of the formula.
 +
@@ -518,19 +512,6 @@ joins_with::
 layout::
   Specifies the Pinboard layout, in the order that a `visualization_id` is listed.
 
-[#lesson_plan_string]
-lesson_plan_string::
-A string that represents the fully disambiguated search query used in a xref:search-assist-coach.adoc[Search Assist Coach] lesson on a Worksheet. For example, `"What is the [Quantity] of items from [Customer Nation].'egypt' per [Datekey].'day of week' by [Color] ?"`.
-//Refer to xref:search-data-api.adoc[Components of a Search Query] to understand syntax.
-
-[#lesson_plans]
-lesson_plans::
-A list of xref:search-assist-coach.adoc[] lessons for the Worksheet.
-
-[#lesson_id]
-lesson_id::
-The id of the xref:search-assist-coach.adoc[Search Assist Coach] lesson. For example, the first lesson to appear to users has an id of `0`, the next lesson has an id of `1`, and so on.
-
 [#locked]
 locked::
   The 'automatically select my chart' option in the UI.
@@ -551,7 +532,7 @@ Applies to `worksheet`, `table`,`joins`, `formula`, `rls_rules`, `answer`, `pinb
 +
 For Answers, `name` refers to how the column appears in the query.
 For example, if you sorted by `Quarter` in your search, from the `Commit Date` column, the `name` of the column is `Quarter(Commit Date)`.
-//Refer to xref:search-data-api.adoc#components[Components of a Search Query] to understand syntax.
+Refer to xref:search-data-api.adoc#components[Components of a Search Query] to understand syntax.
 
 [#on]
 on::
@@ -614,7 +595,7 @@ schema::
 [#search_query]
 search_query::
   A string that represents the fully disambiguated search query.
-//Refer to xref:search-data-api.adoc#components[Components of a Search Query] to understand syntax.
+Refer to xref:search-data-api.adoc#components[Components of a Search Query] to understand syntax.
 
 [#show_headline]
 show_headline::
@@ -677,7 +658,7 @@ Possible values: `LEFT_OUTER` for left outer join, `RIGHT_OUTER` for right outer
 +
 Default: `INNER`
 +
-For tables, this is the Embrace connection type.
+For tables, this is the connection type.
 +
 Possible values: `Snowflake`, `Google BigQuery`, `Microsoft Azure`, or `Amazon Redshift`.
 +
