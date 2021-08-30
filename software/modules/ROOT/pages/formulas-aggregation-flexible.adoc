@@ -145,15 +145,17 @@ group_aggregate(
 
 For more extensive examples of using the `group-aggregate` function, we encourage you to see xref:reaggregation-scenarios.adoc[Reaggreggation scenarios in practice]
 
-== Groups and filters
+== Query groups and query filters
 
 Flexible group aggregate formulas allow for flexibility in both xref:formulas-aggregation-group.adoc[groupings] and xref:formulas-aggregation-filtered.adoc[filters].
 The formulas give you the ability to specify only groupings or only filters.
 
 [#query-filters]
-== Query filters
+=== Query filters
 
 With `query_filters()+{filter_condition}` or `query_filters()-{filter_condition}`, users will be able to aggregate the results while including/excluding a filter condition.
+
+==== Including a filter condition
 
 Filter condition: `Ship Mode='car'`
 
@@ -169,6 +171,8 @@ sales by Customer ID and Category= group_aggregate (
 ----
 
 In this case, the results will be aggregated based on the dimensions: `‘Category’` and `‘Customer ID’` and filters: `‘air’` and `‘car’`.
+
+==== Subtracting or removing a filter condition
 
 With `query_filters()-{column}`, users will be able to aggregate the results while removing any expression related to a column.
 
