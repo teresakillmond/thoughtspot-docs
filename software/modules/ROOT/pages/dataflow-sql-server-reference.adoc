@@ -51,6 +51,8 @@ Version:: Specify the SQL Server version being connected to. Optional field.
 Example:;; 2016
 Other notes:;; Advanced configuration.
 ////
+[#dataflow-sql-server-conn-azure-ad-user]
+Azure AD User:: This option appears when you select "Azure SQL database" in *SQL server type*.
 [#dataflow-sql-server-conn-jdbc-options]
 include::partial$dataflow/jdbc-options.adoc[]
 
@@ -84,5 +86,9 @@ Escape character:: Specify the escape character if using a text qualifier in the
 Example:;; \"
 Valid Values:;; Any ASCII character
 Default:;; \"
+[#dataflow-sql-server-sync-max-ignored-rows]
+Max ignored rows::
+Abort the transaction after encountering 'n' ignored rows. Optional field.
+Default:;; 0
 [#dataflow-sql-server-sync-ts-load-options]
 include::partial$dataflow/ts-load-options.adoc[]
