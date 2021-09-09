@@ -50,6 +50,25 @@ ThoughtSpot is dropping support for one feature in the 7.1 release. This feature
 [#data-engineer-7-1]
 === For the Data Engineer
 
+[#connections]
+Connections:: ThoughtSpot has renamed Embrace to Connections. To access your connections, navigate to the *Data* tab and click *Connections*. For more information, see xref:connections.adoc[].
+Databricks;; Connections now supports Databricks. For more information, see xref:connections-databricks.adoc[].
+Starburst;; Connections now supports Starburst. For more information, see xref:connections-starburst.adoc[].
+
+[#dataflow]
+DataFlow::
+Single Sign-On;; DataFlow now supports Single Sign-On (SSO). You can configure the Single Sign-On settings based on the SSO service used in your organization. Once configured, the user login authentication in ThoughtSpot and ThoughtSpot DataFlow is routed through the SSO service, and you do not need to maintain separate user credentials for ThoughtSpot DataFlow. See xref:dataflow-user-management-sso.adoc[] for details.
+Case-sensitive table names;; DataFlow now supports case-sensitive table names. You can now create multiple syncs using different tables with the same name from the same connection and the same database.
+Sync mode advanced settings;; For all DataFlow connections, the Sync mode available in the Sync properties tab now defaults to *Append*.
+////
+SQL Server type;; When setting up a SQL Server connection, you can now select one of three SQL server types: On-premise, Azure SQL database, and SQL Server on Cloud VM. For *On-Premise* and *SQL Server on Cloud VM*, select *Named Instance* to include the *Instance* field. For *Azure SQL Database*, select the *Azure AD User* checkbox to provide authentication details. See xref:dataflow-sql-server-reference.adoc[].
+////
+Salesforce drivers;; In this release, the Salesforce cdata JDBC jar in `agent/lib/jars/salesforce/xx/jdbc/cdata.jdbc.salesforce.jar` upgraded with the latest drivers. ThoughtSpot added new properties `BulkPageSize=2000` and `UseBulkAPI=true` in the JDBC URL.
+Cassandra drivers;; The Cassandra JDBC jar in `agent/lib/jars/cassandra/3.x Jar: cdata.jdbc.cassandra.jar` location upgraded with the latest drivers.
+
+
+
+
 [#it-ops-engineer-7-1]
 === For the IT Ops Engineer
 
