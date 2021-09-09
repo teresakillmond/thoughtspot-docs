@@ -1,5 +1,5 @@
 = Flat file connection reference
-:last_updated: 07/07/2020
+:last_updated: 09/09/2021
 :experimental:
 :linkattrs:
 :page-aliases: /data-integrate/dataflow/dataflow-files-reference.adoc
@@ -148,16 +148,19 @@ Time delimiter:: Specifies the character used as separate the time components. O
 Example:;; :
 Valid Values:;; Any printable ASCII character
 Default:;; :
+////
 [#dataflow-files-sync-statistics]
 Statistics:: Specify if the file source count needs to be displayed in Monitor statistics. Optional field.
 Example:;; ON
 Valid Values:;; OFF
 Default:;; ON
+
 [#dataflow-files-sync-skip-trailer-rows]
 Skip trailer rows:: Skip trailer row while processing the data. Optional field.
 Example:;; 5
 Valid Values:;; Any numeric value
 Default:;; 0
+////
 [#dataflow-files-sync-reader-encoder]
 Reader encoder:: Specify the encoding format of the source system. Optional field.
 Example:;; UFT-8
@@ -170,3 +173,13 @@ Boolean representation:: Specifies the representation of data in the boolean fie
 Example:;; true_false
 Valid Values:;; true_false, T_F, 1_0, T_NULL
 Default:;; true_false
+[#dataflow-files-sync-parallel-thread-limit]
+Parallel thread limit:: Specifies the number of parallel threads to unload data. Optional field.
+Example:;; 4
+Valid Values:;; Any numeric value
+Default:;; 1
+[#dataflow-files-sync-max-ignored-rows]
+Max ignored rows:: Aborts the transaction after encountering 'n' ignored rows. Optional field.
+Example:;; 0
+Valid Values:;; Any numeric value
+Default:;; 0
