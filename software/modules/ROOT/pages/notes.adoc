@@ -61,8 +61,8 @@ Starburst;; Connections now supports Starburst. For more information, see xref:c
 DataFlow::
 We added support for the following databases: xref:dataflow-dremio.adoc[Dremio], xref:dataflow-google-sheets.adoc[Google Sheets], and xref:dataflow-vertica.adoc[Vertica].
 
-When connecting to remote files, DataFlow now automatically selects file format based on the source file type. For details, see xref:dataflow-files.adoc[Files].
-DataFlow now supports the XML and Avro file formats.
+DataFlow now automatically selects the options based on source file format, but you can overwrite it. For details, see xref:dataflow-files.adoc[Files].
+When connecting to remote files, DataFlow now supports the XML and Avro file formats.
 
 DataFlow Single Sign-On;; DataFlow now supports Single Sign-On (SSO). You can configure the Single Sign-On settings based on the SSO service used in your organization. Once configured, the user login authentication in ThoughtSpot and ThoughtSpot DataFlow is routed through the SSO service, and you do not need to maintain separate user credentials for ThoughtSpot DataFlow. See xref:dataflow-user-management-sso.adoc[] for details.
 Case-sensitive table names;; DataFlow now supports case-sensitive table names. You can now create multiple syncs using different tables with the same name from the same connection and the same database.
