@@ -1,5 +1,5 @@
 = Apache Parquet connection reference
-:last_updated: 09/14/2020
+:last_updated: 09/09/2021
 :experimental:
 :linkattrs:
 :page-aliases: /data-integrate/dataflow/dataflow-apache-parquet-reference.adoc
@@ -125,6 +125,12 @@ Optional field.
 Example:;; :
 Valid Values:;; Any printable ASCII character
 Default:;; :
+[#dataflow-apache-parquet-sync-boolean-representation]
+Boolean representation:: Specifies the representation of data in the boolean field. +
+Optional field.
+Example:;; true_false
+Valid Values:;; true_false, T_F, 1_0, T_NULL
+Default:;; true_false
 [#dataflow-apache-parquet-sync-skip-trailer-rows]
 Skip trailer rows:: Skip trailer row while processing the data. +
 Optional field.
@@ -137,12 +143,11 @@ Optional field.
 Example:;; UFT-8
 Valid Values:;; ISO-8859-1, UTF-16, UTF-16BE, WINDOWS-1252
 Default:;; UFT-8
+[#dataflow-apache-parquet-sync-parallel-thread-limit]
+Parallel thread limit:: Specify the number of parallel threads to unload data. Optional field.
+Example:;; 4
+Valid Values:;; Any numeric value
+Default:;; 1
 [#dataflow-apache-parquet-sync-tsload-options]
 
 include::partial$dataflow/ts-load-options.adoc[]
-[#dataflow-apache-parquet-sync-boolean-representation]
-Boolean representation:: Specifies the representation of data in the boolean field. +
-Optional field.
-Example:;; true_false
-Valid Values:;; true_false, T_F, 1_0, T_NULL
-Default:;; true_false
