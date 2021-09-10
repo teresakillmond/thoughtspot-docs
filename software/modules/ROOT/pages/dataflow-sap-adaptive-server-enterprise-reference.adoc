@@ -48,7 +48,7 @@ Default:;; 1
 [#dataflow-sap-adaptive-server-enterprise-sync-fetch-size]
 Fetch size::
 Specify the number of rows at a time to fetch and process in memory.
-If you specify zero, the system extracts all rows at once. Mandatory field.
+If you specify zero, the system extracts all rows at once. Optional field.
 Example:;; 1000
 Valid Values:;; Any numeric value
 Default:;; 1000
@@ -62,5 +62,10 @@ Escape character:: Specify the escape character if using a text qualifier in the
 Example:;; \"
 Valid Values:;; Any ASCII character
 Default:;; \"
+[#dataflow-sap-adaptive-server-enterprise-sync-max-ignored-rows]
+Max ignored rows:: Abort the transaction after encountering 'n' ignored rows. Optional field.
+Example:;; 0
+Valid Values:;; Any numeric value
+Default:;; 0
 [#dataflow-sap-adaptive-server-enterprise-sync-ts-load-options]
 include::partial$dataflow/ts-load-options.adoc[]

@@ -48,7 +48,7 @@ include::partial$dataflow/jdbc-options.adoc[]
 [#sync-properties]
 == Sync properties
 [#dataflow-oracle-sync-data-extraction-mode]
-Data extraction mode:: Specify the extraction type.
+Data extraction mode:: Specify the extraction type. Optional field.
 Example:;; JDBC
 Valid Values:;; JDBC,OCI
 Default:;; JDBC
@@ -78,9 +78,14 @@ Default:;; \"
 [#dataflow-oracle-sync-fetch-size]
 Fetch size::
 Specify the number of rows to be fetched at a time and processed in memory.
-If the value specified is zero then, all rows are extracted at once.
+If the value specified is zero then, all rows are extracted at once. Optional field.
 Example:;; 1000
 Valid Values:;; Any numeric value
 Default:;; 1000
+[#dataflow-oracle-sync-max-ignored-rows]
+Max ignored rows:: Abort the transaction after encountering 'n' ignored rows. Optional field.
+Example:;; 0
+Valid Values:;; Any numeric value
+Default:;; 0
 [#dataflow-oracle-sync-ts-load-options]
 include::partial$dataflow/ts-load-options.adoc[]
