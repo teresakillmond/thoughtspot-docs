@@ -78,8 +78,8 @@ Valid Values:;; SINGLE, DOUBLE
 Default:;; DOUBLE
 Other notes:;; This is required if the text data has newline character or delimiter character.
 [#dataflow-exadata-sync-max-ignored-rows]
-Max ignored rows:: Abort the transaction after encountering 'n' ignored rows Optional field.
-Default:;; 0
+include::partial$dataflow/max-ignored-rows.adoc[]
+
 [#dataflow-exadata-sync-fetch-size]
 Fetch size:: Specify the number of rows to be fetched at a time and processed in memory.If the value specified is zero then, all rows are extracted at once. Optional field.
 Example:;; 1000
