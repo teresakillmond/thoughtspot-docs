@@ -72,11 +72,13 @@ Optional field. +
 
 [#sync-properties]
 == Sync properties
+////
 [#dataflow-apache-parquet-sync-enclosing-character]
 Enclosing character:: Specify if the text columns in the source data needs to be enclosed in quotes. Optional field.
 Example:;; Single
 Valid Values:;; Single, Double, Empty
 Default:;; Empty
+
 [#dataflow-apache-parquet-sync-escape-character]
 Escape character::
 Specify escape character if data uses text qualifier is mentioned.
@@ -85,6 +87,7 @@ Optional field.
 Example:;; \\
 Valid Values:;; Any ASCII character
 Default:;; Empty
+////
 [#dataflow-apache-parquet-sync-null-value]
 Null value::
 Specifies the string literal indicates the null value for a column.
@@ -148,6 +151,8 @@ Parallel thread limit:: Specify the number of parallel threads to unload data. O
 Example:;; 4
 Valid Values:;; Any numeric value
 Default:;; 1
+////
 [#dataflow-apache-parquet-sync-tsload-options]
 
 include::partial$dataflow/ts-load-options.adoc[]
+////
