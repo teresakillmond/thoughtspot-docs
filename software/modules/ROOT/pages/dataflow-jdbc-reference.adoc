@@ -1,5 +1,5 @@
 = JDBC connection reference
-:last_updated: 11/25/2020
+:last_updated: 09/10/2021
 :experimental:
 :linkattrs:
 :page-aliases: /data-integrate/dataflow/dataflow-jdbc-reference.adoc
@@ -59,5 +59,16 @@ This should be the character which escapes the text qualifier character in the s
 Example:;; \"
 Valid Values:;; Any ASCII character
 Default:;; \"
+[#dataflow-jdbc-sync-max-ignored-rows]
+Max ignored rows::
+Terminate the transaction when encounter `n` ignored rows.
++
+Optional field.
+Example;;
+`0`
+Valid values;;
+Any numeric value
+Default;;
+`0`
 [#dataflow-jdbc-sync-ts-load-options]
 include::partial$dataflow/ts-load-options.adoc[]
