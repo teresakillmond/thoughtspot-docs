@@ -1,5 +1,5 @@
 = Greenplum connection reference
-:last_updated: 03/22/2021
+:last_updated: 09/10/2021
 :page-aliases: /data-integrate/dataflow/dataflow-greenplum-reference.adoc
 :experimental:
 :linkattrs:
@@ -71,8 +71,10 @@ Valid Values:;; SINGLE, DOUBLE
 Default:;; DOUBLE
 Other notes:;; This is required if the text data has newline character or delimiter character
 [#dataflow-greenplum-sync-max-ignored-rows]
-Max ignored rows:: Abort the transaction after encountering 'n' ignored rows Optional field.
+Max ignored rows:: Abort the transaction after encountering 'n' ignored rows. Optional field.
 Default:;; 0
+Valid Values:;; Any numeric value
+Example:;; 0
 [#dataflow-greenplum-sync-ts-load-options]
 TS load options:: Specifies the parameters passed with the `tsload` command, in addition to the commands already included by the application. The format for these parameters is:
 +
