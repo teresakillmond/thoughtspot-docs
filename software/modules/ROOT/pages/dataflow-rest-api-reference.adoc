@@ -1,5 +1,5 @@
 = REST API connection reference
-:last_updated: 11/25/2020
+:last_updated: 09/10/2021
 :experimental:
 :linkattrs:
 :page-aliases: /data-integrate/dataflow/dataflow-rest-api-reference.adoc
@@ -106,5 +106,10 @@ During the data load, the column value matching this string loads as null in the
 Example:;; NULL
 Valid Values:;; Any string literal
 Default:;; NULL
+[#dataflow-rest-api-sync-max-ignored-rows]
+Max ignored rows:: Abort the transaction after encountering 'n' ignored rows. Optional field.
+Default:;; 0
+Valid Values:;; Any numeric value
+Example:;; 0
 [#dataflow-rest-api-sync-ts-load-options]
 include::partial$dataflow/ts-load-options.adoc[]
