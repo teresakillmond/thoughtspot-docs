@@ -1,5 +1,5 @@
 = Azure Blob Storage connection reference
-:last_updated: 06/19/2020
+:last_updated: 09/10/2021
 :experimental:
 :linkattrs:
 :page-aliases: /data-integrate/dataflow/dataflow-azure-blob-storage-reference.adoc
@@ -33,6 +33,10 @@ Shared access signature
 [#dataflow-azure-blob-storage-conn-key]
 Key:: The 512-bit access key generated while creating storage account. Mandatory field.
 Example:;; ABCDEFGH245HIJK
+[#dataflow-azure-blob-storage-conn-folder]
+Folder:: Give the storage folder details. Mandatory field.
+Availability:;; Displayed only when "Authentication type" is Datalake GEN2 Storage.
+Example:;; difolder
 [#dataflow-azure-blob-storage-conn-container]
 Container:: Give container details that organizes a set of blobs, like a directory in a file system. Mandatory field.
 Example:;; container
@@ -68,7 +72,7 @@ Example:;; gzip
 Valid Values:;; None, gzip
 Default:;; None
 [#dataflow-azure-blob-storage-sync-enclosing-character]
-Enclosing character:: Specify if the text columns in the source data is enclosed in quotes. Mandatory field.
+Enclosing character:: Specify if the text columns in the source data is enclosed in quotes. Optional field.
 Example:;; Single
 Valid Values:;; Single, Double, Empty
 Default:;; Empty
