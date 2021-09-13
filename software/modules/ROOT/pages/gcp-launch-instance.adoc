@@ -135,9 +135,9 @@ Size (GB):: 250
 image::gcp-6-save-boot-disk-expand-mgmt.png[Advanced configuration options]
 
 . Attach two 1 TB SSD drives for data storage.
-Refer to xref:gcp-configuration-options.adoc#vms-with-persistent-disk-only-storage[SSD-only persistent storage].
+Refer to xref:gcp-configuration-options.adoc#vms-with-persistent-disk-only-storage-in-memory[SSD-only persistent storage].
 If you are using GCS, attach only 1 SSD drive, with 500 GB instead of 1 TB.
-Refer to xref:gcp-configuration-options.adoc#vms-with-persistent-disk-and-google-cloud-storage[GCS and SSD persistent storage].
+Refer to xref:gcp-configuration-options.adoc#vms-with-persistent-disk-and-google-cloud-storage-in-memory[GCS and SSD persistent storage].
 
 .. Click the *Disks* tab, and click *Add new disk*.
 +
@@ -146,7 +146,7 @@ image::gcp-7-advanced-disk-config.png[Add new disk]
 Unselect the *Deletion rule*, to prevent potential loss of data if your instance is deleted accidentally.
 
 .. Configure the following settings for each disk.
-Refer to xref:gcp-configuration-options.adoc#vms-with-persistent-disk-and-google-cloud-storage[ThoughtSpot GCP instance types] to determine the size in GB when you have GCS.
+Refer to xref:gcp-configuration-options.adoc#vms-with-persistent-disk-and-google-cloud-storage-in-memory[ThoughtSpot GCP instance types] to determine the size in GB when you have GCS.
 Ensure the disks have read/write access.
 +
 Type:: SSD persistent disk
