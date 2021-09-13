@@ -1,5 +1,5 @@
 = Sync data through a Dremio connection
-:last_updated: 9/9/2021
+:last_updated: 9/13/2021
 :experimental:
 :linkattrs:
 :page-aliases: /data-integrate/dataflow/dataflow-dremio-sync.adoc
@@ -12,68 +12,21 @@ include::partial$sync-for-databases.adoc[]
 +
 See xref:dataflow-dremio-reference.adoc#sync-properties[Sync properties] for details, defaults, and examples.
 +
-[#dataflow-dremio-sync-column-delimiter]
-Column delimiter::
+xref:dataflow-dremio-reference.adoc#dataflow-dremio-sync-column-delimiter[Column delimiter]::
 Specify the column delimiter character.
-+
-Mandatory field.
-
-Example;;
-1
-Valid values;;
-Any printable ASCII character or the decimal value for ASCII character
-Default;;
-1
-
-[#dataflow-dremio-sync-enclosing-character]
-Enclosing character::
+xref:dataflow-dremio-reference.adoc#dataflow-dremio-sync-enclosing-character[Enclosing character]::
 Specify when the text columns in the source data must be enclosed in quotes.
-+
-Optional field.
 
-Example;;
-DOUBLE
-Valid values;;
-SINGLE, DOUBLE
-Default;;
-DOUBLE
-Note;;
-Required when the text data contains newline or delimiter characters.
-
-[#dataflow-dremio-sync-escape-character]
-Escape character::
+xref:dataflow-dremio-reference.adoc#dataflow-dremio-sync-escape-character[Escape character]::
 Specify this if the text qualifier is mentioned. This should be the character which escapes the text qualifier character in the source data.
-+
-Optional field.
 
-Example;;
-\""
-Valid values;;
-Any ASCII character
-Default;;
-\""
-
-[#dataflow-dremio-sync-fetch-size]
-Fetch size::
+xref:dataflow-dremio-reference.adoc#dataflow-dremio-sync-fetch-size[Fetch size]::
 Specify the number of rows to fetch at one time, and process in memory.
-+
-If the value specified is `0`, then DataFlow extracts all rows at the same time.
-+
-Optional field.
 
-Example;;
-`1000`
-Valid values;;
-Any numeric value
-Default;;
-`1000`
+xref:dataflow-dremio-reference.adoc#dataflow-dremio-sync-max-ignored-rows[Max ignored rows]::
+Abort the transaction after encountering 'n' ignored rows.
 
-[#dataflow-dremio-sync-max-ignored-rows]
-include::partial$dataflow/max-ignored-rows.adoc[]
-
-
-[#dataflow-dremio-sync-ts-load-options]
-TS load options::
+xref:dataflow-dremio-reference.adoc#dataflow-dremio-sync-ts-load-options[TS load options]::
 Specifies the parameters passed with the `tsload` command, in addition to the commands already included by the application.
 +
 The format for these parameters is:
@@ -81,26 +34,6 @@ The format for these parameters is:
 ----
 --<param_1_name><optonal_param_1_value>
 --<param_2_name><optonal_param_21_value>
-----
-+
-Optional field.
-
-Example;;
-+
-----
---max_ignored_rows 0
-----
-Valid values;;
-+
-----
---null_value """"
---escape_character """"
---max_ignored_rows 0
-----
-Default;;
-+
-----
---max_ignored_rows 0
 ----
 
 . Save your work by clicking *Save*.
