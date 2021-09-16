@@ -1,4 +1,4 @@
-= About Runtime Filters
+= About runtime filters
 :last_updated: 11/18/2019
 
 Use runtime filters to filter an embedded answer or pinboard.
@@ -6,7 +6,7 @@ Use runtime filters to filter an embedded answer or pinboard.
 Runtime filters allow you to filter an answer or pinboard through parameters you pass in the URL to filter the data that is returned.
 You can use them with the data API or with embedding of answers or pinboards.
 
-== Capabilities of Runtime Filters
+== Capabilities of runtime filters
 
 Runtime Filters provide ability to filter data at the time of retrieval using xref:about-embedding-viz.adoc[Embedding] or the xref:about-data-api.adoc[REST API].
 This is done by providing filter information through the URL query parameters.
@@ -37,7 +37,7 @@ You can add any number of filter sets by incrementing the parameters (e.g.
 If the pinboard or answer you're filtering already has one or more filters applied, the Runtime Filter(s) will act as an `AND` condition.
 This means that the data returned must meet the conditions of all filters - those supplied in the runtime filter, and those included in the pinboard or visualization itself.
 
-== Supported Data Types
+== Supported data types
 
 You can use runtime filters on these data types:
 
@@ -53,13 +53,14 @@ You can use runtime filters on these data types:
 
 Note that for `DATE` and `DATE_TIME` values, you must specify the date in epoch time (also known as POSIX or Unix time).
 
-== Example Uses
+== Example uses
 
 You can use Runtime Filters alongside the REST API and Embedding to create dynamic controls in your Web portal.
 For example, you could use the REST API to get a list of possible filters for a visualization.
 Then use that data to populate a select list on your Web portal.
 When a user makes a selection, you would then pass it as a Runtime Filter, and the result returned will apply the filter.
 
+[#limitations-of-runtime-filters]
 == Limitations of runtime filters
 
 Runtime Filters do not work directly on top of tables.
