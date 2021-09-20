@@ -2,7 +2,7 @@
 :last_updated: 01/01/2021
 :experimental:
 :linkattrs:
-:redirect_from: /app-integrate/SAML/integrate-ADFS.html
+:page-aliases: /app-integrate/SAML/integrate-ADFS.adoc
 
 Learn how to configure ADFS to work with ThoughtSpot.
 
@@ -21,7 +21,7 @@ You can do this by running the command `nslookup` in the command line on both ma
 The syntax is `nslookup [HOST] [SERVER]`.
 Replace HOST and SERVER with your specific information.
 +
-[source]
+[source,console]
 ----
  $ nslookup [HOST] [SERVER]
 ----
@@ -40,14 +40,14 @@ You can reference this file by its URL:
 
 . *SSH into your cluster* Log into the Linux shell using SSH.
 +
-[source]
+[source,console]
 ----
  $ ssh admin@<cluster-IP>
 ----
 
 . *Change directories to the SAML directory*
 +
-[source]
+[source,console]
 ----
  $ cd /usr/local/scaligent/release/production/orion/tomcat/callosum/saml
 ----

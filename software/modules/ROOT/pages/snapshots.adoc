@@ -1,6 +1,6 @@
 = Work with snapshots
 :last_updated: 12/9/2020
-:redirect_from: /admin/backup-restore/overview-snapshot.html
+:page-aliases: /admin/backup-restore/overview-snapshot.adoc
 :experimental:
 :linkattrs:
 
@@ -41,13 +41,13 @@ Note that snapshot names must not exceed 44 characters.
 If you specify `ttl` as `4`, the system deletes the snapshot after four days.
 
 +
-[source]
+[source,console]
 ----
  $ tscli snapshot create <name> <reason> <ttl>
 ----
 . Check that the snapshot was created successfully by checking the directory listing:
 +
-[source]
+[source,console]
 ----
  $ tscli snapshot ls
 ----
@@ -69,7 +69,7 @@ To view your current periodic snapshot policy, follow these steps:
 
 . Log in to the Linux shell using SSH.
 +
-[source]
+[source,console]
 ----
  $ ssh admin@<cluster-IP>
 ----
@@ -133,14 +133,14 @@ To update your current periodic snapshot policy, follow these steps:
 
 . Log in to the Linux shell using SSH.
 +
-[source]
+[source,console]
 ----
  $ ssh admin@<cluster-IP>
 ----
 
 . Enter `tscli snapshot-policy update`.
 +
-[source]
+[source,console]
 ----
  $ tscli snapshot-policy update
 ----
@@ -157,14 +157,14 @@ To disable your current periodic snapshot policy, follow these steps:
 
 . Log in to the Linux shell using SSH.
 +
-[source]
+[source,console]
 ----
  $ ssh admin@<cluster-IP>
 ----
 
 . Enter `tscli snapshot-policy disable`.
 +
-[source]
+[source,console]
 ----
  $ tscli snapshot-policy disable
 ----
@@ -176,14 +176,14 @@ To enable a specific periodic snapshot policy, follow these steps:
 
 . Log in to the Linux shell using SSH.
 +
-[source]
+[source,console]
 ----
  $ ssh admin@<cluster-IP>
 ----
 
 . Enter `tscli snapshot-policy enable`.
 +
-[source]
+[source,console]
 ----
  $ tscli snapshot-policy disable
 ----

@@ -3,12 +3,10 @@
 :linkattrs:
 :experimental:
 
-Install the certificate to support LDAPS.
-
 When you set up LDAP, you specified whether or not to use SSL for LDAP (LDAPS).
 
 If using SSL, you must install the LDAP SSL certificate.
-Before you can add the SSL certificate, you must xref:LDAP-config-AD.adoc[Configure LDAP for Active Directory].
+Before you can add the SSL certificate, you must xref:ldap-config-ad.adoc[Configure LDAP for Active Directory].
 
 You must have the SSL certificate before you start.
 For more information on obtaining an SSL certificate, see xref:ssl.adoc[Configure SSL (secure socket layers)].
@@ -19,7 +17,7 @@ To add the SSL certificate for LDAP:
 This is usually sent by email or available for download.
 . Copy the certificate to ThoughtSpot:
 +
-[source]
+[source,console]
 ----
  $ scp <certificate> admin@<IP_address>:<path>
 ----
@@ -27,14 +25,14 @@ This is usually sent by email or available for download.
 . Log in to the Linux shell using SSH.
 . Change directories to where you copied the certificate:
 +
-[source]
+[source,console]
 ----
  $ cd <path>
 ----
 
 . Run the command to configure SSL for LDAP, designating an alias for this certificate using the `<name>` parameter:
 +
-[source]
+[source,console]
 ----
  $ tscli ldap add-cert <name> <certificate>
 ----
