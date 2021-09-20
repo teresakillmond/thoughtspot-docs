@@ -34,17 +34,19 @@ include::partial$dataflow/password.adoc[]
 [#dataflow-postgresql-conn-database]
 Database:: Collection of information that is organized so that it can be easily accessed, managed and updated. Mandatory field.
 Example:;; ditform
+////
 [#dataflow-postgresql-conn-version]
 Version:: Specify the PostgreSQL version being connected to. Optional field.
 Example:;; 9.x
 Other notes:;; Advanced configuration
+////
 [#dataflow-postgresql-conn-jdbc-options]
 include::partial$dataflow/jdbc-options.adoc[]
 
 [#sync-properties]
 == Sync properties
 [#dataflow-postgresql-sync-data-extraction-mode]
-Data extraction mode:: Specify the extraction type. Mandatory field.
+Data extraction mode:: Specify the extraction type. Optional field.
 Example:;; JDBC
 Valid Values:;; JDBC,PSQL
 Default:;; JDBC
@@ -71,5 +73,8 @@ Escape character:: Specify the escape character if using a text qualifier in the
 Example:;; \"
 Valid Values:;; Any ASCII character
 Default:;; \"
+[#dataflow-postgresql-sync-max-ignored-rows]
+include::partial$dataflow/max-ignored-rows.adoc[]
+
 [#dataflow-postgresql-sync-ts-load-options]
 include::partial$dataflow/ts-load-options.adoc[]

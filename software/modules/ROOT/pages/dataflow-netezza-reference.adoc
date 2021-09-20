@@ -1,5 +1,5 @@
 = Netezza connection reference
-:last_updated: 07/6/2020
+:last_updated: 09/10/2021
 :experimental:
 :linkattrs:
 :page-aliases: /data-integrate/dataflow/dataflow-netezza-reference.adoc
@@ -31,17 +31,19 @@ Example:;; userdi
 [#dataflow-netezza-conn-password]
 include::partial$dataflow/password.adoc[]
 
+////
 [#dataflow-netezza-conn-version]
 Version:: Specify the Netezza version being connected to. Optional field.
 Example:;; 7.x
 Other notes:;; Advanced Configuration.
+////
 [#dataflow-netezza-conn-jdbc-options]
 include::partial$dataflow/jdbc-options.adoc[]
 
 [#sync-properties]
 == Sync properties
 [#dataflow-netezza-sync-data-extraction-mode]
-Data extraction mode:: Specify the extraction type. Mandatory field.
+Data extraction mode:: Specify the extraction type. Optional field.
 Example:;; External table
 Valid Values:;; External table, JDBC
 Default:;; External Table
@@ -66,5 +68,8 @@ Socket buffer size:: Specifies the chunk size at which to read the data from the
 Example:;; 8
 Valid Values:;; Any numeric value
 Default:;; 8
+[#dataflow-netezza-sync-max-ignored-rows]
+include::partial$dataflow/max-ignored-rows.adoc[]
+
 [#dataflow-netezza-sync-ts-load-options]
 include::partial$dataflow/ts-load-options.adoc[]
