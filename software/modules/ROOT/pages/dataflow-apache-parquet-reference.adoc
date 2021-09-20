@@ -1,8 +1,8 @@
 = Apache Parquet connection reference
-:last_updated: 09/14/2020
+:last_updated: 09/09/2021
 :experimental:
 :linkattrs:
-:redirect_from: /data-integrate/dataflow/dataflow-apache-parquet-reference.html", "/7.0.0.mar.sw/data-integrate/dataflow/dataflow-apache-parquet-reference.html"
+:page-aliases: /data-integrate/dataflow/dataflow-apache-parquet-reference.adoc
 
 Learn about the fields used to create an Apache Parquet connection with ThoughtSpot DataFlow.
 
@@ -72,11 +72,13 @@ Optional field. +
 
 [#sync-properties]
 == Sync properties
+////
 [#dataflow-apache-parquet-sync-enclosing-character]
 Enclosing character:: Specify if the text columns in the source data needs to be enclosed in quotes. Optional field.
 Example:;; Single
 Valid Values:;; Single, Double, Empty
 Default:;; Empty
+
 [#dataflow-apache-parquet-sync-escape-character]
 Escape character::
 Specify escape character if data uses text qualifier is mentioned.
@@ -85,6 +87,7 @@ Optional field.
 Example:;; \\
 Valid Values:;; Any ASCII character
 Default:;; Empty
+////
 [#dataflow-apache-parquet-sync-null-value]
 Null value::
 Specifies the string literal indicates the null value for a column.
@@ -125,6 +128,12 @@ Optional field.
 Example:;; :
 Valid Values:;; Any printable ASCII character
 Default:;; :
+[#dataflow-apache-parquet-sync-boolean-representation]
+Boolean representation:: Specifies the representation of data in the boolean field. +
+Optional field.
+Example:;; true_false
+Valid Values:;; true_false, T_F, 1_0, T_NULL
+Default:;; true_false
 [#dataflow-apache-parquet-sync-skip-trailer-rows]
 Skip trailer rows:: Skip trailer row while processing the data. +
 Optional field.
@@ -137,12 +146,13 @@ Optional field.
 Example:;; UFT-8
 Valid Values:;; ISO-8859-1, UTF-16, UTF-16BE, WINDOWS-1252
 Default:;; UFT-8
+[#dataflow-apache-parquet-sync-parallel-thread-limit]
+Parallel thread limit:: Specify the number of parallel threads to unload data. Optional field.
+Example:;; 4
+Valid Values:;; Any numeric value
+Default:;; 1
+////
 [#dataflow-apache-parquet-sync-tsload-options]
 
 include::partial$dataflow/ts-load-options.adoc[]
-[#dataflow-apache-parquet-sync-boolean-representation]
-Boolean representation:: Specifies the representation of data in the boolean field. +
-Optional field.
-Example:;; true_false
-Valid Values:;; true_false, T_F, 1_0, T_NULL
-Default:;; true_false
+////

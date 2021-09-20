@@ -2,7 +2,7 @@
 :last_updated: 06/19/2020
 :experimental:
 :linkattrs:
-:redirect_from: /data-integrate/dataflow/dataflow-splunk-reference.html
+:page-aliases: /data-integrate/dataflow/dataflow-splunk-reference.adoc
 
 Learn about the fields used to create a splunk connection with ThoughtSpot DataFlow.
 
@@ -53,15 +53,15 @@ Valid Values:;; SINGLE, DOUBLE
 Default:;; DOUBLE
 Other notes:;; This is required if the text data has newline character or delimiter character.
 [#dataflow-splunk-sync-max-ignored-rows]
-Max ignored rows:: Abort the transaction after encountering 'n' ignored rows Optional field.
-Default:;; 0
+include::partial$dataflow/max-ignored-rows.adoc[]
+
 [#dataflow-splunk-sync-ts-load-options]
 TS load options:: Specifies the parameters passed with the `tsload` command, in addition to the commands already included by the application.
 The format for these parameters is:
 +
-` --<param_1_name> <optional_param_1_value>`
+`--<param_1_name> <optional_param_1_value>`
 +
-` --<param_2_name> <optional_param_2_value>` Optional field.
+`--<param_2_name> <optional_param_2_value>` Optional field.
 
 Example:;; --max_ignored_rows 0
 Valid Values:;; --null_value "" --escape_character "" --max_ignored_rows 0
@@ -69,6 +69,6 @@ Default:;; --max_ignored_rows 0
 
 Reference:;; xref:tsload-api-flags.adoc[]
 
-== Related Information
-
-xref:data-flow-tips.adoc[Dataflow tips]
+> **Related information**
+>
+> * xref:dataflow-tips.adoc[Dataflow tips]

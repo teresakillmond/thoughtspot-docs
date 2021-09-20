@@ -2,7 +2,7 @@
 :last_updated: 06/15/2021
 :experimental:
 :linkattrs:
-:redirect_from: /complex-search/about-moving-formulas.html
+:page-aliases: /complex-search/about-moving-formulas.adoc
 
 Moving formulas can be used to smooth out any irregularities in your data to
 easily recognize trends.
@@ -14,11 +14,11 @@ The larger intervals smooth out a larger number of peaks and troughs in your dat
 Each of the moving formulas accepts a *measure*, two integers to define the *window* or *interval*, and one or more optional *attributes*.
 
 [source]
----
+----
 formula (
   measure,windowStart,windowFinish,
   [attribute1,attribute2,...])
----
+----
 
 Moving formulas require only the measure and integer values. However, if you do not specify the attributes, the function reverts to a non-moving measure; in other words, a `moving_sum()` functions as a `sum()`. When you specify both required and optional values, the formula returns the aggregate of the *measure* over the provided *attributes* for the defined *window*.
 

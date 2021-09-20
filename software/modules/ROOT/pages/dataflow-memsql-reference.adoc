@@ -1,6 +1,6 @@
 = MemSQL connection reference
-:last_updated: 03/22/2021
-:redirect_from: /data-integrate/dataflow/dataflow-memsql-reference.html
+:last_updated: 09/10/2021
+:page-aliases: /data-integrate/dataflow/dataflow-memsql-reference.adoc
 :experimental:
 :linkattrs:
 
@@ -42,10 +42,10 @@ Mandatory field.
 +
 For On Premise Platform Type only.
 
-Example:;; Password aunthentication
-Valid Values:;; Password aunthentication, Kerberos
-Default:;; Password aunthentication
-[#dataflow-memsql-conn-kdc-host}
+Example:;; Password authentication
+Valid Values:;; Password authentication, Kerberos
+Default:;; Password authentication
+[#dataflow-memsql-conn-kdc-host]
 KDC Host:: Specify KDC Host Name where as KDC (Kerberos Key Distribution Center) is a service than runs on a domain controller server role.
 Mandatory field.
 +
@@ -94,6 +94,9 @@ For SSL authentication only.
 
 Example:;; password
 
+[#dataflow-memsql-conn-jdbc-options]
+include::partial$dataflow/jdbc-options.adoc[]
+
 [#sync-properties]
 == Sync properties
 [#dataflow-memsql-sync-column-delimiter]
@@ -112,22 +115,24 @@ Example:;; DOUBLE
 Valid Values:;; SINGLE, DOUBLE
 Default:;; DOUBLE
 Other notes:;; This is required if the text data has newline character or delimiter character.
+[#dataflow-memsql-conn-max-ignored-rows]
+include::partial$dataflow/max-ignored-rows.adoc[]
+
 [#dataflow-memsql-conn-ts-load-options]
 TS load options:: Specifies the parameters passed with the `tsload` command, in addition to the commands already included by the application.The format for these parameters is:
 +
-` --<param_1_name> <optional_param_1_value>`
+`--<param_1_name> <optional_param_1_value>`
 +
-` --<param_2_name> <optional_param_2_value>`
+`--<param_2_name> <optional_param_2_value>`
 Optional field.
 
 Example:;; --max_ignored_rows 0
-Valid Values:;; --null_value + --escape_character + --max_ignored_rows 0
+Valid Values:;; --null_value +
+ --escape_character +
+  --max_ignored_rows 0
 Default:;; --max_ignored_rows 0
-[#dataflow-memsql-conn-max-ignored-rows]
-Max ignored rows:: Abort the transaction after encountering 'n' ignored rows Optional field.
-Default:;; 0
-Reference:;; xref:tsload-api-flags.adoc[]
 
-== Related Information
 
-xref:data-flow-tips.adoc[Dataflow tips]
+> **Related information**
+>
+> * xref:dataflow-tips.adoc[Dataflow tips]

@@ -2,7 +2,7 @@
 :last_updated: 12/31/2020
 :experimental:
 :linkattrs:
-:redirect_from: /admin/data-security/row-level-security.html
+:page-aliases: /admin/data-security/row-level-security.adoc
 
 Use rule-based RLS to restrict a group's access to data.
 
@@ -42,7 +42,7 @@ Members of groups with *Can Administer and Bypass RLS*:
 * Can add/edit/delete existing RLS rules.
 * Can check or uncheck Bypass RLS on a worksheet.
 
-This behavior is true regardless of whether the privilege is from a direct group membership or indirect (through a group hierarchy).
+This behavior is true regardless of whether the privilege is from a direct group membership or indirect (through a group hierarchy, where the user is part of a group that is part of a larger, top-level group with the RLS privilege).
 
 [#rls-rule-examples]
 == Examples of RLS rules
