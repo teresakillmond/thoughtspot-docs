@@ -11,6 +11,7 @@ You need specific information to establish a seamless and secure connection.
 
 [#connection-properties]
 == Connection properties
+
 [#dataflow-amazon-s3-conn-connection-name]
 Connection name:: Name your connection. Mandatory field.
 Example:;; AmazonS3Connection
@@ -19,7 +20,7 @@ Connection type:: Choose the Amazon S3 connection type. Mandatory field.
 Example:;; Amnazon S3
 [#dataflow-amazon-s3-conn-amazon-s3-url]
 Amazon S3 URL:: Specify the Amazon S3 hostname link. Mandatory field.
-Example:;; https://example1-amazonaws.com
+Example:;; 'https://s3.eu-central-1.amazonaws.com'
 [#dataflow-amazon-s3-conn-compatible-object-store]
 Other S3-compatible object store:: Enable this option to support for non-AWS S3 storage. When selected, the *Region* field replaces *Authentication Type*. Optional field.
 [#dataflow-amazon-s3-conn-region]
@@ -27,7 +28,8 @@ Region:: Specifies the location on the globe. Location options may vary dependin
 Example:;; US-West
 [#dataflow-amazon-s3-conn-bucket]
 Bucket::
-Specify the bucket. +
+Specify the bucket.
++
  An Amazon S3 bucket name is globally unique, and the namespace is shared by all AWS accounts. Mandatory field.
  Example:;; bucket
 [#dataflow-amazon-s3-conn-authentication-type]
@@ -42,6 +44,35 @@ Authentication type:: Specifies the type of security protocol to connect to the 
 
 [#sync-properties]
 == Sync properties
+
+For DataFlow S3 sync to work properly, it needs bucket-wide list permission. However, it is sufficient to have 'get' permissions for the object.
+
+----
+{
+"Version": "2012-10-17",
+"Statement": [
+{
+"Sid": "VisualEditor0",
+"Effect": "Allow",
+"Action": [
+"s3:ListBucket",
+"s3:GetBucketLocation"
+],
+"Resource": "arn:aws:s3:::datalake"
+},
+{
+"Sid": "VisualEditor1",
+"Effect": "Allow",
+"Action": [
+"s3:PutObject",
+"s3:GetObject"
+],
+"Resource": "arn:aws:s3:::datalake/david/*"
+}
+]
+}
+----
+
 [#dataflow-amazon-s3-sync-file-name]
 File name:: Specify the name of the file. Mandatory field.
 Example:;; PRODUCT.csv
@@ -130,7 +161,7 @@ Example:;; 5
 Valid Values:;; Any numeric value
 Default:;; 0
 [#dataflow-amazon-s3-sync-ts-load-options]
-TS load options::
+
 include::partial$dataflow/ts-load-options.adoc[]
 [#dataflow-amazon-s3-sync-boolean-representation]
 Boolean representation:: Specifies the representation of data in the boolean field. +
