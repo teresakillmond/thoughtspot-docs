@@ -4,4 +4,31 @@
 :experimental:
 :page-partial:
 
-When you xref:pinboard-schedule.adoc[schedule a pinboard job], you can add a gating condition that triggers the pinboard email. If the condition evaluates to `true` at the scheduled time, ThoughtSpot sends the pinboard to the specified recipients.
+When you xref:pinboard-schedule.adoc[schedule a pinboard job], you can add a gating condition that triggers the pinboard email. If the condition evaluates to `true` at the scheduled time, ThoughtSpot emails the pinboard to the specified recipients. If it evaluates to `false`, ThoughtSpot does not send the pinboard.
+
+This article walks you through an example scenario in which you use a gating condition to determine whether to email the pinboard.
+
+== Gating condition functionality
+A gating condition is a statement that returns a single boolean value (`true` or `false`). For example, `sum (revenue) > 100` is a valid condition, but `is_weekend (commit_date)` is not, since it returns a result per row of data. You can use any data source (table, worksheet, or view) for the gating condition, since ThoughtSpot executes the query as an admin with access to all data sources. The gating condition formula and any tables you use in it do not need to be related to the pinboard the gating condition is for. You can use any valid formula in your statement. ThoughtSpot checks the formula syntax, but does not validate if the formula returns a valid single boolean.
+
+At the scheduled time, ThoughtSpot executes the gating condition query as an admin user. If the condition evaluates to `true`, ThoughtSpot processes the Pinboard.
+
+For a list of valid formulas, see xref:formula-reference.adoc[Formula function reference].
+
+== Gating condition example
+You can leverage gating conditions to send alerts. For example, you begin to notice invalid data appearing in your recent data loads, even though they seem to be successful.
+
+You can validate the data you load by setting several business rules. For example:
+
+* *Sales validation:* The sum of sales today versus the sum of sales yesterday should not vary by more than 20%. A higher amount of variance is unlikely, and probably the result of invalid data.
+* *Product validation:* The unique product count should be greater than 4000 but less than 5500. Your company's product count is within that range; any more or less is the result of invalid data.
+* *Customer validation:* The unique customer count should be greater than 20000. Your company has more than 20000 customers; any fewer is the result of invalid data.
+
+You can create a view with these business rules and create a pinboard schedule with a gating condition that references these rules. Then, the pinboard schedule notifies the specified recipients if any of these rules is not met, suggesting a problem with invalid data.
+
+=== Create a view
+After you determine your business rules, create a view that includes these rules. This makes the gating condition formula much simpler and ensures that the formula returns a single result, rather than multiple rows of data.
+
+image:gating-condition-view-example.png[Gating condition view example]
+
+This answer, saved as a view, contains multiple formulas that help determine if a sales, product, or customer exception occurred.

@@ -35,9 +35,11 @@ Type::
 Gating condition::
   Write a statement that returns a single boolean value (`true` or `false`). For example, `sum (revenue) > 100` is a valid condition, but `is_weekend (commit_date)` is not, since it returns a result per row of data. You can use any data source (table, worksheet, or view) for the gating condition, since ThoughtSpot executes the query as an admin with access to all data sources. The gating condition formula and any tables you use in it do not need to be related to the pinboard the gating condition is for. You can use any valid formula in your statement. ThoughtSpot checks the formula syntax, but does not validate if the formula returns a valid single boolean.
 +
-At the scheduled time, ThoughtSpot executes the gating condition query as an admin user. If the condition evaluates to `true`, ThoughtSpot processes the Pinboard.
+At the scheduled time, ThoughtSpot executes the gating condition query as a ThoughtSpot admin user. If the condition evaluates to `true`, ThoughtSpot processes the Pinboard.
 +
 For a list of valid formulas, see xref:formula-reference.adoc[Formula function reference].
++
+NOTE: ThoughtSpot executes the gating condition as a ThoughtSpot admin user. If you are using passthrough security for your external data warehouse connection, the gating condition may not work.
 Recipients::
   You are limited to 1000 recipients for each job. You can add *Users* or *groups*. Use *Emails* to add recipients who are not ThoughtSpot users. Your ThoughtSpot admin must set these email domains as allowed domains in advance. Contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support^] to add allowed domains.
 +
