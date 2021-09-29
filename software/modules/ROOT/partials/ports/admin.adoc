@@ -27,6 +27,15 @@ Also used for scp (secure copy).
 | All nodes
 | Secure HTTP.
 
+| 8442
+| Mandatory
+| HTTPS
+| `etl_http_server`
+| inbound
+| User's HTTPS client
+| Any ThoughtSpot node
+| Secure service accepting data to be loaded into Falcon, ThoughtSpot's in-memory database, over a REST interface.
+
 | 80
 | Optional
 | TCP
@@ -37,13 +46,13 @@ Also used for scp (secure copy).
 | Primary app HTTP port (nginx)
 
 | 8441
-| Optional unless using the TSload connector
-| TCP
-| TSload connector
+| Optional
+| HTTP
+| `etl_http_server`
 | inbound
-| Any node
+| ThoughtSpot Support or user debugging
 | Any ThoughtSpot node
-| Allows the xref:tsload-connector.adoc[TSload connector] to load data into ThoughtSpot's in-memory database.
+| Keeps track of the status of different load attempts on the cluster.
 
 | 12345
 | Optional unless using Simba
