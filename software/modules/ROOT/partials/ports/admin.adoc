@@ -27,13 +27,22 @@ Also used for scp (secure copy).
 | All nodes
 | Secure HTTP.
 
+| 8441
+| Mandatory
+| HTTP
+| `etl_http_server`
+| bidirectional
+| All nodes
+| All nodes
+| Keeps track of the status of different load attempts on the cluster.
+
 | 8442
 | Mandatory
 | HTTPS
 | `etl_http_server`
-| inbound
-| User's HTTPS client
-| Any ThoughtSpot node
+| bidirectional
+| All nodes
+| All nodes
 | Secure service accepting data to be loaded into Falcon, ThoughtSpot's in-memory database, over a REST interface.
 
 | 80
@@ -44,15 +53,6 @@ Also used for scp (secure copy).
 | All nodes
 | All nodes
 | Primary app HTTP port (nginx)
-
-| 8441
-| Optional
-| HTTP
-| `etl_http_server`
-| inbound
-| ThoughtSpot Support or user debugging
-| Any ThoughtSpot node
-| Keeps track of the status of different load attempts on the cluster.
 
 | 12345
 | Optional unless using Simba
