@@ -38,7 +38,11 @@ image::scheduled_pinboards_1.png[]
 | Type | CSV files provide all data for tables, with one attachment per table. Use CSV files to perform further analysis offline. PDF files show all visualizations in the pinboard. Each chart takes up a whole page in the file, while only the first 100 rows of a table are included. Use PDF files to skim the data.
 | Gating condition | Write a statement that returns a single boolean value (`true` or `false`). For example, `sum (revenue) > 100` is a valid condition, but `is_weekend (commit_date)` is not, since it returns a result per row of data. You can use any data source (table, worksheet, or view) for the gating condition, since ThoughtSpot executes the query as an admin with access to all data sources. The gating condition formula and any tables you use in it do not need to be related to the pinboard the gating condition is for. You can use any valid formula in your statement. ThoughtSpot checks the formula syntax, but does not validate if the formula returns a valid single boolean.
 
-At the scheduled time, ThoughtSpot executes the gating condition query as an admin user. If the condition evaluates to `true`, ThoughtSpot processes the pinboard. For a list of valid formulas, see the xref:formula-reference.adoc[Formula function reference].
+At the scheduled time, ThoughtSpot executes the gating condition query as a ThoughtSpot admin user. If the condition evaluates to `true`, ThoughtSpot processes the pinboard. For a list of valid formulas, see the xref:formula-reference.adoc[Formula function reference].
+
+For an in-depth example of a scenario where a gating condition is useful and powerful, refer to xref:pinboard-gating-condition-example.adoc[].
+
+ThoughtSpot executes the gating condition as a ThoughtSpot admin user. If you are using passthrough security for your external data warehouse connection, the gating condition may not work.
 | Recipients | You are limited to 1000 recipients per job. You can add Users or groups to enter ThoughtSpot users or groups. Use Emails to add recipients that are not ThoughtSpot users. Your ThoughtSpot admin must set these email domains as allowed domains. Contact ThoughtSpot Support to add allowed domains.
 
 If you experience problems with sending email, your cluster may not have SMTP enabled. Contact your system administrator to resolve this issue.
