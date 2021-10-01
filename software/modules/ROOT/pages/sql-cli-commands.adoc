@@ -34,7 +34,7 @@ Use caution when modifying tables directly. If you change or remove a schema on 
 
 == View schemas and data
 [width="100%",options="header",cols="30%,70%"]
-|====================
+|===
 | Syntax  | Description
 a| `SHOW DATABASES` |  Lists all available databases.
 Examples:
@@ -100,7 +100,7 @@ You can use the following date functions:
 - `time`
 
 For example:
-```
+----
 SELECT TOP 10 "quantity" FROM "sales_fact";
 
 SELECT COUNT(*) FROM "vendor";
@@ -113,12 +113,12 @@ AND "amount" > 100 GROUP BY "vendor" ORDER BY "amount" DESC;
 
 SELECT "vendor", SUM("quantity") FROM "sales_fact"
 GROUP BY "vendor" LIMIT 10;
-```
-|====================
+----
+|===
 
 == Schema creation
 [width="100%",options="header",cols="30%,70%"]
-|====================
+|===
 | Syntax  | Description
 a| `CREATE DATABASE <database>` |  Creates a database. For example:
 
@@ -141,11 +141,11 @@ CREATE TABLE "sales_fact" ("saleid" int, "locationid" int, "vendorid" int,
 "quantity" int, "sale_amount" double, "fruitid" int,
 CONSTRAINT PRIMARY KEY("saleid")) PARTITION BY HASH(96) KEY ("saleid");`
 
-|====================
+|===
 
 == Schema modification
 [width="100%",options="header",cols="30%,70%"]
-|====================
+|===
 | Syntax  | Description
 a| `DROP DATABASE <database>` a|  Drops a database and all of its schemas and tables. For example:
 
@@ -207,12 +207,12 @@ a| `ALTER TABLE <table> MODIFY COLUMN <column>
 <new_data_type>;` a|  Changes the data type of a column. This can have implications on sharding and primary key behavior. See xref:about-data-type-conversion.adoc[About data type conversion]. For example:
 
 `ALTER TABLE fact100 MODIFY COLUMN product_id int;`
-|====================
+|===
 
 == Modify data
 
 [width="100%",options="header",cols="25%,75%"]
-|====================
+|===
 | Syntax | Description
 a| `INSERT INTO &lt;table&gt; VALUES ...` a| Inserts values into a table. Only use this for testing. Do not use `INSERT` on a production system. For example:
 
@@ -231,7 +231,7 @@ a| `DELETE FROM &lt;table&gt; [WHERE...]` a|Deletes rows from a table that match
 
 `DELETE FROM "vendor" WHERE "name" = 'Joey Smith' AND "vendorid" =
 '19463';`
-|====================
+|===
 
 == Constraints and relationships
 
@@ -242,7 +242,7 @@ the following constraints when creating a table with `CREATE TABLE`, or add them
 to an existing table using the `ADD CONSTRAINT` syntax:
 
 [width="100%",options="header",cols="25%,75%"]
-|====================
+|===
 | Syntax | Description
 a| PRIMARY KEY a| Designates a unique, non-null value as the primary key for a table. This can be one column or a combination of columns. If values are not unique, an upsert will be performed if a row includes a primary key that is already present in the data. Some examples:
 
@@ -281,7 +281,7 @@ Examples of this statement:
 "retail_sales"."date_sold" &lt; "wholesale_buys"."expire_date");`
 
 `ALTER TABLE "wholesale_buys" DROP RELATIONSHIP "REL_fruit";`
-|====================
+|===
 
 
 === Permitted joins and necessary permissions
@@ -295,7 +295,7 @@ include::partial$joins-matrix.adoc[]
 ThoughtSpot supports a simplified list of data types:
 
 [width="100%",options="header",cols="20%,20%,60%"]
-|====================
+|===
 | Syntax | Description | Examples
 | Character a| VARCHAR(_n_) | 	Specify the maximum number of characters, as in VARCHAR(255). The size limit is 64MB for VARCHAR values.
 | Floating point a| - DOUBLE
@@ -311,4 +311,4 @@ BIGINT holds 64 bits.
 - TIME |  DATETIME, TIMESTAMP, and TIME are stored at the granularity of seconds.
 
 TIMESTAMP is identical to DATETIME, but is included for syntax compatibility.
-|====================
+|===

@@ -36,12 +36,12 @@ Disable SELinux or run it in permissive mode>>
 
 Set up hosts for the ThoughtSpot cluster on Amazon Web Services.
 
-. Refer to xref:configuration-options.adoc[AWS configuration options] for the exact specification for the hosts:
+. Refer to xref:configuration-options-aws.adoc[AWS configuration options] for the exact specification for the hosts:
  ** CPU
  ** memory
  ** disks
-. Refer to xref:launch-an-instance.adoc[Set up AWS resources for ThoughtSpot] to create and launch your AWS virtual machines.
- ** Ensure that your xref:launch-an-instance.adoc#al2-ami[AMI] is an Amazon Linux 2 image.
+. Refer to xref:launch-an-instance-aws.adoc[Set up AWS resources for ThoughtSpot] to create and launch your AWS virtual machines.
+ ** Ensure that your xref:launch-an-instance-aws.adoc#prerequisites-ami[AMI] is an Amazon Linux 2 image.
 
 [#aws-ssm]
 == [Optional] Set up AWS Systems Manager Agent
@@ -73,17 +73,19 @@ As you create VMs, ensure that all ThoughtSpot hosts have the following partitio
 
 * *Python repository*: for Python, ensure the machine is able to reach the `PyPI` repository located at https://pypi.python.org/.
 
-* *R repository*: for R, ensure the machine is able to reach the `CRAN` repository located at link:cran.rstudio.com[cran.rstudio.com].
+* *R repository*: for R, ensure the machine is able to reach the `CRAN` repository located at link:c[cran.rstudio.com].
 
 Make sure that you can download Amazon Linux 2 packages to all hosts, either from the <<official-repositories,official package repositories>>, or from a <<mirror-repositories,mirror repository>> owned and managed by your organization.
 
 If you cannot access the Amazon Linux 2 repositories, there is no mirror repository in your organization, or you are unable to access Yum, Python, or R repositories, please xref:contact.adoc[contact ThoughtSpot Support].
 
+[#official-repositories]
 *Official package repositories*
 
 If the hosts of your ThoughtSpot cluster can access external repositories, either directly or through a proxy, your cluster is online.
 You can then proceed to download <<yum-repositories,Yum>>, <<python-repositories,Python>>, and <<r-repositories,R>> package repositories.
 
+[#mirror-repositories]
 *Internal mirror repository*
 
 If the hosts of your ThoughtSpot cluster have access to an internal repository that mirrors the public repositories, copy the <<yum-repositories,Yum>>, <<python-repositories,Python>>, and <<r-repositories,R>> package repositories to your hosts.
