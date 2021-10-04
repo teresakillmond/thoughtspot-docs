@@ -3,6 +3,7 @@
 :linkattrs:
 :experimental:
 :page-partial:
+:linkattrs:
 :page-aliases: /data-integrate/embrace/embrace-snowflake-add.adoc
 
 You can easily add a connection to a Snowflake database, enabling you to run live queries of an external database, create answers and pinboards.
@@ -19,6 +20,10 @@ image::redshift-addconnection.png[]
 image::snowflake-connectiontype.png[Add a Snowflake connection]
 
 . Enter the connection details for your Snowflake data source using either OAuth or service account authentication:
++
+ThoughtSpot supports https://docs.snowflake.com/en/user-guide/oauth-partner.html[Snowflake OAuth authentication, window=_blank], but not External OAuth.
++
+Before selecting OAuth authentication in ThoughtSpot, you must configure OAuth in Snowflake. For details, see xref:connections-snowflake-oauth.adoc[Configure OAuth for a Snowflake connection].
 +
 For OAuth authentication, do the following:
 
