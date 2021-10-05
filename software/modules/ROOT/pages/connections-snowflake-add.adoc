@@ -6,7 +6,20 @@
 :linkattrs:
 :page-aliases: /data-integrate/embrace/embrace-snowflake-add.adoc
 
+[.lead]
 You can easily add a connection to a Snowflake database, enabling you to run live queries of an external database, create answers and pinboards.
+
+== Prerequisites
+
+Before you add a Snowflake connection, ensure the default role of the account being used has been granted usage on the database and the schema, and select on the tables that will be added to the connection.
+
+Example:
+
+* Grant usage on database `<databasename>` to role `<rolename>`
+* Grant usage on schema `<databasename>`.`<schemaname>` to role `<rolename>`
+* Grant select on all tables in schema `<databasename>`.`<schemaname>` to role `<rolename>`
+
+== Connecting to Snowflake
 
 To add a new connection to Snowflake:
 
