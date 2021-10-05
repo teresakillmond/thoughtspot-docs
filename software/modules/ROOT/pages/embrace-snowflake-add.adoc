@@ -1,9 +1,21 @@
 = Add a Snowflake connection
 :last_updated: 1/29/2020
 
-Once ThoughtSpot Embrace is enabled, you can add a connection to a Snowflake database.
+[.lead]
+After you enable ThoughtSpot Embrace, you can add a connection to a Snowflake database.
 This allows you to perform a live query of the external database to create answers and pinboards, without having to bring the data into ThoughtSpot.
 
+== Prerequisites
+
+Before you add a Snowflake connection, ensure the default role of the account being used has been granted usage on the database and the schema, and select on the tables that will be added to the connection.
+
+Example:
+
+* Grant usage on database `<databasename>` to role `<rolename>`
+* Grant usage on schema `<databasename>`.`<schemaname>` to role `<rolename>`
+* Grant select on all tables in schema `<databasename>`.`<schemaname>` to role `<rolename>`
+
+== Adding a new connection to Snowflake
 To add a new connection to Snowflake:
 
 . Click *Data* in the top navigation bar.
