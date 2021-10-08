@@ -65,7 +65,16 @@ With table joins, you can accomplish the following tasks:
 Note that you must have an 'equals' clause before you can have a 'greater than/less than' clause. `Table1.date = Table2.date AND Table1.date > Table2.start_date AND Table1.date < Table2.end_date` is valid, but `Table1.date < Table2.end_date` is not.
 +
 Joins only appear in the table TML file of the source table in a join, or the table on the Many side of a Many to One join. You can only add and edit table joins from the TML file of the table on the Many side of the join.
-
++
+*Generic/ range join example*:
++
+----
+name: LO to Date Range Join
+    destination:
+    name: DATE
+    "on": "(([LINEORDER::Order Date] = [DATE::Datekey]) AND ([LINEORDER::Commit Date] < [DATE::Datekey]))"
+    type: INNER
+----
 
 - Edit existing joins by changing the name of the join and modifying it to your specifications. Changing the name of the join creates a new join; you must then delete the old join in the UI. Joins only appear in the table TML file of the source table in a join, or the table on the Many side of a Many to One join. You can only add and edit table joins from the TML file of the table on the Many side of the join.
 
