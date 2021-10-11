@@ -9,6 +9,7 @@ Collect security audit logs to monitor user activity in ThoughtSpot and increase
 ThoughtSpot Cloud provides security audit events related to account activities and user actions within ThoughtSpot. These events can help your SOC team detect potential security threats or compromised user accounts in your organization. These human-readable and comprehensive events can be shipped to your SIEM application in near real-time. Security events remain within the system for 30 days. To integrate with your SIEM or view these logs, xref:support-contact.adoc[contact ThoughtSpot Support].
 
 ThoughtSpot security events include the following information:
+
 - An event ID
 - A unique description of the event (e.g. “A user account was created”)
 - Timestamp (in UTC) yyyy/mm/dd:hh:mm:ss
@@ -20,61 +21,60 @@ ThoughtSpot security events include the following information:
 == Security events
 
 The possible events are:
-- <<logout-successful,logout-successful>>
-- <<create-rls-rule,create-rls-rule>>
-- <<delete-rls-rules,delete-rls-rules>>
-- <<login-failed,login-failed>>
-- <<failed-logout,failed-logout>>
-- <<user-groups-created,user-groups-created>>
-- <<user-groups-deleted,user-groups-deleted>>
-- <<user-group-modified,user-group-modified>>
-- <<principals-in-group-update,principals-in-group-update>>
-- <<account-locked,account-locked>>
-- <<object-modification,object-modification>>
-- <<object-sharing,object-sharing>>
-- <<update-password,password-update>>
-- <<privilege-changes,privilege-changes>>
-- <<users-modified,users-modified>>
-- <<login-successful,login-successful>>
-- <<update-rls-rule,update-rls-rule>>
-- <<users-created,user-account-creation>>
-- <<users-deleted,user-account-deletion>>
-- <<user-group-change,user-group-change>>
+
+- <<logout-successful,Account logout>>
+- <<create-answer,Answer creation>>
+- <<delete-answers,Answer deletion>>
+- <<update-answers,Answer update>>
+- <<login-failed,Failed login>>
+//- <<failed-logout,failed-logout>>
+- <<user-groups-created,Group creation>>
+- <<user-groups-deleted,Group deletion>>
+- <<user-group-modified,Group modification>>
+- <<principals-in-group-update,Group principals update>>
+- <<account-locked,Locked account>>
+- <<object-sharing,Object sharing>>
+- <<update-password,Password update>>
+- <<create-pinboard,Pinboard creation>>
+- <<delete-pinboards,Pinboard deletion>>
+- <<update-pinboards,Pinboard update>>
+- <<privilege-changes,Privilege changes>>
+- <<users-modified,Profile change>>
+- <<create-rls-rule,Row level security (RLS) rule creation>>
+- <<delete-rls-rules,RLS rule deletion>>
+- <<update-rls-rule,RLS rule modification>>
+- <<login-successful,Successful login>>
+- <<create-tables,Table creation>>
+- <<users-created,User account creation>>
+- <<users-deleted,User account deletion>>
+- <<user-group-change,User group change>>
 
 == Event descriptions
 
 ThoughtSpot defines these events as follows:
 
-
 [#logout-successful]
 Account logout::
 A user logs out from ThoughtSpot.
 
-[#answer-creation]
+[#create-answer]
 Answer creation::
 A user attempts to create a new answer.
 
-[#answer-update]
-Answer update::
-A user attempts to modify an existing answer.
-
-[#answer-deletion]
+[#delete-answers]
 Answer deletion::
 A user attempts to delete an answer.
 
-[#create-rls-rule]
-Row level security (RLS) rule creation::
-A user creates an RLS rule on a table.
+[#update-answers]
+Answer update::
+A user attempts to modify an existing answer.
 
-[#delete-rls-rules]
-RLS rule deletion::
-A user deletes an RLS rule on a table.
 
 [#login-failed]
 Failed login::
 A user fails to log in due to an incorrect password, or IdP/ADP deny the authentication request.
 
-// oct. cl release
+// 7.2 release
 ////
 [#failed-logout]
 Failed logout::
@@ -109,17 +109,17 @@ A user successfully or unsuccessfully attempts to share an object(Pinboard, Work
 Password update::
 A user successfully or unsuccessfully attempts to change their password.
 
-[#pinboard-creation]
+[#create-pinboard]
 Pinboard creation::
 A user attempts to create a new Pinboard.
 
-[#pinboard-update]
-Pinboard update::
-A user attempts to modify an existing Pinboard.
-
-[#pinboard-deletion]
+[#delete-pinboards]
 Pinboard deletion::
 A user attempts to delete a Pinboard.
+
+[#update-pinboards]
+Pinboard update::
+A user attempts to modify an existing Pinboard.
 
 [#privilege-changes]
 Privilege changes::
@@ -129,15 +129,23 @@ A user adds or removes one or several privileges from a group.
 Profile change::
 A user profile changes, either manually in the Admin Portal or over SAML sync.
 
-[#login-successful]
-Successful login::
- A local, IdP or AD user logs in to ThoughtSpot.
+[#create-rls-rule]
+Row level security (RLS) rule creation::
+A user creates an RLS rule on a table.
+
+[#delete-rls-rules]
+RLS rule deletion::
+A user deletes an RLS rule on a table.
 
 [#update-rls-rule]
- RLS rule update::
+ RLS rule modification::
  A user attempts to modify an RLS rule on a table.
 
-[#table-creation]
+[#login-successful]
+Successful login::
+A local, IdP or AD user logs in to ThoughtSpot.
+
+[#create-tables]
 Table creation::
 A user attempts to create a new table.
 
