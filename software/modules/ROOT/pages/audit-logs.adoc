@@ -33,7 +33,7 @@ The possible events are:
 - <<user-group-modified,Group modification>>
 - <<principals-in-group-update,Group principals update>>
 - <<account-locked,Locked account>>
-- <<object-sharing,Object sharing>>
+- <<share-objects,Object sharing>>
 - <<update-password,Password update>>
 - <<create-pinboard,Pinboard creation>>
 - <<delete-pinboards,Pinboard deletion>>
@@ -47,7 +47,7 @@ The possible events are:
 - <<create-tables,Table creation>>
 - <<users-created,User account creation>>
 - <<users-deleted,User account deletion>>
-- <<user-group-change,User group change>>
+//- <<user-group-change,User group change>>
 
 == Event descriptions
 
@@ -101,7 +101,7 @@ A user successfully or unsuccessfully attempts to add or remove users or groups 
 Locked account::
 A local user fails to authenticate _x_ times in a row, locking the account. Administrators can configure the number of authentication attempts before lockout within ThoughtSpot.
 
-[#object-sharing]
+[#share-objects]
 Object sharing::
 A user successfully or unsuccessfully attempts to share an object(Pinboard, Worksheet, Answer) with another user or group.
 
@@ -157,10 +157,11 @@ User account creation::
 User account deletion::
  A user account is deleted, either manually in the Admin Portal or through the internal API.
 
+////
 [#user-group-change]
 User group change::
  A successful or unsuccessful attempt to change the user list to a group by adding or removing members.
-
+////
 
 
 ////
