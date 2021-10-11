@@ -116,6 +116,38 @@ Refer to xref:rhel-install-online.adoc[] and xref:rhel-install-offline.adoc[].
 SAML configuration::
 When configuring SAML authentication for ThoughtSpot, you can now optionally map the display name subject value in the IDP metadata file to `displayName`. This ensures that your users' display names in SAML match their display names in ThoughtSpot. For more information, refer to xref:saml.adoc[].
 
+[#security-logs]
+Security log collection::
+This release of ThoughtSpot Cloud enables your security team to collect security audit events based on user activity and ship them to your SIEM application in real-time. You can view logs for the following events:
+
+- Account logout
+- Answer creation
+- Answer deletion
+- Answer update
+- Failed login
+- Group creation
+- Group deletion
+- Group modification
+- Group principals update
+- Locked account
+- Object sharing
+- Password update
+- Pinboard creation
+- Pinboard deletion
+- Pinboard update
+- Privilege changes
+- Profile change
+- Row level security (RLS) rule creation
+- RLS rule deletion
+- RLS rule modification
+- Successful login
+- Table creation
+- User account creation
+- User account deletion
+- User group change
+
+For further details, see xref:audit-logs.adoc[Collect security logs].
+
 [#ui-improvement]
 UI improvement for Admin Console::
 This release improves the UI and user experience of the xref:admin-portal-nas-mount-configure.adoc[NAS mount], xref:admin-portal-reverse-ssh-tunnel.adoc[Reverse SSH tunnel], xref:admin-portal-smtp-configure.adoc[SMTP], xref:admin-portal-snapshot-manage.adoc[Snapshot], xref:admin-portal-available-update.adoc[Upgrade], xref:admin-portal-scheduled-maintenance.adoc[Scheduled maintenance], and xref:admin-portal-ssl-configure.adoc[SSL] sections of the Admin Console.
