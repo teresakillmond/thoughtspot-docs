@@ -74,20 +74,33 @@ Replace `nodeIP` with your specific network information.
 
 [#upgrade-step-2]
 === Step 2: Download the release
-Use `tscli fileserver download-release` to download the release bundle.
-
+. Use `tscli fileserver download-release` to download the release bundle.
++
 You must xref:tscli-command-ref.adoc#tscli-fileserver[configure the fileserver] by running `tscli fileserver configure` before you can download the release.
-
++
 [source,bash]
 ----
 $ tscli fileserver download-release <release-number> --user <username> --out <release-location>
 ----
-
++
 Note the following parameters:
-
++
 `release-number`:: is the release number of your ThoughtSpot instance, such as 5.3, 5.3.1, 6.0, and so on.
 `username`:: is the username for the fileserver that you set up earlier, when configuring the fileserver.
 `release-location`:: is the location path of the release bundle on your local machine. For example, `/export/sdb1/TS_TASKS/install/6.0.tar.gz`.
+
+. Copy the downloaded release bundle to `/export/sdb1/TS_TASKS/install`. Run `scp <release-number>.tar.gz admin@<hostname>:/export/sdb1/TS_TASKS/install/<file-name>`.
++
+[source,bash]
+----
+$ scp <release-number>.tar.gz admin@<hostname>:/export/sdb1/TS_TASKS/install/<file-name>
+----
++
+Note the following parameters:
++
+`release-number`:: is the release number of your ThoughtSpot instance, such as 5.3, 5.3.1, 6.0, and so on.
+`hostname`:: is your specific hostname.
+`file-name`:: is the name of the tarball file on your local machine.
 
 NOTE: You can use another secure copy method, if you prefer a method other than the `scp` command.
 
