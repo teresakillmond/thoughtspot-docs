@@ -89,7 +89,17 @@ Note the following parameters:
 `username`:: is the username for the fileserver that you set up earlier, when configuring the fileserver.
 `release-location`:: is the location path of the release bundle on your local machine. For example, `/export/sdb1/TS_TASKS/install/6.0.tar.gz`.
 
-. Copy the downloaded release bundle to `/export/sdb1/TS_TASKS/install`. Run `scp <release-number>.tar.gz admin@<hostname>:/export/sdb1/TS_TASKS/install/<file-name>`.
+. Copy the downloaded release bundle to a specific path in the `/export` folder.
++
+You must copy the bundle to a different path in the `/export` folder, depending on your deployment platform:
++
+--
+SMC, Dell, VMware, and GCP:: `/export/sdb1/TS_SRE_TASKS`
+AWS:: `/export/xvdb1/TS_SRE_TASKS`
+Azure:: `/export/sdc1/TS_SRE_TASKS`
+--
++
+Run `scp <release-number>.tar.gz admin@<hostname>:/export/sdb1/TS_TASKS/install/<file-name>`.
 +
 [source,bash]
 ----
