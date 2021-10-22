@@ -122,11 +122,7 @@ a| <<phrase,phrase>>
 
 <<range,range>>
 
-<<rls_rules,rls_rules>>
-
 <<rule,rule>>
-
-<<rules,rules>>
 
 <<schema,schema>>
 
@@ -318,7 +314,7 @@ excluded_visualizations::
 
 [#expr]
 expr::
-  The definition of the formula or row level security (RLS) rule. For RLS rules, the syntax for variables in TML should be the same as the syntax of the variables in the rule on the table.
+  The definition of the formula.
 
 [#filters]
 filters::
@@ -530,7 +526,7 @@ min::
 [#name]
 name::
   The name of an object.
-Applies to `worksheet`, `table`,`joins`, `formula`, `rls_rules`, `answer`, `pinboard`, `view`, `table`, `connection`, `destination`, and so on.
+Applies to `worksheet`, `table`,`joins`, `formula`, `answer`, `pinboard`, `view`, `table`, `connection`, `destination`, and so on.
 +
 For Answers, `name` refers to how the column appears in the query.
 For example, if you sorted by `Quarter` in your search, from the `Commit Date` column, the `name` of the column is `Quarter(Commit Date)`.
@@ -578,17 +574,9 @@ This is the 'fill chart' option in the UI.
 range::
   Range for the conditional formatting to apply to, with a specified `min` and `max`.
 
-[#rls_rules]
-rls_rules::
-A container for the full definition of xref:security-rls-concept.adoc[row level security] rules for the table.
-
 [#rule]
 rule::
 A conditional formatting rule.
-
-[#rules]
-rules::
-A container for the names and expressions of xref:security-rls-concept.adoc[row level security] rules for the table.
 
 [#schema]
 schema::
@@ -648,7 +636,7 @@ Each table path is identified by the `id`, and additional attributes of `table` 
 
 [#tables]
 tables::
-  List of tables used by the Worksheet, Answer, or table RLS rule.
+  List of tables used by the Worksheet or Answer.
 +
 Each table is identified by `name`.
 
