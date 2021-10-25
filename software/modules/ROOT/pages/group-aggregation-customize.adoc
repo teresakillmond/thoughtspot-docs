@@ -1,0 +1,152 @@
+= Customizing your aggregation
+:last-updated: 10/12/2021
+:experimental:
+:linkattrs: 
+
+////
+== Intro
+Click link:{attachmentsdir}/Meetings_tiny.csv[here] to download this data set.
+////
+
+The previous examples used an intentionally simple inner aggregation of sum(hours) so that we could focus on the overall behavior of group_aggregate. For example, we saw the following formula:
+
+[source]
+----
+Average hours per activity class = average(group_aggregate(sum(hours), query_groups() + {activity class}, {}))
+----
+
+This sums hours to the level of detail specified by the search bar + activity class, and then aggregates up to the search bar level of detail by averaging the sums that were calculated at the search bar + activity class level of detail.
+
+[#example-6]
+== Aggregating with a 'greater than' clause
+
+What if we only wanted to look at hours for activity classes that surpassed some minimum bar. For example, suppose we only want to consider activity classes where the sum of hours is greater than 5? In that case we could create a formula like this:
+
+[source]
+----
+hours per activity class where hours > 5 =
+ average(group_aggregate(if (sum(hours) > 5) then sum(hours) else 0, query_groups() + {activity class }, {}))
+----
+
+Now, instead of summing the hours, we are summing hours only when the sum of the hours is greater than 5.
+
+In the search below, we can see that activity class hours above 5 shows zero hours for the cases where total hours is less than or equal to 5.
+
+Search for: `account`    `activity class`   `hours`   `activity class hours above 5`   `sort by account`
+
+[#example-6-1]
+.Example 6.1
+[options=”header”]
+|===
+| Account | Activity class | Total Hours | Activity class hours above 5
+
+| Amazon | meeting | 11 | 11
+
+| Oracle | meeting | 18 | 18
+
+| Redshift | meeting | 5 | 0
+
+| Redshift | call | 1 | 0
+
+| Snowflake | meeting | 2 | 0
+
+| Snowflake | call | 6 | 0
+|===
+
+Notice in the above formula that the calculation takes place within the group aggregate.
+
+A common mistake that customers make is to create an aggregate calculation and then attempt to aggregate on top of that. For example, the following will not work: +
+----
+hours by activity class = sum(group_aggregate(sum(hours), query_groups() + {activity class}, {}))
+bad_formula = If (sum(hours by activity class) > 5) then hours by activity class else 0
+----
+
+In the second line, sum is an aggregation function. It attempts to aggregate the column specified in its argument (in this case, hours by activity class) to the level of the search. But the column specified is the result of a group-aggregate, so it is already aggregated to the level of detail of the search. If you try to do this, you will find that you cannot create bad_formula because when you type “sum”, it will not accept hours by activity class as an argument.
+
+Note that this doesn’t work whether or not you have the outer aggregation supplied in the hours by activity class formula. If it is supplied, as shown above, hours by activity class is already aggregated to the level of detail specified by the search.
+
+Similarly, it does not make sense to do this:
+----
+hours by activity class = sum(group_aggregate(sum(hours), query_groups() + {activity class}, {}))
+
+bad_formula = sum(if (hours by activity class > 5) then hours by activity class else 0)
+----
+
+Although the argument to sum can be an expression, it must be an expression that is computed from a column that can be aggregated, and in this case hours by activity class is already aggregated to the level of the search and cannot be aggregated. Again, you will not be able to create bad_formula as the syntax won’t be accepted.
+
+A rule of thumb is to always do your calculation as the first argument inside the group_aggregate function.
+
+== Aggregating using 'else'
+
+In this example, we want to only include events in our calculation where the event time is greater than two hours. We use the \{ID} to specify that we want our level of detail to be the finest level of detail possible, the event.
+
+[source]
+----
+event hours > 2 hours = sum(group_aggregate(if (sum(hours) - 2 > 0) then sum(hours) - 2 else 0, query_groups() + {id}, {}))
+----
+
+This formula calculates an “adjusted” time for each event by subtracting two hours. If the event has less than two hours of time, the event hours are set to 0. We can use this in the search bar in a variety of ways.
+
+Search: `account`    `id`   `hours`       `event hours > 2 hours`   `sort by account sort by id`
+
+[#example-6-2-1]
+.Example 6.2.1
+[options=”header”]
+|===
+| Account | ID | Total Hours | Event hours > 2  hours
+
+| Amazon | 10 | 2 | 0
+
+| Amazon | 11 | 3 | 1
+
+| Amazon | 8 | 5 | 3
+
+| Amazon | 9 | 1 | 0
+
+| Oracle | 12 | 5 | 3
+
+| Oracle | 13 | 6 | 4
+
+| Oracle | 14 | 7 | 5
+
+| Redshift | 5 | 4 | 2
+
+| Redshift | 6 | 1 | 0
+
+| Redshift | 7 | 1 | 0
+
+| Snowflake | 1 | 2 | 0
+
+| Snowflake | 2 | 1 | 0
+
+| Snowflake | 3 | 3 | 1
+
+| Snowflake | 4 | 1 | 0
+|===
+
+
+Here’s another search which aggregates up to the account level using the same formula.
+
+Search for: `account`   `hours`   `event hours > 2 hours`    `sort by account`
+
+[#example-6-2-2]
+.Example 6.2.2
+[options=”header”]
+|===
+| Account | Total hours | Event hours > 2 hours
+
+| Amazon | 11 | 4
+
+| Oracle | 18 | 12
+
+| Redshift | 3 | 2
+
+| Snowflake | 3.5 | 1
+|===
+
+
+Note that Amazon has a total of four event hours, which reflects the sum of hours for all Amazon events, discounting the first two hours of any event.
+
+In general, at this time, it is not possible to do nested group_aggregate functions and it is not possible to nest a group_aggregate in another aggregation function.
+
+There are business use cases where this makes sense - for example, if the inner aggregation specifies a particular level of detail (does not use query_groups() +) and the outer aggregation then aggregates to the search level of detail or to another specified level of aggregation. However, this is not supported by ThoughtSpot’s formula language at this time.
