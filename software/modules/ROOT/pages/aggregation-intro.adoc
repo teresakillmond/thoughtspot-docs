@@ -1,22 +1,22 @@
-= ThoughtSpot Aggregation Formulas - User Guide
+= ThoughtSpot aggregation formulas - user guide
 :last-updated: 10/12/2021
 :experimental:
-:linkattrs: 
+:linkattrs:
 
 == Introduction
 
-Aggregation is core to the process of finding insights in your data. It allows you to organize your data at a level of detail that is appropriate for your business needs. For example, when looking at a spreadsheet that contains all sales for your company, it is difficult to glean any useful information. Once you aggregate sales to sales-person or region level of detail, interesting insights emerge.
+Aggregation is core to the process of finding insights in your data. It allows you to organize your data at a level of detail that is appropriate for your business needs. For example, when looking at a spreadsheet that contains all sales data for your company, it is difficult to glean any useful information. Once you aggregate sales to sales-person or region level of detail, interesting insights emerge.
 
-When ThoughtSpot aggregates your measures, it uses the aggregation specified in the Worksheet by default. However, as you dive into your data, you will want to create formulas that are targeted to your own business use cases.
+When ThoughtSpot aggregates your measures, it uses the aggregation specified in the worksheet by default. However, as you dive into your data, you will want to create formulas that are targeted to your own business use cases.
 
 ThoughtSpot provides a robust set of aggregation functions that you can use to customize your aggregations. These are grouped into three categories:
 
 [#basic-aggregation]
-== Basic Aggregation
+== Basic aggregation
 
 Basic aggregation functions aggregate a column to the level of detail specified by the search.
 
-For example, when you specify that you want to show “average” revenue, that average will be computed at whatever level of aggregation is specified in your search. This might be month, region, or even no aggregation at all, in which case average revenue for your whole table would be computed.
+For example, when you specify that you want to show “average” revenue, that average is computed at whatever level of aggregation you specify in your search. This might be month, region, or even no aggregation at all, in which case your results will show the average revenue for your whole table.
 
 The basic aggregation functions are::
 - average(), average_if()
@@ -32,7 +32,7 @@ The basic aggregation functions are::
 
 
 [#table-aggregation]
-== Table Aggregation
+== Table aggregation
 
 Table aggregation functions perform calculations on the data that results from your search. These functions look across multiple rows of data in your table to compute a new value.
 
@@ -53,7 +53,7 @@ The table aggregate functions are::
 
 
 [#group-aggregation]
-== Group Aggregation
+== Group aggregation
 
 These functions aggregate to a specific level of detail that may differ from the level of detail specified by your search.
 
@@ -76,3 +76,4 @@ NOTE: In the above documentation and in the documentation that follows, all refe
 > Related information:
 >
 > * xref:formulas-aggregation-group.adoc[]
+> * xref:group-aggregation-intro.adoc[]

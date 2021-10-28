@@ -1,27 +1,27 @@
 = Filters in group_aggregate()
-:last-updated: 10/12/2021
+:last-updated: 10/22/2021
 :experimental:
-:linkattrs: 
+:linkattrs:
 
-////
-== Intro
-Click link:{attachmentsdir}/Meetings_tiny.csv[here] to download this data set.
-////
+In this article, we will walk through examples of group aggregation using filters. To test for yourself, use the data set provided in <<prerequisites,the prerequisite>>.
+
+[#prerequisites]
+include::partial$group-aggregate-prerequisite.adoc[]
 
 Now let’s see what happens when you use filters in your search. The last argument of group_aggregate() allows you to specify whether the filter from the search should be applied in the formula.
 
 [#example-4]
-== Adding filters through the Search bar
+== Adding filters through the search bar
 
-In this example, we’ll apply a filter in the search bar that filters for activity class = “call”.
+In this example, we’ll apply a filter in the search bar that filters for `activity classification = “call”`.
 
-First, let’s look at what our table looks like with no filter. This is created by the following search.
+1. First, let’s look at what our table looks like with no filter. This is created by the following search:
 
-Search for: `account`  `activity class`   `hours`   `sort by account`
-
+.. Search for: `account`  `activity classification`   `hours`   `sort by account`.
++
 [options=”header”]
 |===
-| Account | Activity Class | Total Hours
+| Account | Activity Classification | Total Hours
 
 | Amazon | meeting | 11
 
@@ -36,10 +36,12 @@ Search for: `account`  `activity class`   `hours`   `sort by account`
 | Snowflake | call | 5
 |===
 
-Now let’s add a filter for `activity class = “call”`.
+2. Now let’s add a filter for `activity classification = “call”`.
 
-Search for: `account`    `activity class`   `hours`   `activity class = call`    `sort by account`
+.. Search for: `account`    `activity classification`   `hours`   `activity classification = call`    `sort by account`.
 
+.. The following table results:
++
 [options=”header”]
 |===
 | Account | Activity Class | Total Hours
@@ -50,47 +52,62 @@ Search for: `account`    `activity class`   `hours`   `activity class = call`   
 |===
 
 
-Finally, let’s add a formula that aggregates hours to the account level of detail:
-
-*Formula*: +
+3. Finally, let’s add a formula that aggregates hours to the account level of detail.
+.. Click the **more options** icon image:icon-more-10px.png[] and select *Create formula*.
+.. In the formula pop-up window, name your formula. Here, we have named the formula *hours per account*.
+.. Enter the following formula and click *Save*: +
 [source]
 ----
-hours per account =average(group_aggregate(sum(hours), {account}, {}))
+average(
+  group_aggregate(
+    sum(hours),
+    {account},
+    {}
+    )
+  )
 ----
 
-And let’s add that formula to our search bar,
+4. Finally, add that formula to our search bar.
 
-Search for: `account` `activity class`  `hours`  `hours per account`   `activity class = call`  `sort by account`
+.. Search for: `account` `activity classification`  `hours`  `hours per account`   `activity class = call`  `sort by account`.
 
+.. The following table results:
++
 [#example-4-1-1]
 .Table 4.1.1
 [options=”header”]
 |===
-| Account | Activity Class | Total Hours | Hours per account
+| Account | Activity Classification | Total Hours | Hours per account
 
 | Redshift | call | 1 | 6.00
 
 | Snowflake | call | 5 | 7.00
 |===
 
-
 This gives us a result which filters our rows to only rows that include “call”, but note that `Hours per account` does not match `Total Hours`. This is because `Hours per account` is aggregated without the filter, because the last argument of group_aggregate is {}.
 
-If you want your formula to take into account the filters specified in the search, you can use the query_filters() argument like this:
+If you want your formula to take into account the filters specified in the search, you can use the query_filters() argument.
 
-*Formula*: +
+8. Select *Formulas* from the left sidebar and click the *edit icon* next to "hours per account".
+9. In the formula window, enter the following formula and click *Save*:
 [source]
 ----
-hours per account =average(group_aggregate(sum(hours), {account}, query_filters()))
+average(
+  group_aggregate(
+    sum(hours),
+    {account},
+    query_filters()
+    )
+  )
 ----
 
 Now your resulting table will look like this:
-
++
 [#example-4-1-2]
 .Table 4.1.2
 [options=”header”]
 |===
-| Account | Activity Class | Total Hours | Hours per account
+| Account | Activity Classification | Total Hours | Hours per account
 
 | Redshift | call | 1 | 1.00
 
@@ -99,25 +116,33 @@ Now your resulting table will look like this:
 
 == Adding filters to your formula
 
-You can also include filters in your group_aggregate formula which are not in the search bar. For example, if you want your formula to explicitly filter for activity class = “call”, regardless of what is in the search bar, you could create it like this:
+You can also include filters in your group_aggregate formula which are not in the search bar.
 
-*Formula*: +
+For example, create the following formula if you want your formula to explicitly filter for `activity class = “call”`, regardless of what is in the search bar:
+
+*Hours per account*: +
 [source]
 ----
-hours per account =average(group_aggregate(sum(hours), {account}, activity class = “call”))
+average(
+  group_aggregate(
+    sum(hours),
+    {account},
+    activity class = “call”
+    )
+  )
 ----
 
 If you now perform the following search:
 
-Search for: `account`   `activity class`  `hours`   `hours per account`   `sort by account`   `sort by activity class`
+Search for: `account`   `activity classification`  `hours`   `hours per account`   `sort by account`   `sort by activity classification`
 
-You’ll get a table where Hours per account results in values that are filtered by “call”, even though the table itself contains rows for both calls and meetings.
+You’ll get a table where `Hours per account` results in values that are filtered by “call”, even though the table itself contains rows for both calls and meetings.
 
 [#example-4-2]
 .Example 4.2
 [options=”header”]
 |===
-| Account | Activity Class  | Total Hours | Hours per account
+| Account | Activity Classification  | Total Hours | Hours per account
 
 | Amazon | meeting | 11 | \{null}
 
@@ -134,23 +159,31 @@ You’ll get a table where Hours per account results in values that are filtered
 
 == Using multiple filters
 
-You can put multiple filters in the filters argument of the group_aggregate function. For example, if you want to filter on both activity class and activity date, you could create a group_aggregate function that looks like this:
+You can put multiple filters in the filters argument of the group_aggregate function. For example, use the following formula if you want to filter on both activity class and activity date:
 
-*Formula*: +
+*Hours per account*: +
 [source]
 ----
-hours per account =average(group_aggregate(sum(hours), {account}, activity class = “call”, activity date >= 04/01/2020 and activity date <= 04/14/2020))
+average(
+  group_aggregate(
+    sum(hours),
+    {account},
+    {activity classification = “call”,
+    activity date >= 04/01/2020 and activity date <= 04/14/2020
+    }
+    )
+  )
 ----
 
-In the above example, the activity class and activity date filters will be added in an `and` condition together.
+In the above example, the activity classification and activity date filters will be added in an `and` condition together.
 
-Search for: `account`   `activity class`  `hours`  `hours per account`    `sort by account`  `sort by activity class`
+Search for: `account`   `activity classification`  `hours`  `hours per account`    `sort by account`  `sort by activity classification`
 
 [#example-4-3]
 .Example 4.3
 [options=”header”]
 |===
-| Account | Activity Class | Total Hours | Hours per account
+| Account | Activity Classification | Total Hours | Hours per account
 
 | Amazon | meeting | 11 | \{null}
 
@@ -166,10 +199,19 @@ Search for: `account`   `activity class`  `hours`  `hours per account`    `sort 
 |===
 
 
-You can also use AND, OR, and parens, as shown below to flexibly combine filters:
+You can also use AND, OR, and parens, to flexibly combine filters:
 
-*Formula*: +
+*Hours per account*: +
 [source]
 ----
-hours per account =average(group_aggregate(sum(hours), {account}, activity class = “call” or (activity date >= 04/01/2020 and activity date <= 04/14/2020)))
+average(
+  group_aggregate(
+    sum(hours),
+    {account},
+    {activity classification = “call” or (
+      activity date >= 04/01/2020 and activity date <= 04/14/2020
+      )
+     }
+    )
+  )
 ----

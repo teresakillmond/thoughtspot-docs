@@ -1,30 +1,38 @@
 = Basic use of group aggregation
-:last-updated: 10/12/2021
+:last-updated: 10/22/2021
 :experimental:
-:linkattrs: 
+:linkattrs:
 
-////
-== Intro
-Click link:{attachmentsdir}/Meetings_tiny.csv[here] to download this data set.
-////
+In this article, we will walk through examples of basic aggregation. To test for yourself, use the data set provided in <<prerequisites,the prerequisite>>.
+
+[#prerequisites]
+include::partial$group-aggregate-prerequisite.adoc[]
 
 [#example-1]
-== Basic aggregation example (aggregating hours per account)
+== Basic aggregation: Aggregate the sum of hours at _account_ level of detail
 
 The formula below aggregates sum(hours) at the account level. If the search level of detail is coarser than account, it “aggregates up” by averaging the aggregation at the account level.
 
-*Formula*: +
+1. Begin your search, using _Meetings_tiny.csv_ as your data source.
+2. Enter `hours``account` in the search bar and click *Go*.
+3. Click the **more options** icon image:icon-more-10px.png[] and select *Create formula*.
+4. In the formula pop-up window, name your formula. Here, we have named the formula *hours per account*.
+5. Enter the following formula and click *Save*: +
 [source]
 ----
-hours per account =average(group_aggregate(sum(hours), {account}, {}))
+average(
+  group_aggregate(
+    sum(hours),
+    {account},
+    {}
+    )
+  )
 ----
 
-Below, we show a search using this formula:
+7. In the search bar, enter the following terms: `account`  `hours`  `hours per account` `sort by account`.
 
-Search for: `account`  `hours`  `hours per account` `sort by account`
-
-This example shows that the search level aggregation of hours (Total hours) is the same as the aggregation specified by our formula, hours per account. This makes sense because they are both aggregating to the account level.
-
+8. The resulting table shows that the search level aggregation of hours (Total hours) is the same as the aggregation specified by our formula, hours per account. This makes sense because they are both aggregating to the account level.
++
 [#example-1-1]
 .Example 1.1
 [cols=”50%,25%,25%”,options=”header”]
@@ -39,21 +47,11 @@ This example shows that the search level aggregation of hours (Total hours) is t
 
 == Aggregation with unspecified level of detail in search
 
-Let’s use the same formula shown in the previous example, but this time our search will not specify any level of detail at all.
+Using the same formula shown in the previous example, let's see what changes when our search does not specify any level of detail:
 
-*Formula*: +
-[source]
-----
-hours per account =average(group_aggregate(sum(hours), {account}, {}))
-----
+1. Search for: `hours`  `hours per account`.
 
-Search for: `hours`  `hours per account`
-
-In this example, no dimension is specified in the search bar, so the search level of detail is the whole table. In other words, our search is at the coarsest level of detail while the formula is specifying an aggregation at a finer level of detail (the account level of detail). The first column of the table below displays the aggregation of all hours to the table (coarsest) level.
-
-The second column, which is the result of our formula, is computed as follows:
-First, aggregate using the inner_aggregation function (sum) to the account level of detail, which gives results like those shown in <<example-1-1,example 1.1>> (values as 7, 6, 11, and 18 for the account level hours).
-Then, aggregate to the coarser search level of detail by using the outer aggregation function, which is Average. That average gives us (7 + 6 + 11 + 18)/4 which results in the 10.5 value shown below.
+2. The following table results:
 
 [#example-1-2]
 .Example 1.2
@@ -63,28 +61,28 @@ Then, aggregate to the coarser search level of detail by using the outer aggrega
 | 42 | 10.5
 |===
 
+In this example, no dimension is specified in the search bar, so the search level of detail is the whole table. In other words, our search is at the coarsest level of detail while the formula is specifying an aggregation at a finer level of detail (the account level of detail). The first column of the table above displays the aggregation of all hours to the table (coarsest) level.
+
+The second column, which is the result of our formula, is computed as follows:
+* First, aggregate using the inner_aggregation function (sum) to the account level of detail, which gives results like those shown in <<example-1-1,example 1.1>> (values as 7, 6, 11, and 18 for the account level hours).
+* Then, aggregate to the coarser search level of detail by using the outer aggregation function, which is Average. That average gives us (7 + 6 + 11 + 18)/4 which results in the 10.5 value shown above.
+
+
 
 == Aggregating when search level of detail is finer than formula
 
-In this example, we’ll again use the same formula:
+In this example, we’ll again use the same formula. This time, we’ll use a search that specifies a level of detail that is finer than the account level.
 
-*Formula*: +
-[source]
-----
-hours per account =average(group_aggregate(sum(hours), {account}, {}))
-----
-
-But this time we’ll use a search that specifies a level of detail that is finer than the account level.
-
-Search for: `account` `activity class`  `hours`  `hours per account`  `sort by account`
-
-Activity class is a finer level of detail because there are multiple activity classes for each account. In this case, our formula aggregates to the account level and then “copies down” or “replicates” to the finer level of detail. The resulting table looks like this:
+1. Search for: `account` `activity class`  `hours`  `hours per account`  `sort by account`.
++
+Activity class is a finer level of detail because there are multiple activity classes for each account. In this case, our formula aggregates to the account level and then “copies down” or “replicates” to the finer level of detail.
+2. The resulting table looks like this:
 
 [#example-1-3]
 .Example 1.3
 [cols=”25%,25%,25%,25%”,options=”header”]
 |===
-| Account | Activity Class | Total hours | Total hours per account
+| Account | Activity classification | Total hours | Total hours per account
 
 | Amazon | meeting | 11 | 11
 
@@ -101,27 +99,36 @@ Activity class is a finer level of detail because there are multiple activity cl
 
 == Aggregating with multiple levels of detail in your formula
 
-If we want to specify multiple levels of detail within the formula, we can do that by using a comma-separated list of dimensions. Our small data set makes coming up with a “useful” example difficult so this is a bit contrived, but will still show how this works.
+If we want to specify multiple levels of detail within the formula, we can do that by using a comma-separated list of dimensions. Our small data set makes coming up with a “useful” example difficult, but it will still show how this works.
 
 In the example below our inner aggregation aggregates to the account and activity classification level of detail.
 
-*Formula*: +
+1. Enter `hours``account` in the search bar and click *Go*.
+3. Click the **more options** icon image:icon-more-10px.png[] and select *Create formula*.
+4. In the formula pop-up window, name your formula. Here, we have named the formula *average of average by account and activity class*.
+5. Enter the following formula and click *Save*: +
 [source]
 ----
-average of average by account and activity class =average(group_aggregate(average(hours), {account, activity classification}, {}))
+average(
+  group_aggregate(
+    average(hours),
+    {account, activity classification},
+    {}
+    )
+  )
 ----
 
-When the Search specifies `account` and `activity classification` as the level of detail, this formula generates the same values as those generated by the simple average hours aggregation.  You can see this with the following search:
+.. When the Search specifies `account` and `activity classification` as the level of detail, this formula generates the same values as those generated by the simple average hours aggregation. You can see this with the following search:
 
-Search for: `account` `activity class`    `average hours`  `average of average by account and activity class sort by account`    `sort by activity class`
-
+... Search for: `account` `activity class`    `average hours`  `average of average by account and activity class sort by account`    `sort by activity class`
++
 The resulting table looks like this:
-
++
 [#example-1-4-supplement]
 .Example 1.4 - Supporting
 [cols=”10%,15%,25%,50%”,options=”header”]
 |===
-| Account | Activity Class  | Average Hours | Average of average by account and activity class
+| Account | Activity Classification | Average Hours | Average of average by account and activity class
 
 | Amazon | meeting | 2.75 | 2.75
 
@@ -136,13 +143,13 @@ The resulting table looks like this:
 | Snowflake | meeting | 2 | 2
 |===
 
-If we aggregate to the table level by removing account and activity classification from the search:
+.. If we aggregate to the table level by removing account and activity classification from the search:
 
-Search for: `average of average by account and activity class`
+... Search for: `average of average by account and activity class`
 
 Our formula will “aggregate” up resulting in a table with a single value that represents the average of the above values. If we put both average hours and our formula in this table level table, we can see that they result in different values.
 
-Search for: `average of average by account and activity class`    `average hours`
+... Search for: `average of average by account and activity class`    `average hours`
 
 [#example-1-4]
 .Example 1.4
@@ -153,7 +160,6 @@ Search for: `average of average by account and activity class`    `average hours
 | 2.65 | 3
 |===
 
-
 This is because our formula adds the six values that represent the average hours by account and activity class  and then divides by six, while “average hours” sums the hours value from each of the 14 lines in the original table, and then divides by 14.
 
 There are many business use cases that require very specific aggregation like this; understanding the subtleties of level of detail calculations and how to implement them with group_aggregate is key to being successful at implementing these more complex aggregations.
@@ -163,4 +169,4 @@ For more examples of aggregation, see xref:group-aggregation-querygroups.adoc[Us
 > Related information:
 >
 > * xref:aggregation-intro.adoc[]
-> * xref:group-aggregation-intro.adoc[]]
+> * xref:group-aggregation-intro.adoc[]

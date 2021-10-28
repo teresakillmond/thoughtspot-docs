@@ -1,7 +1,7 @@
 = Customizing your aggregation
-:last-updated: 10/12/2021
+:last-updated: 10/22/2021
 :experimental:
-:linkattrs: 
+:linkattrs:
 
 ////
 == Intro
@@ -12,7 +12,14 @@ The previous examples used an intentionally simple inner aggregation of sum(hour
 
 [source]
 ----
-Average hours per activity class = average(group_aggregate(sum(hours), query_groups() + {activity class}, {}))
+Average hours per activity class =
+average(
+  group_aggregate(
+    sum(hours),
+    query_groups() + {activity class},
+    {}
+    )
+  )
 ----
 
 This sums hours to the level of detail specified by the search bar + activity class, and then aggregates up to the search bar level of detail by averaging the sums that were calculated at the search bar + activity class level of detail.
@@ -25,7 +32,13 @@ What if we only wanted to look at hours for activity classes that surpassed some
 [source]
 ----
 hours per activity class where hours > 5 =
- average(group_aggregate(if (sum(hours) > 5) then sum(hours) else 0, query_groups() + {activity class }, {}))
+ average(
+   group_aggregate(
+     if (sum(hours) > 5) then sum(hours) else 0,
+     query_groups() + {activity class},
+     {}
+     )
+   )
 ----
 
 Now, instead of summing the hours, we are summing hours only when the sum of the hours is greater than 5.
@@ -57,7 +70,16 @@ Notice in the above formula that the calculation takes place within the group ag
 
 A common mistake that customers make is to create an aggregate calculation and then attempt to aggregate on top of that. For example, the following will not work: +
 ----
-hours by activity class = sum(group_aggregate(sum(hours), query_groups() + {activity class}, {}))
+hours by activity class =
+sum(
+  group_aggregate(
+    sum(hours),
+    query_groups() + {activity class},
+    {}
+    )
+  )
+
+
 bad_formula = If (sum(hours by activity class) > 5) then hours by activity class else 0
 ----
 
@@ -67,7 +89,14 @@ Note that this doesn’t work whether or not you have the outer aggregation supp
 
 Similarly, it does not make sense to do this:
 ----
-hours by activity class = sum(group_aggregate(sum(hours), query_groups() + {activity class}, {}))
+hours by activity class =
+sum(
+  group_aggregate(
+    sum(hours),
+    query_groups() + {activity class},
+    {}
+    )
+  )
 
 bad_formula = sum(if (hours by activity class > 5) then hours by activity class else 0)
 ----
@@ -82,7 +111,14 @@ In this example, we want to only include events in our calculation where the eve
 
 [source]
 ----
-event hours > 2 hours = sum(group_aggregate(if (sum(hours) - 2 > 0) then sum(hours) - 2 else 0, query_groups() + {id}, {}))
+event hours > 2 hours =
+sum(
+  group_aggregate(
+    if (sum(hours) - 2 > 0) then sum(hours) - 2 else 0,
+    query_groups() + {id},
+    {}
+    )
+  )
 ----
 
 This formula calculates an “adjusted” time for each event by subtracting two hours. If the event has less than two hours of time, the event hours are set to 0. We can use this in the search bar in a variety of ways.
