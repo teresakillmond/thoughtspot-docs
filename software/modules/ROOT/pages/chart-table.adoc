@@ -137,6 +137,8 @@ image::table-config-footer.png[Enable or disable table footer]
 
 == Column summaries
 
+NOTE: If you are using the xref:answer-experience-new.adoc[new answer experience], we consolidated client-side column summaries and headlines from the backend into new headline summaries that come from the backend. These headline summaries are integrated with the table columns. You can pin them to Pinboards.
+
 For columns with numeric information, you can turn on *column summaries* that display column totals.
 
 . Click the *edit table configuration* icon image:icon-gear-10px.png[] to the upper right of your table.
@@ -150,14 +152,18 @@ Column summaries are not available for tables with more than 1000 rows.
 
 == About headlines (summary information)
 
+NOTE: If you are using the xref:answer-experience-new.adoc[new answer experience], we consolidated client-side column summaries and headlines from the backend into new headline summaries that come from the backend. These headline summaries are integrated with the table columns. You can pin them to Pinboards.
+
 Headlines display summary information of a table result.
 Headlines contain summary information for each column of a table.
 They appear at the bottom of the table in individual boxes.
 
 image::chartconfig-headlines.png[]
 
-ThoughtSpot automatically creates up to 20 headlines for each table.
-Your ThoughtSpot configuration can be changed to accommodate more if needed. Headlines are not available for tables with more than 15000 rows, unless the data comes from an= xref:connections.adoc[direct connection to the database].
+ThoughtSpot automatically creates up to 20 headlines for each table. Your ThoughtSpot configuration can be changed to accommodate more if needed.
+
+Headlines are not available for tables with more than 15000 rows, unless the data comes from a xref:connections.adoc[direct connection to the database]. If you are using the xref:answer-experience-new.adoc[new answer experience], and your query generates more than 15,000 distinct table rows, the headline summary shows a dash instead of a number, and tells you to use a filter to reduce the number of rows.
+
 You can modify how you'd like the value to be displayed by clicking the dropdown on a headline and selecting a different type of aggregation.
 The usual available aggregations are total, average, standard deviation, variance, minimum, and maximum.
 There are also unique count and total count values available for the appropriate columns.
