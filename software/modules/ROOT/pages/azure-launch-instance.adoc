@@ -193,14 +193,14 @@ Your private key does not work after initial installation.
 
 Verify the existence of your data disks, created in Step 4 of <<create-instance,create an instance>>, by issuing `lsblk` in your terminal application:
 
-[source,bash]
+[source,console]
 ----
 $ lsblk
 ----
 
 Your result may look something like the following listing:
 
-[source,bash]
+[source,console]
 ----
    NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
    fd0       2:0    1    4K  0 disk
@@ -218,7 +218,7 @@ Your result may look something like the following listing:
 
 . Unmount the temporary disk by issuing the following command:
 +
-[source,bash]
+[source,console]
 ----
 $ sudo umount /mnt/resource
 ----
@@ -232,14 +232,14 @@ You must unmount the `/mnt/resource` disk.
 CAUTION: Do not use the disk `/dev/sdb`.
 Any data on it will be wiped if the VM is shut down.
 +
-[source,bash]
+[source,console]
 ----
  $ sudo /usr/local/scaligent/bin/prepare_disks.sh /dev/sdc /dev/sdd
 ----
 
 . Check the status of the disks by issuing the following command:
 +
-[source,bash]
+[source,console]
 ----
  $ df -h
 ----
