@@ -82,16 +82,16 @@ The arguments to group_aggregate are:
 
 * <level_of_detail> specifies the level of detail at which the inner aggregation should be applied. The level of detail can be specified independently of the query in the search bar, or can be combined with the attributes in the search bar to create a level of detail that adjusts based on what is in the search bar.  Examples are:
   ** { account }: aggregate by applying the inner_aggregation function at a level of detail created by grouping by account.
-  ** { account, activity class }: aggregate by applying the inner aggregation function at a level of detail created by grouping by account and activity class.
-  ** query_groups() + { activity class }: aggregate by applying the inner aggregation function at a level of detail created by adding activity class to the level of detail specified by the search bar. If the search bar already contains activity class, this will have no effect.
-  ** query_groups() - { activity class }: aggregate by applying the inner aggregation function at a level of detail created by removing activity class from the level of detail specified by the search bar. If the search bar does not contain an activity class, this will have no effect.
+  ** { account, activity classification }: aggregate by applying the inner aggregation function at a level of detail created by grouping by account and activity classification.
+  ** query_groups() + { activity classification }: aggregate by applying the inner aggregation function at a level of detail created by adding activity classification to the level of detail specified by the search bar. If the search bar already contains activity classification, this will have no effect.
+  ** query_groups() - { activity classification }: aggregate by applying the inner aggregation function at a level of detail created by removing activity classification from the level of detail specified by the search bar. If the search bar does not contain an activity classification, this will have no effect.
 
 * <filters> specifies filters that are applied to the return value. The filters can be independent of any filters in the search or they can include or exclude filters from the search bar. Examples are:
-  ** {activity class = ‘meeting’}: apply a row level filter to include only rows where activity class is set to ‘meeting’
+  ** {activity classification = ‘meeting’}: apply a row level filter to include only rows where activity classification is set to ‘meeting’
   ** query_filters() : apply the filters specified in the search
 ////
-** query_filters() + {activity class} // TBD - doesn’t yet exist
-** query_filters() - { activity class } //  TBD - doesn’t yet exist
+** query_filters() + {activity classification} // TBD - doesn’t yet exist
+** query_filters() - { activity classification } //  TBD - doesn’t yet exist
 ////
 
 Outer_aggregation is a simple aggregation function such as sum, avg, or min. As mentioned above, it is recommended that you always include outer_aggregation in your definition of a group_aggregate() formula. Omitting it can lead to unexpected results that are difficult to understand unless you are an expert user of group_aggregate() functions.

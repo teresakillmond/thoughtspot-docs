@@ -1,41 +1,41 @@
 = Customizing your aggregation
-:last-updated: 10/22/2021
+:last-updated: 11/01/2021
 :experimental:
 :linkattrs:
 
-////
-== Intro
-Click link:{attachmentsdir}/Meetings_tiny.csv[here] to download this data set.
-////
+In this article, we will walk through examples of aggregation using customized clauses like "greater than" and "else". To test for yourself, use the data set provided in <<prerequisites,the prerequisite>>.
+
+[#prerequisites]
+include::partial$group-aggregate-prerequisite.adoc[]
 
 The previous examples used an intentionally simple inner aggregation of sum(hours) so that we could focus on the overall behavior of group_aggregate. For example, we saw the following formula:
 
+Average hours per activity classification::
 [source]
 ----
-Average hours per activity class =
 average(
   group_aggregate(
     sum(hours),
-    query_groups() + {activity class},
+    query_groups() + {activity classification},
     {}
     )
   )
 ----
 
-This sums hours to the level of detail specified by the search bar + activity class, and then aggregates up to the search bar level of detail by averaging the sums that were calculated at the search bar + activity class level of detail.
+This sums hours to the level of detail specified by the search bar + activity classification, and then aggregates up to the search bar level of detail by averaging the sums that were calculated at the search bar + _activity classification_ level of detail.
 
 [#example-6]
 == Aggregating with a 'greater than' clause
 
-What if we only wanted to look at hours for activity classes that surpassed some minimum bar. For example, suppose we only want to consider activity classes where the sum of hours is greater than 5? In that case we could create a formula like this:
+What if we only wanted to look at hours for activity classes that surpassed some minimum bar? For example, suppose we only want to consider activity classes where the sum of hours is greater than 5? In that case we could create a formula like this:
 
+hours per activity classification where hours > 5::
 [source]
 ----
-hours per activity class where hours > 5 =
  average(
    group_aggregate(
      if (sum(hours) > 5) then sum(hours) else 0,
-     query_groups() + {activity class},
+     query_groups() + {activity classification},
      {}
      )
    )
@@ -43,15 +43,15 @@ hours per activity class where hours > 5 =
 
 Now, instead of summing the hours, we are summing hours only when the sum of the hours is greater than 5.
 
-In the search below, we can see that activity class hours above 5 shows zero hours for the cases where total hours is less than or equal to 5.
+In the search below, we can see that activity classification hours above 5 shows zero hours for the cases where total hours is less than or equal to 5.
 
-Search for: `account`    `activity class`   `hours`   `activity class hours above 5`   `sort by account`
+Search for: `account`    `activity classification`   `hours`   `activity classification where hours > 5`   `sort by account`
 
 [#example-6-1]
 .Example 6.1
 [options=”header”]
 |===
-| Account | Activity class | Total Hours | Activity class hours above 5
+| Account | Activity classification | Total Hours | Activity classification where hours > 5
 
 | Amazon | meeting | 11 | 11
 
@@ -69,39 +69,55 @@ Search for: `account`    `activity class`   `hours`   `activity class hours abov
 Notice in the above formula that the calculation takes place within the group aggregate.
 
 A common mistake that customers make is to create an aggregate calculation and then attempt to aggregate on top of that. For example, the following will not work: +
+hours by activity classification::
 ----
-hours by activity class =
 sum(
   group_aggregate(
     sum(hours),
-    query_groups() + {activity class},
+    query_groups() + {activity classification},
     {}
     )
   )
-
-
-bad_formula = If (sum(hours by activity class) > 5) then hours by activity class else 0
 ----
 
-In the second line, sum is an aggregation function. It attempts to aggregate the column specified in its argument (in this case, hours by activity class) to the level of the search. But the column specified is the result of a group-aggregate, so it is already aggregated to the level of detail of the search. If you try to do this, you will find that you cannot create bad_formula because when you type “sum”, it will not accept hours by activity class as an argument.
-
-Note that this doesn’t work whether or not you have the outer aggregation supplied in the hours by activity class formula. If it is supplied, as shown above, hours by activity class is already aggregated to the level of detail specified by the search.
-
-Similarly, it does not make sense to do this:
+bad_formula::
 ----
-hours by activity class =
+If (
+  sum(hours by activity classification) > 5
+  )
+  then
+   hours by activity classification else
+    0
+----
+
+In the second formula, sum is an aggregation function. It attempts to aggregate the column specified in its argument (in this case, hours by activity classification) to the level of the search. But the column specified is the result of a group-aggregate, so it is already aggregated to the level of detail of the search. If you try to do this, you will find that you cannot create `bad_formula` because when you type “sum”, it will not accept hours by activity classification as an argument.
+
+Note that this doesn’t work whether or not you have the outer aggregation supplied in the hours by activity classification formula. If it is supplied, as shown above, hours by activity classification is already aggregated to the level of detail specified by the search.
+
+Similarly, it does not make sense to use these formulas together:
+hours by activity classification::
+----
 sum(
   group_aggregate(
     sum(hours),
-    query_groups() + {activity class},
+    query_groups() + {activity classification},
     {}
     )
   )
-
-bad_formula = sum(if (hours by activity class > 5) then hours by activity class else 0)
 ----
 
-Although the argument to sum can be an expression, it must be an expression that is computed from a column that can be aggregated, and in this case hours by activity class is already aggregated to the level of the search and cannot be aggregated. Again, you will not be able to create bad_formula as the syntax won’t be accepted.
+bad_formula::
+----
+sum(
+  if (hours by activity classification > 5
+    )
+    then
+     hours by activity classification else
+      0
+    )
+----
+
+Although the argument to sum can be an expression, it must be an expression that is computed from a column that can be aggregated, and in this case hours by activity classification is already aggregated to the level of the search and cannot be aggregated further. Again, you will not be able to create `bad_formula` as the syntax won’t be accepted.
 
 A rule of thumb is to always do your calculation as the first argument inside the group_aggregate function.
 
@@ -109,9 +125,9 @@ A rule of thumb is to always do your calculation as the first argument inside th
 
 In this example, we want to only include events in our calculation where the event time is greater than two hours. We use the \{ID} to specify that we want our level of detail to be the finest level of detail possible, the event.
 
+event hours > 2 hours::
 [source]
 ----
-event hours > 2 hours =
 sum(
   group_aggregate(
     if (sum(hours) - 2 > 0) then sum(hours) - 2 else 0,
@@ -185,4 +201,4 @@ Note that Amazon has a total of four event hours, which reflects the sum of hour
 
 In general, at this time, it is not possible to do nested group_aggregate functions and it is not possible to nest a group_aggregate in another aggregation function.
 
-There are business use cases where this makes sense - for example, if the inner aggregation specifies a particular level of detail (does not use query_groups() +) and the outer aggregation then aggregates to the search level of detail or to another specified level of aggregation. However, this is not supported by ThoughtSpot’s formula language at this time.
+There are business use cases where this makes sense; for example, if the inner aggregation specifies a particular level of detail (does not use query_groups() +) and the outer aggregation then aggregates to the search level of detail or to another specified level of aggregation. However, this functionality is not currently supported by ThoughtSpot’s formula language.

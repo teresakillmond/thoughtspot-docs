@@ -1,5 +1,5 @@
 = Filters in group_aggregate()
-:last-updated: 10/22/2021
+:last-updated: 11/01/2021
 :experimental:
 :linkattrs:
 
@@ -44,7 +44,7 @@ In this example, we’ll apply a filter in the search bar that filters for `acti
 +
 [options=”header”]
 |===
-| Account | Activity Class | Total Hours
+| Account | Activity Classification | Total Hours
 
 | Redshift | call | 1
 
@@ -69,7 +69,7 @@ average(
 
 4. Finally, add that formula to our search bar.
 
-.. Search for: `account` `activity classification`  `hours`  `hours per account`   `activity class = call`  `sort by account`.
+.. Search for: `account` `activity classification`  `hours`  `hours per account`   `activity classification = call`  `sort by account`.
 
 .. The following table results:
 +
@@ -118,7 +118,7 @@ Now your resulting table will look like this:
 
 You can also include filters in your group_aggregate formula which are not in the search bar.
 
-For example, create the following formula if you want your formula to explicitly filter for `activity class = “call”`, regardless of what is in the search bar:
+For example, create the following formula if you want your formula to explicitly filter for `activity classification = “call”`, regardless of what is in the search bar:
 
 *Hours per account*: +
 [source]
@@ -127,7 +127,7 @@ average(
   group_aggregate(
     sum(hours),
     {account},
-    activity class = “call”
+    {activity classification = “call”}
     )
   )
 ----
@@ -159,7 +159,7 @@ You’ll get a table where `Hours per account` results in values that are filter
 
 == Using multiple filters
 
-You can put multiple filters in the filters argument of the group_aggregate function. For example, use the following formula if you want to filter on both activity class and activity date:
+You can put multiple filters in the filters argument of the group_aggregate function. For example, use the following formula if you want to filter on both activity classification and activity date:
 
 *Hours per account*: +
 [source]

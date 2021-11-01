@@ -10,7 +10,7 @@ include::partial$group-aggregate-prerequisite.adoc[]
 
 In the xref:group-aggregation-basic.adoc[basic aggregation examples], we described basic usage for group_aggregate functions and how to specify a level of detail. As noted before, when using group_aggregate() the first argument specifies the type of aggregation that should be performed, and the second argument specifies the level of detail at which it should be performed. Your group_aggregate function should be enclosed in an outer aggregation function that specifies the secondary aggregation that should be used when aggregating to a search level of detail that is coarser than the level of detail specified within the group_aggregate function.
 
-Performing a secondary level of aggregation across disjoint levels of detail may give nonsensical results. For example, aggregating to the activity class level and then “aggregating up” to the account level doesn’t really make sense.
+Performing a secondary level of aggregation across disjoint levels of detail may give nonsensical results. For example, aggregating to the activity classification level and then “aggregating up” to the account level doesn’t really make sense.
 
 Multiple accounts have multiple classes. When you aggregate to the `activity classification` level, you are aggregating without including the `account` level of detail. You are creating a small virtual table with two rows, one for meetings and one for calls. The row for meetings provides the total number of meetings and the row for calls provides the total number of calls. There is no way to then “aggregate” up to the account level of detail because this virtual table is now at a level of detail that is disjoint from the account level of detail. The results you get in this case will not make sense. In this situation, where your data includes a hierarchy that needs to be maintained in order for your query to make sense, you must use the “query_groups() +” syntax.
 
@@ -28,23 +28,22 @@ To practice using "query_groups () +", complete the following steps:
 1. Begin your search, using _Meetings_tiny.csv_ as your data source.
 2. Enter `hours``account` in the search bar and click *Go*.
 3. Click the **more options** icon image:icon-more-10px.png[] and select *Create formula*.
-4. In the formula pop-up window, name your formula. Here, we have named the formula *average hours per activity class*.
+4. In the formula pop-up window, name your formula. Here, we have named the formula *average hours per activity classification*.
 5. Enter the following formula and click *Save*: +
 [source]
 ----
-average hours per activity class =
 	average(
 	  group_aggregate(
 	    sum(hours),
-	    query_groups() + {activity class},
+	    query_groups() + {activity classification},
  	    {}
 	  )
 	)
 ----
 +
-NOTE: In this example, the search bar specifies the “account” level of detail. The formula adds activity class, thus summing hours to the {account, activity class} level of detail. The outer level of aggregation then averages the values computed at the {account, activity class} level of detail to the account level of detail.
+NOTE: In this example, the search bar specifies the “account” level of detail. The formula adds activity classification, thus summing hours to the {account, activity classification} level of detail. The outer level of aggregation then averages the values computed at the {account, activity classification} level of detail to the account level of detail.
 
-6. Search for: `account` `average hours per activity class` `sort by account`.
+6. Search for: `account` `average hours per activity classification` `sort by account`.
 
 7. The following table results:
 +
@@ -52,7 +51,7 @@ NOTE: In this example, the search bar specifies the “account” level of detai
 .Example 2.1.1
 [options=”header”]
 |===
-| Account | Hours per activity class averaged
+| Account | Hours per activity classification averaged
 
 | Amazon | 11
 
@@ -65,7 +64,7 @@ NOTE: In this example, the search bar specifies the “account” level of detai
 
 One way to understand this is to create a chart without the formula, using the following search:
 
-1. Search for: `account`  `hours`  `activity class`  `sort by account`  `sort by activity class`.
+1. Search for: `account`  `hours`  `activity classification`  `sort by account`  `sort by activity classification`.
 
 2. This creates the chart shown below:
 +
@@ -73,7 +72,7 @@ One way to understand this is to create a chart without the formula, using the f
 .Example  2.1.2
 [options=”header”]
 |===
-| Account | Activity Class | Total Hours
+| Account | Activity Classification | Total Hours
 
 | Amazon | meeting | 11
 
@@ -94,12 +93,12 @@ The portion of the hours per activity formula that looks like this: +
 ----
 group_aggregate(
 	sum(hours),
-	query_groups() + {activity class},
+	query_groups() + {activity classification},
 	{}
 	)
 ----
 
-aggregates (sums) hours to the {account, activity class} level of detail. This is comparable to what is shown in <<example-2-1-2,Table 2.1.2>> above.
+aggregates (sums) hours to the {account, activity classification} level of detail. This is comparable to what is shown in <<example-2-1-2,Table 2.1.2>> above.
 
 The second level of aggregation specified by the average surrounding the group_aggregate: +
 [source]
@@ -107,7 +106,7 @@ The second level of aggregation specified by the average surrounding the group_a
 average(
 	group_aggregate(
 		sum(hours),
-		query_groups() + {activity class},
+		query_groups() + {activity classification},
 		{}
 		)
 ----
@@ -118,7 +117,7 @@ Redshift: (1 + 5)/2 = 3
 Oracle: 18/1 = 18
 Dunder mifflin: 11/1 = 1
 
-This results in the values computed by the hours per activity class averaged formula shown in <<example-2-1-1,Table 2.1.1>> above.
+This results in the values computed by the hours per activity classification averaged formula shown in <<example-2-1-1,Table 2.1.1>> above.
 
 == Using “query_groups() -”
 
@@ -190,16 +189,16 @@ Note that in the table above, the Hours value for each row of an account is the 
 
 In this example we use the same formula as that used in <<example-3,Example 3.1>>.
 
-In Example 3.1, our search bar contained account and activity date. Here we’ll add activity class, so we are now computing Hours ignoring activity date at the {Account, Activity Class} level of detail.
+In Example 3.1, our search bar contained account and activity date. Here we’ll add activity classification, so we are now computing Hours ignoring activity date at the {Account, Activity Classification} level of detail.
 
-1. Search for: `account`   `activity class`  `activity date`   `hours ignoring activity date`  `sort by account sort by activity date`.
+1. Search for: `account`   `activity classification`  `activity date`   `hours ignoring activity date`  `sort by account sort by activity date`.
 +
 2. The following table results:
 [#example-3-2]
 .Table 3.2
 [options=”header”]
 |===
-| Account | Activity Class | Activity Date | Hours ignoring activity date
+| Account | Activity Classification | Activity Date | Hours ignoring activity date
 
 | Amazon | meeting | 04/01/2020 | 2.75
 
@@ -230,4 +229,4 @@ In Example 3.1, our search bar contained account and activity date. Here we’ll
 | Snowflake | call | 04/15/2020 | 1.67
 |===
 
-In the table above, note that the three rows for Snowflake where the Activity Class is “call” have the Hours value set to 1.67, while the line for Snowflake where the activity class is “meeting” has Hours set to 2.
+In the table above, note that the three rows for Snowflake where the Activity Classification is “call” have the Hours value set to 1.67, while the line for Snowflake where the activity classification is “meeting” has Hours set to 2.
