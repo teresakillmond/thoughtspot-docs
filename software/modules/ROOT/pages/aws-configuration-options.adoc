@@ -1,5 +1,5 @@
 = AWS configuration options
-:last_updated: 8/31/2021
+:last_updated: 12/31/2020
 :linkattrs:
 :experimental:
 
@@ -27,8 +27,6 @@ For more information, see https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide
 
 The following sections contain the supported and recommended instance types for a ThoughtSpot AWS deployment.
 When setting up your cluster in AWS, use the information here to select an instance type, configure the number of instances required for the storage you need, and add data volumes to your cluster. Our recommendations for instance types differ, depending on whether you are accessing your data by loading it into ThoughtSpot's <<in-memory,in-memory database>>, or if you are connecting to your data in a <<connections,cloud data warehouse>>.
-
-When choosing an instance type, ensure that it uses Intel CPUs.
 
 For example: If you were deploying a total cluster data size of 1 TB using the standard r5.16xlarge instance type, you would need 4 VM instances, because the instance type supports data capacity of 250 GB.
 The data volumes on the EBS would need to be provision with 2x1 TB volumes per VM.
@@ -59,12 +57,12 @@ However, in the case of our 16CPU/128GB RAM and 32CPU/256GB RAM instances, we su
 [#vm-ebs-only-persistent-storage-connections]
 ==== VMs with EBS-only persistent storage
 
-include::partial$aws-ebs-only-storage-embrace.adoc[]
+include::partial$aws-ebs-only-storage-connections.adoc[]
 
 [#vm-ebs-s3-persistent-storage-connections]
 ==== VMs with EBS and S3 persistent storage
 
-include::partial$aws-ebs-s3-storage-embrace.adoc[]
+include::partial$aws-ebs-s3-storage-connections.adoc[]
 
 [#related]
 '''
