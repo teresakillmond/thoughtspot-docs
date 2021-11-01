@@ -86,15 +86,6 @@ s3.dualstack.us-west-1.amazonaws.com
 | For transferring monitoring data to InfluxCloud.
 (Given address will resolve to point to AWS instances).
 
-| 443
-| Optional unless using consumption-based pricing
-| TCP
-| HTTPS
-| outbound
-| All nodes
-| redshift-pricing.thoughtspot.cloud
-| Required for consumption-based pricing.
-
 | 2049
 | Mandatory
 | TCP/UDP
@@ -104,15 +95,6 @@ s3.dualstack.us-west-1.amazonaws.com
 | All nodes
 | Port used by NFS.
 
-| 5439
-| Optional unless using consumption-based pricing
-| TCP
-| Redshift
-| outbound
-| All nodes
-| redshift-pricing.thoughtspot.cloud
-| Required for consumption-based pricing.
-
 | 80
 | Optional
 | TCP
@@ -121,6 +103,24 @@ s3.dualstack.us-west-1.amazonaws.com
 | ThoughtSpot Support
 | All nodes
 | HTTP access to the cluster. By default SSL is enabled and only used to redirect to HTTPS.
+
+| 443
+| Optional unless using consumption-based pricing
+| TCP
+| HTTPS
+| outbound
+| All nodes
+| redshift-pricing.thoughtspot.cloud
+| Required for consumption-based pricing.
+
+| 5439
+| Optional unless using consumption-based pricing
+| TCP
+| Redshift
+| outbound
+| All nodes
+| redshift-pricing.thoughtspot.cloud
+| Required for consumption-based pricing.
 |===
 ====
 
