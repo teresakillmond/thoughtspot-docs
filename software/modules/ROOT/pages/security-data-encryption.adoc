@@ -49,8 +49,34 @@ NOTE: You can check  `/etc/strongswan/ipsec.conf` and `/etc/strongswan/ipsec.sec
 
 == Firewall configuration
 
-The following ports must be open between nodes to allow IPSec encryption:
+The following ports and protocols must be open between nodes to allow IPSec encryption:
 
-* UDP port 500 (for IKE)
-* UDP port 4500 (for IPSec over IDP)
-* IP Protocol 50 (ESP)
+====
+[cols="10,~,~,~,~,~,~",options="header"]
+|===
+| Port | Protocol | Service Name | Direction | Source | Dest. | Description
+| 500
+| UDP
+| Internet Key Exchange (IKE)
+| bidirectional
+| All nodes
+| All nodes
+| Required when using IPSec (encryption in transit)
+| 4500
+| UDP
+| IPSec
+| bidirectional
+| All nodes
+| All nodes
+| Required when using IPSec (encryption in transit)
+|
+| IP protocol 50
+| Encapsulating Security Payload (ESP)
+| bidirectional
+| All nodes
+| All nodes
+| Required when using IPSec (encryption in transit)
+|===
+====
+
+NOTE: If you deploy ThoughtSpot in Microsoft Azure, you cannot use the Azure web portal to add IP protocol 50. You must use the https://docs.microsoft.com/en-us/cli/azure/network/nsg/rule?view=azure-cli-latest[Azure CLI^] or https://docs.microsoft.com/en-us/powershell/module/az.network/new-aznetworksecurityruleconfig?view=azps-6.5.0[Powershell^].
