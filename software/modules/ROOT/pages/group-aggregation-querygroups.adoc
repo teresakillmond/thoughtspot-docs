@@ -1,4 +1,4 @@
-= “Querygroups() +” and “Querygroups() -”
+= "Querygroups() +" and "Querygroups() -"
 :last-updated: 10/22/2021
 :experimental:
 :linkattrs:
@@ -8,6 +8,8 @@ In this article, we will walk through examples of aggregation using "Querygroups
 [#prerequisites]
 include::partial$group-aggregate-prerequisite.adoc[]
 
+== Aggregating across multiple levels of detail
+
 In the xref:group-aggregation-basic.adoc[basic aggregation examples], we described basic usage for group_aggregate functions and how to specify a level of detail. As noted before, when using group_aggregate() the first argument specifies the type of aggregation that should be performed, and the second argument specifies the level of detail at which it should be performed. Your group_aggregate function should be enclosed in an outer aggregation function that specifies the secondary aggregation that should be used when aggregating to a search level of detail that is coarser than the level of detail specified within the group_aggregate function.
 
 Performing a secondary level of aggregation across disjoint levels of detail may give nonsensical results. For example, aggregating to the activity classification level and then “aggregating up” to the account level doesn’t really make sense.
@@ -16,9 +18,9 @@ Multiple accounts have multiple classes. When you aggregate to the `activity cla
 
 == Using “query_groups() +”
 
-When you use “query_groups() +” you are specifying that you want to use the level of detail specified in the search bar and possibly add to it.
+When you use “query_groups() +”, you specify that you want to use the level of detail defined in the search bar and possibly add to it.
 
-If you use query_groups() without the “+”, your group_aggregate function will use exactly the level of detail specified in the search bar. This is less useful since you could get the same result without using group_aggregate(). Add arguments after the "+" to specify the additional attributes that you want to add to the level of detail specified in the search bar.
+If you use query_groups() without the "\+", your group_aggregate function will use exactly the level of detail specified in the search bar. This is less useful since you could get the same result without using group_aggregate(). Add arguments after the "+" to specify the additional attributes that you want to add to the level of detail specified in the search bar.
 
 [#example-2]
 === Use "query_groups() +" to add level of detail
@@ -26,10 +28,11 @@ If you use query_groups() without the “+”, your group_aggregate function wil
 To practice using "query_groups () +", complete the following steps:
 
 1. Begin your search, using _Meetings_tiny.csv_ as your data source.
-2. Enter `hours``account` in the search bar and click *Go*.
+2. Enter `hours` `account` in the search bar and click *Go*.
 3. Click the **more options** icon image:icon-more-10px.png[] and select *Create formula*.
 4. In the formula pop-up window, name your formula. Here, we have named the formula *average hours per activity classification*.
-5. Enter the following formula and click *Save*: +
+5. Enter the following formula and click *Save*:
++
 [source]
 ----
 	average(
@@ -86,9 +89,10 @@ One way to understand this is to create a chart without the formula, using the f
 
 | Snowflake | meeting | 2
 |===
++
 
-
-The portion of the hours per activity formula that looks like this: +
+The portion of the hours per activity formula that looks like this:
++
 [source]
 ----
 group_aggregate(
@@ -97,10 +101,11 @@ group_aggregate(
 	{}
 	)
 ----
-
++
 aggregates (sums) hours to the {account, activity classification} level of detail. This is comparable to what is shown in <<example-2-1-2,Table 2.1.2>> above.
-
-The second level of aggregation specified by the average surrounding the group_aggregate: +
++
+The second level of aggregation specified by the average surrounding the group_aggregate:
++
 [source]
 ----
 average(
@@ -110,12 +115,15 @@ average(
 		{}
 		)
 ----
-
-It averages the values associated with each account.
++
+averages the values associated with each account.
 Snowflake: (5 + 2)/2 = 3.5
++
 Redshift: (1 + 5)/2 = 3
++
 Oracle: 18/1 = 18
-Dunder mifflin: 11/1 = 1
++
+Amazon: 11/1 = 11
 
 This results in the values computed by the hours per activity classification averaged formula shown in <<example-2-1-1,Table 2.1.1>> above.
 
@@ -127,10 +135,11 @@ In this section we’ll explore how to create a formula that is based off of the
 === Use "query_groups() -" to remove level of detail
 
 1. Begin your search, using _Meetings_tiny.csv_ as your data source.
-2. Enter `account``activity date` in the search bar and click *Go*.
+2. Enter `account` `activity date` in the search bar and click *Go*.
 3. Click the **more options** icon image:icon-more-10px.png[] and select *Create formula*.
 4. In the formula pop-up window, name your formula. Here, we have named the formula *hours ignoring activity date*.
-5. Enter the following formula and click *Save*: +
+5. Enter the following formula and click *Save*:
++
 [source]
 ----
 average(
@@ -142,7 +151,7 @@ average(
 	)
 ----
 +
-NOTE: In this example, the search bar specifies the account and activity date level of detail. The formula removes the activity date and averages hours to the account level of detail. The outer level of aggregation will have no effect in this case, but it is good practice to always provide the outer level of aggregation.
+NOTE: In this example, the search bar specifies the "account" and "activity date" level of detail. The formula removes the activity date and averages hours to the account level of detail. The outer level of aggregation will have no effect in this case, but it is good practice to always provide the outer level of aggregation.
 
 6. Search for: `account` `activity date` `hours ignoring activity date` `sort by account` `sort by activity date`.
 
@@ -182,7 +191,7 @@ NOTE: In this example, the search bar specifies the account and activity date le
 
 | Snowflake | 04/15/2020 | 1.75
 |===
-
++
 Note that in the table above, the Hours value for each row of an account is the same. For example, the four rows for Snowflake all show an Hours value.  Similarly, the Hours value for Amazon (2.75) is the same in each of the Amazon rows. This is because Activity Date is being ignored and Hours ignoring activity date is computed at the Account level of detail.
 
 === Aggregate hours ignoring activity date
@@ -194,6 +203,7 @@ In Example 3.1, our search bar contained account and activity date. Here we’ll
 1. Search for: `account`   `activity classification`  `activity date`   `hours ignoring activity date`  `sort by account sort by activity date`.
 +
 2. The following table results:
++
 [#example-3-2]
 .Table 3.2
 [options=”header”]
@@ -228,5 +238,9 @@ In Example 3.1, our search bar contained account and activity date. Here we’ll
 
 | Snowflake | call | 04/15/2020 | 1.67
 |===
-
++
 In the table above, note that the three rows for Snowflake where the Activity Classification is “call” have the Hours value set to 1.67, while the line for Snowflake where the activity classification is “meeting” has Hours set to 2.
+
+> Related information:
+>
+> * xref:group-aggregation-filters.adoc[]

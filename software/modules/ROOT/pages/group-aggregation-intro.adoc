@@ -1,17 +1,17 @@
 = Group aggregation overview
-:last-updated: 10/12/2021
+:last-updated: 11/01/2021
 :linkattrs:
 :experimental:
 
 Group_aggregate() is a general function which includes all functionality supplied by the other functions in this group. In other words, group_average(), group_count(), … group_variance() can all be performed using only the group_aggregate() function. For this reason, we will primarily focus on the group_aggregate() function.
 
-== Group Aggregation
+== Group aggregation
 
 ThoughtSpot’s group_aggregate() function allows you to aggregate to a level of detail that differs from the “search” level of detail, which is the level of detail at which your table or chart is displayed. You can use this function for many business use cases.
 
 For example, in your table or chart, you may want each row to display the city name, the population of a city, and the population of the state. In this case the city represents the "search" level of detail, but you want to display values that are aggregated to the level of the state.
 
-Alternatively, you may want to know the percentage of the state’s population that resides in each city. In this case you don’t want to display the state’s population, but you need it in order to execute the computation (city population / state population). In both of these cases, the group_aggregate() function gives you the flexibility to aggregate to the state level of detail, even though your search is at the city level of detail.
+Alternatively, you may want to know the percentage of the state’s population that resides in each city. In this case you don’t want to display the state’s population, but you need that data in order to execute the computation (city population / state population). In both of these cases, the group_aggregate() function gives you the flexibility to aggregate to the _state_ level of detail, even though your search is at the _city_ level of detail.
 
 The group_aggregate() function is powerful, but in order to harness its power you’ll need to understand how to use it. In this tutorial, we’ll use a very small data set that allows you to compute aggregates on the fly so that you can understand exactly how group_aggregate works. Once you understand the mechanics, you’ll be able to apply it to your own business use cases.
 
@@ -23,7 +23,7 @@ Click link:{attachmentsdir}/Meetings_tiny.csv[here] to download this data set.
 
 In this data set we have four accounts: Snowflake, Redshift, Amazon, and Oracle. Each account has activities associated with it: Meetings and Calls. Each meeting or call occurs on a particular date and for a specified number of hours. We’ll use this data set for all of our examples. Using a small data set like this will allow you to fully understand how group_aggregate() functions on your data.
 
-The basic format of group_aggregate is: +
+The basic format of the group_aggregate formula is: +
 [source]
 ----
 outer_aggregation(
@@ -69,9 +69,12 @@ This applies the following set of steps to aggregate values based on the argumen
 
 . Your final result will depend on the level of detail of the search. If the search level of detail is:
 .. the same as <level_of_detail>: the result is _inner aggregation result_
-.. finer than <level_of_detail>: _inner aggregation result_ is replicated at the finer search level of detail. +
+.. finer than <level_of_detail>: _inner aggregation result_ is replicated at the finer search level of detail.
++
 Consider a formula that calculates the population of the state. If you create a table that has one row for each city, the state population value will be replicated for each city row. In other words, you might have a column with state population and for every city in the state, the column would always show the city’s state population. You could use this in another formula to calculate the city’s population as a percentage of its state population.
-.. coarser than <level_of_detail>: _inner aggregation result_ is aggregated up to the coarser search level of detail using the aggregation specified by <outer_aggregation>. While it is possible to omit outer_aggregation, we recommend you always include outer_aggregation in the definition of a group_aggregate formula. For more information on behavior when omitting outer_aggregation, see xref:group-aggregation-inner.adoc[].
+.. coarser than <level_of_detail>: _inner aggregation result_ is aggregated up to the coarser search level of detail using the aggregation specified by <outer_aggregation>.
++
+While it is possible to omit outer_aggregation, we recommend you always include outer_aggregation in the definition of a group_aggregate formula. For more information on behavior when omitting outer_aggregation, see xref:group-aggregation-inner.adoc[].
 
 The arguments to group_aggregate are:
 
@@ -87,8 +90,8 @@ The arguments to group_aggregate are:
   ** query_groups() - { activity classification }: aggregate by applying the inner aggregation function at a level of detail created by removing activity classification from the level of detail specified by the search bar. If the search bar does not contain an activity classification, this will have no effect.
 
 * <filters> specifies filters that are applied to the return value. The filters can be independent of any filters in the search or they can include or exclude filters from the search bar. Examples are:
-  ** {activity classification = ‘meeting’}: apply a row level filter to include only rows where activity classification is set to ‘meeting’
-  ** query_filters() : apply the filters specified in the search
+  ** {activity classification = "meeting"}: apply a row level filter to include only rows where activity classification is set to ‘meeting’
+  ** query_filters() : apply the filters specified in the search bar
 ////
 ** query_filters() + {activity classification} // TBD - doesn’t yet exist
 ** query_filters() - { activity classification } //  TBD - doesn’t yet exist
@@ -98,10 +101,12 @@ Outer_aggregation is a simple aggregation function such as sum, avg, or min. As 
 
 In xref:group-aggregation-basic.adoc[Basic use of group aggregation], we’ll walk through a number of example use cases of group_aggregate, using our link:{attachmentsdir}/Meetings_tiny.csv[sample data set].
 
-* xref:group-aggregation-basic.adoc#example-1[Basic group aggregation()]
-* xref:group-aggregation-querygroups.adoc#example-2[Using “query_groups() -”]
-* xref:group-aggregation-querygroups.adoc#example-3[Using “query_groups() +”]
-* xref:group-aggregation-filters.adoc#example-4[Using group_aggregate filters]
-* xref:group-aggregation-inner.adoc#example-5[Omitting outer aggregation]
-* xref:group-aggregation-customize.adoc#example-6[Customize your aggregation]
-* xref:group-aggregation-formulas.adoc[Other group aggregation formulas]
+> Related information:
+>
+> * xref:group-aggregation-basic.adoc#example-1[Basic group aggregation()]
+> * xref:group-aggregation-querygroups.adoc#example-2[Using “query_groups() -”]
+> * xref:group-aggregation-querygroups.adoc#example-3[Using “query_groups() +”]
+> * xref:group-aggregation-filters.adoc#example-4[Using group_aggregate filters]
+> * xref:group-aggregation-inner.adoc#example-5[Omitting outer aggregation]
+> * xref:group-aggregation-customize.adoc#example-6[Customize your aggregation]
+> * xref:group-aggregation-formulas.adoc[Other group aggregation formulas]
