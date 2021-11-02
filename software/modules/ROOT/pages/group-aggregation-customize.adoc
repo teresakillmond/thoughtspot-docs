@@ -3,12 +3,12 @@
 :experimental:
 :linkattrs:
 
-In this article, we will walk through examples of aggregation using customized clauses like "greater than" and "else". To test for yourself, use the data set provided in <<prerequisites,the prerequisite>>.
+In this article, we will walk through examples of group aggregation using customized clauses like "greater than" and "else". To test for yourself, use the data set provided in <<prerequisites,the prerequisite>>.
 
 [#prerequisites]
 include::partial$group-aggregate-prerequisite.adoc[]
 
-The previous examples used an intentionally simple inner aggregation of sum(hours) so that we could focus on the overall behavior of group_aggregate. For example, we saw the following formula:
+The previous examples used an intentionally simple inner aggregation of sum(hours) so that we could focus on the overall behavior of group_aggregate. For example, we used the following formula:
 
 Average hours per activity classification::
 +
@@ -29,6 +29,7 @@ This sums hours to the level of detail specified by the search bar + _activity c
 == Aggregating with a 'greater than' clause
 
 What if we only wanted to look at hours for activity classes that surpassed some minimum amount? For example, suppose we only want to consider activity classes where the sum of hours is greater than 5?
+
 In that case we could use a formula like the following:
 
 1. Create the formula:
@@ -46,9 +47,10 @@ hours per activity classification where hours > 5::
    )
 ----
 +
-Now, instead of summing the hours, we sum hours only when the sum of the hours is greater than 5.
+Now, instead of summing hours for all accounts, we sum hours only when the sum of the hours is greater than 5.
 
 2. Search for: `account`    `activity classification`   `hours`   `activity classification where hours > 5`   `sort by account`
+3. The following table results:
 +
 [#example-6-1]
 .Example 6.1
@@ -71,11 +73,11 @@ Now, instead of summing the hours, we sum hours only when the sum of the hours i
 +
 In the results above, we can see that *hours per activity classification where hours > 5* shows zero hours for the cases where total hours is less than or equal to 5.
 
-Notice in the above formula that the calculation takes place within the group aggregate.
+Notice in the above formula that the calculation takes place *within* the group aggregate.
 
 == Nesting aggregated formulas
 
-A common mistake is to create an aggregate calculation and then attempt to aggregate on top of that. For example, the following nested formulas will not work:
+A common mistake is to create an aggregate calculation and then attempt to aggregate further. For example, the following nested formulas will not work:
 
 hours by activity classification::
 ----
@@ -94,7 +96,7 @@ If (
   sum("hours by activity classification") > 5
   )
   then
-   hours by activity classification else
+   "hours by activity classification" else
     0
 ----
 
@@ -153,7 +155,8 @@ sum(
 +
 This formula calculates an “adjusted” time for each event by subtracting two hours. If the event has less than two hours of time, the event hours are set to 0. We can use this in the search bar in a variety of ways.
 
-2. Search: `account`    `id`   `hours`       `event hours > 2 hours`   `sort by account sort by id`
+2. Search: `account`    `id`   `hours`       `event hours > 2 hours`   `sort by account sort by id`.
+3. The following table results:
 +
 [#example-6-2-1]
 .Example 6.2.1
@@ -193,7 +196,8 @@ This formula calculates an “adjusted” time for each event by subtracting two
 
 Let's try another search which aggregates up to the account level using the same formula.
 
-1. Search for: `account`   `hours`   `event hours > 2 hours`    `sort by account`
+1. Search for: `account`   `hours`   `event hours > 2 hours`    `sort by account`.
+2. The following table results:
 +
 [#example-6-2-2]
 .Example 6.2.2

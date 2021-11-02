@@ -18,6 +18,7 @@ In this example, we’ll apply a filter in the search bar that filters for `acti
 1. First, let’s look at what our table looks like with no filter. This is created by the following search:
 
 .. Search for: `account`  `activity classification`   `hours`   `sort by account`.
+.. The following table results:
 +
 [options=”header”]
 |===
@@ -52,9 +53,9 @@ In this example, we’ll apply a filter in the search bar that filters for `acti
 |===
 
 
-3. Finally, let’s add a formula that aggregates hours to the account level of detail.
+3. Finally, let’s add a formula that aggregates hours to the _account_ level of detail.
 .. Click the **more options** icon image:icon-more-10px.png[] and select *Create formula*.
-.. In the formula pop-up window, name your formula. Here, we have named the formula *hours per account*.
+.. In the formula pop-up window, name your formula. Here, we will name the formula *hours per account*.
 .. Enter the following formula and click *Save*:
 +
 [source]
@@ -78,14 +79,14 @@ average(
 .Table 4.1.1
 [options=”header”]
 |===
-| Account | Activity Classification | Total Hours | Hours per account
+| Account | Activity classification | Total Hours | Hours per account
 
 | Redshift | call | 1 | 6.00
 
 | Snowflake | call | 5 | 7.00
 |===
 +
-This gives us a result which filters our rows to only rows that include “call”, but note that `Hours per account` does not match `Total Hours`. This is because `Hours per account` is aggregated without the filter, because the last argument of group_aggregate is {}.
+This gives us a result which filters our rows to only rows that include "call", but note that `Hours per account` does not match `Total Hours`. `Hours per account` is aggregated without the filter, because the last argument of group_aggregate is {}.
 +
 If you want your formula to take into account the filters specified in the search, you can use the query_filters() argument.
 +
@@ -211,7 +212,7 @@ average(
   group_aggregate(
     sum(hours),
     {account},
-    {activity classification = “call” or (
+    {activity classification = “call” OR (
       activity date >= 04/01/2020 and activity date <= 04/14/2020
       )
      }

@@ -1,4 +1,4 @@
-= Other group aggregation formulas
+= Group_aggregation formulas other than group_aggregate()
 :last-updated: 11/01/2021
 :linkattrs:
 :experimental:
@@ -7,6 +7,8 @@ In this article, we will consider examples of aggregation formulas other than gr
 
 [#prerequisites]
 include::partial$group-aggregate-prerequisite.adoc[]
+
+== Group aggregation functions
 
 As mentioned in xref:group-aggregation-basic.adoc[], there are a number of group aggregation functions whose functionality is subsumed by group_aggregate(). These are:
 
@@ -21,7 +23,7 @@ As mentioned in xref:group-aggregation-basic.adoc[], there are a number of group
 
 Each of these functions can be implemented using only group_aggregate(). These optional functions are maintained for backward compatibility, and in some cases can provide a simpler syntax, but they are not as flexible as group_aggregate().
 
-Let’s use group_sum() as an example: +
+Let’s use group_sum() as an example. +
 [source]
 ----
 average(
@@ -45,13 +47,15 @@ average(
   )
 ----
 
-NOTE: * Outer aggregation is required for the group_* functions in exactly the same manner that it is required for group_aggregate(). +
+Keep the following points in mind:
+
+* Outer aggregation is required for the group_* functions in exactly the same manner that it is required for group_aggregate(). +
 * The only way to specify that the level of detail should include the search level of detail is to use group_aggregate() with the query_groups() functionality. There is no way to use query_groups() with the  group_* functions. +
 * Filters on the search bar are automatically included in the group_* functions, but are not included in group_aggregate() unless you use query_filters().
 
 The lack of ability to specify query_groups() in the group_* functions can be problematic, depending on the organization of your data and what you are trying to search. Understanding the use of query_groups() is important in general, and this discussion will help if you don’t yet fully understand its purpose.
 
-Using our Meetings dataset, imagine you want to get the average number of hours by activity classification and then you want to average those hours. In other words, for Snowflake you want to get the average hours spent in meetings (2 hours) and the average hours spent in calls (5/3 = 1.67), and then you want to average these to get (2 + 1.67)/2 = 1.83.
+Using our Meetings dataset, imagine you want to get the average number of hours by activity classification, and then you want to average those hours. In other words, for Snowflake you want to get the average hours spent in meetings (2 hours) and the average hours spent in calls (5/3 = 1.67), and then you want to average these to get (2 + 1.67)/2 = 1.83.
 
 The following formula will calculate this correctly, regardless of the level of detail specified in the search:
 
@@ -85,7 +89,8 @@ If your search includes _account_, this will aggregate correctly to the account 
 
 If the search contains _account_, the final table will look exactly like that shown above.
 
-1. Search for: `account`    `average hours per activity classification`
+1. Search for: `account`    `average hours per activity classification`.
+2. The following table results:
 +
 [#example-7-1]
 .Example 7.1
@@ -104,7 +109,7 @@ If the search contains _account_, the final table will look exactly like that sh
 +
 If you do not include `account` in the search bar, it will aggregate up to the table level, averaging the four values.
 
-2. Search for: `average hours per activity classification`
+3. Search for: `average hours per activity classification`
 +
 [options=”header”]
 |===
