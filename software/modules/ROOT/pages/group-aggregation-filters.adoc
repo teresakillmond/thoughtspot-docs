@@ -1,26 +1,26 @@
 = Filters in group_aggregate()
-:last-updated: 11/01/2021
+:last-updated: 11/05/2021
 :experimental:
 :linkattrs:
 
-In this article, we will walk through examples of group aggregation using filters. To test for yourself, use the data set provided in <<prerequisites,the prerequisite>>.
+In this article, we walk through examples of group aggregation using filters. To test for yourself, use the data set we provide in <<prerequisites, prerequisites>>.
 
 [#prerequisites]
 include::partial$group-aggregate-prerequisite.adoc[]
 
-Now let’s see what happens when you use filters in your search. The last argument of group_aggregate() allows you to specify whether the filter from the search should be applied in the formula.
+Now let’s see what happens when you use filters in your search. The last argument of group_aggregate() allows you to specify whether ThoughtSpot should apply the filter from the search in the formula.
 
 [#example-4]
 == Adding filters through the search bar
 
-In this example, we’ll apply a filter in the search bar that filters for `activity classification = "call"`.
+In this example, we apply a filter in the search bar that filters for `activity classification = "call"`.
 
-1. First, let’s look at what our table looks like with no filter. This is created by the following search:
+1. First, let’s look at what our table looks like with no filter. We use the following search:
 
 .. Search for: `account`  `activity classification`   `hours`   `sort by account`.
 .. The following table results:
 +
-[options=”header”]
+[options="header"]
 |===
 | Account | Activity Classification | Total Hours
 
@@ -37,13 +37,13 @@ In this example, we’ll apply a filter in the search bar that filters for `acti
 | Snowflake | call | 5
 |===
 
-2. Now let’s add a filter for `activity classification = “call”`.
+2. Now let’s add a filter for `activity classification = "call"`.
 
 .. Search for: `account`    `activity classification`   `hours`   `activity classification = call`    `sort by account`.
 
 .. The following table results:
 +
-[options=”header”]
+[options="header"]
 |===
 | Account | Activity Classification | Total Hours
 
@@ -55,10 +55,10 @@ In this example, we’ll apply a filter in the search bar that filters for `acti
 
 3. Finally, let’s add a formula that aggregates hours to the _account_ level of detail.
 .. Click the **more options** icon image:icon-more-10px.png[] and select *Create formula*.
-.. In the formula pop-up window, name your formula. Here, we will name the formula *hours per account*.
+.. In the formula pop-up window, name your formula. Here, we name the formula *hours per account*.
 .. Enter the following formula and click *Save*:
 +
-[source]
+[source,groovy,linenums]
 ----
 average(
   group_aggregate(
@@ -69,7 +69,7 @@ average(
   )
 ----
 
-4. Finally, add that formula to our search bar.
+4. Finally, add the `hours per account` formula to our search bar.
 
 .. Search for: `account` `activity classification`  `hours`  `hours per account`   `activity classification = call`  `sort by account`.
 
@@ -77,7 +77,7 @@ average(
 +
 [#example-4-1-1]
 .Table 4.1.1
-[options=”header”]
+[options="header"]
 |===
 | Account | Activity classification | Total Hours | Hours per account
 
@@ -93,7 +93,7 @@ If you want your formula to take into account the filters specified in the searc
 5. Select *Formulas* from the left sidebar and click the *edit icon* next to "hours per account".
 6. In the formula window, enter the following formula and click *Save*:
 +
-[source]
+[source,groovy,linenums]
 ----
 average(
   group_aggregate(
@@ -104,11 +104,11 @@ average(
   )
 ----
 +
-Now your resulting table will look like this:
+Now your resulting table looks like this:
 +
 [#example-4-1-2]
 .Table 4.1.2
-[options=”header”]
+[options="header"]
 |===
 | Account | Activity Classification | Total Hours | Hours per account
 
@@ -121,17 +121,17 @@ Now your resulting table will look like this:
 
 You can also include filters in your group_aggregate formula which are not in the search bar.
 
-1. Create the following formula if you want your formula to explicitly filter for `activity classification = "call"`, regardless of what is in the search bar:
+1. Create the following formula if you want your formula to explicitly filter for `activity classification = "call"`, regardless of what you add in the search bar:
 +
 *Hours per account*::
 +
-[source]
+[source,groovy,linenums]
 ----
 average(
   group_aggregate(
     sum(hours),
     {account},
-    {activity classification = “call”}
+    {activity classification = "call"}
     )
   )
 ----
@@ -142,7 +142,7 @@ The resulting table's `Hours per account` column results in values that are filt
 +
 [#example-4-2]
 .Example 4.2
-[options=”header”]
+[options="header"]
 |===
 | Account | Activity Classification  | Total Hours | Hours per account
 
@@ -166,26 +166,26 @@ You can put multiple filters in the filters argument of the group_aggregate func
 1. Create the following formula:
 *Hours per account*::
 +
-[source]
+[source,groovy,linenums]
 ----
 average(
   group_aggregate(
     sum(hours),
     {account},
-    {activity classification = “call”,
+    {activity classification = "call",
     activity date >= 04/01/2020 and activity date <= 04/14/2020
     }
     )
   )
 ----
 +
-In the above example, the activity classification and activity date filters will be added in an `and` condition together.
+In the above example, ThoughtSpot adds the activity classification and activity date filters in an `and` condition together.
 
 2. Search for: `account`   `activity classification`  `hours`  `hours per account`    `sort by account`  `sort by activity classification`.
 +
 [#example-4-3]
 .Example 4.3
-[options=”header”]
+[options="header"]
 |===
 | Account | Activity Classification | Total Hours | Hours per account
 
@@ -206,13 +206,13 @@ You can also use AND, OR, and parens, to flexibly combine filters as shown in fo
 
 *Hours per account*::
 +
-[source]
+[source,groovy,linenums]
 ----
 average(
   group_aggregate(
     sum(hours),
     {account},
-    {activity classification = “call” OR (
+    {activity classification = "call" OR (
       activity date >= 04/01/2020 and activity date <= 04/14/2020
       )
      }

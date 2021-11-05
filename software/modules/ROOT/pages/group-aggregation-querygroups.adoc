@@ -1,9 +1,9 @@
 = "Querygroups() +" and "querygroups() -"
-:last-updated: 10/22/2021
+:last-updated: 11/05/2021
 :experimental:
 :linkattrs:
 
-In this article, we will walk through examples of aggregation using "querygroups() +" and "querygroups() -". To test for yourself, use the data set provided in <<prerequisites,the prerequisite>>.
+In this article, we walk through examples of aggregation using "querygroups() +" and "querygroups() -". To test for yourself, use the data set we provide in <<prerequisites,the prerequisite>>.
 
 [#prerequisites]
 include::partial$group-aggregate-prerequisite.adoc[]
@@ -12,17 +12,17 @@ include::partial$group-aggregate-prerequisite.adoc[]
 
 In the xref:group-aggregation-basic.adoc[basic aggregation examples], we described basic usage for group_aggregate functions and how to specify a level of detail. When using group_aggregate(), the first argument specifies the type of aggregation that should be performed, and the second argument specifies the level of detail at which it should be performed. Your group_aggregate function should be enclosed in an outer aggregation function that specifies the secondary aggregation that should be used when aggregating to a search level of detail that is coarser than the level of detail specified within the group_aggregate function.
 
-Performing a secondary level of aggregation across disjoint levels of detail may give nonsensical results. For example, consider aggregating to the _activity classification_ level and then “aggregating up” to the _account_ level.
+Performing a secondary level of aggregation across disjoint levels of detail may give nonsensical results. For example, consider aggregating to the _activity classification_ level and then "aggregating up" to the _account_ level.
 
 Multiple accounts have multiple classes. When you aggregate to the `activity classification` level, you are aggregating without including the `account` level of detail. You are creating a small virtual table with two rows, one for meetings and one for calls. The row for meetings provides the total number of meetings and the row for calls provides the total number of calls.
 
-There is no way to then “aggregate” up to the account level of detail because this virtual table is now at a level of detail that is disjoint from the account level of detail. The results you get in this case will not make sense. In this situation, where your data includes a hierarchy that needs to be maintained in order for your query to make sense, you must use the "query_groups() +" syntax.
+There is no way to then "aggregate" up to the account level of detail because this virtual table is now at a level of detail that is disjoint from the account level of detail. The results you get in this case will not make sense. In this situation, where your data includes a hierarchy that needs to be maintained in order for your query to make sense, you must use the "query_groups() +" syntax.
 
 == Using "query_groups() +"
 
 When you use "query_groups() +", you specify that you want to use the level of detail defined in the search bar and possibly add to it.
 
-If you use query_groups() without the "\+", your group_aggregate function will use exactly the level of detail specified in the search bar. This is less useful since you could get the same result without using group_aggregate(). Add arguments after the "+" to specify the additional attributes that you want to add to the level of detail specified in the search bar.
+If you use query_groups() without the "\+", your group_aggregate function uses exactly the level of detail specified in the search bar. This is less useful since you could get the same result without using group_aggregate(). Add arguments after the "+" to specify the additional attributes that you want to add to the level of detail specified in the search bar.
 
 [#example-2]
 === Use "query_groups() +" to add level of detail
@@ -35,7 +35,7 @@ To practice using "query_groups () +", complete the following steps:
 4. In the formula pop-up window, name your formula. Here, we have named the formula *average hours per activity classification*.
 5. Enter the following formula and click *Save*:
 +
-[source]
+[source,groovy,linenums]
 ----
 	average(
 	  group_aggregate(
@@ -54,7 +54,7 @@ NOTE: In this example, the search bar specifies the "account" level of detail. T
 +
 [#example-2-1-1]
 .Example 2.1.1
-[options=”header”]
+[options="header"]
 |===
 | Account | Hours per activity classification averaged
 
@@ -75,7 +75,7 @@ One way to understand this result is to create a chart without the formula, usin
 +
 [#example-2-1-2]
 .Example  2.1.2
-[options=”header”]
+[options="header"]
 |===
 | Account | Activity Classification | Total Hours
 
@@ -95,7 +95,7 @@ One way to understand this result is to create a chart without the formula, usin
 
 The portion of the hours per activity formula within the "group_aggregate" argument aggregates (sums) hours to the {account, activity classification} level of detail:
 +
-[source]
+[source,groovy,linenums]
 ----
 group_aggregate(
 	sum(hours),
@@ -107,7 +107,7 @@ This is comparable to what is shown in <<example-2-1-2,Table 2.1.2>> above.
 +
 The second level of aggregation specified by the average surrounding the group_aggregate averages the values associated with each account.:
 +
-[source]
+[source,groovy,linenums]
 ----
 average(
 	group_aggregate(
@@ -131,7 +131,7 @@ This results in the values computed by the hours per activity classification ave
 
 == Using "query_groups() -"
 
-In this section we’ll explore how to create a formula that is based off of the level of detail in the search bar, but which subtracts out certain dimensions specified in the search bar. We do this by using the "query_groups() -" syntax. This syntax means, "use the level of detail specified by the enclosing context, which is the search bar, and then remove the portion specified by text following the "-"."
+In this section we explore how to create a formula that is based off of the level of detail in the search bar, but which subtracts out certain dimensions specified in the search bar. We do this by using the "query_groups() -" syntax. This syntax means, "use the level of detail specified by the enclosing context, which is the search bar, and then remove the portion specified by text following the "-"."
 
 [#example-3]
 === Use "query_groups() -" to remove level of detail
@@ -139,10 +139,10 @@ In this section we’ll explore how to create a formula that is based off of the
 1. Begin your search, using _Meetings_tiny.csv_ as your data source.
 2. Enter `account` `activity date` in the search bar and click *Go*.
 3. Click the **more options** icon image:icon-more-10px.png[] and select *Create formula*.
-4. In the formula pop-up window, name your formula. Here, we will name the formula *hours ignoring activity date*.
+4. In the formula pop-up window, name your formula. Here, we name the formula *hours ignoring activity date*.
 5. Enter the following formula and click *Save*:
 +
-[source]
+[source,groovy,linenums]
 ----
 average(
 	group_aggregate(
@@ -153,7 +153,7 @@ average(
 	)
 ----
 +
-NOTE: In this example, the search bar specifies the "account" and "activity date" level of detail. The formula removes the activity date and averages hours to the account level of detail. The outer level of aggregation will have no effect in this case, but it is good practice to always provide the outer level of aggregation.
+NOTE: In this example, the search bar specifies the "account" and "activity date" level of detail. The formula removes the activity date and averages hours to the account level of detail. The outer level of aggregation has no effect in this case, but it is good practice to always provide the outer level of aggregation.
 
 6. Search for: `account` `activity date` `hours ignoring activity date` `sort by account` `sort by activity date`.
 
@@ -161,7 +161,7 @@ NOTE: In this example, the search bar specifies the "account" and "activity date
 +
 [#example-3-1]
 .Example 3.1
-[options=”header”]
+[options="header"]
 |===
 | Account | Activity Date | Hours ignoring activity date
 
@@ -200,7 +200,7 @@ Note that in the table above, the Hours value for each row of an account is the 
 
 In this example we use the same formula as that used in <<example-3,Example 3.1>>.
 
-In Example 3.1, our search bar contained `account` and `activity date`. Here we’ll add `activity classification`, so we are now computing Hours ignoring activity date at the {Account, Activity Classification} level of detail.
+In Example 3.1, our search bar contained `account` and `activity date`. Here we add `activity classification`, so we are now computing Hours ignoring activity date at the {Account, Activity Classification} level of detail.
 
 1. Search for: `account`   `activity classification`  `activity date`   `hours ignoring activity date`  `sort by account sort by activity date`.
 +
@@ -208,7 +208,7 @@ In Example 3.1, our search bar contained `account` and `activity date`. Here we�
 +
 [#example-3-2]
 .Table 3.2
-[options=”header”]
+[options="header"]
 |===
 | Account | Activity Classification | Activity Date | Hours ignoring activity date
 
@@ -241,7 +241,7 @@ In Example 3.1, our search bar contained `account` and `activity date`. Here we�
 | Snowflake | call | 04/15/2020 | 1.67
 |===
 +
-In the table above, note that the three rows for Snowflake where the Activity Classification is “call” have an Hours value of 1.67, while the line for Snowflake where the activity classification is “meeting” has an Hours value of 2.
+In the table above, note that the three rows for Snowflake where the Activity Classification is "call" have an Hours value of 1.67, while the line for Snowflake where the activity classification is "meeting" has an Hours value of 2.
 
 > Related information:
 >
