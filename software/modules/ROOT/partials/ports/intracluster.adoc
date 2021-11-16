@@ -206,8 +206,8 @@ The dynamic ports come from the range of ports that are dynamically allocated by
 | Port used by data cache for communication between themselves. Falcon is ThoughtSpot's in-memory database.
 
 | 4010
-| TCP
 | Mandatory
+| TCP
 | Falcon moderator
 | bidirectional
 | All nodes
@@ -215,8 +215,8 @@ The dynamic ports come from the range of ports that are dynamically allocated by
 | Debug DFS data
 
 | 4011
-| TCP
 | Mandatory
+| TCP
 | Falcon moderator
 | bidirectional
 | All nodes
@@ -674,7 +674,7 @@ The dynamic ports come from the range of ports that are dynamically allocated by
 | Primary app HTTP port (nginx)
 
 | 500
-| Optional
+| Optional unless using IPSec
 | UDP
 | Internet Key Exchange (IKE)
 | bidirectional
@@ -683,7 +683,7 @@ The dynamic ports come from the range of ports that are dynamically allocated by
 | Required when using IPSec (encryption in transit)
 
 | 4500
-| Optional
+| Optional unless using IPSec
 | UDP
 | IPSec
 | bidirectional
@@ -692,7 +692,7 @@ The dynamic ports come from the range of ports that are dynamically allocated by
 | Required when using IPSec (encryption in transit)
 
 |
-| Optional
+| Optional unless using IPSec
 | IP protocol 50
 | Encapsulating Security Payload (ESP)
 | bidirectional
