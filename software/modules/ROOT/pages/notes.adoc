@@ -1,9 +1,8 @@
 = 7.1 Release Notes
 :experimental:
-:last_updated: 9/9/2021
+:last_updated: 11/16/2021
 :linkattrs:
 :page-aliases: /release/notes.adoc, /7.0/release/notes.adoc, /7.0.0.CU1/release/notes.adoc, /7.0.1/release/notes.adoc, /7.0.0.mar.sw/release/notes.adoc
-
 
 ThoughtSpot version 7.1.1 is now available.
 
@@ -23,10 +22,10 @@ For a complete list of issues that we fixed in this release, see xref:fixed.adoc
 Here are the most significant new features and improvements in the 7.1.1 Software Release:
 
 * <<analyst-7-1-1,For the Analyst>>
-* <<business-user-7-1-1,For the Business User>>
-* <<data-engineer-7-1-1,For the Data Engineer>>
-* <<it-ops-engineer-7-1-1,For the IT Ops Engineer>>
-* <<developer-7-1-1,For the Developer>>
+// * <<business-user-7-1-1,For the Business User>>
+// * <<data-engineer-7-1-1,For the Data Engineer>>
+// * <<it-ops-engineer-7-1-1,For the IT Ops Engineer>>
+// * <<developer-7-1-1,For the Developer>>
 
 [#analyst-7-1-1]
 === For the Analyst
@@ -37,17 +36,17 @@ ThoughtSpot now supports the migration and editing of tables with xref:security-
 Pinboard schedule gating conditions::
 Gating conditions for scheduled pinboards are now GA. Refer to xref:pinboard-schedule.adoc[] to learn more about scheduling pinboards for email delivery, and how to leverage gating conditions so that ThoughtSpot only sends the pinboards when certain conditions are true.
 
-[#business-user-7-1-1]
-=== For the Business User
+// [#business-user-7-1-1]
+// === For the Business User
 
-[#data-engineer-7-1-1]
-=== For the Data Engineer
+// [#data-engineer-7-1-1]
+// === For the Data Engineer
 
-[#it-ops-engineer-7-1-1]
-=== For the IT Ops Engineer
+// [#it-ops-engineer-7-1-1]
+// === For the IT Ops Engineer
 
-[#developer-7-1-1]
-=== For the Developer
+// [#developer-7-1-1]
+// === For the Developer
 
 [#new-7-1-0-CU1]
 == 7.1.0.CU1 New Features and Functionality
@@ -203,14 +202,15 @@ This worksheet is the underlying source for the xref:object-usage-pinboard.adoc[
 [#upgrade-paths]
 == Supported Upgrade Paths
 
-If you are running one of the following versions, you can upgrade to the 7.1 release directly:
+If you are running one of the following versions, you can upgrade to the 7.1.1 release directly:
 
-* 6.3.x to 7.1
-* 7.0.x to 7.1
+* 6.3.x to 7.1.1
+* 7.0.x to 7.1.1
+* 7.1 to 7.1.1
 
 This includes any hotfixes or customer patches on these branches.
 
 If you are running a different version, you must do a multiple pass upgrade.
-First, upgrade to version 6.3.x, or 7.0.x, and then to the 7.1 release.
+First, upgrade to version 6.3.x, 7.0.x, or 7.1 and then to the 7.1.1 release.
 
 NOTE: To successfully upgrade your ThoughtSpot cluster, all user profiles must include a valid email address. Without valid email addresses, the upgrade is blocked.
