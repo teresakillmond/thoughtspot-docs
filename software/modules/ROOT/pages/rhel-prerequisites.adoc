@@ -13,10 +13,9 @@ Prepare the system and ThoughtSpot clusters for installation:
 | &#10063; | xref:install-rhel[3. Install RHEL version 7.8 or 7.9 on all hosts]
 | &#10063; | xref:linux-kernel-version[4. Ensure that your Linux kernel is on the correct version]
 | &#10063; | xref:enable-hosts[5. Enable the hosts to download RHEL packages]
-| &#10063; | xref:enable-ansible[6. Enable an Ansible Control Server]
-| &#10063; | xref:disable-selinux[7. Disable SELinux]
-| &#10063; | xref:tmp-permission[8. Ensure tmp has permission 777]
-| &#10063; | xref:etc-sudoers[9. Remove Defaults requiretty from /etc/sudoers]
+| &#10063; | xref:tmp-permission[6. Ensure tmp has permission 777]
+| &#10063; | xref:etc-sudoers[7. Remove Defaults requiretty from /etc/sudoers]
+| &#10063; | xref:enable-ansible[ (Optional) Enable an Ansible Control Server]
 |===
 
 [#set-up-hosts]
@@ -38,36 +37,47 @@ Please refer to the relevant deployment sections in our documentation for the ex
 Ensure that all ThoughtSpot hosts meet the following partition and sizing requirements.
 All drives must be SSDs.
 
-. At least 20 GB available on the root drive, for yum packages and system logs.
-. At least 50 GB available for `/tmp`.
-. At least 200 GB for ThoughtSpot installation, either on a secondary drive or as a separate partition on the root drive.
-For ThoughtSpot-certified hardware platforms, xref:dell.adoc[Dell] and xref:smc.adoc[Super Micro Computer], you must use a secondary drive because the root drive has a limit of 200 GB.
-+
-NOTE: This drive must be separate from the data drive(s).
+Do not partition the data drives. ThoughtSpot partitions the data drives during installation. For information about data drive specifications, refer to the intro articles for each platform linked in the <<set-up-hosts,set up hosts>> section of this article.
+
+[cols="15,85",options="header"]
+|===
+| Path | Required free space
+
+| /
+| 20 GB. This is the root drive.
+
+| /tmp
+| 50 GB
+
+| /export
+| 200 GB, on a separate filesystem
+|===
+
+NOTE: For ThoughtSpot-certified hardware platforms, xref:dell.adoc[Dell] and xref:smc.adoc[Super Micro Computer], you must use a secondary drive rather than a partition, because the root drive has a limit of 200 GB. This drive must be separate from the data drive(s).
 
 [#install-rhel]
 == Install RHEL on hosts
 
 ThoughtSpot is certified with RHEL versions 7.8 and 7.9;
 we *do not* support other versions of RHEL, including 7.7, 8, and 8.1.
-Install RHEL version 7.8 or 7.9. On RHEL version 7.8, ensure that your xref:linux-kernel-version[linux kernel version] is 3.10.0-1127.19.1. On RHEL version 7.9, use the default linux kernel.
+Install RHEL version 7.8 or 7.9. On RHEL version 7.8, ensure that your xref:linux-kernel-version[linux kernel version] is 3.10.0-1127.19.1 or higher. On RHEL version 7.9, use the default linux kernel.
 
 NOTE: When installing ThoughtSpot on online clusters, the Ansible playbook upgrades the OS to RHEL 7.9. The Ansible playbook does *not* upgrade the OS when installing offline.
 
 [#linux-kernel-version]
 === Linux kernel version
 
-For RHEL version 7.8, your Linux kernel *_must_* be on version 3.10.0-1127.19.1.
+For RHEL version 7.8, your Linux kernel *_must_* be on version 3.10.0-1127.19.1 or higher.
 RHEL 7.8 used to come with a Linux kernel of version 3.10.x, which has a bug that causes nodes to reboot unexpectedly.
 The default Linux kernel version for RHEL 7.8 is now 3.10.0-1127.19.1.
 However, you may have an older RHEL 7.8, with a Linux kernel of version 3.10.x.
-You must upgrade to 3.10.0-1127.19.1.
-If you have trouble upgrading your Linux kernel to version 3.10.0-1127.19.1, contact xref:support-contact.adoc[ThoughtSpot Support].
-This is a requirement for *all* platforms: appliance, cloud, and VMware.
+You must upgrade to 3.10.0-1127.19.1 or higher.
+If you have trouble upgrading your Linux kernel to version 3.10.0-1127.19.1 or higher, contact xref:support-contact.adoc[ThoughtSpot Support].
+This is a requirement for *all* platforms: hardware appliance, cloud, and VMware.
 
 If you are using RHEL version 7.9, use the default Linux kernel.
 
-WARNING: If you are running RHEL 7.8, and your Linux kernel version is not 3.10.0-1127.19.1, you may run into unexpected node reboots and possible loss of data.
+WARNING: If you are running RHEL 7.8, and your Linux kernel version is not 3.10.0-1127.19.1 or higher, you may run into unexpected node reboots and possible loss of data.
 
 [#enable-hosts]
 == Enable the hosts to download RHEL packages
@@ -103,12 +113,6 @@ You can then proceed to download xref:yum-repository[Yum], xref:python-repositor
 
 If the hosts of your ThoughtSpot cluster have access to an internal repository that mirrors the public repositories, copy the xref:yum-repository[Yum], xref:python-repository[Python], and xref:r-repository[R] package repositories to your hosts.
 
-[#enable-ansible]
-== Enable an Ansible Control Server
-
-Configure an Ansible Control Server, on a separate host, to run the Ansible playbook that ThoughtSpot supplies.
-You must install both `rsync` and Ansible on the Ansible Control Server host.
-
 [#disable-selinux]
 == Disable SELinux or run it in permissive mode
 
@@ -124,3 +128,9 @@ The `/tmp` directory must have the `777` permission.
 == Remove Defaults requiretty from /etc/sudoers
 
 The `/etc/sudoers` file must not have the `Defaults requiretty` line. This line can cause cluster creation to fail.
+
+[#enable-ansible]
+== [Optional] Enable an Ansible Control Server
+
+Optionally configure an Ansible Control Server, on a separate host, to run the Ansible playbook that ThoughtSpot supplies.
+You must install both `rsync` and Ansible on the Ansible Control Server host.
