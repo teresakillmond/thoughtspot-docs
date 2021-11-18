@@ -5,9 +5,15 @@
 :page-partial:
 :page-aliases: /data-integrate/embrace/embrace-snowflake-best.adoc
 
-You can connect to Snowflake, and start searching your data. This article contains helpful pointers on data modeling.
+This article contains helpful pointers on data modeling when using Snowflake.
 
 After connecting to Snowflake through ThoughtSpot, you may notice that some things don’t work as you expect. This article lists best practices for improving the user experience by making small changes to the Snowflake schema in Snowflake, to optimize it for ThoughtSpot.
+
+== Keep default collation settings
+
+Collation settings in Snowflake compare strings based on their UTF-8 character representations. For the best query performance, ThoughtSpot recommends using the default setting of `en-cs` (case-sensitive).
+
+For more information, see https://docs.snowflake.com/en/sql-reference/collation.html[Collation Support, window=_blank] in the Snowflake documentation.
 
 == Change JSON to a relational schema in Snowflake
 
