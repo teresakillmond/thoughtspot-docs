@@ -39,10 +39,12 @@ Gating conditions for scheduled pinboards are now GA. Refer to xref:pinboard-sch
 [#it-ops-engineer-7-1-1]
 === For the IT Ops Engineer
 
-RHEL installation improvements::
-We made installing ThoughtSpot on RHEL easier and more secure, in the following ways:
-* The admin user who installs ThoughtSpot on RHEL does *_not_* need to be a root/ sudo user.
-* The linux package installation no longer requires use of the yum package manager.
+RHEL and Amazon Linux 2 installation flexibility::
+We made installing ThoughtSpot on RHEL and Amazon Linux 2 easier and more secure, in the following ways:
+* We reduced the number of required xref:rhel-packages.adoc[yum packages].
+* We limited the sudo commands the admin user can run. To obtain a list of sudo commands the admin user can run, xref:support-contact.adoc[contact ThoughtSpot Support].
+* Allowed users to configure the installation so it skips specific OS changes. Refer to xref:rhel-install-online.adoc[] or xref:al2-install-online.adoc[] for information about the OS changes you can skip. You can also skip these changes when you install online.
+* Removed calls to sudo by the root user.
 
 // [#business-user-7-1-1]
 // === For the Business User
