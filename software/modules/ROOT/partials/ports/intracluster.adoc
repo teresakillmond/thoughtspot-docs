@@ -1,8 +1,9 @@
+[#required-ports-for-cluster-communication]
 == Ports for intracluster network operations
 
 Static ports are used for communication between services within the cluster.
 ThoughtSpot recommends that you open all ports within a cluster.
-This not required, but it will ensure that cluster communication works properly if additional ports are used in a future software release.
+This is not required, but it ensures that cluster communication works properly if additional ports are used in a future software release.
 
 If your organization does not allow you to open all ports, make sure you open the required intracluster ports listed in the following table.
 In addition, a number of ports are dynamically assigned to services, which change between runs.
@@ -11,19 +12,12 @@ The dynamic ports come from the range of ports that are dynamically allocated by
 .Click to see the ports ThoughtSpot uses for intracluster network operations
 [%collapsible]
 ====
-[options="header"]
+[cols="10,14,~,~,~,~,~,~",options="header"]
 |===
-| Port | Protocol | Service Name | Direction | Source | Dest. | Description
-
-| 80
-| TCP
-| nginx
-| inbound
-| All nodes
-| All nodes
-| Primary app HTTP port (nginx)
+| Port | Mandatory | Protocol | Service Name | Direction | Source | Dest. | Description
 
 | 443
+| Mandatory
 | TCP
 | Secure nginx
 | inbound
@@ -32,7 +26,8 @@ The dynamic ports come from the range of ports that are dynamically allocated by
 | Primary app HTTPS port (nginx)
 
 | 2100
-| RPC
+| Mandatory
+| TCP
 | Oreo RPC port
 | bidirectional
 | All nodes
@@ -40,54 +35,43 @@ The dynamic ports come from the range of ports that are dynamically allocated by
 | Node daemon RPC
 
 | 2101
-| HTTP
+| Mandatory
+| TCP
 | Oreo HTTP port
 | bidirectional
-| Admin IP addresses and all nodes
+| All nodes
 | All nodes
 | Node daemon HTTP
 
 | 2181
+| Mandatory
 | TCP
 | Zookeeper servers listen on this RPC port for client connections
 | bidirectional
 | All nodes
 | All nodes
-| Zookeeper servers listen on this RPC port for client connections
-
-| 3181
-| TCP
-| Zookeeper servers listen on this RPC port for client connections
-| bidirectional
-| All nodes
-| All nodes
-| Zookeeper servers listen on this RPC port for client connections
-
-| 4181
-| TCP
-| Zookeeper servers listen on this RPC port for client connections
-| bidirectional
-| All nodes
-| All nodes
-| Zookeeper servers listen on this RPC port for client connections
+| Zookeeper servers listen on this RPC port for client connections. Zookeeper is ThoughtSpot's cluster-wide configuration management tool.
 
 | 2200
-| RPC
+| Mandatory
+| TCP
 | Orion master RPC port
 | bidirectional
 | All nodes
 | All nodes
-| Internal communication with the cluster manager
+| Internal communication with Orion, ThoughtSpot's cluster management tool.
 
 | 2201
-| HTTP
+| Mandatory
+| TCP
 | Orion master HTTP port
 | bidirectional
-| Admin IP addresses and all nodes
 | All nodes
-| Port used to debug the cluster manager
+| All nodes
+| Port used to debug Orion, ThoughtSpot's cluster management tool.
 
 | 2205
+| Mandatory
 | TCP
 | Cluster update service TCP port
 | bidirectional
@@ -96,7 +80,8 @@ The dynamic ports come from the range of ports that are dynamically allocated by
 | Internal communication with the cluster manager
 
 | 2210
-| RPC
+| Mandatory
+| TCP
 | Cluster stats service RPC port
 | bidirectional
 | All nodes
@@ -104,31 +89,35 @@ The dynamic ports come from the range of ports that are dynamically allocated by
 | Internal communication with the stats collector
 
 | 2211
-| HTTP
+| Mandatory
+| TCP
 | Cluster stats service HTTP port
 | bidirectional
-| Admin IP addresses and all nodes
+| All nodes
 | All nodes
 | Port used to debug the stats collector
 
 | 2230
-| RPC
+| Mandatory
+| TCP
 | Callosum stats collector RPC port
 | bidirectional
 | All nodes
 | All nodes
-| Internal communication with the BI stats collector
+| Internal communication with Callosum, ThoughtSpot's BI stats collector.
 
 | 2231
-| HTTP
+| Mandatory
+| TCP
 | Callosum stats collector HTTP port
 | bidirectional
-| Admin IP addresses and all nodes
 | All nodes
-| Port used to debug the BI stats collector
+| All nodes
+| Port used to debug Callosum, ThoughtSpot's BI stats collector.
 
 | 2240
-| RPC
+| Mandatory
+| TCP
 | Alert manager
 | bidirectional
 | All nodes
@@ -136,7 +125,8 @@ The dynamic ports come from the range of ports that are dynamically allocated by
 | Port where alerting service receives alert events
 
 | 2241
-| RPC
+| Mandatory
+| TCP
 | Alert manager
 | bidirectional
 | All nodes
@@ -144,431 +134,80 @@ The dynamic ports come from the range of ports that are dynamically allocated by
 | Port where alerting service receives alert events
 
 | 2888
-| RPC
+| Mandatory
+| TCP
 | Ports used by Zookeeper servers for communication between themselves
 | bidirectional
 | All nodes
 | All nodes
-| Ports used by Zookeeper servers for communication between themselves
+| Ports used by Zookeeper servers for communication between themselves. Zookeeper is ThoughtSpot's cluster-wide configuration management tool.
 
 | 3181
-| RPC
+| Mandatory
+| TCP
 | Ports used by Zookeeper servers for communication between themselves
 | bidirectional
 | All nodes
 | All nodes
-| Ports used by Zookeeper servers for communication between themselves
+| Ports used by Zookeeper servers for communication between themselves. Zookeeper is ThoughtSpot's cluster-wide configuration management tool.
 
 | 3888
-| RPC
+| Mandatory
+| TCP
 | Ports used by Zookeeper servers for communication between themselves
 | bidirectional
 | All nodes
 | All nodes
-| Ports used by Zookeeper servers for communication between themselves
+| Ports used by Zookeeper servers for communication between themselves. Zookeeper is ThoughtSpot's cluster-wide configuration management tool.
 
 | 4000
-| RPC
+| Mandatory
+| TCP
 | Falcon worker RPC port
 | bidirectional
 | All nodes
 | All nodes
-| Port used by data cache for communication between themselves
+| Port used by data cache for communication between themselves. Falcon is ThoughtSpot's in-memory database.
 
 | 4001
-| HTTP
+| Mandatory
+| TCP
 | Falcon worker HTTP port
 | bidirectional
-| Admin IP addresses and all nodes
 | All nodes
-| Port used to debug the data cache
+| All nodes
+| Port used to debug the data cache. Falcon is ThoughtSpot's in-memory database.
 
 | 4002
-| HTTP
+| Mandatory
+| TCP
 | Falcon worker HTTP port
 | bidirectional
-| Admin IP addresses and all nodes
 | All nodes
-| Port used to debug the data cache
+| All nodes
+| Port used to debug the data cache. Falcon is ThoughtSpot's in-memory database.
 
 | 4003
-| RPC
+| Mandatory
+| TCP
 | Falcon worker RPC port
 | bidirectional
 | All nodes
 | All nodes
-| Port used by data cache for communication between themselves
+| Port used by data cache for communication between themselves. Falcon is ThoughtSpot's in-memory database.
 
 | 4004
-| RPC
+| Mandatory
+| TCP
 | Falcon worker RPC port
 | bidirectional
 | All nodes
 | All nodes
-| Port used by data cache for communication between themselves
-
-| 4021
-| RPC
-| Sage metadata service port (exported by Tomcat), Callosum services like meta-data services, medata-dependency service, scheduling service, session-less service, spotiq service
-| bidirectional
-| All nodes
-| All nodes
-| Port where search service contacts metadata service for metadata
-
-| 4181
-| RPC
-| Ports used by Zookeeper servers for communication between themselves
-| bidirectional
-| All nodes
-| All nodes
-| Ports used by Zookeeper servers for communication between themselves
-
-| 4201
-| HTTP
-| Sage auto complete server HTTP interface port
-| bidirectional
-| Admin IP addresses and all nodes
-| All nodes
-| Port used to debug the search service
-
-| 4231
-| HTTP
-| Sage index server HTTP port
-| bidirectional
-| Admin IP addresses and all nodes
-| All nodes
-| Port used to debug the search service
-
-| 4232
-| RPC
-| Sage index server metadata subscriber port
-| bidirectional
-| All nodes
-| All nodes
-| Port used for search service internal communication
-
-| 4233
-| RPC
-| Sage index server RPC port
-| bidirectional
-| All nodes
-| All nodes
-| Port used for search service internal communication
-
-| 4241
-| HTTP
-| Sage auto complete server HTTP port
-| bidirectional
-| Admin IP addresses and all nodes
-| All nodes
-| Port used to debug the search service
-
-| 4242
-| RPC
-| Sage auto complete server RPC port
-| bidirectional
-| All nodes
-| All nodes
-| Port used for search service internal communication
-
-| 4243
-| RPC
-| Sage auto complete server metadata subscriber port
-| bidirectional
-| All nodes
-| All nodes
-| Port used for search internal communication
-
-| 4244
-| RPC
-| Sage auto complete server metadata subscriber port
-| bidirectional
-| All nodes
-| All nodes
-| Port used for search internal communication
-
-| 4245
-| RPC
-| Sage auto complete server metadata subscriber port
-| bidirectional
-| All nodes
-| All nodes
-| Port used for search internal communication
-
-| 4249
-| TCP
-| Ports used by Enlite/SpotIQ
-| bidirectional
-| All nodes
-| All nodes
-| Port used for SpotIQ internal communication
-
-| 4251
-| RPC
-| Sage master RPC port
-| bidirectional
-| All nodes
-| All nodes
-| Port used for search service internal communication
-
-| 4405
-| RPC
-| Diamond (graphite) port
-| bidirectional
-| All nodes
-| All nodes
-| Port used for communication with monitoring service
-
-| 4406
-| RPC
-| Diamond (graphite) port
-| bidirectional
-| All nodes
-| All nodes
-| Port used for communication with monitoring service
-
-| 4500
-| RPC
-| Trace vault service RPC port
-| bidirectional
-| All nodes
-| All nodes
-| Trace collection for ThoughtSpot services
-
-| 4501
-| HTTP
-| Trace vault service HTTP port
-| bidirectional
-| Admin IP addresses and all nodes
-| All nodes
-| Debug trace collection
-
-| 4851
-| RPC
-| Graphite manager RPC port
-| bidirectional
-| All nodes
-| All nodes
-| Communication with graphite manager
-
-| 4852
-| HTTP
-| Graphite manager HTTP port
-| bidirectional
-| Admin IP addresses and all nodes
-| All nodes
-| Debug graphite manager
-
-| 4853
-| RPC
-| Elastic search stack (ELK) manager RPC port
-| bidirectional
-| All nodes
-| All nodes
-| Communication with log search service
-
-| 4853
-| HTTP
-| Elastic search stack (ELK) manager HTTP port
-| bidirectional
-| Admin IP addresses and all nodes
-| All nodes
-| Debug log search service
-
-| 9200
-| RPC
-| Elastic search (ELK)
-| bidirectional
-| All nodes
-| All nodes
-| Communication with log search service
-
-| 5021
-| RPC
-| Callosum services like meta-data services, medata-dependency service, scheduling service, session-less service, spotiq service
-| bidirectional
-| All nodes
-| All nodes
-| Port where search service contacts metadata service for metadata
-
-| 5432
-| Postgres
-| Postgres database server port
-| bidirectional
-| All nodes
-| All nodes
-| Communication with Postgres database
-
-| 6021
-| RPC
-| Callosum services like meta-data services, medata-dependency service, scheduling service, session-less service, spotiq service
-| bidirectional
-| All nodes
-| All nodes
-| Port where search service contacts metadata service for metadata
-
-| 7021
-| RPC
-| Callosum services like meta-data services, medata-dependency service, scheduling service, session-less service, spotiq service
-| bidirectional
-| All nodes
-| All nodes
-| Port where search service contacts metadata service for metadata
-
-| 8020
-| RPC
-| HDFS namenode server RPC port
-| bidirectional
-| All nodes
-| All nodes
-| Distributed file system (DFS) communication with clients
-
-| 8021
-| RPC
-| Callosum services like meta-data services, medata-dependency service, scheduling service, session-less service, spotiq service
-| bidirectional
-| All nodes
-| All nodes
-| Port where search service contacts metadata service for metadata
-
-| 8080
-| HTTP
-| Tomcat
-| bidirectional
-| All nodes
-| All nodes
-| BI engine communication with clients
-
-| 8081
-| HTTP
-| Callosum/Tomcat status
-| bidirectional
-| All nodes
-| All nodes
-| BI engine communication with clients
-
-| 8787
-| HTTP
-| Periscope (UI) service HTTP port
-| bidirectional
-| All nodes
-| All nodes
-| Administration UI back end
-
-| 8888
-| HTTP
-| HTTP proxy server (tinyproxy)
-| bidirectional
-| All nodes
-| All nodes
-| Reverse SSH tunnel
-
-| 11211
-| Mem-cached
-| Memcached server port
-| bidirectional
-| All nodes
-| All nodes
-| BI engine cache
-
-| 12345
-| ODBC
-| Simba server port
-| bidirectional
-| All nodes
-| All nodes
-| Port used for ETL (extract, transform, load)
-
-| 8480
-| HTTP
-| HDFS journalnode server HTTP port
-| bidirectional
-| All nodes
-| All nodes
-| Debug DFS metadata
-
-| 8485
-| HTTP
-| HDFS journalnode server HTTP port
-| bidirectional
-| All nodes
-| All nodes
-| Debug DFS metadata
-
-| 50070
-| HTTP
-| HDFS namenode server HTTP port
-| bidirectional
-| All nodes
-| All nodes
-| Debug DFS metadata
-
-| 50090
-| HTTP
-| HDFS secondary namenode server HTTP port
-| bidirectional
-| All nodes
-| All nodes
-| Debug DFS metadata
-
-| 50075
-| HTTP
-| HDFS datanode server HTTP port
-| bidirectional
-| All nodes
-| All nodes
-| Debug DFS data
-
-| 50010
-| HTTP
-| HDFS datanode server HTTP port
-| bidirectional
-| All nodes
-| All nodes
-| Debug DFS data
-
-| 50020
-| HTTP
-| HDFS datanode server HTTP port
-| bidirectional
-| All nodes
-| All nodes
-| Debug DFS data
-
-| 7000
-| TCP
-| Cassandra KV store database
-| bidirectional
-| All nodes
-| All nodes
-| Debug DFS data
-
-| 7001
-| TCP
-| Cassandra
-| bidirectional
-| All nodes
-| All nodes
-| Debug DFS data
-
-| 9042
-| HTTP
-| Munshi server impression service, Cassandra
-| bidirectional
-| All nodes
-| All nodes
-| Debug DFS data
-
-| 9160
-| TCP
-| Cassandra
-| bidirectional
-| All nodes
-| All nodes
-| Debug DFS data
+| Port used by data cache for communication between themselves. Falcon is ThoughtSpot's in-memory database.
 
 | 4010
-| HTTP
+| Mandatory
+| TCP
 | Falcon moderator
 | bidirectional
 | All nodes
@@ -576,22 +215,196 @@ The dynamic ports come from the range of ports that are dynamically allocated by
 | Debug DFS data
 
 | 4011
-| HTTP
+| Mandatory
+| TCP
 | Falcon moderator
 | bidirectional
 | All nodes
 | All nodes
 | Debug DFS data
 
-| 20123 - 32768
-| TCP (dynamic)
-| Dynamic port in this range used for various services and anciliary services like atlas, caffeine, callhome, callosum, falcon, monitoring, munshi server, nlp, object_search, postgres, sage UBR, spotiq snapshot, timely
+| 4021
+| Mandatory
+| TCP
+| Sage metadata service port (exported by Tomcat), Callosum services like meta-data services, medata-dependency service, scheduling service, session-less service, spotiq service
+| bidirectional
 | All nodes
-| Services
-|
-|
+| All nodes
+| Port where search service (Sage) contacts metadata service (Callosum) for metadata
+
+| 4123
+| Mandatory
+| TCP
+| Prism. Prism is an API gateway that connects ThoughtSpot's frontend to multiple backend services.
+| bidirectional
+| All nodes
+| All nodes
+| Intracluster communication. Allows table joins.
+
+| 4181
+| Mandatory
+| TCP
+| Ports used by Zookeeper servers for communication between themselves
+| bidirectional
+| All nodes
+| All nodes
+| Ports used by Zookeeper servers for communication between themselves. Zookeeper is ThoughtSpot's cluster-wide configuration management tool.
+
+| 4201
+| Mandatory
+| TCP
+| Sage auto complete server HTTP interface port
+| bidirectional
+| All nodes
+| All nodes
+| Port used to debug Sage, ThoughtSpot's search service.
+
+| 4231
+| Mandatory
+| TCP
+| Sage index server HTTP port
+| bidirectional
+| All nodes
+| All nodes
+| Port used to debug Sage, ThoughtSpot's search service.
+
+| 4232
+| Mandatory
+| TCP
+| Sage index server metadata subscriber port
+| bidirectional
+| All nodes
+| All nodes
+| Port used for internal communication for Sage, ThoughtSpot's search service.
+
+| 4233
+| Mandatory
+| TCP
+| Sage index server RPC port
+| bidirectional
+| All nodes
+| All nodes
+| Port used for internal communication for Sage, ThoughtSpot's search service.
+
+| 4241
+| Mandatory
+| TCP
+| Sage auto complete server HTTP port
+| bidirectional
+| All nodes
+| All nodes
+| Port used to debug Sage, ThoughtSpot's search service.
+
+| 4242
+| Mandatory
+| TCP
+| Sage auto complete server RPC port
+| bidirectional
+| All nodes
+| All nodes
+| Port used for internal communication for Sage, ThoughtSpot's search service.
+
+| 4243
+| Mandatory
+| TCP
+| Sage auto complete server metadata subscriber port
+| bidirectional
+| All nodes
+| All nodes
+| Port used for internal communication for Sage, ThoughtSpot's search service.
+
+| 4244
+| Mandatory
+| TCP
+| Sage auto complete server metadata subscriber port
+| bidirectional
+| All nodes
+| All nodes
+| Port used for internal communication for Sage, ThoughtSpot's search service.
+
+| 4245
+| Mandatory
+| TCP
+| Sage auto complete server metadata subscriber port
+| bidirectional
+| All nodes
+| All nodes
+| Port used for internal communication for Sage, ThoughtSpot's search service.
+
+| 4249
+| Mandatory
+| TCP
+| Ports used by Enlite/SpotIQ
+| bidirectional
+| All nodes
+| All nodes
+| Port used for SpotIQ internal communication.
+
+| 4251
+| Mandatory
+| TCP
+| Sage master RPC port
+| bidirectional
+| All nodes
+| All nodes
+| Port used for internal communication for Sage, ThoughtSpot's search service.
+
+| 4405
+| Mandatory
+| TCP
+| Diamond (graphite) port
+| bidirectional
+| All nodes
+| All nodes
+| Port used for communication with monitoring service
+
+| 4406
+| Mandatory
+| TCP
+| Diamond (graphite) port
+| bidirectional
+| All nodes
+| All nodes
+| Port used for communication with monitoring service
+
+| 4500
+| Mandatory
+| TCP
+| Trace vault service RPC port
+| bidirectional
+| All nodes
+| All nodes
+| Trace collection for ThoughtSpot services
+
+| 4501
+| Mandatory
+| TCP
+| Trace vault service HTTP port
+| bidirectional
+| All nodes
+| All nodes
+| Debug trace collection
+
+| 9200
+| Mandatory
+| TCP
+| Elastic search (ELK)
+| bidirectional
+| All nodes
+| All nodes
+| Communication with log search service
+
+| 5021
+| Mandatory
+| TCP
+| Callosum services like meta-data services, medata-dependency service, scheduling service, session-less service, spotiq service
+| bidirectional
+| All nodes
+| All nodes
+| Port where the search service (Sage) contacts the metadata service (Callosum) for metadata.
 
 | 5270
+| Mandatory
 | TCP
 | Cluster monitoring service (ELK)
 | bidirectional
@@ -600,6 +413,7 @@ The dynamic ports come from the range of ports that are dynamically allocated by
 | Services
 
 | 5271
+| Mandatory
 | TCP
 | Cluster monitoring service (ELK)
 | bidirectional
@@ -607,7 +421,17 @@ The dynamic ports come from the range of ports that are dynamically allocated by
 | All nodes
 | Services
 
+| 5432
+| Mandatory
+| TCP
+| Postgres database server port
+| bidirectional
+| All nodes
+| All nodes
+| Communication with Postgres database
+
 | 5601
+| Mandatory
 | TCP
 | Kibana UI (ELK)
 | bidirectional
@@ -615,7 +439,17 @@ The dynamic ports come from the range of ports that are dynamically allocated by
 | All nodes
 | Services
 
+| 6021
+| Mandatory
+| TCP
+| Callosum services like meta-data services, medata-dependency service, scheduling service, session-less service, spotiq service
+| bidirectional
+| All nodes
+| All nodes
+| Port where the search service (Sage) contacts the metadata service (Callosum) for metadata
+
 | 6311
+| Mandatory
 | TCP
 | R service
 | bidirectional
@@ -623,7 +457,35 @@ The dynamic ports come from the range of ports that are dynamically allocated by
 | All nodes
 | Services
 
+| 7000
+| Mandatory
+| TCP
+| Cassandra KV store database
+| bidirectional
+| All nodes
+| All nodes
+| Debug DFS data. Cassandra is a third-party database management system.
+
+| 7001
+| Mandatory
+| TCP
+| Cassandra
+| bidirectional
+| All nodes
+| All nodes
+| Debug DFS data. Cassandra is a third-party database management system.
+
+| 7021
+| Mandatory
+| TCP
+| Callosum services like meta-data services, medata-dependency service, scheduling service, session-less service, spotiq service
+| bidirectional
+| All nodes
+| All nodes
+| Port where the search service (Sage) contacts the metadata service (Callosum) for metadata
+
 | 8008
+| Mandatory
 | TCP
 | Video recorder
 | bidirectional
@@ -631,7 +493,89 @@ The dynamic ports come from the range of ports that are dynamically allocated by
 | All nodes
 | Services
 
+| 8020
+| Mandatory
+| TCP
+| HDFS namenode server RPC port
+| bidirectional
+| All nodes
+| All nodes
+| Distributed file system (DFS) communication with clients
+
+| 8021
+| Mandatory
+| TCP
+| Callosum services like meta-data services, medata-dependency service, scheduling service, session-less service, spotiq service
+| bidirectional
+| All nodes
+| All nodes
+| Port where the search service (Sage) contacts the metadata service (Callosum) for metadata.
+
+| 8080
+| Mandatory
+| TCP
+| Tomcat
+| bidirectional
+| All nodes
+| All nodes
+| BI engine communication with clients
+
+| 8081
+| Mandatory
+| TCP
+| Callosum/Tomcat status
+| bidirectional
+| All nodes
+| All nodes
+| BI engine communication with clients
+
+| 8480
+| Mandatory
+| TCP
+| HDFS journalnode server HTTP port
+| bidirectional
+| All nodes
+| All nodes
+| Debug DFS metadata
+
+| 8485
+| Mandatory
+| TCP
+| HDFS journalnode server HTTP port
+| bidirectional
+| All nodes
+| All nodes
+| Debug DFS metadata
+
+| 8787
+| Mandatory
+| TCP
+| Periscope (UI) service HTTP port
+| bidirectional
+| All nodes
+| All nodes
+| Administration UI back end
+
+| 8888
+| Mandatory
+| TCP
+| HTTP proxy server (tinyproxy)
+| bidirectional
+| All nodes
+| All nodes
+| Reverse SSH tunnel
+
+| 9042
+| Mandatory
+| HTTP
+| Munshi server impression service, Cassandra
+| bidirectional
+| All nodes
+| All nodes
+| Debug DFS data. Cassandra is a third-party database management system.
+
 | 9090
+| Mandatory
 | TCP
 | Timely
 | bidirectional
@@ -639,12 +583,122 @@ The dynamic ports come from the range of ports that are dynamically allocated by
 | All nodes
 | Services
 
+| 9160
+| Mandatory
+| TCP
+| Cassandra
+| bidirectional
+| All nodes
+| All nodes
+| Debug DFS data. Cassandra is a third-party database management system.
+
+| 11211
+| Mandatory
+| TCP/UDP
+| Memcached server port
+| bidirectional
+| All nodes
+| All nodes
+| BI engine cache
+
+| 20123 - 32768
+| Mandatory
+| TCP
+| Dynamic services
+| bidirectional
+| All nodes
+| All nodes
+| Used for various services, such as atlas, caffeine, callhome, callosum, falcon, monitoring, munshi server, nlp, object_search, postgres, sage UBR, spotiq snapshot, timely.
+
+| 50010
+| Mandatory
+| TCP
+| HDFS datanode server HTTP port
+| bidirectional
+| All nodes
+| All nodes
+| Debug DFS data
+
+| 50020
+| Mandatory
+| TCP
+| HDFS datanode server HTTP port
+| bidirectional
+| All nodes
+| All nodes
+| Debug DFS data
+
+| 50070
+| Mandatory
+| TCP
+| HDFS namenode server HTTP port
+| bidirectional
+| All nodes
+| All nodes
+| Debug DFS metadata
+
+| 50075
+| Mandatory
+| TCP
+| HDFS datanode server HTTP port
+| bidirectional
+| All nodes
+| All nodes
+| Debug DFS data
+
+| 50090
+| Mandatory
+| TCP
+| HDFS secondary namenode server HTTP port
+| bidirectional
+| All nodes
+| All nodes
+| Debug DFS metadata
+
 |
-| ICMPv4
+| Mandatory
+| ICMP
 | Used for health check of cluster nodes
 | bidirectional
 | All nodes
 | All nodes
 | Services
+
+| 80
+| Optional
+| TCP
+| nginx
+| inbound
+| All nodes
+| All nodes
+| Primary app HTTP port (nginx)
+
+| 500
+| Optional unless using IPSec
+| UDP
+| Internet Key Exchange (IKE)
+| bidirectional
+| All nodes
+| All nodes
+| Required when using IPSec (encryption in transit)
+
+| 4500
+| Optional unless using IPSec
+| UDP
+| IPSec
+| bidirectional
+| All nodes
+| All nodes
+| Required when using IPSec (encryption in transit)
+
+|
+| Optional unless using IPSec
+| IP protocol 50
+| Encapsulating Security Payload (ESP)
+| bidirectional
+| All nodes
+| All nodes
+| Required when using IPSec (encryption in transit)
 |===
 ====
+

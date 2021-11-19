@@ -6,7 +6,7 @@
 
 You can schedule a pinboard job for any Pinboard by using the *Add a schedule* prompt page.
 
-You can add multiple schedules with different configurations for a single Pinboard. However, each job is limited to one Pinboard schedule. To add a schedule, you must either be an administrator, or have the *Schedule pinboard* privilege, and edit-only and view-only access or better.
+You can add multiple schedules with different configurations for a single Pinboard. However, each job is limited to one Pinboard schedule. To add a schedule, you must either be an administrator, or have the *Schedule pinboard* privilege, and at least view-only access for the pinboard.
 
 To schedule a Pinboard, follow these steps:
 
@@ -25,7 +25,7 @@ image::scheduled_pinboards_1.png[]
 Repeats::
   You can rebuild a pinboard every _n_ minutes, hourly, daily, weekly, or monthly. For some of these, you can also choose specific times of the day or days of the week. Make sure to note the *Server time zone*.
 Name::
-  Provide a short name for this schedule; for example, _Monthly Report Source_.
+  Provide a short name for this schedule. This name should be descriptive and unique.
 Description::
   Enter a description to remind yourself and to inform others. If this is an important schedule for a meeting or a report, you should mention that.
 Type::
@@ -42,7 +42,7 @@ For an in-depth example of a scenario where a gating condition is useful and pow
 +
 NOTE: ThoughtSpot executes the gating condition as a ThoughtSpot admin user. If you are using passthrough security for your external data warehouse connection, the gating condition may not work.
 Recipients::
-  You are limited to 1000 recipients for each job. You can add *Users* or *groups*. Use *Emails* to add recipients who are not ThoughtSpot users. Your ThoughtSpot admin must set these email domains as allowed domains in advance. Contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support^] to add allowed domains.
+  You are limited to 1000 recipients for each job. You can add *Users* or *groups*. Use *Emails* to add recipients who are not ThoughtSpot users. Your ThoughtSpot admin must set these email domains as allowed domains in advance. Contact xref:support-contact.adoc[ThoughtSpot Support] to add allowed domains.
 +
 If you experience problems with sending email, your cluster may not have SMTP enabled. Contact your system administrator to resolve this issue.
 . Click *Schedule* to save your schedule configuration.

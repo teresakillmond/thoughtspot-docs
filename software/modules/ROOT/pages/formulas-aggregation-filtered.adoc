@@ -64,7 +64,7 @@ A condition can have multiple filters, like the two conditions for `region` in t
 
 You can also just type a value as a filter; here, `east` is the filter in the expression `sales east`.
 
-If there are no rows matching the filter criteria, the condition returns a `0` (zero).
+If there are no rows matching the filter criteria, the condition returns a `0` (zero). When you use a filter rather than a filter function, ThoughtSpot does not include any zero values in your chart or table. Using a filter function like `sum_if` or `count_if` is the best way to include zero values in your chart or table.
 
 A 0 can result in situations where there are logic errors in the formula, so be sure to verify your work.
 

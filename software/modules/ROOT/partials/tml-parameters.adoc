@@ -72,8 +72,6 @@ a| <<filters,filters>>
 
 <<id,id>>
 
-<<identity,identity>>
-
 <<index_priority,index_priority>>
 
 <<index_type,index_type>>
@@ -332,6 +330,8 @@ fqn::
 You can find this string of letters and numbers at the end of the URL for that table.
 +
 For example, in `https://<company>.thoughtspot.com/#/data/tables/34226aaa-4bcf-4d6b-9045-24cb1e9437cb`, the GUID is `34226aaa-4bcf-4d6b-9045-24cb1e9437cb`.
++
+Use this optional parameter to identify a specific table, if you have multiple tables with the same name.
 
 [#geo_config]
 geo_config::
@@ -375,10 +375,6 @@ Refer to xref:search-data-api.adoc#components[Components of a Search Query] to u
 For formulas within Answers, `id` refers to the display name of the formula.
 +
 If you do not give your formula a name, it appears as 'Untitled Formula'.
-
-[#identity]
-identity::
-  Specifies the identity of a table, based on its `name`, `id`, and `fqn`.
 
 [#index_priority]
 index_priority::
