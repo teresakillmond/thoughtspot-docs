@@ -167,7 +167,7 @@ outoflineFK:: The foreign key in the relationship, with the following definition
 ----
 outoflineFK :=
     [ CONSTRAINT <constraint_name> ]
-    FOREIGN KEY ( <col_namev [ , <col_name> , ... ] )
+    FOREIGN KEY ( <col_name> [ , <col_name> , ... ] )
     REFERENCES <ref_table_name> [ ( <ref_col_name> [ , <ref_col_name> , ... ] ) ]
     [ MATCH { FULL | SIMPLE | PARTIAL } ]
     [ ON [ UPDATE { CASCADE | SET NULL | SET DEFAULT | RESTRICT | NO ACTION } ]
