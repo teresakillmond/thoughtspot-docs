@@ -47,7 +47,7 @@ The following example uses the sample `WEATHER` data from the **Snowflake Free T
 +
 [source]
 ----
-CREATE <strong>json_weather_data_view</strong> as
+CREATE json_weather_data_view as
 SELECT
   v:time::timestamp as observation_time,
   v:city.id::int as city_id,
@@ -118,7 +118,6 @@ JOIN
 ORDER BY
   fk_tco.table_schema,
   fk_tco.table_name;
-[source]
 ----
 
 The system returns the results of this query as a table that represents all foreign keys in the database, ordered by schema name and by name of the foreign table. The table has the following columns:
@@ -153,7 +152,7 @@ To add a foreign key constraint in Snowflake, you must issue the following `ALTE
 
 [source]
 ----
-ALTER TABLE &lt;table_name&gt; ADD { outoflineUniquePK | outoflineFK }
+ALTER TABLE <table_name> ADD { outoflineUniquePK | outoflineFK }
 ----
 
 
@@ -163,8 +162,8 @@ The primary key in the relationship, with the following definition:
 [source]
 ----
   outoflineUniquePK ::=
-  [ CONSTRAINT &lt;constraint_name&gt;> ]
-  { UNIQUE | PRIMARY KEY } ( &lt;col_name&gt;> [ , &lt;col_name&gt; , ... ] )
+  [ CONSTRAINT <constraint_name>> ]
+  { UNIQUE | PRIMARY KEY } ( <col_name>> [ , <col_name> , ... ] )
   [ [ NOT ] ENFORCED ]
   [ [ NOT ] DEFERRABLE ]
   [ INITIALLY { DEFERRED | IMMEDIATE } ]
@@ -179,9 +178,9 @@ The foreign key in the relationship, with the following definition:
 [source]
 ----
      outoflineFK :=
-    [ CONSTRAINT &lt;constraint_name&gt; ]
-    FOREIGN KEY ( &lt;col_namev [ , &lt;col_name&gt; , ... ] )
-    REFERENCES &lt;ref_table_name&gt; [ ( &lt;ref_col_name&gt; [ , &lt;ref_col_name&gt; , ... ] ) ]
+    [ CONSTRAINT <constraint_name> ]
+    FOREIGN KEY ( <col_name> [ , <col_name> , ... ] )
+    REFERENCES <ref_table_name> [ ( <ref_col_name> [ , <ref_col_name> , ... ] ) ]
     [ MATCH { FULL | SIMPLE | PARTIAL } ]
     [ ON [ UPDATE { CASCADE | SET NULL | SET DEFAULT | RESTRICT | NO ACTION } ]
          [ DELETE { CASCADE | SET NULL | SET DEFAULT | RESTRICT | NO ACTION } ] ]
