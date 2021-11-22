@@ -46,7 +46,7 @@ The following example uses the sample `WEATHER` data from the **Snowflake Free T
 
 [source]
 ----
-CREATE <strong>json_weather_data_view</strong> as
+CREATE json_weather_data_view as
 SELECT
   v:time::timestamp as observation_time,
   v:city.id::int as city_id,
@@ -157,14 +157,14 @@ For in-depth information from Snowflake, see https://docs.snowflake.net/manuals/
 To add a foreign key constraint in Snowflake, you must issue the following `ALTER TABLE` statement:
 
 ----
-ALTER TABLE &lt;table_name&gt; ADD { outoflineUniquePK | outoflineFK }
+ALTER TABLE <table_name> ADD { outoflineUniquePK | outoflineFK }
 ----
 
 outoflineUniquePK:: The primary key in the relationship, with the following definition:
 ----
     outoflineUniquePK ::=
-  [ CONSTRAINT &lt;constraint_name&gt;> ]
-  { UNIQUE | PRIMARY KEY } ( &lt;col_name&gt;> [ , &lt;col_name&gt; , ... ] )
+  [ CONSTRAINT <constraint_name> ]
+  { UNIQUE | PRIMARY KEY } ( <col_name> [ , <col_name> , ... ] )
   [ [ NOT ] ENFORCED ]
   [ [ NOT ] DEFERRABLE ]
   [ INITIALLY { DEFERRED | IMMEDIATE } ]
@@ -176,9 +176,9 @@ outoflineUniquePK:: The primary key in the relationship, with the following defi
 outoflineFK:: The foreign key in the relationship, with the following definition:
 ----
     outoflineFK :=
-  [ CONSTRAINT &lt;constraint_name&gt; ]
-  FOREIGN KEY ( &lt;col_namev [ , &lt;col_name&gt; , ... ] )
-  REFERENCES &lt;ref_table_name&gt; [ ( &lt;ref_col_name&gt; [ , &lt;ref_col_name&gt; , ... ] ) ]
+  [ CONSTRAINT <constraint_name> ]
+  FOREIGN KEY ( <col_name> [ , <col_name> , ... ] )
+  REFERENCES <ref_table_name> [ ( <ref_col_name> [ , <ref_col_name> , ... ] ) ]
   [ MATCH { FULL | SIMPLE | PARTIAL } ]
   [ ON [ UPDATE { CASCADE | SET NULL | SET DEFAULT | RESTRICT | NO ACTION } ]
        [ DELETE { CASCADE | SET NULL | SET DEFAULT | RESTRICT | NO ACTION } ] ]
@@ -211,7 +211,7 @@ ALTER TABLE "HO_RETAIL"."PUBLIC"."HO_Retail_Sales_Fact"
 To add the foreign key in ThoughtSpot (an alternative to the process outlined in <<add-fk-snowflake,Example 1>>, you can issue the following TQL `ALTER TABLE` statement:
 
 ----
-TQL&gt; ALTER TABLE "HO_Retail_Sales_Fact"
+TQL> ALTER TABLE "HO_Retail_Sales_Fact"
    ADD CONSTRAINT FOREIGN KEY ("Date_Key")
    REFERENCES "HO_Date_Dimension" ("Date_Key");
 ----
