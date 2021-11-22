@@ -1,19 +1,12 @@
 site:
   title: ThoughtSpot Software
-  url: https://preview-thoughtspot.netlify.app/software
 content:
   sources:
   # embedding empty credentials in the URL disables the Edit this Page link for any page created from this repository
-  # - url: ./
-    # branches: HEAD
-    # start_paths:
-      # - software/
-  - url: .
+  - url: ./
     branches: HEAD
-    start_path: software
-  - url: git@github.com:thoughtspot/thoughtspot-docs.git
-    branches: ['7.1.1']
-    start_path: software/
+    start_paths:
+      - software/
 ui:
   bundle:
     url: ui-bundle/ui2-bundle.zip
