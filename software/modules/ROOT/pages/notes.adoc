@@ -1,15 +1,81 @@
 = 7.1 Release Notes
 :experimental:
-:last_updated: 9/9/2021
+:last_updated: 11/22/2021
 :linkattrs:
-:page-aliases: /release/notes.adoc, /7.0/release/notes.adoc, /7.0.0.CU1/release/notes.adoc, /7.0.1/release/notes.adoc, /7.0.0.mar.sw/release/notes.adoc
+:page-aliases: /release/notes.adoc
 
-ThoughtSpot version 7.1.0.CU1 is now available. These release notes include information about new and enhanced features.
+
+ThoughtSpot version 7.1.1 is now available.
+
+These release notes include information about new and enhanced features.
 
 To see our feature deprecation plans, please see xref:deprecation.adoc[].
 
 For a complete list of issues that we fixed in this release, see xref:fixed.adoc#releases-7-1-x[Fixed issues].
 
+* <<new-7-1-1,7.1.1 New Features and Functionality>>
+* <<upgrade-paths,Supported Upgrade Paths>>
+
+[#new-7-1-1]
+== 7.1.1 New Features and Functionality
+For a complete list of issues that we fixed in this release, see xref:fixed.adoc#releases-7-1-x[Fixed issues].
+
+Here are the most significant new features and improvements in the 7.1.1 Software Release:
+
+* <<analyst-7-1-1,For the Analyst>>
+* <<business-user-7-1-1,For the Business User>>
+* <<data-engineer-7-1-1,For the Data Engineer>>
+// * <<it-ops-engineer-7-1-1,For the IT Ops Engineer>>
+* <<developer-7-1-1,For the Developer>>
+
+[#analyst-7-1-1]
+=== For the Analyst
+
+TML for tables with row-level security::
+ThoughtSpot now supports the migration and editing of tables with xref:security-rls-concept.adoc[row level security (RLS)] using xref:tml.adoc#syntax-tables[TML].
+
+Pinboard schedule gating conditions::
+Gating conditions for scheduled pinboards are now GA. Refer to xref:pinboard-schedule.adoc[] to learn more about scheduling pinboards for email delivery, and how to leverage gating conditions so that ThoughtSpot only sends the pinboards when certain conditions are true.
+
+[#business-user-7-1-1]
+=== For the Business User
+
+New answer experience [.label.label-beta]#Beta#::
+This release redesigns the experience of creating and working with answers. The new answer experience contains multiple new features and feature enhancements. It is in [.label.label-beta]#Beta# and off by default, but the option to turn it on or off individually is on by default. You can toggle it on or off individually from the *Experience manager* in your profile, or for the whole company by xref:support-contact.adoc[contacting ThoughtSpot Support].
++
+The new answer experience contains the following features and enhancements:
++
+--
+include::partial$new-answer-experience-features.adoc[]
+--
++
+include::partial$new-answer-experience-deprecations.adoc[]
++
+Refer to xref:answer-experience-new.adoc[New answer experience] for more information on the behavior of these features.
+
+// [#business-user-7-1-1]
+// === For the Business User
+
+[#data-engineer-7-1-1]
+=== For the Data Engineer
+
+Custom calendar::
+Custom calendar is now available for Snowflake, Amazon Redshift, Google BigQuery, Microsoft Azure Synapse, and Databricks cloud data warehouses. See xref:connections-cust-cal.adoc[Custom calendar].
+This feature is disabled by default. To enable it, xref:support-contact.adoc[contact ThoughtSpot Support].
+
+
+Integration with AWS Secrets Manager for connection passwords::
+Connections now supports AWS Secrets Manager for clusters deployed in AWS. This feature is disabled by default. To enable it, xref:support-contact.adoc[contact ThoughtSpot Support].
+
+[#developer-7-1-1]
+=== For the Developer
+
+ThoughtSpot Software deployments now support ThoughtSpot Everywhere, which provides a low-code embedded analytics platform for developers and product owners. ThoughtSpot Everywhere users can now use the Visual Embed SDK to embed ThoughtSpot Search, pinboards, visualizations, and even the entire ThoughtSpot experience in their application, product, or web page.
+
+This release also introduces the Developer portal for application developers and ThoughtSpot Everywhere users. The portal provides a Playground for developer users to explore the SDK APIs and embedding workflows. The portal also offers several features, such as style customization and custom actions, to customize and enhance the embedded content.
+To know more about ThoughtSpot Everywhere and learn how to embed ThoughtSpot content using Visual Embed SDK and REST APIs, go to *Develop* > *Guides*, or refer to the https://visual-embed-sdk-7-1-1.vercel.app/docs/[ThoughtSpot Everywhere documentation^].
+
+=======
 * <<new-7-1-0-CU1,7.1.0.CU1 New Features and Functionality>>
 * <<upgrade-paths,Supported Upgrade Paths>>
 
@@ -169,14 +235,16 @@ This worksheet is the underlying source for the xref:object-usage-pinboard.adoc[
 [#upgrade-paths]
 == Supported Upgrade Paths
 
-If you are running one of the following versions, you can upgrade to the 7.1.x release directly:
+If you are running one of the following versions, you can upgrade to the 7.1.1 release directly:
 
-* 6.3.x to 7.1.x
-* 7.0.x to 7.1.x
+* 6.3.x to 7.1.1
+* 7.0.x to 7.1.1
+* 7.1 to 7.1.1
 
 This includes any hotfixes or customer patches on these branches.
 
 If you are running a different version, you must do a multiple pass upgrade.
-First, upgrade to version 6.3.x, or 7.0.x, and then to the 7.1.x release.
+
+First, upgrade to version 6.3.x, 7.0.x, or 7.1 and then to the 7.1.1 release.
 
 NOTE: To successfully upgrade your ThoughtSpot cluster, all user profiles must include a valid email address. Without valid email addresses, the upgrade is blocked.

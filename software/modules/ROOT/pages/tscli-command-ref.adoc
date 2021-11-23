@@ -75,6 +75,7 @@ There are several optional flags that are common to each `tscli` subcommand:
 [#tscli-flag-help]
 === help
 
+[source,tscli]
 ----
 -h, --help
 ----
@@ -85,6 +86,7 @@ This flag lists the specified command's subcommands and their definitions.
 [#tscli-flag-helpfull]
 === helpfull
 
+[source,tscli]
 ----
 --helpfull HELPFUll
 ----
@@ -94,6 +96,7 @@ This flag shows help for all supported commands.
 [#tscli-flag-verbose]
 === verbose
 
+[source,tscli]
 ----
 --verbose
 ----
@@ -104,6 +107,7 @@ By default, logs are written to both the console and log files, with the log fil
 [#tscli-flag-noautoconfig]
 === noautoconfig
 
+[source,tscli]
 ----
 --noautoconfig
 ----
@@ -113,6 +117,7 @@ Prompts y/n response for each question within a command, instead of assuming `ye
 [#tscli-flag-autoconfig]
 === autoconfig
 
+[source,tscli]
 ----
 --autoconfig
 ----
@@ -123,6 +128,7 @@ User may still be prompted for certain inputs. The default is `False`.
 [#tscli-flag-yes]
 === yes
 
+[source,tscli]
 ----
 --yes
 ----
@@ -133,6 +139,7 @@ User may still be prompted for certain inputs. The default is `False`.
 [#tscli-flag-cluster]
 === cluster
 
+[source,tscli]
 ----
 --cluster CLUSTER
 ----
@@ -143,6 +150,7 @@ Used when a cluster is not automatically detected. The default is `False`.
 [#tscli-flag-zoo]
 === zoo
 
+[source,tscli]
 ----
 --zoo ZOO
 ----
@@ -202,6 +210,7 @@ This section lists each subcommand of the tscli command, and its syntax:
 [#tscli-access]
 === access
 
+[source,tscli]
 ----
 tscli access [-h] {list}
 ----
@@ -218,6 +227,7 @@ tscli access list::
 [#tscli-alert]
 === alert
 
+[source,tscli]
 ----
 tscli alert [-h] {count,info,list,off,on,refresh,silence,status,unsilence}
 ----
@@ -251,6 +261,7 @@ tscli alert unsilence --name NAME::
 [#tscli-ansible]
 === ansible
 
+[source,tscli]
 ----
 tscli ansible [-h] {checkout,commit} [--local]
 ----
@@ -267,6 +278,7 @@ tscli ansible commit --host HOST::
 [#tscli-backup]
 === backup
 
+[source,tscli]
 ----
 tscli backup [-h] {create,delete,ls}
 ----
@@ -292,6 +304,7 @@ tscli backup ls::
 [#tscli-backup-policy]
 === backup-policy
 
+[source,tscli]
 ----
 tscli backup-policy [-h] {create,delete,disable,enable,ls,show,status,update}
 ----
@@ -334,6 +347,7 @@ tscli backup-policy update NAME::
 [#tscli-calendar]
 === calendar
 
+[source,tscli]
 ----
 tscli calendar [-h] {create,delete,disable,enable,generate,get,list,update}
 ----
@@ -391,6 +405,7 @@ tscli calendar update::  Updates a custom calendar table in the system, with the
 
 Provides usage statistics to ThoughtSpot by sending them from the cluster to a secure S3 bucket that ThoughtSpot owns.
 
+[source,tscli]
 ----
 tscli callhome [-h] {disable,enable,generate-bundle}
 ----
@@ -410,6 +425,7 @@ tscli callhome generate-bundle [--d D] [--since SINCE]::
 [#tscli-cassandra]
 === cassandra
 
+[source,tscli]
 ----
 tscli cassandra [-h] {backup,restore,tablestats}
 ----
@@ -432,6 +448,7 @@ tscli cassandra tablestats::
 [#tscli-cluster]
 === cluster
 
+[source,tscli]
 ----
 tscli cluster [-h] {abort-update,bucket-migrate,bucket-name,check,create,download-release,get-config,list-available-releases,list-downloaded-releases,load,restore,resume-update,set-config,set-min-resource-spec,setup-release-host,setup-release-host-key,show-id,show-name,show-resource-spec,start,status,stop,update,update-hadoop}
 ----
@@ -547,6 +564,7 @@ tscli cluster update-hadoop::
 [#tscli-command]
 === command
 
+[source,tscli]
 ----
 tscli command [-h] {run}
 ----
@@ -565,6 +583,7 @@ tscli command run COMMAND::
 [#tscli-config-mode]
 === config-mode
 
+[source,tscli]
 ----
 tscli config-mode [-h] {lean}
 ----
@@ -578,6 +597,7 @@ tscli config-mode lean::
 [#tscli-csp]
 === csp
 
+[source,tscli]
 ----
 tscli csp [-h] {add-override,clear-override,remove-override,reset-override}
 ----
@@ -604,6 +624,7 @@ Resets a specified override with a new value, with the following parameters:
 [#tscli-dataflow]
 === dataflow
 
+[source,tscli]
 ----
 tscli dataflow [-h] {disable,enable}
 ----
@@ -619,6 +640,7 @@ tscli dataflow enable::
 [#tscli-dr-mirror]
 === dr-mirror
 
+[source,tscli]
 ----
 tscli dr-mirror [-h] {start,status,stop}
 ----
@@ -643,6 +665,7 @@ tscli dr-mirror stop::
 [#tscli-event]
 === event
 
+[source,tscli]
 ----
 tscli event [-h] {list}
 ----
@@ -664,6 +687,7 @@ tscli event list [-h] [--include INCLUDE] [--since SINCE] [--from FROM] [--to TO
 [#tscli-feature]
 === feature
 
+[source,tscli]
 ----
 tscli feature [-h] {get-all-config}
 ----
@@ -677,6 +701,7 @@ tscli feature get-all-config::
 [#tscli-fileserver]
 === fileserver
 
+[source,tscli]
 ----
 tscli fileserver [-h] {configure,download-release,purge-config,show-config,upload}
 ----
@@ -710,6 +735,7 @@ tscli fileserver upload [-h] [--user USER] [--password PASSWORD] --file_name FIL
 [#tscli-firewall]
 === firewall
 
+[source,tscli]
 ----
 tscli firewall [-h] {close-ports,disable,enable,open-ports,status}
 ----
@@ -734,6 +760,7 @@ tscli firewall status::
 [#tscli-hdfs]
 === hdfs
 
+[source,tscli]
 ----
 tscli hdfs [-h] {leave-safemode}
 ----
@@ -747,6 +774,7 @@ tscli hdfs leave-safemode::
 [#tscli-ipsec]
 === ipsec
 
+[source,tscli]
 ----
 tscli ipsec [-h] {disable,enable,status}
 ----
@@ -765,6 +793,7 @@ tscli ipsec status::
 [#tscli-ldap]
 === ldap
 
+[source,tscli]
 ----
 tscli ldap [-h] {add-cert,configure,purge-configuration}
 ----
@@ -783,6 +812,7 @@ tscli ldap purge-configuration::
 [#tscli-logs]
 === logs
 
+[source,tscli]
 ----
 tscli logs [-h] {collect,runcmd}
 ----
@@ -824,6 +854,7 @@ tscli logs runcmd [-h] --cmd CMD [--include INCLUDE] [--exclude EXCLUDE] [--sinc
 [#tscli-tiles]
 === map-tiles
 
+[source,tscli]
 ----
 tscli map-tiles [-h] {disable,enable,status}
 ----
@@ -835,6 +866,7 @@ tscli map-tiles enable [-h] [--offline] [--tar TAR] [--md5 MD5]::
 +
 If you don't have internet access, you must download the map tiles tar and md5 files, and append the clause `--offline --tar _TAR_ --md5 _MD5_` to the `tscli map-tiles enable` command:
 +
+[source,tscli]
 ----
 tscli map-tiles enable --offline --tar TAR --md5 MD5
 ----
@@ -857,6 +889,7 @@ tscli map-tiles status::
 [#tscli-monitoring]
 === monitoring
 
+[source,tscli]
 ----
 tscli monitoring [-h] {set-config,show-config}
 ----
@@ -876,6 +909,7 @@ tscli monitoring show-config::
 [#tscli-nas]
 === nas
 
+[source,tscli]
 ----
 tscli nas [-h] {ls,mount-cifs,mount-nfs,unmount}
 ----
@@ -910,6 +944,7 @@ tscli nas unmount [-h] --mount_point __MOUNT_POINT__::
 [#tscli-nitro-switch]
 === nitro-switch
 
+[source,tscli]
 ----
 tscli nitro-switch [-h] {disable,enable}
 ----
@@ -924,6 +959,7 @@ tscli nitro-switch enable::
 [#tscli-node]
 === node
 
+[source,tscli]
 ----
 tscli node [-h] {check,ls,status}
 ----
@@ -947,6 +983,7 @@ tscli node status::
 [#tscli-notification]
 === notification
 
+[source,tscli]
 ----
 tscli notification [-h] {set-apns-config}
 ----
@@ -959,6 +996,7 @@ tscli notification set-apns-config::
 [#tscli-onboarding]
 === onboarding
 
+[source,tscli]
 ----
 tscli onboarding [-h] {configure,purge-configuration}
 ----
@@ -989,6 +1027,7 @@ tscli onboarding configure::
 [#tscli-patch]
 === patch
 
+[source,tscli]
 ----
 tscli patch [-h] {abort-apply,apply,ls,resume-apply,resume-rollback,rollback,status}
 ----
@@ -1028,6 +1067,7 @@ tscli patch status::
 [#tscli-rpackage]
 === rpackage
 
+[source,tscli]
 ----
 tscli rpackage [-h] {add,delete,list}
 ----
@@ -1056,6 +1096,7 @@ tscli rpackage list [-h] [--detailed]::
 [#tscli-saml]
 === saml
 
+[source,tscli]
 ----
 tscli saml [-h] {configure,purge-configuration}
 ----
@@ -1073,6 +1114,7 @@ To see a list of prerequisites, refer to xref:saml.adoc[Configure SAML].
 [#tscli-scheduled-pinboards]
 === scheduled-pinboards
 
+[source,tscli]
 ----
 tscli scheduled-pinboards [-h] {disable,enable,status}
 ----
@@ -1094,6 +1136,7 @@ Contact xref:support-contact.adoc[ThoughtSpot Support]  for help on how to confi
 [#tscli-set]
 === set
 
+[source,tscli]
 ----
 tscli set [-h] {heterogeneous}
 ----
@@ -1108,6 +1151,7 @@ tscli set heterogeneous::
 [#tscli-smtp]
 === smtp
 
+[source,tscli]
 ----
 tscli smtp [-h] {remove-mailfromname,remove-mailname,remove-realname,remove-relayhost,remove-saslcredentials,reset-canonical-mapping,set-canonical-mapping,set-mailfromname,set-mailname,set-realname,set-relayhost,set-saslcredentials,show-canonical-mapping,show-mailfromname,show-mailname,show-realname,show-relayhost}
 ----
@@ -1173,6 +1217,7 @@ tscli smtp show-relayhost::
 [#tscli-snapshot]
 === snapshot
 
+[source,tscli]
 ----
 tscli snapshot [-h] {backup,create,delete,ls,pin,restore,unpin,update-ttl,validate}
 ----
@@ -1226,6 +1271,7 @@ tscli snapshot validate::
 [#tscli-snapshot-policy]
 === snapshot-policy
 
+[source,tscli]
 ----
 tscli snapshot-policy [-h] {disable,enable,show,update}
 ----
@@ -1248,6 +1294,7 @@ tscli snapshot-policy update [-h] [--config CONFIG]::
 [#tscli-socialproof]
 === socialproof
 
+[source,tscli]
 ----
 tscli socialproof [-h] {disable,enable}
 ----
@@ -1263,6 +1310,7 @@ tscli socialproof enable::
 [#tscli-ssl]
 === ssl
 
+[source,tscli]
 ----
 tscli ssl [-h] {add-cert,add-valid-hosts,clear-min-tls-version,enable-dhparam,get-dhparam,off,on,remove-valid-hosts,reset-cipher,revert-dhparam,rm-cert,set-alert-days,set-cipher,set-min-tls-version,show-valid-hosts,status,tls-status}
 ----
@@ -1339,6 +1387,7 @@ tscli ssl tls-status::
 [#tscli-sssd]
 === sssd
 
+[source,tscli]
 ----
 tscli sssd {clear-sudo-group,disable,disable-openldap,enable,enable-openldap,set-sudo-group}
 ----
@@ -1386,6 +1435,7 @@ tscli sssd set-sudo-group _SUDO_GROUP_::
 [#tscli-storage]
 === storage
 
+[source,tscli]
 ----
 tscli storage [-h] {gc,df}
 ----
@@ -1420,9 +1470,9 @@ tscli storage df::
 [#tscli-support]
 === support
 
+[source,tscli]
 ----
 tscli support [-h] {bundle,remove-maintenance,restart-remote,rm-admin-email,rm-admin-phone,rm-feedback-email,schedule-maintenance,set-admin-email,set-admin-phone,set-debug-ui-password,set-feedback-email,set-remote,show-admin-email,show-admin-phone,show-feedback-email,show-remote,start-remote,stop-remote}
-
 ----
 
 This subcommand has the following options:
@@ -1501,6 +1551,7 @@ tscli support stop-remote::
 [#tscli-tokenauthentication]
 === tokenauthentication
 
+[source,tscli]
 ----
 tscli tokenauthentication [-h] {disable,enable}
 ----
@@ -1516,6 +1567,7 @@ tscli tokenauthentication disable::
 [#tscli-update]
 === update
 
+[source,tscli]
 ----
 tscli update [-h] {get-history}
 ----
