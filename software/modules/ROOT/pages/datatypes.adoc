@@ -13,14 +13,14 @@ The tables you create to receive the data must have the same number of columns a
 Choose a data type for each column from the list of supported data types:
 
 [width="100%",options="header",cols="20%,20%,60%"]
-|====================
-|Data|Supported data types|Details
-|Character|VARCHAR(*n*)|Specify the maximum number of characters, as in VARCHAR(255). The size limit is 64MB for VARCHAR values.
-|Floating point|DOUBLE or FLOAT|DOUBLE is recommended. DOUBLE has a range of 1.7E +/- 308 (15 digits).
-|Boolean|BOOL|Can be true or false.
-|Integer|INT or BIGINT|INT holds 32 bits. BIGINT holds 64 bits. INT has a range of –2,147,483,648 to 2,147,483,647. BIGINT has a range of –9,223,372,036,854,775,808 to 9,223,372,036,854,775,807.
-|Date or time|DATE,  DATETIME, TIMESTAMP, TIME|DATETIME, TIMESTAMP, and TIME are stored at the granularity of seconds. TIMESTAMP is identical to DATETIME, but is included for syntax compatibility.
-|====================
+|===
+| Data | Supported data types | Details
+| Character | `VARCHAR(*n*)` | Specify the maximum number of characters, as in `VARCHAR(255)`. The size limit is 64MB for `VARCHAR` values.
+| Floating point | `DOUBLE` or `FLOAT` | We recommend that you use `DOUBLE`, because it has a range of 15 significant digits, `1.7E +/- 308`. `FLOAT` has a range of 7 significant digits, `3.4E +/- 38`.
+| Boolean | `BOOL` | Can be `true` or `false`.
+| Integer | `INT` or `BIGINT` | `INT` holds 32 bits. `BIGINT` holds 64 bits. `INT` has a range of `–2,147,483,648` to `2,147,483,647`. `BIGINT` has a range of `–9,223,372,036,854,775,808` to `9,223,372,036,854,775,807`.
+| Date or time | `DATE`,  `DATETIME`, `TIMESTAMP`, `TIME` | `DATETIME`, `TIMESTAMP`, and `TIME` are stored at the granularity of seconds. `TIMESTAMP` is identical to `DATETIME`; we include it for syntax compatibility.
+|===
 
 WARNING: There is a 64MB limitation on the number of characters for `VARCHAR`.
 If you have any `VARCHAR` data that exceeds this limit, the entire load will fail.
