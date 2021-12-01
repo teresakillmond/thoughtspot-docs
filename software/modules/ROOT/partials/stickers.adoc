@@ -4,8 +4,9 @@ You can create stickers to make it easier for people to find data sources and pi
 Keep in mind these permissions when working with stickers:
 
 - Only administrators can create stickers.
-- Anyone who has *edit* access to an object can apply a sticker to it.</li>
+- Anyone who has *edit* access to an object can apply a sticker to it.
 - Anyone can filter by a sticker.
+- You can only filter by one sticker at a time from the UI.
 
 [#create-a-sticker]
 == Create a sticker
@@ -42,7 +43,9 @@ image::apply_sticker.png[Choose a sticker to apply]
 [#filter-by-stickers]
 == Filter by stickers
 
-Whenever you are selecting objects from a list, you can filter by sticker to find what you’re looking for. Anyone can use stickers to filter lists of pinboards or data sources. You can also filter by sticker when selecting data sources.
+Whenever you are selecting objects from a list, you can filter by sticker to find what you’re looking for. Anyone can use stickers to filter lists of pinboards or data sources. You can also filter by a sticker when selecting data sources.
+
+Note that you can only filter by one sticker at a time in the UI. To get a list of ThoughtSpot objects or object headers that is filtered by multiple stickers, use the https://developers.thoughtspot.com/docs/?pageid=metadata-api[Metadata API^]. The `list` and `listobjectheaders` endpoints allow you to filter by multiple stickers.
 
 To filter by sticker:
 
@@ -50,3 +53,8 @@ To filter by sticker:
 . **Select sticker**, and select the name of the sticker you want to filter by.
 +
 image::filter_by_sticker.png[Filter by a sticker]
+
+[#unfilter-stickers]
+=== Remove a sticker filter
+
+To remove a sticker filter and see all objects again, select the sticker you filtered on in the sticker list.
