@@ -104,4 +104,29 @@ If the enclosing character is double quotes, you need to escape it, as in this e
 +
 If supplied, the input CSV file uses a bit for boolean values, so the false value is represented as `0x0` and true as `0x1`. If omitted or set to false, boolean values are assumed to be T_F, unless you specify something else using the flag `--boolean_representation [true_false | 1_0 | T_F | Y_N]`.
 --format_file::
-  Specifies the filepath that describes the formats for the columns you are importing.
+  Specifies the filepath that describes the formats for the columns you are importing. The format file must be in `JSON` format, similar to the following example:
++
+----
+{
+"database": "test",
+"schema": "falcon_default_schema",
+"table": "format_file_example",
+"columns": [{
+"name": "sale_date",
+"date_format": "%d/%m/%Y"
+}, {
+"name": "warranty_date",
+"date_format": "%d %b %Y"
+}, {
+"name": "POS Timestamp",
+"date_format": "%d/%m/%Y",
+"datetime_format": "%d/%m/%Y %H:%M:%S"
+
+  }, {
+    "name": "Inventory Timestamp",
+    "date_format": "%d/%m/%Y",
+    "datetime_format": "%d/%m/%Y %H:%M:%S"
+
+  }]
+}
+----
