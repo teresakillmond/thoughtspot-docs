@@ -1,4 +1,4 @@
-= IBM Db2 connection reference
+= IBM Db2 DataFlow connection reference
 :last_updated: 07/6/2020
 
 Learn about the fields used to create an IBM Db2 connection with ThoughtSpot DataFlow.
@@ -6,8 +6,10 @@ Learn about the fields used to create an IBM Db2 connection with ThoughtSpot Dat
 Here is a list of the fields for an IBM Db2 connection in ThoughtSpot DataFlow.
 You need specific information to establish a seamless and secure connection.
 
+[#connection-properties]
 == Connection properties
 
+[#dataflow-ibm-db2-conn-connection-name]
 Connection name:: Name your connection.
 +
 Mandatory field.
@@ -16,6 +18,7 @@ Mandatory field.
 +
 IBMDb2Connection
 
+[#dataflow-ibm-db2-conn-connection-type]
 Connection type:: Choose the IBM Db2 connection type.
 +
 Mandatory field.
@@ -24,59 +27,74 @@ Mandatory field.
 +
 IBM Db2
 
+[#dataflow-ibm-db2-conn-platform]
 Platform:: An environment in which a data point is executed. Specify LUW, iSeries, or Mainframe.
 +
 Optional field.
++
 *Example:*
 +
 platform
 
+[#dataflow-ibm-db2-conn-host]
 Host:: Specify the hostname or the IP address of the Db2 system.
 +
 Mandatory field.
++
 *Example:*
 +
 example.plaform.com
 
+[#dataflow-ibm-db2-conn-port]
 Port:: Specify the port associated to the Db2 system.
 +
 Mandatory field.
++
 *Example:*
 +
 1234
 
+[#dataflow-ibm-db2-conn-user]
 User:: Specify the user to connect to IBM Db2. This user must have data access privileges.
 +
 Mandatory field.
++
 *Example:*
 +
 userdi
 
+[#dataflow-ibm-db2-conn-password]
 Password:: Specify the password.
 +
 Mandatory field.
++
 *Example:*
 +
 pswrd234%!
 
+[#dataflow-ibm-db2-conn-database]
 Database:: Collection of information that is organized so that it can be easily accessed, managed and updated.
 +
 Mandatory field.
++
 *Example:*
 +
 database
 
+[#dataflow-ibm-db2-conn-database-alias]
 Database alias:: Specify database alias for easy identification.
 +
 Mandatory field.
++
 *Example:*
 +
 database_alias
 +
 *Other notes:*
 +
-These are under Advanced configuration
+These are under Advanced configuration.
 
+[#dataflow-ibm-db2-sync-version]
 Version:: Specify the Db2 version being connected to.
 +
 Optional field.
@@ -87,8 +105,9 @@ Optional field.
 +
 *Other notes:*
 +
-These are under Advanced configuration
+These are under Advanced configuration.
 
+[#dataflow-ibm-db2-sync-code-page]
 Code page:: A standardized code in which characters are represented for computer storage and transmission by the numbers 0 through 127. Select either ASCII or EBCDIC.
 +
 Optional field.
@@ -97,6 +116,7 @@ Optional field.
 +
 ASCII
 
+[#dataflow-ibm-db2-conn-jdbc-options]
 JDBC options:: Specify the options associated with the JDBC URL.
 +
 Optional field.
@@ -109,7 +129,9 @@ Optional field.
 +
 Advanced configuration
 
+[#sync-properties]
 == Sync properties
+[#dataflow-ibm-db2-sync-data-extraction-mode]
 Data extraction mode:: Specify the extraction type.
 +
 Mandatory field.
@@ -126,6 +148,7 @@ JDBC,Db2 EXPORT
 +
 JDBC
 
+[#dataflow-ibm-db2-sync-column-delimiter]
 Column delimiter:: Specify the column delimiter character.
 +
 Mandatory field.
@@ -142,6 +165,7 @@ Any printable ASCII character or decimal value for ASCII character
 +
 The delimiter specified in sync
 
+[#dataflow-ibm-db2-sync-null-value]
 Null value:: Specifies the string literal that should indicate the null value in the extracted data. During the data load the column value matching this string will be loaded as null in the target.
 +
 Optional field.
@@ -162,6 +186,7 @@ NULL
 +
 Specific only to Db2 EXPORT Utility\
 
+[#dataflow-ibm-db2-sync-enclosing-character]
 Enclosing character:: Specify if the text columns in the source data needs to be enclosed in quotes.
 +
 Optional field.
@@ -180,8 +205,9 @@ DOUBLE
 +
 *Other notes:*
 +
-This is required if the text data has newline character or delimiter character
+This is required if the text data has newline character or delimiter character.
 
+[#dataflow-ibm-db2-sync-escape-character]
 Escape character:: Specify the escape character if using a text qualifier in the source data.
 +
 Optional field.
@@ -197,6 +223,7 @@ Any ASCII character
 +
 \"
 
+[#dataflow-ibm-db2-sync-fetch-size]
 Fetch size:: Specify the number of rows to be fetched at a time and processed in memory. If the value specified is zero then, all rows are extracted at once.
 +
 Mandatory field.
@@ -213,11 +240,12 @@ Any numeric value
 +
 1000
 
+[#dataflow-ibm-db2-sync-ts-load-options]
 TS load options:: Specifies the parameters passed with the `tsload` command, in addition to the commands already included by the application. The format for these parameters is:
 +
-` --<param_1_name> <optional_param_1_value>`
+`--<param_1_name> <optional_param_1_value>`
 +
-` --<param_2_name> <optional_param_2_value>`
+`--<param_2_name> <optional_param_2_value>`
 +
 Optional field.
 +
