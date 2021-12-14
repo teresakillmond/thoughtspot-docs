@@ -1,4 +1,4 @@
-= SAP SQL Anywhere connection reference
+= SAP SQL Anywhere DataFlow connection reference
 :last_updated: 07/7/2020
 
 Learn about the fields used to create an SAP SQL Anywhere Server Enterprise connection with ThoughtSpot DataFlow.
@@ -6,8 +6,10 @@ Learn about the fields used to create an SAP SQL Anywhere Server Enterprise conn
 Here is a list of the fields for an SAP SQL Anywhere connection in ThoughtSpot DataFlow.
 You need specific information to establish a seamless and secure connection.
 
+[#connection-properties]
 == Connection properties
 
+[#dataflow-sap-sql-anywhere-conn-connection-name]
 Connection name:: Name your connection.
 +
 Mandatory field.
@@ -16,6 +18,7 @@ Mandatory field.
 +
 SAPSQLAnywhereConnection
 
+[#dataflow-sap-sql-anywhere-conn-connection-type]
 Connection type:: Choose the SAP SQL Anywhere connection type.
 +
 Mandatory field.
@@ -24,6 +27,7 @@ Mandatory field.
 +
 SAP SQL Anywhere
 
+[#dataflow-sap-sql-anywhere-conn-host]
 Host:: Specify the hostname or the IP address of the Sybase system.
 +
 Mandatory field.
@@ -32,6 +36,7 @@ Mandatory field.
 +
 www.example.com
 
+[#dataflow-sap-sql-anywhere-conn-port]
 Port:: Specify the port associated to the Sybase system.
 +
 Mandatory field.
@@ -40,6 +45,7 @@ Mandatory field.
 +
 1234
 
+[#dataflow-sap-sql-anywhere-conn-user]
 User:: Specify the user id that will be used to connect to the Sybase system. This user should have necessary privileges to access the data in the databases.
 +
 Mandatory field.
@@ -47,7 +53,8 @@ Mandatory field.
 *Example:*
 +
 userdi
-+
+
+[#dataflow-sap-sql-anywhere-conn-password]
 Password:: Specify the password for the user.
 +
 Mandatory field.
@@ -56,6 +63,7 @@ Mandatory field.
 +
 pswrd234%!
 
+[#dataflow-sap-sql-anywhere-conn-version]
 Version:: Specify the version of Sybase you are using.
 +
 Optional field.
@@ -68,6 +76,7 @@ Optional field.
 +
 Advanced configuration
 
+[#dataflow-sap-sql-anywhere-conn-jdbc-options]
 JDBC options:: Specify the options associated with the JDBC URL.
 +
 Optional field.
@@ -80,8 +89,10 @@ Optional field.
 +
 Advanced configuration
 
+[#sync-properties]
 == Sync properties
 
+[#dataflow-sap-sql-anywhere-sync-column-delimiter]
 Column delimiter:: Specify the column delimiter character.
 +
 Mandatory field.
@@ -98,6 +109,7 @@ Any printable ASCII character or decimal value for ASCII character
 +
 1
 
+[#dataflow-sap-sql-anywhere-sync-fetch-size]
 Fetch size:: Specify the number of rows at a time to fetch and process in memory. If you specify zero, the system extracts all rows at once.
 +
 Mandatory field.
@@ -114,6 +126,7 @@ Any numeric value
 +
 1000
 
+[#dataflow-sap-sql-anywhere-sync-enclosing-character]
 Enclosing character:: Specify if the text columns in the source data needs to be enclosed in quotes.
 +
 Optional field.
@@ -131,6 +144,7 @@ SINGLE, DOUBLE
 +
 DOUBLE
 
+[#dataflow-sap-sql-anywhere-sync-escape-character]
 Escape character:: Specify the escape character if using a text qualifier in the source data.
 +
 Optional field.
@@ -147,11 +161,12 @@ Any ASCII character
 +
 \"
 
+[#dataflow-sap-sql-anywhere-sync-ts-load-options]
 TS load options:: Specifies the parameters passed with the `tsload` command, in addition to the commands already included by the application. The format for these parameters is:
 +
-` --<param_1_name> <optional_param_1_value>`
+`--<param_1_name> <optional_param_1_value>`
 +
-` --<param_2_name> <optional_param_2_value>`
+`--<param_2_name> <optional_param_2_value>`
 +
 Optional field.
 +
