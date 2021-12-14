@@ -1,4 +1,4 @@
-= Sync data through Snowflake connection
+= Sync data through Snowflake DataFlow connection
 :last_updated: 6/22/2020
 
 After using ThoughtSpot DataFlow to establish a connection to a Snowflake database, you can create automatic data updates, to seamlessly refresh your data.
@@ -14,7 +14,8 @@ Specify the extraction type.
 Specify the column delimiter character.
  ** xref:dataflow-snowflake-reference.adoc#dataflow-snowflake-sync-enclosing-character[Enclosing character]
  +
-Specify if text column data is in quotes, and if + Optional field.
+Specify if the text columns in the source data needs to be enclosed in quotes. +
+Optional field.
  ** xref:dataflow-snowflake-reference.adoc#dataflow-snowflake-sync-escape-character[Escape character]
  +
 Specify the escape character if using a text qualifier in the source data.
@@ -46,4 +47,5 @@ Specify the parameters passed with the `tsload` command, in addition to the comm
 +
 See xref:dataflow-snowflake-reference.adoc#sync-properties[Sync properties] for details, defaults, and examples.
 . Save your work by clicking *Save*.
-+ Alternatively, click *Save and sync now* to save your work and sync data at the same time.
++
+Alternatively, click *Save and sync now* to save your work and sync data at the same time.
