@@ -1,4 +1,4 @@
-= Flat file connection reference
+= Flat file DataFlow connection reference
 :last_updated: 07/07/2020
 
 Learn about the fields used to create a Flat file connection with ThoughtSpot DataFlow.
@@ -6,8 +6,10 @@ Learn about the fields used to create a Flat file connection with ThoughtSpot Da
 Here is a list of the fields for a Flat file connection in ThoughtSpot DataFlow.
 You need specific information to establish a seamless and secure connection.
 
+[#connection-properties]
 == Connection properties
 
+[#dataflow-files-conn-connection-name]
 Connection name:: Name your connection.
 +
 Mandatory field.
@@ -16,6 +18,7 @@ Mandatory field.
 +
 FilesConnection
 
+[#dataflow-files-conn-connection-type]
 Connection type:: Choose the Files connection type.
 +
 Mandatory field.
@@ -24,6 +27,7 @@ Mandatory field.
 +
 Files
 
+[#dataflow-files-conn-file-location]
 File location:: Specify the base location of the file on the server.
 +
 Mandatory field.
@@ -32,6 +36,7 @@ Mandatory field.
 +
 /home/admin/dataflow/data
 
+[#dataflow-files-conn-files-on-remote-location]
 Files on remote location:: Specify If the files on remote server.
 +
 Mandatory field.
@@ -42,8 +47,9 @@ No
 +
 *Other notes:*
 +
-These are under Advanced configuration
+Advanced configuration
 
+[#dataflow-files-conn-protocol]
 Protocol:: Select the required remote server connection.
 +
 Mandatory field.
@@ -62,7 +68,8 @@ FTP, SFTP
 +
 FTP
 
-Authentication type:: Specify the authentication type for SFTP Protocol
+[#dataflow-files-conn-authentication-type]
+Authentication type:: Specify the authentication type for SFTP Protocol.
 +
 Mandatory field.
 +
@@ -80,6 +87,7 @@ Key, Password
 +
 Password
 
+[#dataflow-files-conn-host]
 Host:: Specify the Hostname or the IP address of the remote server.
 +
 Mandatory field.
@@ -90,6 +98,7 @@ For remote location files only.
 +
 www.example.com
 
+[#dataflow-files-conn-port]
 Port:: Specify the Port to connect the remote server.
 +
 Mandatory field.
@@ -100,6 +109,7 @@ For remote location files only.
 +
 1234
 
+[#dataflow-files-conn-user]
 User:: Specify the user to connect to remote server. This user must have data access privileges.
 +
 Mandatory field.
@@ -110,6 +120,7 @@ For remote location files only.
 +
 userdi
 
+[#dataflow-files-conn-password]
 Password:: Specify the password.
 +
 Optional field.
@@ -120,14 +131,18 @@ For remote location files only, when using password authentication.
 +
 pswrd234%!
 
+[#dataflow-files-conn-key-file]
 Key file:: Specify the key file and its fully qualified path.
 +
 Mandatory field.
 +
 For remote location files only, when using key authentication.
 +
-*Example:* + /app/key/sftp.key
+*Example:*
++
+/app/key/sftp.key
 
+[#dataflow-files-conn-passphrase-for-key-file]
 Passphrase for key file:: Specify the passphrase for the key file.
 +
 Optional field.
@@ -138,8 +153,9 @@ For remote location files only, when using key authentication.
 +
 !hello
 
+[#sync-properties]
 == Sync properties
-
+[#dataflow-files-sync-file-name]
 File name:: Specify name of the file.
 +
 Mandatory field.
@@ -160,6 +176,7 @@ The name of the file
 +
 To specify wildcard, use '*' character in the file name
 
+[#dataflow-files-sync-column-delimiter]
 Column delimiter:: Specify the column delimiter character.
 +
 Mandatory field.
@@ -176,6 +193,7 @@ Any printable ASCII character or decimal value for ASCII character
 +
 The delimiter specified in sync
 
+[#dataflow-files-sync-enable-archive-on-success]
 Enable archive on success:: Specify if system is to archive file after successful sync.
 +
 Optional field.
@@ -192,6 +210,7 @@ Yes, No
 +
 No
 
+[#dataflow-files-sync-delete-file-on-success]
 Delete file on success:: Specify if system to delete file after successful sync.
 +
 Optional field.
@@ -208,6 +227,7 @@ Yes, No
 +
 No
 
+[#dataflow-files-sync-compression]
 Compression:: Specify if file uses compression, and compression type.
 +
 Optional field.
@@ -224,6 +244,7 @@ None, gzip
 +
 None
 
+[#dataflow-files-sync-skip-header-rows]
 Skip header rows:: Specify the number of header rows to skip when loading data.
 +
 Optional field.
@@ -240,6 +261,7 @@ Any numeric value
 +
 0
 
+[#dataflow-files-sync-enclosing-character]
 Enclosing character:: Specify if the text columns in the source data needs to be enclosed in quotes.
 +
 Optional field.
@@ -254,6 +276,7 @@ Single, Double, Empty
 +
 Empty
 
+[#dataflow-files-sync-escape-character]
 Escape character:: Specify the escape character if using a text qualifier in the source data.
 +
 Optional field.
@@ -270,6 +293,7 @@ Any ASCII character
 +
 Empty
 
+[#dataflow-files-sync-null-value]
 Null value:: Specifies the string literal indicates the null value for a column. During the data load, the column value matching this string will be loaded as null in the target.
 +
 Optional field.
@@ -287,6 +311,7 @@ Any string literal
 +
 NULL
 
+[#dataflow-files-sync-date-style]
 Date style:: Specifies how to interpret the date format.
 +
 Optional field.
@@ -323,6 +348,7 @@ YMD
 +
 `MONDY2`: 3-character month name, 2-digit day, 2-digit year
 
+[#dataflow-files-sync-date-delimiter]
 Date delimiter:: Specifies the separator used in the date format.
 +
 Optional field.
@@ -336,6 +362,8 @@ Any printable ASCII character
 *Default:*
 +
 -
+
+[#dataflow-files-sync-time-style]
 Time style:: Specifies the format of the time portion in the data.
 +
 Optional field.
@@ -352,6 +380,7 @@ Optional field.
 +
 24HOUR
 
+[#dataflow-files-sync-time-delimiter]
 Time delimiter:: Specifies the character used as separate the time components.
 +
 Optional field.
@@ -368,6 +397,7 @@ Any printable ASCII character
 +
 :
 
+[#dataflow-files-sync-statistics]
 Statistics:: Specify if the file source count needs to be displayed in Monitor statistics.
 +
 Optional field.
@@ -384,6 +414,7 @@ OFF
 +
 ON
 
+[#dataflow-files-sync-skip-trailer-rows]
 Skip trailer rows:: Skip trailer row while processing the data.
 +
 Optional field.
@@ -400,6 +431,7 @@ Any numeric value
 +
 0
 
+[#dataflow-files-sync-reader-encoder]
 Reader encoder:: Specify the encoding format of the source system.
 +
 Optional field.
@@ -416,11 +448,12 @@ ISO-8859-1, UTF-16, UTF-16BE, WINDOWS-1252
 +
 UFT-8
 
+[#dataflow-files-sync-tsload-options]
 TS load options:: Specifies the parameters passed with the `tsload` command, in addition to the commands already included by the application. The format for these parameters is:
 +
-` --<param_1_name> <optional_param_1_value>`
+`--<param_1_name> <optional_param_1_value>`
 +
-` --<param_2_name> <optional_param_2_value>`
+`--<param_2_name> <optional_param_2_value>`
 +
 Optional field.
 +
@@ -440,6 +473,7 @@ Optional field.
 +
 `--max_ignored_rows 0`
 
+[#dataflow-files-sync-boolean-representation]
 Boolean representation:: Specifies the representation of data in the boolean field.
 +
 Optional field.
