@@ -1,4 +1,4 @@
-= MongoDB connection reference
+= MongoDB DataFlow connection reference
 :last_updated: 07/6/2020
 
 Learn about the fields used to create a MongoDB connection with ThoughtSpot DataFlow.
@@ -6,8 +6,10 @@ Learn about the fields used to create a MongoDB connection with ThoughtSpot Data
 Here is a list of the fields for a MongoDB connection in ThoughtSpot DataFlow.
 You need specific information to establish a seamless and secure connection.
 
+[#connection-properties]
 == Connection properties
 
+[#dataflow-mongodb-conn-connection-name]
 Connection name:: Name your connection.
 +
 Mandatory field.
@@ -16,20 +18,25 @@ Mandatory field.
 +
 MongoDBConnection
 
+[#dataflow-mongodb-conn-connection-type]
 Connection type:: Choose the MongoDB connection type.
 +
 Mandatory field.
++
 *Example:*
 +
 MongoDB
 
+[#dataflow-mongodb-conn-host]
 Host:: Specify the hostname or the IP address of the MongoDB system.
 +
 Mandatory field.
++
 *Example:*
 +
 www.example.com
 
+[#dataflow-mongodb-conn-port]
 Port:: Specify the port associated to the MongoDB system.
 +
 Mandatory field.
@@ -38,7 +45,20 @@ Mandatory field.
 +
 1234
 
-User:: Specify the user id that will be used to connect to the MongoDB system. This user should have necessary privileges to access the data in the databases. Mandatory field. *Example:* + userdi+++</dlentry>++++++<dlentry id="dataflow-mongodb-conn-password-">+++Password:::: Specify the password for the User Mandatory field. *Example:* + pswrd234%!+++</dlentry>++++++<dlentry id="dataflow-mongodb-conn-database-">+++Database:::: Collection of information that is organized so that it can be easily accessed, managed and updated.
+[#dataflow-mongodb-conn-user]
+User:: Specify the user id that will be used to connect to the MongoDB system. This user should have necessary privileges to access the data in the databases. Mandatory field.
++
+*Example:*
++
+userdi
+[#dataflow-mongodb-conn-password]
+Password:: Specify the password for the User Mandatory field.
++
+*Example:*
++
+pswrd234%!
+[#dataflow-mongodb-conn-database]
+Database:: Collection of information that is organized so that it can be easily accessed, managed and updated.
 +
 Mandatory field.
 +
@@ -46,6 +66,7 @@ Mandatory field.
 +
 Test
 
+[#dataflow-mongodb-sync-flatten-arrays]
 Flatten arrays:: The FlattenArrays property can be used to flatten the elements of nested arrays into columns of their own. Set FlattenArrays to the number of elements you want to return from nested arrays.
 +
 Optional field.
@@ -58,9 +79,11 @@ Optional field.
 +
 Advanced configuration
 
+[#dataflow-mongodb-sync-row-scan-depth]
 Row scan depth:: The maximum number of rows to scan to look for the columns available in a table. Set this property to gain more control over how the provider applies data types to collections.
 +
 Optional field.
++
 *Example:*
 +
 -1
@@ -69,6 +92,7 @@ Optional field.
 +
 Advanced configuration
 
+[#dataflow-mongodb-conn-jdbc-options]
 JDBC options:: Specify the options associated with the JDBC URL.
 +
 Optional field.
@@ -81,7 +105,10 @@ Optional field.
 +
 Advanced configuration
 
+[#sync-properties]
 == Sync properties
+
+[#dataflow-mongodb-sync-column-delimiter]
 Column delimiter:: Specify the column delimiter character.
 +
 Mandatory field.
@@ -98,6 +125,7 @@ Any printable ASCII character or decimal value for ASCII character
 +
 1
 
+[#dataflow-mongodb-sync-enclosing-character]
 Enclosing character:: Specify if the text columns in the source data needs to be enclosed in quotes.
 +
 Optional field.
@@ -116,6 +144,7 @@ SINGLE, DOUBLE
 +
 This is required if the text data has newline character or delimiter character.
 
+[#dataflow-mongodb-sync-escape-character]
 Escape character:: Specify the escape character if using a text qualifier in the source data.
 +
 Optional field.
@@ -132,11 +161,12 @@ Any ASCII character
 +
 \"
 
+[#dataflow-mongodb-sync-ts-load-options]
 TS load options:: Specifies the parameters passed with the `tsload` command, in addition to the commands already included by the application. The format for these parameters is:
 +
-` --<param_1_name> <optional_param_1_value>`
+`--<param_1_name> <optional_param_1_value>`
 +
-` --<param_2_name> <optional_param_2_value>`
+`--<param_2_name> <optional_param_2_value>`
 +
 Optional field.
 +
