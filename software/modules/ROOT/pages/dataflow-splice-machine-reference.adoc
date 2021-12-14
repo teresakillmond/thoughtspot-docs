@@ -1,4 +1,4 @@
-= Splice Machine connection reference
+= Splice Machine connection reference for DataFlow
 :last_updated: 07/7/2020
 
 Learn about the fields used to create a Splice Machine connection with ThoughtSpot DataFlow.
@@ -6,8 +6,10 @@ Learn about the fields used to create a Splice Machine connection with ThoughtSp
 Here is a list of the fields for a Splice Machine connection in ThoughtSpot DataFlow.
 You need specific information to establish a seamless and secure connection.
 
+[#connection-properties]
 == Connection properties
 
+[#dataflow-splice-machine-conn-connection-name]
 Connection name:: Name your connection.
 +
 Mandatory field.
@@ -16,6 +18,7 @@ Mandatory field.
 +
 SpliceMachineConnection
 
+[#dataflow-splice-machine-conn-connection-type]
 Connection type:: Choose the Splice Machine connection type.
 +
 Mandatory field.
@@ -24,6 +27,7 @@ Mandatory field.
 +
 Splice Machine
 
+[#dataflow-splice-machine-conn-host]
 Host:: Specify the hostname or the IP address of the Splice Machine system.
 +
 Mandatory field.
@@ -32,6 +36,7 @@ Mandatory field.
 +
 www.example.com
 
+[#dataflow-splice-machine-conn-port]
 Port:: Specify the port associated with the Splice Machine system.
 +
 Mandatory field.
@@ -40,6 +45,7 @@ Mandatory field.
 +
 1234
 
+[#dataflow-splice-machine-conn-user]
 User:: Specify the user id that will be used to connect to the Splice Machine system. This user should have necessary privileges to access the data in the databases.
 +
 Mandatory field.
@@ -48,6 +54,7 @@ Mandatory field.
 +
 userdi
 
+[#dataflow-splice-machine-conn-password]
 Password:: Specify the password for the user.
 +
 Mandatory field.
@@ -56,6 +63,7 @@ Mandatory field.
 +
 pswrd234%
 
+[#dataflow-splice-machine-conn-database]
 Database:: Collection of information that is organized so that it can be easily accessed, managed and updated.
 +
 Mandatory field.
@@ -64,6 +72,7 @@ Mandatory field.
 +
 splicedb
 
+[#dataflow-splice-machine-conn-hadoop-version]
 Hadoop version:: Specify the version of Hadoop you are using.
 +
 Mandatory field.
@@ -72,6 +81,7 @@ Mandatory field.
 +
 HDP_2.6.4
 
+[#dataflow-splice-machine-sync-hdfs-host]
 HDFS host:: Specify the hostname or the IP address of the HDFS.
 +
 Optional field.
@@ -84,6 +94,7 @@ www.example.com
 +
 Advanced configuration
 
+[#dataflow-splice-machine-sync-hdfs-port]
 HDFS port:: Specify the port associated to the HDFS.
 +
 Optional field.
@@ -96,6 +107,7 @@ Optional field.
 +
 Advanced configuration
 
+[#dataflow-splice-machine-sync-hdfs-temp-location]
 HDFS temp location:: Specify the HDFS location for creating temp directory.
 +
 Optional field.
@@ -108,6 +120,7 @@ Optional field.
 +
 Advanced configuration
 
+[#dataflow-splice-machine-conn-jdbc-options]
 JDBC options:: Specify the options associated with the JDBC URL.
 +
 Optional field.
@@ -120,8 +133,10 @@ Optional field.
 +
 Advanced configuration
 
+[#sync-properties]
 == Sync properties
 
+[#dataflow-splice-machine-sync-data-extraction-mode]
 Data extraction mode:: Specify the extraction type.
 +
 Mandatory field.
@@ -138,6 +153,7 @@ JDBC, BULK Export
 +
 JDBC
 
+[#dataflow-splice-machine-sync-column-delimiter]
 Column delimiter:: Specify the column delimiter character.
 +
 Mandatory field.
@@ -154,6 +170,7 @@ Any printable ASCII character or decimal value for ASCII character
 +
 1
 
+[#dataflow-splice-machine-sync-enclosing-character]
 Enclosing character:: Specify if the text columns in the source data needs to be enclosed in quotes.
 +
 Optional field.
@@ -174,6 +191,7 @@ DOUBLE
 +
 This is required if the text data has newline character or delimiter character.
 
+[#dataflow-splice-machine-sync-escape-character]
 Escape character:: Specify the escape character if using a text qualifier in the source data.
 +
 Optional field.
@@ -190,6 +208,7 @@ Any ASCII character
 +
 \"
 
+[#dataflow-splice-machine-sync-fetch-size]
 Fetch size:: Specify the number of rows at a time to fetch and process in memory. If you specify zero, the system extracts all rows at once.
 +
 Mandatory field.
@@ -206,11 +225,12 @@ Any numeric value
 +
 1000
 
+[#dataflow-splice-machine-sync-ts-load-options]
 TS load options:: Specifies the parameters passed with the `tsload` command, in addition to the commands already included by the application. The format for these parameters is:
 +
-` --<param_1_name> <optional_param_1_value>`
+`--<param_1_name> <optional_param_1_value>`
 +
-` --<param_2_name> <optional_param_2_value>`
+`--<param_2_name> <optional_param_2_value>`
 +
 Optional field.
 +
