@@ -1,4 +1,4 @@
-= SQL Server connection reference
+= SQL Server DataFlow connection reference
 :last_updated: 07/7/2020
 
 Learn about the fields used to create an SQL Server connection with ThoughtSpot DataFlow.
@@ -6,8 +6,10 @@ Learn about the fields used to create an SQL Server connection with ThoughtSpot 
 Here is a list of the fields for an SQL Server connection in ThoughtSpot DataFlow.
 You need specific information to establish a seamless and secure connection.
 
+[#connection-properties]
 == Connection properties
 
+[#dataflow-sql-server-conn-connection-name]
 Connection name:: Name your connection.
 +
 Mandatory field.
@@ -16,6 +18,7 @@ Mandatory field.
 +
 SQLServerConnection
 
+[#dataflow-sql-server-conn-connection-type]
 Connection type:: Choose the SQL Server connection type.
 +
 Mandatory field.
@@ -23,7 +26,8 @@ Mandatory field.
 *Example:*
 +
 SQL Server
-+
+
+[#dataflow-sql-server-conn-host]
 Host:: Specify the hostname or the IP address of the SQL Server system.
 +
 Mandatory field.
@@ -32,6 +36,7 @@ Mandatory field.
 +
 www.example.com
 
+[#dataflow-sql-server-conn-port]
 Port:: Specify the port associated with the SQL Server system.
 +
 Mandatory field.
@@ -40,6 +45,7 @@ Mandatory field.
 +
 1234
 
+[#dataflow-sql-server-conn-user]
 User:: Specify the user id that will be used to connect to the SQL Server system. This user should have necessary privileges to access the data in the databases.
 +
 Mandatory field.
@@ -48,6 +54,7 @@ Mandatory field.
 +
 userdi
 
+[#dataflow-sql-server-conn-password]
 Password:: Specify the password for the user.
 +
 Mandatory field.
@@ -56,6 +63,7 @@ Mandatory field.
 +
 pswrd234%!
 
+[#dataflow-sql-server-conn-instance]
 Instance:: Specify an instance with all SQL Server databases run by a single SQL Server service.
 +
 Optional field.
@@ -68,6 +76,7 @@ diazsql
 +
 Advanced configuration
 
+[#dataflow-sql-server-conn-version]
 Version:: Specify the SQL Server version being connected to.
 +
 Optional field.
@@ -80,6 +89,7 @@ Optional field.
 +
 Advanced configuration
 
+[#dataflow-sql-server-sync-jdbc-options]
 JDBC options:: Specify the options associated with the JDBC URL.
 +
 Optional field.
@@ -92,8 +102,10 @@ Optional field.
 +
 Advanced configuration
 
+[#sync-properties]
 == Sync properties
 
+[#dataflow-sql-server-sync-data-extraction-mode]
 Data extraction mode:: Specify the extraction type.
 +
 Mandatory field.
@@ -110,6 +122,7 @@ JDBC, BCP
 +
 JDBC
 
+[#dataflow-sql-server-sync-column-delimiter]
 Column delimiter:: Specify the column delimiter character.
 +
 Mandatory field.
@@ -126,6 +139,7 @@ Any printable ASCII character or decimal value for ASCII character
 +
 1
 
+[#dataflow-sql-server-sync-null-value]
 Null value:: Specifies the string literal that indicates the null value in the extracted data. During the data load, the column value matching this string loads as null in the target.
 +
 Optional field.
@@ -142,6 +156,7 @@ Any string literal
 +
 NULL
 
+[#dataflow-sql-server-sync-enclosing-character]
 Enclosing character:: Specify if the text columns in the source data needs to be enclosed in quotes.
 +
 Optional field.
@@ -162,6 +177,7 @@ DOUBLE
 +
 This is required if the text data has newline character or delimiter character.
 
+[#dataflow-sql-server-sync-escape-character]
 Escape character:: Specify the escape character if using a text qualifier in the source data.
 +
 Optional field.
@@ -178,11 +194,12 @@ Any ASCII character
 +
 \"
 
+[#dataflow-sql-server-sync-ts-load-options]
 TS load options:: Specifies the parameters passed with the `tsload` command, in addition to the commands already included by the application. The format for these parameters is:
 +
-` --<param_1_name> <optional_param_1_value>`
+`--<param_1_name> <optional_param_1_value>`
 +
-` --<param_2_name> <optional_param_2_value>`
+`--<param_2_name> <optional_param_2_value>`
 +
 Optional field.
 +
