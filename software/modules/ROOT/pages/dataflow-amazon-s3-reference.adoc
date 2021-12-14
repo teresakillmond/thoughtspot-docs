@@ -1,4 +1,4 @@
-= Amazon S3 connection reference
+= Amazon S3 DataFlow connection reference
 :last_updated: 07/16/2020
 
 Learn about the fields used to create an Amazon S3 connection with ThoughtSpot DataFlow.
@@ -6,8 +6,9 @@ Learn about the fields used to create an Amazon S3 connection with ThoughtSpot D
 Here is a list of the fields for an Amazon S3 connection in ThoughtSpot DataFlow.
 You need specific information to establish a seamless and secure connection.
 
+[#connection-properties]
 == Connection properties
-
+[#dataflow-amazon-s3-conn-connection-name]
 Connection name:: Name your connection.
 +
 Mandatory field.
@@ -16,6 +17,7 @@ Mandatory field.
 +
 AmazonS3Connection
 
+[#dataflow-amazon-s3-conn-connection-type]
 Connection type:: Choose the Amazon S3 connection type.
 +
 Mandatory field.
@@ -24,14 +26,16 @@ Mandatory field.
 +
 Amazon S3
 
+[#dataflow-amazon-s3-conn-amazon-s3-url]
 Amazon S3 URL:: Specify the Amazon S3 hostname link.
 +
 Mandatory field.
 +
 *Example:*
 +
-https://example1-amazonaws.com
+\https://example1-amazonaws.com
 
+[#dataflow-amazon-s3-conn-bucket]
 Bucket:: Specify the bucket.
 +
 An Amazon S3 bucket name is globally unique, and the namespace is shared by all AWS accounts.
@@ -42,6 +46,7 @@ Mandatory field.
 +
 bucket
 
+[#dataflow-amazon-s3-conn-access-key]
 Access key:: Specify the access key ID generated when creating AWS security credentials.
 +
 Mandatory field.
@@ -50,6 +55,7 @@ Mandatory field.
 +
 access key
 
+[#dataflow-amazon-s3-conn-secret-key]
 Secret key:: Specify the secrete access key generated when creating AWS security credentials.
 +
 Mandatory field.
@@ -58,6 +64,9 @@ Mandatory field.
 +
 ABCDEFGH245HIJK
 
+[#sync-properties]
+== Sync Properties
+[#dataflow-amazon-s3-sync-file-name]
 File name:: Specify the name of the file.
 +
 Mandatory field.
@@ -78,6 +87,7 @@ File name for sync.
 +
 To specify wildcard pattern, use `*`.
 
+[#dataflow-amazon-s3-sync-enable-archive-on-success]
 Enable archive on success:: Specify if must archive file after operation succeeds.
 +
 Optional field.
@@ -92,6 +102,7 @@ Yes, No
 +
 No
 
+[#dataflow-amazon-s3-sync-delete-file-on-success]
 Delete file on success:: Specify if must delete file after operation succeeds.
 +
 Optional field.
@@ -107,6 +118,7 @@ Yes, No
 +
 No
 
+[#dataflow-amazon-s3-sync-column-delimiter]
 Column delimiter:: Specify the column delimiter character.
 +
 Mandatory field.
@@ -123,6 +135,7 @@ Any printable ASCII character or decimal value for ASCII character
 +
 1
 
+[#dataflow-amazon-s3-sync-skip-header-rows]
 Skip header rows:: Skip the specified number of header rows when loading data.
 +
 Optional field.
@@ -139,6 +152,7 @@ Any numeric value
 +
 0
 
+[#dataflow-amazon-s3-sync-compression]
 Compression:: Specify if the file has compression, and type of compression.
 +
 Mandatory field.
@@ -155,12 +169,14 @@ None, gzip
 +
 None
 
+[#dataflow-amazon-s3-sync-row-delimiter]
 Row delimiter:: Specify the end of the row character in the extracted data.
 +
 Optional field.
 +
 *Example:*
-+ \\n
++
+\\n
 +
 *Valid Values:*
 +
@@ -170,6 +186,7 @@ Any printable ASCII character
 +
 \\n (new line character)
 
+[#dataflow-amazon-s3-sync-enclosing-character]
 Enclosing character:: Specify if text columns in the source data use enclosing quotation marks, and their type.
 +
 Optional field.
@@ -186,6 +203,7 @@ Single, Double, Empty
 +
 None
 
+[#dataflow-amazon-s3-sync-escape-character]
 Escape character:: Specify the escape character if using a text qualifier in the source data.
 +
 Optional field.
@@ -202,6 +220,7 @@ Any ASCII character
 +
 None
 
+[#dataflow-amazon-s3-sync-null-value]
 Null value:: Specifies the string literal indicates the null value for a column. During the data load, the column value matching this string will be loaded as null in the target.
 +
 Optional field.
@@ -218,6 +237,7 @@ Any string literal
 +
 NULL
 
+[#dataflow-amazon-s3-sync-date-style]
 Date style:: Specifies how to interpret the date format.
 +
 Optional field.
@@ -254,6 +274,7 @@ YMD
 +
 `MONDY2`: 3-character month name, 2-digit day, 2-digit year
 
+[#dataflow-amazon-s3-sync-date-delimiter]
 Date delimiter:: Specifies the separator used in the date format.
 +
 Optional field.
@@ -268,6 +289,7 @@ Any printable ASCII character
 +
 -
 
+[#dataflow-amazon-s3-sync-time-style]
 Time style:: Specifies the format of the time portion in the data.
 +
 Optional field.
@@ -284,6 +306,7 @@ Optional field.
 +
 24 Hour
 
+[#dataflow-amazon-s3-sync-time-delimiter]
 Time delimiter:: Specifies the character used as separate the time components.
 +
 Optional field.
@@ -300,6 +323,7 @@ Any printable ASCII character
 +
 :
 
+[#dataflow-amazon-s3-sync-skip-trailer-rows]
 Skip trailer rows:: Skip the number of trailer rows specified while loading the data.
 +
 Optional field.
@@ -316,11 +340,12 @@ Any numeric value
 +
 0
 
+[#dataflow-amazon-s3-sync-ts-load-options]
 TS load options:: Specifies the parameters passed with the `tsload` command, in addition to the commands already included by the application. The format for these parameters is:
 +
-` --<param_1_name> <optional_param_1_value>`
+`--<param_1_name> <optional_param_1_value>`
 +
-` --<param_2_name> <optional_param_2_value>`
+`--<param_2_name> <optional_param_2_value>`
 +
 Optional field.
 +
@@ -340,6 +365,7 @@ Optional field.
 +
 `--max_ignored_rows 0`
 
+[#dataflow-amazon-s3-sync-boolean-representation]
 Boolean representation:: Specifies the representation of data in the boolean field.
 +
 Optional field.
