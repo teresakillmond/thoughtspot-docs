@@ -157,6 +157,7 @@ Yes, No
 +
 No
 
+[#dataflow-google-cloud-storage-sync-delete-file-on-success]
 Delete file on success:: Specify if file needs to be deleted after execution is successful.
 +
 Optional field.
@@ -173,6 +174,7 @@ Yes, No
 +
 No
 
+[#dataflow-google-cloud-storage-sync-column-delimiter]
 Column delimiter:: Specify the column delimiter character.
 +
 Mandatory field.
@@ -189,9 +191,11 @@ Any printable ASCII character or decimal value for ASCII character
 +
 The delimiter specified in sync
 
+[#dataflow-google-cloud-storage-sync-skip-header-rows]
 Skip header rows:: Skip the number of header rows specified while loading the data.
 +
 Optional field.
++
 *Example:*
 +
 5
@@ -204,6 +208,7 @@ Any numeric value
 +
 0
 
+[#dataflow-google-cloud-storage-sync-compression]
 Compression:: Specify this if the file is compressed and what kind of compressed file it is.
 +
 Mandatory field.
@@ -220,6 +225,7 @@ None, gzip
 +
 None
 
+[#dataflow-google-cloud-storage-sync-row-delimiter]
 Row delimiter:: Specifies the character to be used to indicate the end of the row in the extracted data.
 +
 Optional field.
@@ -236,6 +242,7 @@ Any printable ASCII character
 +
 \\n (new line character)
 
+[#dataflow-google-cloud-storage-sync-enclosing-character]
 Enclosing character:: Specify if the text columns in the source data is enclosed in quotes.
 +
 Optional field.
@@ -252,6 +259,7 @@ Single, Double, Empty
 +
 Empty
 
+[#dataflow-google-cloud-storage-sync-escape-character]
 Escape character:: Specify the escape character if using a text qualifier in the source data.
 +
 Optional field.
@@ -262,11 +270,13 @@ Optional field.
 +
 *Valid Values:*
 +
-Any ASCII character +
+Any ASCII character
++
 *Default:*
 +
 Empty
 
+[#dataflow-google-cloud-storage-sync-null-value]
 Null value:: Specifies the string literal indicates the null value for a column. During the data load, the column value matching this string will be loaded as null in the target.
 +
 Optional field.
@@ -283,13 +293,16 @@ Any string literal
 +
 NULL
 
+[#dataflow-google-cloud-storage-sync-date-style]
 Date style:: Specifies how to interpret the date format.
 +
 Optional field.
 +
 *Example:*
 +
-YMD *Valid Values:*
+YMD
++
+*Valid Values:*
 +
 `YMD`, `MDY`, `DMY`, `DMONY`, `MONDY`, `Y2MD`, `MDY2`, `DMY2`, `DMONY2`, and `MONDY2`
 +
@@ -317,13 +330,16 @@ YMD *Valid Values:*
 +
 `MONDY2`: 3-character month name, 2-digit day, 2-digit year
 
+[#dataflow-google-cloud-storage-sync-date-delimiter]
 Date delimiter:: Specifies the separator used in the date format.
 +
 Optional field.
 +
 *Example:*
 +
-- *Valid Values:*
+-
++
+*Valid Values:*
 +
 Any printable ASCII character
 +
@@ -331,6 +347,7 @@ Any printable ASCII character
 +
 -
 
+[#dataflow-google-cloud-storage-sync-time-style]
 Time style:: Specifies the format of the time portion in the data.
 +
 Optional field.
@@ -347,6 +364,7 @@ Optional field.
 +
 24 Hour
 
+[#dataflow-google-cloud-storage-sync-time-delimiter]
 Time delimiter:: Specifies the character used as separate the time components.
 +
 Optional field.
@@ -363,6 +381,7 @@ Any printable ASCII character
 +
 :
 
+[#dataflow-google-cloud-storage-sync-decimal-delimiter]
 Decimal delimiter:: Specify the decimal delimiter for float/double/numeric data types.
 +
 Optional field.
@@ -379,6 +398,7 @@ Optional field.
 +
 EMPTY
 
+[#dataflow-google-cloud-storage-sync-skip-trailer-rows]
 Skip trailer rows:: Skip the number of trailer rows specified while loading the data.
 +
 Optional field.
@@ -395,6 +415,7 @@ Any numeric value
 +
 0
 
+[#dataflow-google-cloud-storage-sync-ts-load-options]
 TS load options:: Specify additional parameters passed with the `tsload` command. The format for these parameters is:
 +
 `--<param_1_name> <optional_param_1_value>`
@@ -407,16 +428,17 @@ Optional field.
 +
 *Valid Values:*
 +
-` --null_value ""`
+`--null_value ""`
 +
-` --escape_character ""`
+`--escape_character ""`
 +
-` --max_ignored_rows 0`
+`--max_ignored_rows 0`
 +
 *Default:*
 +
-` --max_ignored_rows 0`
+`--max_ignored_rows 0`
 
+[#dataflow-google-cloud-storage-sync-boolean-representation]
 Boolean representation:: Specifies the representation of data in the boolean field.
 +
 Optional field.
