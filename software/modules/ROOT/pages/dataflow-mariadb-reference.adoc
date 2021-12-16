@@ -1,4 +1,4 @@
-= MariaDB connection reference
+= MariaDB DataFlow connection reference
 :last_updated: 07/6/2020
 
 Learn about the fields used to create a MariaDB connection with ThoughtSpot DataFlow.
@@ -6,7 +6,9 @@ Learn about the fields used to create a MariaDB connection with ThoughtSpot Data
 Here is a list of the fields for a MariaDB connection in ThoughtSpot DataFlow.
 You need specific information to establish a seamless and secure connection.
 
+[#connection-properties]
 == Connection properties
+[#dataflow-mariadb-conn-connection-name]
 Connection name:: Name your connection.
 +
 Mandatory field.
@@ -14,6 +16,7 @@ Mandatory field.
 *Example:*
 +
 MariaDBConnection
+[#dataflow-mariadb-conn-connection-type]
 Connection type:: Choose the MariaDB connection type.
 +
 Mandatory field.
@@ -22,6 +25,7 @@ Mandatory field.
 +
 MariaDB
 
+[#dataflow-mariadb-conn-host]
 Host:: Specify the hostname or the IP address of the MariaDB system.
 +
 Mandatory field.
@@ -30,6 +34,7 @@ Mandatory field.
 +
 www.example.com
 
+[#dataflow-mariadb-conn-port]
 Port:: Specify the port associated to the MariaDB system.
 +
 Mandatory field.
@@ -38,6 +43,7 @@ Mandatory field.
 +
 1234
 
+[#dataflow-mariadb-conn-user]
 User:: Specify the user id that will be used to connect to the MariaDB system. This user should have necessary privileges to access the data in the databases.
 +
 Mandatory field.
@@ -45,6 +51,7 @@ Mandatory field.
 +
 userdi
 
+[#dataflow-mariadb-conn-password]
 Password:: Specify the password for the user.
 +
 Mandatory field.
@@ -53,6 +60,7 @@ Mandatory field.
 +
 pswrd234%!
 
+[#dataflow-mariadb-conn-database-version]
 Database version:: Specify the MariaDB version being connected to.
 +
 Optional field.
@@ -65,6 +73,7 @@ Optional field.
 +
 These are under Advanced configuration
 
+[#dataflow-mariadb-conn-jdbc-options]
 JDBC options:: Specify the options associated with the JDBC URL.
 +
 Optional field.
@@ -77,7 +86,10 @@ Optional field.
 +
 Advanced configuration
 
+[#sync-properties]
 == Sync properties
+
+[#dataflow-mariadb-sync-column-delimiter]
 Column delimiter:: Specify the column delimiter character.
 +
 Mandatory field.
@@ -94,6 +106,7 @@ Any printable ASCII character or decimal value for ASCII character
 +
 The delimiter specified in sync
 
+[#dataflow-mariadb-sync-enclosing-character]
 Enclosing character:: Specify if the text columns in the source data needs to be enclosed in quotes.
 +
 Optional field.
@@ -113,6 +126,7 @@ DOUBLE
 +
 This is required if the text data has newline character or delimiter character.
 
+[#dataflow-mariadb-sync-escape-character]
 Escape character:: Specify the escape character if using a text qualifier in the source data.
 +
 Optional field.
@@ -129,6 +143,7 @@ Any ASCII character
 +
 \"
 
+[#dataflow-mariadb-sync-fetch-size]
 Fetch size:: Specify the number of rows to be fetched at a time and processed in memory. If the value specified is zero then, all rows are extracted at once.
 +
 Mandatory field.
@@ -145,6 +160,7 @@ Any numeric value
 +
 1000
 
+[#dataflow-mariadb-sync-ts-load-options]
 TS load options:: Specifies the parameters passed with the `tsload` command, in addition to the commands already included by the application. The format for these parameters is:
 +
 ` --<param_1_name> <optional_param_1_value>`

@@ -1,4 +1,4 @@
-= Salesforce connection reference
+= Salesforce DataFlow connection reference
 :last_updated: 07/03/2020
 
 Learn about the fields used to create a Salesforce connection with ThoughtSpot DataFlow.
@@ -6,8 +6,10 @@ Learn about the fields used to create a Salesforce connection with ThoughtSpot D
 Here is a list of the fields for a Salesforce connection in ThoughtSpot DataFlow.
 You need specific information to establish a seamless and secure connection.
 
+[#connection-properties]
 == Connection properties
 
+[#dataflow-salesforce-conn-connection-name]
 Connection name:: Name your connection.
 +
 Mandatory field.
@@ -16,6 +18,7 @@ Mandatory field.
 +
 SalesforceConnection
 
+[#dataflow-salesforce-conn-connection-type]
 Connection type:: Choose the Salesforce connection type.
 +
 Mandatory field.
@@ -24,6 +27,7 @@ Mandatory field.
 +
 Salesforce
 
+[#dataflow-salesforce-conn-user]
 User:: Specify the user id. This user must have data access privileges.
 +
 Mandatory field.
@@ -32,6 +36,7 @@ Mandatory field.
 +
 userdi
 
+[#dataflow-salesforce-conn-password]
 Password:: Specify the password.
 +
 Mandatory field.
@@ -40,6 +45,7 @@ Mandatory field.
 +
 pswrd234%!
 
+[#dataflow-salesforce-conn-use-sandbox]
 Use sandbox:: Specify if connecting to copy of a production environment.
 +
 Optional field.
@@ -52,8 +58,10 @@ Unchecked
 +
 Advanced configuration
 
+[#sync-properties]
 == Sync properties
 
+[#dataflow-salesforce-sync-column-delimiter]
 Column delimiter:: Specify the column delimiter character.
 +
 Mandatory field.
@@ -70,6 +78,7 @@ Any printable ASCII character or decimal value for ASCII character
 +
 1
 
+[#dataflow-salesforce-sync-enclosing-character]
 Enclosing character:: Specify if the text columns in the source data must be enclosed in quotes.
 +
 Optional field.
@@ -90,6 +99,7 @@ DOUBLE
 +
 This is required if the text data has newline character or delimiter character.
 
+[#dataflow-salesforce-sync-escape-character]
 Escape character:: Specify the escape character if using a text qualifier in the source data.
 +
 Optional field.
@@ -106,6 +116,7 @@ Any ASCII character
 +
 \"
 
+[#dataflow-salesforce-sync-fetch-size]
 Fetch size:: Specify the number of rows fetched into memory at the same time. If the value is 0, system fetches all rows at the same time.
 +
 Mandatory field.
@@ -122,11 +133,12 @@ Any numeric value
 +
 1000
 
+[#dataflow-salesforce-sync-ts-load-options]
 TS load options:: Specifies the parameters passed with the `tsload` command, in addition to the commands already included by the application. The format for these parameters is:
 +
-` --<param_1_name> <optional_param_1_value>`
+`--<param_1_name> <optional_param_1_value>`
 +
-` --<param_2_name> <optional_param_2_value>`
+`--<param_2_name> <optional_param_2_value>`
 +
 Optional field.
 +
