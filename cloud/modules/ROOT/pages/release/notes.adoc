@@ -1,0 +1,830 @@
+= ["ThoughtSpot Cloud Release Notes"]
+:experimental:
+:last_updated: 11/4/2021
+:permalink: /:collection/:path.html
+:sidebar: mydoc_sidebar
+:toc: false
+
+ThoughtSpot 8 Cloud November 2021 version (ts8.nov.cl) is now available.
+
+These release notes include information about new and enhanced features.
+
+To see our feature deprecation plans, please see link:{{ site.baseurl }}/release/deprecation.html[Deprecation Announcements].
+
+[#new]
+== New Features and Functionality
+
+{% include content/new-features-cloud-release.md %}
+
+[#2021-october]
+== ThoughtSpot 7 Cloud October Release (ts7.oct.cl)
+
+* link:{{ site.baseurl }}#october-cloud-2021-first[For the First user]
+* link:{{ site.baseurl }}#october-cloud-2021-analyst[For the Analyst]
+* link:{{ site.baseurl }}#october-cloud-2021-business-user[For the Business User]
+* link:{{ site.baseurl }}#october-cloud-2021-data-engineer[For the Data Engineer]
+* link:{{ site.baseurl }}#october-cloud-2021-it-ops-engineer[For the IT Ops Engineer]
+* link:{{ site.baseurl }}#october-cloud-2021-developer[For the Developer]
+
+[#october-cloud-2021-first]
+=== For the First User
++++<dlentry id="getting-started">+++Getting started with ThoughtSpot Cloud::::
+The first user on the account has to complete a series of steps before other people can start using ThoughtSpot with your organization's data.
+For these instructions, see link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-getting-started.html[Getting Started with ThoughtSpot Cloud].+++</dlentry>+++
+
+[#october-cloud-2021-analyst]
+=== For the Analyst
++++<dlentry id="pinboard-gating-conditions">+++Liveboard schedule gating conditions::::
+Gating conditions for scheduled Liveboards are now GA.
+Refer to link:{{ site.baseurl }}/admin/manage-jobs/schedule-a-pinboard-job.html[Schedule a Liveboard job] to learn more about scheduling Liveboards for email delivery, and how to leverage gating conditions so that ThoughtSpot only sends the Liveboards when certain conditions are true.+++</dlentry>+++
+
+[#october-cloud-2021-business-user]
+=== For the Business User
++++<dlentry id="geomaps-new-zealand">+++Geo map support::::
+We added support for regional councils, cities and districts, and postcodes, for New Zealand.
+See link:{{ site.baseurl }}/reference/geomap-reference.html[Geo Map Reference].+++</dlentry>+++
+
+[#october-cloud-2021-data-engineer]
+=== For the Data Engineer
++++<dlentry id="connections-custom-calendar">+++Custom calendar::::
+Custom calendar is now available, and it supports the Snowflake, Amazon Redshift, Google BigQuery, Microsoft Azure Synapse, and Databricks cloud data warehouses.
+See link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-cust-cal.html[Custom calendar].+++</dlentry>+++
+
+[#october-cloud-2021-it-ops-engineer]
+=== For the IT Ops Engineer
++++<dlentry id="profile-ui">+++UI improvement for user profile::::  This release improves the UI and user experience of the link:{{ site.baseurl }}/end-user/introduction/about-user.html[user profile].+++</dlentry>+++
+
+[#october-cloud-2021-developer]
+=== For the Developer
+
+ThoughtSpot Everywhere:: For information about the new features and enhancements introduced in this release, refer to https://developers.thoughtspot.com/docs/?pageid=whats-new[ThoughtSpot Developer Documentation].
+
+[#2021-september]
+== ThoughtSpot 7 Cloud September Release (ts7.sep.cl)
+
+* link:{{ site.baseurl }}#september-cloud-2021-first[For the First user]
+* link:{{ site.baseurl }}#september-cloud-2021-analyst[For the Analyst]
+* link:{{ site.baseurl }}#september-cloud-2021-business-user[For the Business User]
+* link:{{ site.baseurl }}#september-cloud-2021-data-engineer[For the Data Engineer]
+* link:{{ site.baseurl }}#september-cloud-2021-it-ops-engineer[For the IT Ops Engineer]
+* link:{{ site.baseurl }}#september-cloud-2021-developer[For the Developer]
+
+[#september-cloud-2021-first]
+=== For the First User
++++<dlentry id="getting-started">+++Getting started with ThoughtSpot Cloud::::
+The first user on the account has to complete a series of steps before other people can start using ThoughtSpot with your organization's data.
+For these instructions, see link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-getting-started.html[Getting Started with ThoughtSpot Cloud].+++</dlentry>+++
+
+[#september-cloud-2021-analyst]
+=== For the Analyst
++++<dlentry id="auto-email">+++Automatic following of How Users are Searching Answers Liveboard::::
+The link:{{ site.baseurl }}/admin/thoughtspot-one/query-intelligence-pinboard.html[How Users are Searching Answers Liveboard] allows administrators, and users they share the Liveboard with, to understand how users are searching for existing answers and Liveboards.
+Starting in the September release, ThoughtSpot automatically emails this Liveboard to administrators once a week.
+You can add or remove users from this email list by link:{{ site.baseurl }}/admin/manage-jobs/schedule-a-pinboard-job.html[editing the follow schedule] for this Liveboard.+++</dlentry>+++
+
+[#september-cloud-2021-business-user]
+=== For the Business User
++++<dlentry id="geomaps-denmark">+++Geo map support::::
+We added support for regions, municipalities, and postal codes, for Denmark.
+See link:{{ site.baseurl }}/reference/geomap-reference.html[Geo Map Reference].+++</dlentry>++++++<dlentry id="learning-cards">+++Learning cards::::
+This release introduces a new in-product learning initiative.
+Sets of learning cards appear when you first view an answer or search result after updating to the September release.
+These cards teach new users about ThoughtSpot, and how to gain insights from searches and answers.
+If you exit the learning cards by clicking the *Hide* or *x* button, you can always get them back by clicking on "`learning mode on`" from the profile menu.
+
+This feature is only available if you have the link:{{ site.baseurl }}/admin/ts-cloud/new-answer-experience.html[new answer experience] [.badge.badge-update]#Beta# (off by default) on in your environment.
+You can turn the new answer experience on from the *Experience manager* in your profile.+++</dlentry>++++++<dlentry id="watchlist-drag-and-drop">+++Drag and drop metrics on your watchlist::::
+You can now move metrics on your link:{{ site.baseurl }}/end-user/thoughtspot-one/thoughtspot-one-homepage.html#quick-links[home page watchlist] using drag and drop.
+Click on a metric, and move it to a different position in your watchlist.+++</dlentry>++++++<dlentry id="search-suggestions">+++Search suggestions [.label.label-beta]#Beta#::::
+When you link:{{ site.baseurl }}/end-user/search/search-answers.html[search across existing answers and Liveboards], ThoughtSpot now offers search suggestions in the search bar, based on your past searches and popular searches in your environment, in addition to object suggestions.
+For example, if you type `Sal` into the search bar, it might now result in search suggestions like *Sales* and *Sales this year*, in addition to object suggestions like an existing Liveboard called *Sales in the east last year*.
+
+ThoughtSpot provides these search object suggestions before you begin typing, based on your past searches and popular searches in your environment.
+
+This feature is in beta.
+If you do not see it yet, ThoughtSpot will enable it for you soon.+++</dlentry>+++
+
+[#september-cloud-2021-data-engineer]
+=== For the Data Engineer+++<dlentry id="connections">+++Embrace is now called Connections::::
+ThoughtSpot has renamed Embrace to Connections.
+Functionality remains the same.
+To access your connections, navigate to the Data tab and click Connections.
+For more information, see link:{{ site.baseurl }}/admin/ts-cloud/embrace.html[Connections].+++</dlentry>+++
+
+[#september-cloud-2021-it-ops-engineer]
+=== For the IT Ops Engineer
++++<dlentry id="custom-domains">+++Custom domain configuration::::
+ThoughtSpot now supports the configuration of a custom domain or multiple domains for your ThoughtSpot Cloud URL.
+By default, the base URL is _<your_company_name>.thoughtspot.cloud_.
+This feature allows you to request a different URL or multiple URLs, such as _analytics.<your_company_name>.com_.
+This is useful when embedding ThoughtSpot pages with TS Everywhere, so that your embedding application and the ThoughtSpot pages have the same base URL.
+If you are embedding ThoughtSpot in multiple environments, such as a staging environment and a production environment, these multiple domains can point to the same ThoughtSpot instance.
+
+Refer to link:{{ site.baseurl }}/admin/ts-cloud/custom-domains.html[Custom domain configuration] for more information.
+To set up a custom domain in your ThoughtSpot Cloud URL, link:{{ site.baseurl }}/admin/misc/contact.html[contact ThoughtSpot Support.]+++</dlentry>+++
+
+[#september-cloud-2021-developer]
+=== For the Developer
++++<dlentry id="thoughtspot-everywhere">+++ThoughtSpot Everywhere::::  This release introduces the ThoughtSpot Everywhere Edition license, Visual Embed SDK version 1.4.0, and new REST APIs for programmatic management of data connections, metadata objects, user accounts, user groups and privileges, and object sharing permissions.
+
+For more information, refer to https://docs.thoughtspot.com/visual-embed-sdk/release/en/?pageid=whats-new[ThoughtSpot Developer Documentation].+++</dlentry>+++
+
+[#2021-august]
+== ThoughtSpot 7 Cloud August Release (ts7.aug.cl)
+
+* link:{{ site.baseurl }}#august-cloud-first[For the First user]
+* link:{{ site.baseurl }}#august-cloud-analyst[For the Analyst]
+* link:{{ site.baseurl }}#august-cloud-business-user[For the Business User]
++
+// <li><a href="{{ site.baseurl }}#august-cloud-data-engineer">For the Data Engineer</a></li>
+* link:{{ site.baseurl }}#august-cloud-it-ops-engineer[For the IT Ops Engineer]
+* link:{{ site.baseurl }}#august-cloud-developer[For the Developer]
+
+[#august-cloud-first]
+=== For the First user
++++<dlentry id="getting-started">+++Getting started with ThoughtSpot Cloud::::
+The first user on the account has to complete a series of steps before other people can start using ThoughtSpot with your organization's data.
+For these instructions, see link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-getting-started.html[Getting Started with ThoughtSpot Cloud].+++</dlentry>+++
+
+[#august-cloud-analyst]
+=== For the Analyst
++++<dlentry id="scriptability">+++Scriptability::::
+* *Improved import workflow:* The new import workflow for link:{{ site.baseurl }}/admin/ts-cloud/scriptability.html[Scriptability] identifies errors, suggests solutions, and allows you to resolve these errors as part of the import workflow.
+It also has a cleaner, more intuitive UI, with separate sections for different object types.
+* *TML for tables with row-level security:* ThoughtSpot now supports the migration and editing of tables with link:{{ site.baseurl }}/admin/data-security/row-level-security.html[row level security (RLS)] using link:{{ site.baseurl }}/admin/ts-cloud/tml.html#syntax-tables[TML].+++</dlentry>+++
+
+[#august-cloud-business-user]
+=== For the Business User
++++<dlentry id="watchlist-metrics">+++Watchlist metrics::::  There are several new features for the metrics watchlist on your ThoughtSpot home page:
+
+* You can now open metrics in your watchlist in a new tab by right-clicking on the metric on the home page.
+* There is now no limit to the number of metrics you can add to your watchlist.
+
+Refer to link:{{ site.baseurl }}/end-user/thoughtspot-one/thoughtspot-one-homepage.html#quick-links[ThoughtSpot One home page] for more information about watchlist metrics.+++</dlentry>++++++<dlentry id="scatter-bubble-charts">+++Minimum and maximum on x-axis for scatter and bubble charts::::
+You can now specify a minimum and maximum value for measures on the x-axis of link:{{ site.baseurl }}/end-user/search/about-scatter-charts.html[scatter] and link:{{ site.baseurl }}/end-user/search/about-bubble-charts.html[bubble] charts.
+For more information on how to add a minimum and maximum value to a chart axis, refer to link:{{ site.baseurl }}/end-user/search/chart-axes-options.html#edit[Change axis options].+++</dlentry>++++++<dlentry id="deprecations">+++Deprecations::::
+ThoughtSpot is dropping support for the following feature in the August Cloud release.
+This feature is *_not_* available in the August release:
+
+* Ask an Expert
+
+Refer to link:{{ site.baseurl }}/release/deprecation.html#de-support-august-cloud[Deprecation Announcements] for more information.+++</dlentry>+++
+
+////
+<h3><a id="august-cloud-data-engineer"></a>For the Data Engineer</h3>
+
+<dl>
+<dlentry id="custom-calendar">
+<dt>Custom calendar enhancements</dt>
+<dd>There are several enhancements for custom calendar in this release:
+<ul><li>Custom calendar offers <span class="badge badge-update">Beta</span> support for Redshift, Teradata, Starburst, Synapse, and SAP Hana connections. These are off by default. To enable them, <a href="{{ site.baseurl }}/admin/misc/contact.html">contact ThoughtSpot support</a>.</li><li>Streamlined custom calendar window with the ability to preview calendar data.</li>
+<li>Simplified workflow.</li>
+<li>Preview calendar data from custom calendar list</li></ul>
+For more information, refer to <a href="{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-cust-cal.html">Custom calendar overview</a>.</dd>
+</dlentry>
+</dl>
+////
+
+[#august-cloud-it-ops-engineer]
+=== For the IT Ops Engineer
++++<dlentry id="credit-usage-pinboard">+++Credit Usage Liveboard::::  The Credit Usage Liveboard, a Liveboard for monitoring your credit consumption under the consumption-based pricing model, is now accessible from the Admin Console, under menu:Billing[Credit consumption].+++</dlentry>++++++<dlentry id="saml-mail-field">+++SAML configuration::::
+When configuring SAML authentication for ThoughtSpot, it is now mandatory to map the `mail` attribute in the IDP metadata file to the email address of the user.
+If your company cannot meet this requirement, link:{{ site.baseurl }}/admin/misc/contact.html[contact ThoughtSpot support].
+For more information, refer to link:{{ site.baseurl }}/admin/ts-cloud/authentication-integration.html[configure SAML].+++</dlentry>++++++<dlentry id="column-summaries">+++Enable or disable table column summaries::::
+This release allows admins to enable or disable table column summaries for users on the new answer experience, from the link:{{ site.baseurl }}/admin/ts-cloud/search-spotiq-settings.html#search[Search & SpotIQ] section of the admin console.
+By default, table column summaries are on.
+This does not affect the display of summaries for users on the classic answer experience.+++</dlentry>++++++<dlentry id="admin-console">+++UI improvement for help customization::::  This release improves the UI and user experience of the link:{{ site.baseurl }}/admin/ts-cloud/customize-help.html[Help customization] section of the admin console.+++</dlentry>+++
+
+[#august-cloud-developer]
+=== For the Developer
+
+ThoughtSpot introduces several new features and enhancements to the Developer Portal and Visual Embed SDK.
+This release also introduces new REST APIs to manage users, user sessions, group privileges, cluster configuration, and metadata objects. For more information, refer to https://developers.thoughtspot.com/docs/?pageid=whats-new[ThoughtSpot Developer Documentation].
+
+[#2021-june]
+== ThoughtSpot 7 Cloud June Release (ts7.jun.cl)
+
+* link:{{ site.baseurl }}#june-cloud-first[For the First user]
+* link:{{ site.baseurl }}#june-cloud-analyst[For the Analyst]
+* link:{{ site.baseurl }}#june-cloud-business-user[For the Business User]
+* link:{{ site.baseurl }}#june-cloud-data-engineer[For the Data Engineer]
+* link:{{ site.baseurl }}#june-cloud-it-ops-engineer[For the IT Ops Engineer]
+* link:{{ site.baseurl }}#june-cloud-developer[For the Developer]
+
+[#june-cloud-first]
+=== For the First user
++++<dlentry id="getting-started">+++Getting started with ThoughtSpot Cloud::::
+The first user on the account has to complete a series of steps before other people can start using ThoughtSpot with your organization's data.
+For these instructions, see link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-getting-started.html[Getting Started with ThoughtSpot Cloud].+++</dlentry>+++
+
+[#june-cloud-analyst]
+=== For the Analyst
++++<dlentry id="pivot-tables">+++Conditional formatting for pivot tables::::
+You can now perform conditional formatting on measures in pivot tables.
+Refer to link:{{ site.baseurl }}/end-user/search/apply-conditional-formatting.html#table[Apply conditional formatting] and link:{{ site.baseurl }}/complex-search/about-pivoting-a-table.html[Pivot tables].
+
+To perform conditional formatting on measures in pivot tables, you must have the link:{{ site.baseurl }}/admin/ts-cloud/new-answer-experience.html[New Answer experience] [.badge.badge-update]#Beta# (off by default in June Cloud) enabled on your cluster.+++</dlentry>++++++<dlentry id="embedded-link-format">+++Embedded link format for sharing objects::::
+For embedded ThoughtSpot environments, you can now generate links with your host application context and send these links in email notifications.
+You can specify the link format when sharing an object or scheduling a Liveboard job to ensure that the links sent in the email notifications go to the appropriate URL.
+Refer to link:{{ site.baseurl }}/end-user/pinboards/share-answers.html[Share answers] and link:{{ site.baseurl }}/admin/manage-jobs/schedule-a-pinboard-job.html[Schedule a Liveboard job] for more information.+++</dlentry>++++++<dlentry id="streamlined-analyst-setup">+++Streamlined analyst setup::::
+We simplified the steps to set up an analyst account on ThoughtSpot.
+Now, you can create a connection, create a worksheet to model your business use cases, and immediately search your data in three steps.
+See link:{{ site.baseurl }}/admin/ts-cloud/analyst-onboarding.html[Analyst Onboarding] for further details.+++</dlentry>++++++<dlentry id="group-aggregate-query-filters">+++Group aggregate query filters::::
+This release improves support for group aggregate query filters when seeking finer-grained results by adding a secondary dimension, or courser-grained results when dropping one of the existing dimensions.
+You can now also include or drop the filter condition.
+Refer to link:{{ site.baseurl }}/complex-search/aggregation-filters.html[Aggregation filters] for more information.+++</dlentry>+++
+
+[#june-cloud-business-user]
+=== For the Business User
++++<dlentry id="trending-objects">+++View counts for trending objects::::
+You can now see the view counts for trending answers and Liveboards on the home page.
+This can help you understand why an object is trending.+++</dlentry>++++++<dlentry id="trending-objects-link">+++Open trending objects in a new tab::::
+You can now open trending objects in a new tab by right-clicking on the object link on the home page.
+Refer to link:{{ site.baseurl }}/end-user/thoughtspot-one/thoughtspot-one-homepage.html#trending[ThoughtSpot One home page] for more information.+++</dlentry>+++
+
+[#june-cloud-data-engineer]
+=== For the Data Engineer
++++<dlentry id="embrace-databricks">+++Databricks GA::::
+Databricks is now GA in this release of ThoughtSpot Cloud.
+For more information, refer to link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-databricks.html[Databricks].+++</dlentry>++++++<dlentry id="object-usage-pinboard">+++Object Usage Liveboard::::
+This release introduces a new default Liveboard for monitoring object usage.
+The link:{{ site.baseurl }}/admin/ts-cloud/object-usage.html[Object Usage Liveboard] contains data on the following topics:
+
+* Specifies what existing tables, worksheets and views users search on
+* Specifies which columns users search most frequently
+* Tracks the most searched tables, worksheets and views each month
+
+Use this Liveboard to identify what users have accessed, and determine which unused data objects can be deleted.+++</dlentry>+++
+
+[#june-cloud-it-ops-engineer]
+=== For the IT Ops Engineer
++++<dlentry id="consumption-pricing">+++Consumption-based pricing system answers::::
+ThoughtSpot provides 2 default system answers to help you track and analyze your credit consumption.
+These answers allow you to dive deeper into the credit consumption and activities of a specific user, or over a specific time window.
+
+* *Sample Answer - Credit usage details*: This answer is ideal for looking into object-level details, such as the objects a user accessed and the actions they performed on those objects.
+* *Credit usage from Charging Records*: Use this answer to learn more about API-level details.
+You can map activities and credit consumption to specific API calls.
+
+Refer to link:{{ site.baseurl }}/admin/ts-cloud/consumption-pricing.html#user-activity[Consumption-based pricing] for more information.+++</dlentry>++++++<dlentry id="admin-privileges">+++New admin privileges [.label.label-beta]#Beta#::::
+This release introduces new administrator privileges that separate the abilities of the administrator into 4 specific privileges.
+For example, you can allow certain users to create and manage users, while not allowing them to manage SAML integration or other advanced settings.
+These new administrator privileges do *_not_* provide access to all data in ThoughtSpot, unlike the *Can administer ThoughtSpot* privilege.
+Users with the new privileges can only see data that others share with them.
+The *Can administer ThoughtSpot* privilege, which encompasses all 4 new administrator privileges, still appears as an option by default.
+To remove it, link:{{ site.baseurl }}/admin/misc/contact.html[contact ThoughtSpot Support].
+The 4 new privileges are:
+
+* Can manage users: Can create, delete, and edit users.
+* Can manage privileges: Can create, delete, and edit groups.
+This includes the group's name, sharing visibility, and privileges.
+* Can operate application: Can configure local and SAML authentication.
+Can manage application settings: search, SpotIQ, and onboarding advanced settings, style and help customization.
+Can view scheduled maintenance.
+* Can see system information: Can view all default admin data, including system worksheets and Liveboards.
+
+This feature is in beta and off by default.
+To enable it, link:{{ site.baseurl }}/admin/misc/contact.html[contact ThoughtSpot Support].+++</dlentry>++++++<dlentry id="security-log-collection">+++Security log collection::::
+This release of ThoughtSpot Cloud enables your security team to collect security audit events based on user activity and ship them to your SIEM application in real-time.
+You can view logs for the following events:
+
+* Account logout
+* Failed login
+* Group creation
+* Group deletion
+* Group modification
+* Locked account
+* Object creation
+* Object deletion
+* Object modification
+* Object sharing
+* Password change
+* Privilege change
+* Profile change
+* Row level security (RLS) rule creation
+* RLS rule deletion
+* RLS rule modification
+* Successful login
+* User account creation
+* User account deletion
+* User group change
+
+For further details, see link:{{ site.baseurl }}/admin/data-security/audit-logs.html[Collect security logs].+++</dlentry>++++++<dlentry id="admin-console">+++UI improvement for scheduled maintenance::::  This release improves the UI and user experience of the link:{{ site.baseurl }}/admin/ts-cloud/scheduled-maintenance.html[Scheduled maintenance] section of the admin console.+++</dlentry>+++
+
+[#june-cloud-developer]
+=== For the Developer
++++<dlentry id="global-local-actions">+++Global and local custom actions::::
+The ThoughtSpot developer portal now supports designating a custom action as a _global_ or _local_ action.
+This feature allows you to determine and control the placement of custom actions in the ThoughtSpot UI.
+Developers can now choose to create a custom action that will appear on all visualizations or a specific custom action that can be added to a particular visualization by a ThoughtSpot user.
+A custom actions panel in the visualization pages allows ThoughtSpot users to view the available custom actions and add an action to any visualization.
+For example, if you want an action that triggers a callback into your parent app, which would then post its data to Slack, you might want to add a custom action globally to all visualizations.
+Similarly, if you want to send the data obtained from a specific visualization to a URL, you can associate a custom action locally to that visualization.  For more information, see https://developers.thoughtspot.com/docs/?pageid=customize-actions[ThoughtSpot Developer Documentation].+++</dlentry>+++
++++<dlentry id="custom-action-auth">+++Authentication schemes for custom actions::::
+You can now apply an authentication scheme for custom actions that trigger a data payload to a specific URL target.
+If a custom action requires your users to authenticate to send data to a URL, you can specify the authentication method and authorization attributes when creating a custom action in the Developer portal.  ThoughtSpot will use this authentication information to send the required attributes in the `Authorization` headers to the URL endpoint configured in the custom action.  For more information, see https://developers.thoughtspot.com/docs/?pageid=custom-action-url[ThoughtSpot Developer Documentation].+++</dlentry>+++
++++<dlentry id="custom-action-position">+++Custom action position settings::::
+ThoughtSpot users with edit privileges can now define or modify the position of a custom action on visualization pages.
+When a developer creates a custom action in the Developer portal, ThoughtSpot adds a menu item to the *More* menu image:/images/icon-ellipses.png[more options menu icon] by default.
+ThoughtSpot users can change this to a context menu action or a primary action at any time.
+If your application instance requires an action that sends only a single row of data from charts or tables, developers can configure a custom action and restrict it to only the contextual menu.
+If this setting is enabled on a custom action, ThoughtSpot users cannot modify this action on a visualization page.  For more information, see https://developers.thoughtspot.com/docs/?pageid=custom-action-viz[ThoughtSpot Developer Documentation].+++</dlentry>+++
++++<dlentry id="custom-link-format">+++Custom link format for ThoughtSpot embedded instances::::
+ThoughtSpot generates links to access objects, such as Liveboards, visualizations, and search answers, when a user shares an object with another user or follows a Liveboard to receive periodic notifications.
+If you have embedded ThoughtSpot in your application, you might want to generate these links in the format that preserves your host application context.
+For embedded instances, ThoughtSpot now allows you to customize the format of these links in the Developer portal.
+The *Link Settings* page in the Developer portal allows you to customize the link format for various resource URLs and the *unsubscribe* link sent in email notifications.  For more information, see https://developers.thoughtspot.com/docs/?pageid=customize-links[ThoughtSpot Developer Documentation].+++</dlentry>+++
++++<dlentry id="rest-apis">+++New REST APIs::::  The ThoughtSpot 7 Cloud June release introduces the following REST APIs: +  +
+
+* `POST /tspublic/v1/security/share` + You can use this API to share ThoughtSpot objects with another user or user group.
++ For more information, see link:{{ site.baseurl }}/reference/api/rest-api-reference.html[REST API reference]. +
+
+* `POST /tspublic/v1/security/shareviz` + You can use this API to share a specific ThoughtSpot visualization with another user or user group.
++ For more information, see link:{{ site.baseurl }}/reference/api/rest-api-reference.html[REST API reference]. +
+
+* `GET /tspublic/v1/session/login/token` + This API allows you to authenticate and log in a user if trusted authentication is enabled on ThoughtSpot.
++ For more information, see link:{{ site.baseurl }}/reference/api/rest-api-reference.html[REST API reference]. +
+
+* `POST /tspublic/v1/metadata/assigntag` + You can use this API to programmatically assign a tag to a ThoughtSpot object such as Liveboards, search answers, tables, and worksheets.
++ For more information, see link:{{ site.baseurl }}/reference/api/rest-api-reference.html[REST API reference]. +
+
+* `POST /tspublic/v1/user/updatepreference` + This API now includes the optional `username` parameter, which allows API users to specify the `username` of the ThoughtSpot user.
++ For more information, see link:{{ site.baseurl }}/reference/api/rest-api-reference.html[REST API reference].+++</dlentry>+++
+
+[#2021-may]
+== ThoughtSpot 7 Cloud May Release (ts7.may.cl)
+
+* link:{{ site.baseurl }}#may-cloud-analyst[For the Analyst]
+* link:{{ site.baseurl }}#may-cloud-business-user[For the Business User]
+* link:{{ site.baseurl }}#may-cloud-data-engineer[For the Data Engineer]
+* link:{{ site.baseurl }}#may-cloud-it-ops-engineer[For the IT Ops Engineer]
+* link:{{ site.baseurl }}#may-cloud-developer[For the Developer]
+
+[#may-cloud-analyst]
+=== For the Analyst
++++<dlentry>+++Search Assist Coach::::
+link:{{ site.baseurl }}/admin/ts-cloud/search-assist-coach.html[Search Assist Coach] enables Analysts, or anyone who has *edit* access to a Worksheet, to create link:{{ site.baseurl }}/admin/ts-cloud/search-assist.html[Search Assist] sample queries based on their company data.
+This gives all users the opportunity to experience onboarding and training on data that is relevant to their work, and specific to their line of business.+++</dlentry>++++++<dlentry>+++Scriptable Worksheets with Search Assist Coach lessons::::
+You can now use TML to import, export, and update Worksheets with link:{{ site.baseurl }}/admin/ts-cloud/search-assist-coach.html[Search Assist Coach] lessons.
+See link:{{ site.baseurl }}/admin/ts-cloud/tml.html#syntax-worksheets[Syntax of the Worksheet TML file].+++</dlentry>+++
+
+[#may-cloud-business-user]
+=== For the Business User
++++<dlentry id="home-page-metrics">+++Track metrics from the home page::::
+You can now add important metrics to your watchlist and track them from the home page.
+Refer to link:{{ site.baseurl }}/end-user/thoughtspot-one/thoughtspot-one-homepage.html#quick-links[Home page metrics].+++</dlentry>++++++<dlentry id="automatic-select">+++Automatic selection of first search result::::
+When you search across existing Answers and Liveboards, ThoughtSpot now automatically selects the first result and opens the *Details* panel.
+This allows you to quickly glance at the details for the result that ThoughtSpot determines is most useful for you.
+You can see the metrics, groups, and filters for the Answer or Liveboard, and easily find out if that object answers your question.+++</dlentry>++++++<dlentry id="latency">+++Improvements in indexing latency for Search Answers::::
+This release improves indexing latency to less than 10 minutes (less than 5 in most cases), from 6 hours previously.
+Now, when you create, modify, or delete a new object, update user permissions, or otherwise make changes within ThoughtSpot, the product reflects these changes within 10 minutes.+++</dlentry>++++++<dlentry id="deprecations">+++Deprecations::::
+ThoughtSpot is dropping support for several features in the May Cloud release.
+These features are *_not_* available in the May release.
+ThoughtSpot is also deprecating several features in the May Cloud release.
+These features are still available in the May release, but ThoughtSpot will drop support for them in a later release.
+Refer to link:{{ site.baseurl }}/release/deprecation.html[Deprecation Announcements] for more information.+++</dlentry>+++
+
+[#may-cloud-data-engineer]
+=== For the Data Engineer
++++<dlentry id="embrace-adw">+++Oracle ADW for Connections::::
+In this release, Oracle Autonomous Data Warehouse (ADW) is GA.
+For details, see link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-adw.html[Oracle ADW].+++</dlentry>++++++<dlentry id="embrace-starburst">+++Starburst for Embrace::::
+Embrace now supports both Starburst Enterprise, and open source Trino databases.
+For details, see link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-starburst.html[Starburst].+++</dlentry>+++
++
+////
+<dlentry id="embrace-custom-calendar">
+<dt>Custom calendar for Embrace</dt>
+<dd>In this release, custom calendar is available for Snowflake connections only. For details, see <a href="{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-cust-cal.html">Custom calendar</a>. </dd></dlentry>
+////+++<dlentry id="embrace-databricks">+++Databricks for Embrace::::
+Embrace now supports Databricks.
+This feature is in beta and disabled by default.
+To enable this feature, contact link:{{ site.baseurl }}/admin/misc/contact.html[ThoughtSpot Support].+++</dlentry>+++
++
+[#may-cloud-it-ops-engineer]
+=== For the IT Ops Engineer+++<dlentry id="product-usage-worksheet">+++Product Usage Worksheet::::
+This release introduces a new default Worksheet for monitoring product usage.
+The Product Usage Worksheet contains data on the following topics:
+
+* Specifies what existing Worksheets, tables, and Views users search on and create objects from, and what those objects are
+* Lists what actions users complete in the product
+* Lists the underlying data sources for any object
+* Lists any object's dependents
+
+You can search on this Worksheet, or create Liveboards based on it, to monitor your users' interaction with the product.
+To access this Worksheet, search for *Product Usage Worksheet* from the *Data* tab, or add it as a source while searching data.+++</dlentry>+++
+
++
+[#may-cloud-developer]
+=== For the Developer+++<dlentry id="custom-actions">+++Custom actions in the context menu::::  ThoughtSpot now allows you to add a custom action in the contextual menu for embedded visualizations in the *Answers* or *Liveboards* page.  To add a custom action to the contextual menu, you must have the link:{{ site.baseurl }}/admin/ts-cloud/new-answer-experience.html[New Answer experience] [.badge.badge-update]#Beta# (off by default) enabled on your cluster.  For more information, see link:{{ site.baseurl }}/admin/ts-cloud/custom-actions.html[Add custom actions].+++</dlentry>+++
++++<dlentry id="viz-embed-sdk">+++Visual Embed SDK Version 1.2.0::::  The ThoughtSpot 7 Cloud May release introduces the Visual Embed SDK 1.2.0 version with a minor update and backward-compatible improvements.+++</dlentry>+++
++++<dlentry id="saml-authentication">+++SAML authentication::::
+The Visual Embed SDK packages now include the `noRedirect` attribute as an optional parameter for the `SSO` `AuthType`.
+If you want to display the SAML authentication workflow in a pop-up window, instead of refreshing the application web page to direct users to the SAML login page, you can set the `noRedirect` attribute to `true`.  For more information, see the https://developers.thoughtspot.com/docs/?pageid=getting-started[ThoughtSpot Developer Documentation].+++</dlentry>+++
++++<dlentry id="viz-embed-sdk-notification">+++Visual Embed SDK notification when third-party cookies are disabled::::
+When a user accesses the embedded application from a web browser that has third-party cookies disabled, the Visual Embed SDK emits the `NoCookieAccess` event to notify the developer.
+Cookies are disabled by default in Safari.
+Users can enable third-party cookies in Safari's Preferences setting page or use another web browser.
+To know how to enable this setting by default on Safari for a ThoughtSpot embedded instance, link:{{ site.baseurl }}/admin/misc/contact.html[contact ThoughtSpot Support].+++</dlentry>+++
++++<dlentry id="pinboard-embed-enhancements">+++Liveboard embed enhancements::::  The More menu image:/images/icon-ellipses.png[more options menu icon] in the embedded Liveboard page now shows the following actions for Liveboard and visualizations.  Liveboard
+
+* Save
+* Make a copy
+* Add filters
+* Configure filters
+* Present
+* Download as PDF
+* Liveboard info
+* Manage schedules
+
+__ *Note:* Users with edit permissions can view and access the *Save*, *Add filters*, *Configure filters*, and *Manage schedules* actions.
+
+Visualizations on a Liveboard
+
+* Pin
+* Download
+* Edit
+* Present
+* Download as CSV
+* Download as XLSX
+* Download as PDF
+
+__ *Note:* Users with edit permissions can view and access the *Edit* action.
+The *Download as CSV*, *Download as XSLX*, and *Download as PDF* actions are available for table visualizations.
+The *Download* action is available for chart visualizations.+++</dlentry>+++
++++<dlentry id="performance-optimization">+++Performance optimization::::  This release introduces the following performance improvements for ThoughtSpot embedded applications:
+
+* Faster loading of embedded objects and application pages.
+* Faster loading of preview results in the Playground.+++</dlentry>+++
++++<dlentry id="rest-apis">+++REST APIs::::  The ThoughtSpot 7 Cloud May release introduces the following new REST APIs: +  +
+
+* `POST /tspublic/v1/user/updatepreference` + You can use this API to programmatically update a ThoughtSpot user's profile settings such as the email address, locale preference, notification settings, and the preference for revisiting the onboarding experience.
++  + For more information, see link:{{ site.baseurl }}/reference/api/rest-api-reference.html[REST API reference]. +
+
+* `GET /tspublic/v1/metadata/listas` + You can use this API to get a list of object headers for a ThoughtSpot user or user group.
+For more information, see link:{{ site.baseurl }}/reference/api/rest-api-reference.html[REST API reference].+++</dlentry>+++
+
+[#2021-april]
+== ThoughtSpot 7 Cloud April Release (ts7.april.cl)
+
+* link:{{ site.baseurl }}#april-cloud-analyst[For the Analyst]
+* link:{{ site.baseurl }}#april-cloud-business-user[For the Business User]
+* link:{{ site.baseurl }}#april-cloud-it-ops-engineer[For the IT Ops Engineer]
+* link:{{ site.baseurl }}#april-cloud-developer[For the Developer]
+
+[#april-cloud-analyst]
+=== For the Analyst
++++<dlentry id="scriptability">+++Scriptability::::  There are several enhancements to the link:{{ site.baseurl }}/admin/ts-cloud/scriptability.html[Scriptability] feature:
+
+* *Support for selective and linked filters:* You can now import, export, and update Liveboards with link:{{ site.baseurl }}/complex-search/linked-filters.html[linked] or link:{{ site.baseurl }}/complex-search/selective-filters.html[selective] filters.
+* *Add tables and columns to an Embrace connection (GA):* ThoughtSpot now allows you to use TML to edit tables created through link:{{ site.baseurl }}/admin/ts-cloud/embrace.html[Embrace], and add columns and tables that already exist in the external database to the connection.
+This feature is now GA and on by default.
+Refer to link:{{ site.baseurl }}/admin/ts-cloud/tml.html#syntax-tables[ThoughtSpot Modeling Language] and specify the `connection` information when adding tables or table columns to an Embrace connection.+++</dlentry>++++++<dlentry id="query-dashboard">+++Enhancements to the Search on Answers Liveboard::::
+The link:{{ site.baseurl }}/admin/thoughtspot-one/query-intelligence-pinboard.html[Search on Answers Liveboard] contains several new or updated visualizations, including *Top search queries on existing Answers*, *Position at which users are clicking*, and *What results users are finding useful with autocomplete suggestions*.
+These new visualizations provide more information about click position, what information users look for, and what information they cannot find.
+You can also view the link:{{ site.baseurl }}/admin/thoughtspot-one/query-intelligence-pinboard.html#best-practices[best practices] for this Liveboard.+++</dlentry>+++
+
+[#april-cloud-business-user]
+=== For the Business User
++++<dlentry id="new-answer-experience">+++New Answer experience [.badge.badge-update]#Beta#::::
+This release redesigns the experience of creating and working with Answers.
+The new Answer experience contains multiple new features and feature enhancements.
+It is in [.badge.badge-update]#Beta# and off by default, but the option to turn it on or off individually is on by default.
+You can toggle it on or off individually from the *Experience manager* in your profile, or for the whole company by link:{{ site.baseurl }}/admin/misc/contact.html[contacting ThoughtSpot Support].
+
+The new Answer experience contains the following features and enhancements: {% include content/new-answer-experience-features.md %}
+
+{% include content/new-answer-experience-deprecations.md %}
+
+Refer to link:{{ site.baseurl }}/admin/ts-cloud/new-answer-experience[New Answer experience] for more information on the behavior of these features.+++</dlentry>++++++<dlentry id="sticky-search-toggle">+++Sticky Search Answers/ Search Data toggle::::
+This release makes the Search Answers/ Search Data toggle image:{{ site.baseurl }}/images/search-toggle-answers.png[search toggle] sticky.
+ThoughtSpot now remembers your choice across sessions when you switch between link:{{ site.baseurl }}/end-user/search/search-answers.html[Search Answers] and link:{{ site.baseurl }}/end-user/search/search-data.html[Search Data].+++</dlentry>++++++<dlentry id="latency">+++Improvements in indexing latency for Search Answers::::
+This release improves indexing latency to less than 10 minutes, from 6 hours previously.
+Now, when you create, modify, or delete a new object, update user permissions, or otherwise make changes within ThoughtSpot, the product reflects these changes within 10 minutes.
+If you create a new Answer, users can search for and find it 10 minutes after you create it.
+This indexing improvement is in the process of rollout.
+If you don't have it yet, ThoughtSpot will deploy it soon.+++</dlentry>++++++<dlentry id="unicode">+++Unicode support::::
+We added unicode character matching in Search Answers, extending support to all languages and character sets.
+You can now search all artifacts that use unicode characters in titles, descriptions, metadata, and keywords, and see the correct results.
+image:/images/search-answers-unicode.png[Search Answers with full unicode support]+++</dlentry>+++
+
+[#april-cloud-it-ops-engineer]
+=== For the IT Ops Engineer
++++<dlentry id="private-link">+++AWS PrivateLink between ThoughtSpot Cloud and your Snowflake or Redshift data warehouse::::
+To ensure a secure two-way data exchange between your cloud data warehouse and the ThoughtSpot Cloud tenant, you can use an AWS PrivateLink.
+This option is currently available for your Snowflake or Redshift data warehouse connections.
+Refer to the link:{{ site.baseurl }}/admin/ts-cloud/private-link-redshift.html[Redshift] and link:{{ site.baseurl }}/admin/ts-cloud/private-link-snowflake.html[Snowflake] articles about enabling an AWS PrivateLink.+++</dlentry>+++
+
+[#april-cloud-developer]
+=== For the Developer
++++<dlentry id="developer-privilege">+++Developer privilege::::
+You can now grant groups the link:{{ site.baseurl }}/end-user/introduction/about-privileges-end-user.html[Developer privilege] from the Admin Console, allowing users in those groups to access and use the link:{{ site.baseurl }}/admin/ts-cloud/spotdev-portal.html[Developer Portal].
+In the Developer Portal, users can explore the ThoughtSpot APIs and developer tools, and build web applications with ThoughtSpot content.+++</dlentry>++++++<dlentry id="tml-api">+++TML APIs::::
+The new TML APIs enable you to programmatically export, validate, and import scriptable link:{{ site.baseurl }}/admin/ts-cloud/tml.html[TML] objects.
+Use these APIs to automate the change management and deployment processes between your development and production environments.
+With these APIs, analysts can much more easily migrate from one environment to the other by automating the entire change management process, reducing the risk of human error.
+
+See link:{{ site.baseurl }}/reference/api/rest-api-reference.html[REST API reference].+++</dlentry>++++++<dlentry id="developer-portal">+++ThoughtSpot Developer portal::::
+ThoughtSpot users with admin or developer privileges can now access the ThoughtSpot Developer portal by clicking the *Develop* tab in the ThoughtSpot application.
+The Developer portal, referred to as *SpotDev* in the earlier release, includes the following enhancements:
+
+* Playground enhancements + The *Playground* page now includes several UI enhancements to improve the interactive coding experience for developers.
+ ** The *Handle custom actions* checkbox on the *Playground* pages allows you to view the code for the custom action event.
+ ** The *Navigate to URL* checkbox on the *Playground* > *Full app* page allows you to set a URL path to navigate to when the embedded application loads.
+* Custom action Configuration + You can now configure custom actions for embedded Liveboards and visualization pages.
+You can also set a custom action as a primary menu command, or as a menu item in the *More* menu image:{{ site.baseurl }}/images/icon-more-10px.png[the more options menu].
+* Security settings + The *Security Settings* page in the developer portal includes the following new features:
+ ** Users with developer and admin privileges can now add external application domains to the Content Security Policy (CSP) and Cross-Origin Resource Sharing (CORS) whitelist.
+ ** Users with admin privileges can add the SAML redirect domains to the allowed list of domains, and thus provide a seamless login experience for federated users who request access to the embedded ThoughtSpot content.
+ ** Users with admin privileges can enable the trusted authentication method to authenticate ThoughtSpot users who request access to the embedded content.+++</dlentry>++++++<dlentry id="visual-embed-sdk">+++ThoughtSpot Visual Embed SDK enhancements::::
+ThoughtSpot Visual Embed SDK is now available to all external users who want to embed ThoughtSpot content in their application, product, or web page.
++ You can now download the Visual Embed SDK package from the https://www.npmjs.com/package/@thoughtspot/visual-embed-sdk[NPM site] and get started with embedding ThoughtSpot.
++ The new Visual Embed SDK package includes several new enhancements to support user authentication, full application rendition, custom action configuration for embedded Liveboards and visualizations, and enumerators for handling the events generated by the embed configuration.
+For more information, see the https://developers.thoughtspot.com/docs/?pageid=js-reference[ThoughtSpot Developer Documentation].+++</dlentry>++++++<dlentry id="session-api-enhancement">+++Session API enhancement::::
+The session REST API service now includes the `/tspublic/v1/session/auth/token` API to enable a client application to programmatically obtain an authentication token for a ThoughtSpot user.
++ To access this API, visit the ThoughtSpot Swagger portal.
++ For more information, see link:{{ site.baseurl }}/reference/api/rest-api-reference.html[REST API reference].+++</dlentry>+++
+
+[#2021-march]
+== ThoughtSpot 7 Cloud March Release (ts7.mar.cl)
+
+* link:{{ site.baseurl }}#mar-cloud-analyst[For the Analyst]
+* link:{{ site.baseurl }}#mar-cloud-business-user[For the Business User]
+* link:{{ site.baseurl }}#mar-cloud-it-ops-engineer[For the IT Ops Engineer]
+* link:{{ site.baseurl }}#mar-cloud-developer[For the Developer]
+
+[#mar-cloud-analyst]
+=== For the Analyst
++++<dlentry id="scriptability">+++Scriptability::::
+* *Add tables and columns to an Embrace connection:* ThoughtSpot now allows you to use TML to edit tables created through link:{{ site.baseurl }}/admin/ts-cloud/embrace.html[Embrace], and add columns and tables that already exist in the external database to the connection.
+Refer to link:{{ site.baseurl }}/admin/ts-cloud/tml.html#syntax-tables[ThoughtSpot Modeling Language] and specify the `connection` information when adding tables or table columns to an Embrace connection.
++ This feature is in *Beta* and off by default;
+to add columns and tables to an Embrace connection through Scriptability, contact your ThoughtSpot administrator.
+* *Improvements to generic join functionality:* The expanded functionality for generic joins in TML files allows the following elements:   * Constants: int, double, bool, date, and string * Comparison operators: `=`, `!=`, `<`, `>`, `+<=+`, and `>=` * Columns * Boolean operators: `AND`, `OR`, and `NOT` This feature is in *Beta* and on by default.+++</dlentry>+++
+
+[#mar-cloud-business-user]
+=== For the Business User
++++<dlentry id="ts-one-ga">+++ThoughtSpot One GA::::
+ThoughtSpot One is now available for all customers.
+It is on by default.
+See link:{{ site.baseurl }}/end-user/search/search-answers.html[Search Answers] and link:{{ site.baseurl }}/end-user/thoughtspot-one/thoughtspot-one-homepage.html[ThoughtSpot One home page] for more information.+++</dlentry>++++++<dlentry id="bulk-share">+++Bulk share objects from the ThoughtSpot One home page::::
+You can now share multiple objects at a time from the ThoughtSpot One home page.
+Refer to link:{{ site.baseurl }}/end-user/thoughtspot-one/thoughtspot-one-homepage.html#bulk-share[ThoughtSpot One home page].+++</dlentry>++++++<dlentry id="details-panel">+++Frequent metrics and attributes in the *Details* panel::::
+The *Details* panel that appears when you click on a Liveboard visualization while searching across your existing Answers and Liveboards now lists frequent metrics and attributes for that Liveboard.
+You can determine if a Liveboard search result is useful for you based on the metrics and attributes used most often in that Liveboard.+++</dlentry>+++
+
+[#mar-cloud-it-ops-engineer]
+=== For the IT Ops Engineer
++++<dlentry id="search-spotiq">+++Manage advanced search and SpotIQ settings::::
+You can now manage advanced search and SpotIQ settings from the Admin Console.
+You can configure column indexing and enable or disable SpotIQ Analyze and column summaries.
+Refer to link:{{ site.baseurl }}/admin/ts-cloud/search-spotiq-settings.html[Manage search and SpotIQ settings].+++</dlentry>++++++<dlentry id="email-onboarding">+++Manage email and onboarding settings::::
+You can manage certain advanced settings for your organization from the Admin Console.
+You can customize welcome emails, scheduled emails, and the workflow that allows users to sign up for ThoughtSpot from the login page.
+Refer to link:{{ site.baseurl }}/admin/ts-cloud/onboarding-email-settings.html[Manage email and onboarding settings].+++</dlentry>++++++<dlentry id="performance-tracking">+++Performance Tracking Liveboard::::
+The link:{{ site.baseurl }}/admin/ts-cloud/performance-tracking.html[Performance Tracking Liveboard] is now accessible from the Admin Console.
+To view this Liveboard, navigate to the Admin Console by selecting *Admin* from the top navigation bar.
+Select *App performance* from the side navigation bar in the Admin Console.+++</dlentry>+++
+
+[#mar-cloud-developer]
+=== For the Developer
++++<dlentry id="thoughtspot-embed">+++ThoughtSpot Embed::::
+ThoughtSpot cloud now supports embedding ThoughtSpot content in third-party applications.
+In this release, ThoughtSpot introduces the Visual Embed SDK package [.label.label-beta]#Beta# to help developers embed the ThoughtSpot search functionality, Liveboards, visualizations, or the full application in their web page, portal, or business solution.  For more information on embedding ThoughtSpot, see link:{{ site.baseurl }}/admin/ts-cloud/intro-embed.html[ThoughtSpot embedding solution].+++</dlentry>++++++<dlentry id="spotdev-portal">+++SpotDev portal [.label.label-beta]#Beta#::::
+ThoughtSpot cloud now includes the *SpotDev* portal in beta to allow developer users to explore the ThoughtSpot SDK APIs and build sample applications.
+The *SpotDev* tab in the ThoughtSpot application is available for the users with administrator and developer privileges.
+The *SpotDev* portal provides a playground for developers and product owners to evaluate the Visual Embed APIs and preview the results.
+The portal also allows authorized users to rebrand the embedded content, link:{{ site.baseurl }}/admin/ts-cloud/customization-rebranding.html[customize styles], and link:{{ site.baseurl }}/admin/ts-cloud/custom-actions.html[add custom menu actions] to the embedded instance. For more information, see link:{{ site.baseurl }}/admin/ts-cloud/spotdev-portal.html[SpotDev Portal].+++</dlentry>+++
+
+[#2021-february]
+== ThoughtSpot 7 Cloud February Release (ts7.feb.cl)
+
+* link:{{ site.baseurl }}#feb-cloud-analyst[For the Analyst]
+* link:{{ site.baseurl }}#feb-cloud-business-user[For the Business User]
+* link:{{ site.baseurl }}#feb-cloud-data-engineer[For the Data Engineer]
+* link:{{ site.baseurl }}#feb-cloud-it-ops-engineer[For the IT Ops Engineer]
+
+[#feb-cloud-analyst]
+=== For the Analyst
++++<dlentry id="scriptability">+++Scriptability::::
+* You can now create and edit joins at the table level using TML, including range and generic joins.
+You must edit these joins from the source table, not the destination table.
+Refer to link:{{ site.baseurl }}/admin/ts-cloud/tml.html#syntax-tables[ThoughtSpot Modeling Language].
++ This feature is in Beta in the February release.
+To enable it, link:{{ site.baseurl }}/admin/misc/contact.html[contact ThoughtSpot Support].
+* *Export custom sets of TML files*: Support for export of custom sets of TML files is now GA and on by default.
+You can now export your own custom sets of TML files, or collections of Scriptable ThoughtSpot Answers, Liveboards, Views, tables, and Worksheets, packaged together as a zip file.
+Simply navigate to menu:Data[Utilities > Import/Export TML] and choose the objects you would like to include in a custom set of TML files.
+Refer to link:{{ site.baseurl }}/admin/ts-cloud/tml-import-export-multiple.html[Migrate multiple TML files].+++</dlentry>++++++<dlentry id="simplified-join-creation">+++Simplified join creation::::
+This release makes creating and editing joins from a table more flexible and intuitive.
+Our new joins interface allows you to define and edit the join type and cardinality at the table level, where previously this was only possible at the Worksheet level.
+Refer to link:{{ site.baseurl }}/admin/worksheets/add-joins.html#table-join[Table joins].+++</dlentry>++++++<dlentry id="pinboard-download-api">+++Liveboard Export API::::
+Use the new Liveboard Export API to programmatically download Liveboards, or specific visualizations from the Liveboards, as PDFs.
+Refer to link:{{ site.baseurl }}/reference/api/rest-api-reference.html[REST API reference].+++</dlentry>++++++<dlentry id="spotiq-analyze">+++Support for SpotIQ Analyze::::
+In this release, ThoughtSpot Cloud adds support for SpotIQ analyze.
+Now you can analyze any answer, Liveboard visualization, or data source to generate instant insights, by clicking the SpotIQ analyze button image:{{ site.baseurl }}/images/icon-lightbulb.png[SpotIQ analyze icon].
+For more information, see link:{{ site.baseurl }}/spotiq/customization.html[Custom SpotIQ analysis].+++</dlentry>+++
+
+[#feb-cloud-business-user]
+=== For the Business User
++++<dlentry id="home-page-shortcuts">+++Home page shortcuts::::
+You can now create and access quick links to your most-used Answers and Liveboards from the ThoughtSpot One home page.
+Refer to link:{{ site.baseurl }}/end-user/thoughtspot-one/thoughtspot-one-homepage.html#quick-links[Home page shortcuts].
+
+ThoughtSpot One may be off in your environment.
+To enable ThoughtSpot One, link:{{ site.baseurl }}/admin/misc/contact.html[contact ThoughtSpot Support.]+++</dlentry>++++++<dlentry id="internet-explorer">+++Deprecation of Internet Explorer::::
+ThoughtSpot browser support for Internet Explorer is now deprecated.
+Refer to link:{{ site.baseurl }}/end-user/accessing.html[ThoughtSpot browser access] for a list of supported browsers.+++</dlentry>+++
+
+[#feb-cloud-data-engineer]
+=== For the Data Engineer
++++<dlentry id="embrace">+++Embrace::::
+Embrace now supports security passthrough for Snowflake and Google BigQuery using OAuth for authentication and authorization.
+For more information, see link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-snowflake-add-connection.html[Snowflake], and link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-gbq-add-connection.html[Google BigQuery].
+Embrace passthrough functions are available for Snowflake.
+Passthrough functions allow you to send custom SQL expressions directly to your Snowflake database without being interpreted by ThoughtSpot.
+For more information, see link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-snowflake-passthrough.html[Passthrough functions for Snowflake].
+Embrace now supports Oracle Autonomous Database [.label.label-beta]#Beta#.
+This feature is in beta and disabled by default.
+To enable this feature, contact link:{{ site.baseurl }}/admin/misc/contact.html[ThoughtSpot Support].+++</dlentry>+++
+
+[#feb-cloud-it-ops-engineer]
+=== For the IT Ops Engineer
++++<dlentry id="new-region-support">+++New region support::::
+ThoughtSpot Cloud is now available in the following 2 regions, in addition to US East (N.
+Virginia) and West (Oregon), Sydney, and Ireland:
+
+* Frankfurt
+* Singapore+++</dlentry>++++++<dlentry id="search-answers-pinboard">+++Search on Answers Liveboard::::  There are several changes to the behavior of the link:{{ site.baseurl }}/admin/thoughtspot-one/query-intelligence-pinboard.html[How Users are Searching Answers Liveboard]:
+
+* The Liveboard and its underlying Worksheet, *Discover Monitoring Data*, are now accessible only to admins by default.
+Admins can share the Liveboard and Worksheet with anyone else who might need this information.
+* The Liveboard is populated with your users' Search on Answers data by default.
+You do not need to link:{{ site.baseurl }}/admin/misc/contact.html[Contact ThoughtSpot Support] to see your users' Search on Answers data in the Liveboard.+++</dlentry>++++++<dlentry id="pinboard-download-control">+++Liveboard download control::::
+You can now limit or remove the options ThoughtSpot provides for downloading Liveboards and their visualizations.
+You can allow users to only download Liveboard visualizations in a specific format (such as .csv), or you can restrict access to downloading Liveboards and their visualizations altogether.
+
+This is a cluster-level feature.
+You cannot configure permissions for specific users.
+
+This is an embed-only feature.
+To enable this functionality, link:{{ site.baseurl }}/admin/misc/contact.html[contact ThoughtSpot Support].+++</dlentry>++++++<dlentry id="consumption-based-pricing">+++Consumption-based pricing::::
+ThoughtSpot now offers consumption, or usage, based pricing.
+Refer to link:{{ site.baseurl }}/admin/ts-cloud/consumption-pricing.html[Consumption-based pricing].
+To compare consumption- and capacity-based pricing, refer to https://www.thoughtspot.com/pricing[ThoughtSpot pricing].+++</dlentry>+++
+
+[#2021-december]
+== ThoughtSpot 6 Cloud December Release (ts6.dec.cl)
+
+=== Scriptability
+
+There are several new features for Scriptability:
+
+* *Export custom sets of TML files*: You can now export your own custom sets of TML files, or collections of Scriptable ThoughtSpot Answers, Liveboards, Views, tables, and Worksheets, packaged together as a zip file.
+Simply navigate to menu:Data[Utilities > Import/Export TML] and choose the objects you would like to include in a custom set of TML files.
+Refer to link:{{ site.baseurl }}/admin/ts-cloud/tml-import-export-multiple.html[Migrate multiple TML files].
++
+This feature is in Beta.
+To enable it, link:{{ site.baseurl }}/admin/misc/contact.html[contact ThoughtSpot Support].
+
+* *GUID handling*: ThoughtSpot now recognizes pre-existing GUIDs upon import and asks if you would like to update the existing object or create a new one.
+Refer to link:{{ site.baseurl }}/admin/ts-cloud/scriptability.html[Scriptability].
+* ThoughtSpot Scripting Language is now called ThoughtSpot Modeling Language.
+
+=== Information Center
+
+ThoughtSpot has a new Information Center, accessible from the help icon *?* next to your profile on the top navigation bar.
+This new help menu contains many useful resources, including a navigation overview, several training videos, and links to more help across the ThoughtSpot product, community, training, and documentation.
+Refer to link:{{ site.baseurl }}/end-user/help-center/what-you-can-find-in-the-help-center.html[More help and support].
+
+=== Embrace passthrough functions
+
+Embrace now supports passthrough functions which allow you to send SQL expressions directly to the database, without being interpreted by ThoughtSpot.
+If you have custom database functions that ThoughtSpot doesn't support, you can use these new passthrough functions in the ThoughtSpot Formula Assistant to call your custom functions.
+Refer to link:{{ site.baseurl }}/reference/formula-reference.html#passthrough-functions[Embrace passthrough functions].
+
+=== New language support
+
+Starting in the December Cloud release, ThoughtSpot supports the following new locale, including support for language keywords that can be used in the search bar:
+
+* English (India)
+
+To set locale to English (India), click the user icon in the top right corner to navigate to the *Profile* page, and select locale under *Preferences*.
+
+[#2021-october]
+== ThoughtSpot 6 Cloud October Release (ts6.oct.cl)
+
+=== New Home page
+
+The ThoughtSpot link:{{ site.baseurl }}/end-user/thoughtspot-one/thoughtspot-one-homepage.html[Home page] allows you to access all your essential actions as a business user.
+You can:
+
+* Search across existing Answers and Liveboards
+* Search your data to create new Answers and Liveboards
+* View objects you viewed recently
+* View trending Liveboards and Answers
+* Filter existing objects by favorite, author, tag, or type of object
+* Sort existing objects by author, views, or most recently viewed
+* Bulk mark objects as favorites
+
+=== Search existing Answers
+
+In addition to the existing Search over data, this release gives business users easy link:{{ site.baseurl }}/end-user/search/search-answers.html[Search over existing Answers and Liveboards].
+This  meets the users' information needs by making Answers searchable, sortable, and applying filters on relevance, recency, number of views, authorship, metrics used, and so on.
+
+=== How Users are Searching Answers Liveboard
+
+Use this default link:{{ site.baseurl }}/admin/thoughtspot-one/query-intelligence-pinboard.html[Liveboard] to analyze how users are searching your existing Answers and Liveboards, so you can determine what objects are the most popular and what assets you may need to create.
+
+=== Disable Answer Search for specific Worksheets
+
+When users search for existing Answers and Liveboards, the default experience is to search across all Worksheets that they have access to.
+You may not want users to search for existing Answer and Liveboards built on certain Worksheets that are works in progress or deprecated.
+You can disable searching for Answers on specific Worksheets.
+Refer to link:{{ site.baseurl }}/admin/thoughtspot-one/disable-discover-for-worksheet.html[Disable Answer Search].
+
+=== Linked Liveboard filters
+
+You can now create one filter that filters visualizations based on multiple Worksheets by linking the Worksheet columns, at the Liveboard level.
+This is useful when you have a Liveboard built on multiple Worksheets, and you would like to filter on columns that are functionally the same, but exist in multiple Worksheets.
++  +
+
+Refer to link:{{ site.baseurl }}/complex-search/linked-filters.html[Linked Liveboard filters].
++
+
+=== Selective Liveboard filters
+
+You can now configure Liveboard filters to apply to specific visualizations that you choose.
+This is useful when you would like to filter some, but not all, visualizations in a Liveboard.
++  +
+
+Refer to link:{{ site.baseurl }}/complex-search/selective-filters.html[Selective Liveboard filters].
+
+////
+<h3>Enhanced data modeling capabilities</h3>
+This release enables new data modeling capabilities. You can now:
+<ul>
+<li>Join a View to a table</li>
+<li>Build a Worksheet on top of a View</li>
+</ul>
+////
+
+=== Geo maps
+
+ThoughtSpot's Geo maps now have more detailed geographic and infrastructural boundaries by default.
+This includes road names, cities, and so on.
++
+
+ThoughtSpot supports maps of many countries.
+See the complete list in the link:{{ site.baseurl }}/reference/geomap-reference.html[Geo Map Reference].
+
+=== Customize ThoughtSpot Help
+
+You can now tailor the ThoughtSpot Help menu to your organization by customizing it from the Admin Console.
+When you configure these Help settings, you set system-wide defaults for all your users.
+
+Refer to link:{{ site.baseurl }}/admin/ts-cloud/customize-help.html[Customize ThoughtSpot Help].
+
+=== User Adoption Liveboard
+
+The link:{{ site.baseurl }}/admin/ts-cloud/user-adoption.html[User Adoption Liveboard] is now accessible from the Admin Console.
+
+[#2020-september]
+== ThoughtSpot Cloud September Release (tscloud.5)
+
+=== Scriptability
+
+Scriptability contains the following new features:
+
+* Export and update logical tables
+* Edit, validate, and publish objects using the TML editor
+* Import multiple objects from the menu:Data[Utilities > Import/Export TML] page, or from the object list page
+* Update Views
+* GUID handling: a new `GUID` parameter in an object's .tml file allows ThoughtSpot to recognize pre-existing GUIDs, and determine if you are updating an existing object, or creating a new one
+
+See link:{{ site.baseurl }}/admin/ts-cloud/scriptability.html[Scriptability].
+
+=== Style Customization
+
+You can now customize the ThoughtSpot application from the Admin Console.
+With style customization, you can change the fonts, chart color palettes, footer text, application logo, and background colors in your embedded ThoughtSpot instance.
++  +
+
+Refer to link:{{ site.baseurl }}/admin/ts-cloud/style-customization.html[Style customization].
+
+=== In-app acceptance of ThoughtSpot's use agreement
+
+You can now sign ThoughtSpot's end-user use agreement from the application itself.
+Even if you previously signed a paper copy of the use agreement, an admin must sign the agreement in the application, within 30 days of ThoughtSpot upgrading your cluster to Cloud 5.
++  +
+
+Refer to link:{{ site.baseurl }}/admin/ts-cloud/use-agreement.html[ThoughtSpot use agreement].
+
+=== User adoption and performance Liveboards
+
+This release of ThoughtSpot Cloud contains two new default Liveboards for administrators.
+Use the link:{{ site.baseurl }}/admin/ts-cloud/user-adoption.html[User Adoption Liveboard] to understand how your ThoughtSpot users are interacting with ThoughtSpot, and how your user adoption is changing over time.
+Use the link:{{ site.baseurl }}/admin/ts-cloud/performance-tracking.html[Performance Tracking Liveboard] to understand how your ThoughtSpot cluster is performing.
++  +
+
+See link:{{ site.baseurl }}/admin/ts-cloud/user-adoption.html[User Adoption Liveboard] and link:{{ site.baseurl }}/admin/ts-cloud/performance-tracking.html[Performance Tracking Liveboard].

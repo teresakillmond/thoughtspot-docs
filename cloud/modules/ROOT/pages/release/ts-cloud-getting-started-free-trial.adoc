@@ -1,0 +1,144 @@
+= ["Getting Started with ThoughtSpot Free Trial"]
+:last_updated: 11/05/2021
+:permalink: /:collection/:path.html
+:sidebar: mydoc_sidebar
+:toc: true
+
+{% include content/liveboards-announcement.md %}
+
+Completing the following steps helps you and other users in your organization get the most value from your data during the trial period.
+A little bit of time setting up ThoughtSpot has a big impact.
+
+== Before you begin
+
+Before you start, review these talks to identify your ideal use case.
+The context helps you make account-related decisions and use ThoughtSpot effectively.+++<div>++++++<iframe width="375" height="210" src="https://www.youtube.com/embed/_HqB__xe3bo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">++++++</iframe>+++
+
+{blank} + https://youtu.be/_HqB%5F%5Fxe3bo[ThoughtSpot Success Series: Defining a ThoughtSpot Use Case]+++</div>+++
+
+{blank} ++++<div>++++++<iframe width="375" height="210" src="https://www.youtube.com/embed/W5dwAmLSwT0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">++++++</iframe>+++
+
+{blank} + https://youtu.be/W5dwAmLSwT0[ThoughtSpot Success Series: Use Case Prioritization]+++</div>+++
+
+We highly recommend that you register for the free ThoughtSpot U course that covers the material in this section, https://training.thoughtspot.com/getting-started-with-thoughtspot-cloud[Getting Started with ThoughtSpot Analytics Cloud].
+
+We also provide these instructions in link:{{ site.baseurl }}/downloads/ts-cloud-free-trial-get-started.pdf[PDF format].
+
+== Step 1: Create a ThoughtSpot Community account
+
+A ThoughtSpot Community account lets you ask questions in our product forums, explore best practices from other customers, sign up for events, and contact support.
+
+https://community.thoughtspot.com/customers/s/login/SelfRegister[Create a Community account]
+
+== Step 2: Activate your ThoughtSpot Cloud account
+
+We will send you an email that contains the administrator credentials to log in for the first time.
+Check your inbox, then click to access the free trial cluster.
+Stay logged in to complete the rest of the setup.
+
+=== Password requirements
+
+When you start using the ThoughtSpot Free Trial, you see the ThoughtSpot password verification checklist.
+Passwords must meet the following requirements:
+
+* 8 or more characters.
+* 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character.
+* Pass a complexity and uniqueness test that checks for known patterns and simple words.
+ThoughtSpot rejects passwords that are not complex enough.
+For more information, see the https://github.com/dropbox/zxcvbn[Dropbox password library].
+* No blocked words.
+By default, the blocked words are: your username and any part of your display name.
+
+== Step 3: Connect to your data source
+
+Completing this step lets all users in your organization perform live queries.
+Choose your cloud data warehouse type, and follow the connection instructions.
+
+* link:{{site.baseurl}}/admin/ts-cloud/ts-cloud-embrace-redshift.html[Amazon Redshift]
+* link:{{site.baseurl}}/admin/ts-cloud/ts-cloud-embrace-synapse.html[Azure Synapse]
+* link:{{site.baseurl}}/admin/ts-cloud/ts-cloud-embrace-gbq.html[Google BigQuery]
+* link:{{site.baseurl}}/admin/ts-cloud/ts-cloud-embrace-adw.html[Oracle ADW]
+* link:{{site.baseurl}}/admin/ts-cloud/ts-cloud-embrace-snowflake.html[Snowflake]
+* link:{{site.baseurl}}/admin/ts-cloud/ts-cloud-embrace-starburst.html[Starburst]
+* link:{{site.baseurl}}/admin/ts-cloud/ts-cloud-embrace-databricks.html[Databricks]
+* link:{{site.baseurl}}/release/ts-cloud-getting-started-free-trial.html#upload-csv[Upload flat data file (CSV)]
+
+== Step 4: Model your data for searches
+
+ThoughtSpot automatically optimizes your data for search.
+It models and configures most details.
+However, we recommend that you adjust the modeling settings to align with your identified use cases, and improve the experience for other users.
+
+* link:{{site.baseurl}}/admin/data-modeling/about-data-modeling-intro.html[Data modeling]
+* link:{{site.baseurl}}/admin/ts-cloud/tables-join.html[Join tables]
+
+== Step 5: Create a worksheet
+
+Worksheets make it easier for everyone in your organization to search data and create visualizations.
+Use the following step-by-step instructions to create your first worksheet.
+
+* link:{{site.baseurl}}/admin/worksheets/about-worksheets.html[Create and use worksheets]
+
+== Step 6: Learn search essentials
+
+After you finish creating worksheets, you are ready to search.
+Review the key concepts to get started, and how to help others in your organization become effective searchers.
+
+* link:{{site.baseurl}}/end-user/search/search-overview.html[Search overview]
+* link:{{site.baseurl}}/reference/keywords.html[Keyword reference]
+* link:{{site.baseurl}}/end-user/search/about-charts.html[Understanding Charts]
+* link:{{site.baseurl}}/complex-search/add-formula-to-search.html[Understanding formulas in searches]
+
+== Step 7: Make a default Liveboard
+
+Liveboards are interactive collections of charts and tables.
+Set up a shared Liveboard now, so everyone who joins your organization can access valuable information.
+
+* link:{{site.baseurl}}/end-user/pinboards/about-pinboards.html[Basic Liveboard usage]
+
+== Keep learning
+
+* https://cloud-docs.thoughtspot.com[ThoughtSpot Cloud documentation]
+* https://training.thoughtspot.com/getting-started-with-thoughtspot-cloud[Training: Getting started with ThoughtSpot Analytics Cloud]
+* https://youtu.be/EYHa8Ck3tdw[Thoughtspot Success Series]
+* link:{{site.baseurl}}/admin/ts-cloud/ts-cloud-support-handbook.html[ThoughtSpot Support Handbook] (link:{{ site.baseurl }}/downloads/support-handbook.pdf[PDF])
+
+== Get connected
+
+* https://www.youtube.com/thoughtspot[Visit YouTube channel]
+* https://thoughtspotcs-officehours.youcanbook.me/[Schedule office hours]
+* https://groups.thoughtspot.com/events/#/list[Join upcoming events]
+
+[#upload-csv]
+== Upload a flat data file (CSV)
+
+To upload a CSV file to Free Trial, follow these steps:
+
+. Navigate to the Data tab, and select *Upload CSV* from the *More* menu in the upper right corner of your screen.
++ Alternatively, navigate to step one of Setup, and click *upload CSV*.
+. Upload the CSV or Excel file using one of these options:
+ ** Click *Browse your files* and select the file.
+ ** Drag and drop the file into the drop area.
+ ** NOTE: Free Trial has a CSV file size limit of 10 MB.
+. Answer the question *Are the column names already defined in the file header?*
+. Answer the question *Are the fields separated by?*
+. Click *Next.*
+. If column names are missing, click the column header to add column names that describe the attributes or measures in the columns.
++ You can also change existing names to a simpler or more human-readable format.
+. Click *Next*.
+. Review the automatically-generated data types for each column, and make necessary changes.
++ There are eight data types: *Integer*, *Large Integer*, *Decimal*, *Text*, *Date*, *Date_Time*, and *Time*.
+. Click *Upload*.
+ ** NOTE: Free Trial users have an upload limit of one CSV file per user.
+
+To replace your uploaded CSV file, follow these steps:
+
+. Navigate to the Data tab, and click the *More* menu icon in the upper right corner of your screen.
+. Select *View CSV*.
+The details of your uploaded file appear.
+. Select *Replace CSV* from the top right corner of the screen.
+. Answer the question *Are the column names already defined in the file header?*
+. Answer the question *Do you want to append to the existing data or overwrite it?* +
+. Answer the question *Are the fields separated by?*
+. Click *Next*.
+. Preview your data and click *Upload*.
