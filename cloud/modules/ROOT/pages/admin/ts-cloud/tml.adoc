@@ -1,11 +1,11 @@
-= ["ThoughtSpot Modeling Language"]
+= ThoughtSpot Modeling Language
 :last_updated: 11/05/2021
 :linkattrs:
 :experimental:
 :page-aliases: /admin/ts-cloud/tml.adoc,/admin/ts-cloud/tsl.adoc, /admin/scriptability/tsl-table.adoc, /admin/scriptability/tsl-pinboard.adoc, /admin/scriptability/tsl-answer.adoc, /admin/scriptability/tsl-view.adoc, /admin/worksheets/yaml-worksheet.adoc, /admin/scriptability/tml-table.adoc, /admin/scriptability/tml-pinboard.adoc, /admin/scriptability/tml-answer.adoc, /admin/scriptability/tml-view.adoc, /admin/worksheets/tml-worksheet.adoc, /admin/worksheets/tsl-worksheet.adoc, /admin/ts-cloud/tsl-table.adoc, /admin/ts-cloud/tsl-pinboard.adoc, /admin/ts-cloud/tsl-answer.adoc, /admin/ts-cloud/tsl-view.adoc, /admin/ts-cloud/yaml-worksheet.adoc, /admin/ts-cloud/tml-worksheet.adoc, /admin/ts-cloud/tsl-worksheet.adoc
 :description: Use TML to modify a ThoughtSpot object in a flat-file format. Then, migrate the object to a different cluster, or restore it to the same cluster.
 
-{% include content/liveboards-announcement.md %}
+include::partial$liveboards-announcement.adoc[]
 
 Use TML to modify a ThoughtSpot object in a flat-file format. Then, migrate the object to a different cluster, or restore it to the same cluster.
 
@@ -15,10 +15,10 @@ To learn how to export, change, and update worksheets, views, tables, answers, a
 In this article, you learn the syntax of the TML files for each Scriptable object.
 You also learn how to <<syntax-joins,add and modify joins>> for Worksheets, Views, and tables.
 
-{% include note.html content="The syntax examples in this article contain every possible parameter in a TML file.
+NOTE: The syntax examples in this article contain every possible parameter in a TML file.
 Some of these parameters are not in a TML file by default.
 If you want to use them, you must add them yourself.
-For example, the `fqn` parameter is not present in the TML file by default, but you can add it to differentiate a table from another table with the same name." %}
+For example, the `fqn` parameter is not present in the TML file by default, but you can add it to differentiate a table from another table with the same name.
 
 [#syntax-worksheets]
 == Syntax of the Worksheet TML file
@@ -33,9 +33,9 @@ You can add that variable to the TML file to specify filters for your Worksheet.
 
 Refer to <<syntax-joins,join syntax>> for more information on the functionality and syntax or Worksheet, View, and table joins in TML.
 
-{% include note.html content="If you edit the joins in the Worksheet TML file, you are only editing the joins for that specific Worksheet.
+NOTE: If you edit the joins in the Worksheet TML file, you are only editing the joins for that specific Worksheet.
 You are not editing the joins at the table level.
-To modify table-level joins, you must edit the source table's TML file." %}
+To modify table-level joins, you must edit the source table's TML file.
 
 ....
 
@@ -158,9 +158,9 @@ You can add that variable to the TML file to specify a description for your View
 
 Refer to <<syntax-joins,join syntax>> for more information on the functionality and syntax or Worksheet, View, and table joins in TML.
 
-{% include note.html content="If you edit the joins in the View TML file, you are only editing the joins for that specific View.
+NOTE: If you edit the joins in the View TML file, you are only editing the joins for that specific View.
 You are not editing the joins at the table level.
-To modify table-level joins, you must edit the source table's TML file." %}
+To modify table-level joins, you must edit the source table's TML file.
 
 ....
 
@@ -812,4 +812,4 @@ Used to specify the Liveboard's <<layout,layout>>.+++</dlentry>++++++<dlentry id
 
 There are certain limitations to the changes you can apply by editing a worksheet, answer, table, view, or Liveboard through TML.
 
-{% include content/scriptability-limitations.md %}
+include::partial$scriptability-limitations.adoc[]
