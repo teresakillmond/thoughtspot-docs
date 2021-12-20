@@ -25,7 +25,7 @@ The rules restrict the visible data when users:
 Search suggestions also fall under row-level security.
 If a user would not have access to the row data, then values from the row do not appear in *Search* suggestions.
 
-If you are using passthrough security for a link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-snowflake-add-connection.html[Snowflake] or link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-gbq-add-connection.html[Google BigQuery] connection, search suggestions may not fall under row-level security.
+If you are using passthrough security for a xref:connections-snowflake-add.adoc[Snowflake] or xref:connections-gbq-add.adoc[Google BigQuery] connection, search suggestions may not fall under row-level security.
 When using passthrough security, ThoughtSpot builds the search index on the user who created the connection.
 This user may have less restrictive row-level-security, or may be able to see all data.
 Other users may be able to see search suggestions for columns or values they should not see.
@@ -36,7 +36,10 @@ If you are using passthrough security, ThoughtSpot recommends you link:{{ site.b
 
 RLS allows you to set up flexible rules that are self-maintaining.
 An RLS configuration can handle thousands of groups.
-There are several reasons you might want to use row level security:+++<table>++++++<tr>++++++<th>+++Reason+++</th>+++
+There are several reasons you might want to use row level security:
++++<table>+++
++++<tr>+++
++++<th>+++Reason+++</th>+++
     +++<th>+++Example+++</th>++++++</tr>+++
   +++<tr>++++++<td>+++Hide sensitive data from groups who should not see it.+++</td>+++
     +++<td>+++In a report with customer details, hide potential customers (those who have not yet completed their purchase) from everyone except the sales group.+++</td>++++++</tr>+++
