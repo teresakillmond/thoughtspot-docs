@@ -1,4 +1,4 @@
-= ["Create Worksheets"]
+= Create Worksheets
 :last_updated: 06/01/2020
 :linkattrs:
 :experimental:
@@ -42,7 +42,7 @@ Each of these fact tables shares common dimensions like date, region, and store.
 In this scenario, you would create two worksheets: sales and inventory.
 The following diagram depicts the workflow for creating the sales worksheet.
 
-image::{{ site.baseurl }}/images/workflow_create_worksheet.png[]
+image::workflow_create_worksheet.png[]
 
 To simplify data modeling, ThoughtSpot supports automated worksheet creation during Setup.
 When creating a worksheet through the Setup tab, you can view suggested joins, and take advantage of data modeling best practices, making your data easier to search.
@@ -58,7 +58,7 @@ A list of the available fact tables from your connection appears.
 Select the box next to the fact table from which you would like to create your worksheet and click *Next*.
 +
 +
-{% include note.html content="After the worksheet is created, you will have the option to add more fact tables to its schema."%}
+NOTE: After the worksheet is created, you will have the option to add more fact tables to its schema.
 
 . A list of the available dimension tables from your connection appears.
 Choose the dimension table(s) to join to your fact table and click _Next_.
@@ -67,8 +67,8 @@ You can choose up to four dimension tables.
 You can proceed with the suggested join, or click the column names to change the join.
 +
 +
-{% include note.html content="The default join type is Inner, which will yield all search results with matching values from the fact table and the dimension table.
-You can click the Venn diagram icon to change the join type."%}
+NOTE: The default join type is Inner, which will yield all search results with matching values from the fact table and the dimension table.
+You can click the Venn diagram icon to change the join type.
 
 . Click _Next_.
 The columns view of your worksheet appears.
@@ -82,21 +82,20 @@ For example, you can change a data type like Zipcode from '`Measure`' to '`Attri
 Your worksheet is now available to search and share.
 +
 
-{% include note.html content="Joins created in the setup of a worksheet are inherited at the table level.
-To remake your auto-generated worksheet through the Setup tab, you must first delete the worksheet, then delete the joins at the table level."%}
+NOTE: Joins created in the setup of a worksheet are inherited at the table level.
+To remake your auto-generated worksheet through the Setup tab, you must first delete the worksheet, then delete the joins at the table level.
 
-== Create a worksheet manually+++<script src="https://fast.wistia.com/embed/medias/6zbrrirs8z.jsonp" async="">++++++</script>++++++<script src="https://fast.wistia.com/assets/external/E-v1.js" async="">++++++</script>+++
+== Create a worksheet manually
 
-[.wistia_embed.wistia_async_6zbrrirs8z.popover=true.popoverAnimateThumbnail=true.popoverBorderColor=4E55FD.popoverBorderWidth=2]#&nbsp;#
++++<script src="https://fast.wistia.com/embed/medias/6zbrrirs8z.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><span class="wistia_embed wistia_async_6zbrrirs8z popover=true popoverAnimateThumbnail=true popoverBorderColor=4E55FD popoverBorderWidth=2" style="display:inline-block;height:252px;position:relative;width:450px">&nbsp;</span>+++
 
 Follow these steps to create worksheets:
 
-image::{{ site.baseurl }}/images/worksheet-create.gif[Create a Worksheet]
+image::worksheet-create.gif[Create a Worksheet]
 
 . Under *Data*, see *Sources*.
 Click *+*.
 . The *Choose sources* interface appears.
-+
 +
 It contains the list of tables that in the connection.
 
@@ -109,11 +108,9 @@ It contains the list of tables that in the connection.
 . Notice that the table and its columns appear on the main pane of the interface.
 . Repeat for each table you plan to include in the worksheet.
 +
-+
 You can always navigate to a table you identified, and change the column selections.
 
 . After you finish selecting the tables and columns, click the *More* menu at the top right corner of the interface.
-+
 +
 Click *Save*.
 
@@ -128,7 +125,6 @@ we recommend that you identify the supported use case here.
 Click *Save*.
 . *Congratulations!* You now have a worksheet to use as a data source for Searching and building standard formulas.
 +
-+
 We recommend that you customize the worksheet in the following manner:
 
  ** *Rename columns* to make them user-readable.
@@ -138,15 +134,18 @@ For example, columns that track life expectancy should use `AVERAGE` or `MAX`, a
 
 *_Next_*, you can proceed to link:{{ site.baseurl }}/admin/ts-cloud/visualize-search.html[Visualize Search results as Answers].
 
-== Introduction to formulas+++<script src="https://fast.wistia.com/embed/medias/6vq23v9us8.jsonp" async="">++++++</script>++++++<script src="https://fast.wistia.com/assets/external/E-v1.js" async="">++++++</script>+++
+== Introduction to formulas
 
-[.wistia_embed.wistia_async_6vq23v9us8.popover=true.popoverAnimateThumbnail=true.popoverBorderColor=4E55FD.popoverBorderWidth=2]#&nbsp;#
++++<script src="https://fast.wistia.com/embed/medias/6vq23v9us8.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><span class="wistia_embed wistia_async_6vq23v9us8 popover=true popoverAnimateThumbnail=true popoverBorderColor=4E55FD popoverBorderWidth=2" style="display:inline-block;height:252px;position:relative;width:450px">&nbsp;</span>+++
 
 == Additional resources
 
 As you develop your expertise with developing and customizing worksheets, we recommend the following ThoughtSpot U courses:
 
-* https://training.thoughtspot.com/2-worksheet-design[Worksheet Design]
-* https://training.thoughtspot.com/series/business-analyst/2-using-formulas[Using Formulas]
+'''
+> **ThoughtSpot Training**
+>
+> * As you develop your expertise with joins and schema, we recommend the following ThoughtSpot U courses: https://training.thoughtspot.com/2-worksheet-design[Worksheet Design] and https://training.thoughtspot.com/series/business-analyst/2-using-formulas[Using Formulas].
+> * See other training resources at https://training.thoughtspot.com/[ThoughtSpot U^].
 
-See other training resources at + https://training.thoughtspot.com/[<img src="{{ "/images/ts-u.png" | prepend: site.baseurl }}" alt="ThoughtSpot U">]
+'''
