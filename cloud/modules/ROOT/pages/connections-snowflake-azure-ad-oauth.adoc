@@ -1,8 +1,8 @@
-= ["Configure Azure AD external OAuth for a Snowflake connection"]
+= Configure Azure AD external OAuth for a Snowflake connection
 :last_updated: 11/1/2021
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:toc: true
+:linkattrs:
+:experimental:
+:page-aliases: /admin/ts-cloud/ts-cloud-embrace-snowflake-azure-ad-oauth.adoc
 
 ThoughtSpot supports Microsoft Azure Active Directory (AD) OAuth for a Snowflake connection.
 With Azure AD OAuth, the authorization server generates an access token from Azure AD on behalf of the ThoughtSpot user which authenticates them with Snowflake and authorizes ThoughtSpot to query the database using their Snowflake user account.
@@ -17,11 +17,11 @@ To create a Snowflake OAuth resource, do the following:
 . Sign in to the https://portal.azure.com/[Microsoft Azure Portal].
 . Navigate to *Azure Active Directory*.
 +
-image::{{ site.baseurl }}/images/azure-portal-ad.png[]
+image::azure-portal-ad.png[]
 
 . Click *App registrations*, then *New registration*.
 +
-image::{{ site.baseurl }}/images/azure-portal-reg.png[]
+image::azure-portal-reg.png[]
 
 . For Name, enter a name for your application.
 +
@@ -30,20 +30,21 @@ Example:``Snowflake Oauth User Resource``
 . Make sure Supported account types is set to *Single Tenant*.
 . Click *Register*.
 +
-image::{{ site.baseurl }}/images/azure-portal-reg-ten.png[]
+image::azure-portal-reg-ten.png[]
 
 . After the application is created, click *Expose an API*.
 +
-image::{{ site.baseurl }}/images/snow-expose-api.png[]
+image::snow-expose-api.png[]
 
 . Next to Application ID URI, click *Set* and change its value from *api://<alphanumeric value>* to *https://<alphanumeric value>* and click *Save*.
 +
 // []({{ site.baseurl }}/images/snow-app-uri.png)
 +
-image::{{ site.baseurl }}/images/snow-app-uri-oauth-client2.png[]
+image::snow-app-uri-oauth-client2.png[]
 +
-{% include note.html content="If the Application ID URI is not used, you must create a security integration with audiences using the Snowflake Account URL (i.e.
-`<account_identifier>.snowflakecomputing.com)`." %}
+NOTE: If the Application ID URI is not used, you must create a security integration with audiences using the Snowflake Account URL (i.e.
+`<account_identifier>.snowflakecomputing.com)`.
+
 . Click *Add a scope*.
 . For Scope name, enter the name of the Snowflake role (example: `session:role-any`).
 . Select who can consent.
@@ -51,9 +52,9 @@ image::{{ site.baseurl }}/images/snow-app-uri-oauth-client2.png[]
 . Enter an Admin consent description.
 . Click *Add Scope*.
 +
-image::{{ site.baseurl }}/images/snow-add-scope.png[]
+image::snow-add-scope.png[]
 
-{% include important.html content="When you create the scope in your Azure AD application, you must set it to "`any`" so that a user can later switch to any of their allowed roles when making a JDBC connection using the obtained token." %}
+IMPORTANT: When you create the scope in your Azure AD application, you must set it to "`any`" so that a user can later switch to any of their allowed roles when making a JDBC connection using the obtained token.
 
 === Part 2: Creating a Snowflake OAuth client app
 
@@ -68,40 +69,40 @@ To create a Snowflake OAuth client app, do the following:
 . From the Application (client) ID field, copy the ID.
 This ID is referred to as the `<OAUTH_CLIENT_ID>` in the steps that follow.
 +
-image::{{ site.baseurl }}/images/sf_oauth_user.png[]
+image::sf_oauth_user.png[]
 
 . Click *Authentication*, and under Web, specify the redirect URI using the following format:
 +
 `<https://<public> url of your ThoughtSpot Instance>/callosum/v1/connection/generateTokens`
 +
-image::{{ site.baseurl }}/images/redirect_uri.png[]
+image::redirect_uri.png[]
 
 . Click *Certificates & secrets* and then *New client secret*.
 +
-image::{{ site.baseurl }}/images/snow_certs_secr.png[]
+image::snow_certs_secr.png[]
 
 . Copy the *Value* of the secret you just created.
 This is referred to as `<OAUTH_CLIENT_SECRET>` in the steps that follow.
 +
-image::{{ site.baseurl }}/images/snow_secr.png[]
+image::snow_secr.png[]
 
 . Click *API permissions*, then click *Add a permission*.
 +
-image::{{ site.baseurl }}/images/snow_api_perm.png[]
+image::snow_api_perm.png[]
 
 . Click *My APIs*.
-. Click the name of the Snowflake OAuth Resource you created in link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-snowflake-azure-ad-oauth.html#part-1[Part 1].
+. Click the name of the Snowflake OAuth Resource you created in <<part-1,Part 1>>.
 +
-image::{{ site.baseurl }}/images/snow_req_api_perm.png[]
+image::snow_req_api_perm.png[]
 
 . On the Request API permissions page, click the *Delegated permissions* box, and select the permission related to scope you defined in the application you want to grant to this client.
 . Click *Add permissions*.
 +
-image::{{ site.baseurl }}/images/snow_req_api_2_perm.png[]
+image::snow_req_api_2_perm.png[]
 
 . Under Configured permissions, click *Grant admin consent for Default Directory*, and then click *Yes* in the confirmation message.
 +
-image::{{ site.baseurl }}/images/snow_grant_admin.png[]
+image::snow_grant_admin.png[]
 
 === Part 3: Collecting Azure AD information for Snowflake
 
@@ -110,35 +111,29 @@ To collect Azure AD information for Snowflake, do the following:
 . Sign in to the https://portal.azure.com/[Microsoft Azure Portal], and navigate to *Azure Active Directory*, if needed.
 . Go back to the Snowflake OAuth Resource App (Snowflake Oauth User Resource) to collect all the info related as mentioned below:
 +
-a.
-Click *Endpoints* in the *Overview* interface.
+.. Click *Endpoints* in the *Overview* interface.
 +
-b.
-On the right-hand side, copy the *OAuth 2.0 token endpoint (v2)* and note the URLs for *OpenID Connect metadata* and *Federation Connect metadata*.
+.. On the right-hand side, copy the *OAuth 2.0 token endpoint (v2)* and note the URLs for *OpenID Connect metadata* and *Federation Connect metadata*.
 
- .. The *OAuth 2.0 token endpoint (v2)* is referred to as the `<AZURE_AD_OAUTH_TOKEN_ENDPOINT>` in the following configuration steps.
+... The *OAuth 2.0 token endpoint (v2)* is referred to as the `<AZURE_AD_OAUTH_TOKEN_ENDPOINT>` in the following configuration steps.
 The endpoint should be similar to `+https://login.microsoftonline.com/<tenant_id>/oauth2/v2.0/token/+`.
- .. For the *OpenID Connect metadata*, open in a new browser window.
+... For the *OpenID Connect metadata*, open in a new browser window.
 +
-a.
-Locate the "jwks_uri" parameter and copy its value.
+.... Locate the "jwks_uri" parameter and copy its value.
 +
-b.
-This parameter value will be known as the `<AZURE_AD_JWS_KEY_ENDPOINT>` in the following configuration steps.
+.... This parameter value will be known as the `<AZURE_AD_JWS_KEY_ENDPOINT>` in the following configuration steps.
 The endpoint should be similar to `+https://login.microsoftonline.com/<tenant_id>/discovery/v2.0/keys+`.
 
 . For the *Federation metadata document*, open the URL in a new browser window.
 +
-a.
-Locate the `"entityID"` parameter in the `XML Root Element` and copy its value.
+.. Locate the `"entityID"` parameter in the `XML Root Element` and copy its value.
 +
-b.
-This parameter value will be known as the `<AZURE_AD_ISSUER>` in the following configuration steps.
+.. This parameter value will be known as the `<AZURE_AD_ISSUER>` in the following configuration steps.
 The entityID value should be similar to `+https://sts.windows.net/<tenant_id>/+`.
 
 . The *OAuth 2.0 authorization endpoint (v2)* should be similar to  `+https://login.microsoftonline.com/<tenant_id>/oauth2/v2.0/authorize+`.
 +
-image:{{ site.baseurl }}/images/snow_oauth_user_res_1.png[]  image:{{ site.baseurl }}/images/snow_oauth_user_res_2.png[]
+image:snow_oauth_user_res_1.png[]  image:snow_oauth_user_res_2.png[]
 
 === Part 4: Creating an OAuth authorization server in Snowflake
 
@@ -164,10 +159,10 @@ create security integration external_oauth_azure_2
 
 Example:
 
-image::{{ site.baseurl }}/images/snow-sec-int-example.png[]
+image::snow-sec-int-example.png[]
 
-{% include note.html content="When you create the Snowflake OAuth Resource Application in Azure AD, if you enter an `Application ID URI` that is not the Snowflake Account URL (i.e.
-`<account_identifier>.snowflakecomputing.com`), you must add the `external_oauth_audience_list` parameter to the command with the value `<SNOWFLAKE_APPLICATION_ID_URI>`." %}
+NOTE: When you create the Snowflake OAuth Resource Application in Azure AD, if you enter an `Application ID URI` that is not the Snowflake Account URL (i.e.
+`<account_identifier>.snowflakecomputing.com`), you must add the `external_oauth_audience_list` parameter to the command with the value `<SNOWFLAKE_APPLICATION_ID_URI>`.
 
 ==== Snowflake commands
 
@@ -220,20 +215,20 @@ Example: `+https://login.microsoftonline.com/<tenant_id>/oauth2/v2.0/token/+`
 . For Scope, you must provide "`offline_access`" as the scope, along with the actual scope.
 The refresh token is only provided if the offline_access scope was requested.
 +
-image::{{ site.baseurl }}/images/postman_get_token.png[]
+image::postman_get_token.png[]
 +
 Example: `https://<application_id>/session:role-any offline_access`
 +
-{% include important.html content="When you create the scope in the Azure AD application setup, it must be set as "`any`" so that a user can later switch to any of his allowed roles when making a JDBC connection using the obtained token." %}
+IMPORTANT: When you create the scope in the Azure AD application setup, it must be set as "`any`" so that a user can later switch to any of his allowed roles when making a JDBC connection using the obtained token.
 
 . Click *Get New Access Token*.
 . Sign in to your Microsoft Azure account.
 +
-image::{{ site.baseurl }}/images/ms_sign_in.png[]
+image::ms_sign_in.png[]
 
 . On the Token Details page, click *Use Token*.
 +
-image:{{ site.baseurl }}/images/token_det_1.png[] image:{{ site.baseurl }}/images/token_det_2.png[]
+image:token_det_1.png[] image:images/token_det_2.png[]
 
 ==== Method 2: cURL
 
@@ -265,7 +260,7 @@ Example:
  `https://login.microsoftonline.com/ <tenant_id>/oauth2/v2.0/token'
 ----
 +
-image::{{ site.baseurl }}/images/curl_1.png[]
+image::curl_1.png[]
 
 . Execute below command for getting access token with refresh_token as grant_type:
 +
@@ -279,7 +274,7 @@ image::{{ site.baseurl }}/images/curl_1.png[]
    'https://login.microsoftonline.com/<tenant_id>/oauth2/v2.0/token'
 ----
 +
-image::{{ site.baseurl }}/images/curl_2.png[]
+image::curl_2.png[]
 
 == Related links
 
