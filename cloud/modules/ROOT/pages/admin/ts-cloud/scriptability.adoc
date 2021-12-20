@@ -1,11 +1,11 @@
-= ["Scriptability"]
+= Scriptability
 :last_updated: 11/05/2021
 :linkattrs:
 :experimental:
 :page-aliases: /admin/ts-cloud/scriptability.adocc
 :description: Use Scriptability to export and import worksheets, views, tables, Liveboards, and answers in a human-readable format.
 
-{% include content/liveboards-announcement.md %}
+include::partial$liveboards-announcement.adoc[]
 
 Use Scriptability to export and import worksheets, views, tables, Liveboards, and answers in a human-readable format.
 
@@ -64,8 +64,8 @@ When importing a worksheet or view, you must have the *can manage data* permissi
 | *View* permission on the object and its first-level dependents.
 |===
 
-{% include note.html content="If you have a permissions issue with a particular object when you export multiple objects, or an object and its dependents, the complete export does not fail.
-The individual object does not export, and you receive an error message about this failure in the `Manifest` file in the zip file." %}
+NOTE: If you have a permissions issue with a particular object when you export multiple objects, or an object and its dependents, the complete export does not fail.
+The individual object does not export, and you receive an error message about this failure in the `Manifest` file in the zip file.
 
 [#export-object]
 == Export an object
@@ -94,22 +94,22 @@ To export custom collections of related TML files, refer to link:{{ site.baseurl
 
 . Navigate to the *Answers*, *Liveboards*, or *Data* page from the top navigation bar, depending on the object(s) you want to export.
 +
-image::{{ site.baseurl }}/images/nav-bar-no-spotiq.png[The top navigation bar]
+image::nav-bar-no-spotiq.png[The top navigation bar]
 
 . Hover over the object(s) you want to export, and click the empty checkboxes that appear.
 . Select the *Export TML* button.
 +
-image::{{ site.baseurl }}/images/scriptability-cloud-export-multiple.png[Export multiple objects]
+image::scriptability-cloud-export-multiple.png[Export multiple objects]
 
 . Choose whether to export only the objects, or the objects and their underlying data sources (worksheets, tables, and views).
 If you export a table, you do not see this modal, since tables do not have any dependents.
 When exporting multiple objects, the zip file contains the `Manifest` file, even if you export the objects without their dependents.
 +
-image::{{ site.baseurl }}/images/scriptability-cloud-select-export.png[Choose what to export]
+image::scriptability-cloud-select-export.png[Choose what to export]
 
 . Click *Export*.
 +
-image::{{ site.baseurl }}/images/scriptability-cloud-click-export.png[Click Export]
+image::scriptability-cloud-click-export.png[Click Export]
 
 . Open the downloaded `TML` zip file.
 The zip file contains a document called the `Manifest` file, which defines the objects you exported, their underlying data sources, and any export errors.
@@ -142,7 +142,7 @@ Select one or more objects by clicking on the checkboxes that appear when you ho
 . From the object list page, select the *Edit TML* button.
 // From the object itself, select the ellipsis ![more options menu]({{ site.baseurl }}/images/icon-ellipses.png){: .inline} (more options) menu in the upper-right side of the screen, and select **Edit TML**.
 +
-image::{{ site.baseurl }}/images/scriptability-edit-tml-object-page.png[Edit TML - object list page]
+image::scriptability-edit-tml-object-page.png[Edit TML - object list page]
 +
 // [Edit TML from object]({{ site.baseurl }}/images/scriptability-edit-tml-object.png "Edit TML from object")
 
@@ -172,20 +172,20 @@ This links to the link:{{ site.baseurl }}/admin/ts-cloud/tml.html[ThoughtSpot Mo
 You must validate each file individually.
 A blue dot appears next to any file that contains changes.
 +
-image::{{ site.baseurl }}/images/scriptability-tml-editor-validate.png[Validate the file]
+image::scriptability-tml-editor-validate.png[Validate the file]
 
 . If you constructed the file(s) correctly, a green check mark appears next to the name of the file.
 If you did not construct the file correctly, a red bar appears near the top of the screen, telling you that ThoughtSpot found errors in one or more files.
 Click *Show errors* to see the errors listed in the *Errors* sidebar.
 +
-image::{{ site.baseurl }}/images/scriptability-tml-editor-errors.png[Review errors]
+image::scriptability-tml-editor-errors.png[Review errors]
 
 . After validating,  select *Publish* in the top right corner, next to *Validate*.
 You must publish each file individually.
 . The system displays a *Publish status* dialog box.
 You can select *Open [object]* to open the object you just published in a new tab, or click *Close* to return to the TML editor.
 +
-image::{{ site.baseurl }}/images/scriptability-tsl-editor-publish-status.png[Open the object or return to the TML editor]
+image::scriptability-tsl-editor-publish-status.png[Open the object or return to the TML editor]
 
 [#update-object]
 == Update an object
@@ -211,7 +211,7 @@ Here, we are uploading the edited *TCPH WS* worksheet.
 ////
 . In the *Import* interface, click *Select .tml or .zip files to upload*.
 +
-image::{{ site.baseurl }}/images/scriptability-worksheet-update-browse.png[Find the Worksheet TML file]
+image::scriptability-worksheet-update-browse.png[Find the Worksheet TML file]
 
 . In your file system, find and select the `TML` file you edited.
 . If you uploaded a `.zip` file with multiple objects, you can unselect any files in the `.zip` file you do not want to upload.
@@ -245,14 +245,14 @@ The object remains on the original cluster as well, unless you delete it.
 
 . Navigate to the cluster you want to add the object to.
 . Click *Answers*, *Liveboards*, or *Data* on the top navigation bar, depending on the objects you want to migrate.
-. To upload a Worksheet or View, click the More icon image:{{ site.baseurl }}/images/icon-ellipses.png[more options menu] in the upper-right side of the screen.
+. To upload a Worksheet or View, click the More icon image:icon-ellipses.png[more options menu] in the upper-right side of the screen.
 Then, select *Import TML*.
 +
-image::{{ site.baseurl }}/images/scriptability-cloud-worksheet-view-import.png[Import Worksheet or View TML]
+image::scriptability-cloud-worksheet-view-import.png[Import Worksheet or View TML]
 
 . To upload a Liveboard or answer, click the *Import TML* button in the upper-right side of the screen.
 +
-image::{{ site.baseurl }}/images/scriptability-cloud-import.png[Import a Liveboard or answer]
+image::scriptability-cloud-import.png[Import a Liveboard or answer]
 
 . In the *Import* interface, click *Select .tml or .zip files to upload*.
 . In your file system, find and select the `TML` file.
@@ -278,7 +278,7 @@ You can open the object(s) that you imported, or click *Exit* to return to the m
 
 There are certain limitations to the changes you can apply by editing a worksheet, answer, table, view, or Liveboard through TML.
 
-{% include content/scriptability-limitations.md %}
+include::partial$scriptability-limitations.adoc[]
 
 == Related information
 
