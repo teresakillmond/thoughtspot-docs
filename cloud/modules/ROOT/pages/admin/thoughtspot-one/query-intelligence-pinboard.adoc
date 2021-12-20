@@ -1,10 +1,13 @@
 = ["How users are searching answers Liveboard"]
 :last_updated: 11/05/2021
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: The How Users are Searching Answers Liveboard describes how users are searching for existing answers and Liveboards. It specifies what users are searching for, where users are successful, and where they are not.
+:linkattrs:
+:experimental:
+:page-aliases: /admin/thoughtspot-one/query-intelligence-pinboard.adoc
+:description: The How Users are Searching Answers Liveboard describes how users search existing answers and Liveboards.
 
-{% include content/liveboards-announcement.md %}
+include::partial$liveboards-announcement.adoc[]
+
+The How Users are Searching Answers Liveboard describes how users search existing answers and Liveboards.
 
 As an analyst, you need data to analyze to help you empower your users.
 For example, it is useful to know how your users are searching your existing answers and Liveboards, so you can determine what objects are the most popular and what assets you may need to create.
@@ -21,22 +24,22 @@ The *How Users are Searching Answers* Liveboard contains the following visualiza
 * <<number-of-searches,Number of searches>>
 * <<no-result-queries,% of queries with zero results>>
 * <<last-updated,Last updated time in hours ago>>
-* <<top-search-existing,Top Search Queries on existing answers>>
-* <<top-search-existing-no-result,Top Search Queries with zero results>>
-* <<top-search-not-useful,Top Search Queries where the user did not click on any result>>
+* <<top-search-existing,Top search queries on existing answers>>
+* <<top-search-existing-no-result,Top search queries with zero results>>
+* <<top-search-not-useful,Top search queries where the user did not click on any result>>
 * <<which-result,What results users are clicking on>>
 * <<click-position,Position at which users are clicking>>
 * <<worst-click-position,Worst click position by any user against search queries>>
 * <<top-results,Top results users are clicking on>>
 * <<weekly-queries-no-answer,Weekly % of search queries on answers for which no answers exist>>
-* <<weekly-searches,Weekly Searches on answers>>
+* <<weekly-searches,Weekly searches on answers>>
 * <<autocomplete,What results users are finding useful with autocomplete suggestions>>
 
-{% include note.html content="Some or all of the visualizations on this Liveboard may be empty, if you do not have Search on Answers on in your environment, or if it is newly on, and few users have searched on it.
+NOTE: Some or all of the visualizations on this Liveboard may be empty, if you do not have Search on Answers on in your environment, or if it is newly on, and few users have searched on it.
 You must also enable Mixpanel.
-To see the statistics on how your organization uses Search Answers, contact ThoughtSpot Support." %}
+To see the statistics on how your organization uses Search Answers, https://community.thoughtspot.com/customers/s/contactsupport[contact ThoughtSpot Support].
 
-image::{{ site.baseurl }}/images/query-intelligence-pinboard.png[How Users are Searching Answers Liveboard]
+image::query-intelligence-pinboard.png[How Users are Searching Answers Liveboard]
 
 [#number-of-searches]
 == Number of searches
@@ -86,8 +89,7 @@ The chart contains the top 10 queries from the last 30 days.
 Describes where in the list of search results users are clicking, indicating how easily users find answers.
 The lower the click position, the better.
 A lower click position means users are able to find answers easily and high up on the list of search results.
-"0" means users are finding useful results in autocomplete suggestions, i.e.
-before they could even search.
+"0" means users are finding useful results in autocomplete suggestions, i.e. before they could even search.
 
 [#worst-click-position]
 == Worst click position by any user against search queries
@@ -127,25 +129,30 @@ The chart contains the top 10 queries from the last 30 days.
 You can use the Stats and Trends Liveboard to understand your company's use of ThoughtSpot in many ways.
 Here are a few of the most useful ways to interact with this Liveboard.
 
-. *Monitor Adoption*: +  Keep track of the <<number-of-searches,number of searches>> on existing answers and Liveboards in the last 7 days, and on the <<weekly-searches,number of searches on answers on a weekly basis>>.
-. *View what's trending in your organization*: +  Users' search queries reflect what information is important to them.
-To understand what data users currently find valuable, view <<top-search-existing,Top Search Queries on existing answers>>, which has data from the last 30 days.
+. *Monitor Adoption*: +
+Keep track of the <<number-of-searches,number of searches>> on existing answers and Liveboards in the last 7 days, and on the <<weekly-searches,number of searches on answers on a weekly basis>>.
+. *View what's trending in your organization*: +
+Users' search queries reflect what information is important to them.
+To understand what data users currently find valuable, view <<top-search-existing,Top search queries on existing answers>>, which has data from the last 30 days.
 +
 You can also see which queries had no satisfactory answer for the user, based on the click position and the count of queries with either no results.
 Consider building answers and Liveboards that satisfy these queries, or renaming existing objects to match what search terms users use.
 
-. *Determine what content you should create*: +  Use this Liveboard to determine what answers and Liveboards you should create for your users.
-View <<top-search-existing-no-result,Top Search Queries with zero results>> and <<top-search-not-useful,Top Search Queries where the user did not click on any result>>.
+. *Determine what content you should create*: +
+Use this Liveboard to determine what answers and Liveboards you should create for your users.
+View <<top-search-existing-no-result,Top search queries with zero results>> and <<top-search-not-useful,Top search queries where the user did not click on any result>>.
 If a query has zero results, you have no content for this query.
 Consider building answers and Liveboards that satisfy it.
 If a user does not click on any results, you may have content for this query, but it may not be discoverable.
 Consider renaming existing objects to match what search terms users use.
-. *Monitor how users are finding content you created*: +  As a content creator, you may want to see which search queries result in users clicking on answers and Liveboards you created.
-In <<top-search-existing,Top Search Queries on existing answers>>, click *Explore*.
+. *Monitor how users are finding content you created*: +
+As a content creator, you may want to see which search queries result in users clicking on answers and Liveboards you created.
+In <<top-search-existing,Top search queries on existing answers>>, click *Explore*.
 Filter by *Result title*, specifying your content's title(s).
 This filter provides a list of the top search queries that resulted in users clicking on your content, in the last 30 days.
 Use this information to determine how to slightly alter your descriptions or titles to make your content more discoverable.
-. *Analyze which search results are useful for a specific query*: +  The <<top-results,Top results users are clicking on>> visualization lists the top 10 search results users clicked on in the last 30 days.
+. *Analyze which search results are useful for a specific query*: +
+The <<top-results,Top results users are clicking on>> visualization lists the top 10 search results users clicked on in the last 30 days.
 You may want to find this information for a specific query.
 In <<top-results,Top results users are clicking on>>, click *Explore*.
 Filter by *query text*, specifying the query text you want to analyze.
