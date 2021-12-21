@@ -1,23 +1,24 @@
-= ["Enabling an AWS PrivateLink between ThoughtSpot Cloud and your Snowflake data warehouse"]
+= Enabling an AWS PrivateLink between ThoughtSpot Cloud and your Snowflake data warehouse
 :last_updated: 3/16/2021
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Learn how to deploy an AWS PrivateLink between your Snowflake data warehouse and the ThoughtSpot Cloud tenant.
+:linkattrs:
+:experimental:
+:page-aliases: /admin/ts-cloud/private-link-snowflake.adoc
+:description: Learn how to deploy an AWS PrivateLink between your Snowflake data warehouse and the ThoughtSpot Cloud tenant.
 
 Your data's security is important.
 To ensure a secure two-way data exchange between your cloud data warehouse and the ThoughtSpot Cloud tenant, you can use an AWS PrivateLink.
 This option is currently available for your Snowflake or Redshift data warehouse connections.
 This article details how to enable a PrivateLink for Snowflake;
-you can also enable it for link:{{ site.baseurl }}/admin/ts-cloud/private-link-redshift.html[Redshift].
+you can also enable it for xref:private-link-redshift.adoc[Redshift].
 
-To deploy an AWS PrivateLink, you must work with link:{{ site.baseurl }}/admin/misc/contact.html[ThoughtSpot Support] and follow the procedure in this article.
+To deploy an AWS PrivateLink, you must work with https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support] and follow the procedure in this article.
 
 [#prerequisites]
 == Prerequisites
 
 * You must have a Snowflake account
 * The ThoughtSpot cluster must be in the same AWS region as your Snowflake account
-* You must obtain the ThoughtSpot AWS Account ID from link:{{ site.baseurl }}/admin/misc/contact.html[ThoughtSpot Support].
+* You must obtain the ThoughtSpot AWS Account ID from https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support].
 You may need a separate Account ID for staging or dev environments.
 
 == Enable an AWS PrivateLink for Snowflake
@@ -35,7 +36,7 @@ To deploy an AWS PrivateLink between your Snowflake data warehouse and the Thoug
 You must provide the following information:
  ** Snowflake account URL
  ** ThoughtSpot AWS Account ID.
-You obtained ThoughtSpot's AWS Account ID from link:{{ site.baseurl }}/admin/misc/contact.html[ThoughtSpot Support] in the <<prerequisites,prerequisites>>.
+You obtained ThoughtSpot's AWS Account ID from https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support] in the <<prerequisites,prerequisites>>.
 You may need a separate Account ID for staging or dev environments.
 . Snowflake provides the following details with their response:
  ** VPC Endpoint Service Name
@@ -51,4 +52,4 @@ You gathered this information from Snowflake in step 2 of <<request-configuratio
 [#embrace]
 === Configure Connections
 
-link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-snowflake.html[Configure Connections for Snowflake], using the PrivateLink Snowflake account name from ThoughtSpot Support.
+xref:connections-snowflake.adoc[Configure Connections for Snowflake], using the PrivateLink Snowflake account name from ThoughtSpot Support.
