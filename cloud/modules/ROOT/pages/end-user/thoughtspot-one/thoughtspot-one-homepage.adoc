@@ -1,19 +1,20 @@
-= ["ThoughtSpot One home page"]
+= ThoughtSpot One home page
 :last_updated: 11/05/2021
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Learn about the ThoughtSpot One home page, where you can search across your company's existing answers and Liveboards and access trending objects, your recently viewed objects, and your favorites.
+:linkattrs:
+:experimental:
+:page-aliases: /end-user/thoughtspot-one/thoughtspot-one-homepage.adoc
+:description: Learn about the ThoughtSpot One home page, where you can search across existing answers and Liveboards and access trending objects, recently viewed objects, and your favorites.
 
-{% include content/liveboards-announcement.md %}
+include::partial$liveboards-announcement.adoc[]
 
-{% include content/ts-one-homepage.md %}
+include::partial$ts-one-homepage.adoc[]
 
 [#search-existing]
 == Search across existing answers and Liveboards
 
-{% include content/search-answers-description.md %}
+include::partial$search-answers-description.adoc[]
 
-To search across existing objects, toggle the *Search type* to *Search answers* by selecting the *Search answers* icon image:{{ site.baseurl }}/images/icon-eureka-8px.png[] at the top right, next to the search bar.
+To search across existing objects, toggle the *Search type* to *Search answers* by selecting the *Search answers* icon image:icon-eureka-8px.png[] at the top right, next to the search bar.
 The home page displays the *Search answers* experience by default.
 You can select a specific worksheet from the *Sources* dropdown to the left of the search bar, or search across all worksheets that you have access to.
 Type your query into the search bar at the top of the screen.
@@ -29,7 +30,7 @@ See link:{{ site.baseurl }}/end-user/search/search-answers.html[Search Answers] 
 You can search directly on your data.
 Use this functionality if you would like to create your own answers and Liveboards to answer questions about your data.
 
-To search your data, toggle the *Search type* to *Search data to create an answer* by selecting the *Search data* icon image:{{ site.baseurl }}/images/icon-sage-8px.png[] at the top right, next to the search bar.
+To search your data, toggle the *Search type* to *Search data to create an answer* by selecting the *Search data* icon image:icon-sage-8px.png[] at the top right, next to the search bar.
 Click on the search bar.
 Select a data source to search on, and type your query into the search bar at the top of the screen.
 Click Enter on your keyboard.
@@ -57,14 +58,14 @@ To find headlines from another Liveboard you would like to add, search for that 
 
 Note that you can have any number of metrics on your watchlist at a time.
 
-image::{{ site.baseurl }}/images/thoughtspot-one-carousel-metrics.gif[Metrics watchlist gif]
+image::thoughtspot-one-carousel-metrics.gif[Metrics watchlist gif]
 
 You can arrange the metric cards in 2 ways:
 
 * *Drag and drop*: Move the metric cards to different positions in your watchlist using drag and drop.
-* *Three-dot more image:{{ site.baseurl }}/images/icon-more-10px.png[] icon*: You can replace or delete a metric, move it one spot to the left or right, make a card the first one in the row, or insert another card to the right or left of a specific card.
+* *Three-dot more image:icon-more-10px.png[] icon*: You can replace or delete a metric, move it one spot to the left or right, make a card the first one in the row, or insert another card to the right or left of a specific card.
 
-{% include note.html content="If you can no longer access a metric on your watchlist (because the headline or Liveboard was deleted, or your access permissions changed), the system displays a note saying you cannot view that metric." %}
+NOTE: If you can no longer access a metric on your watchlist (because the headline or Liveboard was deleted, or your access permissions changed), the system displays a note saying you cannot view that metric.
 
 [#recently-viewed]
 == Recently viewed
@@ -151,6 +152,6 @@ Alternatively, you can select each object on the page, by selecting the empty bo
 Note that you cannot select multiple objects across pages.
 If you select an answer on the first page, and then select *Next* to view and share more objects, ThoughtSpot's discards your selection on the first page.
 
-. Select *Share* image:{{ site.baseurl }}/images/icon-share-10px.png[sharing icon], above the list of objects.
+. Select *Share* image:icon-share-10px.png[sharing icon], above the list of objects.
 
-{% include content/share-answersandpinboards-specify-permissions.md %}
+include::partial$share-answersandpinboards-specify-permissions.adoc[]
