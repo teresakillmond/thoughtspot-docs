@@ -1,7 +1,8 @@
-= ["Deprecation Announcements"]
+= Deprecation Announcements
 :last_updated: 12/01/2021
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
+:linkattrs:
+:experimental:
+:page-aliases: /release/deprecation.adoc
 
 ThoughtSpot sometimes deprecates existing features and replaces them with new and more effective means to use our products.
 In this article, we give you advance notice of features we are discontinuing in future releases.
@@ -14,9 +15,11 @@ Use following notes above feature that is deprecated. Send a link back to this d
 == De-supported in January Cloud
 
 The January Cloud release of ThoughtSpot Software, targeted for January 2022 (GA), will drop support for the following feature:
-+++<dlentry>+++Business user onboarding::::
+
+Business user onboarding::
 ThoughtSpot will replace the current business user onboarding (present in November Cloud 2021 and earlier) with a new onboarding flow.
-The new onboarding flow directs new users to Search Assist, where they can complete sample searches on link:{{ site.baseurl }}/admin/ts-cloud/search-assist.html[demo data] or link:{{ site.baseurl }}/admin/ts-cloud/search-assist-coach.html[their company's data].+++</dlentry>++++++<dlentry>+++Liveboard follow::::
+The new onboarding flow directs new users to Search Assist, where they can complete sample searches on link:{{ site.baseurl }}/admin/ts-cloud/search-assist.html[demo data] or link:{{ site.baseurl }}/admin/ts-cloud/search-assist-coach.html[their company's data].
+Liveboard follow::
 In November Cloud and earlier, there are two different ways for a user to ask ThoughtSpot to email them a Liveboard PDF on a specified schedule.
 You can follow the Liveboard, or link:{{ site.baseurl }}/admin/manage-jobs/schedule-a-pinboard-job.html[schedule a Liveboard job].
 
@@ -31,23 +34,27 @@ If you followed a Liveboard in November Cloud or earlier, you will see it in the
 == De-supported in August Cloud
 
 The August Cloud release of ThoughtSpot Software, targeted for August 2021 (GA), will drop support for the following feature:
-+++<dlentry>+++Ask an Expert::::
+
+Ask an Expert::
 This feature allowed users to ask a designated expert on a particular data source for help when they run into an issue with an Answer or search they created on that data source.
-Now, users can learn about specific data sources in a number of different ways, such as link:{{ site.baseurl }}/end-user/search/search-answers.html[searching across existing Answers and Pinboards], or completing link:{{ site.baseurl }}/admin/ts-cloud/search-assist-coach.html[Search Assist] sample queries on their own data.+++</dlentry>+++
+Now, users can learn about specific data sources in a number of different ways, such as link:{{ site.baseurl }}/end-user/search/search-answers.html[searching across existing Answers and Pinboards], or completing link:{{ site.baseurl }}/admin/ts-cloud/search-assist-coach.html[Search Assist] sample queries on their own data.
 
 [#de-support-may-cloud]
 == De-supported in May Cloud
 
 The May Cloud release of ThoughtSpot Software, targeted for May 2021 (GA), will drop support for the following features:
-+++<dlentry>+++Home page shortcuts for Answers and Pinboards::::
+
+Home page shortcuts for Answers and Pinboards::
 In May Cloud, we are replacing this feature with the ability to link:{{ site.baseurl }}/end-user/thoughtspot-one/thoughtspot-one-homepage.html#quick-links[add important metrics from Pinboards to your watchlist] and track them from the home page.
-To quickly access your most-used Answers and Pinboards in May Cloud, favorite these objects and toggle *My favorites*.+++</dlentry>++++++<dlentry>+++Replay search::::
+To quickly access your most-used Answers and Pinboards in May Cloud, favorite these objects and toggle *My favorites*.
+Replay search::
 Customers currently use *Replay search* to learn how to use ThoughtSpot's search on data.
-As an alternative, use link:{{ site.baseurl }}/admin/ts-cloud/search-assist.html[Search Assist] to learn how to use ThoughtSpot's search on data, either on demo data, or on link:{{ site.baseurl }}/admin/ts-cloud/search-assist-coach.html[your company's data].+++</dlentry>++++++<dlentry>+++Learn how to use ThoughtSpot Pinboard::::
+As an alternative, use link:{{ site.baseurl }}/admin/ts-cloud/search-assist.html[Search Assist] to learn how to use ThoughtSpot's search on data, either on demo data, or on link:{{ site.baseurl }}/admin/ts-cloud/search-assist-coach.html[your company's data].
+Learn how to use ThoughtSpot Pinboard::
 This Pinboard contains search replays created in the system.
 The Replay Search feature is de-supported in May Cloud.
 Customers currently use *Replay search* and the *Learn how to use ThoughtSpot Pinboard* to learn how to use ThoughtSpot's search on data.
-As an alternative, use link:{{ site.baseurl }}/admin/ts-cloud/search-assist.html[Search Assist] to learn how to use ThoughtSpot's search on data, either on demo data, or on link:{{ site.baseurl }}/admin/ts-cloud/search-assist-coach.html[your company's data].+++</dlentry>+++
+As an alternative, use link:{{ site.baseurl }}/admin/ts-cloud/search-assist.html[Search Assist] to learn how to use ThoughtSpot's search on data, either on demo data, or on link:{{ site.baseurl }}/admin/ts-cloud/search-assist-coach.html[your company's data].
 
 [#deprecate-may-cloud]
 == Deprecated in May Cloud
@@ -56,12 +63,16 @@ The May Cloud release of ThoughtSpot Software, targeted for May 2021 (GA), will 
 ThoughtSpot will drop support for these features in a later release.
 If you have the link:{{ site.baseurl }}/admin/ts-cloud/new-answer-experience.html[new Answer experience] [.badge.badge-update]#Beta# (off by default in May Cloud) turned on, these features are de-supported in May Cloud.
 To use these features, turn the new Answer experience off link:{{ site.baseurl }}/admin/ts-cloud/new-answer-experience.html#toggle-on-off[individually] from your profile or for your whole company by link:{{ site.baseurl }}/admin/misc/contact.html[contacting ThoughtSpot Support].
-+++<dlentry>+++Multiple join path resolution within the formula editor or a search::::
+
+Multiple join path resolution within the formula editor or a search::
 When you try to search on columns with more than one possible join path, the system no longer allows you to define the join path within the search.
 Similarly, when you try to create a formula with columns with more than one possible join path, the system does not allow you to define the join path.
-Instead, the system now prompts you to resolve this issue and avoid confusion or incorrect data by creating a Worksheet with the correct join path.+++</dlentry>++++++<dlentry>+++Send feedback::::  The option to send product feedback, from the more options menu image:{{ site.baseurl }}/images/icon-more-10px.png[more options menu icon] on an Answer or search.+++</dlentry>++++++<dlentry>+++Client-side summaries for tables::::
+Instead, the system now prompts you to resolve this issue and avoid confusion or incorrect data by creating a Worksheet with the correct join path.
+Send feedback::  The option to send product feedback, from the more options menu image:icon-more-10px.png[more options menu icon] on an Answer or search.
+Client-side summaries for tables::
 We consolidated client-side column summaries and headlines from the backend into new headline summaries that come from the backend.
 These headline summaries are integrated with the table columns.
-You can pin them to Pinboards.+++</dlentry>++++++<dlentry>+++Ask an Expert::::
+You can pin them to Pinboards.
+Ask an Expert::
 This feature allowed users to ask a designated expert on a particular data source for help when they run into an issue with an Answer or search they created on that data source.
-Now, users can learn about specific data sources in a number of different ways, such as link:{{ site.baseurl }}/end-user/search/search-answers.html[searching across existing Answers and Pinboards], or completing link:{{ site.baseurl }}/admin/ts-cloud/search-assist-coach.html[Search Assist] sample queries on their own data.+++</dlentry>+++
+Now, users can learn about specific data sources in a number of different ways, such as link:{{ site.baseurl }}/end-user/search/search-answers.html[searching across existing Answers and Pinboards], or completing link:{{ site.baseurl }}/admin/ts-cloud/search-assist-coach.html[Search Assist] sample queries on their own data.
