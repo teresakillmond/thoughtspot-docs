@@ -24,16 +24,19 @@ Irrespective of the method you use for embedding, make sure you define your appl
 
 The ThoughtSpot application integration involves several workflows that require users to have specific privileges:
 
-*ThoughtSpot admin* + ThoughtSpot administrators who define the authentication workflow and create user groups.
-+ Access control in ThoughtSpot is managed through the users and groups that are stored locally on ThoughtSpot, even if the users are authenticated using SSO or Trusted Authentication.
-This means that to provide access to content or system privileges, admin users must create users and groups in ThoughtSpot.
-+ For more information, see link:{{ site.baseurl }}/admin/ts-cloud/users.html[Managing Users] and link:{{ site.baseurl }}/admin/ts-cloud/groups.html[Managing groups].
+*ThoughtSpot admin* +
+ThoughtSpot administrators who define the authentication workflow and create user groups. +
+Access control in ThoughtSpot is managed through the users and groups that are stored locally on ThoughtSpot, even if the users are authenticated using SSO or Trusted Authentication.
+This means that to provide access to content or system privileges, admin users must create users and groups in ThoughtSpot. +
+For more information, see link:{{ site.baseurl }}/admin/ts-cloud/users.html[Managing Users] and link:{{ site.baseurl }}/admin/ts-cloud/groups.html[Managing groups].
 
-*Developer* + Application developers with privileges to use the Developer portal and embed ThoughtSpot components in their host application.
-+ Developer users can also customize the look and feel of the UI, add custom actions to an embedded visualization or Liveboard, and modify security settings such as CORS and CSP.
-+ For more information, see https://developers.thoughtspot.com/docs/?pageid=developer-access[Developer access].
+*Developer* +
+Application developers with privileges to use the Developer portal and embed ThoughtSpot components in their host application. +
+Developer users can also customize the look and feel of the UI, add custom actions to an embedded visualization or Liveboard, and modify security settings such as CORS and CSP. +
+For more information, see https://developers.thoughtspot.com/docs/?pageid=developer-access[Developer access].
 
-*Host application admin* + Admin privileges to modify the interfaces of your host application.
+*Host application admin* +
+Admin privileges to modify the interfaces of your host application.
 For example, to embed ThoughtSpot components in a business application or web page, you may require edit access to the host application.
 
 == Define an authentication method
@@ -41,19 +44,21 @@ For example, to embed ThoughtSpot components in a business application or web pa
 For initial development and testing purposes, you can use the basic authentication method with the https://developers.thoughtspot.com/docs/?pageid=session-api[session APIs] to manage ThoughtSpot user logins and sessions.
 However, ThoughtSpot recommends that you use SAML SSO or trusted authentication in production environments.
 
-*SAML SSO* + To provide a seamless login experience for your application users, you can configure SSO and enable SAML authentication, so that the federated users are automatically authenticated to ThoughtSpot.
+*SAML SSO* +
+To provide a seamless login experience for your application users, you can configure SSO and enable SAML authentication, so that the federated users are automatically authenticated to ThoughtSpot.
 With SSO, you can use your host application, or an external service as the identity provider, and allow authenticated users to access the ThoughtSpot service.
 ThoughtSpot administrators can set up SAML SSO using the *Admin* UI in the ThoughtSpot application.
 
-To use SSO authentication, you must add the identity provider domain as a SAML redirect domain in the *Security Settings* page of the Developer portal.
-+ For more information, see https://developers.thoughtspot.com/docs/?pageid=saml-sso[Configure SAML].
+To use SSO authentication, you must add the identity provider domain as a SAML redirect domain in the *Security Settings* page of the Developer portal. +
+For more information, see https://developers.thoughtspot.com/docs/?pageid=saml-sso[Configure SAML].
 
-*Trusted Authentication* + Trusted authentication is a token-based authentication service that uses a central authentication service to authenticate ThoughtSpot users.
+*Trusted Authentication* +
+Trusted authentication is a token-based authentication service that uses a central authentication service to authenticate ThoughtSpot users.
 In a trusted authentication workflow, ThoughtSpot provides the authentication service with a token for a given ThoughtSpot user.
 This token is used for obtaining trust from the client applications before granting access to ThoughtSpot content.
 
-ThoughtSpot users with administrator privileges can generate a trusted authentication token in the *Security Settings* page of the Developer portal.
-+ For more information, see https://developers.thoughtspot.com/docs/?pageid=trusted-auth[Configure trusted authentication].
+ThoughtSpot users with administrator privileges can generate a trusted authentication token in the *Security Settings* page of the Developer portal. +
+For more information, see https://developers.thoughtspot.com/docs/?pageid=trusted-auth[Configure trusted authentication].
 
 == Define security settings
 
@@ -64,8 +69,10 @@ When you add your host domain for CORS in the Developer portal, ThoughtSpot adds
 
 *Content Security Policy* To use the Visual Embed SDK, configure the following content security policy (CSP).
 
-* *CSP visual embed hosts*                                          + To allow your host domain to set the *frame-ancestors* CSP policy header and embed a ThoughtSpot object within your application frame, you must add your host domain as a CSP visual embed host.
-* *CSP connect-src*                    + If you plan to configure custom actions to invoke external URLs, you must add these URLs to the *CSP connect-src* domain list in the Developer portal.
+* *CSP visual embed hosts* +
+To allow your host domain to set the *frame-ancestors* CSP policy header and embed a ThoughtSpot object within your application frame, you must add your host domain as a CSP visual embed host.
+* *CSP connect-src* +
+If you plan to configure custom actions to invoke external URLs, you must add these URLs to the *CSP connect-src* domain list in the Developer portal.
 
 For more information, see https://developers.thoughtspot.com/docs/?pageid=security-settings[Configure security settings].
 
