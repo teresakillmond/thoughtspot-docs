@@ -1,10 +1,9 @@
-= ["Delete a table with dependent objects from a Teradata connection"]
+= Delete a table with dependent objects from a Teradata connection
 :last_updated: 11/05/2021
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:toc: true
+:linkattrs:
+:experimental:
 
-{% include content/liveboards-announcement.md %}
+include::partial$liveboards-announcement.adoc[]
 
 If you attempt to delete a table with dependent objects, the operation is blocked.
 A _Cannot delete_ window appears, with a list of links to dependent objects.
@@ -13,7 +12,7 @@ A _Cannot delete_ window appears, with a list of links to dependent objects.
 +
 When all dependencies are removed, you can delete the table.
 +
-image::{{ site.baseurl }}/images/embrace-delete-table-depend.png[]
+image::embrace-delete-table-depend.png[]
 
 You can also click the name of a table and then click the linked objects to see a list of dependent objects with links.
 The list shows the names of the dependent objects (worksheets, Liveboards or answers), and the columns they use from that table.

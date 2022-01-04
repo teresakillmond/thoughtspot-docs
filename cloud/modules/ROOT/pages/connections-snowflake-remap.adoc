@@ -1,8 +1,7 @@
-= ["Remap a Snowflake connection"]
+= Remap a Snowflake connection
 :last_updated: 8/11/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:toc: true
+:linkattrs:
+:experimental:
 
 Modify the connection parameters by editing the source mapping `yaml` file that was created when you added the connection.
 For example, you can remap the existing table or column to a different table or column in an existing database connection.
@@ -14,23 +13,23 @@ To remap a Snowflake connection:
 . Click the *Connections* tab at the top of the page.
 . Click the name of the connection you want to remap.
 +
-image::{{ site.baseurl }}/images/select-connection.png[]
+image::select-connection.png[]
 
-. Click the More Info icon image:{{ site.baseurl }}/images/icon-ellipses.png[more options menu icon] and select *Remapping* on the upper-right-hand side of the page.
+. Click the More Info icon image:icon-ellipses.png[more options menu icon] and select *Remapping* on the upper-right-hand side of the page.
 +
-image::{{ site.baseurl }}/images/snowflake-remapping.png[Remap a connection]
+image::snowflake-remapping.png[Remap a connection]
 
 . Click *Download* to download the source mapping file.
 +
-image::{{ site.baseurl }}/images/snowflake-downloadyaml.png["Download the source mapping file"]
+image::snowflake-downloadyaml.png[Download the source mapping file]
 
 . Edit the file, as required, and save it.
 // []({{ site.baseurl }}/images/embrace-yaml.png "Edit yaml")
 . Finally, click *Browse your files*, and upload your edited mapping file to update the mapping of your connection.
 
 To remove a table from a connection, delete it from the connection details page.
-For more information, see: link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-snowflake-delete-connection.html[Delete a Snowflake connection].
+For more information, see: xref:connections-snowflake-delete.adoc[Delete a Snowflake connection].
 
-See the link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-snowflake-connection-reference.html[Connection reference] for details of connection parameters.
+See the xref:connections-snowflake-reference.adoc[Connection reference] for details of connection parameters.
 
-We also recommend that you review link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-snowflake-best-practices.html[Best Practices for Snowflake connections]
+We also recommend that you review xref:connections-snowflake-best.adoc[Best Practices for Snowflake connections]
