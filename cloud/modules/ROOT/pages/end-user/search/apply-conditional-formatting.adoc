@@ -1,20 +1,21 @@
-= ["Apply conditional formatting"]
+= Apply conditional formatting
 :last_updated: 11/5/2021
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Apply conditional formatting to add visual cues for values in your data.
+:linkattrs:
+:experimental:
+:page-aliases: /end-user/search/apply-conditional-formatting.adoc
+:description: Apply conditional formatting to add visual cues for values in your data.
 
-{% include content/liveboards-announcement.md %}
+include::partial$content/liveboards-announcement.adoc[]
 
 You can apply conditional formatting to tables or charts to highlight values in the data.
 This makes values above, below, or within a particular threshold stand out.
 
-{% include note.html content="Certain elements of table configuration are part of the new answer experience.
+NOTE: Certain elements of table configuration are part of the new answer experience.
 The new answer experience is in Beta and off by default, but the option to turn it on or off individually is on by default.
 These elements include conditional and number formatting for table summaries, improved conditional formatting for attributes and measures in table cells, conditional formatting for measures in pivot tables, content density, and theme (outline, row, or zebra).
 If the new Answer experience is off, you do not see these capabilities.
 You can turn it on or off individually from the *Experience manager* panel in your profile.
-If that option is not available, contact your administrator." %}
+If that option is not available, contact your administrator.
 
 == Understand conditional formatting
 
@@ -35,9 +36,9 @@ You can create conditional formatting rules for both measures and attributes.
 For pivot tables, you can only create conditional formatting rules for measures.
 Pivot tables follow the same conditional formatting rules as tables, even though they fall under ThoughtSpot's chart category.
 
-{% include note.html content="You can only apply conditional formatting to numbers and strings.
+NOTE: You can only apply conditional formatting to numbers and strings.
 For example, you can apply conditional formatting to a `month of year` column, with values such as `January`, but not to date column where dates are in the format `1 Jan 2021`.
-For pivot tables, you can only apply conditional formatting to measure, not attributes." %}
+For pivot tables, you can only apply conditional formatting to measure, not attributes.
 
 If you create multiple conditional formatting rules for one measure or attribute, the first rule you create overrides the others, if there is a conflict.
 To change which rule overrides the others, simply drag and drop the rule to the top of the list of conditional formatting rules.
@@ -45,21 +46,21 @@ To change which rule overrides the others, simply drag and drop the rule to the 
 In the example below, the *christmas* table cell falls under both the `is christmas` rule, and the `not winter` rule.
 Currently, the `not winter` rule overrides the `is christmas` rule, so the *christmas* table cell does not have red text and a green background.
 
-image::{{ site.baseurl }}/images/conditional-formatting-override.png[Drag and drop the rule you would like to override other rules]
+image::conditional-formatting-override.png[Drag and drop the rule you would like to override other rules]
 
 To create a conditional formatting rule:
 
-. Click the *edit table configuration* icon image:{{ site.baseurl }}/images/icon-gear-10px.png[] to the upper right of your table.
+. Click the *edit table configuration* icon image:icon-gear-10px.png[] to the upper right of your table.
 The *Edit table* panel appears, on the *Configure* menu.
 . Select the measure or attribute you would like to add a conditional formatting rule for.
 . The *Edit* panel for that column appears.
 Under *Conditional formatting*, click *+ Add rule*.
 If you would like to add conditional formatting for a column summary, select *Summary* under the column name, and click *+ Add rule*.
 +
-{% include note.html content="When you create a rule for a column, it does not automatically apply to the column summary.
-You must create a separate rule for the column summary." %}
+NOTE: When you create a rule for a column, it does not automatically apply to the column summary.
+You must create a separate rule for the column summary.
 +
-image::{{ site.baseurl }}/images/table-config-conditional-formatting.png[Conditional formatting -- add rule]
+image::table-config-conditional-formatting.png[Conditional formatting -- add rule]
 
 . Select an operator.
 The valid options for attributes are `is`, `not`, `contains`, `does not contain`, `starts with`, `ends with`, `empty`, and `not empty`.
@@ -69,7 +70,7 @@ The valid options for measures are `less than`, `greater than`, `less than or eq
 +
 In this example, if the `selling season` is (=) `christmas`, the background color for the table cell is green, and the font color is red.
 +
-image::{{ site.baseurl }}/images/table-config-conditional-formatting-rule.png[Conditional formatting example]
+image::table-config-conditional-formatting-rule.png[Conditional formatting example]
 
 . Click *Save*.
 The system applies the rule to the column or column summary.
@@ -77,12 +78,12 @@ The system applies the rule to the column or column summary.
 . You can delete a conditional formatting rule from the *Edit* panel for the column.
 Select the *delete* icon that appears when you hover over a rule.
 +
-image::{{ site.baseurl }}/images/table-config-conditional-formatting-delete.png[Delete a conditional formatting rule]
+image::table-config-conditional-formatting-delete.png[Delete a conditional formatting rule]
 
-{% include note.html content="If you change to a chart type, you must apply conditional formatting again.
-Conditional formatting is tied to the specific visualization." %}
+NOTE: If you change to a chart type, you must apply conditional formatting again.
+Conditional formatting is tied to the specific visualization.
 
 [#conditional-formatting-chart]
 == Apply conditional formatting to a chart
 
-{% include content/conditional-formatting-chart.md %}
+include::partial$content/conditional-formatting-chart.adoc[]
