@@ -1,9 +1,6 @@
-= ["ThoughtSpot Tutorials for Snowflake Partner Connect"]
+= ThoughtSpot Tutorials for Snowflake Partner Connect
 :last_updated: 3/9/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Explore these tutorials to learn how to model your data after connecting to your Snowflake database.
-:toc: true
+:description: Explore these tutorials to learn how to model your data after connecting to your Snowflake database.
 
 When you create a connection to Snowflake in ThoughtSpot, any data modeling or table joins are inherited automatically.
 
@@ -32,13 +29,16 @@ The Add Join window appears.
  ** For Destination Columns, select *Product_Key*.
 
 +
-image::{{ site.baseurl }}/images/snow-add-join.png[]
+image::snow-add-join.png[]
 . Click *Next*.
 . Enter the name _Product_Key - Product_Key_, a description for your join (optional), and click *Next*.
-+ image:{{ site.baseurl }}/images/snow-add-join-name.png[]
 +
-{% include note.html content="You can use any name you want.
-The names we've chosen for this tutorial match those in the actual schema for this dataset on try.thoughtspot.com." %}
+image::snow-add-join-name.png[]
+
+
++
+NOTE: You can use any name you want.
+The names we've chosen for this tutorial match those in the actual schema for this dataset on try.thoughtspot.com.
 +
 The first join is created.
 Now you will add the other joins.
@@ -50,10 +50,11 @@ Now you will add the other joins.
  ** For Destination Columns, select *Customer_Key*.
 
 +
-image::{{ site.baseurl }}/images/snow-add-join2.png[]
+image::snow-add-join2.png[]
 . Click *Next*.
 . Enter the name _Customer_Key - Customer_Key_, a description for your join (optional), and click *Next*.
-+ image:{{ site.baseurl }}/images/snow-add-join-name2.png[]
++
+image::snow-add-join-name2.png[]
 . Click *+Add join*.
 . In the Add Join window, use the drop-down menus to make the following selections:
  ** For Destination Table, select *Stores*.
@@ -61,10 +62,11 @@ image::{{ site.baseurl }}/images/snow-add-join2.png[]
  ** For Destination Columns, select *Store_Key*.
 
 +
-image::{{ site.baseurl }}/images/snow-add-join3.png[]
+image::snow-add-join3.png[]
 . Click *Next*.
 . Enter the name _Store_Key-Store_Key_, a description for your join (optional), and click *Next*.
-+ image:{{ site.baseurl }}/images/snow-add-join-name3.png[]
++
+image::snow-add-join-name3.png[]
 . Click *+Add join*.
 . In the Add Join window, use the drop-down menus to make the following selections:
  ** For Destination Table, select *Dates*.
@@ -72,12 +74,15 @@ image::{{ site.baseurl }}/images/snow-add-join3.png[]
  ** For Destination Columns, select *Date_Key*.
 
 +
-image::{{ site.baseurl }}/images/snow-add-join4.png[]
+image::snow-add-join4.png[]
 . Click *Next*.
 . Enter the name _Date_Key - Date_Key_, a description for your join (optional), and click *Next*.
-+ image:{{ site.baseurl }}/images/snow-add-join-name4.png[]
 +
-Now that all four table joins are created, the schema looks like this: + image:{{ site.baseurl }}/images/snow-schema.png[]
+image::snow-add-join-name4.png[]
++
+Now that all four table joins are created, the schema looks like this:
++
+image::snow-schema.png[]
 
 === Searching joined tables
 
@@ -89,17 +94,22 @@ To search the joined tables, do the following:
 . Click the _Retail Sales_ data source, and click *Choose sources*.
 . Select all the tables you just joined (Customers, Dates, Products, Sales, and Stores) and click *Close*.
 . In the search bar, enter *sales_dollar_amount*, *store_region*, and *monthly _Date in Dates_*.
-+ image:{{ site.baseurl }}/images/date-in-dates.png[]
 +
-The search results look like this: + image:{{ site.baseurl }}/images/snow-search-results.png[]
+image::date-in-dates.png[]
 +
-{% include note.html content="When Monthly is a native keyword, it will work on any timestamp.
-For the purposes of this example, we're using monthly as the date, from the Dates table." %}
+The search results look like this:
++
+image::snow-search-results.png[]
++
+NOTE: When Monthly is a native keyword, it will work on any timestamp.
+For the purposes of this example, we're using monthly as the date, from the Dates table.
 
-. To confirm that the search is honoring the table joins, click the Query details icon image:{{ site.baseurl }}/images/icon-information-20px.png[query details icon], to the right of the chart.
-+ image:{{ site.baseurl }}/images/partner-connect-query-details.png[]
+. To confirm that the search is honoring the table joins, click the Query details icon image:icon-information-20px.png[query details icon], to the right of the chart.
++
+image::partner-connect-query-details.png[]
 . To confirm the search is bridging three different tables to create a result, click *Query visualizer*.
-+ image:{{ site.baseurl }}/images/partner-connect-query-visualizer.png[]
++
+image::partner-connect-query-visualizer.png[]
 
 === Best practices for data modeling
 
@@ -109,11 +119,12 @@ Here are some examples of how you can model your data to enhance searchability:
 * Add synonyms for columns
 
 In the following example, the _Sales_Dollar_Amount_ column was renamed to Sales and the synonyms of _Revenue_ and _Dollars_ were added.
-+    image:{{ site.baseurl }}/images/snow-model-best.png[]
+
+image::snow-model-best.png[]
 
 These are just a couple of examples of things you can do.
 
-For more information about data modeling, see: link:{{ site.baseurl }}/admin/data-modeling/data-modeling-settings.html[Overview of data modeling settings]
+For more information about data modeling, see: xref:data-modeling-settings.html[Overview of data modeling settings]
 
 == Creating a worksheet
 
@@ -128,12 +139,14 @@ Examples of things you can do in a worksheet include:
 The worksheet based on the Sales table on *try.thoughtspot.com* was created by doing the following:
 
 . Click *Data*.
-. Click the more options icon image:{{ site.baseurl }}/images/icon-ellipses.png[more options menu icon], and select *Create worksheet*.
-+  image:{{ site.baseurl }}/images/worksheet_create_icon.png[]
+. Click the more options icon image:icon-ellipses.png[more options menu icon], and select *Create worksheet*.
++  image:worksheet_create_icon.png[]
 . Click the plus icon, next to Sources.
-+ image:{{ site.baseurl }}/images/worksheet_add_sources_link.png[]
++
+image:worksheet_add_sources_link.png[]
 . Check the box next to all five of the tables from the Retail dataset in your schema.
-+ image:{{ site.baseurl }}/images/partner-connect-tables-worksheet.png[]
++
+image:partner-connect-tables-worksheet.png[]
 . Make sure the default setting of *Apply joins progressively* is selected.
 This ensures that the search uses only the tables that are required.
 . Click *Close*.
@@ -179,20 +192,24 @@ From the Stores table, include these columns:
  ** Store_State
  ** Store_City
  ** Store_Zip_Code
- ** Store_County + image:{{ site.baseurl }}/images/partner-connect-columns-worksheet.png[]
+ ** Store_County
++
+image::partner-connect-columns-worksheet.png[]
 
 +
-{% include note.html content="As a best practice, you would not select a key from a table when creating a worksheet, because you would not want to search for the key." %}
+NOTE: As a best practice, you would not select a key from a table when creating a worksheet, because you would not want to search for the key.
 
-. Click the pencil icon image:{{ site.baseurl }}/images/icon-edit-20px.png[edit icon] next to the current name of your worksheet, enter the name *Retail Sales*, and click *Done*.
-+ image:{{ site.baseurl }}/images/partner-connect-worksheet-title.png[]
-. Click the more options icon image:{{ site.baseurl }}/images/icon-ellipses.png[more options menu icon], and select *Save*.
-+ image:{{ site.baseurl }}/images/partner-connect-worksheet-save.png[]
+. Click the pencil icon image:icon-edit-20px.png[edit icon] next to the current name of your worksheet, enter the name *Retail Sales*, and click *Done*.
++
+image::partner-connect-worksheet-title.png[]
+. Click the more options icon image:icon-ellipses.png[more options menu icon], and select *Save*.
++
+image::partner-connect-worksheet-save.png[]
 +
 Now, let's add a percent gross margin formula to the worksheet.
 
 . Click *Edit Worksheet*.
-. Next to Formulas, click the plus icon image:{{ site.baseurl }}/images/icon-add-20px.png[plus icon].
+. Next to Formulas, click the plus icon image:icon-add-20px.png[plus icon].
 . In the formula window, do the following:
  .. In the top field, enter the formula title: *% Gross Margin*.
  .. In the next field, enter this formula:
@@ -202,8 +219,9 @@ sum ( gross_profit_dollar_amount ) / sum ( sales_dollar_amount ) * 100
 ----
 
  .. Click *Save*.
-+ image:{{ site.baseurl }}/images/partner-connect-worksheet-formula.png[]
-. Save the worksheet with the formula added, by clicking the more options icon image:{{ site.baseurl }}/images/icon-ellipses.png[more options menu icon], and selecting *Save*.
++
+image::partner-connect-worksheet-formula.png[]
+. Save the worksheet with the formula added, by clicking the more options icon image:icon-ellipses.png[more options menu icon], and selecting *Save*.
 . Click *Data*, and click the Retail Sales worksheet.
 . In the Columns view, make sure that the % Gross Margin formula has the following settings:
  ** For DATA TYPE: *DOUBLE*
@@ -219,7 +237,9 @@ The example here includes:
 
 * Changed column names
 * Synonyms for columns
-* % Gross Margin formula + image:{{ site.baseurl }}/images/partner-connect-worksheet-best.png[]
+* % Gross Margin formula
++
+image::partner-connect-worksheet-best.png[]
 
 === Adding a currency and geo map to a worksheet
 
@@ -230,10 +250,12 @@ Using the Retail Sales worksheet example, here's how geo maps and currency could
 . Click *Data*, and click the *Retail Sales* worksheet.
 . In the Columns view, find the Sales column and click *None* in the Currency Type column.
 . In the Specify Currency Type window, select *Specify ISO Code* and, then select *USD* from the drop-down menu.
-+ image:{{ site.baseurl }}/images/partner-connect-currency.png[]
++
+image::partner-connect-currency.png[]
 . In the Columns view, find the Store_State column, and click *None* in the Geo Config column.
 . In the Specify Geographic Configuration window, select *Specify Sub-nation region*, keep the default country of United States, and then select *State*.
-+ image:{{ site.baseurl }}/images/partner-connect-geo-config.png[]
++
+image::partner-connect-geo-config.png[]
 . Click *Save Changes*.
 +
 Now that both currency and geographic types are set, you can see those changes reflected when you search the Retail Sales worksheet.
@@ -244,20 +266,22 @@ Now that both currency and geographic types are set, you can see those changes r
 . In the search bar, enter: *sales* *store state* and press tab.
 +
 The initial search results appear, but without labels for each state.
-+ image:{{ site.baseurl }}/images/partner-connect-geo-curr-search-nolabels.png[]
++
+image::partner-connect-geo-curr-search-nolabels.png[]
 +
 The final step is to add the labels.
 
-. Click the Edit chart configuration icon image:{{ site.baseurl }}/images/icon-gear-20px.png[gear icon]
+. Click the Edit chart configuration icon image:icon-gear-20px.png[gear icon]
 . In the Customize panel, click the *Total Sales* tile.
 . In the Edit column panel, select the *Data Labels* checkbox.
 +
 Now in the search results, you can see labels with the state name and total sales in US dollars.
-+ image:{{ site.baseurl }}/images/partner-connect-geo-curr-search.png[]
++
+image::partner-connect-geo-curr-search.png[]
 
 == Related information
 
-* link:{{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-partner.html[ThoughtSpot in Snowflake Partner Connect]
-* link:{{ site.baseurl }}/data-integrate/embrace/embrace-intro.html[Connections overview]
-* link:{{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-add.html[Add a Snowflake connection]
-* link:{{ site.baseurl }}/data-integrate/embrace/embrace-snowflake-modify.html[Modify a Snowflake connection]
+* xref:connections-snowflake-partner.adoc[ThoughtSpot in Snowflake Partner Connect]
+* xref:connections.adoc[Connections overview]
+* xref:connections-snowflake-add.adoc[Add a Snowflake connection]
+* xref:connections-snowflake-edit.adoc[Edit a Snowflake connection]
