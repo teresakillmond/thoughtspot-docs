@@ -1,8 +1,9 @@
-= ["Search bar features"]
+= Search bar features
 :last_updated: 4/2/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: The search bar is designed to make it easy for you to identify your search terms.
+:linkattrs:
+:experimental:
+:page-aliases: /end-user/search/about-the-search-bar.adoc
+:description: The search bar is designed to make it easy for you to identify your search terms.
 
 A lot of work has gone into making ThoughtSpot's search bar intuitive and easy to use.
 However, it still helps to know some details of how the search bar works.
@@ -13,12 +14,12 @@ The search bar shows boxes around each search phrase, so you can easily see wher
 Your search phrases still appear as text when you are typing, but whenever you click out of the search bar, they are boxed.
 link:{{ site.baseurl }}/end-user/search/about-attributes-and-measures.html#measures[Measures] are green, link:{{ site.baseurl }}/end-user/search/about-attributes-and-measures.html#attributes[attributes] are blue, and link:{{ site.baseurl }}/complex-search/about-filters.html#[filters] are gray.
 
-image::{{ site.baseurl }}/images/search-bar-basics.png[Measures, attributes, and filters in the search bar]
+image::search-bar-basics.png[Measures, attributes, and filters in the search bar]
 
-{% include note.html content="If any of your column names or values contain leading or trailing whitespaces, you must add a delimiter for the search bar to accept them.
+NOTE: If any of your column names or values contain leading or trailing whitespaces, you must add a delimiter for the search bar to accept them.
 For example, if you have a column named ` Sales `, with a space before and after the word Sales, you must enter it in the search bar as `' Sales '`, with single quotes surrounding the name.
 Otherwise, ThoughtSpot automatically removes the extra spaces and does not recognize the column name.
-Alternatively, you can ask your administrator to remove the spaces before and after column names and values." %}
+Alternatively, you can ask your administrator to remove the spaces before and after column names and values.
 
 == Search on enter
 
@@ -69,7 +70,7 @@ You can still find the answer in many cases, if you type a word with the same me
 If you type an unrecognized search term, ThoughtSpot offers you tips on searching.
 The search help appears when you type a term that isn't understood by ThoughtSpot and then press the Enter key.
 
-image::{{ site.baseurl }}/images/search_help.png[]
+image::search_help.png[]
 
 == Related Answers
 

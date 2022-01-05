@@ -1,10 +1,11 @@
-= ["Linked Liveboard filters"]
+= Linked Liveboard filters
 :last_updated: 11/05/2021
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: You can link columns from multiple worksheets, to create one Liveboard filter for visualizations that come from different worksheets.
+:linkattrs:
+:experimental:
+:page-aliases: /complex-search/linked-filters.adoc
+:description: You can link columns from multiple worksheets, to create one Liveboard filter for visualizations that come from different worksheets.
 
-{% include content/liveboards-announcement.md %}
+include::partial$content/liveboards-announcement.adoc[]
 
 When you create and share a Liveboard, your users may want to filter the visualizations on the Liveboard, to only see data that is relevant to their role.
 The head of customer experience in the North America region may only want to see the data on customers in North America, in a Liveboard that represents global customer data.
@@ -19,32 +20,32 @@ To configure linked Liveboard filters, follow these steps.
 Note that you can link the worksheet columns at the Liveboard level *_without_* actually filtering the Liveboard.
 This is useful if you would like your users to be able to choose their own filters for the Liveboard.
 
-{% include note.html content="When you create linked Liveboard filters, you link worksheet columns at the Liveboard level.
+NOTE: When you create linked Liveboard filters, you link worksheet columns at the Liveboard level.
 You do not globally link the worksheet columns.
-You must create linked filters separately, for each Liveboard." %}
+You must create linked filters separately, for each Liveboard.
 
-. Navigate to the Liveboard you would like to filter, or link:{{ site.baseurl }}/admin/ts-cloud/pinboard-compose.html[create a new Liveboard].
+. Navigate to the Liveboard you would like to filter, or xref:pinboard-compose.adoc[create a new Liveboard].
 . First, you must add primary Liveboard filters.
-If you do not add primary filters, the *Configure filters* option does not appear in the *more options menu* image:{{ site.baseurl }}/images/icon-ellipses.png[].
-. To add a primary Liveboard filter, select the *more options menu* image:{{ site.baseurl }}/images/icon-ellipses.png[] at the top right, and select *Add filters*.
+If you do not add primary filters, the *Configure filters* option does not appear in the *more options menu* image:icon-ellipses.png[].
+. To add a primary Liveboard filter, select the *more options menu* image:icon-ellipses.png[] at the top right, and select *Add filters*.
 . In the *Add filters* side panel, search for columns you would like to filter on, or open the worksheets the columns are in and click on the correct columns.
 In this example, we will create a linked *Customer region* filter.
 To create a filter without actually filtering the Liveboard, click *Done* after you choose the column you would like to filter on, instead of specifying values to include or exclude.
 +
-image::{{ site.baseurl }}/images/add-filters.png[Add filters]
+image:add-filters.png[Add filters]
 
 . After you add a filter, it appears on the Liveboard filters bar, below the Liveboard name.
 . Now we can create a linked filter.
-Select the *more options menu* image:{{ site.baseurl }}/images/icon-ellipses.png[] at the top right, and select *Configure filters*.
+Select the *more options menu* image:icon-ellipses.png[] at the top right, and select *Configure filters*.
 +
-image::{{ site.baseurl }}/images/configure-filters.png[Configure filters]
+image:configure-filters.png[Configure filters]
 
 . The *Configure filter* modal appears.
 The side menu contains every primary filter column for the Liveboard.
 In this case, we only added one filter: *Customer region*.
 So, *Customer region* is the only column in the side menu.
 +
-image::{{ site.baseurl }}/images/configure-filters-modal.png[Configure filters modal]
+image:configure-filters-modal.png[Configure filters modal]
 
 . The *Primary worksheet* and *Primary filter* text boxes contain the worksheet and column that the Liveboard is already filtering on.
 To link the *Customer region* filter across worksheets, we must specify the *Linked worksheet* and *Linked filter*.
@@ -53,14 +54,14 @@ In this case, the Liveboard only uses one other worksheet: *Formula worksheet*.
 . After you select the *Linked worksheet*, you can select the column to filter on.
 In this case, we are filtering on *Customer region*.
 +
-image::{{ site.baseurl }}/images/choose-linked-filter.png[Choose linked filter]
+image:choose-linked-filter.png[Choose linked filter]
 
 . To link another worksheet's *Customer region* column to this filter, click *+ Link filter*.
 In this case, the Liveboard only uses two worksheets, so the *+ Link filter* option is unavailable.
 . To specify visualizations to apply the filter to, scroll down to *Applicable to*.
 You can select the *All* option, or only choose certain visualizations.
 +
-image::{{ site.baseurl }}/images/filter-applicable-to-not-all.png[Specify filtered visualizations]
+image:filter-applicable-to-not-all.png[Specify filtered visualizations]
 +
 You can specify which visualizations a filter should apply to, even if it is not a multi-worksheet linked filter.
 
@@ -69,7 +70,7 @@ You can see that all of the visualizations in the Liveboard, or each visualizati
 There is now one *Customer region* filter for the two worksheets in this Liveboard.
 You or viewers of the Liveboard can change the customer region to any of the other regions in the *Customer region* column.
 +
-image::{{ site.baseurl }}/images/configure-filters-done.png[Configure filters - done]
+image:configure-filters-done.png[Configure filters - done]
 
 == Limitations of linked filters
 

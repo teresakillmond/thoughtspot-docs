@@ -1,10 +1,11 @@
-= ["Schedule a Liveboard job"]
+= Schedule a Liveboard job
 :last_updated: 11/05/2021
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
+:linkattrs:
+:experimental:
+:page-aliases: /admin/manage-jobs/schedule-a-pinboard-job.adoc
 :summary: You can schedule or modify a Liveboard job for any Liveboard by using the Add a schedule prompt page.
 
-{% include content/liveboards-announcement.md %}
+include::partial$content/liveboards-announcement.adoc[]
 
 You can add multiple schedules with different configurations for a single Liveboard.
 However, each job is limited to one Liveboard schedule.
@@ -15,18 +16,19 @@ To schedule a Liveboard:
 . Sign in to ThoughtSpot from a browser.
 . Select *Liveboards*, on the top navigation bar.
 . Select the Liveboard you want to create a schedule for.
-. Click the ellipses icon image:{{ site.baseurl }}/images/icon-more-10px.png[more options menu icon] and select *Manage schedules* to view all of the schedules set for the Liveboard.
+. Click the ellipses icon image:icon-more-10px.png[more options menu icon] and select *Manage schedules* to view all of the schedules set for the Liveboard.
 +
-image::{{ site.baseurl }}/images/pinboard-view-schedule.png[View Liveboard schedules]
+image::pinboard-view-schedule.png[View Liveboard schedules]
 
 . Click *+ Schedule* to add a new schedule.
 To modify a schedule, click on the schedule you would like to edit.
 +
-image::{{ site.baseurl }}/images/pinboard-add-schedule.png[Add a new Liveboard schedule]
+image::pinboard-add-schedule.png[Add a new Liveboard schedule]
 
 . Set the values for your schedule.
 +
-image::{{ site.baseurl }}/images/pinboard-schedule-create.png[Set the Liveboard schedule]+++<table>++++++<tr>++++++<th>+++Field+++</th>+++
+image::pinboard-schedule-create.png[Set the Liveboard schedule]
++++<table>++++++<tr>++++++<th>+++Field+++</th>+++
     +++<th>+++Description+++</th>++++++</tr>+++
   +++<tr>++++++<th>+++Repeats+++</th>+++
     +++<td>+++You can rebuild a Liveboard every +++<i>+++n+++</i>+++ minutes, hourly, daily, weekly, or monthly. For some of these, you can also choose specific times of the day or days of the week. Make sure to note the +++<strong>+++Server time zone+++</strong>+++ which is the timezone which will be used.+++</td>++++++</tr>+++
@@ -44,9 +46,9 @@ image::{{ site.baseurl }}/images/pinboard-schedule-create.png[Set the Liveboard 
   +++<tr>++++++<th>+++Embedded link format+++</th>+++
   +++<td>+++If your ThoughtSpot environment is embedded, select +++<strong>+++Embedded link format+++</strong>+++ to generate a URL for your host application context. This option allows you to ensure that the links to the object in email notifications go to the appropriate application URL.+++</td>++++++</tr>+++
   +++<tr>++++++<th>+++Recipients+++</th>+++
-    +++<td>++++++<p>+++You are limited to 1000 recipients per job. You can add +++<b>+++Users or groups+++</b>+++ to enter ThoughtSpot users or groups. Use +++<b>+++Emails+++</b>+++ to add recipients that are not ThoughtSpot users. Any users your ThoughtSpot admin must have set your whitelist domains. +++<a href="{{ site.baseurl }}/admin/misc/contact.html">+++Contact ThoughtSpot Support+++</a>+++ to set your whitelist domains.+++</p>+++
+    +++<td>++++++<p>+++You are limited to 1000 recipients per job. You can add +++<b>+++Users or groups+++</b>+++ to enter ThoughtSpot users or groups. Use +++<b>+++Emails+++</b>+++ to add recipients that are not ThoughtSpot users. Any users your ThoughtSpot admin must have set your whitelist domains. xref:support-contact.adoc[Contact ThoughtSpot Support] to set your whitelist domains.+++</p>+++
     +++<p>+++If you experience problems with sending email, your cluster may not have SMTP enabled. Contact your system administrator to resolve this issue.+++</p>++++++</td>++++++</tr>++++++</table>+++
 
 . Click *Schedule* to save your new schedule, or *Save* to save your modified schedule.
 
-{% include content/date-column-download.md %}
+include::partial$content/date-column-download.adoc[]
