@@ -3,9 +3,9 @@
 :permalink: /:collection/:path.html
 :sidebar: mydoc_sidebar
 
-{% include content/liveboards-announcement.md %}
+include::partial$content/liveboards-announcement.adoc[]
 
-When you link:{{ site.baseurl }}/admin/manage-jobs/schedule-a-pinboard-job.html[schedule a Liveboard job], you can add a gating condition that triggers the Liveboard email.
+When you xref:schedule-a-liveboard-job.adoc[schedule a Liveboard job], you can add a gating condition that triggers the Liveboard email.
 If the condition evaluates to `true` at the scheduled time, ThoughtSpot emails the Liveboard to the specified recipients.
 If it evaluates to `false`, ThoughtSpot does not send the Liveboard.
 
@@ -72,7 +72,7 @@ Note that the Liveboard title, *ThoughtSpot Validation Alert - Data Validation* 
 
 === Create the Liveboard schedule
 
-After you create your view and Liveboard, follow the directions in link:{{ site.baseurl }}/admin/manage-jobs/schedule-a-pinboard-job.html[Schedule a Liveboard job] to create the Liveboard schedule.
+After you create your view and Liveboard, follow the directions in xref:schedule-a-liveboard-job.adoc[Schedule a Liveboard job] to create the Liveboard schedule.
 
 image::{{ site.baseurl }}/images/gating-condition-pinboard-schedule-example.png[Gating condition Liveboard schedule example]
 

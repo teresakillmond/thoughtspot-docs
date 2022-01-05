@@ -1,10 +1,10 @@
-= ["Job management (scheduled Liveboards)"]
+= Job management (scheduled Liveboards)
 :last_updated: 11/05/2021
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: All jobs on your cluster will appear on the Jobs Management page. You can also view jobs for individual Liveboards under the Liveboard Actions dropdown.
+:linkattrs:
+:experimental: /admin/manage-jobs/about-scheduled-pinboards.adoc
+:description: All jobs on your cluster will appear on the Jobs Management page. You can also view jobs for individual Liveboards under the Liveboard Actions dropdown.
 
-{% include content/liveboards-announcement.md %}
+include::partial$content/liveboards-announcement.adoc[]
 
 The *Jobs Management* page found on the *Admin* section in the ThoughtSpot web application allows you to create and manage jobs, namely scheduled Liveboards.
 Scheduled Liveboards should help with preparing for recurrent meetings, when reviewing the same Liveboard is necessary.
@@ -20,7 +20,7 @@ xref:support-contact.adoc[Contact ThoughtSpot Support] if scheduled Liveboards i
 Administrators and users with can schedule Liveboard privilege can schedule and manage Liveboard jobs.
 These scheduled Liveboard creators must have at least edit-only and view-only rights to the Liveboard they want to share.
 
-{% include warning.html content="It is recommended that admins carefully choose who to give can schedule Liveboard privilege to, since there is a possible security hole where a user with limited access can get a Liveboard email with all access data." %}
+WARNING: It is recommended that admins carefully choose who to give can schedule Liveboard privilege to, since there is a possible security hole where a user with limited access can get a Liveboard email with all access data.
 
 == Row level security
 
@@ -62,4 +62,4 @@ And the total number of recipients for a scheduled Liveboard job cannot exceed t
 
 == Related information
 
-For information on creating a Liveboard, see the link:{{ site.baseurl }}/admin/manage-jobs/schedule-a-pinboard-job.html[Schedule a Liveboard job].
+For information on creating a Liveboard, see the xref:schedule-a-liveboard-job.adoc[Schedule a Liveboard job].
