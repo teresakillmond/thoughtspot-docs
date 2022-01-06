@@ -1,7 +1,8 @@
-= ["Change result display options"]
+= Change result display options
 :last_updated: 1/16/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
+:linkattrs:
+:experimental:
+:page-aliases: /complex-search/change-the-view.adoc
 :summary: You can change how your search results (Answers) appear.
 
 Your search results, or Answers, have various display options.
@@ -15,10 +16,10 @@ To change the view of your answer:
 . View your answer.
 . Toggle between either a table or a chart type.
 +
-image::{{ site.baseurl }}/images/changeview-chartortable.png[Select table or chart]
+image::changeview-chartortable.png[Select table or chart]
 
 When you display your data as a chart, ThoughtSpot automatically selects the type of chart that works best for your data.
-If you want to use another type, click the change visualization icon image:{{ site.baseurl }}/images/icon-chart-type-10px.png[] and select the type of chart you want.
+If you want to use another type, click the change visualization icon image:icon-chart-type-10px.png[] and select the type of chart you want.
 Refer to xref:charts.adoc[understand charts].
 
 == Sort your search
@@ -32,8 +33,8 @@ By default, sorting applies in descending order.
 For example, if the column has numerical values, it would start at the highest number and decrease.
 Click the column header again to sort in ascending order.
 +
-{% include tip.html content="Hold shift and click another column to add a secondary sort.
-You can even add tertiary sorting and so on by continuing to use this trick." %}
+TIP: Hold shift and click another column to add a secondary sort.
+You can even add tertiary sorting and so on by continuing to use this trick.
 
 * If you are in the chart view, click the axis label of your chart that you would like to sort and select *Sort*.
 You can choose to sort in ascending or descending order.
@@ -42,17 +43,17 @@ You can choose to sort in ascending or descending order.
 
 You can change the date _bucketing_ on tables and charts for columns with date values.
 Bucketing is a method for grouping a column in your data.
-To bucket your data in a table view, click the More icon image:{{ site.baseurl }}/images/icon-more-10px.png[] that appears when you hover over a column name on a table.
+To bucket your data in a table view, click the More icon image:icon-more-10px.png[] that appears when you hover over a column name on a table.
 
 You can specify date bucketing at many granularities, from *detailed* (to the minute or second) to *yearly*, depending on your data.
 You can also specify bucketing based on the position of a bucket relative to another, larger bucket.
 For example, you can group data by *month of quarter*, or *week of month*.
 
-image::{{ site.baseurl }}/images/changeview-bucket.png[Choose a date bucket on a table]
+image::changeview-bucket.png[Choose a date bucket on a table]
 
-To bucket your data in a chart view, click the dropdown icon image:{{ site.baseurl }}/images/icon-dropdown-down-20px.png[] that appears when you hover near the axis labels on a chart.
+To bucket your data in a chart view, click the dropdown icon image:icon-dropdown-down-20px.png[] that appears when you hover near the axis labels on a chart.
 
-image::{{ site.baseurl }}/images/changeview-chartbucket.png[Choose a date bucket on a chart]
+image::changeview-chartbucket.png[Choose a date bucket on a chart]
 
 ThoughtSpot chooses a default date bucket for you when you search.
 This default takes the entire search result into account.
@@ -67,7 +68,7 @@ To exclude or include row values:
 . Right-click the visualization or table cell of interest.
 . Select *Exclude "value"* or *Only Include "value"* if available.
 +
-image::{{ site.baseurl }}/images/changeview-exclude.png[Exclude or include a value]
+image::changeview-exclude.png[Exclude or include a value]
 
 ////
 back button functionality removed for now (6/23/21)
