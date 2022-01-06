@@ -36,7 +36,7 @@ For these instructions, see link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-gett
 === For the Analyst
 +++<dlentry id="pinboard-gating-conditions">+++Liveboard schedule gating conditions::::
 Gating conditions for scheduled Liveboards are now GA.
-Refer to xref:schedule-a-liveboard-job.adoc[Schedule a Liveboard job] to learn more about scheduling Liveboards for email delivery, and how to leverage gating conditions so that ThoughtSpot only sends the Liveboards when certain conditions are true.+++</dlentry>+++
+Refer to xref:liveboard-schedule.adoc[Schedule a Liveboard job] to learn more about scheduling Liveboards for email delivery, and how to leverage gating conditions so that ThoughtSpot only sends the Liveboards when certain conditions are true.+++</dlentry>+++
 
 [#october-cloud-2021-business-user]
 === For the Business User
@@ -80,7 +80,7 @@ For these instructions, see link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-gett
 +++<dlentry id="auto-email">+++Automatic following of How Users are Searching Answers Liveboard::::
 The link:{{ site.baseurl }}/admin/thoughtspot-one/query-intelligence-pinboard.html[How Users are Searching Answers Liveboard] allows administrators, and users they share the Liveboard with, to understand how users are searching for existing answers and Liveboards.
 Starting in the September release, ThoughtSpot automatically emails this Liveboard to administrators once a week.
-You can add or remove users from this email list by xref:schedule-a-liveboard-job.adoc[editing the follow schedule] for this Liveboard.+++</dlentry>+++
+You can add or remove users from this email list by xref:liveboard-schedule.adoc[editing the follow schedule] for this Liveboard.+++</dlentry>+++
 
 [#september-cloud-2021-business-user]
 === For the Business User
@@ -226,7 +226,7 @@ Refer to xref:search-conditional-formatting.adoc#table[Apply conditional formatt
 To perform conditional formatting on measures in pivot tables, you must have the link:{{ site.baseurl }}/admin/ts-cloud/new-answer-experience.html[New Answer experience] [.badge.badge-update]#Beta# (off by default in June Cloud) enabled on your cluster.+++</dlentry>++++++<dlentry id="embedded-link-format">+++Embedded link format for sharing objects::::
 For embedded ThoughtSpot environments, you can now generate links with your host application context and send these links in email notifications.
 You can specify the link format when sharing an object or scheduling a Liveboard job to ensure that the links sent in the email notifications go to the appropriate URL.
-Refer to xref:share-answers.adoc[Share answers] and xref:schedule-a-liveboard-job.adoc[Schedule a Liveboard job] for more information.+++</dlentry>++++++<dlentry id="streamlined-analyst-setup">+++Streamlined analyst setup::::
+Refer to xref:share-answers.adoc[Share answers] and xref:liveboard-schedule.adoc[Schedule a Liveboard job] for more information.+++</dlentry>++++++<dlentry id="streamlined-analyst-setup">+++Streamlined analyst setup::::
 We simplified the steps to set up an analyst account on ThoughtSpot.
 Now, you can create a connection, create a worksheet to model your business use cases, and immediately search your data in three steps.
 See link:{{ site.baseurl }}/admin/ts-cloud/analyst-onboarding.html[Analyst Onboarding] for further details.+++</dlentry>++++++<dlentry id="group-aggregate-query-filters">+++Group aggregate query filters::::
@@ -476,7 +476,7 @@ For more information, see link:{{ site.baseurl }}/reference/api/rest-api-referen
 === For the Analyst
 +++<dlentry id="scriptability">+++Scriptability::::  There are several enhancements to the link:{{ site.baseurl }}/admin/ts-cloud/scriptability.html[Scriptability] feature:
 
-* *Support for selective and linked filters:* You can now import, export, and update Liveboards with xref:linked-filters.adoc[linked] or link:{{ site.baseurl }}/complex-search/selective-filters.html[selective] filters.
+* *Support for selective and linked filters:* You can now import, export, and update Liveboards with xref:liveboard-filters-linked.adoc[linked] or xref:liveboard-filters-selective.html[selective] filters.
 * *Add tables and columns to an Embrace connection (GA):* ThoughtSpot now allows you to use TML to edit tables created through link:{{ site.baseurl }}/admin/ts-cloud/embrace.html[Embrace], and add columns and tables that already exist in the external database to the connection.
 This feature is now GA and on by default.
 Refer to link:{{ site.baseurl }}/admin/ts-cloud/tml.html#syntax-tables[ThoughtSpot Modeling Language] and specify the `connection` information when adding tables or table columns to an Embrace connection.+++</dlentry>++++++<dlentry id="query-dashboard">+++Enhancements to the Search on Answers Liveboard::::
@@ -749,7 +749,7 @@ You can now create one filter that filters visualizations based on multiple Work
 This is useful when you have a Liveboard built on multiple Worksheets, and you would like to filter on columns that are functionally the same, but exist in multiple Worksheets.
 +  +
 
-Refer to xref:linked-filters.adoc[Linked Liveboard filters].
+Refer to xref:liveboard-filters-linked.adoc[Linked Liveboard filters].
 +
 
 === Selective Liveboard filters
@@ -758,7 +758,7 @@ You can now configure Liveboard filters to apply to specific visualizations that
 This is useful when you would like to filter some, but not all, visualizations in a Liveboard.
 +  +
 
-Refer to link:{{ site.baseurl }}/complex-search/selective-filters.html[Selective Liveboard filters].
+Refer to xref:liveboard-filters-selective.adoc[Selective Liveboard filters].
 
 ////
 <h3>Enhanced data modeling capabilities</h3>
