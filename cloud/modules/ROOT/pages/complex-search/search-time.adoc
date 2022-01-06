@@ -1,14 +1,15 @@
-= ["Time series analysis"]
+= Time series analysis
 :last_updated: 2/25/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
+:linkattrs:
+:experimental:
+:page-aliases: /complex-search/period-searches.adoc
 :summary: You can compare across time periods without using a formula.
 
 A _time series_ is a set of data points ordered by time.
 For example, in such a data set, a sale in January 2020 comes before a sale in February 2020.
 You can use ThoughtSpot's _time series analysis_ feature to search for answers about series data.
 
-image::{{ site.baseurl }}/images/time-series.png[Automatic time series suggestions]
+image::time-series.png[Automatic time series suggestions]
 
 You might use this feature to compare a time period across other time periods.
 For example, you might look at sales for each month across several years.
@@ -39,11 +40,11 @@ You can use these new keywords in combination with the existing data keywords wh
 Typically, when you search for answers about series data, the visualizations that answer your questions are line charts.
 These charts frequently but not always include a stack to indicate a period.
 
-image::{{ site.baseurl }}/images/time-example1.png[]
+image::images/time-example1.png[]
 
 When you search for an aspect of data of time series, a typical response is a line chart showing the aspect as it rises and falls over time.
 
-image::{{ site.baseurl }}/images/time-example2.png[]
+image::images/time-example2.png[]
 
 You can also add a relative date filter for example,
 
@@ -54,7 +55,7 @@ month(commit date) before 01/01/1998
 
 This type of query also yields a stacked line chart:
 
-image::{{ site.baseurl }}/images/time-example3.png[]
+image::images/time-example3.png[]
 
 The child date time attribute is on the X-axis and the parent in the legend.
 For example, if you search `revenue month yearly` the child, `monthly`, appears on the x-axis and the parent, `yearly`, in the legend.
