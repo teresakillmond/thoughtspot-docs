@@ -1,11 +1,13 @@
-= ["Percent (simple number) calculations"]
+= Percent (simple number) calculations
 :last_updated: 3/26/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
+:linkattrs:
+:experimental:
+:page-aliases: /advanced-search/formulas/percent-calculations.adoc
 :summary: Learn about simple number calculations.
 
 You can use simple number functions to perform useful percent calculations on your data.
-Simple number functions include addition, subtraction, multiplication, and division.+++<table>++++++<colgroup>++++++<col style="width:10%">++++++</col>+++
+Simple number functions include addition, subtraction, multiplication, and division.
++++<table>++++++<colgroup>++++++<col style="width:10%">++++++</col>+++
       +++<col style="width:45%">++++++</col>+++
       +++<col style="width:45%">++++++</col>++++++</colgroup>+++
    +++<thead class="thead" style="text-align:left;">++++++<tr>++++++<th>+++Function+++</th>+++
@@ -32,7 +34,7 @@ Simple number functions include addition, subtraction, multiplication, and divis
 
 Calculating percentages is useful when you want to see, for example, the percentage of revenue that each retail department generates (gifts, bakery, canned goods, etc.).
 
-Create a formula called `Percent Revenue` in the link:{{ site.baseurl }}/complex-search/how-to-add-formula.html[*Formula Assistant*]:
+Create a formula called `Percent Revenue` in the xref:formula-add.adoc[*Formula Assistant*]:
 
 `( sum ( revenue ) / group_sum ( revenue ) ) * 100`
 
@@ -41,4 +43,4 @@ Replace `revenue` with your company's name for their `revenue` column, such as `
 Now you can see the percentage of your total revenue that each department contributes, using the percent revenue formula that you just created.
 See the example below.
 
-image::{{ site.baseurl }}/images/formula-percent-revenue.png[Percent revenue per department]
+image::formula-percent-revenue.png[Percent revenue per department]
