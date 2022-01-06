@@ -1,8 +1,11 @@
-'''
+= Understand backup/snapshot schedules
+:last_updated: 3/10/2020
+:linkattrs:
+:experimental:
+:page-aliases: /admin/backup-restore/how-to-create-a-schedule.adoc
+:description: Learn about backup and snapshot schedules.
 
-title: [Understand backup/snapshot schedules]
-
-last_updated: 3/10/2020 description: "Learn about backup and snapshot schedules." sidebar: mydoc_sidebar permalink: /:collection/:path.html -- You can schedule periodic snapshots and backups.
+You can schedule periodic snapshots and backups.
 ThoughtSpot comes configured with a default periodic snapshot policy.
 For backups, there is no such policy.
 You may want to configure one or several of your own backup policies.
@@ -12,7 +15,7 @@ This section helps you understand existing schedules and how to configure new sc
 
 ThoughtSpot uses a https://developers.google.com/protocol-buffers/[protocol buffer] configuration file to hold snapshot and backup policies.
 There are slight differences between the configuration of snapshots and backups.
-Refer to link:{{ site.baseurl }}/admin/backup-restore/overview-snapshot.html[work with snapshots] and link:{{ site.baseurl }}/admin/backup-restore/configure-backup.html[configure periodic backups].
+Refer to xref:snapshots.adoc[work with snapshots] and xref:backup-configure-schedule.adoc[configure periodic backups].
 However, the file format defines a `schedule` structure, which is the same for both snapshots and backups.
 The following example shows the `schedule` format:
 

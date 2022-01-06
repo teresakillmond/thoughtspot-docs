@@ -1,8 +1,9 @@
-= ["Create a manual backup"]
+= Create a manual backup
 :last_updated: 3/11/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Learn how to manually create a backup.
+:linkattrs:
+:experimental:
+:page-aliases: /admin/backup-restore/take-backup.adoc
+:description: Learn how to manually create a backup.
 
 ThoughtSpot enables you to manually create a backup to restore a cluster to a prior state or a differently configured appliance.
 You can also move the backup from an appliance to a virtual cluster or vice versa.
@@ -25,7 +26,7 @@ To manually create a backup using ThoughtSpot's command line interface, tscli:
  $ ssh admin@<cluster-IP>
 ----
 
-. link:{{ site.baseurl }}/admin/backup-restore/overview-snapshot.html#snapshot-tscli[Create a manual snapshot] or find a snapshot you want to use.
+. xref:snapshots.adoc#snapshot-tscli[Create a manual snapshot] or find a snapshot you want to use.
 To find a snapshot you want to use for your backup, run `tscli snapshot ls`:
 +
 ----

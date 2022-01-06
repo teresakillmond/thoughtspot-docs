@@ -1,9 +1,10 @@
-= ["Work with snapshots"]
+= Work with snapshots
 :last_updated: 3/10/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: A snapshot is a point-in-time image of your running cluster. You can use a snapshot to restore the cluster to a specific point in time. In this section, we describe how to work with the default snapshot configuration that is enabled on every cluster, and how to make manual snapshots.
-:toc: true
+:linkattrs:
+:experimental:
+:page-aliases: /admin/backup-restore/overview-snapshot.adoc
+:description: A snapshot is a point-in-time image of your running cluster. You can use a snapshot to restore the cluster to a specific point in time. In this section, we describe how to work with the default snapshot configuration that is enabled on every cluster, and how to make manual snapshots.
+
 
 To work with snapshots, use the `tscli` command line interface.
 
@@ -72,7 +73,7 @@ To view your current periodic snapshot policy, follow these steps:
 In the following example, the policy starts at midnight on Sunday.
 It retains the snapshots from the previous three 4-hour intervals, and two snapshots from two of the previous 4-hour intervals.
 Here, ThoughtSpot retains 7 periodic snapshots overall.
-For detailed information about understanding the schedule, see link:how-to-create-a-schedule.html[Understand backup/snapshot schedules].
+For detailed information about understanding the schedule, see xref:backup-schedule.adoc[Understand backup/snapshot schedules].
 
  $ tscli snapshot-policy show
  schedule {
