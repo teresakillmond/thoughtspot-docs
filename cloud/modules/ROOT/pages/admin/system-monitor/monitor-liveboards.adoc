@@ -1,11 +1,12 @@
 = ["System Liveboards"]
 :last_updated: 11/05/2021
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: ThoughtSpot provides several Liveboards that help with system monitoring.
-:toc: false
+:experimental:
+:linkattrs:
+:page-aliases: /admin/system-monitor/monitor-pinboards.adoc
+:description: ThoughtSpot provides several Liveboards that help with system monitoring.
 
-{% include content/liveboards-announcement.md %}
+
+include::partial$content/liveboards-announcement.adoc[]
 
 There are several system monitoring Liveboards in ThoughtSpot that provide answers for system status and resource usage questions.
 The information in these Liveboards are updated hourly from internal data sources that collect monitoring statistics.
@@ -23,7 +24,8 @@ To view these system Liveboards:
 . Enter `System User` in the search field, or search for the Liveboard you would like to view.
 You can also view the User Adoption Liveboard and Performance Tracking Liveboard in the Admin Console.
 
-== Description of system Liveboards+++<table>++++++<colgroup>++++++<col style="width:35%">++++++</col>+++
+== Description of system Liveboards
++++<table>++++++<colgroup>++++++<col style="width:35%">++++++</col>+++
    +++<col style="width:65%">++++++</col>++++++</colgroup>+++
    +++<tr>++++++<th>+++Liveboard+++</th>+++
       +++<th>+++Description+++</th>++++++</tr>+++
@@ -44,4 +46,4 @@ You can also view the User Adoption Liveboard and Performance Tracking Liveboard
    +++<tr>++++++<td>++++++<code class="highlighter-rouge">+++Credit Usage Liveboard+++</code>++++++</td>+++
       +++<td>+++Tracks credit consumption for consumption-based pricing. Refer to +++<a href="{{ site.baseurl }}/admin/ts-cloud/consumption-pricing.html#credit-usage-pinboard">+++Consumption-based pricing+++</a>+++.+++</td>++++++</tr>+++
    +++<tr>++++++<td>++++++<code class="highlighter-rouge">+++How Users are Searching Answers+++</code>++++++</td>+++
-      +++<td>+++Describes how users are searching for existing answers and Liveboards. Contains information on what users are searching for, where users are successful and where they are not. Refer to +++<a href="{{ site.baseurl }}/admin/thoughtspot-one/query-intelligence-pinboard.html#">+++How Users are Searching Answers+++</a>+++.+++</td>++++++</tr>++++++</table>+++
+      +++<td>+++Describes how users are searching for existing answers and Liveboards. Contains information on what users are searching for, where users are successful and where they are not. Refer to xref:thoughtspot-one-query-intelligence-liveboard.adoc[How Users are Searching Answers].+++</td>++++++</tr>++++++</table>+++
