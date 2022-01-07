@@ -1,8 +1,9 @@
-= ["Create, edit, or delete a group"]
+= Create, edit, or delete a group
 :last_updated: 11/05/2021
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: ThoughtSpot has intuitive and powerful user group management for assigning privileges, user selection, multi-tier subgroups, default Liveboard assignment, and emailing.
+:linkattrs:
+:experimental:
+:page-aliases: /admin/users-groups/add-group.adoc
+:description: ThoughtSpot has intuitive and powerful user group management for assigning privileges, user selection, multi-tier subgroups, default Liveboard assignment, and emailing.
 
 {% include content/liveboards-announcement.md %}
 
@@ -36,7 +37,7 @@ image::{{ site.baseurl }}/images/add-group.png[Enter details for the new group]+
   +++<tr id="description">++++++<th>+++Description+++</th>+++
     +++<td>+++Optionally, enter a description.+++</td>++++++</tr>+++
   +++<tr id="privileges">++++++<th>+++Privileges+++</th>+++
-    +++<td>+++Check the <a href="{{"/admin/users-groups/about-users-groups.html#list-of-privileges" | prepend: site.baseurl }}">privileges</a> you want to grant to the group. If you add the privilege +++<b>+++Has administration privileges+++</b>+++ to a group, all users in that group can see all the data in ThoughtSpot. Administrators can always see all data sources, and xref:security-rls.adoc[Row level security] does not
+    +++<td>+++Check the xref:groups-privileges.adoc#list-of-privileges[privileges] you want to grant to the group. If you add the privilege +++<b>+++Has administration privileges+++</b>+++ to a group, all users in that group can see all the data in ThoughtSpot. Administrators can always see all data sources, and xref:security-rls.adoc[Row level security] does not
     apply to them.+++</td>++++++</tr>++++++</table>+++
 
 . You can also add _<<add-groups,Groups>>_ (these would be the subgroups of the group you are editing), _<<add-users,Users>>_.
