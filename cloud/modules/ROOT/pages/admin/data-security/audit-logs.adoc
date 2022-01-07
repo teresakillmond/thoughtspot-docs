@@ -1,7 +1,8 @@
-= ["Collect security logs"]
+= Collect security logs
 :last_updated: 11/04/2021
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
+:linkattrs:
+:experimental:
+:page-aliases: /admin/data-security/audit-logs.adoc
 :description: Collect security audit logs to monitor user activity in ThoughtSpot and increase your system security.
 
 ThoughtSpot Cloud provides security audit events related to account activities and user actions within ThoughtSpot.
@@ -22,7 +23,7 @@ ThoughtSpot security events include the following information:
 name of the new account)
 
 [#security-events]
-=== Security events
+== Security events
 
 The possible events are:
 
@@ -54,7 +55,7 @@ The possible events are:
 // - [user-group-change](#user-group-change)
 * <<user-invited,user-invitation>>
 
-=== Event descriptions
+== Event descriptions
 
 ThoughtSpot defines these events as follows:
 +++<dlentry id="logout-successful">+++Account logout::::  A user logs out from ThoughtSpot.+++</dlentry>++++++<dlentry id="create-answer">+++Answer creation::::  A user attempts to create a new answer.+++</dlentry>++++++<dlentry id="delete-answers">+++Answer deletion::::  A user attempts to delete an answer.+++</dlentry>++++++<dlentry id="update-answers">+++Answer update::::  A user attempts to modify an existing answer.+++</dlentry>++++++<dlentry id="create-rls-rule">+++Row-level security (RLS) rule creation::::  A user creates an RLS rule on a table.+++</dlentry>++++++<dlentry id="delete-rls-rules">+++RLS rule deletion::::  A user deletes an RLS rule on a table.+++</dlentry>++++++<dlentry id="login-failed">+++Failed login::::  A user fails to log in due to an incorrect password, or IdP/ADP deny the authentication request.+++</dlentry>++++++<dlentry id="logout-failed">+++Failed logout::::  User logout failed.+++</dlentry>++++++<dlentry id="user-groups-created">+++Group creation::::  A user creates a new group, either manually through the Admin Portal, or through the internal API.+++</dlentry>++++++<dlentry id="user-groups-deleted">+++Group deletion::::  A user deletes a group, either manually through the Admin Portal, or through the internal API.+++</dlentry>++++++<dlentry id="group-modification">+++Group modification::::

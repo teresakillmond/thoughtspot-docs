@@ -1,7 +1,8 @@
-= ["How rule-based RLS works"]
+= How rule-based RLS works
 :last_updated: 11/05/2021
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
+:linkattrs:
+:experimental:
+:page-aliases: /admin/data-security/row-level-security.adoc
 :description: Use rule-based RLS to restrict a group's access to data. Users see only accessible row data.
 
 {% include content/liveboards-announcement.md %}
@@ -69,7 +70,7 @@ Rules can also reference tables other than the table you are securing.
 Consider a simple RLS rule example.
 Your company has `vendor-purchase` table such as:
 
-image::{{ site.baseurl }}/images/rls-example0.png[]
+image::rls-example0.png[]
 
 You want to give your vendors the ability to see trends in company purchases.
 You give vendor personnel access to ThoughtSpot _and_ add them to self-titled vendor groups.
@@ -142,6 +143,6 @@ So, err on the side of simple rules rather than complex rules with a lot of logi
 
 == Related information
 
-* To learn the procedure you follow for setting a rule, link:{{ site.baseurl }}/admin/data-security/set-rls.html#[Set RLS rules]
+* To learn the procedure you follow for setting a rule, xref:security-rls-implement.adoc#[Set RLS rules]
 * For a list of operators and functions you can use to build RLS rules see link:{{ site.baseurl }}/reference/rls-rule-builder-reference.html#[Row level security rules reference].
 * For information on bypassing rules on a worksheet, see xref:worksheet-inclusion.adoc#[Change inclusion, join, or RLS for a worksheet].

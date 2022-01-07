@@ -1,8 +1,9 @@
-= ["Data security"]
+= Data security
 :last_updated: 11/05/2021
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Data security refers to which users can see which data in the ThoughtSpot application.
+:linkattrs:
+:experimental:
+:page-aliases: /admin/data-security/sharing-security-overview.adoc
+:description: Data security refers to which users can see which data in the ThoughtSpot application.
 
 {% include content/liveboards-announcement.md %}
 
@@ -34,16 +35,16 @@ Security and sharing settings apply to several different types of objects, each 
     +++<th>+++Default security model+++</th>++++++</tr>+++
   +++<tr>++++++<td>+++Tables+++</td>+++
     +++<td>+++The source data tables that have been loaded using ThoughtSpot Loader.+++</td>+++
-    +++<td>+++Administrator users have access to source tables. They can share a table with other users or groups. See [Share tables and columns](share-source-tables.html#)+++</td>++++++</tr>+++
+    +++<td>+++Administrator users have access to source tables. They can share a table with other users or groups. See [Share tables and columns](share-source-tables.adoc#)+++</td>++++++</tr>+++
   +++<tr>++++++<td>+++Columns+++</td>+++
     +++<td>+++The columns in the source data tables that have been loaded using ThoughtSpot Loader.+++</td>+++
-    +++<td>+++Administrator users have access to columns in the source tables. They can share selected columns with other users or groups. See [Share tables and columns](share-source-tables.html#)+++</td>++++++</tr>+++
+    +++<td>+++Administrator users have access to columns in the source tables. They can share selected columns with other users or groups. See [Share tables and columns](share-source-tables.adoc#)+++</td>++++++</tr>+++
   +++<tr>++++++<td>+++Rows+++</td>+++
     +++<td>+++The rows in the source data tables that have been loaded using ThoughtSpot Loader.+++</td>+++
     +++<td>+++All rows in the source tables are shared with all users by default.+++</td>++++++</tr>+++
   +++<tr>++++++<td>+++Imported data+++</td>+++
     +++<td>+++Data that was imported using a Web browser.+++</td>+++
-    +++<td>+++Only the user who imported the data (and any user with administrator privileges) has access to it by default. They can share a table (or selected columns) with other users or groups. See [Share tables and columns](share-source-tables.html#)+++</td>++++++</tr>+++
+    +++<td>+++Only the user who imported the data (and any user with administrator privileges) has access to it by default. They can share a table (or selected columns) with other users or groups. See [Share tables and columns](share-source-tables.adoc#)+++</td>++++++</tr>+++
   +++<tr>++++++<td>+++Worksheets+++</td>+++
     +++<td>+++A worksheet created using a Web browser.+++</td>+++
     +++<td>+++Only the creator of the worksheet (and any user with administrator privileges) has access to it by default. They can share a worksheet with other users or groups. See [Share worksheets](share-worksheets.html)+++</td>++++++</tr>+++
@@ -74,4 +75,4 @@ To prevent these groups from appearing in the *Share* dialog, create a *NOT SHAR
 == Related information
 
 * link:{{ site.baseurl }}/admin/data-security/unshare.html[Revoke access (unshare)]
-* link:{{ site.baseurl }}/admin/data-security/about-row-security.html[Row level security]
+* xref:security-rls.adoc[Row level security]
