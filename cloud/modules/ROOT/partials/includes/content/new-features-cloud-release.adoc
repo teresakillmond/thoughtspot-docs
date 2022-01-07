@@ -1,22 +1,22 @@
 The latest release of ThoughtSpot Cloud contains several new and enhanced features.
 
-* link:{{ site.baseurl }}#november-cloud-2021-first[For the First user]
-* link:{{ site.baseurl }}#november-cloud-2021-analyst[For the Analyst]
-* link:{{ site.baseurl }}#november-cloud-2021-business-user[For the Business User]
-* link:{{ site.baseurl }}#november-cloud-2021-data-engineer[For the Data Engineer]
-* link:{{ site.baseurl }}#november-cloud-2021-it-ops-engineer[For the IT Ops Engineer]
-* link:{{ site.baseurl }}#november-cloud-2021-developer[For the Developer]
+* <<november-cloud-2021-first,For the First user>>
+* <<november-cloud-2021-analyst,For the Analyst>>
+* <<november-cloud-2021-business-user,For the Business User>>
+* <<november-cloud-2021-data-engineer,For the Data Engineer>>
+* <<november-cloud-2021-it-ops-engineer,For the IT Ops Engineer>>
+* <<november-cloud-2021-developer,For the Developer>>
 
 [#november-cloud-2021-first]
 === For the First User
-+++<dlentry id="getting-started">+++Getting started with ThoughtSpot Cloud::::
+Getting started with ThoughtSpot Cloud::
 The first user on the account has to complete a series of steps before other people can start using ThoughtSpot with your organization's data.
-For these instructions, see link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-getting-started.html[Getting Started with ThoughtSpot Cloud].+++</dlentry>+++
+For these instructions, see link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-getting-started.html[Getting Started with ThoughtSpot Cloud].
 
 [#november-cloud-2021-analyst]
 === For the Analyst
 
-+
+
 ////
 removing these features for now per alok. may add back in
 
@@ -39,18 +39,24 @@ removing these features for now per alok. may add back in
 <dd><p>This release redesigns the <strong>Data</strong> section of the product. To access this part of the product, select <strong>Data</strong> from the top navigation bar. The redesign introduces several new features, such as SQL-based views and SpotApps, and makes the UI more intuitive.</p>
 <p>This feature is in beta and off by default. To enable it, <a href="{{ site.baseurl }}/admin/misc/contact.html">contact ThoughtSpot Support</a>.</p></dd>
 </dlentry>
-////+++<dlentry id="auto-answer">+++Automated answer creation in Setup::::
+////
+
+[#auto-answer]
+Automated answer creation in Setup::
 We simplified the steps to create Search visualizations during Setup.
 Now, you can select measures, attributes and date columns and immediately view suggested answers and visualizations.
-For more information, see link:{{ site.baseurl }}/admin/ts-cloud/automated-answer-creation.html[Create answers in Setup].+++</dlentry>+++
+For more information, see link:{{ site.baseurl }}/admin/ts-cloud/automated-answer-creation.html[Create answers in Setup].
 
 [#november-cloud-2021-business-user]
 === For the Business User
-+++<dlentry id="liveboard-announcement">+++::::
+
+[#liveboard-announcement]
 Starting in December 2021, ThoughtSpot refers to Liveboards instead of pinboards.
 With Liveboards, you can have an interactive experience and get granular insights through live queries on cloud data, tailored for you.
-You can use Livebaords to iterate, explore, and drill into more insights, and tell a continuously evolving data story.
-+ ThoughtSpot plans to support for several releases, and then retire, internal processes and external methods that use the older naming convention.+++</dlentry>++++++<dlentry id="session-validity">+++User session timeout and validity::::
+You can use Livebaords to iterate, explore, and drill into more insights, and tell a continuously evolving data story. +
+ThoughtSpot plans to support for several releases, and then retire, internal processes and external methods that use the older naming convention.
+[#session-validity]
+User session timeout and validity::
 ThoughtSpot increased the duration of *idle session timeouts* and the *maximum session validity*, when you click *Remember me* on the login screen.
 There is no change to the duration when you do not click *Remember me*.
 
@@ -62,19 +68,23 @@ Clusters created on the October Cloud release and earlier have the old experienc
 In the old experience, the *idle session timeout* is 60 minutes with *Remember me*, and 30 minutes without it.
 The old *maximum session validity* is 7 days with *Remember me*, and not available without it.
 
-To increase idle session timeouts or maximum session validity for clusters created on the October Cloud release and earlier, xref:support-contact.adoc[contact ThoughtSpot Support].+++</dlentry>++++++<dlentry id="search-suggestions">+++Search suggestions::::
+To increase idle session timeouts or maximum session validity for clusters created on the October Cloud release and earlier, xref:support-contact.adoc[contact ThoughtSpot Support].
+
+[#search-suggestions]
+Search suggestions::
 Search suggestions are now GA.
 When you xref:search-answers.adoc[search across existing answers and Liveboards], ThoughtSpot now offers search suggestions in the search bar, based on your past searches and popular searches in your environment, in addition to object suggestions.
 For example, if you type `Sal` in the search bar, it might now result in search suggestions like *Sales* and *Sales this year*, in addition to object suggestions like an existing Liveboard called *Sales in the east last year*.
 
-ThoughtSpot provides search suggestions before you begin typing, but not object suggestions.+++</dlentry>+++
+ThoughtSpot provides search suggestions before you begin typing, but not object suggestions.
 
 [#november-cloud-2021-data-engineer]
 === For the Data Engineer
-+++<dlentry id="connections-snowflake-azure-ad-oauth">+++Azure AD external OAuth for Snowflake::::
+[#connections-snowflake-azure-ad-oauth]
+Azure AD external OAuth for Snowflake::
 Snowflake now supports external OAuth through Microsoft Azure AD.
-See link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-snowflake-azure-ad-oauth.html[Configure Azure AD external OAuth for a Snowflake connection].+++</dlentry>+++
-+
+See link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-snowflake-azure-ad-oauth.html[Configure Azure AD external OAuth for a Snowflake connection].
+
 ////
 removing for now per alok
 <dlentry id="connections-flow-data-portal">
@@ -85,19 +95,26 @@ removing for now per alok
 
 [#november-cloud-2021-it-ops-engineer]
 === For the IT Ops Engineer
-+++<dlentry id="saml">+++SAML assertion validity::::
+[#saml]
+SAML assertion validity::
 ThoughtSpot now supports 2 methods to increase the duration of validity for your link:{{ site.baseurl }}/admin/ts-cloud/authentication-integration.html#saml-assertion[SAML assertion]: the `SessionNotOnOrAfter` attribute and the `maxAuthenticationAge` parameter.
-`SessionNotOnOrAfter` overrules `maxAuthenticationAge` if both are present.
-If your IDP does not support use of `SessionNotOnOrAfter`, remove that attribute from your IDP assertion and xref:support-contact.adoc[ask ThoughtSpot Support] to enable `maxAuthenticationAge`.+++</dlentry>++++++<dlentry id="multiple-idp">+++Multiple Identity Providers for SAML login::::
+You can ask ThoughtSpot to disable either one of these checks. If you use both, and either check fails, ThoughtSpot does not authenticate the user. Some IDPs do not support use of `SessionNotOnOrAfter`.
+If your IDP does not support use of `SessionNotOnOrAfter`, remove that attribute from your IDP assertion and xref:support-contact.adoc[ask ThoughtSpot Support] to enable `maxAuthenticationAge`.
+
+[#multiple-idp]
+Multiple Identity Providers for SAML login::
 You can now configure SAML SSO login for more than one Identity Provider (IDP).
 You may have multiple groups of users who need to log into ThoughtSpot but are managed by separate IDPs.
-To configure this, xref:support-contact.adoc[contact ThoughtSpot Support].+++</dlentry>++++++<dlentry id="vpn">+++OpenVPN support for Google BigQuery and Azure Synapse connections::::
+To configure this, xref:support-contact.adoc[contact ThoughtSpot Support].
+
+[#vpn]
+OpenVPN support for Google BigQuery and Azure Synapse connections::
 ThoughtSpot now supports secure access from ThoughtSpot Cloud to your data in Google BigQuery and Azure Synapse, through your OpenVPN server.
 ThoughtSpot supports the following OpenVPN server implementations:
 
-* https://openvpn.net/community-downloads/[OpenVPN Community Edition]
-* https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-openvpn-clients[Azure VPN]
-* https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html[AWS Client VPN]
+* https://openvpn.net/community-downloads/[OpenVPN Community Edition^]
+* https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-openvpn-clients[Azure VPN^]
+* https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html[AWS Client VPN^]
 
 To learn how to configure a VPN connection for your Google BigQuery or Azure Synapse connection, refer to link:{{ site.baseurl }}/admin/ts-cloud/openvpn-gbq.html[OpenVPN for Google BigQuery] and link:{{ site.baseurl }}/admin/ts-cloud/openvpn-synapse.html[OpenVPN for Azure Synapse].+++</dlentry>+++
 
