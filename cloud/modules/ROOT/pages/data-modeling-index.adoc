@@ -46,8 +46,8 @@ The system behavior when the *INDEX TYPE* is *DEFAULT* is as follows:
 The exceptions are columns with *COLUMN TYPE* of `MEASURE` and columns with *DATA TYPE* of `DATE`.
 * Columns that contain data values with large amount of free-form strings, that is, a length is greater than 50 words, are indexed as `PREFIX_ONLY` by default.
 +
-{% include warning.html content="If a column has a very large free text values, ThoughtSpot recommends you keep `DEFAULT` or set `DONT_INDEX`.
-Other settings indexing on these values may generate confusing suggestions." %}
+WARNING: If a column has a very large free text values, ThoughtSpot recommends you keep `DEFAULT` or set `DONT_INDEX`.
+Other settings indexing on these values may generate confusing suggestions.
 
 * Short strings (like a `firstname` column) are indexed using `PREFIX_AND_SUBSTRING` by default, which indexes both prefix and substrings.
 * If a column is using has a _cardinality_ &ndash;
