@@ -229,10 +229,10 @@ You can specify the link format when sharing an object or scheduling a Liveboard
 Refer to xref:share-answers.adoc[Share answers] and xref:liveboard-schedule.adoc[Schedule a Liveboard job] for more information.+++</dlentry>++++++<dlentry id="streamlined-analyst-setup">+++Streamlined analyst setup::::
 We simplified the steps to set up an analyst account on ThoughtSpot.
 Now, you can create a connection, create a worksheet to model your business use cases, and immediately search your data in three steps.
-See link:{{ site.baseurl }}/admin/ts-cloud/analyst-onboarding.html[Analyst Onboarding] for further details.+++</dlentry>++++++<dlentry id="group-aggregate-query-filters">+++Group aggregate query filters::::
+See xref:analyst-onboarding.adoc[Analyst Onboarding] for further details.+++</dlentry>++++++<dlentry id="group-aggregate-query-filters">+++Group aggregate query filters::::
 This release improves support for group aggregate query filters when seeking finer-grained results by adding a secondary dimension, or courser-grained results when dropping one of the existing dimensions.
 You can now also include or drop the filter condition.
-Refer to link:{{ site.baseurl }}/complex-search/aggregation-filters.html[Aggregation filters] for more information.+++</dlentry>+++
+Refer to xref:aggregation-filters.adoc[Aggregation filters] for more information.+++</dlentry>+++
 
 [#june-cloud-business-user]
 === For the Business User
@@ -325,7 +325,7 @@ You can now apply an authentication scheme for custom actions that trigger a dat
 If a custom action requires your users to authenticate to send data to a URL, you can specify the authentication method and authorization attributes when creating a custom action in the Developer portal.  ThoughtSpot will use this authentication information to send the required attributes in the `Authorization` headers to the URL endpoint configured in the custom action.  For more information, see https://developers.thoughtspot.com/docs/?pageid=custom-action-url[ThoughtSpot Developer Documentation].+++</dlentry>+++
 +++<dlentry id="custom-action-position">+++Custom action position settings::::
 ThoughtSpot users with edit privileges can now define or modify the position of a custom action on visualization pages.
-When a developer creates a custom action in the Developer portal, ThoughtSpot adds a menu item to the *More* menu image:/images/icon-ellipses.png[more options menu icon] by default.
+When a developer creates a custom action in the Developer portal, ThoughtSpot adds a menu item to the *More* menu image:icon-ellipses.png[more options menu icon] by default.
 ThoughtSpot users can change this to a context menu action or a primary action at any time.
 If your application instance requires an action that sends only a single row of data from charts or tables, developers can configure a custom action and restrict it to only the contextual menu.
 If this setting is enabled on a custom action, ThoughtSpot users cannot modify this action on a visualization page.  For more information, see https://developers.thoughtspot.com/docs/?pageid=custom-action-viz[ThoughtSpot Developer Documentation].+++</dlentry>+++
@@ -426,7 +426,7 @@ When a user accesses the embedded application from a web browser that has third-
 Cookies are disabled by default in Safari.
 Users can enable third-party cookies in Safari's Preferences setting page or use another web browser.
 To know how to enable this setting by default on Safari for a ThoughtSpot embedded instance, xref:support-contact.adoc[contact ThoughtSpot Support].+++</dlentry>+++
-+++<dlentry id="pinboard-embed-enhancements">+++Liveboard embed enhancements::::  The More menu image:/images/icon-ellipses.png[more options menu icon] in the embedded Liveboard page now shows the following actions for Liveboard and visualizations.  Liveboard
++++<dlentry id="pinboard-embed-enhancements">+++Liveboard embed enhancements::::  The More menu image:icon-ellipses.png[more options menu icon] in the embedded Liveboard page now shows the following actions for Liveboard and visualizations.  Liveboard
 
 * Save
 * Make a copy
@@ -497,7 +497,7 @@ The new Answer experience contains the following features and enhancements: {% i
 {% include content/new-answer-experience-deprecations.md %}
 
 Refer to link:{{ site.baseurl }}/admin/ts-cloud/new-answer-experience[New Answer experience] for more information on the behavior of these features.+++</dlentry>++++++<dlentry id="sticky-search-toggle">+++Sticky Search Answers/ Search Data toggle::::
-This release makes the Search Answers/ Search Data toggle image:{{ site.baseurl }}/images/search-toggle-answers.png[search toggle] sticky.
+This release makes the Search Answers/ Search Data toggle image:search-toggle-answers.png[search toggle] sticky.
 ThoughtSpot now remembers your choice across sessions when you switch between xref:search-answers.adoc[Search Answers] and xref:search-data.adoc[Search Data].+++</dlentry>++++++<dlentry id="latency">+++Improvements in indexing latency for Search Answers::::
 This release improves indexing latency to less than 10 minutes, from 6 hours previously.
 Now, when you create, modify, or delete a new object, update user permissions, or otherwise make changes within ThoughtSpot, the product reflects these changes within 10 minutes.
@@ -532,7 +532,7 @@ The Developer portal, referred to as *SpotDev* in the earlier release, includes 
  ** The *Handle custom actions* checkbox on the *Playground* pages allows you to view the code for the custom action event.
  ** The *Navigate to URL* checkbox on the *Playground* > *Full app* page allows you to set a URL path to navigate to when the embedded application loads.
 * Custom action Configuration + You can now configure custom actions for embedded Liveboards and visualization pages.
-You can also set a custom action as a primary menu command, or as a menu item in the *More* menu image:{{ site.baseurl }}/images/icon-more-10px.png[the more options menu].
+You can also set a custom action as a primary menu command, or as a menu item in the *More* menu image:icon-more-10px.png[the more options menu].
 * Security settings + The *Security Settings* page in the developer portal includes the following new features:
  ** Users with developer and admin privileges can now add external application domains to the Content Security Policy (CSP) and Cross-Origin Resource Sharing (CORS) whitelist.
  ** Users with admin privileges can add the SAML redirect domains to the allowed list of domains, and thus provide a seamless login experience for federated users who request access to the embedded ThoughtSpot content.
@@ -622,7 +622,7 @@ Refer to xref:join-add.adoc#table-join[Table joins].+++</dlentry>++++++<dlentry 
 Use the new Liveboard Export API to programmatically download Liveboards, or specific visualizations from the Liveboards, as PDFs.
 Refer to link:{{ site.baseurl }}/reference/api/rest-api-reference.html[REST API reference].+++</dlentry>++++++<dlentry id="spotiq-analyze">+++Support for SpotIQ Analyze::::
 In this release, ThoughtSpot Cloud adds support for SpotIQ analyze.
-Now you can analyze any answer, Liveboard visualization, or data source to generate instant insights, by clicking the SpotIQ analyze button image:{{ site.baseurl }}/images/icon-lightbulb.png[SpotIQ analyze icon].
+Now you can analyze any answer, Liveboard visualization, or data source to generate instant insights, by clicking the SpotIQ analyze button image:icon-lightbulb.png[SpotIQ analyze icon].
 For more information, see link:{{ site.baseurl }}/spotiq/customization.html[Custom SpotIQ analysis].+++</dlentry>+++
 
 [#feb-cloud-business-user]

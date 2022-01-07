@@ -225,7 +225,7 @@ Using `date` as your shard key would result in data skew, and would impact perfo
 +
 Here is an example of data skew, where `Los Angeles` has many more transactions than the average, so you should not use `store county` as your sharding key.
 +
-image::{{ site.baseurl }}/images/sharding-skew.png[Skew example]
+image::sharding-skew.png[Skew example]
 +
 You may also have to clean up your data and any null values before sharding.
 For example, your retail data may have a `customer` column.

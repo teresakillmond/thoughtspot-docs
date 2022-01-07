@@ -51,7 +51,7 @@ Then, the Liveboard schedule notifies the specified recipients if any of these r
 After you determine your business rules, create a view that includes these rules.
 This makes the gating condition formula much simpler and ensures that the formula returns a single result, rather than multiple rows of data.
 
-image::{{ site.baseurl }}/images/gating-condition-view-example.png[Gating condition view example]
+image::gating-condition-view-example.png[Gating condition view example]
 
 This answer, saved as a view, contains multiple formulas that help determine if a sales, product, or customer exception occurred.
 The `sales exception` formula uses the `delta sales %` formula, which in turn uses the `max sales` and `max sales -1` formulas.
@@ -64,7 +64,7 @@ In the image above, the sales and customer exceptions are `true`, which should r
 Now you have a view where you define the three exceptions that suggest your data loads have invalid data.
 Next, you must create the Liveboard ThoughtSpot sends out at the scheduled time if the gating condition is met.
 
-image::{{ site.baseurl }}/images/gating-condition-pinboard-example.png[Gating condition Liveboard example]
+image::gating-condition-pinboard-example.png[Gating condition Liveboard example]
 
 This Liveboard contains optional answers to provide information about which exceptions failed.
 The Liveboard can contain any information relevant to the alert.
@@ -75,7 +75,7 @@ Note that the Liveboard title, *ThoughtSpot Validation Alert - Data Validation* 
 
 After you create your view and Liveboard, follow the directions in xref:liveboard-schedule.adoc[Schedule a Liveboard job] to create the Liveboard schedule.
 
-image::{{ site.baseurl }}/images/gating-condition-pinboard-schedule-example.png[Gating condition Liveboard schedule example]
+image::gating-condition-pinboard-schedule-example.png[Gating condition Liveboard schedule example]
 
 In this example, the `Repeats` value, which determines how frequently ThoughtSpot emails the Liveboard, is set to send the email every weekday at 9 A.M.
 You may want to set this value to a more or less frequent cadence, depending on your business needs.
@@ -98,7 +98,7 @@ If (sales exception or product exception or customer exception) then true else f
 
 In the gating condition formula editor, it looks like this:
 
-image::{{ site.baseurl }}/images/gating-condition-formula-example.png[Gating condition formula example]
+image::gating-condition-formula-example.png[Gating condition formula example]
 
 The operators (if...then...else) are in blue, and the columns, defined by the view, are in purple.
 
