@@ -1,8 +1,9 @@
-= ["Delete a worksheet or table"]
+= Delete a worksheet or table
 :last_updated: 11/05/2021
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: When you try to delete a worksheet or a table, you see a message listing any dependent objects that must be removed first.
+:linkattrs:
+:experimental:
+:page-aliases: /admin/worksheets/delete-worksheet.adoc
+:description: When you try to delete a worksheet or a table, you see a message listing any dependent objects that must be removed first.
 
 {% include content/liveboards-announcement.md %}
 
@@ -16,7 +17,7 @@ To delete a worksheet or table:
 . Find the worksheet or table you want to remove in the list, and check the box next to its name.
 . Click the *Delete* icon.
 +
-image::{{ site.baseurl }}/images/delete_object.png[]
+image::delete_object.png[]
 +
 If you are attempting to delete a data source with dependent objects, the operation will be blocked.
 You will see a warning, with a list of dependent objects with links.
@@ -25,7 +26,7 @@ You will see a warning, with a list of dependent objects with links.
 +
 When all its dependencies are removed, you will be able to delete the data source.
 +
-image::{{ site.baseurl }}/images/dependency_warning_with_links.png[]
+image::dependency_warning_with_links.png[]
 
 . You can also click the name of a worksheet or table and then click *Dependents*, to see a list of dependent objects with links.
 +
@@ -33,4 +34,4 @@ The *Dependents* list shows the names of the dependent objects (worksheets and L
 You can use this information to determine the impact of changing the structure of the data source or to see how widely used it is.
 Click a dependent object to modify or delete it.
 +
-image::{{ site.baseurl }}/images/dependents.png[]
+image::dependents.png[]

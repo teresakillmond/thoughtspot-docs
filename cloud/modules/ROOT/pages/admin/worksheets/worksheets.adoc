@@ -1,9 +1,9 @@
-'''
-
-title: [Create and use worksheets]
-
-last_updated: 7/21/2021 summary: "Worksheets are flat tables created by joining columns from a set of one or more tables or imported datasets.
-" sidebar: mydoc_sidebar permalink: /:collection/:path.html --
+= Create and use worksheets
+:last_updated: 7/21/2021
+:linkattrs:
+:experimental:
+:page-aliases: /admin/worksheets/about-worksheets.adoc
+:description: Worksheets are flat tables created by joining columns from a set of one or more tables or imported datasets.
 
 After xref:data-modeling.adoc[modeling your data], create worksheets to make searching easier.
 For example, a sales executive might need to search for information about retail sales.
@@ -38,7 +38,7 @@ The process for creating a worksheet is:
 . <<create-worksheet,Create a new Worksheet>>.
 If the worksheet already exists in another cluster, you can migrate it link:{{ site.baseurl }}/admin/ts-cloud/scriptability.html[using a flat `yaml` file].
 . Add sources (tables) to the worksheet.
-. Choose the link:progressive-joins.html#[worksheet join rule].
+. Choose the xref:worksheet-progressive-joins.adoc#[worksheet join rule].
 . Select the columns to include.
 +
 {% include note.html content="ThoughtSpot supports multiple join paths for worksheets.
@@ -46,9 +46,9 @@ For example, you may have a fact table joined to a dimension table more than onc
 When adding attribute columns from that dimension table to your worksheet, ThoughtSpot prompts you to choose which join path you would like to use for that column.
 To use multiple join paths, select that attribute again, modify the name, and choose the other join path when ThoughtSpot prompts you to select one." %}
 
-. Optionally link:mod-ws-internal-joins.html#[modify the join types] within the worksheet.
-. Optionally link:create-formula.html#[create formulas].
-. Optionally link:create-ws-filter.html#[create worksheet filters].
+. Optionally xref:join-worksheet-edit.adoc#[modify the join types] within the worksheet.
+. Optionally xref:worksheet-formula.adoc#[create formulas].
+. Optionally xref:worksheet-filter.adoc#[create worksheet filters].
 . Save the worksheet.
 . link:{{ site.baseurl }}/admin/data-security/share-worksheets.html#[Share the worksheet with groups or users].
 
@@ -86,7 +86,7 @@ Note that the list of sources only shows the data sources on which you have view
 +
 image::{{ site.baseurl }}/images/worksheet-create-choose-sources.png[Choose sources]
 
-. Choose the link:progressive-joins.html#[worksheet join rule].
+. Choose the xref:worksheet-progressive-joins.adoc#[worksheet join rule].
 Either *apply joins progressively* or *apply all joins*.
 Applying joins progressively speeds up performance.
 . If you want to disable link:{{ site.baseurl }}/admin/data-security/row-level-security.html#[Row Level Security] for this worksheet, check the checkbox to disable it.
@@ -99,9 +99,9 @@ Applying joins progressively speeds up performance.
 +
 Note that after you add a column, non-related tables (those without a primary/foreign key relationship) become hidden.
 If you are working with two tables that should be related, but are not, you can xref:relationships.adoc#[add a relationship between them].
-. (Optional) link:mod-ws-internal-joins.html#[Modify the join types] within the worksheet.
-. (Optional) link:create-formula.html#[Create formulas].
-. (Optional) link:create-ws-filter.html#[Create worksheet filters].
+. (Optional) xref:join-worksheet-edit.adoc#[Modify the join types] within the worksheet.
+. (Optional) xref:worksheet-formula.adoc#[Create formulas].
+. (Optional) xref:worksheet-filter.adoc#[Create worksheet filters].
 . Click the ellipsis icon image:{{ site.baseurl }}/images/icon-ellipses.png[more options menu icon], and select *Save*.
 . In the Save Worksheet window, enter a name and description for your worksheet and click *SAVE*.
 . (Optional) Click each column name and enter a more user-friendly name for searching.
@@ -118,5 +118,5 @@ image::{{ site.baseurl }}/images/worksheet-create-save.png[Save your worksheet]
 
 == Where to go next
 
-* *link:{{ site.baseurl }}/admin/worksheets/progressive-joins.html[How the worksheet join rule works]* + Use the worksheet join rule to specify when to apply joins when a search is done on a worksheet.
+* *xref:worksheet-progressive-joins.adoc[How the worksheet join rule works]* + Use the worksheet join rule to specify when to apply joins when a search is done on a worksheet.
 You can either apply joins progressively, as each search term is added (recommended), or apply all joins to every search.

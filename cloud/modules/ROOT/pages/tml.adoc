@@ -728,7 +728,7 @@ Specifies the cardinality of the join.
 This is an optional parameter.
 + Possible values: `true`, `false` + Default: `false`+++</dlentry>++++++<dlentry id="join">+++join::::  Specific join, used in defining higher-level objects, such as table paths + Defined as `name` within `joins` definition+++</dlentry>++++++<dlentry id="join_path">+++join_path::::
 Specification of a composite join as a list of distinct `join` attributes + These `join` attributes list relevant joins, previously defined in the `joins`, by name.
-+ Default: `{}`+++</dlentry>++++++<dlentry id="join_progressive">+++join_progressive::::  Specifies when to apply joins on a worksheet + Possible values: `true` when joins are applied only for tables whose columns are included in the search, and `false` for all possible joins + Default: `true` + See link:../worksheets/progressive-joins.html[How the worksheet join rule works]+++</dlentry>++++++<dlentry id="joins">+++joins::::  Contains a list of joins between the tables and Views.
++ Default: `{}`+++</dlentry>++++++<dlentry id="join_progressive">+++join_progressive::::  Specifies when to apply joins on a worksheet + Possible values: `true` when joins are applied only for tables whose columns are included in the search, and `false` for all possible joins + Default: `true` + See xref:worksheet-progressive-joins.adoc[How the worksheet join rule works]+++</dlentry>++++++<dlentry id="joins">+++joins::::  Contains a list of joins between the tables and Views.
 
 If you edit the joins in the Worksheet or View TML file, you are only editing the joins for that specific Worksheet or View.
 You are not editing the joins at the table level.
