@@ -10,8 +10,8 @@ This operation computes the data for the view and stores it in memory, just like
 You can expect a 3-6 times performance improvement on a materialized view over a view that is not materialized.
 However, materialized views take up space in memory, so weigh the tradeoffs and benefits of materializing a view ahead of time.
 
-{% include note.html content="Row Level Security does not apply to materialized views.
-All users will see the same data when using the materialized view as a data source." %}
+NOTE: Row Level Security does not apply to materialized views.
+All users will see the same data when using the materialized view as a data source.
 
 To materialize a view:
 
@@ -27,8 +27,8 @@ image::{{ site.baseurl }}/images/materialization_dialog_off.png[]
 +
 image::{{ site.baseurl }}/images/materialize-details.png[]
 +
-{% include note.html content="If you do not fill in the sharding details, the view will be replicated on every node of your cluster.
-If you're not sure what to fill in, ask your ThoughtSpot administrator, or follow the links in this step to learn more about sharding." %}
+NOTE: If you do not fill in the sharding details, the view will be replicated on every node of your cluster.
+If you're not sure what to fill in, ask your ThoughtSpot administrator, or follow the links in this step to learn more about sharding.
 
 . Click *Materialize*.
 . In the *Schedule data updates* dialog, select an option for *Repeats* (Monthly, Weekly, or Daily).

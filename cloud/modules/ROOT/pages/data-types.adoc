@@ -35,8 +35,8 @@ Choose a data type for each column from the list of supported data types:+++<tab
     +++<td>++++++<code>+++DATE+++</code>+++,  +++<code>+++DATETIME+++</code>+++, +++<code>+++TIMESTAMP+++</code>+++, +++<code>+++TIME+++</code>++++++</td>+++
     +++<td>++++++<code>+++DATETIME+++</code>+++, +++<code>+++TIMESTAMP+++</code>+++, and +++<code>+++TIME+++</code>+++ are stored at the granularity of seconds. +++<code>+++TIMESTAMP+++</code>+++ is identical to +++<code>+++DATETIME+++</code>+++, but is included for syntax compatibility.+++</td>++++++</tr>++++++</table>+++
 
-{% include warning.html content="There is a 64MB limitation on the number of characters for `VARCHAR`.
-If you have any `VARCHAR` data that exceeds this limit, the entire load will fail."%}
+WARNING: There is a 64MB limitation on the number of characters for `VARCHAR`.
+If you have any `VARCHAR` data that exceeds this limit, the entire load will fail.
 
 == Geographical data types
 
@@ -109,4 +109,6 @@ These data types can be designated as geographical data, which enables them to b
 * Other Sub-nation Regions, which are administrative regions found in countries other than the United States, for example:
  ** bremen
  ** normandy
- ** west midlands {% include important.html content="You cannot upload your own custom boundaries." %}
+ ** west midlands
+
+IMPORTANT: You cannot upload your own custom boundaries.

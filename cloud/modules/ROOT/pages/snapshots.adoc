@@ -8,8 +8,8 @@
 
 To work with snapshots, use the `tscli` command line interface.
 
-{% include warning.html content="Backups rely on the snapshot system, so you must never disable the periodic snapshot system.
-If you disable periodic snapshots and enable periodic backups, the backups either fail or use an outdated snapshot." %}
+WARNING: Backups rely on the snapshot system, so you must never disable the periodic snapshot system.
+If you disable periodic snapshots and enable periodic backups, the backups either fail or use an outdated snapshot.
 
 [#manual-snapshot]
 == Create a manual snapshot
@@ -22,7 +22,7 @@ To delete a snapshot, contact xref:support-contact.adoc#[ThoughtSpot Support].
 ThughtSpot generates a snapshot in approximately 20 seconds, depending on the size of the cluster.
 To restore from a snapshot, contact xref:support-contact.adoc#[ThoughtSpot Support].
 
-{% include note.html content="During an upgrade, all snapshots from the previous version of ThoughtSpot become manual snapshots." %}
+NOTE: During an upgrade, all snapshots from the previous version of ThoughtSpot become manual snapshots.
 
 [#snapshot-tscli]
 === Create a snapshot using tscli
@@ -120,8 +120,8 @@ For detailed information about understanding the schedule, see xref:backup-sched
 
 Do not change the default policy, unless it is recommended by xref:support-contact.adoc#[ThoughtSpot Support].
 
-{% include note.html content="Your policy must hold no more than 20 snapshots at any time.
-Exceeding this number impacts cluster performance." %}
+NOTE: Your policy must hold no more than 20 snapshots at any time.
+Exceeding this number impacts cluster performance.
 
 To update your current periodic snapshot policy, follow these steps:
 
