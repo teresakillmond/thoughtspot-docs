@@ -8,8 +8,8 @@
 include::partial$liveboards-announcement.adoc[]
 
 You can change data modeling settings in two ways, both of which change the model.
-If you want to make a few small changes, you should link:{{ site.baseurl }}/admin/data-modeling/model-data-in-UI.html[make them in the ThoughtSpot application].
-If you want to make many changes link:{{ site.baseurl }}/admin/data-modeling/edit-model-file.html#[you should edit the modeling file].
+If you want to make a few small changes, you should xref:model-data-UI.adoc[make them in the ThoughtSpot application].
+If you want to make many changes xref:data-modeling-edit.adoc#[you should edit the modeling file].
 Whether you are changing data modeling settings using the modeling file or the Web interface, the settings and their accepted values are the same.
 
 == Modeling settings
@@ -19,12 +19,12 @@ The following index includes mutable data modeling settings that you can apply t
 |===
 | Setting&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description |  |
 
-| link:change-column-basics.adoc#change-the-column-name#[Column Name]
+| xref:data-modeling-column-basics.adoc#change-the-column-name#[Column Name]
 | Sets the name of the column to be used in searches.
 |
 |
 
-| link:change-column-basics.adoc#change-column-description[Description]
+| xref:data-modeling-column-basics.adoc#change-column-description[Description]
 | Adds a text description of what the column contains.
 |
 |
@@ -34,17 +34,17 @@ The following index includes mutable data modeling settings that you can apply t
 |
 |
 
-| link:change-column-basics.adoc#change-column-type[Column Type]
+| xref:data-modeling-column-basics.adoc#change-column-type[Column Type]
 | Sets the type of column, either `ATTRIBUTE` or `MEASURE`.
 |
 |
 
-| link:change-aggreg-additive.adoc#[Additive]
+| xref:data-modeling-aggreg-additive.adoc#[Additive]
 | Controls the type of aggregations that will be available for a column.
 |
 |
 
-| link:change-aggreg-additive.adoc#[Aggregation]
+| xref:data-modeling-aggreg-additive.adoc#[Aggregation]
 | Sets the default aggregation type for a column.
 |
 |
@@ -66,32 +66,32 @@ By Default, all columns are included in SpotIQ.
 | // endif::software[]
 -->
 
-| link:change-index.adoc#[Index Type]
+| xref:data-modeling-index.adoc#[Index Type]
 | Sets the type of index that will be created for a column.
 |
 |
 
-| link:model-geo-data.adoc#[Geo Config]
+| xref:data-modeling-geo-data.adoc#[Geo Config]
 | Enables a column to be used in geo map visualizations.
 |
 |
 
-| link:change-index.adoc#[Index Priority]
+| xref:data-modeling-index.adoc#[Index Priority]
 | Changes the priority of a column in search suggestions.
 |
 |
 
-| link:set-format-pattern-numbers.adoc#[Format Pattern]
+| xref:data-modeling-patterns.adoc#[Format Pattern]
 | Specifies the format to use for numeric values or dates that show in the column.
 |
 |
 
-| link:set-format-pattern-numbers.adoc#set-currency-type[Currency Type]
+| xref:data-modeling-patterns.adoc#set-currency-type[Currency Type]
 | Specifies the format of currencies in a column.
 |
 |
 
-| link:attributable-dimension.adoc#[Attribution Dimension]
+| xref:data-modeling-attributable-dimension.adoc#[Attribution Dimension]
 | Only applies to tables that join over a xref:chasm-trap.adoc#[Chasm Trap].
 Designates whether the tables depend on this column for attribution.
 You cannot change the attribution dimension in the modeling file.
@@ -125,5 +125,5 @@ For example, if you've changed the geo map setting from "None" to "Country", you
 
 == Related information
 
-* link:{{ site.baseurl }}/admin/data-modeling/about-data-modeling-intro.html[Model the data for searching]
-* link:{{ site.baseurl }}/admin/data-modeling/model-geo-data.html[Add a geographical data setting for a column]
+* xref:data-modeling.adoc[Model the data for searching]
+* xref:data-modeling-geo-data.adoc[Add a geographical data setting for a column]

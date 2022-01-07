@@ -1,7 +1,8 @@
-= ["Set number, date, and currency formats"]
+= Set number, date, and currency formats
 :last_updated: 07/07/2021
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
+:linkattrs:
+:experimental:
+:page-aliases: /admin/data-modeling/set-format-pattern-numbers.adoc
 :description: Learn how to set key formats for column values.
 
 You can set number, date, and currency display formats.
@@ -84,7 +85,7 @@ These are some examples of formats you can use:
 
 {% include content/data-modeling-strings.md %}
 
-You can change the date format used to display a column's values link:{{ site.baseurl }}/admin/data-modeling/model-data-in-UI.html[for a single table or Worksheet] or, by editing the data model, for link:{{ site.baseurl }}/admin/data-modeling/edit-model-file.html[the entire ThoughtSpot instance].
+You can change the date format used to display a column's values xref:model-data-UI.adoc[for a single table or Worksheet] or, by editing the data model, for xref:data-modeling-edit.adoc[the entire ThoughtSpot instance].
 To edit the data model file, you must have administrative privileges.
 To change the date format, follow these steps:
 
@@ -107,7 +108,7 @@ For daily dates, ThoughtSpot uses each user's locale to determine whether to dis
 You can set a format for how currencies display in tables and charts when using the ThoughtSpot Data API or embedding.
 For example, you can display currencies in a standard European Euro or US Dollar format, based on the data modeling setting *Currency Type*.
 
-You can change the currency format used to display a column's values link:{{ site.baseurl }}/admin/data-modeling/model-data-in-UI.html[for a single table].
+You can change the currency format used to display a column's values xref:model-data-UI.adoc[for a single table].
 When you specify the currency type of your data in the *Columns* settings, your currency data will only display the correct format and currency code in the embedded use case.
 Currency specific symbols are available in the non-embedded use case as well, but they are not localized.
 
@@ -142,4 +143,4 @@ This option is disabled if there is no `VARCHAR` column to choose from.
 
 == Related information
 
-link:{{ site.baseurl }}/admin/data-modeling/about-data-modeling-intro.html[Model the data for searching]
+xref:data-modeling.adoc[Model the data for searching]

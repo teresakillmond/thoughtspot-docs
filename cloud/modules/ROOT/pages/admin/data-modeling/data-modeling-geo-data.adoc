@@ -1,7 +1,8 @@
-= ["Add a geographical data setting"]
+= Add a geographical data setting
 :last_updated: 3/26/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
+:linkattrs:
+:experimental:
+:page-aliases: /admin/data-modeling/model-geo-data.adoc
 :description: Learn how to model your geographical data.
 
 Certain attribute columns that contain location data can be used to create Geo maps.
@@ -27,7 +28,7 @@ If you are using a column with the data type `DOUBLE` for latitude and longitude
 * set *Additive* to `NO`
 * set *Aggregation Type* to `NONE`
 
-For information on these settings, see link:change-aggreg-additive.html[Set ADDITIVE or AGGREGATION].
+For information on these settings, see xref:data-modeling-aggreg-additive.adoc[Set ADDITIVE or AGGREGATION].
 
 As a best practice, you should make the following changes to your geographical data *_before_* importing it to ThoughtSpot:
 
@@ -40,7 +41,7 @@ As a best practice, you should make the following changes to your geographical d
 +  + According to the 2010 Census, there are 31 distinct Washington Counties in the United States.
 +  + To account for multiple different geographical entities with the same name, you must be specific within your data.
 +  + A value of _Washington County_ without a state attached to it may result in incorrect or incomplete geo maps.
-| image:{{ site.baseurl }}/images/wa-county.png[Washington Counties in United States]
+| image:wa-county.png[Washington Counties in United States]
 |===
 
 == How to edit geographic columns
@@ -48,7 +49,7 @@ As a best practice, you should make the following changes to your geographical d
 . Find the *GEO CONFIG* for the column that contains the geographical data.
 . Select the column to display the *Specify Geographic Configuration* dialog.
 +
-image::{{ site.baseurl }}/images/geomap-config.png[Configure geo data]
+image::geomap-config.png[Configure geo data]
 
 . Change the value to the appropriate *GEO CONFIG*, depending on the kind of geo data the column contains.
 +
@@ -65,4 +66,4 @@ For a complete list of supported geo maps in ThoughtSpot, refer to: link:{{ site
 
 == Related information
 
-link:{{ site.baseurl }}/admin/data-modeling/about-data-modeling-intro.html[Model the data for searching]
+xref:data-modeling.adoc[Model the data for searching]
