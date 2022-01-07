@@ -1,8 +1,9 @@
-= ["How to change a schema"]
+= How to change a schema
 :last_updated: 11/05/2021
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: After you've created a schema and loaded data, you may find yourself wishing you'd set things up a little differently. You can make changes to the schema, such as changing the primary key, relationships to other tables, and sharding.
+:linkattrs:
+:experimental:
+:page-aliases: /admin/loading/change-schema.adoc
+:description: After you've created a schema and loaded data, you may find yourself wishing you'd set things up a little differently. You can make changes to the schema, such as changing the primary key, relationships to other tables, and sharding.
 
 {% include content/liveboards-announcement.md %}
 
@@ -29,7 +30,7 @@ Any dependent objects (Liveboards or worksheets) will remain intact.
 To change the primary key of a table:
 
 . xref:snapshots.adoc[Create a manual snapshot].
-. link:prep-schema-for-load.adoc#connect-with-tql[Connect to the database with the ThoughtSpot SQL Command Line (TQL)].
+. xref:prep-schema-for-load.adoc#connect-with-tql[Connect to the database with the ThoughtSpot SQL Command Line (TQL)].
 . Drop the existing primary key (if any), by issuing a command like this example:
 +
 ----
@@ -69,7 +70,7 @@ Any dependent objects (Liveboards or worksheets) will remain intact.
 To change the relationship between tables:
 
 . xref:snapshots.adoc[Create a manual snapshot].
-. link:prep-schema-for-load.html#connect-with-tql[Connect to the database with the ThoughtSpot SQL Command Line (TQL)].
+. xref:prep-schema-for-load.adoc#connect-with-tql[Connect to the database with the ThoughtSpot SQL Command Line (TQL)].
 . Issue the command to drop the existing relationship
 +
 Before dropping a relationship TQL checks for and then warns of any dependent objects.
@@ -137,7 +138,7 @@ You can use these steps to do any of these operations:
 To change the sharding on a table:
 
 . xref:snapshots.adoc[Create a manual snapshot].
-. link:prep-schema-for-load.html#connect-with-tql[Connect to the database with the ThoughtSpot SQL Command Line (TQL)].
+. xref:prep-schema-for-load.adoc#connect-with-tql[Connect to the database with the ThoughtSpot SQL Command Line (TQL)].
 . Issue the command to change the sharding using this syntax:
 +
 ----

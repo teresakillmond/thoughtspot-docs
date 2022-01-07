@@ -1,8 +1,9 @@
-= ["Sharding"]
+= Sharding
 :last_updated: 3/16/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Sharding partitions very large tables into smaller, faster, more easily managed parts called data shards.
+:linkattrs:
+:experimental:
+:page-aliases: /admin/loading/sharding.adoc
+:description: Sharding partitions very large tables into smaller, faster, more easily managed parts called data shards.
 
 ThoughtSpot tables can be replicated or sharded.
 Replicated tables exist in their entirety, as the complete data set, on each node.
@@ -74,11 +75,12 @@ PARTITION BY HASH (96) KEY ("customer_id");
 ----
 
 Note the following parameters, specified above as `96` and `"customer_id"`:
-+++<dlentry>+++HASH::::
+HASH::
 Determines the number of shards.
-In this case, `96`.+++</dlentry>++++++<dlentry>+++KEY::::
+In this case, `96`.
+KEY::
 Specifies how to assign data into the shards (shard key).
-In this case, `customer_id`.+++</dlentry>+++
+In this case, `customer_id`.
 
 The recommended number of shards depends on the number of nodes in the cluster:
 

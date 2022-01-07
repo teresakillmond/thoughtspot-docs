@@ -1,8 +1,9 @@
-'''
-
-title: [About materialized views]
-
-last_updated: 10/31/2018 summary: "You can materialize a view to improve its performance." toc: false sidebar: mydoc_sidebar permalink: /:collection/:path.html --
+= About materialized views
+:last_updated: 10/31/2018
+:linkattrs:
+:experimental:
+:page-aliases: /admin/loading/materialized-views.adoc
+:description: You can materialize a view to improve its performance.
 
 == Introduction to materialized views
 
@@ -21,9 +22,9 @@ All users will see the same data when using the materialized view as a data sour
 
 These are the operations you can do on a view:
 
-* link:{{ site.baseurl }}/admin/loading/materialize-a-view.html[Materialize a view] to improve performance,
-* link:{{ site.baseurl }}/admin/loading/dematerialize-a-view.html[Dematerialize a view] to save space, or
-* link:{{ site.baseurl }}/admin/loading/refresh-view.html[Refresh a view] to synchronize its data with the latest data load to the underlying tables.
+* xref:view-materialize.adoc[Materialize a view] to improve performance,
+* xref:view-dematerialize.adoc[Dematerialize a view] to save space, or
+* xref:view-refresh.adoc[Refresh a view] to synchronize its data with the latest data load to the underlying tables.
 * Check the status of a view.
 
 After materializing, a view can have one of three statuses.
@@ -73,7 +74,7 @@ Optionally run a report.
 Your view can become stale, if it isn't refreshed when the data in the tables used to create it is updated.
 There are two ways to refresh the data:
 
-* link:{{ site.baseurl }}/admin/loading/refresh-view.html[Manually refresh data in a view]
+* xref:view-refresh.adoc[Manually refresh data in a view]
 * link:{{ site.baseurl }}/admin/loading/schedule-materialization.html[Refresh the view on a schedule]
 
 Here are some conditions that could lead to a view becoming stale:
@@ -88,4 +89,4 @@ Here are some conditions that could lead to a view becoming stale:
 
 * link:{{ site.baseurl }}/complex-search/about-query-on-query.html[Understand views]
 * xref:searches-views.adoc[Save a search as a view]
-* link:{{ site.baseurl }}/admin/loading/materialize-a-view.html[Materialize a view]
+* xref:view-materialize.adoc[Materialize a view]

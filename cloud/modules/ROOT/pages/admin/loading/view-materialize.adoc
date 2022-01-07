@@ -1,8 +1,9 @@
-'''
-
-title: [Materialize a view]
-
-last_updated: 11/2/2018 summary: "Learn how to materialize a view to improve its performance." toc: false sidebar: mydoc_sidebar permalink: /:collection/:path.html --
+= Materialize a view
+:last_updated: 11/2/2018
+:linkattrs:
+:experimental:
+:page-aliases: /admin/loading/materialize-a-view.adoc
+:description: Learn how to materialize a view to improve its performance.
 
 To improve the performance of a view, you can materialize it.
 This operation computes the data for the view and stores it in memory, just like a table.
@@ -22,7 +23,7 @@ To materialize a view:
 +
 image::{{ site.baseurl }}/images/materialization_dialog_off.png[]
 
-. Fill in the details for link:{{ site.baseurl }}/admin/loading/constraints.html[primary key], link:{{ site.baseurl }}/admin/loading/sharding.html[sharding key, and number of shards].
+. Fill in the details for xref:constraints.adoc[primary key], xref:sharding.adoc[sharding key, and number of shards].
 +
 image::{{ site.baseurl }}/images/materialize-details.png[]
 +
@@ -50,12 +51,12 @@ image::{{ site.baseurl }}/images/materialization-update-status.png[]
 +
 image::{{ site.baseurl }}/images/materialization-dialog-on.png[]
 +
-If after some time, the status has not changed to *Materialized*, check the link:{{ site.baseurl }}/admin/loading/materialized-views.html#materialization-status[list of statuses] and corresponding actions to take.
+If after some time, the status has not changed to *Materialized*, check the xref:views-materialized.adoc#materialization-status[list of statuses] and corresponding actions to take.
 
 == Related Information
 
 * link:{{ site.baseurl }}/complex-search/about-query-on-query.html[Understand views]
 * xref:searches-views.adoc[Save a search as a view]
-* link:{{ site.baseurl }}/admin/loading/materialized-views.html[About materialized views]
-* link:{{ site.baseurl }}/admin/loading/constraints.html[Constraints]
-* link:{{ site.baseurl }}/admin/loading/sharding.html[Sharding]
+* xref:views-materialized.adoc[About materialized views]
+* xref:constraints.adoc[Constraints]
+* xref:sharding.adoc[Sharding]

@@ -1,8 +1,9 @@
-= ["Import CSV files with tsload"]
+= Import CSV files with tsload
 :last_updated: 03/07/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:summary: Use the <code>tsload</code> command to import data from a CSV file.
+:linkattrs:
+:experimental:
+:page-aliases: /admin/loading/use-data-importer.adoc
+:description: Use the <code>tsload</code> command to import data from a CSV file.
 
 {% include access.html content="To add data into the system, you must have the required permissions.
 Initially, only the `Admin` user has that level of access." %}
@@ -14,11 +15,11 @@ When using `tsload`, you can load larger datasets and make the loading process r
 The `tsload` command accepts flags that enable you to specify column and row separators, date or timestamp formats, null value representations, and similar parameters.
 Many of these options have defaults that you can override.
 
-Before importing data, you need to link:create-schema.html#[build the schema].
+Before importing data, you need to xref:schema-create.adoc#[build the schema].
 
 After importing data, you can see it in the *Data* tab.
 
-image::{{ site.baseurl }}/images/data-tab.png[Click on the Data tab from the top navigation bar]
+image::data-tab.png[Click on the Data tab from the top navigation bar]
 
 == ThoughtSpot Loader
 
