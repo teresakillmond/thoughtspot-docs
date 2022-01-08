@@ -14,19 +14,19 @@ For Worksheets, the *SUGGEST VALUES IN SEARCH* section for a column determines w
 Additionally, ThoughtSpot uses a column's *INDEX PRIORITY* value to determine where to rank a column's name and values in the search suggestions.
 These values impact the dynamically calculated _usage based ranking (UBR)_.
 
-To configure certain aspects of ThoughtSpot's indexing behavior, refer to link:{{ site.baseurl }}/admin/ts-cloud/search-spotiq-settings.html#search[Managing search and SpotIQ settings].
+To configure certain aspects of ThoughtSpot's indexing behavior, refer to xref:search-spotiq-settings.adoc#search[Managing search and SpotIQ settings].
 
 == Example of Search suggestion behavior
 
 The following example illustrates how searching for `promotion_last_name t` causes the system to suggest several ways of completing the `t` in the search:
 
-image::{{ site.baseurl }}/images/index-type.png[]
+image::index-type.png[]
 
 The system is suggesting the synonym `type` (callout A) for a column in the `Promotion` table.
 It is also suggesting a value of `theil` (callout B) for the `Promotion_Last Name` column.
 If you look in the menu:Data[Tables] page, you can see that there is a `type` synonym for the `Promotion_Type` column which is using default indexing.
 
-image::{{ site.baseurl }}/images/index-row.png[]
+image::index-row.png[]
 
 Managing search suggestions through *INDEX TYPE* and *INDEX PRIORITY* is important.
 Properly configured suggestions can decrease "noise" in the suggestion list.
@@ -38,7 +38,7 @@ ThoughtSpot has a system default *INDEX TYPE* behavior for search suggestions fo
 This system default is configured on your cluster and applies to all tables.
 You can override this default behavior on a per-column basis.
 
-image::{{ site.baseurl }}/images/table-search-indexing.png[Table and View search indexing]
+image::table-search-indexing.png[Table and View search indexing]
 
 The system behavior when the *INDEX TYPE* is *DEFAULT* is as follows:
 
@@ -71,7 +71,7 @@ If you have concerns or questions, your ThoughtSpot Customer Success Engineer ca
 If you need to, you can work with ThoughtSpot Support or your Customer Success Engineer to configure new cluster defaults.
 
 Additionally, you can configure certain aspects of ThoughtSpot's indexing behavior from the Admin Console.
-Refer to link:{{ site.baseurl }}/admin/ts-cloud/search-spotiq-settings.html#search[Managing search and SpotIQ settings].
+Refer to xref:search-spotiq-settings.adoc#search[Managing search and SpotIQ settings].
 
 == Understand the indexing behavior for Worksheets
 
@@ -79,7 +79,7 @@ For Worksheets, you can only choose whether or not to index the column.
 You cannot choose an index type.
 When viewing a Worksheet, toggle the *SUGGEST VALUES IN SEARCH* option on or off.
 
-image::{{ site.baseurl }}/images/worksheet-search-indexing.png[Worksheet search indexing]
+image::worksheet-search-indexing.png[Worksheet search indexing]
 
 == Override the system default on a column
 
@@ -135,13 +135,13 @@ If you are using the model file, locate the *Index* cell, and enter the *INDEX T
 
 A column's *INDEX PRIORITY* determines the order or rank in which it and its values appear in the search dropdown.
 
-image::{{ site.baseurl }}/images/priority-effect.png[]
+image::priority-effect.png[]
 
 By default, the *INDEX PRIORITY* value is set to `1` for all columns.
 You can push a column up in the order (increase the rank) by increasing its *INDEX PRIORITY* value.
 A higher value (like `2`) will cause the corresponding column and its values to appear higher up in the search dropdown than columns with lower value (like `1`).
 
-image::{{ site.baseurl }}/images/set-priority.png[]
+image::set-priority.png[]
 
 You should only use numbers between 1-10 in the *INDEX PRIORITY* field.Use a value between `8-10` for important columns to improve their search ranking.
 Use `1-3` for low priority columns.
