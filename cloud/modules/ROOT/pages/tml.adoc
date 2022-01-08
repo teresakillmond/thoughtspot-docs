@@ -2,7 +2,7 @@
 :last_updated: 11/05/2021
 :linkattrs:
 :experimental:
-:page-aliases: /admin/ts-cloud/tml.adoc,/admin/ts-cloud/tsl.adoc, /admin/scriptability/tsl-table.adoc, /admin/scriptability/tsl-pinboard.adoc, /admin/scriptability/tsl-answer.adoc, /admin/scriptability/tsl-view.adoc, /admin/worksheets/yaml-worksheet.adoc, /admin/scriptability/tml-table.adoc, /admin/scriptability/tml-pinboard.adoc, /admin/scriptability/tml-answer.adoc, /admin/scriptability/tml-view.adoc, /admin/worksheets/tml-worksheet.adoc, /admin/worksheets/tsl-worksheet.adoc, /admin/ts-cloud/tsl-table.adoc, /admin/ts-cloud/tsl-pinboard.adoc, /admin/ts-cloud/tsl-answer.adoc, /admin/ts-cloud/tsl-view.adoc, /admin/ts-cloud/yaml-worksheet.adoc, /admin/ts-cloud/tml-worksheet.adoc, /admin/ts-cloud/tsl-worksheet.adoc
+:page-aliases: /admin/ts-cloud/tml.adoc, /admin/ts-cloud/tsl.adoc, /admin/scriptability/tsl-table.adoc, /admin/scriptability/tsl-pinboard.adoc, /admin/scriptability/tsl-answer.adoc, /admin/scriptability/tsl-view.adoc, /admin/worksheets/yaml-worksheet.adoc, /admin/scriptability/tml-table.adoc, /admin/scriptability/tml-pinboard.adoc, /admin/scriptability/tml-answer.adoc, /admin/scriptability/tml-view.adoc, /admin/worksheets/tml-worksheet.adoc, /admin/worksheets/tsl-worksheet.adoc, /admin/ts-cloud/tsl-table.adoc, /admin/ts-cloud/tsl-pinboard.adoc, /admin/ts-cloud/tsl-answer.adoc, /admin/ts-cloud/tsl-view.adoc, /admin/ts-cloud/yaml-worksheet.adoc, /admin/ts-cloud/tml-worksheet.adoc, /admin/ts-cloud/tsl-worksheet.adoc
 :description: Use TML to modify a ThoughtSpot object in a flat-file format. Then, migrate the object to a different cluster, or restore it to the same cluster.
 
 include::partial$content/liveboards-announcement.adoc[]
@@ -10,7 +10,7 @@ include::partial$content/liveboards-announcement.adoc[]
 Use TML to modify a ThoughtSpot object in a flat-file format. Then, migrate the object to a different cluster, or restore it to the same cluster.
 
 To work with Scriptable <<syntax-worksheets,worksheets>>, <<syntax-views,views>>, <<syntax-tables,tables>>, <<syntax-answers,answers>>, and <<syntax-pinboards,Liveboards>> in ThoughtSpot, you can download these objects to a flat file in `.TML` format, modify it, and subsequently upload this file either to the same cluster, or to a different cluster.
-To learn how to export, change, and update worksheets, views, tables, answers, and Liveboards, see link:{{ site.baseurl }}/admin/ts-cloud/scriptability.html[Scriptability].
+To learn how to export, change, and update worksheets, views, tables, answers, and Liveboards, see xref:scriptability.adoc[Scriptability].
 
 In this article, you learn the syntax of the TML files for each Scriptable object.
 You also learn how to <<syntax-joins,add and modify joins>> for Worksheets, Views, and tables.
@@ -737,10 +737,10 @@ To modify table-level joins, you must edit the source table's TML file.
 Each join is identified by `name`, and the additional attributes of `source`, `destination`, `type`, and `is_one_to_one.`+++</dlentry>++++++<dlentry id="joins_with">+++joins_with::::  Contains a list of external joins for which this table is the source.
 
 Each join is identified by `name` and optional `description`, and the additional attributes of `destination`, `type`, `on` and `is_one_to_one.`+++</dlentry>++++++<dlentry id="layout">+++layout::::  Specifies the Liveboard layout, in the order that a `visualization_id` is listed.+++</dlentry>++++++<dlentry id="lesson_plan_string">+++lesson_plan_string::::
-A string that represents the fully disambiguated search query used in a link:{{ site.baseurl }}/admin/ts-cloud/search-assist-coach.html[Search Assist Coach] lesson on a Worksheet.
+A string that represents the fully disambiguated search query used in a xref:search-assist-coach.adoc[Search Assist Coach] lesson on a Worksheet.
 For example, `"What is the [Quantity] of items from [Customer Nation].'egypt' per [Datekey].'day of week' by [Color] ?"`.
-Refer to https://developers.thoughtspot.com/docs/?pageid=search-data-api[Components of a Search Query] to understand syntax.+++</dlentry>++++++<dlentry id="lesson_plans">+++lesson_plans::::  A list of link:{{ site.baseurl }}/admin/ts-cloud/search-assist-coach.html[Search Assist Coach] lessons for the Worksheet.+++</dlentry>++++++<dlentry id="lesson_id">+++lesson_id::::
-The id of the link:{{ site.baseurl }}/admin/ts-cloud/search-assist-coach.html[Search Assist Coach] lesson.
+Refer to https://developers.thoughtspot.com/docs/?pageid=search-data-api[Components of a Search Query] to understand syntax.+++</dlentry>++++++<dlentry id="lesson_plans">+++lesson_plans::::  A list of xref:search-assist-coach.adoc[Search Assist Coach] lessons for the Worksheet.+++</dlentry>++++++<dlentry id="lesson_id">+++lesson_id::::
+The id of the xref:search-assist-coach.adoc[Search Assist Coach] lesson.
 For example, the first lesson to appear to users has an id of `0`, the next lesson has an id of `1`, and so on.+++</dlentry>++++++<dlentry id="locked">+++locked::::
 The 'automatically select my chart' option in the UI.
 If set to `true`, the chart type does not change, even when you add items to the query.+++</dlentry>++++++<dlentry id="max">+++max::::  Maximum value for conditional formatting.+++</dlentry>++++++<dlentry id="min">+++min::::  Minimum value for conditional formatting.+++</dlentry>++++++<dlentry id="name">+++name::::
