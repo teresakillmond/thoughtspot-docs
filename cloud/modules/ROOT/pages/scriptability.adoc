@@ -2,7 +2,7 @@
 :last_updated: 11/05/2021
 :linkattrs:
 :experimental:
-:page-aliases: /admin/ts-cloud/scriptability.adocc
+:page-aliases: /admin/ts-cloud/scriptability.adoc
 :description: Use Scriptability to export and import worksheets, views, tables, Liveboards, and answers in a human-readable format.
 
 include::partial$content/liveboards-announcement.adoc[]
@@ -25,11 +25,11 @@ The Scriptability feature supports several scenarios that you may encounter:
 Depending on how you want to use Scriptability, there are several workflows you can follow:
 
 . *Edit and update an existing object in the same cluster*: You can either
- ** <<export-object,export>> the object(s), edit the object(s) by modifying its link:{{ site.baseurl }}/admin/ts-cloud/tml.html[ThoughtSpot Modeling Language] (`TML`) representation, and <<update-object,import>> the updated file(s) to modify the existing object _or_
+ ** <<export-object,export>> the object(s), edit the object(s) by modifying its xref:tml.adoc[ThoughtSpot Modeling Language] (`TML`) representation, and <<update-object,import>> the updated file(s) to modify the existing object _or_
  ** edit the object(s) using the <<edit-tml,in-app `TML` editor>> and publish the updated file(s).
 . *Migrate an existing object from one cluster to a new cluster*: <<export-object,export>> the object(s) and <<migrate-object,import>> the updated file(s) to the new cluster.
 . *Edit and migrate an existing object from one cluster to a new cluster*: You can either
- ** <<export-object,export>> the object(s), edit the object(s) by modifying its link:{{ site.baseurl }}/admin/ts-cloud/tml.html[ThoughtSpot Modeling Language] (`TML`) representation, and <<migrate-object,import>> the updated file(s) to the new cluster _or_
+ ** <<export-object,export>> the object(s), edit the object(s) by modifying its xref:tml.adoc[ThoughtSpot Modeling Language] (`TML`) representation, and <<migrate-object,import>> the updated file(s) to the new cluster _or_
  ** edit the object(s) using the <<edit-tml,in-app `TML` editor>>, publish the updated file(s), <<export-object,export>> the object(s), and <<migrate-object,import>> the updated file(s) to the new cluster.
 Note that this workflow changes the object(s) in both clusters.
 
@@ -72,7 +72,7 @@ The individual object does not export, and you receive an error message about th
 
 You can export one object at a time or export more than one object as a zip file.
 The zip file contains a document called the `Manifest` file, which defines the objects you exported, and their underlying data sources.
-To export custom collections of related TML files, refer to link:{{ site.baseurl }}/admin/ts-cloud/tml-import-export-multiple.html#export-multiple[Migrate multiple TML files].
+To export custom collections of related TML files, refer to xref:tml-import-export-multiple.adoc#export-multiple[Migrate multiple TML files].
 
 ////
 {: id="export-one"}
@@ -90,7 +90,7 @@ To export one object:
 === How to export objects
 
 To export objects, follow these steps.
-To export custom collections of related TML files, refer to link:{{ site.baseurl }}/admin/ts-cloud/tml-import-export-multiple.html#export-multiple[Migrate multiple TML files].
+To export custom collections of related TML files, refer to xref:tml-import-export-multiple.adoc#export-multiple[Migrate multiple TML files].
 
 . Navigate to the *Answers*, *Liveboards*, or *Data* page from the top navigation bar, depending on the object(s) you want to export.
 +
@@ -122,7 +122,7 @@ The zip file still exports, even if an individual object's export fails.
 You can edit the `TML` file in one of two ways.
 You can <<export-object,export>> the object(s) and edit the file(s) in any text editor, before you import it.
 Or, you can use the <<tml-editor,in-app `TML` editor>> to edit, validate, and publish the object(s).
-Refer to link:{{ site.baseurl }}/admin/ts-cloud/tml.html[ThoughtSpot Modeling Language] for information on syntax in the TML files.
+Refer to xref:tml.adoc[ThoughtSpot Modeling Language] for information on syntax in the TML files.
 
 [#tml-editor]
 == Edit, validate, and publish objects using the TML editor
@@ -147,7 +147,7 @@ image::scriptability-edit-tml-object-page.png[Edit TML - object list page]
 // [Edit TML from object]({{ site.baseurl }}/images/scriptability-edit-tml-object.png "Edit TML from object")
 
 . The TML editor opens.
-Edit the TML file(s), using the syntax specified in link:{{ site.baseurl }}/admin/ts-cloud/tml.html[ThoughtSpot Modeling Language].
+Edit the TML file(s), using the syntax specified in xref:tml.adoc[ThoughtSpot Modeling Language].
 +
 The TML editor has the following functions under the top menu:
 
@@ -166,7 +166,7 @@ You can also click on a word or parameter in the TML editor, and the editor high
 *Show/Hide errors* toggles the *Errors* sidebar on and off.
 The *Errors* sidebar does not appear until after you Validate a file, if there are errors in it.
  ** *Help*: Documentation.
-This links to the link:{{ site.baseurl }}/admin/ts-cloud/tml.html[ThoughtSpot Modeling Language] documentation.
+This links to the xref:tml.adoc[ThoughtSpot Modeling Language] documentation.
 
 . When you finish editing the TML file(s), select *Validate* in the top right corner.
 You must validate each file individually.
@@ -191,7 +191,7 @@ image::scriptability-tsl-editor-publish-status.png[Open the object or return to 
 == Update an object
 
 You can overwrite an existing worksheet, view, table, answer, or Liveboard, by downloading the `TML` file, making any necessary changes, and then re-uploading the `TML` file.
-To update collections of objects packaged together as a zip file, refer to link:{{ site.baseurl }}/admin/ts-cloud/tml-import-export-multiple.html[Migrate multiple TML files].
+To update collections of objects packaged together as a zip file, refer to xref:tml-import-export-multiple.adoc[Migrate multiple TML files].
 
 You can also update an object using the <<tml-editor,TML editor>>.
 
@@ -235,7 +235,7 @@ You can open the object(s) that you imported, or click *Exit* to return to the m
 == Migrate an object
 
 To migrate an answer, Liveboard, view, or worksheet from one cluster to another, follow these steps.
-To migrate collections of objects packaged together as a zip file, refer to link:{{ site.baseurl }}/admin/ts-cloud/tml-import-export-multiple.html[Migrate multiple TML files].
+To migrate collections of objects packaged together as a zip file, refer to xref:tml-import-export-multiple.adoc[Migrate multiple TML files].
 Note that you cannot create a new table using Scriptability.
 You can only update existing tables.
 
@@ -282,4 +282,4 @@ include::partial$content/scriptability-limitations.adoc[]
 
 == Related information
 
-* link:{{ site.baseurl }}/admin/ts-cloud/tml.html[ThoughtSpot Modeling Language]
+* xref:tml.adoc[ThoughtSpot Modeling Language]
