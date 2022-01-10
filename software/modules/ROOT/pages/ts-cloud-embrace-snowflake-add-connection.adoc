@@ -1,13 +1,8 @@
 = Add a Snowflake connection
-:last_updated: 09/08/2021
-:linkattrs:
-:experimental:
-:page-partial:
-:linkattrs:
-:page-aliases: /data-integrate/embrace/embrace-snowflake-add.adoc
-
-[.lead]
-You can easily add a connection to a Snowflake database, enabling you to run live queries of an external database, create answers and pinboards.
+:last_updated: 8/11/2020
+:permalink: /:collection/:path.html
+:sidebar: mydoc_sidebar
+:toc: true
 
 == Prerequisites
 
@@ -112,15 +107,15 @@ Because the selected tables and columns in your connection are linked, it may ta
 This is because ThoughtSpot does not cache linked data.
 With linked data, ThoughtSpot queries the external database directly, which is slower than querying data that is stored in ThoughtSpot's database.
 
-'''
-> **Related information**
->
-> * xref:connections-snowflake-edit.adoc[]
-> * xref:connections-snowflake-remap.adoc[]
-> * xref:connections-snowflake-delete-table.adoc[]
-> * xref:connections-snowflake-delete-table-dependencies.adoc[]
-> * xref:connections-snowflake-delete.adoc[]
-//> * xref:connections-snowflake-modify.adoc[Modify a Snowflake connection]
-> * xref:connections-snowflake-reference.adoc[Snowflake connection reference]
-> * xref:data-load.adoc[Load and manage data]
-> * xref:security.adoc[Data and object security]
+You can modify a Snowflake connection in the following ways:
+
+* xref:connections-snowflake-edit-connection.adoc[Edit a Snowflake connection]
+* xref:connections-snowflake-remap-connection.adoc[Remap a Snowflake connection]
+* xref:connections-snowflake-delete-table.adoc[Delete a table from a Snowflake connection]
+* xref:connections-snowflake-delete-table-dependencies.adoc[Delete a table with dependent objects]
+
+You can also xref:connections-snowflake-delete-connection.adoc[Delete a Snowflake connection].
+
+See the xref:connections-snowflake-connection-reference.adoc[Connection reference] for details of connection parameters.
+
+We also recommend that you review xref:connections-snowflake-best-practices.adoc[Best Practices for Snowflake connections].
