@@ -45,7 +45,7 @@ removing these features for now per alok. may add back in
 Automated answer creation in Setup::
 We simplified the steps to create Search visualizations during Setup.
 Now, you can select measures, attributes and date columns and immediately view suggested answers and visualizations.
-For more information, see link:{{ site.baseurl }}/admin/ts-cloud/automated-answer-creation.html[Create answers in Setup].
+For more information, see xref:automated-answer-creation.adoc[Create answers in Setup].
 
 [#november-cloud-2021-business-user]
 === For the Business User
@@ -55,6 +55,7 @@ Starting in December 2021, ThoughtSpot refers to Liveboards instead of pinboards
 With Liveboards, you can have an interactive experience and get granular insights through live queries on cloud data, tailored for you.
 You can use Livebaords to iterate, explore, and drill into more insights, and tell a continuously evolving data story. +
 ThoughtSpot plans to support for several releases, and then retire, internal processes and external methods that use the older naming convention.
+
 [#session-validity]
 User session timeout and validity::
 ThoughtSpot increased the duration of *idle session timeouts* and the *maximum session validity*, when you click *Remember me* on the login screen.
@@ -75,7 +76,7 @@ Search suggestions::
 Search suggestions are now GA.
 When you xref:search-answers.adoc[search across existing answers and Liveboards], ThoughtSpot now offers search suggestions in the search bar, based on your past searches and popular searches in your environment, in addition to object suggestions.
 For example, if you type `Sal` in the search bar, it might now result in search suggestions like *Sales* and *Sales this year*, in addition to object suggestions like an existing Liveboard called *Sales in the east last year*.
-
++
 ThoughtSpot provides search suggestions before you begin typing, but not object suggestions.
 
 [#november-cloud-2021-data-engineer]
@@ -83,7 +84,7 @@ ThoughtSpot provides search suggestions before you begin typing, but not object 
 [#connections-snowflake-azure-ad-oauth]
 Azure AD external OAuth for Snowflake::
 Snowflake now supports external OAuth through Microsoft Azure AD.
-See link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-snowflake-azure-ad-oauth.html[Configure Azure AD external OAuth for a Snowflake connection].
+See xref:connections-snowflake-azure-ad-oauth.adoc[Configure Azure AD external OAuth for a Snowflake connection].
 
 ////
 removing for now per alok
@@ -97,7 +98,7 @@ removing for now per alok
 === For the IT Ops Engineer
 [#saml]
 SAML assertion validity::
-ThoughtSpot now supports 2 methods to increase the duration of validity for your link:{{ site.baseurl }}/admin/ts-cloud/authentication-integration.html#saml-assertion[SAML assertion]: the `SessionNotOnOrAfter` attribute and the `maxAuthenticationAge` parameter.
+ThoughtSpot now supports 2 methods to increase the duration of validity for your xref:authentication-integration.adoc#saml-assertion[SAML assertion]: the `SessionNotOnOrAfter` attribute and the `maxAuthenticationAge` parameter.
 You can ask ThoughtSpot to disable either one of these checks. If you use both, and either check fails, ThoughtSpot does not authenticate the user. Some IDPs do not support use of `SessionNotOnOrAfter`.
 If your IDP does not support use of `SessionNotOnOrAfter`, remove that attribute from your IDP assertion and xref:support-contact.adoc[ask ThoughtSpot Support] to enable `maxAuthenticationAge`.
 
@@ -116,7 +117,7 @@ ThoughtSpot supports the following OpenVPN server implementations:
 * https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-openvpn-clients[Azure VPN^]
 * https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html[AWS Client VPN^]
 
-To learn how to configure a VPN connection for your Google BigQuery or Azure Synapse connection, refer to link:{{ site.baseurl }}/admin/ts-cloud/openvpn-gbq.html[OpenVPN for Google BigQuery] and link:{{ site.baseurl }}/admin/ts-cloud/openvpn-synapse.html[OpenVPN for Azure Synapse].+++</dlentry>+++
+To learn how to configure a VPN connection for your Google BigQuery or Azure Synapse connection, refer to xref:connections-gbq-open-vpn.adoc[OpenVPN for Google BigQuery] and xref:connections-synapse-open-vpn.adoc[OpenVPN for Azure Synapse].
 
 [#november-cloud-2021-developer]
 === For the Developer
