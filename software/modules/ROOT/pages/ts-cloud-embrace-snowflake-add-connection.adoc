@@ -1,13 +1,8 @@
 = Add a Snowflake connection
-:last_updated: 09/08/2021
-:linkattrs:
-:experimental:
-:page-partial:
-:linkattrs:
-:page-aliases: /data-integrate/embrace/embrace-snowflake-add.adoc
-
-[.lead]
-You can easily add a connection to a Snowflake database, enabling you to run live queries of an external database, create answers and pinboards.
+:last_updated: 8/11/2020
+:permalink: /:collection/:path.html
+:sidebar: mydoc_sidebar
+:toc: true
 
 == Prerequisites
 
@@ -44,7 +39,7 @@ TIP: For the best experience using Snowflake OAuth, you should have a Snowflake 
 Before selecting *Microsoft Azure AD OAuth* authentication, you must configure Azure AD external OAuth.
 For details, see xref:connections-snowflake-azure-ad-oauth.adoc[Configure Azure AD external OAuth for a Snowflake connection].
 +
-- For OAuth authentication, do the following:
+For OAuth authentication, do the following:
 
  .. Select *Use OAuth*.
  .. Enter Account name or your Snowflake URL, OAuth Client ID, OAuth Client Secret, and (optional) Database.
@@ -56,9 +51,10 @@ If not, click *Continue*.
  .. In the next Snowflake screen, allow ThoughtSpot to access your Snowflake account by clicking *Allow*, and then go to step 7 to select tables for your connection.
 +
 Using security passthrough may have implications for your Row Level Security.
-See xref:security-rls.adoc[About row level security (RLS)] for more information.
+See xref:about-row-security.adoc[About row level security (RLS)] for more information.
+
 +
-- For Microsoft Azure AD OAuth authentication, do the following:
+For Microsoft Azure AD OAuth authentication, do the following:
 
  .. Select *Microsoft Azure AD OAuth*.
  .. Enter Account name or Snowflake URL, OAuth Client ID, OAuth Client Secret, Scope, Auth URL, Access token URL, and (optional) Database.
@@ -70,14 +66,14 @@ If not, click *Continue*.
  .. On the Stay-signed-in screen, click *Yes*.
 
 +
-- For *Use Service Account* authentication, do the following:
+For *Use Service Account* authentication, do the following:
 
  .. Select *Use Service Account*.
  .. Enter Account name, User, Password, Role, Warehouse, and (optional) Database.
 image::snowflake-connectiondetails-serv-acct2.png[Enter connection details]
 
 +
-Refer to the xref:connections-snowflake-reference.adoc[Snowflake connection reference] for more information on each of the specific attributes you must enter for your connection.
+Refer to the xref:connections-snowflake-connection-reference.adoc[Snowflake connection reference] for more information on each of the specific attributes you must enter for your connection.
 
 . (Optional) Provide additional key-value pairs that are required to set up your connection to Snowflake, by doing the following:
  .. Click the *Advanced Config* menu to reveal the *Key* and *Value* fields.
@@ -111,15 +107,15 @@ Because the selected tables and columns in your connection are linked, it may ta
 This is because ThoughtSpot does not cache linked data.
 With linked data, ThoughtSpot queries the external database directly, which is slower than querying data that is stored in ThoughtSpot's database.
 
-'''
-> **Related information**
->
-> * xref:connections-snowflake-edit.adoc[]
-> * xref:connections-snowflake-remap.adoc[]
-> * xref:connections-snowflake-delete-table.adoc[]
-> * xref:connections-snowflake-delete-table-dependencies.adoc[]
-> * xref:connections-snowflake-delete.adoc[]
-//> * xref:connections-snowflake-modify.adoc[Modify a Snowflake connection]
-> * xref:connections-snowflake-reference.adoc[Snowflake connection reference]
-> * xref:data-load.adoc[Load and manage data]
-> * xref:security.adoc[Data and object security]
+You can modify a Snowflake connection in the following ways:
+
+* xref:connections-snowflake-edit-connection.adoc[Edit a Snowflake connection]
+* xref:connections-snowflake-remap-connection.adoc[Remap a Snowflake connection]
+* xref:connections-snowflake-delete-table.adoc[Delete a table from a Snowflake connection]
+* xref:connections-snowflake-delete-table-dependencies.adoc[Delete a table with dependent objects]
+
+You can also xref:connections-snowflake-delete-connection.adoc[Delete a Snowflake connection].
+
+See the xref:connections-snowflake-connection-reference.adoc[Connection reference] for details of connection parameters.
+
+We also recommend that you review xref:connections-snowflake-best-practices.adoc[Best Practices for Snowflake connections].
