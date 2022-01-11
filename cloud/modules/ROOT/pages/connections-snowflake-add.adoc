@@ -1,12 +1,12 @@
+////
 :doctype: book
 
-include::7.1@software:ROOT:connections-snowflake-add.adoc[]
+////include::7.1@software:ROOT:connections-snowflake-add.adoc[]
 ////
-= ["Add a Snowflake connection"]
+= Add a Snowflake connection
 :last_updated: 8/11/2020
-:permalink: /:collection/:path.html
-:sidebar: mydoc_sidebar
-:toc: true
+:linkattrs:
+:experimental:
 
 == Prerequisites
 
@@ -36,10 +36,10 @@ image::embrace-snowflake-connection-type-ts-cloud.png[Add a Snowflake connection
 The Use OAuth option uses https://docs.snowflake.com/en/user-guide/oauth-partner.html[Snowflake OAuth authentication].
 +
 Before selecting *Use OAuth* authentication, you must configure OAuth in Snowflake.
-For details, see link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-snowflake-oauth.html[Configure OAuth for a Snowflake connection].
+For details, see xref:connections-snowflake-oauth.adoc[Configure OAuth for a Snowflake connection].
 +
 Before selecting *Microsoft Azure AD OAuth* authentication, you must configure Azure AD external OAuth.
-For details, see link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-snowflake-azure-ad-oauth.html[Configure Azure AD external OAuth for a Snowflake connection].
+For details, see xref:connections-snowflake-azure-ad-oauth.adoc[Configure Azure AD external OAuth for a Snowflake connection].
 +
 For OAuth authentication, do the following:
 
@@ -75,7 +75,7 @@ For *Use Service Account* authentication, do the following:
 image:snowflake-connectiondetails-serv-acct2.png[Enter connection details]
 
 +
-Refer to the link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-snowflake-connection-reference.html[Snowflake connection reference] for more information on each of the specific attributes you must enter for your connection.
+Refer to the xref:connections-snowflake-connection-reference.adoc[Snowflake connection reference] for more information on each of the specific attributes you must enter for your connection.
 
 . (Optional) Provide additional key-value pairs that are required to set up your connection to Snowflake, by doing the following:
  .. Click the *Advanced Config* menu to reveal the *Key* and *Value* fields.
@@ -83,8 +83,8 @@ Refer to the link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-snowflake-c
  .. To add more keys and values, click the plus sign (+), and enter them.
 
 +
-{% include note.html content="Any key-value pairs that you enter must be defined in your Snowflake data source.
-Key-value pairs are case-sensitive." %}
+NOTE: Any key-value pairs that you enter must be defined in your Snowflake data source.
+Key-value pairs are case-sensitive.
 . Click *Continue*.
 . Select tables (on the left) and the columns from each table (on the right), and then click *Create connection*.
 +
@@ -111,14 +111,14 @@ With linked data, ThoughtSpot queries the external database directly, which is s
 
 You can modify a Snowflake connection in the following ways:
 
-* link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-snowflake-edit-connection.html[Edit a Snowflake connection]
-* link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-snowflake-remap-connection.html[Remap a Snowflake connection]
-* link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-snowflake-delete-table.html[Delete a table from a Snowflake connection]
-* link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-snowflake-delete-table-dependencies.html[Delete a table with dependent objects]
+* xref:connections-snowflake-edit.adoc[Edit a Snowflake connection]
+* xref:connections-snowflake-remap.adoc[Remap a Snowflake connection]
+* xref:connections-snowflake-delete-table.adoc[Delete a table from a Snowflake connection]
+* xref:connections-snowflake-delete-table-dependencies.adoc[Delete a table with dependent objects]
 
-You can also link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-snowflake-delete-connection.html[Delete a Snowflake connection].
+You can also xref:connections-snowflake-delete.adocl[Delete a Snowflake connection].
 
-See the link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-snowflake-connection-reference.html[Connection reference] for details of connection parameters.
+See the xref:connections-snowflake-reference.adoc[Connection reference] for details of connection parameters.
 
-We also recommend that you review link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-embrace-snowflake-best-practices.html[Best Practices for Snowflake connections]
+We also recommend that you review xref:connections-snowflake-best.adoc[Best Practices for Snowflake connections]
 ////
