@@ -11,7 +11,7 @@ The latest release of ThoughtSpot Cloud contains several new and enhanced featur
 === For the First User
 Getting started with ThoughtSpot Cloud::
 The first user on the account has to complete a series of steps before other people can start using ThoughtSpot with your organization's data.
-For these instructions, see link:{{ site.baseurl }}/admin/ts-cloud/ts-cloud-getting-started.html[Getting Started with ThoughtSpot Cloud].
+For these instructions, see xref:ts-cloud-getting-started.adoc[Getting Started with ThoughtSpot Cloud].
 
 [#november-cloud-2021-analyst]
 === For the Analyst
@@ -25,21 +25,30 @@ removing these features for now per alok. may add back in
 <dd><p>SpotApps are ThoughtSpot's new out-of-the-box solution templates built for specific use cases and data sources. They are built on Blocks, which are pre-built pieces of code that are easy to download and implement directly from the product. This release introduces the ServiceNow SpotApp and Analytics Blocks. Analytics Blocks include pre-built Worksheet, Answer, and Liveboard Blocks.</p>
 <p>The ServiceNow SpotApp mimics the ServiceNow data model. After you connect to your ServiceNow data in your cloud data warehouse, ThoughtSpot maps that data to SpotApp columns, and creates pre-built but still customizable worksheets, answers, and Liveboards, based on your ServiceNow data.</p>
 <p>Refer to <a href="{{ site.baseurl }}/admin/ts-cloud/app-templates.html">SpotApps</a>.</p>
-<p>This feature is in beta and off by default. It is part of the <a href="#data-tab">Data tab redesign</a> beta. To enable SpotApps and the Data tab redesign, <a href="{{ site.baseurl }}/admin/misc/contact.html">contact ThoughtSpot Support</a>.</p></dd>
+<p>This feature is in beta and off by default. It is part of the <a href="#data-tab">Data tab redesign</a> beta. To enable SpotApps and the Data tab redesign, xref:support-contact.adoc[contact ThoughtSpot Support].</p></dd>
 </dlentry>
 
 <dlentry>
 <dt>SQL-based views <span class="label label-beta">Beta</span></dt>
 <dd><p>This release introduces beta support for SQL-based views. Users can create views based on SQL queries, and use those views as data sources. This type of view has the same functionality as a view based on searching your data.</p>
-<p>This feature is in beta and off by default. To enable it, <a href="{{ site.baseurl }}/admin/misc/contact.html">contact ThoughtSpot Support</a>.</p></dd>
+<p>This feature is in beta and off by default. To enable it, xref:support-contact.adoc[contact ThoughtSpot Support].</p></dd>
 </dlentry>
 
 <dlentry id="data-tab">
 <dt>Data tab redesign <span class="label label-beta">Beta</span></dt>
 <dd><p>This release redesigns the <strong>Data</strong> section of the product. To access this part of the product, select <strong>Data</strong> from the top navigation bar. The redesign introduces several new features, such as SQL-based views and SpotApps, and makes the UI more intuitive.</p>
-<p>This feature is in beta and off by default. To enable it, <a href="{{ site.baseurl }}/admin/misc/contact.html">contact ThoughtSpot Support</a>.</p></dd>
+<p>This feature is in beta and off by default. To enable it, xref:support-contact.adoc[contact ThoughtSpot Support].</p></dd>
 </dlentry>
 ////
+
+[#date-interval-functions
+Date interval functions::
+In this release, we introduced new functions for computing time intervals between two dates. In addition to the existing xref:formula-reference.adoc#diff_days[diff_days] and xref:formula-reference.adoc#diff_time[diff_time] functions, you can now use `diff_years`, `diff_quarters`, `diff_months`, `diff_weeks`, `diff_hours`, and `diff_minutes` to calculate time intervals at these additional granularities.
+
+If your organization uses a xref:connections-cust-cal.adoc[custom calendar], which can specify a new starting date of a year, starting dates of quarters, a starting day of the month, and a starting day of the week, use the optional custom calendar argument with these functions to calculate the difference between the two dates.
+
+
+
 
 [#auto-answer]
 Automated answer creation in Setup::
