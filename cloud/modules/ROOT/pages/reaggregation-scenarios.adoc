@@ -3,7 +3,7 @@
 :linkattrs:
 :experimental:
 :page-aliases: /reference/practice/reaggregation-scenarios.adoc
-:summary: We provide real world scenarios for using flexible aggregation in ThoughtSpot.
+:description: We provide real world scenarios for using flexible aggregation in ThoughtSpot.
 
 The following scenarios showcase the use of the `group_aggregate` function in the real world.
 We provide them to demonstrate to you how the function works, and the scenarios where it proved useful.
@@ -13,7 +13,7 @@ We provide them to demonstrate to you how the function works, and the scenarios 
 * <<average-period-value-semi-additive-numbers-1,Scenario 3: Average period value for semi-additive numbers I>>
 * <<average-period-value-semi-additive-numbers-2,Scenario 4: Average period value for semi-additive numbers II>>
 
-{% include content/flexible-aggregation-best-practices.md %}
+include::partial$includes/content/flexible-aggregation-best-practices.adoc[]
 
 [#supplier-tendering]
 == Scenario 1: Supplier tendering by job
@@ -32,9 +32,9 @@ We want to see high numbers, which indicate that many suppliers bid on the job, 
 ....
 
 
-sum(group_aggregate(if(sum(# trades tendered ) > 1) then 1 else 0, 
-                    query_groups() + {claimid, packageid}, 
-                    query_filters())) 
+sum(group_aggregate(if(sum(# trades tendered ) > 1) then 1 else 0,
+                    query_groups() + {claimid, packageid},
+                    query_filters()))
 ....
 
 image::supplier-tender-job-1.png[Supplier tendering by job, aggregated result]
@@ -109,8 +109,8 @@ The join ensures that a single rate value returns each day for each transaction 
 
 ----
 sum(group_aggregate (sum(loans)*average (rate),
-                     query_groups () + {transaction_currency}, 
-                     query_filters () )) 
+                     query_groups () + {transaction_currency},
+                     query_filters () ))
 ----
 
 The following search and resulting response returns the dollar value for each year, for each target reporting currency.
@@ -157,7 +157,7 @@ Here, the result returns 1 row for each `transaction currency`.
 
 ----
 group_aggregate (sum(loans )*average (rate ),
-                 query_groups() + {transaction_currency}, 
+                 query_groups() + {transaction_currency},
                  query_filters())
 ----
 
@@ -177,7 +177,7 @@ In this scenario, we have daily position values for home loans, and therefore ca
 ----
 average(group_aggregate(sum(loan balance),
                         query_groups() + {date(balance date)},
-                        query_filters())) 
+                        query_filters()))
 ----
 
 image::avg-period-non-additive-1-1.png[Average period value semi-additive numbers, aggregated result]
