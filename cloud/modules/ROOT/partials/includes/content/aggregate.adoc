@@ -1,10 +1,11 @@
 +++<table>++++++<colgroup>++++++<col style="width:25%">++++++</col>+++
    +++<col style="width:25%">++++++</col>+++
    +++<col style="width:50%">++++++</col>++++++</colgroup>+++
-  +++<thead>++++++<tr>++++++<th>+++Function+++</th>+++
++++<thead>++++++<tr>++++++<th>+++Function+++</th>+++
       +++<th>+++Description+++</th>+++
       +++<th>+++Examples+++</th>++++++</tr>++++++</thead>+++
-  +++<tbody>++++++<tr id="average">++++++<td>++++++<code>+++average+++</code>++++++</td>+++
++++<tbody>+++
++++<tr id="average">++++++<td>++++++<code>+++average+++</code>++++++</td>+++
       +++<td>+++Returns the average of all the values of a column.+++</td>+++
       +++<td>++++++<code class="highlighter-rouge">+++average (revenue)+++</code>++++++</td>++++++</tr>+++
     +++<tr id="average_if">++++++<td>++++++<code>+++average_if+++</code>++++++</td>+++
@@ -82,7 +83,7 @@ SCAL-49352
       {% include note.html content="Fact table limit is 10 million (10<sup>7</sup>) rows." %}</td>
     </tr>
 ////
-    +++<tr id="min">++++++<td>++++++<code>+++min+++</code>++++++</td>+++
++++<tr id="min">++++++<td>++++++<code>+++min+++</code>++++++</td>+++
       +++<td>+++Returns the minimum value of a column.+++</td>+++
       +++<td>++++++<code class="highlighter-rouge">+++min (revenue)+++</code>++++++</td>++++++</tr>+++
     +++<tr id="min-if">++++++<td>++++++<code>+++min_if+++</code>++++++</td>+++
@@ -107,7 +108,7 @@ SCAL-49352
     <tr id="nth_percentile"><td><code>nth_percentile</code></td><td>Returns the nth percentile of a group of measures.</td><td><code>nth_percentile (measure, n, 'asc')</code>,<br><code>nth_percentile (measure, n, 'desc')</code>
     {% include note.html content="Fact table limit is 10 million (10<sup>7</sup>) rows." %}</td></tr>
 ////
-    +++<tr id="rank">++++++<td>++++++<code>+++rank+++</code>++++++</td>+++
++++<tr id="rank">++++++<td>++++++<code>+++rank+++</code>++++++</td>+++
       +++<td>+++Returns the rank for the current row. Identical values receive an identical rank. Takes an aggregate input for the first argument. The second argument specifies the order, +++<code>+++'asc' | 'desc'+++</code>+++.+++</td>+++
       +++<td>++++++<code class="highlighter-rouge">+++rank (sum (revenue) , 'asc' )+++</code>++++++<br>++++++</br>++++++<code class="highlighter-rouge">+++rank (sum (revenue) , '`desc' )+++</code>++++++</td>++++++</tr>+++
     +++<tr id="rank_percentile">++++++<td>++++++<code>+++rank_percentile+++</code>++++++</td>+++
