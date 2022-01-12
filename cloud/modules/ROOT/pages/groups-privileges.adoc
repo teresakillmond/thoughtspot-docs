@@ -37,7 +37,7 @@ So if you're a member of a sub-group, you would automatically have the privilege
 
 Here are the different privileges, and the capabilities they enable:
 
-{% include content/privileges.md %}
+include::partial$privileges.adoc[]
 
 Privileges are additive, meaning that if a user belongs to more than one group, they will have the highest level of privileges from among the groups they are a member of.
 They are also inherited from the parent, so that a sub-group gets all the same privileges of its parent, all the way up the group hierarchy.
@@ -47,7 +47,8 @@ Administrators can see all data sources, and xref:security-rls.adoc#[Row level s
 
 Permissions to see and edit tables, worksheets, and Liveboards are set when you share them with users and groups, as described in the topic xref:data-security.adoc#[Data security].
 
-The following table shows the intersection of user privilege and ability: {% include content/security-matrix.md %}
+The following table shows the intersection of user privilege and ability:
+include::partial$security-matrix.adoc[]
 
 == Related information
 

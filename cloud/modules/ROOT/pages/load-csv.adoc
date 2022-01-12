@@ -8,14 +8,14 @@
 NOTE: This feature is exclusive to ThoughtSpot Free Trial.
 Use Connections to access your data in ThoughtSpot Cloud.
 
-{% include content/web-load-intro.md %}
+include::partial$web-load-intro.adoc[]
 
 == Formatting the CSV
 
 Your ETL (extract, transform, load) process will typically generate CSV files.
 You can also create a CSV file from a Microsoft Excel spreadsheet by opening the spreadsheet in Excel, choosing *Save As* and selecting CSV.
 
-{% include content/csv-format.md %}
+include::partial$csv-format.adoc[]
 
 If you are loading a fact table that joins to dimension tables, you must load the fact table first, and then the dimension tables.
 The joining key must be a single column of unique values in the dimension table.
@@ -23,14 +23,14 @@ The joining key must be a single column of unique values in the dimension table.
 
 == Create a CSV file
 
-{% include content/csv-create.md %}
+include::partial$csv-create.adoc[]
 
 For general information about CSV files and the rules for creating them, see the Comma-separated_values on Wikipedia (http://en.wikipedia.org/wiki/Comma-separated_values).
 
 == Load the CSV File
 
-{% include content/csv-load.md %}
+include::partial$csv-load.adoc[]
 
 == Append to an existing table
 
-{% include content/csv-append.md %}
+include::partial$csv-append.adoc[]
