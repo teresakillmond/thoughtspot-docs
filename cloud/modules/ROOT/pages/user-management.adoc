@@ -31,53 +31,58 @@ image::admin-portal-users.png[Admin Console - Users]
 . Click the *+ Add User* button on the upper left-hand side of the list of users.
 . In the *Add a new user* interface, enter the details for the new user:
 +
-image::add-user.png[Add a new User]+++<table>++++++<colgroup>++++++<col width="20%">++++++</col>+++
-   +++<col width="10%">++++++</col>+++
-   +++<col width="70%">++++++</col>++++++</colgroup>+++
-  +++<tr>++++++<th>+++Field+++</th>+++
-   +++<th>+++Required?+++</th>+++
-   +++<th>+++Description+++</th>++++++</tr>+++
-   +++<tr id="username">++++++<th>+++Username+++</th>+++
-     +++<td>+++Yes+++</td>+++
-     +++<td>+++A login name for the user. Usernames must be unique and lowercase.+++</td>++++++</tr>+++
-   +++<tr id="display-name">++++++<th>+++Display name+++</th>+++
-     +++<td>+++Yes+++</td>+++
-     +++<td>+++A unique name for the user (usually their first and last name).+++</td>++++++</tr>+++
-   +++<tr id="sharing-visibility">++++++<th>+++Sharing visibility+++</th>+++
-     +++<td>+++Yes+++</td>+++
-     +++<td>+++Indicate whether objects can be shared with this user. When set to +++<b>+++SHAREABLE+++</b>+++,
-     this user is an option in the +++<b>+++Share+++</b>+++ dialog.+++</td>++++++</tr>+++
-   +++<tr id="password">++++++<th>+++Change password+++</th>+++
-     +++<td>+++Yes+++</td>+++
-     +++<td>+++A password. Your password must meet the following requirements:
-     +++<ul>++++++<li>+++The password must be 8 characters or more in length.+++</li>++++++<li>+++The password must include at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character.+++</li>++++++<li>+++The password must pass a complexity test based on an external library. This test ensures password complexity and uniqueness by checking for known patterns or words that are too simple. If the password is not complex enough, ThoughtSpot rejects it, even if it fulfills the other requirements. Refer to the +++<a href="https://github.com/dropbox/zxcvbn" target="_blank">+++Dropbox password library+++</a>+++ for more information.+++</li>+++
-     +++<li>+++The password cannot use certain blocked words. By default, the blocked words are: your username, any part of your display name, and any blocked words your company configures. To add additional words to the blocklist, xref:support-contact.adoc[contact ThoughtSpot Support].+++</li>++++++</ul>++++++</td>++++++</tr>+++
-   +++<tr id="confirm_password">++++++<th>+++Confirm password+++</th>+++
-     +++<td>+++Yes+++</td>+++
-     +++<td>+++Enter the password again.+++</td>++++++</tr>+++
-   +++<tr id="email">++++++<th>+++Email+++</th>+++
-     +++<td>+++Yes+++</td>+++
-     +++<td>+++The user's email address. ThoughtSpot uses this for  notification when another user shares something with them, for onboarding, for the +++<strong>+++Ask an Expert+++</strong>+++ feature, and others.
-     +++<p>+++Note that during cluster configuration, the domain is specified. ThoughtSpot does not accept emails outside this domain. xref:support-contact.adoc[Contact ThoughtSpot Support] to whitelist domains.+++</p>++++++</td>++++++</tr>+++
-   +++<tr id="welcome-email">++++++<th>+++Send a welcome email+++</th>+++
-     +++<td>+++No+++</td>+++
-     +++<td>+++When checked, this option ensures that the new user receives a welcome email.+++</td>++++++</tr>+++
-   +++<tr id="email-text">++++++<th>+++Email message text+++</th>+++
-     +++<td>+++No+++</td>+++
-     +++<td>+++Enter text of the optional welcome email here.+++</td>++++++</tr>+++
-   +++<tr id="groups">++++++<th>+++Groups+++</th>+++
-     +++<td>+++Recommended+++</td>+++
-     +++<td>+++Select the groups for the user.
-     +++<p>+++Note that if you add the user to a group that has the privilege +++<b>+++Has administration privileges+++</b>+++, they can see all the data in ThoughtSpot.+++</p>+++
-     +++<p>+++When you create a new user, the groups they belong to define the following attributes for the user:+++</p>+++
-     +++<ul>++++++<li>++++++<strong>+++Privileges+++</strong>+++: the actions they can perform, defined when you xref:group-management.adoc[Add a group and set security privileges].+++</li>+++
-       +++<li>++++++<strong>+++Permissions+++</strong>+++: the data they can access and view, defined when you consider xref:data-security.adoc[Data security].+++</li>++++++</ul>+++
-     +++<p>+++Administrators can see all data sources, and xref:security-rls.adoc[Row level security] does not apply to them.+++</p>++++++</td>++++++</tr>++++++</table>+++
+image::add-user.png[Add a new User]
++
+[#username]
+Username::
+A login name for the user. Usernames must be unique and lowercase. If you are using Active Directory to authenticate users, and your LDAP configuration requires users to be created manually (they are not created automatically in ThoughtSpot upon authentication), the username you specify has to be domain-qualified (`username@ldap.thoughtspot.com`), and you must enter a dummy password.
+[#display-name]
+Display name::
+A unique name for the user (usually their first and last name).
+[#sharing-visibility]
+Sharing visibility::
+Indicate whether objects can be shared with this user. When set to *SHARABLE*, this user is an option in the *Share* dialog.
+[#password]
+Change password::
+Add or change the password. Your password must meet the following requirements:
+* The password must be 8 characters or more in length.
+* The password must include at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character.
+* The password must pass a complexity test based on an external library. This test ensures password complexity and uniqueness by checking for known patterns or words that are too simple. If the password is not complex enough, ThoughtSpot rejects it, even if it fulfills the other requirements. Refer to the https://github.com/dropbox/zxcvbn[Dropbox password library^] for more information.
+* The password cannot use certain blocked words. By default, the blocked words are: your username, any part of your display name, and any blocked words your company configures. To add additional words to the blocklist, xref:support-contact.adoc[contact ThoughtSpot Support].
+Confirm password::
+Enter the password again.
+[#email]
+Email::
+The user's email address. ThoughtSpot uses this for  notification when another user shares something with them, for onboarding, for the *Ask an Expert* [.label.label-dep]#De-supported 7.1.1# feature, and others.
++
+NOTE: During cluster configuration, the administrator specifies the email server domain. ThoughtSpot does not accept emails outside this domain. Contact xref:support-contact.adoc[ThoughtSpot Support] to add new domains to a list of allowed domains.
+[#email-welcome]
+Send a welcome email::
+(Optional) When checked, this option ensures that the new user receives a welcome email.
+[#email-text]
+Email message text::
+(Optional) Enter text of the optional welcome email here.
+[#groups]
+Groups::
+(Recommended) Select the groups for the user.
++
+[NOTE]
+====
+When you create a new user, the groups they belong to define the following attributes for the user:
+
+Privileges:: the actions they can perform, defined when you xref:group-management.adoc[Add a group and set security privileges]
+
+Permissions:: the data they can access and view, defined when you consider xref:data-security.adoc[Data security]
+
+Administrators can see all data sources, and xref:security-rls.adoc[Row level security] does not apply to them.
+====
++
+WARNING: If you add the user to a group that has the privilege *Has administration privileges*, they can see all the data in ThoughtSpot.
 
 . Click *Add* to create the user.
 
 Note that this process of identifying the user's needs contributes to a robust onboarding process.
-See xref:onboarding.adoc#[Onboarding users].
+See xref:onboarding.adoc[Onboarding users].
 
 [#edit-user]
 == Edit an existing user
