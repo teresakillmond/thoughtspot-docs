@@ -61,7 +61,8 @@ The possible events are:
 ThoughtSpot defines these events as follows:
 
 [#logout-successful]
-Account logout::  A user logs out from ThoughtSpot. [#create-answer]
+Account logout::  A user logs out from ThoughtSpot.
+[#create-answer]
 Answer creation::  A user attempts to create a new answer.
 [#delete-answers]
 Answer deletion::  A user attempts to delete an answer.
@@ -70,21 +71,21 @@ Answer update::  A user attempts to modify an existing answer.
 [#create-rls-rule]
 Row-level security (RLS) rule creation::  A user creates an RLS rule on a table.
 [#delete-rls-rules]
-RLS rule deletion:: A user deletes an RLS rule on a table.
+RLS rule deletion::  A user deletes an RLS rule on a table.
 [#login-failed]
-Failed login:: A user fails to log in due to an incorrect password, or IdP/ADP deny the authentication request.
+Failed login::  A user fails to log in due to an incorrect password, or IdP/ADP deny the authentication request.
 [#logout-failed]
-Failed logout:: User logout failed.
+Failed logout::  User logout failed.
 [#user-groups-created]
-Group creation:: A user creates a new group, either manually through the Admin Console, or through the internal API.
+Group creation::  A user creates a new group, either manually through the Admin Portal, or through the internal API.
 [#user-groups-deleted]
-Group deletion:: A user deletes a group, either manually through the Admin Console, or through the internal API.
-[#group-modification]
+Group deletion::  A user deletes a group, either manually through the Admin Portal, or through the internal API.
+[#user-group-modified]
 Group modification::
-A user modifies the properties of a group, either in the Admin Console or over internal API.
+A user modifies the properties of a group, either in Admin Portal or over internal API.
 (Properties include group name, display name, and sharing visibility.)
 [#principals-in-group-update]
-Group principals update:: A user successfully or unsuccessfully attempts to add or remove users or groups from a group.
+Group principals update::  A user successfully or unsuccessfully attempts to add or remove users or groups from a group.
 [#account-locked]
 Locked account::
 A local user fails to authenticate _x_ times in a row, locking the account.
@@ -104,39 +105,41 @@ Administrators can configure the number of authentication attempts before lockou
  <dd>A user successfully or unsuccessfully attempts to change the properties of an object.</dd>
 </dlentry>
 ////
+
 [#share-objects]
-Object sharing:: A user successfully or unsuccessfully attempts to share an object (Pinboard, Worksheet, Answer) with another user or group.
+Object sharing::  A user successfully or unsuccessfully attempts to share an object (Pinboard, Worksheet, Answer) with another user or group.
 [#update-password]
-Password change:: A user successfully or unsuccessfully attempts to change their password.
+Password change::  A user successfully or unsuccessfully attempts to change their password.
 [#create-pinboard]
-Pinboard creation:: A user attempts to create a new Pinboard.
+Pinboard creation::  A user attempts to create a new Pinboard.
 [#delete-pinboards]
-Pinboard deletion:: A user attempts to delete a Pinboard.
+Pinboard deletion::  A user attempts to delete a Pinboard.
 [#update-pinboards]
-Pinboard update:: A user attempts to modify an existing Pinboard.
+Pinboard update::  A user attempts to modify an existing Pinboard.
 [#privilege-changes]
-Privilege change:: A user adds or removes one or several privileges from a group.
+Privilege change::  A user adds or removes one or several privileges from a group.
 [#users-modified]
-Profile change:: A user profile changes, either manually in the Admin Console or over SAML sync.
+Profile change::  A user profile changes, either manually in the Admin Portal or over SAML sync.
 [#update-rls-rule]
-RLS rule update:: A user modifies an RLS rule on a table.
+RLS rule update::  A user modifies an RLS rule on a table.
 [#login-successful]
-Successful login:: A local, IdP or AD user logs in to ThoughtSpot.
+Successful login::  A local, IdP or AD user logs in to ThoughtSpot.
 [#create-tables]
-Table creation:: A user attempts to create a new table.
+Table creation::  A user attempts to create a new table.
 [#users-created]
-User account creation:: A new user creates an account, either manually in the Admin Console or through the internal API.
+User account creation::  A new user creates an account, either manually in the Admin Portal or through the internal API.
 [#users-deleted]
-User account deletion:: A user account is deleted, either manually in the Admin Console or through the internal API.
-+
+User account deletion::  A user account is deleted, either manually in the Admin Portal or through the internal API.
+
 ////
 <dlentry id="user-group-change">
   <dt>User group change</dt>
   <dd>A successful or unsuccessful attempt to change the user list to a group by adding or removing members.</dd>
   </dlentry>
 ////
+
 [#user-invited]
-User invitation:: A user is invited to ThoughtSpot for a free trial.
+User invitation::  A user is invited to ThoughtSpot for a free trial.
 
 ////
 ThoughtSpot includes a number of management tools, monitoring applications, and automated processes to support system security. System security includes managing access and privileges, audit logs, security policies, and Linux OS installed package updates.

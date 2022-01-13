@@ -37,7 +37,7 @@
       +++<code>+++group_aggregate (<aggregation(measure)>, <groupings>, <filters>)+++</code>++++++</p>+++
       +++<p>+++Define lists using curly brackets, +++<code>+++{ }+++</code>+++. Optional list functions +++<code>+++query_groups+++</code>+++ or
       +++<code>+++query_filters+++</code>+++ specify the lists or filters used in the original search. Use +++<code>+++++++</code>+++ (plus) and +++<code>+++-+++</code>+++ (minus) to add or exclude specific columns for query groups.+++</p>+++
-      +++<p>+++See <a href="{{"/complex-search/aggregation-flexible.html" | prepend: site.baseurl }}">Flexible aggregation functions</a>.+++</p>++++++</td>+++
+      +++<p>+++See xref:formulas-aggregation-flexible.adoc[Flexible aggregation functions].+++</p>++++++</td>+++
       +++<td>++++++<code class="highlighter-rouge">+++group_aggregate (sum (revenue), {ship mode, date}, {} )+++</code>++++++<br>++++++</br>++++++<br>++++++</br>+++
       +++<code class="highlighter-rouge">+++group_aggregate (sum (revenue), {ship mode , date}, {day_of_week (date) = 'friday'} )+++</code>++++++<br>++++++</br>++++++<br>++++++</br>+++
       +++<code class="highlighter-rouge">+++group_aggregate (sum (revenue), query_groups(), query_filters() )+++</code>++++++<br>++++++</br>++++++<br>++++++</br>+++
