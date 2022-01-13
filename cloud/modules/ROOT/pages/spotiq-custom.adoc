@@ -103,50 +103,34 @@ The *Tell us more* window provides information on how to exclude a value from al
 
 image::spotiq-customize-improve-analysis.png[]
 
-== Eliminate null values
+You can set SpotIQ customization parameters in your xref:spotiq-preferences.adoc[SpotIQ preferences], along with options for email notifications when analyses run:
 
-Null values should be eliminated from your analysis.+++<table>++++++<tr>++++++<th>+++From next analysis+++</th>+++
-    +++<th>+++From future analyses+++</th>++++++</tr>+++
-  +++<tr>++++++<td>+++// next
-    +++<p>+++In the Search bar, add a filter +++<code>++++++<i>+++column+++</i>+++!= Null+++</code>+++ to the search bar. Or choose +++<b>+++Exclude null values from current analysis+++</b>+++, using the +++<b>+++Advanced+++</b>+++ panel.+++</p>++++++</td>+++
-    +++<td>+++// future
-    Set +++<b>+++Exclude null values from my analysis+++</b>+++ on your user +++<b>+++Profile+++</b>+++ to exclude them from any future  SpotIQ analyses you do.+++</td>++++++</tr>++++++</table>+++
+Eliminate null values::
+Null values should be eliminated from your analysis.
+From next analysis;; In the *Search* bar, add a filter `column!= Null` to the search bar. Or choose *Exclude null values from current analysis*, using the *Advanced* panel.
+From future analyses;; Set *Exclude null values from my analysis* on your user *Profile* to exclude them from any future SpotIQ analyses you do.
 
-== Exclude uninteresting column(s) in insight
+Exclude uninteresting column(s) in insight::
+You should always exclude columns you are not interested from your analysis.
+From next analysis;; Use the *EXCLUDE* option of *SPOTIQ PREFERENCE* under the *DATA* tab to exclude any column permanently from all future analysis.
+From future analyses;; Not applicable.
 
-You should always exclude columns you are not interested from your analysis.+++<table>++++++<tr>++++++<th>+++From next analysis+++</th>+++
-    +++<th>+++From future analyses+++</th>++++++</tr>+++
-  +++<tr>++++++<td>+++// next
-    +++<p>+++Use the +++<b>+++EXCLUDE+++</b>+++ option of +++<b>+++SPOTIQ PREFERENCE+++</b>+++ under the +++<b>+++DATA+++</b>+++ tab to exclude any column permanently from all future analysis.+++</p>++++++</td>++++++</tr>++++++</table>+++
+Include an interesting column::
+You can always include columns that interest you in your analysis.
+From next analysis;; Choose *Customize analysis* and select columns that you want to include.
+From future analyses;; Ensure *Index Priority* is between 8-10 on the column under the *DATA* tab.
 
-== Include an interesting column
-
-You can always include columns that interest you in your analysis.+++<table>++++++<tr>++++++<th>+++From next analysis+++</th>+++
-    +++<th>+++From future analyses+++</th>++++++</tr>+++
-  +++<tr>++++++<td>+++// next
-    +++<p>+++Choose +++<b>+++Customize analysis+++</b>+++ and select columns that you want to include.+++</p>++++++</td>+++
-    +++<td>+++// future
-    Ensure +++<b>+++Index Priority+++</b>+++ is between 8-10 on the column under the +++<b>+++DATA+++</b>+++ tab.+++</td>++++++</tr>++++++</table>+++
-
-== Remove known date outliers
-
+Remove known date outliers::
 Your data may contain known outliers.
-For example, you are in the middle of a quarter and only want to analyze the previous quarter.
-Anything from the present quarter could contain an outlier.+++<table>++++++<tr>++++++<th>+++From next analysis+++</th>+++
-    +++<th>+++From future analyses+++</th>++++++</tr>+++
-  +++<tr>++++++<td>+++// next
-    +++<p>+++In the Search bar, add a filter +++<code>++++++<i>+++date+++</i>+++< last time period+++</code>+++ to the search bar.+++</p>++++++</td>+++
-    +++<td>+++// future
-    Not applicable.+++</td>++++++</tr>++++++</table>+++
++
+For example, you are in the middle of a quarter and only want to analyze the previous quarter. Anything from the present quarter could contain an outlier.
+From next analysis;; In the *Search* bar, add a filter date< last time period to the search bar.
+From future analyses;; Not applicable.
 
-== Too few insights
-
-Your SpotIQ analysis may not provide you as many insights as you think it should.+++<table style="border:1px;">++++++<tr>++++++<th>+++From next analysis+++</th>+++
-    +++<th>+++From future analyses+++</th>++++++</tr>+++
-  +++<tr>++++++<td>+++// next
-    +++<p>+++Choose +++<b>+++Customize analysis+++</b>+++, select the +++<b>+++Advanced+++</b>+++ tab, and decrease the +++<b>+++Multiplier for Outlier Detection+++</b>+++ to a value closer to zero.+++</p>++++++</td>+++
-    +++<td>+++// future
-    Not applicable.+++</td>++++++</tr>++++++</table>+++
+Too few insights::
+Your SpotIQ analysis may not provide you as many insights as you think it should.
+From next analysis;; Choose *Customize analysis*, select the *Advanced tab*, and decrease the *Multiplier for Outlier Detection* to a value closer to zero.
+From future analyses;; Not applicable;;
 
 == Explaining Anomaly Insights
 

@@ -19,20 +19,17 @@ If you supply both a measure and attributes, the formula returns the aggregate o
 You should experiment with only a measure and then with an attribute to see which output best meets your use case.
 
 The cumulative formulas are:
-+++<table>++++++<colgroup>++++++<col style="width:25%">++++++</col>+++
-    +++<col style="width:75%">++++++</col>++++++</colgroup>+++
-    +++<tr>++++++<th>+++Function+++</th>+++
-       +++<th>+++Description+++</th>++++++</tr>+++
-    +++<tr>++++++<td>++++++<code>+++cumulative_average+++</code>++++++</td>+++
-       +++<td>+++Takes a measure and one or more attributes. Returns the average of the measure, accumulated by the attribute(s) in the order specified. For example:
-       +++<code>+++cumulative_average (revenue, order date, state)+++</code>++++++</td>++++++</tr>+++
-    +++<tr>++++++<td>++++++<code>+++cumulative_max+++</code>++++++</td>+++
-       +++<td>+++Takes a measure and one or more attributes. Returns the maximum of the measure, accumulated by the
-    attribute(s) in the order specified. For example: +++<code>+++cumulative_max (revenue, state)+++</code>++++++</td>++++++</tr>+++
-    +++<tr>++++++<td>++++++<code>+++cumulative_min+++</code>++++++</td>+++
-       +++<td>+++Takes a measure and one or more attributes. Returns the minimum of the measure, accumulated by the attribute(s) in the order specified. or example: +++<code>+++cumulative_min (revenue, campaign)+++</code>++++++</td>++++++</tr>+++
-    +++<tr>++++++<td>++++++<code>+++cumulative_sum+++</code>++++++</td>+++
-       +++<td>+++Takes a measure and one or more attributes. Returns the sum of the measure, accumulated by the attribute(s) in the order specified. For example:  +++<code>+++cumulative_sum (revenue, order date)+++</code>++++++</td>++++++</tr>++++++</table>+++
+
+|===
+| Function | Description
+
+| `cumulative_average` | Takes a measure and one or more attributes. Returns the average of the measure, accumulated by the attribute(s) in the order specified. For example:
+       `cumulative_average (revenue, order date, state)`
+| `cumulative_max` | Takes a measure and one or more attributes. Returns the maximum of the measure, accumulated by the
+    attribute(s) in the order specified. For example: `cumulative_max (revenue, state)`
+| `cumulative_min` | Takes a measure and one or more attributes. Returns the minimum of the measure, accumulated by the attribute(s) in the order specified. or example: `cumulative_min (revenue, campaign)`
+| `cumulative_sum` | Takes a measure and one or more attributes. Returns the sum of the measure, accumulated by the attribute(s) in the order specified. For example:  `cumulative_sum (revenue, order date)`
+|===
 
 == Calculate a cumulative sum
 
