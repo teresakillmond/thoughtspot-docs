@@ -1,31 +1,38 @@
-+++<table>++++++<colgroup>++++++<col width="25%">++++++</col>+++
-+++<col width="75%">++++++</col>++++++</colgroup>+++
-  +++<thead>++++++<tr>++++++<th>+++Privilege+++</th>+++
-      +++<th>+++Description+++</th>++++++</tr>++++++</thead>+++
-  +++<tbody>++++++<tr>++++++<td>++++++<strong>+++Can administer ThoughtSpot+++</strong>++++++</td>+++
-      +++<td>+++Can manage Users and Groups and has view and edit access to all data. Users with this privilege can also download a saved answer.+++</td>++++++</tr>+++
-    +++<tr>++++++<td>++++++<strong>+++Can download data+++</strong>++++++</td>+++
-      +++<td>+++Can download data from search results and Liveboards.+++</td>++++++</tr>+++
-    +++<tr>++++++<td>++++++<strong>+++Can share with all users+++</strong>++++++</td>+++
-      +++<td>+++Can see the names of and share with users outside of the groups the user belongs to. Members of groups with this privilege can also share with groups marked as
-      +++<strong>+++NOT SHAREABLE+++</strong>+++.+++</td>++++++</tr>+++
-    +++<tr>++++++<td>++++++<strong>+++Can manage data+++</strong>++++++</td>+++
-      +++<td>+++Can create connections. To view or edit other people's connections, you must have the +++<strong>+++Can administer ThoughtSpot+++</strong>+++ privilege. +++<br>++++++</br>+++Can create worksheets and views.+++<br>++++++</br>+++Note that to edit a worksheet or a view created by another user, you must have the +++<strong>+++Edit+++</strong>+++ permission on that object, and it must be shared with you.+++</td>++++++</tr>+++
-    +++<tr>++++++<td>++++++<strong>+++Can use experimental features+++</strong>++++++</td>+++
-      +++<td>+++Can access trial and experimental features that ThoughtSpot makes available to early adopters.+++</td>++++++</tr>+++
-    +++<tr id="schedule-pinboards">++++++<td>++++++<strong>+++Can schedule Liveboards+++</strong>++++++</td>+++
-      +++<td>+++Can create Liveboard schedules and edit their own scheduled jobs.+++</td>++++++</tr>+++
-    +++<tr>++++++<td>++++++<strong>+++Has SpotIQ privilege+++</strong>++++++</td>+++
-      +++<td>+++Can use the SpotIQ feature.+++<br>++++++</br>+++If this privilege is not enabled for the user, they can still see "Did you know" SpotIQ insights on the ThoughtSpot home page.+++</td>++++++</tr>+++
-    +++<tr>++++++<td>++++++<strong>+++Can administer and bypass RLS+++</strong>++++++</td>+++
-      +++<td>++++++<p>+++Users in groups with this privilege (directly or through group inheritance):+++</p>+++
-+++<ul>++++++<li>+++Are exempt from row-level security (RLS) rules.+++</li>+++
-      +++<li>+++Can add/edit/delete existing RLS rules.+++</li>+++
-      +++<li>+++Can check or uncheck Bypass RLS on a worksheet.+++</li>++++++</ul>+++
-      +++<p>+++Your installation configuration may enable or disable the availability of this privilege. By default, it is enabled. Administrators or groups with the privilege +++<b>+++Can administer ThoughtSpot+++</b>+++ can grant this privilege.+++</p>++++++</td>++++++</tr>+++
-    +++<tr>++++++<td>++++++<strong>+++Has Developer privilege+++</strong>++++++</td>+++
-      +++<td>+++Can access and use the xref:spotdev-portal.adoc[Developer Portal] to explore the ThoughtSpot APIs and developer tools, and build web applications with ThoughtSpot content.+++</td>++++++</tr>+++
-    +++<tr id="read-only">++++++<td>++++++<strong>+++Cannot create or update Liveboards+++</strong>++++++</td>+++
-      +++<td>++++++<p>+++Users are limited to viewing and exploring curated Liveboards (and Answers). They cannot copy, edit, download, or share them.+++</p>+++
-      +++<p>+++This privilege is designed to support embedded implementations, and is not available by default. xref:support-contact.adoc[Contact ThoughtSpot Support] to enable it.+++</p>+++
-      +++<p>+++See xref:liveboard-granular-permission.adoc[Granular access to Liveboards] for a deeper discussion of this privilege, and an implementation example.+++</p>++++++</td>++++++</tr>++++++</tbody>++++++</table>+++
+[options="header",cols="25%,75%"]
+|===
+| Privilege | Description
+
+| *Can administer ThoughtSpot* | Can manage Users and Groups and has view and edit access to all data. Users with this privilege can also download a saved answer.
+
+| *Can download data* | Can download data from search results and Liveboards.
+
+| *Can share with all users* | Can see the names of and share with users outside of the groups the user belongs to. Members of groups with this privilege can also share with groups marked as *NOT SHAREABLE*.
+
+| *Can manage data* | Can create connections. To view or edit other people's connections, you must have the *Can administer ThoughtSpot* privilege. +
+Can create worksheets and views. +
+Note that to edit a worksheet or a view created by another user, you must have the *Edit* permission on that object, and it must be shared with you.
+
+| *Can use experimental features* | Can access trial and experimental features that ThoughtSpot makes available to early adopters.
+a|
+[#schedule-pinboards]
+*Can schedule Liveboards* | Can create Liveboard schedules and edit their own scheduled jobs.
+| *Has SpotIQ privilege* | Can use the SpotIQ feature. +
+If this privilege is not enabled for the user, they can still see "Did you know" SpotIQ insights on the ThoughtSpot home page.
+| *Can administer and bypass RLS*
+a| Users in groups with this privilege (directly or through group inheritance): +
+
+- Are exempt from row-level security (RLS) rules.
+- Can add/edit/delete existing RLS rules.
+- Can check or uncheck Bypass RLS on a worksheet. +
+
+Your installation configuration may enable or disable the availability of this privilege. By default, it is enabled. Administrators or groups with the privilege *Can administer ThoughtSpot* can grant this privilege.
+
+| *Has Developer privilege* | Can access and use the xref:spotdev-portal.adoc[Developer Portal] to explore the ThoughtSpot APIs and developer tools, and build web applications with ThoughtSpot content.
+a|
+[#read-only]
+*Cannot create or update Liveboards* | Users are limited to viewing and exploring curated Liveboards (and Answers). They cannot copy, edit, download, or share them. +
+
+This privilege is designed to support embedded implementations, and is not available by default. xref:support-contact.adoc[Contact ThoughtSpot Support] to enable it. +
+
+See xref:liveboard-granular-permission.adoc[Granular access to Liveboards] for a deeper discussion of this privilege, and an implementation example.
+|===
