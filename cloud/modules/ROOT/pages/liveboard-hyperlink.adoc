@@ -16,19 +16,18 @@ Using the concat formula, you can create an external hyperlink, or link your ans
 To add an external hyperlink in a search, follow these steps:
 
 . Start a new search.
-+   Alternatively, choose to edit an existing answer from a Liveboard.
++
+Alternatively, choose to edit an existing answer from a Liveboard.
 . If the answer shows a chart, switch to *Table View*.
 +
-+
-[.inline] image::changeview-chartortable.png[Switch to table view]
+image::changeview-chartortable.png[Switch to table view]
 
 . In the upper-right side of the table, click the *More* menu icon image:icon-ellipses.png[more options menu icon], and select *Add formula*.
 +
-+
-[.inline] image::formula-add-to-search.png[Create a new formula in an answer]
+image::formula-add-to-search.png[Create a new formula in an answer]
 
 . Name your formula.
-. Enter your formula, following the basic syntax: +
+. Enter your formula, following the basic syntax:
 +
 ----
  concat({caption}value{/caption}link)
@@ -42,7 +41,8 @@ To add an external hyperlink in a search, follow these steps:
 ----
 
  .. For a data set that contains properly formed urls, you can simplify the formula.
-+  For example, to link from the `Fruit` column to the `url`, use the following syntax to reference the two columns, `fruit` and `url`: +
++
+For example, to link from the `Fruit` column to the `url`, use the following syntax to reference the two columns, `fruit` and `url`:
 +
 ----
  concat("{caption}",fruit,"{/caption}",url)
@@ -61,17 +61,16 @@ To add a hyperlink to another Liveboard, follow these steps:
 . Within your Search, switch to *Table View*.
 . In the upper-right side of the table, click the *More* menu icon image:icon-ellipses.png[more options menu icon]  and select *Add formula*.
 +
-+
 image::formula-add-to-search.png[Create a new formula in an answer]
 
 . Name your formula.
-. Enter your formula, following the basic syntax: +
+. Enter your formula, following the basic syntax:
 +
 ----
  concat(“{caption}pinboard{/caption}http://<thoughtspot_server>:<port>/?<runtime filter>,column name)
 ----
 +
-For example, the formula to link between a search on fruit sales and a Liveboard based on the same data with url `https://.com/#/pinboard/e510f946-f9ce-48ad-a4af-1a40a9cf8add` would be: `
+For example, the formula to link between a search on fruit sales and a Liveboard based on the same data with url `https://.com/#/pinboard/e510f946-f9ce-48ad-a4af-1a40a9cf8add` would be: `concat("{caption}pinboard{/caption}https://.com/#/pinboard/e510f946-f9ce-48ad-a4af-1a40a9cf8add/?col1=fruit&op1=eq&val1=",fruit)`
 +
 Here, the runtime filter is operating on the column "`fruit,`" and will only return values that are equal (EQ) to the fruits listed in the columns.
 To learn more about runtime filters, see xref:runtime-filters.adoc[About Runtime Filters].

@@ -828,7 +828,7 @@ Specifies the calendar used by a date column.
 +
 Can be the Gregorian calendar (`default`), a fiscal calendar, or any custom calendar.
 +
-See xref:custom-calendar.adoc[Set up a custom calendar]
+See xref:connections-cust-cal.adoc[Set up a custom calendar]
 
 [#chart]
 chart::
@@ -848,7 +848,7 @@ Color to use for conditional formatting or for the columns of an Answer in chart
 
 [#column]
 column::
-The id of the column(s) being filtered on. When a Pinboard contains xref:pinboard-filters-linked.adoc[linked filters], or filters that affect visualizations based on more than one Worksheet, the primary filter column appears first in the list of columns in the TML. The linked filter column appears after the primary filter column.
+The id of the column(s) being filtered on. When a Liveboard contains xref:liveboard-filters-linked.adoc[linked filters], or filters that affect visualizations based on more than one Worksheet, the primary filter column appears first in the list of columns in the TML. The linked filter column appears after the primary filter column.
 
 [#columns]
 columns::
@@ -945,7 +945,7 @@ If the visualization is a headline, this parameter specifies the column the head
 
 [#excluded_visualizations]
 excluded_visualizations::
-A list of visualizations the Pinboard editor chose to exclude from the filter. Only appears when using xref:pinboard-filters-selective.adoc[selective filters].
+A list of visualizations the Liveboard editor chose to exclude from the filter. Only appears when using xref:liveboard-filters-selective.adoc[selective filters].
 
 [#expr]
 expr::
@@ -953,7 +953,7 @@ The definition of the formula or, in release 7.1.1 and later, row level security
 
 [#filters]
 filters::
-Contains specifications for Pinboard, View, and Worksheet filters.
+Contains specifications for Liveboard, View, and Worksheet filters.
 
 [#format_pattern]
 format_pattern::
@@ -996,7 +996,7 @@ See xref:data-modeling-geo-data.adoc[Add a geographical data setting]
 
 [#guid]
 guid::
-The GUID for the Answer, Pinboard, SpotIQ result, Table, Worksheet, or View.
+The GUID for the Answer, Liveboard, SpotIQ result, Table, Worksheet, or View.
 +
 You can find this string of letters and numbers at the end of the URL for an object.
 
@@ -1013,7 +1013,7 @@ Specifies the id of an object, such as `table_paths`, `formula`.
 For Answers, `id` refers to how the column appears in the query.
 For example, if you sorted by `Quarter` in your search, from the `Commit Date` column, the `id` of the column is `Quarter(Commit Date)`.
 +
-Refer to xref:search-data-api.adoc#components[Components of a Search Query] to understand syntax.
+Refer to https://developers.thoughtspot.com/docs/?pageid=search-data-api[Components of a Search Query^] to understand syntax.
 +
 For formulas within Answers, `id` refers to the display name of the formula.
 +
@@ -1139,7 +1139,7 @@ Each join is identified by `name` and optional `description`, and the additional
 
 [#layout]
 layout::
-Specifies the Pinboard layout, in the order that a `visualization_id` is listed.
+Specifies the Liveboard layout, in the order that a `visualization_id` is listed.
 
 [#locked]
 locked::
@@ -1161,7 +1161,7 @@ Applies to `worksheet`, `table`,`joins`, `formula`, `rls_rules`, `answer`, `pinb
 +
 For Answers, `name` refers to how the column appears in the query.
 For example, if you sorted by `Quarter` in your search, from the `Commit Date` column, the `name` of the column is `Quarter(Commit Date)`.
-Refer to xref:search-data-api.adoc#components[Components of a Search Query] to understand syntax.
+Refer to https://developers.thoughtspot.com/docs/?pageid=search-data-api[Components of a Search Query^] to understand syntax.
 
 [#on]
 on::
@@ -1170,7 +1170,7 @@ You cannot directly edit a relationship definition. To alter a relationship defi
 
 [#oper]
 oper::
-The operator of the Pinboard, View or Worksheet filter.
+The operator of the Liveboard, View or Worksheet filter.
 Accepted operators are `"in"`, `"not in"`, `"between"`, `=<`, `!=`, `+<=+`, `>=`, `>`, or `<`.
 
 [#ordered_column_ids]
@@ -1183,7 +1183,7 @@ Phrase associated with a View column.
 
 [#pinboard]
 pinboard::
-Top-level container for all object definitions within the Pinboard or SpotIQ result.
+Top-level container for all object definitions within the Liveboard or SpotIQ result.
 
 [#properties]
 properties::
@@ -1224,7 +1224,7 @@ The schema that the table is a part of.
 [#search_query]
 search_query::
 A string that represents the fully disambiguated search query.
-Refer to xref:search-data-api.adoc#components[Components of a Search Query] to understand syntax.
+Refer to https://developers.thoughtspot.com/docs/?pageid=search-data-api[Components of a Search Query^] to understand syntax.
 
 [#show_headline]
 show_headline::
@@ -1233,7 +1233,7 @@ Determines whether to show the headline for this column.
 
 [#size]
 size::
-The size of a visualization in a Pinboard.
+The size of a visualization in a Liveboard.
 The options are `EXTRA_SMALL`, `SMALL`, `MEDIUM`, `LARGE`, `LARGE_SMALL`, `MEDIUM_SMALL`, and `EXTRA_LARGE`.
 
 [#source]
@@ -1249,9 +1249,7 @@ Refer to xref:spotiq-data-model-preferences.adoc[Set columns to exlude from Spot
 
 [#synonyms]
 synonyms::
-Alternate names for the column, used in search
-+
-See xref:data-modeling-synonym.adoc[]
+Alternate names for the column, used in search.
 
 [#table]
 table::
@@ -1297,7 +1295,7 @@ Possible values: `COLUMN`, `BAR`, `LINE`, `PIE`, `SCATTER`, `BUBBLE`, `STACKED_C
 
 [#values]
 values::
-The values being filtered (excluded or included) in a Pinboard, View, or Worksheet.
+The values being filtered (excluded or included) in a Liveboard, View, or Worksheet.
 
 [#view]
 view::
@@ -1311,13 +1309,13 @@ Each column is identified by `name`, `description`, `column_id`, `phrase` and `p
 
 [#visualizations]
 visualizations::
-The visualizations in a Pinboard: tables, charts, and headlines.
+The visualizations in a Liveboard: tables, charts, and headlines.
 
 [#visualization_id]
 visualization_id::
 The id of a visualization.
 +
-Used to specify the Pinboard's <<layout,layout>>.
+Used to specify the Liveboard's <<layout,layout>>.
 
 [#worksheet]
 worksheet::
