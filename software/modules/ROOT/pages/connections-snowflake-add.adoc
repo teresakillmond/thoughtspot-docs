@@ -69,10 +69,17 @@ Refer to the xref:connections-snowflake-reference.adoc[Snowflake connection refe
 .. For Key, enter *proxyHost*, and for Value, enter the URL of your proxy server.
 .. Click the plus sign (+) to add additional Key and Value fields.
 .. For Key, enter *proxyPort*, and for Value, enter your proxy port number.
-IMPORTANT: Snowflake reuses the proxy configuration across *all* connections. Snowflake uses proxy settings from the first connection.
++
+[IMPORTANT]
+.Snowflake Shared proxy limitation
+====
+Snowflake uses proxy settings from the first connection, and reuses the proxy configuration across *all* connections.
+
 When setting up a proxy with Snowflake ensure that:
-* There are no other connections which use a different proxy or are without a proxy.
-* Ensure new connections has proxy details. If there was an unsuccessful attempt to fetch metadata without proxy, adding a proxy later might not work because the Snowflake driver might assume no proxy.
+
+- There are no other connections which use a different proxy or are without a proxy.
+- Ensure each new connection has the same proxy details. If there was an unsuccessful attempt to fetch metadata without proxy, adding a proxy later might not work because the Snowflake driver might assume no proxy.
+====
 
 . (Optional) Provide additional key-value pairs that you need to set up your connection to Snowflake, by doing the following:
  .. Click the *Advanced Config* menu to reveal the Key and Value fields.
