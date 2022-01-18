@@ -72,7 +72,7 @@ Refer to the xref:connections-snowflake-reference.adoc[Snowflake connection refe
 IMPORTANT: Snowflake reuses the proxy configuration across *all* connections. Snowflake uses proxy settings from the first connection.
 When setting up a proxy with Snowflake ensure that:
 * There are no other connections which use a different proxy or are without a proxy.
-* Ensure new connections has proxy details. If there was an unsuccessful attempt to fetch metadata without proxy, adding a proxy later might not work because the Snowflake driver might assume no proxy. 
+* Ensure new connections has proxy details. If there was an unsuccessful attempt to fetch metadata without proxy, adding a proxy later might not work because the Snowflake driver might assume no proxy.
 
 . (Optional) Provide additional key-value pairs that you need to set up your connection to Snowflake, by doing the following:
  .. Click the *Advanced Config* menu to reveal the Key and Value fields.
@@ -117,3 +117,4 @@ With linked data, ThoughtSpot queries the external database directly, which is s
 > * xref:connections-snowflake-reference.adoc[Snowflake connection reference]
 > * xref:data-load.adoc[Load and manage data]
 > * xref:security.adoc[Data and object security]
+> * https://docs.snowflake.com/en/user-guide/snowcd.html#using-snowcd-with-an-http-proxy[Snowflake docs: Proxy settings^]
