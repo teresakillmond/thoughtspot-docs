@@ -62,10 +62,22 @@ For Service account authentication, do the following:
 +
 Refer to the xref:connections-snowflake-reference.adoc[Snowflake connection reference] for more information on each of the specific attributes you must enter for your connection.
 +
+. (Optional) Configure proxy for your Snowflake connection by doing the following:
+.. Click the *Advanced Config* menu to reveal the Key and Value fields.
+.. For Key, enter *useProxy*, and for Value, enter *true*.
+.. Click the plus sign (+) to add additional Key and Value fields.
+.. For Key, enter *proxyHost*, and for Value, enter the URL of your proxy server.
+.. Click the plus sign (+) to add additional Key and Value fields.
+.. For Key, enter *proxyPort*, and for Value, enter your proxy port number.
+IMPORTANT: Snowflake reuses the proxy configuration across *all* connections. Snowflake uses proxy settings from the first connection.
+When setting up a proxy with Snowflake ensure that:
+* There are no other connections which use a different proxy or are without a proxy.
+* Ensure new connections has proxy details. If there was an unsuccessful attempt to fetch metadata without proxy, adding a proxy later might not work because the Snowflake driver might assume no proxy. 
+
 . (Optional) Provide additional key-value pairs that you need to set up your connection to Snowflake, by doing the following:
- ** Click the *Advanced Config* menu to reveal the *Key* and *Value* fields.
- ** Enter your key and value information.
- ** To add more keys and values, click the plus sign (+), and enter them.
+ .. Click the *Advanced Config* menu to reveal the Key and Value fields.
+ .. Enter your key and value information.
+ .. To add more keys and values, click the plus sign (+), and enter them.
 +
 NOTE: Any key-value pairs that you enter must be defined in your Snowflake data source.
 Key-value pairs are case-sensitive.
