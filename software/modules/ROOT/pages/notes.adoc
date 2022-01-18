@@ -26,15 +26,40 @@ For a complete list of issues that we fixed in this release, see xref:fixed.adoc
 
 [#analyst-7-2]
 === For the Analyst
+[#scriptability]
+Improved import workflow for Scriptability:: The new import workflow for xref:scriptability.adoc[Scriptability] identifies errors, suggests solutions, and allows you to resolve these errors as part of the import workflow.
+It also has a cleaner, more intuitive UI, with separate sections for different object types.
 
 [#business-user-7-2]
 === For the Business User
+
+[#profile-ui]
+UI improvement for user profile::
+This release improves the UI and user experience of the xref:user-profile.adoc[user profile].
+
+[#scatter-bubble-charts]
+Minimum and maximum on x-axis for scatter and bubble charts::
+You can now specify a minimum and maximum value for measures on the x-axis of xref:chart-scatter.adoc[scatter] and xref:chart-bubble.adoc[bubble] charts.
+For more information on how to add a minimum and maximum value to a chart axis, refer to xref:chart-axes-options.adoc#edit[Change axis options].
+
+[#geomaps]
+Geo map support::
+New Zealand;; We added support for regional councils, cities and districts, and postcodes, for New Zealand.
+Denmark;; We added support for regions, municipalities, and postal codes, for Denmark.
+
+See xref:geomap-reference.adoc[Geo Map Reference].
 
 [#data-engineer-7-2]
 === For the Data Engineer
 
 [#it-ops-engineer-7-2]
 === For the IT Ops Engineer
+
+SAML assertion validity::
+ThoughtSpot now supports 2 methods to increase the duration of validity for your xref:saml.adoc#_saml_assertion_and_attributes[SAML assertion]: the `SessionNotOnOrAfter` attribute and the `maxAuthenticationAge` parameter. You can ask ThoughtSpot to disable either one of these checks. If you use both, and either check fails, ThoughtSpot does not authenticate the user. Some IDPs do not support use of `SessionNotOnOrAfter`. If your IDP does not support use of `SessionNotOnOrAfter`, remove that attribute from your IDP assertion and https://community.thoughtspot.com/customers/s/contactsupport[ask ThoughtSpot Support^] to enable `maxAuthenticationAge`.
+
+[#credit-usage-pinboard]
+Credit Usage Liveboard::  The Credit Usage Liveboard, a Liveboard for monitoring your credit consumption under the consumption-based pricing model, is now accessible from the Admin Console, under menu:Billing[Credit consumption].
 
 [#developer-7-2]
 === For the Developer
