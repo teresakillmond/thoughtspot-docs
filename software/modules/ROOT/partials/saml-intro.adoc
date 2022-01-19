@@ -23,6 +23,7 @@ The provider of a business function or application service; for example ThoughtS
 - **Federated user** +
 A user whose identity information is managed by the IdP. The federated users have SSO credentials and authenticate to IdP to access various application services.
 
+[#saml-assertion]
 === SAML assertion and attributes
 
 Both SP-initiated and IdP-initiated authentication workflows rely upon assertions that are exchanged between the SAML endpoints through a web browser.
@@ -31,6 +32,8 @@ Some of the most commonly used elements are:
 
 - **SAML assertion** +
 The user authentication and authorization information issued by the IdP. SAML assertions contain all the information necessary for a service provider to confirm if the user identity is valid.
++
+ThoughtSpot supports 2 methods to increase the duration of validity for your SAML assertion: the `SessionNotOnOrAfter` attribute and the `maxAuthenticationAge` parameter. You can ask ThoughtSpot to disable either one of these checks. If you use both, and either check fails, ThoughtSpot does not authenticate the user. Some IDPs do not support use of `SessionNotOnOrAfter`. If your IDP does not support use of `SessionNotOnOrAfter`, remove that attribute from your IDP assertion and https://community.thoughtspot.com/customers/s/contactsupport[ask ThoughtSpot Support^] to enable `maxAuthenticationAge`.
 
 - **Metadata** +
 Data in the XML format to establish interoperability between the IdP and SP. It contains the URLs of the endpoints, entity ID, and so on.
