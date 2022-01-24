@@ -25,6 +25,42 @@ If you right-click a table cell, the system displays a contextual menu, allowing
 
 image::charts-pivot-table-cell-new.png[Pivot table cell menu]
 
+== Sort
+To sort any column or row, right-click on a row or column heading and select **Sort**.
+
+You can sort a pivot table in many different ways. The ways you can sort a pivot table differ, depending on whether you are using the <<classic-experience,classic answer experience>> or the <<new-experience,new answer experience>>.
+
+[#classic-experience]
+=== Sort with the classic answer experience
+If you use the classic answer experience, you have the following limitations:
+
+* You can only sort on one attribute at a time.
+* When you sort by a measure, it sorts both columns and rows.
+* When you save a pivot table that you sorted, any sorts you added do not save.
+
+[#new-experience]
+=== Sort with the new answer experience
+If you use the xref:answer-experience-new.adoc[new answer experience], you can sort in the following ways:
+
+* You can sort on more than one attribute at a time, as long as it works within ThoughtSpot's logic. See the <<sorting-logic,sorting logic table>>.
+* When you sort by a measure, you sort rows only. This allows you to sort the rows by a measure, like `sales`, and the columns by an attribute, like `date`.
+* When you save a pivot table that you sorted, all sorting saves as well.
+* If you sort both from the search bar and from the in-context row or column heading menus, whichever sorting is the latest overrides the other. For example, if you right-click on a `Department` row heading and select *Sort ascending*, and then add `sort by date monthly` to the search bar, ThoughtSpot sorts only by `date monthly`.
+
+[#sorting-logic]
+.Sorting logic
+|===
+| Starting state | Add sort on row attribute | Add sort on column attribute | Add sort on measure
+
+| No sorts in place | Adds sort | Adds sort | Adds sort, only across rows
+| One or multiple sorts exist on row attributes | Adds sort | Adds sort | Overrides previous sorts and sorts based on the measure
+| One or multiple sorts exist on column attributes | Adds sort | Adds sort | Adds sort, only across rows
+| One sort on measure exists | Adds sort. Overrides previous sort by measure | Adds sort | Overrides previous sort by measure
+| Sort on both row and column attributes exists | Adds sort | Adds sort | Adds sort. Overrides sort on row, retains sort on column
+| Sort on column attribute and measure exists | Adds sort. Overrides sort on measure, retains sort on column | Adds sort | Adds sort. Overrides sort on measure, retains sort on column
+
+|===
+
 == Expand or contract columns and rows
 
 Click on a column or row heading to expand it.
