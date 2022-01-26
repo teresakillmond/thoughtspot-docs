@@ -127,6 +127,13 @@ max_if::
 +
 `max_if( (revenue > 10) , customer region )`
 
+[#median]
+median::
+Returns the value of the measure from the row that has the 50th percentile value.
++
+`median (sales)`
+
+
 [#min]
 min::
   Returns the minimum value of a column.
@@ -162,6 +169,13 @@ moving_sum::
   Takes a measure, two integers to define the window to aggregate over, and one or more attributes. The window is (current - Num1...Current + Num2) with both end points being included in the window. For example, "`1,1`" will have a window size of 3. To define a window that begins before Current, specify a negative number for Num2. Returns the sum of the measure over the given window. The attributes are the ordering columns used to compute the moving sum.
 +
 `moving_sum (revenue, 1, 1, order date)`
+
+[#percentile]
+percentile::
+Returns the value of the measure from the row that has a `rank_percentile` less than or equal to N. If there is no `rank_percentile` below N, the value of the measure of the first row above N will be returned.
++
+`percentile (sales , 99 , 'asc' )` +
+`percentile (sales , 99, 'desc' )`
 
 [#rank]
 rank::
