@@ -20,7 +20,7 @@ For more information, see https://docs.aws.amazon.com/redshift/latest/mgmt/conne
 === Configuring OAuth
 
 If you need to use OAuth with Redshift, you must configure an OpenID Connect (OIDC) provider in AWS IAM.
-For details, see xref:connections-redshift-oauth.add[Configure OAuth for a Redshift connection]
+For details, see xref:connections-redshift-oauth.adoc[Configure OAuth for a Redshift connection]
 
 == Adding a Redshift connection
 
@@ -38,14 +38,16 @@ image::redshift-connectiondetails.png[Enter connection details]
 +
 For Service Account authentication, do the following:
 
- ** Enter Host, Port, User, Password, and Database.
+** Enter Host, Port, User, Password, and Database.
 
 +
+--
 For IAM authentication, do the following:
 
- ** Enter Host, Port, Database, Db User, Access Key, and Secret Key.
+** Enter Host, Port, Database, Db User, Access Key, and Secret Key.
 
 +
+--
 For OAuth authentication, do the following:
 
  ** Enter Host, Port, Database, OAuth Client ID, OAuth Client Secret, Auth Url, Access token Url, Role ARN, and DbGroups.
@@ -59,6 +61,7 @@ Refer to the xref:connections-redshift-reference.adoc[Redshift connection refere
 
 +
 To add more keys and values, click the plus sign (+), and enter them.
+
 +
 NOTE: Any key-value pairs that you enter must be defined in your Redshift data source.
 Key-value pairs are case-sensitive.
