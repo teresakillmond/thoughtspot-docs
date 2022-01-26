@@ -1,8 +1,8 @@
 = Configure OAuth for a Redshift connection
-:last_updated: 1/10/2022
-:linkattrs:
 :experimental:
-:page-partial:
+:last_updated: 1/25/2022
+:linkattrs:
+:page-layout: default-cloud
 
 ThoughtSpot supports OAuth for an Amazon Redshift connection.
 Redshift supports federated authentication, enabling users from an identity provider (IdP) like Okta to authenticate to the database.
@@ -85,6 +85,7 @@ To create an IAM role with IdP trust, do the following:
 +
 Example policy:
 +
+[source,Redshift]
 ----
 {
     "Version": "2012-10-17",
@@ -118,6 +119,7 @@ Example policy:
 
 . Add the IdP resource as a trusted entity for assuming this role.
 +
+[source,Redshift]
 ----
  {
  "Version": "2012-10-17",
@@ -163,5 +165,5 @@ It is usually available in the IdP's console.
 * xref:connections-redshift-remap.adoc[Remap a Redshift connection]
 * xref:connections-redshift-delete-table.adoc[Delete a table from a Redshift connection]
 * xref:connections-redshift-delete-table-dependencies.adoc[Delete a table with dependent objects]
-* xref:connections-redshift-delete-connection.adoc[Delete a Redshift connection]
+* xref:connections-redshift-delete.adoc[Delete a Redshift connection]
 * xref:connections-redshift-reference.adoc[Connection reference for Redshift]
