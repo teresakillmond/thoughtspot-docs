@@ -1,5 +1,5 @@
 = Add a hyperlink to a search
-:last_updated: 11/05/2021
+:last_updated: 1/26/2021
 :linkattrs:
 :experimental:
 :page-layout: default-cloud
@@ -70,7 +70,7 @@ image::formula-add-to-search.png[Create a new formula in an answer]
  concat(“{caption}pinboard{/caption}http://<thoughtspot_server>:<port>/?<runtime filter>,column name)
 ----
 +
-For example, the formula to link between a search on fruit sales and a Liveboard based on the same data with url `https://.com/#/pinboard/e510f946-f9ce-48ad-a4af-1a40a9cf8add` would be: `concat("{caption}pinboard{/caption}https://.com/#/pinboard/e510f946-f9ce-48ad-a4af-1a40a9cf8add/?col1=fruit&op1=eq&val1=",fruit)`
+For example, the formula to link between a search on fruit sales and a Liveboard based on the same data with url `+https://<thoughtspot-instance>.com/#/pinboard/e510f946-f9ce-48ad-a4af-1a40a9cf8add+` would be: `+concat("{caption}pinboard{/caption}https://<thoughtspot-instance>.com/#/pinboard/e510f946-f9ce-48ad-a4af-1a40a9cf8add/?col1=fruit&op1=eq&val1=",fruit)+`
 +
 Here, the runtime filter is operating on the column "`fruit,`" and will only return values that are equal (EQ) to the fruits listed in the columns.
 To learn more about runtime filters, see xref:runtime-filters.adoc[About Runtime Filters].
