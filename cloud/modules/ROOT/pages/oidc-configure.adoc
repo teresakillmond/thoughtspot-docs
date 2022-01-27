@@ -176,6 +176,25 @@ Email address of the user. It maps to the `mail` attribute in the user profile o
 +
 The unique ID issued for the user at the OpenID provider. Maps to `oktauserid` attribute on ThoughtSpot.
 
+== OIDC authentication workflow
+
+////
+The following figure illustrates the OIDC authentication workflow:
+
+image::oidc-auth-workflow.png[OIDC authentication]
+////
+
+The OIDC authentication workflow involves the following steps:
+
+. A user requests access to ThoughtSpot.
+. ThoughtSpot checks for an existing user session in the browser.
+. If there is no session, it redirects the user to the OpenID authorization endpoint.
+. The OpenID authorization server returns an authorization code.
+. ThoughtSpot sends the authorization code with the ThoughtSpot client credentials in a `POST` request to the OpenID token endpoint.
+. The token endpoint returns an ID and access token in exchange for the authorization code.
+. ThoughtSPot validates the ID token and authenticates the user.
+. If the authentication is successful, the web browser redirects the user to the requested page.
+
 == Additional resources
 
 * link:https://developer.okta.com/docs/concepts/oauth-openid/[Okta documentation]
