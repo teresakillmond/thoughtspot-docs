@@ -15,8 +15,9 @@ Prepare the system and ThoughtSpot clusters for installation:
 | &#10063; | xref:enable-hosts[5. Enable the hosts to download RHEL or OEL packages]
 | &#10063; | xref:tmp-permission[6. Ensure tmp has permission 777]
 | &#10063; | xref:cgroups[7. Ensure that you are using Linux cgroupsV1]
-| &#10063; | xref:etc-sudoers[8. Remove Defaults requiretty from /etc/sudoers]
-| &#10063; | xref:selinux[9. Remove the selinux policy for rsync]
+| &#10063; | xref:proc[8. Ensure /proc mount point flags are compatible]
+| &#10063; | xref:etc-sudoers[9. Remove Defaults requiretty from /etc/sudoers]
+| &#10063; | xref:selinux[10. Remove the selinux policy for rsync]
 | &#10063; | xref:enable-ansible[ (Optional) Enable an Ansible Control Server]
 |===
 
@@ -125,12 +126,17 @@ If the hosts of your ThoughtSpot cluster have access to an internal repository t
 [#tmp-permission]
 == Ensure tmp has permission 777
 
-The `/tmp` directory must have the `777` permission.
+The `/tmp` directory must have the `777` permission. If you mount the `/tmp` directory as a separate partition, it must NOT have the `noexec` flag set.
 
 [#cgroups]
 == Ensure that you are using Linux cgroupsV1
 
 You must use Linux control groups v1 (`cgroupsV1`). `cgroupsV1` is the default on both RHEL 7 and RHEL 8. ThoughtSpot does not support use of Linux control groups v2 (`cgroupsV2`).
+
+[#proc]
+== Ensure /proc mount point flags are compatible
+
+You cannot mount the /proc mount point with the `hidepid` flag.
 
 [#etc-sudoers]
 == Remove Defaults requiretty from /etc/sudoers
