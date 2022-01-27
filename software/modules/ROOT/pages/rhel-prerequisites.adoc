@@ -38,8 +38,10 @@ Disable SELinux>>
 Ensure tmp has permission 777>>
 
 | &#10063;
-| <<etc-sudoers,9.
-Remove Defaults requiretty from /etc/sudoers>>
+| <<proc,9. Ensure /proc mount point flags are compatible>>
+
+| &#10063;
+| <<etc-sudoers,10. Remove Defaults requiretty from /etc/sudoers>>
 |===
 
 [#set-up-hosts]
@@ -91,28 +93,33 @@ You must upgrade to 3.10.0-1127.19.1.
 If you have trouble upgrading your Linux kernel to version 3.10.0-1127.19.1, xref:contact.adoc[contact ThoughtSpot Support].
 This is a requirement for *_all_* platforms: appliance, cloud, and VMware.
 
-WARNING: If Linux kernel version is not 3.10.0-1127.19.1, you may run into unexpected node reboots and possible loss of data.
+WARNING: If the Linux kernel version is not 3.10.0-1127.19.1, you may run into unexpected node reboots and possible loss of data.
 
 [#enable-hosts]
 == Enable the hosts to download RHEL packages
 
 *Repositories*
 
+[#yum-repositories]
 * *Yum repositories*: you must enable the following Yum repositories in your cluster: `epel`, `nux-desktop`, `pgdg95`, `rhel`, `rhel-optional`, `rhel-extras`.
 
+[#python-repositories]
 * *Python repository*: for Python, ensure the machine is able to reach the `PyPI` repository located at https://pypi.python.org/.
 
+[#r-repositories]
 * *R repository*: for R, ensure the machine is able to reach the `CRAN` repository located at https://cran.rstudio.com/.
 
 Make sure that you can download RHEL packages to all hosts, either from the <<official-repositories,official package repositories>>, or from a <<mirror-repositories,mirror repository>> owned and managed by your organization.
 
 If you cannot access the RHEL repositories, there is no mirror repository in your organization, or you are unable to access Yum, Python, or R repositories, please xref:contact.adoc[contact ThoughtSpot Support].
 
+[#official-repositories]
 *Official package repositories*
 
 If the hosts of your ThoughtSpot cluster can access external repositories, either directly or through a proxy, your cluster is online.
 You can then proceed to download <<yum-repositories,Yum>>, <<python-repositories,Python>>, and <<r-repositories,R>> package repositories.
 
+[#mirror-repositories]
 *Internal mirror repository*
 
 If the hosts of your ThoughtSpot cluster have access to an internal repository that mirrors the public repositories, copy the <<yum-repositories,Yum>>, <<python-repositories,Python>>, and <<r-repositories,R>> package repositories to your hosts.
@@ -132,7 +139,12 @@ We recommend that you disable SELinux, or run it in permissive mode.
 [#tmp-permission]
 == Ensure tmp has permission 777
 
-The `/tmp` directory must have the `777` permission.
+The `/tmp` directory must have the `777` permission. If you mount the `/tmp` directory as a separate partition, it must NOT have the `noexec` flag set.
+
+[#proc]
+== Ensure /proc mount point flags are compatible
+
+You cannot mount the /proc mount point with the `hidepid` flag. You must mount it without that flag.
 
 [#etc-sudoers]
 == Remove Defaults requiretty from /etc/sudoers
