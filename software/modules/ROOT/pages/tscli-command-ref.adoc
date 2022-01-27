@@ -1101,10 +1101,10 @@ This subcommand has the following options:
 
 tscli saml configure::
   Configures SAML, with the following subcommands:
---multi;; Adds multiple Identity Provider (IDP) configuration.
+--multi;; Adds multiple Identity Provider (IdP) configuration. After you fill out the configuration prompts for one IdP, the configurator asks `Do you want to add an IDP metadata?` Type `y` to configure another IdP.
 +
 The default is `False`.
---change_default_idp;; Changes your default IDP.
+--change_default_idp;; If you configured multiple IdPs, changes your default IDP. When users log into ThoughtSpot from the ThoughtSpot URL, the login screen takes them to the default IdP to log in. To use other, non-default IdPs that you configured with the `--multi` flag, users must log into ThoughtSpot from the other IdP's login page.
 +
 The default is `False`.
 

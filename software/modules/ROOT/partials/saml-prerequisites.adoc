@@ -10,7 +10,9 @@ Before you configure SAML, collect the following information:
 | &#10063; | <<ts-service-name,Unique service name>>
 | &#10063; | <<skew-time,Skew time in seconds>>
 | &#10063; | <<protocol,Protocol>>
-| &#10063; | <<metadata-xml-file,IDP Metadata XML File>>
+| &#10063; | <<metadata-xml-file,IdP Metadata XML File>>
+| &#10063; | <<label,IdP label>>
+| &#10063; | <<default,Do you want to make this IdP default?>>
 | &#10063; | <<auto-add,Automatically add SAML users to Thoughtspot>>
 | &#10063; | <<ts-auth,Also use ThoughtSpot internal authentication>>
 | &#10063; | <<max-auth,samlMaxAuthenticationAge>>
@@ -35,6 +37,14 @@ The allowed skew time, after which the authentication response is rejected and s
 [#protocol]
 === Protocol
 The connection protocol for ThoughtSpot. For example, `https`.
+
+[#label]
+=== IdP label
+*[TSCLI only. For multiple IdP only, with `--multi` flag]* Unique key to identify this IdP when using multiple identity providers. Cannot start with a period (`.`).
+
+[#default]
+=== Do you want to make this IdP default?
+*[TSCLI only. For multiple IdP only, with `--multi` flag]* Specifies if this IdP should be the default. Type `y` to make this IdP the default, and `n` to make the next IdP you configure the default. When users log into ThoughtSpot from the ThoughtSpot URL, the login screen takes them to the default IdP to log in. To use other, non-default IdPs that you configured with the `--multi` flag, users must log into ThoughtSpot from the other IdP's login page.
 
 [#metadata-xml-file]
 === IdP Metadata XML File
