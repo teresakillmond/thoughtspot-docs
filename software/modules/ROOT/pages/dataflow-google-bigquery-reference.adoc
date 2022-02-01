@@ -6,11 +6,17 @@
 
 Learn about the fields used to create an Google BigQuery connection with ThoughtSpot DataFlow.
 
-Here is a list of the fields for a Cassandra connection in ThoughtSpot DataFlow.
+Here is a list of the fields for a Google BigQuery connection in ThoughtSpot DataFlow.
 You need specific information to establish a seamless and secure connection.
 
 [#connection-properties]
 == Connection properties
+[#dataflow-google-bigquery-conn-connection-name]
+Connection name:: Name your connection. Mandatory field.
+Example:;; GoogleBigQueryConnection
+[#dataflow-google-bigquery-conn-connection-type]
+Connection type:: Choose the Google BigQuery connection type. Mandatory field.
+Example:;; Google BigQuery
 [#dataflow-google-bigquery-conn-project-id]
 Project id:: The identification number given to particular project, always unique. Mandatory field.
 Example:;; myproject-1234
@@ -56,8 +62,11 @@ Optional field. +
  Example:;; http
  Valid Values:;; http, https
  Default:;; http
+
+////
 [#dataflow-google-bigquery-conn-jdbc-options]
 include::partial$dataflow/jdbc-options.adoc[]
+////
 
 [#sync-properties]
 == Sync properties
