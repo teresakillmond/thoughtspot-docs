@@ -42,7 +42,7 @@ For details, see xref:connections-snowflake-oauth.adoc[Configure OAuth for a Sno
 Before selecting *Microsoft Azure AD OAuth* authentication, you must configure Azure AD external OAuth.
 For details, see xref:connections-snowflake-azure-ad-oauth.adoc[Configure Azure AD external OAuth for a Snowflake connection].
 +
-For OAuth authentication, do the following:
+- For OAuth authentication, do the following:
 
  .. Select *Use OAuth*.
  .. Enter Account name or your Snowflake URL, OAuth Client ID, OAuth Client Secret, and (optional) Database.
@@ -57,7 +57,7 @@ Using security passthrough may have implications for your Row Level Security.
 See xref:security-rls.adoc[About row level security (RLS)] for more information.
 
 +
-For Microsoft Azure AD OAuth authentication, do the following:
+- For Microsoft Azure AD OAuth authentication, do the following:
 
  .. Select *Microsoft Azure AD OAuth*.
  .. Enter Account name or Snowflake URL, OAuth Client ID, OAuth Client Secret, Scope, Auth URL, Access token URL, and (optional) Database.
@@ -69,12 +69,30 @@ If not, click *Continue*.
  .. On the Stay-signed-in screen, click *Yes*.
 
 +
-For *Use Service Account* authentication, do the following:
+- For *Use Service Account* authentication, do the following:
 
  .. Select *Use Service Account*.
  .. Enter Account name, User, Password, Role, Warehouse, and (optional) Database.
 image:snowflake-connectiondetails-serv-acct2.png[Enter connection details]
++
+. (Optional) Configure proxy for your Snowflake connection by doing the following:
+.. Click the *Advanced Config* menu to reveal the Key and Value fields.
+.. For Key, enter *useProxy*, and for Value, enter *true*.
+.. Click the plus sign (+) to add additional Key and Value fields.
+.. For Key, enter *proxyHost*, and for Value, enter the URL of your proxy server.
+.. Click the plus sign (+) to add additional Key and Value fields.
+.. For Key, enter *proxyPort*, and for Value, enter your proxy port number.
++
+[IMPORTANT]
+.Snowflake Shared proxy limitation
+====
+Snowflake uses proxy settings from the first connection, and reuses the proxy configuration across *all* connections.
 
+When setting up a proxy with Snowflake ensure that:
+
+- There are no other connections which use a different proxy or are without a proxy.
+- Ensure each new connection has the same proxy details. If there was an unsuccessful attempt to fetch metadata without proxy, adding a proxy later might not work because the Snowflake driver might assume no proxy.
+====
 +
 Refer to the xref:connections-snowflake-reference.adoc[Snowflake connection reference] for more information on each of the specific attributes you must enter for your connection.
 
