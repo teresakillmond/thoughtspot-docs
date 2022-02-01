@@ -15,10 +15,45 @@ These are the issues we fixed in recent ThoughtSpot releases.
 +
 --
 * DataFlow: Saving a new sync returns an "insufficient privileges" error if the target DB is not DataFlow_DB.
-* Embed SDK: If you add an event listener on the DialogClose event, DialogClose event is not triggered.
+* Embed SDK: If you add an event listener on the DialogClose event, the DialogClose event is not triggered.
 * DataFlow: While checking status of load, a "connection refused" error appears.
 * DataFlow: Syncs fail and cannot be aborted.
 * Runtime filter is dropped when user accesses ThoughtSpot through SSO.
+* DataFlow: Mail server cannot be configured when the domain of the SMTP relayhost and email ID are different.
+* Embed SDK: When clicking "go to pinboard" in a pinboard created from a search/answer via Pin / Create pinboard, it opens the entire ThoughtSpot app within the search embed.
+* Embed SDK: Share button does not appear in a pinboard after embedding.
+* DataFlow: Some tables are stuck while syncing.
+* Some Oracle ADW tables cannot be queried.
+* DataFlow syncs must be manually paused when upgrading ThoughtSpot.
+* Longer queries abort automatically at 5 minutes.
+* Users who do not have any SpotIQ privileges are able to run SpotIQ analyses from pinboard answers.
+* DataFlow: An edited sync cannot be saved and DataFlow attempts to drop PK constraint.
+* Show underlying data fails over chasm trap.
+* TS Everywhere: Disabling TML actions doesn't disable buttons on the main page.
+* Backup through tscli fails because space is not found in /tmp directory.
+* When downloading an answer in Excel, CSV, or PDF, the date range changes.
+* List of pinboards is very slow to display.
+* ThoughtSpot Everywhere: Login fails intermittently.
+* Axis values exceeding 20,000 are partially visualized in a bar chart.
+* Scheduled pinboard invalid when using an OAuth connection.
+* ThoughtSpot Everywhere: `disableMobileDeeplink` flag does not work on the login page.
+* CSV upload on Free Trial takes a long time to index.
+* ThoughtSpot installation erases AWS EC2 profile credentials.
+* When a user requests access to a pinbaord, the email is not sent to the administrator.
+* Connections: Custom calendar does not support a datatime columns join.
+* Cursor placement incorrect when clicking in Search using the Google Chrome 92 browser.
+* `tscli configure onboarding` command doesn't change email text.
+* Unable to change colors in a pie chart.
+* Pivot table chart combines aggregated and unaggregated sub-expressions.
+* Connections: Formula created at the answer level affects all other metric fields.
+* Pinboard sharing option does not work.
+* Snowflake query shows GUID for custom calendar in the join statement.
+* Join between INT32 and INT64 columns is not allowed.
+* Headline chart shows incorrect value.
+* Connections: filters on column !=0 return results that appear to be 0, but are actually meant to be NULL.
+* SQL query difference between Falcon and Snowflake connection.
+* Using `VS` in conjunction with `UNIQUE COUNT` shows negative values for null when querying a Snowflake connection.
+--
 ====
 
 [#releases-7-1-x]
