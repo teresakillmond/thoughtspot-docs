@@ -64,7 +64,7 @@ a|
 
 In the following example, May 1st is the start of the fiscal year. +
 
-`day_number_of_quarter (01/30/2015, 'fiscal') = 91`
+`day_number_of_quarter (01/30/2015, fiscal) = 91`
 
 a|
 [#day_number_of_week]
@@ -80,7 +80,7 @@ a|
 
 In the following example, May 1st is the start of the fiscal year. +
 
-`day_number_of_year ( 01/30/2015, 'fiscal' ) = 275` +
+`day_number_of_year ( 01/30/2015, fiscal ) = 275` +
 `day_number_of_year (invoiced)`
 
 a|
@@ -116,8 +116,8 @@ a|
 [#diff_months]
 `diff_months`
 | Subtracts the month of the second date from the month of the first date and returns the result in number of months. +
-+
-Use the optional third parameter to specify if ThoughtSpot should use a custom calendar to calculate the result.
+
+The optional third parameter specifies the custom calendar the formula uses to calculate the result.
 | `diff_months (12/25/2013, 01/01/2014) = -1` +
 `diff_months (01/01/2014, 01/25/2014) = 0` +
 `diff_months (purchased, shipped)` +
@@ -128,7 +128,7 @@ a|
 `diff_quarters`
 | Subtracts the quarter of the second date from the quarter of the first date and returns the result in number of quarters. +
 
-Use the optional third parameter to specify if ThoughtSpot should use a custom calendar to calculate the result.
+The optional third parameter specifies the custom calendar the formula uses to calculate the result.
 | `diff_quarters (12/31/2013, 01/01/2014) = -1` +
 `diff_quarters (01/01/2014, 03/31/2014) = 0` +
 `diff_quarters (purchased, shipped)` +
@@ -146,7 +146,7 @@ a|
 `diff_weeks`
 | Subtracts the week of the second date from the week of the first date and returns the result in number of weeks. +
 
-Use the optional third parameter to specify if ThoughtSpot should use a custom calendar to calculate the result.
+The optional third parameter specifies the custom calendar the formula uses to calculate the result.
 | `diff_weeks (01/05/2014, 01/06/2014) = -1` +
 `diff_weeks (01/06/2014, 01/12/2014) = 0` +
 `diff_weeks (purchased, shipped)` +
@@ -157,7 +157,7 @@ a|
 `diff_years`
 | Subtracts the second date from the first date and returns the result in number of years. +
 
-Use the optional third parameter to specify if ThoughtSpot should use a custom calendar to calculate the result.
+The optional third parameter specifies the custom calendar the formula uses to calculate the result.
 | `diff_years (12/25/2013, 01/01/2014) = -1` +
 `diff_years (01/01/2014, 12/25/2014) = 0` +
 `diff_years (purchased, shipped)` +
@@ -191,7 +191,7 @@ a|
 
 In the following example, May 1st is the start of the fiscal year. +
 
-`month_number ( 09/20/2014, 'fiscal' ) = 5` +
+`month_number ( 09/20/2014, fiscal ) = 5` +
 `month_number (purchased)`
 
 a|
@@ -202,7 +202,7 @@ a|
 
 In the following example, May 1st is the start of the fiscal year. +
 
-`month_number_of_quarter (02/20/2018,'fiscal' ) = 1`
+`month_number_of_quarter (02/20/2018,fiscal ) = 1`
 a|
 [#now]
 `now`
@@ -217,7 +217,7 @@ a|
 
 In the following example, May 1st is the start of the fiscal year. +
 
-`quarter_number ( 04/14/2014, 'fiscal' ) = 4` +
+`quarter_number ( 04/14/2014, fiscal ) = 4` +
 `quarter_number ( shipped )`
 
 a|
@@ -235,7 +235,7 @@ a|
 
 In the following example, May 1st is the start of the fiscal year. +
 
-`start_of_quarter ( 04/30/2014, 'fiscal') = Feb 2014` +
+`start_of_quarter ( 04/30/2014, fiscal) = Feb 2014` +
 `start_of_quarter (sold)`
 
 a|
@@ -253,7 +253,7 @@ a|
 
 In the following example, May 1st is the start of the fiscal year. +
 
-`start_of_year (04/30/2014, 'fiscal') returns May 2013` +
+`start_of_year (04/30/2014, fiscal) returns May 2013` +
 `start_of_year (joined)`
 
 a| [#time]
@@ -281,7 +281,7 @@ a|
 
 In the following example, May 1st is the start of the fiscal year. +
 
-`week_number_of_quarter (05/31/2020, 'fiscal') = 5`
+`week_number_of_quarter (05/31/2020, fiscal) = 5`
 
 a|
 [#week_number_of_year]
@@ -291,7 +291,7 @@ a|
 
 In the following example, May 1st is the start of the fiscal year. +
 
-`week_number_of_year ( 01/17/2014, 'fiscal') = 38`
+`week_number_of_year ( 01/17/2014, fiscal) = 38`
 
 a|
 [#year]
@@ -301,6 +301,6 @@ a|
 
 In the following example, May 1st is the start of the fiscal year. Per standard convention, the fiscal year is defined by the year-end date. +
 
-`year (12/15/2013, 'fiscal' ) = 2014` +
+`year (12/15/2013, fiscal ) = 2014` +
 `year (date ordered)`
 |===
