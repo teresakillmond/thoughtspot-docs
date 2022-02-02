@@ -5,16 +5,16 @@
 :page-layout: default-cloud
 
 ThoughtSpot supports OAuth for an Amazon Redshift connection.
-Redshift supports federated authentication, enabling users from an identity provider (IdP) like Okta to authenticate to the database.
+Redshift supports federated authentication, enabling users from an identity provider (IDP) like Okta to authenticate to the database.
 
 You configure the OpenID Connect(OIDC) provider in AWS IAM.
 OIDC does not require user credentials to be stored or passed from the client application.
-Users attempting a connection to Redshift are redirected to the IdP login page to authenticate and obtain an access token.
+Users attempting a connection to Redshift are redirected to the IDP login page to authenticate and obtain an access token.
 Redshift's driver has options to pass an access token as a parameter in creating a connection.
 
 == Setting up OIDC for Redshift with Okta ldP
 
-Setting up Redshift for OIDC authentication with Okta as IdP requires configuration on Okta and AWS.
+Setting up Redshift for OIDC authentication with Okta as IDP requires configuration on Okta and AWS.
 The high level steps are as follows.
 
 * Create an OIDC application in Okta with the details of the application that will request token - in this case TS.
@@ -40,7 +40,7 @@ image::redshift-oauth-okta-app-int.png[]
 . Click *Next*.
 . Complete the rest of the steps by following the on-screen instructions.
  ** *Grant type*: Authorization code is the default.
-In addition *Refresh Token* is required to request a new access token without interactive login to IdP when the token expires.
+In addition *Refresh Token* is required to request a new access token without interactive login to IDP when the token expires.
  ** *Sign-in redirect URIs*: The endpoint in the TS application which will handle the OAuth authorization code flow.
 . Make a note of the Client ID and Client Secret of the OIDC application.
 These are required by the ThoughtSpot connection to perform the OAuth authorization code flow.
@@ -63,9 +63,9 @@ The Redshift driver requires this claim in the JWT token presented to it.
 image::redshift-oauth-add-claim.png[]
 
 [#part-3]
-=== Part 3: Add Okta as the IdP in AWS
+=== Part 3: Add Okta as the IDP in AWS
 
-To add Okta as the IdP, do the following:
+To add Okta as the IDP, do the following:
 
 . Sign in to the AWS management console.
 . Go to menu:Access management[Identity providers].
@@ -76,9 +76,9 @@ To add Okta as the IdP, do the following:
 image::redshift-oauth-add-idp.png[]
 
 [#part-4]
-=== Part 4: Create an IAM role with IdP trust
+=== Part 4: Create an IAM role with IDP trust
 
-To create an IAM role with IdP trust, do the following:
+To create an IAM role with IDP trust, do the following:
 
 . Sign in to the AWS management console (if needed).
 . Create an IAM role attached with a policy that allows Redshift actions on the Redshift cluster, Database, User and Group.
@@ -117,7 +117,7 @@ Example policy:
 }
 ----
 
-. Add the IdP resource as a trusted entity for assuming this role.
+. Add the IDP resource as a trusted entity for assuming this role.
 +
 [source,Redshift]
 ----
@@ -144,18 +144,18 @@ The role/policy requirement is same as that for SAML integration documented in  
 
 . Obtain the following connection properties from above configurations:
 
-* *Client ID*: Client ID of the application registered with the OAuth provider (IdP).
+* *Client ID*: Client ID of the application registered with the OAuth provider (IDP).
 This is an alphanumeric string.
-* *Client Secret*: Client Secret of the application registered with the OAuth provider (IdP).
-An alphanumeric string that should be picked from the IdP console (e.g.
+* *Client Secret*: Client Secret of the application registered with the OAuth provider (IDP).
+An alphanumeric string that should be picked from the IDP console (e.g.
 Okta dashboard).
 * *Role ARN*: Amazon Resource Name (ARN) of the role.
 ARN of the role defined with a policy allowing the usage of token based authentication and permissions on Redshift.
 It is in the following format: `arn:aws:iam::<account_id>:role/<role_name>`.
 * *Authorization Url*: URL of the authorization server to where the authorization code request is sent by ThoughtSpot.
-It is usually available in the IdP's console.
+It is usually available in the IDP's console.
 * *Access token Url*: Endpoint provided by the authorization server to where the token request is sent by ThoughtSpot exchanging the authorization code obtained for the client.
-It is usually available in the IdP's console.
+It is usually available in the IDP's console.
 * *DbGroups*: A comma-separated list of existing database group names that user joins for the current session.
 
 == Related links
