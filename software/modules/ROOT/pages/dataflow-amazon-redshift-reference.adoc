@@ -1,5 +1,5 @@
 = Amazon Redshift connection reference
-:last_updated: 06/19/2020
+:last_updated: 02/01/2022
 :experimental:
 :linkattrs:
 :page-aliases: /data-integrate/dataflow/dataflow-amazon-redshift-reference.adoc
@@ -24,6 +24,9 @@ Example:;; example.com
 Port:: Specify the port associated to the Redshift system Mandatory field.
 Example:;; 1234
 Default:;; 5439
+[#dataflow-amazon-redshift-conn-database]
+Database:: Collection of information that is organized so that it can be easily accessed, managed and updated. Mandatory field.
+Example:;; database
 [#dataflow-amazon-redshift-conn-user]
 User::
 Specify the user to connect to Amazon Redshift.
@@ -32,9 +35,6 @@ Example:;; userdi
 [#dataflow-amazon-redshift-conn-password]
 include::partial$dataflow/password.adoc[]
 
-[#dataflow-amazon-redshift-conn-database]
-Database:: Collection of information that is organized so that it can be easily accessed, managed and updated. Mandatory field.
-Example:;; database
 [#dataflow-amazon-redshift-conn-jdbc-options]
 include::partial$dataflow/jdbc-options.adoc[]
 
