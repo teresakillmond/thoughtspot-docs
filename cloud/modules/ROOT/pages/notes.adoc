@@ -124,13 +124,13 @@ If you have the new redesigned data tab enabled, you'll see the new Data Portal 
 [#saml]
 SAML assertion validity::
 ThoughtSpot now supports 2 methods to increase the duration of validity for your xref:authentication-integration.adoc#saml-assertion[SAML assertion]: the `SessionNotOnOrAfter` attribute and the `maxAuthenticationAge` parameter.
-You can ask ThoughtSpot to disable either one of these checks. If you use both, and either check fails, ThoughtSpot does not authenticate the user. Some IDPs do not support use of `SessionNotOnOrAfter`.
-If your IDP does not support use of `SessionNotOnOrAfter`, remove that attribute from your IDP assertion and https://community.thoughtspot.com/customers/s/contactsupport[ask ThoughtSpot Support] to enable `maxAuthenticationAge`.
+You can ask ThoughtSpot to disable either one of these checks. If you use both, and either check fails, ThoughtSpot does not authenticate the user. Some IdPs do not support use of `SessionNotOnOrAfter`.
+If your IdP does not support use of `SessionNotOnOrAfter`, remove that attribute from your IdP assertion and https://community.thoughtspot.com/customers/s/contactsupport[ask ThoughtSpot Support] to enable `maxAuthenticationAge`.
 
 [#multiple-idp]
 Multiple Identity Providers for SAML login::
-You can now configure SAML SSO login for more than one Identity Provider (IDP).
-You may have multiple groups of users who need to log into ThoughtSpot but are managed by separate IDPs.
+You can now configure SAML SSO login for more than one Identity Provider (IdP).
+You may have multiple groups of users who need to log into ThoughtSpot but are managed by separate IdPs.
 To configure this, https://community.thoughtspot.com/customers/s/contactsupport[contact ThoughtSpot Support].
 
 [#vpn]
@@ -353,7 +353,7 @@ For more information, refer to xref:connections-cust-cal-create.adoc[Custom cale
 Credit Usage Liveboard::  The Credit Usage Liveboard, a Liveboard for monitoring your credit consumption under the consumption-based pricing model, is now accessible from the Admin Console, under menu:Billing[Credit consumption].
 [#saml-mail-field]
 SAML configuration::
-When configuring SAML authentication for ThoughtSpot, it is now mandatory to map the `mail` attribute in the IDP metadata file to the email address of the user.
+When configuring SAML authentication for ThoughtSpot, it is now mandatory to map the `mail` attribute in the IdP metadata file to the email address of the user.
 If your company cannot meet this requirement, https://community.thoughtspot.com/customers/s/contactsupport[contact ThoughtSpot support].
 For more information, refer to xref:authentication-integration.adoc[configure SAML].
 [#column-summaries]
