@@ -150,8 +150,10 @@ In this part you must do the following:
 * Validate the tokens from Azure AD.
 * Provide the appropriate Snowflake data access to users based on the user role associated with the OAuth token.
 
-==== Security integration format
+IMPORTANT: If you use **_SESSION:ROLE-ANY_** in scope, you must configure the following flag in the security integration: `external_oauth_any_role_mode = ‘ENABLE’`. This is shown in the optional line of the security integration format below.
 
+==== Security integration format
+[source]
 ----
 create security integration external_oauth_azure_2
     type = external_oauth
