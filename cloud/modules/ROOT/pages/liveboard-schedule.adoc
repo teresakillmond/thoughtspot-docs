@@ -9,8 +9,8 @@
 include::partial$liveboards-announcement.adoc[]
 
 You can add multiple schedules with different configurations for a single Liveboard.
-However, each job is limited to one Liveboard schedule.
-To add or modify a schedule, you must either be an administrator or have the schedule Liveboard privilege, and at least edit-only and view-only access to the Liveboard.
+However, each job is limited to one Liveboard schedule. Any user can create a Liveboard schedule for themselves.
+To add or modify a schedule for other users and groups, you must either be an administrator or have the *can schedule for others* privilege, and at least edit-only and view-only access to the Liveboard.
 
 To schedule a Liveboard:
 
@@ -42,6 +42,9 @@ Recipients::
 You are limited to 1000 recipients for each job. You can add *Users* or *groups*. Use *Emails* to add recipients who are not ThoughtSpot users. Your ThoughtSpot admin must set these email domains as allowed domains in advance. Contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support] to add allowed domains.
 +
 If you experience problems with sending email, your cluster may not have SMTP enabled. Contact your system administrator to resolve this issue.
++
+NOTE: You must have *can schedule for others* privileges to add other recipients to your Liveboard schedule.
++
 . Click *Schedule* to save your schedule configuration.
 
 include::partial$date-column-download.adoc[]
