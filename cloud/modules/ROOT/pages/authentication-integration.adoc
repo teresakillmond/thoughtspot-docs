@@ -14,7 +14,8 @@ ThoughtSpot supports the Single Sign-On (SSO) authentication method with the Sec
 With SAML SSO, users can authenticate to the SAML identity provider (IDP) at your federation to access the ThoughtSpot application, or the embedded ThoughtSpot content in an external web application.
 It also allows them to navigate seamlessly between different application interfaces with their existing credentials.
 
-By default, xref:authentication-local.adoc[local authentication] is enabled.
+By default, xref:authentication-local.adoc[local authentication] is enabled. After you configure SAML authentication, you can configure the ThoughtSpot login page to default to SSO login by contacting {support-url}. Note that if you change the default login experience to SSO, local users cannot authenticate.
+
 Use this article to learn how to configure a SAML integration with an external IDP.
 To configure SAML in an embedded environment, refer to https://developers.thoughtspot.com/docs/?pageid=saml-sso[SAML SSO authentication].
 
@@ -180,3 +181,8 @@ If your IDP does not allow you to import the IDP metadata XML file, you must map
 You can map your SAML groups from your IDP to your ThoughtSpot groups.
 This means that you do not have to manually recreate your groups in ThoughtSpot, if they are already present in your IDP.
 Refer to xref:saml-group-mapping.adoc[Configure SAML group mapping].
+
+== Use SSO login by default
+After you configure SAML authentication, a new option appears on the login page that allows users to log in using SSO, while still allowing local users to log in.
+
+To only allow SSO login by default, contact {support-url}. Note that if you change the default login experience to SSO, local users cannot authenticate.
