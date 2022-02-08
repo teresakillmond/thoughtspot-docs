@@ -1,5 +1,5 @@
 = Job management (scheduled Liveboards)
-:last_updated: 11/05/2021
+:last_updated: 2/08/2022
 :linkattrs:
 :page-layout: default-cloud
 :experimental: /admin/manage-jobs/about-scheduled-pinboards.adoc
@@ -18,14 +18,14 @@ https://community.thoughtspot.com/customers/s/contactsupport[Contact ThoughtSpot
 
 == Scheduled Liveboard creators
 
-Administrators and users with can schedule Liveboard privilege can schedule and manage Liveboard jobs.
+Administrators and users with *can schedule for others* privilege can schedule and manage Liveboard jobs for other users and groups.
 These scheduled Liveboard creators must have at least edit-only and view-only rights to the Liveboard they want to share.
 
-WARNING: It is recommended that admins carefully choose who to give can schedule Liveboard privilege to, since there is a possible security hole where a user with limited access can get a Liveboard email with all access data.
+WARNING: It is recommended that admins carefully choose who to give *can schedule for others* privilege to, since there is a possible security hole where a user with limited access can get a Liveboard email with all access data.
 
-== Row level security
+== Row-level security
 
-The scheduled Liveboards respect row level security rules.
+The scheduled Liveboards respect row-level security rules.
 This means if the recipients are users in ThoughtSpot, then they can only see data based on their own access to the Liveboard.
 If the user does not have at least view-only access to the Liveboard, then they will not see anything in the email.
 However, if the recipients are from outside of the cluster, then they will have access to the dataset of the Liveboard based on the sender's permissions.
