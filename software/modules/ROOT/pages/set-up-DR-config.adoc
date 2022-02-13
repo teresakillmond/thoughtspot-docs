@@ -14,7 +14,7 @@ If you configure daily backups, any metadata or data loaded/created after the la
 == Prerequisites
 
 Both primary and secondary appliances must use a shared storage volume. Both the primary and secondary appliance must have an active running ThoughtSpot cluster. You can use an NAS or Samba volume for your share.
-If you choose NAS, keep in mind that too slow a volume could potentially break backups or significantly slow restore performance.
+If you choose NAS, keep in mind that too slow a volume potentially break backups or significantly slow restore performance.
 The following are good guidelines for choosing storage:
 
 * Provision a dedicated storage volume for periodic backups.
@@ -22,23 +22,27 @@ The following are good guidelines for choosing storage:
 If backups fill up this storage, other components will suffer.
 * To ensure better supportability and continuity in case local hard disks go bad, the shared storage volume should be network based.
 
-ThoughtSpot supports shared storage by mounting NFS or CIFS/Samba based volumes.
+Thoughtspot supports shared storage by mounting NFS or CIFS/Samba based volumes.
 Before you begin, make sure you know if the shared volume is Samba or NAS volume.
 To find out, use the `telnet` command.
+
 Telnet confirms NFS::
++
+[source,console]
 ----
 $ telnet,2049
-  Trying 192.168.2.216\...
-  Connected to 192.168.2.216.
-  Escape character is '{caret}]'.
+Trying 192.168.2.216\...
+Connected to 192.168.2.216.
+Escape character is '{caret}]'.
 ----
-
 Telnet confirms Samba::
++
+[source,console]
 ----
 $ telnet,445
-    Trying 192.168.2.216\...
-    Connected to 192.168.2.216.
-    Escape character is '{caret}]'.
+Trying 192.168.2.216\...
+Connected to 192.168.2.216.
+Escape character is '{caret}]'
 ----
 
 == Configure and test your shared volume
@@ -53,12 +57,14 @@ The primary appliance contains the cluster you are protecting with the recovery 
 
 . Create a directory to act as your _mount_point_.
 +
+[source]
 ----
 sudo mkdir <mount_point>
 ----
 
 . Set the directory owner to `admin`.
 +
+[source]
 ----
 sudo chown -R admin:admin <mount_point>
 ----
@@ -68,19 +74,49 @@ Run `tscli nas mount-nfs` or `tscli nas mount-cifs`.
 +
 Use the command-line help (`tscli nas -h`) or the documentation to view all the xref:tscli-command-ref.adoc#tscli-nas[nas subcommand options].
 Below are some samples to help you:
-Example invocations::
-Samba share:;;
-`tscli nas mount-cifs --server 192.168.4.216 --path_on_server /bigstore_share --mount_point /mnt --username admin --password sambashare --uid 1001 --gid 1001`
-Samba share with Windows AD authentication:;;
-`tscli nas mount-cifs --server 172.27.1.75 --path_on_server /elc --mount_point /home/admin/etl/external_datadir --username COMPANYCO/thoughtspot_svc --password 'ts123PDI!' --uid 1001 --gid 1001`
-NFS:;;
-`tscli nas mount-nfs --server 192.168.4.132 --path_on_server /data/toolchain --mount_point /mnt`
+
+Samba share::
++
+[source]
+----
+tscli nas mount-cifs
+  --server 192.168.4.216
+  --path_on_server /bigstore_share
+  --mount_point /mnt
+  --username admin
+  --password sambashare
+  --uid 1001
+  --gid 1001
+----
+
+Samba share with Windows AD authentication::
++
+[source]
+----
+tscli nas mount-cifs
+  --server 172.27.1.75
+  --path_on_server /elc
+  --mount_point /home/admin/etl/external_datadir
+  --username COMPANYCO/thoughtspot_svc
+  --password 'ts123PDI!'
+  --uid 1001
+  --gid 1001
+----
+NFS::
++
+[source]
+----
+tscli nas mount-nfs
+  --server 192.168.4.132
+  --path_on_server /data/toolchain
+  --mount_point /mnt
+----
 
 . Log into the target machine.
 . Ensure that the target machine is running a ThoughtSpot cluster.
 Note that the clusters on the primary and target machines do not need to be on the same ThoughtSpot version.
 +
-If a cluster is not running on the target machine, xref:contact.adoc[contact ThoughtSpot Support] to create a cluster.
+If a cluster is not running on the target machine, contact {support-url} to create a cluster.
 
 . Repeat steps 3-5 on the target machine.
 +
@@ -89,12 +125,14 @@ The configuration of the mount point should be identical on both machines.
 
 . Test the configuration by creating a file as the `admin` user.
 +
+[source]
 ----
 touch <mount_point>/testfile
 ----
 
 . Return to the primary server and make sure you can edit the file.
 +
+[source]
 ----
 touch <mount_point>/testfile
 ----
@@ -117,21 +155,23 @@ If you are unfamiliar with the policy format, see xref:configure-backup.adoc[Con
 +
 By default, newly created policies are automatically enabled.
 
-. Verify the policy using the `tscli backup periodic-config <name>` command.
+. Verify the policy using the `tscli backup-policy show <name>` command.
 +
 Use the `<name>` from the policy you created in the previous step.
 
 . SSH into the secondary recovery appliance.
 . Use the `tscli dr-mirror` subcommand to start the mirror cluster.
 +
+[source]
 ----
-tscli dr-mirror start
+tscli dr-mirror start <mount point> <comma separated ip addresses of secondary cluster> <cluster name> <cluster id>
 ----
 
-. Verify that the cluster has started running in mirror mode.
-
+. Verify that the cluster has started running in mirror mode
++
+[source]
 ----
-   tscli dr-mirror status
+tscli dr-mirror status
 ----
 
 It may take some time for the cluster to begin acting as a mirror.
@@ -148,18 +188,21 @@ WARNING: You should perform this procedure under the supervision of ThoughtSpot 
 . SSH into the secondary cluster.
 . Stop the mirror cluster.
 +
+[source]
 ----
 tscli dr-mirror stop
 ----
 
 . Verify the mirror has stopped.
 +
+[source]
 ----
 tscli dr-mirror status
 ----
 
 . Start the new primary cluster.
 +
+[source]
 ----
 tscli cluster start
 ----
