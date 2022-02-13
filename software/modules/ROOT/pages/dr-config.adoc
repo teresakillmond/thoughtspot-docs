@@ -160,7 +160,7 @@ If you are unfamiliar with the policy format, see xref:backup-configure-schedule
 +
 By default, newly created policies are automatically enabled.
 
-. Verify the policy using the `tscli backup periodic-config <name>` command.
+. Verify the policy using the `tscli backup-policy show <name>` command.
 +
 Use the `<name>` from the policy you created in the previous step.
 
@@ -169,7 +169,7 @@ Use the `<name>` from the policy you created in the previous step.
 +
 [source]
 ----
-tscli dr-mirror start
+tscli dr-mirror start <mount point> <comma separated ip addresses of secondary cluster> <cluster name> <cluster id>
 ----
 
 . Verify that the cluster has started running in mirror mode
