@@ -68,3 +68,46 @@ A dataless backup saves a backup of the schema (metadata), with no data.
 Dataless backups allow you to send a copy of your cluster metadata to ThoughtSpot Support for troubleshooting without compromising data security and privacy.
 
 When restoring from a dataless backup, you must supply the correct release tarball, since this type of backup does not include the software release.
+
+=== Dataless backup contents for ThoughtSpot's in-memory database
+Dataless backups contain the following information for deployments with ThoughtSpot's in-memory database:
+
+* Metadata:
+** for users, groups, answers, Liveboards, visualizations, worksheets, data modeling settings, row level security filters
+* Scheduled jobs (for example, scheduled Liveboards)
+* Cluster details: ID, name, version
+* *[For S3-based clusters]:* AWS configuration (label, region, S3 bucket name)
+* Cluster manager configuration and state
+* Database schema: Definitions of databases, tables and views. Definition of a table includes its type (dimension/fact), version, internal/external, column details, region, primary key, unique key, relationships (foreign key)
+* End-user license agreement (EULA) policy and file
+* ThoughtSpot Software artifacts: binaries and configuration files
+* Hadoop layout
+* Firewall configuration
+* `mailname` and `mailfromname`
+* SAML configuration
+* Consumption pricing user activity
+
+Dataless backups for ThoughtSpot's in-memory database DO NOT include the following information:
+
+* Data stored in the in-memory database
+* Search index tokens
+
+=== Dataless backup contents for connections to external cloud data warehouses
+* Metadata:
+** for users, groups, answers, Liveboards, visualizations, worksheets, data modeling settings, row level security filters, tables, columns
+** for configuration of connections to external cloud data warehouses
+* Scheduled jobs (for example, scheduled Liveboards)
+* Cluster details: ID, name, version
+* *[For S3-based clusters]:* AWS configuration (label, region, S3 bucket name)
+* Cluster manager configuration and state
+* End-user license agreement (EULA) policy and file
+* ThoughtSpot Software artifacts: binaries and configuration files
+* Hadoop layout
+* Firewall configuration
+* `mailname` and `mailfromname`
+* SAML configuration
+* Consumption pricing user activity
+
+Dataless backups for connections to external cloud data warehouses DO NOT include the following information:
+
+* Search index tokens
