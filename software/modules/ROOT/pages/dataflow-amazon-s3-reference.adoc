@@ -1,5 +1,5 @@
 = Amazon S3 DataFlow connection reference
-:last_updated: 07/16/2020
+:last_updated: 02/16/2022
 :experimental:
 :linkattrs:
 :page-aliases: /data-integrate/dataflow/dataflow-amazon-s3-reference.adoc
@@ -20,6 +20,14 @@ Example:;; Amnazon S3
 [#dataflow-amazon-s3-conn-amazon-s3-url]
 Amazon S3 URL:: Specify the Amazon S3 hostname link. Mandatory field.
 Example:;; https://example1-amazonaws.com
+[#dataflow-amazon-s3-conn-other-s3-compatible-object-store]
+Other S3-compatible object store:: Enable this option to support for non-AWS S3 storage. Optional field.
+[#dataflow-amazon-s3-conn-region]
+Region:: Specifies the location on the globe. Location options may vary depending on the type of Cloud Platform. Mandatory field.
++
+Option appears when you select "Other S3-compatible object store."
+Example:;; US-West
+
 [#dataflow-amazon-s3-conn-bucket]
 Bucket::
 Specify the bucket. +
