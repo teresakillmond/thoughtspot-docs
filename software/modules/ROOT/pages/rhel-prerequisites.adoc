@@ -1,5 +1,5 @@
 = RHEL and OEL installation prerequisites
-:last_updated: 8/6/2021
+:last_updated: 2/18/2022
 :linkattrs:
 :page-aliases: /appliance/rhel/rhel-prerequisites.adoc
 :experimenal:
@@ -10,7 +10,7 @@ Prepare the system and ThoughtSpot clusters for installation:
 |===
 | &#10063; | xref:set-up-hosts[1. Set up hosts for the ThoughtSpot cluster]
 | &#10063; | xref:partition-hosts[2. Partition the hosts]
-| &#10063; | xref:install-rhel[3. Install RHEL version 7.8 or 7.9 or OEL version 7.9 on all hosts]
+| &#10063; | xref:install-rhel[3. Install RHEL version 7.8, 7.9, 8.1, 8.2, 8.3, 8.4, or 8.5 or OEL version 7.9 on all hosts]
 | &#10063; | xref:linux-kernel-version[4. Ensure that your Linux kernel is correct]
 | &#10063; | xref:enable-hosts[5. Enable the hosts to download RHEL or OEL packages]
 | &#10063; | xref:tmp-permission[6. Ensure tmp has permission 777]
@@ -27,12 +27,12 @@ Prepare the system and ThoughtSpot clusters for installation:
 Set up hosts for the ThoughtSpot cluster on your chosen platform.
 Please refer to the relevant deployment sections in our documentation for the exact specification for the hosts: CPU, memory, and disks.
 
-* [*_RHEL only_*] ThoughtSpot-certified hardware appliance manufactured by xref:dell.adoc[DELL]
-* [*_RHEL only_*] ThoughtSpot-certified hardware appliance manufactured by xref:smc.adoc[SMC]
-* [*_RHEL or OEL_*] xref:aws-configuration-options.adoc[Amazon Web Services (AWS) EC2]
-* [*_RHEL or OEL_*] xref:gcp-configuration-options.adoc[Google Cloud Platform (GCP)]
-* [*_RHEL only_*] xref:azure-configuration-options.adoc[Microsoft Azure]
-* [*_RHEL or OEL_*] xref:vmware.adoc[VMware]
+* [*_RHEL 7 only_*] ThoughtSpot-certified hardware appliance manufactured by xref:dell.adoc[DELL]
+* [*_RHEL 7 only_*] ThoughtSpot-certified hardware appliance manufactured by xref:smc.adoc[SMC]
+* [*_RHEL 7 or 8 or OEL_*] xref:aws-configuration-options.adoc[Amazon Web Services (AWS) EC2]
+* [*_RHEL 7 or OEL_*] xref:gcp-configuration-options.adoc[Google Cloud Platform (GCP)]
+* [*_RHEL 7 only_*] xref:azure-configuration-options.adoc[Microsoft Azure]
+* [*_RHEL 7 or 8 or OEL_*] xref:vmware.adoc[VMware]
 
 [#partition-hosts]
 == Partition the hosts
@@ -63,9 +63,11 @@ NOTE: For ThoughtSpot-certified hardware platforms, xref:dell.adoc[Dell] and xre
 [#install-rhel]
 == Install RHEL or OEL on hosts
 
-ThoughtSpot is certified with RHEL versions 7.8 and 7.9;
-we *do not* support other versions of RHEL, including 7.7, 8, and 8.1.
-ThoughtSpot is certified with OEL version 7.9. Install RHEL version 7.8 or 7.9 or OEL version 7.9. On RHEL version 7.8, ensure that your <<#linux-kernel-version,linux kernel version>> is 3.10.0-1127.19.1 or higher. On RHEL version 7.9, use the default linux kernel. On OEL version 7.9, ensure that you are using the Red Hat Compatible Kernel (RHCK), not the default Unbreakable Enterprise Kernel (UEK). If you are using the UEK, xref:support-contact.adoc[contact ThoughtSpot Support] to switch to the RHCK.
+ThoughtSpot is certified with RHEL versions 7.8, 7.9, 8.1, 8.2, 8.3, 8.4, and 8.5;
+we *do not* support other versions of RHEL, including 7.7 and 8.
+ThoughtSpot is certified with OEL version 7.9. Install RHEL version 7.8, 7.9, 8.1, 8.2, 8.3, 8.4, or 8.5, or OEL version 7.9.
+
+On RHEL version 7.8, ensure that your <<#linux-kernel-version,linux kernel version>> is 3.10.0-1127.19.1 or higher. On all other supported RHEL versions, use the default linux kernel. On OEL version 7.9, ensure that you are using the Red Hat Compatible Kernel (RHCK), not the default Unbreakable Enterprise Kernel (UEK). If you are using the UEK, xref:support-contact.adoc[contact ThoughtSpot Support] to switch to the RHCK.
 
 NOTE: For RHEL deployments on online clusters, the Ansible playbook upgrades the OS to RHEL 7.9. The Ansible playbook does *not* upgrade the OS when installing offline.
 
@@ -80,7 +82,7 @@ You must upgrade to 3.10.0-1127.19.1 or higher.
 If you have trouble upgrading your Linux kernel to version 3.10.0-1127.19.1 or higher, contact xref:support-contact.adoc[ThoughtSpot Support].
 This is a requirement for *all* platforms: hardware appliance, cloud, and VMware.
 
-If you are using RHEL version 7.9, use the default Linux kernel.
+If you are using any other supported RHEL version, use the default Linux kernel.
 
 On OEL version 7.9, ensure that you are using the Red Hat Compatible Kernel (RHCK), not the default Unbreakable Enterprise Kernel (UEK). If you are using the UEK, xref:support-contact.adoc[contact ThoughtSpot Support] to switch to the RHCK.
 
