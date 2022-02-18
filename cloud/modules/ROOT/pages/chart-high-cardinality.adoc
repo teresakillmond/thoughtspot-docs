@@ -9,16 +9,14 @@
 == High cardinality tables
 
 ThoughtSpot tables are no longer limited to 1000 rows.
-Now, you can see exactly how many rows your table displays.
+If you scroll all the way down on your table, or look at the `unique count` column summary, you can see exactly how many rows your table contains.
 The new default maximum number of rows is 20,000.
 You can configure this maximum, up to 35,000.
 To configure the maximum number of rows on a table, https://community.thoughtspot.com/customers/s/contactsupport[contact ThoughtSpot Support].
 
-Here, the table has 2632 rows, and ThoughtSpot is showing the first 1000. If you scroll down, ThoughtSpot shows the next 1000.
+Here, the table has many rows, and ThoughtSpot is showing the first 1000. If you scroll down, ThoughtSpot shows the next 1000. If you scroll all the way down on your table, you can see exactly how many rows your table contains.
 
 image::high-cardinality-table-new.png[High cardinality table example]
-
-The footer text may say `Showing 1,000 of many rows`, instead of specifying the number of rows, if ThoughtSpot receives an unknown number of rows.
 
 == High cardinality charts
 
@@ -27,17 +25,16 @@ You are no longer limited to 1000 data points.
 When your chart has a very large number of data values, you see a horizontal scroll bar at the bottom.
 The new default maximum number of data points is 20,000.
 You can configure this maximum, up to 35,000.
-To configure the maximum number of data points on a chart, https://community.thoughtspot.com/customers/s/contactsupport[contact ThoughtSpot Support].
+
+To configure the maximum number of data points on a chart for your whole cluster, https://community.thoughtspot.com/customers/s/contactsupport[contact ThoughtSpot Support]. To configure it for an individual chart, click the *edit chart configuration* image:icon-gear-10px.png[] icon, and select the *Settings* menu. Under *Max data points*, enter the maximum number of data points you would like ThoughtSpot to show at once, up to 35,000. If your administrator configured a smaller number as the cluster-wide maximum, you cannot individually configure a bigger maximum.
 
 image::high-cardinality-chart-new.png[High cardinality chart with scroll bar]
-
-The footer text may say `Showing 1,000 of many data points`, instead of specifying the number of data points, if ThoughtSpot receives an unknown number of data points.
 
 If you want to see the whole chart at one time, you can select the *fit to screen* option.
 To *fit to screen*, click the *edit chart configuration* image:icon-gear-10px.png[] icon, and select the *Settings* menu.
 Select *fit to screen*.
 
-When you *fit to screen*, you see the whole chart.
+When you *fit to screen*, you see the whole chart, up to 35,000 data points, or your administrator-configured maximum.
 You can easily return to the zoomed-in view, by unselecting the *fit to screen* option.
 
 Note that when you enable *fit to screen*, the *all labels* option is grayed out.
