@@ -5,19 +5,24 @@
 :page-aliases: /release/notes.adoc
 
 
-ThoughtSpot version 7.1.1 is now available.
+ThoughtSpot version 7.1.1.CU1 is now available.
 
-These release notes include information about new and enhanced features.
+This release provides critical security fixes for log4j, and other fixes to functional issues.
+
+To address the log4j issues, we’ve done the following:
+
+- Upgraded the log4j version used by ThoughtSpot to the latest version.
+- Upgraded the OS packages to the latest version.
+- Fixed remote code execution Java vulnerability in the H2 database console (CVE-2021-42392)
+
+For a complete list of functional issues that we fixed in this release, see xref:fixed.adoc#releases-7-1-x[Fixed issues].
 
 To see our feature deprecation plans, please see xref:deprecation.adoc[].
 
-For a complete list of issues that we fixed in this release, see xref:fixed.adoc#releases-7-1-x[Fixed issues].
-
-* <<new-7-1-1,7.1.1 New Features and Functionality>>
-* <<upgrade-paths,Supported Upgrade Paths>>
-
 [#new-7-1-1]
 == 7.1.1 New Features and Functionality
+These release notes include information about new and enhanced features.
+
 For a complete list of issues that we fixed in this release, see xref:fixed.adoc#releases-7-1-x[Fixed issues].
 
 Here are the most significant new features and improvements in the 7.1.1 Software Release:
@@ -236,16 +241,16 @@ This worksheet is the underlying source for the xref:object-usage-pinboard.adoc[
 [#upgrade-paths]
 == Supported Upgrade Paths
 
-If you are running one of the following versions, you can upgrade to the 7.1.1 release directly:
+If you are running one of the following versions, you can upgrade to the 7.1.1.CU1 release directly:
 
-* 6.3.x to 7.1.1
-* 7.0.x to 7.1.1
-* 7.1 to 7.1.1
+* 6.3.x to 7.1.1.CU1
+* 7.0.x to 7.1.1.CU1
+* 7.1 to 7.1.1.CU1
 
 This includes any hotfixes or customer patches on these branches.
 
 If you are running a different version, you must do a multiple pass upgrade.
 
-First, upgrade to version 6.3.x, 7.0.x, or 7.1 and then to the 7.1.1 release.
+First, upgrade to version 6.3.x, 7.0.x, or 7.1 and then to the 7.1.1.CU1 release.
 
 NOTE: To successfully upgrade your ThoughtSpot cluster, all user profiles must include a valid email address. Without valid email addresses, the upgrade is blocked.
