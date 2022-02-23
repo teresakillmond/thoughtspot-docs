@@ -1,0 +1,48 @@
+= Data protection and business continuity
+:last_updated: 2/22/2022
+:linkattrs:
+:experimental:
+:page-layout: default-cloud
+:description: Learn how ThoughtSpot protects your data and ensures business continuity. This article describes ThoughtSpot's disaster recovery strategy.
+
+This article describes ThoughtSpot's disaster recovery strategy.
+
+There are several methods ThoughtSpot employs to protect your cluster data and ensure business continuity in the event of a hardware or software failure or a catastrophic event.
+
+== Recovery Point Objective and Recovery Time Objective
+A Recovery Point Objective (RPO) is the frequency of which you take a backup of a system. ThoughtSpot's RPO is 24 hours. Every 24 hours, ThoughtSpot automatically takes a backup and stores it in Amazon S3, in the same region as the cluster, but in a different Availability Zone (AZ).
+
+A Recovery Time Objective (RTO) is the targeted duration of time between an event of failure and the return to operation. ThoughtSpot's RTO is 2 hours.
+
+== Snapshots and backups
+ThoughtSpot has a concept of both <<snapshots,snapshots>> and <<backups,backups>> for disaster recovery and backing up your ThoughtSpot cluster.
+
+[#snapshots]
+=== Snapshots
+A snapshot is a point-in-time image of your running cluster. Snapshots are both taken on and restored to a cluster while it is running. ThoughtSpot takes snapshots of your cluster once an hour and stores them on EBS disks attached to your VM instance. If an error occurs while making any changes to your cluster’s environment, loading a large amount of new data, or changing the structure of a table, you can restore the cluster to a point in time at most an hour before the error.
+
+[#backups]
+=== Backups
+A backup is a procedure that stores a snapshot outside a ThoughtSpot cluster. ThoughtSpot takes backups of your cluster once a day and stores them in Amazon S3. You can use a backup to restore a cluster to a prior state or remove a node.
+
+Backups contain the following information:
+
+* Metadata:
+** for users, groups, answers, Liveboards, visualizations, worksheets, data modeling settings, row level security filters, tables, columns
+** for configuration of connections to external cloud data warehouses
+* Scheduled jobs (for example, scheduled Liveboards)
+* Cluster details: ID, name, version
+* [For clusters with S3 storage]: AWS configuration (label, region, S3 bucket name)
+* Cluster manager configuration and state
+* End-user license agreement (EULA) policy and file
+* ThoughtSpot Software artifacts: binaries, configuration files, and custom configuration
+* Hadoop layout
+* Firewall configuration
+* mailname and mailfromname
+* SAML configuration
+* Consumption pricing user activity
+
+Backups DO NOT include the following information:
+* Search index tokens
+* Usage information
+* Traces
