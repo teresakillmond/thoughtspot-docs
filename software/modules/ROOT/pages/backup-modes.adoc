@@ -46,7 +46,7 @@ Don't forget that the backup size can grow over time, so you should occasionally
 
 == Lightweight backups
 
-Lightweight backups contain everything that makes up a cluster:
+Lightweight backups contain everything that is in a dataless backup, as well as everything that makes up a cluster:
 
 * Cluster configuration (SSH, LDAP, and so on)
 * In-memory data cache
@@ -95,6 +95,8 @@ Dataless backups for ThoughtSpot's in-memory database DO NOT include the followi
 * Traces
 
 === Dataless backup contents for deployments with connections to external cloud data warehouses
+Dataless backups contain the following information for deployments with connections to external cloud data warehouses:
+
 * Metadata:
 ** Users, groups, answers, Liveboards, visualizations, worksheets, data modeling settings, row level security filters, tables, columns
 ** Configuration of connections to external cloud data warehouses
