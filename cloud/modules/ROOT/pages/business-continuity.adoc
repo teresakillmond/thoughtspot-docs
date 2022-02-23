@@ -7,10 +7,10 @@
 
 This article describes ThoughtSpot's disaster recovery strategy.
 
-There are several methods ThoughtSpot employs to protect your cluster data and ensure business continuity in the event of a hardware or software failure or a catastrophic event.
+There are several methods ThoughtSpot employs to protect your cluster data and ensure business continuity in the event of a hardware or software failure or a catastrophic event. For example, ThoughtSpot can recover from a physical server failure, or an Availability Zone (AZ) failure, but not a region failure.
 
 == Recovery Point Objective and Recovery Time Objective
-A Recovery Point Objective (RPO) is the frequency of which you take a backup of a system. ThoughtSpot's RPO is 24 hours. Every 24 hours, ThoughtSpot automatically takes a backup and stores it in Amazon S3, in the same region as the cluster, but in a different Availability Zone (AZ).
+A Recovery Point Objective (RPO) is the frequency of which you take a backup of a system. ThoughtSpot's RPO is 24 hours. Every 24 hours, ThoughtSpot automatically takes a backup and stores it in Amazon S3, in the same region as the cluster, but in a different Availability Zone.
 
 A Recovery Time Objective (RTO) is the targeted duration of time between an event of failure and the return to operation. ThoughtSpot's RTO is 2 hours.
 
@@ -23,22 +23,22 @@ A snapshot is a point-in-time image of your running cluster. Snapshots are both 
 
 [#backups]
 === Backups
-A backup is a procedure that stores a snapshot outside a ThoughtSpot cluster. ThoughtSpot takes backups of your cluster once a day and stores them in Amazon S3. You can use a backup to restore a cluster to a prior state or remove a node.
+A backup is a procedure that stores a snapshot outside a ThoughtSpot cluster. ThoughtSpot takes backups of your cluster once a day and stores them in Amazon S3. You can use a backup to restore a cluster to a prior state.
 
 Backups contain the following information:
 
 * Metadata:
-** for users, groups, answers, Liveboards, visualizations, worksheets, data modeling settings, row level security filters, tables, columns
-** for configuration of connections to external cloud data warehouses
+** Users, groups, answers, Liveboards, visualizations, worksheets, data modeling settings, row level security filters, tables, columns
+** Configuration of connections to external cloud data warehouses
 * Scheduled jobs (for example, scheduled Liveboards)
 * Cluster details: ID, name, version
-* [For clusters with S3 storage]: AWS configuration (label, region, S3 bucket name)
-* Cluster manager configuration and state
+* *[For clusters with S3 storage]:* AWS configuration (label, region, S3 bucket name)
+* Cluster manager configuration (e.g., backup policy), and service configuration (e.g., service enabled or disabled, memory limits for service)
 * End-user license agreement (EULA) policy and file
-* ThoughtSpot Software artifacts: binaries, configuration files, and custom configuration
+* ThoughtSpot Software artifacts: version, checksum of binaries
 * Hadoop layout
 * Firewall configuration
-* mailname and mailfromname
+* `mailname` and `mailfromname`
 * SAML configuration
 * Consumption pricing user activity
 
