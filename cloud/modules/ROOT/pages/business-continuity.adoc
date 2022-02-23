@@ -25,6 +25,8 @@ A snapshot is a point-in-time image of your running cluster. Snapshots are both 
 === Backups
 A backup is a procedure that stores a snapshot outside a ThoughtSpot cluster. ThoughtSpot takes backups of your cluster once a day and stores them in Amazon S3. You can use a backup to restore a cluster to a prior state.
 
+When restoring from a backup, you must supply the correct release tarball, since the backup does not include the release tarball, just the release version. Note that the release version that you use to restore the cluster from the backup must exactly match the version information in the backup.
+
 Backups contain the following information:
 
 * Metadata:
