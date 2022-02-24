@@ -18,7 +18,11 @@ Here, the table has 1406 rows.
 
 image::cardinality-table-rows.png[High cardinality table example]
 
-Note that the behavior of a table with many rows may differ, depending on your connection to your data. ThoughtSpot automatically loads the first 1000 rows of your data. If your data is in ThoughtSpot's in-memory database, the footer shows the total number of rows in the table, up to the cluster-configured maximum. If your data comes from a connection to an external database, the footer does not tell you how the number of rows in the data. The image above comes from data in ThoughtSpot's in-memory database.
+Note that the behavior of a table with many rows may differ, depending on your connection to your data. ThoughtSpot automatically loads the first 1000 rows of your data, regardless of where you store your data.
+
+If your data is in ThoughtSpot's in-memory database, the footer shows the total number of rows in the table, up to the cluster-configured maximum. For example, if your cluster's maximum number of rows is 25,000 rows, and you have a table with 24,000 rows, the footer message for that table reads `Showing 1,000 of 24,000 rows`. When you scroll past the first 1,000 rows, it reads `Showing 2,000 of 24,000 rows`, and so on. For a table with 26,000 rows, the footer message for the table reads `Showing 1,000 of many rows`. If you scroll all the way down, it reads `Showing 25,000 of many rows`, because that is your cluster maximum.
+
+If your data comes from a connection to an external database, the footer does not tell you how the number of rows in the data. The image above comes from data in ThoughtSpot's in-memory database.
 
 Column summaries are not available for tables with more than 15000 rows, unless the data comes from a xref:connections.adoc[direct connection to the database].
 
