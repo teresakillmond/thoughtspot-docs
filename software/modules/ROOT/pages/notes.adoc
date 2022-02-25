@@ -17,6 +17,12 @@ For a complete list of issues that we fixed in this release, see xref:fixed.adoc
 
 For a complete list of issues that we fixed in this release, see xref:fixed.adoc#6-2-1[6.2.1 Fixed issues].
 
+=== For the Analyst
+The '`not in`' keyword::
+
+The xref:keywords.adoc#in[not in] keyword phrase enables you to find the relative complement of two sets: results that satisfy the outer query that are not in the inner query.
+Contrast this with xref:keywords.adoc#in[in], which returns results that are an intersection of the outer and inner query, or 'query within a query'.
+
 === For the IT Ops Engineer
 
 Granular access to Pinboards:: Starting with this release, you can control user's permissions to create or update Pinboards, essentially limiting them to 'read only' access. These users can view and explore Pinboards.
@@ -83,13 +89,8 @@ See xref:high-cardinality.adoc[Charts and tables with a very large number of dat
 
 New search keywords and changed behavior::
 
-* *The nested '`top`' keyword*
-+
+* *The nested '`top`' keyword* +
 The new keyword phrase, xref:keywords.adoc#top-n-by[top _n_ _measure1_ by _attribute_ | _measure2_], enables you to search the top n results by an attribute or a secondary measure.
-* *The '`not in`' keyword*
-+
-Another keyword phrase, xref:keywords.adoc#not-in[not in], enables you to find the relative complement of two sets: results that satisfy the outer query that are not in the inner query.
-Contrast this with xref:keywords.adoc#in[in] that returns results that are an intersection of the outer and inner query, or 'query within a query'.
 * *Change in behavior for the '`in`' keyword*
 +
 The xref:keywords.adoc#in[in] keyword returns results that are an intersection of the outer and inner query, or 'query within a query'.
