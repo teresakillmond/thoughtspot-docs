@@ -4,6 +4,8 @@
 :page-aliases: /reference/tscli-command-ref.adoc
 :experimental:
 
+// NOTE: the following commands have been REMOVED because their related features were deprecated (but the commands are still present in tscli: etl, cluster setup-release-host, cluster setup-release-host-key
+
 The ThoughtSpot command line interface, or tscli, is an administration interface for the cluster. Use `tscli` to take snapshots (backups) of data, to apply updates, to stop and to start services, and to view information about the system. This reference defines each subcommand.
 
 The command returns `0` code on success, and a non-zero exit code on failure.
@@ -314,7 +316,7 @@ tscli backup-policy create::
   mode {full,light,dataless};; The backup mode. A `FULL` backup is required for restoring a cluster. The default is `full.`
   type;; The backup type. Only `STANDALONE` is supported.
   directory;; The location on the disk to place the backup. You specify an existing directory path as `home/admin/folder`. The `folder` cannot already exist. ThoughtSpot creates the folder when it runs a backup.
-  storage_type {NAS,local,S3};; The type of storage you are using. `NAS` storage is recommended for `FULL` backups.
+  storage_type {NAS,local,S3,gcs};; The type of storage you are using. `NAS` storage is recommended for `FULL` backups.
   --config CONFIG;; Specifies the text format of the periodic backup policy config.
 
 tscli backup-policy delete NAME::
@@ -336,7 +338,12 @@ tscli backup-policy status NAME::
   Shows the status of the backup policy `name`.
 
 tscli backup-policy update NAME::
-  Prompts an editor for you to edit the backup policy `name`, with the following parameter:
+  Prompts an editor for you to edit the backup policy `name`, with the following parameters:
+name;; Specify a name for your backup.
+mode {full,light,dataless};; The backup mode. A `FULL` backup is required for restoring a cluster. The default is `full.`
+type;; The backup type. Only `STANDALONE` is supported.
+directory;; The location on the disk to place the backup. You specify an existing directory path as `home/admin/folder`. The `folder` cannot already exist. ThoughtSpot creates the folder when it runs a backup.
+storage_type {NAS,local,S3,gcs};; The type of storage you are using. `NAS` storage is recommended for `FULL` backups.
   --config _CONFIG_;; Specifies the text format of the periodic backup policy config.
 
 [#tscli-calendar]
@@ -408,7 +415,7 @@ tscli callhome [-h] {disable,enable,generate-bundle}
 This subcommand has the following options:
 
 tscli callhome enable --customer_name CUSTOMER_NAME::
-  Enables the callhome feature. This feature is enabled by default.
+  Enables the callhome feature, which sends stats to ThoughtSpot. This feature is enabled by default.
   --customer_name CUSTOMER_NAME;; The parameter `customer_name` takes the form `Shared/CUSTOMER_NAME/stats`.
 tscli callhome disable::
   Turns off the callhome feature.
@@ -547,7 +554,7 @@ tscli cluster update::
   Updates an existing cluster on a specified release, with the following parameters:
   --release_version;; Looks for 'release' in the downloaded tarballs and if found, updates to that tarball. The default is `False`.
   --dry_run_only;; Runs only the pre-update checks. The default is `False`.
-  --wait_for_falcon_sage;; Waits for Falcon and Sage to be in a serving state before marking an update as complete. The default is `False`.
+  --wait_for_falcon_sage;; Waits for ThoughtSpot's in-memory database and search service to be in a serving state before marking an update as complete. The default is `False`.
   --create_snapshot_before_update;; Creates a snapshot automatically before starting an update. The default is `False`.
   --generate_compare_scoreboard;; Generates pre-update and post-update scoreboards and compares them. The default is `False`.
   --scoreboard_tags __SCOREBOARD_TAGS__;; You must specify comma separated tags to identify the group(s) of fields for the scoreboard config to use.
@@ -574,7 +581,7 @@ This subcommand has the following option:
 
 tscli command run COMMAND::
   This subcommand has the following parameters:
-  --nodes NODES;; Space-separated IPs of nodes where to run the command. The default setting is `all`.
+  --nodes NODES;; Space-separated IPs of nodes to run the command on. The default setting is `all`.
   --dest_dir DEST_DIR;; Directory to save the files that contain the output from each node. This is a mandatory parameter.
   --copyfirst COPYFIRST;; Command to copy the executable to required nodes first. The default setting is `False`.
   --timeout TIMEOUT;; Timeout waiting for the command to finish. The default setting is `60`.
@@ -803,7 +810,7 @@ tscli ldap add-cert NAME CERT_FILE::
   Adds an SSL certificate for LDAP. Use only if LDAP has already been configured without SSL, when you are adding SSL. Use `name` to supply an alias for the certificate you are installing. Use `cert-file` to specify the certificate file.
 
 tscli ldap configure::
-  Configures LDAP using an interactive script.
+  Configures LDAP using an interactive script. Refer to xref:ldap-config-ad.adoc[].
 
 tscli ldap purge-configuration::
   Purges (removes) any existing LDAP configuration.
@@ -1075,8 +1082,8 @@ This subcommand has the following options:
 tscli rpackage add [-h] [--repo REPO] [--timeout TIMEOUT] [--dest_dir DEST_DIR] [--nodes NODES] package_name::
   Command to add the specified R package, `package_name`, to the cluster. Accepts the following flags:
   --repo REPO;; Specifies the URL of a specific source repository of packages, to download them. The default is `http://cran.rstudio.com/`.
-  --timeout  REPO;; Timeout waiting for the R package to install. The default is `60`.
-  --dest_dir REPO;; Directory where output of this command will be placed.
+  --timeout  TIMEOUT;; Timeout waiting for the R package to install. The default is `60`.
+  --dest_dir DEST_DIR;; Directory where output of this command will be placed.
   --nodes NODES;; Space-separated list of IPs for nodes to run the command on. The default setting is `all`.
 
 tscli rpackage delete [-h] [--timeout TIMEOUT] [--dest_dir DEST_DIR] [--nodes NODES] package_name::
@@ -1108,6 +1115,12 @@ The default is `False`.
 +
 The default is `False`.
 
++
+Refer to xref:saml.adoc[].
+
+tscli saml get-config::
+Gets existing SAML configuration.
+
 tscli saml purge-configuration::
   Purges any existing SAML configuration.
 
@@ -1126,10 +1139,10 @@ This subcommand has the following options:
 tscli scheduled-pinboards disable::
   Disables scheduled pinboards for the cluster.
 
-tscli scheduled-pinboards enable [-h]::
-  Enables scheduled Pinboards, which are disabled in production clusters by default.
+tscli scheduled-pinboards enable::
+  Enables scheduled Pinboards.
 
-tscli scheduled-pinboards status [-h]::
+tscli scheduled-pinboards status::
   Shows the status of scheduled Pinboards for the cluster.
 
 NOTE: When you enable scheduled Pinboards, you should also configure a list of intended email domains.
@@ -1155,7 +1168,7 @@ tscli set heterogeneous::
 
 [source,tscli]
 ----
-tscli smtp [-h] {remove-mailfromname,remove-mailname,remove-realname,remove-relayhost,remove-saslcredentials,reset-canonical-mapping,set-canonical-mapping,set-mailfromname,set-mailname,set-realname,set-relayhost,set-saslcredentials,show-canonical-mapping,show-mailfromname,show-mailname,show-realname,show-relayhost}
+tscli smtp [-h] {remove-mailfromname,remove-mailname,remove-optparams,remove-realname,remove-relayhost,remove-saslcredentials,reset-canonical-mapping,set-canonical-mapping,set-mailfromname,set-mailname,set-realname,set-relayhost,set-saslcredentials,show-canonical-mapping,show-mailfromname,show-mailname,show-optparams,show-realname,show-relayhost}
 ----
 
 This subcommand has the following options:
@@ -1184,25 +1197,25 @@ tscli smtp reset-canonical-mapping::
 tscli smtp set-canonical-mapping [-h] new_key new_value::
   Sets a new Postmap mapping. You must specify the `new_key` and the `new_value`.
 
-tscli smtp set-mailfromname mailfromname::
+tscli smtp set-mailfromname MAILFROMNAME::
   Sets the name from where email alerts are sent for the cluster. It is the first half of the email address, the part before the @ sign. In _example@company.com_, it is _example_.
 
-tscli smtp set-mailname mailname::
+tscli smtp set-mailname MAILNAME::
   Sets the domain from where email alerts are sent for the cluster. It is the second half of the email address, the part after the @ sign. In _example@company.com_, it is _company_.
 
 tscli smtp set-optparams::
   Allows you to configure optional Postfix settings. Postfix is the service ThoughtSpot uses for routing and delivering email.
 
-tscli smtp set-realname::
+tscli smtp set-realname REALNAME::
   Sets the realname for the cluster.
 
-tscli smtp set-relayhost [-h] [--force FORCE] relayhost::
+tscli smtp set-relayhost [-h] [--force FORCE] RELAYHOST::
   Sets the specified `relayhost` for SMTP (email) sent from the cluster. Accepts the following flag:
   --force FORCE;; Set even if relay host is not accessible. The default setting is `False`.
 
-  * On ThoughtSpot release 6.1.1 or later, and on release 6.0.5, you can specify a custom port to connect to the relay host. If you do not specify a port, the system uses the default recommended port, port 25. Use a custom port if port 25 is blocked in your environment.
+  * You can specify a custom port to connect to the relay host. If you do not specify a port, the system uses the default recommended port, port 25. Use a custom port if port 25 is blocked in your environment.
   * To use the default port, run the setup command normally: `$ tscli smtp set-relayhost IP_address`. To use a custom port instead of port 25, run the setup command, specifying the port you want to use: `$ tscli smtp set-relayhost IP_address:custom_port`.
-  * If you are on 6.1 rather than 6.1.1, or an a version earlier than 6.0.5, contact xref:support-contact.adoc[ThoughtSpot Support] to help you set up a custom port.
+  * If you are on 6.1 or on a version earlier than 6.0.5, contact xref:support-contact.adoc[ThoughtSpot Support] to help you set up a custom port.
 
 tscli smtp set-saslcredentials::
   Sets SASL credentials and enables SMTP AUTH.
@@ -1237,7 +1250,7 @@ To learn more about snapshots and backups, see xref:backup-strategy.adoc[].
 
 This subcommand has the following options:
 
-tscli snapshot backup [-h] [--mode {full,light,dataless}] [--type {full,incremental}] [--base __BASE__] [--storage_type {local,nas,s3a,gcs}] [--remote] [--no-orion-master] [--bucket_name __BUCKET_NAME__] [--staging_dir __STAGING_DIR__] __name__ __out__::
+tscli snapshot backup [-h] [--mode {full,light,dataless}] [--type {full,incremental}] [--base __BASE__] [--storage_type {local,nas,s3a,gcs}] [--remote] [--no-orion-master] [--bucket_name __BUCKET_NAME__] [--staging_dir __STAGING_DIR__] __NAME__ __OUT__::
   Pulls snapshot out as a backup. This command has two required elements: `name` and `out`. The rest of the flags are optional:
   name;; Name of snapshot to pull out as a backup. To list all snapshots, run `tscli snapshot ls`.
   out;; Directory where backup will be written. The directory must not already exist.
@@ -1270,7 +1283,7 @@ tscli snapshot restore [-h] [--allow_release_change] [--only_service_state] NAME
 tscli snapshot unpin [-h] NAME::
   Unpins the specified snapshot _name_ so it can be deleted or garbage-collected.
 
-tscli snapshot update-ttl [-h] [--disable DISABLE] __name__ __ttl__::
+tscli snapshot update-ttl [-h] [--disable DISABLE] __NAME__ __TTL__::
   Updates manual snapshot garbage collection policy. Accepts the following flags; both `name` and `ttl` are required:
   name;; Specifies which snapshot to update.
   ttl;; This is the "time-to-live" value. Use a positive value to increase `ttl`. Use negative values to decrease it.
@@ -1368,7 +1381,7 @@ tscli ssl remove-valid-hosts::
   Turns off validation of hosts.
 
 tscli ssl reset-cipher::
-  Resets SSL cipher list to factory default of `EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH`.
+  Resets SSL cipher list to the factory default.
 
 tscli ssl revert-dhparam::
   Reverts current SSL DH parameters to the default key size of 1024 bits.
@@ -1379,8 +1392,8 @@ tscli ssl rm-cert::
 tscli ssl set-alert-days DAYS::
   Sets alert threshold for a specified number of days to check before SSL certificate expires. The default is `30 days`.
 
-tscli ssl set-cipher __cipher__::
-  Specify enabled ciphers, with the following parameter:
+tscli ssl set-cipher CIPHER::
+  Specify enabled ciphers, with the following required parameter:
   cipher;; Cipher list that uses openssl format.
 
 tscli ssl set-min-tls-version {1.0,1.1,1.2}::
@@ -1440,7 +1453,7 @@ This subcommand has the following parameters:
   Specify the LDAP server uniform resource identifier, in the form  ldap://<ldap_server_IP>`.
 
 [#tscli-sssd-set-sudo-group]
-tscli sssd set-sudo-group _SUDO_GROUP_::
+tscli sssd set-sudo-group SUDO_GROUP::
   Allows `sudo` permissions for the specified user `sudo_group`. For more about setting up Active Directory access, see xref:active-directory.adoc[Enable Active Directory based access].
 
 [#tscli-storage]
