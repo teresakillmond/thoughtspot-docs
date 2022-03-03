@@ -73,6 +73,11 @@ ThoughtSpot now supports installation on RHEL 8.1, 8.2, 8.3, 8.4, and 8.5. Refer
 SAML assertion validity::
 ThoughtSpot now supports 2 methods to increase the duration of validity for your xref:saml.adoc#saml-assertion[SAML assertion]: the `SessionNotOnOrAfter` attribute and the `maxAuthenticationAge` parameter. You can ask ThoughtSpot to disable either one of these checks. If you use both, and either check fails, ThoughtSpot does not authenticate the user. Some IDPs do not support use of `SessionNotOnOrAfter`. If your IDP does not support use of `SessionNotOnOrAfter`, remove that attribute from your IDP assertion and https://community.thoughtspot.com/customers/s/contactsupport[ask ThoughtSpot Support^] to enable `maxAuthenticationAge`.
 
+Manage answer experience::
+This release allows administrators to control the answer experience for their users. In 7.2, the xref:answer-experience-new.adoc[new answer experience] is available but off by default. Individual users can turn it on from their profile. Administrators can now manage the availability of the new answer experience by xref:support-contact.adoc[contacting ThoughtSpot Support]. ThoughtSpot Support can turn the new answer experience on or off globally, and specify the default answer experience for all users. For example, you can turn the new answer experience on globally and have the new experience as the default, instead of the classic experience.
++
+To manage the availability of the new answer experience, contact {support-url}.
+
 [#developer-7-2]
 === For the Developer
 ThoughtSpot Everywhere::
