@@ -1,5 +1,5 @@
 = Impala connection reference
-:last_updated: 02/01/2021
+:last_updated: 03/08/2022
 :experimental:
 :linkattrs:
 :page-aliases:
@@ -62,8 +62,8 @@ No authentication, Kerberos, LDAP
 Default;;
 Kerberos
 
-[#dataflow-impala-conn-default-realm]
-Default realm::
+[#dataflow-impala-conn-kerberos-realm]
+Kerberos realm::
 Realm of the Impala host.
 +
 Mandatory field.
@@ -71,9 +71,9 @@ Mandatory field.
 Example;;
 example.com
 
-[#dataflow-impala-conn-kerberos-host-name]
-Kerberos host name::
-fully qualified domain name of the Impala host.
+[#dataflow-impala-conn-kdc-host]
+KDC host::
+Hostname or IP address of the KDC server.
 +
 Mandatory field.
 
@@ -89,18 +89,23 @@ Mandatory field.
 Example;;
 impala
 
-[#dataflow-impala-conn-user]
-User::
-Specify the user id that will be used to connect to the Impala system. This user should have necessary privileges to access the data in the databases.
+[#dataflow-impala-conn-user-key-tab]
+User key tab::
+
+Specify the path to the keytab file containing the user principal's credentials.
 +
 Mandatory field.
 
-Example;;
-userdi
+[#dataflow-impala-conn-user-principal]
+User principal::
+Specify the user id that will be used to connect to the Impala system. This user should have necessary privileges to access the data in the databases. For Kerberos it is usually of the form <user>/<service_host>@<kerberos_realm>.
++
+Mandatory field.
+
 
 [#dataflow-impala-conn-password]
 Password::
-Specify the password for the User.
+Specify the password for the User. Appears when the Authentication type is "LDAP".
 +
 Mandatory field.
 
