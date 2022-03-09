@@ -20,6 +20,13 @@ Example:;; Amnazon S3
 [#dataflow-amazon-s3-conn-amazon-s3-url]
 Amazon S3 URL:: Specify the Amazon S3 hostname link. Mandatory field.
 Example:;; https://example1-amazonaws.com
+[#dataflow-amazon-s3-conn-other-s3-compatible-object-store]
+Other S3-compatible object store:: Enable this option to support for non-AWS S3 storage. Optional field.
+[#dataflow-amazon-s3-conn-region]
+Region:: Specifies the location on the globe. Location options may vary depending on the type of Cloud Platform. Mandatory field.
++
+Option appears when you select "Other S3-compatible object store."
+Example:;; US-West
 [#dataflow-amazon-s3-conn-bucket]
 Bucket::
 Specify the bucket. +
@@ -28,7 +35,7 @@ Specify the bucket. +
 [#dataflow-amazon-s3-conn-folder]
 Folder::
 Give the storage folder details. Optional field.
-[#dataflow-amazon-s3-authentication-type]
+[#dataflow-amazon-s3-conn-authentication-type]
 Authentication type:: Specifies the type of security protocol to connect to the instance. Based on the type of security, select the authentication type and provide details.
 Valid Values:;; EC2 attached IAM role, Access key and secret key
 [#dataflow-amazon-s3-conn-access-key]
