@@ -1,5 +1,5 @@
 = Teradata connection reference
-:last_updated: 07/7/2020
+:last_updated: 03/8/2022
 :experimental:
 :linkattrs:
 :page-aliases: /data-integrate/dataflow/dataflow-teradata-reference.adoc
@@ -45,6 +45,11 @@ Mandatory field.
 Example:;; userdi
 [#dataflow-teradata-conn-password]
 include::partial$dataflow/password.adoc[]
+[#dataflow-teradata-conn-database]
+Database:: Collection of information that is organized so that it can be easily accessed, managed and updated. Optional field.
+Example:;; Test
+[#dataflow-teradata-conn-jdbc-options]
+include::partial$dataflow/jdbc-options.adoc[]
 
 [#dataflow-teradata-conn-version]
 Version:: Specify the version of Teradata you are using.
@@ -53,8 +58,7 @@ Optional field.
 +
 Example:;; 14.2
 Other notes:;; Advanced configuration.
-[#dataflow-teradata-conn-jdbc-options]
-include::partial$dataflow/jdbc-options.adoc[]
+
 
 [#sync-properties]
 == Sync properties
