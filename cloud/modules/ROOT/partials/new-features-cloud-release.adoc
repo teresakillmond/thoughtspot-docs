@@ -17,11 +17,34 @@ For these instructions, see xref:ts-cloud-getting-started.adoc[Getting Started w
 [#8-2-0-cl-analyst]
 === For the Analyst
 
+[#spotapps]
+ServiceNow SpotApp::
+SpotApps are ThoughtSpot's new out-of-the-box solution templates built for specific use cases and data sources. They are built on Blocks, which are pre-built pieces of code that are easy to download and implement directly from the product. This release introduces the ServiceNow SpotApp and Analytics Blocks. Analytics Blocks include pre-built Worksheet, Answer, and Liveboard Blocks.
++
+The ServiceNow SpotApp mimics the ServiceNow data model. After you connect to your ServiceNow data in your cloud data warehouse, ThoughtSpot maps that data to SpotApp columns, and creates pre-built but still customizable worksheets, answers, and Liveboards, based on your ServiceNow data.
++
+This feature is in beta and off by default. It is part of the <<data-tab,Data tab redesign>>, which is also in beta and off by default. To enable SpotApps and the Data tab redesign, contact {support-url}.
+
+SQL-based views::
+This release introduces beta support for SQL-based views. Users can create views based on custom SQL queries, and use those views as data sources. This type of view has the same functionality as a view based on searching your data.
++
+This feature is in beta and off by default. To enable it, contact {support-url}.
+
+[#data-tab]
+Data tab redesign::
+This release redesigns the *Data* section of the product. The new Data Workspace is still in the same place in the product. To access it, select *Data* from the top navigation bar. The redesign introduces several new features, such as SQL-based views and SpotApps, and makes the UI more intuitive.
++
+This feature is in beta and off by default. To enable it,  contact {support-url}.
+
 [#8-2-0-cl-business-user]
 === For the Business User
 
 [#8-2-0-cl-data-engineer]
 === For the Data Engineer
+
+[#connections-flow-data-portal]
+New connection creation flow with data tab redesign::
+If you have the new <<data-tab,redesigned data tab>> enabled, you can see the new Data Workspace page from the *Data* tab in the top navigation bar. To start creating a connection, click *Connections*, then click the connection type you want to create. The new Data Workspace allows you to create a connection without selecting tables or columns.
 
 [#8-2-0-cl-it-ops-engineer]
 === For the IT Ops Engineer
