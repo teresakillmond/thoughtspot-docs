@@ -17,7 +17,7 @@ Prepare the system and ThoughtSpot clusters for installation:
 | &#10063; | xref:cgroups[7. Ensure that you are using Linux cgroupsV1]
 | &#10063; | xref:proc[8. Ensure /proc mount point flags are compatible]
 | &#10063; | xref:etc-sudoers[9. Remove Defaults requiretty from /etc/sudoers]
-| &#10063; | xref:selinux[10. Remove the selinux policy for rsync]
+| &#10063; | xref:selinux[(RHEL 8 only) 10. Remove the selinux policy for rsync]
 | &#10063; | xref:enable-ansible[ (Optional) Enable an Ansible Control Server]
 |===
 
@@ -146,9 +146,11 @@ You cannot mount the /proc mount point with the `hidepid` flag. You must mount i
 The `/etc/sudoers` file must not have the `Defaults requiretty` line. This line can cause cluster creation to fail.
 
 [#selinux]
-== Remove the selinux policy for rsync
+== [RHEL 8 only] Remove the selinux policy for rsync
 
-Remove the selinux policy for rsync on each node. Run the following command on each ThoughtSpot node:
+Remove the selinux policy for rsync on each node. This is *only* necessary if you are using RHEL 8.1 - 8.5. You do not need to do this step if you are using RHEL 7.9 or 7.9, or OEL 7.9.
+
+Run the following command on each ThoughtSpot node:
 
 ----
 semanage permissive -a rsync_t
