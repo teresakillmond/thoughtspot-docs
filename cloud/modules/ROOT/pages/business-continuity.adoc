@@ -5,9 +5,9 @@
 :page-layout: default-cloud
 :description: Learn how ThoughtSpot protects your data and ensures business continuity. This article describes ThoughtSpot's disaster recovery strategy.
 
-This article describes ThoughtSpot's disaster recovery strategy.
+This article describes ThoughtSpot's data protection and business continuity strategy for ThoughtSpot Cloud.
 
-There are several methods ThoughtSpot employs to protect your cluster data and ensure business continuity in the event of a hardware or software failure or a catastrophic event. For example, ThoughtSpot can recover from a physical server failure, or an Availability Zone (AZ) failure, but not a region failure.
+There are several methods ThoughtSpot employs to protect your cluster data and ensure business continuity in the event of a hardware or software failure or a catastrophic event.
 
 == Recovery Point Objective and Recovery Time Objective
 A Recovery Point Objective (RPO) is the frequency of which you take a backup of a system. ThoughtSpot's RPO is 24 hours. Every 24 hours, ThoughtSpot automatically takes a backup and stores it in Amazon S3, in the same region as the cluster, but in a different Availability Zone.
@@ -15,17 +15,15 @@ A Recovery Point Objective (RPO) is the frequency of which you take a backup of 
 A Recovery Time Objective (RTO) is the targeted duration of time between an event of failure and the return to operation. ThoughtSpot's RTO is 2 hours.
 
 == Snapshots and backups
-ThoughtSpot has a concept of both <<snapshots,snapshots>> and <<backups,backups>> for disaster recovery and backing up your ThoughtSpot cluster.
+ThoughtSpot has a concept of both <<snapshots,snapshots>> and <<backups,backups>> for data protection and backing up your ThoughtSpot cluster.
 
 [#snapshots]
 === Snapshots
-A snapshot is a point-in-time image of your running cluster. Snapshots are both taken on and restored to a cluster while it is running. ThoughtSpot takes snapshots of your cluster once an hour and stores them on EBS disks attached to your VM instance. If an error occurs while making any changes to your cluster’s environment, loading a large amount of new data, or changing the structure of a table, you can restore the cluster to a point in time at most an hour before the error.
+A snapshot is a point-in-time image of your running cluster. Snapshots are taken on a running cluster, and later restored to the same cluster. ThoughtSpot takes snapshots of your cluster once an hour and stores them on EBS disks attached to your VM instance. If an error occurs while making any changes to your cluster’s environment, loading a large amount of new data, or changing the structure of a table, you can restore the cluster to a point in time at most an hour before the error.
 
 [#backups]
 === Backups
-A backup is a procedure that stores a snapshot outside a ThoughtSpot cluster. ThoughtSpot takes backups of your cluster once a day and stores them in Amazon S3. You can use a backup to restore a cluster to a prior state.
-
-When restoring from a backup, you must supply the correct release tarball, since the backup does not include the release tarball, just the release version. Note that the release version that you use to restore the cluster from the backup must exactly match the version information in the backup.
+A backup is a procedure that stores a snapshot outside a ThoughtSpot cluster. ThoughtSpot takes backups of your cluster once a day, at midnight local cluster time, and stores them in Amazon S3. ThoughtSpot can use a backup to restore a cluster to a prior state.
 
 Backups contain the following information:
 
@@ -49,3 +47,8 @@ Backups DO NOT include the following information:
 * Search index tokens
 * Usage information
 * Traces
+
+== Automation of data protection
+ThoughtSpot's data protection procedure is fully automated. ThoughtSpot automatically takes <<snapshots,snapshots>> of your cluster once an hour and stores them on EBS disks attached to your VM instance. ThoughtSpot automatically takes <<backups,backups>> of your cluster once a day and stores them in Amazon S3.
+
+If a cluster is not available, {support-url} receives an alert. Then, ThoughtSpot Support investigates the cluster, and restores it from a snapshot or backup, if necessary.
