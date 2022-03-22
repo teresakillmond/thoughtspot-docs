@@ -49,6 +49,6 @@ Backups DO NOT include the following information:
 * Traces
 
 == Automation of data protection
-ThoughtSpot's data protection procedure is fully automated. ThoughtSpot automatically takes <<snapshots,snapshots>> of your cluster once an hour and stores them on EBS disks attached to your VM instance. ThoughtSpot automatically takes <<backups,backups>> of your cluster once a day and stores them in Amazon S3.
+ThoughtSpot's data protection procedure is fully automated. You do not need to file an issue with ThoughtSpot to request recovery. {support-url} receives an alert after 15 minutes of  cluster unavailability, and immediately investigates it. ThoughtSpot automatically takes <<snapshots,snapshots>> of your cluster once an hour and stores them on EBS disks attached to your VM instance. ThoughtSpot automatically takes <<backups,backups>> of your cluster once a day and stores them in Amazon S3.
 
-If a cluster is not available, {support-url} receives an alert. Then, ThoughtSpot Support investigates the cluster, and restores it from a snapshot or backup, if necessary.
+If a cluster is not available, {support-url} receives an alert after 15 minutes of unavailability. Then, ThoughtSpot Support investigates the cluster to determine the problem and tries to fix it. If necessary, ThoughtSpot Support restores the cluster from a snapshot or backup.
