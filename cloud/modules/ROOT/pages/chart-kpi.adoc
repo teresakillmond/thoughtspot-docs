@@ -1,5 +1,5 @@
 = KPI charts
-:last_updated: 3/9/2022
+:last_updated: 3/22/2022
 :linkattrs:
 :experimental:
 :page-layout: default-cloud
@@ -50,11 +50,42 @@ When you create a KPI chart with a time period keyword, you can change the displ
 
 Click the *chart configuration icon* image:icon-gear-10px.png[] and select *Settings* to make the following display changes:
 
-- *Show date label* to display or hide the date label.
+- *Show Date Label* to display or hide the date label.
 - *Show Sparkline* to display or hide the time-series visualization.
-- *Comparison* to display or hide the percentage change since the last period selected.
+- *Show Comparison* to display or hide the percentage change since the last period selected.
 - *Positive change color* to change the color of the percentage increase label.
 - *Negative change color* to change the color of the percentage decrease label.
+
+== Apply conditional formatting
+
+You can add visual cues for KPIs or threshold metrics to easily show where you are falling short or exceeding targets. These visual cues are called conditional formatting, which applies color and font formatting to your search result. Add conditional formatting to show the threshold(s) you defined, and the data that falls within them will be shown using the same color.
+
+To apply conditional formatting to your KPI, follow these steps:
+
+. Select the *Edit chart* icon image:icon-gear-10px.png[] to the right of your KPI.
+. Click the measure tile under the *Visualized* section, for example, “Total Sales”. The number format menu appears.
+. Under the *Conditional formatting* dropdown, select *+Add rule*.
+. From the options provided in the operator menu, choose the rule to define your range:
+- Less than
+- Greater than
+- Less than or equal to
+- Greater than or equal to
+- Equal to
+- Not equal to
+- Between
+- Empty
+- Not empty
+. Enter the numeric value under *Value*. +
+If you select *Between*, you must provide a minimum and maximum value. For example, you can define a rule to change the color of your KPI when the value is between 180,000 and 200,000.
+. From the options provided under *Font*, select the color and font:
+- Bold
+- Italic
+- Underline
+- Strikethrough
++
+image:kpi-conditional.png[]
+
+. Click *Add*.
 
 
 == Monitor your KPI
@@ -63,8 +94,4 @@ When you pin a KPI visualization to a Liveboard or save it as an answer, you can
 
 For more information on the **Monitor** feature, see xref:monitor.adoc[Monitor Key Performance Indicators in your data].
 
-////
-Soon-to-be-available:
 
-== Sparkline visualization
-////
