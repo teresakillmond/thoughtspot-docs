@@ -1,5 +1,5 @@
 = tsload connector reference
-:last_updated: 10/21/2020
+:last_updated: 3/22/2022
 
 The tsload connector APIs enable you to load data into ThoughtSpot.
 
@@ -221,7 +221,7 @@ All of this data is uploaded to the ThoughtSpot cluster unless a commit load is 
 === Request
 
 ----
-POST /ts_dataservice/v1/public/loads/cycle_id
+POST /ts_dataservice/v1/public/loads/<cycle_id>
 Cookie: <token>
 Content-Type: multipart/form-data; boundary=bndry
 --bndry
@@ -282,7 +282,7 @@ Once the data load is complete, you use *CommitLoad* to commit data to be loaded
 === Request
 
 ----
-POST /ts_dataservice/v1/public/loads/cycle_id/commit
+POST /ts_dataservice/v1/public/loads/<cycle_id>/commit
 Cookie: <token>
 ----
 
@@ -324,7 +324,7 @@ Use this API to stop loading data.
 === Request
 
 ----
-POST /ts_dataservice/v1/public/loads/cycle_id/cancel
+POST /ts_dataservice/v1/public/loads/<cycle_id>/cancel
 Cookie: token
 ----
 
@@ -360,7 +360,7 @@ Use the api to get the current status of a load.
 === Request
 
 ----
-GET /ts_dataservice/v1/loads/cycle_id
+GET /ts_dataservice/v1/public/loads/<cycle_id>
 Cookie: token
 ----
 
@@ -408,6 +408,14 @@ if (status != OK) {
 == Bad records
 
 Use this api to view the bad records file data.
+
+=== Request
+
+----
+GET /ts_dataservice/v1/public/loads/cycle_id/bad_records_file
+Cookie: token
+Content-range: xxx-xxxx
+----
 
 === Response
 
