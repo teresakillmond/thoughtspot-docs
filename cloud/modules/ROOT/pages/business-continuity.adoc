@@ -19,11 +19,11 @@ ThoughtSpot has a concept of both <<snapshots,snapshots>> and <<backups,backups>
 
 [#snapshots]
 === Snapshots
-A snapshot is a point-in-time image of your running cluster. Snapshots are taken on a running cluster, and later restored to the same cluster. ThoughtSpot takes snapshots of your cluster once an hour and stores them on EBS disks attached to your VM instance. If an error occurs while making any changes to your cluster’s environment, loading a large amount of new data, or changing the structure of a table, you can restore the cluster to a point in time at most an hour before the error.
+A snapshot is a point-in-time image of your running cluster. Snapshots are taken on a running cluster, and later restored to the same cluster. ThoughtSpot takes snapshots of your cluster once an hour and stores them in persistent storage attached to your cluster. If an error occurs while making any changes to your cluster’s environment, or changing the structure of a table, you can file an issue with {support-url} to restore the cluster from snapshots.
 
 [#backups]
 === Backups
-A backup is a procedure that stores a snapshot outside a ThoughtSpot cluster. ThoughtSpot takes dataless backups of your cluster once a day, at midnight local cluster time, and stores them in Amazon S3. ThoughtSpot can use a backup to restore a cluster to a prior state.
+A backup is a procedure that stores a snapshot outside a ThoughtSpot cluster. ThoughtSpot takes dataless backups of your cluster once a day, at midnight local cluster time, and stores them in an Amazon S3 bucket in the same region as the cluster. ThoughtSpot can use a backup to restore a cluster to a prior state. ThoughtSpot can restore the cluster in any Availability Zone and in the same region as the original cluster.
 
 Backups contain the following information:
 
@@ -32,7 +32,7 @@ Backups contain the following information:
 ** Configuration of connections to external cloud data warehouses
 * Scheduled jobs (for example, scheduled Liveboards)
 * Cluster details: ID, name, version
-* *[For clusters with S3 storage]:* AWS configuration (label, region, S3 bucket name)
+* AWS configuration (label, region, S3 bucket name)
 * Cluster manager configuration (e.g., backup policy), and service configuration (e.g., service enabled or disabled, memory limits for service)
 * End-user license agreement (EULA) policy and file
 * ThoughtSpot Software artifacts: version, checksum of binaries
