@@ -34,6 +34,9 @@ Enter a description to remind yourself and to inform others. If this is an impor
 Type::
 * *CSV files* provide all data for tables, with one attachment for each table. Use CSV files to perform further analysis offline.
 * *PDF files* show all visualizations in the Liveboard. Each chart uses a page in the file; tables show only the first 100 rows of a table. Use PDF files to skim the data.
+* *Configure layout options* allows you to specify the Liveboard layout, after you choose either *CSV* or *PDF*. For more details about the layout options, refer to xref:liveboard-download-pdf.adoc[].
++
+Refer to xref:schedule-liveboards.adoc#format[format of scheduled Liveboards] for more information about the differences between CSV and PDF attachments in a scheduled Liveboard email.
 Gating condition::
 Write a statement that returns a single boolean value (`true` or `false`). For example, `sum (revenue) > 100` is a valid condition, but `is_weekend (commit_date)` is not, since it returns a result per row of data. You can use any data source (table, worksheet, or view) that you have access to for the gating condition, since ThoughtSpot executes the query at user-level. The gating condition will still work if you are using passthrough security for your external data warehouse connection. The gating condition formula and any tables you use in it do not need to be related to the Liveboard the gating condition is for. You can use any valid formula in your statement. ThoughtSpot checks the formula syntax, but does not validate if the formula returns a valid single boolean.
 +
