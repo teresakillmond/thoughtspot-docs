@@ -27,19 +27,23 @@ If the recipients are users in ThoughtSpot, they can only see data based on thei
 If the user does not have view-only or greater access to the Liveboard, they do not see any data in the email.
 However, if the recipients are not ThoughtSpot users, then they have access to the dataset of the Liveboard based on the sender's permissions.
 
-== Format of scheduled Liveboards
+[#format]
+== Format and layout of scheduled Liveboards
 
-The Liveboard visualizations are attached to the scheduled email as CSV or PDF files.
+The Liveboard visualizations are attached to the scheduled email as either CSV or PDF files.
 Saved configurations such as Liveboard filters are applied to the attachments.
-Refer to the table to see how the Liveboard data is represented in each file format.
+Refer to the <<format-table,format types table>> to see how the Liveboard data is represented in each file format.
 
+To specify the layout of the Liveboard in the email, select *Configure layout options*. For more details about the layout options, refer to xref:liveboard-download-pdf.adoc[].
+
+[#format-table]
 |===
 | CSV | PDF
 
 | The CSV file gets data only for table visualizations.
 | The PDF file gets data for all visualizations.
 
-| The email has _n_ CSV attachments, where there are _n_ table visualizations in the Liveboard.
+a| The email has _n_ CSV attachments, where there are _n_ table visualizations in the Liveboard.
 | The email has only one attachment file, which includes every visualization on its own page.
 
 | Table visualizations have all data rows that they're supposed to have.
@@ -56,8 +60,8 @@ An error message indicating visualization export error is visible on the Jobs Ma
 
 The size of each email is limited to 25 MB, which matches most email services size limitations.
 
-And the total number of recipients for a scheduled Liveboard job cannot exceed the default of 1000.
+The total number of recipients for a scheduled Liveboard job cannot exceed the default of 1000.
 
 == Related information
 
-For information on creating a Liveboard, see the xref:liveboard-schedule.adoc[Schedule a Liveboard job].
+For more information on creating a Liveboard job, see the xref:liveboard-schedule.adoc[Schedule a Liveboard job].
