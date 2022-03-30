@@ -32,6 +32,8 @@ You may not see each of these parameters in your own TML files, depending on whe
 For example, if you do not have any filters on your Worksheet, the `filters` parameter does not appear.
 You can add that variable to the TML file to specify filters for your Worksheet.
 
+To reduce ambiguity, you may need to add the optional `fqn` parameter to your TML file when you reference source tables or connections. This is necessary if you have multiple connections or tables with the same name. If you do not add the `fqn` parameter, and the connection or table you reference does not have a unique name, the file import fails.
+
 Refer to <<syntax-joins,join syntax>> for more information on the functionality and syntax or Worksheet, View, and table joins in TML.
 
 NOTE: If you edit the joins in the Worksheet TML file, you are only editing the joins for that specific Worksheet.
@@ -157,6 +159,8 @@ You may not see each of these parameters in your own TML files, depending on whe
 For example, if you do not have a description for your View, the `description` parameter does not appear.
 You can add that variable to the TML file to specify a description for your View.
 
+To reduce ambiguity, you may need to add the optional `fqn` parameter to your TML file when you reference source tables or connections. This is necessary if you have multiple connections or tables with the same name. If you do not add the `fqn` parameter, and the connection or table you reference does not have a unique name, the file import fails.
+
 Refer to <<syntax-joins,join syntax>> for more information on the functionality and syntax or Worksheet, View, and table joins in TML.
 
 NOTE: If you edit the joins in the View TML file, you are only editing the joins for that specific View.
@@ -279,6 +283,8 @@ You can add that variable to the TML file to specify an index priority for the t
 
 Refer to <<syntax-joins,join syntax>> for more information on the functionality and syntax of worksheet, view, and table joins in TML.
 
+NOTE: To reduce ambiguity, you may need to add the optional `fqn` parameter to your TML file when you reference source tables or connections. This is necessary if you have multiple connections or tables with the same name. If you do not add the `fqn` parameter, and the connection or table you reference does not have a unique name, the file import fails.
+
 ....
 
 guid: <table_guid>
@@ -289,7 +295,7 @@ table:
   db_table: <database_table_name>
   connection:
     name: <connection_name>
-    type: <connection_type>
+    fqn: <optional_connection_GUID>
   columns:
   - name: <column_name_1>
     db_column_name: <database_column_name>
@@ -335,7 +341,7 @@ table:
     tables:
     - name: <table_name_1>
       id : <optional_table_id>
-      fqn : <optional_GUID_of_table_name>
+      fqn : <optional_table_GUID>
     - name: <table_name_2>
     - name: <table_name_n>
     joins:
@@ -431,6 +437,8 @@ You can only override the joins for that specific Worksheet or View.
 
 === Table join syntax
 
+To reduce ambiguity, you may need to add the optional `fqn` parameter to your TML file when you reference source tables or connections. This is necessary if you have multiple connections or tables with the same name. If you do not add the `fqn` parameter, and the connection or table you reference does not have a unique name, the file import fails.
+
 ....
 
 joins_with:
@@ -498,6 +506,8 @@ See the <<parameters,Parameters>> section for details about the keywords used in
 You may not see each of these parameters in your own TML files, depending on whether each variable is explicitly defined.
 For example, if you did not define any conditional formatting, the `conditional_formatting` variable does not appear.
 You can add that variable in the TML file to specify conditional formatting.
+
+To reduce ambiguity, you may need to add the optional `fqn` parameter to your TML file when you reference source tables or connections. This is necessary if you have multiple connections or tables with the same name. If you do not add the `fqn` parameter, and the connection or table you reference does not have a unique name, the file import fails.
 
 ....
 
@@ -969,12 +979,12 @@ Each formula is identified by `name`, the `expr` (expression), and an optional `
 
 [#fqn]
 fqn::
-The table's GUID.
-You can find this string of letters and numbers at the end of the URL for that table.
+The table or connection's GUID.
+You can find this string of letters and numbers at the end of the URL for that table or connection.
 +
 For example, in `\https://<company>.thoughtspot.com/#/data/tables/34226aaa-4bcf-4d6b-9045-24cb1e9437cb`, the GUID is `34226aaa-4bcf-4d6b-9045-24cb1e9437cb`.
 +
-Use this optional parameter to identify a specific table, if you have multiple tables with the same name.
+Use this optional parameter to reduce ambiguity and identify a specific table, if you have multiple tables with the same name. If you do not add the `fqn` parameter, and the connection or table you reference does not have a unique name, the file import fails.
 
 [#geo_config]
 geo_config::
