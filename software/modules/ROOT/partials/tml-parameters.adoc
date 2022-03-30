@@ -336,12 +336,12 @@ Each formula is identified by `name`, the `expr` (expression), and an optional `
 
 [#fqn]
 fqn::
-  The table's GUID.
+  The table or connection's GUID.
 You can find this string of letters and numbers at the end of the URL for that table.
 +
 For example, in `\https://<company>.thoughtspot.com/#/data/tables/34226aaa-4bcf-4d6b-9045-24cb1e9437cb`, the GUID is `34226aaa-4bcf-4d6b-9045-24cb1e9437cb`.
 +
-Use this optional parameter to identify a specific table, if you have multiple tables with the same name.
+Use this optional parameter to reduce ambiguity and identify a specific table or connection, if you have multiple tables or connections with the same name. If you do not add the `fqn` parameter, and the connection or table you reference does not have a unique name, the file import fails.
 
 [#geo_config]
 geo_config::
