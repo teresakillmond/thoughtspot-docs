@@ -1,5 +1,5 @@
 = Group aggregation functions
-:last_updated: 11/15/2019
+:last_updated: 3/29/2022
 :linkattrs:
 :experimental:
 :page-layout: default-cloud
@@ -29,6 +29,9 @@ The group aggregation functions are the following:
 
 |===
 | Function | Description
+
+| `group_aggregate`
+| Takes a measure and optional attributes and filters. Used to aggregate measures with different granularities and filters than the columns used in the search.
 | `group_average` | Takes a measure and one or more attributes. Returns the average of the measure grouped by the attribute(s).
 
 `group_average (revenue, customer region)`
