@@ -223,10 +223,12 @@ columns::
 
 [#column_id]
 column_id::
-  The `id` of the Worksheet or View column.
+  The `id` of the worksheet or view column.
 +
-For Answers, `column_id` refers to how the column appears in the query.
+For answers, `column_id` refers to how the column appears in the query.
 For example, if you sorted by `Quarter` in your search, from the `Commit Date` column, the `column_id` of the column is `Quarter(Commit Date)`.
++
+For worksheets and views, `column_id` is in the following format: `column_id: <table_path>::<column_id>`. For example: `column_id: Customer_Dimension::Customer_Name`.
 
 [#column_type]
 column_type::
