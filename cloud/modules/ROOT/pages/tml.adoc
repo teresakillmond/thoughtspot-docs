@@ -98,7 +98,7 @@ worksheet:
   worksheet_columns:
   - name: <column_name_1>
     description: <optional_column_description>
-    column_id: <column_id_1>
+    column_id: <table_path>::<column_id_1>
     properties:
       column_type: [ MEASURE | ATTRIBUTE ]
       aggregation: [ SUM | COUNT | AVERAGE | MAX | MIN |
@@ -134,7 +134,7 @@ worksheet:
       search_iq_preferred: [ true | false ]
     name: <column_name_2>
     description: <column_description>
-    column_id: <column_id_2>
+    column_id: <table_path>::<column_id_2>
     ...
   properties:
     is_bypass_rls: [ true | false ]
@@ -229,7 +229,7 @@ view:
   view_columns:
   - name: <column_name_1>
     description: <optional_column_description>
-    column_id: <column_id_1>
+    column_id: <table_path>::<column_id_1>
     phrase: <phrase_string_1>
     properties:
       column_type: [ MEASURE | ATTRIBUTE ]
@@ -266,7 +266,7 @@ view:
       search_iq_preferred: [ true | false ]
     name: <column_name_2>
     description: <column_description>
-    column_id: <column_id_2>
+    column_id: <table_path>::<column_id_2>
     ...
 ....
 
@@ -866,10 +866,12 @@ The columns in the table.
 
 [#column_id]
 column_id::
-The `id` of the Worksheet or View column.
+The `id` of the worksheet or view column.
 +
-For Answers, `column_id` refers to how the column appears in the query.
+For answers, `column_id` refers to how the column appears in the query.
 For example, if you sorted by `Quarter` in your search, from the `Commit Date` column, the `column_id` of the column is `Quarter(Commit Date)`.
++
+For worksheets and views, `column_id` is in the following format: `column_id: <table_path>::<column_id>`. For example: `column_id: Customer_Dimension::Customer_Name`.
 
 [#column_type]
 column_type::
