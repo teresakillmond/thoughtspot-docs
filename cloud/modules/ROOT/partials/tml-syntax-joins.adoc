@@ -59,12 +59,13 @@ To reduce ambiguity, you may need to add the optional `fqn` parameter to your TM
   <<name,name>>: <join_name_n>
 ....
 
+[#table-join-functionality]
 === Table join functionality and limitations
 
 With table joins, you can accomplish the following tasks:
 
 - Add new joins at the table level. Joins only appear in the table TML file of the source table in a join, or the table on the Many side of a Many to One join. You can only add and edit table joins from the TML file of the table on the Many side of the join.
-- Create generic or range joins at the table level. Previously, you could only create non-generic joins through the TML, such as `Table1.date = Table2.date`. Now, you can create generic joins through the TML, such as `Table1.date = Table2.date AND Table1.date > Table2.start_date AND Table1.date < Table2.end_date`.
+- Create range joins at the table level. Previously, you could only create non-range joins through the TML, such as `Table1.date = Table2.date`. Now, you can create range joins through the TML, such as `Table1.date = Table2.date AND Table1.date > Table2.start_date AND Table1.date < Table2.end_date`.
 +
 Note that you must have an 'equals' clause before you can have a 'greater than/less than' clause. `Table1.date = Table2.date AND Table1.date > Table2.start_date AND Table1.date < Table2.end_date` is valid, but `Table1.date < Table2.end_date` is not.
 +
