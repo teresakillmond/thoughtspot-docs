@@ -944,7 +944,7 @@ tscli nas mount-nfs [-h] [--server SERVER] [--path_on_server PATH_ON_SERVER] [--
   --options OPTIONS;; Command-line options to mount. The default setting is `noexec`.
   --protocol {nfs,nfs4};; Protocol to use for mounting, either `nfs` or `nfs4`. The default is `nfs`.
 
-tscli nas unmount [-h] --mount_point __MOUNT_POINT__::
+tscli nas unmount [-h] --mount_point MOUNT_POINT::
   Unmounts NAS filesystem from the specified mount point, `MOUNT_POINT`. This command returns an error if nothing is currently mounted on this directory through `tscli nas mount`.
 
 [#tscli-nitro-switch]
@@ -1088,9 +1088,9 @@ tscli rpackage add [-h] [--repo REPO] [--timeout TIMEOUT] [--dest_dir DEST_DIR] 
 
 tscli rpackage delete [-h] [--timeout TIMEOUT] [--dest_dir DEST_DIR] [--nodes NODES] package_name::
   Command to delete the specified R package, `package_name`, from the cluster. Accepts the following flags:
-  --timeout __TIMEOUT__;; Timeout waiting for the R package to be removed. The default is 60.
-  --dest_dir __DEST_DIR__;; Directory where the output of this command should be saved.
-  --nodes __NODES__;; Space-separated list of node IPs on which to run the command. The default setting is `all`.
+  --timeout TIMEOUT;; Timeout waiting for the R package to be removed. The default is 60.
+  --dest_dir DEST_DIR;; Directory where the output of this command should be saved.
+  --nodes NODES;; Space-separated list of node IPs on which to run the command. The default setting is `all`.
 
 tscli rpackage list [-h] [--detailed]::
   List all R packages installed on the cluster, with the following parameter:
@@ -1145,7 +1145,7 @@ tscli scheduled-pinboards enable::
 tscli scheduled-pinboards status::
   Shows the status of scheduled Pinboards for the cluster.
 
-NOTE: When you enable scheduled Pinboards, you should also configure a list of intended email domains.
+NOTE: When you enable scheduled Pinboards, you must also configure a list of allowed email domains.
 Contact xref:support-contact.adoc[ThoughtSpot Support]  for help on how to configure this list.
 
 [#tscli-set]
@@ -1214,7 +1214,16 @@ tscli smtp set-relayhost [-h] [--force FORCE] RELAYHOST::
   --force FORCE;; Set even if relay host is not accessible. The default setting is `False`.
 
   * You can specify a custom port to connect to the relay host. If you do not specify a port, the system uses the default recommended port, port 25. Use a custom port if port 25 is blocked in your environment.
-  * To use the default port, run the setup command normally: `$ tscli smtp set-relayhost IP_address`. To use a custom port instead of port 25, run the setup command, specifying the port you want to use: `$ tscli smtp set-relayhost IP_address:custom_port`.
+  * To use the default port, run the setup command normally:
++
+```
+$ tscli smtp set-relayhost IP_address
+```
+* To use a custom port instead of port 25, run the setup command, specifying the port you want to use:
++
+```
+$ tscli smtp set-relayhost IP_address:custom_port
+```
   * If you are on 6.1 or on a version earlier than 6.0.5, contact xref:support-contact.adoc[ThoughtSpot Support] to help you set up a custom port.
 
 tscli smtp set-saslcredentials::
@@ -1289,7 +1298,7 @@ tscli snapshot update-ttl [-h] [--disable DISABLE] __NAME__ __TTL__::
   ttl;; This is the "time-to-live" value. Use a positive value to increase `ttl`. Use negative values to decrease it.
   --disable DISABLE;; Disables manual snapshot garbage collection. Setting this value to `True` overrides any `ttl` value. The default is `False`.
 
-tscli snapshot validate::
+tscli snapshot validate NAME::
   Validates a specified snapshot _name_ to ensure it is not corrupt.
 
 [#tscli-snapshot-policy]
@@ -1364,11 +1373,11 @@ tscli ssl add-valid-hosts [-h] VALID_HOSTS::
 tscli ssl clear-min-tls-version [-h]::
   Clears any customizations for the minimum TLS version to support.
 
-tscli ssl enable-dhparam [-h] [--key_size __KEY_SIZE__]::
+tscli ssl enable-dhparam [-h] [--key_size KEY_SIZE]::
 Enables stronger SSL DH parameters, with the following optional parameter:
   --key_size __KEY_SIZE_;; The key size in bits. The default is `2048`
 
-tscli ssl get-dhparam [-h] [--key_size __KEY_SIZE__]::
+tscli ssl get-dhparam [-h] [--key_size KEY_SIZE]::
   Displays the current SSL DH parameters.
 
 tscli ssl off::
@@ -1529,11 +1538,11 @@ tscli support rm-admin-phone::
 
 tscli support schedule-maintenance [-h] [--start_time START_TIME] [--duration_min DURATION_MIN] [--status {scheduled,ad-hoc}] [--type {upgrade,patch}] [--description DESCRIPTION]::
   Schedules a maintenance window for the cluster, with the following parameters:
-  --start_time __START_TIME__;; Start time for the scheduled maintenance, in the format `MM/DD/YYYY HH:MM`.
-  --duration_min __DURATION_MIN__;; Duration, in minutes, of the maintenance window. The default is `120`.
+  --start_time START_TIME;; Start time for the scheduled maintenance, in the format `MM/DD/YYYY HH:MM`.
+  --duration_min DURATION_MIN;; Duration, in minutes, of the maintenance window. The default is `120`.
   --status {scheduled,ad-hoc};; The type of maintenance event, either `scheduled` or `ad-hoc`. The default is `scheduled`.
   --type {upgrade,patch};; The type of maintenance event, either  `upgrade` or `patch`. The default is `upgrade`.
-  --description __DESCRIPTION__;; Description of the scheduled maintenance event.
+  --description DESCRIPTION;; Description of the scheduled maintenance event.
 
 tscli support set-admin-email EMAIL::
   Sets the specified email address for contacting the customer administrator.
