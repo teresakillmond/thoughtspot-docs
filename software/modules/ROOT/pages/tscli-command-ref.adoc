@@ -316,7 +316,7 @@ tscli backup-policy create::
   mode {full,light,dataless};; The backup mode. A `FULL` backup is required for restoring a cluster. The default is `full.`
   type;; The backup type. Only `STANDALONE` is supported.
   directory;; The location on the disk to place the backup. You specify an existing directory path as `home/admin/folder`. The `folder` cannot already exist. ThoughtSpot creates the folder when it runs a backup.
-  storage_type {NAS,local,S3,gcs};; The type of storage you are using. `NAS` storage is recommended for `FULL` backups.
+  storage_type {NAS,local,s3a,gcs};; The type of storage you are using. `NAS` storage is recommended for `FULL` backups.
   --config CONFIG;; Specifies the text format of the periodic backup policy config.
 
 tscli backup-policy delete NAME::
@@ -343,7 +343,7 @@ name;; Specify a name for your backup.
 mode {full,light,dataless};; The backup mode. A `FULL` backup is required for restoring a cluster. The default is `full.`
 type;; The backup type. Only `STANDALONE` is supported.
 directory;; The location on the disk to place the backup. You specify an existing directory path as `home/admin/folder`. The `folder` cannot already exist. ThoughtSpot creates the folder when it runs a backup.
-storage_type {NAS,local,S3,gcs};; The type of storage you are using. `NAS` storage is recommended for `FULL` backups.
+storage_type {NAS,local,s3a,gcs};; The type of storage you are using. `NAS` storage is recommended for `FULL` backups.
   --config _CONFIG_;; Specifies the text format of the periodic backup policy config.
 
 [#tscli-calendar]
@@ -439,7 +439,7 @@ This subcommand has the following options:
 tscli cassandra backup::
   Takes a backup of cassandra, with the following parameters:
   --keyspaces KEYSPACES;; Comma-separated list of keyspaces to back up.
-  backup_dir BACKUP_DIR;; The path to the backup directory.
+  --backup_dir BACKUP_DIR;; The path to the backup directory.
 tscli cassandra restore::
   Restores cassandra from a backup, with the following parameter:
   --backup_dir BACKUP_DIR;; The path to the backup directory.
@@ -535,7 +535,7 @@ tscli cluster show-name::
   Prints the cluster name.
 
 tscli cluster show-resource-spec::
-  Prints default or min.
+  Prints default or minimum resource configuration.
 
 tscli cluster start::
   Starts the cluster.
@@ -718,7 +718,7 @@ tscli fileserver configure [-h] --user USER [--password PASSWORD]::
   Configures the secure file server username and password for file upload/download, and the call home feature. You only have to issue this command one time, to set up the connection to the secure file server. Reissue this command if the password changes. The parameter `PASSWORD` is optional. If a password is not specified, the system prompts the user to enter it.
 
 tscli fileserver download-release [-h] [--user USER] [--password PASSWORD] [--url URL] [--md5 MD5] [--out OUT] release::
-  Downloads the specified release file, including its checksum, and verifies the integrity of release bundle. You must specify the exact release number, such as `6.3.1`. Before using this command for the first time, you must set up the file server connection using `tscli fileserver configure`.  You can then work with a member of the ThoughtSpot Support team because a privileged `user` and a corresponding `password` must be specified to download releases.  This command has the following parameters:
+  Downloads the specified release file, including its checksum, and verifies the integrity of release bundle. You must specify the exact release number, such as `6.3.1`. Before using this command for the first time, you must set up the file server connection using `tscli fileserver configure`.  You must work with a member of the ThoughtSpot Support team, because they must specify a privileged `user` and a corresponding `password` to allow you to download releases.  This command has the following parameters:
   --user USER;; The fileserver username.
   --password PASSWORD;; The fileserver password.
   --url URL;; Url from where the release needs to be downloaded.
@@ -735,8 +735,8 @@ tscli fileserver upload [-h] [--user USER] [--password PASSWORD] --file_name FIL
   Uploads the specified file to the specified directory on the secure file server. You may optionally specify the `user` and `password` to bypass the credentials specified when configuring the file server connection with `tscli fileserver configure`. Before using this command for the first time, you must set up the file server connection using `tscli fileserver configure`. This command uses the following flags:
   --user USER;; Username of the fileserver.
   --password PASSWORD;; Password of the fileserver. This is required and the command prompts you for it if you do not supply it.
-  --file_name __FILE_NAME__;; Name of the local file to upload.
-  --server_dir_path __SERVER_DIR_PATH__;; Directory path on fileserver. The `SERVER_DIR_PATH` parameter specifies the directory for file upload. It is based on the customer name, and takes the form `/Shared/support/__customer_name__`.
+  --file_name FILE_NAME;; Name of the local file to upload.
+  --server_dir_path SERVER_DIR_PATH;; Directory path on fileserver. The `SERVER_DIR_PATH` parameter specifies the directory for file upload. It is based on the customer name, and takes the form `/Shared/support/<customer_name>`.
 
 [#tscli-firewall]
 === firewall
