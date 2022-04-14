@@ -5,87 +5,87 @@
 [#8-2-0-cl-kpi]
 **KPI chart type**
 
-With this release, you can get even more information from KPIs charts, at a glance.
+With this release, you get even more information from KPI charts.
 
 [#8-2-0-cl-kpi-attributes]
 * **Support for attributes**
 +
-You can now get KPIs on attributes, like product and dates.
+Have you ever wanted to display just the name of your product with the highest sales as a KPI and pin it to a Liveboard? You can now get KPIs on attributes, like products and dates.
++
+image::kpi-attribute.gif[KPI support for attributes]
 
 [#8-2-0-cl-kpi-conditional-formatting]
 * **Conditional formatting**
 +
-Add visual cues for KPIs or threshold metrics, to easily show where your measurements fall short or exceed targets desirable targets. For example, you can ensure that KPI metrics in certain ranges.
+Add visual cues for KPIs or threshold metrics, to easily show where your measurements exceed or fall short of desirable targets. For example, you can ensure that KPI metrics stay within certain ranges.
 +
-image::kpi-conditional.png[KPI conditional formatting]
+image::kpi-conditional.gif[KPI conditional formatting]
 
 [#8-2-0-cl-html-titles-descriptions]
 **HTML in answer titles and descriptions**
 
-In Liveboards, you can add clickable links to words or phrases in the title and description of answers and visualizations, using the `<a href>` HTML tag.
+In the title or description of an answer or visualization in a Liveboard, you can now make any word or phrase a hyperlink by using an `<a href>` HTML tag.
 
 image::chart-config-html.png[HTML links]
 
-You can also format the text (bold, italic, or highlight) of titles and descriptions.
+You can also format text as *bold*, _italic_, or #highlight#.
 
 image::chart-config-html-highlight.png[HTML highlight]
 
-Remember that you cannot use this for the title and description of Liveboards themselves, only for the answers and visualizations inside Liveboards.
-
-[#8-2-0-cl-search-suggestions]
-**Search suggestions**
-
-When you search across existing answers and Liveboards, ThoughtSpot offers suggestions based on your own viewing and interaction history, not just popular items in your organization. You can then quickly return to the work you were completing in previous sessions with ThoughtSpot.
-
-This is in **[.badge.badge-update]#Beta#** and off by default; we made it available as early access to some of our customers.
+This feature is available only for answers and visualizations *inside* a Liveboard, and not for the title or description of the Liveboard itself.
 
 '''
 [#secondary-8.2.0.cl]
 *_Other features and enhancements_*
 
 [#8-2-0-cl-data-tab]
-**Data tab redesign**
+**Data tab redesign [.badge.badge-update]#Beta#**
 
-We optimized the design for the *Data*-management interface of ThoughtSpot. To access it, select *Data* from the top navigation bar. The redesign adds several new features, such as SQL-based views and SpotApps, and a more intuitive UI.
-
-This feature is in **[.badge.badge-update]#Beta#** and off by default. To enable it, contact {support-url}.
+The redesigned data tab provides new features including SQL-based views, SpotApps, and a more intuitive user experience. To see it, select *Data* in the top navigation bar.
 
 [#8-2-0-cl-sql-based-views]
-**SQL-based views**
-This release introduces **[.badge.badge-update]#Beta#** support for SQL-based views. You can create views based on custom SQL queries, and then use them as data sources.
+**SQL-based views [.badge.badge-update]#Beta#**
 
-This feature is in **[.badge.badge-update]#Beta#** and off by default. To enable it, contact {support-url}.
+With SQL-based views, you can now create views based on custom SQL queries, and then use them as data sources.
+
+image::sql-bsd-view.png[sql-based-views]
 
 [#8-2-0-cl-connections-flow-data-portal]
-**New Data tab redesign and simplified connections**
+**Simplified connections [.badge.badge-update]#Beta#**
 
-Another advantage of the <<8-2-0-cl-data-tab,redesigned data tab>> is how easily you can create new connections to your data source, inside the new Data Workspace interface. Just click the *Data* tab, select *Connections* and then the connection type (Snowflake, Amazon Redshift, and so on), and follow the prompts. You don't even have to specify the tables and columns.
+You can now more easily create connections on the new Data Workspace page. To get started, select *Data* > *Connections*  in the top navigation bar, and then select a cloud data warehouse. You don't even have to specify tables or columns when you create your connection.
+
+image::simple-connections.png[simplified connections]
 
 [#8-2-0-cl-spotapps]
-**ServiceNow and Snowflake SpotApps**
+**ServiceNow and Snowflake SpotApps [.badge.badge-update]#Beta#**
 
-ThoughtSpot built new solution templates, SpotApps, for specific use cases and data sources. We deliver them to you as Blocks, pre-built pieces of code that you can easily download and implement directly from our product.
+SpotApps are solution templates for specific use cases and data sources. We deliver them to you as pieces of code that you can download and implement directly from our product.
 
-This release introduces the *Analytics Blocks* and the *ServiceNow* and *Snowflake* SpotApps. Analytics Blocks include pre-built Worksheet, Answer, and Liveboard Blocks.
+In this release, we introduce *Analytics Blocks*, which include pre-built worksheet, answer, and Liveboard blocks.
 
-The ServiceNow and Snowflake SpotApps mimic the ServiceNow and Snowflake data models. After connecting to your ServiceNow or Snowflake data in your cloud data warehouse, ThoughtSpot maps the data to SpotApp columns, and creates functional and  customizable worksheets, answers, and Liveboards.
+We also include the *ServiceNow* and *Snowflake* SpotApps, which mimic the ServiceNow and Snowflake data models. After you connect to your ServiceNow or Snowflake data in your cloud data warehouse, ThoughtSpot maps the data to SpotApp columns, and creates functional and customizable worksheets, answers, and Liveboards.
 
-This feature is in **[.badge.badge-update]#Beta#**, and off by default. It is part of the <<8-2-0-cl-data-tab,Data tab redesign>>, which is also in **[.badge.badge-update]#Beta#** and off by default. To enable SpotApps and the Data tab redesign, contact {support-url}.
+image::spot-apps.png[spot apps]
+
+All these features are part of the data tab redesign, which is in beta.
 
 [#8-2-0-cl-okta]
-**Okta authentication**
+**Okta authentication [.badge.badge-update]#Beta#**
 
-In this release, ThoughtSpot adopts the industry-standard cloud authentication through Okta. This change is internal, and has no impact on customers. When enabled, all user authentication automatically switches to the internal Okta service.
+ThoughtSpot now supports cloud authentication through Okta. When enabled, all user authentication automatically switches to the internal Okta service.
 
-This new Okta authentication feature is in **[.badge.badge-update]#Beta#** and off by default. To enable it, contact {support-url}.
+Okta authentication provides significant improvements and security enhancements:
 
-Okta authentication introduces several significant improvements and security enhancements:
-
-* Okta maps your IDP attributes from the ThoughtSpot *Admin Console* (username, email, and display name).
-* Monitor account activation on the *Admin Console > Users* section; if a user did not activate their account, that information is visible, and you can re-send their activation email.
-* Only Okta, not your ThoughtSpot cluster, interacts with your ID
-* Local users create their own passwords during account activation; administrators do not have to create passwords for them.
+* Okta maps your IDP attributes from the ThoughtSpot *Admin Console*, including username, email, and display name.
+* You can monitor account activation in the *Admin Console > Users* section. You can see if a user does not activate their account, and re-send their activation email.
+* Only Okta interacts with your ID
+* Local users create their own passwords during account activation. Administrators no longer have to create passwords for them.
 
 **ThoughtSpot Everywhere**
 
 For new features and enhancements introduced in this release for ThoughtSpot Everywhere, see https://developers.thoughtspot.com/docs/?pageid=whats-new[ThoughtSpot Developer Documentation^].
+
+**About beta features**
+
+Beta features are off by default. To enable them, contact {support-url}.
