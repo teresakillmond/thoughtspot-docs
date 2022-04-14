@@ -1,10 +1,10 @@
 = 7.2 Release Notes
 :experimental:
-:last_updated: 1/14/2021
+:last_updated: 3/31/2022
 :linkattrs:
 :page-aliases: /release/notes.adoc
 
-ThoughtSpot version 7.2 is now available as a limited availability release. This release is only available to specific customers. Contact {support-url} for details.
+ThoughtSpot version 7.2.1 is now available.
 
 These release notes include information about new and enhanced features.
 
@@ -12,8 +12,24 @@ To see our feature deprecation plans, please see xref:deprecation.adoc[].
 
 For a complete list of issues that we fixed in this release, see xref:fixed.adoc#releases-7-2-x[Fixed issues].
 
+* <<new-7-2-1,7.2.1 New Features and Functionality>>
 * <<new-7-2,7.2 New Features and Functionality>>
 * <<upgrade-paths,Supported Upgrade Paths>>
+
+[#new-7-2-1]
+== 7.2.1 New Features and Functionality
+
+* <<data-engineer-7-2-1,For the Data Engineer>>
+* <<it-ops-engineer-7-2-1,For the IT Ops Engineer>>
+
+[#data-engineer-7-2-1]
+=== For the Data Engineer
+
+[#it-ops-engineer-7-2-1]
+=== For the IT Ops Engineer
+
+Support for Python 3.9::
+ThoughtSpot now uses version 3.9 of python 3 for deployment. We also removed the dependency on Python 2 pip packages.
 
 [#new-7-2]
 == 7.2 New Features and Functionality
@@ -80,13 +96,18 @@ To manage the availability of the new answer experience, contact {support-url}.
 
 [#developer-7-2]
 === For the Developer
+
+Customers embedding ThoughtSpot in software releases should continue embedding ThoughtSpot using xref:embedding-overview.adoc[legacy embedding tools], which remain supported in 7.x software releases. Upgrading an environment with an existing embedded solution leveraging the legacy embedded technology to SW v.7.x is supported and seamless from an embedding standpoint.
+
+////
 ThoughtSpot Everywhere::
 For information about the new features and enhancements introduced in this release, refer to the documentation embedded in your ThoughtSpot environment under the *Develop* tab.
+////
 
 [#upgrade-paths]
 == Supported Upgrade Paths
 
-If you are running one of the following versions, you can upgrade to the 7.2 release directly:
+If you are running one of the following versions, you can upgrade to the 7.2 or 7.2.1 release directly:
 
 * 7.0.x to 7.2
 * 7.1.x to 7.2
@@ -95,6 +116,6 @@ This includes any hotfixes or customer patches on these branches.
 
 If you are running a different version, you must do a multiple pass upgrade.
 
-First, upgrade to version 7.0.x or 7.1.x, and then to the 7.2 release.
+First, upgrade to version 7.0.x or 7.1.x, and then to the 7.2 or 7.2.1 release.
 
 NOTE: To successfully upgrade your ThoughtSpot cluster, all user profiles must include a valid email address. Without valid email addresses, the upgrade is blocked.
