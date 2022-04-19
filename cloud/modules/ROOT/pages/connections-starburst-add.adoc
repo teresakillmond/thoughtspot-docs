@@ -1,11 +1,12 @@
-= Add a Starburst connection
+= Add a {connection} connection
 :last_updated: 9/21/2020
 :linkattrs:
 :page-layout: default-cloud
 :page-aliases: /admin/ts-cloud/ts-cloud-embrace-starburst-add-connection.adoc
 :experimental:
+:connection: Starburst
 
-To connect to Starburst, follow these steps:
+To connect to {connection}, follow these steps:
 
 . Click *Data* in the top navigation bar.
 . Click the *Connections* tab at the top of the page, and click *+ Add connection* at the upper-right-hand side of the page.
@@ -13,27 +14,27 @@ To connect to Starburst, follow these steps:
 // ![Click "+ Add connection"]({{ site.baseurl }}/images/redshift-addconnection.png "Click "+ add connection"")
 +
 // ![]({{ site.baseurl }}/images/new-connection.png "New db connect")
-. Create a name for your connection, a description (optional), then select the Starburst connection type, and click *Continue*.
+. Create a name for your connection, a description (optional), then select the {connection} connection type, and click *Continue*.
 +
-image::starburst-connectiontype.png[Add a Starburst connection]
+image::starburst-connectiontype.png[Add a {connection} connection]
 
-. Enter the connection details for your Starburst data source.
+. Enter the connection details for your {connection} data source.
 +
 image::starburst-connectiondetails.png[Enter connection details]
 +
-Refer to the xref:connections-starburst-reference.adoc[Starburst connection reference] for more information on each of the specific attributes you must enter for your connection.
-. (Optional) Configure proxy for your Starburst connection by doing the following:
+Refer to the xref:connections-starburst-reference.adoc[{connection} connection reference] for more information on each of the specific attributes you must enter for your connection.
+. (Optional) Configure proxy for your {connection} connection by doing the following:
 .. Click the *Advanced Config* menu to reveal the Key and Value fields.
 .. For Key, enter *httpProxy*, and for Value, enter *<proxyHost>:<proxyPort>*.
 +
 Example: *40.142.32.22:5050*
-. (Optional) Provide additional key-value pairs that you need to set up your connection to Starburst, by doing the following:
+. (Optional) Provide additional key-value pairs that you need to set up your connection to {connection}, by doing the following:
  .. Click the *Advanced Config* menu to reveal the *Key* and *Value* fields.
  .. Enter your key and value information.
  .. To add more keys and values, click the plus sign (+), and enter them.
 
 +
-NOTE: Any key-value pairs that you enter must be defined in your Starburst data source.
+NOTE: Any key-value pairs that you enter must be defined in your {connection} data source.
 Key-value pairs are case-sensitive.
 . Click *Continue*.
 . Select tables (on the left) and the columns from each table (on the right), and then click *Create connection*.
@@ -45,7 +46,7 @@ A message appears indicating the number of tables and columns that will be added
 
 . Click *Confirm*.
 +
-Once the connection is added, you can search your Starburst database right away by clicking *Search now*.
+Once the connection is added, you can search your {connection} database right away by clicking *Search now*.
 +
 image::starburst-connectioncreated.png[The "Connection created" screen]
 +
@@ -60,13 +61,13 @@ Because the selected tables and columns in your connection are linked, it may ta
 This is because ThoughtSpot does not cache linked data.
 With linked data, ThoughtSpot queries the external database directly, which is slower than querying data that is stored in ThoughtSpot's database.
 
-You can modify a Starburst connection in the following ways:
+You can modify a {connection} connection in the following ways:
 
-* xref:connections-starburst-edit.adoc[Edit a Starburst connection]
-* xref:connections-starburst-remap.adoc[Remap a Starburst connection]
-* xref:connections-starburst-delete-table.adoc[Delete a table from a Starburst connection]
+* xref:connections-starburst-edit.adoc[Edit a {connection} connection]
+* xref:connections-starburst-remap.adoc[Remap a {connection} connection]
+* xref:connections-starburst-delete-table.adoc[Delete a table from a {connection} connection]
 * xref:connections-starburst-delete-table-dependencies.adoc[Delete a table with dependent objects]
 
-You can also xref:connections-starburst-delete.adoc[Delete a Starburst connection].
+You can also xref:connections-starburst-delete.adoc[Delete a {connection} connection].
 
 See the xref:connections-starburst-reference.adoc[Connection reference] for details of connection parameters.
