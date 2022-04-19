@@ -1,16 +1,17 @@
-= BigQuery prerequisites
+= {connection} prerequisites
 :last_updated: 9/21/2020
 :linkattrs:
 :page-layout: default-cloud
 :page-aliases: /admin/ts-cloud/ts-cloud-embrace-gbq-prerequisites.adoc
 :experimental:
+:connection: BigQuery
 
 To use a ThoughtSpot connection to query your GBQ database, you must create a custom role with specific permissions and then assign it to  your service account.
 
 [#custom-role]
 == Create a custom role
 
-To create a custom role in BigQuery, do the following:
+To create a custom role in {connection}, do the following:
 
 . Navigate to https://console.cloud.google.com[console.cloud.google.com^], sign in, and select your project.
 . Hover over *IAM & admin*.
@@ -67,19 +68,19 @@ The key downloads to your computer.
 +
 When the download is complete, the message: "Private key saved to your computer" appears.
 . Make note of the name of the filename, so you can find it on your computer, and then click *CLOSE*.
-. When you are ready to add a connection to BigQuery in ThoughtSpot, open the private key file in a text editor, and copy the entire contents of the file.
-. In the connection details page of your BigQuery connection in ThoughtSpot, paste this key into the *Service account* field.
+. When you are ready to add a connection to {connection} in ThoughtSpot, open the private key file in a text editor, and copy the entire contents of the file.
+. In the connection details page of your {connection} connection in ThoughtSpot, paste this key into the *Service account* field.
 +
-For details on how to add a connection to BigQuery in ThoughtSpot, see xref:connections-gbq-add.adoc[Add a BigQuery connection].
+For details on how to add a connection to {connection} in ThoughtSpot, see xref:connections-gbq-add.adoc[Add a {connection} connection].
 
 [#share-dataset]
 == Share dataset
 
-To make your dataset available for your Google BigQuery connection in ThoughtSpot, you must share it with your service account in Google BigQuery in an owner role.
+To make your dataset available for your Google {connection} connection in ThoughtSpot, you must share it with your service account in Google {connection} in an owner role.
 
 . Navigate to https://console.cloud.google.com[console.cloud.google.com^], sign in, and select your project.
 . Click the navigation menu in the upper left, if it is not already open.
-. Scroll down in the navigation menu into the BIG DATA section, and click *BigQuery*.
+. Scroll down in the navigation menu into the BIG DATA section, and click *{connection}*.
 +
 Your project should be listed on the left side of the page under the search box.
 . Click your project to reveal its available datasets.
