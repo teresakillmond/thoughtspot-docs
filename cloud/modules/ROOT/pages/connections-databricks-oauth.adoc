@@ -19,7 +19,7 @@ To create an application in AAD, do the following:
 image::databricks-oauth-config-1.png[]
 . Provide a name for your application and add a redirect URI in the following format:
 +
-`https://<your-thoughtspot-instance>/callosum/v1/connection/generateTokens`.
+`\https://<your-thoughtspot-instance>/callosum/v1/connection/generateTokens`.
 +
 This is where the call is redirected upon successful login to AAD when creating a connection in ThoughtSpot.
 +
@@ -50,16 +50,16 @@ In the authorization code flow for OAuth, the scope must be set with this resour
 ----
 2ff814a6-3304-4ab8-85cb-cd0e6f879c1d/.default
 ----
-Example:
-
-image::databricks-oauth-config-5.png[]
 
 For more information, see https://docs.microsoft.com/en-us/azure/databricks/dev-tools/api/latest/aad/app-aad-token[Get Azure AD tokens by using the Microsoft Authentication Library^] in Microsoft's Azure {connection} documentation.
 ****
 
 == Part 3: Create AAD users in the {connection} workspace
 
-. Log in to the {connection} workspace as a user with admin privileges. Click *Setting* and navigate to *Admin Console* to create AAD users in {connection}.
+To create AAD users in the {connection} workspace, do the following:
+
+. Log in to the {connection} workspace as a user with admin privileges. Click *Setting* and navigate to *Admin Console*.
+. Click *Add User* to create AAD users in {connection}.
 +
 image::databricks-oauth-config-6.png[]
 
