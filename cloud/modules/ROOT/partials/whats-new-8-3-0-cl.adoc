@@ -2,97 +2,116 @@
 
 [#primary-8.3.0.cl]
 
-[#8-2-0-cl-kpi]
-**KPI chart type**
+[#8-3-0-cl-kpi]
+**KPI chart enhancements**
 
-With this release, you get even more information from KPI charts.
+// summary sentence (eg "With this release, you get even more information from KPI charts.")
 
-[#8-2-0-cl-kpi-attributes]
-* **Support for attributes**
-+
-Have you ever wanted to display just the name of your product with the highest sales as a KPI and pin it to a Liveboard? You can now get KPIs on attributes, like products and dates.
-+
-image::kpi-attribute.gif[KPI support for attributes]
+[#8-3-0-cl-kpi-conditional-formatting]
+* *Conditional formatting for KPI attributes*
 
-[#8-2-0-cl-kpi-conditional-formatting]
-* **Conditional formatting**
-+
-Add visual cues for KPIs or threshold metrics, to easily show where your measurements exceed or fall short of desirable targets. For example, you can ensure that KPI metrics stay within certain ranges.
-+
-image::kpi-conditional.gif[KPI conditional formatting]
+// NEEDS CONTENT AND NEW TITLE
 
-* *Support for Drill down, Show underlying data, and SpotIQ analyze*
-+
-You can now right-click the sparkline visual of any KPI chart to xref:search-drill-down.adoc[Drill down] to a finer-grain view of your data, xref:show-underlying-data.adoc[Show underlying data], or xref:spotiq-custom.adoc[run a custom SpotIQ analysis].
-+
-image::kpi-drilldown.gif[KPI drilldown gif]
+[#8-3-0-cl-kpi-homepage]
+* *KPI charts on your home page watchlist*
 
-[#8-2-0-cl-html-titles-descriptions]
-**HTML in answer titles and descriptions**
+// NEEDS CONTENT AND NEW TITLE
 
-In the title or description of an answer or visualization in a Liveboard, you can now make any word or phrase a hyperlink by using an `<a href>` HTML tag.
+[#8-3-0-cl-monitor]
+**Monitor**
 
-image::chart-config-html.png[HTML links]
+// NEEDS CONTENT AND NEW TITLE
 
-You can also format text as *bold*, _italic_, or #highlighted#.
+[#8-3-0-cl-previously-viewed]
+**Recently viewed Liveboard and answer suggestions**
 
-image::chart-config-html-highlight.png[HTML highlight]
+Get to your most-viewed Liveboards and answers more quickly with recently viewed object suggestions. When you search answers, ThoughtSpot now suggests your recently viewed Liveboards and answers, as well as popular objects.
 
-This feature is available only for answers and visualizations *inside* a Liveboard, and not for the title or description of the Liveboard itself.
+// IMAGE
 
-*Pivot table scroll bar*
+[#8-3-0-cl-spotiq]
+**New SpotIQ experience**
 
-If your pivot table contains more than 2 measures, the column header now has a horizontal scroll bar, so you can see all your measures without taking up excessive space.
+SpotIQ has a new UI. The functionality remains the same, but we reorganized the UI to make it more intuitive. Try it out by switching to the new experience in your profile.
 
-image::pivot-gif.gif[Pivot table scroll bar gif]
+// IMAGE
+
+[#8-3-0-cl-search-data]
+**Search data button**
+
+The *Search data* button in the top navigation bar now allows you to right-click and open it in a new tab, so you can search data without disrupting your workflow.
+
+// IMAGE
 
 '''
 [#secondary-8.2.0.cl]
 *_Other features and enhancements_*
 
-[#8-2-0-cl-data-tab]
-**Data tab redesign [.badge.badge-update]#Beta#**
+[#8-3-0-cl-connections]
+**Connections**
 
-The redesigned data tab provides new features including SQL-based views, SpotApps, and a more intuitive user experience. To see it, select *Data* in the top navigation bar.
+// summary sentence
 
-[#8-2-0-cl-sql-based-views]
-**SQL-based views [.badge.badge-update]#Beta#**
+[#8-3-0-cl-oracle]
+* *Oracle Exadata connector*
 
-With SQL-based views, you can now create views based on custom SQL queries, and then use them as data sources.
+// NEEDS CONTENT AND NEW TITLE
 
-image::sql-bsd-view.png[sql-based-views]
+[#8-3-0-cl-dremio]
+* *Dremio connector*
 
-[#8-2-0-cl-connections-flow-data-portal]
-**Simplified connections [.badge.badge-update]#Beta#**
+// NEEDS CONTENT AND NEW TITLE
 
-You can now more easily create connections on the new Data Workspace page. To get started, select *Data* > *Connections*, and then select a cloud data warehouse. You don't even have to specify tables or columns when you create your connection.
+[#8-3-0-cl-databricks-security]
+* *Security Passthrough for Databricks*
 
-image::simple-connections.png[simplified connections]
+// NEEDS CONTENT AND NEW TITLE
 
-[#8-2-0-cl-spotapps]
-**ServiceNow and Snowflake SpotApps [.badge.badge-update]#Beta#**
+[#8-3-0-cl-seekwell]
+**Seekwell as a destination**
 
-SpotApps are solution templates for specific use cases and data sources. We deliver them to you as pieces of code that you can download and implement directly from our product.
+// summary sentence
 
-In this release, we introduce *Analytics Blocks*, which include pre-built worksheet, answer, and Liveboard blocks.
+[#8-3-0-cl-zoho]
+* *Zoho*
 
-We also include the *ServiceNow* and *Snowflake* SpotApps, which mimic the ServiceNow and Snowflake data models. After you connect to your ServiceNow or Snowflake data in your cloud data warehouse, ThoughtSpot maps the data to SpotApp columns, and creates functional and customizable worksheets, answers, and Liveboards.
+// NEEDS CONTENT AND NEW TITLE
 
-image::spot-apps.png[spot apps]
+[#8-3-0-cl-front]
+* *Front*
 
-All these features are part of the data tab redesign, which is in beta.
+// NEEDS CONTENT AND NEW TITLE
 
-[#8-2-0-cl-okta]
-**Okta authentication [.badge.badge-update]#Beta#**
+[#8-3-0-cl-customerio]
+* *Customer.io*
 
-ThoughtSpot now supports cloud authentication through Okta. When enabled, all user authentication automatically switches to the internal Okta service.
+// NEEDS CONTENT AND NEW TITLE
 
-Okta authentication provides significant improvements and security enhancements:
+[#8-3-0-cl-encryption]
+*Data encryption at rest*
 
-* Okta maps your IDP attributes from the ThoughtSpot *Admin Console*, including username, email, and display name.
-* You can monitor account activation in the *Admin Console > Users* section. You can see if a user does not activate their account, and re-send their activation email.
-* Only Okta interacts with your ID
-* Local users create their own passwords during account activation. Administrators no longer have to create passwords for them.
+ThoughtSpot now provides advanced data encryption at rest (EAR) on request. It allows for granular user and folder level controls for encrypting your persistent data.
+
+[#8-3-0-cl-liveboard-v2]
+*New Liveboard experience[.badge.badge-update]#Beta#*
+
+The new Liveboard experience contains multiple new features and feature enhancements, including Edit mode, HTML in Liveboard titles and descriptions, and an improved filters modal. Try it out by switching to the new experience in your profile.
+
+// image
+
+[#8-3-0-cl-spotapps]
+*Jira Issue Management SpotApp [.badge.badge-update]#Beta#*
+
+ThoughtSpot can now map your Jira data to SpotApp columns, and create pre-built but still customizable worksheets, answers, and Liveboards, based on your data. Use this new SpotApp to analyze your issue tracking data.
+
+// image
+
+[#8-3-0-cl-dbt]
+**Integration with dbt [.badge.badge-update]#Beta#**
+
+ThoughtSpot now offers an integration with dbt. Provide your existing dbt models, and automatically create worksheets in ThoughtSpot that you can use to query your data.
+
+// IMAGE
 
 **ThoughtSpot Everywhere**
 
