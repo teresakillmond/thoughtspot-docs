@@ -157,7 +157,7 @@ su admin
 /usr/local/scaligent/bin/prepare_disks.sh /dev/sdc /dev/sdd
 ----
 
-Your hosts are now ready for installing the ThoughtSpot application.
+Your hosts are ready for installing the ThoughtSpot application.
 
 [#install-thoughtspot]
 == Install the ThoughtSpot cluster and the application
@@ -170,4 +170,5 @@ Follow these general steps to install ThoughtSpot on the prepared hosts:
 . Download the release artifact from the ThoughtSpot file sharing system.
 . Upload the release artifact to the first host.
 . Run the `tscli cluster create` command. This script prompts for user input.
+. *[Optional, 7.2.1 and later]* Upgrade Python version. ThoughtSpot's default Python version for Amazon Linux 2 is 3.7; you can upgrade it to 3.9. Refer to xref:python-upgrade.adoc[].
 . Check the cluster health by running health checks and logging into the application.
