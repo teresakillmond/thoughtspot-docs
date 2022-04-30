@@ -38,6 +38,7 @@ Follow the steps in this checklist:
 | &#10063; | <<cluster-step-1,Step 1: Run the installer>>
 | &#10063; | <<cluster-step-2,Step 2: Check cluster health>>
 | &#10063; | <<cluster-step-3,Step 3: Finalize installation>>
+| &#10063; | <<install-step-4, *[Optional - 7.2.1 and later]* Step 4: Upgrade Python>>
 |===
 
 Refer to your welcome letter from ThoughtSpot to find the link to download the release bundle.
@@ -116,6 +117,12 @@ $ tscli cluster create <release-number>.tar.gz --enable_cloud_storage=gcs
 ----
 
 include::partial$cluster-steps1through3.adoc[]
+
+[#install-step-4]
+=== [Optional - 7.2.1 and later] Step 4: Upgrade Python
+By default, your ThoughtSpot cluster comes with Python 3.6. In ThoughtSpot version 7.2.1 and later, you can upgrade it to Python 3.9 or remain on the default version.
+
+Refer to xref:python-upgrade.adoc[].
 
 == Lean configuration
 

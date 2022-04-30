@@ -1,10 +1,10 @@
 = 7.2 Release Notes
 :experimental:
-:last_updated: 1/14/2021
+:last_updated: 3/31/2022
 :linkattrs:
 :page-aliases: /release/notes.adoc
 
-ThoughtSpot version 7.2 is now available as a limited availability release. This release is only available to specific customers. Contact {support-url} for details.
+ThoughtSpot version 7.2.1 is now available.
 
 These release notes include information about new and enhanced features.
 
@@ -12,8 +12,40 @@ To see our feature deprecation plans, please see xref:deprecation.adoc[].
 
 For a complete list of issues that we fixed in this release, see xref:fixed.adoc#releases-7-2-x[Fixed issues].
 
+* <<new-7-2-1,7.2.1 New Features and Functionality>>
 * <<new-7-2,7.2 New Features and Functionality>>
 * <<upgrade-paths,Supported Upgrade Paths>>
+
+[#new-7-2-1]
+== 7.2.1 New Features and Functionality
+
+* <<data-engineer-7-2-1,For the Data Engineer>>
+* <<it-ops-engineer-7-2-1,For the IT Ops Engineer>>
+
+[#data-engineer-7-2-1]
+=== For the Data Engineer
+
+[#synapse-oauth]
+OAuth for Microsoft Azure Synapse +++<span class="badge badge-new">New</span>+++::
+Synapse connections now support OAuth. See xref:connections-synapse-oauth.adoc[Configure OAuth for an Azure Synapse connection].
+
+[#oracle]
+Oracle connections support Exadata and ADW +++<span class="badge badge-new">New</span>+++::
+In this release, the Oracle ADW connection is renamed to Oracle. Existing ADW connections continue to work. There are now two options: *Cloud* for ADW connections, and *On Premise* for Exadata or on-prem database connections. For details, see xref:connections-adw.adoc[Oracle].
+
+[#dremio]
+Dremio connector +++<span class="badge badge-new">New</span>+++::
+In this release, Dremio is a new connection type. For details, see xref:connections-dremio.adoc[Dremio].
+Dremio supports OAuth. For details, see xref:connections-dremio-oauth.adoc[Configure OAuth for a Dremio connection]
+
+[#it-ops-engineer-7-2-1]
+=== For the IT Ops Engineer
+
+Support for Python versions 3.6, 3.7, and 3.9::
+ThoughtSpot supports use of the following versions of Python 3 for deployment:
+* Python 3.6: ThoughtSpot-managed CentOS for AWS, GCP, VMware, Azure, SMC, and Dell; customer-managed xref:rhel.adoc[RedHat Enterprise Linux (RHEL)]; customer-managed xref:rhel.adoc[Oracle Enterprise Linux (OEL)]; customer-managed xref:al2.adoc[Amazon Linux 2]
+* Python 3.7: customer-managed Amazon Linux 2
+* Python 3.9: ThoughtSpot-managed CentOS for AWS, GCP, and Azure; customer-managed xref:rhel.adoc[RedHat Enterprise Linux (RHEL)]; customer-managed xref:al2.adoc[Amazon Linux 2]
 
 [#new-7-2]
 == 7.2 New Features and Functionality
@@ -46,7 +78,6 @@ See xref:geomap-reference.adoc[Geo Map Reference].
 
 [#data-engineer-7-2]
 === For the Data Engineer
-
 
 [#dataflow]
 DataFlow:: We added support for the following database: xref:dataflow-impala.adoc[Impala].
@@ -84,6 +115,7 @@ To manage the availability of the new answer experience, contact {support-url}.
 === For the Developer
 
 Customers embedding ThoughtSpot in software releases should continue embedding ThoughtSpot using xref:embedding-overview.adoc[legacy embedding tools], which remain supported in 7.x software releases. Upgrading an environment with an existing embedded solution leveraging the legacy embedded technology to SW v.7.x is supported and seamless from an embedding standpoint.
+
 ////
 ThoughtSpot Everywhere::
 For information about the new features and enhancements introduced in this release, refer to the documentation embedded in your ThoughtSpot environment under the *Develop* tab.
@@ -92,15 +124,15 @@ For information about the new features and enhancements introduced in this relea
 [#upgrade-paths]
 == Supported Upgrade Paths
 
-If you are running one of the following versions, you can upgrade to the 7.2 release directly:
+If you are running one of the following versions, you can upgrade to the 7.2.1 release directly:
 
-* 7.0.x to 7.2
-* 7.1.x to 7.2
+* 7.0.x to 7.2.1
+* 7.1.x to 7.2.1
 
 This includes any hotfixes or customer patches on these branches.
 
 If you are running a different version, you must do a multiple pass upgrade.
 
-First, upgrade to version 7.0.x or 7.1.x, and then to the 7.2 release.
+First, upgrade to version 7.0.x or 7.1.x, and then to the 7.2.1 release.
 
 NOTE: To successfully upgrade your ThoughtSpot cluster, all user profiles must include a valid email address. Without valid email addresses, the upgrade is blocked.
