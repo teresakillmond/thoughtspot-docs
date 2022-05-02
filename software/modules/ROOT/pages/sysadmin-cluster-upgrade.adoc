@@ -14,9 +14,11 @@ Learn how to upgrade a single-node, ThoughtSpot-managed CentOS cluster to a new 
 
 '''
 
+NOTE: This article teaches you how to upgrade a single-node, ThoughtSpot-managed CentOS cluster. To upgrade multi-node clusters, or clusters that use customer-managed xref:rhel.adoc[RHEL], xref:rhel.adoc[OEL], or xref:al2.adoc[Amazon Linux 2], contact {support-url}.
+
 == About cluster upgrades and patches
 ThoughtSpot is installed or updated from a release tarball that contains the ThoughtSpot application (binaries and configuration), third-party software, and Operating System image.
-Third party softwares are licensed software components necessary for operation of the ThoughtSpot application.
+Third party software includes licensed software components necessary for operation of the ThoughtSpot application.
 These include Java, Boost C{pp} libraries, Google protocol buffers, and so on.
 
 ThoughtSpot patches the Operating System at the time of upgrades.
@@ -44,16 +46,18 @@ To upgrade your cluster, follow these steps:
 | &#10063; | <<upgrade-step-4,Step 4: Finalize installation>>
 |===
 
+NOTE: If any commands return errors, warnings, or failures while you upgrade, contact {support-url}.
+
 [#upgrade-step-1]
 === Step 1: Check cluster health
 . SSH into your cluster.
-Run `ssh admin@<nodeIP>`.
+Run `ssh admin@<ThoughtSpotnodeIP>`.
 +
-Replace `nodeIP` with your specific network information.
+Replace `ThoughtSpotnodeIP` with your specific network information.
 +
 [source,bash]
 ----
- $ ssh admin@<nodeIP>
+ $ ssh admin@<ThoughtSpotnodeIP>
 ----
 
 . Run `tscli cluster status`. This tells you what version you are currently on, and ensures that the cluster is running and ready.
@@ -62,6 +66,8 @@ Replace `nodeIP` with your specific network information.
 ----
  $ tscli cluster status
 ----
++
+Make sure that the output says `Cluster: RUNNING`, `Database: READY`, and `Search Engine: READY`.
 
 . Run `tscli cluster check` to ensure there are no component failures.
 +
@@ -69,14 +75,40 @@ Replace `nodeIP` with your specific network information.
 ----
  $ tscli cluster check
 ----
++
+Make sure that the output for each component is `SUCCESS`.
 
-. If `tscli cluster status` or `tscli cluster check` return any failures, xref:support-contact.adoc[contact ThoughtSpot Support] before you proceed with the upgrade.
+. If `tscli cluster status` or `tscli cluster check` return any errors, warnings, or failures, contact {support-url} before you proceed with the upgrade.
 
 [#upgrade-step-2]
 === Step 2: Download the release
-. Use `tscli fileserver download-release` to download the release bundle.
+You can download the release and move it to the correct directory in one of two ways:
+
+* using the <<fileserver,tscli fileserver>> command
+* using the <<egnyte,Egnyte link and scp command>>
+
+[#fileserver]
+==== Download the release using tscli
+Use `tscli fileserver download-release` to download the release bundle.
+
+// should they cd to the specific export directory here?
+
+. First, ensure that you already xref:tscli-command-ref.adoc#tscli-fileserver[configured the fileserver] by running `tscli fileserver show-config`.
 +
-You must xref:tscli-command-ref.adoc#tscli-fileserver[configure the fileserver] by running `tscli fileserver configure` before you can download the release.
+[source,bash]
+----
+tscli fileserver show-config
+----
+If the fileserver is already configured, the output is `Fileserver is configured`.
+
+.. If the fileserver is *not* configured, xref:tscli-command-ref.adoc#tscli-fileserver[configure the fileserver] by running `tscli fileserver configure --user USER --password PASSWORD`.
++
+[source,bash]
+----
+tscli fileserver configure --user USER --password PASSWORD
+----
+
+. Download the release from the fileserver by running `tscli fileserver download-release <release-number> --user <username> --out <release-location>`.
 +
 [source,bash]
 ----
@@ -89,27 +121,34 @@ Note the following parameters:
 `username`:: is the username for the fileserver that you set up earlier, when configuring the fileserver.
 `release-location`:: is the location path of the release bundle on your local machine. For example, `/export/sdb1/TS_TASKS/install/6.0.tar.gz`.
 
+[#egnyte]
+==== Download the release using the Egnyte link
+// should they cd to the specific export directory here?
+. On a machine that can also access your ThoughtSpot cluster, navigate to [LINK].
+. Select *Download*. [i'm not sure what this actually looks like on egnyte]
 . Copy the downloaded release bundle to a specific path in the `/export` folder.
 +
 You must copy the bundle to a different path in the `/export` folder, depending on your deployment platform:
 +
+[#platform-export-path]
 --
 SMC, Dell, VMware, and GCP:: `/export/sdb1/TS_SRE_TASKS`
 AWS:: `/export/xvdb1/TS_SRE_TASKS`
 Azure:: `/export/sdc1/TS_SRE_TASKS`
 --
 +
-Run `scp <release-number>.tar.gz admin@<hostname>:/export/sdb1/TS_TASKS/install/<file-name>`.
+Run `scp <release-number>.tar.gz admin@<hostname>:/export/<path>/TS_TASKS/install/<file-name>`.
 +
 [source,bash]
 ----
-$ scp <release-number>.tar.gz admin@<hostname>:/export/sdb1/TS_TASKS/install/<file-name>
+$ scp <release-number>.tar.gz admin@<hostname>:/export/<path>/TS_TASKS/install/<file-name>
 ----
 +
 Note the following parameters:
 +
 `release-number`:: is the release number of your ThoughtSpot instance, such as 5.3, 5.3.1, 6.0, and so on.
 `hostname`:: is your specific hostname.
+`path`:: is the path within the export folder. This differs based on your deployment platform; refer to <<platform-export-path, list of paths>>.
 `file-name`:: is the name of the tarball file on your local machine.
 
 NOTE: You can use another secure copy method, if you prefer a method other than the `scp` command.
