@@ -1,5 +1,5 @@
 = Authentication flow with embed
-:last_updated: 05/02/2021
+:last_updated: 05/03/2022
 :linkattrs:
 :experimental:
 
@@ -9,28 +9,9 @@ If your ThoughtSpot system is configured for Security Assertion Markup Language 
 
 == iFrame embedding with SSO
 
-ThoughtSpot clusters running 7.0.1 or lower Software release versions may add additional headers and restrict iFrame embedding with SSO. To resolve this issue, apply `saml_iframe_options.patch`.
+ThoughtSpot clusters running 7.0.1 or lower Software release versions may add additional headers and restrict iFrame embedding with SSO. You can resolve this issue by applying the `saml_iframe_options.patch`.
+To install this patch on your ThoughtSpot instance, contact xref:support-contact.adoc[ThoughtSpot Support].
 
-. Log in to ThoughtSpot.
-. Go to `/usr/local/scaligent/release/production/orion/tomcat/callosum/saml`.
-. Edit `applicationContext-security.xml`.
-. Apply `saml_iframe_options.patch`.
-+
-[source,text]
-----
-diff --git a/production/orion/tomcat/callosum/saml/applicationContext-security.xml b/production/orion/tomcat/callosum/saml/applicationContext-security.xml
-index 096558ca13a..3dae46e5d83 100644
---- a/production/orion/tomcat/callosum/saml/applicationContext-security.xml
-+++ b/production/orion/tomcat/callosum/saml/applicationContext-security.xml
-@@ -22,6 +22,9 @@
-     <security:csrf disabled="true"/>
-     <security:custom-filter before="FIRST" ref="metadataGeneratorFilter"/>
-     <security:custom-filter after="BASIC_AUTH_FILTER" ref="samlFilter"/>
-+    <security:headers>
-+      <security:frame-options disabled="true"/>
-+    </security:headers>
-   </security:http>
-----
 
 == Authenticate when the window is initialized
 
