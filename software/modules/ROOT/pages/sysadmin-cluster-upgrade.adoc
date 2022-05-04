@@ -26,6 +26,8 @@ Installation and upgrade use the same process, replacing the older OS image on a
 
 ThoughtSpot Support will contact you to schedule an update when a minor or major upgrade becomes available.
 
+// is this last sentence still true
+
 == View available releases
 
 NOTE: This feature is now deprecated. You may not use it starting with the 7.2.1 release. For details, see xref:deprecation.adoc[Deprecation Announcements].
@@ -40,17 +42,24 @@ The *Upgrade* page shows your cluster's current version, and any new releases th
 To upgrade your cluster, follow these steps:
 [cols="5,~",grid=none,frame=none]
 |===
-| &#10063; | <<upgrade-step-1,Step 1: Check cluster health>>
-| &#10063; | <<upgrade-step-2,Step 2: Download the release>>
-| &#10063; | <<upgrade-step-3,Step 3: Upgrade the cluster>>
-| &#10063; | <<upgrade-step-4,Step 4: Finalize installation>>
+| &#10063; | <<upgrade-step-1,Step 1: Download the release>>
+| &#10063; | <<upgrade-step-2,Step 2: Check disk space>>
+| &#10063; | <<upgrade-step-3,Step 3: Take manual snapshot and backup>>
+| &#10063; | <<upgrade-step-4,Step 4: Check cluster health and release integrity>>
+| &#10063; | <<upgrade-step-5,Step 5: Upgrade the cluster>>
+| &#10063; | <<upgrade-step-6,Step 6: Finalize installation>>
+| &#10063; | <<upgrade-step-7,Step 7: Apply patches>>
 |===
 
 NOTE: If any commands return errors, warnings, or failures while you upgrade, contact {support-url}.
 
 [#upgrade-step-1]
-=== Step 1: Check cluster health
-. SSH into your cluster.
+=== Step 1: Download the release
+Download the release, including any patches for the version you are installing, and move it to a folder in your ThoughtSpot node.
+
+. Navigate to [LINK].
+. Download the release content folder for the version you would like to upgrade to. [i'm not sure what this actually looks like on egnyte]
+. In your terminal application, `ssh` into your cluster.
 Run `ssh admin@<ThoughtSpotnodeIP>`.
 +
 Replace `ThoughtSpotnodeIP` with your specific network information.
@@ -59,7 +68,35 @@ Replace `ThoughtSpotnodeIP` with your specific network information.
 ----
  $ ssh admin@<ThoughtSpotnodeIP>
 ----
+. Copy the downloaded release bundle from your Downloads folder to any path in the `/export` folder of your ThoughtSpot node that has enough space. Use one of two methods:
++
+* Use any secure copy method, such as `winscp`.
+* If your ThoughtSpot cluster allows access to Egnyte, you can use the following `wget` command:
++
+[source,bash]
+----
+ $ wget -O <release-bundle-name> <EGNYTE LINK THAT I WILL PROVIDE WHEN I HAVE IT>
+----
 
+[#upgrade-step-2]
+=== Step 2: Check disk space
+. Check disk space by running `df -h`. `/tmp` needs at least 21 GB free for upgrades.
++
+[source,bash]
+----
+ $ df -h
+----
++
+The output of this command shows all disks in the ThoughtSpot node and their availability, in percentage and in number of GB.
+
+[#upgrade-step-3]
+=== Step 3: Take manual snapshot and backup
+. Take a manual snapshot of the cluster. For information on how to take a manual snapshot, refer to xref:snapshots.adoc#manual-snapshot[Work with snapshots].
+
+. Take a manual backup of the cluster. For information on how to take a manual backup, refer to xref:backup-manual.adoc[Create a manual backup].
+
+[#upgrade-step-4]
+=== Step 4: Check cluster health and release integrity
 . Run `tscli cluster status`. This tells you what version you are currently on, and ensures that the cluster is running and ready.
 +
 [source,bash]
@@ -78,92 +115,43 @@ Make sure that the output says `Cluster: RUNNING`, `Database: READY`, and `Searc
 +
 Make sure that the output for each component is `SUCCESS`.
 
-. If `tscli cluster status` or `tscli cluster check` return any errors, warnings, or failures, contact {support-url} before you proceed with the upgrade.
-
-[#upgrade-step-2]
-=== Step 2: Download the release
-You can download the release and move it to the correct directory in one of two ways:
-
-* using the <<fileserver,tscli fileserver>> command
-* using the <<egnyte,Egnyte link and scp command>>
-
-[#fileserver]
-==== Download the release using tscli
-Use `tscli fileserver download-release` to download the release bundle.
-
-// should they cd to the specific export directory here?
-
-. First, ensure that you already xref:tscli-command-ref.adoc#tscli-fileserver[configured the fileserver] by running `tscli fileserver show-config`.
+. Run `./capture_cluster_information.sh`. This provides {support-url} with information about your cluster in case of upgrade or post-upgrade failures.
 +
 [source,bash]
 ----
-tscli fileserver show-config
+ $ ./capture_cluster_information.sh
 ----
-If the fileserver is already configured, the output is `Fileserver is configured`.
 
-.. If the fileserver is *not* configured, xref:tscli-command-ref.adoc#tscli-fileserver[configure the fileserver] by running `tscli fileserver configure --user USER --password PASSWORD`.
+. Check the integrity of the release by running the `md5sum -c <MD5checksum file>` command. Replace `MD5checksum file` with the name of the checksum file in your release bundle.
 +
 [source,bash]
 ----
-tscli fileserver configure --user USER --password PASSWORD
+ $ md5sum -c <MD5checksum file>
 ----
++
+The output should be a green `OK`.
 
-. Download the release from the fileserver by running `tscli fileserver download-release <release-number> --user <username> --out <release-location>`.
+. If `tscli cluster status`, `tscli cluster check`, or the `md5sum` command return any errors, warnings, or failures, contact {support-url} before you proceed with the upgrade.
+
+[#upgrade-step-5]
+=== Step 5: Upgrade the cluster
+. Launch a screen session. Use screen to ensure that your installation does not stop if you lose network connectivity.
 +
 [source,bash]
 ----
-$ tscli fileserver download-release <release-number> --user <username> --out <release-location>
+ $ screen -S upgrade
 ----
-+
-Note the following parameters:
-+
-`release-number`:: is the release number of your ThoughtSpot instance, such as 5.3, 5.3.1, 6.0, and so on.
-`username`:: is the username for the fileserver that you set up earlier, when configuring the fileserver.
-`release-location`:: is the location path of the release bundle on your local machine. For example, `/export/sdb1/TS_TASKS/install/6.0.tar.gz`.
-
-[#egnyte]
-==== Download the release using the Egnyte link
-// should they cd to the specific export directory here?
-. On a machine that can also access your ThoughtSpot cluster, navigate to [LINK].
-. Select *Download*. [i'm not sure what this actually looks like on egnyte]
-. Copy the downloaded release bundle to a specific path in the `/export` folder.
-+
-You must copy the bundle to a different path in the `/export` folder, depending on your deployment platform:
-+
-[#platform-export-path]
---
-SMC, Dell, VMware, and GCP:: `/export/sdb1/TS_SRE_TASKS`
-AWS:: `/export/xvdb1/TS_SRE_TASKS`
-Azure:: `/export/sdc1/TS_SRE_TASKS`
---
-+
-Run `scp <release-number>.tar.gz admin@<hostname>:/export/<path>/TS_TASKS/install/<file-name>`.
-+
-[source,bash]
-----
-$ scp <release-number>.tar.gz admin@<hostname>:/export/<path>/TS_TASKS/install/<file-name>
-----
-+
-Note the following parameters:
-+
-`release-number`:: is the release number of your ThoughtSpot instance, such as 5.3, 5.3.1, 6.0, and so on.
-`hostname`:: is your specific hostname.
-`path`:: is the path within the export folder. This differs based on your deployment platform; refer to <<platform-export-path, list of paths>>.
-`file-name`:: is the name of the tarball file on your local machine.
-
-NOTE: You can use another secure copy method, if you prefer a method other than the `scp` command.
-
-[#upgrade-step-3]
-=== Step 3: Upgrade the cluster
-. Run `tscli cluster update <release-number>.tar.gz`.
+. Run `tscli cluster update <release-number>.tar.gz`. This may take about one hour.
 +
 Note the following parameters:
 
 `release-number`:: is the release number of your ThoughtSpot installation, such as `6.0`, `5.3`, `5.3.1`, and so on.
 
-. The nodes reboot one by one. Wait about 15 minutes before you log back in.
+. During the upgrade process, the node reboots. The node reboot logs you out of the node. Wait about 15 minutes before you `ssh` back in. If the `ssh` output says something similar to `Connection refused`, the node is still rebooting.
 
-. To see which step the upgrade is in, run `tscli cluster status --tail`.
+. If you run into an error during upgrade, and the upgrade fails, refer to <<error-recovery,Error recovery>>.
+
+. To see which step the upgrade is in, run `tscli cluster status --tail`. When the upgrade is complete, the output of this command says that the upgrade is complete.
 +
 [source,bash]
 ----
@@ -174,8 +162,8 @@ NOTE: During the upgrade process, some services may temporarily be unavailable. 
 
 . The upgrade takes about 1.5 hours to complete, including the objects upgrader.
 
-[#upgrade-step-4]
-=== Finalize installation
+[#upgrade-step-6]
+=== Step 6: Finalize installation
 . After the upgrade completes, log out of the shell.
 +
 [source,bash]
@@ -184,13 +172,13 @@ $ logout
 ----
 
 . `SSH` back into the cluster.
-Run `ssh admin@<nodeIP>`.
+Run `ssh admin@<ThoughtSpotnodeIP>`.
 +
-Replace `nodeIP` with your specific network information.
+Replace `ThoughtSpotnodeIP` with your specific network information.
 +
 [source,bash]
 ----
- $ ssh admin@<nodeIP>
+ $ ssh admin@<ThoughtSpotnodeIP>
 ----
 
 . To check that the cluster is ready, run `tscli cluster status`.
@@ -202,8 +190,22 @@ Replace `nodeIP` with your specific network information.
 +
 Ensure that the `DATABASE` and `SEARCH ENGINE` fields in the `tscli cluster status` command show `READY`.
 
+. Run `tscli cluster check` to ensure there are no component failures.
++
+[source,bash]
+----
+ $ tscli cluster check
+----
++
+Make sure that the output for each component is `SUCCESS`.
+
 . Sign into the ThoughtSpot application on your browser.
 
+[#upgrade-step-7]
+=== Step 7: Apply patches
+Your release bundle may include patches for the ThoughtSpot application. These patches update services and provide bug fixes. If your release bundle included any patches, <<patch,apply the patches>>.
+
+[#patch]
 == Patch a cluster
 To patch your cluster, follow these steps:
 [cols="5,~",grid=none,frame=none]
@@ -215,14 +217,33 @@ To patch your cluster, follow these steps:
 |===
 
 [#patch-step-1]
-=== Obtain cluster patch
-ThoughtSpot Support must provide you with the correct patch to apply. Do not apply any other patches. xref:support-contact.adoc[] to obtain the correct cluster patch.
+=== Step 1: Obtain cluster patch
+Download the patch or patches for the version you are running, and move it to a folder in your ThoughtSpot node. If you just upgraded to a new version, the release bundle you downloaded and copied to your ThoughtSpot node should contain the patches you need to apply.
 
-After ThoughtSpot Support supplies you with the patch, copy it to your cluster.
+. Navigate to [LINK].
+. Download the release content folder or patch folder for the version you are running. [i'm not sure what this actually looks like on egnyte]
+. In your terminal application, `ssh` into your cluster.
+Run `ssh admin@<ThoughtSpotnodeIP>`.
++
+Replace `ThoughtSpotnodeIP` with your specific network information.
++
+[source,bash]
+----
+ $ ssh admin@<ThoughtSpotnodeIP>
+----
+. Copy the downloaded release or patch bundle from your Downloads folder to any path in the `/export` folder of your ThoughtSpot node that has enough space. Use one of two methods:
++
+* Use any secure copy method, such as `winscp`.
+* If your ThoughtSpot cluster allows access to Egnyte, you can use the following `wget` command:
++
+[source,bash]
+----
+ $ wget -O <release-bundle-name> <EGNYTE LINK THAT I WILL PROVIDE WHEN I HAVE IT>
+----
 
 [#patch-step-2]
 === Step 2: Verify patch integrity
-To verify the integrity of the patch file, check the checksum.
+To verify the integrity of the patch files, check the checksum for each patch.
 
 Run `md5sum -c <patch-name>.tar.gz.MD5checksum`.
 
@@ -235,7 +256,7 @@ Your output says `ok` if you have the correct release.
 
 [#patch-step-3]
 === Step 3: Apply the patch to the cluster
-Run `tscli patch apply <patch-name>`.
+Run `tscli patch apply <patch-name>` for each patch.
 [source,bash]
 ----
  $ tscli patch apply <patch-name
@@ -244,11 +265,24 @@ The patch process takes about 10 minutes.
 
 [#patch-step-4]
 === Step 4: Finalize installation
-Ensure that ThoughtSpot applied the patch successfully.
+Ensure that ThoughtSpot applied the patches successfully.
 
-Run `tscli patch ls` and look for the new patch name.
+Run `tscli patch ls` and look for the new patch names.
 
 [source,bash]
 ----
  $ tscli patch ls
 ----
+
+[#error-recovery]
+== Error recovery
+
+During the upgrade process, after you run `tscli cluster update`, the upgrade may fail with a message similar to `Update failed for cluster <cluster-name>`.
+
+. Run the following command to resume the upgrade:
++
+[source,bash]
+----
+ $ tscli cluster resume-update
+----
+. If that command does not work, or if the upgrade fails again, contact {support-url}.
