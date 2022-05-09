@@ -58,7 +58,7 @@ NOTE: If any commands return errors, warnings, or failures while you upgrade, co
 Download the release, including any patches for the version you are installing, and move it to a folder in your ThoughtSpot node.
 
 . Navigate to [LINK].
-. Download the release content folder for the version you would like to upgrade to. [i'm not sure what this actually looks like on egnyte]
+. Download the release content folder for the version you would like to upgrade to. This includes the release, any patches, the `Md5checksum`, and `capture_cluster_information.sh`. [i'm not sure what this actually looks like on egnyte]
 . In your terminal application, `ssh` into your cluster.
 Run `ssh admin@<ThoughtSpotnodeIP>`.
 +
@@ -70,7 +70,7 @@ Replace `ThoughtSpotnodeIP` with your specific network information.
 ----
 . Copy the downloaded release bundle from your Downloads folder to any path in the `/export` folder of your ThoughtSpot node that has enough space. Use one of two methods:
 +
-* Use any secure copy method, such as `winscp`.
+* Use `winscp` or a similar secure copy method.
 * If your ThoughtSpot cluster allows access to Egnyte, you can use the following `wget` command:
 +
 [source,bash]
@@ -115,7 +115,7 @@ Make sure that the output says `Cluster: RUNNING`, `Database: READY`, and `Searc
 +
 Make sure that the output for each component is `SUCCESS`.
 
-. Run `./capture_cluster_information.sh`. This provides {support-url} with information about your cluster in case of upgrade or post-upgrade failures.
+. Run `./capture_cluster_information.sh`. This captures current information about your cluster in case {support-url} needs it for any purpose after the upgrade.
 +
 [source,bash]
 ----
