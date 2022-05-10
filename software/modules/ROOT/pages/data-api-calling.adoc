@@ -1,16 +1,18 @@
 = Calling the Data REST API
-:last_updated: 12/31/2020
+:last_updated: 5/10/2022
 :linkattrs:
 :experimental:
 :page-aliases: /app-integrate/data-api/calling-rest-api.adoc
+
+include::partial$liveboards-announcement.adoc[]
 
 Learn how to call the Data REST API.
 
 To call the Data REST API, you can specify a URL using the POST method, passing the ID numbers of the objects from which you want to obtain data.
 
-== Specify the pinboard or visualization example
+== Specify the Liveboard or visualization example
 
-id:: For a pinboard, you can append the ID of your pinboard as a parameter, like this example:
+id:: For a Liveboard, you can append the ID of your Liveboard as a parameter, like this example:
 +
 [source,html]
 ----
@@ -18,7 +20,7 @@ https://<thoughtspot_server>/callosum/v1/tspublic/v1
    /pinboarddata?id=7752fa9e-db22-415e-bf34-e082c4bc41c3
 ----
 
-vizid:: To retrieve data from a specific visualization within a pinboard, you would append the ID number of the visualization using the vizid parameter:
+vizid:: To retrieve data from a specific visualization within a Liveboard, you would append the ID number of the visualization using the vizid parameter:
 +
 NOTE: You must add brackets around the vizid parameter.
 The URL encoding for open bracket is `%5B`, and the URL encoding for close bracket is `%5D`.
@@ -31,12 +33,12 @@ https://<thoughtspot_server>/callosum/v1/tspublic/v1
 
 == Object Format for Returned Data
 
-When you parse the returned JSON data you can see that there is one object for every viz on the pinboard.
+When you parse the returned JSON data you can see that there is one object for every viz on the Liveboard.
 The objects are named according to the corresponding vizid.
 
 image::parsed_json_data.png[]
 
-If you make a call to a specific viz on a pinboard, it returns only one object.
+If you make a call to a specific viz on a Liveboard, it returns only one object.
 
 The JSON object format for the data that is returned from ThoughtSpot is:
 

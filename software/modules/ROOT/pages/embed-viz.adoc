@@ -1,28 +1,30 @@
-= Embed pinboard or visualization
-:last_updated: 12/31/2020
+= Embed Liveboard or visualization
+:last_updated: 5/10/2022
 :linkattrs:
 :experimental:
 
-Learn how to embed a visualization or Pinboard in your own Web page.
+include::partial$liveboards-announcement.adoc[]
 
-This page explains, through an example, how to embed either a ThoughtSpot visualization (table or chart) or a ThoughtSpot Pinboard from ThoughtSpot in your own static Web page, portal, or application.
+Learn how to embed a visualization or Liveboard in your own Web page.
+
+This page explains, through an example, how to embed either a ThoughtSpot visualization (table or chart) or a ThoughtSpot Liveboard from ThoughtSpot in your own static Web page, portal, or application.
 
 To build this sample, you must have access to a text editor and a ThoughtSpot instance with a visualization.
 Experience working with Javascript also helps.
 
 == Get the link
 
-You can get the link for an entire Pinboard, or single visualization
+You can get the link for an entire Liveboard, or single visualization
 
-This procedure assumes the Pinboard with the visualization you want to embed already exists.
+This procedure assumes the Liveboard with the visualization you want to embed already exists.
 
 . Log in to ThoughtSpot from a browser.
-. Navigate to a visualization on the *Pinboard* tab.
-. Open a Pinboard.
+. Navigate to a visualization on the *Liveboard* tab.
+. Open a Liveboard.
 . Copy the URL:
 +
-Pinboard embedding::
-Click the *More* menu at the level of the Pinboard, image:icon-ellipses.png[more options menu icon], and select *[-] Copy embed link*. The format for the link is:
+Liveboard embedding::
+Click the *More* menu at the level of the Liveboard, image:icon-ellipses.png[more options menu icon], and select *[-] Copy embed link*. The format for the link is:
 +
 [source,html]
 ----
@@ -38,7 +40,7 @@ Vizualization embedding:: click the *More* menu on the visual you plan to embed,
 
 == Edit the test.html file
 
-You must edit the page in your application or web page where you want to embed a ThoughtSpot pinboard or visualization.
+You must edit the page in your application or web page where you want to embed a ThoughtSpot Liveboard or visualization.
 For this example, you can get a copy of the link:{attachmentsdir}/test.html[test.html] file.
 
 . Create an empty directory called `test`.
@@ -59,7 +61,7 @@ Here are the fields in the `test.html` file you must edit.
  var vizualizationId = "VIZUALIZATON_ID";
 ----
 
-. Edit each variable in the section and replace it with the IDs you copied from the pinboard.
+. Edit each variable in the section and replace it with the IDs you copied from the Liveboard.
 +
 For example, your URL may look similar to the following:
 +
@@ -96,7 +98,7 @@ If you do this, you must DNS for the server when you contact Support.
 
 == Test the example page
 
-You are almost ready to view your embedded pinboard and visualization.
+You are almost ready to view your embedded Liveboard and visualization.
 The fastest way to run a webserver and test the code is using Python's `simplehttpserver`.
 If you have Python on your system you already have the `simplehttpserver`.
 
@@ -121,7 +123,7 @@ python -m SimpleHTTPServer 8000
 +
 `http://localhost:8000/test.html`
 +
-See if your Pinboard or visualization appears in the browser window.
+See if your Liveboard or visualization appears in the browser window.
 
 . Check the browser console.
 +
