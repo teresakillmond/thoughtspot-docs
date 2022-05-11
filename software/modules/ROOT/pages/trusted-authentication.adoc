@@ -5,6 +5,8 @@
 :description: Learn how to configure trusted authentication.
 
 
+include::partial$liveboards-announcement.adoc[]
+
 If your organization has an authentication server, you can configure the trusted authentication method on ThoughtSpot to allow authenticated users to access the embedded ThoughtSpot content.
 In the trusted authentication method, the authenticator server uses the secret key issued by ThoughtSpot to request a login token from ThoughtSpot on behalf of a user. Using the login token, client applications can log in a user to ThoughtSpot and allow access to the requested content.
 
@@ -82,11 +84,11 @@ Allows access to the entire ThoughtSpot application. When a token has been reque
 
 ** `REPORT_BOOK_VIEW`
 +
-Allows access to only one object at a time. The token request for this access mode requires you to specify the GUID of the pinboard or answer. If your application user requires access to another object, a new token request must be sent.
+Allows access to only one object at a time. The token request for this access mode requires you to specify the GUID of the Liveboard or answer. If your application user requires access to another object, a new token request must be sent.
 
 `id`::
 +
-__String__. The GUID of the pinboard or answer.
+__String__. The GUID of the Liveboard or answer.
 This attribute is required only for the `REPORT_BOOK_VIEW` access mode.
 
 ThoughtSpot verifies the authentication server's request and returns a login token.
@@ -111,7 +113,7 @@ _String_. The login token obtained from ThoughtSpot to authorize the API request
 +
 _String_. The URL to which the user is redirected after successful authentication. The URL is fully encoded and includes the login token obtained from ThoughtSpot.
 +
-For example, if the user has requested access to a specific visualization on a pinboard, the redirect URL includes the domain URL of the client application, the login token obtained for the user, and the visualization and pinboard GUIDs.
+For example, if the user has requested access to a specific visualization on a Liveboard, the redirect URL includes the domain URL of the client application, the login token obtained for the user, and the visualization and Liveboard GUIDs.
 
 +
 [source, HTML]

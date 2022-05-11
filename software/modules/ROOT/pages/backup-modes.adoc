@@ -1,7 +1,9 @@
 = Understand backup modes
-:last_updated: 01/10/2021
+:last_updated: 05/10/2022
 :linkattrs:
 :experimental:
+
+include::partial$liveboards-announcement.adoc[]
 
 Learn about types of backups.
 
@@ -54,7 +56,7 @@ Lightweight backups contain everything that is in a dataless backup, as well as 
 * Data uploaded by users
 * Metadata for the data store
 * Users, groups and permissions
-* Objects created by users (pinboards, worksheets, and formulas) with their shares and permissions.
+* Objects created by users (Liveboards, worksheets, and formulas) with their shares and permissions.
 * Data model and row-level security rules.
 
 Lightweight backups do *not* contain data loaded through ThoughtSpot Loader (`tsload`), or ODBC/JDBC drivers.
@@ -73,8 +75,8 @@ When restoring from a dataless backup, you must supply the correct release tarba
 Dataless backups contain the following information for deployments with ThoughtSpot's in-memory database:
 
 * Metadata:
-** Users, groups, answers, Pinboards, visualizations, worksheets, data modeling settings, row level security filters
-* Scheduled jobs (for example, scheduled Pinboards)
+** Users, groups, answers, Liveboards, visualizations, worksheets, data modeling settings, row level security filters
+* Scheduled jobs (for example, scheduled Liveboards)
 * Cluster details: ID, name, version
 * *[For clusters with S3 storage]:* AWS configuration (label, region, S3 bucket name)
 * Cluster manager configuration (e.g. backup policy), and service configuration (e.g. service enabled or disabled, memory limits for service)
@@ -98,9 +100,9 @@ Dataless backups for ThoughtSpot's in-memory database DO NOT include the followi
 Dataless backups contain the following information for deployments with connections to external cloud data warehouses:
 
 * Metadata:
-** Users, groups, answers, Pinboards, visualizations, worksheets, data modeling settings, row level security filters, tables, columns
+** Users, groups, answers, Liveboards, visualizations, worksheets, data modeling settings, row level security filters, tables, columns
 ** Configuration of connections to external cloud data warehouses
-* Scheduled jobs (for example, scheduled Pinboards)
+* Scheduled jobs (for example, scheduled Liveboards)
 * Cluster details: ID, name, version
 * *[For clusters with S3 storage]:* AWS configuration (label, region, S3 bucket name)
 * Cluster manager configuration (e.g., backup policy), and service configuration (e.g., service enabled or disabled, memory limits for service)

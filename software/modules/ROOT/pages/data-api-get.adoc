@@ -1,8 +1,10 @@
 = Use the Data REST API to get data
-:last_updated: 12/31/2020
+:last_updated: 5/10/2022
 :linkattrs:
 :experimental:
 :page-aliases: /app-integrate/data-api/use-data-api-read.adoc
+
+include::partial$liveboards-announcement.adoc[]
 
 This procedure shows how to use the REST API to get data out of ThoughtSpot, so you can use it in a Web page, portal, or application.
 
@@ -13,11 +15,11 @@ Before you can use the Data REST API, you need to enable the xref:js-api-enable.
 Use this procedure to construct the URL you will use to call the Data REST API:
 
 . Log in to ThoughtSpot from a browser.
-. Navigate to the pinboard from which you want to get data.
+. Navigate to the Liveboard from which you want to get data.
 If it doesn't exist yet, create it now.
 . Find the ID number of the object you want to get the data from.
 If the object is:
- ** A pinboard, click the *More* menu icon image:icon-ellipses.png[more options menu icon] the and select *Copy Link*.
+ ** A Liveboard, click the *More* menu icon image:icon-ellipses.png[more options menu icon] the and select *Copy Link*.
 +
 image::copy_pinboard_link.png[]
 
@@ -29,7 +31,7 @@ Paste it somewhere so that you can use it later to construct the URL to use when
 +
 If the object is:
 +
-Pinboard:: Copy the identifier that appears after "viz/".
+Liveboard:: Copy the identifier that appears after "viz/".
 Omit the trailing "/".
 +
 image::copy_link_pinboard.png[]
@@ -39,7 +41,7 @@ Visualization:: Copy the identifier that appears after "viz/". This is the visua
 +
 image::copy_link_viz_pinboard_part.png[]
 
-. Construct the URL as follows: For a pinboard, the URL takes the form:
+. Construct the URL as follows: For a Liveboard, the URL takes the form:
 +
 [source,html]
 ----
