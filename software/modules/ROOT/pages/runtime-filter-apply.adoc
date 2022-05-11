@@ -1,11 +1,13 @@
 = Apply a runtime filter
-:last_updated: 02/01/2021
+:last_updated: 05/10/2022
 :linkattrs:
 :page-partial:
-:page-aliases: app-integrate::runtime-filters:apply-runtime-filter.adoc
+:page-aliases: /app-integrate/runtime-filters/apply-runtime-filter.adoc
 :experimental:
 
-Runtime filters allow you to apply filters to the data returned by the APIs or the visualization or pinboard you're embedding.
+include::partial$liveboards-announcement.adoc[]
+
+Runtime filters allow you to apply filters to the data returned by the APIs or the visualization or Liveboard you're embedding.
 Before you apply a runtime filter, make sure you understand their xref:runtime-filters.adoc#limitations-of-runtime-filters[limitations].
 
 The filters are specified in the called URL as parameters.
@@ -14,7 +16,7 @@ The filters are specified in the called URL as parameters.
 Before you can use runtime filter(s), you need to do these procedures:
 
 . xref:js-api-enable.adoc[Enable the JavaScript API (JS API)] and authenticate to ThoughtSpot.
-. Use the xref:data-api-get.adoc[Data API] or xref:embed-viz.adoc[Visualization Embedding] to retrieve the answer or pinboard you want to use.
+. Use the xref:data-api-get.adoc[Data API] or xref:embed-viz.adoc[Visualization Embedding] to retrieve the answer or Liveboard you want to use.
 ////
 Now you are ready to add a runtime filter to your Data API call or Embedded object:
 
@@ -22,7 +24,7 @@ Now you are ready to add a runtime filter to your Data API call or Embedded obje
 . Paste the URL it into a text editor.
 . Append the runtime filter to the URL, using the xref:runtime-filter-operators.adoc[runtime filter operators] to get the data you want.
 The format for the runtime filter depends on how you use it:
-Embedding a pinboard::
+Embedding a board::
 +
 [source]
 ----
@@ -40,7 +42,7 @@ http://<thoughtspot_server>:<port>/
 #/pinboard/<pinboard_id>/<visualization_id>
 ----
 
-REST API with a pinboard::
+REST API with a board::
 +
 [source]
 ----

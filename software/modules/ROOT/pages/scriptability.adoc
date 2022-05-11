@@ -5,9 +5,11 @@
 :page-aliases: /admin/scriptability/scriptability.adoc
 :experimental:
 
-Use Scriptability to export and import Worksheets, Views, Tables, Pinboards, SpotIQ results, and Answers in a human-readable format.
+include::partial$liveboards-announcement.adoc[]
 
-ThoughtSpot developed its own scriptable approach for exporting, enhancing, and migrating Worksheets, Views, Tables, Pinboards, SpotIQ results, and Answers.
+Use Scriptability to export and import worksheets, views, tables, Liveboards, SpotIQ results, and answers in a human-readable format.
+
+ThoughtSpot developed its own scriptable approach for exporting, enhancing, and migrating worksheets, views, tables, Liveboards, SpotIQ results, and answers.
 
 You can model your data and build out sophisticated dashboards in your test environment, before deploying to all users.
 
@@ -33,7 +35,7 @@ Note that this workflow changes the object(s) in both clusters.
 
 == Prerequisites
 
-Examine the permission requirements for xref:import[Importing] and xref:export[Exporting] ThoughtSpot artifacts: Pinboards, SpotIQ results, Answers, Worksheets, Tables, and Views.
+Examine the permission requirements for xref:import[Importing] and xref:export[Exporting] ThoughtSpot artifacts: Liveboards, SpotIQ results, answers, worksheets, tables, and views.
 
 [#import]
 === Import prerequisites
@@ -43,7 +45,7 @@ Import and create a new object without importing its dependents::
 +
 You must have *view* permissions for the first-level dependent.
 +
-For example, if you import a Pinboard that is built on a Worksheet that is built on a table, you must have *view* permission for the Worksheet.
+For example, if you import a Liveboard that is built on a Worksheet that is built on a table, you must have *view* permission for the Worksheet.
 +
 When importing a new Worksheet or View, you must have the *can manage data* permission.
 
@@ -88,24 +90,24 @@ The SpotApp contains a document called the `Manifest` file, which defines the ob
 
 To export one object:
 
-. Navigate to the Pinboard, SpotIQ result, Answer, View, Table, or Worksheet you want to export.
-Note that SpotIQ results are in the form of Pinboards, but you can only find them in the *SpotIQ* tab.
+. Navigate to the Liveboard, SpotIQ result, answer, view, table, or worksheet you want to export.
+Note that SpotIQ results are in the form of Liveboards, but you can only find them in the *SpotIQ* tab.
 . Click the *More* menu icon image:icon-ellipses.png[more options menu icon], and select *Export as TML*.
 +
-image::scriptability-cloud-pinboard-export.png[Export a Pinboard]
+image::scriptability-cloud-pinboard-export.png[Export a Liveboard]
 
 [#export-zip-file]
 === Export multiple objects
 
 To export multiple objects at a time, follow these steps:
 
-. Navigate to the *Answers*, *Pinboards*, *SpotIQ*, or *Data* page from the top navigation bar, depending on the objects you want to export.
+. Navigate to the *Answers*, *Liveboards*, *SpotIQ*, or *Data* page from the top navigation bar, depending on the objects you want to export.
 . Hover over the objects you want to export, and click the empty checkboxes that appear.
 . Select the *Export* button.
 +
 image::scriptability-cloud-export-multiple.png[Export multiple objects]
 
-. Choose whether to export only the objects, or the objects and their underlying data sources (Worksheets, Tables, and Views).
+. Choose whether to export only the objects, or the objects and their underlying data sources (worksheets, tables, and views).
 If you export a table, you do not see this modal, since tables do not have any dependents.
 +
 image::scriptability-cloud-select-export.png[Choose what to export]
@@ -132,7 +134,7 @@ To edit and update multiple objects using the TML editor, access it from the obj
 
 To use the TML editor, follow these steps:
 
-. Navigate to the *Answers*, *Pinboards*, *SpotIQ*, or *Data* page from the top navigation bar, depending on the object you want to update.
+. Navigate to the *Answers*, *Liveboards*, *SpotIQ*, or *Data* page from the top navigation bar, depending on the object you want to update.
 . Click the name of the object you want to edit, or select multiple objects by clicking on the checkboxes that appear when you hover over an object name.
 . From the object list page, select the *Edit TML* button.
 From the object itself, select the *More* menu icon image:icon-ellipses.png[more options menu] in the upper-right side of the screen, and select *Edit TML*.
@@ -143,8 +145,8 @@ image::scriptability-edit-tml-object.png[Edit TML from object]
 
 . The TML editor opens.
 Edit the TML file(s), using the syntax specified in xref:tml.adoc[ThoughtSpot Modeling Language].
-Note that SpotIQ results are in the form of Pinboards.
-Refer to xref:tml.adoc#syntax-pinboards[Pinboard TML] to edit a SpotIQ TML file.
+Note that SpotIQ results are in the form of Liveboards.
+Refer to xref:tml.adoc#syntax-pinboards[Liveboard TML] to edit a SpotIQ TML file.
 +
 The TML editor has the following functions under the top menu:
 
@@ -187,7 +189,7 @@ image:scriptability-tsl-editor-publish-status.png[]
 [#update-object]
 == Update an object
 
-You can overwrite an existing Worksheet, View, Table, Answer, Pinboard, or SpotIQ result, by downloading the `TML` file, making any necessary changes, and then re-uploading the `TML` file.
+You can overwrite an existing worksheet, view, table, answer, Liveboard, or SpotIQ result, by downloading the `TML` file, making any necessary changes, and then re-uploading the `TML` file.
 To update SpotApps, or collections of objects packaged together as a zip file, refer to xref:app-templates.adoc[SpotApps].
 
 You can also update an object using the <<tml-editor,TML editor>>.
@@ -198,7 +200,7 @@ You can update multiple objects at once by uploading them in .zip file format.
 
 . <<export-object,Export the object>> you want to update, as in steps 1 to 5 of the *Export an Object* section above.
 . Edit the file in a text editor.
-. Navigate to the *Answers*, *Pinboards*, *SpotIQ*, or *Data* page from the top navigation bar, depending on the object you want to update.
+. Navigate to the *Answers*, *Liveboards*, *SpotIQ*, or *Data* page from the top navigation bar, depending on the object you want to update.
 . Select *Import TML*.
 
 . In the *Import* interface, click *Select .tml or .zip files to upload*.
@@ -219,7 +221,7 @@ image::scriptability-worksheet-update-browse.png[Find the Worksheet TML file]
 [#migrate-object]
 == Migrate an object
 
-To migrate an answer, pinboard, SpotIQ result, view, or worksheet from one cluster to another, follow these steps.
+To migrate an answer, Liveboard, SpotIQ result, view, or worksheet from one cluster to another, follow these steps.
 To migrate SpotApps, or collections of objects packaged together as a zip file, refer to xref:app-templates.adoc[SpotApps].
 Note that you cannot create a new table using Scriptability.
 You can only update existing tables.
@@ -229,15 +231,15 @@ You can only update existing tables.
 The object remains on the original cluster as well, unless you delete it.
 
 . Navigate to the cluster you want to add the object to.
-. Click *Answers*, *Pinboards*, *SpotIQ*, or *Data* on the top navigation bar, depending on the objects you want to migrate.
+. Click *Answers*, *Liveboards*, *SpotIQ*, or *Data* on the top navigation bar, depending on the objects you want to migrate.
 . To upload a worksheet or view, click the More icon image:icon-ellipses.png[more options menu] in the upper-right side of the screen.
 Then, select *Import TML*.
 +
 image::scriptability-data-import.png[Import Worksheet or View TML]
 
-. To upload a Pinboard or answer, click the *Import TML* button in the upper-right side of the screen.
+. To upload a Liveboard or answer, click the *Import TML* button in the upper-right side of the screen.
 +
-image::scriptability-cloud-import.png[Import a Pinboard or Answer]
+image::scriptability-cloud-import.png[Import a Liveboard or answer]
 
 . In the *Import* interface, click *Select .TML or .zip files to upload*.
 
@@ -254,7 +256,7 @@ You can open the object(s) that you imported, or click *Exit* to return to the m
 
 == Limitations of working with TML files
 
-There are certain limitations to the changes you can apply by editing a Worksheet, Answer, Table, View, Pinboard, or SpotIQ result through TML.
+There are certain limitations to the changes you can apply by editing a worksheet, answer, table, view, Liveboard, or SpotIQ result through TML.
 
 include::partial$scriptability-limitations.adoc[]
 
