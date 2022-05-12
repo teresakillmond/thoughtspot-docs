@@ -84,20 +84,6 @@ Active directory is now linked  with the SQL database.
 This is referred to as a “contained user” created in the database mapped to Azure AD identity. For details, see Microsoft's documentation:
 https://docs.microsoft.com/en-us/azure/azure-sql/database/authentication-aad-configure?tabs=azure-powershell#create-contained-users-mapped-to-azure-ad-identities[Create contained users mapped to Azure AD identities^].
 
-== Part 4: Scope for OAuth authorization request
-
-You must include the resource URL in the scope you pass with the authorization request. In this case, it is URL of the {connection} server.
-
-[source]
---
-url = webclient.prepare_request_uri(
-  authurl,
-  redirect_uri = 'http://localhost:8080/callback',
-  scope = ['offline_access','openid','https://sql.azuresynapse.net/.default'],
-  state = 'abc1234'
-)
---
-
 == Troubleshooting
 
 - If valid API Permissions for the AD application are not present, the following error appears:
