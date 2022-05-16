@@ -44,8 +44,8 @@ To upgrade your cluster, follow these steps:
 |===
 | &#10063; | <<upgrade-step-1,Step 1: Download the release>>
 | &#10063; | <<upgrade-step-2,Step 2: Check disk space>>
-| &#10063; | <<upgrade-step-3,Step 3: Take manual snapshot and backup>>
-| &#10063; | <<upgrade-step-4,Step 4: Check cluster health and release integrity>>
+| &#10063; | <<upgrade-step-3,Step 3: Create a cluster snapshot and back it up on disk>>
+| &#10063; | <<upgrade-step-4,Step 4: Check the cluster's health and integrity of provided software>>
 | &#10063; | <<upgrade-step-5,Step 5: Upgrade the cluster>>
 | &#10063; | <<upgrade-step-6,Step 6: Finalize installation>>
 | &#10063; | <<upgrade-step-7,Step 7: Apply patches>>
@@ -90,13 +90,13 @@ Replace `ThoughtSpotnodeIP` with your specific network information.
 The output of this command shows all disks in the ThoughtSpot node and their availability, in percentage and in number of GB.
 
 [#upgrade-step-3]
-=== Step 3: Take manual snapshot and backup
+=== Step 3: Create a cluster snapshot and back it up on disk
 . Take a manual snapshot of the cluster. For information on how to take a manual snapshot, refer to xref:snapshots.adoc#manual-snapshot[Work with snapshots].
 
 . Take a manual backup of the cluster. For information on how to take a manual backup, refer to xref:backup-manual.adoc[Create a manual backup].
 
 [#upgrade-step-4]
-=== Step 4: Check cluster health and release integrity
+=== Step 4: Check the cluster's health and integrity of provided software
 . Run `tscli cluster status`. This tells you what version you are currently on, and ensures that the cluster is running and ready.
 +
 [source,bash]
@@ -104,7 +104,7 @@ The output of this command shows all disks in the ThoughtSpot node and their ava
  $ tscli cluster status
 ----
 +
-Make sure that the output says `Cluster: RUNNING`, `Database: READY`, and `Search Engine: READY`.
+Make sure that the output includes `Cluster: RUNNING`, `Database: READY`, and `Search Engine: READY` or `UPDATING`. Make sure the output does NOT include any errors.
 
 . Run `tscli cluster check` to ensure there are no component failures.
 +
@@ -129,7 +129,7 @@ Make sure that the output for each component is `SUCCESS`.
  $ md5sum -c <MD5checksum file>
 ----
 +
-The output should be a green `OK`.
+The output should be a list of filenames, followed by  `OK`.
 
 . If `tscli cluster status`, `tscli cluster check`, or the `md5sum` command return any errors, warnings, or failures, contact {support-url} before you proceed with the upgrade.
 
@@ -188,7 +188,7 @@ Replace `ThoughtSpotnodeIP` with your specific network information.
  $ tscli cluster status
 ----
 +
-Ensure that the `DATABASE` and `SEARCH ENGINE` fields in the `tscli cluster status` command show `READY`.
+Ensure that the `DATABASE` and `SEARCH ENGINE` fields in the `tscli cluster status` command output show `READY`, and that the output reports no errors.
 
 . Run `tscli cluster check` to ensure there are no component failures.
 +
@@ -200,6 +200,11 @@ Ensure that the `DATABASE` and `SEARCH ENGINE` fields in the `tscli cluster stat
 Make sure that the output for each component is `SUCCESS`.
 
 . Sign into the ThoughtSpot application on your browser.
+
+. Verify the release version in the UI matches the version you upgraded to:
+
+.. Navigate to *Admin > Cluster*.
+.. In the *Cluster details* panel, confirm that the *Release* version matches the version you upgraded to.
 
 [#upgrade-step-7]
 === Step 7: Apply patches
@@ -242,26 +247,17 @@ Replace `ThoughtSpotnodeIP` with your specific network information.
 ----
 
 [#patch-step-2]
-=== Step 2: Verify patch integrity
-To verify the integrity of the patch files, check the checksum for each patch.
-
-Run `md5sum -c <patch-name>.tar.gz.MD5checksum`.
-
-[source,bash]
-----
- $ md5sum -c <patch-name>.tar.gz.MD5checksum
-----
-
-Your output says `ok` if you have the correct release.
+=== Step 2: Verify integrity of patch files
+To verify the integrity of the patch files, check the checksum for each patch, as explained in step 4 of <<upgrade-step-4,Step 4: Check the cluster's health and integrity of provided software>>.
 
 [#patch-step-3]
 === Step 3: Apply the patch to the cluster
-Run `tscli patch apply <patch-name>` for each patch.
+Run `tscli patch apply <patch-name>` for each patch, one file at a time.
 [source,bash]
 ----
  $ tscli patch apply <patch-name
 ----
-The patch process takes about 10 minutes.
+The patch process for each patch takes about 10 minutes. Once a patch has been applied successfully, you can proceed with the next patch immediately, without waiting for any services to restart and without carrying out any extra checks.
 
 [#patch-step-4]
 === Step 4: Finalize installation
@@ -277,12 +273,13 @@ Run `tscli patch ls` and look for the new patch names.
 [#error-recovery]
 == Error recovery
 
-During the upgrade process, after you run `tscli cluster update`, the upgrade may fail with a message similar to `Update failed for cluster <cluster-name>`.
+During the upgrade process, after you run `tscli cluster update <filename>`, the upgrade may fail with a message similar to `Update failed for cluster <cluster-name>`.
 
-. Run the following command to resume the upgrade:
+. Try to resume the upgrade with the following command:
 +
 [source,bash]
 ----
  $ tscli cluster resume-update
 ----
-. If that command does not work, or if the upgrade fails again, contact {support-url}.
+. If the `resume-update` command does not work, and you see an error you have fixed with the help of {support-url} before, make a note of it and fix the error in the same way that {support-url} did, and run `tscli cluster resume-update` again. Do *NOT* try to fix any errors that you have not fixed with {support-url} in previous upgrades.
+. If the upgrade fails again, contact {support-url}.
