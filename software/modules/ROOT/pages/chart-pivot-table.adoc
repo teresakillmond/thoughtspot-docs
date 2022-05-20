@@ -54,7 +54,19 @@ If you use the xref:answer-experience-new.adoc[new answer experience], you can s
 
 * If you sort both from the search bar and from the in-context row or column heading menus, whichever sorting is the latest overrides the other. For example, if you right-click on a `Department` row heading and select *Sort ascending*, and then add `sort by date monthly` to the search bar, ThoughtSpot sorts only by `date monthly`.
 
+[#sort-table]
+.Sorting logic
+|===
+| Starting state | Add sort on row attribute | Add sort on column attribute | Add sort on measure
 
+| No sorts in place | Adds sort | Adds sort | Adds sort, only across rows
+| One or multiple sorts exist on row attributes | Adds sort | Adds sort | Overrides previous sorts and sorts based on the measure
+| One or multiple sorts exist on column attributes | Adds sort | Adds sort | Adds sort, only across rows
+| One sort on measure exists | Adds sort. Overrides previous sort by measure | Adds sort | Overrides previous sort by measure
+| Sort on both row and column attributes exists | Adds sort | Adds sort | Adds sort. Overrides sort on row, retains sort on column
+| Sort on column attribute and measure exists | Adds sort. Overrides sort on measure, retains sort on column | Adds sort | Adds sort. Overrides sort on measure, retains sort on column
+
+|===
 
 == Expanding or contract columns and rows
 
