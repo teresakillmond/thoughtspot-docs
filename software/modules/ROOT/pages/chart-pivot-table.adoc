@@ -7,8 +7,8 @@
 
 include::partial$liveboards-announcement.adoc[]
 
-Pivot tables are charts that enable you to explore an alternate visualization of your data in a wide, customizable table.
-With pivot tables, you can use the same table to visualize some of your data horizontally, and some data vertically.
+Pivot tables enable you to explore an alternate visualization of your data in a wide, customizable table.
+With pivot tables, you can use the same table to visualize some of your data horizontally, and some data vertically. A pivot table is a chart time table that uses a drag-and-drop interface.
 
 If you would like to visualize your search as a pivot table, click on the *change visualization* icon image:icon-chart-type-10px.png[] near the top right of your screen, and select *pivot table*.
 You need at least one attribute and one measure in your search.
@@ -24,6 +24,37 @@ image::charts-pivot-table-column.png[Sort by a column heading]
 If you right-click a table cell, the system displays the contextual menu, so you can *exclude* or *include* values, xref:search-drill-down.adoc[drill down], *show underlying data*, or *SpotIQ analyze*.
 
 image::charts-pivot-table-cell.png[Pivot table cell menu]
+
+If your pivot table contains more than 2 measures, the column header now has a horizontal scroll bar, so you can see all your measures without taking up excessive space in the pivot table.
+
+== Sort
+To sort any column or row, right-click on a row or column heading or subheading or a measure or attribute name and select *Sort*. You can also sort from the search bar. Type `sort by <column name> [ascending | descending]`.
+
+You can sort a pivot table in many different ways. The ways you can sort a pivot table differ, depending on whether you are using the <<classic-experience,classic answer experience>> or the <<new-experience,new answer experience>>.
+
+[#classic-experience]
+=== Sort with the classic answer experience
+If you use the classic answer experience, you have the following limitations:
+
+* You can only sort on one attribute at a time.
+
+* When you sort by a measure, it sorts both columns and rows.
+
+* When you save a pivot table that you sorted, any sorts you added do not save.
+
+[#new-experience]
+=== Sort with the new answer experience
+If you use the xref:answer-experience-new.adoc[new answer experience], you can sort in the following ways:
+
+* You can sort on more than one attribute at a time, as long as it works within ThoughtSpot’s logic. See the <<sort-table,sorting logic table>>.
+
+* When you sort by a measure, you sort rows only. This allows you to sort the rows by a measure and the columns by an attribute. For example, in the sample pivot table at the beginning of the article, you can sort the rows by `Total sales` and the columns by `Store State`.
+
+* When you save a pivot table that you sorted, all sorting saves as well.
+
+* If you sort both from the search bar and from the in-context row or column heading menus, whichever sorting is the latest overrides the other. For example, if you right-click on a `Department` row heading and select *Sort ascending*, and then add `sort by date monthly` to the search bar, ThoughtSpot sorts only by `date monthly`.
+
+
 
 == Expanding or contract columns and rows
 
@@ -73,12 +104,14 @@ image::chart-pivot-table-heatmap.png[Heatmap mode]
 To turn on the heatmap, click the *edit chart configuration* image:icon-gear-10px.png[] icon, and click *settings* at the bottom of the chart configuration panel.
 Select *heatmap mode*.
 
+== Number and conditional formatting
+You can perform conditional and number formatting on pivot tables. Both these features work the same way they work for regular ThoughtSpot tables, except that you cannot set different conditional formatting rules for pivot table cells and pivot table column summaries. Select *Edit chart configuration* image:icon-more-10px.png[chart config icon], and click on the measure you would like to add number or conditional formatting to. Refer to xref:search-conditional-formatting.adoc#table[Apply conditional formatting] and xref:chart-table.adoc#number-formatting[Number formatting] for more information.
+
 == Pivot table limitations
 
 The pivot table chart type has these limitations:
 
 * The pivot table displays a maximum of 100k rows.
 If your query returns more than 100k rows, you cannot visualize it with a pivot table.
-* You cannot use conditional formatting.
-//* You cannot use conditional formatting, unless you use the xref:answer-experience-new.adoc[new answer experience].
+* You cannot use conditional formatting, unless you use the xref:answer-experience-new.adoc[new answer experience].
 * Pivot tables do not support use of xref:formulas-aggregation-group.adoc[group aggregation functions].

@@ -7,9 +7,7 @@
 
 include::partial$liveboards-announcement.adoc[]
 
-////
-NOTE: Certain elements of table configuration are part of the xref:answer-experience-new.adoc[new answer experience]. The new answer experience is in [.label.label-beta]#Beta# and off by default, but the option to turn it on or off individually is on by default. These new elements include conditional and number formatting for table summaries, improved conditional formatting for attributes and measures in table cells, conditional formatting for measures in pivot tables, content density, and theme (outline, row, or zebra). If you have the new answer experience on, your user interface and experience may be different from the experience described in this article. You can turn the new answer experience on or off individually from the *Experience manager* panel in xref:user-profile.adoc#new-answer-experience[your profile]. If that option is not available, contact your administrator.
-////
+NOTE: Certain elements of table configuration are part of the xref:answer-experience-new.adoc[new answer experience]. The new answer experience is on by default, and the option to turn it on or off individually is also on by default. These new elements include conditional and number formatting for table summaries, improved conditional formatting for attributes and measures in table cells, conditional formatting for measures in pivot tables, content density, and theme (outline, row, or zebra). If the new answer experience is off, you do not see these capabilities. You can turn it on or off individually from the *Experience manager* panel in xref:user-profile.adoc#new-answer-experience[your profile]. If that option is not available, contact your administrator.
 
 Tables display your answer in a format similar to an Excel spreadsheet.
 
@@ -71,18 +69,20 @@ image::table-config-clip-individual-column.png[Clip or wrap an individual column
 [#number-formatting]
 == Number formatting
 
-You can format the numbers in any table column based on a measure.
+You can format the numbers in any table column or column summary based on a measure.
 This functionality allows you to change the *category* (number, percentage, or currency), *units* (auto, none, thousand, million, billion, or trillion), or method of writing *negative values* (-1234, 1234-, or (1234)).
+
+NOTE: When you change the formatting for a column, you do not change the formatting for its column summary. You must separately change the number formatting for column summaries.
 
 To change the number formatting:
 
 . Click the *edit table configuration* icon image:icon-gear-10px.png[] to the upper right of your table.
 The *Edit table* panel appears, on the *Configure* menu.
-. Select the measure you want to format the labels of.
+. Select the column you want to format the values of, or the column whose column summary you would like to format.
 +
 image::table-config-edit-measure.png[Select a measure]
 +
-The *Edit* panel for that column appears.
+The *Edit* panel for that column appears. To format the column summary, select *Summary*.
 +
 You can also reach this panel from the *more* icon that appears when you hover over a column name:
 +
@@ -108,6 +108,13 @@ image::table-config-unit.png[Unit, decimal places, thousand separator]
 The default is -1234.
 +
 image::table-config-number-formatting.gif[Number formatting gif]
+
+== Conditional formatting
+You can perform conditional formatting on both measures and attributes, within table cells and in the table summaries.
+
+Refer to xref:search-conditional-formatting.adoc[Apply conditional formatting].
+
+Note that certain elements of conditional formatting are part of the xref:answer-experience-new.adoc[new answer experience]. These elements include conditional formatting for table summaries and improved conditional formatting for attributes and measures in table cells. The new answer experience is on by default. You can toggle it on or off from the *Experience manager* in xref:user-profile.adoc[your profile]. If that option is not available, contact your administrator.
 
 == Sort columns
 
@@ -139,61 +146,56 @@ The *Edit table* panel appears, on the *Configure* menu.
 +
 image::table-config-footer.png[Enable or disable table footer]
 
+[#content-density]
+== Content density
+Content density is part of the xref:answer-experience-new.adoc[new answer experience]. You can view more table rows at a time by changing the content density. You can change the content density from the Settings menu.
+
+. Click the *edit table configuration* icon image:icon-gear-10px.png[gear icon] to the upper right of your table. The *Edit table* panel appears, on the *Configure* menu.
+
+. Select *Settings*.
+
+. Under *Content density*, select *regular* or *compact*.
++
+image::table-content-density.png[Choose regular or compact content density]
+
+[#table-theme]
+== Table theme
+Table themes are part of the xref:answer-experience-new.adoc[new answer experience]. You can change the table theme from the default (outline) to *row* or *zebra*. You can change the table theme from the *Settings* menu. *Row* removes the lines between columns, and *zebra* changes the color of every other row.
+
+. Click the *edit table configuration* icon image:icon-gear-10px.png[gear icon] to the upper right of your table. The *Edit table* panel appears, on the *Configure* menu.
+
+. Select *Settings*.
+
+. Under *Table theme*, select *outline*, *row*, or *zebra*.
++
+image::table-theme.png[Choose outline, row, or zebra]
+
 == Column summaries
 
-////
-NOTE: If you are using the xref:answer-experience-new.adoc[new answer experience], we consolidated column summaries and headlines into one summary, called a headline summary. To calculate these headline summaries, ThoughtSpot executes a query against the underlying database. If you are connecting to your data in an external database, ThoughtSpot executes one query for each summary. If you store your data in ThoughtSpot’s in-memory database, ThoughtSpot executes one query for all summaries in the search. These headline summaries are integrated with the table columns. You can pin them to Liveboards.
-////
+For columns with numeric information, you can turn on *column summaries* that display column totals. You can perform number and conditional formatting on column summaries, just like you can for column values.
 
-For columns with numeric information, you can turn on *column summaries* that display column totals.
-
+=== Enable or disable column summaries
 . Click the *edit table configuration* icon image:icon-gear-10px.png[] to the upper right of your table.
 The *Edit table* panel appears, on the *Configure* menu.
 . Select *Settings*.
-. Select *column summary* to enable or disable column summaries for your table.
+. Select *column summary* to enable or disable column summaries for your table. You can also enable or disable individual column summaries, from the *Summary* section in a column’s *Edit* image:icon-gear-10px.png[edit icon] panel.
 +
-image::table-config-column-summary.png[Enable or disable column summaries]
+image::table-config-summary-global.png[Enable or disable column summaries for the whole table]
+image::table-config-summary-individual.png[Enable or disable column summaries for one column]
 
-Column summaries are not available for tables with more than 1000 rows.
+Column summaries are not available for tables with more than 15000 rows, unless the data comes from a xref:connections.adoc[direct connection to the external database].
 
-== About headlines (summary information)
+If you are using the xref:answer-experience-new.adoc[new answer experience], and your query generates more than 15,000 distinct table rows, the column summary shows a dash instead of a number, and tells you to use a filter to reduce the number of rows.
 
-////
-NOTE: If you are using the xref:answer-experience-new.adoc[new answer experience], we consolidated column summaries and headlines into one summary, called a headline summary. To calculate these headline summaries, ThoughtSpot executes a query against the underlying database. If you are connecting to your data in an external database, ThoughtSpot executes one query for each summary. If you store your data in ThoughtSpot’s in-memory database, ThoughtSpot executes one query for all summaries in the search. These headline summaries are integrated with the table columns. You can pin them to Liveboards.
-////
+=== Pin column summaries
+You can pin column summaries to any Liveboard. Select the pin icon that appears when you hover over a summary.
 
-Headlines display summary information of a table result.
-Headlines contain summary information for each column of a table.
-They appear at the bottom of the table in individual boxes.
+=== Column summary aggregation
+You can modify how you would like a column summary value to be displayed by clicking the dropdown on a summary and selecting a different type of aggregation. This *aggregation* menu is also available from the Summary section in a column’s *Edit* image:icon-gear-10px.png[edit icon] panel. For measures, the available aggregations are `total`, `average`, `standard deviation`, `variance`, `min`, and `max`. For attributes, the available aggregations are `unique count` and `total count`.
 
-image::chartconfig-headlines.png[]
+=== Table aggregate summary
+The Table Aggregate summary appears when you use an aggregate function either through a formula or a search bar query, such as average of a measure. It recalculates the function for the entire table. In such cases, the Table Aggregate summary appears by default, instead of the “Avg” option, which does a second level of aggregation on top of the existing aggregation.
 
-ThoughtSpot automatically creates up to 20 headlines for each table. Your ThoughtSpot configuration can be changed to accommodate more if needed.
+In the following example, the table aggregate is a result of the Average Revenue formula `sum ( revenue ) / count ( ship mode )`, which divides the total profit of each ship mode by the sum total count for that ship mode. ThoughtSpot recalculates that function for the entire table, taking the sum total profits of all ship modes and dividing it by the sum total count of all ship modes. Here, that results in a table aggregate average profit of 3.61M. The `average` summary option, by comparison, sums the average revenue for all ship modes and divides it by the number of ship modes (8), providing a less accurate average.
 
-Headlines are not available for tables with more than 15000 rows, unless the data comes from a xref:connections.adoc[direct connection to the database].
-
-//If you are using the xref:answer-experience-new.adoc[new answer experience], and your query generates more than 15,000 distinct table rows, the headline summary shows a dash instead of a number, and tells you to use a filter to reduce the number of rows.
-
-You can modify how you'd like the value to be displayed by clicking the dropdown on a headline and selecting a different type of aggregation.
-The usual available aggregations are total, average, standard deviation, variance, minimum, and maximum.
-There are also unique count and total count values available for the appropriate columns.
-
-To add a headline to a Liveboard, hover over the headline and click the *Pin* icon.
-
-image::pin_headline.png[Add a headline to a Liveboard]
-
-You can decide whether or not to display headlines in your table results.
-To  customize headlines, click the *More* menu icon image:icon-more-10px.png[] and select *Customize Summaries*.
-
-=== Table aggregate headline
-
-The Table Aggregate headline option is available when an aggregate function is used either through a formula or a search bar query like average of a measure.
-It recalculates the function for the entire table.
-In such cases, Table Aggregate is shown by default in a headline under the table, instead of the "`Avg`" option, which does a second level of aggregation on top of the existing aggregation.
-
-In the following example, the table aggregate is shown as a result of the Average Profit formula `sum ( profit ) / count ( ship mode )` which divides the total profit of each ship mode by the sum total count for that ship mode.
-ThoughtSpot recalculates that function for the entire table, taking the sum total profits of all ship modes and dividing it by the sum total count of all ship modes.
-Here, that results in a table aggregate average profit of 28.7.
-The `average` headline option, by comparison, sums the average profit for all ship modes and divides it by the number of ship modes (4), providing a less accurate average.
-
-image::table-aggregate.png[Table aggregate headline]
+image::table-aggregate-summary.png[Table aggregate summary]

@@ -47,20 +47,8 @@ If you have the new Liveboard experience turned on in 8.4.0.sw, the following fe
 * *Liveboard edit icon*: The Liveboard edit icon image:icon-edit-20px.png[] next to the Liveboard name, for editing the Liveboard name or description, is no longer available. Instead, select the *Edit* option in the *more* menu image:icon-more-10px.png[] for the Liveboard. Then, click on the Liveboard title or description to edit it inline.
 
 === New answer experience deprecations
-If you have the new answer experience turned on in 8.4.0.sw, these features are *de-supported* in 8.4.0.sw. To use these features, turn the new answer experience off.
 
-Multiple join path resolution within the formula editor or a search::
-When you try to search on columns with more than one possible join path, the system no longer allows you to define the join path within the search. Similarly, when you try to create a formula with columns with more than one possible join path, the system does not allow you to define the join path. Instead, the system now prompts you to resolve this issue and avoid confusion or incorrect data by creating a Worksheet with the correct join path.
-Send feedback::
-The option to send product feedback, from the more options menu image:icon-more-10px.png[more options menu icon] on an Answer or search.
-Client-side summaries for tables::
-We consolidated column summaries and headlines into one summary, called a headline summary. To calculate these headline summaries, ThoughtSpot executes a query against the underlying database. If you are connecting to your data in an external database, ThoughtSpot executes one query for each summary. If you store your data in ThoughtSpot’s in-memory database, ThoughtSpot executes one query for all summaries in the search. These headline summaries are integrated with the table columns. You can pin them to Liveboards.
-R integration::
-R integration is not available in the new answer experience at this time. We plan to add support for R in the new answer experience in a future release.
-+
-ThoughtSpot continues to support R for all customers who currently include R charts in their solutions on the ThoughtSpot Software deployments; please continue to use the classic answer experience.
-+
-TIP: We support R only in Falcon deployments (data imported into ThoughtSpot), and R integration is disabled by default. It is not available when creating connections and linking to external databases in real time.
+include::partial$new-answer-experience-deprecations.adoc[]
 
 [#de-support-7-2-1]
 == De-supported in 7.2.1
