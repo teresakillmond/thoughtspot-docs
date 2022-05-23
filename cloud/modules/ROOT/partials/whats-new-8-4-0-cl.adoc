@@ -26,45 +26,184 @@ p img {
 .show-hide {
   display: ;
 }
-.admonitionblock {
+.doc .admonitionblock {
 margin-top: 1rem;
 }
-.admonitionblock.note>table {
-    background-color: transparent;
-    border-radius: 5px;
-    border: 2px solid rgba(0,174,255,.2);
-    border-left: 6px solid #00aeef;
+.doc .admonitionblock > table,
+.doc .admonitionblock > table > tbody,
+.doc .admonitionblock > table > tbody > tr > td {
+  display: block;
+  padding-left: 2px; /* for new all-in-one note */
 }
-.admonitionblock td.icon {
-    padding-left: 0.1rem;
+.doc .admonitionblock > table > tbody > tr {
+  display: flex;
 }
-i.fa {
-    -webkit-hyphens: none;
-    -ms-hyphens: none;
-    hyphens: none;
-    font-style: normal;
-    padding-left: 5px;
+.doc .admonitionblock td.icon {
+  padding-left: 0.1rem;
+  /* padding-right: 0.5rem; */ /* new all-in-one admonition */
 }
-.admonitionblock td.content {
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    font-size: .8375rem;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
-    line-height: 1.6;
-    min-width: 0;
-    padding: 0.75rem 0.75rem 0.75rem 0.3rem;
-    border-radius: 5px;
+.doc .admonitionblock td.icon i::before {
+  background: no-repeat 0/cover;
+  content: "";
+  margin-top: -18px; /* for new all-in-one admonition */
+  margin-left: 7px; /* for new all-in-one admonition */
+  display: block;
+  height: 1.875rem;
+  width: 1.875rem;
 }
-table {
-    border-collapse: inherit;
+.doc .admonitionblock td.content {
+  /* border-bottom: 1px solid var(--color-brand-silver); */ /* new all-in-one admonition */
+  /* border-right: 1px solid var(--color-brand-silver); */ /* new all-in-one admonition */
+  /* border-top: 1px solid var(--color-brand-silver); */ /* new all-in-one admonition */
+  flex: 1;
+  font-size: 0.8375rem;
+  hyphens: auto;
+  line-height: 1.6;
+  min-width: 0;
+  padding: 0.75rem;
+  padding-left: 0.3rem;
+  border-radius: 5px;
+  /* border: 2px solid rgba(33, 126, 231, 0.2); */ /* new all-in-one admonition */
 }
-admonitionblock.note td.icon i::before {
-    background-image: url(../images/info2.svg);
-    vertical-align: middle;
-    padding-left: 25px;
+.doc .admonitionblock td.content > .title {
+  display: inline;
+  font-style: italic;
+}
+.doc .admonitionblock td.content > .title::after {
+  content: "";
+  display: table;
+}
+.doc .admonitionblock td.content::before {
+  font-weight: var(--weight-medium);
+}
+.doc .admonitionblock.caution > table {
+  background-color: transparent;
+  border: 2px solid rgba(247, 140, 32, 0.2); /* for new all-in-one note */
+  border-left: 6px solid #f78c20; /* for new all-in-one note */
+  border-radius: 5px; /* for new all-in-one note */
+  border-bottom: 2px solid rgba(247, 140, 32, 0.2);
+  border-top: 2px solid rgba(247, 140, 32, 0.2);
+  border-right: 2px solid rgba(247, 140, 32, 0.2);
+  /* box-shadow: 0.1px 1px 5px 1px #ccc; */
+}
+.doc .admonitionblock.caution td.icon i::before {
+  background-image: url(../img/caution.svg);
+  vertical-align: middle;
+}
+.doc .admonitionblock.caution td.content::before {
+  content: "Caution: ";
+  color: #f78c20;
+}
+.doc .admonitionblock.caution td.content {
+  /* border-left: 6px solid #f78c20;
+  border-bottom: 2px solid rgba(163, 93, 255, 0.2);
+  border-top: 2px solid rgba(163, 93, 255, 0.2);
+  border-right: 2px solid rgba(163, 93, 255, 0.2);
+  box-shadow: 0.1px 1px 5px 1px #ccc; */
+}
+.doc .admonitionblock.important > table {
+  background-color: transparent;
+  border: 2px solid rgba(163, 93, 255, 0.2); /* for new all-in-one note */
+  border-left: 6px solid #a35dff; /* for new all-in-one note */
+  border-radius: 5px; /* for new all-in-one note */
+  border-bottom: 2px solid rgba(163, 93, 255, 0.2);
+  border-top: 2px solid rgba(163, 93, 255, 0.2);
+  border-right: 2px solid rgba(163, 93, 255, 0.2);
+  /* box-shadow: 0.1px 1px 5px 1px #ccc; */
+}
+.doc .admonitionblock.important td.icon i::before {
+  background-image: url(../img/important.svg);
+  vertical-align: middle;
+}
+.doc .admonitionblock.important td.content::before {
+  content: "Important: ";
+  color: #a35dff;
+}
+.doc .admonitionblock.important td.content {
+  /* border-left: 6px solid #a35dff;
+  border-bottom: 2px solid rgba(255, 89, 90, 0.2);
+  border-top: 2px solid rgba(255, 89, 90, 0.2);
+  border-right: 2px solid rgba(255, 89, 90, 0.2);
+  box-shadow: 0.1px 1px 5px 1px #ccc; */
+}
+.doc .admonitionblock.note > table {
+  background-color: transparent;
+  border: 2px solid rgba(0, 174, 255, 0.2); /* for new all-in-one note */
+  border-left: 6px solid #00aeef; /* for new all-in-one note */
+  border-radius: 5px; /* for new all-in-one note */
+  border-bottom: 2px solid rgba(0, 174, 2319, 0.2);
+  border-top: 2px solid rgba(0, 174, 2319, 0.2);
+  border-right: 2px solid rgba(0, 174, 2319, 0.2);
+  /* box-shadow: 0.1px 1px 5px 1px #ccc; */
+}
+.doc .admonitionblock.note td.icon i::before {
+  background-image: url(../images/info2.svg);
+  vertical-align: middle;
+  padding-left: 25px; /* for new all-in-one note */
+}
+.doc .admonitionblock.note td.content::before {
+  content: "Note: ";
+  color: #00aeef;
+}
+.doc .admonitionblock.note td.content {
+  /* border-left: 6px solid #00aeef;
+  border-bottom: 2px solid rgba(0, 174, 2319, 0.2);
+  border-top: 2px solid rgba(0, 174, 2319, 0.2);
+  border-right: 2px solid rgba(0, 174, 2319, 0.2);
+  box-shadow: 0.1px 1px 5px 1px #ccc; */
+}
+.doc .admonitionblock.tip > table {
+  background-color: transparent;
+  border: 2px solid rgba(6, 191, 127, 0.2); /* for new all-in-one note */
+  border-left: 6px solid #06bf7f; /* for new all-in-one note */
+  border-radius: 5px; /* for new all-in-one note */
+  border-bottom: 2px solid rgba(6, 191, 127, 0.2);
+  border-top: 2px solid rgba(6, 191, 127, 0.2);
+  border-right: 2px solid rgba(6, 191, 127, 0.2);
+  /* box-shadow: 0.1px 1px 5px 1px #ccc; */
+}
+.doc .admonitionblock.tip td.icon i::before {
+  background-image: url(../img/tip.svg);
+  vertical-align: middle;
+}
+.doc .admonitionblock.tip td.content::before {
+  content: "Tip: ";
+  color: #06bf7f;
+}
+.doc .admonitionblock.tip td.content {
+  /* border-left: 6px solid #06bf7f;
+  border-bottom: 2px solid rgba(6, 191, 127, 0.2);
+  border-top: 2px solid rgba(6, 191, 127, 0.2);
+  border-right: 2px solid rgba(6, 191, 127, 0.2);
+  box-shadow: 0.1px 1px 5px 1px #ccc; */
+}
+.doc .admonitionblock.warning > table {
+  background-color: transparent;
+  border: 2px solid rgba(255, 89, 90, 0.2); /* for new all-in-one note */
+  border-left: 6px solid #ff595a; /* for new all-in-one note */
+  border-radius: 5px; /* for new all-in-one note */
+  border-bottom: 2px solid rgba(255, 89, 90, 0.2);
+  border-top: 2px solid rgba(255, 89, 90, 0.2);
+  border-right: 2px solid rgba(255, 89, 90, 0.2);
+  /* box-shadow: 0.1px 1px 5px 1px #ccc; */
+}
+.doc .admonitionblock.warning td.icon i::before {
+  background-image: url(../img/warning.svg);
+  vertical-align: middle;
+}
+.doc .admonitionblock.warning td.content::before {
+  content: "Warning: ";
+  color: #ff595a;
+}
+.doc .admonitionblock.warning td.content {
+  /* border-left: 6px solid #ff595a;
+  border-bottom: 2px solid rgba(254, 201, 67, 0.2);
+  border-top: 2px solid rgba(254, 201, 67, 0.2);
+  border-right: 2px solid rgba(254, 201, 67, 0.2);
+  box-shadow: 0.1px 1px 5px 1px #ccc; */
+}
+.doc .admonitionblock td.content > :first-child {
+  margin-top: 0;
 }
 </style>
 +++
