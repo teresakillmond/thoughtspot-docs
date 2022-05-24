@@ -7,14 +7,16 @@
 
 include::partial$liveboards-announcement.adoc[]
 
+include::partial$liveboard-experience-new-announcement.adoc[]
+
 When you xref:liveboard-schedule.adoc[schedule a Liveboard job], you can add a gating condition that triggers the Liveboard email. If the condition evaluates to `true` at the scheduled time, ThoughtSpot emails the Liveboard to the specified recipients. If it evaluates to `false`, ThoughtSpot does not send the Liveboard.
 
 This article walks you through an example scenario in which you use a gating condition to determine whether to email the Liveboard, sending an alert to specified users.
 
 == Gating condition functionality
-A gating condition is a statement that returns a single boolean value (`true` or `false`). For example, `sum (revenue) > 100` is a valid condition, but `is_weekend (commit_date)` is not, since it returns a result per row of data. You can use any data source (table, worksheet, or view) for the gating condition, since ThoughtSpot executes the query as an admin with access to all data sources. The gating condition formula and any tables you use in it do not need to be related to the Liveboard the gating condition is for. You can use any valid formula in your statement. ThoughtSpot checks the formula syntax, but does not validate if the formula returns a valid single boolean.
+A gating condition is a statement that returns a single boolean value (`true` or `false`). For example, `sum (revenue) > 100` is a valid condition, but `is_weekend (commit_date)` is not, since it returns a result per row of data. You can use any data source (table, worksheet, or view) for the gating condition, since ThoughtSpot executes the query at user-level. The gating condition formula and any tables you use in it do not need to be related to the Liveboard the gating condition is for. You can use any valid formula in your statement. ThoughtSpot checks the formula syntax, but does not validate if the formula returns a valid single boolean.
 
-At the scheduled time, ThoughtSpot executes the gating condition query as an admin user. If the condition evaluates to `true`, ThoughtSpot processes the Liveboard.
+At the scheduled time, ThoughtSpot executes the gating condition query at user-level. If the condition evaluates to `true`, ThoughtSpot processes the Liveboard.
 
 For a list of valid formulas, see xref:formula-reference.adoc[Formula function reference].
 
@@ -50,9 +52,7 @@ Note that the Liveboard title, *ThoughtSpot Validation Alert - Data Validation* 
 === Create the Liveboard schedule
 After you create your view and Liveboard, follow the directions in xref:liveboard-schedule.adoc[] to create the Liveboard schedule.
 
-image:gating-condition-pinboard-schedule-example.png[Gating condition Liveboard schedule example]
-
-In this example, the `Repeats` value, which determines how frequently ThoughtSpot emails the Liveboard, is set to send the email every weekday at 9 A.M. You may want to set this value to a more or less frequent cadence, depending on your business needs.
+The `Repeats` value, which determines how frequently ThoughtSpot emails the Liveboard, is set to send the email every Monday at 9 A.M by default. You may want to set this value to a more or less frequent cadence, depending on your business needs.
 
 Note that the description in the Liveboard schedule is the automatic body of the Liveboard schedule email.
 

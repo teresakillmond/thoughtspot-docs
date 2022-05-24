@@ -6,6 +6,29 @@
 
 These are the issues we fixed in recent ThoughtSpot releases.
 
+[#releases-8-4-x]
+== 8.4.X Releases fixed issues
+[tabset]
+====
+
+8.4.0.sw [LA]::
++
+--
+* When disableLoginRedirect is set to true, users incorrectly navigate to the license upload page.
+* Authentication does not work in Incgonito mode of the Google Chrome browser.
+* When the enableLocalization flag is set to false, ThoughtSpot incorrectly defaults to the language of the user's browser locale, instead of English.
+* No tables display for a connection that uses the custom sql feature with a key/value pair set to "tracing/ALL" in the advanced config of the connection.
+* Multiple data downloads occur when applying a filter in a table and trying to download the data in csv or xlsx format.
+* DataFlow: When setting up table sync, user cannot move to the next screen after clicking the *Set up sync* button.
+* An error appears when viewing a Liveboard which contains a visualization, though the same visualization displays normally outside of the Liveboard.
+* Attempting to edit a column in a table in a Liveboard or clicking the column name to sort the data causes a message to appear indicating the user needs edit access, even when they already have it.
+* Creating answers based on a worksheet causes a warning message to appear indicating data is still being indexed.
+* Updating a cluster to use Instance Metadata Service Version 2, causes an error message indicating there is an exception retrieving the InstanceId.
+* Using a formula that contains a unique count on a table with a chasm trap returns incorrect results.
+* Exporting a pivot table in .xlsx format results in a file with missing headers.
+--
+====
+
 [#releases-7-2-x]
 == 7.2.X Releases fixed issues
 [tabset]
@@ -16,19 +39,19 @@ These are the issues we fixed in recent ThoughtSpot releases.
 --
 * DataFlow: Syncs are unstable and errors appear during loading.
 * Connections: Remapping of connection does not work.
-* Capacity details are not shown in the Admin/Cluster Liveboard
+* Capacity details are not shown in the Admin/Cluster pinboard
 * DataFlow: MySQL sync fails.
 * Transitioning from /etc/environment to /export/environment fails when upgrading from 6.3.1CU4 to 7.1.1.
-* Filtering on a Liveboard cannot be turned off.
+* Filtering on a pinboard cannot be turned off.
 * KPIs cannot display decimal places.
 * Unhelpful system error message when validating TML.
 * Connections: JDBC driver error occurs because of a connection string issue with Snowflake.
 * Sending a custom welcome email actually sends the default one configured with `tscli onboarding configure`.
-* Liveboards do not display properly.
+* Pinboards do not display properly.
 * Connections: Connection details cannot be updated.
 * Periodic backups do not work on a GCS-enabled cluster.
 * Backups are extremely slow.
-* Large Liveboard does not fully display all visualizations.
+* Large Pinboard does not fully display all visualizations.
 * Loading data into Falcon is slow using Informatica for ETL and the Linux ODBC Driver 3.8 as the database driver.
 * Secondary line in a chart is cut off with default axis setting.
 --
@@ -420,7 +443,7 @@ cookies for pages in a ThoughtSpot cluster do not have the new SameSite attribut
 6.0.5::
 +
 --
-* When *Copy link* has been disabled, it still appears in the More menu image:icon-ellipses.png[more options menu icon] of Pinboards.
+* When *Copy link* has been disabled, it still appears in the More menu image:icon-more-10px.png[more options menu icon] of Pinboards.
 * The management console is not accessible.
 * A Pinboard with an advanced formula can be viewed by an administrator, but not by a regular user they share it wit
 * A cluster that is using a customer logo, still shows the ThoughtSpot logo on downloaded PDFs.

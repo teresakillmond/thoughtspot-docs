@@ -31,8 +31,10 @@ Can invoke Custom R Analysis::
   Can access R scripts to further explore search answers. Includes options to invoke R scripts on visualizations, create and share custom scripts, and share the results of R analysis as answers and Liveboards.
 
 [#schedule-liveboards]
-Can schedule Liveboards::
-  Can create and edit Liveboard schedules for other users and groups. Without this privilege, users can only create Liveboard schedules for themselves.
+Can schedule for others::
+  Can create and edit Liveboard schedules for other users and groups.
++
+If a user previously had *Can schedule for others* privileges and the permission was removed, their existing schedules would continue to send as before. As owners of a Liveboard schedule, they could delete the schedule, but could not add or remove existing users.
 
 [#spotiq]
 Has SpotIQ privilege::
@@ -58,4 +60,4 @@ This privilege is designed to support embedded implementations, and it is behind
 +
 See xref:liveboard-granular-permission.adoc[Granular access to Liveboards] for a deeper discussion of this privilege, and an implementation example.
 +
-NOTE: This privilege is now deprecated. It is unavailable starting in release 8.4.0.sw, if you are using the new answer experience. To use this privilege in 8.4.0.sw and later, return to the classic answer experience. For details, see xref:deprecation.adoc[Deprecation Announcements].
+NOTE: This privilege is now deprecated. It is unavailable starting in release 8.4.0.sw, if you are using the xref:answer-experience-new.adoc[new answer experience]. To use this privilege in 8.4.0.sw and later, return to the classic answer experience. For details, see xref:deprecation.adoc[Deprecation Announcements].

@@ -1,6 +1,6 @@
 = 8.4.0.sw Release Notes
 :experimental:
-:last_updated: 5/11/2022
+:last_updated: 5/19/2022
 :linkattrs:
 :page-aliases: /release/notes.adoc
 
@@ -39,6 +39,43 @@ Refer to xref:formula-reference.adoc#date-functions[Formula reference date funct
 Conditional and number formatting for downloaded tables::
 When you download a table in `XLSX` format, the downloaded table now shows the same conditional and number formatting as the table in ThoughtSpot. Refer to xref:search-download.adoc#table-formatting[Download your search].
 
+Liveboard schedule::
+ThoughtSpot now combines the Liveboard follow and xref:liveboard-schedule.adoc[Liveboard Schedule] features into a single action called "Schedule." To create a new schedule to receive an email containing a pdf of your Liveboard, users now select the *Schedule* button to the left of the *more options menu* image:icon-more-10px.png[].
++
+ThoughtSpot will migrate any existing Liveboard follows to Liveboard schedules. For users who followed a Liveboard in November Cloud or earlier, those Liveboard schedules appear in the list of Liveboard schedules as _Migrated from follow (your display name)_.
+
+New SpotIQ experience::
+The new SpotIQ experience is now available. The functionality remains the same, but we reorganized the UI to make it more intuitive. The new experience is on by default. You can manage your individual SpotIQ experience xref:user-profile.adoc#spotiq[from your profile]. Note that the new SpotIQ experience is dependent on the xref:answer-experience-new.adoc[new answer experience]; to use the new SpotIQ experience, you must first enable the new answer experience. For more information, refer to xref:spotiq.adoc[SpotIQ].
+
+New answer experience::
+The xref:answer-experience-new.adoc[new answer experience] is now GA and on by default. It contains multiple new features and feature enhancements.
+It is part of ThoughtSpot's move to a new stack.
+To learn how to manage your answers experience, refer to xref:answer-experience-new.adoc[].
++
+The new answer experience contains the following features:
++
+include::partial$new-answer-experience-features.adoc[]
+
+New answer experience deprecations::
+include::partial$new-answer-experience-deprecations.adoc[]
+
+New Liveboard experience::
+The xref:liveboard-experience-new.adoc[new Liveboard experience] is now GA and on by default. It contains multiple new features and feature enhancements.
+It is part of ThoughtSpot's move to a new stack.
+To learn how to manage your Liveboard experience, refer to xref:liveboard-experience-new.adoc[].
++
+The new Liveboard experience contains the following features:
++
+include::partial$new-liveboard-experience-features.adoc[]
+
+New Liveboard experience deprecations::
+include::partial$new-liveboard-experience-deprecations.adoc[]
+
+Streamlined analyst setup::
+We simplified the steps to set up an analyst account on ThoughtSpot. Now, you can create a connection, xref:worksheet-create-setup.adoc[create a worksheet] to model your business use cases, immediately search your data, and automatically xref:automated-answer-creation.adoc[create Search visualizations]. See xref:analyst-onboarding.adoc[Analyst Onboarding] for further details.
++
+This feature is specific to clusters based on connections to external data warehouses, not imported data (Falcon). To enable this feature for your cluster, xref:support-contact.adoc[Contact ThoughtSpot Support].
+
 [#business-user-8-4-0-sw]
 === For the Business User
 
@@ -60,22 +97,26 @@ We now support more detailed geographic maps for France. You can now create maps
 === For the Data Engineer
 
 [#data-workspace-beta]
-Data Workspace [.label.label-beta]#Beta#::
+Data Workspace [.badge.badge-update]#Beta#::
 This release redesigns the Data section of the product. The new Data Workspace is still in the same place in the product. To access it, select Data from the top navigation bar. The redesign introduces several new features, such as SQL-based views and SpotApps, and makes the UI more intuitive.
 +
 This feature is in beta and off by default. To enable it, contact {support-url}.
 
 [#sql-views-beta]
-SQL-based views [.label.label-beta]#Beta#::
+SQL-based views  [.badge.badge-update]#Beta#::
 This release introduces beta support for SQL-based views. Users can create views based on custom SQL queries, and use those views as data sources. This type of view has the same functionality as a view based on searching your data.
 +
 This feature is in beta and off by default. It is part of the new <<data-workspace-beta,Data Workspace>>, which is also in beta and off by default. To enable SQL-based views and the new Data Workspace, contact {support-url}.
 
 [#dbt-beta]
-Integration with dbt [.label.label-beta]#Beta#::
+Integration with dbt  [.badge.badge-update]#Beta#::
 ThoughtSpot now offers an integration with dbt. You can provide your existing dbt models and automatically create worksheets in ThoughtSpot that you can use to perform searches on your data.
 +
 This feature is in beta and off by default. It is part of the new <<data-workspace-beta,Data Workspace>>, which is also in beta and off by default. To enable dbt integration and the Data tab redesign, contact {support-url}.
+
+[#databricks-oauth]
+OAuth for Databricks [.badge.badge-new]#New#::
+Databricks connections now support OAuth. See xref:connections-databricks-oauth.adoc[Configure OAuth for a Databricks connection].
 
 [#it-ops-engineer-8-4-0-sw]
 === For the IT Ops Engineer
@@ -87,6 +128,12 @@ NOTE: This does not apply to customer-managed Amazon Linux 2 or RHEL deployments
 
 [#developer-8-4-0-sw]
 === For the Developer
+
+Starting from the 8.4.0-sw release (Limited Availability), customers licensed to embed ThoughtSpot can use ThoughtSpot Everywhere features and Visual Embed SDK.
+
+To enable ThoughtSpot Everywhere on your cluster, contact ThoughtSpot Support.
+
+For information about ThoughtSpot Everywhere, refer to  link:https://developers.thoughtspot.com/docs[ThoughtSpot Everywhere Documentation, window=_blank].
 
 [#upgrade-paths]
 == Supported Upgrade Paths
