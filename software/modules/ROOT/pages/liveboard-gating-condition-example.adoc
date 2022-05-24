@@ -7,6 +7,8 @@
 
 include::partial$liveboards-announcement.adoc[]
 
+include::partial$liveboard-experience-new-announcement.adoc[]
+
 When you xref:liveboard-schedule.adoc[schedule a Liveboard job], you can add a gating condition that triggers the Liveboard email. If the condition evaluates to `true` at the scheduled time, ThoughtSpot emails the Liveboard to the specified recipients. If it evaluates to `false`, ThoughtSpot does not send the Liveboard.
 
 This article walks you through an example scenario in which you use a gating condition to determine whether to email the Liveboard, sending an alert to specified users.
@@ -50,9 +52,7 @@ Note that the Liveboard title, *ThoughtSpot Validation Alert - Data Validation* 
 === Create the Liveboard schedule
 After you create your view and Liveboard, follow the directions in xref:liveboard-schedule.adoc[] to create the Liveboard schedule.
 
-image:gating-condition-pinboard-schedule-example.png[Gating condition Liveboard schedule example]
-
-In this example, the `Repeats` value, which determines how frequently ThoughtSpot emails the Liveboard, is set to send the email every weekday at 9 A.M. You may want to set this value to a more or less frequent cadence, depending on your business needs.
+The `Repeats` value, which determines how frequently ThoughtSpot emails the Liveboard, is set to send the email every Monday at 9 A.M by default. You may want to set this value to a more or less frequent cadence, depending on your business needs.
 
 Note that the description in the Liveboard schedule is the automatic body of the Liveboard schedule email.
 
