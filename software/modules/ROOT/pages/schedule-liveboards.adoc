@@ -9,30 +9,21 @@ include::partial$liveboards-announcement.adoc[]
 
 include::partial$liveboard-experience-new-announcement.adoc[]
 
-All jobs on your cluster will appear on the Jobs Management page. You can also view jobs for individual boards under the Liveboard Actions dropdown.
+On the *Jobs Management* page, found in *Data > Usage > Jobs Management*, you can create and manage jobs, including xref:liveboard-schedule.adoc[scheduled Liveboards]. With scheduled Liveboards, you can prepare for recurrent meetings and closely monitored metrics.
 
-The *Jobs Management* page found in the menu:Data[Usage] section in the ThoughtSpot web application allows you to create and manage jobs, namely scheduled Liveboards.
-Scheduled Liveboards should help with preparing for recurrent meetings, when reviewing the same Liveboard is necessary.
-They should also be useful when you have metrics you want to monitor at a consistent interval, like daily or monthly sales targets.
+With scheduled Liveboard email updates, you can analyze your data offline and share Liveboards with your colleagues, including people who may not have a ThoughtSpot account.
 
-You can get Liveboards emailed to you on a regular basis and do analysis offline.
-This introduces an additional format for you to consume and share Liveboards with others, including those who don't have a ThoughtSpot account.
+Contact {support-url} if scheduled Liveboards is not enabled on your cluster.
 
-Run `tscli scheduled-pinboards enable` to enable scheduled Liveboards on your cluster.
+== Scheduling Liveboards
 
-== Scheduled Liveboard creators
+Administrators and users with the *can schedule for others* privilege can schedule and manage Liveboard jobs for other users and groups. Users do not need the *can schedule for others* privilege to schedule and manage Liveboard jobs for themselves. Users must have at least view-only access to the Liveboards they share.
 
-Administrators and users with can schedule Liveboard privilege can schedule and manage Liveboard jobs.
-These scheduled Liveboard creators must have at least edit-only and view-only rights to the Liveboard they want to share.
-
-WARNING: It is recommended that admins carefully choose who to give can schedule Liveboard privilege to, since there is a possible security hole where a user with limited access can get a Liveboard email with all access data.
+WARNING: ThoughtSpot recommends that you remain conservative when deciding who has the *can schedule for others* privilege in your organization. There are possible security implications when critical information can be shared outside your company.
 
 == Row level security
 
-The scheduled Liveboards respect row level security rules.
-This means if the recipients are users in ThoughtSpot, then they can only see data based on their own access to the Liveboard.
-If the user does not have at least view-only access to the Liveboard, then they will not see anything in the email.
-However, if the recipients are from outside of the cluster, then they will have access to the dataset of the Liveboard based on the sender's permissions.
+Scheduled Liveboards adhere to row-level security rules. If the recipients are users in ThoughtSpot, they can only see data based on their own access to that Liveboard. If the user does not have view-only or greater access to the Liveboard, they do not see any data in the email. However, if the recipients are not ThoughtSpot users, then they have access to the dataset of the Liveboard based on the sender’s permissions.
 
 [#format]
 == Format and layout of scheduled Liveboards
