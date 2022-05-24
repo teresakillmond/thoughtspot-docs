@@ -137,9 +137,17 @@ margin-top: 1rem;
   /* box-shadow: 0.1px 1px 5px 1px #ccc; */
 }
 .admonitionblock.note td.icon i::before {
-  background-image: url(../images/info2.svg);
+  background-image: url(_images/info2.svg);
   vertical-align: middle;
   padding-left: 25px; /* for new all-in-one note */
+}
+.admonitionblock.note td.icon {
+  margin-top: 25px;
+}
+.admonitionblock.note td.content::before {
+  content: "Note: ";
+  font-weight: 500;
+  color: #00aeef;
 }
 .admonitionblock.note td.content::before {
   content: "Note: ";
