@@ -237,7 +237,7 @@ image:kpi-viz-sparkline.png[KPI visualization example 2]
 [#8-4-0-sw-auto-select-search-source]
 *Auto-select search data source for new users*
 
-// TBD
+When a new user uses Search Data, ThoughtSpot intelligently selects a data source for them to search on. ThoughtSpot chooses the most popular data source in the cluster that the user has access to. This allows users to begin to search data easily, without looking through all the existing data sources on their cluster.
 
 // image
 
@@ -253,14 +253,16 @@ We now support more detailed geographic maps for France. You can now create maps
 [#8-4-0-sw-date-interval]
 *Date interval functions*
 
-// TBD
+We introduced new functions for computing time intervals between two dates. In addition to the existing xref:formula-reference.adoc#diff_days[diff_days] and xref:formula-reference.adoc#diff_time[diff_time] functions, you can now use `diff_years`, `diff_quarters`, `diff_months` `diff_weeks`, `diff_hours`, and `diff_minutes` to calculate time intervals.
+
+If your organization uses a xref:connections-cust-cal.adoc[custom calendar] for your fiscal year, use the optional custom calendar argument with these functions to calculate the difference between the two dates.
 
 // image
 
 [#8-4-0-sw-conditional-formatting]
 *Conditional and number formatting for downloaded tables*
 
-// TBD
+When you download a table in `XLSX` format, the downloaded table now shows the same conditional and number formatting as the table in ThoughtSpot.
 
 // image
 
@@ -274,17 +276,20 @@ We now support more detailed geographic maps for France. You can now create maps
 [#8-4-0-sw-new-spotiq]
 *New SpotIQ experience*
 
-// TBD
+SpotIQ has a new reorganized and more intuitive UI. The functionality remains the same.
 
-// image
+To try it out, navigate to your profile, scroll down to *Experience*, select *Edit*, and toggle the SpotIQ experience to *New experience*. [.show-hide]#See xref:spotiq.adoc[SpotIQ].#
+
+image::spotiq-v2-ui.png[New SpotIQ experience]
 
 [#8-4-0-sw-new-answer]
 *New answer experience*
 
-// TBD
+The new answer experience contains new features and enhancements, including an in-product undo, redo, and reset button, HTML for answer titles and descriptions, and improvements to conditional formatting for charts, tables, and pivot tables.
+
+To try it out, navigate to your profile, scroll down to *Experience*, select *Edit*, and toggle the Answer experience to *New experience*. [.show-hide]#See xref:answer-experience-new.adoc[New answer experience].#
 
 // image
-
 
 [#8-4-0-sw-streamlined-analyst]
 *Streamlined analyst setup*
@@ -303,35 +308,30 @@ This feature is specific to clusters based on connections to external data wareh
 [#8-4-0-sw-data-workspace]
 *Data Workspace [.badge.badge-update]#Beta#*
 
-// TBD
+The redesigned Data Workspace provides new features including SQL-based views, SpotApps, and a more intuitive user experience. To see it, select *Data* in the top navigation bar.
 
 // image
 
 [#8-4-0-sw-sql-views]
 *SQL-based views [.badge.badge-update]#Beta#*
 
-// TBD
+With SQL-based views, you can now create views based on custom SQL queries, and then use them as data sources.
 
-// image
+image::sql-bsd-view.png[sql-based-views]
 
 [#8-4-0-sw-int-dbt]
 *Integration with dbt [.badge.badge-update]#Beta#*
 
-// TBD
+With the new dbt integration, you provide your existing dbt models and ThoughtSpot automatically creates worksheets you can use to query your data.
 
-// image
+To try out dbt integration, navigate to the *Data* tab, and select *Utilities*. Select *dbt Integration*.
+
+image::dbt-integration.png[]
 
 [#8-4-0-sw-int-dbt]
 *OAuth for Databricks*
 
 Databricks connections now support OAuth. See xref:connections-databricks-oauth[Configure OAuth for a Databricks connection].
-
-// image
-
-[#8-4-0-python-3-9]
-*Python 3.9 upgrade*
-
-// Teresa
 
 // image
 
