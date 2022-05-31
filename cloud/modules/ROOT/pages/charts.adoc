@@ -1,12 +1,12 @@
 = Understanding charts
-:last_updated: 2/25/2020
+:last_updated: 5/31/2022
 :linkattrs:
 :experimental:
 :page-layout: default-cloud
 :page-aliases: /end-user/search/about-charts.adoc
 :description: Charts display your search answer in a visual way.
 
-Your search needs at least xref:search-columns.adoc#[one attribute and one measure] to be presented as a chart.
+Your search needs at least xref:search-columns.adoc[one attribute and one measure] to be presented as a chart.
 When you choose to display your answer as a chart, ThoughtSpot will assign it the best fit chart type.
 
 NOTE: Colors are maintained across searches within a session.
@@ -53,6 +53,11 @@ Just like stacked columns, stacked bars combine the different secondary dimensio
 * *xref:chart-line.adoc[Line charts]* +
 Like the column chart, the line chart is one of ThoughtSpot's simplest, yet most versatile chart types.
 More often than not the line chart will be chosen as your default chart type.
+* *xref:chart-kpi.adoc[KPI charts]*
++
+When you search a single measure, such as `Sales`, ThoughtSpot automatically creates a KPI chart displaying the topmost value of that column.
++
+Add a time-related keyword to your Search to view a sparkline visualization of your key performance indicator.
 * *xref:chart-pie.adoc[Pie charts]* +
 The pie chart is a classic chart type that displays your search in a circle.
 The pie chart ThoughtSpot shows is in the shape of a doughnut.
@@ -73,7 +78,7 @@ The waterfall chart is used to show how an initial value is affected by a series
 The treemap chart displays hierarchical data as a set of nested rectangles.
 * *xref:chart-heatmap.adoc[Heatmap charts]* +
 The heatmap chart displays individual data values in a matrix following a color scale.
-* *chart:chart-line-column.adoc[Line column charts]* +
+* *xref:chart-line-column.adoc[Line column charts]* +
 The line column chart combines the column and line charts.
 * *xref:chart-funnel.adoc[Funnel charts]* +
 The funnel chart shows a process with progressively decreasing proportions amounting to 100 percent in total.
