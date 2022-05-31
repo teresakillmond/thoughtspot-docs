@@ -17,7 +17,7 @@ A ThoughtSpot deployment consists of the following high level software systems:
 
 === Operating System
 
-All ThoughtSpot physical appliances, virtual machines (VMs) and public cloud images come pre-installed with CentOS 7.
+All ThoughtSpot virtual machines (VMs) and public cloud images come pre-installed with CentOS 7.
 The https://www.centos.org/[CentOS^] distribution of Linux is owned by https://www.redhat.com/en[RedHat^] and closely tracks versions of RedHat Enterprise Linux (RHEL).
 
 ThoughtSpot uses the minimal install of CentOS 7 with the addition of a few software packages (e.g.
@@ -34,7 +34,7 @@ ThoughtSpot only uses software licensed for distribution.
 == Development and Release Process
 
 ThoughtSpot releases its software as a tarball containing all the ThoughtSpot application (binaries and configuration), third-party software, and an operating system image.
-Installation or update using this release tarball on appliances, VMs, or cloud instances updates each of these components.
+Installation or update using this release tarball updates each of these components.
 
 === Operating System
 
@@ -92,7 +92,7 @@ ThoughtSpot is installed or updated from a release tarball which contains the Th
 
 === Operating System Image Installation
 
-Installing ThoughtSpot on any node (VM, cloud instance, appliance) automatically updates the operating system and required packages on the node.
+Installing ThoughtSpot on any node automatically updates the operating system and required packages on the node.
 No Internet or repository access is required for this, the update is applied directly from the release tarball.
 
 Specifically, all nodes running ThoughtSpot are required to have two root partitions on their boot drive of which one of them is booted from at any given time.
