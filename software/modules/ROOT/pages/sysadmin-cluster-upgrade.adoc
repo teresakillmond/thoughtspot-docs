@@ -42,7 +42,7 @@ The *Upgrade* page shows your cluster's current version, and any new releases th
 To upgrade your cluster, follow these steps:
 [cols="5,~",grid=none,frame=none]
 |===
-| &#10063; | <<upgrade-step-1,Step 1: Download the release>>
+| &#10063; | <<upgrade-step-1,Step 1: Download the release files>>
 | &#10063; | <<upgrade-step-2,Step 2: Check disk space>>
 | &#10063; | <<upgrade-step-3,Step 3: Create a cluster snapshot and back it up on disk>>
 | &#10063; | <<upgrade-step-4,Step 4: Check the cluster's health and integrity of provided software>>
@@ -54,12 +54,16 @@ To upgrade your cluster, follow these steps:
 NOTE: If any commands return errors, warnings, or failures while you upgrade, contact {support-url}.
 
 [#upgrade-step-1]
-=== Step 1: Download the release
-Download the release, including any patches for the version you are installing, and move it to a folder in your ThoughtSpot node.
+=== Step 1: Download the release files
+Download the release, including any patches for the version you are installing, to your computer. Move the release files to a directory with sufficient space in your ThoughtSpot node.
+
+WARNING: Do not put the release files in the `/home/admin` or `/home/thoughtspot` directories. You should put the release files in one of the bigger hard disks/volumes on one node in the cluster. Typically, this is `/export/sdb1/` for hardware appliances, VMware and GCP, `/export/sdc1/` for Azure, and `/export/xvdb1/` for AWS.
+
+To download the release files, follow these steps:
 
 . Navigate to [LINK].
-. Download the release content folder for the version you would like to upgrade to. This includes the release, any patches, the `Md5checksum`, and `capture_cluster_information.sh`. [i'm not sure what this actually looks like on egnyte]
-. In your terminal application, `ssh` into your cluster.
+. Download the release content folder for the version you would like to upgrade to. This includes the release, any patches, the `Md5checksum`, and the `capture_cluster_information.sh` script. This script inventories a ThoughtSpot cluster for use in audit or recovery, if necessary. [i'm not sure what this actually looks like on egnyte]
+. In your terminal application, connect to the first node in your ThoughtSpot cluster using `ssh`.
 Run `ssh admin@<ThoughtSpotnodeIP>`.
 +
 Replace `ThoughtSpotnodeIP` with your specific network information.
@@ -71,11 +75,11 @@ Replace `ThoughtSpotnodeIP` with your specific network information.
 . Copy the downloaded release bundle from your Downloads folder to any path in the `/export` folder of your ThoughtSpot node that has enough space. Use one of two methods:
 +
 * Use `winscp` or a similar secure copy method.
-* If your ThoughtSpot cluster allows access to Egnyte, you can use the following `wget` command:
+* If your ThoughtSpot cluster allows access to Egnyte, you download the files directly to the node. Use the following `wget` command:
 +
 [source,bash]
 ----
- $ wget -O <release-bundle-name> <EGNYTE LINK THAT I WILL PROVIDE WHEN I HAVE IT>
+ $ wget <EGNYTE LINK THAT I WILL PROVIDE WHEN I HAVE IT> -c -O <release-bundle-name>
 ----
 
 [#upgrade-step-2]
@@ -212,7 +216,7 @@ Your release bundle may include patches for the ThoughtSpot application. These p
 
 [#patch]
 == Patch a cluster
-To patch your cluster, follow these steps:
+Patching a cluster updates the ThoughtSpot services and allows for bug fixes. The process is similar to upgrading a cluster. To patch your cluster, follow these steps:
 [cols="5,~",grid=none,frame=none]
 |===
 | &#10063; | <<patch-step-1,Step 1: Obtain cluster patch>>
@@ -226,7 +230,7 @@ To patch your cluster, follow these steps:
 Download the patch or patches for the version you are running, and move it to a folder in your ThoughtSpot node. If you just upgraded to a new version, the release bundle you downloaded and copied to your ThoughtSpot node should contain the patches you need to apply.
 
 . Navigate to [LINK].
-. Download the release content folder or patch folder for the version you are running. [i'm not sure what this actually looks like on egnyte]
+. Download the required patches for the ThoughtSpot version you are running. [i'm not sure what this actually looks like on egnyte]
 . In your terminal application, `ssh` into your cluster.
 Run `ssh admin@<ThoughtSpotnodeIP>`.
 +
@@ -236,15 +240,7 @@ Replace `ThoughtSpotnodeIP` with your specific network information.
 ----
  $ ssh admin@<ThoughtSpotnodeIP>
 ----
-. Copy the downloaded release or patch bundle from your Downloads folder to any path in the `/export` folder of your ThoughtSpot node that has enough space. Use one of two methods:
-+
-* Use any secure copy method, such as `winscp`.
-* If your ThoughtSpot cluster allows access to Egnyte, you can use the following `wget` command:
-+
-[source,bash]
-----
- $ wget -O <release-bundle-name> <EGNYTE LINK THAT I WILL PROVIDE WHEN I HAVE IT>
-----
+. Copy the downloaded patch bundle from your Downloads folder to the first node in your ThoughtSpot cluster. To copy the patch bundle, refer to step 4 of <<upgrade-step-1,Download the release files>>.
 
 [#patch-step-2]
 === Step 2: Verify integrity of patch files
@@ -261,9 +257,7 @@ The patch process for each patch takes about 10 minutes. Once a patch has been a
 
 [#patch-step-4]
 === Step 4: Finalize installation
-Ensure that ThoughtSpot applied the patches successfully.
-
-Run `tscli patch ls` and look for the new patch names.
+Ensure that ThoughtSpot applied the patches successfully by running the `tscli patch ls` command. Ensure that the new patches you applied appear in the output.
 
 [source,bash]
 ----
