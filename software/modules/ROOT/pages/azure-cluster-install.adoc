@@ -274,13 +274,28 @@ To configure advanced lean mode, do the following:
 
 . SSH as admin into your ThoughtSpot cluster, using the following syntax: +
 `ssh admin@<cluster-ip-address or hostname>`.
-. Run the advanced lean mode configuration using the following syntax: +
-`tscli config-mode lean [-h] --type {small,medium,default}`.
+. Run the advanced lean mode configuration using the following syntax:
++
+[source,bash]
+----
+tscli config-mode lean [-h] --type {small,medium,default}
+----
 +
 Examples:
 
- ** To configure your instance with the "small" data size, run: `tscli config-mode lean [-h] --type small`
- ** To configure your instance with the "medium" data size, run: `tscli config-mode lean [-h] --type medium`
+** To configure your instance with the "small" data size, run:
++
+[source,bash]
+----
+tscli config-mode lean [-h] --type small
+----
+** To configure your instance with the "medium" data size, run:
++
+[source,bash]
+----
+tscli config-mode lean [-h] --type medium
+----
+
 
 +
 NOTE: If you decide later you want to disable advanced lean mode, use `default`.
