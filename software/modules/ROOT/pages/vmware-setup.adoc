@@ -69,7 +69,7 @@ Ask your network administrator if you need help filling out the site survey.
 +
 The system displays the dialog for selecting an OVA template.
 +
-image::vmware-ova.png[ThoughtSpot OVA]
+// image::vmware-ova.png[ThoughtSpot OVA]
 
 . Select menu:Creation type[deploy a virtual machine from an OVF or OVA].
 Click *Next*.
@@ -89,7 +89,7 @@ Power on automatically:: Check this option.
 
 . Review your selection and click *Finish*.
 +
-image::vmware-complete.png[]
+// image::vmware-complete.png[]
 
 . Wait for the template to be loaded.
 +
@@ -103,28 +103,28 @@ image::vmware-loading.png[]
 
 In production deployments, ThoughtSpot requires you to have three 2TB HDFS disks on HDD (3 x 2TB). If you expect your user data capacity for each VM to be 100 GB or less, you may not need three 2TB disks. Refer to xref:vmware.adoc#supported-configurations[Supported configurations] for more information. Follow these steps to create the required 3 2TB hard disks.
 
-. Edit the VM you just created.
+. Edit the VM you just created. Select *Edit*.
 +
-image::vmware-add-disk0.png[]
+// image::vmware-add-disk0.png[]
 
 . Select menu:Add hard disk[New hard disk].
 +
-image::vmware-adddisk1.png[]
+// image::vmware-adddisk1.png[]
 +
 The new disk appears as a new row under the only existing SSD row.
 
 . Click the *New Hard disk* to expand the detailed configuration options.
 . Set the options as follows.
 +
-size:: 2 TB
+Size:: 2 TB
 Location:: Use the *Browse* button to select the hard disk store.
 +
-image::vmware-adddisk3.png[]
+// image::vmware-adddisk3.png[]
 Thin provisioned:: Check this option.
 +
-You should see something similar to the following:
+// You should see something similar to the following:
 +
-image::vmware-add-disk-2-tb.png[]
+// image::vmware-add-disk-2-tb.png[]
 . Save your changes.
 . Repeat steps 1-5 to create additional hard disks. ThoughtSpot requires 3 hard disks for most environments. If you expect your user data capacity for each VM to be 100 GB or less, you may not need three 2TB disks. Refer to xref:vmware.adoc#supported-configurations[Supported configurations] for more information.
 . Power on the VM.
