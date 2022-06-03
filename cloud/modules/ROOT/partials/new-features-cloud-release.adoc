@@ -26,6 +26,47 @@ When you download a table in `XLSX` format, the downloaded table now shows the s
 [#8-5-0-cl-data-engineer]
 === For the Data Engineer
 
+[#data-workspace]
+Data Workspace::
+The new Data Workspace is now GA and on by default. It redesigns the *Data* section of the product. To access it, select *Data* from the top navigation bar. The redesign introduces several new features, such as SQL-based views, dbt integration, and SpotApps, and makes the UI more intuitive.
++
+See xref:data-workspace.adoc[Data workspace].
+
+[#sql-views]
+SQL-based views::
+SQL-based views are now GA and on by default. Users can create views based on custom SQL queries, and use those views as data sources. This type of view has the same functionality as a view based on searching your data.
++
+See xref:sql-views.adoc[SQL views].
+
+[#dbt]
+Integration with dbt::
+The dbt integration is now GA and on by default. You can provide your existing dbt models and automatically create worksheets in ThoughtSpot that you can use to perform searches on your data.
++
+See xref:dbt-integration.adoc[dbt integration].
+
+[#spotapps]
+SpotApps::
+SpotApps are now GA and on by default. SpotApps are ThoughtSpot's new out-of-the-box solution templates built for specific use cases and data sources. They are built on xref:tml.adoc[ThoughtSpot Modeling Language (TML)] Blocks, which are pre-built pieces of code that are easy to download and implement directly from the product.
++
+SpotApps mimic the data models of the applications they are based on, such as ServiceNow or Jira. After you connect to your data in your cloud data warehouse, ThoughtSpot maps that data to SpotApp columns, and creates pre-built but still customizable worksheets, answers, and Liveboards, based on your data.
++
+The following SpotApps are now available:
++
+--
+* ServiceNow Incident Management
+* JIRA Issue Management
+* Google Analytics
+* Snowflake Performance and Consumption
+* Redshift Performance and Consumption
+* Okta Application Management
+* Databricks Storage and Performance
+* HubSpot Email Marketing
+* JIRA Sprint Management
+* GBQ Performance and Consumption
+--
++
+See xref:spotapps.adoc[SpotApps].
+
 [#8-5-0-cl-it-ops-engineer]
 === For the IT Ops Engineer
 
