@@ -1,8 +1,12 @@
 = SQL-based views
-:last_updated: 6/3/2022
+:last_updated: 6/6/2022
 :linkattrs:
 :experimental:
 :page-layout: default-cloud
+
+NOTE: Only users with the *Can administer ThoughtSpot* or the *Can manage data* privilege can create views and link them.
+
+IMPORTANT: Views do not support row level security (RLS), so all users of a view can see all the data it contains.
 
 With SQL views, you can quickly start using ThoughtSpot to get insights from your data. Simply connect to your data in an external warehouse, and you can run SQL queries on it. When you save these queries as SQL views, they become data sources that you can run traditional ThoughtSpot xref:search-data.adoc[searches] on, allowing you to create charts, tables, and Liveboards from the data.
 

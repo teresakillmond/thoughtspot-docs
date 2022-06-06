@@ -2,14 +2,16 @@
 
 The syntax and functionality of joins in the table TML file differs from the syntax and functionality for Worksheet and View TML files.
 
-When you edit the information in the <<joins,joins>> section of the TML for a Worksheet or View, you override the table join(s) from the table the Worksheet or View comes from. However, you only override the join(s) for the specific Worksheet or View you are editing, *not* for the source table.
+When you edit the information in the <<joins_syntax,joins>> section of the TML for a Worksheet or View, you override the table join(s) from the table the Worksheet or View comes from. However, you only override the join(s) for the specific Worksheet or View you are editing, *not* for the source table.
 
-When you edit the information in the <<joins_with,joins_with>> section of the TML for a table, you edit the join information for the source table, the destination table, and any dependents, such as Worksheets and Views. Note that you can only edit joins for which the table is the source table.
+When you edit the information in the <<joins_with_syntax,joins_with>> section of the TML for a table, worksheet, view, or SQL view, you edit the join information for the source object, the destination object, and any dependents, such as worksheets and views. Note that you can only edit joins for which the object is the source.
 
-=== Worksheet and View join syntax
+=== Worksheet, view, and SQL view join syntax
 
-For Worksheets and Views, the join syntax is the following:
+For worksheets, views, and SQL views, the join syntax is the following. The <<joins_syntax,joins>> section defines the joins that the worksheet, view, or SQL view was built on, and the <<joins_with_syntax,joins_with>> section defines the joins from that worksheet, view, or SQL view to another object.
 
+[#joins_syntax]
+`joins` syntax
 [subs=+macros]
 ....
 <<joins,joins>>:
@@ -28,21 +30,40 @@ For Worksheets and Views, the join syntax is the following:
     - <join_name_2>
 ....
 
-=== Worksheet and View join functionality and Limitations
+[#joins_with_syntax]
+`joins_with` syntax
+[subs=+macros]
+....
+<<joins_with,joins_with>>:
+- <<name,name>>: <join_name_1>
+  <<description,description>>: <optional_join_description_1>
+  <<destination,destination>>:
+    <<name,name>>: <destination_table_name_1>
+    <<fqn,fqn>>: <optional_table_guid_1>
+  <<on,on>>: <join_expression_string_1>
+  <<type,type>>: [RIGHT_OUTER | LEFT_OUTER | INNER | OUTER]
+  <<is_one_to_one,is_one_to_one>>: [ false | true ]
+  <<name,name>>: <join_name_2>
+  <<name,name>>: <join_name_n>
+....
 
-With Worksheet and View joins, you can accomplish the following tasks:
+=== Worksheet, view, and SQL view join functionality and limitations
 
-- Add new joins at the Worksheet or View level
-- Modify existing joins at the Worksheet or View level
-- Delete existing joins at the Worksheet or View level
+With worksheet, view, and SQL view joins, you can accomplish the following tasks:
 
-Worksheet and View joins have the following limitation:
+- Add new joins at the worksheet, view, or SQL view level
+- Modify existing joins at the worksheet, view, or SQL view level
+- Delete existing joins at the worksheet, view, or SQL view level
 
-- You cannot modify joins at the table level from the Worksheet or View TML file. You can only override the joins for that specific Worksheet or View.
+Worksheet, view, and SQL view joins have the following limitation:
+
+- You cannot modify joins at the table level from the worksheet, view, or SQL view TML file. You can only override the joins for that specific worksheet, view, or SQL view.
 
 === Table join syntax
 
 To reduce ambiguity, you may need to add the optional `fqn` parameter to your TML file when you reference source tables or connections. This is necessary if you have multiple connections or tables with the same name. If you do not add the `fqn` parameter, and the connection or table you reference does not have a unique name, the file import fails.
+
+The <<joins_with_syntax,joins_with>> section defines the joins from the table to another object.
 
 [subs=+macros]
 ....

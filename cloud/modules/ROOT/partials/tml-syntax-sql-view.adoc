@@ -1,6 +1,6 @@
-== Syntax of the view TML file
+== Syntax of the SQL view TML file
 
-The `TML` file for scriptable views has a specific syntax.
+The `TML` file for scriptable SQL views has a specific syntax.
 
 See the xref:parameters[TML parameters] for details about the keywords used in this example.
 
@@ -12,22 +12,19 @@ To reduce ambiguity, you may need to add the optional `fqn` parameter to your TM
 
 Refer to <<syntax-joins,join syntax>> for more information on the functionality and syntax of worksheet, view, SQL view, and table joins in TML.
 
-NOTE: If you edit the joins in the view TML file, you are only editing the joins for that specific view. You are not editing the joins at the table level. To modify table-level joins, you must edit the source table's TML file.
+NOTE: If you edit the joins in the SQL view TML file, you are only editing the joins for that specific SQL view. You are not editing the joins at the table level. To modify table-level joins, you must edit the source table's TML file.
 
 [subs=+macros]
 ....
-<<guid,guid>>: <view_guid>
-<<view,view>>:
+<<guid,guid>>: <sql_view_guid>
+<<sql_view,sql_view>>:
   <<name,name>>: <view_name>
   <<description,description>>:
     This is a multi-line description of the View.
     Description line 2
-  <<tables,tables>>:
-  - <<name,name>>: <table_name_1>
-    <<id,id>> : <optional_table_id>
-    <<fqn,fqn>> : <optional_GUID_of_table_name>
-  - <<name,name>>: <table_name_2>
-  - <<name,name>>: <table_name_n>
+  <<connection,connection>>:
+    <<name,name>>: <connection_name>
+    <<fqn,fqn>>: <optional_connection_GUID>
   <<joins,joins>>:
   - <<name,name>>: <join_name_1>
     <<source,source>>: <source_table_name>
@@ -52,33 +49,12 @@ NOTE: If you edit the joins in the view TML file, you are only editing the joins
     <<join_path,join_path>>:
     - <<join,join>>:
       - <join_name_n>
-  <<formulas,formulas>>:
-  - <<id,id>>: <formula_id_1>
-    <<name,name>>: <formula_name_1>
-    <<expr,expr>>: <formula_definition_1>
-    <<properties,properties>>: <formula_properties_1>
-      <<column_type,column_type>>: [ MEASURE | ATTRIBUTE ]
-      <<data_type,data_type>>: [ BOOL | VARCHAR | DOUBLE | FLOAT | INT | BIGINT | DATE | DATETIME | TIMESTAMP | TIME ]
-      <<aggregation,aggregation>>: [ SUM | COUNT | AVERAGE | MAX | MIN |
-                         COUNT_DISTINCT | NONE | STD_DEVIATION | VARIANCE]
-  - <<id,id>>: <formula_id_n>
-    <<name,name>>: <formula_name_n>
-    <<expr,expr>>: <formula_definition_n>
-    <<properties,properties>>: <formula_properties_n>
-  <<filters,filters>>:
-  - <<column,column>>: <filtered_column_name_1>
-    <<oper,oper>>: <filter_operator>
-    <<values,values>>: <filtered_values>
-    - value 1
-    - value 2
-  - <<column,column>>: <filtered_column_name_n>
-  <<search_query,search_query>>: <query_string>
-  <<view_columns,view_columns>>:
+  <<sql_query,sql_query>>: <sql_query_string>
+  <<sql_view_columns,sql_view_columns>>:
   - <<name,name>>: <column_name_1>
     <<description,description>>: <optional_column_description>
-    <<search_output_column,search_output_column>>: <query_column_name>
-    <<column_id,column_id>>: <table_path>::<column_id_1>
-    <<phrase,phrase>>: <phrase_string_1>
+    <<db_column_name,db_column_name>>: <database_column_name>
+    <<sql_output_column,sql_output_column>>: <sql_query_column_name>
     <<properties,properties>>:
       <<column_type,column_type>>: [ MEASURE | ATTRIBUTE ]
       <<aggregation,aggregation>>: [ SUM | COUNT | AVERAGE | MAX | MIN |
@@ -111,10 +87,16 @@ NOTE: If you edit the joins in the view TML file, you are only editing the joins
         - country : <name_supported_country>
         - region_name : <region_name_in_UI>
       <<spotiq_preference,spotiq_preference>> : <spotiq_preference_string>
-  - <<name,name>>: <column_name_2>
-    <<description,description>> : <column_description>
-    <<search_output_column,search_output_column>>: <query_column_name>
-    <<column_id,column_id>> : <table_path>::<column_id_2>
+  - <<name,name>> : <column_name_2>
+    <<description,description>> : <column_description_2>
+    <<sql_output_column,sql_output_column>>: <sql_query_column_name_2>
+    <<properties,properties>>:
+    ...
+  - <<name,name>> : <column_name_n>
+    <<description,description>> : <column_description_n>
+    <<sql_output_column,sql_output_column>>: <sql_query_column_name_n>
+    <<properties,properties>>:
+    ...
   <<joins_with,joins_with>>:
   - <<name,name>>: <join_name_1>
     <<description,description>>: <optional_join_description_1>
