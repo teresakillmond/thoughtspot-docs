@@ -21,7 +21,7 @@ Worksheets are the most commonly used data sources for searching.
 
 Above the list of data sources, you can see quick links to objects you recently viewed. These links tell you when the object was last modified, and when you last viewed it.
 
-=== Data types
+=== Data source types
 // if we add the ability to upload CSVs, add user-uploaded data to the list of data sources that people see
 
 [cols="15,~,15",option="header"]
@@ -92,7 +92,9 @@ The Data workspace also contains information about your data connections.
 
 image::data-workspace-connections.png[Connections tab]
 
-Your connections appear under the xref:connections.adoc[Connections] tab, in the side navigation bar of the Data workspace. You can add, edit, remap, delete, or apply tags to connections to external data warehouses from the *Connections* page.
+Your connections appear under the *Connections* tab, in the side navigation bar of the Data workspace. You can add, edit, remap, delete, or apply tags to connections to external data warehouses from the *Connections* page.
+
+To learn more about connecting to your data in an external data warehouse, refer to xref:connections.adoc[].
 
 === Add a connection
 To *add* a connection, select the icon for the type of connection you would like to add, such as Snowflake or Amazon Redshift. If you do not see your data warehouse, and it is one of ThoughtSpot's xref:connections.adoc[supported data warehouses], select *Others*.
@@ -101,7 +103,7 @@ To *add* a connection, select the icon for the type of connection you would like
 
 To *edit*, *remap*, or *delete* a connection, select the more menu image:icon-more-10px.png[more menu icon] for the connection, and select the action you would like to take.
 
-== Bulk actions
+=== Bulk actions
 To *bulk delete* or *apply tags in bulk*, follow these steps:
 
 . Ensure that you are in list view. Click on the *List/ Tile view* toggle above the list of connections, to the right of your screen.
@@ -110,14 +112,70 @@ To *bulk delete* or *apply tags in bulk*, follow these steps:
 
 . At the top of the list of connections, several buttons appear. You can delete the connections or apply xref:tags.adoc[tags].
 
-=== Sort
+=== Filter connections
 
-=== Filter
+Use the filters and the search bar at the top of the list of connections to find the connection you are interested in. You can filter in the following ways:
+
+* By *tag*
+* By *author*
+
+You can also use the search bar to find a specific connection, if you know its name.
+
+=== Sort connections
+
+//double-check this when i get a working cluster
+
+You can sort the connections that display on the *Connections* page of the Data workspace in the following ways. Note that you must be in list view to sort the connections.
+
+* *Alphabetically by author*: You can sort by author alphabetically, either ascending or descending.
+Click on *Author*, above the list of connections.
+To see ascending order, select *Author* again.
+* *Alphabetically by connection name*: You can sort by connection name alphabetically, either ascending or descending.
+Click on *Connection name*, above the list of connections.
+To see ascending order, select *Connection name* again.
+* *Alphabetically by connection type*: You can sort by connection type alphabetically, either ascending or descending.
+Click on *Connection type*, above the list of connections.
+To see ascending order, select *Connection type* again.
+* *By how recently anyone modified the connection*: You can sort by how recently anyone modified the connection, either ascending or descending.
+Click on *Modified*, above the list of connections.
+To see ascending order, select *Modified* again.
+* *By number of tables in the connection*: You can sort by how the number of tables in the connection, either ascending or descending.
+Click on *Tables*, above the list of connections.
+To see ascending order, select *Tables* again.
+
+To see more connections, scroll down to the bottom of the page and select *Next*.
+ThoughtSpot displays 20 objects on each page.
+
+These changes do not persist across sessions.
+If you log out and log back in, the view returns to the default.
 
 [#spotapps]
 == SpotApps
+In the Data workspace, you can deploy SpotApps, ThoughtSpot's out-of-the-box solution templates built for specific use cases and data sources. When you deploy a SpotApp, ThoughtSpot creates pre-built but still customizable worksheets, answers, and Liveboards, based on your data in Jira, ServiceNow, Snowflake, and many other applications.
 
-== Related information
+To learn more about SpotApps, refer to xref:spotapps.adoc[SpotApps].
 
-* xref:sharing.adoc[About sharing]. Whenever you are working in ThoughtSpot, you are in your own private environment until you share your work with others. This applies to searches, Liveboards, and any data you upload.
-* xref:data-modeling-settings.adoc[Overview of data modeling settings]
+image::data-workspace-spotapps.png[Data workspace spotapps page]
+
+The SpotApps Library is accessible from the *SpotApps* tab in the side navigation bar of the Data workspace. Click on the tile for any SpotApp that interests you, and refer to xref:spotapps.adoc[SpotApps] to learn how to deploy them.
+
+== Usage statistics
+
+To view usage statistics for your connections to external data sources, select *Usage statistics* from the side navigation bar of the Data workspace. There, you can view the system Liveboard for connections, with information on monthly and daily row count, query count, and query performance for each connection.
+
+image::data-workspace-usage-statistics.png[Data workspace usage statistics page]
+
+== Utilities
+
+The *Utilities* section of the Data workspace contains many of your additional workflows as a data engineer.
+
+image::data-workspace-utilities.png[Data workspace utilities page]
+
+Here, you can accomplish the following tasks:
+
+* xref:tml-import-export-multiple.adoc[Import and export custom sets of TML files]
+* xref:data-modeling-edit.adoc[]
+* xref:schema-viewer.adoc[View the system data schema]
+* xref:schedule-liveboards.adoc[Manage Liveboard schedules]
+* xref:connections-cust-cal.adoc[Manage the custom calendar]
+* xref:dbt-integration.adoc[Integrate with dbt]
