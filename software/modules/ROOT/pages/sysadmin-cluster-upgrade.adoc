@@ -59,32 +59,37 @@ Download the release, including any patches for the version you are installing, 
 
 WARNING: Do not put the release files in the `/home/admin` or `/home/thoughtspot` directories. You should put the release files in one of the bigger hard disks/volumes on one node in the cluster. Typically, this is `/export/sdb1/` for hardware appliances, VMware and GCP, `/export/sdc1/` for Azure, and `/export/xvdb1/` for AWS.
 
-To download the release files, follow these steps:
+To download the release files, use one of two methods:
 
-. Navigate to [LINK].
-. Download the release content folder for the version you would like to upgrade to. This includes the release, any patches, the `Md5checksum`, and the `capture_cluster_information.sh` script. This script inventories a ThoughtSpot cluster for use in audit or recovery, if necessary. [i'm not sure what this actually looks like on egnyte]
-. In your terminal application, connect to the first node in your ThoughtSpot cluster using `ssh`.
-Run `ssh admin@<ThoughtSpotnodeIP>`.
+* Download the release files from Egnyte, and use `winscp` or a similar secure copy method to copy the downloaded release bundle from your Downloads folder to any path in the `/export` folder of your ThoughtSpot node that has enough space.
 +
-Replace `ThoughtSpotnodeIP` with your specific network information.
+<<download-scp, To download using secure copy, follow these steps>>.
+
+* If your ThoughtSpot cluster has internet access and allows access to Egnyte, you can download the files directly to any path in the `/export` folder of your ThoughtSpot node that has enough space, using a `wget` command.
++
+<<download-wget,To download using wget, follow these steps>>.
+
+[#download-scp]
+==== Download using secure copy
+. Navigate to [RELEASE LINK].
+. Download the release content folder for the version you would like to upgrade to. This includes the release, any patches, the `Md5checksum`, and the `capture_cluster_information.sh` script. This script inventories a ThoughtSpot cluster for use in audit or recovery, if necessary.
+. In your terminal application, log in to your ThoughtSpot node using `ssh`.
+. Copy the downloaded release bundle from your Downloads folder to any path in the `/export` folder of your ThoughtSpot node that has enough space, using winscp or a similar secure copy method.
+
+[#download-wget]
+==== Download using wget
+. In your terminal application, log in to your ThoughtSpot node using `ssh`.
+. Navigate to any path in the `/export` folder of your ThoughtSpot node that has enough space.
+. If your ThoughtSpot cluster has internet access and allows access to Egnyte, you can download the files directly to the node. Use the following `wget` command:
 +
 [source,bash]
 ----
- $ ssh admin@<ThoughtSpotnodeIP>
-----
-. Copy the downloaded release bundle from your Downloads folder to any path in the `/export` folder of your ThoughtSpot node that has enough space. Use one of two methods:
-+
-* Use `winscp` or a similar secure copy method.
-* If your ThoughtSpot cluster allows access to Egnyte, you download the files directly to the node. Use the following `wget` command:
-+
-[source,bash]
-----
- $ wget <EGNYTE LINK THAT I WILL PROVIDE WHEN I HAVE IT> -c -O <release-bundle-name>
+ $ wget <EGNYTE RELEASE LINK THAT I WILL PROVIDE WHEN I HAVE IT> -c -O <release-bundle-name>
 ----
 
 [#upgrade-step-2]
 === Step 2: Check disk space
-. Check disk space by running `df -h`. `/tmp` needs at least 21 GB free for upgrades.
+. Check disk space by running `df -h`. `/tmp` needs at least 21 GB free for upgrades, and you need at least 10% availability on every other filesystem, except for `/update`.
 +
 [source,bash]
 ----
@@ -108,7 +113,7 @@ The output of this command shows all disks in the ThoughtSpot node and their ava
  $ tscli cluster status
 ----
 +
-Make sure that the output includes `Cluster: RUNNING`, `Database: READY`, and `Search Engine: READY` or `UPDATING`. Make sure the output does NOT include any errors.
+Make sure that the output includes `Cluster: RUNNING`, `Database: READY`, and `Search Engine: READY`, `PENDING`, `INDEXING`, or `UPDATING`. Make sure the output does NOT include any errors.
 
 . Run `tscli cluster check` to ensure there are no component failures.
 +
@@ -126,11 +131,11 @@ Make sure that the output for each component is `SUCCESS`.
  $ ./capture_cluster_information.sh
 ----
 
-. Check the integrity of the release by running the `md5sum -c <MD5checksum file>` command. Replace `MD5checksum file` with the name of the checksum file in your release bundle.
+. Check the integrity of the release by running the `md5sum -c <checksum file name>` command. Replace `checksum file name` with the name of the checksum file in your release bundle. It will likely be in the format `\*.MD*.`
 +
 [source,bash]
 ----
- $ md5sum -c <MD5checksum file>
+ $ md5sum -c <checksum file name>
 ----
 +
 The output should be a list of filenames, followed by  `OK`.
@@ -149,7 +154,7 @@ The output should be a list of filenames, followed by  `OK`.
 +
 Note the following parameters:
 
-`release-number`:: is the release number of your ThoughtSpot installation, such as `6.0`, `5.3`, `5.3.1`, and so on.
+`release-number`:: is the release number of your ThoughtSpot installation, such as 8.4.1.sw, 7.2.1, and so on.
 
 . During the upgrade process, the node reboots. The node reboot logs you out of the node. Wait about 15 minutes before you `ssh` back in. If the `ssh` output says something similar to `Connection refused`, the node is still rebooting.
 
@@ -162,29 +167,12 @@ Note the following parameters:
 $ tscli cluster status --tail
 ----
 +
-NOTE: During the upgrade process, some services may temporarily be unavailable. Their status in the `tscli cluster status --tail` command might be `FAILURE`. The service should return to `SUCCESS` as the upgrade continues. If a service continues to fail, xref:support-contact.adoc[contact ThoughtSpot Support].
+NOTE: During the upgrade process, some services may temporarily be unavailable. The status of an update task in the `tscli cluster status --tail` command might be `FAILURE`. In this case, the installer will run the command again, and the update task should return to `SUCCESS. If an update task continues to fail, xref:support-contact.adoc[contact ThoughtSpot Support].
 
-. The upgrade takes about 1.5 hours to complete, including the objects upgrader.
+. The upgrade takes about 1.5 hours to complete.
 
 [#upgrade-step-6]
 === Step 6: Finalize installation
-. After the upgrade completes, log out of the shell.
-+
-[source,bash]
-----
-$ logout
-----
-
-. `SSH` back into the cluster.
-Run `ssh admin@<ThoughtSpotnodeIP>`.
-+
-Replace `ThoughtSpotnodeIP` with your specific network information.
-+
-[source,bash]
-----
- $ ssh admin@<ThoughtSpotnodeIP>
-----
-
 . To check that the cluster is ready, run `tscli cluster status`.
 +
 [source,bash]
@@ -192,7 +180,7 @@ Replace `ThoughtSpotnodeIP` with your specific network information.
  $ tscli cluster status
 ----
 +
-Ensure that the `DATABASE` and `SEARCH ENGINE` fields in the `tscli cluster status` command output show `READY`, and that the output reports no errors.
+Ensure that the `DATABASE` and `SEARCH ENGINE` fields in the `tscli cluster status` command output show `READY`, and that the output reports no errors. It may take up to an hour for the `DATABASE` and `SEARCH ENGINE` fields to show `READY`, depending on how much data you have.
 
 . Run `tscli cluster check` to ensure there are no component failures.
 +
@@ -203,7 +191,7 @@ Ensure that the `DATABASE` and `SEARCH ENGINE` fields in the `tscli cluster stat
 +
 Make sure that the output for each component is `SUCCESS`.
 
-. Sign into the ThoughtSpot application on your browser.
+. Sign in to the ThoughtSpot application on your browser. Make sure you sign in to ThoughtSpot in a new tab.
 
 . Verify the release version in the UI matches the version you upgraded to:
 
@@ -229,18 +217,35 @@ Patching a cluster updates the ThoughtSpot services and allows for bug fixes. Th
 === Step 1: Obtain cluster patch
 Download the patch or patches for the version you are running, and move it to a folder in your ThoughtSpot node. If you just upgraded to a new version, the release bundle you downloaded and copied to your ThoughtSpot node should contain the patches you need to apply.
 
-. Navigate to [LINK].
-. Download the required patches for the ThoughtSpot version you are running. [i'm not sure what this actually looks like on egnyte]
-. In your terminal application, `ssh` into your cluster.
-Run `ssh admin@<ThoughtSpotnodeIP>`.
+WARNING: Do not put the patch files in the `/home/admin` or `/home/thoughtspot` directories. You should put the patch files in one of the bigger hard disks/volumes on one node in the cluster. Typically, this is `/export/sdb1/` for hardware appliances, VMware and GCP, `/export/sdc1/` for Azure, and `/export/xvdb1/` for AWS.
+
+To download the patch files, use one of two methods:
+
+* Download the patch files from Egnyte, and use `winscp` or a similar secure copy method to copy the downloaded patch bundle from your Downloads folder to any path in the `/export` folder of your ThoughtSpot node that has enough space.
 +
-Replace `ThoughtSpotnodeIP` with your specific network information.
+<<download-scp-patch, To download using secure copy, follow these steps>>.
+
+* If your ThoughtSpot cluster has internet access and allows access to Egnyte, you can download the files directly to any path in the `/export` folder of your ThoughtSpot node that has enough space, using a `wget` command.
++
+<<download-wget-patch,To download using wget, follow these steps>>.
+
+[#download-scp-patch]
+==== Download using secure copy
+. Navigate to [PATCH LINK].
+. Download the patch folder for the version you would like to upgrade to. This includes the patches, the `Md5checksum`, and the `capture_cluster_information.sh` script. This script inventories a ThoughtSpot cluster for use in audit or recovery, if necessary.
+. In your terminal application, log in to your ThoughtSpot node using `ssh`.
+. Copy the downloaded patch bundle from your Downloads folder to any path in the `/export` folder of your ThoughtSpot node that has enough space, using winscp or a similar secure copy method.
+
+[#download-wget-patch]
+==== Download using wget
+. In your terminal application, log in to your ThoughtSpot node using `ssh`.
+. Navigate to any path in the `/export` folder of your ThoughtSpot node that has enough space.
+. If your ThoughtSpot cluster has internet access and allows access to Egnyte, you can download the patch files directly to the node. Use the following `wget` command:
 +
 [source,bash]
 ----
- $ ssh admin@<ThoughtSpotnodeIP>
+ $ wget <EGNYTE PATCH LINK THAT I WILL PROVIDE WHEN I HAVE IT> -c -O <patch-bundle-name>
 ----
-. Copy the downloaded patch bundle from your Downloads folder to the first node in your ThoughtSpot cluster. To copy the patch bundle, refer to step 4 of <<upgrade-step-1,Download the release files>>.
 
 [#patch-step-2]
 === Step 2: Verify integrity of patch files
@@ -257,12 +262,32 @@ The patch process for each patch takes about 10 minutes. Once a patch has been a
 
 [#patch-step-4]
 === Step 4: Finalize installation
-Ensure that ThoughtSpot applied the patches successfully by running the `tscli patch ls` command. Ensure that the new patches you applied appear in the output.
+Ensure that ThoughtSpot applied the patches successfully by running several commands.
 
+. Ensure that the new patches you applied appear in the `tscli patch ls` output.
++
 [source,bash]
 ----
  $ tscli patch ls
 ----
+
+. To check that the cluster is ready, run `tscli cluster status`.
++
+[source,bash]
+----
+ $ tscli cluster status
+----
++
+Ensure that the `DATABASE` and `SEARCH ENGINE` fields in the `tscli cluster status` command output show `READY`, and that the output reports no errors. It may take up to an hour for the `DATABASE` and `SEARCH ENGINE` fields to show `READY`, depending on how much data you have.
+
+. Run `tscli cluster check` to ensure there are no component failures.
++
+[source,bash]
+----
+ $ tscli cluster check
+----
++
+Make sure that the output for each component is `SUCCESS`.
 
 [#error-recovery]
 == Error recovery
