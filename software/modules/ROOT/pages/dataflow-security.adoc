@@ -1,5 +1,5 @@
 = DataFlow security
-:last_updated: 6/6/2022
+:last_updated: 6/8/2022
 :linkattrs:
 :experimental:
 :description:
@@ -24,11 +24,11 @@ As of the 7.0 software release, DataFlow uses ThoughtSpot’s internal Postgres 
 
 == Securing DataFlow data in ThoughtSpot
 
-By default, ThoughtSpot uses JDBC in "pipe" mode for data extraction through DataFlow for all relational data sources. In this process, the system creates a named pipe under `/export/xvdb1/large_files/diyotta_agent_stage_dir/` directory. The JDBC extraction process pushes plain data to the named pipe in chunks and in parallel, `tsload` as a service reads the chunked data from the pipe and loads it to the Falcon destination table. The source data does not persist to disk at any time. After completing the load process, the system deletes the named pipe from the staging directory.
+By default, ThoughtSpot uses JDBC in _pipe_ mode for data extraction through DataFlow for all relational data sources. In this process, the system creates a named pipe under the `/export/xvdb1/large_files/diyotta_agent_stage_dir/` directory. The JDBC extraction process pushes plain data to the named pipe in chunks and in parallel, `tsload` as a service reads the chunked data from the pipe and loads it to the Falcon destination table. The source data does not persist to disk at any time. After completing the load process, the system deletes the named pipe from the staging directory.
 
-When using xref:dataflow-snowflake.adoc[Snowflake] as the DataFlow source, the default extraction type is "bulk export", and default extract mode is "pipe". Here, DataFlow stages data to the Snowflake internal user stage and then exports to pipe.
+When using xref:dataflow-snowflake.adoc[Snowflake] as the DataFlow source, the default extraction type is _bulk export_, and default extract mode is _pipe_. Here, DataFlow stages data to the Snowflake internal user stage and then exports to pipe.
 
-You can override the extraction mode from the default ‘pipe’ to ‘file’ by using DataFlow sync properties. The JDBC process extracts all data to a `csv` file as a plain text under  `/export/xvdb1/large_files/diyotta_agent_stage_dir/` directory, and provides the file as input to `tsload` as a service. After completing the load process, the system deletes the intermediate staging file.
+You can override the extraction mode from the default _pipe_ to _file_ by using DataFlow sync properties. The JDBC process extracts all data to a `csv` file as a plain text under the  `/export/xvdb1/large_files/diyotta_agent_stage_dir/` directory, and provides the file as input to `tsload` as a service. After completing the load process, the system deletes the intermediate staging file.
 
 With file sources like xref:dataflow-amazon-s3.adoc[Amazon S3], xref:dataflow-azure-blob-storage.adoc[Azure Blob Storage], xref:dataflow-google-cloud-storage.adoc[GCS] and xref:dataflow-hdfs.adoc[HDFS], DataFlow downloads source files to the staging directory `/export/xvdb1/large_files/diyotta_agent_stage_dir`, and sends them to `tsload` as a service. After completing the load process, the system deletes the downloaded files.
 
