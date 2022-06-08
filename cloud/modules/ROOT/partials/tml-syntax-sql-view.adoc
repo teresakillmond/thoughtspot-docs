@@ -25,35 +25,10 @@ NOTE: If you edit the joins in the SQL view TML file, you are only editing the j
   <<connection,connection>>:
     <<name,name>>: <connection_name>
     <<fqn,fqn>>: <optional_connection_GUID>
-  <<joins,joins>>:
-  - <<name,name>>: <join_name_1>
-    <<source,source>>: <source_table_name>
-    <<destination,destination>>: <destination_table_name>
-    <<type,type>>: [RIGHT_OUTER | LEFT_OUTER | INNER | OUTER]
-    <<on,on>>: <join_expression_string>
-    <<is_one_to_one,is_one_to_one>>: [ false | true ]
-  <<table_paths,table_paths>>:
-  - <<id,id>>: <table_path_name_1>
-    <<table,table>>: <table_name_1>
-    <<join_path,join_path>>:
-    - <<join,join>>:
-      - <join_name_1>
-      - <join_name_n>
-  - <<id,id>>: <table_path_name_2>
-    <<table,table>>: <table_name_2>
-    <<join_path,join_path>>:
-    - <<join,join>>:
-      - <join_name_2>
-  - <<id,id>>: <table_path_name_n>
-    <<table,table>>: <table_name_n>
-    <<join_path,join_path>>:
-    - <<join,join>>:
-      - <join_name_n>
   <<sql_query,sql_query>>: <sql_query_string>
   <<sql_view_columns,sql_view_columns>>:
   - <<name,name>>: <column_name_1>
     <<description,description>>: <optional_column_description>
-    <<db_column_name,db_column_name>>: <database_column_name>
     <<sql_output_column,sql_output_column>>: <sql_query_column_name>
     <<properties,properties>>:
       <<column_type,column_type>>: [ MEASURE | ATTRIBUTE ]

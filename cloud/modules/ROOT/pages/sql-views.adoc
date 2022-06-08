@@ -8,7 +8,7 @@ NOTE: Only users with the *Can administer ThoughtSpot* or the *Can manage data* 
 
 IMPORTANT: Views do not support row level security (RLS), so all users of a view can see all the data it contains.
 
-With SQL views, you can quickly start using ThoughtSpot to get insights from your data. Simply connect to your data in an external warehouse, and you can run SQL queries on it. When you save these queries as SQL views, they become data sources that you can run traditional ThoughtSpot xref:search-data.adoc[searches] on, allowing you to create charts, tables, and Liveboards from the data.
+With SQL views, you can quickly start using ThoughtSpot to get insights from your data. Simply create a connection to your external data warehouse, and you can run SQL queries against it. When you save these queries as SQL views, they become data sources that you can run traditional ThoughtSpot xref:search-data.adoc[searches] on, allowing you to create charts, tables, and Liveboards from the data.
 
 SQL views are very similar to other ThoughtSpot views. Refer to xref:views.adoc[] for an introduction to views and their use in ThoughtSpot. This article describes a specific type of view, the SQL view, which follows the same rules as other ThoughtSpot views.
 
@@ -28,7 +28,11 @@ If you did not already create a connection, select *Add new connection*. Refer t
 
 . After you select the connection, a list of tables appears in the side panel, under the schema and database names. To see a list of the columns in a table, click on the table name. A list of the columns and their data types appears.
 
-. In the SQL editor, write your SQL query. The SQL editor has autocomplete functionality, based on the tables and columns in your connection.
+. In the SQL editor, write your SQL query.
++
+NOTE: The SQL you use must be compliant with your data warehouse's SQL standard.
++
+The SQL editor has autocomplete functionality, based on the tables and columns in your connection.
 +
 In the example below, after we type `select * from`, the SQL editor suggests several tables. When we click on the `DIM_RETAPP_PRODUCTS` table, the query autocompletes as `select * from RETAILAPPAREL.PUBLIC.DIM_RETAPP_PRODUCTS AS d`, completing this part of the query and assigning the table an alias.
 +
@@ -51,7 +55,7 @@ image::sql-view-autocomplete.gif[SQL view autocomplete gif]
 == Managing SQL views
 
 You can use a SQL view just like any other data source.
-You can even link it to other sources by xref:join-add.adoc[defining a relationship].
+You can also join a SQL view to other tables or views by xref:join-add.adoc[defining a relationship].
 When you save a SQL query as a view, and then use it as a source in a new search, it is similar to doing a nested query in SQL, only much easier to create.
 
 You can perform the same actions on a SQL view that you can perform on a regular view:
