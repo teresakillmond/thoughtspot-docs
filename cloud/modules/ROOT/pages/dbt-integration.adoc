@@ -4,4 +4,67 @@
 :experimental:
 :page-layout: default-cloud
 
+ThoughtSpot's dbt integration allows you to easily provide your existing dbt models and automatically create ThoughtSpot xref:worksheets.adoc[worksheets], which you can use to xref:search-data.adoc[search your data].
 
+dbt takes your raw data in your data warehouse and transforms and validates it. ThoughtSpot's dbt integration  connects users to their cloud data warehouse, integrates with your dbt models using an API key or zip file, and generates the relationships between the tables defined in the dbt model that you select. Then, ThoughtSpot creates worksheets, based on the relationships between the tables. These worksheets provide user-friendly logical views of your complex datasets.
+
+== Integrating with dbt
+You can set up your dbt integration from the Data workspace. To integrate with dbt, follow these steps:
+
+. Ensure that you have already xref:connections.adoc[created a connection] to your external cloud data warehouse.
+
+. Select *Data* in the top navigation bar.
+
+. Select *Utilities* in the side navigation bar.
+
+. Under *dbt Integration*, select *Open dbt integration wizard*. The dbt integration wizard opens.
++
+image::dbt-integration-connect.png[dbt integration step 1]
+
+. Under *Data warehouse*, select the cloud data warehouse you would like to use from the dropdown, or search for it using the search bar in the dropdown.
+
+. Under *Database*, select the database within the cloud data warehouse that you would like to use from the dropdown, or search for it using the search bar in the dropdown.
+
+. Under *Connect to dbt project*, select either *Via dbt cloud* or *Use a .zip file*.
+
+. If you select *Via dbt cloud*, fill in the following parameters:
++
+API key:: This is also called the *API token* in dbt. Any dbt user with a dbt developer license has an API token. Find your token in your dbt profile, under *API access*, and enter it in the dbt integration wizard under *API key*.
+Account ID:: Your default dbt Cloud account ID. Find your account ID in your dbt Cloud URL, after you log in. For example, if your URL is `https://cloud.getdbt.com/#/accounts/12345/projects/56789/dashboard`, your account ID is `12345`.
+Project ID:: Find your project ID in your dbt Cloud URL, after you log in. For example, if your URL is `https://cloud.getdbt.com/#/accounts/12345/projects/56789/dashboard`, your project ID is `56789`.
+
+. If you select *Use a .zip file*, click the *Upload* button, and add the zip file from your files.
+
+. Select *Next*.
+
+. On the next screen, select dbt folders to import. ThoughtSpot lists the model names, paths, and the number of tables they have. Your model must have at least 2 tables.
++
+image::dbt-integration-folder.png[dbt integration step 2]
+
+. Select *Next*.
+
+. On the next screen, select tables to import. By default, ThoughtSpot imports all tables in the folder. Deselect any tables you do not want to import.
++
+image::dbt-integration-tables.png[dbt integration step 3]
+
+. Select *Finish*.
+
+. The *Worksheets generated* page appears. ThoughtSpot generates several worksheets from your dbt models.
++
+image::dbt-integration-worksheets.png[dbt integration step 4]
++
+To inspect the worksheet details, click on any of the worksheet names.
++
+To xref:search-data.adoc[search the data] on the worksheet, select *Search on this worksheet* next to any worksheet.
+
+. Select *Exit*.
+
+. On the Data workspace home page, you can see the tables and worksheets that you just created from dbt.
++
+image::dbt-integration-home-page.png[dbt integration view worksheets and tables]
+
+. If you click on any of the tables and worksheets you created, and then select *Joins*, you can see the joins ThoughtSpot created, based on the relationships in dbt.
+
+== Limitations
+
+//waiting for info from ravi
