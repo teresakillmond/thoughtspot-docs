@@ -8,9 +8,7 @@
 
 Learn how to deploy an AWS PrivateLink between your {connection} data warehouse and the ThoughtSpot Cloud tenant.
 
-Your data's security is important.
-To ensure a secure two-way data exchange between your cloud data warehouse and the ThoughtSpot Cloud tenant, you can use an AWS PrivateLink.
-This option is currently available for your Amazon Redshift, Databricks, Dremio, Oracle, SAP HANA, Snowflake, Starburst, or Teradata data warehouse connections.
+include::partial$private-link-intro.adoc[]
 
 This article details how to enable a PrivateLink for *{connection}*;
 to enable it for other data warehouses, refer to:
@@ -69,11 +67,17 @@ Complete https://docs.databricks.com/administration-guide/cloud-configurations/a
 [#create-workspace]
 === Step 4: Create or update the Databricks workspace
 
-Complete https://docs.databricks.com/administration-guide/cloud-configurations/aws/privatelink.html#step-7-create-or-update-a-workspace-with-privatelink-configurations-using-the-account-api[Step 7: Create or update a workspace with PrivateLink configurations using the Account API^] in the https://docs.databricks.com/administration-guide/cloud-configurations/aws/privatelink.html[Databricks AWS PrivateLink documentation^].
+. Complete https://docs.databricks.com/administration-guide/cloud-configurations/aws/privatelink.html#step-7-create-or-update-a-workspace-with-privatelink-configurations-using-the-account-api[Step 7: Create or update a workspace with PrivateLink configurations using the Account API^] in the https://docs.databricks.com/administration-guide/cloud-configurations/aws/privatelink.html[Databricks AWS PrivateLink documentation^].
+
+. Make a note of your *Databricks Workspace URL*. You must send it to {support-url} in the next step. This URL is in the format `https://xxx.cloud.databricks.com/`.
 
 [#support]
 === Step 5: Contact ThoughtSpot Support
-After you complete steps 1-4 in this document, contact {support-url}. They must finish the PrivateLink configuration. After {support-url} finishes the configuration, they will contact you, and you can move on to <<embrace,Step 6: Configure Connections>>.
+After you complete steps 1-4 in this document, contact {support-url}. They must finish the PrivateLink configuration.
+
+Make sure you send ThoughtSpot Support your *Databricks Workspace URL*. This URL is in the format `https://xxx.cloud.databricks.com/`.
+
+After {support-url} finishes the configuration, they will contact you, and you can move on to <<embrace,Step 6: Configure Connections>>.
 
 [#embrace]
 === Step 6: Configure Connections
