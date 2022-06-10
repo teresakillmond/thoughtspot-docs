@@ -234,12 +234,9 @@ NOTE: Features designated as [.badge.badge-update]#Beta# are off by default. To 
 [#8-5-0-cl-formatting]
 *Conditional and number formatting for downloaded tables*
 
-// Teresa
+When you download a table in `XLSX` format, the downloaded table now shows the same conditional and number formatting as the table in ThoughtSpot.
 
-[#8-5-0-cl-liveboard-v2]
-*Liveboard V2 [.badge.badge-update]#Beta#*
-
-// Naomi
+image::xlsx-download.gif[XLSX download gif]
 
 [#8-5-0-cl-seekwell]
 *Seekwell as a destination: Shopify and Webflow*
@@ -249,7 +246,7 @@ NOTE: Features designated as [.badge.badge-update]#Beta# are off by default. To 
 [#8-5-0-cl-threshold-alerts]
 *Threshold-based alerts*
 
-// Teresa
+// Naomi
 
 [#8-5-0-cl-okta-business-user]
 *Okta business user features*
@@ -264,7 +261,7 @@ NOTE: Features designated as [.badge.badge-update]#Beta# are off by default. To 
 [#8-5-0-cl-mobile]
 *Mobile app updates*
 
-// Naomi
+// Mark
 
 '''
 [#secondary-8-5-0-cl]
@@ -273,22 +270,45 @@ NOTE: Features designated as [.badge.badge-update]#Beta# are off by default. To 
 [#8-5-0-cl-spotapps]
 *SpotApps*
 
-// Teresa
+SpotApps are now GA and on by default. SpotApps are ThoughtSpot’s new out-of-the-box solution templates built for specific use cases and data sources. They are built on ThoughtSpot Modeling Language (TML) Blocks, which are pre-built pieces of code that are easy to download and implement directly from the product.
 
-[#8-5-0-cl-dbt]
-*Integration with dbt*
+SpotApps mimic the data models of the applications they are based on, such as ServiceNow or Jira. After you connect to your data in your cloud data warehouse, ThoughtSpot maps that data to SpotApp columns, and creates pre-built but still customizable worksheets, answers, and Liveboards, based on your data.
 
-// Teresa
+The following SpotApps are now available:
+
+* Databricks Storage Management
+* GBQ Performance and Consumption
+* Google Analytics
+* HubSpot Email Marketing
+* JIRA Issue Management
+* JIRA Sprint Management
+* Okta Application Management
+* Redshift Performance and Consumption
+* ServiceNow Incident Management
+* Snowflake Performance and Consumption
+
+image::spotapps.gif[SpotApps gif]
 
 [#8-5-0-cl-data-workspace]
 *New data workspace*
 
-// Teresa
+The new Data Workspace is now GA and on by default. It redesigns the *Data* section of the product. To access it, select *Data* from the top navigation bar. The redesign introduces several new features, such as SQL-based views, dbt integration, and SpotApps, and makes the UI more intuitive.
+
+image::data-workspace.gif[Data workspace gif]
+
+[#8-5-0-cl-dbt]
+*Integration with dbt*
+
+The dbt integration is now GA and on by default. With the new dbt integration, you provide your existing dbt models and ThoughtSpot automatically creates worksheets you can use to query your data. To try it out, navigate to the *Data* tab, and select *Utilities*. Select *dbt Integration*.
+
+image::dbt-integration.gif[dbt integration gif]
 
 [#8-5-0-cl-sql-views]
 *SQL views*
 
-// Teresa
+SQL-based views are now GA and on by default. You can now create a view based on a custom SQL query, and use that view as a data source. To try it out, select *Data* from the top navigation bar. Then select *+ Create new > Custom SQL View*.
+
+image::sql-view.gif[SQL view gif]
 
 [#8-5-0-cl-databricks]
 *Databricks Partner Connect*
@@ -308,7 +328,8 @@ NOTE: Features designated as [.badge.badge-update]#Beta# are off by default. To 
 [#8-5-0-cl-private-link]
 *PrivateLink support*
 
-// Teresa
+ThoughtSpot now supports AWS PrivateLink for several new data warehouse connections. ThoughtSpot encrypts all your data by default. For an additional layer of security and network reliability, you can use an AWS PrivateLink.
+This option is now available for the following new data warehouse connections: Databricks, Dremio, Oracle, SAP HANA, Starburst, and Teradata.
 
 [#8-5-0-cl-okta-admin]
 *Okta admin features*
