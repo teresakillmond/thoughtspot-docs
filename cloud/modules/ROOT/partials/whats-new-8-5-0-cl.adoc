@@ -4,16 +4,6 @@ NOTE: Features designated as [.badge.badge-update]#Beta# are off by default. To 
 
 [#primary-8-5-0-cl]
 
-[#8-5-0-cl-formatting]
-*Conditional and number formatting for downloaded tables*
-
-// Teresa
-
-[#8-5-0-cl-liveboard-v2]
-*Liveboard V2 [.badge.badge-update]#Beta#*
-
-// Naomi
-
 [#8-5-0-cl-threshold-alerts]
 *Threshold-based alerts for KPI charts [.badge.badge-update]#Beta#*
 
@@ -38,6 +28,19 @@ image::monitor-threshold-alert.gif[Threshold-based alerts]
 
 You can now make content easily available to your team members when you save or share an answer. By default, the *Make this answer discoverable* checkbox that appears when you save or share an answer grants view access to any teammate with access to the answer’s underlying worksheet. Your answer appears in the list of relevant results when a teammate uses the *Search Answer* feature.
 
+[#8-5-0-cl-formatting]
+*Conditional and number formatting for downloaded tables*
+
+When you download a table in `XLSX` format, the downloaded table now shows the same conditional and number formatting as the table in ThoughtSpot. For more information,
+ifndef::pendo-links[]
+see xref:search-download.adoc#table-formatting[Download your search].
+endif::[]
+ifdef::pendo-links[]
+see xref:search-download.adoc#table-formatting[Download your search,window=_blank].
+endif::[]
+
+image::xlsx-download.gif[XLSX download gif]
+
 [#8-5-0-cl-okta-business-user]
 *Okta business user features*
 
@@ -51,7 +54,7 @@ You can now make content easily available to your team members when you save or 
 [#8-5-0-cl-mobile]
 *Mobile app updates*
 
-// Naomi
+// Mark
 
 '''
 [#secondary-8-5-0-cl]
@@ -60,7 +63,32 @@ You can now make content easily available to your team members when you save or 
 [#8-5-0-cl-spotapps]
 *SpotApps*
 
-// Teresa
+SpotApps are now GA and on by default. SpotApps are ThoughtSpot’s new out-of-the-box solution templates built for specific use cases and data sources. They are built on ThoughtSpot Modeling Language (TML) Blocks, which are pre-built pieces of code that are easy to download and implement directly from the product.
+
+SpotApps mimic the data models of the applications they are based on, such as ServiceNow or Jira. After you connect to your data in your cloud data warehouse, ThoughtSpot maps that data to SpotApp columns, and creates pre-built but still customizable worksheets, answers, and Liveboards, based on your data.
+
+The following SpotApps are now available:
+
+* Databricks Storage Management
+* GBQ Performance and Consumption
+* Google Analytics
+* HubSpot Email Marketing
+* JIRA Issue Management
+* JIRA Sprint Management
+* Okta Application Management
+* Redshift Performance and Consumption
+* ServiceNow Incident Management
+* Snowflake Performance and Consumption
+
+image::spotapps.gif[SpotApps gif]
+
+For more information,
+ifndef::pendo-links[]
+see xref:spotapps.adoc[SpotApps].
+endif::[]
+ifdef::pendo-links[]
+see xref:spotapps.adoc[SpotApps,window=_blank].
+endif::[]
 
 [#8-5-0-cl-dbt]
 *Integration with dbt*
@@ -75,7 +103,15 @@ You can now make content easily available to your team members when you save or 
 [#8-5-0-cl-sql-views]
 *SQL views*
 
-// Teresa
+SQL-based views are now GA and on by default. You can now create a view based on a custom SQL query, and use that view as a data source. For more information,
+ifndef::pendo-links[]
+see xref:sql-views.adoc[SQL views].
+endif::[]
+ifdef::pendo-links[]
+see xref:sql-views.adoc[SQL views,window=_blank].
+endif::[]
+
+image::sql-view.gif[SQL view gif]
 
 [#8-5-0-cl-databricks]
 *Databricks Partner Connect*
@@ -95,7 +131,14 @@ You can now make content easily available to your team members when you save or 
 [#8-5-0-cl-private-link]
 *PrivateLink support*
 
-// Teresa
+ThoughtSpot now supports AWS PrivateLink for several new data warehouse connections. ThoughtSpot encrypts all your data by default. For an additional layer of security and network reliability, you can use an AWS PrivateLink.
+This option is now available for the following new data warehouse connections: Databricks, Dremio, Oracle, SAP HANA, Starburst, and Teradata. For more information,
+ifndef::pendo-links[]
+see xref:connections-private-link-intro.adoc[Enabling an AWS PrivateLink between ThoughtSpot Cloud and your cloud data warehouse].
+endif::[]
+ifdef::pendo-links[]
+see xref:connections-private-link-intro.adoc[Enabling an AWS PrivateLink between ThoughtSpot Cloud and your cloud data warehouse,window=_blank].
+endif::[]
 
 [#8-5-0-cl-okta-admin]
 *Okta admin features*
