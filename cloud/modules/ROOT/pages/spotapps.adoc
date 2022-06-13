@@ -1,0 +1,92 @@
+= SpotApps
+:last_updated: 6/13/2022
+:experimental:
+:linkattrs:
+:page-layout: default-cloud
+:description: SpotApps, ThoughtSpot's scriptable applications, are out-of-the-box solution templates built for specific use cases and data sources.
+
+include::partial$liveboards-announcement.adoc[]
+
+*SpotApps* are ThoughtSpot's out-of-the-box solution templates built for specific use cases and data sources, such as Snowflake Performance and Consumption, or Jira Issue Management. Starting in the 8.5.0.cl release, SpotApps no longer refer to any set of multiple TML files. To learn about migrating custom sets of TML files, refer to xref:tml-import-export-multiple.adoc[Migrate multiple TML files].
+
+SpotApps are built on xref:tml.adoc[ThoughtSpot Modeling Language (TML)] Blocks, which are pre-built pieces of code that are easy to download and implement directly from the product.
+
+SpotApps use xref:scriptability.adoc[Scriptability], ThoughtSpot's solution for migrating data models (worksheets, tables, and views) and content (Liveboards and answers) between different environments, such as development and production. You can optionally edit these ThoughtSpot objects during the migration process.
+
+== Available SpotApps and Blocks
+ThoughtSpot currently supports the following SpotApps, built on Analytics Blocks. Analytics Blocks include pre-built Worksheet, Answer, and Liveboard Blocks.
+
+Databricks Storage and Performance::
+fill in use case
+GBQ Performance and Consumption::
+fill in use case
+Google Analytics::
+fill in use case
+HubSpot Email Marketing::
+fill in use case
+JIRA Issue Management::
+fill in use case
+JIRA Sprint Management::
+fill in use case
+Okta Application Management::
+fill in use case
+Redshift Performance and Consumption::
+fill in use case
+ServiceNow Incident Management::
+fill in use case
+Snowflake Performance and Consumption::
+fill in use case
+
+SpotApps mimic their application's data model. For example, after you connect to your ServiceNow data in your cloud data warehouse, ThoughtSpot maps that data to SpotApp columns, and creates pre-built but still customizable worksheets, answers, and Liveboards, based on your ServiceNow data.
+
+[#prerequisites]
+== Prerequisites to deploy SpotApps
+To deploy any SpotApp, you must:
+
+include::partial$spotapp-prereqs-general.adoc[]
+
+== Deploying SpotApps
+After you complete the <<prerequisites,prerequisites>>, you are ready to deploy SpotApps and begin leveraging their pre-built content.
+
+Refer to the following articles, depending on the SpotApp you would like to deploy:
+
+* xref:spotapps-databricks.adoc[Deploying the Databricks Storage and Performance SpotApp]
+* xref:spotapps-gbq.adoc[Deploying the GBQ Performance and Consumption SpotApp]
+* xref:spotapps-google-analytics.adoc[Deploying the Google Analytics SpotApp]
+* xref:spotapps-hubspot.adoc[Deploying the HubSpot Email Marketing SpotApp]
+* xref:spotapps-jira-issue.adoc[Deploying the JIRA Issue Management SpotApp]
+* xref:spotapps-jira-spring.adoc[Deploying the JIRA Sprint Management SpotApp]
+* xref:spotapps-okta.adoc[Deploying the Okta Application Management SpotApp]
+* xref:spotapps-redshift.adoc[Deploying the Redshift Performance and Consumption SpotApp]
+* xref:spotapps-servicenow.adoc[Deploying the ServiceNow Incident Management SpotApp]
+* xref:spotapps-snowflake.adoc[Deploying the Snowflake Performance and Consumption SpotApp]
+
+To deploy the SpotApp, follow these steps:
+
+. Navigate to *Data > SpotApps*.
+
+. Select the SpotApp you would like to deploy, either the *ServiceNow ITIL Management Board* or the *Snowflake Consumption* SpotApp.
+
+. To set up your Analytics Block, select *Configure*.
+
+. Set up a connection to your data warehouse. For more information, refer to xref:connections.adoc[Connections] and the connection credentials that you collected in the <<prerequisites,prerequisites>>.
++
+Note that you do not have to select any tables or columns while setting up the connection. You can select them later by editing the connection.
+
+. After you create the connection, ThoughtSpot auto-maps tables from your cloud data warehouse to table names in the SpotApp. If ThoughtSpot cannot map some of the SpotApp tables, a warning symbol appears next to the unmapped user table(s). To choose a table in your cloud data warehouse that matches the name of the table in the SpotApp, use the dropdown in the *User table* column.
++
+For example, you might call your *problem* table something else, like *issues*. You can map your *issues* table to the *problem* table in the SpotApp.
++
+Tables with asterisks next to their names are required. Other tables are optional.
+
+. Select *Next*.
+
+. Next, ThoughtSpot auto-maps columns from your cloud data warehouse to column names in the SpotApp. If ThoughtSpot cannot map some of the SpotApp columns, a warning symbol appears next to the unmapped user column(s). To choose a column in your cloud data warehouse that matches the name of the column in the SpotApp, use the dropdown in the *User column* column.
++
+Columns with asterisks next to their names are required. Other columns are optional.
++
+Select *Finish*.
+
+. ThoughtSpot generates the objects in your SpotApp. This may take a few moments. When the generation is complete, a message appears at the bottom of your screen: `Analytics block for the SpotApp installed successfully`.
+
+. After you configure the Analytics Block, ThoughtSpot returns you to the main *Analytics Block* page, where you can see a list of the objects ThoughtSpot created for your SpotApp. You can also see them in the list on the *Data* home page, and on the *Liveboards* page.
