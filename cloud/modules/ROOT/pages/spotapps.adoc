@@ -54,39 +54,11 @@ Refer to the following articles, depending on the SpotApp you would like to depl
 * xref:spotapps-gbq.adoc[Deploying the GBQ Performance and Consumption SpotApp]
 * xref:spotapps-google-analytics.adoc[Deploying the Google Analytics SpotApp]
 * xref:spotapps-hubspot.adoc[Deploying the HubSpot Email Marketing SpotApp]
-* xref:spotapps-jira-issue.adoc[Deploying the JIRA Issue Management SpotApp]
-* xref:spotapps-jira-spring.adoc[Deploying the JIRA Sprint Management SpotApp]
+* xref:spotapps-jira-issue.adoc[Deploying the Jira Issue Management SpotApp]
+* xref:spotapps-jira-sprint.adoc[Deploying the Jira Sprint Management SpotApp]
 * xref:spotapps-okta.adoc[Deploying the Okta Application Management SpotApp]
 * xref:spotapps-redshift.adoc[Deploying the Redshift Performance and Consumption SpotApp]
 * xref:spotapps-servicenow.adoc[Deploying the ServiceNow Incident Management SpotApp]
 * xref:spotapps-snowflake.adoc[Deploying the Snowflake Performance and Consumption SpotApp]
 
-To deploy the SpotApp, follow these steps:
 
-. Navigate to *Data > SpotApps*.
-
-. Select the SpotApp you would like to deploy, either the *ServiceNow ITIL Management Board* or the *Snowflake Consumption* SpotApp.
-
-. To set up your Analytics Block, select *Configure*.
-
-. Set up a connection to your data warehouse. For more information, refer to xref:connections.adoc[Connections] and the connection credentials that you collected in the <<prerequisites,prerequisites>>.
-+
-Note that you do not have to select any tables or columns while setting up the connection. You can select them later by editing the connection.
-
-. After you create the connection, ThoughtSpot auto-maps tables from your cloud data warehouse to table names in the SpotApp. If ThoughtSpot cannot map some of the SpotApp tables, a warning symbol appears next to the unmapped user table(s). To choose a table in your cloud data warehouse that matches the name of the table in the SpotApp, use the dropdown in the *User table* column.
-+
-For example, you might call your *problem* table something else, like *issues*. You can map your *issues* table to the *problem* table in the SpotApp.
-+
-Tables with asterisks next to their names are required. Other tables are optional.
-
-. Select *Next*.
-
-. Next, ThoughtSpot auto-maps columns from your cloud data warehouse to column names in the SpotApp. If ThoughtSpot cannot map some of the SpotApp columns, a warning symbol appears next to the unmapped user column(s). To choose a column in your cloud data warehouse that matches the name of the column in the SpotApp, use the dropdown in the *User column* column.
-+
-Columns with asterisks next to their names are required. Other columns are optional.
-+
-Select *Finish*.
-
-. ThoughtSpot generates the objects in your SpotApp. This may take a few moments. When the generation is complete, a message appears at the bottom of your screen: `Analytics block for the SpotApp installed successfully`.
-
-. After you configure the Analytics Block, ThoughtSpot returns you to the main *Analytics Block* page, where you can see a list of the objects ThoughtSpot created for your SpotApp. You can also see them in the list on the *Data* home page, and on the *Liveboards* page.
