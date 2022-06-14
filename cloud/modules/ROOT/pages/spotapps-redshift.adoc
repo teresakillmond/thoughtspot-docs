@@ -17,9 +17,27 @@ Before you can deploy the {spotapp}, you must complete the following prerequisit
 
 include::partial$spotapp-prereqs-general.adoc[]
 
-* SPECIFIC REDSHIFT PREREQS
+* Administrator access to {application}
+* Access to the following {application} tables and views in your cloud data warehouse:
+** pg_user_vw
+** stl_query_vw
+** stl_wlm_query_vw
+** stv_wlm_service_class_config_vw
+** svl_qlog_vw
+** stl_alert_event_log_vw
+** svv_table_info_vw
+** stv_sessions_vw
+** stl_load_errors_vw
+** stv_node_storage_capacity_vw
+** stl_ddltext_vw
+** stl_plan_info_vw
+** svl_query_metrics_summary_vw
+** svl_s3query_summary_vw
 
-== Deploy the {spotapp}
-After you complete the <<prerequisites,prerequisites>>, you are ready to deploy the {spotapp} and begin leveraging its pre-built content.
+include::partial$spotapp-deploy-individual.adoc[]
 
-To deploy the {spotapp}, refer to xref:spotapps-deploy.adoc[Deploying SpotApps].
+== {spotapp} schema
+
+The following table describes the schema for the {spotapp}.
+
+SCHEMA TABLE

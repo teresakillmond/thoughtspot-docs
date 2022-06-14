@@ -17,9 +17,27 @@ Before you can deploy the {spotapp}, you must complete the following prerequisit
 
 include::partial$spotapp-prereqs-general.adoc[]
 
-* SPECIFIC SERVICENOW PREREQS
+* Developer account in {application}
+* {application} data loaded into your cloud data warehouse
+* Access to the following {application} tables in your cloud data warehouse:
+** INCIDENT
+** CMN_LOCATION
+** SYS_USER
+** SYS_USER_GROUP
+** TASK_SLA
+** CONTRACT_SLA
+** SERVICE_OFFERING
+** SERVICES
+** CONFIG_ITEM
+** CORE_COMPANY
 
-== Deploy the {spotapp}
-After you complete the <<prerequisites,prerequisites>>, you are ready to deploy the {spotapp} and begin leveraging its pre-built content.
+// there are parts in this prereqs doc https://docs.google.com/document/d/1uGKduUseDTO4jcJUXfNdUydKb5wOVI4xzqTyzRgZthA/edit that mention fivetran, and there are steps after the table access part, that I'm not sure about
 
-To deploy the {spotapp}, refer to xref:spotapps-deploy.adoc[Deploying SpotApps].
+include::partial$spotapp-deploy-individual.adoc[]
+
+== {spotapp} schema
+
+The following table describes the schema for the {spotapp}.
+
+SCHEMA TABLE
+

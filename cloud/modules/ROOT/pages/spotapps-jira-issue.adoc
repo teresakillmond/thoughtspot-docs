@@ -17,9 +17,23 @@ Before you can deploy the {spotapp}, you must complete the following prerequisit
 
 include::partial$spotapp-prereqs-general.adoc[]
 
-* SPECIFIC JIRA ISSUE PREREQS
+* Administrator access to {application}
+* Access to the following {application} tables in your cloud data warehouse:
+** JIRA_ISSUES
+** ISSUE
+** PROJECT
+** PRIORITY
+** RESOLUTION
+** STATUS
+** ISSUE_TYPE
+** USER
+** ISSUE_FIELD_HISTORY
+** WORKLOG
 
-== Deploy the {spotapp}
-After you complete the <<prerequisites,prerequisites>>, you are ready to deploy the {spotapp} and begin leveraging its pre-built content.
+include::partial$spotapp-deploy-individual.adoc[]
 
-To deploy the {spotapp}, refer to xref:spotapps-deploy.adoc[Deploying SpotApps].
+== {spotapp} schema
+
+The following table describes the schema for the {spotapp}.
+
+SCHEMA TABLE
