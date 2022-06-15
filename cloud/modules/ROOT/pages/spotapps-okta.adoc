@@ -17,7 +17,9 @@ Before you can deploy the {spotapp}, you must complete the following prerequisit
 
 include::partial$spotapp-prereqs-general.adoc[]
 
-* SPECIFIC OKTA PREREQS
+* Administrator access to {application}
+* Access to the following {application} table in your cloud data warehouse. Refer to <<schema,{spotapp} schema>> for more details.
+** SYSLOG
 
 include::partial$spotapp-deploy-individual.adoc[]
 
@@ -25,4 +27,39 @@ include::partial$spotapp-deploy-individual.adoc[]
 
 The following table describes the schema for the {spotapp}.
 
-SCHEMA TABLE
+[#schema]
+|===
+| Table/View |Column | Column type | Join column | Required | Frequency
+
+| SYSLOG| actor.id| varchar | N/A | N | 0
+| SYSLOG| event_type| varchar | N/A | Y | 8
+| SYSLOG| uuid| varchar | N/A | N | 0
+| SYSLOG| timestamp | date_time | N/A | Y | 5
+| SYSLOG| severity| varchar | N/A | Y | 1
+| SYSLOG| display_message | varchar | N/A | N | 0
+| SYSLOG| outcome.result| varchar | N/A | Y | 3
+| SYSLOG| outcome.reason| varchar | N/A | Y | 1
+| SYSLOG| actor.type| varchar | N/A | N | 0
+| SYSLOG| actor.display_name| varchar | N/A | Y | 2
+| SYSLOG| actor.alternate_id| varchar | N/A | N | 0
+| SYSLOG| authentication_context.authentication_provider| varchar | N/A | N | 0
+| SYSLOG| authentication_context.credential_type| varchar | N/A | N | 0
+| SYSLOG| authentication_context.external_session_id| varchar | N/A | N | 0
+| SYSLOG| client.ip_address | varchar | N/A | Y | 1
+| SYSLOG| client.device | varchar | N/A | Y | 1
+| SYSLOG| client.user_agent.raw_user_agent| varchar | N/A | Y | 1
+| SYSLOG| client.user_agent.os| varchar | N/A | Y | 1
+| SYSLOG| client.user_agent.browser | varchar | N/A | N | 0
+| SYSLOG| client.geographical_context.country | varchar | N/A | Y | 2
+| SYSLOG| client.geographical_context.city| varchar | N/A | N | 0
+| SYSLOG| client.geographical_context.postal_code | varchar | N/A | N | 0
+| SYSLOG| client.geographical_context.geolocation.lon | varchar | N/A | Y | 1
+| SYSLOG| client.geographical_context.geolocation.lat | varchar | N/A | Y | 1
+| SYSLOG| transaction.id| varchar | N/A | N | 0
+| SYSLOG| transaction.type| varchar | N/A | N | 0
+| SYSLOG| target0.id| varchar | N/A | N | 0
+| SYSLOG| target0.type| varchar | N/A | Y | 1
+| SYSLOG| target0.alternate_id| varchar | N/A | N | 0
+| SYSLOG| target0.display_name| varchar | N/A | Y | 2
+
+|===

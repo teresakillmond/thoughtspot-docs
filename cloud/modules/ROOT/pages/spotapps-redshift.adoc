@@ -18,7 +18,23 @@ Before you can deploy the {spotapp}, you must complete the following prerequisit
 include::partial$spotapp-prereqs-general.adoc[]
 
 * Administrator access to {application}
-* Access to the following {application} tables and views in your cloud data warehouse:
+* You must create views based on the following {application} tables in your cloud data warehouse. If you already created the views, you only need access to the views, not the tables. Refer to <<schema,{spotapp} schema>> for more details.
+** pg_user
+** stl_query
+** stl_wlm_query
+** stv_wlm_service_class_config
+** svl_qlog
+** stl_alert_event_log
+** svv_table_info
+** stv_sessions
+** stl_load_errors
+** stv_node_storage_capacity
+** stl_ddltext
+** stl_plan_info
+** svl_query_metrics_summary
+** svl_s3query_summary
+
+* Access to the following {application} views in your cloud data warehouse:
 ** pg_user_vw
 ** stl_query_vw
 ** stl_wlm_query_vw
@@ -34,8 +50,10 @@ include::partial$spotapp-prereqs-general.adoc[]
 ** svl_query_metrics_summary_vw
 ** svl_s3query_summary_vw
 
+
 include::partial$spotapp-deploy-individual.adoc[]
 
+[#schema]
 == {spotapp} schema
 
 The following table describes the schema for the {spotapp}.

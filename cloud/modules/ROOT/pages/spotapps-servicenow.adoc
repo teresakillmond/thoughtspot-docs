@@ -19,7 +19,7 @@ include::partial$spotapp-prereqs-general.adoc[]
 
 * Developer account in {application}
 * {application} data loaded into your cloud data warehouse
-* Access to the following {application} tables in your cloud data warehouse:
+* Access to the following {application} tables in your cloud data warehouse. Refer to <<schema,{spotapp} schema>> for more details.
 ** INCIDENT
 ** CMN_LOCATION
 ** SYS_USER
@@ -35,9 +35,50 @@ include::partial$spotapp-prereqs-general.adoc[]
 
 include::partial$spotapp-deploy-individual.adoc[]
 
+[#schema]
 == {spotapp} schema
 
 The following table describes the schema for the {spotapp}.
 
-SCHEMA TABLE
+|===
+| Table |Column | Column type |Required table | Join column | Required column
 
+| INCIDENT| NUMBER| VARCHAR | Y | Y | Y
+| INCIDENT| CATEGORY| VARCHAR | Y | N | Y
+| INCIDENT| CLOSED_AT | DATE_TIME | Y | N | Y
+| INCIDENT| STATE | VARCHAR | Y | N | Y
+| INCIDENT| ACTIVE| VARCHAR | Y | N | Y
+| INCIDENT| CLOSE_CODE| VARCHAR | Y | N | N
+| INCIDENT| REASSIGNMENT_COUNT| VARCHAR | Y | N | Y
+| INCIDENT| REOPEN_COUNT| VARCHAR | Y | N | N
+| INCIDENT| OPENED_BY | VARCHAR | Y | Y | N
+| INCIDENT| OPENED_AT | DATE_TIME | Y | N | Y
+| INCIDENT| PRIORITY| VARCHAR | Y | N | Y
+| INCIDENT| ESCALATION| VARCHAR | Y | N | Y
+| INCIDENT| ASSIGNED_TO | VARCHAR | Y | Y | Y
+| INCIDENT| CLOSED_BY | VARCHAR | Y | Y | N
+| INCIDENT| RESOLVED_BY | VARCHAR | Y | Y | N
+| INCIDENT| SYS_UPDATED_ON| DATE_TIME | Y | N | N
+| INCIDENT| SYS_ID| VARCHAR | Y | Y | N
+| INCIDENT| LOCATION| VARCHAR | Y | Y | N
+| INCIDENT| SYS_UPDATED_BY| VARCHAR | Y | N | N
+| INCIDENT| SYS_CREATED_ON| DATE_TIME | Y | N | N
+| INCIDENT| MAJOR_INCIDENT_STATE| VARCHAR | Y | N | Y
+| SYS_USER| TITLE | VARCHAR | Y | N | Y
+| SYS_USER| NAME| VARCHAR | Y | N | Y
+| SYS_USER| SYS_ID| VARCHAR | Y | Y | N
+| CMN_LOCATION| NAME| VARCHAR | Y | N | Y
+| CMN_LOCATION| COUNTRY | VARCHAR | Y | N | Y
+| CMN_LOCATION| STATE | VARCHAR | Y | N | Y
+| CMN_LOCATION| SYS_ID| VARCHAR | Y | Y | Y
+| TASK_SLA| HAS_BREACHED| VARCHAR | Y | N | Y
+| TASK_SLA| END_TIME| DATE_TIME | Y | N | Y
+| TASK_SLA| TASK| VARCHAR | Y | Y | Y
+| CONTRACT_SLA| SYS_ID| VARCHAR | Y | Y | Y
+| CONTRACT_SLA| TYPE| VARCHAR | Y | N | Y
+| CONTRACT_SLA| TARGET| VARCHAR | Y | N | Y
+| CONTRACT_SLA| SYS_NAME| VARCHAR | Y | N | N
+| CONTRACT_SLA| DURATION| DATE_TIME | Y | N | N
+| SYS_USER_GROUP| SYS_ID| VARCHAR | Y | Y | Y
+| SYS_USER_GROUP| NAME| VARCHAR | Y | N | Y
+|===

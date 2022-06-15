@@ -17,10 +17,28 @@ Before you can deploy the {spotapp}, you must complete the following prerequisit
 
 include::partial$spotapp-prereqs-general.adoc[]
 
-* SPECIFIC GBQ PREREQS
+* Administrator access to {application} on console.cloud.google.com for the project
+* Administrator access to IAM, to create roles and Service accounts
+* Access to the following {application} tables and worksheets in your cloud data warehouse. Refer to <<schema,{spotapp} schema>> for more details.
+** JOB_BY_PROJECT (table)
+** GBQ : JOB TIMELINE BY PROJECT (worksheet)
+* Run the required SQL commands in your cloud data warehouse. Refer to <<sql,Run SQL commands>>.
+
+[#sql]
+=== Run SQL commands
+These commands import the `JOB_BY_PROJECT` metadata table into your project dataset. Replace the database name and schema name with your specific information.
+
+NOTE: The following SQL example is for the Amazon Redshift cloud data warehouse. You may need to modify the code for the SQL requirements of your specific cloud data warehouse.
+
+[source,bash]
+----
+create  view `<project_name>.<dataset_name>.JOBS_BY_PROJECT` as
+select * from  `region-us`.INFORMATION_SCHEMA.JOBS_BY_PROJECT
+----
 
 include::partial$spotapp-deploy-individual.adoc[]
 
+[#schema]
 == {spotapp} schema
 
 The following table describes the schema for the {spotapp}.

@@ -18,7 +18,7 @@ Before you can deploy the {spotapp}, you must complete the following prerequisit
 include::partial$spotapp-prereqs-general.adoc[]
 
 * Administrator access to {application}
-* Access to the following {application} tables in your cloud data warehouse:
+* Access to the following {application} tables in your cloud data warehouse. Refer to <<schema,{spotapp} schema>> for more details.
 ** DATABASE_STORAGE_USAGE_HISTORY
 ** QUERY_HISTORY
 ** STAGES
@@ -27,8 +27,14 @@ include::partial$spotapp-prereqs-general.adoc[]
 
 include::partial$spotapp-deploy-individual.adoc[]
 
+[#schema]
 == {spotapp} schema
 
 The following table describes the schema for the {spotapp}.
 
-SCHEMA TABLE
+|===
+| Worksheet name |Worksheet column name | Original table name | Original column name | User table name | User column name | Required table | Required column
+
+TABLE
+
+

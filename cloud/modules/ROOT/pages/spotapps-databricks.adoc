@@ -18,8 +18,23 @@ Before you can deploy the {spotapp}, you must complete the following prerequisit
 include::partial$spotapp-prereqs-general.adoc[]
 
 * Administrator access to {application}
-* Access to the following {application} tables and views in your cloud data warehouse:
-NEED TABLE INFO
+* Access to the following {application} tables in your cloud data warehouse. Refer to <<schema,{spotapp} schema>> for more details.
+** ENDPOINTS
+** QUERIES
+** BILLING
+* Run the required Python script in your cloud data warehouse. Refer to <<python,Run Python script>>.
+
+[#python]
+=== Run Python script
+Run the following Python script on your Databricks instance. NEED MORE INFO
+
+NOTE: The following Python example is for the Databricks cloud data warehouse. You may need to modify the code for the Python requirements of your specific cloud data warehouse.
+
+Python script:
+[%collapsible]
+====
+include::partial$databricks-python-script.adoc[]
+====
 
 include::partial$spotapp-deploy-individual.adoc[]
 
@@ -27,4 +42,40 @@ include::partial$spotapp-deploy-individual.adoc[]
 
 The following table describes the schema for the {spotapp}.
 
-SCHEMA TABLE
+[#schema]
+|===
+| Table |Column | Column type | Required table | Join column | Required column
+
+| ENDPOINTS | NAME| VARCHAR | Y | N | Y
+| ENDPOINTS | ID| VARCHAR | Y | Y | Y
+| QUERIES | ENDPOINT_ID | VARCHAR | Y | Y | Y
+| QUERIES | QUERY_TEXT| VARCHAR | Y | N | Y
+| QUERIES | STATUS| VARCHAR | Y | N | N
+| QUERIES | USER_NAME | VARCHAR | Y | N | N
+| QUERIES | QUERY_START_TIME| DATE_TIME | Y | N | Y
+| QUERIES | METRICS.READ_CACHE_BYTES| INTEGER | Y | N | N
+| QUERIES | METRICS.READ_PARTITIONS_COUNT | INTEGER | Y | N | N
+| QUERIES | METRICS.READ_REMOTE_BYTES | INTEGER | Y | N | N
+| QUERIES | METRICS.SPILL_TO_DISK_BYTES | INTEGER | Y | N | N
+| QUERIES | METRICS.ROWS_READ_COUNT | INTEGER | Y | N | Y
+| QUERIES | METRICS.READ_FILES_COUNT| INTEGER | Y | N | N
+| QUERIES | METRICS.ROWS_PRODUCED_COUNT | INTEGER | Y | N | N
+| QUERIES | METRICS.RESULT_FROM_CACHE | BOOLEAN | Y | N | Y
+| QUERIES | METRICS.WRITE_REMOTE_BYTES| INTEGER | Y | N | N
+| QUERIES | ERROR_MESSAGE | VARCHAR | Y | N | Y
+| QUERIES | QUERY_ID| VARCHAR | Y | N | Y
+| QUERIES | METRICS.TOTAL_TIME_MS | INTEGER | Y | N | Y
+| QUERIES | METRICS.EXECUTION_TIME_MS | DOUBLE| Y | N | Y
+| QUERIES | METRICS.COMPILATION_TIME_MS | DOUBLE| Y | N | Y
+| QUERIES | METRICS.TASK_TOTAL_TIME_MS| INTEGER | Y | N | Y
+| QUERIES | METRICS.RESULT_FETCH_TIME_MS| INTEGER | Y | N | Y
+| BILLING | DBUS| DOUBLE| Y | N | Y
+| BILLING | MACHINEHOURS| DOUBLE| Y | N | Y
+| BILLING | CLUSTERNODETYPE | VARCHAR | Y | N | Y
+| BILLING | CLUSTERNAME | VARCHAR | Y | N | Y
+| BILLING | CLUSTERID | VARCHAR | Y | N | Y
+| BILLING | WORKSPACEID | INTEGER | Y | N | N
+| BILLING | CLUSTEROWNERUSERID| INTEGER | Y | N | N
+| BILLING | SKU | VARCHAR | Y | N | Y
+| BILLING | TIMESTAMP | DATE_TIME | Y | N | Y
+|===

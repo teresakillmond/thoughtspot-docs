@@ -18,7 +18,7 @@ Before you can deploy the {spotapp}, you must complete the following prerequisit
 include::partial$spotapp-prereqs-general.adoc[]
 
 * Administrator access to {application}
-* Access to the following {application} tables in your cloud data warehouse:
+* Access to the following {application} tables in your cloud data warehouse. Refer to <<schema,{spotapp} schema>> for more details.
 ** JIRA_ISSUES
 ** ISSUE
 ** PROJECT
@@ -29,11 +29,48 @@ include::partial$spotapp-prereqs-general.adoc[]
 ** USER
 ** ISSUE_FIELD_HISTORY
 ** WORKLOG
+* Run the required SQL commands in your cloud data warehouse. Refer to <<sql,Run SQL commands>>.
+
+[#sql]
+=== Run SQL commands
+The following SQL commands help standardize data types and column names. Replace the database name and schema name with your specific information.
+
+NOTE: The following SQL example is for the Snowflake cloud data warehouse. You may need to modify the code for the SQL requirements of your specific cloud data warehouse.
+
+SQL commands:
+[%collapsible]
+====
+include::partial$jira-issue-sql-script.adoc[]
+====
 
 include::partial$spotapp-deploy-individual.adoc[]
 
+[#schema]
 == {spotapp} schema
 
 The following table describes the schema for the {spotapp}.
 
-SCHEMA TABLE
+|===
+| Table |Column | Column type | Join column | Required | Frequency
+
+| JIRA_ISSUES | CREATED | TIMESTAMP | No| Yes | 5
+| JIRA_ISSUES | ISSUE_TYPE_NAME | VARCHAR | No| Yes | 4
+| JIRA_ISSUES | ID| NUMBER| No| No| 0
+| JIRA_ISSUES | DUE_DATE| DATE| No| No| 0
+| JIRA_ISSUES | KEY | VARCHAR | No| Yes | 14
+| JIRA_ISSUES | RESOLUTION_DATE | TIMESTAMP | No| Yes | 5
+| JIRA_ISSUES | SUMMARY | VARCHAR | No| No| 0
+| JIRA_ISSUES | UPDATED | TIMESTAMP | No| Yes | 0
+| JIRA_ISSUES | PRIORITY_NAME | VARCHAR | No| Yes | 3
+| JIRA_ISSUES | RESOLUTION_NAME | VARCHAR | No| Yes | 5
+| JIRA_ISSUES | PROJECT_KEY | VARCHAR | No| No| 0
+| JIRA_ISSUES | ASSIGNEE| VARCHAR | No| Yes | 3
+| JIRA_ISSUES | CREATOR | VARCHAR | No| Yes | 1
+| JIRA_ISSUES | REPORTER| VARCHAR | No| Yes | 1
+| JIRA_ISSUES | PROJECT_NAME| VARCHAR | No| Yes | 2
+| JIRA_ISSUES | STATUS_NAME | VARCHAR | No| Yes | 4
+| JIRA_ISSUES | TIME_ESTIMATE | NUMBER| No| Yes | 1
+| JIRA_ISSUES | TIME_SPENT_SECONDS| NUMBER| No| Yes | 1
+| JIRA_ISSUES | TIME_ORIGINAL_ESTIMATE| NUMBER| No| Yes | 1
+
+|===

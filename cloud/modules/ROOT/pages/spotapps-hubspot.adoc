@@ -17,12 +17,31 @@ Before you can deploy the {spotapp}, you must complete the following prerequisit
 
 include::partial$spotapp-prereqs-general.adoc[]
 
-* SPECIFIC HUBSPOT PREREQS
+* Super Admin access to {application}
+* Access to the following {application} tables in your cloud data warehouse. Refer to <<schema,{spotapp} schema>> for more details.
+TABLES
+* Run the required SQL commands in your cloud data warehouse. Refer to <<sql,Run SQL commands>>.
+
+[#sql]
+=== Run SQL commands
+The following SQL commands help standardize data types and column names. Replace the database name and schema name with your specific information.
+
+NOTE: The following SQL example is for the Snowflake cloud data warehouse. You may need to modify the code for the SQL requirements of your specific cloud data warehouse.
+
+SQL commands:
+[%collapsible]
+====
+include::partial$hubspot-sql-script.adoc[]
+====
 
 include::partial$spotapp-deploy-individual.adoc[]
 
+[#schema]
 == {spotapp} schema
 
 The following table describes the schema for the {spotapp}.
 
-SCHEMA TABLE
+|===
+| Table/View |Column | Column type | Join column | Required | Frequency
+
+TABLE INFO
