@@ -20,6 +20,19 @@ include::partial$spotapp-prereqs-general.adoc[]
 * Administrator access to {application}
 * Access to the following {application} table in your cloud data warehouse. Refer to <<schema,{spotapp} schema>> for more details.
 ** SYSLOG
+* Run the required SQL commands in your cloud data warehouse. Refer to <<sql,Run SQL commands>>.
+
+[#sql]
+=== Run SQL commands
+The following SQL commands help standardize data types and column names. Replace the *database name*, *schema name*, and *file path* with your specific information.
+
+NOTE: The following SQL example is for the Snowflake cloud data warehouse. You may need to modify the code for the SQL requirements of your specific cloud data warehouse.
+
+SQL commands:
+[%collapsible]
+====
+include::partial$okta-sql-script.adoc[]
+====
 
 include::partial$spotapp-deploy-individual.adoc[]
 
@@ -29,37 +42,37 @@ The following table describes the schema for the {spotapp}.
 
 [#schema]
 |===
-| Table/View |Column | Column type | Join column | Required | Frequency
+| Table/View |Column | Column type  | Required
 
-| SYSLOG| actor.id| varchar | N/A | N | 0
-| SYSLOG| event_type| varchar | N/A | Y | 8
-| SYSLOG| uuid| varchar | N/A | N | 0
-| SYSLOG| timestamp | date_time | N/A | Y | 5
-| SYSLOG| severity| varchar | N/A | Y | 1
-| SYSLOG| display_message | varchar | N/A | N | 0
-| SYSLOG| outcome.result| varchar | N/A | Y | 3
-| SYSLOG| outcome.reason| varchar | N/A | Y | 1
-| SYSLOG| actor.type| varchar | N/A | N | 0
-| SYSLOG| actor.display_name| varchar | N/A | Y | 2
-| SYSLOG| actor.alternate_id| varchar | N/A | N | 0
-| SYSLOG| authentication_context.authentication_provider| varchar | N/A | N | 0
-| SYSLOG| authentication_context.credential_type| varchar | N/A | N | 0
-| SYSLOG| authentication_context.external_session_id| varchar | N/A | N | 0
-| SYSLOG| client.ip_address | varchar | N/A | Y | 1
-| SYSLOG| client.device | varchar | N/A | Y | 1
-| SYSLOG| client.user_agent.raw_user_agent| varchar | N/A | Y | 1
-| SYSLOG| client.user_agent.os| varchar | N/A | Y | 1
-| SYSLOG| client.user_agent.browser | varchar | N/A | N | 0
-| SYSLOG| client.geographical_context.country | varchar | N/A | Y | 2
-| SYSLOG| client.geographical_context.city| varchar | N/A | N | 0
-| SYSLOG| client.geographical_context.postal_code | varchar | N/A | N | 0
-| SYSLOG| client.geographical_context.geolocation.lon | varchar | N/A | Y | 1
-| SYSLOG| client.geographical_context.geolocation.lat | varchar | N/A | Y | 1
-| SYSLOG| transaction.id| varchar | N/A | N | 0
-| SYSLOG| transaction.type| varchar | N/A | N | 0
-| SYSLOG| target0.id| varchar | N/A | N | 0
-| SYSLOG| target0.type| varchar | N/A | Y | 1
-| SYSLOG| target0.alternate_id| varchar | N/A | N | 0
-| SYSLOG| target0.display_name| varchar | N/A | Y | 2
+| SYSLOG| actor.id| varchar  | N
+| SYSLOG| event_type| varchar  | Y
+| SYSLOG| uuid| varchar  | N
+| SYSLOG| timestamp | date_time  | Y
+| SYSLOG| severity| varchar  | Y
+| SYSLOG| display_message | varchar  | N
+| SYSLOG| outcome.result| varchar  | Y
+| SYSLOG| outcome.reason| varchar  | Y
+| SYSLOG| actor.type| varchar  | N
+| SYSLOG| actor.display_name| varchar  | Y
+| SYSLOG| actor.alternate_id| varchar  | N
+| SYSLOG| authentication_context.authentication_provider| varchar  | N
+| SYSLOG| authentication_context.credential_type| varchar  | N
+| SYSLOG| authentication_context.external_session_id| varchar  | N
+| SYSLOG| client.ip_address | varchar  | Y
+| SYSLOG| client.device | varchar  | Y
+| SYSLOG| client.user_agent.raw_user_agent| varchar  | Y
+| SYSLOG| client.user_agent.os| varchar  | Y
+| SYSLOG| client.user_agent.browser | varchar  | N
+| SYSLOG| client.geographical_context.country | varchar  | Y
+| SYSLOG| client.geographical_context.city| varchar  | N
+| SYSLOG| client.geographical_context.postal_code | varchar  | N
+| SYSLOG| client.geographical_context.geolocation.lon | varchar  | Y
+| SYSLOG| client.geographical_context.geolocation.lat | varchar  | Y
+| SYSLOG| transaction.id| varchar  | N
+| SYSLOG| transaction.type| varchar  | N
+| SYSLOG| target0.id| varchar  | N
+| SYSLOG| target0.type| varchar  | Y
+| SYSLOG| target0.alternate_id| varchar  | N
+| SYSLOG| target0.display_name| varchar  | Y
 
 |===

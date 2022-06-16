@@ -49,7 +49,19 @@ include::partial$spotapp-prereqs-general.adoc[]
 ** stl_plan_info_vw
 ** svl_query_metrics_summary_vw
 ** svl_s3query_summary_vw
+* Run the required SQL commands in your cloud data warehouse. Refer to <<sql,Run SQL commands>>.
 
+[#sql]
+=== Run SQL commands
+The following SQL commands create the required views based on the required tables.
+
+NOTE: The following SQL example is for the Redshift cloud data warehouse. You may need to modify the code for the SQL requirements of your specific cloud data warehouse.
+
+SQL commands:
+[%collapsible]
+====
+include::partial$redshift-sql-script.adoc[]
+====
 
 include::partial$spotapp-deploy-individual.adoc[]
 
@@ -58,4 +70,58 @@ include::partial$spotapp-deploy-individual.adoc[]
 
 The following table describes the schema for the {spotapp}.
 
-SCHEMA TABLE
+|===
+| Table/View | Column | Column type | Join column | Required
+
+| pg_user_vw| usename | varchar | Y | Y
+| pg_user_vw| usesuper| bool| N | N
+| pg_user_vw| usesysid| int | Y | Y
+| stl_query_vw| query | int | Y | Y
+| stl_query_vw| pid | int | Y | Y
+| stl_query_vw| database| varchar | N | Y
+| stl_query_vw| querytxt| varchar | N | Y
+| stl_query_vw| starttime | timestamp | N | N
+| stl_query_vw| endtime | timestamp | N | N
+| stl_query_vw| aborted | int | N | N
+| stl_query_vw| userid| int | N | N
+| stl_wlm_query_vw| query | int | Y | Y
+| stl_wlm_query_vw| service_class | int | Y | Y
+| stv_wlm_service_class_config_vw | name| varchar | N | Y
+| stv_wlm_service_class_config_vw | service_class | int | Y | Y
+| svl_qlog_vw | elapsed | int | N | Y
+| svl_qlog_vw | query | int | Y | Y
+| stl_alert_event_log_vw| query | int | Y | Y
+| stl_alert_event_log_vw| event | varchar | N | Y
+| stl_alert_event_log_vw| solution| varchar | N | N
+| stl_alert_event_log_vw| pid | int | N | N
+| stl_alert_event_log_vw| event_time| timestamp | N | N
+| svv_table_info_vw | database| varchar | N | N
+| svv_table_info_vw | table | varchar | N | Y
+| svv_table_info_vw | size| int | N | N
+| svv_table_info_vw | pct_used| numeric | N | N
+| svv_table_info_vw | tbl_rows| numeric | N | Y
+| stv_sessions_vw | starttime | timestamp | N | Y
+| stv_sessions_vw | process | int | N | Y
+| stv_sessions_vw | db_name | varchar | N | N
+| stv_sessions_vw | timeout_sec | int | N | N
+| stv_sessions_vw | user_name | varchar | Y | Y
+| stl_load_errors_vw| query | int | N | Y
+| stl_load_errors_vw| line_number | int | N | N
+| stl_load_errors_vw| session | int | N | N
+| stl_load_errors_vw| colname | varchar | N | N
+| stl_load_errors_vw| starttime | timestamp | N | N
+| stl_load_errors_vw| tbl | int | N | N
+| stl_load_errors_vw| filename| varchar | N | N
+| stl_load_errors_vw| err_code| int | N | N
+| stl_load_errors_vw| err_reason| varchar | N | Y
+| stl_load_errors_vw| userid| int | Y | Y
+| stv_node_storage_capacity_vw| capacity| int | N | Y
+| stv_node_storage_capacity_vw| used| int | N | Y
+| stv_node_storage_capacity_vw| node| int | Y | Y
+| stl_ddltext_vw| pid | int | Y | Y
+| stl_plan_info_vw| nodeid| int | Y | Y
+| stl_plan_info_vw| query | int | Y | Y
+| svl_query_metrics_summary_vw| query | int | Y | Y
+| svl_s3query_summary_vw| query | int | Y | Y
+
+|===

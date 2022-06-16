@@ -9,7 +9,7 @@
 
 include::partial$spotapps-intro.adoc[]
 
-Use the {spotapp} to manage costs and investigate query performance. Track how and where your users consume credits, and triage and resolve any performance bottlenecks.
+Use the {spotapp} to manage Snowflake costs and investigate query performance. Track how and where your users consume credits, and triage and resolve any performance bottlenecks.
 
 [#prerequisites]
 == Prerequisites
@@ -24,6 +24,19 @@ include::partial$spotapp-prereqs-general.adoc[]
 ** STAGES
 ** STORAGE_USAGE
 ** WAREHOUSE_METERING_HISTORY
+* Run the required SQL commands in your cloud data warehouse. Refer to <<sql,Run SQL commands>>.
+
+[#sql]
+=== Run SQL commands
+The following SQL commands help standardize data types and column names. Replace the *database name* and *schema name* with your specific information.
+
+NOTE: The following SQL example is for the Snowflake cloud data warehouse. You may need to modify the code for the SQL requirements of your specific cloud data warehouse.
+
+SQL commands:
+[%collapsible]
+====
+include::partial$snowflake-sql-script.adoc[]
+====
 
 include::partial$spotapp-deploy-individual.adoc[]
 
@@ -35,6 +48,38 @@ The following table describes the schema for the {spotapp}.
 |===
 | Worksheet name |Worksheet column name | Original table name | Original column name | User table name | User column name | Required table | Required column
 
-TABLE
+| Query History | Query ID| query_history | query_id| query_history | query_id| Y | N
+| Query History | Query Text| query_history | query_text| query_history | query_text| Y | N
+| Query History | Database ID | query_history | database_id | query_history | database_id | Y | Y
+| Query History | Database Name | query_history | database_name | query_history | database_name | Y | Y
+| Query History | Schema ID | query_history | schema_id | query_history | schema_id | Y | Y
+| Query History | Schema Name | query_history | schema_name | query_history | schema_name | Y | Y
+| Query History | Query Type| query_history | query_type| query_history | query_type| Y | N
+| Query History | Session ID| query_history | session_id| query_history | session_id| Y | N
+| Query History | User Name | query_history | user_name | query_history | user_name | Y | N
+| Query History | Role Name | query_history | role_name | query_history | role_name | Y | Y
+| Query History | Warehouse ID| query_history | warehouse_id| query_history | warehouse_id| Y | Y
+| Query History | Warehouse Name| query_history | warehouse_name| query_history | warehouse_name| Y | N
+| Query History | Warehouse Size| query_history | warehouse_size| query_history | warehouse_size| Y | N
+| Query History | Warehouse Type| query_history | warehouse_type| query_history | warehouse_type| Y | Y
+| Query History | Query Tag | query_history | query_tag | query_history | query_tag | Y | N
+| Query History | Execution Status| query_history | execution_status| query_history | execution_status| Y | Y
+| Query History | Error Code| query_history | error_code| query_history | error_code| Y | Y
+| Query History | Error Message | query_history | error_message | query_history | error_message | Y | Y
+| Query History | Start Time| query_history | start_time| query_history | start_time| Y | Y
+| Query History | Rows Produced | query_history | rows_produced | query_history | rows_produced | Y | Y
+| Query History | Partitions Scanned| query_history | partitions_scanned| query_history | partitions_scanned| Y | N
+| Query History | Partitions Total| query_history | partitions_total| query_history | partitions_total| Y | Y
+| Query History | Percentage Scanned From Cache | query_history | percentage_scanned_from_cache | query_history | percentage_scanned_from_cache | Y | N
+| Query History | Bytes Spilled To Local Storage| query_history | bytes_spilled_to_local_storage| query_history | bytes_spilled_to_local_storage| Y | N
+| Query History | Bytes Spilled To Remote Storage | query_history | bytes_spilled_to_remote_storage | query_history | bytes_spilled_to_remote_storage | Y | N
+| Query History | Queued Repair Time| query_history | queued_repair_time| query_history | queued_repair_time| Y | Y
+| Query History | Queued Overload Time| query_history | queued_overload_time| query_history | queued_overload_time| Y | Y
+| Query History | Queued Provisioning Time| query_history | queued_provisioning_time| query_history | queued_provisioning_time| Y | Y
+| Query History | Total Elapsed Time| query_history | total_elapsed_time| query_history | total_elapsed_time| Y | Y
+| Query History | Compilation Time| query_history | compilation_time| query_history | compilation_time| Y | N
+| Query History | Execution Time| query_history | execution_time| query_history | execution_time| Y | N
+
+|===
 
 

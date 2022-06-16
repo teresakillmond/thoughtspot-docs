@@ -1,3 +1,5 @@
+[source,bash]
+----
 create or replace view "<DATABASE NAME>"."<SCHEMA NAME>"."JIRA_ISSUES" as
 select distinct
 "ISSUE"."ID" "ID",
@@ -50,3 +52,4 @@ left outer join (select * from "<DATABASE NAME>"."<SCHEMA NAME>"."ISSUE_FIELD_HI
 on "ISSUE"."ID" = "ESTIMATE"."ISSUE_ID"
 left outer join "<DATABASE NAME>"."<SCHEMA NAME>"."WORKLOG" "ISSUE_TIME"
 on "ISSUE"."ID" = "ISSUE_TIME"."ISSUE_ID";
+----

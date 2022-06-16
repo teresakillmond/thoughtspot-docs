@@ -19,12 +19,13 @@ include::partial$spotapp-prereqs-general.adoc[]
 
 * Super Admin access to {application}
 * Access to the following {application} tables in your cloud data warehouse. Refer to <<schema,{spotapp} schema>> for more details.
-TABLES
+** HUBSPOT_MARKETING_EMAIL
+** HUBSPOT_MARKETING_EMAIL_EVENTS
 * Run the required SQL commands in your cloud data warehouse. Refer to <<sql,Run SQL commands>>.
 
 [#sql]
 === Run SQL commands
-The following SQL commands help standardize data types and column names. Replace the database name and schema name with your specific information.
+The following SQL commands help standardize data types and column names. Replace the *database name* and *schema name* with your specific information.
 
 NOTE: The following SQL example is for the Snowflake cloud data warehouse. You may need to modify the code for the SQL requirements of your specific cloud data warehouse.
 
@@ -42,6 +43,34 @@ include::partial$spotapp-deploy-individual.adoc[]
 The following table describes the schema for the {spotapp}.
 
 |===
-| Table/View |Column | Column type | Join column | Required | Frequency
+| Table/View |Column | Column type | Required column
 
-TABLE INFO
+| HUBSPOT_MARKETING_EMAIL | EMAIL_URL | VARCHAR | Y
+| HUBSPOT_MARKETING_EMAIL | DATE_CREATED| TIMESTAMP_NTZ(9)| Y
+| HUBSPOT_MARKETING_EMAIL | CAMPAIGN_NAME | VARCHAR | Y
+| HUBSPOT_MARKETING_EMAIL | BOUNCE| NUMBER(38,0)| N
+| HUBSPOT_MARKETING_EMAIL | CLICK | NUMBER(38,0)| Y
+| HUBSPOT_MARKETING_EMAIL | DELIVERED | NUMBER(38,0)| Y
+| HUBSPOT_MARKETING_EMAIL | OPEN| NUMBER(38,0)| Y
+| HUBSPOT_MARKETING_EMAIL | REPLY | NUMBER(38,0)| Y
+| HUBSPOT_MARKETING_EMAIL | SENT| NUMBER(38,0)| Y
+| HUBSPOT_MARKETING_EMAIL | UNSUBSCRIBED| NUMBER(38,0)| Y
+| HUBSPOT_MARKETING_EMAIL | BOUNCE_RATIO| NUMBER(38,0)| N
+| HUBSPOT_MARKETING_EMAIL | CLICK_RATIO | FLOAT | Y
+| HUBSPOT_MARKETING_EMAIL | CLICK_THROUGH_RATIO | FLOAT | Y
+| HUBSPOT_MARKETING_EMAIL | OPEN_RATIO| FLOAT | Y
+| HUBSPOT_MARKETING_EMAIL | EMAIL_SUBJECT | VARCHAR | Y
+| HUBSPOT_MARKETING_EMAIL | CAMPAIGN_ID | NUMBER(38,0)| Y
+| HUBSPOT_MARKETING_EMAIL | DATE_CAMPAIGN_SENT| DATE| N
+| HUBSPOT_MARKETING_EMAIL | CAMPAIGN_DATE | DATE| Y
+| HUBSPOT_MARKETING_EMAIL_EVENTS| APP_ID| NUMBER(38,0)| N
+| HUBSPOT_MARKETING_EMAIL_EVENTS| EMAIL_CAMPAIGN_ID | NUMBER(38,0)| N
+| HUBSPOT_MARKETING_EMAIL_EVENTS| ID| VARCHAR | Y
+| HUBSPOT_MARKETING_EMAIL_EVENTS| RECIPIENT | VARCHAR | N
+| HUBSPOT_MARKETING_EMAIL_EVENTS| TYPE| VARCHAR | Y
+| HUBSPOT_MARKETING_EMAIL_EVENTS| BROWSER_NAME| VARCHAR | N
+| HUBSPOT_MARKETING_EMAIL_EVENTS| LOCATION_CITY | VARCHAR | N
+| HUBSPOT_MARKETING_EMAIL_EVENTS| LOCATION_COUNTRY| VARCHAR | N
+| HUBSPOT_MARKETING_EMAIL_EVENTS| LOCATION_STATE| VARCHAR | N
+
+|===

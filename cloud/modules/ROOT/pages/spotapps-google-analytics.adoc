@@ -28,14 +28,14 @@ include::partial$spotapp-prereqs-general.adoc[]
 
 [#sql]
 === Run SQL commands
-The following SQL commands create 5 views based on your Google Analytics data. This standardizes data types and column names. Replace the database name and schema name with your specific information.
+The following SQL commands create 5 views based on your Google Analytics data. This standardizes data types and column names. Replace the *database name* and *schema name* with your specific information.
 
-NOTE: The following SQL example is for the Snowflake cloud data warehouse. You may need to modify the code for the SQL requirements of your specific cloud data warehouse.
+NOTE: The following SQL example is for the Redshift cloud data warehouse. You may need to modify the code for the SQL requirements of your specific cloud data warehouse.
 
 SQL commands:
 [%collapsible]
 ====
-include::partial$gbq-sql-script.adoc[]
+include::partial$google-analytics-sql-script.adoc[]
 ====
 
 include::partial$spotapp-deploy-individual.adoc[]
@@ -45,84 +45,84 @@ include::partial$spotapp-deploy-individual.adoc[]
 
 The following table describes the schema for the {spotapp}.
 
-[cols="~,~,~,30,~,~,~",option="header"]
 |===
-| Table | Column | Column type | Column description | Required table | Join column | Required column
+| Table | Column | Column type | Required column
 
-| ga_ad_analytics | ga:adClicks | INT64 | Number of times users have clicked on an ad to reach the property.| Y | N | Y
-| ga_ad_analytics | ga:adCost | INT64 | Derived cost for the advertising campaign. Its currency is the one you set in the AdWords account | Y | N | Y
-| ga_ad_analytics | ga:impressions| INT64 | Number of campaign impressions. | Y | N | Y
-| ga_ad_analytics | ga:users| DOUBLE| Users| Y | N | N
-| ga_ad_analytics | ga:transactionRevenue | DOUBLE| Transaction revenue| Y | N | Y
-| ga_ad_analytics | ga:bounces| DOUBLE| Number of single page (or single interaction hit) sessions for the property.| Y | N | N
-| ga_ad_analytics | ga:cpc| DOUBLE| Cost to advertiser| Y | N | N
-| ga_ad_analytics | ga:cpm| DOUBLE| Cost impressions.| Y | N | Y
-| ga_ad_analytics | ga:pageviews| DOUBLE| Number of pages viewed during a session, including repeated views of a single page. | Y | N | Y
-| ga_ad_analytics | ga:sessions | DOUBLE| Number of sessions | Y | N | Y
-| ga_ad_analytics | ga:date | DATE| The date of the session | Y | N | Y
-| ga_ad_analytics | ga:adGroup| VARCHAR | The name of the AdWords ad group. | Y | N | Y
-| ga_ad_analytics | ga:adContent| VARCHAR | For manual campaign tracking, it is the value of the utm_content campaign tracking parameter. For AdWords autotagging, it is the first line of the text for the online Ad campaign. If you use mad libs for the AdWords content, it contains the keywords you provided for the mad libs keyword match. If you use none of the above, its value is (not set).| Y | N | Y
-| ga_ad_analytics | ga:adSlot | VARCHAR | The location (Top, RHS, or not set) of the advertisement on the hosting page. | Y | N | Y
-| ga_ad_analytics | ga:campaign | VARCHAR | For manual campaign tracking, it is the value of the utm_campaign campaign tracking parameter. For AdWords autotagging, it is the name(s) of the online ad campaign(s) you use for the property. If you use neither, its value is (not set).| Y | N | Y
-| ga_ad_analytics | ga:adDistributionNetwork| VARCHAR | The network (Content, Search, Search partners, etc.) used to deliver the ads. | Y | N | Y
-| ga_traffic_source | ga:userType | VARCHAR | A boolean, either New Visitor or Returning Visitor, indicating if the users are new or returning. | Y | N | Y
-| ga_traffic_source | ga:users| INT64 | The total number of users for the requested time period.| Y | N | Y
-| ga_traffic_source | ga:organicSearches| INT64 | The number of organic searches happened in a session. This metric is search engine agnostic.| Y | N | Y
-| ga_traffic_source | ga:bounces| INT64 | The total number of single page (or single interaction hit) sessions for the property.| Y | N | Y
-| ga_traffic_source | ga:sessions | INT64 | The total number of sessions. | Y | N | Y
-| ga_traffic_source | ga:sessionDuration| DOUBLE| Total duration (in seconds) of users' sessions. | Y | N | Y
-| ga_traffic_source | ga:pageviews| DOUBLE| Number of pages viewed during a session, including repeated views of a single page. | Y | N | Y
-| ga_traffic_source | ga:date | DATE| The date of the session | Y | N | Y
-| ga_traffic_source | ga:campaign | VARCHAR | For manual campaign tracking, it is the value of the utm_campaign campaign tracking parameter. For AdWords autotagging, it is the name(s) of the online ad campaign(s) you use for the property. If you use neither, its value is (not set).| Y | N | N
-| ga_traffic_source | ga:source | VARCHAR | The source of referrals. For manual campaign tracking, it is the value of the utm_source campaign tracking parameter. For AdWords autotagging, it is google. If you use neither, it is the domain of the source (e.g., document.referrer) referring the users. It may also contain a port address. If users arrived without a referrer, its value is (direct).| Y | N | Y
-| ga_traffic_source | ga:medium | VARCHAR | The type of referrals. For manual campaign tracking, it is the value of the utm_medium campaign tracking parameter. For AdWords autotagging, it is cpc. If users came from a search engine detected by Google Analytics, it is organic. If the referrer is not a search engine, it is referral. If users came directly to the property and document.referrer is empty, its value is (none). | Y | N | Y
-| ga_traffic_source | ga:keyword| VARCHAR | For manual campaign tracking, it is the value of the utm_term campaign tracking parameter. For AdWords traffic, it contains the best matching targeting criteria. For the display network, where multiple targeting criteria could have caused the ad to show up, it returns the best matching targeting criteria as selected by Ads. This could be display_keyword, site placement, boomuserlist, user_interest, age, or gender. Otherwise its value is (not set). | Y | N | N
-| ga_traffic_source | ga:adContent| VARCHAR | For manual campaign tracking, it is the value of the utm_content campaign tracking parameter. For AdWords autotagging, it is the first line of the text for the online Ad campaign. If you use mad libs for the AdWords content, it contains the keywords you provided for the mad libs keyword match. If you use none of the above, its value is (not set).| Y | N | N
-| ga_traffic_source | ga:socialNetwork| VARCHAR | The social network name. This is related to the referring social network for traffic sources; e.g., Google+, Blogger. | Y | N | Y
-| ga_traffic_source | ga:channelGrouping| VARCHAR | The Channel Group associated with an end user's session for this View (defined by the View's Channel Groupings).| Y | N | Y
-| ga_geo_audience | ga:userType | VARCHAR | A boolean, either New Visitor or Returning Visitor, indicating if the users are new or returning. | Y | N | Y
-| ga_geo_audience | ga:users| INT64 | Contains no of users| Y | N | Y
-| ga_geo_audience | ga:bounces| INT64 | Contains no of bounced sessions | Y | N | Y
-| ga_geo_audience | ga:sessions | INT64 | Contains no of sessions | Y | N | Y
-| ga_geo_audience | ga:sessionDuration| DOUBLE| Contains session duration | Y | N | Y
-| ga_geo_audience | ga:pageviews| DOUBLE| Contains No of Page views | Y | N | N
-| ga_geo_audience | ga:date | DATE| The date of the session | Y | N | Y
-| ga_geo_audience | ga:source | VARCHAR | The source of referrals. For manual campaign tracking, it is the value of the utm_source campaign tracking parameter. For AdWords autotagging, it is google. If you use neither, it is the domain of the source (e.g., document.referrer) referring the users. It may also contain a port address. If users arrived without a referrer, its value is (direct).| Y | N | Y
-| ga_geo_audience | ga:medium | VARCHAR | The type of referrals. For manual campaign tracking, it is the value of the utm_medium campaign tracking parameter. For AdWords autotagging, it is cpc. If users came from a search engine detected by Google Analytics, it is organic. If the referrer is not a search engine, it is referral. If users came directly to the property and document.referrer is empty, its value is (none). | Y | N | N
-| ga_geo_audience | ga:channelGrouping| VARCHAR | The Channel Group associated with an end user's session for this View (defined by the View's Channel Groupings).| Y | N | Y
-| ga_geo_audience | ga:country| VARCHAR | Users' country, derived from their IP addresses or Geographical IDs.| Y | N | Y
-| ga_geo_audience | ga:region | VARCHAR | Users' region, derived from their IP addresses or Geographical IDs. In U.S., a region is a state, Victoria, for example.| Y | N | N
-| ga_geo_audience | ga:latitude | DOUBLE| The approximate latitude of users' city, derived from their IP addresses or Geographical IDs. Locations north of the equator have positive latitudes and locations south of the equator have negative latitudes.| Y | N | Y
-| ga_geo_audience | ga:longitude| DOUBLE| The approximate longitude of users' city, derived from their IP addresses or Geographical IDs. Locations east of the prime meridian have positive longitudes and locations west of the prime meridian have negative longitudes. | Y | N | Y
-| ga_page_behaviour | ga:entrances| INT64 | The number of entrances to the property measured as the first pageview in a session, typically used with landingPagePath. | Y | N | Y
-| ga_page_behaviour | ga:exits| DOUBLE| The number of exits from the property.| Y | N | Y
-| ga_page_behaviour | ga:pageValue| DOUBLE| The average value of this page or set of pages, which is equal to (ga:transactionRevenue + ga:goalValueAll) / ga:uniquePageviews. | Y | N | Y
-| ga_page_behaviour | ga:sessions | INT64 | The total number of sessions. | Y | N | Y
-| ga_page_behaviour | ga:pageviews| INT64 | The total number of pageviews for the property. | Y | N | Y
-| ga_page_behaviour | ga:timeOnPage | DOUBLE| Time (in seconds) users spent on a particular page, calculated by subtracting the initial view time for a particular page from the initial view time for a subsequent page. This metric does not apply to exit pages of the property. | Y | N | Y
-| ga_page_behaviour | ga:date | DATE| The date of the session | Y | N | Y
-| ga_page_behaviour | ga:source | VARCHAR | The source of referrals. For manual campaign tracking, it is the value of the utm_source campaign tracking parameter. For AdWords autotagging, it is google. If you use neither, it is the domain of the source (e.g., document.referrer) referring the users. It may also contain a port address. If users arrived without a referrer, its value is (direct).| Y | N | Y
-| ga_page_behaviour | ga:country| VARCHAR | Users' country, derived from their IP addresses or Geographical IDs.| Y | N | Y
-| ga_page_behaviour | ga:hostname | VARCHAR | The hostname from which the tracking request was made.| Y | N | N
-| ga_page_behaviour | ga:pagePath | VARCHAR | A page on the website specified by path and/or query parameters. Use this with hostname to get the page's full URL. | Y | N | N
-| ga_page_behaviour | ga:secondPagePath | VARCHAR | The second page in users' sessions. | Y | N | N
-| ga_page_behaviour | ga:pageTitle| VARCHAR | The page's title. Multiple pages might have the same page title.| Y | N | N
-| ga_page_behaviour | ga:landingPagePath| VARCHAR | The first page in users' sessions, or the landing page. | Y | N | Y
-| ga_page_behaviour | ga:exitPagePath | VARCHAR | The last page or exit page in users' sessions.| Y | N | Y
-| ga_site_statistics| ga:avgPageDownloadTime| DOUBLE| The average time (in seconds) to download this page.| Y | N | Y
-| ga_site_statistics| ga:avgPageLoadTime| INT64 | The average time (in seconds) pages from the sample set take to load, from initiation of the pageview (e.g., a click on a page link) to load completion in the browser. | Y | N | Y
-| ga_site_statistics| ga:pageviews| INT64 | The total number of pageviews for the property. | Y | N | Y
-| ga_site_statistics| ga:sessions | INT64 | The total number of sessions. | Y | N | Y
-| ga_site_statistics| ga:avgRedirectionTime | DOUBLE| The average time (in seconds) spent in redirects before fetching this page. If there are no redirects, this is 0. | Y | N | N
-| ga_site_statistics| ga:avgServerConnectionTime| DOUBLE| The average time (in seconds) spent in establishing a TCP connection to this page.| Y | N | N
-| ga_site_statistics| ga:serverResponseTime | DOUBLE| The total time (in milliseconds) the site's server takes to respond to users' requests among all samples; this includes the network time from users' locations to the server. | Y | N | N
-| ga_site_statistics| ga:time | TIME| time of transaction | Y | N | Y
-| ga_site_statistics| ga:date | DATE| The date of the session | Y | N | Y
-| ga_site_statistics| ga:country| VARCHAR | Users' country, derived from their IP addresses or Geographical IDs.| Y | N | Y
-| ga_site_statistics| ga:hostname | VARCHAR | The hostname from which the tracking request was made.| Y | N | N
-| ga_site_statistics| ga:pagePath | VARCHAR | A page on the website specified by path and/or query parameters. Use this with hostname to get the page's full URL. | Y | N | N
-| ga_site_statistics| ga:browser| VARCHAR | The name of users' browsers, for example, Internet Explorer or Firefox. | Y | N | Y
-| ga_site_statistics| ga:operatingSystemVersion | VARCHAR | The version of users' operating system, i.e., XP for Windows, PPC for Macintosh.| Y | N | N
-| ga_site_statistics| ga:language | VARCHAR | The language, in ISO-639 code format (e.g., en-gb for British English), provided by the HTTP Request for the browser. | Y | N | N
-| ga_site_statistics| ga:deviceCategory | VARCHAR | The type of device: desktop, tablet, or mobile. | Y | N | N
-| ga_site_statistics| ga:operatingSystem| VARCHAR | Users' operating system, for example, Windows, Linux, Macintosh, or iOS.| Y | N | N
+| ga_ad_analytics | ga:adClicks | INT64 | Y
+| ga_ad_analytics | ga:adCost | INT64 | Y
+| ga_ad_analytics | ga:impressions| INT64 | Y
+| ga_ad_analytics | ga:users| DOUBLE| N
+| ga_ad_analytics | ga:transactionRevenue | DOUBLE| Y
+| ga_ad_analytics | ga:bounces| DOUBLE| N
+| ga_ad_analytics | ga:cpc| DOUBLE| N
+| ga_ad_analytics | ga:cpm| DOUBLE| Y
+| ga_ad_analytics | ga:pageviews| DOUBLE| Y
+| ga_ad_analytics | ga:sessions | DOUBLE| Y
+| ga_ad_analytics | ga:date | DATE| Y
+| ga_ad_analytics | ga:adGroup| VARCHAR | Y
+| ga_ad_analytics | ga:adContent| VARCHAR | Y
+| ga_ad_analytics | ga:adSlot | VARCHAR | Y
+| ga_ad_analytics | ga:campaign | VARCHAR | Y
+| ga_ad_analytics | ga:adDistributionNetwork| VARCHAR | Y
+| ga_traffic_source | ga:userType | VARCHAR | Y
+| ga_traffic_source | ga:users| INT64 | Y
+| ga_traffic_source | ga:organicSearches| INT64 | Y
+| ga_traffic_source | ga:bounces| INT64 | Y
+| ga_traffic_source | ga:sessions | INT64 | Y
+| ga_traffic_source | ga:sessionDuration| DOUBLE| Y
+| ga_traffic_source | ga:pageviews| DOUBLE| Y
+| ga_traffic_source | ga:date | DATE| Y
+| ga_traffic_source | ga:campaign | VARCHAR | N
+| ga_traffic_source | ga:source | VARCHAR | Y
+| ga_traffic_source | ga:medium | VARCHAR | Y
+| ga_traffic_source | ga:keyword| VARCHAR | N
+| ga_traffic_source | ga:adContent| VARCHAR | N
+| ga_traffic_source | ga:socialNetwork| VARCHAR | Y
+| ga_traffic_source | ga:channelGrouping| VARCHAR | Y
+| ga_geo_audience | ga:userType | VARCHAR | Y
+| ga_geo_audience | ga:users| INT64 | Y
+| ga_geo_audience | ga:bounces| INT64 | Y
+| ga_geo_audience | ga:sessions | INT64 | Y
+| ga_geo_audience | ga:sessionDuration| DOUBLE| Y
+| ga_geo_audience | ga:pageviews| DOUBLE| N
+| ga_geo_audience | ga:date | DATE| Y
+| ga_geo_audience | ga:source | VARCHAR | Y
+| ga_geo_audience | ga:medium | VARCHAR | N
+| ga_geo_audience | ga:channelGrouping| VARCHAR | Y
+| ga_geo_audience | ga:country| VARCHAR | Y
+| ga_geo_audience | ga:region | VARCHAR | N
+| ga_geo_audience | ga:latitude | DOUBLE| Y
+| ga_geo_audience | ga:longitude| DOUBLE| Y
+| ga_page_behaviour | ga:entrances| INT64 | Y
+| ga_page_behaviour | ga:exits| DOUBLE| Y
+| ga_page_behaviour | ga:pageValue| DOUBLE| Y
+| ga_page_behaviour | ga:sessions | INT64 | Y
+| ga_page_behaviour | ga:pageviews| INT64 | Y
+| ga_page_behaviour | ga:timeOnPage | DOUBLE| Y
+| ga_page_behaviour | ga:date | DATE| Y
+| ga_page_behaviour | ga:source | VARCHAR | Y
+| ga_page_behaviour | ga:country| VARCHAR | Y
+| ga_page_behaviour | ga:hostname | VARCHAR | N
+| ga_page_behaviour | ga:pagePath | VARCHAR | N
+| ga_page_behaviour | ga:secondPagePath | VARCHAR | N
+| ga_page_behaviour | ga:pageTitle| VARCHAR | N
+| ga_page_behaviour | ga:landingPagePath| VARCHAR | Y
+| ga_page_behaviour | ga:exitPagePath | VARCHAR | Y
+| ga_site_statistics| ga:avgPageDownloadTime| DOUBLE| Y
+| ga_site_statistics| ga:avgPageLoadTime| INT64 | Y
+| ga_site_statistics| ga:pageviews| INT64 | Y
+| ga_site_statistics| ga:sessions | INT64 | Y
+| ga_site_statistics| ga:avgRedirectionTime | DOUBLE| N
+| ga_site_statistics| ga:avgServerConnectionTime| DOUBLE| N
+| ga_site_statistics| ga:serverResponseTime | DOUBLE| N
+| ga_site_statistics| ga:time | TIME| Y
+| ga_site_statistics| ga:date | DATE| Y
+| ga_site_statistics| ga:country| VARCHAR | Y
+| ga_site_statistics| ga:hostname | VARCHAR | N
+| ga_site_statistics| ga:pagePath | VARCHAR | N
+| ga_site_statistics| ga:browser| VARCHAR | Y
+| ga_site_statistics| ga:operatingSystemVersion | VARCHAR | N
+| ga_site_statistics| ga:language | VARCHAR | N
+| ga_site_statistics| ga:deviceCategory | VARCHAR | N
+| ga_site_statistics| ga:operatingSystem| VARCHAR | N
+|===
