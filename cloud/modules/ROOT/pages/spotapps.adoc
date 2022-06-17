@@ -14,7 +14,7 @@ SpotApps are built on xref:tml.adoc[ThoughtSpot Modeling Language (TML)] Blocks,
 SpotApps use xref:scriptability.adoc[Scriptability], ThoughtSpot's solution for migrating data models (worksheets, tables, and views) and content (Liveboards and answers) between different environments, such as development and production. You can optionally edit these ThoughtSpot objects during the migration process.
 
 == Available SpotApps and Blocks
-ThoughtSpot currently supports the following SpotApps, built on Analytics Blocks. Analytics Blocks include pre-built Worksheet, Answer, and Liveboard Blocks.
+ThoughtSpot currently supports the following SpotApps, built on Analytics Blocks. Analytics Blocks can include pre-built Worksheet, Answer, and Liveboard Blocks.
 
 xref:spotapps-databricks.adoc[Databricks Storage and Performance]::
 Use this SpotApp to manage Databricks costs and investigate query performance.
@@ -37,7 +37,7 @@ Use this SpotApp to track ServiceNow tickets and manage incidents.
 xref:spotapps-snowflake.adoc[Snowflake Performance and Consumption]::
 Use this SpotApp to manage Snowflake costs and investigate query performance.
 
-SpotApps mimic their application's data model. For example, after you connect to your ServiceNow data in your cloud data warehouse, ThoughtSpot maps that data to SpotApp columns, and creates pre-built but still customizable worksheets, answers, and Liveboards, based on your ServiceNow data.
+SpotApps are built specifically for their application's out-of-the-box data model. To deploy a SpotApp successfully, you must ensure the data exists in your cloud data warehouse according to the required schema. Customizations can be handled with manual edits during the deployment and mapping process. For more information, refer to xref:spotapps-deploy.adoc[Deploying SpotApps].
 
 [#prerequisites]
 == Prerequisites to deploy SpotApps

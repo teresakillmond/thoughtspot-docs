@@ -9,6 +9,10 @@
 
 include::partial$spotapps-intro.adoc[]
 
+This is a sample Liveboard, created after you deploy the {spotapp}:
+
+image::spotapp-redshift-liveboard.png[Redshift SpotApp Liveboard]
+
 Use the {spotapp} to manage costs and investigate query performance. Track how and where your users consume credits, and triage and resolve any performance bottlenecks.
 
 [#prerequisites]
@@ -59,8 +63,11 @@ NOTE: The following SQL example is for the Redshift cloud data warehouse. You ma
 
 SQL commands:
 [%collapsible]
+.Click on the dropdown to view the SQL commands.
 ====
+--
 include::partial$redshift-sql-script.adoc[]
+--
 ====
 
 include::partial$spotapp-deploy-individual.adoc[]
@@ -71,7 +78,7 @@ include::partial$spotapp-deploy-individual.adoc[]
 The following table describes the schema for the {spotapp}.
 
 |===
-| Table/View | Column | Column type | Join column | Required
+| Table/View | Column | Column type | Join column | Required column
 
 | pg_user_vw| usename | varchar | Y | Y
 | pg_user_vw| usesuper| bool| N | N

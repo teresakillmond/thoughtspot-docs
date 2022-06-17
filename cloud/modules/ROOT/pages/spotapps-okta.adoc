@@ -9,6 +9,10 @@
 
 include::partial$spotapps-intro.adoc[]
 
+This is a sample Liveboard, created after you deploy the {spotapp}:
+
+image::spotapp-okta-liveboard.png[Okta SpotApp Liveboard]
+
 Use the {spotapp} to understand login problems and application adoption. Diagnose login problems by tracking login events and platform activity. You can also measure which applications people in your organization use the most.
 
 [#prerequisites]
@@ -24,14 +28,17 @@ include::partial$spotapp-prereqs-general.adoc[]
 
 [#sql]
 === Run SQL commands
-The following SQL commands help standardize data types and column names. Replace the *database name*, *schema name*, and *file path* with your specific information.
+The following SQL commands help standardize data types and column names. They create 4 views in your cloud data warehouse schema. Replace the *database name*, *schema name*, and *file path* with your specific information.
 
 NOTE: The following SQL example is for the Snowflake cloud data warehouse. You may need to modify the code for the SQL requirements of your specific cloud data warehouse.
 
 SQL commands:
 [%collapsible]
+.Click on the dropdown to view the SQL commands.
 ====
+--
 include::partial$okta-sql-script.adoc[]
+--
 ====
 
 include::partial$spotapp-deploy-individual.adoc[]

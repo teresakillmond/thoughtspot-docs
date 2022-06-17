@@ -9,6 +9,10 @@
 
 include::partial$spotapps-intro.adoc[]
 
+This is a sample Liveboard, created after you deploy the {spotapp}:
+
+image::spotapp-databricks-liveboard.png[Databricks SpotApp Liveboard]
+
 Use the {spotapp} to manage costs and investigate query performance. Track how and where your users consume Databricks Units (DBUs), and investigate latency issues with database queries. You can also review your tables' Z-Ordering.
 
 [#prerequisites]
@@ -26,16 +30,17 @@ include::partial$spotapp-prereqs-general.adoc[]
 
 [#python]
 === Run Python script
-Run the following Python script on your Databricks instance. Replace any parts of the script that say `UPDATE` with your specific information.
+Run the following Python script on your Databricks instance. It helps load the Databricks data into tables. Replace any parts of the script that say `UPDATE` with your specific information, such as the `hostid`, `accountid`, and `authorization token`.
 
-//NEED MORE INFO
-
-NOTE: The following Python example is for the Databricks cloud data warehouse. You may need to modify the code for the Python requirements of your specific cloud data warehouse.
+NOTE: You must run this Python script on the Databricks cloud data warehouse.
 
 Python script:
 [%collapsible]
+.Click on the dropdown to view the Python script.
 ====
+--
 include::partial$databricks-python-script.adoc[]
+--
 ====
 
 include::partial$spotapp-deploy-individual.adoc[]
