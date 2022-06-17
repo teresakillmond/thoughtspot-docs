@@ -10,6 +10,10 @@ ThoughtSpot supports Okta OAuth for a {connection} connection.
 
 To configure Okta OAuth for {connection}, you create an app in the Identity Provider and use the app’s credentials to register it in {connection} as an external token provider. Once these steps are completed, {connection} will allow connections issued by the IdP.
 
+NOTE: The steps provided here are an example of how you can configure Okta for external OAuth. You can use any OAuth flow provided that you can get the information required for the security integration. The following steps provide a guide for getting the information required to create the security integration for Snowflake.
+
+IMPORTANT: Be sure to consult your organization's security policies for configuring an authorization server to make sure you meet all requirements.
+
 [#part-1]
 == Part 1: Configuring the IdP with Okta
 
@@ -24,7 +28,7 @@ image::dremio-oauth1.png[]
 . For sign-in method, choose *OIDC - OpenID Connect*.
 . For application type, choose *Web Application*
 . Click *Next*.
-. Under Grant type, make sure *Authorization Code* is selected.
+. Under Grant type, make sure *Authorization Code* and *Refresh Token* are selected.
 +
 image::sf-oauth2.png[]
 
