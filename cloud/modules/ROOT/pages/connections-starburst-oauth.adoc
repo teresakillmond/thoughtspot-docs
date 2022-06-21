@@ -82,16 +82,6 @@ The value for the principal-field configuration should be the claim name in the 
 +
 image::dremio-oauth8.png[]
 
-[#part-3]
-== Part 3: JDBC Connection URL
-
-In the JDBC connection, specify the JWT in the connection URL with the parameter “access_token”.
-
-Example:
-[source]
-----
-jdbc:trino://10.79.143.40:8443/tpch/sf100?user=admin&accessToken=<token_from_IdP>&SSL=true&SSLVerification=NONE
-----
 '''
 > **Related information**
 >
