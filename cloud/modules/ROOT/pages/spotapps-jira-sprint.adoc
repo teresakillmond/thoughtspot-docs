@@ -13,9 +13,7 @@ include::partial$spotapps-intro.adoc[]
 //
 //image::spotapp-jira-sprint-liveboard.png[Jira Sprint SpotApp Liveboard]
 
-Use the {spotapp} to manage your Jira sprints.
-
-// NEED ACTUAL USE CASE INFO
+Use the {spotapp} to manage your Jira sprints. You can improve prioritization and visibility of issues, and increase team productivity.
 
 [#prerequisites]
 == Prerequisites
@@ -26,14 +24,11 @@ include::partial$spotapp-prereqs-general.adoc[]
 * Administrator access to {application}
 * Access to the following {application} table in your cloud data warehouse. Refer to <<schema,{spotapp} schema>> for more details.
 ** JIRA_SPRINTS
-
-////
-NO SQL RIGHT NOW
 * Run the required SQL commands in your cloud data warehouse. Refer to <<sql,Run SQL commands>>.
 
 [#sql]
 === Run SQL commands
-The following SQL commands help standardize data types and column names. Replace the *database name* and *schema name* with your specific information.
+The following SQL commands help standardize data types and column names. Replace the *database name*, *schema name*, and *sprint table name* with your specific information.
 
 NOTE: The following SQL example is for the Snowflake cloud data warehouse. You may need to modify the code for the SQL requirements of your specific cloud data warehouse.
 
@@ -45,7 +40,6 @@ SQL commands:
 include::partial$jira-sprint-sql-script.adoc[]
 --
 ====
-////
 
 include::partial$spotapp-deploy-individual.adoc[]
 
