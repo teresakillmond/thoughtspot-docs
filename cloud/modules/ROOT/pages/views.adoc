@@ -4,9 +4,9 @@
 :experimental:
 :page-layout: default-cloud
 :page-aliases: /complex-search/about-query-on-query.adoc
-:description: If you want to perform a search on top of another search, try saving your search as a view. Then, you can use the saved view as a data source for a new search.
+:description: To perform a search on top of another search, save your search as a view. Then, you can use the saved view as a data source for a new search.
 
-NOTE: Only users with the *Can administrator ThoughtSpot* or the *Can manage data* privilege can create views and link them.
+NOTE: Only users with the *Can administer ThoughtSpot* or the *Can manage data* privilege can create views and link them.
 
 IMPORTANT: Views do not support row level security (RLS), so all users of a view can see all the data it contains.
 
@@ -45,6 +45,11 @@ The table or view with the foreign key must be in the the first (left) position.
 The table or view with the primary key must be in the second (right) position.
 * For best performance, views should have 50 or fewer columns, and no more than 10 million rows.
 // If your View has more than 10 million rows, consider materializing it. If your View has more than 40 million rows, consider sharding it.
+
+== SQL views
+You create a traditional ThoughtSpot view by saving a ThoughtSpot xref:search-data.adoc[data search] as a view. You can also create xref:sql-views.adoc[SQL views], by running SQL queries on your data, and saving the result as a SQL view.
+
+For more information, see xref:sql-views.adoc[SQL views].
 
 == Related Information
 

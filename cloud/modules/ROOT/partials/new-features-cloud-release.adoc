@@ -37,9 +37,49 @@ ThoughtSpot now supports session-level ranking of Date columns in Search. For ex
 [#8-5-0-cl-data-engineer]
 === For the Data Engineer
 
+[#data-workspace]
+Data Workspace::
+The new Data Workspace is now GA and on by default. It redesigns the *Data* section of the product. To access it, select *Data* from the top navigation bar. The redesign introduces several new features, such as SQL-based views, dbt integration, and SpotApps, and makes the UI more intuitive.
++
+See xref:data-workspace.adoc[Data workspace].
+
+[#sql-views]
+SQL-based views::
+SQL-based views are now GA and on by default. Users can create views based on custom SQL queries, and use those views as data sources. This type of view has the same functionality as a view based on searching your data.
++
+See xref:sql-views.adoc[SQL views].
+
+[#dbt]
+Integration with dbt::
+The dbt integration is now GA and on by default. You can provide your existing dbt models and automatically create worksheets in ThoughtSpot that you can use to perform searches on your data.
++
+See xref:dbt-integration.adoc[dbt integration].
+
+[#spotapps]
+SpotApps::
+SpotApps are now GA and on by default. SpotApps are ThoughtSpot's new out-of-the-box solution templates built for specific use cases and data sources. They are built on xref:tml.adoc[ThoughtSpot Modeling Language (TML)] Blocks, which are pre-built pieces of code that are easy to download and implement directly from the product.
++
+SpotApps mimic the data models of the applications they are based on, such as ServiceNow or Jira. After you connect to your data in your cloud data warehouse, ThoughtSpot maps that data to SpotApp columns, and creates pre-built but still customizable worksheets, answers, and Liveboards, based on your data.
++
+The following SpotApps are now available:
++
+--
+* xref:spotapps-databricks.adoc[Databricks Storage and Performance]
+* xref:spotapps-gbq.adoc[GBQ Performance and Consumption]
+* xref:spotapps-google-analytics.adoc[Google Analytics]
+* xref:spotapps-hubspot.adoc[HubSpot Email Marketing]
+* xref:spotapps-jira-issue.adoc[Jira Issue Management]
+* xref:spotapps-jira-sprint.adoc[Jira Sprint Management]
+* xref:spotapps-okta.adoc[Okta Application Management]
+* xref:spotapps-redshift.adoc[Redshift Performance and Consumption]
+* xref:spotapps-servicenow.adoc[ServiceNow Incident Management]
+* xref:spotapps-snowflake.adoc[Snowflake Performance and Consumption]
+--
++
+See xref:spotapps.adoc[SpotApps].
+
 Okta OAuth for Snowflake connections::
 You can now use Okta as your authorization server for external OAuth. For details, see xref:connections-snowflake-okta-oauth.adoc[Configure Okta OAuth for a Snowflake connection].
-
 
 [#8-5-0-cl-it-ops-engineer]
 === For the IT Ops Engineer
