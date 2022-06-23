@@ -17,11 +17,22 @@ For these instructions, see xref:ts-cloud-getting-started.adoc[Getting Started w
 [#8-5-0-cl-analyst]
 === For the Analyst
 
-Conditional and number formatting for downloaded tables::
-When you download a table in `XLSX` format, the downloaded table now shows the same conditional and number formatting as the table in ThoughtSpot. Refer to xref:search-download.adoc#table-formatting[Download your search].
+Table formatting for downloaded tables::
+When you download a table in `XLSX` format, the downloaded table now shows the same column width and date formatting as the table in ThoughtSpot. Refer to xref:search-download.adoc#table-formatting[Download your search].
 
 [#8-5-0-cl-business-user]
 === For the Business User
+
+Threshold-based alerts for KPI charts [.badge.badge-update]#Beta#::
+You can now use the Monitor feature to receive alerts when your KPI satisfies a given threshold condition. For example, create a condition to receive an alert when your Sales KPI becomes `greater than 200,000`, or when your KPI for Sales weekly `increases by 2%`. For more information, see xref:monitor.adoc#threshold-based-alert[Create a threshold-based alert].
++
+This feature is in beta and off by default. To enable threshold-based alerts, contact {support-url}.
+
+Make content discoverable::
+You can now make content easily available to your team members when you save or share an answer. By default, the *Make this answer discoverable* checkbox that appears when you save or share an answer grants view access to any teammate who can access the answer’s underlying worksheet. Your answer appears in the list of relevant results when a teammate uses the *Search Answer* feature.
+
+Session-level ranking of date columns in Search::
+ThoughtSpot now supports session-level ranking of Date columns in Search. For example, when you add a date column such as `promotion date` to your Search, then the `promotion date` column rises to the top of Search completion suggestions for the duration of your session.
 
 [#8-5-0-cl-data-engineer]
 === For the Data Engineer
@@ -67,8 +78,24 @@ The following SpotApps are now available:
 +
 See xref:spotapps.adoc[SpotApps].
 
+Okta OAuth for Snowflake connections::
+You can now use Okta as your authorization server for external OAuth. For details, see xref:connections-snowflake-okta-oauth.adoc[Configure Okta OAuth for a Snowflake connection].
+
 [#8-5-0-cl-it-ops-engineer]
 === For the IT Ops Engineer
+
+[#private-link]
+AWS PrivateLink between ThoughtSpot Cloud and your cloud data warehouse::
+ThoughtSpot now supports AWS PrivateLink for several new data warehouse connections. ThoughtSpot encrypts all your data by default. For an additional layer of security and network reliability, you can use an AWS PrivateLink.
+This option is now available for the following new data warehouse connections:
+* xref:connections-databricks-private-link.adoc[Databricks PrivateLink]
+* xref:connections-dremio-private-link.adoc[Dremio PrivateLink]
+* xref:connections-adw-private-link.adoc[Oracle PrivateLink]
+* xref:connections-hana-private-link.adoc[SAP HANA PrivateLink]
+* xref:connections-starburst-private-link.adoc[Starburst PrivateLink]
+* xref:connections-teradata-private-link.adoc[Teradata PrivateLink]
++
+This option was already available for xref:connections-redshift-private-link.adoc[Amazon Redshift] and xref:connections-snowflake-private-link.adoc[Snowflake].
 
 [#8-5-0-cl-developer]
 === For the Developer

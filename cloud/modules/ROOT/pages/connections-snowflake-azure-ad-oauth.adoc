@@ -9,6 +9,10 @@
 ThoughtSpot supports Microsoft Azure Active Directory (AD) OAuth for a {connection} connection.
 With Azure AD OAuth, the authorization server generates an access token from Azure AD on behalf of the ThoughtSpot user which authenticates them with {connection} and authorizes ThoughtSpot to query the database using their {connection} user account.
 
+NOTE: The steps provided here are an example of how you can configure Azure AD OAuth for external OAuth. You can use any OAuth flow provided that you can get the information required for the security integration. The following steps provide a guide for getting the information required to create the security integration for Snowflake.
+
+IMPORTANT: Be sure to consult your organization's security policies for configuring an authorization server to make sure you meet all requirements.
+
 [#part-1]
 == Creating an external OAuth token using Azure AD on behalf of the user
 
@@ -37,8 +41,7 @@ image::azure-portal-reg-ten.png[]
 . After the application is created, click *Expose an API*.
 +
 image::snow-expose-api.png[]
-
-. Next to Application ID URI, click *Set* and change its value from *api://<alphanumeric value>* to *\https://<alphanumeric value>* and click *Save*.
+. [#step-8]#Next to Application ID URI, click *Set* and change its value from *api://<alphanumeric value>* to *\https://<alphanumeric value>* and click *Save*.#
 +
 // []({{ site.baseurl }}/images/snow-app-uri.png)
 +
@@ -239,6 +242,13 @@ image:token_det_1.png[]
 +
 image:token_det_2.png[]
 
+. Verify the validity of the generated access token by running this SQL in snowflake:
++
+[source]
+----
+select system$verify_external_oauth_token('<access_token>');
+----
+
 ==== Method 2: cURL
 
 To validate your configuration using cURL, do the following:
@@ -284,9 +294,17 @@ image::curl_1.png[]
 ----
 +
 image::curl_2.png[]
+. Verify the validity of the generated access token by running this SQL in snowflake:
++
+[source]
+----
+select system$verify_external_oauth_token('<access_token>');
+----
+
 
 == Related links
 
+* https://docs.snowflake.com/en/sql-reference/functions/system_verify_ext_oauth_token.html#examples[Snowflake docs: external OAuth token examples^]
 * https://docs.snowflake.com/en/user-guide/oauth-azure.html#configure-microsoft-azure-ad-for-external-oauth[{connection} docs: Configure Microsoft Azure AD for External OAuth^]
 * https://community.snowflake.com/s/article/Create-External-OAuth-Token-Using-Azure-AD-For-The-OAuth-Client-Itself[{connection} docs: create external OAuth token using Azure AD for the OAuth client itself^]
 * https://community.snowflake.com/s/article/External-oAuth-Token-Generation-using-Azure-AD[{connection} docs: create external OAuth token using Azure AD on behalf of the user^]

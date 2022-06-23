@@ -128,7 +128,7 @@ This file is provided by your IDP.
 You need this file so that the configuration persists over upgrades.
 It is a best practice to set it up on persistent/HA storage (NAS volumes) or in the same absolute path on all nodes in the cluster.
 For example, _idp-meta.xml_.
-If your IDP needs an Assertion Consumer Service URL to create the metadata file, use `https://<hostname_or_IP>:443/callosum/v1/saml/SSO`.
+If your IDP needs an Assertion Consumer Service URL to create the metadata file, use `\https://<hostname_or_IP>:443/callosum/v1/saml/SSO`.
 Note that this URL is case-sensitive.
 +
 If your IDP does not allow you to import the IDP metadata XML file, you must map values between ThoughtSpot and your IDP manually.
@@ -151,7 +151,7 @@ Instead, you must xref:admin-portal-users.adoc[add users manually].
 . After you fill in all parameters, click *OK*.
 . When the configuration is complete, download ThoughtSpot's metadata file, `spring_saml_metadata.xml`.
 This file contains the public key you need if you want to encrypt your SAML assertions.
-To download this file, navigate to `https://<hostname-or-IP>/callosum/v1/saml/metadata/`.
+To download this file, navigate to `\https://<hostname-or-IP>/callosum/v1/saml/metadata/`.
 The file automatically downloads.
 
 === Configure the IDP
@@ -166,7 +166,7 @@ To determine if ThoughtSpot supports your preferred IDP, https://community.thoug
 Complete your configuration of the IDP using the IDP's SAML documentation.
 Upload or copy the contents of the `spring_saml_metadata.xml` to your IDP server.
 This file contains the public key you need if you want to encrypt your SAML assertions.
-If you did not download the `spring_saml_metadata.xml` file, navigate to `https://<your_ThoughtSpot_hostname-or-IP>/callosum/v1/saml/metadata/`.
+If you did not download the `spring_saml_metadata.xml` file, navigate to `\https://<your_ThoughtSpot_hostname-or-IP>/callosum/v1/saml/metadata/`.
 The file automatically downloads.
 
 NOTE: When configuring SAML 2.0, make sure you map the SAML user attributes and subjects to appropriate fields.
