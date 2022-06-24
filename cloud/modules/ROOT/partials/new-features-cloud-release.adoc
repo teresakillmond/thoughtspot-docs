@@ -98,6 +98,18 @@ This option is now available for the following new data warehouse connections:
 +
 This option was already available for xref:connections-redshift-private-link.adoc[Amazon Redshift] and xref:connections-snowflake-private-link.adoc[Snowflake].
 
+[#okta]
+Okta authentication::
+
+Okta authentication is now GA and on by default. In this release, ThoughtSpot switched to a new, industry-standard cloud authentication method through Okta. ThoughtSpot now powers its internal authentication with Okta, which is the industry-leading authentication platform. This change is internal and has no impact on customers. After we enable this feature by default, all user authentication will automatically use the internal Okta service.
++
+This switch involves several external improvements to authentication, including security enhancements:
+
+* Ability to map IDP attributes from the ThoughtSpot Admin Console (username, email, and display name).
+* Account activation monitoring from the Users section of the Admin Console: if a user still needs to activate their account, administrators can see that information in the Users section and re-send their activation email.
+* Only Okta interacts with your IDP. Your ThoughtSpot cluster does not directly interact with your IDP.
+* Local users create their own password during activation. Administrators do not create the password prior to activation.
+
 [#8-5-0-cl-developer]
 === For the Developer
 

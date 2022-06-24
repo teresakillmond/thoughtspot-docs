@@ -43,10 +43,16 @@ endif::[]
 
 image::xlsx-download-85.png[XLSX download image]
 
-//[#8-5-0-cl-okta-business-user]
-//*Okta business user features*
+[#8-5-0-cl-okta-business-user]
+*Okta account activation*
 
-// Teresa -- waiting for info
+In this release, ThoughtSpot switched to a new, industry-standard cloud authentication method through Okta. As part of this switch, new local users now create their own password during activation. Administrators do not create the password prior to activation. For more information,
+ifndef::pendo-links[]
+see xref:user-account-activation.adoc[Activate your ThoughtSpot account].
+endif::[]
+ifdef::pendo-links[]
+see xref:user-account-activation.adoc[Activate your ThoughtSpot account,window=_blank].
+endif::[]
 
 '''
 [#secondary-8-5-0-cl]
@@ -173,10 +179,25 @@ ifdef::pendo-links[]
 see xref:connections-private-link-intro.adoc[Enabling an AWS PrivateLink between ThoughtSpot Cloud and your cloud data warehouse,window=_blank].
 endif::[]
 
-//[#8-5-0-cl-okta-admin]
-//*Okta admin features*
+[#8-5-0-cl-okta-admin]
+*Okta authentication*
 
-// Teresa -- waiting for info
+In this release, ThoughtSpot switched to a new, industry-standard cloud authentication method through Okta. This switch involves several external improvements to authentication:
+
+* Ability to map IDP attributes for SAML authentication from the ThoughtSpot Admin Console (username, email, and display name). For more information,
+ifndef::pendo-links[]
+see xref:authentication-integration.adoc[Managing authentication with SAML].
+endif::[]
+ifdef::pendo-links[]
+see xref:authentication-integration.adoc[Managing authentication with SAML,window=_blank].
+endif::[]
+* Account activation monitoring from the Users section of the Admin Console: if a user still needs to activate their account, administrators can see that information in the Users section and re-send their activation email. For more information,
+ifndef::pendo-links[]
+see xref:user-management.adoc[Create, edit, or delete a  user].
+endif::[]
+ifdef::pendo-links[]
+see xref:user-management.adoc[Create, edit, or delete a  user,window=_blank].
+endif::[]
 
 *ThoughtSpot Everywhere*
 
