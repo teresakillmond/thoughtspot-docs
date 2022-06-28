@@ -1,11 +1,13 @@
 = Monitor Key Performance Indicators in your data
-:last_updated: 6/6/2022
+:last_updated: 6/28/2022
 :description: Use the Monitor feature to receive periodic updates on your KPIs, or to receive an alert when your KPI satisfies a given threshold condition.
 :linkattrs:
 :page-layout: default-cloud
 :experimental:
 
 ThoughtSpot now supports scheduled alerts for changes in xref:chart-kpi.adoc[Key Performance Indicators (KPIs)] in your data. You can use the Monitor function to receive notifications when your KPI satisfies a certain threshold condition, or to schedule notifications for your KPIs on an hourly, daily, weekly, or monthly basis. From the *Monitor* tab, you can view and manage all KPI alerts you create or subscribe to.
+
+NOTE: Starting with the 8.5.0.cl release, ThoughtSpot supports cluster-level admin controls for upper-limit monitoring frequency (option available under *Admin > Search & SpotIQ > SpotIQ Settings*). For example, if your admin defines “Shortest time period to check alerts” as “weekly,” then you will not see “hourly” or “daily” options when you create an alert.
 
 [#threshold-based-alert]
 == Create a threshold-based KPI alert ([.badge.badge-update]#Beta#)
