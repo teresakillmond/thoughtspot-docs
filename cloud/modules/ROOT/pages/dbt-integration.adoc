@@ -6,7 +6,7 @@
 
 ThoughtSpot's dbt integration allows you to easily provide your existing dbt models and automatically create ThoughtSpot xref:worksheets.adoc[worksheets], which you can use to xref:search-data.adoc[search your data].
 
-dbt takes your raw data in your data warehouse and transforms and validates it. ThoughtSpot's dbt integration  connects users to their cloud data warehouse, integrates with your dbt models using an API key or zip file, and generates the relationships between the tables defined in the dbt model that you select. Then, ThoughtSpot creates worksheets, based on the relationships between the tables. These worksheets provide user-friendly logical views of your complex datasets. Users can use these worksheets to easily search their complex data.
+dbt takes your raw data in your data warehouse and transforms and validates it. ThoughtSpot's dbt integration  connects users to their cloud data warehouse, integrates with your dbt models using an API key or zip file, and generates the relationships between the tables defined in the dbt model that you select. It also brings any logical tables into ThoughtSpot. Then, ThoughtSpot creates worksheets, based on the relationships between the tables. These worksheets provide user-friendly logical views of your complex datasets. Users can use these worksheets to easily search their complex data.
 
 == Prerequisites
 Before you can integrate with dbt, you must satisfy the following prerequisites
@@ -68,7 +68,7 @@ image::dbt-integration-tables.png[dbt integration step 3]
 +
 image::dbt-integration-worksheets.png[dbt integration step 4]
 +
-To inspect the worksheet details, click on any of the worksheet names.
+To inspect the worksheet details, click on any of the worksheet names. You can view the joins created between the related tables in the worksheet from the *Joins* tab for the worksheet.
 +
 To xref:search-data.adoc[search the data] on the worksheet, select *Search on this worksheet* next to any worksheet.
 
@@ -84,6 +84,6 @@ image::dbt-integration-home-page.png[dbt integration view worksheets and tables]
 
 == Limitations
 
-* You can only connect to one dbt folder at a time.
+* Currently, you can only connect to one dbt folder at a time.
 
-* The integration does not support relationships defined across folders.
+* The integration does not currently support relationships defined across folders.
