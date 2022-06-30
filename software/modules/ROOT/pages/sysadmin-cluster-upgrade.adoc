@@ -61,7 +61,7 @@ WARNING: Do not put the release files in the `/home/admin` or `/home/thoughtspot
 
 To download the release files, use one of two methods:
 
-* Download the release files from Egnyte, and use `winscp` or a similar secure copy method to copy the downloaded release bundle from your Downloads folder to any path in the `/export` folder of your ThoughtSpot node that has enough space.
+* Download the release files from Egnyte, and use `winscp` or a similar secure copy method to copy the downloaded release bundle from your Downloads folder to any path in the `/export` folder of your ThoughtSpot node that has enough space, at least 20 GB.
 +
 <<download-scp, To download using secure copy, follow these steps>>.
 
@@ -89,7 +89,7 @@ To download the release files, use one of two methods:
 
 [#upgrade-step-2]
 === Step 2: Check disk space
-. Check disk space by running `df -h`. `/tmp` needs at least 21 GB free for upgrades, and you need at least 10% availability on every other filesystem, except for `/update`.
+. Check disk space by running `df -h`. `/tmp` needs at least 21 GB free for upgrades, `/export` needs at least 30 GB free, and you need at least 10% availability on every other filesystem, except for `/update`.
 +
 [source,bash]
 ----
