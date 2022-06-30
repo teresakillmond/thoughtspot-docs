@@ -1,4 +1,4 @@
-= Upgrade or patch a cluster
+= Upgrade or patch a single-node ThoughtSpot CentOS cluster
 :last_updated: 01/10/2020
 :linkattrs:
 :page-aliases: /admin/system-admin/upgrade-a-cluster.adoc
@@ -167,7 +167,7 @@ Note the following parameters:
 $ tscli cluster status --tail
 ----
 +
-NOTE: During the upgrade process, some services may temporarily be unavailable. The status of an update task in the `tscli cluster status --tail` command might be `FAILURE`. In this case, the installer will run the command again, and the update task should return to `SUCCESS. If an update task continues to fail, xref:support-contact.adoc[contact ThoughtSpot Support].
+NOTE: During the upgrade process, some services may temporarily be unavailable. The status of an update task in the `tscli cluster status --tail` command might be `FAILURE`. In this case, the installer will run the command repeatedly until the update task status is `SUCCESS. If an update task continues to fail, xref:support-contact.adoc[contact ThoughtSpot Support].
 
 . The upgrade takes about 1.5 hours to complete.
 
@@ -262,7 +262,7 @@ The patch process for each patch takes about 10 minutes. Once a patch has been a
 
 [#patch-step-4]
 === Step 4: Finalize installation
-Ensure that ThoughtSpot applied the patches successfully by running several commands.
+Ensure that ThoughtSpot applied the patches successfully by running the following commands.
 
 . Ensure that the new patches you applied appear in the `tscli patch ls` output.
 +
