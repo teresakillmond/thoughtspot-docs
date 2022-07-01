@@ -7,6 +7,8 @@
 :page-layout: default-cloud
 :description: These release notes include information about new and enhanced features.
 
+// include::partial$cloud-coming-soon-release-notes.adoc[]
+
 ThoughtSpot 8.4.0.cl is now available.
 
 These release notes include information about new and enhanced features.
@@ -151,7 +153,7 @@ This release redesigns the *Data* section of the product. The new Data Workspace
 This feature is in beta and off by default. To enable it,  contact {support-url}.
 
 Pivot table scroll bar::
-If your pivot table contains more than 2 measures, the column header now has a horizontal scroll bar, so you can see all your measures without taking up  excessive space in the pivot table.
+If your pivot table contains multiple measures with long names, the column header now has a horizontal scroll bar, so you can see all your measures without taking up  excessive space in the pivot table.
 
 Group aggregate enhancement::
 When using a group aggregate formula in a Search, you can now view the results grouped at the level of detail specified in your aggregation formula.
@@ -915,7 +917,7 @@ If a custom action requires your users to authenticate to send data to a URL, yo
 [#custom-action-position]
 Custom action position settings::
 ThoughtSpot users with edit privileges can now define or modify the position of a custom action on visualization pages.
-When a developer creates a custom action in the Developer portal, ThoughtSpot adds a menu item to the *More* menu image:icon-ellipses.png[more options menu icon] by default.
+When a developer creates a custom action in the Developer portal, ThoughtSpot adds a menu item to the *More* menu image:icon-more-10px.png[more options menu icon] by default.
 ThoughtSpot users can change this to a context menu action or a primary action at any time.
 If your application instance requires an action that sends only a single row of data from charts or tables, developers can configure a custom action and restrict it to only the contextual menu.
 If this setting is enabled on a custom action, ThoughtSpot users cannot modify this action on a visualization page.  For more information, see https://developers.thoughtspot.com/docs/?pageid=custom-action-viz[ThoughtSpot Developer Documentation].
@@ -1051,7 +1053,7 @@ Cookies are disabled by default in Safari.
 Users can enable third-party cookies in Safari's Preferences setting page or use another web browser.
 To know how to enable this setting by default on Safari for a ThoughtSpot embedded instance, https://community.thoughtspot.com/customers/s/contactsupport[contact ThoughtSpot Support].
 [#pinboard-embed-enhancements]
-Liveboard embed enhancements::  The More menu image:icon-ellipses.png[more options menu icon] in the embedded Liveboard page now shows the following actions for Liveboard and visualizations.
+Liveboard embed enhancements::  The More menu image:icon-more-10px.png[more options menu icon] in the embedded Liveboard page now shows the following actions for Liveboard and visualizations.
 
 Liveboard
 
@@ -1231,7 +1233,7 @@ to add columns and tables to an Embrace connection through Scriptability, contac
 ** Constants: int, double, bool, date, and string
 ** Comparison operators: `=`, `!=`, `<`, `>`, `+<=+`, and `>=`
 ** Columns
-** Boolean operators: `AND`, `OR`, and `NOT` This feature is in *Beta* and on by default.
+** Boolean operators: `AND` and `NOT`. This feature is in *Beta* and on by default.
 
 [#mar-cloud-business-user]
 === For the Business User
