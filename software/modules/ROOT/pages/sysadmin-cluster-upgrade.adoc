@@ -89,7 +89,7 @@ To download the release files, use one of two methods:
 
 [#upgrade-step-2]
 === Step 2: Check disk space
-. Check disk space by running `df -h`. `/tmp` needs at least 21 GB free for upgrades, `/export` needs at least 30 GB free, and you need at least 10% availability on every other filesystem, except for `/update`.
+. Check disk space by running `df -h`. `/tmp` needs at least 50 GB free for upgrades, `/export` needs at least 30 GB free, and you need at least 10% availability on every other filesystem, except for `/update`.
 +
 [source,bash]
 ----
@@ -100,9 +100,9 @@ The output of this command shows all disks in the ThoughtSpot node and their ava
 
 [#upgrade-step-3]
 === Step 3: Create a cluster snapshot and back it up on disk
-. Take a manual snapshot of the cluster. For information on how to take a manual snapshot, refer to xref:snapshots.adoc#manual-snapshot[Work with snapshots].
+. Take a manual snapshot of the cluster. For information on how to take a manual snapshot, refer to xref:snapshots.adoc#manual-snapshot[Work with snapshots]. Note that snapshot creation may take some time.
 
-. Take a manual backup of the cluster. For information on how to take a manual backup, refer to xref:backup-manual.adoc[Create a manual backup].
+. Take a manual backup of the cluster. For information on how to take a manual backup, refer to xref:backup-manual.adoc[Create a manual backup]. Note that taking a backup may take some time.
 
 [#upgrade-step-4]
 === Step 4: Check the cluster's health and integrity of provided software
