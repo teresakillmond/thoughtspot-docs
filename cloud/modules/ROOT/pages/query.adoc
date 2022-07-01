@@ -1,5 +1,5 @@
 = Queries
-:last_updated: 03/31/2022
+:last_updated: 06/18/2022
 :linkattrs:
 :experimental:
 
@@ -113,7 +113,6 @@ h|Undo/Redo
 
 |===
 
-We count the indexterm2:[row]s of data that can be searched. ThoughtSpot accesses data though connections from external data sources, searchable in TS. Data is brought into ThoughtSpot through an Embrace connection to an external Cloud data warehouse or through  CSV upload. The same data may be labeled multiple times under different table names and applied with different security rules by different users. We calculate the total row count across all these tables. A ThoughtSpot view is also treated as a table.
+We count the indexterm2:[row]s of data that can be searched. ThoughtSpot accesses data though connections from external data sources, searchable in TS. Data moves into ThoughtSpot through a connection to an external Cloud data warehouse, or through  CSV upload. Your configuration may label the same data multiple times under different table names, and apply different security rules for different users. We calculate the total row count across all these tables. In ThoughtSpot, we treat views as tables.
 
-Search Index token: ThoughtSpot search engine indexes both table column names and values of attribute column values. Those non-date values are cached locally, and will be used for auto-completion when a user tries to type the name in the search bar. Each cached value will be considered as an index token.
-
+Query token: ThoughtSpot search engine indexes both table column names and values of attribute column values. We cache these non-date values locally, and use them for auto-completion when a user types in the search bar. Each cached value is a query token.
