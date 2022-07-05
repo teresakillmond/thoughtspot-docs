@@ -11,6 +11,21 @@ These are the issues we fixed in recent ThoughtSpot releases.
 [tabset]
 ====
 
+7.2.1.CU1::
++
+--
+* tsload binary loads incorrect timestamp values for an Apache Parquet file.
+* Table visualization in a Liveboard displays a blank screen, while chart types actually display the data.
+* Editing a visualization in a Liveboard changes the chart type to `column`.
+* Issues with tscli and hadoop_tool on a cluster running Amazon Linux 2 after Python 3 is upgraded to 3.7.
+* Error displays when viewing a Liveboard which contains a visualization, but when in the visualization, it displays normally.
+* A warning message indicating "Still indexing" appears when a user creates answers based on a worksheet.
+* Join creation fails because of sharding mismatch.
+* When optimized count-distinct is enabled, sorted merge grouping occurs on nodes that are not ordered, which leads to results containing duplicate rows.
+* "Unique count not supported" error appears after migration using Snowflake.
+* Upgrade to 7.0.1.CU1 fails.
+* Headers are missing from pivot table exported as Microsoft Excel format.
+--
 7.2.1::
 +
 --
