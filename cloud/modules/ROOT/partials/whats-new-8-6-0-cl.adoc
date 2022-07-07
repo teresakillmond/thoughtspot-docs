@@ -4,52 +4,68 @@ NOTE: Features designated as [.badge.badge-update]#Beta# are off by default. To 
 
 [#primary-8-6-0-cl]
 
-[#content-discoverable]
+[#8-6-0-cl-content-discoverable]
 *Making content discoverable*
 
 // Naomi
 
-[#threshold-alerts]
+[#8-6-0-cl-threshold-alerts]
 *Threshold-based alerts*
 
 // Naomi
 
-[#data-panel]
+[#8-6-0-cl-data-panel]
 *Data panel search improvements*
 
 // Mark
 
-[#liveboard-v2]
+[#8-6-0-cl-liveboard-v2]
 *New Liveboard experience GA*
 
-// Teresa
+The new Liveboard experience is now GA and on by default. It contains new features and enhancements, including Edit mode, HTML in Liveboard titles and descriptions, and improved filtering.
 
-[#homepage-delete]
+To try it out, navigate to your profile, scroll down to *Experience*, select *Edit*, and toggle the Liveboard experience to *New experience*. For more information,
+ifndef::pendo-links[]
+see xref:liveboard-experience-new.adoc[New Liveboard experience].
+endif::[]
+ifdef::pendo-links[]
+See xref:liveboard-experience-new.adoc[New Liveboard experience,window=_blank].
+endif::[]
+
+image::new-liveboard-experience-gif.gif[New Liveboard experience gif]
+
+[#8-6-0-cl-homepage-delete]
 *Delete objects from home page*
 
 // Naomi
 
-[#answer-v2-mobile]
+[#8-6-0-cl-answer-v2-mobile]
 *New answer experience on mobile*
 
 // Mark
 
-[#teams]
+[#8-6-0-cl-teams]
 *Teams edition*
 
 // Mark -- needs eval
 
-[#kpi-anomaly]
+[#8-6-0-cl-kpi-anomaly]
 *Show anomaly on KPI chart*
 
 // Naomi -- needs eval
 
-[#okta-local-user]
-*New user activation*
+[#8-6-0-cl-okta-business-user]
+*Local account activation*
 
-// Teresa
+In this release, ThoughtSpot switched to a new, industry-standard cloud authentication method through Okta. As part of this switch, new local users now create their own password during activation. Administrators do not create the password prior to activation. For more information,
+ifndef::pendo-links[]
+see xref:user-account-activation.adoc[Activate your ThoughtSpot account].
+endif::[]
+ifdef::pendo-links[]
+see xref:user-account-activation.adoc[Activate your ThoughtSpot account,window=_blank].
+endif::[]
 
-[#pricing]
+[#8-6-0-cl-pricing]
 *Pricing*
 
 // Mark -- needs eval
@@ -58,45 +74,60 @@ NOTE: Features designated as [.badge.badge-update]#Beta# are off by default. To 
 [#secondary-8-6-0-cl]
 *_Other features and enhancements_*
 
-[#dbt-integration]
+[#8-6-0-cl-dbt-integration]
 *Integration with dbt enhancements*
 
 // Teresa
 
-[#spotapps]
+[#8-6-0-cl-spotapps]
 *SpotApps*
 
 // Teresa
 
-[#tml]
+[#8-6-0-cl-tml]
 *TML import improvements*
 
 // Teresa
 
-[#python]
+[#8-6-0-cl-python]
 *Python 3.9 upgrade*
 
 // Teresa -- waiting for info
 
-[#okta-admin]
-*Local and SAML authentication improvements*
-
-// Teresa
-
-[#snowflake-csv]
+[#8-6-0-cl-snowflake-csv]
 *Upload Snowflake CSV*
 
 // Mark
 
-[#denodo]
+[#8-6-0-cl-denodo]
 *Connect to Denodo*
 
 // Mark
 
-[#delete-relationship]
-*Delete relationships even with dependents*
+[#8-6-0-cl-delete-relationship]
+*Delete relationships that have dependents*
 
 // Teresa
+
+[#8-6-0-cl-okta-admin]
+*Okta authentication*
+
+In this release, ThoughtSpot switched to a new, industry-standard cloud authentication method through Okta. This switch involves several external improvements to authentication:
+
+* Ability to map IDP attributes for SAML authentication from the ThoughtSpot Admin Console (username, email, and display name). For more information,
+ifndef::pendo-links[]
+see xref:authentication-integration.adoc[Managing authentication with SAML].
+endif::[]
+ifdef::pendo-links[]
+see xref:authentication-integration.adoc[Managing authentication with SAML,window=_blank].
+endif::[]
+* Account activation monitoring from the Users section of the Admin Console: if a user still needs to activate their account, administrators can see that information in the Users section and re-send their activation email. For more information,
+ifndef::pendo-links[]
+see xref:user-management.adoc[Create, edit, or delete a  user].
+endif::[]
+ifdef::pendo-links[]
+see xref:user-management.adoc[Create, edit, or delete a  user,window=_blank].
+endif::[]
 
 *ThoughtSpot Everywhere*
 
