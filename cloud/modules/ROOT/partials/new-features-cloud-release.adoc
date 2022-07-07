@@ -17,6 +17,17 @@ For these instructions, see xref:ts-cloud-getting-started.adoc[Getting Started w
 [#8-6-0-cl-analyst]
 === For the Analyst
 
+New Liveboard experience::
+The xref:liveboard-experience-new.adoc[new Liveboard experience] is now GA and on by default. It contains multiple new features and feature enhancements.
+It is part of ThoughtSpot's move to a new stack.
+To learn how to manage its enablement, refer to xref:liveboard-experience-new.adoc[].
++
+The new Liveboard experience contains the following new features:
+
+include::partial$new-liveboard-experience-features.adoc[]
+
+include::partial$new-liveboard-experience-deprecations.adoc[]
+
 [#8-6-0-cl-business-user]
 === For the Business User
 
@@ -25,6 +36,18 @@ For these instructions, see xref:ts-cloud-getting-started.adoc[Getting Started w
 
 [#8-6-0-cl-it-ops-engineer]
 === For the IT Ops Engineer
+
+[#okta]
+Okta authentication::
+
+Okta authentication is now GA and on by default. In this release, ThoughtSpot switched to a new, industry-standard cloud authentication method through Okta. ThoughtSpot now powers its internal authentication with Okta, which is the industry-leading authentication platform. This change is internal and has no impact on customers. After we enable this feature by default, all user authentication will automatically use the internal Okta service.
++
+This switch involves several external improvements to authentication, including security enhancements:
+
+* Ability to map IDP attributes from the ThoughtSpot Admin Console (username, email, and display name).
+* Account activation monitoring from the Users section of the Admin Console: if a user still needs to activate their account, administrators can see that information in the Users section and re-send their activation email.
+* Only Okta interacts with your IDP. Your ThoughtSpot cluster does not directly interact with your IDP.
+* Local users create their own password during activation. Administrators do not create the password prior to activation.
 
 [#8-6-0-cl-developer]
 === For the Developer
