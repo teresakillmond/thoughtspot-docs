@@ -11,6 +11,7 @@ A column's *INDEX TYPE* controls whether and how ThoughtSpot suggests column val
 Additionally, ThoughtSpot uses a column's *INDEX PRIORITY* value to determine where to rank a column's name and values in the search suggestions.
 These values impact ThoughtSpot's dynamically calculated usage-based ranking (UBR).
 
+[#index-type]
 == Example of Search suggestion behavior
 
 The following example illustrates how searching for `promotion_last_name` and then the letter `t` causes the system to suggest several ways of completing the `t` in the search:
@@ -27,6 +28,7 @@ Managing search suggestions through *INDEX TYPE* and *INDEX PRIORITY* is importa
 Properly configured suggestions can decrease "noise" in the suggestion list.
 Increasing the visibility of important columns is helpful for new or intermittent ThoughtSpot users.
 
+[#understand-the-default-indexing-behavior]
 == Understand the default indexing behavior
 
 ThoughtSpot has a system default *INDEX TYPE* behavior for search suggestions.
@@ -108,6 +110,7 @@ To change a value in the application UI:
 
 If you are using the model file, locate the *Index* cell, and enter the *INDEX TYPE* you want to use.
 
+[#change-a-columns-suggestion-priority]
 == Change a column's suggestion priority
 
 A column's *INDEX PRIORITY* determines the order or rank in which it and its values appear in the search dropdown.
