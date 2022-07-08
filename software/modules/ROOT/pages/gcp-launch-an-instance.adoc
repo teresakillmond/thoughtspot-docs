@@ -38,7 +38,7 @@ Ask your network administrator if you need help filling out the site survey.
 == Setting up your Google Cloud Storage (GCS) bucket
 
 If you are going to deploy your cluster using the GCS-storage option, you must set up that bucket before you set up your cluster.
-Contact xref:contact.html#[ThoughtSpot Support] to find out if your specific cluster size will benefit from the GCS storage option.
+Contact xref:contact.adoc#[ThoughtSpot Support] to find out if your specific cluster size will benefit from the GCS storage option.
 If you are not using GCS, skip this step and <<create-an-instance,create an instance>>.
 
 . Sign in to the https://console.cloud.google.com/[Google Cloud Console, window=_blank].
@@ -58,6 +58,7 @@ If you are not using GCS, skip this step and <<create-an-instance,create an inst
 
 When you create your instance, make sure you set Storage to *Read Write* access.
 
+[#create-an-instance]
 == Create an instance
 
 . Sign in to the https://console.cloud.google.com/[Google Cloud Console, window=_blank].
@@ -77,9 +78,9 @@ image::gcp-computeenginedash.png[Go to the Compute Engine Dashboard]
 . Select the zone you are creating your region in.
 . Under *Machine type*, select *custom*.
 . Select the number of vCPU cores you need.
-+ Refer to xref:configuration-options.adoc#thoughtspot-gcp-instance-types[ThoughtSpot GCP instance types] to determine the number of vCPU cores your cluster needs.
++ Refer to xref:gcp-configuration-options.adoc#thoughtspot-gcp-instance-types[ThoughtSpot GCP instance types] to determine the number of vCPU cores your cluster needs.
 . Specify your memory requirements and CPU platform.
-Refer to xref:configuration-options.adoc#thoughtspot-gcp-instance-types[ThoughtSpot GCP instance types] to determine the memory your cluster needs.
+Refer to xref:gcp-configuration-options.adoc#thoughtspot-gcp-instance-types[ThoughtSpot GCP instance types] to determine the memory your cluster needs.
 +
 Your configuration may look something like the following, but with your specific information.
 +
@@ -159,9 +160,9 @@ Click *Select* to save the boot disk configuration.
 image::gcp-6-save-boot-disk-expand-mgmt.png[Advanced configuration options]
 
 . Attach two 1 TB SSD drives for data storage.
-Refer to xref:configuration-options.adoc#vms-with-persistent-disk-only-storage[SSD-only persistent storage].
+Refer to xref:gcp-configuration-options.adoc#vms-with-persistent-disk-only-storage[SSD-only persistent storage].
 If you are using GCS, attach only 1 SSD drive, with 500 GB instead of 1 TB.
-Refer to xref:configuration-options.adoc#vms-with-persistent-disk-and-google-cloud-storage[GCS and SSD persistent storage].
+Refer to xref:gcp-configuration-options.adoc#vms-with-persistent-disk-and-google-cloud-storage[GCS and SSD persistent storage].
 +
 a.
 Click the *Disks* tab, and click *Add new disk*.
@@ -172,7 +173,7 @@ Unselect the *Deletion rule*, to prevent potential loss of data if your instance
 +
 b.
 Configure the following settings for each disk.
-Refer to xref:configuration-options.adoc#vms-with-persistent-disk-and-google-cloud-storage[ThoughtSpot GCP instance types] to determine the size in GB when you have GCS.
+Refer to xref:gcp-configuration-options.adoc#vms-with-persistent-disk-and-google-cloud-storage[ThoughtSpot GCP instance types] to determine the size in GB when you have GCS.
 Ensure the disks have read/write access.
 +
 [cols="40%,60%"]
