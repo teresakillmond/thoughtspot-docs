@@ -158,7 +158,7 @@ Note the following parameters:
 
 . During the upgrade process, the node reboots. The node reboot logs you out of the node. Wait about 15 minutes before you `ssh` back in. If the `ssh` output says something similar to `Connection refused`, the node is still rebooting.
 
-. If you run into an error during upgrade, and the upgrade fails, refer to <<error-recovery,Error recovery>>.
+. If you run into an error during upgrade, and the upgrade fails, refer to <<error-recovery,Error recovery>>.  If the `HDFS fsimage check` returns `FAILURE`, refer to the <<fsimage,HDFS fsimage check error recovery>>.
 
 . To see which step the upgrade is in, run `tscli cluster status --tail`. When the upgrade is complete, the output of this command says that the upgrade is complete.
 +
@@ -292,6 +292,23 @@ Make sure that the output for each component is `SUCCESS`.
 [#error-recovery]
 == Error recovery
 
+[#fsimage]
+=== HDFS fsimage check failure
+During the upgrade process, after you run `tscli cluster update <filename>`, the `HDFS fsimage check` may return `FAILURE`.  If this happens, there is an issue with the DNS resolution.
+
+. Add the cluster hostname to `/etc/hosts`.
+
+. Try to resume the upgrade with the following command:
++
+[source,bash]
+----
+ $ tscli cluster resume-update
+----
+
+. If the `HDFS fsimage check` fails again, contact {support-url}.
+
+[#tscli-cluster-update]
+=== Upgrade failure during tscli cluster update
 During the upgrade process, after you run `tscli cluster update <filename>`, the upgrade may fail with a message similar to `Update failed for cluster <cluster-name>`.
 
 . Try to resume the upgrade with the following command:
