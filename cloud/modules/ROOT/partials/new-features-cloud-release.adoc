@@ -28,6 +28,18 @@ include::partial$new-liveboard-experience-features.adoc[]
 
 include::partial$new-liveboard-experience-deprecations.adoc[]
 
+TML import improvements::
+You can now import xref:tml.adoc[TML] files that contain certain errors. During the import process, ThoughtSpot removes the part of the object that contains errors, and allows you to import the rest of the object. These errors include the following:
++
+--
+* Some Liveboard visualizations contain errors, but the overall Liveboard is valid: ThoughtSpot removes the visualizations that contain errors and imports the Liveboard.
+* Some Liveboard filters contain errors, but the overall Liveboard is valid: ThoughtSpot removes the filters that contain errors and imports the Liveboard.
+* Destination tables for some joins in a table do not exist, but the overall table is valid: ThoughtSpot removes the joins that do not have destination tables and imports the table.
+--
++
+Refer to xref:scriptability.adoc#migrate-object[Migrate an object].
+
+
 [#8-6-0-cl-business-user]
 === For the Business User
 
