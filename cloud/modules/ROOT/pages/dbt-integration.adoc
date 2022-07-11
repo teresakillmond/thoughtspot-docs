@@ -54,13 +54,13 @@ Project ID:: Find your project ID in your dbt Cloud URL, after you log in. For e
 
 . Select *Next*.
 
-. On the next screen, select a dbt folder to import. ThoughtSpot lists the model names, paths, and the number of tables they have. Your model must have at least 2 tables.
+. On the next screen, select up to 4 dbt folders to import. ThoughtSpot lists the model names, paths, and the number of tables they have. Your model must have at least 2 tables.
 +
-image::dbt-integration-folder.png[dbt integration step 2]
+image::dbt-integration-folder-multiple.png[dbt integration step 2]
 
 . Select *Next*.
 
-. On the next screen, select tables to import. By default, ThoughtSpot imports all tables in the folder. Deselect any tables you do not want to import. You must select at least 2 tables within the dbt folder. These tables must have relationships to each other.
+. On the next screen, select tables to import. By default, ThoughtSpot imports all tables in the folder(s). Deselect any tables you do not want to import. You must select at least 1 table within each dbt folder.
 +
 image::dbt-integration-tables.png[dbt integration step 3]
 
@@ -86,8 +86,8 @@ image::dbt-integration-home-page.png[dbt integration view worksheets and tables]
 
 == Limitations
 
-* Currently, you can only connect to one dbt folder at a time.
+* You can only connect to a maximum of 4 dbt folders at a time.
 
-* The integration does not currently support relationships defined across folders.
+* You must select at least 1 table within each dbt folder you import.
 
-* You must select at least 2 tables within the dbt folder. These tables must have relationships to each other.
+* Integration with dbt is certified only for Snowflake and Databricks connections.
