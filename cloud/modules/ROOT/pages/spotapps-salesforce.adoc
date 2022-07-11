@@ -1,0 +1,93 @@
+= {spotapp}
+:last_updated: 6/13/2022
+:experimental:
+:linkattrs:
+:page-layout: default-cloud
+:description: Deploy the {spotapp}, an out-of-the-box solution template built specifically for {application}.
+:spotapp: Salesforce Pipeline Analysis SpotApp
+:application: Salesforce
+
+include::partial$spotapps-intro.adoc[]
+
+//This is a sample Liveboard, created after you deploy the {spotapp}: (waiting for image)
+
+//image::spotapp-salesforce-liveboard.png[Salesforce SpotApp Liveboard]
+
+Use the {spotapp} to USE CASE INFO
+
+[#prerequisites]
+== Prerequisites
+Before you can deploy the {spotapp}, you must complete the following prerequisites:
+
+include::partial$spotapp-prereqs-general.adoc[]
+
+* Administrator access to {application}
+* Access to the following {application} tables and worksheets in your cloud data warehouse. Refer to <<schema,{spotapp} schema>> for more details.
+** ACCOUNTS (table)
+** OPPORTUNITY (table)
+** OPPORTUNITY_HISTORY (table)
+** OPPORTUNITY_STAGE (table)
+** USER (table)
+** Salesforce (worksheet)
+* Run the required SQL script in your cloud data warehouse. Refer to <<sql,Run SQL script>>.
+
+//this is where I'm stopping and waiting for info
+
+[#sql]
+=== Run SQL script
+Run the following SQL script on your Databricks instance. It helps load the Databricks data into tables. Replace any parts of the script that say `UPDATE` with your specific information, such as the `hostid`, `accountid`, and `authorization token`.
+
+NOTE: You must run this Python script on the Databricks cloud data warehouse.
+
+Python script:
+[%collapsible]
+.Click on the dropdown to view the Python script.
+====
+--
+include::partial$databricks-python-script.adoc[]
+--
+====
+
+include::partial$spotapp-deploy-individual.adoc[]
+
+== {spotapp} schema
+
+The following table describes the schema for the {spotapp}.
+
+[#schema]
+|===
+| Table |Column | Column type | Required column
+
+| ENDPOINTS | NAME| VARCHAR | Y
+| ENDPOINTS | ID| VARCHAR | Y
+| QUERIES | ENDPOINT_ID | VARCHAR | Y
+| QUERIES | QUERY_TEXT| VARCHAR | Y
+| QUERIES | STATUS| VARCHAR | N
+| QUERIES | USER_NAME | VARCHAR | N
+| QUERIES | QUERY_START_TIME| DATE_TIME | Y
+| QUERIES | METRICS.READ_CACHE_BYTES| INTEGER | N
+| QUERIES | METRICS.READ_PARTITIONS_COUNT | INTEGER | N
+| QUERIES | METRICS.READ_REMOTE_BYTES | INTEGER | N
+| QUERIES | METRICS.SPILL_TO_DISK_BYTES | INTEGER | N
+| QUERIES | METRICS.ROWS_READ_COUNT | INTEGER | Y
+| QUERIES | METRICS.READ_FILES_COUNT| INTEGER | N
+| QUERIES | METRICS.ROWS_PRODUCED_COUNT | INTEGER | N
+| QUERIES | METRICS.RESULT_FROM_CACHE | BOOLEAN | Y
+| QUERIES | METRICS.WRITE_REMOTE_BYTES| INTEGER | N
+| QUERIES | ERROR_MESSAGE | VARCHAR | Y
+| QUERIES | QUERY_ID| VARCHAR | Y
+| QUERIES | METRICS.TOTAL_TIME_MS | INTEGER | Y
+| QUERIES | METRICS.EXECUTION_TIME_MS | DOUBLE| Y
+| QUERIES | METRICS.COMPILATION_TIME_MS | DOUBLE| Y
+| QUERIES | METRICS.TASK_TOTAL_TIME_MS| INTEGER | Y
+| QUERIES | METRICS.RESULT_FETCH_TIME_MS| INTEGER | Y
+| BILLING | DBUS| DOUBLE| Y
+| BILLING | MACHINEHOURS| DOUBLE| Y
+| BILLING | CLUSTERNODETYPE | VARCHAR | Y
+| BILLING | CLUSTERNAME | VARCHAR | Y
+| BILLING | CLUSTERID | VARCHAR | Y
+| BILLING | WORKSPACEID | INTEGER | N
+| BILLING | CLUSTEROWNERUSERID| INTEGER | N
+| BILLING | SKU | VARCHAR | Y
+| BILLING | TIMESTAMP | DATE_TIME | Y
+|===
