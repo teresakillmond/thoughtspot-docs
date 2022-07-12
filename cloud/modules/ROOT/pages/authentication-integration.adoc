@@ -147,8 +147,7 @@ To determine if ThoughtSpot supports your preferred IDP, contact {support-url}.
 
 Complete your configuration of the IDP using the IDP's SAML documentation.
 Upload or copy the contents of the `spring_saml_metadata.xml` to your IDP server.
-This file contains the public key you need if you want to encrypt your SAML assertions.
-If you did not download the `spring_saml_metadata.xml` file, navigate to the SAML configuration page in ThoughtSpot: *Admin > SAML*. Select *Download sp metadata xml*. If you do not see this option, you have not completed configuration of SAML in ThoughtSpot.
+This file contains the public key you need if you want to encrypt your SAML assertions. It also contains the *Assertion Consumer Service URL* and *Audience*. If you did not download the `spring_saml_metadata.xml` file, navigate to the SAML configuration page in ThoughtSpot: *Admin > SAML*. Select *Download sp metadata xml*. If you do not see this option, you have not completed configuration of SAML in ThoughtSpot.
 
 NOTE: When configuring SAML 2.0, make sure you map the SAML user attributes and subjects to appropriate fields.
 This allows the ThoughtSpot system to automatically pick up certain attributes and subjects, such as a user's email address, display name, and username.
