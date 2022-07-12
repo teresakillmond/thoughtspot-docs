@@ -139,11 +139,12 @@ ifndef::free-trial-feature[]
 
 ThoughtSpot now supports session-level ranking of Date columns in Search. For example, when you add a date column such as `promotion date` to your Search, then the `promotion date` column rises to the top of Search completion suggestions for the duration of your session.
 endif::[]
-ifndef::free-trial-feature[]
+ifdef::free-trial-feature[]
 [#8-5-0-cl-databricks]
 *Databricks Partner Connect*
 
 Databricks Partner Connect allows you to try out ThoughtSpot connected to Databricks for free.
+
 // For details,
 // ifndef::pendo-links[]
 // see xref:connections-databricks-partner.adoc[ThoughtSpot in Databricks Partner Connect].
@@ -151,7 +152,9 @@ Databricks Partner Connect allows you to try out ThoughtSpot connected to Databr
 // ifdef::pendo-links[]
 // see xref:connections-databricks-partner.adoc[ThoughtSpot in Databricks Partner Connect,window=_blank].
 // endif::[]
+endif::[]
 
+ifndef::free-trial-feature[]
 [#8-5-0-cl-okta-oauth]
 *Snowflake Okta OAuth*
 
@@ -175,6 +178,7 @@ Starburst connections now support OAuth.
 // For details, see xref:connections-starburst-oauth.adoc[Configure OAuth for a Starburst connection,window=_blank].
 // endif::[]
 endif::[]
+
 ifndef::free-trial-feature[]
 [#8-5-0-cl-private-link]
 *PrivateLink support*
