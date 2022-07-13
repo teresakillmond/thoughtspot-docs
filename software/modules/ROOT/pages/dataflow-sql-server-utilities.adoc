@@ -1,0 +1,43 @@
+= Using Sql server utilities
+:redirect_from: /data-integrate/dataflow/dataflow-sql-server-utilities.html
+:experimental:
+:linkattrs:
+
+Follow these steps to install the SQL Server:
+
+. Download the Microsoft Red Hat repository configuration file.
++
+----
+sudo curl https://packages.microsoft.com/config/rhel/8/prod.repo > /etc/yum.repos.d/msprod.repo
+----
++
+. If you have previous version of mssql-tools installed, remove any older unixODBC packages.
++
+----
+sudo yum remove mssql-tools unixODBC-utf16-devel
+----
++
+. Run the following commands to install mssql-tools with the unixODBC developer package.
++
+----
+sudo yum install mssql-tools unixODBC-devel
+----
++
+. Add `bcp/sqlcmd` command in dataflow, then it creates symlinks in `/usr/bin` folder.
++
+----
+ sudo ln -s /opt/mssql-tools/bin/bcp /usr/bin/bcp
+ sudo ln -s /opt/mssql-tools/bin/sqlcmd /usr/bin/sqlcmd
+----
+
+. Verify the installation by running the `bcp` or `sqlcmd` command.
++
+----
+#sqlcmd
+----
+
+. Restart the DataFlow service.
++
+----
+#tscli --adv service restart dataflow
+----
