@@ -1,10 +1,9 @@
 = Configure other global properties in DataFlow
-:last_updated: 20/09/2021
+:last_updated: 13/07/2022
 :experimental:
 :linkattrs:
 
-
-Follow these steps to set up some global properties for your DataFlow instance. These include the <<dataflow-other-config-staging-directory,staging directory>>, <<dataflow-other-config-allowed-paths-for-data-files,alternate data file paths>>, <<dataflow-other-config-sync-schedule-calendar-timezone,global timezone for scheduling updates>>, and the <<dataflow-other-config-parallel-sync-execution-count-limit,maximum parallel threads for synchronising data>>.
+Follow these steps to set up some global properties for your DataFlow instance. These include the <<dataflow-other-config-staging-directory,staging directory>>, <<dataflow-other-config-allowed-paths-for-data-files,alternate data file paths>>, <<dataflow-other-config-sync-schedule-calendar-timezone,global timezone for scheduling updates>>,  <<dataflow-other-config-parallel-sync-execution-count-limit,maximum parallel threads for synchronising data>>, <<dataflow-other-config-delete-stage-files,deleting stage files>>, <<dataflow-other-config-query-timeout-in-seconds,query timeout in seconds>>, <<dataflow-other-config-number-of-executions-to-display-for-each-sync,number of executions to display for each sync>>, <<dataflow-other-config-number-of-lines-to-be-parsed,number of lines to be parsed >>.
 
 NOTE: You must have administrator privileges.
 
@@ -34,6 +33,26 @@ Mandatory field.
 [#dataflow-other-config-parallel-sync-execution-count-limit]
 Parallel sync execution count limit::
 Specify the maximum parallel execution limit for syncing data.
++
+Mandatory field.
+[#dataflow-other-config-delete-stage-files]
+Delete stage files::
+Select the stage file deletion. The default is Always.
++
+Mandatory field.
+[#dataflow-other-config-query-timeout-in-seconds]
+Query timeout in seconds::
+Specify the maximum query timeout in seconds for syncing data.
++
+Mandatory field.
+[#dataflow-other-config-number-of-executions-to-display-for-each-sync]
+Number of executions to display for each sync::
+Specify the number of executions to display for each syncing data.
++
+Mandatory field.
+[#dataflow-other-config-number-of-lines-to-be-parsed]
+Number of lines to be parsed::
+Specify the number of lines to be parsed to view data, when we select file.
 +
 Mandatory field.
 [#dataflow-mail-config-smtp-authorization-required]
