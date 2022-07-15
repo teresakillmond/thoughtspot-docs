@@ -49,21 +49,6 @@ You can now delete answers and Liveboards directly from the list on the home pag
 
 // Mark
 
-[#8-6-0-cl-okta-business-user]
-*Local account activation*
-
-In this release, ThoughtSpot switched to a new, industry-standard cloud authentication method through Okta. As part of this switch, new local users now create their own password during activation. Administrators do not create the password prior to activation. For more information,
-ifndef::pendo-links[]
-see xref:user-account-activation.adoc[Activate your ThoughtSpot account].
-endif::[]
-ifdef::pendo-links[]
-see xref:user-account-activation.adoc[Activate your ThoughtSpot account,window=_blank].
-endif::[]
-
-// below the line (part of the admin section)
-
-// just an image (check figma)
-
 '''
 [#secondary-8-6-0-cl]
 *_Other features and enhancements_*
@@ -138,6 +123,13 @@ endif::[]
 
 In this release, ThoughtSpot switched to a new, industry-standard cloud authentication method through Okta. This switch involves several external improvements to authentication:
 
+* New local users now create their own password during activation. Administrators do not create the password prior to activation. For more information,
+ifndef::pendo-links[]
+see xref:user-account-activation.adoc[Activate your ThoughtSpot account].
+endif::[]
+ifdef::pendo-links[]
+see xref:user-account-activation.adoc[Activate your ThoughtSpot account,window=_blank].
+endif::[]
 * Ability to map IDP attributes for SAML authentication from the ThoughtSpot Admin Console (username, email, and display name). For more information,
 ifndef::pendo-links[]
 see xref:authentication-integration.adoc[Managing authentication with SAML].
@@ -152,6 +144,8 @@ endif::[]
 ifdef::pendo-links[]
 see xref:user-management.adoc[Create, edit, or delete a  user,window=_blank].
 endif::[]
++
+image::admin-portal-users-new.png[Account activation column]
 
 *ThoughtSpot Everywhere*
 
