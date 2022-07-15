@@ -38,7 +38,6 @@ endif::[]
 
 // Roza
 
-ifdef::free-trial-feature[]
 [#8-5-0-cl-formatting]
 *Table formatting for downloaded tables*
 
@@ -52,11 +51,11 @@ When you download a table in `XLSX` format, the downloaded table now shows the s
 // endif::[]
 
 image::xlsx-download-85.png[XLSX download image]
-endif::[]
+
 '''
 [#secondary-8-5-0-cl]
 *_Other features and enhancements_*
-ifdef::free-trial-feature[]
+
 [#8-5-0-cl-spotapps]
 *SpotApps*
 
@@ -78,7 +77,7 @@ The following SpotApps are now available:
 * Snowflake Performance and Consumption
 
 image::spotapps-8-4.png[New SpotApps]
-endif::[]
+
 // image::spotapps.gif[SpotApps gif] WAITING FOR CLUSTER -- will replace above image if i get credentials to make a gif
 
 // For more information,
@@ -88,7 +87,7 @@ endif::[]
 // ifdef::pendo-links[]
 // see xref:spotapps.adoc[SpotApps,window=_blank].
 // endif::[]
-ifdef::free-trial-feature[]
+
 [#8-5-0-cl-data-workspace]
 *Data Workspace*
 
@@ -102,8 +101,8 @@ The new Data Workspace is now GA and on by default. It redesigns the *Data* sect
 // endif::[]
 
 image::data-workspace.gif[Data workspace gif]
-endif::[]
-ifdef::free-trial-feature[]
+
+
 [#8-5-0-cl-dbt]
 *Integration with dbt*
 
@@ -117,8 +116,7 @@ The dbt integration is now GA and on by default. With the new dbt integration, y
 // endif::[]
 
 image::dbt-integration.gif[dbt integration gif]
-endif::[]
-ifndef::free-trial-feature[]
+
 [#8-5-0-cl-sql-views]
 *SQL views*
 
@@ -132,14 +130,12 @@ SQL-based views are now GA and on by default. You can now create a view based on
 // endif::[]
 
 image::sql-view.gif[SQL view gif]
-endif::[]
-ifndef::free-trial-feature[]
+
 [#8-5-0-cl-session-level-date]
 *Session-level ranking of date columns in Search*
 
 ThoughtSpot now supports session-level ranking of Date columns in Search. For example, when you add a date column such as `promotion date` to your Search, then the `promotion date` column rises to the top of Search completion suggestions for the duration of your session.
-endif::[]
-ifndef::free-trial-feature[]
+
 [#8-5-0-cl-databricks]
 *Databricks Partner Connect*
 
@@ -152,6 +148,7 @@ Databricks Partner Connect allows you to try out ThoughtSpot connected to Databr
 // see xref:connections-databricks-partner.adoc[ThoughtSpot in Databricks Partner Connect,window=_blank].
 // endif::[]
 
+ifndef::free-trial-feature[]
 [#8-5-0-cl-okta-oauth]
 *Snowflake Okta OAuth*
 
@@ -174,7 +171,6 @@ Starburst connections now support OAuth.
 // ifdef::pendo-links[]
 // For details, see xref:connections-starburst-oauth.adoc[Configure OAuth for a Starburst connection,window=_blank].
 // endif::[]
-endif::[]
 
 [#8-5-0-cl-private-link]
 *PrivateLink support*
@@ -194,7 +190,6 @@ This option is now available for the following new data warehouse connections: D
 
 // Roza
 
-ifndef::free-trial-feature[]
 *ThoughtSpot Everywhere*
 
 For new features and enhancements introduced in this release of ThoughtSpot Everywhere, see https://developers.thoughtspot.com/docs/?pageid=whats-new[ThoughtSpot Developer Documentation^].
