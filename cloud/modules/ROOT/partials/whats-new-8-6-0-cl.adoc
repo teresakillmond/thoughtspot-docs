@@ -112,6 +112,8 @@ endif::[]
 
 // image
 
+'''
+
 [#8-6-0-cl-okta-admin]
 *Okta authentication*
 
@@ -130,6 +132,8 @@ endif::[]
 ifdef::pendo-links[]
 see xref:user-account-activation.adoc[Activate your ThoughtSpot account,window=_blank].
 endif::[]
++
+image::okta-activate-account.png[Activate new account]
 * Ability to map IDP attributes for SAML authentication from the ThoughtSpot Admin Console (username, email, and display name). For more information,
 ifndef::pendo-links[]
 see xref:authentication-integration.adoc[Managing authentication with SAML].
@@ -137,6 +141,8 @@ endif::[]
 ifdef::pendo-links[]
 see xref:authentication-integration.adoc[Managing authentication with SAML,window=_blank].
 endif::[]
++
+image::saml-attribute-mapping.png[SAML attribute mapping]
 * Account activation monitoring from the Users section of the Admin Console: if a user still needs to activate their account, administrators can see that information in the Users section and re-send their activation email. For more information,
 ifndef::pendo-links[]
 see xref:user-management.adoc[Create, edit, or delete a  user].
@@ -145,7 +151,46 @@ ifdef::pendo-links[]
 see xref:user-management.adoc[Create, edit, or delete a  user,window=_blank].
 endif::[]
 +
-image::admin-portal-users-new.png[Account activation column]
+image::admin-portal-account-activation.png[Account activation column]
+
+'''
+*Local user activation*
+
+New local users now create their own password during activation. Administrators do not create the password prior to activation. For more information,
+ifndef::pendo-links[]
+see xref:user-account-activation.adoc[Activate your ThoughtSpot account].
+endif::[]
+ifdef::pendo-links[]
+see xref:user-account-activation.adoc[Activate your ThoughtSpot account,window=_blank].
+endif::[]
+
+image::okta-activate-account.png[Activate new account]
+
+*Map IDP attributes for SAML authentication*
+
+You can now map IDP attributes for SAML authentication from the ThoughtSpot Admin Console (username, email, and display name). For more information,
+ifndef::pendo-links[]
+see xref:authentication-integration.adoc[Managing authentication with SAML].
+endif::[]
+ifdef::pendo-links[]
+see xref:authentication-integration.adoc[Managing authentication with SAML,window=_blank].
+endif::[]
+
+image::saml-attribute-mapping.png[SAML attribute mapping]
+
+*Account activation monitoring*
+
+If a user still needs to activate their account, administrators can see that information in the Users section and re-send their activation email. For more information,
+ifndef::pendo-links[]
+see xref:user-management.adoc[Create, edit, or delete a  user].
+endif::[]
+ifdef::pendo-links[]
+see xref:user-management.adoc[Create, edit, or delete a  user,window=_blank].
+endif::[]
+
+image::admin-portal-account-activation.png[Account activation column]
+
+'''
 
 *ThoughtSpot Everywhere*
 
