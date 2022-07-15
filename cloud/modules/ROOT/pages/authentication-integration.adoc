@@ -101,7 +101,7 @@ You need admin privileges to enable SAML SSO authentication.
 . Under *Specify identity provider details*, fill in the following parameters:
 +
 //image::admin-portal-saml-configure.png[Configure SAML]
-Connection name:: Provide a name for the configuration of the connection to your identity provider.
+Connection name:: Provide a name for the configuration of the connection to your identity provider. This appears as the connection name on the SAML page of the Admin Console.
 IDP provider certificate:: Upload or copy/paste your IDP public key certificate. This verifies SAML messages and assertion signatures.
 IDP issuer ID:: IDP issuer URI.
 IDP single sign on URL:: Your IDP endpoint. Receives the authentication request from ThoughtSpot.
@@ -115,11 +115,11 @@ The default is `86400`.
 . Select *Continue*.
 . Under *Map attributes*, you can map values between ThoughtSpot and your IDP manually.
 This allows the ThoughtSpot system to automatically pick up certain attributes and subjects, such as a user's email address, display name, and username.
-. In the *SAML attribute* text box for *Username*, enter the name of the username attribute in your IDP's SAML assertion. The default is `subjectNameId`. It is *mandatory* to fill out the Username field.
+. In the *SAML attribute* text box for *Username*, enter the name of the username attribute in your IDP's SAML assertion. This attribute maps to the *Username* field for a ThoughtSpot user, which must be unique. The default is `subjectNameId`. It is *mandatory* to fill out the Username field.
 If your company cannot meet this requirement, contact {support-url}.
-. In the *SAML attribute* text box for *Email*, enter the name of the mail/email attribute in your IDP's SAML assertion. It is *mandatory* to fill out the Email field.
+. In the *SAML attribute* text box for *Email*, enter the name of the mail/email attribute in your IDP's SAML assertion. This attribute maps to the *Email* field for a ThoughtSpot user, which does not need to be unique. It is *mandatory* to fill out the Email field.
 If your company cannot meet this requirement, contact {support-url}.
-. In the *SAML attribute* text box for *Display name*, enter the name of the display name attribute in your IDP's SAML assertion.
+. In the *SAML attribute* text box for *Display name*, enter the name of the display name attribute in your IDP's SAML assertion. This attribute maps to the *Display name* field for a ThoughtSpot user, which does not need to be unique.
 . For additional support with the attribute statements, refer to your IDP's SAML documentation.
 ThoughtSpot supports SAML authentication framework with popular Identity Providers such as https://developer.okta.com/docs/guides/build-sso-integration/saml2/before-you-begin/[Okta^], https://docs.microsoft.com/en-us/powerapps/maker/portals/configure/configure-saml2-settings-azure-ad[Azure Active Directory^], https://docs.pingidentity.com/bundle/pingfederate-102/page/ikb1564003000542.html[PingFederate^], https://docs.microsoft.com/en-us/powerapps/maker/portals/configure/configure-saml2-settings[Microsoft AD FS^], and https://developers.onelogin.com/saml[Onelogin^].
 This is not an exhaustive list.
@@ -147,8 +147,7 @@ To determine if ThoughtSpot supports your preferred IDP, contact {support-url}.
 
 Complete your configuration of the IDP using the IDP's SAML documentation.
 Upload or copy the contents of the `spring_saml_metadata.xml` to your IDP server.
-This file contains the public key you need if you want to encrypt your SAML assertions.
-If you did not download the `spring_saml_metadata.xml` file, navigate to the SAML configuration page in ThoughtSpot: *Admin > SAML*. Select *Download sp metadata xml*. If you do not see this option, you have not completed configuration of SAML in ThoughtSpot.
+This file contains the public key you need if you want to encrypt your SAML assertions. It also contains the *Assertion Consumer Service URL* and *Audience*. If you did not download the `spring_saml_metadata.xml` file, navigate to the SAML configuration page in ThoughtSpot: *Admin > SAML*. Select *Download sp metadata xml*. If you do not see this option, you have not completed configuration of SAML in ThoughtSpot.
 
 NOTE: When configuring SAML 2.0, make sure you map the SAML user attributes and subjects to appropriate fields.
 This allows the ThoughtSpot system to automatically pick up certain attributes and subjects, such as a user's email address, display name, and username.
