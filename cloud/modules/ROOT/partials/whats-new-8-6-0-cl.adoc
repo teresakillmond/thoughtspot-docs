@@ -138,6 +138,13 @@ endif::[]
 
 In this release, ThoughtSpot switched to a new, industry-standard cloud authentication method through Okta. This switch involves several external improvements to authentication:
 
+* New local users now create their own password during activation. Administrators do not create the password prior to activation. For more information,
+ifndef::pendo-links[]
+see xref:user-account-activation.adoc[Activate your ThoughtSpot account].
+endif::[]
+ifdef::pendo-links[]
+see xref:user-account-activation.adoc[Activate your ThoughtSpot account,window=_blank].
+endif::[]
 * Ability to map IDP attributes for SAML authentication from the ThoughtSpot Admin Console (username, email, and display name). For more information,
 ifndef::pendo-links[]
 see xref:authentication-integration.adoc[Managing authentication with SAML].
@@ -152,6 +159,8 @@ endif::[]
 ifdef::pendo-links[]
 see xref:user-management.adoc[Create, edit, or delete a  user,window=_blank].
 endif::[]
++
+image::admin-portal-users-new.png[Account activation column]
 
 *ThoughtSpot Everywhere*
 
