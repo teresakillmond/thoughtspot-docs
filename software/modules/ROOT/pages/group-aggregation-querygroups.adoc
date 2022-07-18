@@ -10,7 +10,7 @@ include::partial$group-aggregate-prerequisite.adoc[]
 
 == Aggregating across multiple levels of detail
 
-In the xref:group-aggregation-basic.adoc[basic aggregation examples], we described basic usage for group_aggregate functions and how to specify a level of detail. When using group_aggregate(), the first argument specifies the type of aggregation that should be performed, and the second argument specifies the level of detail at which it should be performed. Your group_aggregate function should be enclosed in an outer aggregation function that specifies the secondary aggregation that should be used when aggregating to a search level of detail that is coarser than the level of detail specified within the group_aggregate function.
+In the xref:group-aggregation-basic.adoc[basic aggregation examples], we describe basic usage for group_aggregate functions and how to specify a level of detail. When using group_aggregate(), the first argument specifies the type of aggregation that should be performed, and the second argument specifies the level of detail at which it should be performed. Your group_aggregate function should be enclosed in an outer aggregation function that specifies the secondary aggregation that should be used when aggregating to a search level of detail that is coarser than the level of detail specified within the group_aggregate function.
 
 Performing a secondary level of aggregation across disjoint levels of detail may give nonsensical results. For example, consider aggregating to the _activity classification_ level and then "aggregating up" to the _account_ level.
 
@@ -115,6 +115,7 @@ average(
 		query_groups() + {activity classification},
 		{}
 		)
+    )
 ----
 +
 In this case, the function performs the following calculations:
