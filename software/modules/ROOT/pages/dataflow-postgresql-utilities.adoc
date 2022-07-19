@@ -1,0 +1,30 @@
+= Using PostgreSQL utilities
+:redirect_from: /data-integrate/dataflow/dataflow-postgresql-utilities.html
+:experimental:
+:linkattrs:
+
+You can use the PostgreSQL client to customize connections in DataFlow.
+
+Follow these steps to install the PostgreSQL client:
+
+. Download the PostgreSQL repository using the package manager `yum`  for RHEL/ Centos.
++
+----
+#sudo yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+----
+. To install PostgreSQL from these repositories, use the yum command on RHEL/Centos 7
++
+----
+#sudo yum install postgres11-client
+----
++
+. Verify installation by running `psql` command.
++
+----
+psql
+----
+. Restart the DataFlow service.
++
+----
+#tscli --adv service restart dataflow
+----
