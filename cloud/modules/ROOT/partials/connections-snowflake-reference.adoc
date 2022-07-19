@@ -1,6 +1,7 @@
 Here is a list of the fields of a {connection} connection.
 You need specific information to establish a seamless and secure connection.
 All fields are required, except where noted.
+ifndef::pendo-links[]
 [#connection-name]
 === Connection name
 Enter a new {connection} connection name.
@@ -8,6 +9,7 @@ Enter a new {connection} connection name.
 === Connection description
 Provide a short description of the connection.
 _(Optional)_
+endif::[]
 [#account-name]
 === Account name
 Enter the account name associated with your Snowflake connection. If you used an
@@ -22,6 +24,10 @@ use the PrivateLink Snowflake account name provided by {support-url}. For exampl
 The account name is part of the URL that you use to access the {connection} UI.
 It is the portion of the URL before `snowflakecomputing.com`. +
 *Example*: If your URL is `+https://abcd.xyz.efg.snowflakecomputing.com+`, your account name is `abcd.xyz.efg`.
+
+ifdef::pendo-links[]
+image::snowflake_accountName.png[snowflake account name]
+endif::[]
 
 Assume that the *account name* is _xy12345_.
 
@@ -48,15 +54,25 @@ Cloud platform  | Region | Full account name
 [#user]
 === User
 Enter the {connection} account username.
+
+ifdef::pendo-links[]
+image::snowflake_user.png[snowflake user name and role]
+endif::[]
 [#password]
 === Password
 Enter the {connection} account password.
 [#role]
 === Role
 Specify the privilege of the user.
+
+ifdef::pendo-links[]
+image::snowflake_role.png[snowflake role]
+endif::[]
 [#warehouse]
 === Warehouse
 Specify the warehouse associated with the connection.
+
+image::snowflake_warehouse.png[snowflake warehouse]
 [#database]
 === Database
 Specify the database associated with the account.
@@ -67,6 +83,8 @@ Specify the schema associated with the database.
 [#oauth]
 === OAuth
 Enter the OAuth client ID associated with the {connection} database.
+
+image::snowflake_oauth_client.png[snowflake oauth client]
 [#oauth-client-secret]
 === OAuth client secret
 Enter the OAuth client secret associated with the {connection} database.
@@ -77,12 +95,17 @@ Enter the OAuth client secret associated with the {connection} database.
 Scope maps to a role in your Snowflake database.
 
 It should be similar to `session:role:developer offline_access`.
+
+ifdef::pendo-links[]
+image::snowflake_scope.png[snowflake scope]
+endif::[]
 [#oauth-url]
 === Auth Url
 (Azure AD OAuth) Enter the Auth URL associated with your Azure AD OAuth.
 
 ThoughtSpot performs an "Authorization Code" grant type flow to get the administrative data (access token). Get the authorization endpoint for Azure AD OAuth app from Azure portal. It should be similar to *\https://login.microsoftonline.com/<tenant_id>/oauth2/v2.0/authorize*.
 [#oauth-token-url]
-Access Token Url:: (Azure AD OAuth) Enter the Access Token Url associated with your Azure AD OAuth.
+=== Access Token Url
+(Azure AD OAuth) Enter the Access Token Url associated with your Azure AD OAuth.
 
 Token endpoint can be obtained from the Azure portal by navigating to the OAuth application in Azure Active Directory resource. It should be similar to *\https://login.microsoftonline.com/<tenant_id>/oauth2/v2.0/token*.
