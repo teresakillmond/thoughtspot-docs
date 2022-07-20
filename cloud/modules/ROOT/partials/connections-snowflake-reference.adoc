@@ -1,3 +1,4 @@
+ifdef::pendo-links[]
 [#top]
 === Information about fields of a {connection} connection:
 ==== xref:account-name[Account name or Snowflake URL]
@@ -15,7 +16,7 @@
 ==== xref:oauth-scope[Scope]
 ==== xref:oauth-url[Auth Url]
 ==== xref:oauth-token-url[Access Token Url]
-
+ifdef::pendo-links[]
 ifndef::pendo-links[]
 All fields are required, except where noted.
 endif::[]
@@ -33,7 +34,12 @@ Provide a short description of the connection.
 _(Optional)_
 endif::[]
 [#account-name]
+ifdef::pendo-links[]
 === Account name or your Snowflake URL (xref:top[Back to top])
+endif::[]
+ifndef::pendo-links[]
+=== Account name or your Snowflake URL
+endif::[]
 Enter the account name associated with your Snowflake connection.
 ifndef::pendo-links[]
 If you used an xref:connections-snowflake-private-link.adoc[AWS PrivateLink between your Snowflake data warehouse and the ThoughtSpot Cloud tenant],
@@ -69,40 +75,74 @@ Cloud platform  | Region | Full account name
 |  | West Europe | xy12345.west-europe.azure
 |  | Australia East | 	xy12345.australia-east.azure
 |====================
-
 [#user]
+ifdef::pendo-links[]
 === User (xref:top[Back to top])
+endif::[]
+ifndef::pendo-links[]
+=== User
+endif::[]
 Enter the {connection} account username.
 
 ifdef::pendo-links[]
 image::snowflake_user.png[snowflake user name and role]
 endif::[]
 [#password]
+ifdef::pendo-links[]
 === Password (xref:top[Back to top])
+endif::[]
+ifndef::pendo-links[]
+=== Password
+endif::[]
 Enter the {connection} account password.
 [#role]
+ifdef::pendo-links[]
 === Role (xref:top[Back to top])
+endif::[]
+ifndef::pendo-links[]
+=== Role
+endif::[]
 Specify the privilege of the user.
 
 ifdef::pendo-links[]
 image::snowflake_role.png[snowflake role]
 endif::[]
 [#warehouse]
+ifdef::pendo-links[]
 === Warehouse (xref:top[Back to top])
+endif::[]
+ifndef::pendo-links[]
+=== Warehouse
+endif::[]
 Specify the warehouse associated with the connection.
 
 ifdef::pendo-links[]
 image::snowflake_warehouse.png[snowflake warehouse]
 endif::[]
 [#database]
+ifdef::pendo-links[]
 === Database (xref:top[Back to top])
+endif::[]
+ifndef::pendo-links[]
+=== Database
+endif::[]
 Specify the database associated with the account.
 _(Optional)_
 [#schema]
+ifdef::pendo-links[]
 === Schema (xref:top[Back to top])
+endif::[]
+ifndef::pendo-links[]
+=== Schema
+endif::[]
 Specify the schema associated with the database.
 [#oauth-id]
+ifdef::pendo-links[]
 === OAuth Client ID (xref:top[Back to top])
+endif::[]
+ifndef::pendo-links[]
+=== OAuth Client ID
+endif::[]
 (*Use OAuth*) Enter the OAuth Client ID associated with the {connection} database.
 
 _Run the SQL command for the security integration created for ThoughtSpot. Look for OAUTH_CLIENT_ID_.
@@ -111,7 +151,12 @@ ifdef::pendo-links[]
 image::snowflake_oauth_client.png[snowflake oauth client]
 endif::[]
 [#oauth-client-secret]
+ifdef::pendo-links[]
 === OAuth client secret (xref:top[Back to top])
+endif::[]
+ifndef::pendo-links[]
+=== OAuth client secret
+endif::[]
 (*Use OAuth*) Enter the OAuth Client Secret associated with the {connection} database.
 
 _Run the SQL command for the security integration created for ThoughtSpot. Look for OAUTH_CLIENT_SECRET_.
@@ -121,7 +166,12 @@ image::snowflake_oauth_secret.png[snowflake oauth client]
 endif::[]
 
 [#oauth-id-external]
+ifdef::pendo-links[]
 === OAuth Client ID (xref:top[Back to top])
+endif::[]
+ifndef::pendo-links[]
+=== OAuth Client ID
+endif::[]
 (Use External OAuth) Enter the OAuth Client ID associated with your external IdP. The example shown is Azure AD. Check your IdP’s documentation for  further details.
 
 ifdef::pendo-links[]
@@ -129,7 +179,12 @@ image::snowflake_external_oauth_clientid.png[snowflake oauth external client]
 endif::[]
 
 [#oauth-client-secret-external]
+ifdef::pendo-links[]
 === OAuth client secret (xref:top[Back to top])
+endif::[]
+ifndef::pendo-links[]
+=== OAuth client secret
+endif::[]
 (Use External OAuth) Enter the OAuth Client Secret associated with your external IdP.
 
 The example shown is Azure AD. Check your IdP’s documentation for further details.
@@ -139,7 +194,12 @@ image::snowflake_azure_client_secret.png[snowflake oauth external secret]
 endif::[]
 
 [#oauth-scope]
+ifdef::pendo-links[]
 === Scope (xref:top[Back to top])
+endif::[]
+ifndef::pendo-links[]
+=== Scope
+endif::[]
 (Azure AD OAuth) Enter the scope associated with your Azure AD OAuth.
 
 Scope maps to a role in your {connection} database.
@@ -150,7 +210,12 @@ ifdef::pendo-links[]
 image::snowflake_scope.png[snowflake scope]
 endif::[]
 [#oauth-url]
+ifdef::pendo-links[]
+=== Auth Url (xref:top[Back to top])
+endif::[]
+ifndef::pendo-links[]
 === Auth Url
+endif::[]
 (Azure AD OAuth) Enter the Auth URL associated with your Azure AD OAuth.
 
 ThoughtSpot performs an "Authorization Code" grant type flow to get the administrative data (access token). Get the authorization endpoint for Azure AD OAuth app from Azure portal. It should be similar to *\https://login.microsoftonline.com/<tenant_id>/oauth2/v2.0/authorize*.
@@ -159,7 +224,12 @@ ifdef::pendo-links[]
 image::snowflake_auth_url.png[snowflake scope]
 endif::[]
 [#oauth-token-url]
+ifdef::pendo-links[]
 === Access Token Url (xref:top[Back to top])
+endif::[]
+ifndef::pendo-links[]
+=== Access Token Url
+endif::[]
 (Azure AD OAuth) Enter the Access Token Url associated with your Azure AD OAuth.
 
 Token endpoint can be obtained from the Azure portal by navigating to the OAuth application in Azure Active Directory resource. It should be similar to *\https://login.microsoftonline.com/<tenant_id>/oauth2/v2.0/token*.
