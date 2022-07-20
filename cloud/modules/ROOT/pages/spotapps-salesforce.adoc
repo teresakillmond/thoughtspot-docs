@@ -13,7 +13,9 @@ include::partial$spotapps-intro.adoc[]
 
 //image::spotapp-salesforce-liveboard.png[Salesforce SpotApp Liveboard]
 
-Use the {spotapp} to USE CASE INFO
+Use the {spotapp} to view and analyze data about your past, current, and forecasted sales pipelines and deals.
+
+// needs review by marketing
 
 [#prerequisites]
 == Prerequisites
@@ -29,22 +31,22 @@ include::partial$spotapp-prereqs-general.adoc[]
 ** OPPORTUNITY_STAGE (table)
 ** USER (table)
 ** Salesforce (worksheet)
-* Run the required SQL script in your cloud data warehouse. Refer to <<sql,Run SQL script>>.
-
-//this is where I'm stopping and waiting for info
+* Run the required SQL commands in your cloud data warehouse. Refer to <<sql,Run SQL commands>>.
 
 [#sql]
-=== Run SQL script
-Run the following SQL script on your Databricks instance. It helps load the Databricks data into tables. Replace any parts of the script that say `UPDATE` with your specific information, such as the `hostid`, `accountid`, and `authorization token`.
+=== Run SQL commands
+Run the following SQL commands on your cloud data warehouse instance. The commands create 5 views in your cloud data warehouse schema. Create the views in one common database. Replace any parts of the script that say `database_name` with your specific database name, and replace `schema_name` with your specific schema name.
 
-NOTE: You must run this Python script on the Databricks cloud data warehouse.
+NOTE: The following SQL example is for the Snowflake cloud data warehouse. You may need to modify the code for the SQL requirements of your specific cloud data warehouse.
 
-Python script:
+// may need to update the above sections if vishwa tells me this is snowflake-only
+
+SQL commands:
 [%collapsible]
-.Click on the dropdown to view the Python script.
+.Click on the dropdown to view the SQL commands.
 ====
 --
-include::partial$databricks-python-script.adoc[]
+include::partial$salesforce-sql-script.adoc[]
 --
 ====
 
