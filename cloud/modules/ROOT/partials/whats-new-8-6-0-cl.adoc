@@ -91,7 +91,15 @@ Denodo is a new connection type.
 [#8-6-0-cl-delete-relationship]
 *Delete relationships that have dependents*
 
-// Teresa (not sure how to visualize)
+You can now delete a join from the ThoughtSpot UI even if the join has dependents. This allows you to delete a join and create it again in the other direction, without invalidating or deleting any dependent objects. For more information,
+ifndef::pendo-links[]
+see xref:relationship-delete.adoc[Delete a relationship].
+endif::[]
+ifdef::pendo-links[]
+see xref:relationship-delete.adoc[Delete a relationship,window=_blank].
+endif::[]
+
+image::join-deletion-gif.gif[Join deletion gif]
 
 [#8-6-0-cl-dbt-integration]
 *dbt integration enhancements*
