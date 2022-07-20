@@ -1,20 +1,21 @@
 ifdef::pendo-links[]
 [#top]
-=== Information about fields of a {connection} connection:
-==== xref:account-name[Account name or Snowflake URL]
-==== xref:user[User]
-==== xref:password[Password]
-==== xref:role[Role]
-==== xref:warehouse[Warehouse]
-==== xref:database[Database]
-==== xref:schema[Schema]
-==== xref:oauth-id[OAuth Client ID (Use OAuth)]
-==== xref:oauth-client-secret[OAuth Client Secret (Use OAuth)]
-==== xref:oauth-id-external[OAuth Client ID (Use External OAuth)]
-==== xref:oauth-client-secret-external[OAuth Client Secret (Use External OAuth)]
-==== xref:oauth-scope[Scope]
-==== xref:oauth-url[Auth Url]
-==== xref:oauth-token-url[Access Token Url]
+== Information about fields of a {connection} connection:
+- *xref:account-name[Account name or Snowflake URL]*
+- *xref:user[User]*
+- *xref:password[Password]*
+- *xref:role[Role]*
+- *xref:warehouse[Warehouse]*
+- *xref:database[Database]*
+- *xref:schema[Schema]*
+- *xref:oauth-id[OAuth Client ID (Use OAuth)]*
+- *xref:oauth-client-secret[OAuth Client Secret (Use OAuth)]*
+- *xref:oauth-id-external[OAuth Client ID (Use External OAuth)]*
+- *xref:oauth-client-secret-external[OAuth Client Secret (Use External OAuth)]*
+- *xref:oauth-scope[Scope]*
+- *xref:oauth-url[Auth Url]*
+- *xref:oauth-token-url[Access Token Url]*
+
 ifdef::pendo-links[]
 ifndef::pendo-links[]
 All fields are required, except where noted.
@@ -171,7 +172,7 @@ endif::[]
 ifndef::pendo-links[]
 === OAuth Client ID
 endif::[]
-(Use External OAuth) Enter the OAuth Client ID associated with your external IdP. The example shown is Azure AD. Check your IdP’s documentation for  further details.
+(*Use External OAuth*) Enter the OAuth Client ID associated with your external IdP. The example shown is Azure AD. Check your IdP’s documentation for  further details.
 
 ifdef::pendo-links[]
 image::snowflake_external_oauth_clientid.png[snowflake oauth external client]
@@ -184,7 +185,7 @@ endif::[]
 ifndef::pendo-links[]
 === OAuth client secret
 endif::[]
-(Use External OAuth) Enter the OAuth Client Secret associated with your external IdP.
+(*Use External OAuth*) Enter the OAuth Client Secret associated with your external IdP.
 
 The example shown is Azure AD. Check your IdP’s documentation for further details.
 
@@ -199,7 +200,7 @@ endif::[]
 ifndef::pendo-links[]
 === Scope
 endif::[]
-(Azure AD OAuth) Enter the scope associated with your Azure AD OAuth.
+(*Azure AD OAuth*) Enter the scope associated with your Azure AD OAuth.
 
 Scope maps to a role in your {connection} database.
 
@@ -215,7 +216,7 @@ endif::[]
 ifndef::pendo-links[]
 === Auth Url
 endif::[]
-(Azure AD OAuth) Enter the Auth URL associated with your Azure AD OAuth.
+(*Azure AD OAuth*) Enter the Auth URL associated with your Azure AD OAuth.
 
 ThoughtSpot performs an "Authorization Code" grant type flow to get the administrative data (access token). Get the authorization endpoint for Azure AD OAuth app from Azure portal. It should be similar to *\https://login.microsoftonline.com/<tenant_id>/oauth2/v2.0/authorize*.
 
@@ -229,7 +230,7 @@ endif::[]
 ifndef::pendo-links[]
 === Access Token Url
 endif::[]
-(Azure AD OAuth) Enter the Access Token Url associated with your Azure AD OAuth.
+(*Azure AD OAuth*) Enter the Access Token Url associated with your Azure AD OAuth.
 
 Token endpoint can be obtained from the Azure portal by navigating to the OAuth application in Azure Active Directory resource. It should be similar to *\https://login.microsoftonline.com/<tenant_id>/oauth2/v2.0/token*.
 
