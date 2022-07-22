@@ -193,6 +193,12 @@ The OIDC authentication workflow involves the following steps:
 . ThoughtSpot validates the ID token and authenticates the user.
 . If the authentication is successful, the web browser redirects the user to the requested page.
 
+== Group synchronization
+
+The group synchronization feature reads the Group claim from the ID token provided by the OpenID provider and creates groups in ThoughtSpot. To enable group synchronization in ThoughtSpot, contact {support-url}.
+
+NOTE: If you delete a group from the OpenID provider server, the corresponding group in ThoughtSpot will not be deleted during synchronization. You must manually delete the group(s) in ThoughtSpot.
+
 == Additional resources
 
 * https://developer.okta.com/docs/concepts/oauth-openid/[Okta documentation^]
