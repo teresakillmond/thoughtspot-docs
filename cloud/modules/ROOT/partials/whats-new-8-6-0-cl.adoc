@@ -39,6 +39,10 @@ image:answer-discoverable.png[]
 [discrete]
 === Data panel search improvements
 
+The data panel now supports multi-word search. You can search text and a list of columns separated by one of the following delimiters: comma (*,*), period (*.*), backslash (*\*), dash (*-*), underscore (*_*), or kbd:[*Space*]. If all of your search words find a match with the column name words then that is considered as a match.
+
+image::data_panel_search.png[]
+
 // Mark
 
 [#8-6-0-cl-liveboard-v2]
@@ -68,12 +72,6 @@ You can now delete answers and Liveboards directly from the list on the home pag
 
 image:home-object-delete.png[]
 
-[#8-6-0-cl-answer-v2-mobile]
-[discrete]
-=== New answer experience on mobile
-
-// Mark
-
 '''
 [#secondary-8-6-0-cl]
 [discrete]
@@ -81,7 +79,9 @@ image:home-object-delete.png[]
 
 [#8-6-0-cl-snowflake-csv]
 [discrete]
-=== Upload Snowflake CSV
+=== CSV upload for Snowflake connections
+
+You can now upload a CSV file that can be joined to a Snowflake connection's tables in your Snowflake database.
 
 // Mark
 
@@ -107,7 +107,15 @@ image::tml-import-partial.png[TML import improvements image]
 
 [#8-6-0-cl-denodo]
 [discrete]
-=== Connect to Denodo
+=== Connections
+
+- image:denodo_sm.png[] Denodo is a new connection type.
+// ifndef::pendo-links[]
+// See xref:connections-denodo.adoc[Denodo].
+// endif::[]
+// ifdef::pendo-links[]
+// See xref:connections-denodo.adoc[Denodo,window=_blank].
+// endif::[]
 
 // Mark
 
