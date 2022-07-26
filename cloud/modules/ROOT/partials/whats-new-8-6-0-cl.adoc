@@ -51,15 +51,16 @@ image::data_panel_search.png[]
 
 The new Liveboard experience is now GA and on by default. It contains new features and enhancements, including Edit mode, HTML in Liveboard titles and descriptions, and improved filtering.
 
-To try it out, navigate to your profile, scroll down to *Experience*, select *Edit*, and toggle the Liveboard experience to *New experience*. For more information,
-ifndef::pendo-links[]
-see xref:liveboard-experience-new.adoc[New Liveboard experience].
-endif::[]
-ifdef::pendo-links[]
-See xref:liveboard-experience-new.adoc[New Liveboard experience,window=_blank].
-endif::[]
+To try it out, navigate to your profile, scroll down to *Experience*, select *Edit*, and toggle the Liveboard experience to *New experience*.
+//For more information,
+//ifndef::pendo-links[]
+//see xref:liveboard-experience-new.adoc[New Liveboard experience].
+//endif::[]
+//ifdef::pendo-links[]
+//See xref:liveboard-experience-new.adoc[New Liveboard experience,window=_blank].
+//endif::[]
 
-image::new-liveboard-experience-gif.gif[New Liveboard experience gif]
+image::new-liveboard-experience-gif-86.gif[New Liveboard experience gif]
 
 [#8-6-0-cl-homepage-delete]
 [discrete]
@@ -81,19 +82,30 @@ image:home-object-delete.png[]
 [discrete]
 === SpotApps
 
-// Teresa
+This release introduces several new SpotApps that you can use to analyze your company data from external applications. Set up these SpotApps to provide your users with pre-built, customizable worksheets, answers, and Liveboards for the following applications:
+
+* Salesforce Pipeline Analysis
+* Facebook Ads
+* AWS Cost and Usage Reports
+
+// this list is not final
+
+To access these new SpotApps, navigate to *Data > SpotApps*.
+
+// IMAGE
 
 [#8-6-0-cl-tml]
 [discrete]
 === TML import improvements
 
-You can now import xref:tml.adoc[TML] files that contain certain errors. During the import process, ThoughtSpot removes the part of the object that contains errors, and allows you to import the rest of the object. For more information,
-ifndef::pendo-links[]
-see xref:scriptability.adoc[Scriptability].
-endif::[]
-ifdef::pendo-links[]
-see xref:scriptability.adoc[Scriptability,window=_blank].
-endif::[]
+You can now import xref:tml.adoc[TML] files that contain certain errors. During the import process, ThoughtSpot removes the part of the object that contains errors, and allows you to import the rest of the object.
+//For more information,
+//ifndef::pendo-links[]
+//see xref:scriptability.adoc[Scriptability].
+//endif::[]
+//ifdef::pendo-links[]
+//see xref:scriptability.adoc[Scriptability,window=_blank].
+//endif::[]
 
 image::tml-import-partial.png[TML import improvements image]
 
@@ -111,15 +123,28 @@ image::tml-import-partial.png[TML import improvements image]
 
 // Mark
 
+////
+waiting for confirmation, but looks like this will not be in 8.6
 [#8-6-0-cl-delete-relationship]
 [discrete]
 === Delete relationships that have dependents
 
-// Teresa
+You can now delete a join from the ThoughtSpot UI even if the join has dependents. Previously, you had to delete any objects dependent on the join before you could delete the join itself. This change allows you to delete a join and create it again in the other direction, without invalidating or deleting any dependent objects.
+//For more information,
+//ifndef::pendo-links[]
+//see xref:relationship-delete.adoc[Delete a relationship].
+//endif::[]
+//ifdef::pendo-links[]
+//see xref:relationship-delete.adoc[Delete a relationship,window=_blank].
+//endif::[]
+
+image::join-deletion-gif.gif[Join deletion gif]
+
+////
 
 [#8-6-0-cl-dbt-integration]
 [discrete]
-*dbt integration enhancements*
+=== dbt integration enhancements
 
 This release includes the following improvements to the dbt integration:
 
@@ -128,15 +153,13 @@ This release includes the following improvements to the dbt integration:
 * Import of a single table within a folder
 * Support for joins across multiple folders
 
-For more information,
-ifndef::pendo-links[]
-see xref:dbt-integration.adoc[Integrate with dbt].
-endif::[]
-ifdef::pendo-links[]
-see xref:dbt-integration.adoc[Integrate with dbt,window=_blank].
-endif::[]
-
-// image
+//For more information,
+//ifndef::pendo-links[]
+//see xref:dbt-integration.adoc[Integrate with dbt].
+//endif::[]
+//ifdef::pendo-links[]
+//see xref:dbt-integration.adoc[Integrate with dbt,window=_blank].
+//endif::[]
 
 [discrete]
 === ThoughtSpot Everywhere
