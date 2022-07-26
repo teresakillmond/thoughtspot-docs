@@ -1,10 +1,26 @@
-[label label-dep]#8.4.0.cl# June 2022
+:leveloffset:
 
-NOTE: Features designated as [.badge.badge-update]#Beta# are off by default. To enable them, contact {support-url}.
+ifndef::pendo-links[]
+[label label-dep]#8.4.0.cl# June 2022
+endif::[]
+ifdef::pendo-links[]
+[label label-dep-whats-new]#8.4.0.cl#
+[month-year-whats-new]#June 2022#
+endif::[]
+
+ifndef::pendo-links[]
+NOTE: Features marked as [.badge.badge-update]#Beta# are off by default. To enable them, contact {support-url}.
+endif::[]
+ifndef::free-trial-feature[]
+ifdef::pendo-links[]
+NOTE: Features marked as [.badge.badge-update-whats-new]#Beta# are off by default. To enable them, contact {support-url}.
+endif::[]
+endif::free-trial-feature[]
 
 [#primary-8-4-0-cl]
 [#8-4-0-cl-france]
-*Geo map support for France*
+[discrete]
+=== Geo map support for France
 
 // Naomi
 
@@ -17,7 +33,8 @@ See xref:geomap-reference.adoc#france[Geo map reference,window=_blank].
 endif::[]
 
 [#8-4-0-cl-formatting]
-*Conditional and number formatting for downloaded tables*
+[discrete]
+=== Conditional and number formatting for downloaded tables
 
 When you download a table in `XLSX` format, the downloaded table now shows the same conditional and number formatting as the table in ThoughtSpot.
 ifndef::pendo-links[]
@@ -32,10 +49,12 @@ image::xlsx-download.png[XLSX download image]
 ifndef::free-trial-feature[]
 '''
 [#secondary-8-4-0-cl]
-*_Other features and enhancements_*
+[discrete]
+=== _Other features and enhancements_
 
 [#8-4-0-cl-footer]
-*Liveboard and answer download footer*
+[discrete]
+=== Liveboard and answer download footer
 
 Users with admin privileges can now add a standard footer to all Liveboard and answer downloads. Use this functionality to add a confidentiality disclaimer, for example.
 
@@ -47,11 +66,17 @@ ifdef::pendo-links[]
 See xref:search-spotiq-settings.adoc#visualization-footer[Managing search & SpotIQ settings,window=_blank].
 endif::[]
 
-
 image::admin-footer-whats-new.png[Add a standard download footer from the Admin Console]
 
 [#8-4-0-cl-spotapps]
-*SpotApps [.badge.badge-update]#Beta#*
+ifndef::pendo-links[]
+[discrete]
+=== SpotApps [.badge.badge-update]#Beta#
+endif::[]
+ifdef::pendo-links[]
+[discrete]
+=== SpotApps [.badge.badge-update-whats-new]#Beta#
+endif::[]
 
 This release introduces several new SpotApps that you can use to analyze your company data from external applications. Set up these SpotApps to provide your users with pre-built, customizable worksheets, answers, and Liveboards for the following applications:
 
@@ -64,8 +89,8 @@ This release introduces several new SpotApps that you can use to analyze your co
 To access these new SpotApps, ensure that the feature is turned on in your environment and navigate to *Data > SpotApps*.
 
 image::spotapps-8-4.png[New SpotApps]
-
-*ThoughtSpot Everywhere*
+[discrete]
+=== ThoughtSpot Everywhere
 
 For new features and enhancements introduced in this release for ThoughtSpot Everywhere, see https://developers.thoughtspot.com/docs/?pageid=whats-new[ThoughtSpot Developer Documentation^].
 endif::[]
