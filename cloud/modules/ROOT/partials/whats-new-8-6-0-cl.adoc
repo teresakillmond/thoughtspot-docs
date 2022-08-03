@@ -1,11 +1,24 @@
+ifndef::pendo-links[]
 [label label-dep]#8.6.0.cl# August 2022
+endif::[]
+ifdef::pendo-links[]
+[label label-dep-whats-new]#8.6.0.cl#
+[month-year-whats-new]#August 2022#
+endif::[]
 
-NOTE: Features designated as [.badge.badge-update]#Beta# are off by default. To enable them, contact {support-url}.
-
+ifndef::pendo-links[]
+NOTE: Features marked as [.badge.badge-update]#Beta# are off by default. To enable them, contact {support-url}.
+endif::[]
+ifndef::free-trial-feature[]
+ifdef::pendo-links[]
+NOTE: Features marked as [.badge.badge-update-whats-new]#Beta# are off by default. To enable them, contact {support-url}.
+endif::[]
+endif::free-trial-feature[]
 [#primary-8-6-0-cl]
 
 [#8-6-0-cl-content-discoverable]
-*Discoverable answers and Liveboards*
+[discrete]
+=== Discoverable answers and Liveboards
 
 // Naomi: keep mostly as-is from 8.5. change text to say "make this [answer | liveboard] discoverable" or similar
 
@@ -17,12 +30,14 @@ Select this checkbox to publish your content in the list of relevant results whe
 image:answer-discoverable.png[]
 
 [#8-6-0-cl-data-panel]
-*Data panel multi-word search*
+[discrete]
+=== Data panel multi-word search
 
 In the data panel search bar, you can now search text and a list of columns separated by one of the following delimiters: comma (*,*), period (*.*), backslash (*\*), dash (*-*), underscore (*_*), or space. If all of your search words find a match with column name words then it is considered as a match.
 
 [#8-6-0-cl-liveboard-v2]
-*New Liveboard experience*
+[discrete]
+=== New Liveboard experience
 
 The new Liveboard experience is now GA and on by default. It contains new features and enhancements, including Edit mode, HTML in Liveboard titles and descriptions, and improved filtering.
 
@@ -37,7 +52,8 @@ endif::[]
 image::new-liveboard-experience-gif-86.gif[New Liveboard experience gif]
 
 [#8-6-0-cl-homepage-delete]
-*Delete objects from home page*
+[discrete]
+=== Delete objects from home page
 
 // Naomi -- just an image. GA in Free Trial and Team Edition
 
@@ -53,10 +69,12 @@ endif::[]
 
 '''
 [#secondary-8-6-0-cl]
-*_Other features and enhancements_*
+[discrete]
+=== _Other features and enhancements_
 
 [#8-6-0-cl-tml]
-*TML import improvements*
+[discrete]
+=== TML import improvements
 
 You can now import xref:tml.adoc[TML] files that contain certain errors. During the import process, ThoughtSpot removes the part of the object that contains errors, and allows you to import the rest of the object. For more information,
 ifndef::pendo-links[]
@@ -69,7 +87,8 @@ endif::[]
 image::tml-import-partial.png[TML import improvements image]
 
 [#tags]
-Edit tags from the Data workspace::
+[discrete]
+=== Edit tags from the Data workspace
 You can now edit tags for tables, worksheets, views, and SQL views from the Data workspace home page. Simply click on the checkbox next to any object in the Data workspace object list, and select *Edit tags*. For more information,
 ifndef::pendo-links[]
 see xref:tags.adoc#data-workspace[Use tags to organize].
@@ -81,7 +100,8 @@ endif::[]
 image::edit-tags-data-workspace.gif[Data worksapce edit tags gif]
 
 [#8-6-0-cl-denodo]
-*Connections*
+[discrete]
+=== Connections
 
 - Denodo is a new connection type.
 ifndef::pendo-links[]
@@ -109,7 +129,8 @@ image::join-deletion-gif.gif[Join deletion gif]
 ////
 
 [#8-6-0-cl-dbt-integration]
-*dbt integration enhancements*
+[discrete]
+=== dbt integration enhancements
 
 This release includes the following improvements to the dbt integration:
 
@@ -128,6 +149,9 @@ endif::[]
 
 // image
 
-*ThoughtSpot Everywhere*
+ifndef::free-trial-feature[]
+[discrete]
+=== ThoughtSpot Everywhere
 
 For new features and enhancements introduced in this release of ThoughtSpot Everywhere, see https://developers.thoughtspot.com/docs/?pageid=whats-new[ThoughtSpot Developer Documentation^].
+endif::[]
