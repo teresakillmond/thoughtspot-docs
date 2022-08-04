@@ -23,6 +23,27 @@ For these instructions, see xref:ts-cloud-getting-started.adoc[Getting Started w
 [#8-7-0-cl-data-engineer]
 === For the Data Engineer
 
+[#8-7-0-cl-it-ops-engineer]
+=== For the IT Ops Engineer
+
+[#okta]
+Okta identity and access management [.badge.badge-update]#Beta#::
+
+In this release, ThoughtSpot switched to a new, industry-standard cloud authentication method through Okta. ThoughtSpot now powers its internal authentication with Okta, which is the industry-leading authentication platform. This change is internal and has no impact on customers. After we enable this feature by default, all user authentication will automatically use the internal Okta service.
++
+This switch involves several external improvements to authentication, including security enhancements:
++
+--
+* Ability to map IDP attributes from the ThoughtSpot Admin Console (username, email, and display name).
+* Account activation monitoring from the Users section of the Admin Console: if a user still needs to activate their account, administrators can see that information in the Users section and re-send their activation email.
+* Only Okta interacts with your IDP. Your ThoughtSpot cluster does not directly interact with your IDP.
+* Local users create their own password during activation. Administrators do not create the password prior to activation.
+--
++
+For more information, refer to xref:okta-iam.adoc[Okta identity and access management].
++
+This feature is in beta and off by default. To enable Okta authentication, contact {support-url}.
+
 [#8-7-0-cl-developer]
 === For the Developer
 
