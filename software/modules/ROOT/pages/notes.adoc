@@ -4,15 +4,51 @@
 :linkattrs:
 :page-aliases: /release/notes.adoc
 
-ThoughtSpot version 8.4.0.sw is now available as a limited availability release.
-
-include::partial$limited-availability-notice.adoc[]
+ThoughtSpot version 8.4.1.sw is now available.
 
 These release notes include information about new and enhanced features.
 
 To see our feature deprecation plans, please see xref:deprecation.adoc[].
 
 For a complete list of issues that we fixed in this release, see xref:fixed.adoc#releases-8-4-x[Fixed issues].
+
+* <<new-8-4-1,8.4.1.sw New Features and Functionality>>
+* <<upgrade-paths,Supported Upgrade Paths>>
+
+[#new-8-4-1]
+== 8.4.1.sw New Features and Functionality
+
+* <<analyst-8-4-1-sw,For the Analyst>>
+* <<business-user-8-4-1-sw,For the Business User>>
+* <<data-engineer-8-4-1-sw,For the Data Engineer>>
+* <<it-ops-engineer-8-4-1-sw,For the IT Ops Engineer>>
+* <<developer-8-4-1-sw,For the Developer>>
+
+[#analyst-8-4-1-sw]
+=== For the Analyst
+
+[#analyst-8-4-1-sw]
+=== For the Business User
+
+[#analyst-8-4-1-sw]
+=== For the Data Engineer
+
+[#analyst-8-4-1-sw]
+=== For the IT Ops Engineer
+
+Python 3.9 upgrade::
+For ThoughtSpot-managed CentOS clusters hosted on AWS, Azure, and GCP, Python 3.9 is now the default Python version. ThoughtSpot does not support downgrading to an earlier Python release for these clusters. For customer-managed RHEL, OEL, or Amazon Linux 2 clusters, and for ThoughtSpot-managed CentOS clusters hosted on VMware, SMC, and Dell, the default Python version is still either 3.6 or 3.7.  For customer-managed RHEL and Amazon Linux 2 clusters, you can xref:python-upgrade.adoc[upgrade the cluster's Python version to 3.9].
+
+[#analyst-8-4-1-sw]
+=== For the Developer
+
+Customers licensed to embed ThoughtSpot can use ThoughtSpot Everywhere features and Visual Embed SDK.
+
+To enable ThoughtSpot Everywhere on your cluster, contact ThoughtSpot Support.
+
+For information about ThoughtSpot Everywhere, refer to  link:https://developers.thoughtspot.com/docs[ThoughtSpot Everywhere Documentation, window=_blank].
+
+include::partial$limited-availability-notice.adoc[]
 
 * <<new-8-4-0,8.4.0.sw New Features and Functionality>>
 * <<upgrade-paths,Supported Upgrade Paths>>
@@ -126,15 +162,15 @@ For information about ThoughtSpot Everywhere, refer to  link:https://developers.
 [#upgrade-paths]
 == Supported Upgrade Paths
 
-If you are running one of the following versions, you can upgrade to the 8.4.0.sw release directly:
+If you are running one of the following versions, you can upgrade to the 8.4.0.sw or 8.4.1.sw release directly:
 
-* 7.1.x to 7.2.1
-* 7.2.x to 8.4.0.sw
+* 7.1.x to 8.4.0.sw or 8.4.1.sw
+* 7.2.x to 8.4.0.sw or 8.4.1.sw
 
 This includes any hotfixes or customer patches on these branches.
 
 If you are running a different version, you must do a multiple pass upgrade.
 
-First, upgrade to version 7.1.x or 7.2.x, and then to the 8.4.0.sw release.
+First, upgrade to version 7.1.x or 7.2.x, and then to the 8.4.0.sw or 8.4.1.sw release.
 
 NOTE: To successfully upgrade your ThoughtSpot cluster, all user profiles must include a valid email address. Without valid email addresses, the upgrade is blocked.
