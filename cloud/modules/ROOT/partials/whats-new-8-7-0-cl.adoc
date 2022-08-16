@@ -24,13 +24,29 @@ endif::free-trial-feature[]
 
 // check if you have a note about trying it out that is different in beta vs GA
 
+Threshold-based alerts are now GA and on by default. You can now use the Monitor feature to receive alerts when your KPI satisfies a given threshold condition. For example, create a condition to receive an alert when your Sales KPI becomes `greater than 200,000`, or when your KPI for Sales weekly `increases by 2%`.
+For more information,
+ifndef::pendo-links[]
+see xref:monitor.adoc#threshold-based-alert[Create a threshold-based alert].
+endif::[]
+ifdef::pendo-links[]
+see xref:monitor.adoc#threshold-based-alert[Create a threshold-based alert,window=_blank].
+endif::[]
+
+image::monitor-threshold-alerts.gif[Threshold-based alerts]
+
+////
 [#8-7-0-cl-kpi]
 [discrete]
 === KPI anomaly
 
-// Naomi -- still waiting for confirmation
+// Naomi -- internal-only for 8.7.
+
+// KPI explain changes planned to be beta release in 8.8.0.cl, KPI anomaly detection still POC
 
 // still image
+
+////
 
 [#8-7-0-cl-geo-maps]
 [discrete]
@@ -62,11 +78,13 @@ endif::free-trial-feature[]
 
 // THE FOLLOWING ARE NEEDS EVALUATION
 
+////
 [#8-7-0-cl-deprecate-list-pages]
 [discrete]
 === Deprecate list pages
 
-// Naomi -- still getting confirmation
+// Naomi -- deprecation planned for beta release in 8.10.cl
+////
 
 [#8-7-0-cl-sage-indexing]
 [discrete]
@@ -85,7 +103,7 @@ endif::free-trial-feature[]
 
 // Naomi
 
-// don't document until mid-september when the flag is removed. naomi will discus with mark
+//  document as beta until mid-september when the flag is removed. no tile view or scheduling included in 8.7 release
 
 // gif or maybe 2 still images with an arrow (TS and then slack or google sheets)
 
@@ -159,7 +177,7 @@ endif::free-trial-feature[]
 [discrete]
 === Seekwell: Zapier
 
-// Naomi
+// Naomi -- not a Seekwell destination, but you can trigger a Seekwell block to run from Zapier using the Seekwell API as a webhook
 
 // ask mark if we want to add seekwell to our release notes now that we are bringing it into our stack. they have their own release schedule though
 
