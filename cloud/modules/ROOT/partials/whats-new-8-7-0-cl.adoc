@@ -16,13 +16,11 @@ endif::[]
 endif::free-trial-feature[]
 [#primary-8-7-0-cl]
 
+// NOTE: reorder if necessary. most impactful business user at the top, but move around so not 10 gifs in a row
+
 [#8-7-0-cl-threshold-alerts]
 [discrete]
 === Threshold-based alerts
-
-// Naomi -- still waiting for confirmation
-
-// check if you have a note about trying it out that is different in beta vs GA
 
 Threshold-based alerts are now GA and on by default. You can now use the Monitor feature to receive alerts when your KPI satisfies a given threshold condition. For example, create a condition to receive an alert when your Sales KPI becomes `greater than 200,000`, or when your KPI for Sales weekly `increases by 2%`.
 For more information,
@@ -32,6 +30,8 @@ endif::[]
 ifdef::pendo-links[]
 see xref:monitor.adoc#threshold-based-alert[Create a threshold-based alert,window=_blank].
 endif::[]
+
+// change gif to just the key component (threshold)? or just simplify? image or gif of the threshold setting and then the email?
 
 image::monitor-threshold-alerts.gif[Threshold-based alerts]
 
@@ -54,7 +54,7 @@ image::monitor-threshold-alerts.gif[Threshold-based alerts]
 
 // Teresa
 
-// still image or gif of zooming in (depending on how smooth it is)
+//gif of zooming in, zooming out, different views (satellite, outdoors, etc)
 
 [#8-7-0-cl-tabs]
 [discrete]
@@ -62,7 +62,7 @@ image::monitor-threshold-alerts.gif[Threshold-based alerts]
 
 // Teresa
 
-// gif
+// gif -- create a tab, then jump to switching between tabs
 
 [#8-7-0-cl-or-contains]
 [discrete]
@@ -70,27 +70,21 @@ image::monitor-threshold-alerts.gif[Threshold-based alerts]
 
 // Teresa -- need to look into this one. might not even need an image
 
+// ask atul about ability to use both and and or -- or do you have to choose?
+
 [#8-7-0-cl-sources]
 [discrete]
 === Choose sources limitation
 
-// Teresa. no image
+// Teresa. no image. this one should be last
 
 // THE FOLLOWING ARE NEEDS EVALUATION
-
-////
-[#8-7-0-cl-deprecate-list-pages]
-[discrete]
-=== Deprecate list pages
-
-// Naomi -- deprecation planned for beta release in 8.10.cl
-////
 
 [#8-7-0-cl-sage-indexing]
 [discrete]
 === Sage indexing
 
-// Mark
+// Mark -- still needs eval/ research. might not be in 8.7.
 
 '''
 [#secondary-8-7-0-cl]
@@ -103,7 +97,11 @@ image::monitor-threshold-alerts.gif[Threshold-based alerts]
 
 // Naomi
 
-//  document as beta until mid-september when the flag is removed. no tile view or scheduling included in 8.7 release
+// move to business user section. probably near the top
+
+// need to make a decision about whether to include this. note that this will be enabled shortly after GA/ where to look for it? have a separate pendo for this specific feature?
+
+//  document as beta until mid-september when the flag is removed (about a week after planned upgrade). no tile view or scheduling included in 8.7 release
 
 You can now sync data directly from an Answer, View, or Liveboard to external business apps like Google Sheets, Slack, or Microsoft Teams. Using ThoughtSpot Sync, you can push insights directly to your app, notify your teams, and view data in context. ThoughtSpot Sync automatically establishes a secure pipeline to the destination app and thus eliminates the need for building custom connectors to external apps. For more information,
 ifndef::pendo-links[]
@@ -113,8 +111,6 @@ ifdef::pendo-links[]
 see xref:thoughtspot-sync.adoc[Sync data from ThoughtSpot to external apps,window=_blank].
 endif::[]
 
-// gif or maybe 2 still images with an arrow (TS and then slack or google sheets)
-
 image:ts-sync-wn.png[]
 
 [#8-7-0-cl-snowflake-csv]
@@ -122,6 +118,12 @@ image:ts-sync-wn.png[]
 === Snowflake CSV upload
 
 // Mark
+
+// should this one be above the fold/ would business users do this? Maybe ask PM about use case?
+
+// two different links to content aimed at different users (data engineer how to set it up and business user how to upload)
+
+// maybe a gif of uploading a csv
 
 [#8-7-0-cl-denodo-oauth]
 [discrete]
@@ -148,12 +150,61 @@ image:ts-sync-wn.png[]
 // probably no image
 
 [#8-7-0-cl-okta]
+ifndef::free-trial-feature[]
+ifdef::pendo-links[]
 [discrete]
-=== Okta authentication
+=== Okta identity and access management [.badge.badge-update-whats-new]#Beta#
+endif::[]
+ifndef::pendo-links[]
+[discrete]
+=== Okta identity and access management [.badge.badge-update]#Beta#
+endif::[]
 
-// Teresa
+// confirm again that this will be in 8.7. rename all this to iam v2 instead of okta
 
-// this is in beta and will need a beta tag
+In this release, ThoughtSpot switched to a new, industry-standard cloud identity and access management method through Okta. This switch involves several external improvements to authentication:
+
+* New local users now create their own password during activation. Administrators do not create the password prior to activation. For more information,
+ifndef::pendo-links[]
+see xref:user-account-activation-okta.adoc[Activate your ThoughtSpot account].
+endif::[]
+ifdef::pendo-links[]
+see xref:user-account-activation-okta.adoc[Activate your ThoughtSpot account,window=_blank].
+endif::[]
++
+image::okta-activate-account.png[Activate new account]
+* Ability to map IDP attributes for SAML authentication from the ThoughtSpot Admin Console (username, email, and display name). For more information,
+ifndef::pendo-links[]
+see xref:authentication-integration.adoc[Managing authentication with SAML].
+endif::[]
+ifdef::pendo-links[]
+see xref:authentication-integration.adoc[Managing authentication with SAML,window=_blank].
+endif::[]
++
+image::saml-attribute-mapping.png[SAML attribute mapping]
+//maybe figure out a way to zoom here (gif?) or just screenshot the relevant parts and have a smaller browser window
+* Account activation monitoring from the Users section of the Admin Console: if a user still needs to activate their account, administrators can see that information in the Users section and re-send their activation email. For more information,
+ifndef::pendo-links[]
+see xref:user-management.adoc[Create, edit, or delete a  user].
+endif::[]
+ifdef::pendo-links[]
+see xref:user-management.adoc[Create, edit, or delete a  user,window=_blank].
+endif::[]
++
+image::admin-portal-account-activation.png[Account activation column]
+//maybe figure out a way to zoom here (gif?) or just screenshot the relevant parts and have a smaller browser window
+
+For a general overview,
+ifndef::pendo-links[]
+see xref:okta-iam.adoc[Okta identity and access management].
+endif::[]
+ifdef::pendo-links[]
+see xref:okta-iam.adoc[Okta identity and access management,window=_blank].
+endif::[]
+
+endif::free-trial-feature[]
+
+// THE FOLLOWING ARE NEEDS EVALUATION
 
 [#8-7-0-cl-spotapps-creator]
 [discrete]
@@ -164,8 +215,6 @@ image:ts-sync-wn.png[]
 // this is in question (PM and marketing need to discuss with sean z)
 
 // just an image most likely
-
-// THE FOLLOWING ARE NEEDS EVALUATION
 
 [#8-7-0-cl-redshift-proxies]
 [discrete]
@@ -182,30 +231,8 @@ image:ts-sync-wn.png[]
 // Teresa
 
 // no image
-
-////
-[#8-7-0-cl-seekwell-zapier]
-[discrete]
-=== Seekwell: Zapier
-
-// Naomi -- not a Seekwell destination, but you can trigger a Seekwell block to run from Zapier using the Seekwell API as a webhook
-
-// ask mark if we want to add seekwell to our release notes now that we are bringing it into our stack. they have their own release schedule though
-
-[#8-7-0-cl-seekwell-close]
-[discrete]
-=== Seekwell: Close
-
-// Naomi
-
-// already in seekwell docs, so even if we start adding notes for seekwell features, this probably doesn't need one
-////
-
-[#8-7-0-cl-spotapps-app-store]
-[discrete]
-=== SpotApps app store
-
-// Teresa -- most likely internal but leaving in until confirmed
+// we don't need this if it's just removing tile view
+// tags? Pretty sure that was fixed in 8.6
 
 ifndef::free-trial-feature[]
 [discrete]
