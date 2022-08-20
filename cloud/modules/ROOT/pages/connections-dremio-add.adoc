@@ -24,8 +24,19 @@ image::connection-dremio-add.png[Add Dremio connection]
 +
 image::connection-dremio-specify-details.png[]
 +
+NOTE: *Project Id* applies to Dremio Cloud only.
++
 Refer to the xref:connections-dremio-reference.adoc[{connection} connection reference] for more information on each of the specific attributes you must enter for your connection.
-
+. (For SSL-enabled instances only) If the Dremio instance you are connecting to has SSL enabled, you *must* do the following:
+.. Click the *Advanced Config* menu to reveal  *Key* and *Value* fields.
+.. In the *Key* field, enter: `disableHostVerification`.
+.. In the *Value* field, enter: `true`.
+.. Click the plus sign (+) to add additional key and value fields.
+.. In the *Key* field, enter: `disableCertificateVerification`.
+.. In the *Value* field, enter: `true`.
+.. Click the plus sign (+) to add additional key and value fields.
+.. In the *Key* field, enter: `ssl`.
+.. In the *Value* field, enter: `true`.
 . (Optional) Provide additional key-value pairs that you need to set up your connection to {connection}, by doing the following:
 ** Click the *Advanced Config* menu to reveal the *Key* and *Value* fields.
 ** Enter your key and value information.
