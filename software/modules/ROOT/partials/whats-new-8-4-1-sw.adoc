@@ -23,14 +23,22 @@ ifdef::pendo-links[]
 NOTE: Features marked as [.badge.badge-update-whats-new]#Beta# are off by default. To enable them, contact {support-url}.
 endif::[]
 
-[#primary-8-4-0-cl]
+[#primary-8-4-0-sw]
 [#8-4-0-sw-kpi-chart]
 [discrete]
 === Key Performance Indicator (KPI) chart type
 
 // Naomi
 
-You can now create visualizations of your data’s Key Performance Indicators (KPIs). When you search for a measure with a time-related keyword (for example, `Sales weekly`), you can create sparkline visualizations of your data’s Key Performance Indicators (KPIs). ThoughtSpot also supports conditional formatting to add visual cues for KPIs or threshold metrics to easily show where you are falling short or exceeding targets. For more information, see xref:chart-kpi.adoc[]. +
+You can now create visualizations of your data’s Key Performance Indicators (KPIs). When you search for a measure with a time-related keyword (for example, `Sales weekly`), you can create sparkline visualizations of your data’s Key Performance Indicators (KPIs). ThoughtSpot also supports conditional formatting to add visual cues for KPIs or threshold metrics to easily show where you are falling short or exceeding targets.
+For more information,
+ifndef::pendo-links[]
+see xref:chart-kpi.adoc[KPI charts].
+endif::[]
+ifdef::pendo-links[]
+see xref:chart-kpi.adoc[KPI charts,window=_blank].
+endif::[]
+
 image:kpi-viz-sparkline.png[KPI visualization example 2]
 
 [#8-4-0-sw-auto-select-search-source]
@@ -38,26 +46,46 @@ image:kpi-viz-sparkline.png[KPI visualization example 2]
 === Auto-select search data source for new users
 
 When a new user uses Search Data, ThoughtSpot intelligently selects a data source for them to search on. ThoughtSpot chooses the most popular data source in the cluster that the user has access to. This allows users to begin to search data easily, without looking through all the existing data sources on their cluster.
-
-// image
+For more information,
+ifndef::pendo-links[]
+see xref:search-choose-data-source.adoc[Choose a data source].
+endif::[]
+ifdef::pendo-links[]
+see xref:search-choose-data-source.adoc[Choose a data source,window=_blank].
+endif::[]
 
 [#8-4-0-sw-geo-france]
 [discrete]
 === Geo map support for France postcode
 
-// Naomi
-
-We now support more detailed geographic maps for France. You can now create maps based on postal codes, as well as region and city name. For more information, see xref:geomap-reference.adoc#france[Geo map reference].
-
-// image
+We now support more detailed geographic maps for France. You can now create maps based on postal codes, as well as region and city name.
+For more information,
+ifndef::pendo-links[]
+see xref:geomap-reference.adoc[Geo map reference].
+endif::[]
+ifdef::pendo-links[]
+see xref:geomap-reference.adoc[Geo map reference,window=_blank].
+endif::[]
 
 [#8-4-0-sw-new-answer]
 [discrete]
-=== New answer experience
+ifndef::pendo-links[]
+=== New answer experience [.badge.badge-update]#Beta#
+endif::[]
+ifdef::pendo-links[]
+=== New answer experience [.badge.badge-update-whats-new]#Beta#
+endif::[]
 
 The new answer experience contains new features and enhancements, including an in-product undo, redo, and reset button, HTML for answer titles and descriptions, and improvements to conditional formatting for charts, tables, and pivot tables.
 
-To try it out, navigate to your profile, scroll down to *Experience*, select *Edit*, and toggle the Answer experience to *New experience*. [.show-hide]#See xref:answer-experience-new.adoc[New answer experience].#
+To try it out, navigate to your profile, scroll down to *Experience*, select *Edit*, and toggle the Answer experience to *New experience*.
+For more information,
+ifndef::pendo-links[]
+see xref:answer-experience-new.adoc[New answer experience].
+endif::[]
+ifdef::pendo-links[]
+see xref:answer-experience-new.adoc[New answer experience,window=_blank].
+endif::[]
 
 image::new-answer-experience.gif[New answer experience gif]
 
@@ -65,28 +93,52 @@ image::new-answer-experience.gif[New answer experience gif]
 [discrete]
 === Conditional and number formatting for downloaded tables
 
-When you download a table in `XLSX` format, the downloaded table now shows the same conditional and number formatting as the table in ThoughtSpot. [.show-hide]#See xref:search-download.adoc[Download a search].#
+When you download a table in `XLSX` format, the downloaded table now shows the same conditional and number formatting as the table in ThoughtSpot. For more information,
+ifndef::pendo-links[]
+see xref:search-download.adoc[Download a search].
+endif::[]
+ifdef::pendo-links[]
+see xref:search-download.adoc[Download a search,window=_blank].
+endif::[]
 
-// image TBD if i can find a cluster
+image::xlsx-download.png[Conditional and number formatting]
 
 [#8-4-0-sw-liveboard-schedule]
 [discrete]
 === Liveboard schedule
 
-// Naomi
+ThoughtSpot now combines the Liveboard follow and Liveboard Schedule features into a single action called "Schedule." To create a new schedule to receive an email containing a pdf of your Liveboard, users now select the *Schedule* button to the left of the *more options menu* image:icon-more-10px.png[].
 
-ThoughtSpot now combines the Liveboard follow and xref:liveboard-schedule.adoc[Liveboard Schedule] features into a single action called "Schedule." To create a new schedule to receive an email containing a pdf of your Liveboard, users now select the *Schedule* button to the left of the *more options menu* image:icon-more-10px.png[]. +
-ThoughtSpot will migrate any existing Liveboard follows to Liveboard schedules. For users who followed a Liveboard in November Cloud or earlier, those Liveboard schedules appear in the list of Liveboard schedules as _Migrated from follow (your display name)_.
+ThoughtSpot will migrate any existing Liveboard follows to Liveboard schedules. For users who followed a Liveboard in 7.2.1 or earlier, those Liveboard schedules appear in the list of Liveboard schedules as _Migrated from follow (your display name)_.
+For more information,
+ifndef::pendo-links[]
+see xref:liveboard-schedule.adoc[Schedule a Liveboard job].
+endif::[]
+ifdef::pendo-links[]
+see xref:liveboard-schedule.adoc[Schedule a Liveboard job,window=_blank].
+endif::[]
 
 image::liveboard-schedule.png[Liveboard schedule button]
 
 [#8-4-0-sw-new-spotiq]
 [discrete]
-=== New SpotIQ experience
+ifndef::pendo-links[]
+=== New SpotIQ experience [.badge.badge-update]#Beta#
+endif::[]
+ifdef::pendo-links[]
+=== New SpotIQ experience [.badge.badge-update-whats-new]#Beta#
+endif::[]
 
 SpotIQ has a new reorganized and more intuitive UI. The functionality remains the same.
 
-To try it out, navigate to your profile, scroll down to *Experience*, select *Edit*, and toggle the SpotIQ experience to *New experience*. [.show-hide]#See xref:spotiq.adoc[SpotIQ].#
+To try it out, navigate to your profile, scroll down to *Experience*, select *Edit*, and toggle the SpotIQ experience to *New experience*.
+For more information,
+ifndef::pendo-links[]
+see xref:spotiq.adoc[SpotIQ].
+endif::[]
+ifdef::pendo-links[]
+see xref:spotiq.adoc[SpotIQ,window=_blank].
+endif::[]
 
 image::spotiq-v2-ui.png[New SpotIQ experience]
 
@@ -160,9 +212,16 @@ image::xlsx-download-85.png[Column width formatting retained in downloaded table
 [discrete]
 === Date interval functions
 
-We introduced new functions for computing time intervals between two dates. In addition to the existing xref:formula-reference.adoc#diff_days[diff_days] and xref:formula-reference.adoc#diff_time[diff_time] functions, you can now use `diff_years`, `diff_quarters`, `diff_months` `diff_weeks`, `diff_hours`, and `diff_minutes` to calculate time intervals.
+We introduced new functions for computing time intervals between two dates. In addition to the existing diff_days and diff_time functions, you can now use `diff_years`, `diff_quarters`, `diff_months` `diff_weeks`, `diff_hours`, and `diff_minutes` to calculate time intervals.
 
-If your organization uses a xref:connections-cust-cal.adoc[custom calendar] for your fiscal year, use the optional custom calendar argument with these functions to calculate the difference between the two dates. [.show-hide]#See xref:formula-reference.adoc[].#
+If your organization uses a custom calendar for your fiscal year, use the optional custom calendar argument with these functions to calculate the difference between the two dates.
+For more information,
+ifndef::pendo-links[]
+see xref:formula-reference.adoc#date-functions[Formula reference].
+endif::[]
+ifdef::pendo-links[]
+see xref:formula-reference.adoc#date-functions[Formula reference,window=_blank].
+endif::[]
 
 [#8-4-0-sw-streamlined-analyst]
 [discrete]
@@ -170,24 +229,42 @@ If your organization uses a xref:connections-cust-cal.adoc[custom calendar] for 
 
 // Naomi
 
-We simplified the steps to set up an analyst account on ThoughtSpot. Now, you can create a connection, xref:worksheet-create-setup.adoc[create a worksheet] to model your business use cases, immediately search your data, and automatically xref:automated-answer-creation.adoc[create Search visualizations]. See xref:analyst-onboarding.adoc[Analyst Onboarding] for further details. +
-This feature is specific to clusters based on connections to external data warehouses, not imported data (Falcon). To enable this feature for your cluster, xref:support-contact.adoc[contact ThoughtSpot Support].
+We simplified the steps to set up an analyst account on ThoughtSpot. Now, you can create a connection, create a worksheet to model your business use cases, immediately search your data, and automatically create Search visualizations.
+For more information,
+ifndef::pendo-links[]
+see xref:analyst-onboarding.adoc[Analyst onboarding] and xref:automated-answer-creation.adoc[Create answers in Setup].
+endif::[]
+ifdef::pendo-links[]
+see xref:analyst-onboarding.adoc[Analyst onboarding,window=_blank] and xref:automated-answer-creation.adoc[Create answers in Setup,window=_blank].
+endif::[]
 
-// image
+This feature is specific to clusters based on connections to external data warehouses, not imported data (Falcon). To enable this feature for your cluster, contact ThoughtSpot Support.
 
 [#8-4-0-sw-oauth-databricks]
 [discrete]
 === OAuth for Databricks
 
-Databricks connections now support OAuth. See xref:connections-databricks-oauth.adoc[Configure OAuth for a Databricks connection].
+Databricks connections now support OAuth.
+For more information,
+ifndef::pendo-links[]
+see xref:connections-databricks-oauth.adoc[Configure OAuth for a Databricks connection].
+endif::[]
+ifdef::pendo-links[]
+see xref:connections-databricks-oauth.adoc[Configure OAuth for a Databricks connection,window=_blank].
+endif::[]
 
 [#8-4-1-sw-oauth-okta-snowflake]
 [discrete]
 === Okta OAuth for Snowflake
 
-Snowflake connections now support Okta OAuth. See xref:connections-snowflake-okta-oauth.adoc[Configure Okta OAuth for a Snowflake connection].
-
-// image
+Snowflake connections now support Okta OAuth.
+For more information,
+ifndef::pendo-links[]
+see xref:connections-snowflake-okta-oauth.adoc[Configure Okta OAuth for a Snowflake connection].
+endif::[]
+ifdef::pendo-links[]
+see xref:connections-snowflake-okta-oauth.adoc[Configure Okta OAuth for a Snowflake connection,window=_blank].
+endif::[]
 
 [#python]
 [discrete]
