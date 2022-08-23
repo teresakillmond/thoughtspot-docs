@@ -1,4 +1,4 @@
-= 8.4.0.sw Release Notes
+= 8.4.1.sw Release Notes
 :experimental:
 :last_updated: 5/19/2022
 :linkattrs:
@@ -19,7 +19,6 @@ For a complete list of issues that we fixed in this release, see xref:fixed.adoc
 == 8.4.1.sw New Features and Functionality
 
 * <<analyst-8-4-1-sw,For the Analyst>>
-* <<business-user-8-4-1-sw,For the Business User>>
 * <<data-engineer-8-4-1-sw,For the Data Engineer>>
 * <<it-ops-engineer-8-4-1-sw,For the IT Ops Engineer>>
 * <<developer-8-4-1-sw,For the Developer>>
@@ -30,17 +29,36 @@ For a complete list of issues that we fixed in this release, see xref:fixed.adoc
 Table formatting for downloaded tables::
 When you download a table in XLSX format, the downloaded table now shows the same column width, number formatting based on the format pattern, and date formatting as the table in ThoughtSpot. Refer to xref:search-download.adoc[Download your search].
 
-[#business-user-8-4-1-sw]
-=== For the Business User
-
 [#data-engineer-8-4-1-sw]
 === For the Data Engineer
+
+[#data-workspace]
+Data Workspace::
+The new Data Workspace is now GA and on by default. It redesigns the *Data* section of the product. To access it, select *Data* from the top navigation bar. The redesign introduces several new features, such as SQL-based views and dbt integration, and makes the UI more intuitive.
++
+See xref:data-workspace.adoc[Data workspace].
+
+[#sql-views]
+SQL-based views::
+SQL-based views are now GA and on by default. Users can create views based on custom SQL queries, and use those views as data sources. This type of view has the same functionality as a view based on searching your data.
++
+See xref:sql-views.adoc[SQL views].
+
+[#dbt]
+Integration with dbt::
+The dbt integration is now GA and on by default. You can provide your existing dbt models and automatically create worksheets in ThoughtSpot that you can use to perform searches on your data.
++
+See xref:dbt-integration.adoc[dbt integration].
 
 [#it-ops-engineer-8-4-1-sw]
 === For the IT Ops Engineer
 
 Python 3.9 upgrade::
 For ThoughtSpot-managed CentOS clusters hosted on AWS, Azure, and GCP, Python 3.9 is now the default Python version. ThoughtSpot does not support downgrading to an earlier Python release for these clusters. For customer-managed RHEL, OEL, or Amazon Linux 2 clusters, and for ThoughtSpot-managed CentOS clusters hosted on VMware, SMC, and Dell, the default Python version is still either 3.6 or 3.7.  For customer-managed RHEL and Amazon Linux 2 clusters, you can xref:python-upgrade.adoc[upgrade the cluster's Python version to 3.9].
+
+System information Liveboards::
+We moved several system monitoring Liveboards to new areas of the product. The *System information and usage Liveboard* is now in the Admin Console, under *System Information*. The *Table status Liveboard* is now in the Admin Console, under *Table Status*. The *Connections Liveboard* is now in the Data Workspace, under *Usage statistics*.
+For more information, see xref:admin-portal.adoc[Admin Console] and xref:data-workspace.adoc#usage-statistics[Data workspace].
 
 [#developer-8-4-1-sw]
 === For the Developer
@@ -125,7 +143,7 @@ We now support more detailed geographic maps for France. You can now create maps
 
 [#data-workspace-beta]
 Data Workspace [.badge.badge-update]#Beta#::
-This release redesigns the Data section of the product. The new Data Workspace is still in the same place in the product. To access it, select Data from the top navigation bar. The redesign introduces several new features, such as SQL-based views and SpotApps, and makes the UI more intuitive.
+This release redesigns the Data section of the product. The new Data Workspace is still in the same place in the product. To access it, select Data from the top navigation bar. The redesign introduces several new features, such as SQL-based views, and makes the UI more intuitive.
 +
 This feature is in beta and off by default. To enable it, contact {support-url}.
 
