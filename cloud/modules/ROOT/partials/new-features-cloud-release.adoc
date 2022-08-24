@@ -26,6 +26,11 @@ You can now customize the colors used for heatmap and treemap charts. Prior to t
 Choose sources limitation::
 You can no longer select more than 100 data sources to search on when searching data. This maximum of 100 sources improves performance and limits timeouts due to the selection of too many sources.
 
+Support for OR in contains operator::
+ThoughtSpot now offers the option to `OR` multiple `contains` clauses for the same attribute in a search, instead of combining them with `AND`, which is the default. For example, with the optional new `OR` behavior, `country name contains 'a' country name contains 'b'` returns results such as `Azerbaijan`, `Bahrain`, `North America`, and `Canada`. With the default `AND` behavior, that search returns `Azerbaijan` and `Bahrain`, but *_not_* `North America` or `Canada`.
++
+To enable this feature, contact {support-url}.
+
 Geo charts enhancements::
 This release includes several enhancements to all geo charts:
 +
