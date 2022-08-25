@@ -21,27 +21,54 @@ Before you can deploy the {spotapp}, you must complete the following prerequisit
 
 include::partial$spotapp-prereqs-general.adoc[]
 
-* Administrator access to {application}
+* Administrator access to {application}. In {application}, this is called `ACCOUNTADMIN`.
 * Access to the following {application} tables in your cloud data warehouse. Refer to <<schema,{spotapp} schema>> for more details.
 ** DATABASE_STORAGE_USAGE_HISTORY
 ** QUERY_HISTORY
 ** STAGES
 ** STORAGE_USAGE
 ** WAREHOUSE_METERING_HISTORY
-* Run the required SQL commands in your cloud data warehouse. Refer to <<sql,Run SQL commands>>.
+* Run the required SQL commands in your cloud data warehouse. Refer to <<sql,Run SQL commands>>. Note that you have two options to set up the SpotApp; only choose one of the options.
 
 [#sql]
 === Run SQL commands
-The following SQL commands help standardize data types and column names. Replace the *database name* and *schema name* with your specific information.
+You can set up the SpotApp in one of two ways:
+
+* *Option 1:* Copy the data from the {application} database to a different database using {application} tasks. This option has faster performance and a customizable cost. Refer to <<option-1,Option 1 SQL commands>>.
+
+* *Option 2:* Query on the system database directly. This option has slower performance and may be more expensive. Refer to <<option-2,Option 2 SQL commands>>.
+
+[#option-1]
+==== Option 1
+The following SQL commands grant permission for the role you use in your {application} connection to use the {application} database. They create a separate database and schema for the data in the {application} database, and create the tables with the data. Replace the *database name*, *schema name*, *YOUR_ROLE*, *WAREHOUSE*, *DATABASE*, *SCHEMA*, AND *PARAMETER* with your specific information.
 
 NOTE: The following SQL example is for the Snowflake cloud data warehouse. You may need to modify the code for the SQL requirements of your specific cloud data warehouse.
+
+Run these commands as the `ACCOUNTADMIN`.
 
 SQL commands:
 [%collapsible]
 .Click on the dropdown to view the SQL commands.
 ====
 --
-include::partial$snowflake-sql-script.adoc[]
+include::partial$snowflake-sql-script-option-1.adoc[]
+--
+====
+
+[#option-2]
+==== Option 2
+The following SQL commands grant permission for the role you use in your {application} connection to use the {application} database. They prepare you to query on the system database directly. Replace the *database name*, *schema name*, and *YOUR_ROLE* with your specific information.
+
+NOTE: The following SQL example is for the Snowflake cloud data warehouse. You may need to modify the code for the SQL requirements of your specific cloud data warehouse.
+
+Run these commands as the `ACCOUNTADMIN`.
+
+SQL commands:
+[%collapsible]
+.Click on the dropdown to view the SQL commands.
+====
+--
+include::partial$snowflake-sql-script-option-2.adoc[]
 --
 ====
 
