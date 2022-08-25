@@ -23,23 +23,27 @@ endif::free-trial-feature[]
 // Naomi
 
 Threshold-based alerts are now GA and on by default. You can now use the Monitor feature to receive alerts when your KPI satisfies a given threshold condition. For example, create a condition to receive an alert when your Sales KPI becomes `greater than 200,000`, or when your KPI for Sales weekly `increases by 2%`.
-For more information,
-ifndef::pendo-links[]
-see xref:monitor.adoc#threshold-based-alert[Create a threshold-based alert].
-endif::[]
-ifdef::pendo-links[]
-see xref:monitor.adoc#threshold-based-alert[Create a threshold-based alert,window=_blank].
-endif::[]
 
 image::monitor-threshold-alerts.gif[Threshold-based alerts]
 
-
-
 [#8-7-0-cl-geo-maps]
 [discrete]
-=== Geo maps street view
+=== Geo charts enhancements
 
-// Teresa
+This release includes several enhancements to all geo charts:
+
+* Improved map quality: This includes faster map loading, better clarity, and more granular details down to the street level when you zoom in. This applies to background maps (the parts of the map with no data) as well.
+* A new *map type* option that allows you to customize the display of the parts of the geo chart map that do not contain data. The new map type options are Light, Dark, Outdoors, Streets, Satellite, and Satellite Streets. The default is Light.
+
+image::geo-chart-zoom-map-type.gif[Geo chart zoom and map type]
+
+[#8-7-0-cl-treemap-heatmap]
+[discrete]
+=== Customizable colors for heatmap and treemap charts
+
+You can now customize the colors used for heatmap and treemap charts. You can select any color in your color palette.
+
+image::treemap-heatmap-color.png[Treemap and heatmap color customization]
 
 [#8-7-0-cl-tabs]
 [discrete]
@@ -51,23 +55,15 @@ image::monitor-threshold-alerts.gif[Threshold-based alerts]
 [discrete]
 === Support for OR in contains operator
 
-// Teresa
+ThoughtSpot now offers the option to `OR` multiple `contains` clauses for the same attribute in a search, instead of combining them with `AND`, which is the default. For example, with the optional new `OR` behavior, `country name contains 'a' country name contains 'b'` returns results such as `Azerbaijan`, `Bahrain`, `North America`, and `Canada`. With the default `AND` behavior, that search returns `Azerbaijan` and `Bahrain`, but *_not_* `North America` or `Canada`.
+
+To enable this feature, contact {support-url}.
 
 [#8-7-0-cl-sources]
 [discrete]
 === Choose sources limitation
 
-// Teresa
-
-// THE FOLLOWING ARE NEEDS EVALUATION
-
-
-
-[#8-7-0-cl-sage-indexing]
-[discrete]
-=== Sage indexing
-
-// Mark
+You can no longer select more than 100 data sources to search on when searching data. This maximum of 100 sources improves performance and limits timeouts due to the selection of too many sources.
 
 '''
 [#secondary-8-7-0-cl]
@@ -109,42 +105,34 @@ You can now upload a CSV file that can be joined to your connection's tables in 
 // Mark
 
 [#8-7-0-cl-okta]
+ifndef::free-trial-feature[]
+ifdef::pendo-links[]
 [discrete]
-=== Okta authentication
-
-// Teresa
-
-// this is in beta and will need a beta tag
-
-[#8-7-0-cl-spotapps-creator]
+=== Identity and Access Management V2 [.badge.badge-update-whats-new]#Beta#
+endif::[]
+ifndef::pendo-links[]
 [discrete]
-=== SpotApps creator/validator flow
+=== Identity and Access Management V2 [.badge.badge-update]#Beta#
+endif::[]
 
-// Teresa
+// confirm again that this will be in 8.7.
 
-// this is in question (PM and marketing need to discuss with sean z)
+In this release, ThoughtSpot switched to a new, industry-standard cloud identity and access management method through Okta. This switch involves several external improvements to authentication:
 
-// THE FOLLOWING ARE NEEDS EVALUATION
+* New local users now create their own password during activation. Administrators do not create the password prior to activation.
++
+image::okta-activate-account.png[Activate new account]
+* Ability to map IDP attributes for SAML authentication from the ThoughtSpot Admin Console (username, email, and display name).
++
+image::saml-idp-attributes.gif[]
+//image::saml-attribute-mapping.png[SAML attribute mapping]
+* Account activation monitoring from the Users section of the Admin Console: if a user still needs to activate their account, administrators can see that information in the Users section and re-send their activation email.
++
+image::user-account-activation-status.gif[Account activation status gif]
+//image::admin-portal-account-activation.png[Account activation column]
 
-[#8-7-0-cl-redshift-proxies]
-[discrete]
-=== Qualify proxies with Redshift
+endif::free-trial-feature[]
 
-// Mark
-
-[#8-7-0-cl-data-workspace]
-[discrete]
-=== Data workspace enhancements
-
-// Teresa
-
-
-
-[#8-7-0-cl-spotapps-app-store]
-[discrete]
-=== SpotApps app store
-
-// Teresa
 
 ifndef::free-trial-feature[]
 [discrete]
