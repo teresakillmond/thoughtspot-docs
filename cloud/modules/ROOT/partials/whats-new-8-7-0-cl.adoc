@@ -50,27 +50,66 @@ image::monitor-threshold-alerts.gif[Threshold-based alerts]
 
 [#8-7-0-cl-geo-maps]
 [discrete]
-=== Geo maps street view
+=== Geo charts enhancements
 
-// Teresa
+This release includes several enhancements to all geo charts:
 
-//gif of zooming in, zooming out, different views (satellite, outdoors, etc)
+* Improved map quality: This includes faster map loading, better clarity, and more granular details down to the street level when you zoom in. This applies to background maps (the parts of the map with no data) as well.
+* A new *map type* option that allows you to customize the display of the parts of the geo chart map that do not contain data. The new map type options are Light, Dark, Outdoors, Streets, Satellite, and Satellite Streets. The default is Light.
+For more information,
+ifndef::pendo-links[]
+see xref:chart-geo.adoc[Geo charts].
+endif::[]
+ifdef::pendo-links[]
+see xref:chart-geo.adoc[Geo charts,window=_blank].
+endif::[]
+
+image::geo-chart-zoom-map-type.gif[Geo chart zoom and map type]
+
+[#8-7-0-cl-treemap-heatmap]
+[discrete]
+=== Customizable colors for heatmap and treemap charts
+
+You can now customize the colors used for heatmap and treemap charts. You can select any color in your color palette.
+For more information,
+ifndef::pendo-links[]
+see xref:chart-heatmap.adoc[Heatmap charts] and xref:chart-treemap.adoc[Treemap charts].
+endif::[]
+ifdef::pendo-links[]
+see xref:chart-heatmap.adoc[Heatmap charts,window=_blank] and xref:chart-treemap.adoc[Treemap charts,window=_blank].
+endif::[]
+
+image::treemap-heatmap-color.png[Treemap and heatmap color customization]
 
 [#8-7-0-cl-tabs]
 [discrete]
 === Liveboard tabs
 
-// Teresa
+ThoughtSpot now supports separating Liveboards into multiple tabs. This allows you to group specific visualizations together within a Liveboard. For example, you may have a *Sales* Liveboard with different visualizations for each region you sell in. You can create tabs for each region, such as *Sales -- East* and *Sales -- West*, and move the visualizations for each region to the relevant tab.
+For more information,
+ifndef::pendo-links[]
+see xref:liveboard-tabs.adoc[Liveboard tabs].
+endif::[]
+ifdef::pendo-links[]
+see xref:liveboard-tabs.adoc[Liveboard tabs,window=_blank].
+endif::[]
 
-// gif -- create a tab, then jump to switching between tabs
+image::liveboard-tabs.gif[Liveboard tabs gif]
 
 [#8-7-0-cl-or-contains]
 [discrete]
 === Support for OR in contains operator
 
-// Teresa -- need to look into this one. might not even need an image
+ThoughtSpot now offers the option to `OR` multiple `contains` clauses for the same attribute in a search, instead of combining them with `AND`, which is the default. For example, with the optional new `OR` behavior, `country name contains 'a' country name contains 'b'` returns results such as `Azerbaijan`, `Bahrain`, `North America`, and `Canada`. With the default `AND` behavior, that search returns `Azerbaijan` and `Bahrain`, but *_not_* `North America` or `Canada`.
+For more information,
+ifndef::pendo-links[]
+see xref:keywords.adoc#contains[Keyword reference].
+endif::[]
+ifdef::pendo-links[]
+see xref:keywords.adoc#contains[Keyword reference,window=_blank].
+endif::[]
 
-// ask atul about ability to use both and and or -- or do you have to choose?
+To enable this feature, contact {support-url}.
 
 [#8-7-0-cl-sources]
 [discrete]
@@ -102,7 +141,7 @@ endif::[]
 
 //  document as beta until mid-september when the flag is removed (about a week after planned upgrade). no tile view or scheduling included in 8.7 release
 
-You can now sync data directly from an Answer, View, or Liveboard to external business apps like Google Sheets, Slack, or Microsoft Teams. Using ThoughtSpot Sync, you can push insights directly to your app, notify your teams, and view data in context. ThoughtSpot Sync automatically establishes a secure pipeline to the destination app and thus eliminates the need for building custom connectors to external apps. For more information,
+You can now sync data directly from an answer or custom SQL view to an external business app like Google Sheets, Slack, or Microsoft Teams. Using ThoughtSpot Sync, you can push insights directly to your app, notify your teams, and view data in context. ThoughtSpot Sync automatically establishes a secure pipeline to the destination app and thus eliminates the need for building custom connectors to external apps. For more information,
 ifndef::pendo-links[]
 see xref:thoughtspot-sync.adoc[Sync data from ThoughtSpot to external apps].
 endif::[]
@@ -153,7 +192,13 @@ image::csv-upload-app.png[CSV upload]
 [#8-7-0-cl-denodo-oauth]
 [discrete]
 === Denodo Oauth
-
+Denodo connections now support OAuth. For details,
+ifndef::pendo-links[]
+see xref:connections-denodo-oauth[Configure OAuth for a Denodo connection].
+endif::[]
+ifdef::pendo-links[]
+see xref:connections-denodo-oauth[Configure OAuth for a Denodo connection,window=_blank].
+endif::[]
 // Mark
 
 // no image
@@ -170,14 +215,14 @@ image::csv-upload-app.png[CSV upload]
 ifndef::free-trial-feature[]
 ifdef::pendo-links[]
 [discrete]
-=== Okta identity and access management [.badge.badge-update-whats-new]#Beta#
+=== Identity and Access Management V2 [.badge.badge-update-whats-new]#Beta#
 endif::[]
 ifndef::pendo-links[]
 [discrete]
-=== Okta identity and access management [.badge.badge-update]#Beta#
+=== Identity and Access Management V2 [.badge.badge-update]#Beta#
 endif::[]
 
-// confirm again that this will be in 8.7. rename all this to iam v2 instead of okta
+// confirm again that this will be in 8.7.
 
 In this release, ThoughtSpot switched to a new, industry-standard cloud identity and access management method through Okta. This switch involves several external improvements to authentication:
 
@@ -198,8 +243,8 @@ ifdef::pendo-links[]
 see xref:authentication-integration.adoc[Managing authentication with SAML,window=_blank].
 endif::[]
 +
-image::saml-attribute-mapping.png[SAML attribute mapping]
-//maybe figure out a way to zoom here (gif?) or just screenshot the relevant parts and have a smaller browser window
+image::saml-idp-attributes.gif[]
+//image::saml-attribute-mapping.png[SAML attribute mapping]
 * Account activation monitoring from the Users section of the Admin Console: if a user still needs to activate their account, administrators can see that information in the Users section and re-send their activation email. For more information,
 ifndef::pendo-links[]
 see xref:user-management.adoc[Create, edit, or delete a  user].
@@ -208,40 +253,28 @@ ifdef::pendo-links[]
 see xref:user-management.adoc[Create, edit, or delete a  user,window=_blank].
 endif::[]
 +
-image::admin-portal-account-activation.png[Account activation column]
-//maybe figure out a way to zoom here (gif?) or just screenshot the relevant parts and have a smaller browser window
+image::user-account-activation-status.gif[Account activation status gif]
+//image::admin-portal-account-activation.png[Account activation column]
 
 For a general overview,
 ifndef::pendo-links[]
-see xref:okta-iam.adoc[Okta identity and access management].
+see xref:okta-iam.adoc[Identity and Access Management V2].
 endif::[]
 ifdef::pendo-links[]
-see xref:okta-iam.adoc[Okta identity and access management,window=_blank].
+see xref:okta-iam.adoc[Identity and Access Management V2,window=_blank].
 endif::[]
 
 endif::free-trial-feature[]
 
-// THE FOLLOWING ARE NEEDS EVALUATION
-
-[#8-7-0-cl-spotapps-creator]
+[#8-7-0-cl-query-based-pricing]
 [discrete]
-=== SpotApps creator/validator flow
+=== Query Stats Liveboard
 
-// Teresa
+The new Query Stats Liveboard allows administrators of customers who have signed up for a query-based usage subscription, to track the number of queries of their users. To view the Query Stats Liveboard, go to *Liveboards* and select *Query Stats Liveboard*. Query-based usage is part of consumption-based pricing. For more information, see xref:consumption-pricing-query-based.adoc[Query-based usage].
 
-// this is in question (PM and marketing need to discuss with sean z)
+image::query-stats-liveboard.png[Query stats Liveboard]
 
-// just an image most likely
-
-[#8-7-0-cl-data-workspace]
-[discrete]
-=== Data workspace enhancements
-
-// Teresa
-
-// no image
-// we don't need this if it's just removing tile view
-// tags? Pretty sure that was fixed in 8.6
+// Mark
 
 ifndef::free-trial-feature[]
 [discrete]

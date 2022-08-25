@@ -17,16 +17,46 @@ For these instructions, see xref:ts-cloud-getting-started.adoc[Getting Started w
 [#8-7-0-cl-analyst]
 === For the Analyst
 
+Customizable colors for heatmap and treemap charts::
+You can now customize the colors used for heatmap and treemap charts. Prior to this release, the only available heatmap color was teal in various shades, and the only available treemap color was green in various shades. Now you can choose any color in your color palette. For more information, see xref:chart-heatmap.adoc[] and xref:chart-treemap.adoc[].
+
 [#8-7-0-cl-business-user]
 === For the Business User
 
 Choose sources limitation::
 You can no longer select more than 100 data sources to search on when searching data. This maximum of 100 sources improves performance and limits timeouts due to the selection of too many sources.
 
+Support for OR in contains operator::
+ThoughtSpot now offers the option to `OR` multiple `contains` clauses for the same attribute in a search, instead of combining them with `AND`, which is the default. For example, with the optional new `OR` behavior, `country name contains 'a' country name contains 'b'` returns results such as `Azerbaijan`, `Bahrain`, `North America`, and `Canada`. With the default `AND` behavior, that search returns `Azerbaijan` and `Bahrain`, but *_not_* `North America` or `Canada`.
++
+To enable this feature, contact {support-url}.
+
+Geo charts enhancements::
+This release includes several enhancements to all geo charts:
++
+--
+* Improved map quality: This includes faster map loading, better clarity, and more granular details down to the street level when you zoom in. This applies to background maps (the parts of the map with no data) as well.
+* A new *map type* option that allows you to customize the display of the parts of the geo chart map that do not contain data. The new map type options are Light, Dark, Outdoors, Streets, Satellite, and Satellite Streets. The default is Light.
+
+--
+See xref:chart-geo.adoc[].
+
 [#8-7-0-cl-data-engineer]
 === For the Data Engineer
 
+Denodo OAuth::
+Denodo connections now support OAuth. For details, see xref:connections-denodo-oauth[Configure OAuth for a Denodo connection].
 
+Snowflake Oauth improvements::
+(TBD)
+
+[#8-7-0-cl-it-ops-engineer]
+=== For the IT/Ops Engineer
+
+[#8-7-0-cl-query-based-pricing]
+Query Stats Liveboard::
+
+The new Query Stats Liveboard allows administrators of customers who have signed up for a query-based usage subscription, to track the number of queries of their users. To view the Query Stats Liveboard, go to *Liveboards* and select *Query Stats Liveboard*. Query-based usage is part of consumption-based pricing. For more information, see xref:consumption-pricing-query-based.adoc[Query-based usage].
 
 [#8-7-0-cl-developer]
 === For the Developer
