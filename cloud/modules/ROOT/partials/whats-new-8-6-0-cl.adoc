@@ -16,24 +16,13 @@ endif::[]
 endif::free-trial-feature[]
 [#primary-8-6-0-cl]
 
-[#8-6-0-cl-content-discoverable]
-[discrete]
-=== Discoverable answers and Liveboards
-
-// Naomi: keep mostly as-is from 8.5. change text to say "make this [answer | liveboard] discoverable" or similar
-
-// GA in Free Trial and Team Edition
-
-You can now make content easily available to your team members when you save or share an answer or Liveboard. Use the *Make this [answer | Liveboard] discoverable* checkbox that appears when you save or share an answer or Liveboard to grant _view_ access to your teammates. Any user who has access to the underlying data source (worksheet, table, view) and is part of the same user group as the author of the content, will be able to  discover and access the answer or Liveboard in *Search Answers*. +
-Select this checkbox to publish your content in the list of relevant results when a teammate uses the *Search Answers* feature, or de-select to keep your content private.
-
-image:answer-discoverable.png[]
-
+////
 [#8-6-0-cl-data-panel]
 [discrete]
 === Data panel multi-word search
 
 In the data panel search bar, you can now search text and a list of columns separated by one of the following delimiters: comma (*,*), period (*.*), backslash (*\*), dash (*-*), underscore (*_*), or space. If all of your search words find a match with column name words then it is considered as a match.
+////
 
 [#8-6-0-cl-liveboard-v2]
 [discrete]
@@ -41,7 +30,7 @@ In the data panel search bar, you can now search text and a list of columns sepa
 
 The new Liveboard experience is now GA and on by default. It contains new features and enhancements, including Edit mode, HTML in Liveboard titles and descriptions, and improved filtering.
 
-To try it out, navigate to your profile, scroll down to *Experience*, select *Edit*, and toggle the Liveboard experience to *New experience*. For more information,
+To try it out, navigate to any Liveboard. For more information,
 ifndef::pendo-links[]
 see xref:liveboard-experience-new.adoc[New Liveboard experience].
 endif::[]
@@ -87,6 +76,19 @@ For more information, see xref:thoughtspot-one-homepage.adoc#object-delete[Home 
 endif::[]
 ifndef::pendo-links[]
 For more information, see xref:thoughtspot-one-homepage.adoc#object-delete[Home page].
+endif::[]
+
+[#8-6-0-cl-sources]
+[discrete]
+=== Choose sources limitation
+
+You can no longer select more than 100 data sources to search on when searching data. This maximum of 100 sources improves performance and limits timeouts due to the selection of too many sources.
+For more information,
+ifndef::pendo-links[]
+see xref:search-choose-data-source.adoc[Choose a data source].
+endif::[]
+ifdef::pendo-links[]
+see xref:search-choose-data-source.adoc[Choose a data source,window=_blank].
 endif::[]
 
 '''

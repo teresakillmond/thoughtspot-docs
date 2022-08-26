@@ -6,7 +6,7 @@
 
 ThoughtSpot's dbt integration allows you to easily provide your existing dbt models and automatically create ThoughtSpot xref:worksheets.adoc[worksheets], which you can use to xref:search-data.adoc[search your data].
 
-dbt takes your raw data in your data warehouse and transforms and validates it. ThoughtSpot's dbt integration  connects users to their cloud data warehouse, integrates with your dbt models using an API key or zip file, and generates the relationships between the tables defined in the dbt model that you select. It also brings any logical tables into ThoughtSpot. Then, ThoughtSpot creates worksheets, based on the relationships between the tables. These worksheets provide user-friendly logical views of your complex datasets. Users can use these worksheets to easily search their complex data.
+dbt takes your raw data in your data warehouse and transforms and validates it. ThoughtSpot's dbt integration  connects users to their cloud data warehouse, integrates with your dbt models using an API key or zip file, and generates the relationships between the tables defined in the dbt model that you select. It also brings any logical tables into ThoughtSpot. Then, ThoughtSpot creates worksheets, based on the relationships between the tables. If a table does not have any relationships, ThoughtSpot creates a worksheet based only on that table. These worksheets provide user-friendly logical views of your complex datasets. Users can use these worksheets to easily search their complex data.
 
 NOTE: Integration with dbt is certified only for Snowflake and Databricks connections.
 
