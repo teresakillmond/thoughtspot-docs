@@ -48,7 +48,9 @@ Denodo OAuth::
 Denodo connections now support OAuth. For details, see xref:connections-denodo-oauth[Configure OAuth for a Denodo connection].
 
 Snowflake Oauth improvements::
-(TBD)
+This release brings improvements in how ThoughtSpot handles user tokens for Snowflake connections configured with Snowflake OAuth. If a user's refresh token becomes invalid, the administrator or author of the connection can now run the Invalidate Tokens command to allow the user to re-authenticate and regain access to the insights provided by the connection, and the connection itself. Also, in this release the _Role_ field has been added to the Snowflake OAuth connection details page, allowing a role to be added when the connection is created and changed when a connection is edited.
++
+See xref:connections-snowflake-edit.adoc#invalidate-tokens[Invalidating refresh tokens of a Snowflake connection].
 
 [#8-7-0-cl-it-ops-engineer]
 === For the IT/Ops Engineer
