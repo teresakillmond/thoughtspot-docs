@@ -181,23 +181,15 @@ image::csv-upload-app.png[CSV upload]
 
 // Mark
 
-// should this one be above the fold/ would business users do this? Maybe ask PM about use case?
-
-// two different links to content aimed at different users (data engineer how to set it up and business user how to upload)
-
-// maybe a gif of uploading a csv
-
-// Waiting for response from Mahesh for cluster to use to document.
-
 [#8-7-0-cl-denodo-oauth]
 [discrete]
 === Denodo Oauth
 Denodo connections now support OAuth. For details,
 ifndef::pendo-links[]
-see xref:connections-denodo-oauth[Configure OAuth for a Denodo connection].
+see xref:connections-denodo-oauth.adoc[Configure OAuth for a Denodo connection].
 endif::[]
 ifdef::pendo-links[]
-see xref:connections-denodo-oauth[Configure OAuth for a Denodo connection,window=_blank].
+see xref:connections-denodo-oauth.adoc[Configure OAuth for a Denodo connection,window=_blank].
 endif::[]
 // Mark
 
@@ -205,11 +197,18 @@ endif::[]
 
 [#8-7-0-cl-snowflake-oauth]
 [discrete]
-=== Snowflake Oauth improvements
+=== Snowflake OAuth improvements
+
+This release brings improvements in how ThoughtSpot handles user tokens for Snowflake connections configured with Snowflake OAuth. If a user's refresh token becomes invalid, the administrator or author of the connection can now run the Invalidate Tokens command to allow the user to re-authenticate and regain access to the insights provided by the connection, and the connection itself. Also, in this release the *Role* field has been added to the Snowflake OAuth connection details page, allowing it to be added when the connection is created and when a connection is edited.
+ifndef::pendo-links[]
+See xref:connections-snowflake-edit.adoc#invalidate-tokens[Invalidating refresh tokens of a Snowflake connection].
+endif::[]
+ifdef::pendo-links[]
+see xref:connections-snowflake-edit.adoc#invalidate-tokens[Invalidating refresh tokens of a Snowflake connection,window=_blank].
+endif::[]
 
 // Mark
 
-// probably no image. Waiting for response from Pradeep.
 
 [#8-7-0-cl-okta]
 ifndef::free-trial-feature[]
