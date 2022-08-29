@@ -31,9 +31,26 @@ ifdef::pendo-links[]
 see xref:monitor.adoc#threshold-based-alert[Create a threshold-based alert,window=_blank].
 endif::[]
 
-// change gif to just the key component (threshold)? or just simplify? image or gif of the threshold setting and then the email?
+// email at the end needs to be a bit longer. the playbar needs to appear when the zoom is there
 
 image::monitor-threshold-alerts.gif[Threshold-based alerts]
+
+[#8-7-0-cl-tabs]
+[discrete]
+=== Liveboard tabs
+
+ThoughtSpot now supports separating Liveboards into multiple tabs. This allows you to group specific visualizations together within a single Liveboard. For example, you may have a *Sales* Liveboard with different visualizations for each region you sell in. You can create tabs for each region, such as *Sales -- East* and *Sales -- West*, and move the visualizations for each region to the relevant tab.
+For more information,
+ifndef::pendo-links[]
+see xref:liveboard-tabs.adoc[Liveboard tabs].
+endif::[]
+ifdef::pendo-links[]
+see xref:liveboard-tabs.adoc[Liveboard tabs,window=_blank].
+endif::[]
+
+image::liveboard-tabs.gif[Liveboard tabs gif]
+
+// cut this off a second earlier to get rid of "hide desktop icons". no need to scroll when switching between tabs
 
 ////
 [#8-7-0-cl-kpi]
@@ -95,6 +112,8 @@ endif::[]
 
 image::geo-chart-zoom-map-type.gif[Geo chart zoom and map type]
 
+// ask manan about the background maps line -- is there precedent for the background maps being different quality? do we need to distinguish between background maps at all?
+
 [#8-7-0-cl-treemap-heatmap]
 [discrete]
 === Customizable colors for heatmap and treemap charts
@@ -110,26 +129,13 @@ endif::[]
 
 image::treemap-heatmap-color.png[Treemap and heatmap color customization]
 
-[#8-7-0-cl-tabs]
-[discrete]
-=== Liveboard tabs
-
-ThoughtSpot now supports separating Liveboards into multiple tabs. This allows you to group specific visualizations together within a Liveboard. For example, you may have a *Sales* Liveboard with different visualizations for each region you sell in. You can create tabs for each region, such as *Sales -- East* and *Sales -- West*, and move the visualizations for each region to the relevant tab.
-For more information,
-ifndef::pendo-links[]
-see xref:liveboard-tabs.adoc[Liveboard tabs].
-endif::[]
-ifdef::pendo-links[]
-see xref:liveboard-tabs.adoc[Liveboard tabs,window=_blank].
-endif::[]
-
-image::liveboard-tabs.gif[Liveboard tabs gif]
+// just do one of the images? keep the treemap
 
 [#8-7-0-cl-or-contains]
 [discrete]
 === Support for OR in contains operator
 
-ThoughtSpot now offers the option to `OR` multiple `contains` clauses for the same attribute in a search, instead of combining them with `AND`, which is the default. For example, with the optional new `OR` behavior, `country name contains 'a' country name contains 'b'` returns results such as `Azerbaijan`, `Bahrain`, `North America`, and `Canada`. With the default `AND` behavior, that search returns `Azerbaijan` and `Bahrain`, but *_not_* `North America` or `Canada`.
+ThoughtSpot now offers the option to combine multiple `contains` clauses in the same search with `OR`, instead of combining them with `AND`, which is the default. For example, with the optional new `OR` behavior, the query `country name contains 'a' country name contains 'b'` returns results such as `Azerbaijan`, `Bahrain`, `North America`, and `Canada`. With the default `AND` behavior, that search returns `Azerbaijan` and `Bahrain`, but *_not_* `North America` or `Canada`.
 For more information,
 ifndef::pendo-links[]
 see xref:keywords.adoc#contains[Keyword reference].
@@ -144,8 +150,6 @@ To enable this feature, contact {support-url}.
 [#secondary-8-7-0-cl]
 [discrete]
 === _Other features and enhancements_
-
-
 
 ifdef::pendo-links[]
 [#8-7-0-cl-snowflake-csv]
@@ -175,7 +179,7 @@ endif::[]
 
 image::csv-upload-app.png[CSV upload]
 
-// Mark
+// add a line about the use case -- maybe a bit mmore 'friendly'?
 
 [#8-7-0-cl-denodo-oauth]
 [discrete]
@@ -218,7 +222,7 @@ endif::[]
 
 // confirm again that this will be in 8.7.
 
-In this release, ThoughtSpot switched to a new, industry-standard cloud identity and access management method through Okta. This switch involves several external improvements to authentication:
+In this release, ThoughtSpot switches to a new, industry-standard cloud identity and access management method through Okta. This switch involves several external improvements to authentication:
 
 * New local users now create their own password during activation. Administrators do not create the password prior to activation. For more information,
 ifndef::pendo-links[]
