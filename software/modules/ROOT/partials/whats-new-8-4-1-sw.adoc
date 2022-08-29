@@ -23,133 +23,6 @@ ifdef::pendo-links[]
 NOTE: Features marked as [.badge.badge-update-whats-new]#Beta# are off by default. To enable them, contact {support-url}.
 endif::[]
 
-[#primary-8-4-0-sw]
-[#8-4-0-sw-kpi-chart]
-[discrete]
-=== Key Performance Indicator (KPI) chart type
-
-// add beta tag. add a line saying something like "KPI charts depend on the new answer experience, which is in beta and off by default." Move below new answer experience
-
-You can now create visualizations of your data’s Key Performance Indicators (KPIs). When you search for a measure with a time-related keyword (for example, `Sales weekly`), you can create sparkline visualizations of your data’s Key Performance Indicators (KPIs). ThoughtSpot also supports conditional formatting to add visual cues for KPIs or threshold metrics to easily show where you are falling short or exceeding targets.
-For more information,
-ifndef::pendo-links[]
-see xref:chart-kpi.adoc[KPI charts].
-endif::[]
-ifdef::pendo-links[]
-see xref:chart-kpi.adoc[KPI charts,window=_blank].
-endif::[]
-
-image:kpi-viz-sparkline.png[KPI visualization example 2]
-
-[#8-4-0-sw-auto-select-search-source]
-[discrete]
-=== Auto-select search data source for new users
-
-When a new user uses Search Data, ThoughtSpot intelligently selects a data source for them to search on. ThoughtSpot chooses the most popular data source in the cluster that the user has access to. This allows users to begin to search data easily, without looking through all the existing data sources on their cluster.
-For more information,
-ifndef::pendo-links[]
-see xref:search-choose-data-source.adoc[Choose a data source].
-endif::[]
-ifdef::pendo-links[]
-see xref:search-choose-data-source.adoc[Choose a data source,window=_blank].
-endif::[]
-
-[#8-4-0-sw-geo-france]
-[discrete]
-=== Geo map support for France postcode
-
-We now support more detailed geographic maps for France. You can now create maps based on postal codes, as well as region and city name.
-For more information,
-ifndef::pendo-links[]
-see xref:geomap-reference.adoc[Geo map reference].
-endif::[]
-ifdef::pendo-links[]
-see xref:geomap-reference.adoc[Geo map reference,window=_blank].
-endif::[]
-
-[#8-4-0-sw-new-answer]
-[discrete]
-ifndef::pendo-links[]
-=== New answer experience [.badge.badge-update]#Beta#
-endif::[]
-ifdef::pendo-links[]
-=== New answer experience [.badge.badge-update-whats-new]#Beta#
-endif::[]
-
-The new answer experience contains new features and enhancements, including an in-product undo, redo, and reset button, HTML for answer titles and descriptions, and improvements to conditional formatting for charts, tables, and pivot tables.
-
-To try it out, navigate to your profile, scroll down to *Experience*, select *Edit*, and toggle the Answer experience to *New experience*.
-For more information,
-ifndef::pendo-links[]
-see xref:answer-experience-new.adoc[New answer experience].
-endif::[]
-ifdef::pendo-links[]
-see xref:answer-experience-new.adoc[New answer experience,window=_blank].
-endif::[]
-
-image::new-answer-experience.gif[New answer experience gif]
-
-//add playbar
-
-[#8-4-0-sw-conditional-formatting]
-[discrete]
-=== Conditional and number formatting for downloaded tables
-
-When you download a table in `XLSX` format, the downloaded table now shows the same conditional and number formatting as the table in ThoughtSpot. For more information,
-ifndef::pendo-links[]
-see xref:search-download.adoc[Download a search].
-endif::[]
-ifdef::pendo-links[]
-see xref:search-download.adoc[Download a search,window=_blank].
-endif::[]
-
-image::xlsx-download.png[Conditional and number formatting]
-
-// ask manan if this needs answer v2
-
-[#8-4-0-sw-liveboard-schedule]
-[discrete]
-=== Liveboard schedule
-
-ThoughtSpot now combines the Liveboard follow and Liveboard Schedule features into a single action called "Schedule." To create a new schedule to receive an email containing a pdf of your Liveboard, users now select the *Schedule* button to the left of the *more options menu* image:icon-more-10px.png[].
-
-ThoughtSpot will migrate any existing Liveboard follows to Liveboard schedules. For users who followed a Liveboard in 7.2.1 or earlier, those Liveboard schedules appear in the list of Liveboard schedules as _Migrated from follow (your display name)_.
-For more information,
-ifndef::pendo-links[]
-see xref:liveboard-schedule.adoc[Schedule a Liveboard job].
-endif::[]
-ifdef::pendo-links[]
-see xref:liveboard-schedule.adoc[Schedule a Liveboard job,window=_blank].
-endif::[]
-
-image::liveboard-schedule.png[Liveboard schedule button]
-
-[#8-4-0-sw-new-spotiq]
-[discrete]
-ifndef::pendo-links[]
-=== New SpotIQ experience [.badge.badge-update]#Beta#
-endif::[]
-ifdef::pendo-links[]
-=== New SpotIQ experience [.badge.badge-update-whats-new]#Beta#
-endif::[]
-
-SpotIQ has a new reorganized and more intuitive UI. The functionality remains the same.
-
-To try it out, navigate to your profile, scroll down to *Experience*, select *Edit*, and toggle the SpotIQ experience to *New experience*.
-For more information,
-ifndef::pendo-links[]
-see xref:spotiq.adoc[SpotIQ].
-endif::[]
-ifdef::pendo-links[]
-see xref:spotiq.adoc[SpotIQ,window=_blank].
-endif::[]
-
-image::spotiq-v2-ui.png[New SpotIQ experience]
-
-// this is also dependent on the new answer experience
-
-[#primary-8-4-1-sw]
-
 [#data-workspace]
 [discrete]
 === Data workspace
@@ -197,26 +70,159 @@ endif::[]
 
 image::sql-view-software.gif[SQL view creation]
 
-[#8-4-1-sw-table-formatting]
+[#8-4-0-sw-new-answer]
 [discrete]
-=== Table formatting for downloaded tables
-
-When you download a table in `XLSX` format, the downloaded table now shows the same column width, number formatting based on the format pattern, and date formatting as the table in ThoughtSpot. For more information,
 ifndef::pendo-links[]
-see xref:search-download.adoc[Download your search].
+=== New answer experience [.badge.badge-update]#Beta#
 endif::[]
 ifdef::pendo-links[]
-see xref:search-download.adoc[Download your search,window=_blank].
+=== New answer experience [.badge.badge-update-whats-new]#Beta#
 endif::[]
 
-image::xlsx-download-85.png[Column width formatting retained in downloaded table]
+The new answer experience contains new features and enhancements, including an in-product undo, redo, and reset button, HTML for answer titles and descriptions, and improvements to conditional formatting for charts, tables, and pivot tables.
 
-// combine with other table formatting and just use one image (the one with colors)
+To try it out, navigate to your profile, scroll down to *Experience*, select *Edit*, and toggle the Answer experience to *New experience*.
+For more information,
+ifndef::pendo-links[]
+see xref:answer-experience-new.adoc[New answer experience].
+endif::[]
+ifdef::pendo-links[]
+see xref:answer-experience-new.adoc[New answer experience,window=_blank].
+endif::[]
+
+image::new-answer-experience.gif[New answer experience gif]
+
+//add playbar
+
+[#primary-8-4-0-sw]
+[#8-4-0-sw-kpi-chart]
+[discrete]
+=== Key Performance Indicator (KPI) chart type
+
+// add beta tag. add a line saying something like "KPI charts depend on the new answer experience, which is in beta and off by default." Move below new answer experience
+
+You can now create visualizations of your data’s Key Performance Indicators (KPIs). When you search for a measure with a time-related keyword (for example, `Sales weekly`), you can create sparkline visualizations of your data’s Key Performance Indicators (KPIs). ThoughtSpot also supports conditional formatting to add visual cues for KPIs or threshold metrics to easily show where you are falling short or exceeding targets. This feature is dependent on the new answer experience; to use KPI charts, you must first enable the new answer experience.
+For more information on KPI charts,
+ifndef::pendo-links[]
+see xref:chart-kpi.adoc[KPI charts].
+endif::[]
+ifdef::pendo-links[]
+see xref:chart-kpi.adoc[KPI charts,window=_blank].
+endif::[]
+
+image:kpi-viz-sparkline.png[KPI visualization example 2]
+
+[#8-4-0-sw-auto-select-search-source]
+[discrete]
+=== Auto-select search data source for new users
+
+When a new user uses Search Data, ThoughtSpot intelligently selects a data source for them to search on. ThoughtSpot chooses the most popular data source in the cluster that the user has access to. This allows users to begin to search data easily, without looking through all the existing data sources on their cluster.
+For more information,
+ifndef::pendo-links[]
+see xref:search-choose-data-source.adoc[Choose a data source].
+endif::[]
+ifdef::pendo-links[]
+see xref:search-choose-data-source.adoc[Choose a data source,window=_blank].
+endif::[]
+
+[#8-4-0-sw-geo-france]
+[discrete]
+=== Geo map support for France postcode
+
+We now support more detailed geographic maps for France. You can now create maps based on postal codes, as well as region and city name.
+For more information,
+ifndef::pendo-links[]
+see xref:geomap-reference.adoc[Geo map reference].
+endif::[]
+ifdef::pendo-links[]
+see xref:geomap-reference.adoc[Geo map reference,window=_blank].
+endif::[]
+
+[#8-4-0-sw-conditional-formatting]
+[discrete]
+=== Conditional and number formatting for downloaded tables
+
+When you download a table in `XLSX` format, the downloaded table now shows the same conditional and number formatting as the table in ThoughtSpot. It also shows the same column width, number formatting based on the format patter, and date formatting as the table in ThoughtSpot. This feature is dependent on the new answer experience; to use this feature, you must first enable the new answer experience. For more information on downloaded tables,
+ifndef::pendo-links[]
+see xref:search-download.adoc[Download a search].
+endif::[]
+ifdef::pendo-links[]
+see xref:search-download.adoc[Download a search,window=_blank].
+endif::[]
+
+image::xlsx-download.png[Conditional and number formatting]
+
+// ask manan if this needs answer v2 -- currently assuming it does
+
+[#8-4-0-sw-liveboard-schedule]
+[discrete]
+=== Liveboard schedule
+
+ThoughtSpot now combines the Liveboard follow and Liveboard Schedule features into a single action called "Schedule." To create a new schedule to receive an email containing a pdf of your Liveboard, users now select the *Schedule* button to the left of the *more options menu* image:icon-more-10px.png[].
+
+ThoughtSpot will migrate any existing Liveboard follows to Liveboard schedules. For users who followed a Liveboard in 7.2.1 or earlier, those Liveboard schedules appear in the list of Liveboard schedules as _Migrated from follow (your display name)_.
+For more information,
+ifndef::pendo-links[]
+see xref:liveboard-schedule.adoc[Schedule a Liveboard job].
+endif::[]
+ifdef::pendo-links[]
+see xref:liveboard-schedule.adoc[Schedule a Liveboard job,window=_blank].
+endif::[]
+
+image::liveboard-schedule.png[Liveboard schedule button]
+
+[#8-4-0-sw-new-spotiq]
+[discrete]
+ifndef::pendo-links[]
+=== New SpotIQ experience [.badge.badge-update]#Beta#
+endif::[]
+ifdef::pendo-links[]
+=== New SpotIQ experience [.badge.badge-update-whats-new]#Beta#
+endif::[]
+
+SpotIQ has a new reorganized and more intuitive UI. The functionality remains the same.
+
+To try it out, navigate to your profile, scroll down to *Experience*, select *Edit*, and toggle the SpotIQ experience to *New experience*. This feature is dependent on the new answer experience; to use the new SpotIQ experience, you must first enable the new answer experience.
+For more information,
+ifndef::pendo-links[]
+see xref:spotiq.adoc[SpotIQ].
+endif::[]
+ifdef::pendo-links[]
+see xref:spotiq.adoc[SpotIQ,window=_blank].
+endif::[]
+
+image::spotiq-v2-ui.png[New SpotIQ experience]
 
 '''
 [#secondary-8-4-1-sw]
 [discrete]
 === _Other features and enhancements_
+
+[#8-4-0-sw-oauth-databricks]
+[discrete]
+=== OAuth for Databricks
+
+Databricks connections now support OAuth.
+For more information,
+ifndef::pendo-links[]
+see xref:connections-databricks-oauth.adoc[Configure OAuth for a Databricks connection].
+endif::[]
+ifdef::pendo-links[]
+see xref:connections-databricks-oauth.adoc[Configure OAuth for a Databricks connection,window=_blank].
+endif::[]
+
+[#8-4-1-sw-oauth-okta-snowflake]
+[discrete]
+=== Okta OAuth for Snowflake
+
+Snowflake connections now support Okta OAuth.
+For more information,
+ifndef::pendo-links[]
+see xref:connections-snowflake-okta-oauth.adoc[Configure Okta OAuth for a Snowflake connection].
+endif::[]
+ifdef::pendo-links[]
+see xref:connections-snowflake-okta-oauth.adoc[Configure Okta OAuth for a Snowflake connection,window=_blank].
+endif::[]
 
 [#8-4-0-sw-date-interval]
 [discrete]
@@ -249,34 +255,6 @@ see xref:analyst-onboarding.adoc[Analyst onboarding,window=_blank] and xref:auto
 endif::[]
 
 This feature is specific to clusters based on connections to external data warehouses, not imported data (Falcon). To enable this feature for your cluster, contact ThoughtSpot Support.
-
-[#8-4-0-sw-oauth-databricks]
-[discrete]
-=== OAuth for Databricks
-
-// move both oauth features to the top of the secondary features
-
-Databricks connections now support OAuth.
-For more information,
-ifndef::pendo-links[]
-see xref:connections-databricks-oauth.adoc[Configure OAuth for a Databricks connection].
-endif::[]
-ifdef::pendo-links[]
-see xref:connections-databricks-oauth.adoc[Configure OAuth for a Databricks connection,window=_blank].
-endif::[]
-
-[#8-4-1-sw-oauth-okta-snowflake]
-[discrete]
-=== Okta OAuth for Snowflake
-
-Snowflake connections now support Okta OAuth.
-For more information,
-ifndef::pendo-links[]
-see xref:connections-snowflake-okta-oauth.adoc[Configure Okta OAuth for a Snowflake connection].
-endif::[]
-ifdef::pendo-links[]
-see xref:connections-snowflake-okta-oauth.adoc[Configure Okta OAuth for a Snowflake connection,window=_blank].
-endif::[]
 
 [#python]
 [discrete]
