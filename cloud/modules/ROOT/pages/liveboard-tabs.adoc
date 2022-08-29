@@ -8,7 +8,7 @@
 include::partial$liveboard-tabs-intro.adoc[]
 
 == Adding tabs
-To add new tabs to a Liveboard, you must first be in *Edit* mode.
+To add new tabs to a Liveboard, you must first be in *Edit* mode. Note that a Liveboard can have a maximum of 20 tabs.
 
 . Select the *Edit* button at the top right of the Liveboard.
 
@@ -16,7 +16,9 @@ To add new tabs to a Liveboard, you must first be in *Edit* mode.
 
 . If the Liveboard already has at least one tab, the new tab appears, with no visualizations in it yet. If the Liveboard does not have any tabs yet, the new tab contains all the visualizations currently in the Liveboard.
 
-. Name the tab.
+. Name the tab. If the name is more than 30 characters, the entire name does not appear. ThoughtSpot cuts it off with an ellipsis.
++
+You can add html to the tab name. For example, you can italicize part of the tab name: `Sales this quarter <em>internal-only</em>`. For more information, see xref:chart-html.adoc[].
 
 . If you want to add more tabs, select *+ Add tab* again.
 
@@ -24,7 +26,7 @@ To add new tabs to a Liveboard, you must first be in *Edit* mode.
 
 == Editing tabs
 
-You can <<rename,rename>> tabs and <<modify,add, remove, or move>> visualizations in a tab.
+You can <<rename,rename>> tabs, <<modify,add, remove, or move>> visualizations in a tab, and <<rearrange,rearrange>> tabs.
 
 [#rename]
 === Renaming tabs
@@ -39,7 +41,7 @@ To rename a tab, follow these steps.
 . Select *Save* in the top menu.
 
 [#modify]
-=== Modify tab visualizations
+=== Modifying tab visualizations
 
 . Select the *Edit* button at the top right of the Liveboard.
 
@@ -51,9 +53,17 @@ To rename a tab, follow these steps.
 
 . Select *Save* in the top menu.
 
+[#rearrange]
+=== Rearranging tabs
+You can modify the order the tabs appear in. To rearrange tabs, follow these steps:
+
+. Select the *Edit* button at the top right of the Liveboard.
+. Click on a tab name and drag and drop it to a new position.
+. Select *Save* in the top menu.
+
 == Deleting tabs
 
-When you delete a tab, ThoughtSpot deletes all the visualizations in the tab. However, if the Liveboard only has one tab, ThoughtSpot does not delete the visualizations. ThoughtSpot just deletes the tab itself.
+When you delete a tab, ThoughtSpot deletes all the visualizations in the tab. However, if the Liveboard only has one tab, ThoughtSpot does not delete the visualizations. ThoughtSpot just removes the tab itself.
 
 To delete a tab, follow these steps:
 
@@ -63,8 +73,11 @@ To delete a tab, follow these steps:
 
 . Select *Delete*. If the Liveboard only has one tab, select *Remove*.
 
-. If the Liveboard has multiple tabs, a confirmation pop-up appears to warn you that this action deletes all the visualizations in the tab. If the Liveboard has one tab, no pop-up appears. ThoughtSpot deletes the tab, but not the visualizations.
+. If the Liveboard has multiple tabs, a confirmation pop-up appears to warn you that this action deletes all the visualizations in the tab. If the tab has no visualizations, no pop-up appears. If the Liveboard has one tab, no pop-up appears. ThoughtSpot removes the tab, but not the visualizations.
 
 . Select *Delete* again.
 
 . Select *Save* in the top menu.
+
+== Sharing tabs
+To share a tab, you must share the entire Liveboard. Refer to xref:share-liveboards.adoc[]. However, tabs have their own URL, so you can copy the URL to a specific tab to send to someone.
