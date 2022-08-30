@@ -35,10 +35,12 @@ ThoughtSpot Sync [.badge.badge-update]#Beta#:: You can now sync data directly fr
 Choose sources limitation::
 You can no longer select more than 100 data sources to search on when searching data. This maximum of 100 sources improves performance and limits timeouts due to the selection of too many sources.
 
+////
 Support for OR in contains operator::
 ThoughtSpot now offers the option to `OR` multiple `contains` clauses for the same attribute in a search, instead of combining them with `AND`, which is the default. For example, with the optional new `OR` behavior, `country name contains 'a' country name contains 'b'` returns results such as `Azerbaijan`, `Bahrain`, `North America`, and `Canada`. With the default `AND` behavior, that search returns `Azerbaijan` and `Bahrain`, but *_not_* `North America` or `Canada`.
 +
 To enable this feature, contact {support-url}.
+////
 
 Support for multiple contains, begins_with, and ends_with phrases in versus queries::
 ThoughtSpot now supports multiple `contains`, `begins_with`, and `ends_with` phrases in `vs` queries. For example, you can now have a versus query such as `state name begins_with 'a' state name begins_with 'c' vs state name begins_with 'd'`.
