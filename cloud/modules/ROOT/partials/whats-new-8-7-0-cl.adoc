@@ -58,7 +58,7 @@ image::geo-chart-zoom-map-type.gif[Geo chart zoom and map type]
 
 You can now customize the colors used for heatmap and treemap charts. You can select any color in your color palette.
 
-image::treemap-heatmap-color.png[Treemap and heatmap color customization]
+image::treemap-new-color.png[Treemap and heatmap color customization]
 
 [#8-7-0-cl-tabs]
 [discrete]
@@ -68,6 +68,7 @@ ThoughtSpot now supports separating Liveboards into multiple tabs. This allows y
 
 image::liveboard-tabs.gif[Liveboard tabs gif]
 
+////
 [#8-7-0-cl-or-contains]
 [discrete]
 === Support for OR in contains operator
@@ -75,6 +76,20 @@ image::liveboard-tabs.gif[Liveboard tabs gif]
 ThoughtSpot now offers the option to `OR` multiple `contains` clauses for the same attribute in a search, instead of combining them with `AND`, which is the default. For example, with the optional new `OR` behavior, `country name contains 'a' country name contains 'b'` returns results such as `Azerbaijan`, `Bahrain`, `North America`, and `Canada`. With the default `AND` behavior, that search returns `Azerbaijan` and `Bahrain`, but *_not_* `North America` or `Canada`.
 
 To enable this feature, contact {support-url}.
+////
+
+[#8-7-0-cl-vs]
+[discrete]
+=== Support for multiple contains, begins_with, and ends_with phrases in versus queries
+ThoughtSpot now supports multiple `contains`, `begins_with`, and `ends_with` phrases in `vs` queries. For example, you can now have a versus query such as `state name begins_with 'a' state name begins_with 'c' vs state name begins_with 'd'`.
+
+For more information,
+ifndef::pendo-links[]
+see the xref:keywords.adoc#vs[Keyword reference].
+endif::[]
+ifdef::pendo-links[]
+see the xref:keywords.adoc#vs[Keyword reference,window=_blank].
+endif::[]
 
 '''
 [#secondary-8-7-0-cl]
