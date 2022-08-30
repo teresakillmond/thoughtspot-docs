@@ -31,9 +31,24 @@ ifdef::pendo-links[]
 see xref:monitor.adoc#threshold-based-alert[Create a threshold-based alert,window=_blank].
 endif::[]
 
-// change gif to just the key component (threshold)? or just simplify? image or gif of the threshold setting and then the email?
+// email at the end needs to be a bit longer. the playbar needs to appear when the zoom is there
 
 image::monitor-threshold-alerts.gif[Threshold-based alerts]
+
+[#8-7-0-cl-tabs]
+[discrete]
+=== Liveboard tabs
+
+ThoughtSpot now supports separating Liveboards into multiple tabs. This allows you to group specific visualizations together within a single Liveboard. For example, you may have a *Sales* Liveboard with different visualizations for each region you sell in. You can create tabs for each region, such as *Sales -- East* and *Sales -- West*, and move the visualizations for each region to the relevant tab.
+For more information,
+ifndef::pendo-links[]
+see xref:liveboard-tabs.adoc[Liveboard tabs].
+endif::[]
+ifdef::pendo-links[]
+see xref:liveboard-tabs.adoc[Liveboard tabs,window=_blank].
+endif::[]
+
+image::liveboard-tabs.gif[Liveboard tabs gif]
 
 ////
 [#8-7-0-cl-kpi]
@@ -47,6 +62,35 @@ image::monitor-threshold-alerts.gif[Threshold-based alerts]
 // still image
 
 ////
+
+ifdef::pendo-links[]
+[#8-7-0-cl-sync]
+[discrete]
+=== TS Sync [.badge.badge-update-whats-new]#Beta#
+endif::[]
+ifndef::pendo-links[]
+[#8-7-0-cl-sync]
+[discrete]
+=== TS Sync [.badge.badge-update]#Beta#
+endif::[]
+
+// Naomi
+
+// move to business user section. probably near the top
+
+// need to make a decision about whether to include this. note that this will be enabled shortly after GA/ where to look for it? have a separate pendo for this specific feature?
+
+//  document as beta until mid-september when the flag is removed (about a week after planned upgrade). no tile view or scheduling included in 8.7 release
+
+You can now sync data directly from an answer or custom SQL view to an external business app like Google Sheets, Slack, or Microsoft Teams. Using ThoughtSpot Sync, you can push insights directly to your app, notify your teams, and view data in context. ThoughtSpot Sync automatically establishes a secure pipeline to the destination app and thus eliminates the need for building custom connectors to external apps. For more information,
+ifndef::pendo-links[]
+see xref:thoughtspot-sync.adoc[Sync data from ThoughtSpot to external apps].
+endif::[]
+ifdef::pendo-links[]
+see xref:thoughtspot-sync.adoc[Sync data from ThoughtSpot to external apps,window=_blank].
+endif::[]
+
+image:ts-sync-wn.png[]
 
 [#8-7-0-cl-geo-maps]
 [discrete]
@@ -66,6 +110,8 @@ endif::[]
 
 image::geo-chart-zoom-map-type.gif[Geo chart zoom and map type]
 
+// ask manan about the background maps line -- is there precedent for the background maps being different quality? do we need to distinguish between background maps at all?
+
 [#8-7-0-cl-treemap-heatmap]
 [discrete]
 === Customizable colors for heatmap and treemap charts
@@ -79,77 +125,40 @@ ifdef::pendo-links[]
 see xref:chart-heatmap.adoc[Heatmap charts,window=_blank] and xref:chart-treemap.adoc[Treemap charts,window=_blank].
 endif::[]
 
-image::treemap-heatmap-color.png[Treemap and heatmap color customization]
-
-[#8-7-0-cl-tabs]
-[discrete]
-=== Liveboard tabs
-
-ThoughtSpot now supports separating Liveboards into multiple tabs. This allows you to group specific visualizations together within a Liveboard. For example, you may have a *Sales* Liveboard that contains top-level KPIs and more detailed charts. You can create a tab for the top-level KPIs for executives to view, and a tab for the more detailed charts that managers need to monitor.
-For more information,
-ifndef::pendo-links[]
-see xref:liveboard-tabs.adoc[Liveboard tabs].
-endif::[]
-ifdef::pendo-links[]
-see xref:liveboard-tabs.adoc[Liveboard tabs,window=_blank].
-endif::[]
-
-image::liveboard-tabs.gif[Liveboard tabs gif]
+image::treemap-new-color.png[Treemap and heatmap color customization]
 
 [#8-7-0-cl-or-contains]
 [discrete]
 === Support for OR in contains operator
 
-ThoughtSpot now offers the option to `OR` multiple `contains` clauses for the same attribute in a search, instead of combining them with `AND`, which is the default. For example, with the optional new `OR` behavior, `country name contains 'a' country name contains 'b'` returns results such as `Azerbaijan`, `Bahrain`, `North America`, and `Canada`. With the default `AND` behavior, that search returns `Azerbaijan` and `Bahrain`, but *_not_* `North America` or `Canada`.
+ThoughtSpot now offers the option to combine multiple `contains` clauses in the same search with `OR`, instead of combining them with `AND`, which is the default. For example, with the optional new `OR` behavior, the query `country name contains 'a' country name contains 'b'` returns results such as `Azerbaijan`, `Bahrain`, `North America`, and `Canada`. With the default `AND` behavior, that search returns `Azerbaijan` and `Bahrain`, but *_not_* `North America` or `Canada`.
 For more information,
 ifndef::pendo-links[]
-see xref:keywords.adoc#contains[Keyword reference].
+see the xref:keywords.adoc#contains[Keyword reference].
 endif::[]
 ifdef::pendo-links[]
-see xref:keywords.adoc#contains[Keyword reference,window=_blank].
+see the xref:keywords.adoc#contains[Keyword reference,window=_blank].
 endif::[]
 
 To enable this feature, contact {support-url}.
 
-[#8-7-0-cl-sources]
+[#8-7-0-cl-vs]
 [discrete]
-=== Choose sources limitation
+=== Support for multiple contains, begins_with, and ends_with phrases in versus queries
+ThoughtSpot now supports multiple `contains`, `begins_with`, and `ends_with` phrases in `vs` queries. For example, you can now have a versus query such as `state name begins_with 'a' state name begins_with 'c' vs state name begins_with 'd'`.
 
-You can no longer select more than 100 data sources to search on when searching data. This maximum of 100 sources improves performance and limits timeouts due to the selection of too many sources.
 For more information,
 ifndef::pendo-links[]
-see xref:search-choose-data-source.adoc[Choose a data source].
+see the xref:keywords.adoc#vs[Keyword reference].
 endif::[]
 ifdef::pendo-links[]
-see xref:search-choose-data-source.adoc[Choose a data source,window=_blank].
+see the xref:keywords.adoc#vs[Keyword reference,window=_blank].
 endif::[]
 
 '''
 [#secondary-8-7-0-cl]
 [discrete]
 === _Other features and enhancements_
-
-[#8-7-0-cl-sync]
-[discrete]
-=== TS Sync
-
-// Naomi
-
-// move to business user section. probably near the top
-
-// need to make a decision about whether to include this. note that this will be enabled shortly after GA/ where to look for it? have a separate pendo for this specific feature?
-
-//  document as beta until mid-september when the flag is removed (about a week after planned upgrade). no tile view or scheduling included in 8.7 release
-
-You can now sync data directly from an Answer, View, or Liveboard to external business apps like Google Sheets, Slack, or Microsoft Teams. Using ThoughtSpot Sync, you can push insights directly to your app, notify your teams, and view data in context. ThoughtSpot Sync automatically establishes a secure pipeline to the destination app and thus eliminates the need for building custom connectors to external apps. For more information,
-ifndef::pendo-links[]
-see xref:thoughtspot-sync.adoc[Sync data from ThoughtSpot to external apps].
-endif::[]
-ifdef::pendo-links[]
-see xref:thoughtspot-sync.adoc[Sync data from ThoughtSpot to external apps,window=_blank].
-endif::[]
-
-image:ts-sync-wn.png[]
 
 ifdef::pendo-links[]
 [#8-7-0-cl-snowflake-csv]
@@ -161,55 +170,66 @@ ifndef::pendo-links[]
 [discrete]
 === Snowflake CSV upload [.badge.badge-update]#Beta#
 endif::[]
-You can now upload a CSV file that can be joined to your connection's tables in your Snowflake database.
+Now you have a quick and easy way to complete one-time data loads of small files that are not present in your cloud data warehouse. You can now upload a CSV file to the database of your Snowflake connection that can be joined to other tables or worksheets in your connection. Once your administrator enables this feature, go to *Data* > *Utilities*, and click *Upload CSV*.
 ifndef::pendo-links[]
-See xref:connections-snowflake-csv-upload.adoc[Upload a CSV file in your Snowflake connection].
+See xref:connections-snowflake-csv-upload-config.adoc[Configure CSV upload for your Snowflake connection],
 endif::[]
 ifdef::pendo-links[]
-See xref:connections-snowflake-csv-upload.adoc[Upload a CSV file in your Snowflake connection,window=_blank].
+See xref:connections-snowflake-csv-upload-config.adoc[Configure CSV upload for your Snowflake connection,window=_blank],
+endif::[]
+endif::[]
+ifndef::pendo-links[]
+and xref:connections-snowflake-csv-upload.adoc[Upload a CSV file in your Snowflake connection].
+endif::[]
+ifdef::pendo-links[]
+and xref:connections-snowflake-csv-upload.adoc[Upload a CSV file in your Snowflake connection,window=_blank].
 endif::[]
 endif::[]
 
-// Mark
+image::csv-upload-app.png[CSV upload]
 
-// should this one be above the fold/ would business users do this? Maybe ask PM about use case?
-
-// two different links to content aimed at different users (data engineer how to set it up and business user how to upload)
-
-// maybe a gif of uploading a csv
-
-// Waiting for response from Mahesh for cluster to use to document.
+// add a line about the use case -- maybe a bit mmore 'friendly'?
 
 [#8-7-0-cl-denodo-oauth]
 [discrete]
 === Denodo Oauth
-
+Denodo connections now support OAuth. For details,
+ifndef::pendo-links[]
+see xref:connections-denodo-oauth.adoc[Configure OAuth for a Denodo connection].
+endif::[]
+ifdef::pendo-links[]
+see xref:connections-denodo-oauth.adoc[Configure OAuth for a Denodo connection,window=_blank].
+endif::[]
 // Mark
 
 // no image
 
 [#8-7-0-cl-snowflake-oauth]
 [discrete]
-=== Snowflake Oauth improvements
+=== Snowflake OAuth improvements
+
+This release brings improvements in how ThoughtSpot handles user tokens for Snowflake connections configured with Snowflake OAuth. If a user's refresh token becomes invalid, the administrator or author of the connection can now run the Invalidate Tokens command to allow the user to re-authenticate and regain access to the insights provided by the connection, and the connection itself. Also, in this release the _Role_ field has been added to the Snowflake OAuth connection details page, allowing a role to be added when the connection is created and changed when a connection is edited.
+ifndef::pendo-links[]
+See xref:connections-snowflake-edit.adoc#invalidate-tokens[Invalidating refresh tokens of a Snowflake connection].
+endif::[]
+ifdef::pendo-links[]
+see xref:connections-snowflake-edit.adoc#invalidate-tokens[Invalidating refresh tokens of a Snowflake connection,window=_blank].
+endif::[]
 
 // Mark
-
-// probably no image. Waiting for response from Pradeep.
 
 [#8-7-0-cl-okta]
 ifndef::free-trial-feature[]
 ifdef::pendo-links[]
 [discrete]
-=== Okta identity and access management [.badge.badge-update-whats-new]#Beta#
+=== Identity and Access Management V2 [.badge.badge-update-whats-new]#Beta#
 endif::[]
 ifndef::pendo-links[]
 [discrete]
-=== Okta identity and access management [.badge.badge-update]#Beta#
+=== Identity and Access Management V2 [.badge.badge-update]#Beta#
 endif::[]
 
-// confirm again that this will be in 8.7. rename all this to iam v2 instead of okta
-
-In this release, ThoughtSpot switched to a new, industry-standard cloud identity and access management method through Okta. This switch involves several external improvements to authentication:
+In this release, ThoughtSpot switches to a new, industry-standard cloud identity and access management method through Okta. This switch involves several external improvements to authentication:
 
 * New local users now create their own password during activation. Administrators do not create the password prior to activation. For more information,
 ifndef::pendo-links[]
@@ -228,8 +248,7 @@ ifdef::pendo-links[]
 see xref:authentication-integration.adoc[Managing authentication with SAML,window=_blank].
 endif::[]
 +
-image::saml-attribute-mapping.png[SAML attribute mapping]
-//maybe figure out a way to zoom here (gif?) or just screenshot the relevant parts and have a smaller browser window
+image::saml-idp-attributes.gif[]
 * Account activation monitoring from the Users section of the Admin Console: if a user still needs to activate their account, administrators can see that information in the Users section and re-send their activation email. For more information,
 ifndef::pendo-links[]
 see xref:user-management.adoc[Create, edit, or delete a  user].
@@ -238,18 +257,27 @@ ifdef::pendo-links[]
 see xref:user-management.adoc[Create, edit, or delete a  user,window=_blank].
 endif::[]
 +
-image::admin-portal-account-activation.png[Account activation column]
-//maybe figure out a way to zoom here (gif?) or just screenshot the relevant parts and have a smaller browser window
+image::user-account-activation-status.gif[Account activation status gif]
 
 For a general overview,
 ifndef::pendo-links[]
-see xref:okta-iam.adoc[Okta identity and access management].
+see xref:okta-iam.adoc[Identity and Access Management V2].
 endif::[]
 ifdef::pendo-links[]
-see xref:okta-iam.adoc[Okta identity and access management,window=_blank].
+see xref:okta-iam.adoc[Identity and Access Management V2,window=_blank].
 endif::[]
 
 endif::free-trial-feature[]
+
+[#8-7-0-cl-query-based-pricing]
+[discrete]
+=== Query Stats Liveboard
+
+The new Query Stats Liveboard allows administrators of customers who have signed up for a query-based usage subscription, to track the number of queries of their users. To view the Query Stats Liveboard, go to *Liveboards* and select *Query Stats Liveboard*. Query-based usage is part of consumption-based pricing. For more information, see xref:consumption-pricing-query-based.adoc[Query-based usage].
+
+image::query-stats-liveboard.png[Query stats Liveboard]
+
+// Mark
 
 ifndef::free-trial-feature[]
 [discrete]
