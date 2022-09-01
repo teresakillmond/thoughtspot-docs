@@ -19,6 +19,8 @@ When creating a join between the columns in two data sources, the linked columns
 That is, they must represent the same data.
 Normally, you can make this kind of link from a fact table column to a column in a dimension table that uniquely identifies a logical entity in your data such as Employee ID for a person, Product ID for a product, or Date Key for a specific date in a date lookup table.
 
+[#create-join]
+== Create a join
 To create a relationship through the Web interface:
 
 . Click *Data* in the top menu, and choose *Tables* or *Views*.
@@ -58,5 +60,11 @@ see xref:join-add.adoc#join-cardinality[Cardinality].
 . Click *Create join*.
 . Repeat these steps until all the joins you want to make have been created.
 
-After creating the join, you may change its name, type, or cardinality by clicking the edit icon.
+[#join-edit]
+== Edit a join
+
+After creating the join, you may change its name, type, or cardinality by clicking the edit icon image:icon-edit-10px.png[edit icon]. This allows you to change a many-to-one join to one-to-one. To reverse the join cardinality, you must delete the join and create it again with the opposite cardinality.
+
 If you want to change the data source or column being joined, you must delete the join and create a new one.
+
+If the join has dependents, and you want to change the cardinality, you must delete the join, and create it again with the opposite cardinality. Deleting the join does not delete the dependent objects. Refer to xref:relationship-delete.adoc#change-cardinality[Delete a relationship].
