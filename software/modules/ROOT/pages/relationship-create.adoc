@@ -120,9 +120,10 @@ image:worksheet-join-dialog.png[Worksheet join dialog]
 . Specify the join cardinality; see <<join-cardinality,Join cardinality>>.
 . Click *Create join*.
 
+[#modify-join]
 == Modifying joins
 
-ThoughtSpot allows you to edit the name, join type, and cardinality through the Web interface. To change the columns that define a join, you must delete the join and create a new one.
+ThoughtSpot allows you to edit the name, join type, and cardinality through the Web interface. This allows you to change a many-to-one join to one-to-one. To reverse the join cardinality, you must delete the join and create it again with the opposite cardinality. To change the columns that define a join, you must delete the join and create a new one.
 
 [#table-join-modify]
 === Editing a join from a table
@@ -143,7 +144,7 @@ image:table-edit-join.png[Edit table join]
 +
 image:edit-join-page.png[Edit table join page]
 
-. Make the desired changes to the name, type, or cardinality of the join.
+. Make the desired changes to the name, type, or cardinality of the join. This allows you to change a many-to-one join to one-to-one. To reverse the join cardinality, you must delete the join and create it again with the opposite cardinality.
 . Click *Save*.
 
 [#worksheet-join-modify]
@@ -159,7 +160,7 @@ To edit a join from a Worksheet or View:
 . Click the edit icon to the right of the name of the join you want to modify. The *Edit join* window appears.
 +
 image:edit-join-window.png[Edit worksheet join]
-. Make the desired changes to the join type or cardinality.
+. Make the desired changes to the join type or cardinality. This allows you to change a many-to-one join to one-to-one. To reverse the join cardinality, you must delete the join and create it again with the opposite cardinality.
 . Click *Save*.
 
 [#delete-join]
@@ -178,10 +179,12 @@ image:table-delete-join.png[Delete a join]
 
 . Click the delete icon to the right of the join name. The *Confirm delete* window appears.
 . Click *Delete*.
-+
-NOTE: If existing Answers or Liveboards depend on the join you are deleting, you will see the *Cannot delete* window listing all dependents of the join. You must delete all dependents before you can delete the join.
-+
-image:cannot-delete-join-dialog.png[Join dependents]
+
+[#change-cardinality]
+=== Reverse join cardinality
+You can use the delete functionality to reverse or change the join cardinality for a join that has dependents. Delete the join, and create it again with the opposite cardinality. Deleting the join does *not* delete the dependent objects.
+
+If a join does not have dependents, you can change the join cardinality by xref:relationship-create.adoc#modify-join[editing the join]. This allows you to change a many-to-one join to one-to-one. To reverse the join cardinality, you must delete the join and create it again with the opposite cardinality.
 
 '''
 > **Related information**
