@@ -107,7 +107,7 @@ If the search contains _account_, the final table looks exactly like that shown 
 | Snowflake | 1.83
 |===
 +
-If you do not include `account` in the search bar, the formula aggregate up to the table level, averaging the four values.
+If you do not include `account` in the search bar, the formula aggregates up to the table level, averaging the four values.
 
 3. Search for: `average hours per activity classification`.
 +
@@ -147,7 +147,7 @@ The inner aggregation aggregates to the activity classification level of detail.
 | meeting | 3.6
 |===
 
-If you now execute a search that contains account, your table will not be meaningful.
+If you now execute a search that contains `account`, your table will not be meaningful.
 
 1. Search for: `account`    `average hours per activity classification`.
 +
@@ -178,7 +178,7 @@ Aggregation to specific levels of details is complex. It takes time to understan
 
 Remember the following key points when using ThoughtSpot’s group_aggregate formula:
 
-- Make sure you have specified the outer level of aggregation. Omitting the outer level of aggregation often leads to results that are at the level of detail of the inner aggregation, rather than the search. We recommend that you place your outer level of aggregation within the formula, but in certain cases you may prefer to place it in the search bar.
+- Make sure to specify the outer level of aggregation. Omitting the outer level of aggregation often leads to results that are at the level of detail of the inner aggregation, rather than the search. We recommend that you place your outer level of aggregation within the formula, but in certain cases you may prefer to place it in the search bar.
 
 - If you have calculations or expressions that need to be combined with group aggregation, push those expressions and calculations inside the group_aggregate (as the first argument, the inner aggregation). ThoughtSpot currently does not support nesting of group_aggregate formulas.
 

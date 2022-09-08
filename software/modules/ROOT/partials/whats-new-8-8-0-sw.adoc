@@ -1,0 +1,298 @@
+ifndef::pendo-links[]
+[label label-dep]#8.8.0.sw# September 2022
+endif::[]
+ifdef::pendo-links[]
+[label label-dep-whats-new]#8.8.0.sw#
+[month-year-whats-new]#September 2022#
+endif::[]
+
+ifndef::pendo-links[]
+NOTE: Features marked as [.badge.badge-update]#Beta# are off by default. To enable them, contact {support-url}.
+endif::[]
+
+ifdef::pendo-links[]
+NOTE: Features marked as [.badge.badge-update-whats-new]#Beta# are off by default. To enable them, contact {support-url}.
+endif::[]
+
+[#primary-8-8-0-sw]
+
+
+[#8-8-0-sw-answer-v2]
+[discrete]
+=== New answer experience
+
+The new answer experience is now GA and on by default. It contains new features and enhancements, including an in-product undo, redo, and reset button, HTML for answer titles and descriptions, and improvements to conditional formatting for charts, tables, and pivot tables.
+
+To try it out, navigate to any answer.
+For more information,
+ifndef::pendo-links[]
+see xref:answer-experience-new.adoc[New answer experience].
+endif::[]
+ifdef::pendo-links[]
+see xref:answer-experience-new.adoc[New answer experience,window=_blank].
+endif::[]
+
+image::new-answer-experience.gif[New answer experience gif]
+
+[#8-8-0-sw-geo]
+[discrete]
+=== Geo charts enhancements
+
+This release includes several enhancements to all geo charts:
+
+* Improved map quality: This includes faster map loading, better clarity, and more granular details down to the street level when you zoom in.
+* A new *map type* option that allows you to customize the display of the geo chart map. The new map type options are Light, Dark, Outdoors, Streets, Satellite, and Satellite Streets. The default is Light.
+For more information,
+ifndef::pendo-links[]
+see xref:chart-geo.adoc[Geo charts].
+endif::[]
+ifdef::pendo-links[]
+see xref:chart-geo.adoc[Geo charts,window=_blank].
+endif::[]
+
+image::geo-chart-zoom-map-type.gif[Geo chart zoom and map type]
+
+[#8-8-0-sw-liveboard-v2]
+[discrete]
+=== New Liveboard experience
+
+// Teresa -- this is in beta. should include liveboard tabs and tile sizes
+
+
+[#8-8-0-sw-treemap-heatmap]
+[discrete]
+=== Customizable colors for heatmap and treemap charts
+
+You can now customize the colors used for heatmap and treemap charts. You can select any color in your color palette.
+For more information,
+ifndef::pendo-links[]
+see xref:chart-heatmap.adoc[Heatmap charts] and xref:chart-treemap.adoc[Treemap charts].
+endif::[]
+ifdef::pendo-links[]
+see xref:chart-heatmap.adoc[Heatmap charts,window=_blank] and xref:chart-treemap.adoc[Treemap charts,window=_blank].
+endif::[]
+
+image::treemap-new-color.png[Treemap and heatmap color customization]
+
+[#8-8-0-sw-search-formula-editor]
+[discrete]
+=== Formula function search bar
+
+The formula editor assistant now contains a search bar for formula functions. Use it to search for specific functions to include in your formula. For more information,
+ifndef::pendo-links[]
+see xref:formula-add.adoc[Add a formula to a search].
+endif::[]
+ifdef::pendo-links[]
+see xref:formula-add.adoc[Add a formula to a search,window=_blank].
+endif::[]
+
+image::formula-assistant-search.png[Formula assistant search]
+
+[#8-8-0-sw-search-panel]
+[discrete]
+=== Data literacy: search panel improvements
+
+// Mark
+
+// same as cloud
+
+[#8-8-0-sw-show-underlying-data]
+[discrete]
+=== Show underlying data user experience improvements
+
+// Naomi-- GA in SW
+
+We have made the following improvements to the Show underlying data UI:
+
+* When you right-click on a table and select *Show underlying data*, ThoughtSpot displays only the columns visualized in your query.
+* You can now open the *Show underlying data* pop-up and click *Edit columns* to add or remove columns from your query.
+* When you open the *Edit columns* pop-up, you can now search for column names using the search bar.
+* The *Show underlying data* pop-up no longer disables columns by default. To disable columns from your query, click *Edit columns* and deselect the column name(s).
+
+[#8-8-0-sw-year-name]
+[discrete]
+=== year_name function
+
+The new `year_name` formula function returns the year in string format for a given date. This improves the behavior of formulas involving years when using a custom calendar with year values that are not in integer format. For more information,
+ifndef::pendo-links[]
+see the xref:formula-reference.adoc#year_name[Formula function reference].
+endif::[]
+ifdef::pendo-links[]
+see the xref:formula-reference.adoc#year_name[Formula function reference,window=_blank].
+endif::[]
+
+[#8-8-0-sw-r]
+[discrete]
+=== R in new answer experience
+
+// Teresa -- do we want this in main section? also confirming how we want to document with akshay -- ask him if we want to de-emphasize it/ how many customers using
+
+[#8-8-0-sw-german]
+[discrete]
+=== Improvements to German keywords
+This release improves the translated German keywords.
+For more information,
+ifndef::pendo-links[]
+see xref:keywords-de-DE.adoc[Deutsch keyword reference].
+endif::[]
+ifdef::pendo-links[]
+see xref:keywords-de-DE.adoc[Deutsch keyword reference,window=_blank].
+endif::[]
+
+[#8-8-0-sw-vs]
+[discrete]
+=== Support for multiple contains, begins_with, and ends_with phrases in versus queries
+
+ThoughtSpot now supports multiple `contains`, `begins_with`, and `ends_with` phrases in `vs` queries. For example, you can now have a versus query such as `state name begins_with 'a' state name begins_with 'c' vs state name begins_with 'd'`.
+For more information,
+ifndef::pendo-links[]
+see the xref:keywords.adoc#vs[Keyword reference].
+endif::[]
+ifdef::pendo-links[]
+see xref:keywords.adoc#vs[Keyword reference,window=_blank].
+endif::[]
+
+[#8-8-0-sw-sources]
+[discrete]
+=== Choose sources limitation
+
+You can no longer select more than 100 data sources to search on when searching data. This maximum of 100 sources improves performance and limits timeouts due to the selection of too many sources.
+For more information,
+ifndef::pendo-links[]
+see xref:search-choose-data-source.adoc[Choose a data source].
+endif::[]
+ifdef::pendo-links[]
+see xref:search-choose-data-source.adoc[Choose a data source,window=_blank].
+endif::[]
+
+// THE FOLLOWING ARE NEEDS EVALUATION
+
+
+'''
+[#secondary-8-8-0-sw]
+[discrete]
+=== _Other features and enhancements_
+
+// rearrange to include some images near the top
+
+[#8-8-0-sw-tml-import]
+[discrete]
+=== TML import improvements
+You can now import TML files that contain certain errors. During the import process, ThoughtSpot removes the part of the object that contains errors, and allows you to import the rest of the object. For more information,
+ifndef::pendo-links[]
+see xref:scriptability.adoc[Migrate an object].
+endif::[]
+ifdef::pendo-links[]
+see xref:scriptability.adoc[Migrate an object,window=_blank].
+endif::[]
+
+image::tml-import-partial.png[TML import improvements image]
+
+[#8-8-0-sw-tags]
+[discrete]
+=== Edit tags from the Data workspace
+You can now edit tags for tables, worksheets, views, and SQL views from the Data workspace home page. Simply click on the checkbox next to any object in the Data workspace object list, and select *Edit tags*. For more information,
+ifndef::pendo-links[]
+see xref:tags.adoc#data-workspace[Use tags to organize].
+endif::[]
+ifdef::pendo-links[]
+see xref:tags.adoc#data-workspace[Use tags to organize,window=_blank].
+endif::[]
+
+image::edit-tags-data-workspace-gif-software.gif[Edit tags from the data worksapce]
+
+[#8-8-0-sw-denodo]
+[discrete]
+=== Denodo support
+
+// Mark
+
+[#8-8-0-sw-starburst-oauth]
+[discrete]
+=== Starburst oauth support
+
+// Mark
+
+[#8-8-0-sw-starburst-oauth-azure]
+[discrete]
+=== Starburst oauth with azure ad as idp
+
+// Mark -- can probably be just one note, combined with above?
+
+[#8-8-0-sw-denodo-oauth]
+[discrete]
+=== Denodo oauth
+
+// Mark -- already in 8.7 cl
+
+[#8-8-0-sw-snowflake-oauth]
+[discrete]
+=== Snowflake oauth improvements
+
+// Mark -- already in cloud
+
+[#8-8-0-sw-snowflake-oauth-okta]
+[discrete]
+=== Snowflake Okta oauth
+
+// Mark -- already in cloud
+
+[#8-8-0-sw-presto]
+[discrete]
+=== Separate presto connector from starburst
+
+// Mark
+
+[#8-8-0-sw-trino]
+[discrete]
+=== Separate trino connector from starburst
+
+// Mark
+
+[#8-8-0-sw-snowflake-pricing]
+[discrete]
+=== Snowflake for consumption-based pricing
+
+// Mark -- already in cloud
+
+[#8-8-0-sw-dbt-integration]
+[discrete]
+=== dbt integration enhancements
+
+This release includes the following improvements to the dbt integration:
+
+* Integration with dbt for Databricks connections
+* Import of multiple folders at a time
+* Import of a single table within a folder
+* Support for joins across multiple folders
+
+For more information,
+ifndef::pendo-links[]
+see xref:dbt-integration.adoc[Integrate with dbt].
+endif::[]
+ifdef::pendo-links[]
+see xref:dbt-integration.adoc[Integrate with dbt,window=_blank].
+endif::[]
+
+[#8-8-0-sw-delete-joins]
+[discrete]
+=== Delete joins that have dependents
+
+You can now delete a join from the ThoughtSpot UI even if the join has dependents. This allows you to delete a join and create it again in the other direction, without invalidating or deleting any dependent objects. For more information,
+ifndef::pendo-links[]
+see xref:relationship-delete.adoc[Delete a relationship].
+endif::[]
+ifdef::pendo-links[]
+see xref:relationship-delete.adoc[Delete a relationship,window=_blank].
+endif::[]
+
+image::join-deletion-gif.gif[Join deletion gif]
+
+[discrete]
+=== ThoughtSpot Everywhere
+
+Customers licensed to embed ThoughtSpot can use ThoughtSpot Everywhere features and the Visual Embed SDK.
+
+To enable ThoughtSpot Everywhere on your cluster, contact {support-url}.
+
+For new features and enhancements introduced in this release for ThoughtSpot Everywhere, see https://developers.thoughtspot.com/docs/?pageid=whats-new[ThoughtSpot Developer Documentation^].

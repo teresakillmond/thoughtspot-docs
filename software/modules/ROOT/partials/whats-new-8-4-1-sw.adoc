@@ -1,129 +1,12 @@
 +++
 <style>
-.banner {
-background-color: #4e55fd;
-color: #f0f8ff;
-font-family: Optimo-Plain,sans-serif;
-width: 100%;
-height: 60px;
-margin-bottom: 20px;
-display: flex;
-text-align: center!important;
-font-face
-height: 30px;
-align-items: center;
-justify-content: center;
-}
-.banner p {
-font-size: 15px;
-padding-left: 10px;
-padding-right: 10px;
-line-height: 5px;
-}
-p img {
-margin-bottom: -5px;
-}
-.show-hide {
-display: ;
-}
-.admonitionblock {
-margin-top: 1rem;
-}
-.image:not(.left):not(.right)>img {
+img {
+max-width: 95%;
 margin-top: 10px;
-margin-bottom: -5px;
-}
-.admonitionblock > table,
-.admonitionblock > table > tbody,
-.admonitionblock > table > tbody > tr > td {
-display: block;
-padding-left: 2px; /* for new all-in-one note */
-}
-.admonitionblock > table > tbody > tr {
-display: flex;
-}
-.admonitionblock td.icon {
-padding-left: 0.1rem;
-/* padding-right: 0.5rem; */ /* new all-in-one admonition */
-}
-.admonitionblock td.icon i::before {
-background: no-repeat 0/cover;
-content: "";
-margin-top: -18px; /* for new all-in-one admonition */
-margin-left: 7px; /* for new all-in-one admonition */
-display: block;
-height: 1.875rem;
-width: 1.875rem;
-}
-.admonitionblock td.content {
-/* border-bottom: 1px solid var(--color-brand-silver); */ /* new all-in-one admonition */
-/* border-right: 1px solid var(--color-brand-silver); */ /* new all-in-one admonition */
-/* border-top: 1px solid var(--color-brand-silver); */ /* new all-in-one admonition */
-flex: 1;
-font-size: 0.8375rem;
-hyphens: auto;
-line-height: 1.6;
-min-width: 0;
-padding: 0.75rem;
-padding-left: 0.3rem;
-border-radius: 5px;
-/* border: 2px solid rgba(33, 126, 231, 0.2); */ /* new all-in-one admonition */
-}
-.admonitionblock td.content > .title {
-display: inline;
-font-style: italic;
-}
-.admonitionblock td.content > .title::after {
-content: "";
-display: table;
-}
-.admonitionblock td.content::before {
-font-weight: var(--weight-medium);
-}
-.admonitionblock.note > table {
-background-color: transparent;
-border: 2px solid rgba(0, 174, 255, 0.2); /* for new all-in-one note */
-border-left: 6px solid #00aeef; /* for new all-in-one note */
-border-radius: 5px; /* for new all-in-one note */
-border-bottom: 2px solid rgba(0, 174, 2319, 0.2);
-border-top: 2px solid rgba(0, 174, 2319, 0.2);
-border-right: 2px solid rgba(0, 174, 2319, 0.2);
-/* box-shadow: 0.1px 1px 5px 1px #ccc; */
-}
-.admonitionblock.note td.icon i::before {
-background-image: url(_images/info2.svg);
-vertical-align: middle;
-padding-left: 25px; /* for new all-in-one note */
-}
-.admonitionblock.note td.icon {
-margin-top: 25px;
-}
-.admonitionblock.note td.content::before {
-content: "Note: ";
-font-weight: 500;
-color: #00aeef;
-}
-.admonitionblock.note td.content::before {
-content: "Note: ";
-color: #00aeef;
-}
-.admonitionblock.note td.content {
-/* border-left: 6px solid #00aeef;
-border-bottom: 2px solid rgba(0, 174, 2319, 0.2);
-border-top: 2px solid rgba(0, 174, 2319, 0.2);
-border-right: 2px solid rgba(0, 174, 2319, 0.2);
-box-shadow: 0.1px 1px 5px 1px #ccc; */
-}
-.admonitionblock td.content > :first-child {
-margin-top: 0;
-}
-.admonitionblock td.content > :first-child {
-margin-top: 3px;
-margin-right: 1px;
+margin-bottom: 10px;
 }
 </style>
 +++
-
 ifndef::pendo-links[]
 [label label-dep]#8.4.1.sw# August 2022
 endif::[]
@@ -134,30 +17,182 @@ endif::[]
 
 ifndef::pendo-links[]
 NOTE: Features marked as [.badge.badge-update]#Beta# are off by default. To enable them, contact {support-url}.
+endif::[]
 
 ifdef::pendo-links[]
 NOTE: Features marked as [.badge.badge-update-whats-new]#Beta# are off by default. To enable them, contact {support-url}.
 endif::[]
 
-[#primary-8-4-1-sw]
+[#data-workspace]
+[discrete]
+=== Data workspace
+
+// move to top
+
+The new Data Workspace is now GA and on by default. It redesigns the *Data* section of the product. To access it, select *Data* from the top navigation bar. The redesign introduces several new features, such as SQL-based views, dbt integration, and SpotApps, and makes the UI more intuitive.
+For more information,
+ifndef::pendo-links[]
+see xref:data-workspace.adoc[Data workspace].
+endif::[]
+ifdef::pendo-links[]
+see xref:data-workspace.adoc[Data workspace,window=_blank].
+endif::[]
+
+image::data-workspace-software.gif[Data workspace gif]
 
 [#8-4-1-sw-dbt]
 [discrete]
 === dbt integration
 
-// Teresa
+The dbt integration is now GA and on by default. With the new dbt integration, you provide your existing dbt models and ThoughtSpot automatically creates worksheets you can use to query your data. Integration with dbt is certified only for Snowflake connections. To try it out, navigate to the *Data* tab, and select *Utilities*. Select *dbt Integration*.
+For more information,
+ifndef::pendo-links[]
+see xref:dbt-integration.adoc[dbt integration].
+endif::[]
+ifdef::pendo-links[]
+see xref:dbt-integration.adoc[dbt integration,window=_blank].
+endif::[]
 
-[#8-4-1-sw-data-workspace]
-[discrete]
-=== Data workspace
-
-// Teresa
+image::dbt-integration.gif[Dbt integration]
 
 [#8-4-1-sw-sql-views]
 [discrete]
 === SQL views
 
-// Teresa
+SQL-based views are now GA and on by default. You can now create a view based on a custom SQL query, and use that view as a data source. To try it out, select *Data* from the top navigation bar. Then select *+ Create new > Custom SQL view*.
+For more information,
+ifndef::pendo-links[]
+see xref:sql-views.adoc[SQL views].
+endif::[]
+ifdef::pendo-links[]
+see xref:sql-views.adoc[SQL views,window=_blank].
+endif::[]
+
+image::sql-view-software.gif[SQL view creation]
+
+[#8-4-0-sw-new-answer]
+[discrete]
+ifndef::pendo-links[]
+=== New answer experience [.badge.badge-update]#Beta#
+endif::[]
+ifdef::pendo-links[]
+=== New answer experience [.badge.badge-update-whats-new]#Beta#
+endif::[]
+
+The new answer experience contains new features and enhancements, including an in-product undo, redo, and reset button, HTML for answer titles and descriptions, and improvements to conditional formatting for charts, tables, and pivot tables.
+
+To try it out, navigate to your profile, scroll down to *Experience*, select *Edit*, and toggle the Answer experience to *New experience*.
+For more information,
+ifndef::pendo-links[]
+see xref:answer-experience-new.adoc[New answer experience].
+endif::[]
+ifdef::pendo-links[]
+see xref:answer-experience-new.adoc[New answer experience,window=_blank].
+endif::[]
+
+image::new-answer-experience.gif[New answer experience gif]
+
+//add playbar
+
+[#primary-8-4-0-sw]
+[#8-4-0-sw-kpi-chart]
+[discrete]
+ifndef::pendo-links[]
+=== Key Performance Indicator (KPI) chart type [.badge.badge-update]#Beta#
+endif::[]
+ifdef::pendo-links[]
+=== Key Performance Indicator (KPI) chart type [.badge.badge-update-whats-new]#Beta#
+endif::[]
+
+You can now create visualizations of your data’s Key Performance Indicators (KPIs). When you search for a measure with a time-related keyword (for example, `Sales weekly`), you can create sparkline visualizations of your data’s Key Performance Indicators (KPIs). ThoughtSpot also supports conditional formatting to add visual cues for KPIs or threshold metrics to easily show where you are falling short or exceeding targets. This feature is dependent on the new answer experience; to use KPI charts, you must first enable the new answer experience.
+For more information on KPI charts,
+ifndef::pendo-links[]
+see xref:chart-kpi.adoc[KPI charts].
+endif::[]
+ifdef::pendo-links[]
+see xref:chart-kpi.adoc[KPI charts,window=_blank].
+endif::[]
+
+image:kpi-viz-sparkline.png[KPI visualization example 2]
+
+[#8-4-0-sw-auto-select-search-source]
+[discrete]
+=== Auto-select search data source for new users
+
+When a new user uses Search Data, ThoughtSpot intelligently selects a data source for them to search on. ThoughtSpot chooses the most popular data source in the cluster that the user has access to. This allows users to begin to search data easily, without looking through all the existing data sources on their cluster.
+For more information,
+ifndef::pendo-links[]
+see xref:search-choose-data-source.adoc[Choose a data source].
+endif::[]
+ifdef::pendo-links[]
+see xref:search-choose-data-source.adoc[Choose a data source,window=_blank].
+endif::[]
+
+[#8-4-0-sw-geo-france]
+[discrete]
+=== Geo map support for France postcode
+
+We now support more detailed geographic maps for France. You can now create maps based on postal codes, as well as region and city name.
+For more information,
+ifndef::pendo-links[]
+see xref:geomap-reference.adoc[Geo map reference].
+endif::[]
+ifdef::pendo-links[]
+see xref:geomap-reference.adoc[Geo map reference,window=_blank].
+endif::[]
+
+[#8-4-0-sw-conditional-formatting]
+[discrete]
+=== Conditional and number formatting for downloaded tables
+
+When you download a table in `XLSX` format, the downloaded table now shows the same conditional and number formatting as the table in ThoughtSpot. It also shows the same column width, number formatting based on the format patter, and date formatting as the table in ThoughtSpot. For more information on downloaded tables,
+ifndef::pendo-links[]
+see xref:search-download.adoc[Download a search].
+endif::[]
+ifdef::pendo-links[]
+see xref:search-download.adoc[Download a search,window=_blank].
+endif::[]
+
+image::xlsx-download.png[Conditional and number formatting]
+
+[#8-4-0-sw-liveboard-schedule]
+[discrete]
+=== Liveboard schedule
+
+ThoughtSpot now combines the Liveboard follow and Liveboard Schedule features into a single action called "Schedule." To create a new schedule to receive an email containing a pdf of your Liveboard, users now select the *Schedule* button to the left of the *more options menu* image:icon-more-10px.png[].
+
+ThoughtSpot will migrate any existing Liveboard follows to Liveboard schedules. For users who followed a Liveboard in 7.2.1 or earlier, those Liveboard schedules appear in the list of Liveboard schedules as _Migrated from follow (your display name)_.
+For more information,
+ifndef::pendo-links[]
+see xref:liveboard-schedule.adoc[Schedule a Liveboard job].
+endif::[]
+ifdef::pendo-links[]
+see xref:liveboard-schedule.adoc[Schedule a Liveboard job,window=_blank].
+endif::[]
+
+image::liveboard-schedule.png[Liveboard schedule button]
+
+[#8-4-0-sw-new-spotiq]
+[discrete]
+ifndef::pendo-links[]
+=== New SpotIQ experience [.badge.badge-update]#Beta#
+endif::[]
+ifdef::pendo-links[]
+=== New SpotIQ experience [.badge.badge-update-whats-new]#Beta#
+endif::[]
+
+SpotIQ has a new reorganized and more intuitive UI. The functionality remains the same.
+
+To try it out, navigate to your profile, scroll down to *Experience*, select *Edit*, and toggle the SpotIQ experience to *New experience*. This feature is dependent on the new answer experience; to use the new SpotIQ experience, you must first enable the new answer experience.
+For more information,
+ifndef::pendo-links[]
+see xref:spotiq.adoc[SpotIQ].
+endif::[]
+ifdef::pendo-links[]
+see xref:spotiq.adoc[SpotIQ,window=_blank].
+endif::[]
+
+image::spotiq-v2-ui.png[New SpotIQ experience]
 
 [#8-4-1-sw-liveboard-experience]
 ifndef::pendo-links[]
@@ -183,13 +218,63 @@ endif::[]
 [discrete]
 === _Other features and enhancements_
 
+[#8-4-0-sw-oauth-databricks]
+[discrete]
+=== OAuth for Databricks
+
+Databricks connections now support OAuth.
+For more information,
+ifndef::pendo-links[]
+see xref:connections-databricks-oauth.adoc[Configure OAuth for a Databricks connection].
+endif::[]
+ifdef::pendo-links[]
+see xref:connections-databricks-oauth.adoc[Configure OAuth for a Databricks connection,window=_blank].
+endif::[]
+
 [#8-4-1-sw-oauth-okta-snowflake]
 [discrete]
 === Okta OAuth for Snowflake
 
-Snowflake connections now support Okta OAuth. See xref:connections-snowflake-okta-oauth[Configure Okta OAuth for a Snwoflake connection].
+Snowflake connections now support Okta OAuth.
+For more information,
+ifndef::pendo-links[]
+see xref:connections-snowflake-okta-oauth.adoc[Configure Okta OAuth for a Snowflake connection].
+endif::[]
+ifdef::pendo-links[]
+see xref:connections-snowflake-okta-oauth.adoc[Configure Okta OAuth for a Snowflake connection,window=_blank].
+endif::[]
 
-// image
+[#8-4-0-sw-date-interval]
+[discrete]
+=== Date interval functions
+
+We introduced new functions for computing time intervals between two dates. In addition to the existing diff_days and diff_time functions, you can now use `diff_years`, `diff_quarters`, `diff_months` `diff_weeks`, `diff_hours`, and `diff_minutes` to calculate time intervals.
+
+If your organization uses a custom calendar for your fiscal year, use the optional custom calendar argument with these functions to calculate the difference between the two dates.
+For more information,
+ifndef::pendo-links[]
+see xref:formula-reference.adoc#date-functions[Formula reference].
+endif::[]
+ifdef::pendo-links[]
+see xref:formula-reference.adoc#date-functions[Formula reference,window=_blank].
+endif::[]
+
+[#8-4-0-sw-streamlined-analyst]
+[discrete]
+=== Streamlined analyst setup
+
+// Naomi
+
+We simplified the steps to set up an analyst account on ThoughtSpot. Now, you can create a connection, create a worksheet to model your business use cases, immediately search your data, and automatically create Search visualizations.
+For more information,
+ifndef::pendo-links[]
+see xref:analyst-onboarding.adoc[Analyst onboarding] and xref:automated-answer-creation.adoc[Create answers in Setup].
+endif::[]
+ifdef::pendo-links[]
+see xref:analyst-onboarding.adoc[Analyst onboarding,window=_blank] and xref:automated-answer-creation.adoc[Create answers in Setup,window=_blank].
+endif::[]
+
+This feature is specific to clusters based on connections to external data warehouses, not imported data (Falcon). To enable this feature for your cluster, contact ThoughtSpot Support.
 
 [#8-4-1-sw-python]
 [discrete]
@@ -204,13 +289,18 @@ ifdef::pendo-links[]
 see xref:python-upgrade.adoc[Upgrade your Python version,window=_blank].
 endif::[]
 
-// need to fix link
-
-[#8-4-1-sw-system-stats]
+[#system-stats]
 [discrete]
-=== System information Liveboard
+=== System information Liveboards
 
-// Teresa
+We moved several system monitoring Liveboards to new areas of the product. The *System information and usage Liveboard* is now in the Admin Console, under *System Information*. The *Table status Liveboard* is now in the Admin Console, under *Table Status*. The *Connections Liveboard* is now in the Data Workspace, under *Usage statistics*.
+For more information,
+ifndef::pendo-links[]
+see xref:admin-portal.adoc[Admin Console] and xref:data-workspace.adoc#usage-statistics[Data workspace].
+endif::[]
+ifdef::pendo-links[]
+see xref:admin-portal.adoc[Admin Console,window=_blank] and xref:data-workspace.adoc#usage-statistics[Data workspace,window=_blank].
+endif::[]
 
 [discrete]
 === ThoughtSpot Everywhere
