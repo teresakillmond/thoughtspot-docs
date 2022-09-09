@@ -31,6 +31,13 @@ We changed the default behavior for table aggregation summaries when the search 
 +
 For example, in the formula `group_aggregate(sum(if (Color = 'blue') then 0 else group_unique_count(Discount)))`, the headline summary would use `COUNT_DISTINCT`, since the first non-constant output column within the `if... then... else` clause is `group_unique_count` and has an aggregation type of `COUNT_DISTINCT`.
 
+[#spotapps-8-9]
+SpotApps::
+
+The following SpotApps are now available:
+* xref:spotapps-salesforce.adoc[Salesforce Pipeline Analysis]
+* xref:spotapps-facebook.adoc[Facebook Ads]
+
 [#8-8-0-cl-business-user]
 === For the Business User
 
