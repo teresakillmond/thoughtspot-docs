@@ -25,7 +25,7 @@ Example:
 To connect to {connection}:
 
 . Click *Data* in the top navigation bar.
-. Click the *Connections* tab in the left navigation bar, and select the {connection} tile.
+. Click the *Connections* tab in the left navigation bar, and select the {connection} tile. Alternatively, select *+ Create new* in the left navigation bar, select *Connection*, and select the {connection} tile.
 . Create a name for your connection and a description (optional), then click *Continue*.
 +
 image::embrace-snowflake-connection-type-ts-cloud.png[Add a {connection} connection]
@@ -37,13 +37,13 @@ The Use OAuth option uses https://docs.snowflake.com/en/user-guide/oauth-partner
 Before selecting *Use OAuth* authentication, you must configure OAuth in {connection}.
 For details, see xref:connections-snowflake-oauth.adoc[Configure OAuth for a {connection} connection].
 +
-Before selecting *Microsoft Azure AD OAuth* authentication, you must configure Azure AD external OAuth.
-For details, see xref:connections-snowflake-azure-ad-oauth.adoc[Configure Azure AD external OAuth for a {connection} connection].
+Before selecting *Use External OAuth* authentication, you must configure either Azure AD or Okta external OAuth.
+For details, see xref:connections-snowflake-azure-ad-oauth.adoc[Configure Azure AD external OAuth for a {connection} connection] or see xref:connections-snowflake-okta-oauth.adoc[Configure Okta external OAuth for a {connection} connection].
 +
 - For OAuth authentication, do the following:
 
  .. Select *Use OAuth*.
- .. Enter Account name or your {connection} URL, OAuth Client ID, OAuth Client Secret, and (optional) Database.
+ .. Enter Account name or your {connection} URL, OAuth Client ID, OAuth Client Secret, Database (optional), Role (optional), and Warehouse (optional).
 image:snowflake-connectiondetails-oauth2.png[Enter connection details]
 // [Enter connection details]({{ site.baseurl }}/images/gbq-connectiondetails.png "Enter connection details")
  .. If you wish to provide the optional additional key-value pairs for your {connection} connection, complete the procedure in step 5, and then click *Continue*.
@@ -55,7 +55,7 @@ Using security passthrough may have implications for your Row Level Security.
 See xref:security-rls.adoc[About row level security (RLS)] for more information.
 
 +
-- For Microsoft Azure AD OAuth authentication, do the following:
+- For Microsoft Azure AD or Okta OAuth authentication, do the following:
 
  .. Select *Use External OAuth*.
  .. Enter Account name or {connection} URL, OAuth Client ID, OAuth Client Secret, Scope, Auth URL, Access token URL, and (optional) Database.
@@ -94,9 +94,9 @@ When setting up a proxy with {connection} ensure that:
 - There are no other connections which use a different proxy or are without a proxy.
 - Ensure each new connection has the same proxy details. If there was an unsuccessful attempt to fetch metadata without proxy, adding a proxy later might not work because the {connection} driver might assume no proxy.
 ====
-. (Optional) Provide additional key-value pairs that are required to set up your connection to {connection}, by doing the following:
+. (Optional) Provide additional key-value pairs that you need to set up your connection to {connection} or customize additional JDBC parameters supported by {connection}, by doing the following:
  .. Click the *Advanced Config* menu to reveal the *Key* and *Value* fields.
- .. Enter your key and value information.
+ .. Enter your key and value information. For example, if you want to access multiple {connection} databases in a single connection, but do not want the connection to access _all_ your Snowflake databases, you can specify that here. For each specific database you would like to access, set `database` as the key, and the database name as the value. Refer to the https://docs.snowflake.com/en/user-guide/jdbc-parameters.html[Snowflake JDBC documentation^].
  .. To add more keys and values, click the plus sign (+), and enter them.
 
 +

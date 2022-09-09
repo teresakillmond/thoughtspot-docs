@@ -1,13 +1,13 @@
-= ThoughtSpot Cloud Release Notes
+= 8.8.0.cl Release Notes
 :experimental:
-:last_updated: 7/7/2022
+:last_updated: 9/1/2022
 :linkattrs:
 :page-toclevels: 1
 :page-aliases: /release/notes.adoc
 :page-layout: default-cloud
 :description: These release notes include information about new and enhanced features.
 
-ThoughtSpot 8.6.0.cl is now available.
+ThoughtSpot Cloud 8.7.0.cl is now available.
 
 These release notes include information about new and enhanced features.
 
@@ -17,6 +17,195 @@ To see our feature deprecation plans, please see xref:deprecation.adoc[Deprecati
 == New Features and Functionality
 
 include::partial$new-features-cloud-release.adoc[]
+
+[#8-7-0-cl]
+== ThoughtSpot 8.7.0.cl Release
+
+* <<8-7-0-cl-first,For the First User>>
+* <<8-7-0-cl-analyst,For the Analyst>>
+* <<8-7-0-cl-business-user,For the Business User>>
+* <<8-7-0-cl-data-engineer,For the Data Engineer>>
+* <<8-7-0-cl-it-ops-engineer,For the IT Ops Engineer>>
+* <<8-7-0-cl-developer,For the Developer>>
+
+[#8-7-0-cl-first]
+=== For the First User
+
+Getting started with ThoughtSpot Cloud::
+The first user on the account has to complete a series of steps before other people can start using ThoughtSpot with your organization's data.
+For these instructions, see xref:ts-cloud-getting-started.adoc[Getting Started with ThoughtSpot Cloud].
+
+[#8-7-0-cl-analyst]
+=== For the Analyst
+
+Customizable colors for heatmap and treemap charts::
+You can now customize the colors used for heatmap and treemap charts. Prior to this release, the only available heatmap color was teal in various shades, and the only available treemap color was green in various shades. Now you can choose any color in your color palette. For more information, see xref:chart-heatmap.adoc[] and xref:chart-treemap.adoc[].
+
+Liveboard tabs::
+ThoughtSpot now supports separating Liveboards into multiple tabs. This allows you to group specific visualizations together within a Liveboard. For example, you may have a *Sales* Liveboard that contains top-level KPIs and more detailed charts. You can create a tab for the top-level KPIs for executives to view, and a tab for the more detailed charts that managers need to monitor. For more information, refer to xref:liveboard-tabs.adoc[Liveboard tabs].
+
+[#8-7-0-cl-business-user]
+=== For the Business User
+
+Threshold-based alerts::
+Threshold-based alerts are now GA and on by default. You can now use the Monitor feature to receive alerts when your KPI satisfies a given threshold condition. For example, create a condition to receive an alert when your Sales KPI becomes `greater than 200,000`, or when your KPI for Sales weekly `increases by 2%`.
+For more information, see xref:monitor.adoc#threshold-based-alert[Create a threshold-based alert].
+
+ThoughtSpot Sync:: You can now sync data directly from an answer or custom SQL view to an external business app like xref:sync-sheets.adoc[Google Sheets], xref:sync-slack.adoc[Slack], or xref:sync-ms-teams.adoc[Microsoft Teams]. Using ThoughtSpot Sync, you can push insights directly to your app, notify your teams, and view data in context. ThoughtSpot Sync automatically establishes a secure pipeline to the destination app and thus eliminates the need for building custom connectors to external apps. For more information, see xref:thoughtspot-sync.adoc[Sync data from ThoughtSpot to external apps].
+
+////
+Support for OR in contains operator::
+ThoughtSpot now offers the option to `OR` multiple `contains` clauses for the same attribute in a search, instead of combining them with `AND`, which is the default. For example, with the optional new `OR` behavior, `country name contains 'a' country name contains 'b'` returns results such as `Azerbaijan`, `Bahrain`, `North America`, and `Canada`. With the default `AND` behavior, that search returns `Azerbaijan` and `Bahrain`, but *_not_* `North America` or `Canada`.
++
+To enable this feature, contact {support-url}.
+////
+
+Support for multiple contains, begins_with, and ends_with phrases in versus queries::
+ThoughtSpot now supports multiple `contains`, `begins_with`, and `ends_with` phrases in `vs` queries. For example, you can now have a versus query such as `state name begins_with 'a' state name begins_with 'c' vs state name begins_with 'd'`.
++
+For more information, refer to the xref:keywords.adoc#vs[Keyword reference].
+
+Geo charts enhancements::
+This release includes several enhancements to all geo charts:
++
+--
+* Improved map quality: This includes faster map loading, better clarity, and more granular details down to the street level when you zoom in. This applies to background maps (the parts of the map with no data) as well.
+* A new *map type* option that allows you to customize the display of the parts of the geo chart map that do not contain data. The new map type options are Light, Dark, Outdoors, Streets, Satellite, and Satellite Streets. The default is Light.
+
+--
+See xref:chart-geo.adoc[].
+
+[#8-7-0-cl-data-engineer]
+=== For the Data Engineer
+
+Denodo OAuth::
+Denodo connections now support OAuth. For details, see xref:connections-denodo-oauth[Configure OAuth for a Denodo connection].
+
+Snowflake Oauth improvements::
+This release brings improvements in how ThoughtSpot handles user tokens for Snowflake connections configured with Snowflake OAuth. If a user's refresh token becomes invalid, the administrator or author of the connection can now run the Invalidate Tokens command to allow the user to re-authenticate and regain access to the insights provided by the connection, and the connection itself. Also, in this release the _Role_ field has been added to the Snowflake OAuth connection details page, allowing a role to be added when the connection is created and changed when a connection is edited.
++
+See xref:connections-snowflake-edit.adoc#invalidate-tokens[Invalidating refresh tokens of a Snowflake connection].
+
+Snowflake CSV upload [.badge.badge-update]#Beta#:: Now you have a quick and easy way to complete one-time data loads of small files that are not present in your cloud data warehouse. You can now upload a CSV file to the database of your Snowflake connection that can be joined to other tables or worksheets in your connection. Once your administrator enables this feature, go to *Data* > *Utilities*, and click *Upload CSV*.
+ifndef::pendo-links[]
+See xref:connections-snowflake-csv-upload-config.adoc[Configure CSV upload for your Snowflake connection], and xref:connections-snowflake-csv-upload.adoc[Upload a CSV file in your Snowflake connection].
+
+
+[#8-7-0-cl-it-ops-engineer]
+=== For the IT/Ops Engineer
+
+[#8-7-0-cl-query-based-pricing]
+Query Stats Liveboard::
+
+The new Query Stats Liveboard allows administrators of customers who have signed up for a query-based usage subscription, to track the number of queries of their users. To view the Query Stats Liveboard, go to *Liveboards* and select *Query Stats Liveboard*. Query-based usage is part of consumption-based pricing. For more information, see xref:consumption-pricing-query-based.adoc[Query-based usage].
+
+[#okta]
+Identity and Access Management V2 [.badge.badge-update]#Beta#::
+
+In this release, ThoughtSpot switched to a new, industry-standard cloud authentication method through Okta. ThoughtSpot now powers its internal authentication with Okta, which is the industry-leading authentication platform. This change is internal and has no impact on customers. After we enable this feature by default, all user authentication will automatically use the internal Okta service.
++
+This switch involves several external improvements to authentication, including security enhancements:
++
+--
+* Ability to map IDP attributes from the ThoughtSpot Admin Console (username, email, and display name).
+* Account activation monitoring from the Users section of the Admin Console: if a user still needs to activate their account, administrators can see that information in the Users section and re-send their activation email.
+* Only Okta interacts with your IDP. Your ThoughtSpot cluster does not directly interact with your IDP.
+* Local users create their own password during activation. Administrators do not create the password prior to activation.
+--
++
+For more information, refer to xref:okta-iam.adoc[Identity and Access Management V2].
++
+This feature is in beta and off by default. To enable Okta authentication, contact {support-url}.
+
+[#8-6-0-cl]
+== ThoughtSpot 8.6.0.cl Release
+
+* <<8-6-0-cl-first,For the First User>>
+* <<8-6-0-cl-analyst,For the Analyst>>
+* <<8-6-0-cl-business-user,For the Business User>>
+* <<8-6-0-cl-data-engineer,For the Data Engineer>>
+* <<8-6-0-cl-it-ops-engineer,For the It Ops Engineer>>
+* <<8-6-0-cl-developer,For the Developer>>
+
+[#8-6-0-cl-first]
+=== For the First User
+
+Getting started with ThoughtSpot Cloud::
+The first user on the account has to complete a series of steps before other people can start using ThoughtSpot with your organization's data.
+For these instructions, see xref:ts-cloud-getting-started.adoc[Getting Started with ThoughtSpot Cloud].
+
+[#8-6-0-cl-analyst]
+=== For the Analyst
+
+New Liveboard experience::
+The xref:liveboard-experience-new.adoc[new Liveboard experience] is now GA and on by default. It contains multiple new features and feature enhancements.
+It is part of ThoughtSpot's move to a new stack.
+To learn how to manage its enablement, refer to xref:liveboard-experience-new.adoc[].
++
+The new Liveboard experience contains the following new features:
+
+include::partial$new-liveboard-experience-features.adoc[]
+
+include::partial$new-liveboard-experience-deprecations.adoc[]
+
+TML import improvements::
+You can now import xref:tml.adoc[TML] files that contain certain errors. During the import process, ThoughtSpot removes the part of the object that contains errors, and allows you to import the rest of the object. These errors include the following:
++
+--
+* Some Liveboard visualizations contain errors, but the overall Liveboard is valid: ThoughtSpot removes the visualizations that contain errors and imports the Liveboard.
+* Some Liveboard filters contain errors, but the overall Liveboard is valid: ThoughtSpot removes the filters that contain errors and imports the Liveboard.
+* Destination tables for some joins in a table do not exist, but the overall table is valid: ThoughtSpot removes the joins that do not have destination tables and imports the table.
+--
++
+Refer to xref:scriptability.adoc#migrate-object[Migrate an object].
+
+
+[#8-6-0-cl-business-user]
+=== For the Business User
+
+Discoverable answers and Liveboards [.badge.badge-update]#Beta#:: You can now make content easily available to your team members when you save or share an answer or Liveboard. Use the *Make this [answer | Liveboard] discoverable* checkbox that appears when you save or share an answer or Liveboard to grant _view_ access to your teammates. Any user who has access to the underlying data source (worksheet, table, view), and is part of the same user group as the author of the content, will be able to  discover and access the answer or Liveboard in *Search Answers*. +
+Select this checkbox to publish your content in the list of relevant results when a teammate uses the *Search Answers* feature, or de-select to keep your content private.
+
+Delete objects from home page:: You can now delete answers and Liveboards directly from the list on the home page, as well as from the *Answers* and *Liveboards* tabs. To delete an answer or Liveboard from the home page, scroll down the list or search tags and author name to select the object name. After selecting the checkbox to the left of the object name, click the *Delete* button that appears. +
+//Note: you will see a warning when you delete an object with dependents.
+
+Choose sources limitation::
+You can no longer select more than 100 data sources to search on when searching data. This maximum of 100 sources improves performance and limits timeouts due to the selection of too many sources.
+
+Data panel multi-word search:: In the data panel search bar, you can now search text and a list of columns separated by one of the following delimiters: comma (*,*), period (*.*), backslash (*\*), dash (*-*), underscore (*_*), or space. If all of your search words find a match with column name words then it is considered as a match.
+
+[#8-6-0-cl-data-engineer]
+=== For the Data Engineer
+
+[#dbt-improvements]
+Integration with dbt improvements::
+This release includes the following improvements to the dbt integration:
+* Integration with dbt for Databricks connections
+* Import of multiple folders at a time
+* Import of a single table within a folder
+* Support for joins across multiple folders
+
+[#connections-denodo]
+Denodo for Connections::
+Denodo is now supported as a connection. See xref:connections-denodo.adoc[Denodo].
+
+[#tags]
+Edit tags from the Data workspace::
+You can now edit tags for tables, worksheets, views, and SQL views from the Data workspace home page. Refer to xref:tags.adoc#data-workspace[Use tags to organize].
+
+[#8-6-0-cl-it-ops-engineer]
+=== For the IT Ops Engineer
+
+[#private-link]
+AWS PrivateLink between ThoughtSpot Cloud and your Denodo data warehouse::
+ThoughtSpot now supports AWS PrivateLink for Denodo connections. ThoughtSpot encrypts all your data by default. For an additional layer of security and network reliability, you can use an AWS PrivateLink.
++
+See xref:connections-denodo-private-link.adoc[Enabling an AWS PrivateLink between ThoughtSpot Cloud and your Denodo data warehouse].
+
+[#8-6-0-cl-developer]
+=== For the Developer
+
+ThoughtSpot Everywhere:: For information about the new features and enhancements introduced in this release, refer to https://developers.thoughtspot.com/docs/?pageid=whats-new[ThoughtSpot Developer Documentation^].
 
 [#8-5-0-cl]
 == ThoughtSpot 8.5.0.cl Release
@@ -41,6 +230,9 @@ For these instructions, see xref:ts-cloud-getting-started.adoc[Getting Started w
 Table formatting for downloaded tables::
 When you download a table in `XLSX` format, the downloaded table now shows the same column width and date formatting as the table in ThoughtSpot. Refer to xref:search-download.adoc#table-formatting[Download your search].
 
+Discoverable Liveboard edit button::
+The *Edit* button for Liveboards in the xref:liveboard-experience-new.adoc[new Liveboard experience] is now more discoverable. We moved it out of the more menu image:icon-more-10px.png[more menu icon] and into the main Liveboard menu. It is now at the top right of the Liveboard.
+
 [#8-5-0-cl-business-user]
 === For the Business User
 
@@ -51,7 +243,7 @@ This feature is in beta and off by default. To enable threshold-based alerts, co
 
 
 Make content discoverable [.badge.badge-update]#Beta#::
-You can now make content easily available to your team members when you save or share an answer or Liveboard. Use the *Make content discoverable* checkbox that appears when you save or share an answer or Liveboard to grant _view_ access to your teammates. Any user who has access to underlying data source (worksheet, table, view) and is part of the same user group as the author of the content, will be able to  discover and access the answer in *Search Answers*. +
+You can now make content easily available to your team members when you save or share an answer or Liveboard. Use the *Make this [answer | Liveboard] discoverable* checkbox that appears when you save or share an answer or Liveboard to grant _view_ access to your teammates. Any user who has access to underlying data source (worksheet, table, view) and is part of the same user group as the author of the content, will be able to  discover and access the answer in *Search Answers*. +
 Select this checkbox to publish your content in the list of relevant results when a teammate uses the *Search Answers* feature, or de-select to keep your content private.
 
 
@@ -106,6 +298,16 @@ See xref:spotapps.adoc[SpotApps].
 Okta OAuth for Snowflake connections::
 You can now use Okta as your authorization server for external OAuth. For details, see xref:connections-snowflake-okta-oauth.adoc[Configure Okta OAuth for a Snowflake connection].
 
+[#external-tables]
+Query external tables::
+ThoughtSpot now supports querying external tables in data stores, after you create these tables in your Amazon Redshift, Google BigQuery, or Snowflake environments.
++
+For more information, refer to the following articles:
+
+* xref:connections-gbq-external-tables.adoc[]
+* xref:connections-redshift-external-tables.adoc[]
+* xref:connections-snowflake-external-tables.adoc[]
+
 [#8-5-0-cl-it-ops-engineer]
 === For the IT Ops Engineer
 
@@ -148,7 +350,7 @@ For these instructions, see xref:ts-cloud-getting-started.adoc[Getting Started w
 Liveboard and answer download footer::
 This release introduces the ability for admins to specify a standard footer to add to all Liveboard and answer downloads. Use this functionality to add a confidentiality disclaimer, for example.
 +
-This feature is part of the xref:answer-experience-new.adoc[new answer experience] and the xref:liveboard-experience-new.adoc[new Liveboard experience]. The new answer experience is on by default, and the new Liveboard experience is off by default. If you are using the classic experiences, you cannot set a standard download footer. If you are using only the new answer experience, you can only set a standard download footer for answers, *_not_* Liveboards.
+This feature is part of the xref:answer-experience-new.adoc[new answer experience] and the xref:liveboard-experience-new.adoc[new Liveboard experience]. The new answer experience is on by default, and the new Liveboard experience is off by default in 8.4.0.cl. If you are using the classic experiences, you cannot set a standard download footer. If you are using only the new answer experience, you can only set a standard download footer for answers, *_not_* Liveboards.
 +
 For more information, refer to xref:search-spotiq-settings.adoc[].
 
@@ -279,7 +481,6 @@ ThoughtSpot Everywhere:: For information about the new features and enhancements
 * <<8-2-0-cl-analyst,For the Analyst>>
 * <<8-2-0-cl-business-user,For the Business User>>
 * <<8-2-0-cl-data-engineer,For the Data Engineer>>
-* <<8-2-0-cl-it-ops-engineer,For the IT Ops Engineer>>
 * <<8-2-0-cl-developer,For the Developer>>
 
 [#8-2-0-cl-first]
@@ -356,23 +557,6 @@ This feature is in *Beta* and on only for select customers.
 [#connections-flow-data-portal]
 New connection creation flow with data tab redesign::
 If you have the new <<data-tab,redesigned data tab>> enabled, you can see the new Data Workspace page from the *Data* tab in the top navigation bar. To start creating a connection, click *Connections*, then click the connection type you want to create. The new Data Workspace allows you to create a connection without selecting tables or columns.
-
-[#8-2-0-cl-it-ops-engineer]
-=== For the IT Ops Engineer
-
-[#okta]
-Okta authentication [.badge.badge-update]#Beta#::
-
-In this release, ThoughtSpot switched to a new, industry-standard cloud authentication method through Okta. ThoughtSpot now powers its internal authentication with Okta, which is the industry-leading authentication platform. This change is internal and has no impact on customers. After we enable this feature by default, all user authentication will automatically use the internal Okta service.
-+
-This new Okta authentication feature is in *Beta*, and off by default. To enable it, https://community.thoughtspot.com/customers/s/contactsupport[contact ThoughtSpot Support^].
-+
-This switch involves several external improvements to authentication, including security enhancements:
-
-* Ability to map IDP attributes from the ThoughtSpot Admin Console (username, email, and display name)
-* Account activation monitoring from the Users section of the Admin Console: if a user still needs to activate their account, you can see that information in the Users section and re-send their activation email
-* Only Okta interacts with your IDP. Your ThoughtSpot cluster does not directly interact with your IDP.
-* Local users create their own password during activation. Administrators do not create the password prior to activation.
 
 [#8-2-0-cl-developer]
 === For the Developer

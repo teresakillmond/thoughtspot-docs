@@ -1,30 +1,36 @@
+ifndef::pendo-links[]
 [label label-dep]#8.6.0.cl# August 2022
+endif::[]
+ifdef::pendo-links[]
+[label label-dep-whats-new]#8.6.0.cl#
+[month-year-whats-new]#August 2022#
+endif::[]
 
-NOTE: Features designated as [.badge.badge-update]#Beta# are off by default. To enable them, contact {support-url}.
-
+ifndef::pendo-links[]
+NOTE: Features marked as [.badge.badge-update]#Beta# are off by default. To enable them, contact {support-url}.
+endif::[]
+ifndef::free-trial-feature[]
+ifdef::pendo-links[]
+NOTE: Features marked as [.badge.badge-update-whats-new]#Beta# are off by default. To enable them, contact {support-url}.
+endif::[]
+endif::free-trial-feature[]
 [#primary-8-6-0-cl]
 
-[#8-6-0-cl-content-discoverable]
-*Making content discoverable*
-
-// Naomi
-
-[#8-6-0-cl-threshold-alerts]
-*Threshold-based alerts*
-
-// Naomi
-
+////
 [#8-6-0-cl-data-panel]
-*Data panel search improvements*
+[discrete]
+=== Data panel multi-word search
 
-// Mark
+In the data panel search bar, you can now search text and a list of columns separated by one of the following delimiters: comma (*,*), period (*.*), backslash (*\*), dash (*-*), underscore (*_*), or space. If all of your search words find a match with column name words then it is considered as a match.
+////
 
 [#8-6-0-cl-liveboard-v2]
-*New Liveboard experience GA*
+[discrete]
+=== New Liveboard experience
 
 The new Liveboard experience is now GA and on by default. It contains new features and enhancements, including Edit mode, HTML in Liveboard titles and descriptions, and improved filtering.
 
-To try it out, navigate to your profile, scroll down to *Experience*, select *Edit*, and toggle the Liveboard experience to *New experience*. For more information,
+To try it out, navigate to any Liveboard. For more information,
 ifndef::pendo-links[]
 see xref:liveboard-experience-new.adoc[New Liveboard experience].
 endif::[]
@@ -32,62 +38,67 @@ ifdef::pendo-links[]
 See xref:liveboard-experience-new.adoc[New Liveboard experience,window=_blank].
 endif::[]
 
-image::new-liveboard-experience-gif.gif[New Liveboard experience gif]
+image::new-liveboard-experience-gif-86.gif[New Liveboard experience gif]
 
-[#8-6-0-cl-homepage-delete]
-*Delete objects from home page*
-
-// Naomi
-
-[#8-6-0-cl-answer-v2-mobile]
-*New answer experience on mobile*
-
-// Mark
-
-[#8-6-0-cl-teams]
-*Teams edition*
-
-// Mark -- needs eval
-
-[#8-6-0-cl-kpi-anomaly]
-*Show anomaly on KPI chart*
-
-// Naomi -- needs eval
-
-[#8-6-0-cl-okta-business-user]
-*Local account activation*
-
-In this release, ThoughtSpot switched to a new, industry-standard cloud authentication method through Okta. As part of this switch, new local users now create their own password during activation. Administrators do not create the password prior to activation. For more information,
+ifndef::free-trial-feature[]
+ifdef::pendo-links[]
+[discrete]
+=== Threshold-based alerts for KPI charts [.badge.badge-update-whats-new]#Beta#
+endif::[]
 ifndef::pendo-links[]
-see xref:user-account-activation.adoc[Activate your ThoughtSpot account].
+[discrete]
+=== Threshold-based alerts for KPI charts [.badge.badge-update]#Beta#
+endif::[]
+You can now use the Monitor feature to receive alerts when your KPI satisfies a given threshold condition. For example, create a condition to receive an alert when your Sales KPI becomes `greater than 200,000`, or when your KPI for Sales weekly `increases by 2%`.
+For more information,
+ifndef::pendo-links[]
+see xref:monitor.adoc#threshold-based-alert[Create a threshold-based alert].
 endif::[]
 ifdef::pendo-links[]
-see xref:user-account-activation.adoc[Activate your ThoughtSpot account,window=_blank].
+see xref:monitor.adoc#threshold-based-alert[Create a threshold-based alert,window=_blank].
 endif::[]
 
-// add image
+image::monitor-threshold-alerts.gif[Threshold-based alerts]
 
-[#8-6-0-cl-pricing]
-*Pricing*
+endif::free-trial-feature[]
 
-// Mark -- needs eval
+[#8-6-0-cl-homepage-delete]
+[discrete]
+=== Delete objects from home page
+
+// Naomi -- just an image. GA in Free Trial and Team Edition
+
+You can now delete answers and Liveboards directly from the list on the home page, as well as from the *Answers* and *Liveboards* tabs. To delete an answer or Liveboard from the home page, scroll down the list or search tags and author name to select the object name. After clicking the checkbox to the left of the object name, click the *Delete* button that appears. +
+//Note: you will see a warning when you delete an object with dependents. +
+image:home-object-delete.png[]
+ifdef::pendo-links[]
+For more information, see xref:thoughtspot-one-homepage.adoc#object-delete[Home page,window=_blank].
+endif::[]
+ifndef::pendo-links[]
+For more information, see xref:thoughtspot-one-homepage.adoc#object-delete[Home page].
+endif::[]
+
+[#8-6-0-cl-sources]
+[discrete]
+=== Choose sources limitation
+
+You can no longer select more than 100 data sources to search on when searching data. This maximum of 100 sources improves performance and limits timeouts due to the selection of too many sources.
+For more information,
+ifndef::pendo-links[]
+see xref:search-choose-data-source.adoc[Choose a data source].
+endif::[]
+ifdef::pendo-links[]
+see xref:search-choose-data-source.adoc[Choose a data source,window=_blank].
+endif::[]
 
 '''
 [#secondary-8-6-0-cl]
-*_Other features and enhancements_*
-
-[#8-6-0-cl-dbt-integration]
-*Integration with dbt enhancements*
-
-// Teresa
-
-[#8-6-0-cl-spotapps]
-*SpotApps*
-
-// Teresa
+[discrete]
+=== _Other features and enhancements_
 
 [#8-6-0-cl-tml]
-*TML import improvements*
+[discrete]
+=== TML import improvements
 
 You can now import xref:tml.adoc[TML] files that contain certain errors. During the import process, ThoughtSpot removes the part of the object that contains errors, and allows you to import the rest of the object. For more information,
 ifndef::pendo-links[]
@@ -99,48 +110,87 @@ endif::[]
 
 image::tml-import-partial.png[TML import improvements image]
 
-[#8-6-0-cl-python]
-*Python 3.9 upgrade*
+[#tags]
+[discrete]
+=== Edit tags from the Data workspace
+You can now edit tags for tables, worksheets, views, and SQL views from the Data workspace home page. Simply click on the checkbox next to any object in the Data workspace object list, and select *Edit tags*. For more information,
+ifndef::pendo-links[]
+see xref:tags.adoc#data-workspace[Use tags to organize].
+endif::[]
+ifdef::pendo-links[]
+see xref:tags.adoc#data-workspace[Use tags to organize,window=_blank].
+endif::[]
 
-// Teresa -- waiting for info
-
-[#8-6-0-cl-snowflake-csv]
-*Upload Snowflake CSV*
-
-// Mark
+image::edit-tags-data-workspace.gif[Data worksapce edit tags gif]
 
 [#8-6-0-cl-denodo]
-*Connect to Denodo*
+[discrete]
+=== Connections
 
-// Mark
+- Denodo is a new connection type.
+ifndef::pendo-links[]
+See xref:connections-denodo.adoc[Denodo].
+endif::[]
+ifdef::pendo-links[]
+See xref:connections-denodo.adoc[Denodo,window=_blank].
+endif::[]
 
+////
+waiting for confirmation, but looks like this will not be in 8.6
 [#8-6-0-cl-delete-relationship]
 *Delete relationships that have dependents*
 
-// Teresa
-
-[#8-6-0-cl-okta-admin]
-*Okta authentication*
-
-In this release, ThoughtSpot switched to a new, industry-standard cloud authentication method through Okta. This switch involves several external improvements to authentication:
-
-* Ability to map IDP attributes for SAML authentication from the ThoughtSpot Admin Console (username, email, and display name). For more information,
+You can now delete a join from the ThoughtSpot UI even if the join has dependents. Previously, you had to delete any objects dependent on the join before you could delete the join itself. This change allows you to delete a join and create it again in the other direction, without invalidating or deleting any dependent objects. For more information,
 ifndef::pendo-links[]
-see xref:authentication-integration.adoc[Managing authentication with SAML].
+see xref:relationship-delete.adoc[Delete a relationship].
 endif::[]
 ifdef::pendo-links[]
-see xref:authentication-integration.adoc[Managing authentication with SAML,window=_blank].
+see xref:relationship-delete.adoc[Delete a relationship,window=_blank].
 endif::[]
-* Account activation monitoring from the Users section of the Admin Console: if a user still needs to activate their account, administrators can see that information in the Users section and re-send their activation email. For more information,
+
+image::join-deletion-gif.gif[Join deletion gif]
+
+////
+
+[#8-6-0-cl-dbt-integration]
+[discrete]
+=== dbt integration enhancements
+
+This release includes the following improvements to the dbt integration:
+
+* Integration with dbt for Databricks connections
+* Import of multiple folders at a time
+* Import of a single table within a folder
+* Support for joins across multiple folders
+
+For more information,
 ifndef::pendo-links[]
-see xref:user-management.adoc[Create, edit, or delete a  user].
+see xref:dbt-integration.adoc[Integrate with dbt].
 endif::[]
 ifdef::pendo-links[]
-see xref:user-management.adoc[Create, edit, or delete a  user,window=_blank].
+see xref:dbt-integration.adoc[Integrate with dbt,window=_blank].
 endif::[]
 
-// add image
+ifndef::free-trial-feature[]
+[#8-6-0-cl-private-link]
+[discrete]
+=== PrivateLink support
 
-*ThoughtSpot Everywhere*
+ThoughtSpot now supports AWS PrivateLink for Denodo connections. ThoughtSpot encrypts all your data by default. For an additional layer of security and network reliability, you can use an AWS PrivateLink.
+For more information,
+ifndef::pendo-links[]
+see xref:connections-denodo-private-link.adoc[Enabling an AWS PrivateLink between ThoughtSpot Cloud and your Denodo data warehouse].
+endif::[]
+ifdef::pendo-links[]
+see xref:connections-denodo-private-link.adoc[Enabling an AWS PrivateLink between ThoughtSpot Cloud and your Denodo data warehouse,window=_blank].
+endif::[]
+endif::[]
+
+// image
+
+ifndef::free-trial-feature[]
+[discrete]
+=== ThoughtSpot Everywhere
 
 For new features and enhancements introduced in this release of ThoughtSpot Everywhere, see https://developers.thoughtspot.com/docs/?pageid=whats-new[ThoughtSpot Developer Documentation^].
+endif::[]

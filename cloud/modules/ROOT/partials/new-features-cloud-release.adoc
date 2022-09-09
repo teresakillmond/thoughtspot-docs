@@ -1,72 +1,86 @@
 The latest release of ThoughtSpot Cloud contains several new and enhanced features.
 
-* <<8-6-0-cl-first,For the First User>>
-* <<8-6-0-cl-analyst,For the Analyst>>
-* <<8-6-0-cl-business-user,For the Business User>>
-* <<8-6-0-cl-data-engineer,For the Data Engineer>>
-* <<8-6-0-cl-it-ops-engineer,For the IT Ops Engineer>>
-* <<8-6-0-cl-developer,For the Developer>>
+* <<8-8-0-cl-first,For the First User>>
+* <<8-8-0-cl-analyst,For the Analyst>>
+* <<8-8-0-cl-business-user,For the Business User>>
+* <<8-8-0-cl-data-engineer,For the Data Engineer>>
+* <<8-8-0-cl-it-ops-engineer,For the IT Ops Engineer>>
+* <<8-8-0-cl-developer,For the Developer>>
 
-[#8-6-0-cl-first]
+[#8-8-0-cl-first]
 === For the First User
 
 Getting started with ThoughtSpot Cloud::
 The first user on the account has to complete a series of steps before other people can start using ThoughtSpot with your organization's data.
 For these instructions, see xref:ts-cloud-getting-started.adoc[Getting Started with ThoughtSpot Cloud].
 
-[#8-6-0-cl-analyst]
+[#8-8-0-cl-analyst]
 === For the Analyst
 
-New Liveboard experience::
-The xref:liveboard-experience-new.adoc[new Liveboard experience] is now GA and on by default. It contains multiple new features and feature enhancements.
-It is part of ThoughtSpot's move to a new stack.
-To learn how to manage its enablement, refer to xref:liveboard-experience-new.adoc[].
+Custom visualization sizes for Liveboards::
+This release introduces custom tile sizes for visualizations within Liveboards. In addition to the 5 predetermined visualization sizes, you can now customize your Liveboard visualizations to be any size. See xref:liveboard-layout-edit.adoc#size[Edit the layout of a Liveboard].
+
+Formula function search bar::
+The formula editor assistant now contains a search bar for formula functions. Use it to search for specific functions to include in your formula. Refer to xref:formula-add.adoc[].
+
+year_name function::
+The new `year_name` formula function returns the year in string format for a given date. This improves the behavior of formulas involving years when using a custom calendar with year values that are not in integer format. Refer to xref:formula-reference.adoc#year_name[Formula function reference].
+
+Headline summaries for discontinuous group aggregate formulas::
+We changed the default behavior for table aggregation summaries when the search contains a formulas that contain both a conditional clause (`if... then... else`) and a group_aggregate expression. When a user searches with a formula containing both a conditional clause and a group_aggregate expression, then ThoughtSpot detects the aggregation type on the first non-constant output clause and uses it in the headline summary. In this context, a non-constant output clause means any fixed value (number or string).
 +
-The new Liveboard experience contains the following new features:
+For example, in the formula `group_aggregate(sum(if (Color = 'blue') then 0 else group_unique_count(Discount)))`, the headline summary would use `COUNT_DISTINCT`, since the first non-constant output column within the `if... then... else` clause is `group_unique_count` and has an aggregation type of `COUNT_DISTINCT`.
 
-include::partial$new-liveboard-experience-features.adoc[]
-
-include::partial$new-liveboard-experience-deprecations.adoc[]
-
-TML import improvements::
-You can now import xref:tml.adoc[TML] files that contain certain errors. During the import process, ThoughtSpot removes the part of the object that contains errors, and allows you to import the rest of the object. These errors include the following:
-+
---
-* Some Liveboard visualizations contain errors, but the overall Liveboard is valid: ThoughtSpot removes the visualizations that contain errors and imports the Liveboard.
-* Some Liveboard filters contain errors, but the overall Liveboard is valid: ThoughtSpot removes the filters that contain errors and imports the Liveboard.
-* Destination tables for some joins in a table do not exist, but the overall table is valid: ThoughtSpot removes the joins that do not have destination tables and imports the table.
---
-+
-Refer to xref:scriptability.adoc#migrate-object[Migrate an object].
-
-[#spotapps-8-6]
+[#spotapps-8-9]
 SpotApps::
 
 The following SpotApps are now available:
 * xref:spotapps-salesforce.adoc[Salesforce Pipeline Analysis]
+* xref:spotapps-facebook.adoc[Facebook Ads]
 
-[#8-6-0-cl-business-user]
+[#8-8-0-cl-business-user]
 === For the Business User
 
-[#8-6-0-cl-data-engineer]
+Apply tags from the Home page::
+You can now apply and edit tags on Liveboards and answers directly from the Home page, as well as from the *Answers* and *Liveboards* tabs. To try it out, select the checkbox next to the name(s) of the answer(s) or Liveboard(s) you would like to tag and click the *Apply tags* button that appears. For more information, see xref:thoughtspot-one-homepage.adoc#object-tag[Home page].
+
+Show underlying data improvements::
+We have made the following improvements to the *Show underlying data* feature:
+
+* When you right-click on a table and select *Show underlying data*, ThoughtSpot displays only the visualized columns.
+* You can now open the *Show underlying data* pop-up and click *Edit columns* to add or remove columns from your query.
+* When you open the *Edit columns* pop-up, you can now search for column names using the search bar.
+* The *Show underlying data* pop-up no longer disables columns by default. To disable columns from your query, click *Edit columns* and deselect the column name(s).
+
+Improvements to German keywords::
+This release improves the translated German keywords. See xref:keywords-de-DE.adoc[].
+
+[#8-8-0-cl-data-engineer]
 === For the Data Engineer
 
-[#8-6-0-cl-it-ops-engineer]
-=== For the IT Ops Engineer
-
-[#okta]
-Okta authentication::
-
-Okta authentication is now GA and on by default. In this release, ThoughtSpot switched to a new, industry-standard cloud authentication method through Okta. ThoughtSpot now powers its internal authentication with Okta, which is the industry-leading authentication platform. This change is internal and has no impact on customers. After we enable this feature by default, all user authentication will automatically use the internal Okta service.
+[#join-deletion]
+Delete joins that have dependents::
+You can now delete a join from the ThoughtSpot UI even if the join has dependents. Deleting the join does not delete the dependents. This allows you to delete a join and create it again in the other direction, without invalidating or deleting any dependent objects.
 +
-This switch involves several external improvements to authentication, including security enhancements:
+Refer to xref:relationship-delete.adoc[].
 
-* Ability to map IDP attributes from the ThoughtSpot Admin Console (username, email, and display name).
-* Account activation monitoring from the Users section of the Admin Console: if a user still needs to activate their account, administrators can see that information in the Users section and re-send their activation email.
-* Only Okta interacts with your IDP. Your ThoughtSpot cluster does not directly interact with your IDP.
-* Local users create their own password during activation. Administrators do not create the password prior to activation.
+[#8-8-0-cl-it-ops-engineer]
+=== For the IT/Ops Engineer
 
-[#8-6-0-cl-developer]
+////
+(draft)
+[#ts-eula-v2]
+License agreement::
+We made the following changes to the ThoughtSpot license agreement signing process:
+
+* First-time admin users see a checkbox to agree to ThoughtSpot's terms and conditions upon login.
+* Admin users on updated clusters see a banner to sign ThoughtSpot's terms and conditions within 30 days. You can click *Accept* on the banner, or from *Admin > Legal*. Note that users without admin permissions see a banner reminding them of the remaining days until an admin agrees to ThoughtSpot's end-user license agreement.
+* If an admin user does not accept the ThoughtSpot terms and conditions within a 30-day period, cluster access is suspended for all users.
+
+For more information, see link:https://www.thoughtspot.com/legal/thoughtspot-cloud-subscription-agreement[ThoughtSpot Cloud Subscription Agreement].
+////
+
+[#8-8-0-cl-developer]
 === For the Developer
 
 ThoughtSpot Everywhere:: For information about the new features and enhancements introduced in this release, refer to https://developers.thoughtspot.com/docs/?pageid=whats-new[ThoughtSpot Developer Documentation^].

@@ -1,42 +1,68 @@
+ifndef::pendo-links[]
 [label label-dep]#8.5.0.cl# July 2022
+endif::[]
+ifdef::pendo-links[]
+[label label-dep-whats-new]#8.5.0.cl#
+[month-year-whats-new]#July 2022#
+endif::[]
 
-NOTE: Features designated as [.badge.badge-update]#Beta# are off by default. To enable them, contact {support-url}.
-
+ifndef::pendo-links[]
+NOTE: Features marked as [.badge.badge-update]#Beta# are off by default. To enable them, contact {support-url}.
+endif::[]
+ifndef::free-trial-feature[]
+ifdef::pendo-links[]
+NOTE: Features marked as [.badge.badge-update-whats-new]#Beta# are off by default. To enable them, contact {support-url}.
+endif::[]
+endif::free-trial-feature[]
 [#primary-8-5-0-cl]
 
+////
 [#8-5-0-cl-threshold-alerts]
 *Threshold-based alerts for KPI charts [.badge.badge-update]#Beta#*
 
 // Naomi
 
-You can now use the Monitor feature to receive alerts when your KPI satisfies a given threshold condition. For example, create a condition to receive an alert when your Sales KPI becomes `greater than 200,000`, or when your KPI for Sales weekly `increases by 2%`. For more information,
-ifndef::pendo-links[]
-see xref:monitor.adoc#threshold-based-alert[Create a threshold-based alert].
-endif::[]
-ifdef::pendo-links[]
-see xref:monitor.adoc#threshold-based-alert[Create a threshold-based alert,window=_blank].
-endif::[]
-
-This feature is in beta and off by default. To enable threshold-based alerts, contact {support-url}.
+You can now use the Monitor feature to receive alerts when your KPI satisfies a given threshold condition. For example, create a condition to receive an alert when your Sales KPI becomes `greater than 200,000`, or when your KPI for Sales weekly `increases by 2%`.
+// For more information,
+// ifndef::pendo-links[]
+// see xref:monitor.adoc#threshold-based-alert[Create a threshold-based alert].
+// endif::[]
+// ifdef::pendo-links[]
+// see xref:monitor.adoc#threshold-based-alert[Create a threshold-based alert,window=_blank].
+// endif::[]
 
 image::monitor-threshold-alerts.gif[Threshold-based alerts]
-
-
+////
+ifndef::free-trial-feature[]
 [#8-5-0-cl-make-content-discoverable]
-*Public answers and Liveboards [.badge.badge-update]#Beta#*
+ifndef::pendo-links[]
+[discrete]
+=== Discoverable answers and Liveboards [.badge.badge-update]#Beta#
+endif::[]
+ifdef::pendo-links[]
+[discrete]
+=== Public answers and Liveboards [.badge.badge-update-whats-new]#Beta#
+endif::[]
 
 //Naomi
 
-You can now make content easily available to your team members when you save or share an answer or Liveboard. Use the *Make content discoverable* checkbox that appears when you save or share an answer or Liveboard to grant _view_ access to your teammates. Any user who has access to underlying data source (worksheet, table, view) and is part of the same user group as the author of the content, will be able to  discover and access the answer in *Search Answers*. +
+You can now make content easily available to your team members when you save or share an answer or Liveboard. Use the *Make this [answer | Liveboard] discoverable* checkbox that appears when you save or share an answer or Liveboard to grant _view_ access to your teammates. Any user who has access to the underlying data source (worksheet, table, view) and is part of the same user group as the author of the content, will be able to  discover and access the answer or Liveboard in *Search Answers*. +
 Select this checkbox to publish your content in the list of relevant results when a teammate uses the *Search Answers* feature, or de-select to keep your content private.
 
 image:answer-discoverable.png[]
+endif::[]
 
+// [#8-5-0-cl-okta-business-user]
+// *Okta business user features*
+
+// Roza
 
 [#8-5-0-cl-formatting]
-*Table formatting for downloaded tables*
+[discrete]
+=== Table formatting for downloaded tables
 
-When you download a table in `XLSX` format, the downloaded table now shows the same column width and date formatting as the table in ThoughtSpot. For more information,
+When you download a table in `XLSX` format, the downloaded table now shows the same column width and date formatting as the table in ThoughtSpot.
+For more information,
 ifndef::pendo-links[]
 see xref:search-download.adoc#table-formatting[Download your search].
 endif::[]
@@ -46,30 +72,36 @@ endif::[]
 
 image::xlsx-download-85.png[XLSX download image]
 
-//[#8-5-0-cl-okta-business-user]
-//*Okta business user features*
+ifndef::free-trial-feature[]
+ifdef::pendo-links[]
+[discrete]
+=== Discoverable Liveboard edit button [.badge.badge-update-whats-new]#Beta#
+endif::[]
+ifndef::pendo-links[]
+[discrete]
+=== Discoverable Liveboard edit button [.badge.badge-update]#Beta#
+endif::[]
+The *Edit* button for Liveboards in the xref:liveboard-experience-new.adoc[new Liveboard experience] is now more discoverable. We moved it out of the more menu image:icon-more-10px.png[more menu icon] and into the main Liveboard menu. It is now at the top right of the Liveboard.
+For more information,
+ifndef::pendo-links[]
+see xref:liveboard-experience-new.adoc[New Liveboard experience].
+endif::[]
+ifdef::pendo-links[]
+see xref:liveboard-experience-new.adoc[New Liveboard experience,window=_blank].
+endif::[]
 
-// Teresa -- waiting for info
+image::liveboard-v2-edit-button.png[New Liveboard experience edit button]
+
+endif::[]
 
 '''
 [#secondary-8-5-0-cl]
-*_Other features and enhancements_*
-
-[#8-5-0-cl-data-workspace]
-*Data Workspace*
-
-The new Data Workspace is now GA and on by default. It redesigns the *Data* section of the product. To access it, select *Data* from the top navigation bar. The redesign introduces several new features, such as SQL-based views, dbt integration, and SpotApps, and makes the UI more intuitive. For more information,
-ifndef::pendo-links[]
-see xref:data-workspace.adoc[Data Workspace].
-endif::[]
-ifdef::pendo-links[]
-see xref:data-workspace.adoc[Data Workspace,window=_blank].
-endif::[]
-
-image::data-workspace.gif[Data workspace gif]
+[discrete]
+=== _Other features and enhancements_
 
 [#8-5-0-cl-spotapps]
-*SpotApps*
+[discrete]
+=== SpotApps
 
 SpotApps are now GA and on by default. SpotApps are ThoughtSpot’s new out-of-the-box solution templates built for specific use cases and data sources. They are built on ThoughtSpot Modeling Language (TML) Blocks, which are pre-built pieces of code that are easy to download and implement directly from the product.
 
@@ -100,10 +132,27 @@ ifdef::pendo-links[]
 see xref:spotapps.adoc[SpotApps,window=_blank].
 endif::[]
 
-[#8-5-0-cl-dbt]
-*Integration with dbt*
+[#8-5-0-cl-data-workspace]
+[discrete]
+=== Data Workspace
 
-The dbt integration is now GA and on by default. With the new dbt integration, you provide your existing dbt models and ThoughtSpot automatically creates worksheets you can use to query your data. Integration with dbt is certified only for Snowflake connections. To try it out, navigate to the *Data* tab, and select *Utilities*. Select *dbt Integration*. For more information,
+The new Data Workspace is now GA and on by default. It redesigns the *Data* section of the product. To access it, select *Data* from the top navigation bar. The redesign introduces several new features, such as SQL-based views, dbt integration, and SpotApps, and makes the UI more intuitive.
+For more information,
+ifndef::pendo-links[]
+see xref:data-workspace.adoc[Data Workspace].
+endif::[]
+ifdef::pendo-links[]
+see xref:data-workspace.adoc[Data Workspace,window=_blank].
+endif::[]
+
+image::data-workspace.gif[Data workspace gif]
+
+[#8-5-0-cl-dbt]
+[discrete]
+=== Integration with dbt
+
+The dbt integration is now GA and on by default. With the new dbt integration, you provide your existing dbt models and ThoughtSpot automatically creates worksheets you can use to query your data. Integration with dbt is certified only for Snowflake connections. To try it out, navigate to the *Data* tab, and select *Utilities*. Select *dbt Integration*.
+For more information,
 ifndef::pendo-links[]
 see xref:dbt-integration.adoc[dbt integration].
 endif::[]
@@ -114,9 +163,11 @@ endif::[]
 image::dbt-integration.gif[dbt integration gif]
 
 [#8-5-0-cl-sql-views]
-*SQL views*
+[discrete]
+=== SQL views
 
-SQL-based views are now GA and on by default. You can now create a view based on a custom SQL query, and use that view as a data source. To try it out, select *Data* from the top navigation bar. Then select *+ Create new > Custom SQL View*. For more information,
+SQL-based views are now GA and on by default. You can now create a view based on a custom SQL query, and use that view as a data source. To try it out, select *Data* from the top navigation bar. Then select *+ Create new > Custom SQL View*.
+For more information,
 ifndef::pendo-links[]
 see xref:sql-views.adoc[SQL views].
 endif::[]
@@ -127,14 +178,17 @@ endif::[]
 image::sql-view.gif[SQL view gif]
 
 [#8-5-0-cl-session-level-date]
-*Improved usage-based ranking for date columns in Search*
+[discrete]
+=== Session-level ranking of date columns in Search
 
-To help you construct answers based on the most relevant time data, ThoughtSpot now supports session-level ranking of Date columns in Search. For example, when you add a date column such as `promotion date` to your Search, then the `promotion date` column rises to the top of Search completion suggestions for the duration of your session. Any time keywords you add to your search, such as `monthly`, will automatically filter based on the `promotion date` keyword, rather than `sale date`, or other possibilities.
+ThoughtSpot now supports session-level ranking of Date columns in Search. For example, when you add a date column such as `promotion date` to your Search, then the `promotion date` column rises to the top of Search completion suggestions for the duration of your session.
 
 [#8-5-0-cl-databricks]
-*Databricks Partner Connect*
+[discrete]
+=== Databricks Partner Connect
 
-Databricks Partner Connect allows you to try out ThoughtSpot connected to Databricks for free. For details,
+Databricks Partner Connect allows you to try out ThoughtSpot connected to Databricks for free.
+For details,
 ifndef::pendo-links[]
 see xref:connections-databricks-partner.adoc[ThoughtSpot in Databricks Partner Connect].
 endif::[]
@@ -142,10 +196,13 @@ ifdef::pendo-links[]
 see xref:connections-databricks-partner.adoc[ThoughtSpot in Databricks Partner Connect,window=_blank].
 endif::[]
 
+ifndef::free-trial-feature[]
 [#8-5-0-cl-okta-oauth]
-*Snowflake Okta OAuth*
+[discrete]
+=== Snowflake Okta OAuth
 
-You can now use Okta as your authorization server for external OAuth. For details,
+You can now use Okta as your authorization server for external OAuth.
+For details,
 ifndef::pendo-links[]
 see xref:connections-snowflake-okta-oauth.adoc[Configure Okta OAuth for a Snowflake connection].
 endif::[]
@@ -154,7 +211,8 @@ see xref:connections-snowflake-okta-oauth.adoc[Configure Okta OAuth for a Snowfl
 endif::[]
 
 [#8-5-0-cl-starburst-oauth]
-*Starburst OAuth*
+[discrete]
+=== Starburst OAuth
 
 Starburst connections now support OAuth.
 ifndef::pendo-links[]
@@ -164,11 +222,25 @@ ifdef::pendo-links[]
 For details, see xref:connections-starburst-oauth.adoc[Configure OAuth for a Starburst connection,window=_blank].
 endif::[]
 
+[#8-5-0-cl-external-tables]
+[discrete]
+=== Query external tables
+ThoughtSpot now supports querying external tables in data stores, after you create these tables in your Amazon Redshift, Google BigQuery, or Snowflake environments.
+For more information,
+ifndef::pendo-links[]
+see xref:connections-external-tables-intro.adoc[Query external tables from your connection].
+endif::[]
+ifdef::pendo-links[]
+see xref:connections-external-tables-intro.adoc[Query external tables from your connection,window=_blank].
+endif::[]
+
 [#8-5-0-cl-private-link]
-*PrivateLink support*
+[discrete]
+=== PrivateLink support
 
 ThoughtSpot now supports AWS PrivateLink for several new data warehouse connections. ThoughtSpot encrypts all your data by default. For an additional layer of security and network reliability, you can use an AWS PrivateLink.
-This option is now available for the following new data warehouse connections: Databricks, Dremio, Oracle, SAP HANA, Starburst, and Teradata. For more information,
+This option is now available for the following new data warehouse connections: Databricks, Dremio, Oracle, SAP HANA, Starburst, and Teradata.
+For more information,
 ifndef::pendo-links[]
 see xref:connections-private-link-intro.adoc[Enabling an AWS PrivateLink between ThoughtSpot Cloud and your cloud data warehouse].
 endif::[]
@@ -176,11 +248,31 @@ ifdef::pendo-links[]
 see xref:connections-private-link-intro.adoc[Enabling an AWS PrivateLink between ThoughtSpot Cloud and your cloud data warehouse,window=_blank].
 endif::[]
 
-//[#8-5-0-cl-okta-admin]
-//*Okta admin features*
+// [#8-5-0-cl-okta-admin]
+// *Okta admin features*
 
-// Teresa -- waiting for info
+// Roza
+endif::[]
 
-*ThoughtSpot Everywhere*
+ifndef::free-trial-feature[]
+[#oidc-group-sync]
+[discrete]
+=== OpenID Connect Group Sync
+
+ThoughtSpot now supports OpenID Connect (OIDC) Group Sync.
+
+To configure OIDC, refer to
+ifndef::pendo-links[]
+xref:oidc-configure.adoc[OpenID Connect authentication].
+endif::[]
+ifdef::pendo-links[]
+xref:oidc-configure.adoc[OpenID Connect authentication,window=_blank].
+endif::[]
+endif::[]
+
+ifndef::free-trial-feature[]
+[discrete]
+=== ThoughtSpot Everywhere
 
 For new features and enhancements introduced in this release of ThoughtSpot Everywhere, see https://developers.thoughtspot.com/docs/?pageid=whats-new[ThoughtSpot Developer Documentation^].
+endif::[]
