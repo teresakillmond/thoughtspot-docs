@@ -13,9 +13,9 @@ include::partial$spotapps-intro.adoc[]
 
 //image::spotapp-salesforce-liveboard.png[Salesforce SpotApp Liveboard]
 
-Use the {spotapp} to view and analyze data about your past, current, and forecasted sales pipelines and deals.
+Use the {spotapp} to view and analyze data about your total deals closed and booked for each quarter, the deals in your pipelines, and the creators of your pipelines.
 
-// needs review by marketing
+// needs review by marketing and/ or the new use case that michael is supposed to create the week of 9/12.
 
 [#prerequisites]
 == Prerequisites
@@ -30,6 +30,7 @@ include::partial$spotapp-prereqs-general.adoc[]
 ** OPPORTUNITY_HISTORY (table)
 ** OPPORTUNITY_STAGE (table)
 ** USER (table)
+** CURRENCY_TYPE (table)
 ** Salesforce (worksheet)
 * Run the required SQL commands in your cloud data warehouse. Refer to <<sql,Run SQL commands>>.
 
@@ -68,6 +69,8 @@ The following table describes the schema for the {spotapp}.
 | ACCOUNT| ANNUAL_REVENUE| INT64| N
 | ACCOUNT| NUMBER_OF_EMPLOYEES| INT64| N
 | ACCOUNT| REGION| VARCHAR| N
+| CURRENCY_TYPE | ISO_CODE | VARCHAR | Y
+| CURRENCY_TYPE | CONVERSION_RATE | DOUBLE | Y
 | OPPORTUNITY| STAGE_NAME| VARCHAR| Y
 | OPPORTUNITY| ACCOUNT_ID| VARCHAR| Y
 | OPPORTUNITY| NAME| VARCHAR| Y
