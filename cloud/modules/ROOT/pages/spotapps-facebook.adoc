@@ -1,0 +1,63 @@
+= {spotapp}
+:last_updated: 9/9/2022
+:experimental:
+:linkattrs:
+:page-layout: default-cloud
+:description: Deploy the {spotapp}, an out-of-the-box solution template built specifically for {application}.
+:spotapp: Facebook Ads SpotApp
+:application: Facebook
+
+include::partial$spotapps-intro.adoc[]
+
+//This is a sample Liveboard, created after you deploy the {spotapp}: (waiting for image)
+
+//image::spotapp-salesforce-liveboard.png[Facebook SpotApp Liveboard]
+
+Use the {spotapp} to get invaluable insight into the performance of your Facebook ads, from high-level usage to individual clicks.
+
+// needs review by marketing and/ or the new use case that michael is supposed to create the week of 9/12.
+
+[#prerequisites]
+== Prerequisites
+Before you can deploy the {spotapp}, you must complete the following prerequisites:
+
+include::partial$spotapp-prereqs-general.adoc[]
+
+* Administrator access to {application}
+* Access to the following {application} tables and worksheets in your cloud data warehouse. Refer to <<schema,{spotapp} schema>> for more details.
+** FBADS_CAMPAIGN
+** FBADS_AD
+** FBADS_AGE_GENDER
+** FBADS_CONVERSION
+** FBADS_GEO
+** FBADS_VIDEO
+//there may not be any required sql commands
+* Run the required SQL commands in your cloud data warehouse. Refer to <<sql,Run SQL commands>>.
+
+//there may not be any required sql commands
+[#sql]
+=== Run SQL commands
+Run the following SQL commands on your cloud data warehouse instance. The commands create 5 views in your cloud data warehouse schema. Create the views in one common database. Replace any parts of the script that say `database_name` with your specific database name, and replace `schema_name` with your specific schema name.
+
+NOTE: The following SQL example is for the Snowflake cloud data warehouse. You may need to modify the code for the SQL requirements of your specific cloud data warehouse.
+
+SQL commands:
+[%collapsible]
+.Click on the dropdown to view the SQL commands.
+====
+--
+include::partial$facebook-sql-script.adoc[]
+--
+====
+
+include::partial$spotapp-deploy-individual.adoc[]
+
+== {spotapp} schema
+
+The following table describes the schema for the {spotapp}.
+
+[#schema]
+|===
+| Table |Column | Column type | Required column
+
+|===
