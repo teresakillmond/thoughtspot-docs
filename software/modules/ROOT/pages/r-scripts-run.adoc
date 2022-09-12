@@ -4,38 +4,43 @@
 :experimental:
 :page-aliases: /end-user/r-scripts/run-prebuilt-r-scripts.adoc
 
-Anyone with R privileges can run an R analysis [.label.label-dep]#Deprecated 8.4.0.sw [LA]# in ThoughtSpot using provided scripts, you don't need to be an expert.
+Anyone with R privileges can run an R analysis in ThoughtSpot using provided scripts. You don't need to be an expert.
 
 If you have R privileges on your ThoughtSpot instance, you can run R analyses on search results, and save and share the resulting visualization with others.
 The users you share visualizations with do not need R privileges.
 
-== Run an R analysis
+TIP: We support R only in Falcon deployments (data imported into ThoughtSpot), and R integration is disabled by default. It is not available when creating xref:connections.adoc[connections] and linking to external databases in real time.
+
+== Run an R analysis using a pre-built script
 
 . Click the *R* icon image:r-icon-inline-2.png[R icon] on the toolbar for any search result (answer).
 +
 image::r-icon-marketspot.png[]
 +
-From here, you have options to write a custom script, or load a pre-built or ThoughtSpot provided script.
+From here, you can write a custom script, or load a pre-built or ThoughtSpot-provided script.
 
-. In the Analyze dialog, click the *more options* icon image:icon-more-10px.png[more options menu icon] next to the *Custom R Script* panel, and choose *Load*.
+. Click the *Load script template* icon in the R analysis panel, next to the *Custom R Script* panel.
 +
-image::r-load-prebuilt.png[]
+image::r-script-load-prebuilt-v2.png[]
 +
-This brings up a list of pre-built scripts, both provided by ThoughtSpot and any created by programmers on your team.
+This brings up a list of pre-built scripts, including the scripts provided by ThoughtSpot and any scripts created by programmers on your team.
 
-. Select a script, then choose the columns you want to include in the analysis and the output file type (PNG or CSV).
+. Select a script.
+
+. Choose the columns you want to include in the analysis.
 +
-Note that the output file type must match the script.
-+
-For example, if you select one of the ThoughtSpot provided time series  scripts, the comment at the top of the script provides guidance on what  columns to select.
+For example, if you select one of the ThoughtSpot-provided time series scripts, the comment at the top of the script provides guidance on what  columns to select:
 +
 ----
  # NOTE: Only two columns are needed for this analysis.
  # The first column should represent some date column
  # and the second should be some numeric measure column.
 ----
+
+. Choose the output file type (PNG or CSV).
 +
-Also, scroll through the script to identify whether it's coded to produce  graphical (PNG) or tabular (CSV) output.
+Note that the output file type must match the script.
+To ensure this, scroll through the script to identify whether it is coded to produce graphical (PNG) or tabular (CSV) output.
 The time series scripts are both set up  to produce graphical output, as indicated by a line like this at the end of the  scripts.
 +
 ----
@@ -45,6 +50,8 @@ The time series scripts are both set up  to produce graphical output, as indicat
 
 . Select *Run Analysis* to execute the script.
 
+////
+can't get examples to work. might fully remove later
 == Time Series Outlier Example
 
 In this example, we ran an analysis for *Time Series Outlier Detection* on search results that show sales totals by date.
@@ -61,12 +68,11 @@ In this case, no outliers were found, so the R visualization matches the origina
 In this example, we ran a *Time Series Forecast* on the same search result.
 
 image::r-run-time-forecast-script.png[]
+////
 
 == Diverging Bars Example
 
 Here is an example of taking a script found online and repurposing it for a use case in ThoughtSpot.
-Antony Chen demo'ed this in a SpotOn webinar.
-You can find his full presentation on Custom R Scripts and demo at https://community.thoughtspot.com/t/m2dftj[SpotOn Learning: ThoughtSpot 5.0 BI and Data Science Features] in the Community.
 
 Consider this script, found on this website of http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html[Top 50 ggplot2 Visualizations - The Master List (With Full R Code)^].
 A direct link to this script is http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html#Diverging%20Bars[here^].
@@ -94,9 +100,7 @@ ggplot(mtcars, aes(x=`car name`, y=mpg_z, label=mpg_z)) +
   coord_flip()
 ----
 
-You can modify the script above to support the phone sales use case discussed in the webinar.
-
-In this script, `mtcars` is replaced with references to our phone sales (`df$Sales`) and `car name` is replaced with `Device Name` both from the column data in the search example used in the webinar demo.
+In this script, `mtcars` is replaced with references to our phone sales (`df$Sales`) and `car name` is replaced with `Device Name`.
 The script uses the ThoughtSpot _data frame_ object (`df`), and adds two lines at the end to specify output type as a `png` image.
 
 ----
