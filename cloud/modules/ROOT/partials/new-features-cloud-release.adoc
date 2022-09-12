@@ -17,7 +17,7 @@ For these instructions, see xref:ts-cloud-getting-started.adoc[Getting Started w
 [#8-8-0-cl-analyst]
 === For the Analyst
 
-Custom visualization sizes for Liveboards::
+Custom sizes for visualizations in Liveboards::
 This release introduces custom tile sizes for visualizations within Liveboards. In addition to the 5 predetermined visualization sizes, you can now customize your Liveboard visualizations to be any size. See xref:liveboard-layout-edit.adoc#size[Edit the layout of a Liveboard].
 
 Formula function search bar::
@@ -40,6 +40,13 @@ The following SpotApps are now available:
 
 [#8-8-0-cl-business-user]
 === For the Business User
+
+Explain change for KPI charts::
+You can now use SpotIQ analysis to directly identify the key drivers for recent change in your KPIs. To access this feature, go to your KPI chart and select the caret icon to the right of the percent change label. The *Run change analysis* pop-up allows you to customize the columns ThoughtSpot analyzes. Note that ThoughtSpot runs change analysis between the two most recent data points defined by the KPI’s time bucket (for example, `daily` or `weekly`).
++
+For more information on change analysis,
+see xref:spotiq-comparative.adoc[Comparative analysis].
+
 
 Apply tags from the Home page::
 You can now apply and edit tags on Liveboards and answers directly from the Home page, as well as from the *Answers* and *Liveboards* tabs. To try it out, select the checkbox next to the name(s) of the answer(s) or Liveboard(s) you would like to tag and click the *Apply tags* button that appears. For more information, see xref:thoughtspot-one-homepage.adoc#object-tag[Home page].
@@ -67,18 +74,32 @@ Refer to xref:relationship-delete.adoc[].
 [#8-8-0-cl-it-ops-engineer]
 === For the IT/Ops Engineer
 
-////
-(draft)
+[#okta]
+Identity and Access Management V2::
+
+Identity and Access Management V2 (IAMv2) is now GA. With IAMv2, ThoughtSpot switched to a new, industry-standard cloud authentication method through Okta. ThoughtSpot now powers its internal authentication with Okta, which is the industry-leading authentication platform. This change is internal and has no impact on customers. After we enable this feature by default, all user authentication will automatically use the internal Okta service.
++
+This switch involves several external improvements to authentication, including security enhancements:
++
+--
+* Ability to map IDP attributes from the ThoughtSpot Admin Console (username, email, and display name).
+* Account activation monitoring from the Users section of the Admin Console: if a user still needs to activate their account, administrators can see that information in the Users section and re-send their activation email.
+* Only Okta interacts with your IDP. Your ThoughtSpot cluster does not directly interact with your IDP.
+* Local users create their own password during activation. Administrators do not create the password prior to activation.
+--
++
+For more information, refer to xref:okta-iam.adoc[Identity and Access Management V2].
+
 [#ts-eula-v2]
 License agreement::
 We made the following changes to the ThoughtSpot license agreement signing process:
 
 * First-time admin users see a checkbox to agree to ThoughtSpot's terms and conditions upon login.
-* Admin users on updated clusters see a banner to sign ThoughtSpot's terms and conditions within 30 days. You can click *Accept* on the banner, or from *Admin > Legal*. Note that users without admin permissions see a banner reminding them of the remaining days until an admin agrees to ThoughtSpot's end-user license agreement.
+* Admin users on updated clusters see a banner to sign ThoughtSpot's terms and conditions within 30 days. You can sign the agreement by clicking *Accept* on the banner, or from *Admin > Legal*.
 * If an admin user does not accept the ThoughtSpot terms and conditions within a 30-day period, cluster access is suspended for all users.
 
 For more information, see link:https://www.thoughtspot.com/legal/thoughtspot-cloud-subscription-agreement[ThoughtSpot Cloud Subscription Agreement].
-////
+
 
 [#8-8-0-cl-developer]
 === For the Developer

@@ -19,7 +19,7 @@ endif::free-trial-feature[]
 
 [#8-8-0-cl-custom-tile-sizes]
 [discrete]
-=== Custom visualization sizes for Liveboards
+=== Custom sizes for visualizations in Liveboards
 
 This release introduces custom tile sizes for visualizations within Liveboards. In addition to the 5 predetermined visualization sizes, you can now customize your Liveboard visualizations to be any size.
 For more information,
@@ -71,7 +71,15 @@ endif::[]
 
 // Naomi--  beta in 8.8.
 
-You can now use SpotIQ analysis to directly investigate the main reasons for recent change in your KPIs from your Liveboards. To access this feature, enter the Liveboard containing your KPI and select the caret icon to the right of the percent change label. The *Run change analysis* pop-up allows you to select the columns ThoughtSpot analyzes. Note that ThoughtSpot runs analysis between the two most recent data points defined by the KPI’s time bucket (for example, `daily` or `weekly`).
+You can now use SpotIQ analysis to directly identify the key drivers for recent change in your KPIs. To access this feature, go to your KPI chart and select the caret icon to the right of the percent change label. The *Run change analysis* pop-up allows you to customize the columns ThoughtSpot analyzes. Note that ThoughtSpot runs change analysis between the two most recent data points defined by the KPI’s time bucket (for example, `daily` or `weekly`).
+
+For more information on change analysis,
+ifndef::pendo-links[]
+see xref:spotiq-comparative.adoc[Comparative analysis].
+endif::[]
+ifdef::pendo-links[]
+see xref:spotiq-comparative.adoc[Comparative analysis,window=_blank].
+endif::[]
 
 image::kpi-explain-change.gif[]
 
@@ -164,6 +172,51 @@ endif::[]
 [discrete]
 === _Other features and enhancements_
 
+[#8-8-0-cl-okta]
+ifndef::free-trial-feature[]
+[discrete]
+=== Identity and Access Management V2 GA
+
+Identity and Access Management V2 (IAMv2) is now GA. With IAMv2, ThoughtSpot switches to a new, industry-standard cloud identity and access management method through Okta. This switch involves several external improvements to authentication:
+
+* New local users now create their own password during activation. Administrators do not create the password prior to activation. For more information,
+ifndef::pendo-links[]
+see xref:user-account-activation-okta.adoc[Activate your ThoughtSpot account].
+endif::[]
+ifdef::pendo-links[]
+see xref:user-account-activation-okta.adoc[Activate your ThoughtSpot account,window=_blank].
+endif::[]
++
+image::okta-activate-account.png[Activate new account]
+* Ability to map IDP attributes for SAML authentication from the ThoughtSpot Admin Console (username, email, and display name). For more information,
+ifndef::pendo-links[]
+see xref:authentication-integration.adoc[Managing authentication with SAML].
+endif::[]
+ifdef::pendo-links[]
+see xref:authentication-integration.adoc[Managing authentication with SAML,window=_blank].
+endif::[]
++
+image::saml-idp-attributes.gif[]
+* Account activation monitoring from the Users section of the Admin Console: if a user still needs to activate their account, administrators can see that information in the Users section and re-send their activation email. For more information,
+ifndef::pendo-links[]
+see xref:user-management.adoc[Create, edit, or delete a  user].
+endif::[]
+ifdef::pendo-links[]
+see xref:user-management.adoc[Create, edit, or delete a  user,window=_blank].
+endif::[]
++
+image::user-account-activation-status.gif[Account activation status gif]
+
+For a general overview,
+ifndef::pendo-links[]
+see xref:okta-iam.adoc[Identity and Access Management V2].
+endif::[]
+ifdef::pendo-links[]
+see xref:okta-iam.adoc[Identity and Access Management V2,window=_blank].
+endif::[]
+
+endif::free-trial-feature[]
+
 [#8-8-0-cl-starburst oauth]
 [discrete]
 === Starburst oauth with azure ad as idp
@@ -181,12 +234,6 @@ endif::[]
 === Separate trino connector from starburst
 
 // Mark
-
-[#8-8-0-cl-iam-v2]
-[discrete]
-=== IAM V2 GA
-
-// Teresa -- move to top of other features
 
 [#8-8-0-cl-delete-joins]
 [discrete]
