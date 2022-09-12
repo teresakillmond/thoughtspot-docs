@@ -41,6 +41,22 @@ New answer experience deprecations::
 
 include::partial$new-answer-experience-deprecations.adoc[]
 
+New SpotIQ experience::
+
+The new SpotIQ experience is now GA and on by default. The functionality remains the same, but we reorganized the UI to make it more intuitive. You can manage your individual SpotIQ experience xref:user-profile.adoc#spotiq[from your profile]. Note that the new SpotIQ experience is dependent on the xref:answer-experience-new.adoc[new answer experience]; to use the new SpotIQ experience, you must first enable the new answer experience. For more information, refer to xref:spotiq.adoc[SpotIQ].
+
+New Liveboard experience [.badge.badge-update]#Beta#::
+The xref:liveboard-experience-new.adoc[new Liveboard experience] is now available. It contains multiple new features and feature enhancements.
+It is part of ThoughtSpot's move to a new stack.
+To learn how to enable it, refer to xref:liveboard-experience-new.adoc[].
++
+The new Liveboard experience contains the following features:
++
+include::partial$new-liveboard-experience-features.adoc[]
+
+New Liveboard experience deprecations::
+include::partial$new-liveboard-experience-deprecations.adoc[]
+
 TML import improvements::
 You can now import xref:tml.adoc[TML] files that contain certain errors. During the import process, ThoughtSpot removes the part of the object that contains errors, and allows you to import the rest of the object. These errors include the following:
 +
@@ -59,10 +75,16 @@ year_name function::
 
 The new `year_name` formula function returns the year in string format for a given date. This improves the behavior of formulas involving years when using a custom calendar with year values that are not in integer format. Refer to xref:formula-reference.adoc#year_name[Formula function reference].
 
+Headline summaries for discontinuous group aggregate formulas::
+
+We changed the default behavior for table aggregation summaries when the search contains formulas that contain both a conditional clause (`if... then... else`) and a group_aggregate expression. When a user searches with a formula containing both a conditional clause and a group_aggregate expression, then ThoughtSpot detects the aggregation type on the first non-constant output clause and uses it in the headline summary. In this context, a non-constant output clause means any fixed value (number or string).
++
+For example, in the formula `group_aggregate(sum(if (Color = 'blue') then 0 else group_unique_count(Discount)))`, the headline summary would use `COUNT_DISTINCT`, since the first non-constant output column within the `if... then... else` clause is `group_unique_count` and has an aggregation type of `COUNT_DISTINCT`.
+
 R analysis in the new answer experience::
 This release introduces support for xref:r-thoughtspot.adoc[custom R analysis] in the xref:answer-experience-new.adoc[new answer experience].
 +
-TIP: We support R only in Falcon deployments (data imported into ThoughtSpot), and R integration is disabled by default. It is not available when creating connections and linking to external databases in real time.
+TIP: We support R only in Falcon deployments (data imported into ThoughtSpot), and R integration is disabled by default. It is not available when creating xref:connections.adoc[connections] and linking to external databases in real time.
 
 [#business-user-8-8-0-sw]
 === For the Business User
