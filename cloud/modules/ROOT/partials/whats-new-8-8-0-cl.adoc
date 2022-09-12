@@ -17,6 +17,14 @@ endif::free-trial-feature[]
 
 [#primary-8-8-0-cl]
 
+[#8-8-0-cl-custom-tile-sizes]
+[discrete]
+=== Custom sizes for visualizations in Liveboards
+
+This release introduces custom tile sizes for visualizations within Liveboards. In addition to the 5 predetermined visualization sizes, you can now customize your Liveboard visualizations to be any size.
+
+image::liveboard-tile-sizes-gif.gif[Liveboard tile size change gif]
+
 [#8-8-0-cl-ts-sync-enhancements]
 [discrete]
 === ThoughtSpot schedule sync
@@ -32,9 +40,11 @@ endif::free-trial-feature[]
 
 [#8-8-0-cl-search-formula-editor]
 [discrete]
-=== Filter search in formula editor
+=== Formula function search bar
 
-// Teresa (part of search data fe quality epic)
+The formula editor assistant now contains a search bar for formula functions. Use it to search for specific functions to include in your formula.
+
+image::formula-assistant-search.png[Formula assistant search]
 
 [#8-8-0-cl-tags]
 [discrete]
@@ -58,25 +68,11 @@ image::apply-tags.gif[]
 
 // Naomi
 
-
 [#8-8-0-cl-year-name]
 [discrete]
-=== Formula function year_name
+=== year_name function
 
-// Teresa
-
-[#8-8-0-cl-r-visualizations]
-[discrete]
-=== R visualizations
-
-// Teresa
-
-[#8-8-0-cl-custom-tile-sizes]
-[discrete]
-=== Custom tile sizes for Liveboards
-
-// Teresa
-
+The new `year_name` formula function returns the year in string format for a given date. This improves the behavior of formulas involving years when using a custom calendar with year values that are not in integer format.
 
 [#8-8-0-cl-piecewise-group-aggregate]
 [discrete]
@@ -84,26 +80,34 @@ image::apply-tags.gif[]
 
 // Naomi
 
-// THE FOLLOWING ARE NEEDS EVALUATION
-
-
-
 [#8-8-0-cl-german]
 [discrete]
-=== German keyword improvements
-
-// Teresa -- ask Rakesh if he wants this in the release notes/ what's new
-
-[#8-8-0-cl-liveboard-v2]
-[discrete]
-=== Liveboard v2 enhancements
-
-// Teresa -- some of the tasks in this epic would require doc but the epic itself no longer has an etv
+=== Improvements to German keywords
+This release improves the translated German keywords.
 
 '''
 [#secondary-8-7-0-cl]
 [discrete]
 === _Other features and enhancements_
+
+[#8-8-0-cl-okta]
+ifndef::free-trial-feature[]
+[discrete]
+=== Identity and Access Management V2 GA
+
+Identity and Access Management V2 (IAMv2) is now GA. With IAMv2, ThoughtSpot switches to a new, industry-standard cloud identity and access management method through Okta. This switch involves several external improvements to authentication:
+
+* New local users now create their own password during activation. Administrators do not create the password prior to activation.
++
+image::okta-activate-account.png[Activate new account]
+* Ability to map IDP attributes for SAML authentication from the ThoughtSpot Admin Console (username, email, and display name).
++
+image::saml-idp-attributes.gif[]
+* Account activation monitoring from the Users section of the Admin Console: if a user still needs to activate their account, administrators can see that information in the Users section and re-send their activation email.
++
+image::user-account-activation-status.gif[Account activation status gif]
+
+endif::free-trial-feature[]
 
 [#8-8-0-cl-starburst oauth]
 [discrete]
@@ -123,12 +127,6 @@ image::apply-tags.gif[]
 
 // Mark
 
-[#8-8-0-cl-iam-v2]
-[discrete]
-=== IAM V2 GA
-
-// Teresa
-
 [#8-8-0-cl-delete-joins]
 [discrete]
 === Delete joins that have dependents
@@ -139,9 +137,13 @@ image::join-deletion-gif.gif[Join deletion gif]
 
 [#8-8-0-cl-spotapps]
 [discrete]
-=== New SpotApps
+=== SpotApps
 
-// Teresa -- unclear what spotapps if any will be in 8.8
+The following SpotApps are now available:
+
+* *Facebook Ads:* Use this SpotApp to get invaluable insight into the performance of your Facebook ads, from high-level usage to individual clicks.
+endif::[]
+* *Salesforce Pipeline Analysis:* Use this SpotApp to view and analyze data about your past, current, and forecasted sales pipelines and deals.
 
 [#8-8-0-cl-ipsec-vpn]
 [discrete]
@@ -154,13 +156,6 @@ image::join-deletion-gif.gif[Join deletion gif]
 === Snowflake for session-based consumption pricing
 
 // Mark
-
-
-[#8-8-0-cl-orgs]
-[discrete]
-=== Orgs
-
-// Teresa -- pretty sure we don't want this in the what's new since it's private beta, but I will confirm
 
 ifndef::free-trial-feature[]
 [discrete]
