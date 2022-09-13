@@ -77,7 +77,7 @@ The new `year_name` formula function returns the year in string format for a giv
 
 Headline summaries for discontinuous group aggregate formulas::
 
-We changed the default behavior for table aggregation summaries when the search contains formulas that contain both a conditional clause (`if... then... else`) and a group_aggregate expression. When a user searches with a formula containing both a conditional clause and a group_aggregate expression, then ThoughtSpot detects the aggregation type on the first non-constant output clause and uses it in the headline summary. In this context, a non-constant output clause means any data column or reference of said column.
+We changed the default behavior for table aggregation summaries when the search contains formulas that contain both a conditional clause (`if... then... else`) and a group_aggregate expression. When a user searches with a formula containing both a conditional clause and a group_aggregate expression, then ThoughtSpot detects the aggregation type on the first non-constant output clause and uses it in the headline summary. In this context, a non-constant output column means any data column or reference of said column.
 +
 For example, in the formula `group_aggregate(sum(if (Color = 'blue') then 0 else group_unique_count(Discount)))`, the headline summary would use `COUNT_DISTINCT`, since the first non-constant output column within the `if... then... else` clause is `group_unique_count` and has an aggregation type of `COUNT_DISTINCT`.
 
