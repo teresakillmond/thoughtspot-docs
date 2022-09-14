@@ -253,9 +253,16 @@ image::edit-tags-data-workspace-gif-software.gif[Edit tags from the data worksap
 
 [#8-8-0-sw-denodo]
 [discrete]
-=== Denodo support
+=== Denodo support with OAuth
 
-// Mark
+Denodo is a new connection type, which supports OAuth.
+
+ifndef::pendo-links[]
+See xref:connections-denodo.adoc[Denodo], and xref:connections-denodo-oauth.adoc[Denodo OAuth].
+endif::[]
+ifdef::pendo-links[]
+See xref:connections-denodo.adoc[Denodo,window=_blank], and xref:connections-denodo-oauth.adoc[Denodo OAuth,window=_blank].
+endif::[]
 
 [#8-8-0-sw-starburst-oauth]
 [discrete]
@@ -269,17 +276,16 @@ image::edit-tags-data-workspace-gif-software.gif[Edit tags from the data worksap
 
 // Mark -- can probably be just one note, combined with above?
 
-[#8-8-0-sw-denodo-oauth]
-[discrete]
-=== Denodo oauth
-
-// Mark -- already in 8.7 cl
-
 [#8-8-0-sw-snowflake-oauth]
 [discrete]
 === Snowflake oauth improvements
 
-// Mark -- already in cloud
+This release brings improvements in how ThoughtSpot handles user tokens for Snowflake connections configured with Snowflake OAuth. If a user’s refresh token becomes invalid, the administrator or author of the connection can now run the Invalidate Tokens command to allow the user to re-authenticate and regain access to the insights provided by the connection, and the connection itself. Also, in this release the Role field has been added to the Snowflake OAuth connection details page, allowing a role to be added when the connection is created and changed when a connection is edited.
+See xref:connections-snowflake-edit.adoc#invalidate-tokens[Invalidating refresh tokens of a Snowflake connection].
+endif::[]
+ifdef::pendo-links[]
+See xref:connections-snowflake-edit.adoc#invalidate-tokens[Invalidating refresh tokens of a Snowflake connection,window=_blank].
+endif::[]
 
 [#8-8-0-sw-snowflake-oauth-okta]
 [discrete]
