@@ -9,7 +9,7 @@
 ThoughtSpot supports Microsoft Azure Active Directory (AD) OAuth for a {connection} connection.
 With Azure AD OAuth, the authorization server generates an access token from Azure AD on behalf of the ThoughtSpot user which authenticates them with {connection} and authorizes ThoughtSpot to query the database using their {connection} user account.
 
-NOTE: The steps provided here are an example of how you can configure Azure AD OAuth for external OAuth. You can use any OAuth flow provided that you can get the information required for the security integration. The following steps provide a guide for getting the information required to create the security integration for Snowflake.
+NOTE: The steps provided here are an example of how you can configure Azure AD OAuth for external OAuth. You can use any OAuth flow provided that you can get the information required for the security integration. The following steps provide a guide for getting the information required to create the security integration for {connection}.
 
 IMPORTANT: Be sure to consult your organization's security policies for configuring an authorization server to make sure you meet all requirements.
 
@@ -47,8 +47,8 @@ image::star-expose-api.png[]
 +
 image::star-app-uri-oauth-client2.png[]
 +
-NOTE: If the Application ID URI is not used, you must create a security integration with audiences using the Snowflake Account URL (i.e.
-`<account_identifier>.snowflakecomputing.com)`.
+NOTE: If the Application ID URI is not used, you must create a security integration with audiences using the {connection} Account URL (i.e.
+`<account_identifier>.starburst.com)`.
 +
 IMPORTANT: The Application ID URI must be unique within your organization's directory, such as `\https://your.company.com/4d2a8c2b-a5f4-4b86-93ca-ack45667`.
 
@@ -161,10 +161,10 @@ create security integration external_oauth_azure_2
     external_oauth_type = azure
     external_oauth_issuer = '<AZURE_AD_ISSUER>'
     external_oauth_jws_keys_url = '<AZURE_AD_JWS_KEY_ENDPOINT>'
-    external_oauth_audience_list = ('<SNOWFLAKE_APPLICATION_ID_URI>')
+    external_oauth_audience_list = ('<STARBURST_APPLICATION_ID_URI>')
     external_oauth_token_user_mapping_claim = 'upn'
     external_oauth_any_role_mode = 'ENABLE' (optional)
-    external_oauth_snowflake_user_mapping_attribute = 'login_name';
+    external_oauth_starburst_user_mapping_attribute = 'login_name';
 ----
 
 Example:
@@ -172,7 +172,7 @@ Example:
 image::snow-sec-int-example.png[]
 
 NOTE: When you create the {connection} OAuth Resource Application in Azure AD, if you enter an `Application ID URI` that is not the {connection} Account URL (i.e.
-`<account_identifier>.snowflakecomputing.com`), you must add the `external_oauth_audience_list` parameter to the command with the value `<SNOWFLAKE_APPLICATION_ID_URI>`.
+`<account_identifier>.starburst.com`), you must add the `external_oauth_audience_list` parameter to the command with the value `<STARBURST_APPLICATION_ID_URI>`.
 
 ==== {connection} commands
 
@@ -245,7 +245,7 @@ image:token_det_1.png[]
 +
 image:token_det_2.png[]
 
-. Verify the validity of the generated access token by running this SQL in snowflake:
+. Verify the validity of the generated access token by running this SQL in {connection}:
 +
 [source]
 ----
@@ -297,7 +297,7 @@ image::curl_1.png[]
 ----
 +
 image::curl_2.png[]
-. Verify the validity of the generated access token by running this SQL in snowflake:
+. Verify the validity of the generated access token by running this SQL in {connection}:
 +
 [source]
 ----
