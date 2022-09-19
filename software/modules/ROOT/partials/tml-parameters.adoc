@@ -187,7 +187,7 @@ Default: `SUM`.
 
 [#answer]
 answer::
-  Top-level container for all object definitions within an Answer.
+  Top-level container for all object definitions within an answer.
 
 [#answer_columns]
 answer_columns::
@@ -257,7 +257,7 @@ If the data type is `BOOL`, `VARCHAR`, `DOUBLE`, `FLOAT`, `DATE`, `DATETIME`, or
 
 [#conditional_formatting]
 conditional_formatting::
-  Conditional formatting for the chart or table of an Answer.
+  Conditional formatting for the chart or table of an answer.
 
 [#connection]
 connection::
@@ -389,12 +389,12 @@ Can be `COUNT`, `COUNT_DISTINCT`, `SUM`, `MIN`, `MAX`, `AVERAGE`, or `TABLE_AGGR
 id::
   Specifies the id of an object, such as `table_paths`, `formula`.
 +
-For Answers, `id` refers to how the column appears in the query.
+For answers, `id` refers to how the column appears in the query.
 For example, if you sorted by `Quarter` in your search, from the `Commit Date` column, the `id` of the column is `Quarter(Commit Date)`.
 +
 Refer to link:https://developers.thoughtspot.com/docs/?pageid=search-data-api#components[Components of a Search Query] to understand syntax.
 +
-For formulas within Answers, `id` refers to the display name of the formula.
+For formulas within answers, `id` refers to the display name of the formula.
 +
 If you do not give your formula a name, it appears as 'Untitled Formula'.
 
@@ -518,7 +518,7 @@ joins_with::
 
 [#layout]
 layout::
-  Specifies the Pinboard layout, in the order that a `visualization_id` is listed.
+  Specifies the Liveboard layout, in the order that a `visualization_id` is listed.
 
 [#locked]
 locked::
@@ -538,7 +538,7 @@ name::
   The name of an object.
 Applies to `worksheet`, `table`,`joins`, `formula`, `rls_rules`, `answer`, `pinboard`, `view`,, `sql_view`, `table`, `connection`, `destination`, and so on.
 +
-For Answers, `name` refers to how the column appears in the query.
+For answers, `name` refers to how the column appears in the query.
 For example, if you sorted by `Quarter` in your search, from the `Commit Date` column, the `name` of the column is `Quarter(Commit Date)`.
 Refer to link:https://developers.thoughtspot.com/docs/?pageid=search-data-api#components[Components of a Search Query] to understand syntax.
 
@@ -562,7 +562,7 @@ phrase::
 
 [#pinboard]
 pinboard::
-  Top-level container for all object definitions within the Pinboard or SpotIQ result.
+  Top-level container for all object definitions within the Liveboard or SpotIQ result.
 
 [#properties]
 properties::
@@ -616,7 +616,7 @@ show_headline::
 
 [#size]
 size::
-  The size of a visualization in a Pinboard.
+  The size of a visualization in a Liveboard.
 The options are `EXTRA_SMALL`, `SMALL`, `MEDIUM`, `LARGE`, `LARGE_SMALL`, `MEDIUM_SMALL`, and `EXTRA_LARGE`.
 
 [#source]
@@ -662,7 +662,7 @@ Specific table, used in defining higher-level objects, such as table paths.
 +
 Defined as `name` within `tables` definition.
 +
-For Answers, this parameter contains configuration for the Answer, if it displays in table format.
+For answers, this parameter contains configuration for the answer, if it displays in table format.
 
 [#table_columns]
 table_columns::

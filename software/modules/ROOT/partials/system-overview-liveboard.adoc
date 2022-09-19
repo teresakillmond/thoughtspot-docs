@@ -7,15 +7,15 @@ image::system-info-usage-pinboard-new.png[TS Stats: System Information and Usage
 
 == Understand the TS Stats: System Information and Usage Liveboard
 
-The *TS Stats: System Information and Usage Liveboard* page consists of standard ThoughtSpot Answers that update in real time and rely on internal system data.
-The Answers rely on underlying system worksheets, which are available to ThoughtSpot administrators.
+The *TS Stats: System Information and Usage Liveboard* page consists of standard ThoughtSpot answers that update in real time and rely on internal system data.
+The answers rely on underlying system worksheets, which are available to ThoughtSpot administrators.
 The information in these worksheets updates hourly from internal tables that collect monitoring statistics.
 
-The *more options menu* image:icon-more-10px.png[] for the Answers in this Liveboard contains fewer options than the traditional menu.
-You can *Pin*, *SpotIQ analyze*, *download*, *edit,* or *present* the Answer.
-When you *edit* the Answer, you see the query that ThoughtSpot built the Answer on.
-You can also copy the Answer's embed link, use xref:answer-explorer.adoc[Answer Explorer] on the Answer, or interact with the Answer by xref:search-drill-down.adoc[drilling down].
-While you can interact with and change a copied version of the Answer, you cannot save changes to the underlying query.
+The *more options menu* image:icon-more-10px.png[] for the answers in this Liveboard contains fewer options than the traditional menu.
+You can *Pin*, *SpotIQ analyze*, *download*, *edit,* or *present* the answer.
+When you *edit* the Answer, you see the query that ThoughtSpot built the answer on.
+You can also copy the answer's embed link, use xref:answer-explorer.adoc[Answer Explorer] on the answer, or interact with the answer by xref:search-drill-down.adoc[drilling down].
+While you can interact with and change a copied version of the answer, you cannot save changes to the underlying query.
 
 The following charts, tables, and panels are available on the *TS Stats: System Information and Usage Liveboard*: xref:cluster-summary[cluster summary], xref:critical-alerts[critical alerts], xref:mau[monthly active users], xref:monthly-searches[monthly ad-hoc searches], xref:monthly-pb-views[monthly Liveboard views], xref:top-users[top users last month], xref:top-liveboards[top Liveboards last month], xref:search-users[ad-hoc search by user], xref:users-today[today's users], and xref:configuration-events[configuration events].
 
@@ -130,7 +130,7 @@ It tracks  total used space, which consists of raw uncompressed data, including 
 This chart shows the number of active users in the system over the last four months, and during the current month.
 An active user is defined as a user who has logged in at least one time in the defined time interval, in this case months.
 
-The query for this Answer is the following:
+The query for this answer is the following:
 
 ----
 monthly
@@ -145,19 +145,19 @@ This query relies on the `TS: BI server` worksheet.
 == Monthly Ad-hoc Searches
 
 Number of ad-hoc searches (queries) issued per month.
-An ad-hoc query is defined as any search or change to a search that builds a new Answer (result).
+An ad-hoc query is defined as any search or change to a search that builds a new answer (result).
 An ad-hoc search can also be generated through SpotIQ or another UI/API interaction.
 
 ThoughtSpot considers all of the following as ad-hoc searches (queries):
 
 * User edits tokens (boxed terms) in the search bar.
-* User opens an existing saved Answer and makes changes to tokens in the search bar.
+* User opens an existing saved answer and makes changes to tokens in the search bar.
 * User opens an existing saved Liveboard, edits a visualization, and makes change to the search tokens.
 * Searches initiated by an API call for data with runtime filters
 
 It is not considered a search (query) in this context if a user opens an existing saved aggregated worksheet and makes changes to its underlying query.
 
-The query for this Answer is the following:
+The query for this answer is the following:
 
 ----
 ad-hoc search
@@ -166,7 +166,7 @@ monthly
 last 4 months this month
 ----
 
-This Answer relies on data from the `TS: BI Server` worksheet.
+This answer relies on data from the `TS: BI Server` worksheet.
 
 [#monthly-pb-views]
 == Monthly Liveboard Views
@@ -184,7 +184,7 @@ These scenarios are not considered Liveboard views:
 * A user opens admin tab Liveboards.
 * The system loads a Liveboard on the homepage.
 
-The query underlying this Answer is:
+The query underlying this answer is:
 
 ----
 pinboard views
@@ -198,12 +198,12 @@ The query uses the `TS: BI Server` data source.
 [#top-users]
 == Top Users Last Month
 
-This Answer shows the top ThoughtSpot users ranked by number of actions the users performed in the last 30 days.
+This answer shows the top ThoughtSpot users ranked by number of actions the users performed in the last 30 days.
 The possible user actions include:
 
 include::partial$user-actions.adoc[]
 
-The query underlying this Answer is:
+The query underlying this answer is:
 
 ----
 top 10
@@ -219,9 +219,9 @@ The query uses the `TS: BI Server` data source.
 [#top-liveboards]
 == Top Liveboards Last Month
 
-This Answer shows the top ThoughtSpot Liveboards ranked by number of views in the last 30 days.
+This answer shows the top ThoughtSpot Liveboards ranked by number of views in the last 30 days.
 
-The query underlying this Answer is:
+The query underlying this answer is:
 
 ----
 top 10
@@ -237,9 +237,9 @@ The query uses the `TS: BI Server` data source.
 [#search-users]
 == Ad-hoc search by user
 
-This Answer shows the top ten ThoughtSpot users ranked by the number of ad-hoc searches they have completed.
+This answer shows the top ten ThoughtSpot users ranked by the number of ad-hoc searches they have completed.
 
-The query underlying this Answer is:
+The query underlying this answer is:
 
 ----
 top 10
@@ -254,9 +254,9 @@ The query uses the `TS: BI Server` data source.
 [#users-today]
 == Today's users
 
-This Answer shows all users who logged in to ThoughtSpot today.
+This answer shows all users who logged in to ThoughtSpot today.
 
-The query underlying this Answer is:
+The query underlying this answer is:
 
 ----
 latest time
