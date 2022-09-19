@@ -78,7 +78,7 @@ This allows you to easily search a large list of filters repeatedly.
 
 == Cascading filters
 
-ThoughtSpot applies a specific logic to objects with more than one filter. For example, you may have a Worksheet-level filter, such as `country=US`. While searching on that Worksheet, you might want to add filters for specific cities. By default, ThoughtSpot limits your possible filter values to cities in the United States, since you have a Worksheet-level `US` filter. The first filter you apply on an object always limits the available filter values you see for your second and third filters, and so on. This is because if you have a `country=US` filter, and try to add on a `city=Paris,France` filter, for example, this results in *no data found*.
+ThoughtSpot applies a specific logic to objects with more than one filter. For example, you may have a worksheet-level filter, such as `country=US`. While searching on that worksheet, you might want to add filters for specific cities. By default, ThoughtSpot limits your possible filter values to cities in the United States, since you have a worksheet-level `US` filter. The first filter you apply on an object always limits the available filter values you see for your second and third filters, and so on. This is because if you have a `country=US` filter, and try to add on a `city=Paris,France` filter, for example, this results in *no data found*.
 
 === Show unfiltered values
 
@@ -92,14 +92,14 @@ A worksheet filter gets applied every time that worksheet is used.
 This means that for any search involving a filtered worksheet, all worksheet filters are applied before the search is submitted.
 So results are always filtered, even if the specific terms searched do not include the column(s) that are filtered.
 
-=== Use aggregate formulas as Worksheet filters
+=== Use aggregate formulas as worksheet filters
 
-Starting in ThoughtSpot release 6.2, you can use an aggregate formula as a Worksheet filter.
+Starting in ThoughtSpot release 6.2, you can use an aggregate formula as a worksheet filter.
 This is useful when, for example, you only want your results to show a measure when the related attribute is greater than some number, or vice versa.
 You may only want to see `sales` when the `unique customer count` is greater than 1, or you may only want to see a `customer` if the associated `sales` is greater than 0.
-Rather than add that formula to every search, you can create a filter at the Worksheet level.
+Rather than add that formula to every search, you can create a filter at the worksheet level.
 
-To add an aggregated formula to a Worksheet, follow these steps:
+To add an aggregated formula to a worksheet, follow these steps:
 
 . xref:worksheet-formula.adoc[]
-. xref:worksheet-filter.adoc[Add the formula to Worksheet as a filter], and specify conditions in which it should apply.
+. xref:worksheet-filter.adoc[Add the formula to worksheet as a filter], and specify conditions in which it should apply.

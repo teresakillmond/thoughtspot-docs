@@ -177,7 +177,7 @@ a| <<phrase,phrase>>
 
 [#aggregation]
 aggregation::
-  The default aggregation of the Worksheet, View, or table column, or the aggregation of the output for a formula.
+  The default aggregation of the worksheet, view, or table column, or the aggregation of the output for a formula.
 +
 Aggregation options depend on the data type.
 +
@@ -187,7 +187,7 @@ Default: `SUM`.
 
 [#answer]
 answer::
-  Top-level container for all object definitions within an Answer.
+  Top-level container for all object definitions within an answer.
 
 [#answer_columns]
 answer_columns::
@@ -209,7 +209,7 @@ See xref:custom-calendar.adoc[Set up a custom calendar]
 
 [#chart]
 chart::
-  Contains configuration for the Answer, if it displays in chart format.
+  Contains configuration for the answer, if it displays in chart format.
 
 [#chart_columns]
 chart_columns::
@@ -221,11 +221,11 @@ client_state::
 
 [#color]
 color::
-  Color to use for conditional formatting or for the columns of an Answer in chart form, in the form of a HEX value.
+  Color to use for conditional formatting or for the columns of an answer in chart form, in the form of a HEX value.
 
 [#column]
 column::
-  The id of the column(s) being filtered on. When a Pinboard contains xref:liveboard-filters-linked.adoc[linked filters], or filters that affect visualizations based on more than one Worksheet, the primary filter column appears first in the list of columns in the TML. The linked filter column appears after the primary filter column.
+  The id of the column(s) being filtered on. When a Liveboard contains xref:liveboard-filters-linked.adoc[linked filters], or filters that affect visualizations based on more than one worksheet, the primary filter column appears first in the list of columns in the TML. The linked filter column appears after the primary filter column.
 
 [#columns]
 columns::
@@ -247,7 +247,7 @@ For a formula, the `column_type` refers to the output of the formula.
 +
 Possible values: `MEASURE` or `ATTRIBUTE`
 +
-For Worksheets, the default is: `MEASURE`
+For worksheets, the default is: `MEASURE`
 +
 For formulas, the default depends on the <<data_type,data_type>>.
 +
@@ -257,7 +257,7 @@ If the data type is `BOOL`, `VARCHAR`, `DOUBLE`, `FLOAT`, `DATE`, `DATETIME`, or
 
 [#conditional_formatting]
 conditional_formatting::
-  Conditional formatting for the chart or table of an Answer.
+  Conditional formatting for the chart or table of an answer.
 
 [#connection]
 connection::
@@ -311,11 +311,11 @@ description::
 
 [#destination]
 destination::
-  The name of the destination table or View for a join.
+  The name of the destination table or view for a join.
 
 [#display_mode]
 display_mode::
-  Determines whether the Answer displays as a chart or a table.
+  Determines whether the answer displays as a chart or a table.
 Specify either `CHART_MODE` or `TABLE_MODE`.
 
 [#display_headline_column]
@@ -324,7 +324,7 @@ display_headline_column::
 
 [#excluded_visualizations]
 excluded_visualizations::
-  A list of visualizations the Pinboard editor chose to exclude from the filter. Only appears when using xref:liveboard-filters-selective.adoc[selective filters].
+  A list of visualizations the Liveboard editor chose to exclude from the filter. Only appears when using xref:liveboard-filters-selective.adoc[selective filters].
 
 [#expr]
 expr::
@@ -332,7 +332,7 @@ expr::
 
 [#filters]
 filters::
-  Contains specifications for Pinboard, View, and Worksheet filters.
+  Contains specifications for Liveboard, view, and worksheet filters.
 
 [#format_pattern]
 format_pattern::
@@ -342,7 +342,7 @@ See xref:data-modeling-patterns.adoc[Set number, date, and currency formats]
 
 [#formulas]
 formulas::
-  The list of formulas in the Worksheet, View, or Answer.
+  The list of formulas in the worksheet, view, or answer.
 +
 Each formula is identified by `name`, the `expr` (expression), and an optional `id` attribute.
 
@@ -389,12 +389,12 @@ Can be `COUNT`, `COUNT_DISTINCT`, `SUM`, `MIN`, `MAX`, `AVERAGE`, or `TABLE_AGGR
 id::
   Specifies the id of an object, such as `table_paths`, `formula`.
 +
-For Answers, `id` refers to how the column appears in the query.
+For answers, `id` refers to how the column appears in the query.
 For example, if you sorted by `Quarter` in your search, from the `Commit Date` column, the `id` of the column is `Quarter(Commit Date)`.
 +
 Refer to link:https://developers.thoughtspot.com/docs/?pageid=search-data-api#components[Components of a Search Query] to understand syntax.
 +
-For formulas within Answers, `id` refers to the display name of the formula.
+For formulas within answers, `id` refers to the display name of the formula.
 +
 If you do not give your formula a name, it appears as 'Untitled Formula'.
 
@@ -408,7 +408,7 @@ See xref:data-modeling-index.adoc#column-suggestion-priority[Change a column's s
 
 [#index_type]
 index_type::
-  The indexing option of the Worksheet, View, or table column.
+  The indexing option of the worksheet, view, or table column.
 +
 Possible values: `DONT_INDEX`, `DEFAULT` (see xref:data-modeling-index.adoc#default-indexing[Understand the default indexing behavior]), `PREFIX_ONLY`, `PREFIX_AND_SUBSTRING`, and `PREFIX_AND_WORD_SUBSTRING`
 +
@@ -507,7 +507,7 @@ See xref:worksheet-progressive-joins.adoc[How the worksheet join rule works]
 joins::
   Contains a list of joins between the tables and Views.
 +
-If you edit the joins in the Worksheet or View TML file, you are only editing the joins for that specific Worksheet or View. You are not editing the joins at the table level. To modify table-level joins, you must edit the source table's TML file.
+If you edit the joins in the worksheet or view TML file, you are only editing the joins for that specific worksheet or view. You are not editing the joins at the table level. To modify table-level joins, you must edit the source table's TML file.
 +
 Each join is identified by `name`, and the additional attributes of `source`, `destination`, `type`, and `is_one_to_one.`
 
@@ -518,7 +518,7 @@ joins_with::
 
 [#layout]
 layout::
-  Specifies the Pinboard layout, in the order that a `visualization_id` is listed.
+  Specifies the Liveboard layout, in the order that a `visualization_id` is listed.
 
 [#locked]
 locked::
@@ -538,7 +538,7 @@ name::
   The name of an object.
 Applies to `worksheet`, `table`,`joins`, `formula`, `rls_rules`, `answer`, `pinboard`, `view`,, `sql_view`, `table`, `connection`, `destination`, and so on.
 +
-For Answers, `name` refers to how the column appears in the query.
+For answers, `name` refers to how the column appears in the query.
 For example, if you sorted by `Quarter` in your search, from the `Commit Date` column, the `name` of the column is `Quarter(Commit Date)`.
 Refer to link:https://developers.thoughtspot.com/docs/?pageid=search-data-api#components[Components of a Search Query] to understand syntax.
 
@@ -549,7 +549,7 @@ on::
 
 [#oper]
 oper::
-  The operator of the Pinboard, View or Worksheet filter.
+  The operator of the Liveboard, view or worksheet filter.
 Accepted operators are `"in"`, `"not in"`, `"between"`, `=<`, `!=`, `+<=+`, `>=`, `>`, or `<`.
 
 [#ordered_column_ids]
@@ -562,7 +562,7 @@ phrase::
 
 [#pinboard]
 pinboard::
-  Top-level container for all object definitions within the Pinboard or SpotIQ result.
+  Top-level container for all object definitions within the Liveboard or SpotIQ result.
 
 [#properties]
 properties::
@@ -616,12 +616,12 @@ show_headline::
 
 [#size]
 size::
-  The size of a visualization in a Pinboard.
+  The size of a visualization in a Liveboard.
 The options are `EXTRA_SMALL`, `SMALL`, `MEDIUM`, `LARGE`, `LARGE_SMALL`, `MEDIUM_SMALL`, and `EXTRA_LARGE`.
 
 [#source]
 source::
-  Name of the source table or View for a join.
+  Name of the source table or view for a join.
 
 [#spotiq_preference]
 spotiq_preference::
@@ -662,11 +662,11 @@ Specific table, used in defining higher-level objects, such as table paths.
 +
 Defined as `name` within `tables` definition.
 +
-For Answers, this parameter contains configuration for the Answer, if it displays in table format.
+For answers, this parameter contains configuration for the answer, if it displays in table format.
 
 [#table_columns]
 table_columns::
-  The columns in an Answer that is being displayed in table format.
+  The columns in an answer that is being displayed in table format.
 
 [#table_paths]
 table_paths::
@@ -676,13 +676,13 @@ Each table path is identified by the `id`, and additional attributes of `table` 
 
 [#tables]
 tables::
-  List of tables used by the Worksheet, Answer, or table RLS rule.
+  List of tables used by the worksheet, answer, or table RLS rule.
 +
 Each table is identified by `name`.
 
 [#type]
 type::
-  For Worksheets and Views, this is the join type. This is an optional parameter.
+  For worksheets and views, this is the join type. This is an optional parameter.
 +
 Possible values: `LEFT_OUTER` for left outer join, `RIGHT_OUTER` for right outer join, `INNER` for inner join, `OUTER` for full outer join.
 +
@@ -698,27 +698,27 @@ Possible values: `COLUMN`, `BAR`, `LINE`, `PIE`, `SCATTER`, `BUBBLE`, `STACKED_C
 
 [#values]
 values::
-  The values being filtered (excluded or included) in a Pinboard, View, or Worksheet.
+  The values being filtered (excluded or included) in a Liveboard, view, or worksheet.
 
 [#view]
 view::
-  Top-level container for all object definitions within the View.
+  Top-level container for all object definitions within the view.
 
 [#view_columns]
 view_columns::
-  The list of columns in the View.
+  The list of columns in the view.
 +
 Each column is identified by `name`, `description`, `column_id`, `phrase` and `properties`.
 
 [#visualizations]
 visualizations::
-  The visualizations in a Pinboard: tables, charts, and headlines.
+  The visualizations in a Liveboard: tables, charts, and headlines.
 
 [#visualization_id]
 visualization_id::
   The id of a visualization.
 +
-Used to specify the Pinboard's <<layout,layout>>.
+Used to specify the Liveboard's <<layout,layout>>.
 
 [#worksheet]
 worksheet::
