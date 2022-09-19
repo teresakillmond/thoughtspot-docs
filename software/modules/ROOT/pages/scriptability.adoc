@@ -17,7 +17,7 @@ The Scriptability feature supports several scenarios that you may encounter:
 
 * *Migrating from a development environment to a production environment* by downloading files from the development cluster and uploading the same files into the production cluster
 * *Implementing metadata changes outside ThoughtSpot UI*, such as replacing the underlying tables for an object, or replacing a single column from one table with a column in another table
-* *Making bulk changes*, such as mass renaming of objects defined by Worksheets, and managing duplicates
+* *Making bulk changes*, such as mass renaming of objects defined by worksheets, and managing duplicates
 * *Reusing existing objects to build new objects*, such as building two very similar objects based on a similar, pre-existing object.
 
 == How to use Scriptability
@@ -45,12 +45,12 @@ Import and create a new object without importing its dependents::
 +
 You must have *view* permissions for the first-level dependent.
 +
-For example, if you import a Liveboard that is built on a Worksheet that is built on a table, you must have *view* permission for the Worksheet.
+For example, if you import a Liveboard that is built on a worksheet that is built on a table, you must have *view* permission for the worksheet.
 +
-When importing a new Worksheet or View, you must have the *can manage data* permission.
+When importing a new worksheet or view, you must have the *can manage data* permission.
 
 Import and create a new object and its dependents::
-  *Can manage data*, if the object or any of its dependents is a Worksheet or View.
+  *Can manage data*, if the object or any of its dependents is a worksheet or view.
 
 Import and update an existing object without dependents::
   *Edit* permission on the existing object.
@@ -59,12 +59,12 @@ The dependents must already exist in the cluster.
 +
 You must have *view* permissions for the first-level dependent.
 +
-When importing a Worksheet or View, you must have the *can manage data* permission.
+When importing a worksheet or view, you must have the *can manage data* permission.
 
 Import and update an existing object with dependents::
   *Edit* permission on the existing object(s).
 +
-*Can manage data*, if the object or any of its dependents is a Worksheet or View.
+*Can manage data*, if the object or any of its dependents is a worksheet or view.
 
 [#export]
 === Export prerequisites

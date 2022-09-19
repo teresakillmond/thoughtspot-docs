@@ -46,13 +46,13 @@ You must create a join between columns in two data sources that contain the same
 == Possible joins
 
 You must have either the xref:groups-privileges.adoc[*Can administer ThoughtSpot* or the *Can manage data* privilege] to create a join relationship.
-If you're not an administrator, you also need edit permissions on the table, View, or Worksheet.
+If you're not an administrator, you also need edit permissions on the table, view, or worksheet.
 
 See this list for information about which joins you can create, and what permissions these joins require.
 
 include::partial$joins-matrix.adoc[]
 
-NOTE:  If you create joins at the table level, and then create a Worksheet that uses the columns from the table, the settings are inherited from the table at the point in time that the Worksheet is created. If you then go back and change the settings at the table level, your changes will not be reflected in the Worksheet. If you want the Worksheet to have the changes you made at the table level, you must drop those columns from the Worksheet and re-add them.
+NOTE:  If you create joins at the table level, and then create a worksheet that uses the columns from the table, the settings are inherited from the table at the point in time that the worksheet is created. If you then go back and change the settings at the table level, your changes will not be reflected in the worksheet. If you want the worksheet to have the changes you made at the table level, you must drop those columns from the worksheet and re-add them.
 
 == Creating join relationships
 
@@ -90,21 +90,21 @@ image::table-create-join.png[]
 . Click *Create join*.
 
 [#worksheet-join]
-=== Creating a join from a Worksheet or View
+=== Creating a join from a worksheet or view
 
 To create a join from a worksheet:
 
 . To find your worksheet, click *Data* on the top menu, and choose *Worksheets*.
 
-. Find your Worksheet through browsing, Search, or selecting the appropriate Tag(s).
+. Find your worksheet through browsing, Search, or selecting the appropriate Tag(s).
 
-. To select the Worksheet for adding joins, click its name in the list.
+. To select the worksheet for adding joins, click its name in the list.
 
 . Click the *Joins* tab. The list of existing joins within the worksheet appears.
 +
 image:joins-within-worksheet.png[Joins within worksheet]
 
-. To view the joins between this Worksheet and other data sources, click *Joins within this worksheet*, and choose *Joins from this worksheet*.
+. To view the joins between this worksheet and other data sources, click *Joins within this worksheet*, and choose *Joins from this worksheet*.
 
 . To start creating a join, click *+ Add Join* on the upper right side of the screen.
 +
@@ -148,13 +148,13 @@ image:edit-join-page.png[Edit table join page]
 . Click *Save*.
 
 [#worksheet-join-modify]
-=== Editing a join from a Worksheet or View
+=== Editing a join from a worksheet or view
 
-To edit a join from a Worksheet or View:
+To edit a join from a worksheet or view:
 
 . Click *Data* in the top menu, and choose *Worksheets*.
-. Find your Worksheet through browsing, Search, or selecting the appropriate Tag(s).
-. To select the Worksheet, click its name in the list.
+. Find your worksheet through browsing, Search, or selecting the appropriate Tag(s).
+. To select the worksheet, click its name in the list.
 . Click the *Joins* tab. The list of existing joins within the worksheet appears.
 . To view the joins between the worksheet and other data sources, click *Joins within this worksheet*, and choose *Joins from this worksheet*.
 . Click the edit icon to the right of the name of the join you want to modify. The *Edit join* window appears.
@@ -169,11 +169,11 @@ image:edit-join-window.png[Edit worksheet join]
 To delete a join:
 
 . Click *Data* in the top menu.
-. Find the origin table, Worksheet, or View of the join you want to delete through browsing, Search, or selecting the appropriate Tag(s).
-. Click the name of your origin table, Worksheet or View in the list.
-. Click the *Joins* tab. The list of existing joins from the table, Worksheet, or View appears.
+. Find the origin table, worksheet, or view of the join you want to delete through browsing, Search, or selecting the appropriate Tag(s).
+. Click the name of your origin table, worksheet or view in the list.
+. Click the *Joins* tab. The list of existing joins from the table, worksheet, or view appears.
 +
-NOTE: If you want to delete an external join from a Worksheet, you must click *Joins within this worksheet* under the *Joins* tab and select *Joins from this worksheet*.
+NOTE: If you want to delete an external join from a worksheet, you must click *Joins within this worksheet* under the *Joins* tab and select *Joins from this worksheet*.
 +
 image:table-delete-join.png[Delete a join]
 
