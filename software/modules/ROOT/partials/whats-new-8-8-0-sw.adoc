@@ -135,14 +135,6 @@ For example, in the formula `group_aggregate(sum(if (Color = 'blue') then 0 else
 
 For more information, see xref:chart-table.adoc[].
 
-[#8-8-0-sw-search-panel]
-[discrete]
-=== Data literacy: search panel improvements
-
-// Mark
-
-// same as cloud
-
 [#8-8-0-sw-show-underlying-data]
 [discrete]
 === Show underlying data user experience improvements
@@ -276,9 +268,15 @@ endif::[]
 
 [#8-8-0-sw-starburst-oauth-azure]
 [discrete]
-=== Starburst with Azure AD OAuth
+=== Starburst OAuth with Azure AD
 
-// Mark -- can probably be just one note, combined with above?
+Starburst connections now support Azure AD OAuth. For details,
+ifndef::pendo-links[]
+see xref:connections-starburst-azure-ad-oauth.adoc[Azure AD OAuth for Starburst].
+endif::[]
+ifdef::pendo-links[]
+see xref:connections-starburst-azure-ad-oauth.adoc[Azure AD OAuth for Starburst,window=_blank].
+endif::[]
 
 [#8-8-0-sw-snowflake-oauth]
 [discrete]
@@ -305,23 +303,39 @@ ifdef::pendo-links[]
 see xref:connections-snowflake-okta-oauth.adoc[Configure Okta OAuth for a Snowflake connection,window=_blank].
 endif::[]
 
-[#8-8-0-sw-presto]
+[#8-8-0-sw-new-connections]
 [discrete]
-=== Separate presto connector from starburst
+=== New connections
 
-// Mark
+- Presto is a new connection type.
+ifndef::pendo-links[]
+see xref:connections-presto.adoc[Presto].
+endif::[]
+ifdef::pendo-links[]
+see xref:connections-presto.adoc[Presto,window=_blank].
+endif::[]
 
-[#8-8-0-sw-trino]
-[discrete]
-=== Separate trino connector from starburst
+- Trino is a new connection type.
+ifndef::pendo-links[]
+see xref:connections-trino.adoc[Trino].
+endif::[]
+ifdef::pendo-links[]
+see xref:connections-trino.adoc[Trino,window=_blank].
+endif::[]
 
 // Mark
 
 [#8-8-0-sw-snowflake-pricing]
 [discrete]
-=== Snowflake for consumption-based pricing
+=== Storage of session-based consumption in Snowflake
 
-// Mark -- already in cloud
+ThoughtSpot now securely stores your consumption data in a searchable Snowflake data store. For more information,
+ifndef::pendo-links[]
+see xref:consumption-pricing.adoc#_consumption_data_storage[Consumption data storage].
+endif::[]
+ifdef::pendo-links[]
+see xref:consumption-pricing.adoc#_consumption_data_storage[Consumption data storage,window=_blank].
+endif::[]
 
 [#8-8-0-sw-dbt-integration]
 [discrete]
