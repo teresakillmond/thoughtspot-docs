@@ -4,7 +4,7 @@
 :linkattrs:
 :page-layout: default-cloud
 :connection: Starburst
-:description: How to configure Okta Auth for a Starburst connection in ThoughtSpot
+:description: How to configure Azure Ad OAuth for a Starburst connection in ThoughtSpot
 
 ThoughtSpot supports Microsoft Azure Active Directory (AD) OAuth for a {connection} connection.
 With Azure AD OAuth, the authorization server generates an access token from Azure AD on behalf of the ThoughtSpot user which authenticates them with {connection} and authorizes ThoughtSpot to query the database using their {connection} user account.
@@ -241,7 +241,7 @@ image::ms_sign_in.png[]
 
 . On the Token Details page, click *Use Token*.
 +
-image:token_det_1.png[]
+image:token_det_starburst_1.png[]
 +
 image:token_det_2.png[]
 
@@ -303,4 +303,3 @@ image::curl_2.png[]
 ----
 select system$verify_external_oauth_token('<access_token>');
 ----
-
