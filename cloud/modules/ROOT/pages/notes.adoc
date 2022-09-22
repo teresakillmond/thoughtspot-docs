@@ -86,6 +86,17 @@ This release brings improvements in how ThoughtSpot handles user tokens for Snow
 +
 See xref:connections-snowflake-edit.adoc#invalidate-tokens[Invalidating refresh tokens of a Snowflake connection].
 
+[#dbt-improvements]
+Integration with dbt for Amazon Redshift and Google BigQuery::
+This release supports integration with dbt for the following 2 new cloud data warehouses:
++
+--
+* Amazon Redshift
+* Google BigQuery
+--
++
+Refer to xref:dbt-integration.adoc[].
+
 Snowflake CSV upload [.badge.badge-update]#Beta#:: Now you have a quick and easy way to complete one-time data loads of small files that are not present in your cloud data warehouse. You can now upload a CSV file to the database of your Snowflake connection that can be joined to other tables or worksheets in your connection. Once your administrator enables this feature, go to *Data* > *Utilities*, and click *Upload CSV*.
 ifndef::pendo-links[]
 See xref:connections-snowflake-csv-upload-config.adoc[Configure CSV upload for your Snowflake connection], and xref:connections-snowflake-csv-upload.adoc[Upload a CSV file in your Snowflake connection].
