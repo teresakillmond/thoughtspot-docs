@@ -1,0 +1,69 @@
+= Admin Console for Orgs
+:last_updated: 9/26/2022
+:linkattrs:
+:experimental:
+:page-layout: default-cloud
+:page-aliases: /admin/users-groups/add-user.adoc
+:description: Learn how the Admin Console for multi-tenant environments can help you manage users, groups, security, authentication, and much more.
+
+The Admin Console provides you with an intuitive, user-friendly interface to accomplish most of the necessary tasks for administering ThoughtSpot in a multi-tenant environment.
+
+Navigate to the Admin Console by selecting *Admin* from the top navigation bar.
+
+== Cluster administrators and Org administrators
+
+include::partial$org-admin.adoc[]
+
+The Admin Console looks different, depending on whether you are a cluster administrator or an Org administrator.
+
+When a cluster administrator is in the Primary Org, they can see two columns in the side navigation bar of the Admin Console: *All orgs* and *Primary org*.
+
+The Org administrator can only see one column in the side navigation bar.
+
+== Admin Console for cluster administrators
+Cluster administrators can complete the following tasks in the Primary Org's Admin Console, under *All orgs*:
+
+*Manage Orgs*
+
+Create, edit, and delete Orgs. See xref:orgs-administration-overview.adoc#create-manage[Create and manage Orgs].
+
+*Manage users and groups*
+
+* xref:admin-portal-users-orgs.adoc[Manage ThoughtSpot users:] Create, edit, or delete users. Add users to or remove users from Orgs.
+
+*Configure authentication*
+
+* xref:authentication-local.adoc[Manage local authentication:] Enable or disable ThoughtSpot’s local authentication.
+
+* xref:authentication-integration.adoc[Configure SAML authentication:] Integrate with SAML for single sign-on (SSO) authentication.
+
+*Application settings: Search and SpotIQ settings, Onboarding and email settings*
+
+* xref:search-spotiq-settings.adoc[Manage search and SpotIQ settings:] Enable, disable, and configure the following features: SpotIQ, column indexing, summaries, the new answer, SpotIQ, and Liveboard experiences, and the footer for downloaded answers and Liveboards.
+
+* xref:onboarding-email-settings.adoc[Manage email and onboarding settings:] Customize welcome emails, scheduled emails, and the workflow that allows users to sign up for ThoughtSpot from the login page.
+
+*Application and menu customization*
+
+* xref:customize-help.adoc[Customize ThoughtSpot help:] Customize ThoughtSpot Help to be specific to your data, examples, and documentation.
+
+* xref:style-customization.adoc[Customize application style:] Change the overall style of your ThoughtSpot interface: logo, colors, fonts, and footer text.
+
+*Monitor system*
+
+* xref:user-adoption.adoc[View User Adoption Liveboard:] View and explore visualizations about how your ThoughtSpot users are interacting with ThoughtSpot, and how your user adoption is changing over time on the User Adoption Liveboard.
+
+* xref:performance-tracking.adoc[View Performance Tracking Liveboard:] View and explore visualizations about your ThoughtSpot cluster’s performance on the Performance Tracking Liveboard.
+
+* xref:consumption-pricing-time-based.adoc#credit-usage-pinboard[View Credit Usage Liveboard:] View and explore visualizations about your credit usage by Org on the Credit Usage Liveboard.
+
+* *ThoughtSpot Cloud Subscription Agreement:* View and sign the https://www.thoughtspot.com/legal/thoughtspot-cloud-subscription-agreement[ThoughtSpot Cloud Subscription Agreement^].
+
+== Admin Console for Org administrators
+Org administrators can complete the following tasks in the Admin Console:
+
+* xref:admin-portal-users-orgs.adoc[Manage ThoughtSpot users:] Create, edit, or delete users in a specific Org. Add users to or remove users from groups in a specific Org.
+
+* xref:admin-portal-groups-orgs.adoc[Manage ThoughtSpot groups:] Create, edit, or delete groups in a specific Org.
+
+* xref:scheduled-maintenance.adoc[View scheduled maintenance:] View upcoming maintenance and downtime for the ThoughtSpot application.
