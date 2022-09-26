@@ -1,9 +1,8 @@
-= Create, edit, or delete a user
-:last_updated: 11/05/2021
+= Create, edit, or delete a user in a multi-tenant environment
+:last_updated: 9/26/2022
 :linkattrs:
 :experimental:
 :page-layout: default-cloud
-:page-aliases: /admin/users-groups/add-user.adoc
 :description: For each person who accesses ThoughtSpot, you must create an account. When you create a user manually in ThoughtSpot, you manage that user in ThoughtSpot.
 
 [NOTE]
@@ -15,14 +14,16 @@ If the *Users* section of the Admin Console contains an *Account Activation* col
 
 [NOTE]
 ====
-This article contains instructions for managing users in a single tenant environment. If you do not have an Org switcher between the help icon and the *Search answers and Liveboards* search box, your company is in a single tenant environment.
+This article contains instructions for managing users if your company uses the xref:orgs-overview.adoc[Orgs] feature for multi-tenancy in ThoughtSpot. If you have an Org switcher to the left of the help icon in the top navigation bar, your company is using Orgs.
 
-If your company uses the xref:orgs-overview.adoc[Orgs] feature for multi-tenancy in ThoughtSpot, you can see an Org switcher to the left of the help icon in the top navigation bar. Refer to xref:user-management-orgs.adoc[].
+If you do not have an Org switcher between the help icon and the *Search answers and Liveboards* search box, your company is *_not_* using Orgs. Refer to xref:admin-portal-users.adoc[].
 ====
 
 You can create users directly in ThoughtSpot, or import users and user groups through SAML or similar protocols.
 
 For users who have access through SAML, the SAML installation manages all user information.
+
+Depending on whether you are a cluster administrator or an Org administrator, you have different levels of administrator access. Cluster administrators can see, create, and manage users in any Org; Org administrators can only see, create, and manage users in the Org(s) for which they are admins.
 
 [#add-user]
 == Create a user in ThoughtSpot
@@ -33,17 +34,22 @@ The user inherits privileges and permissions directly from the group assignments
 
 Note that all users automatically belong to the group *All*.
 
-To create a new user and assign that user to groups, follow these steps:
+To create a new user and assign that user to groups or Orgs, follow these steps:
+
+. Ensure that you are either in the correct Org. If you are a cluster administrator, you can manage all users in all Orgs from the Primary Org. If you are an Org administrator, you must navigate to the specific Org the users you must manage are in. Use the Org Switcher to the left of the help menu in the top navigation bar.
 
 . Navigate to the Admin Console by clicking on the *Admin* tab from the top navigation bar.
+.  If you are a cluster administrator in the Primary Org, select *All orgs* from the side navigation bar.
 . Select *Users* from the side navigation bar that appears.
 +
-image::admin-portal-users.png[Admin Console - Users]
+image::admin-portal-users-orgs.png[Admin Console - Users]
 
 . Click the *+ Add User* button on the upper left-hand side of the list of users.
-. In the *Add a new user* interface, enter the details for the new user:
+. In the *Add a new user* interface, enter the details for the new user.
 +
-image::add-user.png[Add a new User]
+NOTE: You see a different interface, depending on whether you are adding the new user from the *All orgs* section of the Admin Console, or from a specific Org. From *All orgs*, you can add the new user to multiple Orgs. From the specific Org, you can add the new user to groups.
++
+image::add-user-orgs.png[Add a new User]
 +
 [#username]
 Username::
@@ -76,7 +82,7 @@ Email message text::
 (Optional) Enter text of the optional welcome email here.
 [#groups]
 Groups::
-(Recommended) Select the groups for the user.
+(Recommended) Select the groups for the user. This option appears when you add a user from a specific Org.
 +
 [NOTE]
 ====
@@ -90,6 +96,10 @@ Administrators can see all data sources, and xref:security-rls.adoc[Row level se
 ====
 +
 WARNING: If you add the user to a group that has the privilege *Has administration privileges*, they can see all the data in ThoughtSpot.
++
+[#orgs]
+Orgs::
+(Recommended) Select the Org(s) for the user. This option appears when you add a user from the *All orgs* section of the Admin Console in the Primary Org.
 
 . Click *Add* to create the user.
 
@@ -99,15 +109,18 @@ See xref:onboarding.adoc[Onboarding users].
 [#edit-user]
 == Edit an existing user
 
-As an administrator, you can edit a user account, and change the user's groups.
+As an administrator, you can edit a user account, and change the user's groups or Orgs.
 You can also help users by resetting their password, and evaluating their onboarding experience to ensure they receive the best possible introduction to relevant information in ThoughtSpot.
 
 To edit an existing user, follow these steps:
 
+. Ensure that you are either in the correct Org. If you are a cluster administrator, you can manage all users in all Orgs from the Primary Org. If you are an Org administrator, you must navigate to the specific Org the users you must manage are in. Use the Org Switcher to the left of the help menu in the top navigation bar.
+
 . Navigate to the Admin Console by clicking on the *Admin* tab from the top navigation bar.
+.  If you are a cluster administrator in the Primary Org, select *All orgs* from the side navigation bar.
 . Select *Users* from the side navigation bar that appears.
 +
-image::admin-portal-users.png[Admin Console - Users]
+image::admin-portal-users-orgs.png[Admin Console - Users]
 
 . Click the username in the list to open the *Edit User* interface.
 +
@@ -115,12 +128,13 @@ If you don't immediately see the username you plan to edit, try searching for it
 
 . In the *Edit User* interface, edit the basic user information.
 +
+NOTE: You see a different interface, depending on whether you are editing the user information from the *All orgs* section of the Admin Console, or from a specific Org. From *All orgs*, you can edit Orgs the user is in. From the specific Org, you can edit the groups the user is in.
++
 You can change the _<<username,username>>_, _<<display-name,display name>>_, _<<sharing-visibility,sharing visibility>>_, _<<password,passwords>>_, and _<<email,user's email>>_.
 +
-image::edit-user.png[Edit User]
+image::edit-user-orgs.png[Edit User]
 +
-You can also <<edit-user-preview-onboarding,Preview onboarding>>, and make changes to the _<<edit-user-groups,Groups>>_ assigned to the user.
-// , and check _[Email](#edit-user-email)_ options.
+You can also <<edit-user-preview-onboarding,Preview onboarding>>, and make changes to the _<<edit-user-groups,Groups>>_ or _<<edit-user-orgs,Orgs>>_ assigned to the user, depending on where you are editing the user information.
 
 . Click *Update*.
 
@@ -137,13 +151,28 @@ image::edit-user-preview-onboarding.png[Preview onboarding experience]
 
 Follow these steps to change the user's groups:
 
+. Ensure that you are editing the user from the specific Org the user is in.
 . Click the *Groups* tab.
 . Select the groups you want to add in the list by clicking the box next to the group name.
 . You can also use *Search* to find groups by name.
 . Deselect the groups you want to remove from the list by clearing the box next to the group name.
 . Click *Update* to save changes.
 
-image::edit-user-groups.png[Edit User Grouops]
+image::edit-user-group.png[Edit User Groups]
+
+[#edit-user-orgs]
+=== Orgs
+
+Follow these steps to change the Orgs the user is in:
+
+. Ensure that you are editing the user from the *All orgs* section of the Admin Console.
+. Click the *Orgs* tab in the *Edit User* interface.
+. Select the Org(s) you want to add in the list by clicking the box next to the Org's name.
+. You can also use *Search* to find Orgs by name.
+. Deselect the Orgs you want to remove from the list by clearing the box next to the Org's name.
+. Click *Update* to save changes.
+
+image::edit-user-org.png[Edit User Orgs]
 
 ////
 {: id="edit-user-email"}
@@ -179,10 +208,17 @@ To delete users, follow these steps:
 . Navigate to the Admin Console by clicking on the *Admin* tab from the top navigation bar.
 . Select *Users* from the side navigation bar that appears.
 +
-image::admin-portal-users.png[Admin Console - Users]
+image::admin-portal-users-orgs.png[Admin Console - Users]
 
 . Select the users you plan to delete by clicking the box next to the username.
 +
 If you don't immediately see the username you plan to delete, try searching for it.
 
 . Click *Delete* in the upper left-hand corner.
+
+[NOTE]
+====
+A user may exist in multiple Orgs. You can remove a user from multiple Orgs at a time as the cluster administrator, or remove a user from one specific Org as that Org’s administrator.
+
+To remove a user from multiple Orgs at a time, the cluster administrator must be in the Primary Org, in the *All orgs > Users* section of the Admin Console.
+====
