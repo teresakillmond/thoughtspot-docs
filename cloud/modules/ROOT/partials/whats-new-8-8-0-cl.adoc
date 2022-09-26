@@ -17,14 +17,6 @@ endif::free-trial-feature[]
 
 [#primary-8-8-0-cl]
 
-[#8-8-0-cl-custom-tile-sizes]
-[discrete]
-=== Custom sizes for visualizations in Liveboards
-
-This release introduces custom tile sizes for visualizations within Liveboards. In addition to the 5 predetermined visualization sizes, you can now customize your Liveboard visualizations to be any size.
-
-image::liveboard-tile-sizes-gif.gif[Liveboard tile size change gif]
-
 [#8-8-0-cl-ts-sync-enhancements]
 [discrete]
 === Schedule ThoughtSpot Sync
@@ -35,6 +27,24 @@ When creating a sync from ThoughtSpot to an external business app (Google Sheets
 
 image:ts-sync-schedule.png[]
 
+[#8-8-0-cl-custom-tile-sizes]
+ifndef::free-trial-feature[]
+ifdef::pendo-links[]
+[discrete]
+=== Custom sizes for visualizations in Liveboards [.badge.badge-update-whats-new]#Beta#
+endif::[]
+ifndef::pendo-links[]
+[discrete]
+=== Custom sizes for visualizations in Liveboards [.badge.badge-update]#Beta#
+endif::[]
+
+This release introduces custom tile sizes for visualizations within Liveboards. In addition to the 5 predetermined visualization sizes, you can now customize your Liveboard visualizations to be any size.
+
+image::liveboard-tile-sizes-gif.gif[Liveboard tile size change gif]
+
+endif::free-trial-feature[]
+
+ifndef::free-trial-feature[]
 ifdef::pendo-links[]
 [#8-8-0-cl-kpi-explain-change]
 [discrete]
@@ -51,6 +61,8 @@ endif::[]
 You can now use SpotIQ analysis to directly identify the key drivers for recent change in your KPIs. To access this feature, go to your KPI chart and select the caret icon to the right of the percent change label. The *Run change analysis* pop-up allows you to customize the columns ThoughtSpot analyzes. Note that ThoughtSpot runs change analysis between the two most recent data points defined by the KPI’s time bucket (for example, `daily` or `weekly`).
 
 image::kpi-explain-change.gif[]
+
+endif::free-trial-feature[]
 
 [#8-8-0-cl-search-formula-editor]
 [discrete]
