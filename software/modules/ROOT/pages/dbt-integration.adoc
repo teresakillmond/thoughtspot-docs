@@ -19,7 +19,7 @@ API key:: This is also called the *API token* in dbt. To find this token, naviga
 Account ID:: Your default dbt Cloud account ID. Find your account ID in your dbt Cloud URL, after you log in. For example, if your URL is `https://cloud.getdbt.com/#/accounts/12345/projects/56789/dashboard`, your account ID is `12345`.
 Project ID:: Find your project ID in your dbt Cloud URL, after you log in. For example, if your URL is `https://cloud.getdbt.com/#/accounts/12345/projects/56789/dashboard`, your project ID is `56789`.
 * Define the relationships in the dbt models. If you do not define the relationships, ThoughtSpot does not create tables or worksheets.
-* If you are using *dbt cloud*, execute the project with the *GENERATE DOCS?* option *ON*.
+* If you are using *dbt cloud*, the *generate docs on run* setting must be on. You can enable this setting in the jobs settings of the project, under *Execution settings*.
 * If you are using *dbt core*, execute the `dbt docs generate` command along with the `dbt run` command.
 * If you are using *dbt core*, you must connect to dbt using a zip file, which must contain the latest `manifest.json` and `catalog.json` files. By default, dbt stores these files under the `<project name>/target` folder.
 
