@@ -16,7 +16,7 @@ If the *Users* section of the Admin Console contains an *Account Activation* col
 ====
 This article contains instructions for managing users if your company uses the xref:orgs-overview.adoc[Orgs] feature for multi-tenancy in ThoughtSpot. If you have an Org switcher to the left of the help icon in the top navigation bar, your company is using Orgs.
 
-If you do not have an Org switcher between the help icon and the *Search answers and Liveboards* search box, your company is *_not_* using Orgs. Refer to xref:admin-portal-users.adoc[].
+If you do not have an Org switcher between the help icon and the *Search answers and Liveboards* search box, your company is *_not_* using Orgs. Refer to xref:user-management.adoc[].
 ====
 
 You can create users directly in ThoughtSpot, or import users and user groups through SAML or similar protocols.
@@ -36,7 +36,7 @@ Note that all users automatically belong to the group *All*.
 
 To create a new user and assign that user to groups or Orgs, follow these steps:
 
-. Ensure that you are either in the correct Org. If you are a cluster administrator, you can manage all users in all Orgs from the Primary Org. If you are an Org administrator, you must navigate to the specific Org the users you must manage are in. Use the Org Switcher to the left of the help menu in the top navigation bar.
+. Ensure that you are in the correct Org. If you are a cluster administrator, you can manage all users in all Orgs from the Primary Org. If you are an Org administrator, you must navigate to the specific Org the users you must manage are in. Use the Org Switcher to the left of the help menu in the top navigation bar.
 
 . Navigate to the Admin Console by clicking on the *Admin* tab from the top navigation bar.
 .  If you are a cluster administrator in the Primary Org, select *All orgs* from the side navigation bar.
@@ -114,7 +114,7 @@ You can also help users by resetting their password, and evaluating their onboar
 
 To edit an existing user, follow these steps:
 
-. Ensure that you are either in the correct Org. If you are a cluster administrator, you can manage all users in all Orgs from the Primary Org. If you are an Org administrator, you must navigate to the specific Org the users you must manage are in. Use the Org Switcher to the left of the help menu in the top navigation bar.
+. Ensure that you are in the correct Org. If you are a cluster administrator, you can manage all users in all Orgs from the Primary Org. If you are an Org administrator, you must navigate to the specific Org the users you must manage are in. Use the Org Switcher to the left of the help menu in the top navigation bar.
 
 . Navigate to the Admin Console by clicking on the *Admin* tab from the top navigation bar.
 .  If you are a cluster administrator in the Primary Org, select *All orgs* from the side navigation bar.
@@ -222,3 +222,24 @@ A user may exist in multiple Orgs. You can remove a user from multiple Orgs at a
 
 To remove a user from multiple Orgs at a time, the cluster administrator must be in the Primary Org, in the *All orgs > Users* section of the Admin Console.
 ====
+
+[#add-users-to-orgs]
+== Add multiple users to an Org
+
+To add multiple users to an Org, you must be on the *All Orgs* section of the *Users* interface.
+Follow these steps:
+
+. Ensure that you are in the Primary Org. Use the Org Switcher to the left of the help menu in the top navigation bar.
+. Navigate to the Admin Console by clicking on the *Admin* tab from the top navigation bar.
+. Select *All orgs* in the left navigation bar.
+. Select *Users*.
+
+. Select the names of users you plan to add to Orgs by clicking the box next to the user name.
++
+If you don't immediately see the user name, try searching for it.
+
+. Click the *Add to org* button above the list of users.
+. In the *Add to org* interface, click on the dropdown.
+. Select an Org, or use the search bar to find an Org and select it.
+. Click *Save*.
+
