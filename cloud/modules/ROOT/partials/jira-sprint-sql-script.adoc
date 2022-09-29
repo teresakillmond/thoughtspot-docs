@@ -1,4 +1,4 @@
-=[source,bash]
+[source,bash]
 ----
 create or replace view "<DATABASE NAME>"."<SCHEMA NAME>"."JIRA_SPRINTS" as select
 ID as Id,
@@ -12,7 +12,7 @@ COMPLETE_DATE as CompleteDate from "<DATABASE NAME>"."<SCHEMA NAME>"."<SPRINT TA
 
 If you moved your data using Fivetran, you must also run the following command. Replace `DATABASE NAME`, `SCHEMA NAME`, and `SPRINT TABLE NAME` with your specific information.
 
-=[source,bash]
+[source,bash]
 ----
 create or replace view "<DATABASE NAME>"."<SCHEMA NAME>"."JIRA_SPRINTS" as
 select
