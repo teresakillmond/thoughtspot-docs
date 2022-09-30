@@ -11,7 +11,7 @@ This article is an overview of the Orgs functionality and Org management in the 
 
 == Orgs in ThoughtSpot
 
-If the Orgs feature is enabled on your instance, only one org exists by default. ThoughtSpot refers to this default Org as the *Primary Org*. The cluster administrator is the administrator of the Primary Org. The administrator of the default Org can create more Orgs, add an administrator user profile to each Org to manage users and groups, and define access control at the Org level. This administrator can only administer their Org. Only administrators of the Primary Org can administer across Orgs.
+If the Orgs feature is enabled on your instance, only one org exists by default. ThoughtSpot refers to this default Org as the *Primary Org*. The *cluster administrator* is the administrator of the Primary Org. The administrator of the Primary Org can create more Orgs, add an administrator user profile to each Org to manage users and groups, and define access control at the Org level. The administrator of any other Org, referred to as an *Org administrator*, can only administer their Org. Only administrators of the Primary Org can administer across Orgs.
 
 The following diagram depicts the Orgs architecture on a multi-tenant ThoughtSpot instance.
 
@@ -32,7 +32,10 @@ ThoughtSpot ensures complete Org isolation in a multi-tenant environment. Specif
 * Cloud data warehouse connection
 * Cloud data warehouse data
 * Groups
-* Users. Note that users can belong to multiple Orgs, but are not aware of Orgs they do not belong to.
+* Users.
+** Note that users can belong to multiple Orgs, but at any given time can only access the data and objects of their current Org.
+** If users belong to multiple Orgs, they can switch their current Org context to one of the other Orgs they belong to.
+** Users have no awareness of Orgs they do not belong to.
 * ThoughtSpot objects: Liveboards, worksheets, answers, and tables. You cannot share objects between Orgs.
 * Search data content and indexing
 * Search answers content and indexing
@@ -40,7 +43,7 @@ ThoughtSpot ensures complete Org isolation in a multi-tenant environment. Specif
 
 == User roles
 
-On a multi-tenant instance, ThoughtSpot supports the following 3 user roles: cluster administrator, Org administrator, and Org user. By default, the administrator of the Primary Org is a cluster administrator. The cluster administrator can access all Orgs and perform CRUD operations on all Orgs. The cluster administrator can also switch between Orgs and also act as an Org administrator.
+On a multi-tenant instance, ThoughtSpot supports the following 3 user roles: cluster administrator, Org administrator, and Org user. By default, the administrator of the Primary Org is a cluster administrator. The cluster administrator can access all Orgs and perform CRUD (Create, Read, Update, and Delete) operations on all Orgs. The cluster administrator can also switch between Orgs and also act as an Org administrator.
 
 Org administrators can administer and manage users and groups only of their respective organizations, not all Orgs. Users can belong to more than one Org and access data objects based on the privileges assigned to the groups to which they belong. The following diagram depicts the setup for users on a multi-tenant ThoughtSpot instance.
 
@@ -61,9 +64,15 @@ To create Orgs using the REST v1 API endpoints, refer to https://visual-embed-sd
 
 == Switch between Orgs
 
-Any user with access to multiple Orgs can use the *Org switcher* in the top navigation bar, next to the help icon, to switch between the Orgs they belong to. A user only sees the Orgs they belong to in the Org switcher. If a user is only part of one Org, they do not have the option to switch between Orgs. They only see the one Org that they belong to.
+Any user with access to multiple Orgs can use the *Org switcher* in the top navigation bar, next to the help icon, to switch between the Orgs they belong to. The *Org switcher* also identifies the Org the user is currently in. For example, in the image below, the user is in the Primary Org.
+
+image::org-switcher.png[Org switcher]
+
+A user only sees the Orgs they belong to in the Org switcher. If a user is only part of one Org, they do not have the option to switch between Orgs. They only see the one Org that they belong to.
 
 A cluster administrator can access several Org objects and apply configuration changes. Before performing any operation on the objects in an Org, the administrator must specify the correct Org to ensure that configuration changes are applied in the relevant Org context.
+
+image::org-switcher-gif.gif[]
 
 include::partial$all-org-scope.adoc[]
 
