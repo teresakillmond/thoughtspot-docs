@@ -92,18 +92,17 @@ A local user fails to authenticate _x_ times in a row, locking the account.
 Administrators can configure the number of authentication attempts before lockout within ThoughtSpot.
 
 ////
-<dlentry id="object-creation">
- <dt>Object creation</dt>
- <dd>A user creates a new object (pinboard, worksheet, answer, etc.) in ThoughtSpot.</dd>
-</dlentry>
-<dlentry id="object-deletion">
- <dt>Object deletion</dt>
- <dd>A user successfully or unsuccessfully attempts to delete an object (pinboard, worksheet, answer).</dd>
-</dlentry>
-<dlentry id="object-modification">
- <dt>Object modification</dt>
- <dd>A user successfully or unsuccessfully attempts to change the properties of an object.</dd>
-</dlentry>
+[#object-creation]
+Object creation::
+A user creates a new object (pinboard, worksheet, answer, etc.) in ThoughtSpot.
+
+[#object-deletion]
+Object deletion::
+A user successfully or unsuccessfully attempts to delete an object (pinboard, worksheet, answer).
+
+[#object-modification]
+Object modification::
+A user successfully or unsuccessfully attempts to change the properties of an object.</dd>
 ////
 
 [#share-objects]
@@ -132,10 +131,9 @@ User account creation::  A new user creates an account, either manually in the A
 User account deletion::  A user account is deleted, either manually in the Admin Portal or through the internal API.
 
 ////
-<dlentry id="user-group-change">
-  <dt>User group change</dt>
-  <dd>A successful or unsuccessful attempt to change the user list to a group by adding or removing members.</dd>
-  </dlentry>
+[#user-group-change]
+User group change::
+A successful or unsuccessful attempt to change the user list to a group by adding or removing members.
 ////
 
 [#user-invited]
@@ -144,7 +142,7 @@ User invitation::  A user is invited to ThoughtSpot for a free trial.
 ////
 ThoughtSpot includes a number of management tools, monitoring applications, and automated processes to support system security. System security includes managing access and privileges, audit logs, security policies, and Linux OS installed package updates.
 
-## Audit logs
+== Audit logs
 
 There are several ways you can view audit log information in ThoughtSpot. You can see recent events in the Control Center or view more detailed audit logs using tscli. Administrators can view audit logs of configuration changes users have made to ThoughtSpot in these ways:
 
@@ -203,7 +201,7 @@ To get audit logs:
     ```
 
 
-## Security policies
+== Security policies
 
 Security policies are the principles and processes ThoughtSpot uses in development to ensure a product that conforms to security standards. Security policies ensure a secure product with each release. When a release is in development, each build is tested using Qualys Network Security and Vulnerability Management Suite. Issues and vulnerabilities are fixed proactively, based on the results.
 
