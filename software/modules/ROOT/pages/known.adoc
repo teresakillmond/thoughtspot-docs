@@ -22,7 +22,7 @@ Headline with decimal digits is rounded off, causing a loss of accuracy.
 
 *Conditions*:
 
-Headline value is double type
+Headline value is `DOUBLE` type.
 
 *Workaround*:
 
@@ -37,7 +37,7 @@ a|*Symptoms*:
 
 *Conditions*:
 
-- The headline is over a formula column that contains any of `unique_count`, `unique_count_if`, `group_unique_count`, `approx_unique_count`.
+- The headline is over a formula column that contains any of the following: `unique_count`, `unique_count_if`, `group_unique_count`, `approx_unique_count`.
 - The formula’s unique count portion uses columns that come from tables of a connection to a cloud data warehouse.
 - The selected headline aggregation for the formula (the headline visualization at the bottom of the main answer visualization) is Table Aggregate.
 
