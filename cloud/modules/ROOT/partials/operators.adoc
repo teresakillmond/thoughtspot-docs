@@ -23,10 +23,6 @@ a|
 `in` | Takes a column name and a list of values. It checks each column value against the list of values in the formula, and returns `true` if the column value matches one of the values in the formula. | `state in { 'texas' , 'california' }`
 
 a|
-[#not-in]
-`not in` | Takes a column name and a list of values. It checks each column value against the list of values in the formula, and returns `true` if the column value *_does not_* match any of the values in the formula. | `state not in { 'texas' , 'california' }`
-
-a|
 [#isnull]
 `isnull` | Returns `true` if the value is `null`. | `isnull (phone)`
 
@@ -34,6 +30,10 @@ a|
 [#not]
 `not` | Returns `true` if the condition is `false`, otherwise returns `false`. | `not (3 > 2) = false` +
 `not (state = 'texas')`
+
+a|
+[#not-in]
+`not in` | Takes a column name and a list of values. It checks each column value against the list of values in the formula, and returns `true` if the column value *_does not_* match any of the values in the formula. | `state not in { 'texas' , 'california' }`
 
 a|
 [#or]
