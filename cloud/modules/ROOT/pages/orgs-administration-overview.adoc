@@ -60,7 +60,7 @@ To delete an Org using the UI, follow these steps:
 . Find the Org you would like to delete. You can use the Orgs search bar at the top left of your screen, above the list of Orgs.
 . Select the *Delete* button for the Org you would like to edit.
 . A confirmation pop-up window appears, warning you that this action permanently deletes all users in the Org and all objects they created. Type in CONFIRM.
-. Select *Delete*.
+. Select *Delete*. Note that you cannot delete the Primary Org.
 
 NOTE: When you delete an Org, you delete all its users and all objects they created. However, if a user in the deleted Org also exists in an Org you did not delete, ThoughtSpot deletes all the user objects in the deleted Org, but that user continues to exist in the other Org. ThoughtSpot completely deletes all objects existing in the deleted Org. These objects cannot be retrieved later.
 
@@ -96,13 +96,13 @@ NOTE: Group names must be unique across the cluster, not just the Org.
 
 == User authentication
 
-You manage user authentication at the *All orgs* level of the Admin Console. You cannot manage or configure SAML or local user authentication to work for just one Org.
+You manage user authentication at the *All orgs* level of the Admin Console. You cannot manage or configure SAML or local user authentication to work in different ways for different Orgs in the same cluster.
 
 For more information about SAML and local user authentication, refer to xref:authentication-integration.adoc[Managing authentication with SAML] and xref:authentication-local.adoc[Managing local authentication].
 
 == Application settings
 
-You manage application settings, such as search and SpotIQ settings, email and onboarding settings, and style customization, at the *All orgs* level of the Admin Console. You cannot configure these features to work in a specific way for just one Org.
+You manage application settings, such as search and SpotIQ settings, email and onboarding settings, and style customization, at the *All orgs* level of the Admin Console. You cannot configure these features to work in different ways for different Orgs in the same cluster.
 
 For more information about application settings, refer to xref:search-spotiq-settings.adoc[Managing search and SpotIQ settings], xref:onboarding-email-settings.adoc[Managing email and onboarding settings], and xref:style-customization.adoc[Style customization].
 
