@@ -17,24 +17,9 @@ endif::free-trial-feature[]
 
 [#primary-8-8-0-cl]
 
-[#8-8-0-cl-custom-tile-sizes]
-[discrete]
-=== Custom sizes for visualizations in Liveboards
-
-This release introduces custom tile sizes for visualizations within Liveboards. In addition to the 5 predetermined visualization sizes, you can now customize your Liveboard visualizations to be any size.
-For more information,
-ifndef::pendo-links[]
-see xref:liveboard-layout-edit.adoc#size[Edit the layout of a Liveboard].
-endif::[]
-ifdef::pendo-links[]
-see xref:liveboard-layout-edit.adoc#size[Edit the layout of a Liveboard,window=_blank].
-endif::[]
-
-image::liveboard-tile-sizes-gif.gif[]
-
 [#8-8-0-cl-ts-sync-enhancements]
 [discrete]
-=== ThoughtSpot Sync enhancements
+=== Schedule ThoughtSpot Sync
 
 // Naomi.
 // scheduler possibly GA, Salesforce moved to 8.9.0.cl
@@ -47,7 +32,31 @@ ifndef::pendo-links[]
 see xref:thoughtspot-sync.adoc#pipelines[ThoughtSpot Sync].
 endif::[]
 
-image::ts-sync-schedule.png[]
+image::ts-sync-schedule.png[Schedule sync,356,320]
+
+[#8-8-0-cl-custom-tile-sizes]
+ifndef::free-trial-feature[]
+ifdef::pendo-links[]
+[discrete]
+=== Custom sizes for visualizations in Liveboards [.badge.badge-update-whats-new]#Beta#
+endif::[]
+ifndef::pendo-links[]
+[discrete]
+=== Custom sizes for visualizations in Liveboards [.badge.badge-update]#Beta#
+endif::[]
+
+This release introduces custom tile sizes for visualizations within Liveboards. In addition to the 5 predetermined visualization sizes, you can now customize your Liveboard visualizations to be any size.
+For more information,
+ifndef::pendo-links[]
+see xref:liveboard-layout-edit.adoc#size[Edit the layout of a Liveboard].
+endif::[]
+ifdef::pendo-links[]
+see xref:liveboard-layout-edit.adoc#size[Edit the layout of a Liveboard,window=_blank].
+endif::[]
+
+image::liveboard-tile-sizes-gif.gif[]
+
+endif::free-trial-feature[]
 
 ifndef::free-trial-feature[]
 ifdef::pendo-links[]
@@ -128,6 +137,7 @@ We have made the following improvements to the *Show underlying data* feature:
 * When you open the *Edit columns* pop-up, you can now search for column names using the search bar.
 * The *Show underlying data* pop-up no longer disables columns by default. To disable columns from your query, click *Edit columns* and deselect the column name(s).
 
+image:show-underlying.png[]
 
 [#8-8-0-cl-year-name]
 [discrete]
@@ -166,7 +176,7 @@ see xref:keywords-de-DE.adoc[Deutsch keyword reference,window=_blank].
 endif::[]
 
 '''
-[#secondary-8-7-0-cl]
+[#secondary-8-8-0-cl]
 [discrete]
 === _Other features and enhancements_
 
@@ -235,6 +245,23 @@ see xref:spotapps-salesforce.adoc[Salesforce Pipeline Analysis].
 endif::[]
 ifdef::pendo-links[]
 see xref:spotapps-salesforce.adoc[Salesforce Pipeline Analysis,window=_blank].
+endif::[]
+
+[#8-8-0-cl-dbt]
+[discrete]
+=== Integration with dbt for Amazon Redshift and Google BigQuery
+
+This release supports integration with dbt for the following 2 new cloud data warehouses:
+
+* Amazon Redshift
+* Google BigQuery
+
+For more information,
+ifndef::pendo-links[]
+see xref:dbt-integration.adoc[dbt integration].
+endif::[]
+ifdef::pendo-links[]
+see xref:dbt-integration.adoc[dbt integration,window=_blank].
 endif::[]
 
 ifndef::free-trial-feature[]

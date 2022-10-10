@@ -19,6 +19,8 @@ For these instructions, see xref:ts-cloud-getting-started.adoc[Getting Started w
 
 Custom sizes for visualizations in Liveboards::
 This release introduces custom tile sizes for visualizations within Liveboards. In addition to the 5 predetermined visualization sizes, you can now customize your Liveboard visualizations to be any size. See xref:liveboard-layout-edit.adoc#size[Edit the layout of a Liveboard].
++
+This feature is in *Beta* and off by default. To enable it, contact {support-url}.
 
 Formula function search bar::
 The formula editor assistant now contains a search bar for formula functions. Use it to search for specific functions to include in your formula. Refer to xref:formula-add.adoc[].
@@ -41,7 +43,7 @@ The following SpotApps are now available:
 [#8-8-0-cl-business-user]
 === For the Business User
 
-ThoughtSpot Sync enhancements::
+Schedule ThoughtSpot Sync::
 When creating a sync from ThoughtSpot to an external business app (Google Sheets, Microsoft Teams, Slack), you can now schedule the sync to repeat on an hourly, daily, weekly, or monthly basis. To try it out, create a sync and select *Schedule your sync*. For more information, see xref:thoughtspot-sync.adoc#pipelines[ThoughtSpot Sync].
 
 Explain change for KPI charts [.badge.badge-update]#Beta#::
@@ -75,6 +77,18 @@ Delete joins that have dependents::
 You can now delete a join from the ThoughtSpot UI even if the join has dependents. Deleting the join does not delete the dependents. This allows you to delete a join and create it again in the other direction, without invalidating or deleting any dependent objects.
 +
 Refer to xref:relationship-delete.adoc[].
+
+[#dbt-improvements]
+Integration with dbt for Amazon Redshift and Google BigQuery::
+This release supports integration with dbt for the following 2 new cloud data warehouses:
++
+--
+* Amazon Redshift
+* Google BigQuery
+--
++
+Refer to xref:dbt-integration.adoc[].
+
 
 [#8-8-0-cl-it-ops-engineer]
 === For the IT/Ops Engineer
