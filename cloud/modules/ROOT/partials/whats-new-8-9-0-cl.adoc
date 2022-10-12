@@ -72,7 +72,7 @@ image::liveboard-tile-sizes-gif.gif[]
 === Visualization GUID support in TML files
 Liveboard ThoughtSpot Modeling Language (TML) files now contain distinct GUIDs for each visualization in the Liveboard by default. This ensures that the GUID for the visualization stays the same after you import or export it.
 
-// Teresa -- might not be necessary. What do we think? If we want to include it, how can we make it more exciting?
+// Teresa -- might not be necessary. What do we think?
 
 [#8-9-0-cl-sql-server]
 [discrete]
@@ -82,9 +82,10 @@ Liveboard ThoughtSpot Modeling Language (TML) files now contain distinct GUIDs f
 
 [#8-9-0-cl-fqn]
 [discrete]
-=== Export FQNs in TML export
+=== Table and connection FQN export in TML files
+ThoughtSpot now automatically exports the FQNs for table and connections in any TML file when exporting from the UI. When you import a TML file, if the provided FQN does not match any existing FQNs, ThoughtSpot now uses name matching to find the table or connection it should use.
 
-// Teresa -- prob not necessary
+// Teresa -- might not be necessary. What do we think?
 
 [#8-9-0-cl-object-usage]
 [discrete]
