@@ -72,6 +72,22 @@ This release improves the translated German keywords. See xref:keywords-de-DE.ad
 [#8-8-0-cl-data-engineer]
 === For the Data Engineer
 
+[#snowflake-oauth-improvements]
+Snowflake OAuth improvements::
+This release brings improvements in how ThoughtSpot handles user tokens for Snowflake connections configured with Snowflake OAuth. If a user’s refresh token becomes invalid, the administrator or author of the connection can now run the Invalidate Tokens command to allow the user to re-authenticate and regain access to the insights provided by the connection, and the connection itself. Also, in this release the Role field has been added to the Snowflake OAuth connection details page, allowing a role to be added when the connection is created and changed when a connection is edited. See xref:connections-snowflake-edit.adoc#invalidate-tokens[Invalidating refresh tokens of a Snowflake connection].
+
+[#snowflake-okta-oauth]
+Snowflake Okta OAuth::
+You can now use Okta as your authorization server for external OAuth. For details, see xref:connections-snowflake-okta-oauth.adoc[Configure Okta OAuth for a Snowflake connection].
+
+[#new-connections]
+New connections::
+This release adds the following new connections:
+
+- xref:connections-presto.adoc[Presto]
+- xref:connections-trino.adoc[Trino]
+- xref:connections-denodo.adoc[Denodo], which supports OAuth. See xref:connections-denodo-oauth.adoc[Denodo OAuth].
+
 [#join-deletion]
 Delete joins that have dependents::
 You can now delete a join from the ThoughtSpot UI even if the join has dependents. Deleting the join does not delete the dependents. This allows you to delete a join and create it again in the other direction, without invalidating or deleting any dependent objects.
