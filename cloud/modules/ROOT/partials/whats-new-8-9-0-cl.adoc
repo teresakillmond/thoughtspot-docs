@@ -15,7 +15,15 @@ NOTE: Features marked as [.badge.badge-update-whats-new]#Beta# are off by defaul
 endif::[]
 endif::free-trial-feature[]
 
-[#primary-8-8-0-cl]
+[#primary-8-9-0-cl]
+
+[#8-9-0-cl-custom-tile-sizes]
+[discrete]
+=== Custom sizes for visualizations in Liveboards
+
+Custom tile sizes for visualizations within Liveboards are now GA. In addition to the 5 predetermined visualization sizes, you can now customize your Liveboard visualizations to be any size.
+
+image::liveboard-tile-sizes-gif.gif[]
 
 [#8-9-0-cl-discoverable-content]
 [discrete]
@@ -37,14 +45,6 @@ image:answer-discoverable.png[]
 
 You can now sync data directly from an answer or custom SQL view to Salesforce. Using ThoughtSpot Sync, you can push insights directly to Salesforce, notify your teams, and view data in context. ThoughtSpot Sync automatically establishes a secure pipeline to the destination app and thus eliminates the need for building custom connectors.
 
-[#8-9-0-cl-custom-tile-sizes]
-[discrete]
-=== Custom sizes for visualizations in Liveboards GA
-
-Custom tile sizes for visualizations within Liveboards are now generally available. In addition to the 5 predetermined visualization sizes, you can now customize your Liveboard visualizations to be any size.
-
-image::liveboard-tile-sizes-gif.gif[]
-
 [#8-9-0-cl-display]
 [discrete]
 === Edit display name from profile
@@ -52,9 +52,20 @@ image::liveboard-tile-sizes-gif.gif[]
 // Yochana
 
 '''
-[#secondary-8-8-0-cl]
+[#secondary-8-9-0-cl]
 [discrete]
 === _Other features and enhancements_
+
+[#8-9-0-cl-tags]
+[discrete]
+=== Tag enhancements
+
+This release includes the following updates to the tags feature in the Data workspace:
+
+* Add tags to multiple objects at a time
+* Create new tags from the *Edit tags* modal
+
+image::tags-data-workspace.gif[Data workspace tags gif]
 
 [#8-9-0-cl-high-availability]
 [discrete]
@@ -62,61 +73,22 @@ image::liveboard-tile-sizes-gif.gif[]
 
 // Teresa
 
-[#8-9-0-cl-tags]
-[discrete]
-=== Tag enhancements
-
-// Teresa
-
-[#8-9-0-cl-guids]
-[discrete]
-=== Support viz guids in TML import/export
-
-// Teresa -- might not be necessary
-
 [#8-9-0-cl-sql-server]
 [discrete]
 === SQL server with embrace synapse
 
 // Mark
 
-[#8-9-0-cl-object-usage]
+[#8-9-0-cl-query-stats]
 [discrete]
-=== Object usage Liveboard
+=== Query stats Liveboard
 
 // Naomi
 
-[#8-9-0-cl-orgs]
+[#8-9-0-cl-guids]
 [discrete]
-=== Orgs beta
-
-// Teresa -- need to confirm with orgs team
-
-[#8-9-0-cl-orgs-pricing]
-[discrete]
-=== Orgs phase 1 pricing changes
-
-// Teresa -- prob not necessary
-
-// THE FOLLOWING ARE NEEDS EVAL
-
-[#8-9-0-cl-seekwell-zoho]
-[discrete]
-=== Seekwell as a Service Zoho SecRev
-
-// Naomi -- 9.0.cl or later
-
-[#8-9-0-cl-seekwell-servicenow]
-[discrete]
-=== Seekwell as a Service Servicenow SecRev
-
-// Naomi -- 8.10.cl or later
-
-[#8-9-0-cl-seekwell-hubspot]
-[discrete]
-=== Seekwell as a Service HubSpot SecRev
-
-// Naomi -- 8.10.cl or later
+=== Visualization GUID support in TML files
+Liveboard ThoughtSpot Modeling Language (TML) files now contain distinct GUIDs for each visualization in the Liveboard by default. This ensures that the GUID for the visualization stays the same after you import or export it.
 
 [#8-9-0-cl-pricing]
 [discrete]
