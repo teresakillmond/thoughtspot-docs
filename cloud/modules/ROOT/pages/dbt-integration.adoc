@@ -20,7 +20,7 @@ Before you can integrate with dbt, you must satisfy the following prerequisites
 API key:: This is also called the *API token* in dbt. To find this token, navigate to your *Account Settings* page in dbt cloud. Click on the *Service Account tokens* page, and generate a new token.
 Account ID:: Your default dbt Cloud account ID. Find your account ID in your dbt Cloud URL, after you log in. For example, if your URL is `https://cloud.getdbt.com/#/accounts/12345/projects/56789/dashboard`, your account ID is `12345`.
 Project ID:: Find your project ID in your dbt Cloud URL, after you log in. For example, if your URL is `https://cloud.getdbt.com/#/accounts/12345/projects/56789/dashboard`, your project ID is `56789`.
-* Optionally define the relationships for the dbt models in your `yml` schema file.
+* Optionally define the relationships for the dbt models in your `yml` schema file. For more information, refer to the https://docs.getdbt.com/docs/build/tests[dbt documentation^].
 +
 NOTE: If you do not define relationships, ThoughtSpot imports each model as a single table and creates one worksheet based on each table.
 * If you are using *dbt cloud*, the *generate docs on run* setting must be on. You can enable this setting in the jobs settings of the project, under *Execution settings*.
