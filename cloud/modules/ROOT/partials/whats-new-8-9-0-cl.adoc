@@ -17,23 +17,11 @@ endif::free-trial-feature[]
 
 [#primary-8-8-0-cl]
 
-[#8-9-0-cl-discoverable-content]
-[discrete]
-=== Discoverable answers and Liveboards
-
-// Naomi
-
-Discoverable answers and Liveboards are now GA and on by default. You can now make content easily available to your team members when you save or share an answer or Liveboard. Use the *Make this [answer | Liveboard] discoverable* checkbox that appears when you save or share an answer or Liveboard to grant _view_ access to your teammates. Any user who has access to the underlying data source (worksheet, table, view) and is part of the same user group as the author of the content, will be able to discover and access the answer or Liveboard in *Search Answers*. Note that discoverable answers and Liveboards viewed in *Search Answers* appear on the user's home page, but do not appear under the *Answers* or *Liveboards* tabs. +
-Select the *Make this [answer | Liveboard] discoverable* checkbox to publish your content in the list of relevant results when a teammate uses the *Search Answers* feature, or de-select to keep your content private.
-
-image:answer-discoverable.png[]
-
-
 [#8-9-0-cl-custom-tile-sizes]
 [discrete]
-=== Custom sizes for visualizations in Liveboards GA
+=== Custom sizes for visualizations in Liveboards
 
-Custom tile sizes for visualizations within Liveboards are now generally available. In addition to the 5 predetermined visualization sizes, you can now customize your Liveboard visualizations to be any size.
+Custom tile sizes for visualizations within Liveboards are now GA. In addition to the 5 predetermined visualization sizes, you can now customize your Liveboard visualizations to be any size.
 For more information,
 ifndef::pendo-links[]
 see xref:liveboard-layout-edit.adoc#size[Edit the layout of a Liveboard].
@@ -44,22 +32,36 @@ endif::[]
 
 image::liveboard-tile-sizes-gif.gif[]
 
+[#8-9-0-cl-discoverable-content]
+[discrete]
+=== Discoverable answers and Liveboards
+
+// Naomi
+
+Discoverable answers and Liveboards are now GA and on by default. You can now make content easily available to your team members when you save or share an answer or Liveboard. Use the *Make this [answer | Liveboard] discoverable* checkbox that appears when you save or share an answer or Liveboard to grant _view_ access to your teammates. Any user who has access to the underlying data source (worksheet, table, view) and is part of the same user group as the author of the content, will be able to discover and access the answer or Liveboard in *Search Answers*. Note that discoverable answers and Liveboards viewed in *Search Answers* appear on the user's home page, but do not appear under the *Answers* or *Liveboards* tabs.
+
+Select the *Make this [answer | Liveboard] discoverable* checkbox to publish your content in the list of relevant results when a teammate uses the *Search Answers* feature, or de-select to keep your content private.
+
+image:answer-discoverable.png[]
+
+// take out the note about it not appearing on the answers and liveboards page and the line about access
+
+// general note for all these blurbs: make them less explainy and more markety
+
+// add link
+
 [#8-9-0-cl-display]
 [discrete]
 === Edit display name from profile
 
 // Yochana
 
+// according to adi this might be in 8.8? but we can't find it
+
 '''
 [#secondary-8-8-0-cl]
 [discrete]
 === _Other features and enhancements_
-
-[#8-9-0-cl-high-availability]
-[discrete]
-=== High Availability
-
-// Teresa
 
 [#8-9-0-cl-tags]
 [discrete]
@@ -67,8 +69,10 @@ image::liveboard-tile-sizes-gif.gif[]
 
 This release includes the following updates to the tags feature in the Data workspace:
 
-* Manage tags for multiple objects at a time
+* Add tags to multiple objects at a time
 * Create new tags from the *Edit tags* modal
+
+// create tags is probably admin-only: test this and then clarify
 
 For more information,
 ifndef::pendo-links[]
@@ -79,6 +83,14 @@ see xref:tags.adoc[Use tags to organize].
 endif::[]
 
 image::tags-data-workspace.gif[Data workspace tags gif]
+
+// highlight the multiple items selected, highlight the tag after it's applied
+
+[#8-9-0-cl-high-availability]
+[discrete]
+=== High Availability
+
+// Teresa
 
 [#8-9-0-cl-guids]
 [discrete]
@@ -92,17 +104,13 @@ ifdef::pendo-links[]
 see xref:tml.adoc#viz_guid[ThoughtSpot Modeling Language].
 endif::[]
 
+// move all the way down
+
 [#8-9-0-cl-sql-server]
 [discrete]
 === SQL server with embrace synapse
 
 // Mark
-
-[#8-9-0-cl-object-usage]
-[discrete]
-=== Object usage Liveboard
-
-// Naomi-- moved to 8.10.cl
 
 [#8-9-0-cl-query-stats]
 [discrete]
@@ -114,6 +122,7 @@ The Query Stats Liveboard allows administrators of customers who have signed up 
 
 image::query-stats-whats-new.png[Query stats Liveboard]
 
+// link needs to be pendo version
 
 [#8-9-0-cl-orgs]
 [discrete]
@@ -121,37 +130,13 @@ image::query-stats-whats-new.png[Query stats Liveboard]
 
 // Teresa -- need to confirm with orgs team
 
-[#8-9-0-cl-orgs-pricing]
-[discrete]
-=== Orgs phase 1 pricing changes
-
-// Teresa -- prob not necessary
-
 // THE FOLLOWING ARE NEEDS EVAL
-
-[#8-9-0-cl-seekwell-zoho]
-[discrete]
-=== Seekwell as a Service Zoho SecRev
-
-// Naomi -- prob not necessary. Zoho planned for 9.0.cl
-
-[#8-9-0-cl-seekwell-servicenow]
-[discrete]
-=== Seekwell as a Service Servicenow SecRev
-
-// Naomi -- prob not necessary. Servicenow planned for 8.10.cl
-
-[#8-9-0-cl-seekwell-hubspot]
-[discrete]
-=== Seekwell as a Service HubSpot SecRev
-
-// Naomi -- prob not necessary. HubSpot planned for 8.10.cl
 
 [#8-9-0-cl-pricing]
 [discrete]
 === Product metrics and pricing improvements
 
-// Mark
+// Mark. might all be internal
 
 ifndef::free-trial-feature[]
 [discrete]
