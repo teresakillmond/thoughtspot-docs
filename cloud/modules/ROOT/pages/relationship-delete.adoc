@@ -27,10 +27,12 @@ image::table-delete-join.png[]
 
 . Click the *Delete icon* to the right of the join name.
 The *Confirm delete* window appears.
++
+If the join has dependents, a different window appears, warning you that deleting this join makes the dependent objects stop working until you recreate the join later. However, ThoughtSpot does not delete the dependent objects. You can use this functionality to <<change-cardinality,reverse the join cardinality>> or otherwise edit a join without deleting its dependents.
 . Click *Delete*.
 
 [#change-cardinality]
 == Reverse join cardinality
-You can use the delete functionality to reverse or change the join cardinality for a join that has dependents. Delete the join, and create it again with the opposite cardinality. Deleting the join does *not* delete the dependent objects.
+You can use the delete functionality to reverse or change the join cardinality for a join that has dependents. Delete the join, and create it again with the opposite cardinality. Deleting the join does *not* delete the dependent objects, but it does make them unusable until you create another join.
 
 If a join does not have dependents, you can change the join cardinality by xref:relationship-create.adoc#join-edit[editing the join]. This allows you to change a many-to-one join to one-to-one. To reverse the join cardinality, you must delete the join and create it again with the opposite cardinality.
