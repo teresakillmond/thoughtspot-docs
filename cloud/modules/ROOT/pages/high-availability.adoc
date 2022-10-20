@@ -5,24 +5,18 @@
 :page-layout: default-cloud
 :description: Learn how to enable High Availability, or multi-node clusters, with support across AWS Availability Zones.
 
-High Availability (HA) ensures that the ThoughtSpot Cloud application experiences near-zero downtime in the case of node failure or AWS Availability Zone (AZ) failures. ThoughtSpot provides HA through deployment of multi-node clusters.
+High Availability (HA) ensures that the ThoughtSpot Cloud application experiences near-zero downtime in the case of node failure or AWS Availability Zone (AZ) failures. ThoughtSpot provides HA through deployment spanning multiple AZs. This ensures that, in the case of an AWS Availability Zone failure, ThoughtSpot continues to function.
 
-[#requirements]
-== Requirements
-
-Your environment must fulfill the following requirements for High Availability:
-
-* The cluster must have at least 3 nodes.
-* These nodes must be in different availability zones (AZ). This ensures that, in the case of an AWS Availability Zone failure, the other nodes continue to function.
-* The cluster must have spare capacity; if one node fails, the remaining nodes must be able to host and serve all loaded data.
-
+////
+confirming if we should keep this
 [#node-failure]
 == What happens during node failure
 When a node loses connection with the main service manager process, it becomes *unhealthy*. ThoughtSpot migrates all migratable services that run on the failed node to other *healthy* nodes. For all practical purposes, ThoughtSpot ignores the failed node until it reports itself as healthy. ThoughtSpot rebalances and redistributes the data served from the failed node onto healthy nodes. Healthy nodes read the data from the persistent storage layer into the in-memory database processes.
+////
 
 [#user-impact]
 == Impact on users
-The process of redistributing and loading the data in the affected tables on the persistent layer from a failed node to the remaining healthy nodes is not instantaneous. User performance may be impacted during the failover. However, the cluster remains available and accessible during the entire failover process.
+The process of redistributing and loading the data in the affected tables on the persistent layer from a failed Availability Zones to the remaining healthy Availability Zones is not instantaneous. User performance may be impacted during the AZ failure. However, ThoughtSpot remains available and accessible during the entire AZ failure.
 
 [#enable]
 == Enable High Availability
