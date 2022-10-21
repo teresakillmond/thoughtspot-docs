@@ -99,6 +99,8 @@ a| <<filters,filters>>
 
 <<layout,layout>>
 
+<<liveboard,liveboard>>
+
 <<locked,locked>>
 
 <<max,max>>
@@ -115,7 +117,6 @@ a| <<filters,filters>>
 
 a| <<phrase,phrase>>
 
-<<pinboard,pinboard>>
 
 <<properties,properties>>
 
@@ -321,7 +322,7 @@ Note that this database is not the same as the data warehouse (Falcon, Amazon Re
 
 [#description]
 description::
-The text that describes an object: a `worksheet`, a `worksheet_column`, `answer`, `pinboard`, `view`, `view_column` and so on.
+The text that describes an object: a `worksheet`, a `worksheet_column`, `answer`, `liveboard`, `view`, `view_column` and so on.
 
 [#destination]
 destination::
@@ -538,6 +539,10 @@ Each join is identified by `name` and optional `description`, and the additional
 layout::
 Specifies the Liveboard layout, in the order that a `visualization_id` is listed.
 
+[#liveboard]
+liveboard::
+Top-level container for all object definitions within the Liveboard or SpotIQ result.
+
 [#locked]
 locked::
 The 'automatically select my chart' option in the UI.
@@ -554,7 +559,7 @@ Minimum value for conditional formatting.
 [#name]
 name::
 The name of an object.
-Applies to `worksheet`, `table`,`joins`, `formula`, `rls_rules`, `answer`, `pinboard`, `view`, `sql_view` `table`, `connection`, `destination`, and so on.
+Applies to `worksheet`, `table`,`joins`, `formula`, `rls_rules`, `answer`, `liveboard`, `view`, `sql_view` `table`, `connection`, `destination`, and so on.
 +
 For Answers, `name` refers to how the column appears in the query.
 For example, if you sorted by `Quarter` in your search, from the `Commit Date` column, the `name` of the column is `Quarter(Commit Date)`.
@@ -577,10 +582,6 @@ A list of columns, in the order they appear in the table.
 [#phrase]
 phrase::
 Phrase associated with a view column.
-
-[#pinboard]
-pinboard::
-Top-level container for all object definitions within the Liveboard or SpotIQ result.
 
 [#properties]
 properties::
