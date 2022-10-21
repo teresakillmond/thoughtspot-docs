@@ -16,7 +16,13 @@ When a node loses connection with the main service manager process, it becomes *
 
 [#user-impact]
 == Impact on users
+
+////
 The process of redistributing and loading the data in the affected tables on the persistent layer from a failed Availability Zones to the remaining healthy Availability Zones is not instantaneous. User performance may be impacted during the AZ failure. However, ThoughtSpot remains available and accessible during the entire AZ failure.
+
+////
+
+ThoughtSpot remains available and accessible during the entire AZ failure. However, user performance may be impacted, because an AZ failure can affect certain internal ThoughtSpot services.
 
 [#enable]
 == Enable High Availability
