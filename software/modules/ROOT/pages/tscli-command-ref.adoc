@@ -5,7 +5,7 @@
 :experimental:
 :description: Use `tscli` (ThoughtSpot command line interface) to take backups of data, to apply updates, to stop and to start services, and to view system information.
 
-// NOTE: the following commands have been REMOVED because their related features were deprecated (but the commands are still present in tscli: etl, cluster setup-release-host, cluster setup-release-host-key
+// NOTE: the following commands have been REMOVED because their related features were deprecated. The commands are still present in tscli: etl, cluster setup-release-host, cluster setup-release-host-key
 
 The ThoughtSpot command line interface, or tscli, is an administration interface for the cluster. Use `tscli` to take snapshots (backups) of data, to apply updates, to stop and to start services, and to view information about the system. This reference defines each subcommand.
 
@@ -33,7 +33,7 @@ tscli [-h]
       [--yes]
       [--cluster ]
       [--zoo ]
-      {access,alert,ansible,backup,backup-policy,calendar,callhome,cassandra,cluster,command,config-mode,csp,dataflow,dr-mirror,event,feature,fileserver,firewall,hdfs,ipsec,ldap,logs,map-tiles,monitoring,nas,nitro-switch,node,notification,onboarding,patch,rpackage,saml,scheduled-pinboards,set,smtp,snapshot,snapshot-policy,socialproof,ssl,sssd,storage,support,tokenauthentication,update}
+      {access,alert,ansible,backup,backup-policy,calendar,callhome,cassandra,cluster,command,config-mode,csp,dataflow,dr-mirror,event,feature,fileserver,firewall,hdfs,ipsec,ldap,logs,map-tiles,monitoring,nas,nitro-switch,node,onboarding,patch,pre-update,rpackage,saml,scheduled-pinboards,set,smtp,snapshot,snapshot-policy,socialproof,ssl,sssd,storage,support,tokenauthentication,update}
 ....
 
 The `tscli` command has several subcommands, such as `alert`, `backup`, and so on.
@@ -187,9 +187,9 @@ This section lists each subcommand of the tscli command, and its syntax:
 * xref:tscli-nas[nas]
 * xref:tscli-nitro-switch[nitro-switch]
 * xref:tscli-node[node]
-* xref:tscli-notification[notification]
 * xref:tscli-onboarding[onboarding]
 * xref:tscli-patch[patch]
+* xref:tscli-pre-update[pre-update]
 * xref:tscli-rpackage[rpackage]
 * xref:tscli-saml[saml]
 * xref:tscli-scheduled-pinboards[scheduled-pinboards]
@@ -383,7 +383,7 @@ tscli calendar generate::
   --end_date _END_DATE_;; The end date for the custom calendar, in the form `mm/dd/yyyy`.
   --calendar_type {MONTH_OFFSET,4-4-5,4-5-4,5-4-4};; The type of custom calendar. The default is `MONTH_OFFSET`.
   --month_offset {January,February,March,April,May,June,July,August,September,October,November,December};; The month offset that starts the year, if the calendar is the `MONTH_OFFSET` type. The default is `January`.
-  --start_day_of_week {Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday};; The day for starting the week. The default is `Sunday`.
+  --start_day_of_week {Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday};; The day the week should start on. The default is `Sunday`.
   --quarter_name_prefix _QUARTER_NAME_PREFIX_;; The string for the prefix to the quarter.
   --year_name_prefix _YEAR_NAME_PREFIX_;; The string for the prefix to the year.
   --username USERNAME;; The admin username for ThoughtSpot login.
@@ -415,11 +415,11 @@ tscli callhome [-h] {disable,enable,generate-bundle}
 
 This subcommand has the following options:
 
+tscli callhome disable::
+Turns off the callhome feature.
 tscli callhome enable --customer_name CUSTOMER_NAME::
   Enables the callhome feature, which sends stats to ThoughtSpot. This feature is enabled by default.
   --customer_name CUSTOMER_NAME;; The parameter `customer_name` takes the form `Shared/CUSTOMER_NAME/stats`.
-tscli callhome disable::
-  Turns off the callhome feature.
 tscli callhome generate-bundle [--d D] [--since SINCE]::
   Generates the callhome stats `*.tar` file, with the following parameters:
   --d D;; Destination folder for the `*.tar` file. There is no default setting.
@@ -430,7 +430,7 @@ tscli callhome generate-bundle [--d D] [--since SINCE]::
 
 [source,tscli]
 ----
-tscli cassandra [-h] {backup,restore,tablestats}
+tscli cassandra [-h] {backup,restore,tablestats,truncatehints}
 ----
 
 Backs up cassandra.
@@ -447,6 +447,8 @@ tscli cassandra restore::
 tscli cassandra tablestats::
   Procures a list of heavy tables in Cassandra, with the following parameter:
   --limit __LIMIT__;; Specifies the number of tables to display. The default is `10`.
+tscli cassandra truncatehints::
+Runs `truncatehints` on all nodes. This can resolve issues where the cassandra check fails because of old hints being present.
 
 [#tscli-cluster]
 === cluster
@@ -455,6 +457,8 @@ tscli cassandra tablestats::
 ----
 tscli cluster [-h] {abort-update,bucket-migrate,bucket-name,check,create,download-release,get-config,list-available-releases,list-downloaded-releases,load,restore,resume-update,set-config,set-min-resource-spec,show-id,show-name,show-resource-spec,start,status,stop,update,update-hadoop,update-zookeeper}
 ----
+
+//setup-release-host is SSU-related, which has been deprecated
 
 This subcommand has the following options:
 
@@ -478,6 +482,7 @@ tscli cluster create RELEASE::
   Creates a new cluster from the release file specified by adding the release number. Used by ThoughtSpot Support when installing a new cluster. For example, `tscli cluster create 6.3.1.tar.gz`. This command has the following parameters:
   --disable_rotate_keys;; Disables cluster rotate key configuration. The default is `False`.
   --enable_cloud_storage {s3a,gcs};; Determines whether to enable Cloud Storage setup, and which storage format to use.
+//possibly also goofys? asking sahil
   heterogeneous;; Should be set for heterogeneous clusters. The default is `False`.
 
 tscli cluster download-release RELEASE::
@@ -726,7 +731,7 @@ tscli fileserver show-config::
 tscli fileserver upload [-h] [--user USER] [--password PASSWORD] --file_name FILE_NAME --server_dir_path SERVER_DIR_PATH::
   Uploads the specified file to the specified directory on the secure file server. You may optionally specify the `user` and `password` to bypass the credentials specified when configuring the file server connection with `tscli fileserver configure`. Before using this command for the first time, you must set up the file server connection using `tscli fileserver configure`. This command uses the following flags:
   --user USER;; Username of the fileserver.
-  --password PASSWORD;; Password of the fileserver. This is required and the command prompts you for it if you do not supply it.
+  --password PASSWORD;; Password of the fileserver. The password is required. The command prompts you for it if you do not supply it.
   --file_name FILE_NAME;; Name of the local file to upload.
   --server_dir_path SERVER_DIR_PATH;; Directory path on fileserver. The `SERVER_DIR_PATH` parameter specifies the directory for file upload. It is based on the customer name, and takes the form `/Shared/support/<customer_name>`.
 
@@ -741,7 +746,11 @@ tscli firewall [-h] {close-ports,disable,enable,open-ports,status}
 This subcommand has the following options:
 
 tscli firewall close-ports --ports PORTS::
-  Closes specified ports through firewall on all nodes. Accepts a comma-separated list of ports. Only closes ports that were previously opened using `open-ports`, and ignores closed ports and ports that were not opened with `open-port`. Some essential ports are always kept open, such as `ssh`; they are not affected by this command or by `open-ports`.
+  Closes specified ports through firewall on all nodes. Accepts a comma-separated list of ports. Only closes ports that were previously opened using `open-ports`, and ignores closed ports and ports that were not opened with `open-ports`. Some essential ports are always kept open, such as `ssh`; they are not affected by this command or by `open-ports`.
++
+This command accepts the following optional parameter:
+
+--type TYPE;; The type of port to close, either `tcp`, `udp`, or `all`. The default is `tcp`.
 
 tscli firewall disable::
   Disables the network firewall of the cluster.
@@ -751,6 +760,10 @@ tscli firewall enable::
 
 tscli firewall open-ports --ports PORTS::
   Opens specified ports through a firewall on all nodes. Accepts a comma-separated list of ports. Ignores open ports. Some essential ports are always kept open, such as `ssh`; they are not affected by this command or by `close-ports`.
++
+This command accepts the following optional parameter:
+
+--type TYPE;; The type of port to open, either `tcp`, `udp`, or `all`. The default is `tcp`.
 
 tscli firewall status::
   Shows whether firewall is currently enabled or disabled.
@@ -799,7 +812,7 @@ tscli ldap [-h] {add-cert,configure,purge-configuration}
 This subcommand has the following options:
 
 tscli ldap add-cert NAME CERT_FILE::
-  Adds an SSL certificate for LDAP. Use only if LDAP has already been configured without SSL, when you are adding SSL. Use `name` to supply an alias for the certificate you are installing. Use `cert-file` to specify the certificate file.
+  Adds an SSL certificate for LDAP. Use only if LDAP has already been configured without SSL, when you are adding SSL. Supply an alias or name for the certificate you are installing, and specify the certificate file.
 
 tscli ldap configure::
   Configures LDAP using an interactive script. Refer to xref:ldap-config-ad.adoc[].
@@ -859,6 +872,9 @@ tscli map-tiles [-h] {disable,enable,status}
 
 This subcommand has the following options:
 
+tscli map-tiles disable::
+Disables map-tiles functionality.
+
 tscli map-tiles enable [-h] [--offline] [--tar TAR] [--md5 MD5]::
   Enables ThoughtSpot's map tiles. Used when constructing geo map charts.
 +
@@ -876,9 +892,6 @@ This command has the following parameters:
   The default setting is `False`.
   --tar TAR;; Specified tar file for map-tiles. Use during offline enablement of map-tiles. Download the tarball https://tsengg-geodata.s3.amazonaws.com/raster-osm-jpg.tar.gz[here^].
   --md5 MD5;;  Specified md5 file for map-tiles. Use during offline enablement of map-tiles. Download the md5 https://tsengg-geodata.s3.amazonaws.com/md5[md5^].
-
-tscli map-tiles disable::
-  Disables map-tiles functionality.
 
 tscli map-tiles status::
   Checks whether map-tiles are enabled, with the following parameter:
@@ -974,22 +987,9 @@ tscli node ls [-h] [--type {all,healthy,not-healthy}]::
   --type {all,healthy,not-healthy};; Filters by node state. The default setting is `all`.
 
 tscli node status::
-  Get Node status for the operation specified by mode, with the following parameters:
+  Gets node status for the operation specified by mode, with the following parameters:
   --mode { reinstall-os};; Mode for running node status.
   --tail;; Prints the details of create and update progress. The default is `False`.
-
-[#tscli-notification]
-=== notification
-
-[source,tscli]
-----
-tscli notification [-h] {set-apns-config}
-----
-
-This subcommand has the following option:
-
-tscli notification set-apns-config::
-  Sets APNS configuration.
 
 [#tscli-onboarding]
 === onboarding
@@ -1058,6 +1058,18 @@ tscli patch rollback MD5 [-h]::
 
 tscli patch status::
   Shows the progress of patch operation.
+
+[#tscli-pre-update]
+=== tscli pre-update
+
+[source,tscli]
+----
+tscli pre-update [-h] {check}
+----
+
+This subcommand has the following options:
+
+tscli pre-update check RELEASE_PATH :: Runs a pre-update check for the cluster. Requires a path to the release staging directory.
 
 [#tscli-rpackage]
 === rpackage
@@ -1160,7 +1172,7 @@ tscli set heterogeneous::
 
 [source,tscli]
 ----
-tscli smtp [-h] {remove-mailfromname,remove-mailname,remove-optparams,remove-realname,remove-relayhost,remove-saslcredentials,reset-canonical-mapping,set-canonical-mapping,set-mailfromname,set-mailname,set-realname,set-relayhost,set-saslcredentials,show-canonical-mapping,show-mailfromname,show-mailname,show-optparams,show-realname,show-relayhost}
+tscli smtp [-h] {remove-mailfromname,remove-mailname,remove-optparams,remove-realname,remove-relayhost,remove-saslcredentials,reset-canonical-mapping,set-canonical-mapping,set-mailfromname,set-mailname,set-optparams,set-realname,set-relayhost,set-saslcredentials,show-canonical-mapping,show-mailfromname,show-mailname,show-optparams,show-realname,show-relayhost}
 ----
 
 This subcommand has the following options:
@@ -1187,13 +1199,13 @@ tscli smtp reset-canonical-mapping::
   Deletes the current postmap mapping.
 
 tscli smtp set-canonical-mapping [-h] new_key new_value::
-  Sets a new Postmap mapping. You must specify the `new_key` and the `new_value`.
+  Sets a new Postmap mapping. You must specify the `new_key` entry in SMTP and the `new_value` associated with that key.
 
 tscli smtp set-mailfromname MAILFROMNAME::
-  Sets the name from where email alerts are sent for the cluster. It is the first half of the email address, the part before the @ sign. In _example@company.com_, it is _example_.
+  Sets the name from which email alerts are sent for the cluster. It is the first half of the email address, the part before the @ sign. In _example@company.com_, it is _example_.
 
 tscli smtp set-mailname MAILNAME::
-  Sets the domain from where email alerts are sent for the cluster. It is the second half of the email address, the part after the @ sign. In _example@company.com_, it is _company_.
+  Sets the domain from which email alerts are sent for the cluster. It is the second half of the email address, the part after the @ sign. In _example@company.com_, it is _company_.
 
 tscli smtp set-optparams::
   Allows you to configure optional Postfix settings. Postfix is the service ThoughtSpot uses for routing and delivering email.
@@ -1208,14 +1220,14 @@ tscli smtp set-relayhost [-h] [--force FORCE] RELAYHOST::
   * You can specify a custom port to connect to the relay host. If you do not specify a port, the system uses the default recommended port, port 25. Use a custom port if port 25 is blocked in your environment.
   * To use the default port, run the setup command normally:
 +
-```
+----
 $ tscli smtp set-relayhost IP_address
-```
+----
 * To use a custom port instead of port 25, run the setup command, specifying the port you want to use:
 +
-```
+----
 $ tscli smtp set-relayhost IP_address:custom_port
-```
+----
   * If you are on 6.1 or on a version earlier than 6.0.5, contact xref:support-contact.adoc[ThoughtSpot Support] to help you set up a custom port.
 
 tscli smtp set-saslcredentials::
@@ -1497,7 +1509,7 @@ tscli storage df::
 
 [source,tscli]
 ----
-tscli support [-h] {bundle,remove-maintenance,restart-remote,rm-admin-email,rm-admin-phone,rm-feedback-email,schedule-maintenance,set-admin-email,set-admin-phone,set-debug-ui-password,set-feedback-email,set-remote,show-admin-email,show-admin-phone,show-feedback-email,show-remote,start-remote,stop-remote}
+tscli support [-h] {bundle,notification-banner,remove-maintenance,remove-notification-banner,restart-remote,rm-admin-email,rm-admin-phone,rm-feedback-email,schedule-maintenance,set-admin-email,set-admin-phone,set-debug-ui-password,set-feedback-email,set-remote,show-admin-email,show-admin-phone,show-feedback-email,show-remote,start-remote,stop-remote}
 ----
 
 This subcommand has the following options:
@@ -1513,8 +1525,17 @@ tscli support bundle [-h] [--include INCLUDE] [--exclude EXCLUDE] [--list_select
   --out OUT;; Tarball path for dumping the support bundle. The default setting is `/tmp/support_bundle.tar.gz`.
   --nodes NODES;; Comma-separated list of nodes from which the system collects logs. Skip this to use all nodes. There is no default setting.
 
+tscli support notification-banner::
+Enables the display of a notification banner. This command has the following optional subcommands:
+
+--colour COLOUR;; Background color of the banner. The default is yellow.
+--message MESSAGE;; The content of the notification banner.
+
 tscli support remove-maintenance::
   Removes a scheduled maintenance.
+
+tscli support remove-notification-banner::
+Removes the notification banner.
 
 tscli support restart-remote::
   Restarts remote support.
@@ -1580,11 +1601,11 @@ tscli tokenauthentication [-h] {disable,enable}
 
 This subcommand has the following options:
 
+tscli tokenauthentication disable::
+Purges existing token-based login configuration.
+
 tscli tokenauthentication enable::
   Configures token-based login.
-
-tscli tokenauthentication disable::
-  Purges existing token-based login configuration.
 
 [#tscli-update]
 === update
