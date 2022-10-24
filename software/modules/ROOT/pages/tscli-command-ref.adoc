@@ -482,7 +482,7 @@ tscli cluster create RELEASE::
   Creates a new cluster from the release file specified by adding the release number. Used by ThoughtSpot Support when installing a new cluster. For example, `tscli cluster create 6.3.1.tar.gz`. This command has the following parameters:
   --disable_rotate_keys;; Disables cluster rotate key configuration. The default is `False`.
   --enable_cloud_storage {s3a,gcs};; Determines whether to enable Cloud Storage setup, and which storage format to use.
-//possibly also goofys? asking sahil
+//goofys is included in this list but is internal-only. don't add
   heterogeneous;; Should be set for heterogeneous clusters. The default is `False`.
 
 tscli cluster download-release RELEASE::
