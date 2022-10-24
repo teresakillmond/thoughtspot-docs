@@ -99,13 +99,15 @@ ifndef::free-trial-feature[]
 === High Availability
 
 ThoughtSpot now supports High Availability through  deployment spanning multiple Availability Zones. This ensures that the ThoughtSpot Cloud application experiences near-zero downtime in the case of node failure or AWS Availability Zone (AZ) failures. To learn how to enable High Availability in your environment,
-see xref:high-availability.adoc[High Availability and resilience].
+see
+ifndef::pendo-links[]
+xref:high-availability.adoc[High Availability and resilience].
 endif::[]
 ifdef::pendo-links[]
 see xref:high-availability.adoc[High Availability and resilience,window=_blank].
 endif::[]
 
-endif::[]
+endif::free-trial-feature[]
 
 [#8-9-0-cl-sql-server]
 [discrete]
@@ -113,6 +115,8 @@ endif::[]
 
 // Mark
 
+
+ifndef::free-trial-feature[]
 [#8-9-0-cl-query-stats]
 [discrete]
 === Query stats Liveboard
@@ -130,6 +134,7 @@ endif::[]
 image::query-stats-whats-new.png[Query stats Liveboard]
 
 // link needs to be pendo version
+endif::free-trial-feature[]
 
 [#8-9-0-cl-guids]
 [discrete]
