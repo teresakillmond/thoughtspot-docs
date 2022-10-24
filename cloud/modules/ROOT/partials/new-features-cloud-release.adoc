@@ -63,7 +63,7 @@ Denodo connections now support OAuth. For details, see xref:connections-denodo-o
 Snowflake Oauth improvements::
 This release brings improvements in how ThoughtSpot handles user tokens for Snowflake connections configured with Snowflake OAuth. If a user's refresh token becomes invalid, the administrator or author of the connection can now run the Invalidate Tokens command to allow the user to re-authenticate and regain access to the insights provided by the connection, and the connection itself. Also, in this release the _Role_ field has been added to the Snowflake OAuth connection details page, allowing a role to be added when the connection is created and changed when a connection is edited. See xref:connections-snowflake-edit.adoc#invalidate-tokens[Invalidating refresh tokens of a Snowflake connection].
 
-Snowflake CSV upload [.badge.badge-update]#Beta#:: Now you have a quick and easy way to complete one-time data loads of small files that are not present in your cloud data warehouse. You can now upload a CSV file to the database of your Snowflake connection that can be joined to other tables or worksheets in your connection. Once your administrator enables this feature, go to *Data* > *Utilities*, and click *Upload CSV*.
+Snowflake CSV upload [.badge.badge-beta-relnotes]#Beta#:: Now you have a quick and easy way to complete one-time data loads of small files that are not present in your cloud data warehouse. You can now upload a CSV file to the database of your Snowflake connection that can be joined to other tables or worksheets in your connection. Once your administrator enables this feature, go to *Data* > *Utilities*, and click *Upload CSV*.
 ifndef::pendo-links[]
 See xref:connections-snowflake-csv-upload-config.adoc[Configure CSV upload for your Snowflake connection], and xref:connections-snowflake-csv-upload.adoc[Upload a CSV file in your Snowflake connection].
 
@@ -77,7 +77,7 @@ Query Stats Liveboard::
 The new Query Stats Liveboard allows administrators of customers who have signed up for a query-based usage subscription, to track the number of queries of their users. To view the Query Stats Liveboard, go to *Liveboards* and select *Query Stats Liveboard*. Query-based usage is part of consumption-based pricing. For more information, see xref:consumption-pricing-query-based.adoc[Query-based usage].
 
 [#okta]
-Identity and Access Management V2 [.badge.badge-update]#Beta#::
+Identity and Access Management V2 [.badge.badge-beta-relnotes]#Beta#::
 
 In this release, ThoughtSpot switched to a new, industry-standard cloud authentication method through Okta. ThoughtSpot now powers its internal authentication with Okta, which is the industry-leading authentication platform. This change is internal and has no impact on customers. After we enable this feature by default, all user authentication will automatically use the internal Okta service.
 +
