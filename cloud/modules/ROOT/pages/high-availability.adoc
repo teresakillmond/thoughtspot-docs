@@ -7,22 +7,10 @@
 
 High Availability (HA) ensures that the ThoughtSpot Cloud application experiences near-zero downtime in the case of node failure or AWS Availability Zone (AZ) failures. ThoughtSpot provides HA through deployment spanning multiple AZs. This ensures that, in the case of an AWS Availability Zone failure, ThoughtSpot continues to function.
 
-////
-confirming if we should keep this
-[#node-failure]
-== What happens during node failure
-When a node loses connection with the main service manager process, it becomes *unhealthy*. ThoughtSpot migrates all migratable services that run on the failed node to other *healthy* nodes. For all practical purposes, ThoughtSpot ignores the failed node until it reports itself as healthy. ThoughtSpot rebalances and redistributes the data served from the failed node onto healthy nodes. Healthy nodes read the data from the persistent storage layer into the in-memory database processes.
-////
-
 [#user-impact]
 == Impact on users
 
-////
-The process of redistributing and loading the data in the affected tables on the persistent layer from a failed Availability Zones to the remaining healthy Availability Zones is not instantaneous. User performance may be impacted during the AZ failure. However, ThoughtSpot remains available and accessible during the entire AZ failure.
-
-////
-
-ThoughtSpot remains available and accessible during the entire AZ failure. However, user performance may be impacted, because an AZ failure can affect certain internal ThoughtSpot services.
+When one AWS Availability Zone fails, ThoughtSpot migrates all activity to the functioning Availability Zones. The ThoughtSpot application remains available and accessible during the entire AZ failure. However, user performance may be impacted.
 
 [#enable]
 == Enable High Availability
