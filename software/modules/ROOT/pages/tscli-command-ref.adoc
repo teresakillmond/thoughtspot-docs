@@ -1509,8 +1509,10 @@ tscli storage df::
 
 [source,tscli]
 ----
-tscli support [-h] {bundle,notification-banner,remove-maintenance,remove-notification-banner,restart-remote,rm-admin-email,rm-admin-phone,rm-feedback-email,schedule-maintenance,set-admin-email,set-admin-phone,set-debug-ui-password,set-feedback-email,set-remote,show-admin-email,show-admin-phone,show-feedback-email,show-remote,start-remote,stop-remote}
+tscli support [-h] {bundle,remove-maintenance,restart-remote,rm-admin-email,rm-admin-phone,rm-feedback-email,schedule-maintenance,set-admin-email,set-admin-phone,set-debug-ui-password,set-feedback-email,set-remote,show-admin-email,show-admin-phone,show-feedback-email,show-remote,start-remote,stop-remote}
 ----
+
+// notification-banner and remove-notification-banner are internal and will be removed
 
 This subcommand has the following options:
 
@@ -1525,17 +1527,10 @@ tscli support bundle [-h] [--include INCLUDE] [--exclude EXCLUDE] [--list_select
   --out OUT;; Tarball path for dumping the support bundle. The default setting is `/tmp/support_bundle.tar.gz`.
   --nodes NODES;; Comma-separated list of nodes from which the system collects logs. Skip this to use all nodes. There is no default setting.
 
-tscli support notification-banner::
-Enables the display of a notification banner. This command has the following optional subcommands:
-
---colour COLOUR;; Background color of the banner. The default is yellow.
---message MESSAGE;; The content of the notification banner.
+// notification-banner and remove-notification-banner are internal and will be removed
 
 tscli support remove-maintenance::
   Removes a scheduled maintenance.
-
-tscli support remove-notification-banner::
-Removes the notification banner.
 
 tscli support restart-remote::
   Restarts remote support.
