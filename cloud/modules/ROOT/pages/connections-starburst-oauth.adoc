@@ -27,16 +27,16 @@ The following steps detail the configuration of IdP with Okta as an example. You
 
 To configure the IdP with Okta, do the following:
 
-. Log in to the Okta console with a user having administrator privileges. Navigate to the *Applications* page in the console and click *Create App Integration*.
+. Log in to the Okta console with a user that has administrator privileges. Navigate to the *Applications* page in the console and click *Create App Integration*.
 +
-image::dremio-oauth1.png[]
+image::dremio-oauth1.png[Click Create App Integration]
 +
 . For sign-in method, choose *OIDC - OpenID Connect*.
 . For application type, choose *Web Application*
 . Click *Next*.
 . Under Grant type, make sure *Authorization Code* and *Refresh Token* are selected.
 +
-image::starburst-oauth2.png[]
+image::starburst-oauth2.png[Select Authorization Code and Refresh Token]
 
 . For Sign-in redirect URIs, add the ThoughtSpot redirect URI for the application.
 +
@@ -44,18 +44,18 @@ It should follow this format:
 +
 `\https://<your-thoughtspot-instance-host>/callosum/v1/connection/generateTokens`
 +
-image::dremio-oauth3.png[]
+image::dremio-oauth3.png[Add the ThoughtSpot redirect URI]
 
 . Assign the application to everyone in the organization or to specific groups. This step may vary for other IdPs.
 +
-image::dremio-oauth4.png[]
+image::dremio-oauth4.png[Assign the application]
 . Collect the client credentials from the application home page and make a note of them. These will be required later for adding the external token provider in {connection}.
 +
-image::starburst-oauth5.png[]
+image::starburst-oauth5.png[Make a note of the client credentials]
 . Go to menu:Security[API], and make a note of the value for Audience. This is required in a later step
 for configuring the OpenID well-known URI for the authorization server.
 +
-image::dremio-oauth6.png[]
+image::dremio-oauth6.png[Make a note of the Audience value]
 +
 For Okta, it should follow this format:
 +
@@ -84,9 +84,9 @@ http-server.authentication.jwt.principal-field=<value of the claim containing th
 +
 These details should be obtained from the well known open id configuration URL obtained from Okta authorization server (e.g. *\https://example.okta.com/oauth2/abc1234xyz/.well-known/oauth-authorization-server*).
 +
-The value for the principal-field configuration should be the claim name in the JWT that contains the username matching the username created in Starburst. This can be found from the token payload. In the below example the username is in the claim “sub”
+The value for the principal-field configuration should be the claim name in the JWT that contains the username matching the username created in Starburst. This can be found from the token payload. In the below example the username is in the claim “sub.”
 +
-image::dremio-oauth8.png[]
+image::dremio-oauth8.png[Sample external token provider code]
 
 '''
 > **Related information**

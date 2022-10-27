@@ -32,7 +32,7 @@ Some examples of functions you find in aggregation formulas are:
 You can tell which formulas are aggregation formulas by looking at the function list in the *Formula Assistant*.
 Aggregation functions have their own section.
 
-image::formula_asst_aggregate.png[]
+image::formula-assistant-aggregate.png[Aggregate functions in the formula assistant]
 
 == Advanced aggregation functions
 
@@ -85,7 +85,7 @@ Why?
 It's because the formula will be evaluated in this order: For each row, divide profit by sales and then total up all the results.
 As you can see, the results do not look like gross margin values, which should be between 0 and 1.
 
-image::formula_gross_margin_no_sum.png[]
+image::formula_gross_margin_no_sum.png[Gross margin column with values in the 2000s and 1000s]
 
 Instead, you'd need to use a formula that uses the order of operations you want:
 
@@ -95,4 +95,4 @@ sum (profit) / sum (sales)
 
 Now the result is as expected, because the formula totals the profits for all rows, and then divides that by the total of sales for all rows, returning an average gross margin:
 
-image::formula_gross_margin_sum.png[]
+image::formula_gross_margin_sum.png[Gross margin column with values in between 0 and 1]

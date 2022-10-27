@@ -85,10 +85,10 @@ NOTE: If you are formatting percentages, you cannot have a space before the perc
 
 === Profile-based number formatting
 
-Number formatting is set by default based on your ThoughtSpot profile's *Preferred locale* setting.
+Number formatting is set by default based on your ThoughtSpot profile's *System language* setting.
 You can set this value to accommodate your geographic locations.
 
-image::profile-locale.png[]
+image::profile-locale.png[Set your system language from the profile]
 
 For example, if you are using ThoughtSpot in the US, the number formatting should look like this: `xxx,xxx.xx`.
 And in Europe, it should look like this: `xxx.xxx,xx`.
@@ -133,12 +133,12 @@ All users are treated as if they are in `en-US` locale unless they are in embed 
 For example, `100 Polish Zloty` appears as `100zł` to a user in Poland, but without localization enabled, it appears as `PLN 100`.
 
 This subtle difference can be seen when you use the REST API.
-See the ThoughtSpot Application Integration Guide for more information on the API.
+See the https://developers.thoughtspot.com/docs/?pageid=rest-apis[Developer documentation^] for more information on the API.
 
 . Find the *Currency Type* for the column whose display format you want to change.
 . Click it to open the *Specify Currency Type* menu.
 +
-image::specify_currency_type.png[]
+image::specify_currency_type.png[Specify the currency type]
 
 . Select one of the following ways you would like to change the format.
 +
