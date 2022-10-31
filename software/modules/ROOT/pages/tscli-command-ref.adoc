@@ -430,7 +430,7 @@ tscli callhome generate-bundle [--d D] [--since SINCE]::
 
 [source,tscli]
 ----
-tscli cassandra [-h] {backup,restore,tablestats,truncatehints}
+tscli cassandra [-h] {backup,restore,tablestats}
 ----
 
 Backs up cassandra.
@@ -447,8 +447,8 @@ tscli cassandra restore::
 tscli cassandra tablestats::
   Procures a list of heavy tables in Cassandra, with the following parameter:
   --limit __LIMIT__;; Specifies the number of tables to display. The default is `10`.
-tscli cassandra truncatehints::
-Runs `truncatehints` on all nodes. This can resolve issues where the cassandra check fails because of old hints being present.
+
+//truncatehints is SRE-only. should not be in the public docs
 
 [#tscli-cluster]
 === cluster
