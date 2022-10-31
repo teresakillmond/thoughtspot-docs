@@ -16,7 +16,8 @@ endif::free-trial-feature[]
 [discrete]
 === Custom sizes for visualizations in Liveboards
 
-Custom tile sizes for visualizations within Liveboards are now GA. In addition to the 5 predetermined visualization sizes, you can now customize your Liveboard visualizations to be any size.
+
+Custom tile sizes for visualizations within Liveboards are now GA. You can now customize your Liveboard visualizations to be any size.
 For more information,
 ifndef::pendo-links[]
 see xref:liveboard-layout-edit.adoc#size[Edit the layout of a Liveboard].
@@ -26,6 +27,8 @@ see xref:liveboard-layout-edit.adoc#size[Edit the layout of a Liveboard,window=_
 endif::[]
 
 image::liveboard-tile-sizes-gif.gif[]
+
+// update value prop to be more marketingy
 
 ifndef::free-trial-feature[]
 ifdef::pendo-links[]
@@ -51,6 +54,8 @@ endif::[]
 
 image::sync-salesforce.png[]
 endif::free-trial-feature[]
+
+//return badge to beta, not early access
 
 [#8-9-0-cl-discoverable-content]
 [discrete]
@@ -79,27 +84,28 @@ ifdef::pendo-links[]
 xref:share-liveboards.adoc[Share Liveboards,window=_blank].
 endif::[]
 
-// general note for all these blurbs: make them less explainy and more markety
-
-// add link
+// take out second paragraph. explain a little more, specifically in search answers context
 
 [#8-9-0-cl-display]
 [discrete]
 === Edit display name from profile
 
-ThoughtSpot users can edit their display name by clicking on the profile icon present on top right corner of the screen. For more information,
+ThoughtSpot users can edit their display name by clicking the profile icon in the top right corner of the screen. For more information,
 see
 ifndef::pendo-links[]
-xref:user-profile.adoc[edit display name].
+xref:user-profile.adoc#display-name[Edit display name].
 endif::[]
 ifdef::pendo-links[]
-see xref:user-profile.adoc[Edit display name,window=_blank].
+see xref:user-profile.adoc#display-name[Edit display name,window=_blank].
 endif::[]
-endif::free-trial-feature[]
 
 image::display-name.png[]
 
 // Yochana
+
+//update image here -- we need it to be zoomed in on the display name section. box around the profile icon and the display name feature. no need for this to be full screen -- capture it smaller than full screen so that the profile icon is a lot closer to the profile section itself. the nav bar currently looks like the software nav bar -- if you can't get an instance on cloud, copy/paste the cloud nav bar onto software image
+
+// add additional step: 1. click profile icon. 2. click the edit button next to name
 
 '''
 [#secondary-8-8-0-cl]
@@ -130,7 +136,7 @@ ifndef::free-trial-feature[]
 [discrete]
 === High Availability
 
-ThoughtSpot now supports High Availability through  deployment spanning multiple Availability Zones. This ensures that the ThoughtSpot Cloud application experiences near-zero downtime in the case of AWS Availability Zone (AZ) failures. To learn how to enable High Availability in your environment,
+ThoughtSpot now supports High Availability through  deployment spanning multiple AWS Availability Zones. This ensures that the ThoughtSpot Cloud application experiences near-zero downtime in the case of Availability Zone (AZ) failures. To learn how to enable High Availability in your environment,
 see
 ifndef::pendo-links[]
 xref:high-availability.adoc[High Availability and resilience].
@@ -141,12 +147,17 @@ endif::[]
 
 endif::free-trial-feature[]
 
+//TERADATA FEATURE
+
+// make the blurb two sentences, clarify that "trust sql" is a feature by making it bold or something similar
+
 [#8-9-0-cl-sql-server]
 [discrete]
 === SQL server with Synapse
 
 Synapse connections now support SQL Server.
 
+//still waiting for value prop from team
 
 ifndef::free-trial-feature[]
 [#8-9-0-cl-query-stats]
@@ -165,7 +176,8 @@ endif::[]
 
 image::query-stats-whats-new.png[Query stats Liveboard]
 
-// link needs to be pendo version
+// cut image off after "count of queries by month" so it fits in the pendo screen
+
 endif::free-trial-feature[]
 
 [#8-9-0-cl-guids]
