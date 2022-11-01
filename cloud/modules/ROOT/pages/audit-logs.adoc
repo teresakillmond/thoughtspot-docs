@@ -1,5 +1,5 @@
 = Collect security logs
-:last_updated: 11/04/2021
+:last_updated: 11/01/2022
 :linkattrs:
 :experimental:
 :page-layout: default-cloud
@@ -8,11 +8,32 @@
 
 ThoughtSpot Cloud provides security audit events related to account activities and user actions within ThoughtSpot.
 These events can help your SOC team detect potential security threats or compromised user accounts in your organization.
-These human-readable and comprehensive events can be shipped to your SIEM application in near real-time.
-Security events remain within the system for 30 days.
+
+== How to fetch security events
+
+To fetch security events from ThoughtSpot, you can push the logs to your SIEM server, or pull the logs using the Audit Logs API.
+
+=== Push to your SIEM server
+
+ThoughtSpot’s human-readable and comprehensive events can be shipped to your SIEM application in near real-time. Security events remain within the system for 30 days.
 To integrate with your SIEM or view these logs, https://community.thoughtspot.com/customers/s/contactsupport[contact ThoughtSpot Support].
 
-ThoughtSpot security events include the following information:
+ThoughtSpot also supports log ingestion to the customer SIEM system. We support multiple output plugins which can be configured to push the security audit events to the configured destination SIEM server at an interval of every 5 seconds.
+
+ThoughtSpot supports the following output plugin options:
+
+- HTTP
+- Splunk
+- Azure Log Analytics
+- Datadog
+
+=== Pull via Audit Logs API
+
+The ThoughtSpot log API service allows you to programmatically get security audit events from the ThoughtSpot system. To use this API, make sure you have admin user privileges.
+
+For more information, see link:https://developers.thoughtspot.com/docs/?pageid=logs-api[Audit logs API].
+
+== ThoughtSpot security events
 
 * An event ID
 * A unique description of the event (for example,
