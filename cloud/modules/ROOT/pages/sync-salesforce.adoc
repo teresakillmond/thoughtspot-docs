@@ -24,12 +24,15 @@ NOTE: You cannot create a sync from an unsaved answer. If the *Sync to other app
 . Within ThoughtSpot, fill in the following parameters:
 
 * Edit the *Pipeline name* if needed. By default, this field populates with _PL-[Answer Name]_.
-* If you have more than one Salesforce destination set up, then the *Destination* field appears and you will have to select a Salesforce destination from the drop-down available. However, if no destinations have been set up before or if you have only one Salesforce destination, the *Destination* field will not appear.
-* Select *Object* from the drop-down menu.
+* If you have more than one Salesforce destination set up, then the *Destination* field appears, and you will have to select a Salesforce destination from the drop-down available. However, if no destinations have been set up before or if you have only one Salesforce destination, the *Destination* field will not appear.
+* Select your Salesforce *Object* from the drop-down menu.
 * Select *Operation* from the drop-down menu. You can choose between *Insert* and *Upsert*.
+
 * Map the *Source* and *Destination* columns from the drop-downs provided.
 +
-image::ts-sync-salesforce-param.png[Salesforce Sync window]
+NOTE: If you select *Upsert* as the operation, the *External ID* option appears as well, to the left of the *Source* and *Destination* columns. This option is only clickable if the *Destination* column is unique (for example, `ID`). For the external ID column, the source column values will be looked up against the destination column values. For matches on that column, the existing records in Salesforce will be updated with the new source columns while records that don’t exist yet will be created and populated using the source column data.
++
+image:ts-sync-salesforce-param.png[Salesforce Sync window]
 
 
 . By default, “Save and sync” is selected. Click *Save* to send your data to Salesforce. Your data immediately appears in Salesforce.
@@ -52,10 +55,24 @@ To sync to Salesforce from a custom SQL view, follow these steps:
 * If you have more than one Salesforce destination set up, then the *Destination* field appears and you have to select a Salesforce destination from the drop-down available. However, if no destinations have been set up before or if you have only one Salesforce destination, the *Destination* field will not appear.
 * Select *Object* from the drop-down menu.
 * Select *Operation* from the drop-down menu. You can choose between *Insert* and *Upsert*.
+
 * Map the *Source* and *Destination* columns from the drop-downs provided.
++
+NOTE: If you select *Upsert* as the operation, the *External ID* option appears as well, to the left of the *Source* and *Destination* columns. This option is only clickable if the *Destination* column is unique (for example, `ID`). For the external ID column, the source column values will be looked up against the destination column values. For matches on that column, the existing records in Salesforce will be updated with the new source columns while records that don’t exist yet will be created and populated using the source column data.
 
 
-.By default, “Sync and save” is selected. Click *Save* to send your data to Salesforce. Your data immediately appears in Salesforce.
+. By default, “Sync and save” is selected. Click *Save* to send your data to Salesforce. Your data immediately appears in Salesforce.
+
+=== Failure to sync
+
+A sync to Salesforce can fail due to multiple reasons. If you experience a sync failure, consider the following causes:
+
+* The underlying ThoughtSpot object was deleted.
+* The underlying Salesforce object was deleted.
+* The column name was changed in either ThoughtSpot or Salesforce, making it different to the column name setup in the mapping.
+* There are data validation rules in Salesforce which only allow data with only a certain data type to be populated in the Salesforce fields, but the columns being mapped onto Salesforce from ThoughtSpot do not have the same or allowable data type.
+* There is a mandatory field in Salesforce which has not been mapped onto as a destination column when setting up the mapping in ThoughtSpot.
+
 
 
 == Sync to Salesforce from the Data Workspace
@@ -77,9 +94,22 @@ To create a sync to Salesforce from the Data Workspace, follow these steps:
 * Select your *Source* data. Here you will pick an answer or a custom SQL view to send through sync.
 * Select *Object* from the drop-down menu.
 * Select *Operation* from the drop-down menu. You can choose between *Insert* and *Upsert*.
+
 * Map the source and destination columns from the drop-downs provided.
++
+NOTE: If you select *Upsert* as the operation, the *External ID* option appears as well, to the left of the *Source* and *Destination* columns. This option is only clickable if the *Destination* column is unique (for example, `ID`). For the external ID column, the source column values will be looked up against the destination column values. For matches on that column, the existing records in Salesforce will be updated with the new source columns while records that don’t exist yet will be created and populated using the source column data.
 
 .  By default, “Save and sync” is selected. Click *Save* to send your data to Salesforce. Your data immediately appears in Salesforce.
+
+=== Failure to sync
+
+A sync to Salesforce can fail due to multiple reasons. If you experience a sync failure, consider the following causes:
+
+* The underlying ThoughtSpot object was deleted.
+* The underlying Salesforce object was deleted.
+* The column name was changed in either ThoughtSpot or Salesforce, making it different to the column name setup in the mapping.
+* There are data validation rules in Salesforce which only allow data with only a certain data type to be populated in the Salesforce fields, but the columns being mapped onto Salesforce from ThoughtSpot do not have the same or allowable data type.
+* There is a mandatory field in Salesforce which has not been mapped onto as a destination column when setting up the mapping in ThoughtSpot.
 
 === Manage pipelines
 
