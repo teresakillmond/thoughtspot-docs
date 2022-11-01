@@ -13,7 +13,7 @@ To create a sync to Salesforce from an answer, follow these steps:
 
 . Select the desired answer from the *Answers* tab or the ThoughtSpot homepage. You must have *Can manage sync* permissions and *view* access to an answer to create a sync.
 
-. In the upper-right corner of the answer, select the *more options* menu icon image:icon-more-10px.png[]. From the drop-down menu, select *Sync to other apps*, then choose *Salesforce*.
+. In the upper-right corner of the answer, select the *more options* menu icon image:icon-more-10px.png[More options menu icon]. From the drop-down menu, select *Sync to other apps*, then choose *Salesforce*.
 +
 NOTE: You cannot create a sync from an unsaved answer. If the *Sync to other apps* option appears grayed-out in the menu, first save the answer before trying again.
 
@@ -32,7 +32,7 @@ NOTE: You cannot create a sync from an unsaved answer. If the *Sync to other app
 +
 NOTE: If you select *Upsert* as the operation, the *External ID* option appears as well, to the left of the *Source* and *Destination* columns. This option is only clickable if the *Destination* column is unique (for example, `ID`). For the external ID column, the source column values will be looked up against the destination column values. For matches on that column, the existing records in Salesforce will be updated with the new source columns while records that don’t exist yet will be created and populated using the source column data.
 +
-image:ts-sync-salesforce-param.png[]
+image:ts-sync-salesforce-param.png[Salesforce Sync window]
 
 
 . By default, “Save and sync” is selected. Click *Save* to send your data to Salesforce. Your data immediately appears in Salesforce.
@@ -45,7 +45,7 @@ To sync to Salesforce from a custom SQL view, follow these steps:
 
 . Navigate to your SQL view by clicking the *Data* tab and searching from the Data Workspace home page. Select the SQL view name.
 
-. In the top right corner, click the *more options* menu icon image:icon-more-10px.png[] and select *Sync to Salesforce*.
+. In the top right corner, click the *more options* menu icon image:icon-more-10px.png[more options menu icon] and select *Sync to Salesforce*.
 
 .  If this is the first sync you have created for the selected app, an authorization page appears. To give ThoughtSpot permission to send data to your Salesforce account, click *Sign in with Salesforce*, select your account, and click *Allow*.
 
@@ -115,14 +115,13 @@ A sync to Salesforce can fail due to multiple reasons. If you experience a sync 
 
 While you can also manage a pipeline from the *Pipelines* tab in the Data Workspace, accessing the *Manage pipelines* option from an answer or view displays all pipelines local to that specific data object. To manage a pipeline from an answer or view, follow these steps:
 
-. Click the *more options* menu icon image:icon-more-10px.png[] and select *Manage pipelines*.
+. Click the *more options* menu icon image:icon-more-10px.png[more options menu icon] and select *Manage pipelines*.
 
-. Scroll to the name of your pipeline from the list that appears. Next to the pipeline name, select the *more options* icon image:icon-more-10px.png[]. From the list that appears, select:
+. Scroll to the name of your pipeline from the list that appears. Next to the pipeline name, select the *more options* icon image:icon-more-10px.png[more options menu icon]. From the list that appears, select:
 
 * *Edit* to edit the pipeline’s properties. For example, for a pipeline to Google Sheets, you can edit the pipeline name, file name, sheet name, or cell number. Note that you cannot edit the source or destination of a pipeline.
 * *Delete* to permanently delete the pipeline.
 * *Sync now* to sync your answer or view to the designated destination.
 * *View run history* to see the pipeline’s Activity log in the Data Workspace.
 +
-image:ts-sync-manage-pipelines.png[]
-
+image::ts-sync-manage-pipelines.png[More options menu for a pipeline]
