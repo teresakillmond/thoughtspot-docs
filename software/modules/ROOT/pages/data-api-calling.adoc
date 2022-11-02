@@ -37,7 +37,7 @@ https://<thoughtspot_server>/callosum/v1/tspublic/v1
 When you parse the returned JSON data you can see that there is one object for every viz on the Liveboard.
 The objects are named according to the corresponding vizid.
 
-image::parsed_json_data.png[]
+image::parsed_json_data.png[List of objects in the JSON data]
 
 If you make a call to a specific viz on a Liveboard, it returns only one object.
 
@@ -71,7 +71,7 @@ The `columnNames` array contains a list of all column headers.
 And the `data` array contains a list of other arrays.
 Each sub array represents a new row of data.
 
-image::columnnames_and_data_arrays.png[]
+image::columnnames_and_data_arrays.png[JSON columnNames array, expanded]
 
 The REST API supports filtering the data returned through parameters that you pass within the URL.
 These are called xref:runtime-filters.adoc[Runtime Filters].

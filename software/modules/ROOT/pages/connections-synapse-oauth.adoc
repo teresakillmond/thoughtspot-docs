@@ -13,11 +13,11 @@ The first step in setting up OAuth with Azure AD as an IdP is to create an activ
 1. Log in to the  Azure portal and navigate to “Azure Active Directory” resource.
 2. Under Manage click **App registrations** and then **New registration**.
 +
-image::azure-app-registrations.png[]
+image::azure-app-registrations.png[Select App registrations > New registration]
 +
 The Register an application appears.
 +
-image::azure-register-application.png[]
+image::azure-register-application.png[Register an application page]
 
 3. Enter a name for the application, and select the supported account types.
 
@@ -29,7 +29,7 @@ The OAuth client application creation is complete.
 +
 Example details of an application is displayed as shown below.
 +
-image::azure-application-complete.png[]
+image::azure-application-complete.png[Sample application details]
 
 5. Make a note of the **Application (client) ID** which you will use later in the OAuth2.0 authorization workflow.
 +
@@ -38,7 +38,7 @@ You will now create the client secret for your application.
 6. In the application you just created, click **Certificates & Secrets**.
 +
 
-image::azure-cert-secrets.png[]
+image::azure-cert-secrets.png[Select Certificates & secrets from the left navigation bar]
 
 7. Click **New client secret** to create a secret for the application. This secret will also be used in OAuth2.0 authorization flow along with client ID.
 
@@ -46,11 +46,11 @@ image::azure-cert-secrets.png[]
 +
 Delegated type indicates that the application will authenticate on behalf of the user.
 +
-image::azure-config-permissions.png[]
+image::azure-config-permissions.png[Add the user_impersonation permissions]
 
 9. From the application home page, click **Endpoints** and make a note of the OAuth2.0 authorization and token endpoints.
 +
-image::azure-application-endpoints.png[]
+image::azure-application-endpoints.png[Under Endpoints, make a note of the OAuth2.0 authorization and token endpoints]
 
 == Part 2: Set active directory admin for database server
 
@@ -58,11 +58,11 @@ An active directory user must be set as Admin for the SQL server.
 
 1. Navigate to the SQL server associated with the Synapse deployment and click **Active Directory Admin**.
 +
-image::azure-ad-1.png[]
+image::azure-ad-1.png[From Azure Active Directory, select Active Directory Admin]
 
 2. At the top of the page, click **Set admin** to search for users in the directory, and select the user you want to set as administrator for the server.
 +
-image::azure-ad-2.png[]
+image::azure-ad-2.png[Select Set admin]
 +
 You should now see the **Admin name** set for the server.
 +
@@ -87,11 +87,11 @@ https://docs.microsoft.com/en-us/azure/azure-sql/database/authentication-aad-con
 
 - If valid API Permissions for the AD application are not present, the following error appears:
 +
-image::synapse-oauth-error1.png[]
+image::synapse-oauth-error1.png[Error that appears when valid API permissions are not present]
 
 - With the API permission granted as below, the user is required to consent to the application accessing the resource.
 +
-image::synapse-oauth-error2.png[]
+image::synapse-oauth-error2.png[Configure API permisions]
 - You cannot manage database roles for AD users from Azure. You must manage them from the database side. For details, see Microsoft's documentation: https://docs.microsoft.com/en-us/azure/azure-sql/database/authentication-aad-configure?tabs=azure-powershell#create-contained-users-mapped-to-azure-ad-identities[Create contained users mapped to Azure AD identities^].
 
 

@@ -70,7 +70,7 @@ If there are no rows matching the filter criteria, the condition returns a `0` (
 
 A 0 can result in situations where there are logic errors in the formula, so be sure to verify your work.
 
-image::filtered-agg-forms.png[]
+image::filtered-agg-forms.png[Formula example]
 
 After you have aggregated with a filter, you can do further comparisons with the `vs` and `all` keywords.
 
@@ -86,23 +86,23 @@ For example:
 
 `revenue region last 10 years vs all`
 
-Try this syntax on using the link:{attachmentsdir}/superstore.csv[superstore] example data.
+Try this syntax using the link:{attachmentsdir}/superstore.csv[superstore] example data.
 The first `vs` example compares two segments with a single search token:
 
-image::vs-ex-1.png[]
+image::vs-ex-1.png[Search result for store state vs store region sales]
 
 The system automatically applies the `sales` token to both sides and groups each segment.
 You can use the `all` keyword to break out the segments and avoid grouping.
 
-image::vs-ex-2.png[]
+image::vs-ex-2.png[Search result for sales store state vs all yearly last 3 years]
 
 You can also provide multiple `vs` instances:
 
-image::vs-ex-3.png[]
+image::vs-ex-3.png[Search result for sales store state vs all vs yearly last 3 years]
 
 Of course, you can compare across different columns as well:
 
-image::vs-ex-4.png[]
+image::vs-ex-4.png[Search result for sales customer age group customer gender department sales age group vs customer gender]
 
 Other supported formats you can try:
 

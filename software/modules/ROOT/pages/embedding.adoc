@@ -89,7 +89,7 @@ A trusted authenticator application or service obtains a token from ThoughtSpot.
 This token is used to obtain trust from other, third-party client applications that need access to ThoughtSpot.
 In the following scenario, the trust authenticator forwards requests for ThoughtSpot data from client applications to ThoughtSpot.
 
-image::authentication.png[]
+image::authentication.png[Authentication diagram. There is an arrow labeled 1 demonstrating the client-side application requiring a user token from the trusted authenticator. There is an arrow labeled 2 demonstrating the trusted authenticator requesting a user token from ThoughtSpot. There is an arrow labeled 3 demonstrating ThoughtSpot verifying the authenticator and returning a user token. There is an arrow labeled 4 demonstrating the authenticator returning the user token to the client-side application. There is an arrow labeled 5 demonstrating the client forwarding the user token to ThoughtSpot. There is an arrow labeled 6 demonstrating ThoughtSpot validating the token and returns information to the client-side application that allows the user to authenticate.]
 
 A user who is already logged into client-application interacts with a ThoughtSpot embed point, which initiates the following processes:
 
@@ -114,4 +114,3 @@ ThoughtSpot has an automated feature that collects feedback from users and sends
 Depending on what and how you embed, user actions with your embedded application can trigger feedback.
 You can continue to forward feedback in this manner or direct the feedback to another email.
 To learn how to change the feedback email, see xref:support-configure.adoc#feedback-contact[Manage the feedback contact].
-

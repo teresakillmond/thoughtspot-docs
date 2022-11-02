@@ -8,10 +8,10 @@
 
 To configure OAuth for {connection}, you create an app in the Identity Provider and use the app’s credentials to register it in {connection} as an external token provider. Once these steps are completed, {connection} will allow connections coming in with the JWT issued by the IdP.
 
-== Okta Oauth
+== Okta OAuth
 The steps provided here are an example of how you can configure Okta for external OAuth.
 
-== Azure AD Oauth
+== Azure AD OAuth
 For details on how to configure Microsoft Azure AD OAuth for Starburst, see https://docs.starburst.io/latest/security/oauth2-providers.html#azure-active-directory[Starburst's Azure Active Directory documentation^].
 
 NOTE: You can use any OAuth flow provided that you can get the information required for the security integration. The following steps provide a guide for getting the information required to create the security integration for Snowflake.
@@ -27,14 +27,14 @@ To configure the IdP with Okta, do the following:
 
 . Log in to the Okta console with a user having administrator privileges. Navigate to the *Applications* page in the console and click *Create App Integration*.
 +
-image::dremio-oauth1.png[]
+image::dremio-oauth1.png[Select Applications > Create App Integration]
 +
 . For sign-in method, choose *OIDC - OpenID Connect*.
 . For application type, choose *Web Application*
 . Click *Next*.
 . Under Grant type, make sure *Authorization Code* and *Refresh Token* are selected.
 +
-image::starburst-oauth2.png[]
+image::starburst-oauth2.png[Select Authorization Code and Refresh Token]
 
 . For Sign-in redirect URIs, add the ThoughtSpot redirect URI for the application.
 +
@@ -42,18 +42,18 @@ It should follow this format:
 +
 `\https://<your-thoughtspot-instance-host>/callosum/v1/connection/generateTokens`
 +
-image::dremio-oauth3.png[]
+image::dremio-oauth3.png[Add the ThoughtSpot redirect URI]
 
 . Assign the application to everyone in the organization or to specific groups. This step may vary for other IdPs.
 +
-image::dremio-oauth4.png[]
+image::dremio-oauth4.png[Assign the application as needed]
 . Collect the client credentials from the application home page and make a note of them. These will be required later for adding the external token provider in {connection}.
 +
-image::starburst-oauth5.png[]
+image::starburst-oauth5.png[Make a note of the client credentials]
 . Go to menu:Security[API], and make a note of the value for Audience. This is required in a later step
 for configuring the OpenID well-known URI for the authorization server.
 +
-image::dremio-oauth6.png[]
+image::dremio-oauth6.png[Make a note of the value for Audience under Security > API]
 +
 For Okta, it should follow this format:
 +
@@ -82,9 +82,9 @@ http-server.authentication.jwt.principal-field=<value of the claim containing th
 +
 These details should be obtained from the well known open id configuration URL obtained from Okta authorization server (e.g. *\https://example.okta.com/oauth2/abc1234xyz/.well-known/oauth-authorization-server*).
 +
-The value for the principal-field configuration should be the claim name in the JWT that contains the username matching the username created in Starburst. This can be found from the token payload. In the below example the username is in the claim “sub”
+The value for the principal-field configuration should be the claim name in the JWT that contains the username matching the username created in Starburst. This can be found from the token payload. In the below example the username is in the claim “sub.”
 +
-image::dremio-oauth8.png[]
+image::dremio-oauth8.png[Sample token payload]
 
 '''
 > **Related information**
