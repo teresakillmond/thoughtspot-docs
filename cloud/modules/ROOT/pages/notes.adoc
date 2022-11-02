@@ -13,6 +13,10 @@ These release notes include information about new and enhanced features.
 
 To see our feature deprecation plans, please see xref:deprecation.adoc[Deprecation Announcements].
 
+For a complete list of issues that we fixed in this release, see xref:fixed.adoc[Fixed issues].
+
+For a complete list of known issues in this release, see xref:known.adoc[Known issues].
+
 [#new]
 == New Features and Functionality
 
@@ -109,6 +113,16 @@ This release supports integration with dbt for the following 2 new cloud data wa
 --
 +
 Refer to xref:dbt-integration.adoc[].
+
+[#teradata-query-banding]
+Query banding with Teradata connections::
+With query banding, Teradata connections now support the trust SQL feature in Teradata. This provides additional permissions to a ThoughtSpot user for accessing specific tables in Teradata to execute queries. The user must be configured as an application proxy user in Teradata. Query banding also allows tracking of statistics for queries executed by a user.
++
+Refer to xref:connections-teradata-add.adoc[].
+
+[#synapse-sql-server]
+SQL server certified for Synapse connections::
+In this release, ThoughtSpot officially certifies and provides support for SQL Server used with Synapse connections.
 
 
 [#8-8-0-cl-it-ops-engineer]
@@ -818,7 +832,7 @@ include::partial$new-answer-experience-features.adoc[]
 include::partial$new-answer-experience-deprecations.adoc[]
 
 Liveboard schedule::
-ThoughtSpot now combines the Liveboard follow and xref:liveboard-schedule.adoc[Liveboard Schedule] features into a single action called "Schedule." To create a new schedule to receive an email containing a pdf of your Liveboard, users now select the *Schedule* button to the left of the *more options menu* image:icon-more-10px.png[].
+ThoughtSpot now combines the Liveboard follow and xref:liveboard-schedule.adoc[Liveboard Schedule] features into a single action called "Schedule." To create a new schedule to receive an email containing a pdf of your Liveboard, users now select the *Schedule* button to the left of the *more options menu* image:icon-more-10px.png[More menu icon].
 +
 ThoughtSpot will migrate any existing Liveboard follows to Liveboard schedules.
 For users who followed a Liveboard in November Cloud or earlier, those Liveboard schedules appear in the list of Liveboard schedules as _Migrated from follow (your display name)_.

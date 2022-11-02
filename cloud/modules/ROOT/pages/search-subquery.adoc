@@ -6,10 +6,9 @@
 :page-aliases: /complex-search/in-keyword-searches.adoc
 :description: You can use the IN keyword to complete a nested search
 
-Beginning with version 5.2 of ThoughtSpot, you no longer need a view when you want to do a search on top of another search, commonly known as a subquery.
-You can use the `IN` keyword instead.
+When you want to do a search on top of another search, commonly known as a subquery, you can use the `IN` keyword.
 
-image::in_search_bar_example.png[]
+image::search-example-in-keyword.png[Image of the ThoughtSpot search bar. The query is sales city store store in (top 10 store by sales)]
 
 Suppose you must narrow a result set based on criteria defined using a search.
 For example:
@@ -39,13 +38,13 @@ include::partial$keywords-in.adoc[]
 == Create an IN search
 
 . Start a new search.
-. Run the search you plan to use for the `in clause.
+. Run the search you plan to use for the `in` clause.
 That is, the first level search.
 +
 Check that the result is what you're looking for.
 +
-image::in_search_first_step.png[]
+image::in_search_first_step.png[Sample chart for first level search]
 
-. Copy that search, and paste it into your new search as the `in` clause.
+. Copy that search query, and paste it into your new search as the `in` clause.
 +
-image::in_search_example.png[]
+image::in_search_example.png[Sample chart for in query]
