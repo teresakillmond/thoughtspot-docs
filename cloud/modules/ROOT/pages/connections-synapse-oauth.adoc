@@ -90,9 +90,9 @@ You cannot manage database roles for AD users from Azure. You must manage them f
 
 == Troubleshooting
 
-If the following error appears (`InvalidClientError`) on initial login, you must update the API permissions.
+If the following `Invalid Resource` error appears on initial login, you must update the API permissions.
 
-image::synapse-oauth-error1.png[An InvalidCientError error message]
+image::synapse-oauth-error1.png[An Invalid Resource error message]
 
 Under **API / Permissions name**, for Azure SQL Database, add the **user_impersonation** permission, as shown below.
 
