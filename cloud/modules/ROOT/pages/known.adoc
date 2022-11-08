@@ -1,6 +1,6 @@
 = Known issues
 :keywords: known issues
-:last_updated: 11/1/2022
+:last_updated: 11/8/2022
 :experimental:
 :page-layout:
 :linkattrs:
@@ -14,6 +14,43 @@ These are the known issues in this release of ThoughtSpot Cloud.
 |===
 |Issue ID |Description|Symptoms, conditions, and workaround
 
+|SCAL-132991
+|A red error banner appears on top of search with the first search with embedded ThoughtSpot.
+a|*Symptoms*:
+
+ThoughtSpot Everywhere customers see a red bar error at the top of the page where ThoughtSpot is embedded.
+
+*Conditions*:
+
+Only present for embedded customers
+Occurs only on search page.
+
+*Workaround*:
+
+None, but functionality still works.
+
+|SCAL-129691
+|Error displayed on pinned headline tiles in Liveboards: “UniqueCount is not supported for the current query.”
+a|*Symptoms*:
+
+- If you try to edit the pinned visualization, the Edit page will show the entire answer that the pinned headline came from. If the headline summary in the answer page is showing --, this is a good indication that the current aggregation selected is not compatible with the column that it is summarizing.
+
+- This should only happen with formula columns.
+
+- Pinning the headline to a Liveboard is not a locked action from the UI; instead, the visualization tile will display the execution error message specified above when we attempt to retrieve the actual summary
+
+*Conditions*:
+
+- The headline is over a formula column that contains any of unique_count, unique_count_if, group_unique_count, approx_unique_count.
+
+- The formula’s unique count portion uses columns that come from tables that are Embrace (non-Falcon, external data warehouse, etc.) tables.
+
+- The selected headline aggregation for the formula (the headline visualization is at the bottom of the main answer visualization) is Table Aggregate.
+
+*Workaround*:
+
+Set the selected headline aggregation to something other than Table Aggregate. Usually, TOTAL is a sufficient replacement for Table Aggregate and better matches customer use cases.
+
 |SCAL-133971
 |Unable to view Liveboard data using a Snowflake connection
 a|*Symptoms*:
@@ -26,7 +63,7 @@ TBD
 
 *Workaround*:
 
-EBD
+TBD
 
 |SCAL-133405
 |Importing a TML file causes a timeout error.
