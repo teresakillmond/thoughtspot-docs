@@ -31,12 +31,16 @@ For more information, see xref:tml.adoc#syntax-liveboards[Syntax of the Liveboar
 [#8-9-0-cl-business-user]
 === For the Business User
 
+ThoughtSpot Sync Salesforce connection [.badge.badge-beta-relnotes]#Beta#::
+
+You can now sync data directly from an answer or custom SQL view to Salesforce. Using ThoughtSpot Sync, you can push insights directly to Salesforce, notify your teams, and view data in context. ThoughtSpot Sync automatically establishes a secure pipeline to the destination app and thus eliminates the need for building custom connectors. For more information, see xref:sync-salesforce.adoc[Sync data to Salesforce]
+
 Discoverable answers and Liveboards:: The discoverable answers and Liveboards feature is now GA and on by default. You can now make content easily available to your team members. Use the *Make this [answer | Liveboard] discoverable* checkbox that appears when you save or share an answer or Liveboard to grant _view_ access to your teammates.
 +
 Select this checkbox to publish your content in the list of relevant results when a teammate uses the *Search Answers* feature, or de-select to keep your content private.
 
 Edit your display name::
-You can now edit your display name by clicking the profile icon in the top-right corner of the screen. see xref:user-profile.adoc[Edit display name,window=_blank].
+You can now edit your display name by clicking the profile icon in the top-right corner of the screen. For more information, see xref:user-profile.adoc[Edit display name,window=_blank].
 
 [#8-9-0-cl-data-engineer]
 === For the Data Engineer
@@ -51,6 +55,14 @@ This release includes the following updates to the xref:tags.adoc[tags] feature 
 --
 +
 For more information, see xref:tags#data-workspace-apply[Apply a tag] and xref:tags#data-workspace-create[Create a tag].
+
+Query banding with Teradata connections::
+
+With query banding, Teradata connections now support the trust SQL feature in Teradata. This provides additional permissions to a ThoughtSpot user for accessing specific tables in Teradata to execute queries. The user must be configured as an application proxy user in Teradata. Query banding also allows tracking of statistics for queries executed by a user. Refer to xref:connections-teradata-add.adoc[Add a Teradata connection].
+
+SQL server with Synapse connections::
+
+In this release, ThoughtSpot officially certifies and provides support for SQL Server used with Synapse connections.
 
 [#8-9-0-cl-it-ops-engineer]
 === For the IT/Ops Engineer
