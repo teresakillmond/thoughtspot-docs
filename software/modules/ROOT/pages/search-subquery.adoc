@@ -8,10 +8,10 @@
 
 You can use the IN keyword to complete a nested search.
 
-Beginning with version 5.2 of ThoughtSpot, you no longer need a view when you want to do a search on top of another search, commonly known as a subquery.
+You do not need a view when you want to do a search on top of another search, commonly known as a subquery.
 You can use the `IN` keyword instead.
 
-image::in_search_bar_example.png[]
+image::search-example-in-keyword.png[Sample search query: sales department store name store name in (top 10 store name by sales bakery)]
 
 Suppose you must narrow a result set based on criteria defined using a search.
 For example:
@@ -20,7 +20,7 @@ Find the top 5 stores by sales in the bakery department
 
 Then you want to see all sales across all departments for those five stores.
 
-In past versions,  you'd have two options:
+In past versions, you'd have two options:
 
 . Do your first search to find top 5 stores by bakery sales and save it as a view.
 Then join the view to your worksheet and search both together to get your answer.
@@ -46,8 +46,8 @@ That is, the first level search.
 +
 Check that the result is what you're looking for.
 +
-image::in-search-first-step-2020.png[]
+image::in-search-first-step-2020.png[Sample first level search that will be within the in clause]
 
 . Copy that search, and paste it into your new search as the `in` clause.
 +
-image::in-search-example-2020.png[]
+image::in-search-example-2020.png[Sample search with in clause]

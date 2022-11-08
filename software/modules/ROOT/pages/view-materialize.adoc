@@ -23,21 +23,21 @@ include::partial$view-materialize-navigation.adoc[]
 See xref:relationship-create.adoc[add joins].
 . Under *Materialization*, click *Materialize*.
 +
-image::view-materialize-1.png[]
+image::view-materialize-1.png[Select Materialization > Materialize]
 
 . Fill in the details for xref:constraints.adoc[primary key], xref:sharding.adoc[sharding key, and number of shards].
 +
-image::view-materialize-2.png[]
+image::view-materialize-2.png[Fill in optional details for the primary key, sharding key, and number of shards]
 +
 NOTE: If you do not fill in the sharding details, the view is replicated on every node of your cluster.
 Follow the links in this step to learn more about sharding.
 
 . Click *Materialize*.
-. In the *Schedule data updates* dialog, decide if you want to configure the schedule to refresh materialized view at this time.
+. In the *Schedule data updates* dialog, decide if you want to configure the schedule to refresh the materialized view at a specific time.
 +
-If you want to skip this step and perhaps schedule it later, click *Setup later*.
+If you want to skip this step and schedule it later, click *Setup later*.
 +
-image::view-materialize-3.png[]
+image::view-materialize-3.png[Optionally specify a refresh interval]
 
 include::partial$view-materialize-schedule-options.adoc[]
 
