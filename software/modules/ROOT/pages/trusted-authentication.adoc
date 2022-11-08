@@ -39,7 +39,7 @@ The command returns the service secret key. +
 
 In the following scenario, a trusted authenticator service forwards requests for ThoughtSpot data from a client application.
 
-image::authentication.png[]
+image::authentication.png[Authentication diagram. There is an arrow labeled 1 demonstrating the client-side application requiring a user token from the trusted authenticator. There is an arrow labeled 2 demonstrating the trusted authenticator requesting a user token from ThoughtSpot. There is an arrow labeled 3 demonstrating ThoughtSpot verifying the authenticator and returning a user token. There is an arrow labeled 4 demonstrating the authenticator returning the user token to the client-side application. There is an arrow labeled 5 demonstrating the client forwarding the user token to ThoughtSpot. There is an arrow labeled 6 demonstrating ThoughtSpot validating the token and returns information to the client-side application that allows the user to authenticate.]
 
 When a user tries to interact with the embedded ThoughtSpot content, the following sequence is triggered.
 
