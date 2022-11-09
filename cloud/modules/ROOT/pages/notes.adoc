@@ -114,17 +114,6 @@ This release supports integration with dbt for the following 2 new cloud data wa
 +
 Refer to xref:dbt-integration.adoc[].
 
-[#teradata-query-banding]
-Query banding with Teradata connections::
-With query banding, Teradata connections now support the trust SQL feature in Teradata. This provides additional permissions to a ThoughtSpot user for accessing specific tables in Teradata to execute queries. The user must be configured as an application proxy user in Teradata. Query banding also allows tracking of statistics for queries executed by a user.
-+
-Refer to xref:connections-teradata-add.adoc[].
-
-[#synapse-sql-server]
-SQL server certified for Synapse connections::
-In this release, ThoughtSpot officially certifies and provides support for SQL Server used with Synapse connections.
-
-
 [#8-8-0-cl-it-ops-engineer]
 === For the IT/Ops Engineer
 
@@ -598,13 +587,13 @@ ThoughtSpot now supports scheduled alerts for changes in Key Performance Indicat
 [#8-3-0-cl-data-engineer]
 === For the Data Engineer
 
-OAuth for Databricks  [.badge.badge-new]#New!#::
+OAuth for Databricks::
 Databricks connections now support OAuth. See xref:connections-databricks-oauth.adoc[Configure OAuth for a Databricks connection].
 
-Oracle connections support Exadata and ADW [.badge.badge-new]#New!#::
+Oracle connections support Exadata and ADW::
 In this release, the Oracle ADW connection is renamed to Oracle. Existing ADW connections continue to work. There are now two options: Cloud for ADW connections, and On Premise for Exadata or on-prem database connections. For details, see xref:connections-adw.adoc[Oracle].
 
-Dremio connector [.badge.badge-new]#New!#::
+Dremio connector [.badge.badge-new]::
 In the release, Dremio is a new connection type. For details, see xref:connections-dremio.adoc[Dremio]. Dremio supports OAuth. For details, see xref:connections-dremio-oauth.adoc[Configure OAuth for a Dremio connection].
 
 [#8-3-0-cl-it-ops-engineer]
