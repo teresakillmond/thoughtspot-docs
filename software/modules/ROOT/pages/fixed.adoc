@@ -11,6 +11,24 @@ These are the issues we fixed in recent ThoughtSpot releases.
 == 8.4.X Releases fixed issues
 [tabset]
 ====
+8.4.1.sw.CU1::
++
+--
+* CVE-2022-42889 security vulnerability.
+* Setup becomes stuck at `pip3 install virtualenv` during upgrade.
+* Connections tab is enabled when the Connections feature is not enabled.
+* After running `prepare_disks.sh`, the directory for HDFS DN is not owned by the admin.
+* `libssl.so.10` library is missing because fluent_bit is enabled.
+* "s" appears after the  *Tags* UI label in answers that are localized in German or Japanese.
+* Snowflake connections do not work after upgrade.
+* Search indexing fails frequently.
+* Turning on the regression line in a line chart causes the chart to display a line that is _not_ straight.
+* A visualization in an embedded Liveboard which does not have data causes other visualizations in the Liveboard to load slowly.
+* Visualizations do not load when German date filters are used, and they can't be added to formulas.
+* Opening a Liveboard causes the browser tab to freeze.
+* The value in a pinned headline summary tile is cut off on the bottom.
+* Downloading an answer as an `xlsx` file instead downloads a `json` file.
+--
 8.4.1.sw::
 +
 --
