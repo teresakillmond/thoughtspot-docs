@@ -6,13 +6,8 @@ ifdef::pendo-links[]
 [label label-dep-whats-new]#8.3.0.cl#
 endif::[]
 
-ifndef::pendo-links[]
-NOTE: Features marked as [.badge.badge-update-note]#Beta# are off by default. To enable them, contact {support-url}.
-endif::[]
 ifndef::free-trial-feature[]
-ifdef::pendo-links[]
-NOTE: Features marked as [.badge.badge-update-whats-new]#Beta# are off by default. To enable them, contact {support-url}.
-endif::[]
+NOTE: Features marked as [.badge.badge-update-note]#Beta# are off by default. To enable them, contact {support-url}.
 endif::free-trial-feature[]
 
 [#primary-8.3.0.cl]
@@ -43,7 +38,7 @@ image:kpi-watchlist.gif[Add KPI to home page watchlist]
 +
 Make your KPIs stand out with conditional formatting for attribute-type KPI charts as well as measures.
 +
-To add conditional formatting to your KPI chart, select the *edit chart configuration* icon image:icon-gear-10px.png[], click on the visualized metric, and select *+ Add rule*.
+To add conditional formatting to your KPI chart, select the *edit chart configuration* icon image:icon-gear-10px.png[Chart configuration icon image], click on the visualized metric, and select *+ Add rule*.
 ifndef::pendo-links[]
 See xref:chart-kpi.adoc#kpi-conditional[Apply conditional formatting].#
 endif::[]
@@ -51,7 +46,7 @@ ifdef::pendo-links[]
 See xref:chart-kpi.adoc#kpi-conditional[Apply conditional formatting,window=_blank].
 endif::[]
 +
-image:kpi-conditional-attribute.gif[]
+image:kpi-conditional-attribute.gif[Gif of conditional formatting being added to a KPI attribute]
 
 ifndef::free-trial-feature[]
 [#8-3-0-cl-monitor]
@@ -62,7 +57,7 @@ You can now schedule alerts for changes in KPIs in your data. Using the Monitor 
 
 Select the *Monitor* tab to view and manage all KPI alerts you create or subscribe to. [.show-hide]#See xref:monitor.adoc[Monitor Key Performance Indicators in your data].#
 
-image:monitor-alert.png[]
+image::monitor-alert.png[Create new alert scheduling]
 
 endif::[]
 
@@ -70,19 +65,26 @@ ifndef::free-trial-feature[]
 [#8-3-0-cl-liveboard-v2]
 ifndef::pendo-links[]
 [discrete]
-=== New Liveboard experience [.badge.badge-update]#Beta#
+=== New Liveboard experience [.badge.badge-beta]#Beta#
 endif::[]
 ifdef::pendo-links[]
 [discrete]
-=== New Liveboard experience [.badge.badge-update-whats-new]#Beta#
+=== New Liveboard experience [.badge.badge-beta-whats-new]#Beta#
 endif::[]
 
 The new Liveboard experience contains new features and enhancements, including Edit mode, HTML in Liveboard titles and descriptions, and improved filtering.
 
-To try it out, navigate to your profile, scroll down to *Experience*, select *Edit*, and toggle the Liveboard experience to *New experience*. [.show-hide]#See xref:liveboard-experience-new.adoc[New Liveboard experience].#
-
-image::new-liveboard-experience-gif.gif[]
+To try it out, navigate to your profile, scroll down to *Experience*, select *Edit*, and toggle the Liveboard experience to *New experience*.
+ifndef::pendo-links[]
+See xref:liveboard-experience-new.adoc[New Liveboard experience].
 endif::[]
+ifdef::pendo-links[]
+See xref:liveboard-experience-new.adoc[New Liveboard experience,window=_blank].
+endif::[]
+
+
+image::new-liveboard-experience-gif.gif[Gif of the new Liveboard experience; specifically, the new edit button and the new filter functionality]
+endif::free-trial-feature[]
 
 ifdef::free-trial-feature[]
 [#8-3-0-cl-previously-viewed]
@@ -135,18 +137,19 @@ ifndef::free-trial-feature[]
 [#8-3-0-cl-dbt]
 ifndef::pendo-links[]
 [discrete]
-=== Integration with dbt [.badge.badge-update]#Beta#
+=== Integration with dbt [.badge.badge-beta]#Beta#
 endif::[]
 ifdef::pendo-links[]
 [discrete]
-=== Integration with dbt [.badge.badge-update-whats-new]#Beta#
+=== Integration with dbt [.badge.badge-beta-whats-new]#Beta#
 endif::[]
 With the new dbt integration, you provide your existing dbt models and ThoughtSpot automatically creates worksheets you can use to query your data.
 
 To try out dbt integration, navigate to the *Data* tab, and select *Utilities*. Select *dbt Integration*.
 
-image::dbt-integration.png[]
-endif::[]
+image::dbt-integration.png[dbt integration in the Utilities section of the Data workspace]
+endif::free-trial-feature[]
+
 
 [#8-3-0-cl-connections]
 [discrete]
@@ -155,7 +158,7 @@ endif::[]
 // summary sentence
 
 [#8-3-0-cl-oracle]
-* *image:oracle_sm.png[] Oracle connections support Exadata and ADW*
+* *image:oracle_sm.png[Oracle icon] Oracle connections support Exadata and ADW*
 +
 The Oracle ADW connection is renamed to Oracle. Existing ADW connections continue to work. There are now two options:
  *_Cloud_* for ADW connections, and *_On Premise_* for Exadata or other on-premise Oracle databases.
@@ -166,7 +169,7 @@ ifdef::pendo-links[]
 See xref:connections-adw.adoc[Oracle,window=_blank].
 endif::[]
 [#8-3-0-cl-dremio]
-* *image:dremio_sm.png[] Dremio*
+* *image:dremio_sm.png[Dremio icon] Dremio*
 +
 Dremio is a new connection type, which supports OAuth authentication.
 ifndef::pendo-links[]
@@ -177,7 +180,7 @@ See xref:connections-dremio.adoc[Dremio,window=_blank].
 endif::[]
 
 [#8-3-0-cl-databricks-security]
-* *image:databricks_sm.png[] OAuth for Databricks*
+* *image:databricks_sm.png[Databricks icon] OAuth for Databricks*
 +
 Databricks connections now support OAuth authentication.
 ifndef::pendo-links[]
@@ -199,11 +202,11 @@ ifndef::free-trial-feature[]
 [#8-3-0-cl-spotapps]
 ifndef::pendo-links[]
 [discrete]
-=== Jira Issue Management SpotApp [.badge.badge-update]#Beta#
+=== Jira Issue Management SpotApp [.badge.badge-beta]#Beta#
 endif::[]
 ifdef::pendo-links[]
 [discrete]
-=== Jira Issue Management SpotApp [.badge.badge-update-whats-new]#Beta#
+=== Jira Issue Management SpotApp [.badge.badge-beta-whats-new]#Beta#
 endif::[]
 With the new Jira Issue Management Spot App, you can analyze your issue tracking data. It maps your Jira data to SpotApp columns, and creates customizable worksheets, answers, and Liveboards, based on your data.
 

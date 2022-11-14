@@ -4,6 +4,7 @@
 :linkattrs:
 :page-layout: default-cloud
 :connection: Redshift
+:description: ThoughtSpot supports OAuth for an Amazon Redshift connection.
 
 ThoughtSpot supports OAuth for an Amazon {connection} connection.
 {connection} supports federated authentication, enabling users from an identity provider (IDP) like Okta to authenticate to the database.
@@ -31,12 +32,12 @@ To create the OIDC application, do the following:
 . Sign in to Okta.
 . From the Okta dashboard, navigate to *Applications* and click *Create App Integration*.
 +
-image::redshift-oauth-okta-app.png[]
+image::redshift-oauth-okta-app.png[Select Create App Integration]
 
 . For sign-in method, choose *OIDC - OpenID Connect*.
 . For application type, choose *Web Application*.
 +
-image::redshift-oauth-okta-app-int.png[]
+image::redshift-oauth-okta-app-int.png[Select OIDC - OpenID Connect and select Web Application]
 
 . Click *Next*.
 . Complete the rest of the steps by following the on-screen instructions.
@@ -52,16 +53,16 @@ These are required by the ThoughtSpot connection to perform the OAuth authorizat
 To set up the authorization server, do the following:
 
 . Sign in to Okta (if needed).
-. From the Okta dashboard, navigate to menu:Security[API] section.
+. From the Okta dashboard, navigate to the menu:Security[API] section.
 +
-image::redshift-oauth-okta-api.png[]
+image::redshift-oauth-okta-api.png[Navigate to Security > API]
 
 . If you already have an authorization server you want to use, you can edit it.
 Otherwise, add a new one by clicking *Add Authorization Server*.
 . Add a custom claim with the Name *DbUser* and enter the Value *user.login*.
 The {connection} driver requires this claim in the JWT token presented to it.
 +
-image::redshift-oauth-add-claim.png[]
+image::redshift-oauth-add-claim.png[Add Claim modal]
 
 [#part-3]
 === Part 3: Add Okta as the IDP in AWS
@@ -74,7 +75,7 @@ To add Okta as the IDP, do the following:
 . For Provider URL, enter the Issuer URI of the Okta authorization server.
 . For Audience, enter the Client ID of the OIDC application created in Okta.
 +
-image::redshift-oauth-add-idp.png[]
+image::redshift-oauth-add-idp.png[Specify Okta IDP details]
 
 [#part-4]
 === Part 4: Create an IAM role with IDP trust
