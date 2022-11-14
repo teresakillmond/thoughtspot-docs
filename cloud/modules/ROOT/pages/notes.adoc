@@ -313,6 +313,7 @@ This release brings improvements in how ThoughtSpot handles user tokens for Snow
 See xref:connections-snowflake-edit.adoc#invalidate-tokens[Invalidating refresh tokens of a Snowflake connection].
 
 Snowflake CSV upload [.badge.badge-beta-relnotes]#Beta#:: Now you have a quick and easy way to complete one-time data loads of small files that are not present in your cloud data warehouse. You can now upload a CSV file to the database of your Snowflake connection that can be joined to other tables or worksheets in your connection. Once your administrator enables this feature, go to *Data* > *Utilities*, and click *Upload CSV*.
+
 ifndef::pendo-links[]
 See xref:connections-snowflake-csv-upload-config.adoc[Configure CSV upload for your Snowflake connection], and xref:connections-snowflake-csv-upload.adoc[Upload a CSV file in your Snowflake connection].
 
@@ -461,7 +462,6 @@ Threshold-based alerts for KPI charts [.badge.badge-beta-relnotes]#Beta#::
 You can now use the Monitor feature to receive alerts when your KPI satisfies a given threshold condition. For example, create a condition to receive an alert when your Sales KPI becomes `greater than 200,000`, or when your KPI for Sales weekly `increases by 2%`. For more information, see xref:monitor.adoc#threshold-based-alert[Create a threshold-based alert].
 +
 This feature is in beta and off by default. To enable threshold-based alerts, contact {support-url}.
-
 
 Make content discoverable [.badge.badge-beta-relnotes]#Beta#::
 You can now make content easily available to your team members when you save or share an answer or Liveboard. Use the *Make this [answer | Liveboard] discoverable* checkbox that appears when you save or share an answer or Liveboard to grant _view_ access to your teammates. Any user who has access to underlying data source (worksheet, table, view) and is part of the same user group as the author of the content, will be able to  discover and access the answer in *Search Answers*. +
@@ -678,7 +678,7 @@ Databricks connections now support OAuth. See xref:connections-databricks-oauth.
 Oracle connections support Exadata and ADW::
 In this release, the Oracle ADW connection is renamed to Oracle. Existing ADW connections continue to work. There are now two options: Cloud for ADW connections, and On Premise for Exadata or on-prem database connections. For details, see xref:connections-adw.adoc[Oracle].
 
-Dremio connector]::
+Dremio connector::
 In the release, Dremio is a new connection type. For details, see xref:connections-dremio.adoc[Dremio]. Dremio supports OAuth. For details, see xref:connections-dremio-oauth.adoc[Configure OAuth for a Dremio connection].
 
 [#8-3-0-cl-it-ops-engineer]
@@ -729,6 +729,7 @@ This feature is in beta and off by default. To enable it, contact {support-url}.
 
 [#data-tab]
 Data tab redesign [.badge.badge-beta-relnotes]#Beta#::
+
 This release redesigns the *Data* section of the product. The new Data Workspace is still in the same place in the product. To access it, select *Data* from the top navigation bar. The redesign introduces several new features, such as SQL-based views and SpotApps, and makes the UI more intuitive.
 +
 This feature is in beta and off by default. To enable it,  contact {support-url}.
@@ -1199,6 +1200,7 @@ These cards teach new users about ThoughtSpot, and how to gain insights from sea
 If you exit the learning cards by clicking the *Hide* or *x* button, you can always get them back by clicking on "`learning mode on`" from the profile menu.
 +
 This feature is only available if you have the xref:answer-experience-new.adoc[new answer experience] [.badge.badge-beta]#Beta# (off by default in September cloud) on in your environment.
+
 You can turn the new answer experience on from the *Experience manager* in your profile.
 
 [#watchlist-drag-and-drop]
@@ -1604,6 +1606,7 @@ To access this Worksheet, search for *Product Usage Worksheet* from the *Data* t
 === For the Developer
 [#custom-actions]
 Custom actions in the context menu::  ThoughtSpot now allows you to add a custom action in the contextual menu for embedded visualizations in the *Answers* or *Liveboards* page.  To add a custom action to the contextual menu, you must have the xref:answer-experience-new.adoc[New Answer experience] [.badge.badge-beta]#Beta# (off by default) enabled on your cluster.  For more information, see xref:custom-actions.adoc[Add custom actions].
+
 [#viz-embed-sdk]
 Visual Embed SDK Version 1.2.0::  The ThoughtSpot 7 Cloud May release introduces the Visual Embed SDK 1.2.0 version with a minor update and backward-compatible improvements.
 [#saml-authentication]
@@ -1838,6 +1841,7 @@ Select *App performance* from the side navigation bar in the Admin Console.
 [#thoughtspot-embed]
 ThoughtSpot Embed::
 ThoughtSpot cloud now supports embedding ThoughtSpot content in third-party applications.
+
 In this release, ThoughtSpot introduces the Visual Embed SDK package [.badge.badge-beta]#Beta# to help developers embed the ThoughtSpot search functionality, Liveboards, visualizations, or the full application in their web page, portal, or business solution.  For more information on embedding ThoughtSpot, see xref:intro-embed.adoc[ThoughtSpot embedding solution].
 [#spotdev-portal]
 SpotDev portal [.badge.badge-beta-relnotes]#Beta#::
@@ -1906,8 +1910,10 @@ For more information, see xref:connections-snowflake-add.adoc[Snowflake], and xr
 Passthrough functions for Snowflake:::
 Passthrough functions allow you to send custom SQL expressions directly to your Snowflake database without being interpreted by ThoughtSpot.
 For more information, see xref:connections-snowflake-passthrough.adoc[Passthrough functions for Snowflake].
+
 Oracle Autonomous Database [.badge.badge-beta-relnotes]#Beta#:::
-Embrace now supports Oracle Autonomous Database
+Embrace now supports Oracle Autonomous Database.
+
 This feature is in beta and disabled by default.
 To enable this feature, contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support].
 
