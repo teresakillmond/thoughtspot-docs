@@ -5,7 +5,7 @@
 :page-layout: default-cloud
 :description:  Deploy the Diversity, Equity, and Inclusion SpotApp, an out-of-the-box solution template built specifically for your HR data.
 :spotapp: Diversity, Equity, and Inclusion SpotApp
-:application: HR application
+:application: BambooHR or Workday
 
 // have only changed the front matter
 
@@ -13,11 +13,11 @@ include::partial$spotapps-intro.adoc[]
 
 This is a sample Liveboard, created after you deploy the {spotapp}:
 
-// this is probably TS data -- confirming with vishwa, in which case i need a new image
+// this is probably TS data -- confirming with edukondalu, in which case i need a new image
 
-image::spotapp-google-ads-liveboard.png[Google Ad Analysis SpotApp Liveboard]
+image::spotapp-dei-liveboard.png[Diversity, Equity, and Inclusion SpotApp Liveboard]
 
-Use the {spotapp} to get invaluable insight into your Google Ads performance, from high-level usage to identifying popular campaigns.
+Use the {spotapp} to get invaluable insight into your Diversity, Equity, and Inclusion data from your HR application.
 
 [#prerequisites]
 == Prerequisites
@@ -27,10 +27,32 @@ include::partial$spotapp-prereqs-general.adoc[]
 
 * Administrator access to {application}
 * Access to the following {application} tables and worksheets in your cloud data warehouse. Refer to <<schema,{spotapp} schema>> for more details.
-** GOOGLEADS_AD
-** GOOGLEADS_CAMPAIGN
-** GOOGLEADS_KEYWORD
-** GOOGLEADS_GEO
+** EMPLOYEE_FACT
+* Run the required SQL commands in your cloud data warehouse. Refer to <<sql,Run SQL commands>>.
+
+[#sql]
+=== Run SQL commands
+The following SQL commands help standardize data types and column names. Replace the *database name*, *schema name*, *disability column name*, *grade column name*, *LGBTQI+ column name*, *age column name* (Workday only), and *state column name* (Workday only) with your specific information.
+
+NOTE: The following SQL examples are for the Snowflake cloud data warehouse. You may need to modify the code for the SQL requirements of your specific cloud data warehouse.
+
+SQL commands for BambooHR:
+[%collapsible]
+.Click on the dropdown to view the SQL commands for BambooHR.
+====
+--
+include::partial$dei-sql-script-bamboohr.adoc[]
+--
+====
+
+SQL commands for Workday:
+[%collapsible]
+.Click on the dropdown to view the SQL commands for Workday.
+====
+--
+include::partial$dei-sql-script-workday.adoc[]
+--
+====
 
 include::partial$spotapp-deploy-individual.adoc[]
 
@@ -41,44 +63,26 @@ The following table describes the schema for the {spotapp}.
 [#schema]
 |===
 | Table |Column | Column type | Required column
-| GOOGLEADS_AD| AD_TYPE| VARCHAR| N
-| GOOGLEADS_AD| IMAGE_AD_NAME| VARCHAR| N
-| GOOGLEADS_AD| NETWORK| VARCHAR| N
-| GOOGLEADS_AD| CLICKS| INT64| Y
-| GOOGLEADS_AD| CONVERSIONS| FLOAT| N
-| GOOGLEADS_AD| COST_USD| FLOAT| Y
-| GOOGLEADS_AD| ENGAGEMENTS| INT64| N
-| GOOGLEADS_AD| IMPRESSIONS| INT64| Y
-| GOOGLEADS_AD| INTERACTIONS| INT64| N
-| GOOGLEADS_AD| DATE| DATE| Y
-| GOOGLEADS_AD| CAMPAIGN_NAME| VARCHAR| N
-| GOOGLEADS_AD| DEVICE| VARCHAR| N
-| GOOGLEADS_AD| VIDEO_IMPRESSIONS| VARCHAR| N
-| GOOGLEADS_CAMPAIGN| CAMPAIGN_NAME| VARCHAR| Y
-| GOOGLEADS_CAMPAIGN| CAMPAIGN_STATUS| VARCHAR| N
-| GOOGLEADS_CAMPAIGN| DATE| DATE| Y
-| GOOGLEADS_CAMPAIGN| CLICKS| INT64| Y
-| GOOGLEADS_CAMPAIGN| CONVERSIONS| FLOAT| Y
-| GOOGLEADS_CAMPAIGN| COST_USD| FLOAT| Y
-| GOOGLEADS_CAMPAIGN| ENGAGEMENTS| INT64| N
-| GOOGLEADS_CAMPAIGN| IMPRESSIONS| INT64| Y
-| GOOGLEADS_CAMPAIGN| INTERACTIONS| INT64| N
-| GOOGLEADS_CAMPAIGN| BIDDING_STRATEGY_TYPE| VARCHAR| N
-| GOOGLEADS_CAMPAIGN| DAILY_BUDGET| FLOAT| N
-| GOOGLEADS_CAMPAIGN| CAMPAIGN_ID| VARCHAR| Y
-| GOOGLEADS_KEYWORD| KEYWORD| VARCHAR| N
-| GOOGLEADS_KEYWORD| NETWORK| VARCHAR| N
-| GOOGLEADS_KEYWORD| COST_USD| FLOAT| Y
-| GOOGLEADS_KEYWORD| IMPRESSIONS| INT64| Y
-| GOOGLEADS_KEYWORD| CONVERSIONS| FLOAT| N
-| GOOGLEADS_KEYWORD| DATE| DATE| Y
-| GOOGLEADS_KEYWORD| CLICKS| INT64| Y
-| GOOGLEADS_GEO| REGION| VARCHAR| N
-| GOOGLEADS_GEO| CONVERSIONS| FLOAT| N
-| GOOGLEADS_GEO| COST_USD| FLOAT| Y
-| GOOGLEADS_GEO| IMPRESSIONS| INT64| Y
-| GOOGLEADS_GEO| METRO_AREA| VARCHAR| Y
-| GOOGLEADS_GEO| COUNTRY_NAME| VARCHAR| Y
-| GOOGLEADS_GEO| CLICKS| INT64| Y
-| GOOGLEADS_GEO| DATE| DATE| Y
+
+| EMPLOYEE_FACT| CITY| VARCHAR| N
+| EMPLOYEE_FACT| COUNTRY| VARCHAR| Y
+| EMPLOYEE_FACT| CURRENT_DEPARTMENT| VARCHAR| Y
+| EMPLOYEE_FACT| CURRENT_JOB_TITLE| VARCHAR| N
+| EMPLOYEE_FACT| CURRENT_LOCATION| VARCHAR| Y
+| EMPLOYEE_FACT| DISABILITY| VARCHAR| Y
+| EMPLOYEE_FACT| EMPLOYEE_NUMBER| VARCHAR| Y
+| EMPLOYEE_FACT| EMPLOYMENT_STATUS| VARCHAR| Y
+| EMPLOYEE_FACT| ETHNICITY| VARCHAR| Y
+| EMPLOYEE_FACT| FIRST_GENDER| VARCHAR| Y
+| EMPLOYEE_FACT| FULL_NAME| VARCHAR| N
+| EMPLOYEE_FACT| GRADE| VARCHAR| Y
+| EMPLOYEE_FACT| HIRE_DATE| DATE| Y
+| EMPLOYEE_FACT| LGBTQI+| VARCHAR| Y
+| EMPLOYEE_FACT| REGION| VARCHAR| N
+| EMPLOYEE_FACT| STATE| VARCHAR| N
+| EMPLOYEE_FACT| STATUS| VARCHAR| Y
+| EMPLOYEE_FACT| SUPERVISOR_ID| VARCHAR| N
+| EMPLOYEE_FACT| TERMINATION_DATE| DATE| Y
+| EMPLOYEE_FACT| WORK_EMAIL| VARCHAR| N
+| EMPLOYEE_FACT| AGE| NUMBER| Y
 |===
