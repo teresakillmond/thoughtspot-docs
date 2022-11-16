@@ -7,13 +7,9 @@
 :spotapp: Diversity, Equity, and Inclusion SpotApp
 :application: BambooHR or Workday
 
-// have only changed the front matter
-
 include::partial$spotapps-intro.adoc[]
 
 This is a sample Liveboard, created after you deploy the {spotapp}:
-
-// this is probably TS data -- confirming with edukondalu, in which case i need a new image
 
 image::spotapp-dei-liveboard.png[Diversity, Equity, and Inclusion SpotApp Liveboard]
 
@@ -55,6 +51,16 @@ include::partial$dei-sql-script-workday.adoc[]
 ====
 
 include::partial$spotapp-deploy-individual.adoc[]
+
+== After you deploy the {spotapp}
+After you deploy the {spotapp}, you must update the formulas in the worksheet the SpotApp created with your specific information. Your department names may not match the exact names used in the formula for `Functional Groups`, for example, so you must replace the names in the formula with your own department names.
+
+You must update the following formulas in the *Employee Data* worksheet in ThoughtSpot:
+
+* Employee Count(Full Time Employee)
+* Functional Groups
+* Level Buckets
+* Level Groups
 
 == {spotapp} schema
 
