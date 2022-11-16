@@ -80,6 +80,8 @@ endif::free-trial-feature[]
 
 // updates to the object usage Liveboard, new visualizations to track how objects are used
 
+// not likely to be in Free Trial
+
 '''
 [#secondary-8-10-0-cl]
 [discrete]
@@ -91,21 +93,6 @@ endif::free-trial-feature[]
 === Cross-Region disaster recovery
 
 // Teresa. it's possible this will be pushed to 9.0
-
-ifndef::free-trial-feature[]
-ifdef::pendo-links[]
-[#8-10-0-cl-orgs]
-[discrete]
-=== Multi-tenancy with Orgs [.badge.badge-beta-whats-new]#Beta#
-endif::[]
-ifndef::pendo-links[]
-[discrete]
-=== Multi-tenancy with Orgs [.badge.badge-beta]#Beta#
-endif::[]
-
-// Teresa. orgs public beta
-
-endif::[]
 
 [#8-10-0-cl-dbt-metrics]
 [discrete]
@@ -129,15 +116,17 @@ endif::[]
 [discrete]
 === Enable ORG/Cluster admins to see all the Monitor alerts on the clusters and allow them to edit/delete the alerts created by others
 
-// Naomi. not sure if this goes under 'other features and enhancements' or not
+Admins will be able to view, edit or delete alerts even if they are not the creator or subscriber of those alerts.
+For more information,
+ifndef::pendo-links[]
+see xref:monitor.adoc[permissions].
+endif::[]
+ifdef::pendo-links[]
+see xref:monitor.adoc[permissions,window=_blank].
+endif::[]
+// Yochana.
 
-//re:Vikas-- document in notes and article, not in What's New
-
-[#8-10-0-cl-tml-monitor]
-[discrete]
-=== TML support for Monitor alerts
-
-// Teresa
+//re:Vikas--
 
 [#8-10-0-cl-private-links]
 [discrete]
