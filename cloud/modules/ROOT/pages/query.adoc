@@ -48,8 +48,8 @@ A Liveboard may have *multiple* visuals. The system issues a query to load the f
 
 For every column, a headline query is fired. Maximum 20 headlines per table.
 | |User opens an answer in Chart view.|
-| |User adds an existing column from the data source to the search by clicking on the left panel | 1 query on *Enter* or *Go*.
-| |The user adds an existing formula, previously created on the data source for this answer, to the search by clicking on the left panel |  1 query on *Enter* or *Go*.
+| |User adds an existing column from the data source to the search by selecting the left panel | 1 query on *Enter* or *Go*.
+| |The user adds an existing formula, previously created on the data source for this answer, to the search by selecting the left panel |  1 query on *Enter* or *Go*.
 | | The user successfully adds a filter to an answer from the left panel | 1 query on *Enter*
 ||A user successfully changes an existing filter.|  1 query on *Enter*
 ||A user either creates or changes a formula on an answer.| 1 query on *Enter*
@@ -77,7 +77,7 @@ For every column, a headline query is fired. Maximum 20 headlines per table.
 - Changing aggregation - 1 query is fired for every aggregation applied
 - Filtering - 1 query is fired for every filter |
 
-||User clicks on a follow-up in Explore, this indicates that the user views a follow-up, which is produced by a search event.
+||User selects a follow-up in Explore, this indicates that the user views a follow-up, which is produced by a search event.
 
 h|Drill | User drills down on an answer or visualization | 1 query for each drill action
 
@@ -94,7 +94,7 @@ h|Pin a chart to pinboard
 |No query is fired for the pinning action itself
 
 h|Update a chart in pinboard
-|Every time a user clicks on `edit` of a chart and makes x number of changes to the underlying chart, clicks on `update` or `close` and returns back to the pinboard
+|Every time a user selects `edit` of a chart and makes x number of changes to the underlying chart, selects `update` or `close` and returns back to the pinboard
 |One query is fired for each change, plus 1 query when the chart is updated and returned to the pinboard.
 h|During the creation of a worksheet
 |After adding multiple tables in a worksheet with joins between them, data is inspected in “Data Samples tabs”
