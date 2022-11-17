@@ -20,11 +20,26 @@ endif::free-trial-feature[]
 
 // internal-only for 8.10.cl
 
-[#8-10-0-cl-salesforce-scheduler]
+[#8-10-0-cl-sync-scheduler]
 [discrete]
-=== GA - Data Workspace [TS Sync] - Epic for 8.10 ( Salesforce and Scheduler)
+=== Schedule ThoughtSpot Sync
 
 // Naomi
+
+ThoughtSpot Sync schedules are now GA and on by default. When creating a sync from ThoughtSpot to an external business app (Google Sheets, Microsoft Teams, Slack), you can now schedule the sync to repeat on an hourly, daily, weekly, or monthly basis. To try it out, create a sync and select *Schedule your sync*.
+
+image::sync-schedule.png[Schedule sync]
+
+[#8-10-0-cl-salesforce-sync]
+[discrete]
+=== ThoughtSpot Sync Salesforce connection
+
+// Naomi
+
+ThoughtSpot Sync for Salesforce is now GA and on by default. You can now sync data directly from an answer or custom SQL view to Salesforce. Using ThoughtSpot Sync, you can push insights directly to Salesforce, notify your teams, and view data in context. ThoughtSpot Sync automatically establishes a secure pipeline to the destination app and thus eliminates the need for building custom connectors.
+
+
+image::sync-salesforce.png[Select app to sync pop-up, with Salesforce highlighted]
 
 [#8-10-0-cl-discoverable-content]
 [discrete]
@@ -81,6 +96,8 @@ endif::free-trial-feature[]
 // updates to the object usage Liveboard, new visualizations to track how objects are used
 
 // not likely to be in Free Trial
+
+
 
 '''
 [#secondary-8-10-0-cl]
