@@ -15,7 +15,7 @@ Databricks SQL warehouses are configured with OAuth 2.0 authentication on the Mi
 
 To create an application in AAD, do the following:
 
-. Log in to the Azure portal and navigate to the AAD resource, click *Add*, and select *App registration*.
+. Log in to the Azure portal and navigate to the AAD resource, select *Add*, and select *App registration*.
 +
 image::databricks-oauth-config-1.png[Click Add and select App registration]
 . Provide a name for your application and add a redirect URI in the following format:
@@ -34,14 +34,14 @@ image::databricks-oauth-config-3.png[View the Application ID, OAuth 2.0 authoriz
 
 To configure the AAD application, do the following:
 
-. In the Azure portal, navigate to your application by clicking *App Registrations* and then clicking your newly registered application to open it.
+. In the Azure portal, navigate to your application by selecting *App Registrations* and then selecting your newly registered application to open it.
 +
 image::databricks-oauth-config-4.png[Click on your new application]
 
-. In your application, click *API Permissions* and under the *AzureDatabricks* API/Permissions name, click the *user_impersonation* permission.
+. In your application, select *API Permissions* and under the *AzureDatabricks* API/Permissions name, select the *user_impersonation* permission.
 +
 image::databricks-oauth-config-5.png[Click user_impersonation]
-. Click *Certificates & secrets* and create a new secret for the app, providing an appropriate expiry time. Make a note of the secret value because it is displayed _only_ while creating it. The secret value is required later when you create the {connection} connection in ThoughtSpot.
+. Select *Certificates & secrets* and create a new secret for the app, providing an appropriate expiry time. Make a note of the secret value because it is displayed _only_ while creating it. The secret value is required later when you create the {connection} connection in ThoughtSpot.
 +
 .Setting the scope of the authorization flow
 ****
@@ -59,8 +59,8 @@ For more information, see https://docs.microsoft.com/en-us/azure/databricks/dev-
 
 To create AAD users in the {connection} workspace, do the following:
 
-. Log in to the {connection} workspace as a user with admin privileges. Click *Setting* and navigate to *Admin Console*.
-. Click *Add User* to create AAD users in {connection}.
+. Log in to the {connection} workspace as a user with admin privileges. Select *Setting* and navigate to *Admin Console*.
+. Select *Add User* to create AAD users in {connection}.
 +
 image::databricks-oauth-config-6.png[Click add user]
 
