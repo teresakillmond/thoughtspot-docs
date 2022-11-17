@@ -22,8 +22,7 @@ Before you can deploy the {spotapp}, you must complete the following prerequisit
 include::partial$spotapp-prereqs-general.adoc[]
 
 * Administrator access to {application}
-* Access to the following {application} tables and worksheets in your cloud data warehouse. Refer to <<schema,{spotapp} schema>> for more details.
-** EMPLOYEE_FACT
+* Access to all {application} data, in your cloud data warehouse. Refer to <<schema,{spotapp} schema>> for more details. You may need to transfer the {application} data to your cloud data warehouse, if it is not there already.
 * Run the required SQL commands in your cloud data warehouse. Refer to <<sql,Run SQL commands>>.
 
 [#sql]
@@ -64,7 +63,7 @@ You must update the following formulas in the *Employee Data* worksheet in Thoug
 
 == {spotapp} schema
 
-The following table describes the schema for the {spotapp}.
+The following table describes the schema for the {spotapp}. The `EMPLOYEE_FACT` table is created when you run the <<sql,SQL commands>> in your cloud data warehouse.
 
 [#schema]
 |===
