@@ -87,6 +87,28 @@ endif::free-trial-feature[]
 [discrete]
 === _Other features and enhancements_
 
+ifndef::free-trial-feature[]
+ifdef::pendo-links[]
+[#8-10-0-cl-orgs]
+[discrete]
+=== Multi-tenancy with Orgs [.badge.badge-beta-whats-new]#Beta#
+endif::[]
+ifndef::pendo-links[]
+[discrete]
+=== Multi-tenancy with Orgs [.badge.badge-beta]#Beta#
+endif::[]
+
+This release introduces ThoughtSpot’s multi-tenancy feature, which allows a ThoughtSpot cloud instance to be logically partitioned into multiple tenant-specific environments called *Orgs*.
+For more information, see
+ifndef::pendo-links[]
+xref:orgs-overview.adoc[Multi-tenancy with Orgs].
+endif::[]
+ifdef::pendo-links[]
+see xref:orgs-overview.adoc[Multi-tenancy with Orgs,window=_blank].
+endif::[]
+
+endif::[]
+
 [#8-10-0-cl-dr-sum]
 [discrete]
 === Dr.Sum Embrace connector Integration
@@ -100,10 +122,10 @@ endif::free-trial-feature[]
 Admins will be able to view, edit or delete alerts even if they are not the creator or subscriber of those alerts.
 For more information,
 ifndef::pendo-links[]
-see xref:monitor.adoc[permissions].
+see xref:monitor.adoc#permissions[permissions].
 endif::[]
 ifdef::pendo-links[]
-see xref:monitor.adoc[permissions,window=_blank].
+see xref:monitor.adoc#permissions[permissions,window=_blank].
 endif::[]
 // Yochana.
 
