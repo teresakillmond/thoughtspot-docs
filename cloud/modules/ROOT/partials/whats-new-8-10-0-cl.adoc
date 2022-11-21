@@ -45,7 +45,7 @@ image::sync-salesforce.png[Select app to sync pop-up, with Salesforce highlighte
 [discrete]
 === [Content Discoverability] [Phase 2] Content discoverability enablement improvements
 
-// Naomi-- bug fixes
+// Naomi-- bug fixes. New phrasing on the "information" widget for discoverability, discoverability field added to object-sharing security log
 
 [#8-10-0-cl-headline]
 [discrete]
@@ -87,6 +87,7 @@ image::sync-salesforce.png[Select app to sync pop-up, with Salesforce highlighte
 
 // not in 8.10.cl, planned for "far future"
 
+ifndef::free-trial-feature[]
 [#8-10-0-cl-object-usage]
 [discrete]
 === Object usage Liveboard
@@ -96,6 +97,9 @@ image::sync-salesforce.png[Select app to sync pop-up, with Salesforce highlighte
 // updates to the object usage Liveboard, new visualizations to track how objects are used
 
 // not likely to be in Free Trial
+
+image::object-usage-whats-new.png[]
+endif::free-trial-feature[]
 
 
 
@@ -194,7 +198,10 @@ endif::[]
 [discrete]
 === Allow deletion of tables through UI when it is valid to do so
 
-// Mark
+// Naomi
+
+// Falcon tables used to be deleted using multiple APIs. Now you can use metadata/delete API to delete any tables from the UI, and table IDs will be deleted simultaneously. Possibly already documented in Developer 8.10.0.cl docs.
+
 
 ifndef::free-trial-feature[]
 [discrete]
