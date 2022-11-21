@@ -40,9 +40,9 @@ You can set up the SpotApp in one of two ways:
 
 [#option-1]
 ==== Option 1
-The following SQL commands grant permission for the role you use in your {application} connection to use the {application} database. They create a separate database and schema for the data in the {application} database, and create the tables with the data. Then, they grant permission for the role you use in your {application} connection to use the {application} database. Replace `<YOUR_ROLE>` and `<YOUR_WAREHOUSE>` with your specific information. The role should be either SYSADMIN or a custom SpotApps role. You can also modify the schedule. The commands below set the schedule to refresh the table data monthly. Changing the schedule may have performance and cost implications.
+The following SQL commands grant permission for the role you use in your {application} connection to use the {application} database. They create a separate database and schema for the data in the {application} database, and create the tables with the data. Then, they grant permission for the role you use in your {application} connection to use the {application} database. Replace `<YOUR_ROLE>` and `<YOUR_WAREHOUSE>` with your specific information. The role should be either SYSADMIN or a custom SpotApps role. You can also modify the schedule. The following commands set the schedule to refresh the table data monthly. Changing the schedule may have performance and cost implications.
 
-NOTE: ThoughtSpot recommends you create the database and schema with the suggested names, using the first two commands below. However, you can also use your own names. If you use different names, you must replace ThoughtSpot's suggested names with the names you used.
+NOTE: ThoughtSpot recommends you create the database and schema with the suggested names, using the first two commands in the SQL script. However, you can also use your own names. If you use different names, you must replace ThoughtSpot's suggested names with the names you used.
 
 Run these commands as the `ACCOUNTADMIN`.
 
@@ -140,5 +140,3 @@ The following table describes the schema for the {spotapp}.
 | DATABASE_STORAGE_USAGE_HISTORY| AVERAGE_FAILSAFE_BYTES| FLOAT | Y
 
 |===
-
-

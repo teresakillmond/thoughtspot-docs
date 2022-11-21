@@ -38,6 +38,7 @@ Note that this workflow changes the object(s) in both clusters.
 
 Refer to the following tables for required permissions for importing and exporting Liveboards, answers, worksheets, tables, and views.
 
+[#import-permissions]
 *Import*
 
 |===
@@ -56,6 +57,7 @@ When importing a worksheet or view, you must have the *can manage data* permissi
 *Can manage data*, if the object or any of its dependents is a worksheet or view.
 |===
 
+[#export-permissions]
 *Export*
 
 |===
@@ -74,7 +76,7 @@ The individual object does not export, and you receive an error message about th
 
 *Edit*
 
-To edit TML for an object using the in-product TML editor, you must have the permissions required to both export the object and to import and update the object, as listed above.
+To edit TML for an object using the in-product TML editor, you must have the permissions required to both <<export-permissions,export the object>> and to <<import-permissions,import and update the object>>.
 
 [#export-object]
 == Export an object
@@ -208,7 +210,7 @@ To update an existing object by downloading the TML file and modifying it, follo
 In this case, we are updating a single worksheet.
 You can update multiple objects at once by uploading them in .zip file format.
 
-. <<export-object,Export the object>> you want to update, as in steps 1 to 5 of the *Export an Object* section above.
+. <<export-object,Export the object>> you want to update, as in steps 1 to 5 of the <<export-object,Export an Object>> section.
 . Edit the file in a text editor.
 . Navigate to the *Answers*, *Liveboards*, or *Data* page from the top navigation bar, depending on the object you want to update.
 . Select *Import TML*.
@@ -251,7 +253,7 @@ To migrate collections of objects packaged together as a zip file, refer to xref
 Note that you cannot create a new table using Scriptability.
 You can only update existing tables.
 
-. <<export-object,Export the object>> you want to move, as in steps 1 to 5 of the *Export an Object* section above.
+. <<export-object,Export the object>> you want to move, as in steps 1 to 5 of the <<export-object,Export an Object>> section.
 +
 The object remains on the original cluster as well, unless you delete it.
 
