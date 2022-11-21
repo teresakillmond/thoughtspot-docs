@@ -110,7 +110,7 @@ image::snow_grant_admin.png[]
 To collect Azure AD information for Snowflake, do the following:
 
 . Sign in to the https://portal.azure.com/[Microsoft Azure Portal^], and navigate to *Azure Active Directory*, if needed.
-. Go back to the Snowflake OAuth Resource App (Snowflake Oauth User Resource) to collect all the info related as mentioned below:
+. Go back to the Snowflake OAuth Resource App (Snowflake Oauth User Resource) to collect the following information:
 +
 a.
 Click *Endpoints* in the *Overview* interface.
@@ -152,7 +152,7 @@ In this part you must do the following:
 * Validate the tokens from Azure AD.
 * Provide the appropriate Snowflake data access to users based on the user role associated with the OAuth token.
 
-IMPORTANT: If you use **_SESSION:ROLE-ANY_** in scope, you must configure the following flag in the security integration: `external_oauth_any_role_mode = ‘ENABLE’`. This is shown in the optional line of the security integration format below.
+IMPORTANT: If you use **_SESSION:ROLE-ANY_** in scope, you must configure the following flag in the security integration: `external_oauth_any_role_mode = ‘ENABLE’`. This is shown in the optional line of the security integration format.
 
 ==== Security integration format
 [source]
@@ -249,7 +249,7 @@ image:token_det_2.png[]
 
 To validate your configuration using cURL, do the following:
 
-. Execute below command to get access token with password grant_type:
+. Execute the following command to get access token with password grant_type:
 +
 ----
  curl -X POST -H "Content-Type: application/x-www-form-urlencoded;charset=UTF-8" \
@@ -277,7 +277,7 @@ Example:
 +
 image::curl_1.png[]
 
-. Execute below command for getting access token with refresh_token as grant_type:
+. Execute the following command for getting access token with refresh_token as grant_type:
 +
 ----
  curl -X POST -H "Content-Type: application/x-www-form-urlencoded;charset=UTF-8" \
