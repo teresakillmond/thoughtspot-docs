@@ -123,7 +123,7 @@ Run the following command to verify that the Ansible Control Server can connect 
 ansible -m ping -i hosts.yaml all
 ----
 +
-If you are using AWS SSM instead of ssh, there is no need to fill out this parameter or run the above command.
+If you are using AWS SSM instead of ssh, there is no need to fill out this parameter or run the preceding command.
 ssh_public_key:: Add the public key to the `ssh authorized_keys` file for each host, and add the private key to the `hosts.yaml` file. You can use an existing key pair, or generate a new key pair in the Ansible Control server.
 Run the following command to verify that the Ansible Control Server can connect to the hosts over `ssh`:
 +
@@ -132,7 +132,7 @@ Run the following command to verify that the Ansible Control Server can connect 
 ansible -m ping -i hosts.yaml all
 ----
 +
-If you are using AWS SSM instead of ssh, there is no need to fill out this parameter or run the above command.
+If you are using AWS SSM instead of ssh, there is no need to fill out this parameter or run the preceding command.
 extra_admin_ssh_key:: [Optional] An additional or extra key may be required by your security application, such as Qualys, to connect to the hosts.
 If you are using AWS SSM instead of ssh, there is no need to fill out this parameter.
 http(s)_proxy:: If the hosts must access public repositories through an internal proxy service, provide the proxy information.
