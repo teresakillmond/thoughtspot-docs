@@ -72,7 +72,7 @@ Consult with your ThoughtSpot contact if you are unsure how to handle sharding o
 
 === Sharding recommendations example
 
-Let's use an example to see how the 6 guidelines listed above in <<sharding-guidelines,Table sizes and sharding recommendations>> work.
+Let's use an example to see how the 6 guidelines listed in <<sharding-guidelines,Table sizes and sharding recommendations>> work.
 
 You have a fact table with 2.4 billion rows.
 Your cluster has 24 nodes, and 56 CPU cores per node.
@@ -181,10 +181,10 @@ CONSTRAINT PRIMARY KEY("saleid,vendorid”))
 PARTITION BY HASH(n) KEY ("vendorid");
 ----
 
-In the above examples, the table has a primary key.
+In the preceding examples, the table has a primary key.
 The `KEY` parameters specified, `saleid` and `vendorid`, are subsets of the primary key.
 
-In the below example, the table has a primary key.
+In the following example, the table has a primary key.
 The `KEY` parameter specified, `locationid`, is _not_ a subset of the primary key, and therefore cannot be used as the shard key.
 
 *_AVOID_*
@@ -277,11 +277,11 @@ Your primary key may include several columns.
 For example, suppose the table you want to shard has a primary key made up of `saleid`, `custid`, and `locationid`, as in the example in guideline three.
 The table has 10K sales, 40 locations, and 200 products.
 Based on the best practice outlined in guideline three (*choose a shard key that results in a wide variety of keys*), you should not use `locationid` in your shard key.
-Both `saleid` and `custid` are good shard keys, based on the four best practices mentioned above.
+Both `saleid` and `custid` are good shard keys, based on the four best practices.
 Instead of picking one column to use as your shard key, use both `saleid` and `custid`.
 
 You can always use your primary key as a shard key.
-If you have trouble picking another shard key based on the above requirements and best practices, use your primary key.
+If you have trouble picking another shard key based on the requirements and best practices, use your primary key.
 
 [#dimension-tables]
 == Sharded dimension tables

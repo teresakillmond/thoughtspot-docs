@@ -112,7 +112,7 @@ image::snow_grant_admin.png[Grant admin consent]
 To collect Azure AD information for {connection}, do the following:
 
 . Sign in to the https://portal.azure.com/[Microsoft Azure Portal^], and navigate to *Azure Active Directory*, if needed.
-. Go back to the {connection} OAuth Resource App ({connection} Oauth User Resource) to collect all the info related as mentioned below:
+. Go back to the {connection} OAuth Resource App ({connection} Oauth User Resource) to collect the following information:
 .. Click *Endpoints* in the *Overview* interface.
 .. On the right-hand side, copy the *OAuth 2.0 token endpoint (v2)* and note the URLs for *OpenID Connect metadata* and *Federation Connect metadata*.
 
@@ -146,7 +146,7 @@ In this part you must do the following:
 * Validate the tokens from Azure AD.
 * Provide the appropriate {connection} data access to users based on the user role associated with the OAuth token.
 
-IMPORTANT: If you use _SESSION:ROLE-ANY_ in scope, you must configure the following flag in the security integration: `external_oauth_any_role_mode = ‘ENABLE’`. This is shown in the optional line of the security integration format below.
+IMPORTANT: If you use _SESSION:ROLE-ANY_ in scope, you must configure the following flag in the security integration: `external_oauth_any_role_mode = ‘ENABLE’`. This is shown in the optional line of the security integration format example.
 
 ==== Security integration format
 [source]
@@ -252,7 +252,7 @@ select system$verify_external_oauth_token('<access_token>');
 
 To validate your configuration using cURL, do the following:
 
-. Execute below command to get access token with password grant_type:
+. Execute the following command to get access token with password grant_type:
 +
 ----
  curl -X POST -H "Content-Type: application/x-www-form-urlencoded;charset=UTF-8" \
@@ -280,7 +280,7 @@ Example:
 +
 image::curl_1.png[Sample cURL command in terminal]
 
-. Execute below command for getting access token with refresh_token as grant_type:
+. Execute the following command for getting access token with refresh_token as grant_type:
 +
 ----
  curl -X POST -H "Content-Type: application/x-www-form-urlencoded;charset=UTF-8" \
