@@ -12,14 +12,6 @@ endif::free-trial-feature[]
 
 [#primary-8-10-0-cl]
 
-[#8-10-0-cl-servicenow-hubspot]
-[discrete]
-=== Alpha - TS Sync- Servicenow and Hubspot
-
-// Naomi
-
-// internal-only for 8.10.cl
-
 [#8-10-0-cl-sync-scheduler]
 [discrete]
 === Schedule ThoughtSpot Sync
@@ -41,37 +33,6 @@ ThoughtSpot Sync for Salesforce is now GA and on by default. You can now sync da
 
 image::sync-salesforce.png[Select app to sync pop-up, with Salesforce highlighted]
 
-[#8-10-0-cl-discoverable-content]
-[discrete]
-=== [Content Discoverability] [Phase 2] Content discoverability enablement improvements
-
-// Naomi-- bug fixes. New phrasing on the "information" widget for discoverability, discoverability field added to object-sharing security log
-
-[#8-10-0-cl-headline]
-[discrete]
-=== Remove Headline Pinning feature from table column summary
-
-// Naomi. not sure if this needs to be in the what's new
-
-// planned to GA 9.2.0.cl
-
-[#8-10-0-cl-servicenow]
-[discrete]
-=== TS-Sync: Adding ServiceNow Destination(alpha)
-
-// Naomi
-
-// internal-only, no word as to which release it will GA
-
-
-[#8-10-0-cl-seekwell]
-[discrete]
-=== Seekwell as a Service: Enable support for MailChimp in data workspace
-
-// Naomi
-
-// not in 8.10.cl, planned for "far future"
-
 ifndef::free-trial-feature[]
 [#8-10-0-cl-object-usage]
 [discrete]
@@ -86,7 +47,9 @@ ifndef::free-trial-feature[]
 image::object-usage-whats-new.png[]
 endif::free-trial-feature[]
 
+// move down to other features
 
+// box around new viz(es)
 
 '''
 [#secondary-8-10-0-cl]
@@ -115,11 +78,15 @@ endif::[]
 
 endif::[]
 
+// try to think of a different word -- not environments?
+
+// add a sentence about keeping info for users completely isolated from each other
+
 [#8-10-0-cl-monitor-admin]
 [discrete]
 === Enable ORG/Cluster admins to see all the Monitor alerts on the clusters and allow them to edit/delete the alerts created by others
 
-Admins will be able to view, edit or delete alerts even if they are not the creator or subscriber of those alerts.
+Admins can view, edit or delete alerts even if they are not the creator or subscriber of those alerts.
 For more information,
 ifndef::pendo-links[]
 see xref:monitor.adoc#permissions[permissions].
@@ -129,7 +96,11 @@ see xref:monitor.adoc#permissions[permissions,window=_blank].
 endif::[]
 // Yochana.
 
-//re:Vikas--
+// title needs to be much shorter. Just "View Monitor alerts as an admin" or something
+
+// is this in free trial?
+
+// take out mentions of orgs
 
 [#8-10-0-cl-spotapps]
 [discrete]
@@ -143,9 +114,7 @@ ifdef::pendo-links[]
 see xref:spotapps-dei.adoc[Diversity, Equity, and Inclusion SpotApp,window=_blank].
 endif::[]
 
-// I can add an image here if we want to make this more exciting
-
-//image::spotapp-dei-liveboard.png[Diversity, Equity, and Inclusion SpotApp Liveboard]
+image::spotapp-dei-liveboard.png[Diversity, Equity, and Inclusion SpotApp Liveboard]
 
 ifndef::free-trial-feature[]
 
@@ -153,7 +122,7 @@ ifndef::free-trial-feature[]
 [discrete]
 === Multiple AWS PrivateLinks
 
-ThoughtSpot now supports multiple AWS PrivateLinks in your environment. If you have data in multiple cloud data warehouses that needs an additional layer of security and network reliability, you can set up an AWS PrivateLink between each CDW, for a maximum of five PrivateLinks.
+ThoughtSpot now supports multiple AWS PrivateLinks in your environment. If you have data in multiple cloud data warehouses that need an additional layer of security and network reliability, you can set up an AWS PrivateLink between each CDW, for a maximum of five PrivateLinks.
 For more information, see
 ifndef::pendo-links[]
 xref:connections-private-link-intro.adoc[Enabling an AWS PrivateLink between ThoughtSpot Cloud and your cloud data warehouse].
@@ -164,8 +133,6 @@ endif::[]
 
 endif::[]
 
-// THE FOLLOWING ARE NEEDS EVALUATION
-
 [#8-10-0-cl-delete-tables]
 [discrete]
 === Allow deletion of tables through UI when it is valid to do so
@@ -174,6 +141,7 @@ endif::[]
 
 // Falcon tables used to be deleted using multiple APIs. Now you can use metadata/delete API to delete any tables from the UI, and table IDs will be deleted simultaneously. Possibly already documented in Developer 8.10.0.cl docs.
 
+// don't need to mention the api if it's not involved in the process. don't mention falcon in cloud -- what tables does this apply to if you're a cloud customer? What was happening before and what is happening now?
 
 ifndef::free-trial-feature[]
 [discrete]
