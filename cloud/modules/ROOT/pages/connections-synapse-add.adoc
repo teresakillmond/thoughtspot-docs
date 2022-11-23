@@ -17,11 +17,22 @@ image::synapse-connectiontype.png[Add a {connection} connection]
 
 . Enter the connection details for your {connection} data source using Service Account, or OAuth.
 +
+NOTE: To use SQL Server with your {connection} connection, select *Use Service Account*.
++
 image::synapse-connectiondetails.png[Enter connection details]
 +
 For Service Account authentication, do the following:
 
 ** Enter Host, Port, User, Password, and Database.
++
+[IMPORTANT]
+.SQL Server configuration
+====
+If you are using SQL Server, do the following:
+
+* For Port, enter *1433*.
+* For User, enter the login for your SQL Server database.
+====
 
 +
 --
