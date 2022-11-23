@@ -136,9 +136,11 @@ endif::[]
 
 [#8-10-0-cl-delete-tables]
 [discrete]
-=== Allow deletion of tables through UI when it is valid to do so
+=== Delete tables from ThoughtSpot
 
 // Naomi
+
+Previously, when deleting tables from Connections, ThoughtSpot did not delete the table’s metadata completely. Starting in 8.10.0.cl, tables deleted through the ThoughtSpot UI disappear completely from your cluster.
 
 // Falcon tables used to be deleted using multiple APIs. Now you can use metadata/delete API to delete any tables from the UI, and table IDs will be deleted simultaneously. Possibly already documented in Developer 8.10.0.cl docs.
 
