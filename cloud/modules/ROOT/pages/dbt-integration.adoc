@@ -17,7 +17,7 @@ Before you can integrate with dbt, you must satisfy the following prerequisites
 * Create a xref:connections.adoc[connection] to your external cloud data warehouse: Amazon Redshift, Databricks, Google BigQuery, or Snowflake. This cloud data warehouse must contain the tables that are created from your dbt models.
 * If you connect to dbt via *dbt cloud*, you need the API key, Account ID, and Project ID:
 +
-API key:: This is also called the *API token* in dbt. To find this token, navigate to your *Account Settings* page in dbt cloud. Click on the *Service Account tokens* page, and generate a new token.
+API key:: This is also called the *API token* in dbt. To find this token, refer to the https://docs.getdbt.com/docs/dbt-cloud-apis/user-tokens[dbt documentation^].
 Account ID:: Your default dbt Cloud account ID. Find your account ID in your dbt Cloud URL, after you log in. For example, if your URL is `https://cloud.getdbt.com/#/accounts/12345/projects/56789/dashboard`, your account ID is `12345`.
 Project ID:: Find your project ID in your dbt Cloud URL, after you log in. For example, if your URL is `https://cloud.getdbt.com/#/accounts/12345/projects/56789/dashboard`, your project ID is `56789`.
 * Optionally define the relationships for the dbt models in your `yml` schema file. For more information, refer to the https://docs.getdbt.com/docs/build/tests[dbt documentation^].
@@ -26,7 +26,8 @@ NOTE: If you do not define relationships, ThoughtSpot imports each model as a si
 * If you are using *dbt cloud*, the *generate docs on run* setting must be on. You can enable this setting in the jobs settings of the project, under *Execution settings*.
 * If you are using *dbt core*, execute the `dbt docs generate` command along with the `dbt run` command.
 * If you are using *dbt core*, you must connect to dbt using a zip file, which must contain the latest `manifest.json` and `catalog.json` files. By default, dbt stores these files under the `<project name>/target` folder.
-
++
+NOTE: When you compress the `manifest.json` and `catalog.json` files into one zip file, ensure that you do not include any hidden files, as this may cause errors later. To check the folder you plan to compress does not contain hidden files, refer to these articles for viewing hidden files on your https://discussions.apple.com/thread/7581737[Mac^] or https://support.microsoft.com/en-us/windows/view-hidden-files-and-folders-in-windows-97fbc472-c603-9d90-91d0-1166d1d9f4b5[Windows^] computer. If the folder contains hidden files, move them out of the folder before compressing it into a zip file.
 
 == Integrating with dbt
 You can set up your dbt integration from the Data workspace. To integrate with dbt, follow these steps:
@@ -54,6 +55,8 @@ Account ID:: Your default dbt Cloud account ID. Find your account ID in your dbt
 Project ID:: Find your project ID in your dbt Cloud URL, after you log in. For example, if your URL is `https://cloud.getdbt.com/#/accounts/12345/projects/56789/dashboard`, your project ID is `56789`.
 
 . If you select *Use a .zip file*, click the *Upload* button, and add the zip file from your files. The zip file must contain the latest `manifest.json` and `catalog.json` files. By default, dbt stores these files under the `<project name>/target` folder.
++
+NOTE: When you compress the `manifest.json` and `catalog.json` files into one zip file, ensure that you do not include any hidden files, as this may cause errors later. To check the folder you plan to compress does not contain hidden files, refer to these articles for viewing hidden files on your https://discussions.apple.com/thread/7581737[Mac^] or https://support.microsoft.com/en-us/windows/view-hidden-files-and-folders-in-windows-97fbc472-c603-9d90-91d0-1166d1d9f4b5[Windows^] computer. If the folder contains hidden files, move them out of the folder before compressing it into a zip file.
 
 . Select *Next*.
 
