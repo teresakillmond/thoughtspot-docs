@@ -19,7 +19,7 @@ Note that ThoughtSpot checks your threshold condition against the value displaye
 To create a threshold-based notification for changes in your KPI, follow these steps:
 
 . Select the KPI you want to monitor, either by accessing a Liveboard, or by searching within the **Answers** tab. +
-Optionally, create a KPI and save it as an answer, then select **Create alert** from the **more options** menu.
+Optionally, create a KPI and save it as an Answer, then select **Create alert** from the **more options** menu.
 . Hover over the KPI visualization and select the **Monitor** icon. +
 +
 image:kpi-monitor.png[KPI visualization with monitor icon in the upper right corner]
@@ -68,7 +68,7 @@ Using scheduled alerts, you can define a time period to receive notifications on
 To schedule a repeated notification for changes in your KPI, follow these steps:
 
 . Select the KPI you want to monitor, either by accessing a Liveboard, or by searching within the **Answers** tab. +
-Optionally, create a KPI and save it as an answer, then select **Create alert** from the **more options** menu.
+Optionally, create a KPI and save it as an Answer, then select **Create alert** from the **more options** menu.
 
 . Hover over the KPI visualization and select the **Monitor** icon.
 +
@@ -113,11 +113,11 @@ NOTE: Admins will be able to view, edit, or delete alerts even if they are not t
 
 When creating an alert for a KPI, the following limitations apply:
 
-- A KPI chart must be saved as an answer before you can create an alert.
+- A KPI chart must be saved as an Answer before you can create an alert.
 - When creating an alert for a KPI pinned to a Liveboard, you must first save any changes to the Liveboard containing your KPI.
 - You cannot create an alert for a pinned KPI if your Liveboard contains filters applied through the Liveboard **more options** menu. First, remove the Liveboard filters, then refresh the page before creating a scheduled alert for your KPI.
 - You cannot apply a filter on a pinned KPI and then create an alert for the modified KPI. +
-For example, say you want to create an alert for “Sales”, but only for product type “clothing”. If the Liveboard underlying your KPI does not already filter for “product type= clothing”, you cannot use the **Edit** function to add a filter to your KPI and then schedule an alert. Instead, create a KPI with the desired filters, save it as an answer, and then schedule an alert.
+For example, say you want to create an alert for “Sales”, but only for product type “clothing”. If the Liveboard underlying your KPI does not already filter for “product type= clothing”, you cannot use the **Edit** function to add a filter to your KPI and then schedule an alert. Instead, create a KPI with the desired filters, save it as an Answer, and then schedule an alert.
 - If you modify a pinned KPI visualization using the Liveboard’s Explore mode, you must reset the KPI using the reset button before you can create an alert notification.
 - You cannot create an alert for a pinned KPI visualization if the KPI is in edit mode.
 - Row-level security applies to your KPI alert subscriptions. For example, if you create a threshold-based alert for a KPI on Sales in all regions, you receive a notification when total sales reached your defined threshold. Another user subscribed to your alert whose access is limited to the “West” region would receive an alert _only_ when sales in the “West” region reached the threshold defined in your alert.
