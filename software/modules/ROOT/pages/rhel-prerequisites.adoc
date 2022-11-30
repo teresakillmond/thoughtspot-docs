@@ -11,7 +11,7 @@ Prepare the system and ThoughtSpot clusters for installation:
 |===
 | &#10063; | xref:set-up-hosts[1. Set up hosts for the ThoughtSpot cluster]
 | &#10063; | xref:partition-hosts[2. Partition the hosts]
-| &#10063; | xref:install-rhel[3. Install RHEL version 7.8, 7.9, 8.1, 8.2, 8.3, 8.4, or 8.5 or OEL version 7.9 on all hosts]
+| &#10063; | xref:install-rhel[3. Install RHEL version 7.8, 7.9, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, or 8.7 or OEL version 7.9 on all hosts]
 | &#10063; | xref:linux-kernel-version[4. Ensure that your Linux kernel is correct]
 | &#10063; | xref:enable-hosts[5. Enable the hosts to download RHEL or OEL packages]
 | &#10063; | xref:tmp-permission[6. Ensure tmp has permission 777]
@@ -32,7 +32,7 @@ Please refer to the relevant deployment sections in our documentation for the ex
 * [*_RHEL 7 only_*] ThoughtSpot-certified hardware appliance manufactured by xref:smc.adoc[SMC]
 * [*_RHEL 7 or 8 or OEL_*] xref:aws-configuration-options.adoc[Amazon Web Services (AWS) EC2]
 * [*_RHEL 7 or OEL_*] xref:gcp-configuration-options.adoc[Google Cloud Platform (GCP)]
-* [*_RHEL 7 only_*] xref:azure-configuration-options.adoc[Microsoft Azure]
+* [*_RHEL 7 or 8 only_*] xref:azure-configuration-options.adoc[Microsoft Azure]
 * [*_RHEL 7 or 8 or OEL_*] xref:vmware.adoc[VMware]
 
 [#partition-hosts]
@@ -64,9 +64,9 @@ NOTE: For ThoughtSpot-certified hardware platforms, xref:dell.adoc[Dell] and xre
 [#install-rhel]
 == Install RHEL or OEL on hosts
 
-ThoughtSpot is certified with RHEL versions 7.8, 7.9, 8.1, 8.2, 8.3, 8.4, and 8.5;
+ThoughtSpot is certified with RHEL versions 7.8, 7.9, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, and 8.7;
 we *do not* support other versions of RHEL, including 7.7 and 8.
-ThoughtSpot is certified with OEL version 7.9. Install RHEL version 7.8, 7.9, 8.1, 8.2, 8.3, 8.4, or 8.5, or OEL version 7.9.
+ThoughtSpot is certified with OEL version 7.9. Install RHEL version 7.8, 7.9, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, or 8.7, or OEL version 7.9.
 
 On RHEL version 7.8, ensure that your <<#linux-kernel-version,linux kernel version>> is 3.10.0-1127.19.1 or higher. On all other supported RHEL versions, use the default linux kernel. On OEL version 7.9, ensure that you are using the Red Hat Compatible Kernel (RHCK), not the default Unbreakable Enterprise Kernel (UEK). If you are using the UEK, xref:support-contact.adoc[contact ThoughtSpot Support] to switch to the RHCK.
 
@@ -149,7 +149,7 @@ The `/etc/sudoers` file must not have the `Defaults requiretty` line. This line 
 [#selinux]
 == [RHEL 8 only] Remove the selinux policy for rsync
 
-Remove the selinux policy for rsync on each node. This is *only* necessary if you are using RHEL 8.1 - 8.5. You do not need to do this step if you are using RHEL 7.9 or 7.9, or OEL 7.9.
+Remove the selinux policy for rsync on each node. This is *only* necessary if you are using RHEL 8.1 - 8.7. You do not need to do this step if you are using RHEL 7.9 or 7.9, or OEL 7.9.
 
 Run the following command on each ThoughtSpot node:
 
