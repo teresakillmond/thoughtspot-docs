@@ -3,11 +3,11 @@
 :linkattrs:
 :experimental:
 :page-layout: default-cloud
-:description: ThoughtSpot's dbt integration allows you to provide your existing dbt models and create ThoughtSpot worksheets, which you can use to search your data.
+:description: ThoughtSpot's dbt integration allows you to provide your existing dbt models and create ThoughtSpot Worksheets, which you can use to search your data.
 
-ThoughtSpot's dbt integration allows you to easily provide your existing dbt models and automatically create ThoughtSpot xref:worksheets.adoc[worksheets], which you can use to xref:search-data.adoc[search your data].
+ThoughtSpot's dbt integration allows you to easily provide your existing dbt models and automatically create ThoughtSpot xref:worksheets.adoc[Worksheets], which you can use to xref:search-data.adoc[search your data].
 
-dbt takes your raw data in your data warehouse and transforms and validates it. ThoughtSpot's dbt integration  connects users to their cloud data warehouse, integrates with your dbt models using an API key or zip file, and generates the relationships between the tables defined in the dbt model that you select. It also brings any logical tables into ThoughtSpot. Then, ThoughtSpot creates new worksheets, based on the relationships between the tables. If a table does not have any relationships, ThoughtSpot creates a worksheet based only on that table. These worksheets provide user-friendly logical views of your complex datasets. Users can use these worksheets to easily search their complex data. This process may replace existing dbt tables you imported into ThoughtSpot, but it will not replace existing worksheets.
+dbt takes your raw data in your data warehouse and transforms and validates it. ThoughtSpot's dbt integration  connects users to their cloud data warehouse, integrates with your dbt models using an API key or zip file, and generates the relationships between the tables defined in the dbt model that you select. It also brings any logical tables into ThoughtSpot. Then, ThoughtSpot creates new Worksheets, based on the relationships between the tables. If a table does not have any relationships, ThoughtSpot creates a Worksheet based only on that table. These Worksheets provide user-friendly logical views of your complex datasets. Users can use these Worksheets to easily search their complex data. This process may replace existing dbt tables you imported into ThoughtSpot, but it will not replace existing Worksheets.
 
 NOTE: Integration with dbt is certified only for Amazon Redshift, Databricks, Google BigQuery, and Snowflake connections.
 
@@ -22,7 +22,7 @@ Account ID:: Your default dbt Cloud account ID. Find your account ID in your dbt
 Project ID:: Find your project ID in your dbt Cloud URL, after you log in. For example, if your URL is `https://cloud.getdbt.com/#/accounts/12345/projects/56789/dashboard`, your project ID is `56789`.
 * Optionally define the relationships for the dbt models in your `yml` schema file. For more information, refer to the https://docs.getdbt.com/docs/build/tests[dbt documentation^].
 +
-NOTE: If you do not define relationships, ThoughtSpot imports each model as a single table and creates one worksheet based on each table.
+NOTE: If you do not define relationships, ThoughtSpot imports each model as a single table and creates one Worksheet based on each table.
 * If you are using *dbt cloud*, the *generate docs on run* setting must be on. You can enable this setting in the jobs settings of the project, under *Execution settings*.
 * If you are using *dbt core*, execute the `dbt docs generate` command along with the `dbt run` command.
 * If you are using *dbt core*, you must connect to dbt using a zip file, which must contain the latest `manifest.json` and `catalog.json` files. By default, dbt stores these files under the `<project name>/target` folder.
@@ -74,25 +74,25 @@ image::dbt-integration-tables.png[dbt integration step 3]
 
 . Select *Finish*.
 
-. The *Generated Worksheets and Liveboards* page appears. ThoughtSpot generates several worksheets and Liveboards from your dbt models.
+. The *Generated Worksheets and Liveboards* page appears. ThoughtSpot generates several Worksheets and Liveboards from your dbt models.
 +
 image::dbt-integration-worksheets.png[dbt integration step 4]
 +
-To inspect the worksheet and Liveboard details, select any of the worksheet or Liveboard names. You can view the joins created between the related tables in the worksheets from the *Joins* tab for the worksheet.
+To inspect the Worksheet and Liveboard details, select any of the Worksheet or Liveboard names. You can view the joins created between the related tables in the Worksheets from the *Joins* tab for the Worksheet.
 +
-To xref:search-data.adoc[search the data] on the worksheets, select *Search worksheet* next to any worksheet.
+To xref:search-data.adoc[search the data] on the Worksheets, select *Search worksheet* next to any Worksheet.
 
 . Select *Exit*.
 
 . To see the objects that you just created from dbt, navigate to the *Data > Home* or *Liveboards* pages.
 +
-image::dbt-integration-home-page.png[dbt integration view worksheets and tables]
+image::dbt-integration-home-page.png[dbt integration view Worksheets and tables]
 +
-NOTE: This process may replace existing dbt tables you imported into ThoughtSpot, but it will not replace existing worksheets.
+NOTE: This process may replace existing dbt tables you imported into ThoughtSpot, but it will not replace existing Worksheets.
 
-. If you select any of the tables or worksheets you created, and then click *Joins*, you can see the joins ThoughtSpot created, based on the relationships in dbt.
+. If you select any of the tables or Worksheets you created, and then click *Joins*, you can see the joins ThoughtSpot created, based on the relationships in dbt.
 
-. If there are any changes to the dbt models that you would like the ThoughtSpot worksheets, Liveboards, and tables to reflect, you must run the dbt integration again, which creates a new set of worksheets and Liveboards.
+. If there are any changes to the dbt models that you would like the ThoughtSpot Worksheets, Liveboards, and tables to reflect, you must run the dbt integration again, which creates a new set of Worksheets and Liveboards.
 
 == Limitations
 

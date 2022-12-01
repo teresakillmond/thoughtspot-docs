@@ -1,39 +1,39 @@
-= Modify joins within a worksheet
+= Modify joins within a Worksheet
 :last_updated: 11/18/2019
 :linkattrs:
 :experimental:
 :page-layout: default-cloud
 :page-aliases: /admin/worksheets/mod-ws-internal-joins.adoc
-:description: Learn how to change the join type between the tables within a worksheet.
+:description: Learn how to change the join type between the tables within a Worksheet.
 
 
-When you create a worksheet, you select a xref:worksheet-progressive-joins.adoc[join rule].
-The join rule works together with the joins defined within the worksheet determine how the tables that make up the worksheet are joined, and how those joins behave when searching on the worksheet.
+When you create a Worksheet, you select a xref:worksheet-progressive-joins.adoc[join rule].
+The join rule works together with the joins defined within the Worksheet determine how the tables that make up the Worksheet are joined, and how those joins behave when searching on the Worksheet.
 
-Starting with ThoughtSpot version 5.0, you are not limited to just one join rule for the entire worksheet.
-You can define different types of joins for each join between tables in a worksheet.
+Starting with ThoughtSpot version 5.0, you are not limited to just one join rule for the entire Worksheet.
+You can define different types of joins for each join between tables in a Worksheet.
 Be default, each of these individual table joins uses an inner join.
 But you can override this at the individual join level.
 
-You must have either the *Can administer ThoughtSpot* privilege or the *Can manage data* privilege to modify joins within worksheets.
+You must have either the *Can administer ThoughtSpot* privilege or the *Can manage data* privilege to modify joins within Worksheets.
 
 == Modify a join
 
-To modify the join types within a worksheet, follow these steps:
+To modify the join types within a Worksheet, follow these steps:
 
 . Select the *Data* tab in the top menu.
 
 . Select *Table*, and then select *Worksheets*.
-. Select the name of the worksheet.
-Here, we selected the worksheet _West Regional Sales_.
-. Under the worksheet name and description, select the *Joins* tab.
+. Select the name of the Worksheet.
+Here, we selected the Worksheet _West Regional Sales_.
+. Under the Worksheet name and description, select the *Joins* tab.
 
-. The join information and the schema for the worksheet appear.
+. The join information and the schema for the Worksheet appear.
  ** The schema representation includes the join type.
  ** You can see the list of _Joins within the worksheet_, which include all joins between the underlying tables xref:relationship-create.adoc[created in the browser].
  ** The fact table is always on the left side of the join, and it appears on the left side.
 +
-image::worksheet-join-schema-view.png[Joins and schema view for a worksheet]
+image::worksheet-join-schema-view.png[Joins and schema view for a Worksheet]
 +
 Note the available actions for the join view.
 +
