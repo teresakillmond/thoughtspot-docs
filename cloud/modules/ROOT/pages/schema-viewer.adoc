@@ -4,7 +4,7 @@
 :experimental:
 :page-layout: default-cloud
 :page-aliases: /admin/loading/schema-viewer.adoc
-:description: Use the schema viewer to see tables and worksheets and their relationships.
+:description: Use the schema viewer to see tables and Worksheets and their relationships.
 :toc: true
 
 ThoughtSpot has a *Schema Viewer* though which you can examine the database schema.
@@ -38,23 +38,23 @@ image::schema_viewer.png[Schema viewer. There is a 1 next to the [All | Yours] o
 | Select artifacts tagged with tags.
 |===
 
-. The list of tables and worksheets on the left changes as you select the various filters.
+. The list of tables and Worksheets on the left changes as you select the various filters.
 The schema view focus changes in tandem.
-. To center the view panel on a specific table, worksheet, or view, click that object.
+. To center the view panel on a specific table, Worksheet, or view, click that object.
 +
 You can also drag the objects around in the viewer to position them better.
 
-== Accessing Schema Viewer for a single worksheet, table, or view
+== Accessing Schema Viewer for a single Worksheet, table, or view
 
-You can now see the schema for each object for tables, worksheets, or views.
+You can now see the schema for each object for tables, Worksheets, or views.
 
 . Click the *Data* tab in the top menu.
 
 . From the list of objects, select one.
-Here, we selected the worksheet _West Regional Sales_.
-. At the top of the worksheet, click the *Joins* tab.
+Here, we selected the Worksheet _West Regional Sales_.
+. At the top of the Worksheet, click the *Joins* tab.
 
-. The join information and the schema for the worksheet appear.
+. The join information and the schema for the Worksheet appear.
 +
 image::worksheet-join-schema.png[Join and schema view for a single object]
 
@@ -63,7 +63,7 @@ image::worksheet-join-schema.png[Join and schema view for a single object]
 You can use the Schema Viewer to discover the following information:
 
 * What is the relationship between two tables?
-* What tables make up this worksheet, and how are they joined?
+* What tables make up this Worksheet, and how are they joined?
 
 The schema viewer shows joins between tables, join directionality, and join type.
 
@@ -82,7 +82,7 @@ For example, joins appear in different colors to distinguish their type:
 * Red is used for generic relationships
 * Green is used for primary key/foreign key joins
 
-When viewing a worksheet, you can also see what joins connect the tables: the inner, left outer, right outer, or full outer joins
+When viewing a Worksheet, you can also see what joins connect the tables: the inner, left outer, right outer, or full outer joins
 
 A good rule to follow is "Keep it Green".
 This means that you can get better results from PK/FK joins rather than from using generic relationships.
@@ -92,24 +92,24 @@ If you find tables that have been joined using a generic relationship, but could
 == Worksheet view
 
 Worksheets are often based on more than one table.
-The worksheet schema will show schemas for the tables behind the worksheet, as well as the joins between tables _that were created as a part of the worksheet_.
+The Worksheet schema will show schemas for the tables behind the Worksheet, as well as the joins between tables _that were created as a part of the worksheet_.
 
-Click a worksheet, to see it in the Schema Viewer.
-If the schema view is not showing the schema behind the worksheet, double click the tab on the upper right of the worksheet object.
+Click a Worksheet, to see it in the Schema Viewer.
+If the schema view is not showing the schema behind the Worksheet, double click the tab on the upper right of the Worksheet object.
 
 image::worksheet_viewer_schema.png[Schema viewer for a specific object]
 
-The worksheet view shows the following information:
+The Worksheet view shows the following information:
 
-* All tables in the worksheet, and the relationships between these tables.
-* Source columns for all columns of a worksheet.
+* All tables in the Worksheet, and the relationships between these tables.
+* Source columns for all columns of a Worksheet.
 * Keys and definitions for each relationship, as well as join paths and types.
 * Columns that are derived from formulas.
-* Correct join paths for newly created chasm trap worksheets.
+* Correct join paths for newly created chasm trap Worksheets.
 
 image::worksheet_viewer.png[Worksheet schema view]
 
 == Related Information
 
 * xref:join-add.adoc[Worksheet joins]
-* xref:join-worksheet-edit.adoc[Modify joins within a worksheet]
+* xref:join-worksheet-edit.adoc[Modify joins within a Worksheet]

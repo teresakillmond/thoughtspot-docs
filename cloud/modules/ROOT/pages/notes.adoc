@@ -227,7 +227,7 @@ This release brings improvements in how ThoughtSpot handles user tokens for Snow
 +
 See xref:connections-snowflake-edit.adoc#invalidate-tokens[Invalidating refresh tokens of a Snowflake connection].
 
-Snowflake CSV upload [.badge.badge-beta-relnotes]#Beta#:: Now you have a quick and easy way to complete one-time data loads of small files that are not present in your cloud data warehouse. You can now upload a CSV file to the database of your Snowflake connection that can be joined to other tables or worksheets in your connection. Once your administrator enables this feature, go to *Data* > *Utilities*, and click *Upload CSV*.
+Snowflake CSV upload [.badge.badge-beta-relnotes]#Beta#:: Now you have a quick and easy way to complete one-time data loads of small files that are not present in your cloud data warehouse. You can now upload a CSV file to the database of your Snowflake connection that can be joined to other tables or Worksheets in your connection. Once your administrator enables this feature, go to *Data* > *Utilities*, and click *Upload CSV*.
 ifndef::pendo-links[]
 See xref:connections-snowflake-csv-upload-config.adoc[Configure CSV upload for your Snowflake connection], and xref:connections-snowflake-csv-upload.adoc[Upload a CSV file in your Snowflake connection].
 
@@ -299,7 +299,7 @@ Refer to xref:scriptability.adoc#migrate-object[Migrate an object].
 [#8-6-0-cl-business-user]
 === For the Business User
 
-Discoverable Answers and Liveboards [.badge.badge-beta-relnotes]#Beta#:: You can now make content easily available to your team members when you save or share an Answer or Liveboard. Use the *Make this [answer | Liveboard] discoverable* checkbox that appears when you save or share an Answer or Liveboard to grant _view_ access to your teammates. Any user who has access to the underlying data source (worksheet, table, view), and is part of the same user group as the author of the content, will be able to  discover and access the Answer or Liveboard in *Search Answers*. +
+Discoverable Answers and Liveboards [.badge.badge-beta-relnotes]#Beta#:: You can now make content easily available to your team members when you save or share an Answer or Liveboard. Use the *Make this [answer | Liveboard] discoverable* checkbox that appears when you save or share an Answer or Liveboard to grant _view_ access to your teammates. Any user who has access to the underlying data source (Worksheet, table, view), and is part of the same user group as the author of the content, will be able to  discover and access the Answer or Liveboard in *Search Answers*. +
 Select this checkbox to publish your content in the list of relevant results when a teammate uses the *Search Answers* feature, or de-select to keep your content private.
 
 Delete objects from home page:: You can now delete Answers and Liveboards directly from the list on the home page, as well as from the *Answers* and *Liveboards* tabs. To delete an Answer or Liveboard from the home page, scroll down the list or search tags and author name to select the object name. After selecting the checkbox to the left of the object name, click the *Delete* button that appears. +
@@ -327,7 +327,7 @@ Denodo is now supported as a connection. See xref:connections-denodo.adoc[Denodo
 
 [#tags]
 Edit tags from the Data workspace::
-You can now edit tags for tables, worksheets, views, and SQL views from the Data workspace home page. Refer to xref:tags.adoc#data-workspace[Use tags to organize].
+You can now edit tags for tables, Worksheets, views, and SQL views from the Data workspace home page. Refer to xref:tags.adoc#data-workspace[Use tags to organize].
 
 [#8-6-0-cl-it-ops-engineer]
 === For the IT Ops Engineer
@@ -379,7 +379,7 @@ This feature is in beta and off by default. To enable threshold-based alerts, co
 
 
 Make content discoverable [.badge.badge-beta-relnotes]#Beta#::
-You can now make content easily available to your team members when you save or share an Answer or Liveboard. Use the *Make this [answer | Liveboard] discoverable* checkbox that appears when you save or share an Answer or Liveboard to grant _view_ access to your teammates. Any user who has access to underlying data source (worksheet, table, view) and is part of the same user group as the author of the content, will be able to  discover and access the Answer in *Search Answers*. +
+You can now make content easily available to your team members when you save or share an Answer or Liveboard. Use the *Make this [answer | Liveboard] discoverable* checkbox that appears when you save or share an Answer or Liveboard to grant _view_ access to your teammates. Any user who has access to underlying data source (Worksheet, table, view) and is part of the same user group as the author of the content, will be able to  discover and access the Answer in *Search Answers*. +
 Select this checkbox to publish your content in the list of relevant results when a teammate uses the *Search Answers* feature, or de-select to keep your content private.
 
 
@@ -404,7 +404,7 @@ See xref:sql-views.adoc[SQL views].
 
 [#dbt]
 Integration with dbt::
-The dbt integration is now GA and on by default. You can provide your existing dbt models and automatically create worksheets in ThoughtSpot that you can use to perform searches on your data. Integration with dbt is certified only for Snowflake connections in 8.5.0.cl.
+The dbt integration is now GA and on by default. You can provide your existing dbt models and automatically create Worksheets in ThoughtSpot that you can use to perform searches on your data. Integration with dbt is certified only for Snowflake connections in 8.5.0.cl.
 +
 See xref:dbt-integration.adoc[dbt integration].
 
@@ -491,7 +491,7 @@ This feature is part of the xref:answer-experience-new.adoc[new Answer experienc
 For more information, refer to xref:search-spotiq-settings.adoc[].
 
 SpotApps::
-This release introduces several new SpotApps. ThoughtSpot maps your data from external applications, such as HubSpot, to SpotApp columns, and creates pre-built but still customizable worksheets, Answers, and Liveboards, based on your data.
+This release introduces several new SpotApps. ThoughtSpot maps your data from external applications, such as HubSpot, to SpotApp columns, and creates pre-built but still customizable Worksheets, Answers, and Liveboards, based on your data.
 +
 This release introduces the following new SpotApps:
 +
@@ -549,12 +549,12 @@ include::partial$new-liveboard-experience-features.adoc[]
 include::partial$new-liveboard-experience-deprecations.adoc[]
 
 Integration with dbt [.badge.badge-beta-relnotes]#Beta#::
-ThoughtSpot now offers an integration with dbt. You can provide your existing dbt models and automatically create worksheets in ThoughtSpot that you can use to perform searches on your data.
+ThoughtSpot now offers an integration with dbt. You can provide your existing dbt models and automatically create Worksheets in ThoughtSpot that you can use to perform searches on your data.
 +
 This feature is in beta and off by default. It is part of the <<data-tab,Data tab redesign>>, which is also in beta and off by default. To enable dbt integration and the Data tab redesign, contact {support-url}.
 
 Jira Issue Management SpotApp [.badge.badge-beta-relnotes]#Beta#::
-This release introduces the Jira Issue Management SpotApp. ThoughtSpot maps your Jira data to SpotApp columns, and creates pre-built but still customizable worksheets, Answers, and Liveboards, based on your data.
+This release introduces the Jira Issue Management SpotApp. ThoughtSpot maps your Jira data to SpotApp columns, and creates pre-built but still customizable Worksheets, Answers, and Liveboards, based on your data.
 +
 This feature is in beta and off by default. It is part of the <<data-tab,Data tab redesign>>, which is also in beta and off by default. To enable SpotApps and the Data tab redesign, contact {support-url}.
 
@@ -631,9 +631,9 @@ For these instructions, see xref:ts-cloud-getting-started.adoc[Getting Started w
 
 [#spotapps]
 ServiceNow and Snowflake SpotApps [.badge.badge-beta-relnotes]#Beta#::
-SpotApps are ThoughtSpot's new out-of-the-box solution templates built for specific use cases and data sources. They are built on Blocks, which are pre-built pieces of code that are easy to download and implement directly from the product. This release introduces the Analytics Blocks and the ServiceNow and Snowflake SpotApps. Analytics Blocks include pre-built worksheet, Answer, and Liveboard Blocks.
+SpotApps are ThoughtSpot's new out-of-the-box solution templates built for specific use cases and data sources. They are built on Blocks, which are pre-built pieces of code that are easy to download and implement directly from the product. This release introduces the Analytics Blocks and the ServiceNow and Snowflake SpotApps. Analytics Blocks include pre-built Worksheet, Answer, and Liveboard Blocks.
 +
-The ServiceNow and Snowflake SpotApps mimic the ServiceNow and Snowflake data models. After you connect to your ServiceNow or Snowflake data in your cloud data warehouse, ThoughtSpot maps that data to SpotApp columns, and creates pre-built but still customizable worksheets, Answers, and Liveboards, based on your ServiceNow data.
+The ServiceNow and Snowflake SpotApps mimic the ServiceNow and Snowflake data models. After you connect to your ServiceNow or Snowflake data in your cloud data warehouse, ThoughtSpot maps that data to SpotApp columns, and creates pre-built but still customizable Worksheets, Answers, and Liveboards, based on your ServiceNow data.
 +
 This feature is in beta and off by default. It is part of the <<data-tab,Data tab redesign>>, which is also in beta and off by default. To enable SpotApps and the Data tab redesign, contact {support-url}.
 
@@ -1281,7 +1281,7 @@ Refer to xref:share-answers.adoc[Share Answers] and xref:liveboard-schedule.adoc
 [#streamlined-analyst-setup]
 Streamlined analyst setup::
 We simplified the steps to set up an analyst account on ThoughtSpot.
-Now, you can create a connection, create a worksheet to model your business use cases, and immediately search your data in three steps.
+Now, you can create a connection, create a Worksheet to model your business use cases, and immediately search your data in three steps.
 See xref:analyst-onboarding.adoc[Analyst Onboarding] for further details.
 [#group-aggregate-query-filters]
 Group aggregate query filters::
@@ -1311,9 +1311,9 @@ Object Usage Liveboard::
 This release introduces a new default Liveboard for monitoring object usage.
 The xref:object-usage-liveboard.adoc[Object Usage Liveboard] contains data on the following topics:
 
-* Specifies what existing tables, worksheets and views users search on
+* Specifies what existing tables, Worksheets and views users search on
 * Specifies which columns users search most frequently
-* Tracks the most searched tables, worksheets and views each month
+* Tracks the most searched tables, Worksheets and views each month
 
 Use this Liveboard to identify what users have accessed, and determine which unused data objects can be deleted.
 
@@ -1345,7 +1345,7 @@ This includes the group's name, sharing visibility, and privileges.
 * Can operate application: Can configure local and SAML authentication.
 Can manage application settings: search, SpotIQ, and onboarding advanced settings, style and help customization.
 Can view scheduled maintenance.
-* Can see system information: Can view all default admin data, including system worksheets and Liveboards.
+* Can see system information: Can view all default admin data, including system Worksheets and Liveboards.
 
 This feature is in beta and off by default.
 To enable it, https://community.thoughtspot.com/customers/s/contactsupport[contact ThoughtSpot Support].
@@ -1426,7 +1426,7 @@ This API allows you to authenticate and log in a user if trusted authentication 
 For more information, see xref:public-api-reference.adoc[REST API reference]. +
 
 * `POST /tspublic/v1/metadata/assigntag` +
-You can use this API to programmatically assign a tag to a ThoughtSpot object such as Liveboards, search Answers, tables, and worksheets.
+You can use this API to programmatically assign a tag to a ThoughtSpot object such as Liveboards, search Answers, tables, and Worksheets.
 +
 For more information, see xref:public-api-reference.adoc[REST API reference]. +
 
