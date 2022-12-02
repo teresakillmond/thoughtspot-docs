@@ -20,13 +20,13 @@ Here are common user actions, and the queries that they generate.
 |Multiple queries, various times
 |A Liveboard may have quite a large number of visualizations. When a user opens a Liveboard, the system sends a request for several queries to render the first several visualizations on the screen. As the user scrolls downward in the Liveboard, the system makes additional requests for queries that correspond to further visualizations and charts to render on the screen.
 
-|Opening an answer in the table view
+|Opening an Answer in the table view
 |Multiple queries, at the same time
 |One (1) query fetches the table data.
 
 Additionally, for every column up to a maximum of 1000 columns, the system requests a summary query. See the section What are table summaries? for instructions on how to turn off these additional queries.
 
-|Opening an answer in the chart view
+|Opening an Answer in the chart view
 |Single query*
 |One (1) query fetches the chart data.
 
@@ -46,11 +46,11 @@ The system fires 1 (one) query on enter.
 
 |Adding a formula to search
 |Single query
-|When the user changes the answer by adding a previously defined formula on the data source from the left panel and clicks enter, the system generates a single query.
+|When the user changes the Answer by adding a previously defined formula on the data source from the left panel and clicks enter, the system generates a single query.
 
-|Adding a filter to an answer
+|Adding a filter to an Answer
 |Single query
-|When the user successfully adds a filter to an answer from the left panel, the system requests one query on enter.
+|When the user successfully adds a filter to an Answer from the left panel, the system requests one query on enter.
 
 |Changing a filter
 |Single query
@@ -58,7 +58,7 @@ The system fires 1 (one) query on enter.
 
 |Creating or changing a formula
 |Single query
-|When the user either creates or changes a formula on an answer, the system generates one query.
+|When the user either creates or changes a formula on an Answer, the system generates one query.
 
 |Toggling between table and chart views
 |Single query, or no queries
@@ -104,9 +104,9 @@ a|Toggling a view from a chart to a table with modifications.
 |Multiple queries initially, and more with drill-down
 |The user opens a pivot table chart. The system generates the necessary number of queries initially, based on the structure of the pivot. If the user drills down further, the system generates more queries, depending on the dimensions of the x-axis and y-axis. See information on pivot tables.
 
-|Transforming a table in an answer or inside a Liveboard
+|Transforming a table in an Answer or inside a Liveboard
 |Single query for each transformation
-a|The user transforms a table in answer or on a Liveboard Viz. When changing the aggregation, filtering and sorting from the column header, filtering from the contents of cells.
+a|The user transforms a table in Answer or on a Liveboard Viz. When changing the aggregation, filtering and sorting from the column header, filtering from the contents of cells.
 
 - Sorting: the system generates a single query for each sort
 
@@ -118,13 +118,13 @@ a|The user transforms a table in answer or on a Liveboard Viz. When changing the
 |Single query
 |Every time clicks on a follow-up Explore, the system generates a single query.
 
-|Exploring to update an answer
+|Exploring to update an Answer
 |Single query
-|Every time that a user explores to update the chart or answer, the system generates a single query.
+|Every time that a user explores to update the chart or Answer, the system generates a single query.
 
 |Drilling down
 |Single query
-|When a user drills down on an answer or visualization and selects a column, the system generates a single query.
+|When a user drills down on an Answer or visualization and selects a column, the system generates a single query.
 
 |Schedule Liveboard
 |Multiple queries
@@ -150,17 +150,17 @@ a|The user transforms a table in answer or on a Liveboard Viz. When changing the
 |Single query
 |When the user clicks to show the underlying data of a cell, the system fires a single query.
 
-|Undoing or redoing in a saved answer
+|Undoing or redoing in a saved Answer
 |Single query for each action
-|When the user presses the Undo / Redo button in a saved answer, each press results in a query.
+|When the user presses the Undo / Redo button in a saved Answer, each press results in a query.
 
-|Downloading an answer as a chart
+|Downloading an Answer as a chart
 |Single query
-|When downloading an answer as a chart, the system triggers 1 query for each chart type.
+|When downloading an Answer as a chart, the system triggers 1 query for each chart type.
 
-|Downloading any answer as a chart inside a Liveboard
+|Downloading any Answer as a chart inside a Liveboard
 |Multiple queries
-|One (1) query for each chart answer.
+|One (1) query for each chart Answer.
 
 |Downloading Liveboard as PDF
 |Multiple queries
@@ -176,11 +176,11 @@ Here are common user actions that *don't* generate queries:
 NOTE: If you save the results of a SpotIQ query as a Liveboard, you will be charged the standard Liveboard usage rate when you open it.
 
 - Downloading a Liveboard visualization as a table in any format
-- Downloading an answer as a table in any format, NOT within a Liveboard
-- Searching answers
+- Downloading an Answer as a table in any format, NOT within a Liveboard
+- Searching Answers
 - Accessing system-default Liveboards
-- Importing TML of an answer or a Liveboard
-- Exporting TML of an answer or a Liveboard without data (associated objects)
+- Importing TML of an Answer or a Liveboard
+- Exporting TML of an Answer or a Liveboard without data (associated objects)
 - Creating a connection to an external data warehouse
 - Updating a connection to an external data warehouse by adding a new table with the string data type (triggers Sage indexing)
 - Inspecting data in Data samples tabs after adding multiple tables in a worksheet with joins between them
@@ -188,14 +188,14 @@ NOTE: If you save the results of a SpotIQ query as a Liveboard, you will be char
 
 == How do table summaries affect queries?
 
-When you open an answer in a table view, the system generates individual queries for summary (aggregate) calculations and sends them to the CDW.  Each time the system refreshes the screen, it initiates the queries for refreshing these summaries.
+When you open an Answer in a table view, the system generates individual queries for summary (aggregate) calculations and sends them to the CDW.  Each time the system refreshes the screen, it initiates the queries for refreshing these summaries.
 To reduce the number of queries, ThoughtSpot has two options:
 
-=== Turning off summaries on individual answers
+=== Turning off summaries on individual Answers
 
 ThoughtSpot recommends turning off the summary function for the table if you plan limit the number of queries, at least temporarily.
 
-. Click the table in the Liveboard, to open it in answer mode.
+. Click the table in the Liveboard, to open it in Answer mode.
 . Click the gear icon (chart configuration).
 . Under the Edit table heading, select *Settings*.
 . Under Display, de-select the *Column summary* option.
@@ -208,7 +208,7 @@ Alternatively, in the new user experience,  users with administrative privileges
 . Across from the Search settings heading, click *Edit*.
 . Click the *Table summaries* option.
 . Set the option to the *Disabled* state.
-. Click *Save* to update the configuration for future answers.
+. Click *Save* to update the configuration for future Answers.
 
 == How do Liveboards affect queries?
 
