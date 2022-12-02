@@ -1,4 +1,4 @@
-= About Runtime Filters
+= About runtime filters
 :last_updated: 2/25/2022
 :linkattrs:
 :experimental:
@@ -10,9 +10,9 @@
 
 Runtime filters allow you to apply filters to the data returned by the APIs, or the visualizations and Liveboard you are embedding in another app.
 
-== Capabilities of Runtime Filters
+== Capabilities of runtime filters
 
-Runtime Filters provide the ability to apply filters on embedded objects at the time of retrieval.
+Runtime filters provide the ability to apply filters on embedded objects at the time of retrieval.
 You can pass the filter criteria as URL query parameters on a Liveboard or its visualizations.
 ThoughtSpot supports applying runtime filters to objects embedded using the xref:visual-embed-sdk.adoc[Visual Embed SDK] and the xref:rest-api.adoc[REST APIs].
 
@@ -36,7 +36,7 @@ http://<your.thoughtspot.com>/?col1=Color&op1=EQ&val1=red#
 ----
 
 This example shows the URL for a REST API call with a runtime filter.
-Here the Runtime Filter is operating on the column `Category` and returning values that are equal to `mfgr%2324`.
+Here the runtime filter is operating on the column `Category` and returning values that are equal to `mfgr%2324`.
 
 ----
 http://<your.thoughtspot.com>/callosum/v1/tspublic/v1/pinboarddata?
@@ -48,10 +48,10 @@ ThoughtSpot will try to find a matching column from the Liveboard or visualizati
 You can add any number of filter sets by incrementing the parameters (e.g.
 `col2`, `op2`, and `val2`, etc.) For operators that support more than one value, you can pass `val1=foo&val1=bar`, etc.
 
-If the Liveboard or Answer you're filtering already has one or more filters applied, the Runtime Filter(s) will act as an `AND` condition.
+If the Liveboard or Answer you're filtering already has one or more filters applied, the runtime filter(s) will act as an `AND` condition.
 This means that the data returned must meet the conditions of all filters - those supplied in the runtime filter, and those included in the Liveboard or visualization itself.
 
-== Supported Data Types
+== Supported data types
 
 You can use runtime filters on these data types:
 
@@ -76,9 +76,9 @@ For example, if you want to filter data for 2020-05-22, you can specify the date
 new Date('2020-05-22').getTime() / 1000
 ----
 
-== Example Uses
+== Example uses
 
-You can use Runtime Filters alongside the REST API and Embedding to create dynamic controls in your Web portal.
+You can use runtime filters alongside the REST API and Embedding to create dynamic controls in your Web portal.
 For example, you could use the REST API to get a list of possible filters for a visualization.
 Then use that data to populate a select list on your Web portal.
 When a user makes a selection, you would then pass it as a Runtime Filter, and the result returned will apply the filter.
@@ -86,12 +86,12 @@ When a user makes a selection, you would then pass it as a Runtime Filter, and t
 [#limitations-of-runtime-filters]
 == Limitations of runtime filters
 
-Runtime Filters do not work directly on top of tables.
-You must create a worksheet if you want to use Runtime Filters.
-This means that the Liveboard or visualization on which you apply a runtime filter must be created on top of a worksheet.
+Runtime filters do not work directly on top of tables.
+You must create a Worksheet if you want to use runtime filters.
+This means that the Liveboard or visualization on which you apply a runtime filter must be created on top of a Worksheet.
 
-If the worksheet was created from an Answer (it is an aggregated worksheet), Runtime Filters will only work if the Answer was formed using a single worksheet.
-If the Answer from which the worksheet was created includes raw tables or joins multiple worksheets, you won't be able to use Runtime Filters on it.
+If the Worksheet was created from an Answer (it is an aggregated Worksheet), Runtime Filters will only work if the Answer was formed using a single Worksheet.
+If the Answer from which the Worksheet was created includes raw tables or joins multiple Worksheets, you won't be able to use Runtime Filters on it.
 This is because of the join path ambiguity that could result.
 
 Runtime Filters do not allow you to apply "`having`" filters using a URL.

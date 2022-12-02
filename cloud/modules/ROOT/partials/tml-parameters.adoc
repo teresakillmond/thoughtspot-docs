@@ -192,7 +192,7 @@ a| <<phrase,phrase>>
 
 [#aggregation]
 aggregation::
-The default aggregation of the worksheet, view, or table column, or the aggregation of the output for a formula.
+The default aggregation of the Worksheet, view, or table column, or the aggregation of the output for a formula.
 +
 Aggregation options depend on the data type.
 +
@@ -240,7 +240,7 @@ Color to use for conditional formatting or for the columns of an Answer in chart
 
 [#column]
 column::
-The id of the column(s) being filtered on. When a Liveboard contains xref:liveboard-filters-linked.adoc[linked filters], or filters that affect visualizations based on more than one worksheet, the primary filter column appears first in the list of columns in the TML. The linked filter column appears after the primary filter column.
+The id of the column(s) being filtered on. When a Liveboard contains xref:liveboard-filters-linked.adoc[linked filters], or filters that affect visualizations based on more than one Worksheet, the primary filter column appears first in the list of columns in the TML. The linked filter column appears after the primary filter column.
 
 [#columns]
 columns::
@@ -248,12 +248,12 @@ The columns in the table.
 
 [#column_id]
 column_id::
-The `id` of the worksheet or view column.
+The `id` of the Worksheet or view column.
 +
 For Answers, `column_id` refers to how the column appears in the query.
 For example, if you sorted by `Quarter` in your search, from the `Commit Date` column, the `column_id` of the column is `Quarter(Commit Date)`.
 +
-For worksheets and views, `column_id` is in the following format: `column_id: <id>::<name>`. `id` comes from `Worksheet.table_path`, and `name` comes from `Table.column`. For example: `column_id: Customer_Dimension::Customer_Name`.
+For Worksheets and views, `column_id` is in the following format: `column_id: <id>::<name>`. `id` comes from `Worksheet.table_path`, and `name` comes from `Table.column`. For example: `column_id: Customer_Dimension::Customer_Name`.
 
 [#column_type]
 column_type::
@@ -262,7 +262,7 @@ For a formula, the `column_type` refers to the output of the formula.
 +
 Possible values: `MEASURE` or `ATTRIBUTE`
 +
-For worksheets, the default is: `MEASURE`
+For Worksheets, the default is: `MEASURE`
 +
 For formulas, the default depends on the <<data_type,data_type>>.
 +
@@ -347,7 +347,7 @@ The definition of the formula or row level security (RLS) rule. For RLS rules, t
 
 [#filters]
 filters::
-Contains specifications for Liveboard, view, and worksheet filters.
+Contains specifications for Liveboard, view, and Worksheet filters.
 
 [#format_pattern]
 format_pattern::
@@ -357,7 +357,7 @@ See xref:data-modeling-patterns.adoc[Set number, date, and currency formats]
 
 [#formulas]
 formulas::
-The list of formulas in the worksheet, view, or Answer.
+The list of formulas in the Worksheet, view, or Answer.
 +
 Each formula is identified by `name`, the `expr` (expression), and an optional `id` attribute.
 
@@ -390,7 +390,7 @@ See xref:data-modeling-geo-data.adoc[Add a geographical data setting]
 
 [#guid]
 guid::
-The GUID for the Answer, Liveboard, SpotIQ result, table, worksheet, view, or SQL view.
+The GUID for the Answer, Liveboard, SpotIQ result, table, Worksheet, view, or SQL view.
 +
 You can find this string of letters and numbers at the end of the URL for an object.
 
@@ -427,7 +427,7 @@ See xref:data-modeling-index.adoc#column-suggestion-priority[Change a column's s
 
 [#index_type]
 index_type::
-The indexing option of the worksheet, view, or table column.
+The indexing option of the Worksheet, view, or table column.
 +
 Possible values: `DONT_INDEX`, `DEFAULT` (see xref:data-modeling-index.adoc#default-indexing[Understand the default indexing behavior]), `PREFIX_ONLY`, `PREFIX_AND_SUBSTRING`, and `PREFIX_AND_WORD_SUBSTRING`
 +
@@ -461,7 +461,7 @@ See xref:data-modeling-attributable-dimension.adoc[Change the attribution dimens
 
 [#is_bypass_rls]
 is_bypass_rls::
-Specifies if the worksheet supports bypass of Row-level security (RLS)
+Specifies if the Worksheet supports bypass of Row-level security (RLS)
 +
 Possible values: `true` or `false`
 +
@@ -514,19 +514,19 @@ Default: `{}`
 
 [#join_progressive]
 join_progressive::
-Specifies when to apply joins on a worksheet
+Specifies when to apply joins on a Worksheet
 +
 Possible values: `true` when joins are applied only for tables whose columns are included in the search, and `false` for all possible joins
 +
 Default: `true`
 +
-See xref:worksheet-progressive-joins.adoc[How the worksheet join rule works]
+See xref:worksheet-progressive-joins.adoc[How the Worksheet join rule works]
 
 [#joins]
 joins::
 Contains a list of joins between the tables and views.
 +
-If you edit the joins in the Worksheet or View TML file, you are only editing the joins for that specific worksheet or view. You are not editing the joins at the table level. To modify table-level joins, you must edit the source table's TML file.
+If you edit the joins in the Worksheet or View TML file, you are only editing the joins for that specific Worksheet or view. You are not editing the joins at the table level. To modify table-level joins, you must edit the source table's TML file.
 +
 Each join is identified by `name`, and the additional attributes of `source`, `destination`, `type`, and `is_one_to_one.`
 
@@ -572,7 +572,7 @@ You cannot directly edit a relationship definition. To alter a relationship defi
 
 [#oper]
 oper::
-The operator of the Liveboard, view or worksheet filter.
+The operator of the Liveboard, view or Worksheet filter.
 Accepted operators are `"in"`, `"not in"`, `"between"`, `=<`, `!=`, `+<=+`, `>=`, `>`, or `<`.
 
 [#ordered_column_ids]
@@ -585,9 +585,9 @@ Phrase associated with a view column.
 
 [#properties]
 properties::
-The list of properties of a worksheet, table, or view column, a worksheet or view itself, or the properties of the output for a formula within an Answer, worksheet, or view.
+The list of properties of a Worksheet, table, or view column, a Worksheet or view itself, or the properties of the output for a formula within an Answer, Worksheet, or view.
 +
-For worksheets, views, and tables, each column can have the following properties, depending on its definition: `column_type`, `aggregation`, `index_type`, `is_hidden`, `index_priority`, `synonyms`, `is_attribution_dimension`, `is_additive`, `calendar`, `format_pattern`, `currency_type`, `geo_config`, and `spotiq_preference`.
+For Worksheets, views, and tables, each column can have the following properties, depending on its definition: `column_type`, `aggregation`, `index_type`, `is_hidden`, `index_priority`, `synonyms`, `is_attribution_dimension`, `is_additive`, `calendar`, `format_pattern`, `currency_type`, `geo_config`, and `spotiq_preference`.
 +
 Worksheets and views themselves can have the following properties that affect query generation: `is_bypass_rls`, and `join_progressive`.
 +
@@ -695,7 +695,7 @@ Each table path is identified by the `id`, and additional attributes of `table` 
 
 [#tables]
 tables::
-List of tables used by the worksheet, Answer, or table RLS rule.
+List of tables used by the Worksheet, Answer, or table RLS rule.
 +
 Each table is identified by `name`.
 
@@ -705,7 +705,7 @@ List of tabs in the Liveboard.
 
 [#type]
 type::
-For worksheets and views, this is the join type. This is an optional parameter.
+For Worksheets and views, this is the join type. This is an optional parameter.
 +
 Possible values: `LEFT_OUTER` for left outer join, `RIGHT_OUTER` for right outer join, `INNER` for inner join, `OUTER` for full outer join.
 +
@@ -721,7 +721,7 @@ Possible values: `COLUMN`, `BAR`, `LINE`, `PIE`, `SCATTER`, `BUBBLE`, `STACKED_C
 
 [#values]
 values::
-The values being filtered (excluded or included) in a Liveboard, view, or worksheet.
+The values being filtered (excluded or included) in a Liveboard, view, or Worksheet.
 
 [#view]
 view::
@@ -756,13 +756,13 @@ The width of the Liveboard visualization.
 
 [#worksheet]
 worksheet::
-Top-level container for all object definitions within the worksheet
+Top-level container for all object definitions within the Worksheet
 
 [#worksheet_columns]
 worksheet_columns::
-The list of columns in the worksheet
+The list of columns in the Worksheet
 +
-Each worksheet is identified by `name`, `description`, `column_id`, and `properties`.
+Each Worksheet is identified by `name`, `description`, `column_id`, and `properties`.
 
 [#x]
 x::
