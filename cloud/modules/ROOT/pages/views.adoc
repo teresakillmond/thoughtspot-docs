@@ -14,17 +14,17 @@ IMPORTANT: While you cannot apply row-level security (RLS) to a view, you can ap
 
 You may have noticed that when you do a search on a data source, ThoughtSpot is only able to aggregate one column by one other column.
 Because of this, you may come across searches you can't do in one pass, because they are essentially nested queries.
-But you can create the equivalent of nested queries using a view, which is an answer that you have saved for the purpose of building other searches on top of it.
+But you can create the equivalent of nested queries using a view, which is an Answer that you have saved for the purpose of building other searches on top of it.
 
 You can use a view just like any other data source.
 You can even link it to other sources by defining a relationship.
-When you save an answer as a view, and then use it as a source in a new search, it is similar to doing a nested query in SQL, only much easier to create.
+When you save an Answer as a view, and then use it as a source in a new search, it is similar to doing a nested query in SQL, only much easier to create.
 
 == View workflow
 
 Suppose you created a search on the sales fact table that shows the top ten Sales Reps by revenue, for the first quarter.
 Then you want to do some further investigation on that subset of data, such as ranking them by how much they discounted a specific product based on data from the orders fact table.
-Unless you save your first answer as a view, and then search over that view, you cannot get your answers.
+Unless you save your first Answer as a view, and then search over that view, you cannot get your Answers.
 
 Here are the high-level steps for creating and using views:
 

@@ -13,7 +13,7 @@ Various kinds of user actions or system functions generate one or more queries.
 For example,
 
 - A chart view from a search triggers one (1) query.
-- An answer view that contains a table and two headlines triggers three (3) queries.
+- An Answer view that contains a table and two headlines triggers three (3) queries.
 - A Liveboard view may generate multiple queries when loading multiple visualizations.
 
 .Query categories captured in the `query_stats` table
@@ -30,7 +30,7 @@ h| Callhome | &#10062;|
 h| Sage index | &#10062;|
 h| Connections table_stats query | |
 h| User access system default pinboard like all the default pinboard in Admin portal| |
-h| Search answer | |
+h| Search Answer | |
 
 |===
 
@@ -44,15 +44,15 @@ h|Sage search | Search | *1* query is fired if a chart is presented as the resul
 *Multiple* queries if headlines are enabled; each headline results in *1* query.
 | |User opens a Liveboard|
 A Liveboard may have *multiple* visuals. The system issues a query to load the first several visualizations to render on the Liveboard. As the user scrolls large Liveboards, the system issues additional queries to load more visualizations.
-| |User opens an answer in a Table view.|1 query is made to fetch the table data.
+| |User opens an Answer in a Table view.|1 query is made to fetch the table data.
 
 For every column, a headline query is fired. Maximum 20 headlines per table.
-| |User opens an answer in Chart view.|
+| |User opens an Answer in Chart view.|
 | |User adds an existing column from the data source to the search by clicking on the left panel | 1 query on *Enter* or *Go*.
-| |The user adds an existing formula, previously created on the data source for this answer, to the search by clicking on the left panel |  1 query on *Enter* or *Go*.
-| | The user successfully adds a filter to an answer from the left panel | 1 query on *Enter*
+| |The user adds an existing formula, previously created on the data source for this Answer, to the search by clicking on the left panel |  1 query on *Enter* or *Go*.
+| | The user successfully adds a filter to an Answer from the left panel | 1 query on *Enter*
 ||A user successfully changes an existing filter.|  1 query on *Enter*
-||A user either creates or changes a formula on an answer.| 1 query on *Enter*
+||A user either creates or changes a formula on an Answer.| 1 query on *Enter*
 | |User Changes from table to chart 1st time
 
 .  A user changes query in chart and changes back to the table
@@ -70,7 +70,7 @@ For every column, a headline query is fired. Maximum 20 headlines per table.
 . No Query is fired
 
 
-||User transforms a table in answer or on a Pinboard Viz - this includes changing aggregation, filtering and sorting from the column header, filtering from the cell contents.
+||User transforms a table in Answer or on a Pinboard Viz - this includes changing aggregation, filtering and sorting from the column header, filtering from the cell contents.
 | Transformation fires query
 
 - Sort -1  query is fired for every sort
@@ -79,15 +79,15 @@ For every column, a headline query is fired. Maximum 20 headlines per table.
 
 ||User clicks on a follow-up in Explore, this indicates that the user views a follow-up, which is produced by a search event.
 
-h|Drill | User drills down on an answer or visualization | 1 query for each drill action
+h|Drill | User drills down on an Answer or visualization | 1 query for each drill action
 
-h|Explore | Every time that a user use any part of the explore function to update the chart or answer |
+h|Explore | Every time that a user use any part of the explore function to update the chart or Answer |
 
 h| Liveboard views | Aggregate events of pinboard/answer/Mobile-viz view |One pinboard may have multiple Viz. When opening up one pinboard, a query will be sent to load the first x number of Viz to be shown on the web; later if the customer scrolls down, then the 2nd query will be fired to load more Viz on the web.
 
 h| Scheduled pinboard | The query count depends on 2 factors: # of user groups (as row based security applied) involved, and # of Viz that this pinboard has.|
 
-h| Download data from an opened answer | If an answer is already open, click on download either chart or the table | Only table download will trigger the query, chart download does not. Table download will trigger a single query.
+h| Download data from an opened Answer | If an Answer is already open, click on download either chart or the table | Only table download will trigger the query, chart download does not. Table download will trigger a single query.
 
 h|Pin a chart to pinboard
 |If a user pins a new chart to the pinboard (existing or create a new pinboard)
