@@ -50,7 +50,7 @@ image::snow-expose-api.png[Click Expose an API]
 +
 image::snow-app-uri-oauth-client2.png[Update the App ID URI]
 +
-NOTE: If the Application ID URI is not used, you must create a security integration with audiences using the Snowflake Account URL (i.e.
+NOTE: If the Application ID URI is not used, you must create a security integration with audiences using the Snowflake Account URL (that is,
 `<account_identifier>.snowflakecomputing.com)`.
 +
 IMPORTANT: The Application ID URI must be unique within your organization's directory, such as `\https://your.company.com/4d2a8c2b-a5f4-4b86-93ca-ack45667`.
@@ -121,7 +121,7 @@ To collect Azure AD information for {connection}, do the following:
 . Sign in to the https://portal.azure.com/[Microsoft Azure Portal^], and navigate to *Azure Active Directory*, if needed.
 . Go back to the {connection} OAuth Resource App ({connection} Oauth User Resource) to collect the following information:
 .. Select *Endpoints* in the *Overview* interface.
-.. On the right-hand side, copy the *OAuth 2.0 token endpoint (v2)* and note the URLs for *OpenID Connect metadata* and *Federation Connect metadata*.
+.. On the right side, copy the *OAuth 2.0 token endpoint (v2)* and note the URLs for *OpenID Connect metadata* and *Federation Connect metadata*.
 
 ... The *OAuth 2.0 token endpoint (v2)* is referred to as the `<AZURE_AD_OAUTH_TOKEN_ENDPOINT>` in the following configuration steps.
 The endpoint should be similar to `+https://login.microsoftonline.com/<tenant_id>/oauth2/v2.0/token/+`.
@@ -174,7 +174,7 @@ Example:
 
 image::snow-sec-int-example.png[Security integration format example]
 
-NOTE: When you create the {connection} OAuth Resource Application in Azure AD, if you enter an `Application ID URI` that is not the {connection} Account URL (i.e.
+NOTE: When you create the {connection} OAuth Resource Application in Azure AD, if you enter an `Application ID URI` that is not the {connection} Account URL (that is,
 `<account_identifier>.snowflakecomputing.com`), you must add the `external_oauth_audience_list` parameter to the command with the value `<SNOWFLAKE_APPLICATION_ID_URI>`.
 
 ==== {connection} commands

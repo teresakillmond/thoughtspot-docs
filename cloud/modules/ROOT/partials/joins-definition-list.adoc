@@ -5,23 +5,23 @@ Destination:;; Tables uploaded through the UI
 Necessary permissions:;; *Can edit* permission on source Worksheet
 [#join-view]
 Origin: View::
-Destination:;; other views, materialized views, tables imported through the UI, tables uploaded from backend (tsload) or through DataFlow
+Destination:;; other views, materialized views, tables imported through the UI, tables uploaded from back end (tsload) or through DataFlow
 Necessary permissions:;; *Can edit* permission on source view
 [#join-materialized-view]
 Origin: Materialized View::
-Destination:;; Views, other materialized views, tables imported through the UI, and tables uploaded from backend (tsload) or through DataFlow
+Destination:;; Views, other materialized views, tables imported through the UI, and tables uploaded from back end (tsload) or through DataFlow
 Necessary permissions:;; *Can edit* permission on source materialized view
 +
-NOTE: For tables loaded from backend, it is best practice to create the join through ThoughtSpot UI, rather than using TQL.
+NOTE: For tables loaded from back end, it is best practice to create the join through ThoughtSpot UI, rather than using TQL.
 
 [#join-imported-table]
 Origin: Imported table (UI)::
-Destination:;; Worksheets, views, materialized views, tables imported through the UI, tables uploaded from backend (tsload) or through DataFlow
+Destination:;; Worksheets, views, materialized views, tables imported through the UI, tables uploaded from back end (tsload) or through DataFlow
 Necessary permissions:;; *Can edit* permission on source table
 
 [#join-tsload-table]
-Origin: Table uploaded from backend (tsload) or through DataFlow::
-Destination:;; Views, materialized views, tables imported through the UI, tables uploaded from backend (tsload) or through DataFlow
+Origin: Table uploaded from back end (tsload) or through DataFlow::
+Destination:;; Views, materialized views, tables imported through the UI, tables uploaded from back end (tsload) or through DataFlow
 Necessary permissions:;; *Can edit* permission on source table
 +
 NOTE: For joins from tables uploaded through tsload to materialized views and other tables uploaded through tsload, it is best practice to create the join through ThoughtSpot UI, rather than using TQL.
