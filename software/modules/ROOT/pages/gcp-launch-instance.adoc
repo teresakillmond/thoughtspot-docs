@@ -54,19 +54,19 @@ If you are not using GCS, skip this step and <<instance-create,create an instanc
 
 . Sign in to the https://console.cloud.google.com/[Google Cloud Console^].
 . Go to the *Storage* dashboard from the navigation bar on the side of your screen.
-. Click *CREATE BUCKET* on the top menu bar.
-. Enter a name for your bucket, and click *CONTINUE*.
+. Select *CREATE BUCKET* on the top menu bar.
+. Enter a name for your bucket, and select *CONTINUE*.
 . For location type, select *Region*.
 . Use the Location dropdown menu to select the region where you are going to set up your instance.
-. Click *CONTINUE*.
+. Select *CONTINUE*.
 . For default storage class, select *Standard*.
-. Click *CONTINUE*.
+. Select *CONTINUE*.
 . Under *Access Control*, select *Uniform* to ensure uniform access to all objects in the storage bucket.
-. Click *CONTINUE*.
+. Select *CONTINUE*.
 . Do not edit the advanced settings.
 +
 Leave Encryption set to *Google-managed key* and do not set a retention policy.
-. Click *CREATE*.
+. Select *CREATE*.
 
 When you create your instance, make sure you set Storage to *Read Write* access.
 
@@ -81,7 +81,7 @@ When you create your instance, make sure you set Storage to *Read Write* access.
 // image::gcp-computeenginedash.png[Go to the Compute Engine Dashboard]
 
 . Select *VM instances* on the left panel.
-. Click the *+* icon from the top menu bar to create an instance.
+. Select the *+* icon from the top menu bar to create an instance.
 . Provide a name for the instance.
 . Select the region you are creating the instance in.
 . Select the zone you are creating your region in.
@@ -104,10 +104,10 @@ CPU platform:: Automatic, or select either one of the preferred CPU platforms, `
 // image::gcp-3-preferred-CPUs.png[Preferred CPU platforms]
 
 . Configure the Boot disk.
-.. Scroll down to the *Boot disk* section and click *Change*.
+.. Scroll down to the *Boot disk* section and select *Change*.
 +
 // image::gcp-4-change-boot-disk.png[Change boot disk]
-.. Click *Custom Images* from the options under *Boot disk*.
+.. Select *Custom Images* from the options under *Boot disk*.
 .. Select *ThoughtSpot-images* under *Show images from*.
 .. Select one of the ThoughtSpot base images.
 +
@@ -140,7 +140,7 @@ Refer to xref:gcp-configuration-options.adoc#vms-with-persistent-disk-only-stora
 If you are using GCS, attach only 1 SSD drive, with 500 GB instead of 1 TB.
 Refer to xref:gcp-configuration-options.adoc#vms-with-persistent-disk-and-google-cloud-storage-in-memory[GCS and SSD persistent storage].
 
-.. Click the *Disks* tab, and click *Add new disk*.
+.. Select the *Disks* tab, and click *Add new disk*.
 +
 //image::gcp-7-advanced-disk-config.png[Add new disk]
 +
@@ -159,7 +159,7 @@ Deletion rule:: Select *keep disk*, to prevent potential loss of data if your in
 
 . (For use with GCS only) In the Identity and API access section, make sure Service account is set to *Compute Engine default service account*.
 Under Access scopes, select *Set access for each API*.
-. (For use with GCS only) After you click *Set access for each API*, scroll down to the *Storage* dropdown menu in the Identity and API access section.
+. (For use with GCS only) After you select *Set access for each API*, scroll down to the *Storage* dropdown menu in the Identity and API access section.
 Set it to one of the following options:
  ** To use Google Cloud Storage (GCS) as persistent storage for your instance, select *Read Write*.
  ** To only use GCS to load data into ThoughtSpot, select *Read Only*.
@@ -171,7 +171,7 @@ Update the network interface with your specific information or create a new one.
 +
 // image::gcp-setnetworkinterface.png[Set your network interface]
 +
-Network:: Add an existing VPC network, or create a new one by clicking *VPC network* from the main menu.
+Network:: Add an existing VPC network, or create a new one by selecting *VPC network* from the main menu.
 Ensure that this network has a *firewall rule* attached, with the minimum ports required for ThoughtSpot operation open.
 Refer to the <<port-requirements,minimum port requirements>>.
 See Google's https://cloud.google.com/vpc/docs/using-firewalls[using firewalls] and https://cloud.google.com/vpc/docs/using-vpc[using VPCs] documentation for assistance creating a firewall rule and a VPC network.
