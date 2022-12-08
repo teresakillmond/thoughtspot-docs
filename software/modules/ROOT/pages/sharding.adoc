@@ -387,9 +387,11 @@ See xref:schema-change.adoc#sharding[Change sharding on a table].
 Note that resharding automatically loads data into a new incarnation of the table you sharded.
 You do not need to reload the table's data.
 
-. Check your `row count skew` ratio when you re-evaluate sharding.
+. Check your *row count skew ratio* when you re-evaluate sharding.
 +
-You can view your `row count skew` from the ThoughtSpot application.
-Go to *Data > Usage > Data*. Find the correct table name, and scroll to `row count skew`.
-Use this number to calculate your row count skew ratio: row count skew / (total row count / number of partitions).
+You can view your `row count skew` from the ThoughtSpot application:
++
+Go to *Admin > Table Status*. Scroll down to the *Table information* table. Find the relevant table name, and scroll to `row count skew`.
++
+To calculate your row count skew ratio, use this formula: row count skew / (total row count / number of partitions).
 A row count skew ratio higher than 1 may require changes to your data modeling.
