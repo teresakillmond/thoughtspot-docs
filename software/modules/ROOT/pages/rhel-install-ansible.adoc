@@ -1,0 +1,70 @@
+= Install ThoughtSpot using Ansible on clusters that use RHEL
+:last_updated: 12/8/2022
+:author: Teresa Killmond
+:linkattrs:
+:experimental:
+:description: Install ThoughtSpot using Ansible on RHEL clusters.
+
+This is an alternative installation method to the xref:rhel-install-online.adoc[Online cluster RHEL installation] and xref:rhel-install-offline.adoc[Offline cluster RHEL installation]. If your organization requires that privilege escalation take place through an external tool that integrates with Ansible, follow the steps in this article.
+
+Before starting the installation, complete the xref:rhel-prerequisites.adoc[prerequisites].
+
+[#system-settings]
+== Prepare system settings
+There are certain system settings, specific to this type of RHEL installation, that you must configure. Configure these settings _after_ completing the xref:rhel-prerequisites.adoc[prerequisites].
+
+. If you are using a physical machine or appliance, you must disable the disk write cache. On each ThoughtSpot-specific mounted drive, run the following command:
++
+[source,bash]
+----
+hdparm -W 0 /dev/sdX
+----
+
+. Configure `journalctl` log rotation:
+.. Create a `/var/log/journal` directory.
+.. In that directory, run `systemd-tempfiles –create –prefix /var/log/journal`.
+.. Modify the `journald.conf` file to specify `Storage=Persistent` under the `[Journal]` section.
+.. Set up regular journal log rotation.
+. If you install the `nfs-utils` yum package, ensure that the `rpc.statd` port is bound to a fixed port to prevent conflicts. You can check this in `/etc/sysconfig/nfs`. Both `STATD_PORT` and `STATD_OUTGOING_PORT` should equal a fixed number.
+. Set both `net.core.rmem_max` and `net.core.wmem_max` to *3145728*. To check this setting, run the following commands:
++
+[source,bash]
+----
+sysctl net.core.wmem_max
+sysctl net.core.rmem_max
+----
++
+To ensure this remains true even after reboots, set these values in a file under `/etc/sysctl.d`.
+. Ensure that the `fs.file-max sysctl` setting is the default for linux, and that the `user.max_user_namespaces` is set to *5000* or higher.
++
+To ensure this remains true even after reboots, set these values in a file under `/etc/sysctl.d`.
+. Set up the `kernel cores sysctl` setting to create dump files on crashes.
++
+To ensure this remains true even after reboots, set these values in a file under `/etc/sysctl.d`.
+. Set the soft and hard nofile ulimit values to *524288* or higher. ThoughtSpot prefers the soft core to be unlimited. Pending signals (-i) must be *2062971* or higher.
+. `sshd config` must contain `AllowUsers: tspot`. It must have a `MaxSessions` value greater than or equal to 10. Each node must be able to `ssh` without a password, via keys, to every other node in the cluster as the `tspot` user.
+. Set the `postfix` settings to send email from the cluster.
+
+== Set up nodes
+
+. Unzip the ansible tarball. The ansible tarball contains the following yaml files:
++
+--
+* ts-cluster-create-A.yaml
+* ts-cluster-create-full-flow.yaml
+* ts-no-sudo-cluster-install.yaml
+* ts-packages.yaml
+* ts-setup.yaml
+* ts-systemd.yaml
+* hadoop-ansible/install.yaml
+--
+
+. Ensure that the nodes are correctly initialized. Run the following command from `ts_service_id`:
++
+[source,bash]
+----
+./os_settings.sh
+----
+
+
+
