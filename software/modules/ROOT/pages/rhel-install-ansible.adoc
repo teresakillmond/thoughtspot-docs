@@ -47,25 +47,24 @@ To ensure this remains true even after reboots, set these values in a file under
 
 == Set up nodes
 
-. Unzip the ansible tarball. The ansible tarball contains the following yaml files:
+. Unzip the ansible tarball provided by {support-url}. The ansible tarball contains the following yaml files:
 +
 --
-* ts-cluster-create-A.yaml
-* ts-cluster-create-full-flow.yaml
-* ts-no-sudo-cluster-install.yaml
-* ts-packages.yaml
-* ts-setup.yaml
-* ts-systemd.yaml
-* hadoop-ansible/install.yaml
+* *ts-cluster-create-A.yaml:* Untars the release, sets up the environment, and copies the release toolchain to all nodes.
+* *ts-cluster-create-full-flow.yaml:* Triggers th ecluster installation. Calls ts-cluster-create-A.yaml, hadoop-ansible/install.yaml, ts-setup.yaml, and ts-no-sudo-cluster-install.yaml. After the release tarball is installed, it calls installer_main from the coordinator node. The installer_main pushes all the services and finishes the installation.
+* *ts-no-sudo-cluster-install.yaml:* Installs the release on all nodes. Starts up ThoughtSpot core services on all nodes.
+* *ts-packages.yaml:* Checks that `postgres` was installed correctly and sets up `atop`.
+* *ts-setup.yaml:* Sets up the system settings, including nginx, log rotation, and environment settings. Ensures python3 packages are installed. Calls ts-systemd.yaml and ts-packages.yaml.
+* *ts-systemd.yaml:* Sets up systemd services.
+* *hadoop-ansible/install.yaml:* Installs Zookeeper and HDFS on the cluster. 
 --
 
-. Ensure that the nodes are correctly initialized. Run the following command *_twice_* from `ts_service_id`, once as a root user and once as an admin user:
+. Ensure that the nodes are correctly initialized. Run the following command *_twice_* from `ts_service_id`, once as a root user and once as an admin user. The output of this command informs you of any missing configurations and provides recommended actions.
 +
 [source,bash]
 ----
 ./os_settings.sh
 ----
-
 . Set up the ThoughtSpot directories that require root privileges. Run the following commands:
 +
 [source,bash]
@@ -96,15 +95,15 @@ ln -s /etc/localtime /usr/share/zoneinfo/localtime
 ----
 sed -i 's/Type=oneshot/Type=simple\nRestart=on-failure\nRestartSec=5s/' /etc/systemd/system/cgroup-init.service
 ----
-. Remove unwanted yum packages. Run the following command as a root user:
-+
-[source,bash]
-----
-yum remove pigz R apr-util-bdb xdg-utils tmux librbd less kbd ethtool cryptsetup brotli
-----
+. Configure passwordless ssh for `ts_service_user`.
 
 == Create the cluster
 
+Cluster creation takes about 60 to 90 minutes.
+
+The node that acts as the coordinator node must be part of the cluster. It is defined by the `var: local_node` in the Ansible vars. The release tarball `<software_release.tar.gz>` must be present in the coordinator node and must be specified by the `tarball_location` var in the coordinator node.
+
+. Untar the ansible.tar.gz file on the node from which the ansible playbook will be run, if you have not already. If you are using the ansible tower for running the playbook, this should be the ansible tower machine.
 . Rename *cluster_create_hosts.sample* to *cluster_create_hosts.yaml*.
 . Update the Ansible vars in *cluster_create_hosts.yaml* with your own specific values. See <<ansible-vars,Sample Ansible vars>>.
 . Run the ansible-playbook. This installs ThoughtSpot software on all nodes. Run the following command on any cluster node:
@@ -116,7 +115,6 @@ ansible-playbook -i cluster_create_hosts.yaml ts-cluster-create-full-flow.yaml
 +
 If privilege escalation requires a password, add the `-K` option to the `ansible-playbook` command.
 . If there is a failure at any point, fix the failure and rerun the `ansible-playbook` command. Bypass the completed steps using the `--start-at-task` option, specifying the task at which to start.
-. Configure passwordless ssh between the nodes.
 
 [#ansible-vars]
 === Sample Ansible vars
