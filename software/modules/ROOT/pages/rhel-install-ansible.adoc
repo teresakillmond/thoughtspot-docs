@@ -59,12 +59,95 @@ To ensure this remains true even after reboots, set these values in a file under
 * hadoop-ansible/install.yaml
 --
 
-. Ensure that the nodes are correctly initialized. Run the following command from `ts_service_id`:
+. Ensure that the nodes are correctly initialized. Run the following command *_twice_* from `ts_service_id`, once as a root user and once as an admin user:
 +
 [source,bash]
 ----
 ./os_settings.sh
 ----
 
+. Set up the ThoughtSpot directories that require root privileges. Run the following commands:
++
+[source,bash]
+----
+mkdir -p /export/scaligent /export/thoughtspot
+ln -s /export/scaligent /usr/local/scaligent
+ln -s /export/thoughtspot /etc/thoughtspot
+chown -h $ts_service_id:$ts_group_id /export /export/scaligent /usr/local/scaligent /etc/thoughtspot /export/thoughtspot
+----
 
+. Fix the `postgresql symlinks` after installing it.
++
+[source,bash]
+----
+mkdir -p /usr/lib/postgresql
+ln -s /usr/pgsql-11 /usr/lib/postgresql/11
+----
 
+. Set up `symlink` for `localtime`.
++
+[source,bash]
+----
+ln -s /etc/localtime /usr/share/zoneinfo/localtime
+----
+. Run the following command as a root user:
++
+[source,bash]
+----
+sed -i 's/Type=oneshot/Type=simple\nRestart=on-failure\nRestartSec=5s/' /etc/systemd/system/cgroup-init.service
+----
+. Remove unwanted yum packages. Run the following command as a root user:
++
+[source,bash]
+----
+yum remove pigz R apr-util-bdb xdg-utils tmux librbd less kbd ethtool cryptsetup brotli
+----
+
+== Create the cluster
+
+. Rename *cluster_create_hosts.sample* to *cluster_create_hosts.yaml*.
+. Update the Ansible vars in *cluster_create_hosts.yaml* with your own specific values. See <<ansible-vars,Sample Ansible vars>>.
+. Run the ansible-playbook. This installs ThoughtSpot software on all nodes. Run the following command on any cluster node:
++
+[source,bash]
+----
+ansible-playbook -i cluster_create_hosts.yaml ts-cluster-create-full-flow.yaml
+----
++
+If privilege escalation requires a password, add the `-K` option to the `ansible-playbook` command.
+. If there is a failure at any point, fix the failure and rerun the `ansible-playbook` command. Bypass the completed steps using the `--start-at-task` option, specifying the task at which to start.
+. Configure passwordless ssh between the nodes.
+
+[#ansible-vars]
+=== Sample Ansible vars
+
+This is the definition of the *cluster_create_hosts.sample* file that is present in your Ansible tarball. You must replace anything in this file within `<>` with your own specific information.
+
+[source,bash]
+----
+all:
+hosts:
+# List of IPs of the nodes in the cluster
+<node_ip1>:
+<node_ip2>:
+vars:
+ssh_user: <ts_service_user>
+username: <ts_service_user>
+groupname: <ts_service_group>
+env: {}
+ssh_private_key: <private key use for ssh>
+tarball_location: <Release tarball complete path>
+cluster_id: <Cluster id>
+cluster_name: <Cluster name>
+ramdisk_size: <size of ramdisk for falcon> # The default is 50619136k (50Gb)
+# ThoughtSpot variables. Do not modify.
+release_location: /export/releases/root/
+installer_spec_path: /usr/local/scaligent/install/install_config
+pgversion: 11
+layout_file: /tmp/hadoop_config.json
+no_sudo: 1
+minimal_sudo_install: 1
+offline: 1
+skip_r: 1
+skip_local_user_creation: 1
+----
