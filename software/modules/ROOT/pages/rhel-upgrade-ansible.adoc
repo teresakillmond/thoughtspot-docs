@@ -22,6 +22,7 @@ ansible-playbook -i cluster_upgrade_hosts.yaml cluster_upgrade.yaml
 +
 If privilege escalation requires a password, add the `-K` option to the `ansible-playbook` command.
 . If there is a failure at any point, fix the failure and rerun the `ansible-playbook` command. Bypass the completed steps using the `--start-at-task` option, specifying the task at which to start.
+. Configure passwordless ssh between the nodes, if not already configured.
 
 [#ansible-vars]
 === Sample Ansible vars

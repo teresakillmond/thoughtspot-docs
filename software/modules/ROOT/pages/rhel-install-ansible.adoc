@@ -51,12 +51,12 @@ To ensure this remains true even after reboots, set these values in a file under
 +
 --
 * *ts-cluster-create-A.yaml:* Untars the release, sets up the environment, and copies the release toolchain to all nodes.
-* *ts-cluster-create-full-flow.yaml:* Triggers th ecluster installation. Calls ts-cluster-create-A.yaml, hadoop-ansible/install.yaml, ts-setup.yaml, and ts-no-sudo-cluster-install.yaml. After the release tarball is installed, it calls installer_main from the coordinator node. The installer_main pushes all the services and finishes the installation.
+* *ts-cluster-create-full-flow.yaml:* Triggers the cluster installation. Calls ts-cluster-create-A.yaml, hadoop-ansible/install.yaml, ts-setup.yaml, and ts-no-sudo-cluster-install.yaml. After the release tarball is installed, it calls installer_main from the coordinator node. The installer_main pushes all the services and finishes the installation.
 * *ts-no-sudo-cluster-install.yaml:* Installs the release on all nodes. Starts up ThoughtSpot core services on all nodes.
 * *ts-packages.yaml:* Checks that `postgres` was installed correctly and sets up `atop`.
 * *ts-setup.yaml:* Sets up the system settings, including nginx, log rotation, and environment settings. Ensures python3 packages are installed. Calls ts-systemd.yaml and ts-packages.yaml.
 * *ts-systemd.yaml:* Sets up systemd services.
-* *hadoop-ansible/install.yaml:* Installs Zookeeper and HDFS on the cluster. 
+* *hadoop-ansible/install.yaml:* Installs Zookeeper and HDFS on the cluster.
 --
 
 . Ensure that the nodes are correctly initialized. Run the following command *_twice_* from `ts_service_id`, once as a root user and once as an admin user. The output of this command informs you of any missing configurations and provides recommended actions.
