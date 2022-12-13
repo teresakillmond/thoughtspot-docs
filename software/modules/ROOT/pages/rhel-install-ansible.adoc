@@ -13,6 +13,7 @@ Before starting the installation, complete the xref:rhel-prerequisites.adoc[prer
 == Prepare system settings
 There are certain system settings, specific to this type of RHEL installation, that you must configure. Configure these settings _after_ completing the xref:rhel-prerequisites.adoc[prerequisites].
 
+. Install the required yum, Python 3, and R packages on each node of the ThoughtSpot cluster: xref:rhel-packages.adoc[].
 . If you are using a physical machine or appliance, you must disable the disk write cache. On each ThoughtSpot-specific mounted drive, run the following command:
 +
 [source,bash]
@@ -44,6 +45,7 @@ To ensure this remains true even after reboots, set these values in a file under
 . Set the soft and hard nofile ulimit values to *524288* or higher. ThoughtSpot prefers the soft core to be unlimited. Pending signals (-i) must be *2062971* or higher.
 . `sshd config` must contain `AllowUsers: tspot`. It must have a `MaxSessions` value greater than or equal to 10. Each node must be able to `ssh` without a password, via keys, to every other node in the cluster as the `tspot` user.
 . Set the `postfix` settings to send email from the cluster.
+. Configure passwordless ssh for `ts_service_user`.
 
 == Set up nodes
 
@@ -65,7 +67,7 @@ To ensure this remains true even after reboots, set these values in a file under
 ----
 ./os_settings.sh
 ----
-. Set up the ThoughtSpot directories that require root privileges. Run the following commands:
+. Configure passwordless ssh for `ts_service_user`.. Set up the ThoughtSpot directories that require root privileges. Run the following commands:
 +
 [source,bash]
 ----
@@ -89,13 +91,6 @@ ln -s /usr/pgsql-11 /usr/lib/postgresql/11
 ----
 ln -s /etc/localtime /usr/share/zoneinfo/localtime
 ----
-. Run the following command as a root user:
-+
-[source,bash]
-----
-sed -i 's/Type=oneshot/Type=simple\nRestart=on-failure\nRestartSec=5s/' /etc/systemd/system/cgroup-init.service
-----
-. Configure passwordless ssh for `ts_service_user`.
 
 == Create the cluster
 
@@ -124,28 +119,28 @@ This is the definition of the *cluster_create_hosts.sample* file that is present
 [source,bash]
 ----
 all:
-hosts:
-# List of IPs of the nodes in the cluster
-<node_ip1>:
-<node_ip2>:
-vars:
-ssh_user: <ts_service_user>
-username: <ts_service_user>
-groupname: <ts_service_group>
-env: {}
-ssh_private_key: <private key use for ssh>
-tarball_location: <Release tarball complete path>
-cluster_id: <Cluster id>
-cluster_name: <Cluster name>
-ramdisk_size: <size of ramdisk for falcon> # The default is 50619136k (50Gb)
-# ThoughtSpot variables. Do not modify.
-release_location: /export/releases/root/
-installer_spec_path: /usr/local/scaligent/install/install_config
-pgversion: 11
-layout_file: /tmp/hadoop_config.json
-no_sudo: 1
-minimal_sudo_install: 1
-offline: 1
-skip_r: 1
-skip_local_user_creation: 1
+  hosts:
+    # List of IPs of the nodes in the cluster
+    <node_ip1>:
+    <node_ip2>:
+  vars:
+    ssh_user: <ts_service_user>
+    username: <ts_service_user>
+    groupname: <ts_service_group>
+    env: {}
+    ssh_private_key: <private key use for ssh>
+    tarball_location: <Release tarball complete path>
+    cluster_id: <Cluster id>
+    cluster_name: <Cluster name>
+    ramdisk_size: <size of ramdisk for falcon> # The default is 50619136k (50Gb)
+    # ThoughtSpot variables. Do not modify.
+    release_location: /export/releases/root/
+    installer_spec_path: /usr/local/scaligent/install/install_config
+    pgversion: 11
+    layout_file: /tmp/hadoop_config.json
+    no_sudo: 1
+    minimal_sudo_install: 1
+    offline: 1
+    skip_r: 1
+    skip_local_user_creation: 1
 ----
