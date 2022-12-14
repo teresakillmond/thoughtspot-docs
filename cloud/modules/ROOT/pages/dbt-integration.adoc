@@ -11,6 +11,7 @@ dbt takes your raw data in your data warehouse and transforms and validates it. 
 
 NOTE: Integration with dbt is certified only for Amazon Redshift, Databricks, Google BigQuery, and Snowflake connections.
 
+[#prerequisites]
 == Prerequisites
 Before you can integrate with dbt, you must satisfy the following prerequisites
 
@@ -29,6 +30,51 @@ NOTE: If you do not define relationships, ThoughtSpot imports each model as a si
 +
 NOTE: When you compress the `manifest.json` and `catalog.json` files into one zip file, ensure that you do not include any hidden files, as this may cause errors later. To check the folder you plan to compress does not contain hidden files, refer to these articles for viewing hidden files on your https://discussions.apple.com/thread/7581737[Mac^] or https://support.microsoft.com/en-us/windows/view-hidden-files-and-folders-in-windows-97fbc472-c603-9d90-91d0-1166d1d9f4b5[Windows^] computer. If the folder contains hidden files, move them out of the folder before compressing it into a zip file.
 
+== How the dbt integration works
+
+To integrate with dbt, ThoughtSpot reads information from the latest versions of the `manifest.json` and `catalog.json` files. In the <<prerequisites,prerequisites>>, you ensured that ThoughtSpot could find these files, either by enabling the *generate docs on run* setting in dbt cloud, or by creating a zip file with your `manifest.json` and `catalog.json` files for dbt core.
+
+ThoughtSpot reads the following information from the `manifest.json` file:
+
+* Database name
+* Schema name
+* Model/Table name
+* Table description
+* Column name
+* Column description
+* Table relationships (joins)
+
+ThoughtSpot reads the following information from the `catalog.json` file:
+
+* Column data types
+
+=== How ThoughtSpot creates Worksheets from dbt
+
+ThoughtSpot creates Worksheets based on the table relationships defined in a `schema.yml` file in the models directory.
+
+The Worksheet creation follows these steps:
+
+. ThoughtSpot creates logical tables based on the model files. In the following example, ThoughtSpot creates a table for d_customer, d_product, d_product_category, and so on.
+
+. ThoughtSpot creates joins between the logical tables, based on the relationships defined in the `schema.yml` file. In the following example, ThoughtSpot creates joins between d_product and d_product_category, d_shipping and d_customer, and so on.
+
+. ThoughtSpot creates Worksheets made up of the logical tables, based on the relationships defined in the `schema.yml` file.
+
+For example, based on the following `schema.yml` file, ThoughtSpot creates the following Worksheets:
+
+Download the `schema.yml` file link:{attachmentsdir}/schema-example.yml[here].
+
+|===
+| Model name | Relationship to | Worksheet created?
+
+|d_customer | none | No. This model file only has relationships _from_ other model files. It does not have relationships _to_ other model files.
+|d_product | d_product_category | Yes. The Worksheet consists of the 2 tables: d_product and d_product_category.
+|d_shipping | d_customer | Yes. The Worksheet consists of the 2 tables: d_shipping and d_customer.
+|d_product_category | none | No. This model file only has relationships _from_ other model files. It does not have relationships _to_ other model files.
+| f_inventory | d_product, d_product_category | Yes. The Worksheet consists of the 3 tables: f_inventory, d_product, and d_product_category.
+| f_order | d_customer, d_shipping, d_product, d_product_category | Yes. The Worksheet consists of the 5 tables: f_order, d_customer, d_shipping, d_product, and d_product_category.
+|===
+
 == Integrating with dbt
 You can set up your dbt integration from the Data workspace. To integrate with dbt, follow these steps:
 
@@ -42,9 +88,9 @@ You can set up your dbt integration from the Data workspace. To integrate with d
 +
 image::dbt-integration-connect.png[dbt integration step 1]
 
-. Under *Data warehouse*, select the cloud data warehouse you would like to use from the drop-down, or search for it using the search bar in the drop-down.
+. Under *Data warehouse*, select the cloud data warehouse you would like to use from the dropdown menu, or search for it using the search bar in the dropdown menu.
 
-. Under *Database*, select the database within the cloud data warehouse that you would like to use from the drop-down, or search for it using the search bar in the drop-down. This database must contain the tables that are created from your dbt models.
+. Under *Database*, select the database within the cloud data warehouse that you would like to use from the dropdown menu, or search for it using the search bar in the dropdown menu. This database must contain the tables that are created from your dbt models.
 
 . Under *Connect to dbt project*, select either *Via dbt cloud* or *Use a .zip file*. If you are using *dbt core*, you must select *Use a .zip file*.
 
@@ -101,3 +147,5 @@ NOTE: This process may replace existing dbt tables you imported into ThoughtSpot
 * You must import at least 1 table.
 
 * Integration with dbt is certified only for Amazon Redshift, Databricks, Google BigQuery, and Snowflake connections.
+
+* If you make changes to your dbt models in dbt, ThoughtSpot does not automatically reflect those changes. You must integrate with dbt again. This may affect changes you made to the tables and Worksheets in ThoughtSpot.
