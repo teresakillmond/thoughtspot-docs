@@ -68,7 +68,7 @@ You can control which type of authentication you use between your client applica
 === No Authentication
 
 You can simply not set up authentication.
-This would require the user to be _already logged into ThoughtSpot_, before interacting with the client application.
+This would require the user to be _already logged in to ThoughtSpot_, before interacting with the client application.
 This approach is for testing the client.
 Do not use this in a production environment.
 
@@ -91,7 +91,7 @@ In the following scenario, the trust authenticator forwards requests for Thought
 
 image::authentication.png[Authentication diagram. There is an arrow labeled 1 demonstrating the client-side application requiring a user token from the trusted authenticator. There is an arrow labeled 2 demonstrating the trusted authenticator requesting a user token from ThoughtSpot. There is an arrow labeled 3 demonstrating ThoughtSpot verifying the authenticator and returning a user token. There is an arrow labeled 4 demonstrating the authenticator returning the user token to the client-side application. There is an arrow labeled 5 demonstrating the client forwarding the user token to ThoughtSpot. There is an arrow labeled 6 demonstrating ThoughtSpot validating the token and returns information to the client-side application that allows the user to authenticate.]
 
-A user who is already logged into client-application interacts with a ThoughtSpot embed point, which initiates the following processes:
+A user who is already logged in to client-application interacts with a ThoughtSpot embed point, which initiates the following processes:
 
 . The client-side application requests a user token from the trusted authenticator.
 . The trusted authenticator requests a user token from ThoughtSpot.
