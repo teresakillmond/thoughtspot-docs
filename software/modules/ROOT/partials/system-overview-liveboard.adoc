@@ -15,7 +15,7 @@ The *more options menu* image:icon-more-10px.png[More options menu icon] for the
 You can *Pin*, *SpotIQ analyze*, *download*, *edit,* or *present* the answer.
 When you *edit* the Answer, you see the query that ThoughtSpot built the answer on.
 You can also copy the answer's embed link, use xref:answer-explorer.adoc[Answer Explorer] on the answer, or interact with the answer by xref:search-drill-down.adoc[drilling down].
-While you can interact with and change a copied version of the answer, you cannot save changes to the underlying query.
+While you can interact with and change a copied version of the answer, you can't save changes to the underlying query.
 
 The following charts, tables, and panels are available on the *TS Stats: System Information and Usage Liveboard*: xref:cluster-summary[cluster summary], xref:critical-alerts[critical alerts], xref:mau[monthly active users], xref:monthly-searches[monthly ad hoc searches], xref:monthly-pb-views[monthly Liveboard views], xref:top-users[top users last month], xref:top-liveboards[top Liveboards last month], xref:search-users[ad-hoc search by user], xref:users-today[today's users], and xref:configuration-events[configuration events].
 
@@ -28,7 +28,7 @@ This doesn't reflect the active nodes which may be more or less.
 
 This summary includes the *LAST SNAPSHOT TIME* it reflects whether regular snapshots of your cluster are collected.
 This value should update regularly in real time.
-If you do not see it change or empty, you should check your cluster snapshot policy using the `tscli` command:
+If you don't see it change or empty, you should check your cluster snapshot policy using the `tscli` command:
 
  $ tscli snapshot-policy show
  schedule {
@@ -155,7 +155,7 @@ ThoughtSpot considers all of the following as ad hoc searches (queries):
 * User opens an existing saved Liveboard, edits a visualization, and makes change to the search tokens.
 * Searches initiated by an API call for data with runtime filters
 
-It is not considered a search (query) in this context if a user opens an existing saved aggregated worksheet and makes changes to its underlying query.
+It isn't considered a search (query) in this context if a user opens an existing saved aggregated worksheet and makes changes to its underlying query.
 
 The query for this answer is the following:
 

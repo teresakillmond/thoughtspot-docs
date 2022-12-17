@@ -64,7 +64,7 @@ xref:data-modeling-patterns.adoc#set-currency-type[Currency Type]::
 xref:data-modeling-attributable-dimension.adoc[Attribution Dimension]::
   Only applies to tables that join over a xref:chasm-trap.adoc[Chasm Trap].
 +
-Designates whether the tables depend on this column for attribution. You cannot change the attribution dimension in the modeling file. You can only configure it on a table-by-table basis.
+Designates whether the tables depend on this column for attribution. You can't change the attribution dimension in the modeling file. You can only configure it on a table-by-table basis.
 
 xref:custom-calendar.adoc[Calendar Type]::
   Specifies what type of calendar a date type column uses.
@@ -80,7 +80,7 @@ The settings will be inherited when you create worksheets that use columns from 
 If you have settings that only apply in the context of a particular worksheet, make those settings in the worksheet rather than in the underlying table(s).
 
 Note that if you make your settings at the table level, and then create a worksheet that uses columns from the table, the settings are inherited from the table at the point in time that the worksheet is created.
-If you then go back and change the settings at the table level, your changes will not be reflected in the worksheet.
+If you then go back and change the settings at the table level, your changes won't be reflected in the worksheet.
 
 If you want the worksheet to have the changes you made at the table level, you must drop those columns from the worksheet and re-add them.
 Then save the worksheet.

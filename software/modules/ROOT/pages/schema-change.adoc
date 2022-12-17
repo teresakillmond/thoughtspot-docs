@@ -19,12 +19,12 @@ This snapshot allows you to revert back to the prior state if you make an error,
 == Change the primary key for a table
 
 Use this procedure to change the primary key for a table.
-But use it with caution, particularly if you are changing to a primary key for which values are not unique.
+But use it with caution, particularly if you are changing to a primary key for which values aren't unique.
 
 You can change the primary key of a table without having to `TRUNCATE` it first and reload the data.
 However, changing the primary key could result in data deletion.
 This is because of the upsert behavior which is applied when multiple rows have the same primary key.
-This is very important to understand ahead of time, if you are considering changing to a primary key for which values are not unique.
+This is very important to understand ahead of time, if you are considering changing to a primary key for which values aren't unique.
 
 To change the primary key, first remove any existing primary key, and then define the new key.
 If you no longer want the table to have a primary key, just remove the existing key.
@@ -68,7 +68,7 @@ Use this procedure to remove a relationship between tables or define a new one.
 This operation works for both kinds of relationships: foreign key or generic relationship.
 
 To change a relationship between two tables, first remove any existing relationship, and then define the new relationship (if any).
-You do not have to truncate the tables to do this operation.
+You don't have to truncate the tables to do this operation.
 Any dependent objects (Liveboards or worksheets) will remain intact.
 
 To change the relationship between tables:
@@ -173,7 +173,7 @@ ALTER TABLE "sales"
 ----
 +
 NOTE: When you re-shard the table, the system re-shards all the existing data.
-You do not need to force reload.
+You don't need to force reload.
 
 . Test that any dependent objects (Liveboards, worksheets, and so on) are still working correctly.
 . Delete the snapshot you created earlier using the command:

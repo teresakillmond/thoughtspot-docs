@@ -11,8 +11,8 @@ If you want to perform a search on top of another search, try saving your search
 [IMPORTANT]
 ====
 * Only users with the *Can administer ThoughtSpot* or the *Can manage data* privilege can create views and link them.
-* While you cannot apply row-level security (RLS) to a view, you can apply row-level security to the view's underlying table in order to restrict the data shown when searching on the view.
-//* Views do not support row level security (RLS), so all users of a view can see all the data it contains.
+* While you can't apply row-level security (RLS) to a view, you can apply row-level security to the view's underlying table in order to restrict the data shown when searching on the view.
+//* Views don't support row level security (RLS), so all users of a view can see all the data it contains.
 ====
 
 == Introduction to views
@@ -29,7 +29,7 @@ When you save an answer as a view, and then use it as a source in a new search, 
 
 Suppose you created a search on the sales fact table that shows the top ten Sales Reps by revenue, for the first quarter.
 Then you want to do some further investigation on that subset of data, such as ranking them by how much they discounted a specific product based on data from the orders fact table.
-Unless you save your first answer as a view, and then search over that view, you cannot get your answers.
+Unless you save your first answer as a view, and then search over that view, you can't get your answers.
 
 Here are the high-level steps for creating and using views:
 
@@ -44,7 +44,7 @@ Creating a worksheet makes it easier for people to search using your view and an
 
 * When creating views, keep in mind the sizing recommendations for worksheets, for the final worksheet that you plan to use in modeling you data.
 * To be able to join a view with a base table, your installation must be configured to allow this.
-The view cannot have more than 5 tables, and the number of rows in the view cannot exceed 10 million rows.
+The view can't have more than 5 tables, and the number of rows in the view can't exceed 10 million rows.
 * The order of the objects being linked (joined) matters, because joins are directional.
 The table or view with the foreign key must be in the first (left) position.
 The table or view with the primary key must be in the second (right) position.

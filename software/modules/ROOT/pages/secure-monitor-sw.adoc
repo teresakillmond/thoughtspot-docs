@@ -22,7 +22,7 @@ Splunk:: You can install Splunk rsyslog and use it to forward ThoughtSpot logs t
 For more information about Splunk, see the http://docs.splunk.com/[Splunk documentation^].
 CrowdStrike Falcon Agent:: Crowdstrike Falcon Agent is a cloud-delivered endpoint protection service. For more information, refer to the https://www.crowdstrike.com/endpoint-security-products/falcon-platform/[CrowdStrike Falcon Agent^] website.
 
-WARNING: ThoughtSpot does not support, certify or maintain any third-party software other than the Qualys agent, the SNMP agent for Linux, the Splunk agent, the CrowdStrike Falcon Agent, or AWS SSM. Use of non-certified software is very likely to result in loss of functionality for your ThoughtSpot cluster, or otherwise impact the ThoughtSpot application. Use of McAfee or any other virus scanner to scan directories, memory (RAM), filesystems or disks will result in severe loss of performance and/or functionality.
+WARNING: ThoughtSpot doesn't support, certify or maintain any third-party software other than the Qualys agent, the SNMP agent for Linux, the Splunk agent, the CrowdStrike Falcon Agent, or AWS SSM. Use of non-certified software is very likely to result in loss of functionality for your ThoughtSpot cluster, or otherwise impact the ThoughtSpot application. Use of McAfee or any other virus scanner to scan directories, memory (RAM), filesystems or disks will result in severe loss of performance and/or functionality.
 
 === Install third-party software
 
@@ -30,14 +30,14 @@ For details on how to install third-party software, see xref:secure-monitor-sw-i
 
 == What is not supported
 
-When installing and configuring third-party software on a ThoughtSpot cluster, follow theese guidelines to avoid interfering with cluster operations:
+When installing and configuring third-party software on a ThoughtSpot cluster, follow these guidelines to avoid interfering with cluster operations:
 
 * Avoid making any direct changes to any files outside of the `/home` directory.
-* Do not remove existing SSH keys or authorized keys from `/home/admin/.ssh`
+* Don't remove existing SSH keys or authorized keys from `/home/admin/.ssh`
 * Excessive resource usage, for CPU, disk, memory, processes, and so on.
 * Killing any system or ThoughtSpot services, or causing node reboots.
 
-Do not change any system-wide configuration which may affect ThoughtSpot, such as:
+Don't change any system-wide configuration which may affect ThoughtSpot, such as:
 
 * Network, such as IP addresses, DNS resolution
 * Storage, such as removing existing mount points, removing drives
@@ -49,7 +49,7 @@ Qualys is supported for scanning of ThoughtSpot clusters for security vulnerabil
 
 == SNMP Traps
 
-ThoughtSpot does *_not_* automatically support SNMP traps. However, you can install a third-party tool for SNMP traps and route them as necessary. Before installing a third-party SNMP tool, check that ThoughtSpot supports it with your ThoughtSpot contact.
+ThoughtSpot *_doesn't_* automatically support SNMP traps. However, you can install a third-party tool for SNMP traps and route them as necessary. Before installing a third-party SNMP tool, check that ThoughtSpot supports it with your ThoughtSpot contact.
 
 If you install a third-party tool, ThoughtSpot supports SNMP for read only.
 So for example, you can read the IP address of the cluster, but you can't change it using SNMP.

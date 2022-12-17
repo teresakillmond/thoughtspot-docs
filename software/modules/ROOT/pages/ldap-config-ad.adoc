@@ -39,7 +39,7 @@ For example, `ldap://ad.yourdomain.local:389` or `ldap://ad.yourdomain.local:636
 Default domain under which users who want to be authenticated against Active Directory reside.
 When a user logs in with a username, the default domain is added to the username before sending it to the LDAP server.
 If users reside in multiple sub-domains, you can still designate one of them as the default.
-Authentication against multiple domains is not supported.
+Authentication against multiple domains isn't supported.
 
 Users who don't belong to the default domain must explicitly qualify their username when they log in.
 
@@ -58,7 +58,7 @@ If you want to use SSL, you must obtain the SSL certificate from an issuing auth
 
 If AD servers are behind a load balancer, you must procure the SSL certificate to identify ThoughtSpot to the load balancer.
 The communication after the load balancer is non-secure.
-ThoughtSpot does not support a scenario where multiple AD servers provide their own SSL certificates.
+ThoughtSpot doesn't support a scenario where multiple AD servers provide their own SSL certificates.
 
 [#auto-add]
 === Automatically add LDAP or AD users in ThoughtSpot? (yes/no)
@@ -77,12 +77,12 @@ In order to log in to ThoughtSpot, the user has to exist in ThoughtSpot independ
 If you choose 'yes', ThoughtSpot will first attempt to authenticate the user against AD.
 If that attempt fails, it will then attempt to authenticate the user as an internal/local ThoughtSpot user.
 If either of these succeed, then the user is successfully logged in.
-This is useful in scenarios where some users are not in AD and are created only in ThoughtSpot.
+This is useful in scenarios where some users aren't in AD and are created only in ThoughtSpot.
 
 [#configure-ldap-tscli]
 == Configure LDAP using tscli
 
-You do not have to create a user called `tsadmin` on your LDAP server.
+You don't have to create a user called `tsadmin` on your LDAP server.
 Internal authentication can be used for `tsadmin`.
 To configure AD based authentication, follow these steps:
 
