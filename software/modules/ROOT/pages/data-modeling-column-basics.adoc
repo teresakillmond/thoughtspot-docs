@@ -13,9 +13,9 @@ All of these can influence how a user experiences your data.
 For example, the *DESCRIPTION* appears as a "tip" when a user hovers over a column.
 It helps users understand where the data they are searching comes from.
 
-NOTE: When you change column information such as column names in the UI or in the model file, you do not change this information on the physical table in your database.
+NOTE: When you change column information such as column names in the UI or in the model file, you don't change this information on the physical table in your database.
 You only change your metadata.
-This is why you can have column names with spaces in them in the UI, since physical column names do not support spaces.
+This is why you can have column names with spaces in them in the UI, since physical column names don't support spaces.
 
 == Data modeling from the UI
 
@@ -49,7 +49,7 @@ To update the column name, follow these steps:
 . Type in the new column name.
 . Save your changes.
 
-NOTE: If any of your column names or values contain leading or trailing whitespaces, you must remove these spaces before and after column names and values when loading data. The ThoughtSpot search bar does not accept column names or values with leading or trailing whitespaces. If you must keep these spaces, tell your users to add a delimiter for the search bar to accept them. For example, if you have a column named " Sales ", with a space before and after the word Sales, you must enter it in the search bar as ' Sales ', with single quotes surrounding the name. Otherwise, ThoughtSpot automatically removes the extra spaces and does not recognize the column name.
+NOTE: If any of your column names or values contain leading or trailing whitespaces, you must remove these spaces before and after column names and values when loading data. The ThoughtSpot search bar doesn't accept column names or values with leading or trailing whitespaces. If you must keep these spaces, tell your users to add a delimiter for the search bar to accept them. For example, if you have a column named " Sales ", with a space before and after the word Sales, you must enter it in the search bar as ' Sales ', with single quotes surrounding the name. Otherwise, ThoughtSpot automatically removes the extra spaces and doesn't recognize the column name.
 
 [#change-column-description]
 == Change column description
@@ -80,7 +80,7 @@ Columns with `VARCHAR`, `BOOL`, or date/time data types are assigned the type `A
 
 Usually the default setting for column type works fine.
 But occasionally, you must change a `MEASURE` to an `ATTRIBUTE`.
-Examples of numeric values for which mathematical operations are not meaningful include:
+Examples of numeric values for which mathematical operations aren't meaningful include:
 
 * ID numbers
 * Key values that are primarily used for joining tables
@@ -90,7 +90,7 @@ Examples of numeric values for which mathematical operations are not meaningful 
 1999, 2000)
 * Zipcodes
 
-These values are numbers, but you would not do math on them.
+These values are numbers, but you wouldn't do math on them.
 For example, it is not meaningful to add two zipcodes together.
 
 To change the column type:
@@ -99,7 +99,7 @@ To change the column type:
 . Change it to either `MEASURE` or `ATTRIBUTE`.
 . Save your changes.
 
-NOTE: You cannot change a column with data type `VARCHAR` to column type `MEASURE`. ThoughtSpot allows conversion of numeric fields to attributes, but does not allow conversion of text-based fields to measures.
+NOTE: You can't change a column with data type `VARCHAR` to column type `MEASURE`. ThoughtSpot allows conversion of numeric fields to attributes, but doesn't allow conversion of text-based fields to measures.
 
 '''
 > **Related information**

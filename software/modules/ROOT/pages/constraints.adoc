@@ -20,11 +20,11 @@ When a primary key is selected for a table, it impacts data loading behavior.
 When a new row is added:
 
 * If another row already exists with the same primary key, it is updated with the values in the new row.
-* If a row with the same primary key does not exist already, the new row is inserted into the table.
+* If a row with the same primary key doesn't exist already, the new row is inserted into the table.
 
 This behavior is referred to as "`upsert`" because it does an `INSERT` or an `UPDATE`, depending on whether a row with the same primary key already exists.
 
-Note that ThoughtSpot does not check for primary key violations across different shards of the table.
+Note that ThoughtSpot doesn't check for primary key violations across different shards of the table.
 Therefore, you need to shard the table on the primary key columns if you require this "`upsert`" behavior.
 
 == Permitted joins and necessary permissions

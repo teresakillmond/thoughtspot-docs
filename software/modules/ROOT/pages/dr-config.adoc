@@ -24,7 +24,7 @@ If you choose NAS, keep in mind that too slow a volume potentially break backups
 The following are good guidelines for choosing storage:
 
 * Provision a dedicated storage volume for periodic backups.
-* Do not use the backup volume for loading data or any other purposes.
+* Don't use the backup volume for loading data or any other purposes.
 If backups fill up this storage, other components will suffer.
 * To ensure better supportability and continuity in case local hard disks go bad, the shared storage volume should be network-based.
 
@@ -120,9 +120,9 @@ tscli nas mount-nfs
 
 . Log in to the target machine/ secondary appliance.
 . Ensure that the target machine is running a ThoughtSpot cluster.
-Note that the clusters on the primary and target machines do not need to be on the same ThoughtSpot version.
+Note that the clusters on the primary and target machines don't need to be on the same ThoughtSpot version.
 +
-If a cluster is not running on the target machine, contact xref:support-contact.adoc[ThoughtSpot Support] to create a cluster.
+If a cluster isn't running on the target machine, contact xref:support-contact.adoc[ThoughtSpot Support] to create a cluster.
 
 . Add the NAS mount entry to the `/etc/fstab` file. For example:
 +
@@ -141,7 +141,7 @@ $ cat /etc/fstab
 ----
 $ sudo mount -a
 ----
-You must create the NAS mount under `/export`. You cannot create it under the root partition.
+You must create the NAS mount under `/export`. You can't create it under the root partition.
 +
 The mount point and the parameters should be identical for both the primary and secondary machines.
 
@@ -168,7 +168,7 @@ The command opens a `vi` editor for you to configure the backup policy.
 Make sure your policy points to the NAS mount in the primary appliance.
 +
 When choosing times and frequencies for periodic backups, you should choose a reasonable frequency.
-Do not schedule backups too close together, since a backup cannot start when another backup is still running.
+Don't schedule backups too close together, since a backup can't start when another backup is still running.
 Avoid backing up when the system is experiencing a heavy load, such as peak usage or a large data load.
 +
 If you are unfamiliar with the policy format, see xref:backup-configure-schedule.adoc[Configure periodic backups].

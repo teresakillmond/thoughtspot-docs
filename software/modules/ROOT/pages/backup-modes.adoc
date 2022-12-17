@@ -45,7 +45,7 @@ Some installations can exceed these limits, this is why it is important to test 
 Before creating a manual backup or configuring automated backups, make sure there is enough disk space on the target disk.
 Consider an example, where you want to store three backups.
 If the backup itself takes 18GB, you need about 18 + 5 = 23 GB of free disk space.
-Don't forget that the backup size can grow over time, so you should occasionally check to ensure you are not in danger of running out of disk space to store backups.
+Don't forget that the backup size can grow over time, so you should occasionally check to ensure you aren't in danger of running out of disk space to store backups.
 
 == Lightweight backups
 
@@ -60,7 +60,7 @@ Lightweight backups contain everything that is in a dataless backup, as well as 
 * Objects created by users (Liveboards, worksheets, and formulas) with their shares and permissions.
 * Data model and row-level security rules.
 
-Lightweight backups do *not* contain data loaded through ThoughtSpot Loader (`tsload`), or ODBC/JDBC drivers.
+Lightweight backups *don't* contain data loaded through ThoughtSpot Loader (`tsload`), or ODBC/JDBC drivers.
 The expectation is that data loaded by `tsload` is from external sources and so can be re-loaded after the cluster is restored.
 An exception is if these mechanisms were used to load data into tables that were first created through CSV import (that is, a user first loaded the tables using the UI).
 In this case, the data, like the tables they were loaded into, are saved.
@@ -70,7 +70,7 @@ In this case, the data, like the tables they were loaded into, are saved.
 A dataless backup saves a backup of the schema (metadata), with no customer data or search indices saved to the backup.
 Dataless backups allow you to send a copy of your cluster metadata to ThoughtSpot Support for troubleshooting. For clusters where you connected to an external cloud data warehouse, you can use dataless backups to recover the cluster in the case of irrecoverable issues, such as a cluster crash or a non-restartable cluster.
 
-When restoring from a dataless backup, you must supply the correct release tarball, since this type of backup does not include the release tarball, just the release version. Note that the release version that you use to restore the cluster from the backup must exactly match the version information in the backup.
+When restoring from a dataless backup, you must supply the correct release tarball, since this type of backup doesn't include the release tarball, just the release version. Note that the release version that you use to restore the cluster from the backup must exactly match the version information in the backup.
 
 === Dataless backup contents for deployments with ThoughtSpot's in-memory database
 Dataless backups contain the following information for deployments with ThoughtSpot's in-memory database:
@@ -90,7 +90,7 @@ Dataless backups contain the following information for deployments with ThoughtS
 * SAML configuration
 * Consumption pricing user activity
 
-Dataless backups for ThoughtSpot's in-memory database DO NOT include the following information:
+Dataless backups for ThoughtSpot's in-memory database DON'T include the following information:
 
 * Data stored in the in-memory database
 * Search index tokens
@@ -115,7 +115,7 @@ Dataless backups contain the following information for deployments with connecti
 * SAML configuration
 * Consumption pricing user activity
 
-Dataless backups for connections to external cloud data warehouses DO NOT include the following information:
+Dataless backups for connections to external cloud data warehouses DON'T include the following information:
 
 * Search index tokens
 * Usage information

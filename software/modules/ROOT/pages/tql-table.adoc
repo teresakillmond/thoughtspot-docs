@@ -13,7 +13,7 @@ This should make you feel safe issuing TQL commands, even commands like dropping
 TQL actions with possible dependency consequences include:
 
 * Change, add, or remove a primary key.
- ** When changing or adding a primary key, if the key in question is not unique in the data it may cause deletion of rows, because of upserts occurring when duplicate primary keys are found.
+ ** When changing or adding a primary key, if the key in question isn't unique in the data it may cause deletion of rows, because of upserts occurring when duplicate primary keys are found.
  ** When changing or removing a primary key, incoming foreign key relationships will be broken.
 * Change a column datatype.
 * Add a relationship or foreign key.

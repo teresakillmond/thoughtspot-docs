@@ -9,10 +9,10 @@ Learn how to materialize a view to improve its performance.
 
 To improve the performance of a view, you can materialize it.
 This operation computes the data for the view and stores it in memory, just like a table.
-You can expect a 3-6 times performance improvement on a materialized view over a view that is not materialized.
+You can expect a 3-6 times performance improvement on a materialized view over a view that isn't materialized.
 However, materialized views take up space in memory, so weigh the tradeoffs and benefits of materializing a view ahead of time.
 
-NOTE: Row Level Security does not apply to materialized views.
+NOTE: Row Level Security doesn't apply to materialized views.
 All users will see the same data when using the materialized view as a data source.
 
 To materialize a view:
@@ -29,7 +29,7 @@ image::view-materialize-1.png[Select Materialization > Materialize]
 +
 image::view-materialize-2.png[Fill in optional details for the primary key, sharding key, and number of shards]
 +
-NOTE: If you do not fill in the sharding details, the view is replicated on every node of your cluster.
+NOTE: If you don't fill in the sharding details, the view is replicated on every node of your cluster.
 Follow the links in this step to learn more about sharding.
 
 . Select *Materialize*.
@@ -50,7 +50,7 @@ image::view-materialize-8.png[View materialization in progress]
 +
 image::view-materialize-9.png[Materialized view created successfully]
 +
-If after some time, the status has not changed to *Materialized*, check the xref:views-materialized.adoc#materialization-status[list of statuses] and corresponding actions to take.
+If after some time, the status hasn't changed to *Materialized*, check the xref:views-materialized.adoc#materialization-status[list of statuses] and corresponding actions to take.
 
 When it says *Materialized* your materialized view is ready for search.
 

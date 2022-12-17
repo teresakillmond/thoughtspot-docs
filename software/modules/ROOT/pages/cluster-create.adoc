@@ -16,7 +16,7 @@ To install your appliance, you must install the cluster using the release tarbal
 Download the release tarball from the download link sent by ThoughtSpot Support.
 +
 Refer to your welcome letter to find a link to download the release tarball.
-If you do not have a download link, open a support ticket with xref:support-contact.adoc[ThoughtSpot Support] to access the release tarball.
+If you don't have a download link, open a support ticket with xref:support-contact.adoc[ThoughtSpot Support] to access the release tarball.
 . *Copy the release tarball*
 +
 In your Terminal (Apple) or using https://winscp.net/eng/index.php[Winscp] (Windows application), copy the downloaded release tarball to `/home/admin/` and run the cluster installer.
@@ -35,7 +35,7 @@ For example:
 $ scp 6.0.tar.gz admin@ThoughtSpot:/home/admin/TS-tarball
 ----
 +
-ThoughtSpot recommends that you start the session using https://linux.die.net/man/1/screen[screen], so you do not lose your progress if you lose your connection at any point.
+ThoughtSpot recommends that you start the session using https://linux.die.net/man/1/screen[screen], so you don't lose your progress if you lose your connection at any point.
 +
 [source,console]
 ----
@@ -44,7 +44,7 @@ $ scp <release-number> admin@<hostname>:/home/admin/<file-name>
 Note the following parameters:
 +
 `release-number`:: The version of ThoughtSpot you have on your cluster, such as `6.0` or `5.3`. `release-number` is of the form `0.0.tar.gz`.
-`hostname`:: Your network hostname. Ask your network administrator if you do not know your hostname.
+`hostname`:: Your network hostname. Ask your network administrator if you don't know your hostname.
  `file-name`:: is the name of the tarball file on your local machine.
 
 . *Run the `tscli cluster create` command*
@@ -77,7 +77,7 @@ Fill out the cluster name, cluster ID, email alert preferences and the IP's of t
 You may need to wait about 15 seconds before you see any output.
 The installer is unpacking files and copying them over to the nodes, which can take a few seconds.
 
-Do not edit any part of the installer file except the sections specified in xref:parameters-cluster-create.adoc[Parameters of the tscli cluster create command]. If you delete colons, commas, or other parts of the code, setup may fail.
+Don't edit any part of the installer file except the sections specified in xref:parameters-cluster-create.adoc[Parameters of the tscli cluster create command]. If you delete colons, commas, or other parts of the code, setup may fail.
 
 Refer to xref:parameters-cluster-create.adoc[Parameters of the tscli cluster create command] for further information.
 

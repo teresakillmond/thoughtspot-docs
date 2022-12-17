@@ -11,11 +11,11 @@ Views can become slow as your data volume and the number of views stacked on top
 This happens because when doing a search, each view is computed on the fly.
 To improve the performance of a view, you can materialize it.
 Materializing pre-computes the view and stores it in memory, just like a table.
-You can expect a materialized view to be three to six times faster than a view that is not materialized, on average.
+You can expect a materialized view to be three to six times faster than a view that isn't materialized, on average.
 
 To materialize a view, you must have the xref:groups-privileges.adoc[*Can administer ThoughtSpot* privilege].
 
-NOTE: The number of materialized views you can create is limited to 50, because materialized views take up space in memory. Row Level Security does not apply to materialized views; all users see the same data when using the materialized view as a data source.
+NOTE: The number of materialized views you can create is limited to 50, because materialized views take up space in memory. Row Level Security doesn't apply to materialized views; all users see the same data when using the materialized view as a data source.
 
 These are the operations you can do on a view:
 
