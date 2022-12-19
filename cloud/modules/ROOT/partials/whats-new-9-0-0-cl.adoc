@@ -21,11 +21,13 @@ endif::free-trial-feature[]
 [#9-0-0-cl-sync-servicenow]
 [discrete]
 === ThoughtSpot Sync ServiceNow connection
+
 You can now sync data directly from an Answer or custom SQL view to ServiceNow. Using ThoughtSpot Sync, you can push insights directly to ServiceNow, notify your teams, and view data in context. ThoughtSpot Sync automatically establishes a secure pipeline to the destination app and thus eliminates the need for building custom connectors.
 
 [#9-0-0-cl-sync-hubspot]
 [discrete]
 === ThoughtSpot Sync HubSpot connection
+
 You can now sync data directly from an Answer or custom SQL view to Hubspot. Using ThoughtSpot Sync, you can push insights directly to Hubspot, notify your teams, and view data in context. ThoughtSpot Sync automatically establishes a secure pipeline to the destination app and thus eliminates the need for building custom connectors.
 
 For more information, see xref:sync-hubspot.adoc[].
@@ -67,7 +69,8 @@ image::liveboard-filters-mandatory.gif[Gif of a Liveboard with a mandatory filte
 [#9-0-0-cl-postgresql]
 [discrete]
 === PostgreSQL connection
-In this release, PostgreSQL is a new connection type. For details, see xref:connections-postgresql.adoc[PostgreSQL].
+
+You can now create connections from ThoughtSpot to PostgreSQL. For details, see xref:connections-postgresql.adoc[PostgreSQL].
 
 [#9-0-0-cl-labels]
 [discrete]
@@ -91,7 +94,7 @@ It is the early access feature, by default it is disabled.Admins can enable it t
 [discrete]
 === GroupAggregate Enhancements: Filters
 
-// Naomi
+// Naomi-- behind a flag and limited availability
 
 
 [#9-0-0-cl-rename]
@@ -168,9 +171,11 @@ image::csv-upload-app.png[CSV upload]
 
 [#9-0-0-cl-connection-share]
 [discrete]
-=== Sharing Embrace connections
+=== Sharing Connections
 
 // Naomi
+
+Users with *can manage data* or *admin* privileges can now share Connections with other users or groups that have *can manage data* privileges. Once granted access to a connection, users can add, remove, and modify tables in that connection.
 
 [#9-0-0-cl-dbt-meta]
 [discrete]
@@ -196,13 +201,22 @@ image::tml-export-fqn.png[Choose what to export modal with the export fqn option
 [discrete]
 === Generic Join Creation via UI
 
-// Naomi
+// Naomi-- waiting to hear if GA
 
 [#9-0-0-cl-redshift]
 [discrete]
 === Redshift Partner Connect and Free trial integration
 
 // Naomi
+
+Redshift Partner Connect allows you to try out ThoughtSpot connected to Redshift for free.
+For details,
+ifndef::pendo-links[]
+see xref:connections-redshift-partner.adoc[ThoughtSpot in Redshift Partner Connect].
+endif::[]
+ifdef::pendo-links[]
+see xref:connections-redshift-partner.adoc[ThoughtSpot in Redshift Partner Connect,window=_blank].
+endif::[]
 
 [#9-0-0-cl-joins-rls]
 [discrete]
@@ -252,7 +266,9 @@ THE FOLLOWING ARE NEEDS EVALUATION
 [discrete]
 === Snowflake Partner Connect Free-Trial Integration on my1/my2 clusters
 
-// Naomi
+// Naomi-- GA
+
+// feature works the same, but now redirects you to a my1 or my2 cluster instead of try.thoughtspot.com. Asking for confirmation about when one cluster is selected rather than the other.
 
 ifndef::free-trial-feature[]
 [discrete]
