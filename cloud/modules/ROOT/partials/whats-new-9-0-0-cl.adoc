@@ -38,7 +38,9 @@ You can now sync data directly from an Answer or custom SQL view to Hubspot. Usi
 [discrete]
 === Mandatory filters
 
-// Teresa. early access
+Mark certain filters in your Liveboard as mandatory. If you add mandatory filters to a Liveboard, the visualizations will only load after Liveboard viewers select values for the mandatory filters. Use mandatory filters for Liveboards that contain data that may not be relevant for everyone who must view and consume the Liveboard. Mandatory filters also lower query and performance costs. This feature must be enabled by your administrator.
+
+image::liveboard-filters-mandatory.gif[Gif of a Liveboard with a mandatory filter]
 
 [#9-0-0-cl-pivot-measures]
 [discrete]
@@ -84,9 +86,11 @@ In this release, PostgreSQL is a new connection type.
 
 [#9-0-0-cl-rename]
 [discrete]
-=== Implement rename option in Viz menu and PB menu to help users edit name and description of viz and PB without going to edit mode
+=== Rename Liveboards and visualizations without entering edit mode
 
-// Teresa
+Change the name or description of a Liveboard or visualization without entering *Edit* mode. The more image:icon-more-10px.png[more menu icon] menu for Liveboards and Liveboard visualizations now includes a *Rename* option, where you can also edit the object description.
+
+image::liveboard-viz-rename.png[More menu for a Liveboard visualization, with Rename highlighted]
 
 [#9-0-0-cl-chart-config-apply]
 [discrete]
@@ -147,9 +151,11 @@ image::csv-upload-app.png[CSV upload]
 
 [#9-0-0-cl-fqn]
 [discrete]
-=== Export fqn option on UI
+=== Export FQNs when exporting TML files
 
-// Teresa
+To reduce ambiguity when exporting TML files, export the fully qualified names (FQNs) for the objects' data sources. If you select this option, the TML file contains FQNs for the underlying tables and connections.
+
+image::tml-export-fqn.png[Choose what to export modal with the export fqn option highlighted]
 
 [#9-0-0-cl-generic-join]
 [discrete]
