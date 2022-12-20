@@ -35,10 +35,24 @@ endif::[]
 // Teresa. early access
 
 [#9-0-0-sw-mandatory-filters]
+ifndef::pendo-links[]
 [discrete]
-=== Mandatory filters
+=== Mandatory Liveboard filters [.badge.badge-beta]#Beta#
+endif::[]
+ifdef::pendo-links[]
+[discrete]
+=== Mandatory Liveboard filters [.badge.badge-beta-whats-new]#Beta#
+endif::[]
 
-// Teresa. early access
+Mark certain filters in your Liveboard as mandatory. If you add mandatory filters to a Liveboard, the visualizations will only load after Liveboard viewers select values for the mandatory filters. Use mandatory filters for Liveboards that contain data that may not be relevant for everyone who must view and consume the Liveboard. Mandatory filters also lower query and performance costs. This feature must be enabled by your administrator.  For more information about mandatory filters, see
+ifndef::pendo-links[]
+xref:liveboard-filters-mandatory.adoc[Mandatory Liveboard filters].
+endif::[]
+ifdef::pendo-links[]
+see xref:liveboard-filters-mandatory.adoc[Mandatory Liveboard filters,window=_blank].
+endif::[]
+
+image::liveboard-filters-mandatory.gif[Gif of a Liveboard with a mandatory filter]
 
 [#9-0-0-sw-pivot-measures]
 [discrete]
@@ -164,6 +178,8 @@ endif::[]
 ifdef::pendo-links[]
 see xref:tml.adoc#fqn[ThoughtSpot Modeling Language,window=_blank].
 endif::[]
+
+image::tml-export-fqn.png[Choose what to export modal with the export fqn option highlighted]
 
 [#9-0-0-sw-generic-join]
 [discrete]
