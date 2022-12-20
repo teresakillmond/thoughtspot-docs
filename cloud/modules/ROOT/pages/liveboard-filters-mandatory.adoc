@@ -10,7 +10,7 @@ include::partial$liveboard-experience-new-announcement.adoc[]
 
 You may want to mark certain filters in your Liveboard as mandatory. If you add mandatory filters to a Liveboard, the visualizations will only load after Liveboard viewers select values for the mandatory filters.
 
-Mandatory filters are useful for Liveboards that contain data that may not be relevant for everyone who must view and consume the Liveboard. They also lower query costs, since the Liveboard does not automatically load all the data; it only loads the data after the viewer selects a filter value.
+Mandatory filters are useful for Liveboards that contain data that may not be relevant for everyone who must view and consume the Liveboard. They also lower query costs, since the Liveboard doesn't automatically load all the data; it only loads the data after the viewer selects a filter value.
 
 ThoughtSpot marks mandatory filters with an asterisk in the Liveboard filter bar:
 
@@ -19,6 +19,8 @@ image::liveboard-filters-mandatory.png[Liveboard filter with an asterisk]
 If a Liveboard has a mandatory filter, Liveboard viewers see a prompt to select a value for the filter:
 
 image::mandatory-filter-unselected.png[Liveboard with a mandatory filter where the value has not been selected]
+
+This feature is part of the xref:liveboard-experience-new.adoc[new Liveboard experience]; if the classic experience is on in your environment, this feature is not available.
 
 == Create mandatory filters
 
@@ -35,3 +37,7 @@ To create mandatory filters, follow these steps:
 image::select-mandatory.png[Select Mandatory filter]
 . Select the *Make filter mandatory* checkbox.
 . Select *Apply*.
+
+== Limitations
+
+ThoughtSpot Mobile doesn't currently support mandatory Liveboard filters. If a Liveboard contains mandatory filters, you can't view the Liveboard in the Mobile app.
