@@ -16,17 +16,7 @@ endif::[]
 
 [#primary-9-0-0-sw]
 
-[#9-0-0-sw-sync-servicenow]
-[discrete]
-=== ThoughtSpot Sync ServiceNow connection
 
-// Naomi
-
-[#9-0-0-sw-sync-hubspot]
-[discrete]
-=== ThoughtSpot Sync HubSpot connection
-
-// Naomi
 
 [#9-0-0-sw-parameters]
 [discrete]
@@ -114,17 +104,7 @@ THE FOLLOWING ARE NEEDS EVALUATION
 
 // Yochana
 
-[#9-0-0-cl-zoho]
-[discrete]
-=== TS-Sync: Adding Zoho Destination ( beta)
 
-// Naomi
-
-[#9-0-0-cl-gainsight]
-[discrete]
-=== TS-Sync: Adding Gainsight Destination (beta)
-
-// Naomi
 
 '''
 [#secondary-9-0-0-sw]
@@ -133,9 +113,11 @@ THE FOLLOWING ARE NEEDS EVALUATION
 
 [#9-0-0-sw-connection-share]
 [discrete]
-=== Sharing Embrace connections
+=== Sharing Connections
 
 // Naomi
+
+Users with *can manage data* or *admin* privileges can now share Connections with other users or groups that have *can manage data* privileges. Once granted access to a connection, users can add, remove, and modify tables in that connection.
 
 [#9-0-0-sw-dbt-meta]
 [discrete]
@@ -181,11 +163,6 @@ endif::[]
 
 image::tml-export-fqn.png[Choose what to export modal with the export fqn option highlighted]
 
-[#9-0-0-sw-generic-join]
-[discrete]
-=== Generic Join Creation via UI
-
-// Naomi
 
 [#9-0-0-sw-snowflake]
 [discrete]
@@ -220,6 +197,8 @@ endif::[]
 [#9-0-0-cl-table-delete]
 [discrete]
 === Delete tables from ThoughtSpot
+
+// Naomi
 
 Previously, when deleting tables from Connections, ThoughtSpot did not delete the table’s metadata completely. Starting in 9.0.0.sw, tables deleted through the ThoughtSpot UI disappear completely from your cluster.
 
