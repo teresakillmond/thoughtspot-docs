@@ -11,14 +11,16 @@ Keep in mind these permissions when working with tags:
 [#create-tag]
 == Create a Tag
 
-Only administrator users can create tags. Anyone can apply the tags you create, or use them as filters when selecting from a list of sources or Liveboards.
+Only administrators can create tags. Anyone can apply the tags you create, or use them as filters when selecting from a list of sources or Liveboards.
 
-To create a Tag:
+=== Create a tag from the Answer or Liveboard page
 
-. Select either *Answers* or *Liveboards* from the top navigation bar.
-. Choose the currently selected tag, scroll to the bottom of the list, and click **+ Add**.
+To create a tag from the Answer or Liveboard page, follow these steps:
+
+. Select *Answers* or *Liveboards* from the top navigation bar.
+. Click the currently selected tag, or click *Select tag*, scroll to the bottom of the list, and click **+ Add**.
 +
-image::tags-add.png[Add a tag]
+image::tag-add-answers-page.png[Add a tag]
 . Type the name for the new tag.
 . You can change the name of a tag by clicking the edit icon next to its name.
 +
@@ -26,6 +28,27 @@ image::tags-edit.png[Edit a tag]
 . You can change the color of a tag by clicking the color circle next to its name.
 +
 image::tags-edit-color.png[Edit a tag color]
+
+[#data-workspace-create]
+=== Create a tag from the Data workspace
+To create a tag from the Data workspace, follow these steps. Note that you must be an administrator to create a tag.
+
+. Select *Data* in the top navigation bar.
+. Select the empty checkbox next to an object that you would like to tag.
+
+. Select *Edit tags* from the options at the top of the object list.
+
+. The *Edit tags* modal appears.
+
+. Type the name of the tag you would like to create.
+
+. Select *+ Add tag `<tag name>`*.
++
+image::add-tag-data-workspace.png[Select + Add tag]
+
+. Type the names of any additional tags you would like to create, and select *+ Add tag `<tag name>`*.
+
+. If you would like to create the tag without adding it to the object(s), select *Cancel* in the *Edit tags* modal. If you would like to create the tag and add it to the object, select *Save* in the *Edit tags* modal.
 
 [#apply-a-tag]
 == Apply a tag
@@ -43,17 +66,17 @@ To tag an answer or Liveboard with a tag, follow these steps:
 . Find the item(s) you want to tag in the list, and check the box next to its name.
 . Click the apply tag icon and choose one from the list. You can apply as many tags as you like to an object.
 
-[#data-workspace]
+[#data-workspace-apply]
 === Apply tags to tables, worksheets, views, or SQL views
 To apply a tag to a table, worksheet, view, or SQL view, follow these steps:
 
 . From the top navigation bar, select *Data*.
 
-. Select the checkbox next to the name of the object.
+. Select the checkbox next to the name of the object(s).
 
-. Select *Edit tags* from the options at the top of the object list. Note that this option is not available if you select multiple objects.
+. Select *Edit tags* from the options at the top of the object list.
 
-. The *Edit tags* modal appears. To see existing tags appear in the dropdown, start typing. Use the space bar to see all tags.
+. The *Edit tags* modal appears. To see all tags, click anywhere in the text box of the modal. To narrow down the results in the dropdown, start typing. For example, type `sales` to see all tags related to sales.
 
 . Select a tag. You can continue to add tags as necessary.
 
@@ -69,11 +92,36 @@ Note that you can only filter by one tag at a time in the UI. To get a list of T
 To filter by tag:
 
 . From the top menu, choose **Answers**, **Liveboards**, or **Data**.
-. Click on **Select tag**, and select the name of the tag you want to filter by.
+. On the *Answers* or *Liveboards* pages, click *Select tag*, and select the name of the tag you want to filter by.
 +
 image::tags-filter.png[Filter by a tag]
++
+On the Data workspace home page, select the *All tags* dropdown, and select the name of the tag you want to filter by.
++
+image::select-tag-data-workspace.png[Select a tag from the dropdown]
 
 [#unfilter-tags]
 === Remove a tag filter
 
 To remove a tag filter and see all objects again, select the tag you filtered on in the tag list.
+
+== Remove a tag
+You can remove a tag from an object from the object list page, for Answers and Liveboards, or the Data Workspace home page, for tables, Worksheets, views, and SQL views.
+
+To remove a tag for an Answer or Liveboard, follow these steps:
+
+. Navigate to the *Answers* or *Liveboards* page, from the top navigation bar.
+
+. Select the *x* that appears when you hover over the tag name for the object.
+
+To remove a tag for a table, Worksheet, view, or SQL view, follow these steps:
+
+. Navigate to the *Data workspace* by selecting *Data* from the top navigation bar.
+
+. Select the checkbox next to the name(s) of the object(s).
+
+. Select *Edit tags* from the options at the top of the object list.
+
+. The *Edit tags* modal appears. Select the *x* next to the tag(s) you would like to remove.
+
+. Select *Save*.
