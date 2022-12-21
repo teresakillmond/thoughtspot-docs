@@ -70,12 +70,12 @@ You can use `DOUBLE` or `VARCHAR` for latitude and longitude data. See the follo
 
 image::geoconfig-zipcodes.png[Geo data example]
 
-Here, the zipcodes were imported as text values. By default, the `data type` is `VARCHAR`, the `column type` is `attribute`, and `additive` is `no`.
+Here, the zip codes were imported as text values. By default, the `data type` is `VARCHAR`, the `column type` is `attribute`, and `additive` is `no`.
 
 [NOTE]
 ====
 * You *must* specify the `geo config` for the data. ThoughtSpot does not specify geo config automatically.
-* If you import zipcodes as numeric values, the `column type` defaults to  `measure`. Because `measures` are numeric values used in mathematical formulas and as default aggregations, you *must* change the `column type` to `attribute` and specify `additive` as `no`.
+* If you import zip codes as numeric values, the `column type` defaults to  `measure`. Because `measures` are numeric values used in mathematical formulas and as default aggregations, you *must* change the `column type` to `attribute` and specify `additive` as `no`.
 ====
 
 [#lat-long]
@@ -128,7 +128,7 @@ Country::
 
 [#sub]
 Sub-nation region::
-  Regions could be Countries, States, districts, zipcodes, postal codes, provinces (for example, in Canada), prefectures (in Japan), and so on.
+  Regions could be Countries, States, districts, zip codes, postal codes, provinces (for example, in Canada), prefectures (in Japan), and so on.
 +
 [tabset]
 ====
