@@ -17,18 +17,41 @@ For these instructions, see xref:ts-cloud-getting-started.adoc[Getting Started w
 [#9-0-0-cl-analyst]
 === For the Analyst
 
-//
+Delete joins and RLS rules through TML::
+When you edit and import TML files, ThoughtSpot now supports deletion of joins and RLS rules. Refer to xref:tml.adoc[].
+
+Export FQNs when exporting TML files::
+
+To reduce ambiguity when exporting TML files, export the fully qualified names (FQNs) for the objects' data sources. If you select this option, the TML file contains FQNs for the underlying tables and connections.
++
+For more information, see xref:tml.adoc#fqn[ThoughtSpot Modeling Language].
+
+Upload custom geo maps::
+
+Upload your own custom maps and visualize data on xref:chart-geo.adoc[geo charts] with regions that are specific to you and your organization. This feature must be enabled by your administrator.
++
+For more information about custom geo maps, see xref:geomaps-custom.adoc[].
 
 [#9-0-0-cl-business-user]
 === For the Business User
 
-ThoughtSpot Sync Salesforce connection::
+Mandatory Liveboard filters::
+
+Mark certain filters in your Liveboard as mandatory. If you add mandatory filters to a Liveboard, the visualizations will only load after Liveboard viewers select values for the mandatory filters. Use mandatory filters for Liveboards that contain data that may not be relevant for everyone who must view and consume the Liveboard. Mandatory filters also lower query and performance costs. This feature must be enabled by your administrator.
++
+For more information about mandatory filters, see xref:liveboard-filters-mandatory.adoc[].
+
+ThoughtSpot Sync ServiceNow connection [.label.label-dep]#Deprecated#:: You can now sync data directly from an Answer or custom SQL view to ServiceNow. Using ThoughtSpot Sync, you can push insights directly to ServiceNow, notify your teams, and view data in context. ThoughtSpot Sync automatically establishes a secure pipeline to the destination app and thus eliminates the need for building custom connectors.
+
+ThoughtSpot Sync HubSpot connection::
+You can now sync data directly from an Answer or custom SQL view to Hubspot. Using ThoughtSpot Sync, you can push insights directly to Hubspot, notify your teams, and view data in context. ThoughtSpot Sync automatically establishes a secure pipeline to the destination app and thus eliminates the need for building custom connectors. +
+For more information, see xref:sync-hubspot.adoc[].
 
 //
 
 Rename Liveboards and visualizations without entering edit mode::
 
-Change the name of a Liveboard or visualization without entering *Edit* mode. The more image:icon-more-10px.png[more menu icon] menu for Liveboards and Liveboard visualizations now includes a *Rename* option. For more information, see xref:liveboard-layout-edit.adoc#other-edits[Other Liveboard edits].
+Change the name or description of a Liveboard or visualization without entering *Edit* mode. The more image:icon-more-10px.png[more menu icon] menu for Liveboards and Liveboard visualizations now includes a *Rename* option, where you can edit the object name and description. For more information, see xref:liveboard-layout-edit.adoc#other-edits[Other Liveboard edits].
 
 [#9-0-0-cl-data-engineer]
 === For the Data Engineer
@@ -40,6 +63,12 @@ Change the name of a Liveboard or visualization without entering *Edit* mode. Th
 Snowflake CSV upload is GA in this release. Now you have a quick and easy way to complete one-time data loads of small files that are not present in your cloud data warehouse. You can now upload a CSV file to the database of your Snowflake connection that can be joined to other tables or Worksheets in your connection. Once your administrator enables this feature, go to *Data* > *Utilities*, and click *Upload CSV*. See xref:connections-snowflake-csv-upload-config.adoc[Configure CSV upload for your Snowflake connection].
 
 image::csv-upload-app.png[CSV upload]
+
+
+PostgreSQL connection:: You can now create connections from ThoughtSpot to PostgreSQL. For details, see xref:connections-postgresql.adoc[PostgreSQL].
+
+Sharing Connections::
+Users with *can manage data* or *admin* privileges can now share Connections with other users or groups that have *can manage data* privileges. Once granted access to a connection, users can add, remove, and modify tables in that connection.
 
 [#9-0-0-cl-it-ops-engineer]
 === For the IT/Ops Engineer
