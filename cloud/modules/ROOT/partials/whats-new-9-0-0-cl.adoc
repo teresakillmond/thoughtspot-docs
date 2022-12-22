@@ -16,17 +16,29 @@ endif::free-trial-feature[]
 [discrete]
 === Admin section for early access features
 
-// Mark or Teresa
+// Mark
 
 [#9-0-0-cl-sync-servicenow]
 [discrete]
 === ThoughtSpot Sync ServiceNow connection
+
 You can now sync data directly from an Answer or custom SQL view to ServiceNow. Using ThoughtSpot Sync, you can push insights directly to ServiceNow, notify your teams, and view data in context. ThoughtSpot Sync automatically establishes a secure pipeline to the destination app and thus eliminates the need for building custom connectors.
 
 [#9-0-0-cl-sync-hubspot]
 [discrete]
 === ThoughtSpot Sync HubSpot connection
+
 You can now sync data directly from an Answer or custom SQL view to Hubspot. Using ThoughtSpot Sync, you can push insights directly to Hubspot, notify your teams, and view data in context. ThoughtSpot Sync automatically establishes a secure pipeline to the destination app and thus eliminates the need for building custom connectors.
+
+For more information, see
+ifndef::pendo-links[]
+xref:sync-hubspot.adoc[Sync data from ThoughtSpot to HubSpot].
+endif::[]
+ifdef::pendo-links[]
+xref:sync-hubspot.adoc[Sync data from ThoughtSpot to HubSpot,window=_blank].
+endif::[]
+
+image:sync-hubspot.png[]
 
 [#9-0-0-cl-parameters]
 [discrete]
@@ -36,9 +48,17 @@ You can now sync data directly from an Answer or custom SQL view to Hubspot. Usi
 
 [#9-0-0-cl-mandatory-filters]
 [discrete]
-=== Mandatory filters
+=== Mandatory Liveboard filters
 
-// Teresa. early access
+Mark certain filters in your Liveboard as mandatory. If you add mandatory filters to a Liveboard, the visualizations will only load after Liveboard viewers select values for the mandatory filters. Use mandatory filters for Liveboards that contain data that may not be relevant for everyone who must view and consume the Liveboard. Mandatory filters also lower query and performance costs. This feature must be enabled by your administrator. For more information about mandatory filters, see
+ifndef::pendo-links[]
+xref:liveboard-filters-mandatory.adoc[Mandatory Liveboard filters].
+endif::[]
+ifdef::pendo-links[]
+see xref:liveboard-filters-mandatory.adoc[Mandatory Liveboard filters,window=_blank].
+endif::[]
+
+image::liveboard-filters-mandatory.gif[Gif of a Liveboard with a mandatory filter]
 
 [#9-0-0-cl-pivot-measures]
 [discrete]
@@ -48,20 +68,41 @@ You can now sync data directly from an Answer or custom SQL view to Hubspot. Usi
 
 [#9-0-0-cl-custom-map]
 [discrete]
-=== Custom shapes in maps: Allow geomap data to be visualized in custom shapes
+=== Upload custom geo maps
 
-// Teresa. Early access
+Upload your own custom maps and visualize data on geo charts with regions that are specific to you and your organization. This feature must be enabled by your administrator. For more information about custom geo maps, see
+ifndef::pendo-links[]
+xref:geomaps-custom.adoc[Upload custom geo maps].
+endif::[]
+ifdef::pendo-links[]
+see xref:geomaps-custom.adoc[Upload custom geo maps,window=_blank].
+endif::[]
+
+image::custom-map-example.png[Custom geo map being added]
+
+// I want a 'before and after' with an image of a TS search but that is in progress
 
 [#9-0-0-cl-postgresql]
 [discrete]
 === PostgreSQL connection
-In this release, PostgreSQL is a new connection type. For details, see xref:connections-postgresql.adoc[PostgreSQL].
+
+You can now create connections from ThoughtSpot to PostgreSQL. For details, see
+ifndef::pendo-links[]
+xref:connections-postgresql.adoc[PostgreSQL].
+endif::[]
+ifdef::pendo-links[]
+xref:connections-postgresql.adoc[PostgreSQL,window=_blank].
+endif::[]
 
 [#9-0-0-cl-labels]
 [discrete]
 === Data labels not visible on dark colored charts
+9.0.0.cl
 It is the early access feature, by default it is disabled.Admins can enable it through the admin portal. Now, Data labels are visible even in dark background charts.
 
+=======
+It is the early access feature, by default it is disabled. Admins can enable it through the admin portal. Now, Data labels are visible even in dark background charts.
+ 9.0.0.cl
 // Yochana. early access
 
 [#9-0-0-cl-google-signup]
@@ -80,14 +121,14 @@ It is the early access feature, by default it is disabled.Admins can enable it t
 [discrete]
 === GroupAggregate Enhancements: Filters
 
-// Naomi
+// Naomi-- behind a flag and limited availability
 
 
 [#9-0-0-cl-rename]
 [discrete]
 === Rename Liveboards and visualizations without entering edit mode
 
-Change the name of a Liveboard or visualization without entering *Edit* mode. The more image:icon-more-10px.png[more menu icon] menu for Liveboards and Liveboard visualizations now includes a *Rename* option. For more information, see
+Change the name or description of a Liveboard or visualization without entering *Edit* mode. The more image:icon-more-10px.png[more menu icon] menu for Liveboards and Liveboard visualizations now includes a *Rename* option, where you can edit the object name and description. For more information, see
 ifndef::pendo-links[]
 xref:liveboard-layout-edit.adoc#other-edits[Other Liveboard edits].
 endif::[]
@@ -119,17 +160,41 @@ THE FOLLOWING ARE NEEDS EVALUATION
 
 // Yochana
 
-[#9-0-0-cl-zoho]
+ifndef::free-trial-feature[]
+ifdef::pendo-links[]
+[#9-0-0-cl-zoho-sync]
 [discrete]
-=== TS-Sync: Adding Zoho Destination ( beta)
-
+=== ThoughtSpot Sync Zoho connection [.badge.badge-beta-whats-new]#Beta#
+endif::[]
+ifndef::pendo-links[]
+[#9-0-0-cl-zoho-sync]
+[discrete]
+=== ThoughtSpot Sync Zoho connection [.badge.badge-beta]#Beta#
+endif::[]
 // Naomi
 
-[#9-0-0-cl-gainsight]
-[discrete]
-=== TS-Sync: Adding Gainsight Destination (beta)
+You can now sync data directly from an Answer or custom SQL view to Zoho. Using ThoughtSpot Sync, you can push insights directly to Zoho, notify your teams, and view data in context. ThoughtSpot Sync automatically establishes a secure pipeline to the destination app and thus eliminates the need for building custom connectors.
 
+
+endif::free-trial-feature[]
+
+ifndef::free-trial-feature[]
+ifdef::pendo-links[]
+[#9-0-0-cl-gainsight-sync]
+[discrete]
+=== ThoughtSpot Sync Gainsight connection [.badge.badge-beta-whats-new]#Beta#
+endif::[]
+ifndef::pendo-links[]
+[#9-0-0-cl-gainsight-sync]
+[discrete]
+=== ThoughtSpot Sync Gainsight connection [.badge.badge-beta]#Beta#
+endif::[]
 // Naomi
+
+You can now sync data directly from an Answer or custom SQL view to Gainsight. Using ThoughtSpot Sync, you can push insights directly to Gainsight, notify your teams, and view data in context. ThoughtSpot Sync automatically establishes a secure pipeline to the destination app and thus eliminates the need for building custom connectors.
+
+
+endif::free-trial-feature[]
 
 '''
 [#secondary-9-0-0-cl]
@@ -157,9 +222,11 @@ image::csv-upload-app.png[CSV upload]
 
 [#9-0-0-cl-connection-share]
 [discrete]
-=== Sharing Embrace connections
+=== Sharing Connections
 
 // Naomi
+
+Users with *can manage data* or *admin* privileges can now share Connections with other users or groups that have *can manage data* privileges. Once granted access to a connection, users can add, remove, and modify tables in that connection.
 
 [#9-0-0-cl-dbt-meta]
 [discrete]
@@ -169,15 +236,18 @@ image::csv-upload-app.png[CSV upload]
 
 [#9-0-0-cl-fqn]
 [discrete]
-=== Export fqn option on UI
+=== Export FQNs when exporting TML files
 
-// Teresa
+To reduce ambiguity when exporting TML files, export the fully qualified names (FQNs) for the objects' data sources. If you select this option, the TML file contains FQNs for the underlying tables and connections. For more information, see
+ifndef::pendo-links[]
+xref:tml.adoc#fqn[ThoughtSpot Modeling Language].
+endif::[]
+ifdef::pendo-links[]
+see xref:tml.adoc#fqn[ThoughtSpot Modeling Language,window=_blank].
+endif::[]
 
-[#9-0-0-cl-generic-join]
-[discrete]
-=== Generic Join Creation via UI
+image::tml-export-fqn.png[Choose what to export modal with the export fqn option highlighted]
 
-// Naomi
 
 [#9-0-0-cl-redshift]
 [discrete]
@@ -185,11 +255,26 @@ image::csv-upload-app.png[CSV upload]
 
 // Naomi
 
+Redshift Partner Connect allows you to try out ThoughtSpot connected to Redshift for free.
+For details,
+ifndef::pendo-links[]
+see xref:connections-redshift-partner.adoc[ThoughtSpot in Redshift Partner Connect].
+endif::[]
+ifdef::pendo-links[]
+see xref:connections-redshift-partner.adoc[ThoughtSpot in Redshift Partner Connect,window=_blank].
+endif::[]
+
 [#9-0-0-cl-joins-rls]
 [discrete]
-=== Deletion of joins and RLS-rules during TML import
+=== Delete joins and RLS rules through TML
 
-// Teresa
+When you edit and import TML files, ThoughtSpot now supports deletion of joins and RLS rules.  For more information, see
+ifndef::pendo-links[]
+xref:tml.adoc[ThoughtSpot Modeling Language].
+endif::[]
+ifdef::pendo-links[]
+see xref:tml.adoc[ThoughtSpot Modeling Language],window=_blank].
+endif::[]
 
 [#9-0-0-cl-tml-monitor]
 [discrete]
@@ -227,7 +312,9 @@ THE FOLLOWING ARE NEEDS EVALUATION
 [discrete]
 === Snowflake Partner Connect Free-Trial Integration on my1/my2 clusters
 
-// Naomi
+// Naomi-- GA
+
+// feature works the same, but now redirects you to a my1 or my2 cluster instead of try.thoughtspot.com. Asking for confirmation about when one cluster is selected rather than the other.
 
 ifndef::free-trial-feature[]
 [discrete]
