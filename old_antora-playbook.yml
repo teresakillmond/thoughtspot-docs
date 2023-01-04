@@ -1,6 +1,6 @@
 site:
-  title: ThoughtSpot Documentation
-  url: https://help-cloud-thoughtspot.netlify.app
+  title: ThoughtSpot Cloud
+  url: https://beta-docs-thoughtspot.netlify.app
   start_page: cloud::index.adoc
 content:
   sources:
@@ -10,13 +10,10 @@ content:
     start_paths:
       - cloud/
 urls:
-  latest_version_segment_strategy: redirect:to
-  latest_version_segment: latest
   html_extension_style: drop
 ui:
   bundle:
-    # url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
-    url: ui-bundle/help-ui-bundle.zip
+    url: ui-bundle/ui2-bundle.zip
   supplemental_files:
   - path: .nojekyll
   - path: ui.yml
@@ -24,21 +21,14 @@ ui:
     snapshot: true
 asciidoc:
   attributes:
-    #software: true
-    #cloud: false
-    help: ''
-    page-company: ThoughtSpot
+    software: true
+    cloud: false
     tabs: tabs
     support-url: https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support^]
-    seekwell: SeekWell
     cl-subscription-agreement: https://www.thoughtspot.com/legal/thoughtspot-cloud-subscription-agreement[subscription agreement^]
   extensions:
-  - ./lib/asciidoctor-performance-patch.js
-  - "@djencks/asciidoctor-tabset-block"
+    - "@djencks/asciidoctor-tabset-block"
+
 output:
   clean: true
-  dir: build/
-runtime:
-  fetch: true
-  log:
-    level: error
+  dir: build
