@@ -329,11 +329,11 @@ If the data type is `BOOL`, `VARCHAR`, `DOUBLE`, `FLOAT`, `DATE`, `DATETIME`, or
 
 [#comparator]
 comparator::
-The operator used in the condition of a Monitor threshold-based alert. The options are `COMPARATOR_GT` (greater than), `COMPARATOR_LT` (less than), `COMPARATOR_GEQ` (greater than or equal to), `COMPARATOR_LEQ` (less than or equal to), `COMPARATOR_EQ` (equal to), or `COMPARATOR_NEQ` (not equal to).
+The operator used in the condition of a Monitor threshold-based alert. The options are `COMPARATOR_GT` (greater than), `COMPARATOR_LT` (less than), `COMPARATOR_GEQ` (greater than or equal to), `COMPARATOR_LEQ` (less than or equal to), `COMPARATOR_EQ` (equal to), `COMPARATOR_NEQ` (not equal to), `PERCENTAGE_CHANGE_COMPARATOR_CHANGES_BY` (changes by %), `PERCENTAGE_CHANGE_COMPARATOR_INCREASES_BY` (increases by %), `PERCENTAGE_CHANGE_COMPARATOR_DECREASES_BY` (decreases by %). The `PERCENTAGE_CHANGE` operators are only valid if your KPI includes a xref:search-time.adoc[time-series keyword], such as `weekly`.
 
 [#condition]
 condition::
-Container for the Monitor threshold-based alert condition. To change a threshold-based alert to a scheduled alert, remove the `condition` section.
+Container for the Monitor threshold-based alert condition. Contains either a simple condition or a percentage change condition. To change a threshold-based alert to a scheduled alert, remove the `condition` section.
 
 [#conditional_formatting]
 conditional_formatting::
@@ -421,7 +421,7 @@ If the visualization is a headline, this parameter specifies the column the head
 [#end_time]
 end_time::
 
-// TBA
+The epoch time at which the alert should end. This is almost always 0, which means the alert continues to be triggered indefinitely. Do not edit this parameter.
 
 [#excluded_visualizations]
 excluded_visualizations::
@@ -668,9 +668,7 @@ Top-level container for all object definitions within the Monitor alert.
 
 [#month]
 month::
-The numbered months of the year (1-12) in which the Monitor alert should be sent. For example, to send an alert only in March and September, specify `'3,9'`.
-
-// maybe? need to ask
+The numbered months of the year (1-12, starting with January) in which the Monitor alert should be sent. For example, to send an alert only in March and September, specify `'3,9'`.
 
 [#name]
 name::
@@ -694,6 +692,11 @@ Accepted operators are `"in"`, `"not in"`, `"between"`, `=<`, `!=`, `+<=+`, `>=`
 [#ordered_column_ids]
 ordered_column_ids::
 A list of columns, in the order they appear in the table.
+
+[#percentage_change_condition]
+percentage_change_condition::
+
+Container for the Monitor threshold-based alert condition, if the alert condition involves a percentage change. If the alert condition involves a simple condition (greater than, less than, equal, not equal to, greater than or equal to, less than or equal to), ThoughtSpot uses `simple_condition` instead of `percentage_change_condition`.
 
 [#phrase]
 phrase::
@@ -756,7 +759,7 @@ Refer to https://developers.thoughtspot.com/docs/?pageid=search-data-api[Compone
 
 [#second]
 second::
-Specifies the second that a Monitor alert is scheduled to be sent. For example, if you specify `"30"` for the `second` parameter, `9` for the `hour` parameter, and `17` for the minute parameter, ThoughtSpot sends the Monitor alert at 9:17 and 30 seconds.
+Specifies the second that a Monitor alert is scheduled to be sent. For example, if you specify `"30"` for the `second` parameter, `9` for the `hour` parameter, and `17` for the minute parameter, ThoughtSpot sends the Monitor alert at 9:17 and 30 seconds. You can only specify seconds in TML, not in the UI.
 
 [#show_headline]
 show_headline::
@@ -765,7 +768,7 @@ Determines whether to show the headline for this column.
 
 [#simple_condition]
 simple_condition::
-Container for the Monitor threshold-based alert condition.
+Container for the Monitor threshold-based alert condition. If the alert condition involves a percentage change, ThoughtSpot uses `percentage_change_condition` instead of `simple_condition`.
 
 [#size]
 size::
@@ -804,7 +807,7 @@ Each column is identified by `name`, `description`, and `properties`.
 [#start_time]
 start_time::
 
-// TBA
+The epoch time at which the user created the alert. Do not edit this parameter.
 
 [#subscribed_user]
 subscribed_user::
