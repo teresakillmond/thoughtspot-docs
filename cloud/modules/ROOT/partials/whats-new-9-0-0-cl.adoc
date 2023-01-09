@@ -73,6 +73,7 @@ endif::free-trial-feature[]
 [discrete]
 === PostgreSQL connection
 
+// Naomi
 You can now create connections from ThoughtSpot to PostgreSQL.
 
 [#9-0-0-cl-labels]
@@ -81,11 +82,29 @@ You can now create connections from ThoughtSpot to PostgreSQL.
 
 // Yochana. early access
 
+ifdef::free-trial-feature[]
 [#9-0-0-cl-google-signup]
 [discrete]
-=== Free trial - "Sign up with Google" to improve conversion rate
+=== Free trial: Sign up with Google
 
 // Naomi. Free trial only
+
+In addition to using Free Trial's default sign in, you can now sign in using your Google account. Note that you must use the Google account associated with your ThoughtSpot user account to sign in.
+
+image:ft-google-sign.png[Free Trial sign in with Google]
+endif::[]
+
+ifdef::free-trial-feature[]
+[#9-0-0-cl-free-trial-row-limits]
+[discrete]
+=== Free Trial - Show row limits
+
+// Naomi. Free trial only
+
+When using Free Trial, users are limited to a maximum of 5 million rows. You can now check to see what percent of the row limit you are using, under menu:Admin[Data usage].
+
+image::ft-row.png[Free Trial row limit]
+endif::[]
 
 [#9-0-0-cl-chinese-traditional]
 [discrete]
@@ -97,8 +116,14 @@ You can now create connections from ThoughtSpot to PostgreSQL.
 [discrete]
 === GroupAggregate Enhancements: Filters
 
-// Naomi
+// Naomi-- behind a flag and limited availability
 
+Previously, when using group_aggregate formulas, users could choose to include all filters entered in the search bar by using query_filters, but it was difficult to specify which filters to ignore in the formula. Starting with this release, you can specify column names within the ‘filters’ section of a group_aggregate formula, and any filter in your search bar referencing that column will be added to the formula. Filters entered in the search bar that are not on columns specified in the group_aggregate filter will be ignored.
+
+For example:
+If you search for `fx` `color= ‘blue’` `ship mode != ‘car’`
+Where fx = group_aggregate (sum(Revenue), {ship mode}, {color, quantity})
+then the formula will evaluate to `group_aggregate(sum(Revenue), {ship mode}, {color = ‘blue’})`.
 
 [#9-0-0-cl-rename]
 [discrete]
@@ -252,6 +277,8 @@ THE FOLLOWING ARE NEEDS EVALUATION
 === Snowflake Partner Connect Free-Trial Integration on my1/my2 clusters
 
 // Naomi
+
+// feature works the same, but now redirects you to a my1 or my2 cluster instead of try.thoughtspot.com. My1 or My2 chosen at random.
 
 ifndef::free-trial-feature[]
 [discrete]
