@@ -46,13 +46,17 @@ a| <<aggregation,aggregation>>
 
 <<db_table,db_table>>
 
+<<default_value,default_value>>
+
 <<description,description>>
 
 <<destination,destination>>
 
+<<display_headline_column,display_headline_column>>
+
 <<display_mode,display_mode>>
 
-<<display_headline_column,display_headline_column>>
+<<display_name,display_name>>
 
 <<expr,expr>>
 
@@ -71,6 +75,10 @@ a| <<filters,filters>>
 <<headline_aggregation,headline_aggregation>>
 
 <<id,id>>
+
+<<include_max,include_max>>
+
+<<include_min,include_min>>
 
 <<index_priority,index_priority>>
 
@@ -94,7 +102,13 @@ a| <<filters,filters>>
 
 <<joins,joins>>
 
+<<key,key>>
+
 <<layout,layout>>
+
+<<list_choice,list_choice>>
+
+<<list_config,list_config>>
 
 <<locked,locked>>
 
@@ -110,7 +124,15 @@ a| <<filters,filters>>
 
 <<ordered_column_ids,ordered_column_ids>>
 
-a| <<phrase,phrase>>
+a| <<parameter_overrides,paramater_overrides>>
+
+<<parameter_values,paramater_values>>
+
+<<parameters,parameters>>
+
+<<percentage_change_condition,percentage_change_condition>>
+
+<<phrase,phrase>>
 
 <<pinboard,pinboard>>
 
@@ -119,6 +141,12 @@ a| <<phrase,phrase>>
 <<plotAsBand,plotAsBand>>
 
 <<range,range>>
+
+<<range_config,range_config>>
+
+<<range_max,range_max>>
+
+<<range_min,range_min>>
 
 <<rls_rules,rls_rules>>
 
@@ -282,9 +310,8 @@ custom_name::
 [#data_type]
 data_type::
   The data type of the formula output or column.
-If the data type is `INT` or `BIGINT`, the formula output's `column_type` defaults to `Measure`.
+If the data type is `INT32` or `INT64`, the formula output's `column_type` defaults to `Measure`.
 If the data type is `BOOL`, `VARCHAR`, `DOUBLE`, `FLOAT`, `DATE`, `DATETIME`, or `TIME`, the formula output's `column_type` defaults to `Attribute`.
-The possible data types are `Boolean`, `Text`, `Date`, `Datetime`, `Time`, `Numeric`, and `Decimal`.
 
 [#db]
 db::
@@ -305,6 +332,10 @@ db_table::
   The name of the table in the database.
 Note that this database is not the same as the data warehouse (Falcon, Amazon Redshift, or Snowflake, for example).
 
+[#default_value]
+default_value::
+The default value for a parameter in a Worksheet. Specififed when xref:parameters-create.adoc[creating a parameter].
+
 [#description]
 description::
   The text that describes an object: a `worksheet`, a `worksheet_column`, `answer`, `pinboard`, `view`, `view_column` and so on.
@@ -313,14 +344,18 @@ description::
 destination::
   The name of the destination table or view for a join.
 
+[#display_headline_column]
+display_headline_column::
+If the visualization is a headline, this parameter specifies the column the headline comes from.
+
 [#display_mode]
 display_mode::
   Determines whether the answer displays as a chart or a table.
 Specify either `CHART_MODE` or `TABLE_MODE`.
 
-[#display_headline_column]
-display_headline_column::
-  If the visualization is a headline, this parameter specifies the column the headline comes from.
+[#display_name]
+display_name::
+The name or value that displays in the parameter dialog for an accepted value, if a display name was set when xref:parameters-create.adoc[creating a parameter]. For example, if the parameter accepts `true` and `false`, the display names might be `yes` and `no`.
 
 [#excluded_visualizations]
 excluded_visualizations::
@@ -397,6 +432,21 @@ Refer to link:https://developers.thoughtspot.com/docs/?pageid=search-data-api#co
 For formulas within answers, `id` refers to the display name of the formula.
 +
 If you do not give your formula a name, it appears as 'Untitled Formula'.
+
+
+[#include_max]
+include_max::
+
+// NEED MORE INFO
+
+Valid values are `true` and `false`.
+
+[#include_min]
+include_min::
+
+// NEED MORE INFO
+
+Valid values are `true` and `false`.
 
 [#index_priority]
 index_priority::
@@ -516,9 +566,21 @@ joins_with::
   Contains a list of external joins for which this table is the source. +
   Each join is identified by `name` and optional `description`, and the additional attributes of `destination`, `type`, `on`, and `is_one_to_one`.
 
+[#key]
+key::
+Name of the xref:parameters-create.adoc[parameter] referenced in a formula in an Answer.
+
 [#layout]
 layout::
   Specifies the Liveboard layout, in the order that a `visualization_id` is listed.
+
+[#list_choice]
+list_choice::
+Contains the list of accepted values for a parameter, if a list was configured when xref:parameters-create.adoc[creating a parameter].
+
+[#list_config]
+list_config::
+Contains the list of accepted values for a parameter, if a list was configured when xref:parameters-create.adoc[creating a parameter].
 
 [#locked]
 locked::
@@ -556,6 +618,19 @@ Accepted operators are `"in"`, `"not in"`, `"between"`, `=<`, `!=`, `+<=+`, `>=`
 ordered_column_ids::
   A list of columns, in the order they appear in the table.
 
+[#parameter_overrides]
+parameter_overrides::
+
+// NEED DEFINITION
+
+[#parameter_values]
+parameter_values::
+Container for the xref:parameters-create.adoc[parameters] in an Answer.
+
+[#parameters]
+parameters::
+Container for the xref:parameters-create.adoc[parameters] in a Worksheet.
+
 [#phrase]
 phrase::
   Phrase associated with a view column.
@@ -583,6 +658,18 @@ This is the 'fill chart' option in the UI.
 [#range]
 range::
   Range for the conditional formatting to apply to, with a specified `min` and `max`.
+
+[#range_config]
+range_config::
+Contains the minimum and maximum values for the range of values allowed for a parameter, if a range is specified when xref:parameters-create.adoc[creating a parameter].
+
+[#range_max]
+range_max::
+The maximum value for the range of values allowed for a parameter, if a range is specified when xref:parameters-create.adoc[creating a parameter].
+
+[#range_min]
+range_min::
+The minimum value for the range of values allowed for a parameter, if a range is specified when xref:parameters-create.adoc[creating a parameter].
 
 [#rls_rules]
 rls_rules::
@@ -695,6 +782,12 @@ Possible values: `Snowflake`, `Google BigQuery`, `Microsoft Azure`, or `Amazon R
 Within the `chart` section of an Answer TML file, this is the chart type.
 +
 Possible values: `COLUMN`, `BAR`, `LINE`, `PIE`, `SCATTER`, `BUBBLE`, `STACKED_COLUMN`, `AREA`, `PARETO`, `COLUMN`, `GEO_AREA`, `GEO_BUBBLE`, `GEO_HEATMAP`, `GEO_EARTH_BAR`, `GEO_EARTH_AREA`, `GEO_EARTH_GRAPH`, `GEO_EARTH_BUBBLE`, `GEO_EARTH_HEATMAP`, `WATERFALL`, `TREEMAP`, `HEATMAP`, `STACKED_AREA`, `LINE_COLUMN`, `FUNNEL`, `LINE_STACKED_COLUMN`, `PIVOT_TABLE`, `SANKEY`, `GRID_TABLE`, `SPIDER_WEB`, `WHISKER_SCATTER`, `STACKED_BAR`, or `CANDLESTICK`.
+
+[#value]
+value::
+The accepted value for a parameter, if a list was configured when xref:parameters-create.adoc[creating a parameter].
++
+In an Answer or Liveboard, `value` refers to the configured value of the parameter referenced in a formula in the last saved state Answer or Liveboard.
 
 [#values]
 values::
