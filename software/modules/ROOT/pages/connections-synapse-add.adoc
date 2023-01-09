@@ -20,10 +20,28 @@ To add a connection to Synapse:
 +
 image::synapse-connectiontype.png[Add a Synapse connection]
 
-. Select *Use Service Account*, or *Use OAuth*, and enter the connection details for your Synapse data source
+. Select *Use Service Account*, or *Use OAuth*, and enter the connection details for your Synapse data source.
++
+NOTE: To use SQL Server with your Synapse connection, select *Use Service Account*.
 +
 image::synapse-connectiondetails.png[Enter connection details]
 +
+For Service Account authentication, do the following:
+
+** Enter Host, Port, User, Password, and Database.
++
+[IMPORTANT]
+.SQL Server configuration
+====
+If you are using SQL Server, do the following:
+* For Port, enter *1433*.
+* For User, enter the login for your SQL Server database.
+====
++
+--
+For OAuth authentication, do the following:
+** Enter Host, Port, OAuth Client ID, OAuth Client Secret, Scope, Auth Url, Access token Url, and Database.
+--
 Refer to the xref:connections-synapse-reference.adoc[Synapse connection reference] for more information on each of the specific attributes you must enter for your connection.
 
 . (Optional) Provide additional key-value pairs that you need to set up your connection to {connection} or customize additional JDBC parameters supported by {connection}, by doing the following:
