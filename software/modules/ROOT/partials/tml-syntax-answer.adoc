@@ -2,7 +2,7 @@
 
 The `TML` file for Scriptable Answers has a specific syntax.
 
-See the xref:parameters[TML parameters] for details about the keywords used in this example.
+See the xref:tml-parameters[TML parameters] for details about the keywords used in this example.
 
 You may not see each of these parameters in your own TML files, depending on whether each variable is explicitly defined.
 For example, if you did not define any conditional formatting, the `conditional_formatting` variable does not appear.
@@ -91,4 +91,11 @@ To reduce ambiguity, you may need to add the optional `fqn` parameter to your TM
     <<locked,locked>>: [ true | false ]
     <<client_state,client_state>>: <client_state_string>
   <<display_mode,display_mode>>: <display_mode_string>
+  <<parameter_values,parameter_values>>:
+  - <<key,key>>: <parameter_1_key>
+    <<value,value>>: <parameter_1_value>
+  - <<key,key>>: <parameter_2_key>
+    <<value,value>>: <parameter_2_value>
+  - <<key,key>>: <parameter_n_key>
+    <<value,value>>: <parameter_n_value>
 ....
