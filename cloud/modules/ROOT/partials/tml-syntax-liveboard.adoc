@@ -2,7 +2,7 @@
 
 The `TML` file for Scriptable Liveboards has a specific syntax.
 
-See the xref:parameters[TML parameters] for details about the keywords used in this example.
+See the xref:tml-parameters[TML parameters] for details about the keywords used in this example.
 
 You may not see each of these parameters in your own TML files, depending on whether each variable is explicitly defined.
 For example, if you do not have any filters on your Liveboard, the `filters` parameter does not appear.
@@ -77,5 +77,9 @@ Liveboard TML files exported from older versions still work. However, if you exp
       <<description,description>>: <tab_n_description>
       tiles:
       ...
-
+  <<parameter_overrides,parameter_overrides>>:
+  - <<key,key>>: <parameter_override_key>
+    <<value,value>>:
+      <<name,name>>: <parameter_override_name>
+      <<id,id>>: <parameter_override_id>
 ....
