@@ -1,56 +1,28 @@
-= Parameters
+= Using parameters
 :experimental:
-:last_updated: 1/6/2023
+:last_updated: 1/9/2023
 :author: Teresa Killmond
 :linkattrs:
 :page-layout: default-cloud-early-access
-:description: Create Worksheet parameters to optimize your data inquiries. Use parameters to run multiple scenarios with adjustable values, without changing your answer.
+:description: Use parameters to run multiple scenarios with adjustable values, without changing your answer.
 
-A parameter is a container or a placeholder such as a number, date, or string that can replace a constant value or a list of values. Create Worksheet parameters to optimize your data inquiries. Use parameters to run different scenarios with adjustable values, without changing your Answers or Liveboards.
+A parameter is a container or a placeholder such as a number, date, or string that can replace a constant value or a list of values. Create Worksheet parameters to optimize your data inquiries. Use parameters to run different scenarios with adjustable values, without creating or modifying the constants in formulas for each new value.
 
 Parameters are useful for 'what-if' analysis, financial planning, cohort analysis, and so on. When you create parameters for your Worksheet, you guide users in their exploration of the data as they search on your Worksheet.
+
+To learn how to create parameters, see xref:parameters-create.adoc[].
 
 .[.badge.badge-early-access]#Early Access#
 ****
 Parameters is an Early Access feature and is disabled by default. To enable it, contact your ThoughtSpot administrator. For more about Early Access features, see xref:release.adoc#early-access[ThoughtSpot Cloud release life cycle].
 ****
 
-== Create parameters
-There is no maximum number of parameters you can create for a single Worksheet. To create a parameter, follow these steps:
-
-. Navigate to the Worksheet to which you would like to add a parameter.
-. Select *Edit Worksheet* in the upper right corner.
-. In the *Data* panel on the left of your screen, select the *+* button that appears when you hover over the *Parameters* section.
-+
-image:parameter-add.png[Select the + button to add a parameter]
-. The *Create parameter* dialog appears:
-+
-image::parameter-create.png[Create parameter dialog]
-. In the *Parameter name* text box, enter a name for your parameter. This name should be unique for the Worksheet and easy for users to understand.
-. Optionally, enter a description for the parameter in the *Add a description* text box. Use this field to add additional information users might need before using this parameter in their analysis. It is a best practice to use this field to specify the formulas this parameter is used in, in addition to any other information you add.
-. Under *Data settings*, specify the data type the parameter must be: Integer, Double, String, Boolean, or Date. For more information about data types, refer to xref:data-types.adoc[].
-. For integer, double, or date data types, specify the allowed values: *Any*, *List*, or *Range*. For the string data type, specify either *Any* or *List*.
-+
-[horizontal]
-Any::
-Allows any value within the data type's constraints.
-List:: Allows values only in the list you create. Enter a value in the *Enter value...* text box, and optionally enter what the value should display as in the *Display as...* text box. To add more values, select *+ Add row*. To delete values, select the *x* to the right of the row the value is in.
-+
-image::parameter-list.png[Create a list of allowed values]
-Range:: Allows values only within the range you specify. In the *Minimum value* and *Maximum value* text boxes, specify the values the range begins and ends with.
-+
-image::parameter-range.png[Create a range of allowed values]
-. For the boolean data type, optionally set custom names for `true` and `false`; for example, `0` and `1`.
-. Set the default value for your parameter. In the default value text box, enter the value this parameter should default to. For the boolean data type, the *Default value* option is a dropdown.  `true` and `false` are the only options.
-. Select *Save*.
-. Save your Worksheet. Select *Save* in the upper right corner.
-
-== Use parameters
+== Using parameters
 Use parameters within formulas to run different scenarios when searching on your data or viewing Liveboards or Answers. For example, you may want to forecast your sales for the next month, based on various rates of growth. You might create a parameter, called `growth %`, with a range from 0 to 1 and a default value of .1. Then, you create a formula called `profit forecast`, defined by `profit * (1 + growth %)`. You can then create Answers and Liveboards that use this formula and change the parameter value to view your forecasted profit if your sales grow by 25%, 53%, and so on.
 
 Parameters work like column names in formulas, but appear in green. For more information about formulas, see xref:formula-add.adoc[].
 
-=== Change parameter values in an Answer
+== Changing parameter values in an Answer
 
 When you create or view an Answer that contains a formula with a Parameter, you'll know: ThoughtSpot displays the name of the parameter and its current value below the Answer description, in the row where it displays filters.
 
@@ -68,7 +40,7 @@ image::parameter-info.png[Parameter dialog with information button]
 
 . Depending on the type of parameter, you may see a text box or a list of values. Above the text box, you may see a range of values you can use; for example, you may see "Enter a value between 0 and 10000."
 +
-If there is a text box, enter a value in the text box that is valid for the data type and is within the specified range, if there is one. If there is no range, enter any value that is valid for the data type. For example, if the data type is `integer`, you cannot enter a decimal such as `6.4`.
+If there is a text box, enter a value in the text box that is valid for the data type and is within the specified range, if there is one. If there is no range, enter any value that is valid for the data type. For example, if the data type is `integer`, you can't enter a decimal such as `6.4`.
 +
 If there is a list of values, select the value you would like to use.
 
@@ -76,13 +48,13 @@ If there is a list of values, select the value you would like to use.
 
 . After you enter a new value or reset the value to the default value, select *Apply*.
 
-=== Change parameter values in a Liveboard
+== Changing parameter values in a Liveboard
 
 When you create or view a Liveboard that contains a formula with a parameter, you'll know: ThoughtSpot displays the name of the parameter and its current value below the Liveboard description, in the row where it displays filters.
 
 image::parameter-liveboard.png[Parameter name and value under the Liveboard description]
 
-If the parameter is set at its default value when you first create the Liveboard, it does not appear for users in view mode. To ensure that all users can see and use the parameter, follow these steps. You must have edit access for the Liveboard.
+If the parameter is not currently in use for any visualizations in the Liveboard, it does not appear for users in view mode. To ensure that all users can see and use the parameter, follow these steps. You must have edit access for the Liveboard.
 
 . Select the *Edit* button at the upper right of the Liveboard. If this button is grayed out, you do not have edit privileges for the Liveboard. To resolve this, contact your administrator or the creator of the Liveboard.
 
@@ -96,7 +68,7 @@ image::parameter-info.png[Parameter dialog with information button]
 
 . Depending on the type of parameter, you may see a text box or a list of values. Above the text box, you may see a range of values you can use; for example, you may see "Enter a value between 0 and 10000."
 +
-If there is a text box, enter a value in the text box that is valid for the data type and is within the specified range, if there is one. If there is no range, enter any value that is valid for the data type. For example, if the data type is `integer`, you cannot enter a decimal such as `6.4`.
+If there is a text box, enter a value in the text box that is valid for the data type and is within the specified range, if there is one. If there is no range, enter any value that is valid for the data type. For example, if the data type is `integer`, you can't enter a decimal such as `6.4`.
 +
 If there is a list of values, select the value you would like to use.
 
@@ -106,7 +78,7 @@ If there is a list of values, select the value you would like to use.
 
 . Select *Save* in the upper right corner of your screen.
 
-To change the value of a parameter from view mode for a Liveboard, follow these steps:
+To change the value of a parameter from view mode for a Liveboard, follow these steps. Note that if you only have view access to a Liveboard, you can't save the Liveboard with the altered parameter value.
 
 . Navigate to the Liveboard you would like to change the parameter for.
 
@@ -118,7 +90,7 @@ image::parameter-info.png[Parameter dialog with information button]
 
 . Depending on the type of parameter, you may see a text box or a list of values. Above the text box, you may see a range of values you can use; for example, you may see "Enter a value between 0 and 10000."
 +
-If there is a text box, enter a value in the text box that is valid for the data type and is within the specified range, if there is one. If there is no range, enter any value that is valid for the data type. For example, if the data type is `integer`, you cannot enter a decimal such as `6.4`.
+If there is a text box, enter a value in the text box that is valid for the data type and is within the specified range, if there is one. If there is no range, enter any value that is valid for the data type. For example, if the data type is `integer`, you can't enter a decimal such as `6.4`.
 +
 If there is a list of values, select the value you would like to use.
 
