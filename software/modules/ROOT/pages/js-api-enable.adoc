@@ -8,28 +8,28 @@ You can enable Single Sign On (SSO) with your embedded version of ThoughtSpot.
 
 If your ThoughtSpot system is configured for Security Assertion Markup Language (SAML) you can enable Single Sign On (SSO) for your embed application.
 
-Place the JS API library in the `<head>` section of the HTML on your Web page.
+Place the JS API library in the `<head>` section of the HTML on your webpage.
 Ensure that the JS API script tag is the first script loaded in the page.
 You can see examples of this
 
 == Authenticate when the window is initialized
 
-Your web page needs to authenticate by calling `window.thoughtspot.initialize` and waiting for the `onInitializationCallback` to be called before embedding any ThoughtSpot visualizations or making any ThoughtSpot REST API calls.
+Your webpage needs to authenticate by calling `window.thoughtspot.initialize` and waiting for the `onInitializationCallback` to be called before embedding any ThoughtSpot visualizations or making any ThoughtSpot REST API calls.
 
-The JS API call `window.thoughtspot.initialize` can cause the entire Web page to be re-directed to your Identity Provider (IDP).
+The JS API call `window.thoughtspot.initialize` can cause the entire webpage to be re-directed to your Identity Provider (IDP).
 This order implies that you may not execute any of your application logic before `window.thoughtspot.initialize` has called your callback.
 
 Any redirection could interfere with your application logic.
 So, don't embed any static ThoughtSpot visualizations in your HTML.
 In other words, you should generate the ThoughtSpot visualizations dynamically after `window.thoughtspot.initialize` has called your callback.
 
-The `onAuthExpiration` is only available if you have at least one ThoughtSpot visualization iframe in your web page.
+The `onAuthExpiration` is only available if you have at least one ThoughtSpot visualization iframe in your webpage.
 
 == Example of code flow
 
 . To authenticate with SSO, download the ThoughtSpot JavaScript library; see xref:downloads.adoc[Downloads for ThoughtSpot].
 
-. Include the library file in your web page's `<head>` section:
+. Include the library file in your webpage's `<head>` section:
 +
 [source,html]
 ----
