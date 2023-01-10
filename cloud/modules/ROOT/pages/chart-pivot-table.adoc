@@ -15,8 +15,6 @@ A pivot table is a chart time table that uses a drag-and-drop interface.
 If you would like to visualize your search as a pivot table, click the *change visualization* icon image:icon-chart-type-10px.png[Chart type icon image] near the upper right of your screen, and select *pivot table*.
 You need at least one attribute and one measure in your search.
 
-You can restructure your pivot table by dragging and dropping the measures and attributes under *edit chart configuration* image:icon-gear-10px.png[Chart configuration icon image], or by dragging and dropping column headings on the table itself. Note that you cannot drag a measure from the column heading to the row heading, as you would an attribute.
-
 If you right-click a row or column heading, the system displays a contextual menu, allowing you to *exclude* or *include* values, xref:search-drill-down.adoc[drill down], *show underlying data*, *SpotIQ analyze*, *expand* or *collapse* the values in the row, or *sort*.
 
 image::charts-pivot-table-row-new.png[Sort by a row heading]
@@ -28,6 +26,19 @@ image::charts-pivot-table-cell-new.png[Pivot table cell menu]
 If your pivot table contains multiple measures with long names, the column header now has a horizontal scroll bar, so you can see all your measures without taking up  excessive space in the pivot table.
 
 image::pivot-gif.gif[Pivot table scroll bar gif]
+
+[#reorder]
+== Reorder your pivot table
+
+You can restructure your pivot table by dragging and dropping the measures and attributes under *edit chart configuration* image:icon-gear-10px.png[Chart configuration icon image], or by dragging and dropping column and row headings on the table itself.
+
+By default, ThoughtSpot displays measures in columns. To display measures in rows instead, follow these steps:
+
+. Select the *edit chart configuration* icon image:icon-gear-10px.png[edit chart configuration icon image] near the upper right of the Answer.
+. Select *Settings* in the chart configuration panel.
+. Under *Display measures in*, select *Rows*.
++
+image::pivot-table-measures-rows.png[Display measures in rows]
 
 == Sort
 To sort any column or row, right-click on a row or column heading or subheading or a measure or attribute name and select **Sort**. You can also sort from the search bar. Type `sort by <column name> [ascending | descending]`.
@@ -124,5 +135,3 @@ If your query returns more than 100k rows, you cannot visualize it with a pivot 
 * If the query the pivot table is based on contains the `top` or `bottom` keyword, column and row summaries are not accurate.
 
 * You cannot filter aggregated columns or columns with aggregated formulas.
-
-* Pivot tables display your chosen measure(s) in the column row header, not in the row heading. ThoughtSpot does not support measures in the row heading.
