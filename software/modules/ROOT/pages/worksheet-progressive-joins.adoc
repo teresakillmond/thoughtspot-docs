@@ -44,26 +44,26 @@ Request edit access from your administrator, or the owner of the worksheet.
 +
 image::worksheet-apply-joins.png[Apply joins progressively or apply all joins]
 
-== Rule-Based Row Level Security (RLS) with worksheets
+== Rule-based row-level security (RLS) with worksheets
 
-With Rule-Based RLS, you need to protect every table that contains any sensitive data.
-To do this, you can grant access by creating explicit row level security rules on each of the underlying tables which contain data that row level security should apply to.
+With rule-based RLS, you need to protect every table that contains any sensitive data.
+To do this, you can grant access by creating explicit row-level security rules on each of the underlying tables which contain data that row-level security should apply to.
 
-When creating the row level security rules for a table that's part of a worksheet, you aren't limited to referencing only the columns in that table.
+When creating the row-level security rules for a table that's part of a worksheet, you aren't limited to referencing only the columns in that table.
 You can specify columns from other tables in the worksheet as well, as long as the tables are joined to the table you're creating the rule on.
 Then, when creating a worksheet on top of them, the behavior is consistent regardless of the worksheet join rule you choose.
 Users will never be able to see data they shouldn't, regardless of what their search contains.
 
 Imagine you have a worksheet that contains a `Sales` fact table, and `Customer` and `Product` dimensions that are joined on `Customer SSN` and `Product Code` columns.
-In order to secure the `Sales` table, you can use `Customer Name` from the `Customer` column to create a row level security rule.
+In order to secure the `Sales` table, you can use `Customer Name` from the `Customer` column to create a row-level security rule.
 
 == How joins are applied with chasm traps
 
-When working with worksheets and row level security, you need to understand how joins are applied.
+When working with worksheets and row-level security, you need to understand how joins are applied.
 This is particularly important with chasm trap schemas.
-For chasm trap schemas, if row level security is only set on one of the tables, people could see data they shouldn't see if the scope of their search doesn't include that table.
+For chasm trap schemas, if row-level security is only set on one of the tables, people could see data they shouldn't see if the scope of their search doesn't include that table.
 (This protects them from having people see the wrong things if they have chasm trap.)
 
 For chasm trap _worksheets_, progressive and non-progressive joins don't apply.
-There is an entirely different methodology for how worksheet joins on a chasm trap schema work with row level security.
+There is an entirely different methodology for how worksheet joins on a chasm trap schema work with row-level security.
 So you can safely ignore that setting.
