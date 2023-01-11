@@ -1,0 +1,64 @@
+= Metadata tags for dbt
+:last_updated: 1/11/2023
+:linkattrs:
+:experimental:
+:page-layout: default-cloud
+:author: Teresa Killmond
+:description: Manage your ThoughtSpot Worksheet column properties in dbt by using metadata tags to define column properties within your dbt model schema.
+
+Manage your ThoughtSpot Worksheet xref:data-modeling-settings.adoc[column properties] in dbt by using metadata tags to define column properties within your dbt model schema. dbt stays the source of truth, and you don't have to manually update the columns in ThoughtSpot when you make changes to your dbt model.
+
+ThoughtSpot has its own set of metadata tags that you can use within the *schema.yml* files in your dbt model folders. For example, you can specify the column type, synonyms, and currency type for a column, before ThoughtSpot creates its own Worksheets based on your dbt models during xref:dbt-integration.adoc[dbt integration]. For more information about the Worksheet column properties, see xref:data-modeling-settings.adoc[].
+
+== Add metadata tags
+To add metadata tags, follow these steps:
+
+. In dbt, navigate to the *schema.yml* file for the dbt model. The *schema.yml* file has syntax similar to the following example:
++
+----
+models:
+  - name: dim_retapp_stores
+    columns:
+      - name: LATITUDE
+        description: latitude (data type float)
+
+      - name: ZIPCODE
+        description: zipcode (data type text)
+----
+. Under the `description` section for a column, add a new line, `meta:`
++
+----
+models:
+  - name: dim_retapp_stores
+    columns:
+      - name: LATITUDE
+        description: latitude (data type float)
+        meta:
+          <ts_metadata_content>
+----
+. Specify column properties, using the <<column-properties,column properties metadata tags>>. For example:
++
+[source,bash]
+----
+models:
+  - name: dim_retapp_stores
+    columns:
+      - name: LATITUDE
+        description: latitude (data type float)
+        meta:
+          ts_geo_config:
+            type : LATITUDE
+
+      - name: QUANTITYPURCHASED
+        description: quantitypurchased (data type number)
+        meta:
+          ts_column_type: measure
+          ts_format_pattern : "#,###"
+          ts_currency_type :
+            type : from_browser
+
+----
+
+
+[#column-properties]
+== Column properties metadata tags
