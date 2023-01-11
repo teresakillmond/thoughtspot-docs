@@ -741,6 +741,8 @@ Applies to `worksheet`, `table`,`joins`, `formula`, `rls_rules`, `answer`, `live
 For Answers, `name` refers to how the column appears in the query.
 For example, if you sorted by `Quarter` in your search, from the `Commit Date` column, the `name` of the column is `Quarter(Commit Date)`.
 Refer to https://developers.thoughtspot.com/docs/?pageid=search-data-api[Components of a Search Query^] to understand syntax.
++
+In the `parameter_overrides` section for an Answer or Liveboard, `name` refers to the xref:parameters-create.adoc[parameter] name.
 
 [#on]
 on::
@@ -758,12 +760,12 @@ A list of columns, in the order they appear in the table.
 
 [#override_value]
 override_value::
-The value a parameter is set to in a Liveboard, if different from the default value. Only appears if you change the parameter value in Liveboard *Edit* mode and save it.
+The value a parameter is set to in a Liveboard or Answer, if different from the default value. Only appears if you change the parameter value in Liveboard *Edit* mode and save it.
 
 [#parameter_overrides]
 parameter_overrides::
 
-Contains information on the value a parameter is set to in a Liveboard, if different from its default value. If there is no `override_value` line, the parameter is set to the default value.
+Contains information on the value a parameter is set to in a Liveboard or Answer, if different from its default value. If there is no `override_value` line, the parameter is set to the default value.
 
 [#parameter_values]
 parameter_values::
