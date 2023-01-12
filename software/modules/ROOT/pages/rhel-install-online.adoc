@@ -176,12 +176,12 @@ ansible-playbook -i hosts.yaml ts.yaml
 
 As the Ansible Playbook runs, it will perform these tasks:
 
-. Trigger the installation of xref:rhel-packages.adoc[Yum, Python, and R packages]
-. Configure the local user accounts that the ThoughtSpot application uses
-. Install the ThoughtSpot CLI
+. Trigger the installation of xref:rhel-packages.adoc[Yum, Python, and R packages].
+. Configure the local user accounts that the ThoughtSpot application uses.
+. Install the ThoughtSpot CLI.
 . Configure all the nodes in the ThoughtSpot cluster:
-    - Format and create export partitions, if they do not exist
-    - Format the data disks
+    - Format and create export partitions, if they do not exist.
+    - Format the data disks.
 
 After the Ansible Playbook finishes, run the `prepare_disks` script on every node. You *must* run this script as an admin user. Specify the data drives by adding the full device path for all data drives, such as `/dev/sdc`, after the script name. Separate data drives with a space.
 
