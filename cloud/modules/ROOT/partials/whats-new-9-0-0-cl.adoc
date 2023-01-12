@@ -57,7 +57,7 @@ ifndef::free-trial-feature[]
 [discrete]
 === Parameters
 
-Create Worksheet parameters to optimize your data inquiries. Use parameters to run different scenarios with adjustable values, without creating or modifying the constants in formulas for each new value. This feature must be enabled by your administrator. For more information about parameters, see
+Create Worksheet parameters to optimize your data inquiries. Use parameters to run different scenarios with adjustable values, without creating or modifying the constants in formulas for each new value. For example, forecast your revenue each week, depending on the product discount value, as in the following gif. This feature must be enabled by your administrator. For more information about parameters, see
 ifndef::pendo-links[]
 xref:parameters-create.adoc[Creating parameters] and xref:parameters-use.adoc[Using parameters].
 endif::[]
@@ -66,8 +66,6 @@ xref:parameters-create.adoc[Creating parameters,window=_blank] and xref:paramete
 endif::[]
 
 image::parameter-gif.gif[Parameter gif example]
-
-// add a use case (the use case from the gif). "see image below"
 
 [#9-0-0-cl-mandatory-filters]
 [discrete]
@@ -100,8 +98,6 @@ xref:chart-pivot-table.adoc#reorder[Reorder your pivot table,window=_blank].
 endif::[]
 
 image::pivot-measures.png[Pivot table with measures displayed in rows]
-
-// change rectangle to go around a row and not a column. add an arrow
 
 ifndef::free-trial-feature[]
 [#9-0-0-cl-custom-map]
@@ -188,11 +184,17 @@ endif::[]
 
 [#9-0-0-cl-chinese-traditional]
 [discrete]
-=== ThoughtSpot in Chinese Traditional
+=== Chinese (Traditional) or 中文 (繁體) localization
 
-// Yochana. we already have a what's new for this in 8.8.1
+Set your ThoughtSpot locale to Chinese (Traditional), or 中文 (繁體). ThoughtSpot changes your data format settings, such as currency and number formatting, and translates keywords, ThoughtSpot menu and navigation items, operators, and error messages. For more information, see
+ifndef::pendo-links[]
+xref:keywords-zh-HANT.adoc[中文 (繁體) keyword reference] and xref:user-profile.adoc#language[Change language and data format settings].
+endif::[]
+ifdef::pendo-links[]
+xref:keywords-zh-HANT.adoc[中文 (繁體) keyword reference,window=_blank] and xref:user-profile.adoc#language[Change language and data format settings,window=_blank].
+endif::[]
 
-// teresa just copy and paste
+image::locale-chinese-traditional.png[ThoughtSpot application with the Chinese Traditional locale set]
 
 ifdef::pendo-links[]
 [#9-0-0-cl-group-aggregate]
@@ -333,31 +335,13 @@ Users with *can manage data* or *admin* privileges can now share Connections wit
 [discrete]
 === dbt metadata tags for Worksheets
 
-Manage your ThoughtSpot Worksheet column properties in dbt by using metadata tags to define column properties within your dbt model schema. dbt stays the source of truth, and you don't have to manually update the columns in ThoughtSpot when you make changes to your dbt model. For more information, see
+Manage your ThoughtSpot Worksheet column properties in dbt by using metadata tags to define column properties within your dbt model schema. Your dbt models contain all the necessary information, and you don't have to manually update the columns in ThoughtSpot when you make changes to your dbt model. For more information, see
 ifndef::pendo-links[]
 xref:dbt-integration-metadata-tags.adoc[Metadata tags for dbt].
 endif::[]
 ifdef::pendo-links[]
 xref:dbt-integration-metadata-tags.adoc[Metadata tags for dbt,window=_blank].
 endif::[]
-
-// replace source of truth with diff phrase/ slightly more detail. column properties are defined in dbt
-
-[#9-0-0-cl-fqn]
-[discrete]
-=== Include FQNs when exporting TML files
-
-To reduce ambiguity when exporting TML files, you can export the fully qualified names (FQNs) for the objects' data sources. If you select this option, the TML file contains FQNs for the underlying tables and connections. For more information, see
-ifndef::pendo-links[]
-xref:tml.adoc#fqn[ThoughtSpot Modeling Language].
-endif::[]
-ifdef::pendo-links[]
-xref:tml.adoc#fqn[ThoughtSpot Modeling Language,window=_blank].
-endif::[]
-
-image::tml-export-fqn.png[Choose what to export modal with the export fqn option highlighted]
-
-// group tml stuff
 
 [#9-0-0-cl-redshift]
 [discrete]
@@ -372,18 +356,6 @@ see xref:connections-redshift-partner.adoc[ThoughtSpot in Redshift Partner Conne
 endif::[]
 ifdef::pendo-links[]
 see xref:connections-redshift-partner.adoc[ThoughtSpot in Redshift Partner Connect,window=_blank].
-endif::[]
-
-[#9-0-0-cl-joins-rls]
-[discrete]
-=== Delete joins and RLS rules through TML
-
-When you edit and import TML files, ThoughtSpot now supports deletion of joins and row-level security (RLS) rules.  For more information, see
-ifndef::pendo-links[]
-xref:tml.adoc[ThoughtSpot Modeling Language].
-endif::[]
-ifdef::pendo-links[]
-xref:tml.adoc[ThoughtSpot Modeling Language],window=_blank].
 endif::[]
 
 ifndef::free-trial-feature[]
@@ -405,6 +377,32 @@ xref:tml.adoc#syntax-alerts[Syntax of the Monitor alert TML file,window=_blank] 
 endif::[]
 
 endif::free-trial-feature[]
+
+[#9-0-0-cl-fqn]
+[discrete]
+=== Include FQNs when exporting TML files
+
+To reduce ambiguity when exporting TML files, you can export the fully qualified names (FQNs) for the objects' data sources. If you select this option, the TML file contains FQNs for the underlying tables and connections. For more information, see
+ifndef::pendo-links[]
+xref:tml.adoc#fqn[ThoughtSpot Modeling Language].
+endif::[]
+ifdef::pendo-links[]
+xref:tml.adoc#fqn[ThoughtSpot Modeling Language,window=_blank].
+endif::[]
+
+image::tml-export-fqn.png[Choose what to export modal with the export fqn option highlighted]
+
+[#9-0-0-cl-joins-rls]
+[discrete]
+=== Delete joins and RLS rules through TML
+
+When you edit and import TML files, ThoughtSpot now supports deletion of joins and row-level security (RLS) rules.  For more information, see
+ifndef::pendo-links[]
+xref:tml.adoc[ThoughtSpot Modeling Language].
+endif::[]
+ifdef::pendo-links[]
+xref:tml.adoc[ThoughtSpot Modeling Language],window=_blank].
+endif::[]
 
 [#9-0-0-cl-detail-options]
 [discrete]
