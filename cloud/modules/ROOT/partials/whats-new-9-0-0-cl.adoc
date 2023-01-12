@@ -25,34 +25,44 @@ endif::free-trial-feature[]
 
 [#9-0-0-cl-sync-servicenow]
 [discrete]
-=== ThoughtSpot Sync ServiceNow connection
+=== ThoughtSpot Sync
 
 // Naomi
 
-You can now sync data directly from an Answer or custom SQL view to ServiceNow. Using ThoughtSpot Sync, you can push insights directly to ServiceNow, notify your teams, and view data in context. ThoughtSpot Sync automatically establishes a secure pipeline to the destination app and thus eliminates the need for building custom connectors.
+You can now use ThoughtSpot Sync to sync data directly from an Answer or custom SQL view to the following apps:
+
+ifndef::pendo-links[]
+* xref:sync-servicenow.adoc[ServiceNow]
+endif::[]
+ifdef::pendo-links[]
+* xref:sync-servicenow.adoc[ServiceNow,window=_blank]
+endif::[]
+ifndef::pendo-links[]
+* xref:sync-hubspot.adoc[HubSpot]
+endif::[]
+ifdef::pendo-links[]
+* xref:sync-hubspot.adoc[HubSpot,window=_blank]
+endif::[]
+ifndef::pendo-links[]
+* xref:sync-gainsight.adoc[Gainsight] [.badge.badge-beta]#Beta#
+endif::[]
+ifdef::pendo-links[]
+* xref:sync-gainsight.adoc[Gainsight,window=_blank] [.badge.badge-beta-whats-new]#Beta#
+endif::[]
+ifndef::pendo-links[]
+* xref:sync-zoho.adoc[Zoho] [.badge.badge-beta]#Beta#
+endif::[]
+ifdef::pendo-links[]
+* xref:sync-zoho.adoc[Zoho,window=_blank] [.badge.badge-beta-whats-new]#Beta#
+endif::[]
 
 // combine new sync connectors into one blurb. add link
 
-[#9-0-0-cl-sync-hubspot]
-[discrete]
-=== ThoughtSpot Sync HubSpot connection
-
-// Naomi
-
-You can now sync data directly from an Answer or custom SQL view to Hubspot. Using ThoughtSpot Sync, you can push insights directly to Hubspot, notify your teams, and view data in context. ThoughtSpot Sync automatically establishes a secure pipeline to the destination app and thus eliminates the need for building custom connectors.
-
-For more information, see
-ifndef::pendo-links[]
-xref:sync-hubspot.adoc[Sync data from ThoughtSpot to HubSpot].
-endif::[]
-ifdef::pendo-links[]
-xref:sync-hubspot.adoc[Sync data from ThoughtSpot to HubSpot,window=_blank].
-endif::[]
-
 image:sync-hubspot.png[]
 
-ifndef::free-trial-feature[]
+//update image to show all connections
 
+ifndef::free-trial-feature[]
 [#9-0-0-cl-parameters]
 [discrete]
 === Parameters
@@ -124,21 +134,9 @@ image::custom-map-example.png[Custom geo map being added]
 
 endif::free-trial-feature[]
 
-[#9-0-0-cl-postgresql]
-[discrete]
-=== PostgreSQL connection
 
-You can now create connections from ThoughtSpot to PostgreSQL. For details, see
-ifndef::pendo-links[]
-xref:connections-postgresql.adoc[PostgreSQL].
-endif::[]
-ifdef::pendo-links[]
-xref:connections-postgresql.adoc[PostgreSQL,window=_blank].
-endif::[]
 
 ifndef::free-trial-feature[]
-
-// move to other features. If there are more than one new connections, combine into one blurb
 
 [#9-0-0-cl-labels]
 [discrete]
@@ -157,20 +155,7 @@ image::chartconfig-data-labels-on-dark-background.png[]
 
 endif::free-trial-feature[]
 
-////
-ifdef::free-trial-feature[]
-[#9-0-0-cl-google-signup]
-[discrete]
-=== Free trial: Sign up with Google
 
-// Naomi. Free trial only, 8.10.0.cl release
-
-In addition to using Free Trial's default sign in, you can now sign in using your Google account. Note that you must use the Google account associated with your ThoughtSpot user account to sign in.
-
-image:ft-google-sign.png[Free Trial sign in with Google]
-
-endif::[]
-////
 
 ifdef::free-trial-feature[]
 [#9-0-0-cl-free-trial-row-limits]
@@ -178,13 +163,12 @@ ifdef::free-trial-feature[]
 === Show row limits
 // Naomi. Free trial only
 
-When using Free Trial, users are limited to a maximum of 5 million rows. You can now check to see what percent of the row limit you are using, under menu:Admin[Data usage].
+When using Free Trial, users are limited to a maximum of 5 million rows. You can now check to see what percent of the row limit you are using, under *Admin > Data usage*.
 
 image::ft-row.png[Free Trial row limit]
 
 // fix the menu: part
-
-endif::[]
+endif::free-trial-feature[]
 
 [#9-0-0-cl-chinese-traditional]
 [discrete]
@@ -194,30 +178,6 @@ endif::[]
 
 // teresa just copy and paste
 
-ifdef::pendo-links[]
-[#9-0-0-cl-group-aggregate]
-[discrete]
-=== GroupAggregate Enhancements: Filters [.badge.badge-beta-whats-new]#Beta#
-endif::[]
-ifndef::pendo-links[]
-[#9-0-0-cl-group-aggregate]
-[discrete]
-=== Group aggregatation enhancements: filters [.badge.badge-beta]#Beta#
-endif::[]
-// Naomi-- behind a flag
-
-Previously, when using group_aggregate formulas, users could use query_filters to include filters entered in the search bar in the formula's value, but it was difficult to write a formula that accepted filters from only a single column. Starting with this release, you can specify column names within the ‘filters’ section of a group_aggregate formula, and any filter in your search bar referencing that column will be added to the formula. Filters entered in the search bar that are not on columns specified in the third argument of the group_aggregate formula will be ignored.
-
-For example:
-Say that you search for `group formula` `color= ‘blue’` `ship mode != ‘car’`, where `group formula = group_aggregate (sum(Revenue), {ship mode}, {color, quantity})`. In this case, the formula will adopt the color = blue filter but ignore the ship mode filter, evaluating to `group_aggregate(sum(Revenue), {ship mode}, {color = ‘blue’})`.
-
-// link
-
-// move to bottom of business user
-
-// take example out and make sure the link goes to the example in the article
-
-// remove from free trial. double-check that all beta features are removed from free trial
 
 [#9-0-0-cl-rename]
 [discrete]
@@ -259,36 +219,28 @@ endif::free-trial-feature[]
 
 ifndef::free-trial-feature[]
 ifdef::pendo-links[]
-[#9-0-0-cl-zoho-sync]
+[#9-0-0-cl-group-aggregate]
 [discrete]
-=== ThoughtSpot Sync Zoho connection [.badge.badge-beta-whats-new]#Beta#
+=== GroupAggregate Enhancements: Filters [.badge.badge-beta-whats-new]#Beta#
 endif::[]
 ifndef::pendo-links[]
-[#9-0-0-cl-zoho-sync]
+[#9-0-0-cl-group-aggregate]
 [discrete]
-=== ThoughtSpot Sync Zoho connection [.badge.badge-beta]#Beta#
+=== Group aggregatation enhancements: filters [.badge.badge-beta]#Beta#
 endif::[]
-// Naomi
+// Naomi-- behind a flag
 
-You can now sync data directly from an Answer or custom SQL view to Zoho. Using ThoughtSpot Sync, you can push insights directly to Zoho, notify your teams, and view data in context. ThoughtSpot Sync automatically establishes a secure pipeline to the destination app and thus eliminates the need for building custom connectors.
-endif::free-trial-feature[]
+Previously, when using group_aggregate formulas, users could use query_filters to include filters entered in the search bar in the formula's value, but it was difficult to write a formula that accepted filters from only a single column.
 
-ifndef::free-trial-feature[]
-ifdef::pendo-links[]
-[#9-0-0-cl-gainsight-sync]
-[discrete]
-=== ThoughtSpot Sync Gainsight connection [.badge.badge-beta-whats-new]#Beta#
-endif::[]
-ifndef::pendo-links[]
-[#9-0-0-cl-gainsight-sync]
-[discrete]
-=== ThoughtSpot Sync Gainsight connection [.badge.badge-beta]#Beta#
-endif::[]
-// Naomi
+Starting with this release, you can specify column names within the ‘filters’ section of a group_aggregate formula, and any filter in your search bar referencing that column will be added to the formula. Filters entered in the search bar that are not on columns specified in the third argument of the group_aggregate formula will be ignored.
 
-You can now sync data directly from an Answer or custom SQL view to Gainsight. Using ThoughtSpot Sync, you can push insights directly to Gainsight, notify your teams, and view data in context. ThoughtSpot Sync automatically establishes a secure pipeline to the destination app and thus eliminates the need for building custom connectors.
+// link
 
+// move to bottom of business user
 
+// take example out and make sure the link goes to the example in the article
+
+// remove from free trial. double-check that all beta features are removed from free trial
 endif::free-trial-feature[]
 
 '''
@@ -315,14 +267,35 @@ endif::[]
 
 image::csv-upload-app.png[CSV upload]
 
+[#9-0-0-cl-postgresql]
+[discrete]
+=== PostgreSQL connection
+
+You can now create connections from ThoughtSpot to PostgreSQL. For details, see
+ifndef::pendo-links[]
+xref:connections-postgresql.adoc[PostgreSQL].
+endif::[]
+ifdef::pendo-links[]
+xref:connections-postgresql.adoc[PostgreSQL,window=_blank].
+endif::[]
+
+ifndef::free-trial-feature[]
+
+// move to other features. If there are more than one new connections, combine into one blurb
+
 [#9-0-0-cl-connection-share]
 [discrete]
-=== Sharing Connections
+=== Sharing connections
 
 // Naomi
 
-Users with *can manage data* or *admin* privileges can now share Connections with other users or groups that have *can manage data* privileges. Once granted access to a connection, users can add, remove, and modify tables in that connection.
-
+You can now share connections with other users or groups. Once granted access to a connection, users can add, remove, and modify tables in that connection. For more information, see
+ifndef::pendo-links[]
+xref:connections.adoc[About connections in ThoughtSpot].
+endif::[]
+ifdef::pendo-links[]
+xref:connections.adoc[About connections in ThoughtSpot,window=_blank].
+endif::[]
 // check if and when we're capitalizing connection
 
 // take out mentions of privileges here, but make sure it's in the article about sharing connections
