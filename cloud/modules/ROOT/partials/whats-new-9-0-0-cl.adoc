@@ -21,6 +21,8 @@ Administrators can see the available Early Access features and selectively enabl
 
 endif::free-trial-feature[]
 
+// just have an admin blurb? near the bottom of the list. change link format to pendo
+
 [#9-0-0-cl-sync-servicenow]
 [discrete]
 === ThoughtSpot Sync ServiceNow connection
@@ -28,6 +30,8 @@ endif::free-trial-feature[]
 // Naomi
 
 You can now sync data directly from an Answer or custom SQL view to ServiceNow. Using ThoughtSpot Sync, you can push insights directly to ServiceNow, notify your teams, and view data in context. ThoughtSpot Sync automatically establishes a secure pipeline to the destination app and thus eliminates the need for building custom connectors.
+
+// combine new sync connectors into one blurb. add link
 
 [#9-0-0-cl-sync-hubspot]
 [discrete]
@@ -63,6 +67,8 @@ endif::[]
 
 image::parameter-gif.gif[Parameter gif example]
 
+// add a use case (the use case from the gif). "see image below"
+
 [#9-0-0-cl-mandatory-filters]
 [discrete]
 === Mandatory Liveboard filters
@@ -76,6 +82,8 @@ xref:liveboard-filters-mandatory.adoc[Mandatory Liveboard filters,window=_blank]
 endif::[]
 
 image::liveboard-filters-mandatory.gif[Gif of a Liveboard with a mandatory filter]
+
+// screenshot of actually setting a filter as mandatory then arrow to liveboard with a mandatory filter
 
 endif::free-trial-feature[]
 
@@ -92,6 +100,8 @@ xref:chart-pivot-table.adoc#reorder[Reorder your pivot table,window=_blank].
 endif::[]
 
 image::pivot-measures.png[Pivot table with measures displayed in rows]
+
+// change rectangle to go around a row and not a column. add an arrow
 
 ifndef::free-trial-feature[]
 [#9-0-0-cl-custom-map]
@@ -110,6 +120,8 @@ image::custom-map-example.png[Custom geo map being added]
 
 // I want a 'before and after' with an image of a TS search but that is in progress
 
+// add "to try it out" section
+
 endif::free-trial-feature[]
 
 [#9-0-0-cl-postgresql]
@@ -126,17 +138,19 @@ endif::[]
 
 ifndef::free-trial-feature[]
 
+// move to other features. If there are more than one new connections, combine into one blurb
+
 [#9-0-0-cl-labels]
 [discrete]
 === Data labels on a dark background
-Labels that appear on a dark background can be displayed in a lighter text color, making them easier to read. This feature is disabled by default. To enable it, contact your ThoughtSpot administrator.
+Labels that appear on a dark background can be displayed in a lighter text color, making them easier to read. This feature must be enabled by your administrator.
 For more information,
 see
 ifndef::pendo-links[]
-xref:chart-data-labels.adoc[show data labels].
+xref:chart-data-labels.adoc[Show data labels].
 endif::[]
 ifdef::pendo-links[]
-xref:chart-data-labels.adoc[show data labels,window=_blank].
+xref:chart-data-labels.adoc[Show data labels,window=_blank].
 endif::[]
 
 image::chartconfig-data-labels-on-dark-background.png[]
@@ -161,12 +175,14 @@ endif::[]
 ifdef::free-trial-feature[]
 [#9-0-0-cl-free-trial-row-limits]
 [discrete]
-=== Free Trial - Show row limits
+=== Show row limits
 // Naomi. Free trial only
 
 When using Free Trial, users are limited to a maximum of 5 million rows. You can now check to see what percent of the row limit you are using, under menu:Admin[Data usage].
 
 image::ft-row.png[Free Trial row limit]
+
+// fix the menu: part
 
 endif::[]
 
@@ -176,6 +192,8 @@ endif::[]
 
 // Yochana. we already have a what's new for this in 8.8.1
 
+// teresa just copy and paste
+
 ifdef::pendo-links[]
 [#9-0-0-cl-group-aggregate]
 [discrete]
@@ -184,7 +202,7 @@ endif::[]
 ifndef::pendo-links[]
 [#9-0-0-cl-group-aggregate]
 [discrete]
-=== GroupAggregate Enhancements: Filters [.badge.badge-beta]#Beta#
+=== Group aggregatation enhancements: filters [.badge.badge-beta]#Beta#
 endif::[]
 // Naomi-- behind a flag
 
@@ -193,12 +211,19 @@ Previously, when using group_aggregate formulas, users could use query_filters t
 For example:
 Say that you search for `group formula` `color= ‘blue’` `ship mode != ‘car’`, where `group formula = group_aggregate (sum(Revenue), {ship mode}, {color, quantity})`. In this case, the formula will adopt the color = blue filter but ignore the ship mode filter, evaluating to `group_aggregate(sum(Revenue), {ship mode}, {color = ‘blue’})`.
 
+// link
+
+// move to bottom of business user
+
+// take example out and make sure the link goes to the example in the article
+
+// remove from free trial. double-check that all beta features are removed from free trial
 
 [#9-0-0-cl-rename]
 [discrete]
-=== Rename Liveboards and visualizations without entering edit mode
+=== Rename Liveboards and visualizations in view mode
 
-Change the name or description of a Liveboard or visualization without entering *Edit* mode. The more image:icon-more-10px.png[more menu icon] menu for Liveboards and Liveboard visualizations now includes a *Rename* option, where you can edit the object name and description. For more information, see
+Change the name or description of a Liveboard or visualization from view mode. The more image:icon-more-10px.png[more menu icon] menu for Liveboards and Liveboard visualizations now includes a *Rename* option, where you can edit the object name and description. For more information, see
 ifndef::pendo-links[]
 xref:liveboard-layout-edit.adoc#other-edits[Other Liveboard edits].
 endif::[]
@@ -208,6 +233,8 @@ endif::[]
 
 image::liveboard-viz-rename.png[More menu for a Liveboard visualization, with Rename highlighted]
 
+// evaluate if we need screenshot based on what's new in pendo
+
 ifndef::free-trial-feature[]
 
 [#9-0-0-cl-chart-config-apply]
@@ -215,7 +242,7 @@ ifndef::free-trial-feature[]
 === Apply button on Configure menu under Edit Chart
 Every time when a user moves a field in the config menu, the chart reloads. When a user has multiple fields, they need to rearrange a lot of them to reach a desired chart, so every reload leads to a wait time of 2-5 seconds.
 
-To reduce the reloads and wait time introduced Apply and Reset buttons on configure menu. This feature is disabled by default. To enable it, contact your ThoughtSpot administrator.
+To reduce the reloads and wait time, we introduced Apply and Reset buttons on configure menu. This feature must be enabled by your administrator.
 For more information, see
 ifndef::pendo-links[]
 xref:chart-x-axis.adoc[Reorder labels on the axis or legend].
@@ -228,13 +255,7 @@ endif::free-trial-feature[]
 
 // Yochana. early access
 
-THE FOLLOWING ARE NEEDS EVALUATION
-
-[#9-0-0-cl-spotiq]
-[discrete]
-=== SpotIQ V2 list page improvements
-
-// Yochana  it is only bug fixes, No new features. documentation not required.
+// rename to "apply multiple changes at once" or similar. a little bit of language reworking and more clarity (moves a field). chart configuration panel, not config. don't specify the wait time from before. specify that you can make multiple configurations and then apply them rather than waiting in between each configuration. no need to mention resetting (the point is the apply button)
 
 ifndef::free-trial-feature[]
 ifdef::pendo-links[]
@@ -302,9 +323,15 @@ image::csv-upload-app.png[CSV upload]
 
 Users with *can manage data* or *admin* privileges can now share Connections with other users or groups that have *can manage data* privileges. Once granted access to a connection, users can add, remove, and modify tables in that connection.
 
+// check if and when we're capitalizing connection
+
+// take out mentions of privileges here, but make sure it's in the article about sharing connections
+
+// link
+
 [#9-0-0-cl-dbt-meta]
 [discrete]
-=== dbt metadata tags for Worksheet column properties
+=== dbt metadata tags for Worksheets
 
 Manage your ThoughtSpot Worksheet column properties in dbt by using metadata tags to define column properties within your dbt model schema. dbt stays the source of truth, and you don't have to manually update the columns in ThoughtSpot when you make changes to your dbt model. For more information, see
 ifndef::pendo-links[]
@@ -314,13 +341,13 @@ ifdef::pendo-links[]
 xref:dbt-integration-metadata-tags.adoc[Metadata tags for dbt,window=_blank].
 endif::[]
 
-// should this have an image/ gif?
+// replace source of truth with diff phrase/ slightly more detail. column properties are defined in dbt
 
 [#9-0-0-cl-fqn]
 [discrete]
-=== Export FQNs when exporting TML files
+=== Include FQNs when exporting TML files
 
-To reduce ambiguity when exporting TML files, export the fully qualified names (FQNs) for the objects' data sources. If you select this option, the TML file contains FQNs for the underlying tables and connections. For more information, see
+To reduce ambiguity when exporting TML files, you can export the fully qualified names (FQNs) for the objects' data sources. If you select this option, the TML file contains FQNs for the underlying tables and connections. For more information, see
 ifndef::pendo-links[]
 xref:tml.adoc#fqn[ThoughtSpot Modeling Language].
 endif::[]
@@ -330,10 +357,11 @@ endif::[]
 
 image::tml-export-fqn.png[Choose what to export modal with the export fqn option highlighted]
 
+// group tml stuff
 
 [#9-0-0-cl-redshift]
 [discrete]
-=== Redshift Partner Connect and Free trial integration
+=== Redshift Partner Connect
 
 // Naomi
 
@@ -350,7 +378,7 @@ endif::[]
 [discrete]
 === Delete joins and RLS rules through TML
 
-When you edit and import TML files, ThoughtSpot now supports deletion of joins and RLS rules.  For more information, see
+When you edit and import TML files, ThoughtSpot now supports deletion of joins and row-level security (RLS) rules.  For more information, see
 ifndef::pendo-links[]
 xref:tml.adoc[ThoughtSpot Modeling Language].
 endif::[]
@@ -368,7 +396,7 @@ ifndef::pendo-links[]
 [discrete]
 === TML for Monitor alerts [.badge.badge-beta]#Beta#
 endif::[]
-Export, edit, and import KPI Monitor alerts programmatically using ThoughtSpot Modeling Language. For more information, see
+Export, edit, and import KPI Monitor alerts programmatically, using ThoughtSpot Modeling Language. For more information, see
 ifndef::pendo-links[]
 xref:tml.adoc#syntax-alerts[Syntax of the Monitor alert TML file] and xref:monitor[Monitor KPIs in your data].
 endif::[]
@@ -383,16 +411,6 @@ endif::free-trial-feature[]
 === Add Delete and Make a copy option For applicable objects in details page
 
 // Yochana Tried to contact the concerned person, waiting to hear back.
-
-[#9-0-0-cl-snowflake]
-[discrete]
-=== Snowflake Partner Connect Free-Trial Integration
-
-// Naomi-- GA
-
-When you use Snowflake Partner Connect to try out ThoughtSpot free trial, you are now directed to our new my1.thoughtspot.com or my2.thoughtspot.com clusters, rather than try.thoughtspot.com.
-
-// feature works the same, but now redirects you to a my1 or my2 cluster instead of try.thoughtspot.com. My1 or My2 chosen at random. What's New worthy?
 
 ifndef::free-trial-feature[]
 [discrete]
