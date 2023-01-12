@@ -24,16 +24,17 @@ Delete joins and RLS rules through TML::
 When you edit and import TML files, ThoughtSpot now supports deletion of joins and RLS rules. Refer to xref:tml.adoc[].
 
 Export FQNs when exporting TML files::
-
 To reduce ambiguity when exporting TML files, export the fully qualified names (FQNs) for the objects' data sources. If you select this option, the TML file contains FQNs for the underlying tables and connections.
 +
 For more information, see xref:tml.adoc#fqn[ThoughtSpot Modeling Language].
 
 Upload custom geo maps::
-
 Upload your own custom maps and visualize data on xref:chart-geo.adoc[geo charts] with regions that are specific to you and your organization. This feature must be enabled by your administrator.
 +
 For more information about custom geo maps, see xref:geomaps-custom.adoc[].
+
+Sharing connections::
+You can now share connections with other users or groups. Once granted access to a connection, users can add, remove, and modify tables in that connection. For more information, see xref:connections.adoc[].
 
 Show measures in pivot table rows::
 By default, ThoughtSpot displays measures in columns in pivot tables. With this release, choose whether to display measures in rows or columns in your pivot tables. For more information, see xref:chart-pivot-table.adoc#reorder[Reorder your pivot table].
@@ -43,25 +44,32 @@ Export, edit, and import xref:monitor.adoc[KPI Monitor alerts] programmatically,
 +
 This feature is in Beta and off by default. To enable it, contact {support-url}.
 
+Group aggregation enhancement: filters [.badge.badge-beta-relnotes]#Beta#::
+Previously, when using group_aggregate formulas, users could use query_filters to include filters entered in the search bar in the formula's value, but it was difficult to write a formula that accepted filters from only a single column. Starting with this release, you can specify column names within the ‘filters’ section of a group_aggregate formula, and any filter in your search bar referencing that column will be added to the formula. Filters entered in the search bar that are not on columns specified in the third argument of the group_aggregate formula will be ignored.
++
+For example:
+Say that you search for `group formula` `color= ‘blue’` `ship mode != ‘car’`, where `group formula = group_aggregate (sum(Revenue), {ship mode}, {color, quantity})`. In this case, the formula will adopt the color = blue filter but ignore the ship mode filter, evaluating to `group_aggregate(sum(Revenue), {ship mode}, {color = ‘blue’})`.
+
 [#9-0-0-cl-business-user]
 === For the Business User
 
 Mandatory Liveboard filters [.badge.badge-early-access]#Early Access#::
-
 Mark certain filters in your Liveboard as mandatory. If you add mandatory filters to a Liveboard, the visualizations will only load after Liveboard viewers select values for the mandatory filters. Use mandatory filters for Liveboards that contain data that may not be relevant for everyone who must view and consume the Liveboard. Mandatory filters also lower query and performance costs. This feature must be enabled by your administrator.
 +
 For more information about mandatory filters, see xref:liveboard-filters-mandatory.adoc[].
 
-ThoughtSpot Sync ServiceNow connection [.badge.badge-deprecated]#Deprecated#:: You can now sync data directly from an Answer or custom SQL view to ServiceNow. Using ThoughtSpot Sync, you can push insights directly to ServiceNow, notify your teams, and view data in context. ThoughtSpot Sync automatically establishes a secure pipeline to the destination app and thus eliminates the need for building custom connectors.
+ThoughtSpot Sync::
+You can now sync data directly from an Answer or custom SQL view to the following apps:
 
-ThoughtSpot Sync HubSpot connection::
-You can now sync data directly from an Answer or custom SQL view to Hubspot. Using ThoughtSpot Sync, you can push insights directly to Hubspot, notify your teams, and view data in context. ThoughtSpot Sync automatically establishes a secure pipeline to the destination app and thus eliminates the need for building custom connectors. +
-For more information, see xref:sync-hubspot.adoc[].
+* xref:sync-servicenow.adoc[ServiceNow]
+* xref:sync-hubspot.adoc[HubSpot]
+* xref:sync-gainsight.adoc[Gainsight] [.badge.badge-beta]#Beta#
+* xref:sync-zoho.adoc[Zoho] [.badge.badge-beta]#Beta#
 
-//
+Using ThoughtSpot Sync, you can push insights directly to your selected app, notify your teams, and view data in context. ThoughtSpot Sync automatically establishes a secure pipeline to the destination app and thus eliminates the need for building custom connectors.
+
 
 Rename Liveboards and visualizations without entering edit mode::
-
 Change the name or description of a Liveboard or visualization without entering *Edit* mode. The more image:icon-more-10px.png[more menu icon] menu for Liveboards and Liveboard visualizations now includes a *Rename* option, where you can edit the object name and description. For more information, see xref:liveboard-layout-edit.adoc#other-edits[Other Liveboard edits].
 
 [#9-0-0-cl-data-engineer]
