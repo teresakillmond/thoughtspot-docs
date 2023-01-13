@@ -47,6 +47,8 @@ a| <<aggregation,aggregation>>
 
 <<currency_type,currency_type>>
 
+<<custom_file_guid,custom_file_guid>>
+
 <<custom_name,custom_name>>
 
 <<data_type,data_type>>
@@ -88,6 +90,8 @@ a| <<frequency_granularity,frequency_granularity>>
 <<frequency_spec,frequency_spec>>
 
 <<geo_config,geo_config>>
+
+<<geometryType,geometryType>>
 
 <<guid,guid>>
 
@@ -393,6 +397,10 @@ One of:
 +
 See https://www.iso.org/iso-4217-currency-codes.html[ISO 4217 Currency Codes^] and xref:data-modeling-patterns.adoc#set-currency-type[Set currency type] for more information.
 
+[#custom_file_guid]
+custom_file_guid::
+The GUID for a custom map uploaded by an administrator.
+
 [#custom_name]
 custom_name::
 Optional display name for a column.
@@ -517,7 +525,14 @@ Uses two paired parameters:
 - `country: __<country_name>__`
 - `region_name: __<region_name_in_UI>__`; can be State, Postal Code, District, and so on.
 
+`custom_file_guid: <custom map GUID>`;; for columns that use a custom map. Must be followed by `geometryType`
+`geometryType: POLYGON`;; for columns that use a custom map. Must be preceded by `custom_file_guid`
+
 See xref:data-modeling-geo-data.adoc[Add a geographical data setting]
+
+[#geometryType]
+geometryType::
+Required for geographical configuration of Worksheet or table columns that use a custom map. `POLYGON` is the only valid value.
 
 [#guid]
 guid::
