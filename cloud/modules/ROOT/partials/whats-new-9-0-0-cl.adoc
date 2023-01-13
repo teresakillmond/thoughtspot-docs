@@ -230,9 +230,13 @@ endif::[]
 
 Previously, when using group_aggregate formulas, users could use query_filters to include filters entered in the search bar in the formula's value, but it was difficult to write a formula that accepted filters from only a single column.
 
-Starting with this release, you can specify column names within the ‘filters’ section of a group_aggregate formula, and any filter in your search bar referencing that column will be added to the formula. Filters entered in the search bar that are not on columns specified in the third argument of the group_aggregate formula will be ignored.
-
-// link
+Starting with this release, you can specify column names within the ‘filters’ section of a group_aggregate formula, and any filter in your search bar referencing that column will be added to the formula. Filters entered in the search bar that are not on columns specified in the third argument of the group_aggregate formula will be ignored. For details, see
+ifndef::pendo-links[]
+xref:formulas-aggregation-flexible.adoc#groupagg-filters-enhancement[Group aggregation filters].
+endif::[]
+ifdef::pendo-links[]
+xref:formulas-aggregation-flexible.adoc#groupagg-filters-enhancement[Group aggregation filters,window=_blank].
+endif::[]
 
 // move to bottom of business user
 
@@ -289,10 +293,10 @@ ifndef::free-trial-feature[]
 
 You can now share connections with other users or groups. Once granted access to a connection, users can add, remove, and modify tables in that connection. For more information, see
 ifndef::pendo-links[]
-xref:connections.adoc[About connections in ThoughtSpot].
+xref:connections.adoc#connection-share[About connections in ThoughtSpot].
 endif::[]
 ifdef::pendo-links[]
-xref:connections.adoc[About connections in ThoughtSpot,window=_blank].
+xref:connections.adoc#connection-share[About connections in ThoughtSpot,window=_blank].
 endif::[]
 // check if and when we're capitalizing connection
 
