@@ -37,7 +37,7 @@ ifndef::free-trial-feature[]
 [discrete]
 === Parameters
 
-Create Worksheet parameters to optimize your data inquiries. Use parameters to run different scenarios with adjustable values, without creating or modifying the constants in formulas for each new value. This feature must be enabled by your administrator.
+Create Worksheet parameters to optimize your data inquiries. Use parameters to run different scenarios with adjustable values, without creating or modifying the constants in formulas for each new value. For example, forecast your revenue each week, depending on the product discount value, as in the following gif. This feature must be enabled by your administrator.
 
 image::parameter-gif.gif[Parameter gif example]
 
@@ -47,7 +47,8 @@ image::parameter-gif.gif[Parameter gif example]
 
 Mark certain filters in your Liveboard as mandatory. If you add mandatory filters to a Liveboard, the visualizations will only load after Liveboard viewers select values for the mandatory filters. Use mandatory filters for Liveboards that contain data that may not be relevant for everyone who must view and consume the Liveboard. Mandatory filters also lower query and performance costs. This feature must be enabled by your administrator.
 
-image::liveboard-filters-mandatory.gif[Gif of a Liveboard with a mandatory filter]
+image::mandatory-filter.png[Creation of a mandatory filter and an image of a Liveboard with the mandatory filter]
+
 endif::free-trial-feature[]
 
 [#9-0-0-cl-pivot-measures]
@@ -112,7 +113,10 @@ endif::[]
 [discrete]
 === ThoughtSpot in Chinese Traditional
 
-// Yochana. we already have a what's new for this in 8.8.1
+Set your ThoughtSpot locale to Chinese (Traditional), or 中文 (繁體). ThoughtSpot changes your data format settings, such as currency and number formatting, and translates keywords, ThoughtSpot menu and navigation items, operators, and error messages.
+
+image::locale-chinese-traditional.png[ThoughtSpot application with the Chinese Traditional locale set]
+
 
 [#9-0-0-cl-group-aggregate]
 [discrete]
@@ -129,9 +133,9 @@ then the formula will evaluate to `group_aggregate(sum(Revenue), {ship mode}, {c
 
 [#9-0-0-cl-rename]
 [discrete]
-=== Rename Liveboards and visualizations without entering edit mode
+=== Rename Liveboards and visualizations in view mode
 
-Change the name or description of a Liveboard or visualization without entering *Edit* mode. The more image:icon-more-10px.png[more menu icon] menu for Liveboards and Liveboard visualizations now includes a *Rename* option, where you can edit the object name and description.
+Change the name or description of a Liveboard or visualization from view mode. The more image:icon-more-10px.png[more menu icon] menu for Liveboards and Liveboard visualizations now includes a *Rename* option, where you can edit the object name and description.
 
 image::liveboard-viz-rename.png[More menu for a Liveboard visualization, with Rename highlighted]
 
@@ -140,14 +144,6 @@ image::liveboard-viz-rename.png[More menu for a Liveboard visualization, with Re
 === Apply button on Configure menu under Edit Chart
 
 // Yochana. early access
-
-THE FOLLOWING ARE NEEDS EVALUATION
-
-[#9-0-0-cl-spotiq]
-[discrete]
-=== SpotIQ V2 list page improvements
-
-// Yochana
 
 ifndef::free-trial-feature[]
 ifdef::pendo-links[]
@@ -207,21 +203,19 @@ image::csv-upload-app.png[CSV upload]
 
 Users with *can manage data* or *admin* privileges can now share Connections with other users or groups that have *can manage data* privileges. Once granted access to a connection, users can add, remove, and modify tables in that connection.
 
+ifndef::free-trial-feature[]
+ifdef::pendo-links[]
 [#9-0-0-cl-dbt-meta]
 [discrete]
-=== dbt metadata tags for Worksheet column properties
-
-Manage your ThoughtSpot Worksheet column properties in dbt by using metadata tags to define column properties within your dbt model schema. dbt stays the source of truth, and you don't have to manually update the columns in ThoughtSpot when you make changes to your dbt model.
-
-// should this have an image/ gif?
-
-[#9-0-0-cl-fqn]
+=== dbt metadata tags for Worksheets [.badge.badge-beta-whats-new]#Beta#
+[#9-0-0-cl-group-aggregate]
 [discrete]
-=== Export FQNs when exporting TML files
+=== dbt metadata tags for Worksheets [.badge.badge-beta]#Beta#
+endif::[]
 
-To reduce ambiguity when exporting TML files, export the fully qualified names (FQNs) for the objects' data sources. If you select this option, the TML file contains FQNs for the underlying tables and connections.
+Manage your ThoughtSpot Worksheet column properties in dbt by using metadata tags to define column properties within your dbt model schema. Your dbt models contain all the necessary information, and you don't have to manually update the columns in ThoughtSpot when you make changes to your dbt model.
 
-image::tml-export-fqn.png[Choose what to export modal with the export fqn option highlighted]
+endif::free-trial-feature[]
 
 
 [#9-0-0-cl-redshift]
@@ -231,12 +225,6 @@ image::tml-export-fqn.png[Choose what to export modal with the export fqn option
 // Naomi
 
 Redshift Partner Connect allows you to try out ThoughtSpot connected to Redshift for free.
-
-[#9-0-0-cl-joins-rls]
-[discrete]
-=== Delete joins and RLS rules through TML
-
-When you edit and import TML files, ThoughtSpot now supports deletion of joins and RLS rules.
 
 ifndef::free-trial-feature[]
 ifdef::pendo-links[]
@@ -248,29 +236,29 @@ ifndef::pendo-links[]
 [discrete]
 === TML for Monitor alerts [.badge.badge-beta]#Beta#
 endif::[]
-Export, edit, and import KPI Monitor alerts programmatically using ThoughtSpot Modeling Language.
+Export, edit, and import KPI Monitor alerts programmatically, using ThoughtSpot Modeling Language.
 
 endif::free-trial-feature[]
 
-[#9-0-0-cl-join-creation]
+[#9-0-0-cl-fqn]
 [discrete]
-=== Deprecate old join creation UI
+=== Include FQNs when exporting TML files
 
-// Yochana. may not need what's new
+To reduce ambiguity when exporting TML files, you can export the fully qualified names (FQNs) for the objects' data sources. If you select this option, the TML file contains FQNs for the underlying tables and connections.
+
+image::tml-export-fqn.png[Choose what to export modal with the export fqn option highlighted]
+
+[#9-0-0-cl-joins-rls]
+[discrete]
+=== Delete joins and RLS rules through TML
+
+When you edit and import TML files, ThoughtSpot now supports deletion of joins and row-level security (RLS) rules.
 
 [#9-0-0-cl-detail-options]
 [discrete]
 === Add Delete and Make a copy option For applicable objects in details page
 
 // Yochana
-
-[#9-0-0-cl-snowflake]
-[discrete]
-=== Snowflake Partner Connect Free-Trial Integration on my1/my2 clusters
-
-// Naomi
-
-// feature works the same, but now redirects you to a my1 or my2 cluster instead of try.thoughtspot.com. My1 or My2 chosen at random.
 
 ifndef::free-trial-feature[]
 [discrete]
