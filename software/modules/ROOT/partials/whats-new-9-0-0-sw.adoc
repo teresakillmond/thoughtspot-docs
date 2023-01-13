@@ -28,7 +28,7 @@ ifdef::pendo-links[]
 === Parameters [.badge.badge-beta-whats-new]#Beta#
 endif::[]
 
-Create Worksheet parameters to optimize your data inquiries. Use parameters to run different scenarios with adjustable values, without creating or modifying the constants in formulas for each new value. This feature must be enabled by your administrator. For more information about parameters, see
+Create Worksheet parameters to optimize your data inquiries. Use parameters to run different scenarios with adjustable values, without creating or modifying the constants in formulas for each new value. For example, forecast your revenue each week, depending on the product discount value, as in the following gif. To try it out, edit a Worksheet, and select the *+* button that appears when you hover over the *Parameters* section. For more information about parameters, see
 ifndef::pendo-links[]
 xref:parameters-create.adoc[Creating parameters] and xref:parameters-use.adoc[Using parameters].
 endif::[]
@@ -48,7 +48,7 @@ ifdef::pendo-links[]
 === Mandatory Liveboard filters [.badge.badge-beta-whats-new]#Beta#
 endif::[]
 
-Mark certain filters in your Liveboard as mandatory. If you add mandatory filters to a Liveboard, the visualizations will only load after Liveboard viewers select values for the mandatory filters. Use mandatory filters for Liveboards that contain data that may not be relevant for everyone who must view and consume the Liveboard. Mandatory filters also lower query and performance costs. This feature must be enabled by your administrator.  For more information about mandatory filters, see
+Mark certain filters in your Liveboard as mandatory. If you add mandatory filters to a Liveboard, the visualizations will only load after Liveboard viewers select values for the mandatory filters. Use mandatory filters for Liveboards that contain data that may not be relevant for everyone who must view and consume the Liveboard. Mandatory filters also lower query and performance costs. To try the feature out, select *Mandatory filter > Make filter mandatory* when adding a filter to a Liveboard. For more information about mandatory filters, see
 ifndef::pendo-links[]
 xref:liveboard-filters-mandatory.adoc[Mandatory Liveboard filters].
 endif::[]
@@ -56,13 +56,13 @@ ifdef::pendo-links[]
 xref:liveboard-filters-mandatory.adoc[Mandatory Liveboard filters,window=_blank].
 endif::[]
 
-image::liveboard-filters-mandatory.gif[Gif of a Liveboard with a mandatory filter]
+image::mandatory-filter.png[Creation of a mandatory filter and an image of a Liveboard with the mandatory filter]
 
 [#9-0-0-sw-pivot-measures]
 [discrete]
 === Show measures in pivot table rows
 
-By default, ThoughtSpot displays measures in columns in pivot tables. With this release, choose whether to display measures in rows or columns in your pivot tables. For more information, see
+By default, ThoughtSpot displays measures in columns in pivot tables. With this release, choose whether to display measures in rows or columns in your pivot tables. To try it out, in the chart configuration panel for a pivot table, select *Settings > Display measures in rows*. For more information, see
 ifndef::pendo-links[]
 xref:chart-pivot-table.adoc#reorder[Reorder your pivot table].
 endif::[]
@@ -82,7 +82,7 @@ ifdef::pendo-links[]
 === Upload custom geo maps [.badge.badge-beta-whats-new]#Beta#
 endif::[]
 
-Upload your own custom maps and visualize data on geo charts with regions that are specific to you and your organization. This feature must be enabled by your administrator. For more information about custom geo maps, see
+Upload your own custom maps and visualize data on geo charts with regions that are specific to you and your organization. To try it out, select *Custom maps* in the Admin Console. For more information about custom geo maps, see
 ifndef::pendo-links[]
 xref:geomaps-custom.adoc[Upload custom geo maps].
 endif::[]
@@ -119,9 +119,9 @@ Say that you search for `group formula` `color= ‘blue’` `ship mode != ‘car
 
 [#9-0-0-sw-rename]
 [discrete]
-=== Rename Liveboards and visualizations without entering edit mode
+=== Rename Liveboards and visualizations in view mode
 
-Change the name or description of a Liveboard or visualization without entering *Edit* mode. The more image:icon-more-10px.png[more menu icon] menu for Liveboards and Liveboard visualizations now includes a *Rename* option, where you can edit the object name and description. For more information, see
+Change the name or description of a Liveboard or visualization from view mode. The more image:icon-more-10px.png[more menu icon] menu for Liveboards and Liveboard visualizations now includes a *Rename* option, where you can edit the object name and description. To try it out, navigate to a Liveboard, and select the more image:icon-more-10px.png[more menu icon] menu for a visualization. For more information, see
 ifndef::pendo-links[]
 xref:liveboard-layout-edit.adoc#other-edits[Other Liveboard edits].
 endif::[]
@@ -129,9 +129,7 @@ ifdef::pendo-links[]
 xref:liveboard-layout-edit.adoc#other-edits[Other Liveboard edits,window=_blank].
 endif::[]
 
-image::liveboard-viz-rename.png[More menu for a Liveboard visualization, with Rename highlighted]
-
-// Teresa. need a software version of the image
+image::liveboard-viz-rename-software.png[More menu for a Liveboard visualization, with Rename highlighted]
 
 [#9-0-0-sw-chart-config-apply]
 [discrete]
@@ -144,16 +142,6 @@ image::liveboard-viz-rename.png[More menu for a Liveboard visualization, with Re
 === Users should be able to edit their display name in the profile page
 
 // Yochana
-
-THE FOLLOWING ARE NEEDS EVALUATION
-
-[#9-0-0-sw-spotiq]
-[discrete]
-=== SpotIQ V2 list page improvements
-
-// Yochana
-
-
 
 '''
 [#secondary-9-0-0-sw]
@@ -168,11 +156,22 @@ THE FOLLOWING ARE NEEDS EVALUATION
 
 Users with *can manage data* or *admin* privileges can now share Connections with other users or groups that have *can manage data* privileges. Once granted access to a connection, users can add, remove, and modify tables in that connection.
 
-[#9-0-0-sw-dbt-meta]
+ifdef::pendo-links[]
+[#9-0-0-cl-dbt-meta]
 [discrete]
-=== dbt Meta Tags for ThoughtSpot Metadata Management
+=== dbt metadata tags for Worksheets [.badge.badge-beta-whats-new]#Beta#
+[#9-0-0-cl-group-aggregate]
+[discrete]
+=== dbt metadata tags for Worksheets [.badge.badge-beta]#Beta#
+endif::[]
 
-// Teresa. in beta
+Manage your ThoughtSpot Worksheet column properties in dbt by using metadata tags to define column properties within your dbt model schema. Your dbt models contain all the necessary information, and you don't have to manually update the columns in ThoughtSpot when you make changes to your dbt model. To try it out, update the `schema.yml` files for your dbt models with the new metadata tags. For more information, see
+ifndef::pendo-links[]
+xref:dbt-integration-metadata-tags.adoc[Metadata tags for dbt].
+endif::[]
+ifdef::pendo-links[]
+xref:dbt-integration-metadata-tags.adoc[Metadata tags for dbt,window=_blank].
+endif::[]
 
 [#9-0-0-sw-postgresql]
 [discrete]
@@ -219,20 +218,6 @@ image::tags-data-workspace.gif[Data workspace tags gif]
 
 // Naomi-- checking if in 9.0.0.sw
 
-[#9-0-0-sw-fqn]
-[discrete]
-=== Export FQNs when exporting TML files
-
-To reduce ambiguity when exporting TML files, export the fully qualified names (FQNs) for the objects' data sources. If you select this option, the TML file contains FQNs for the underlying tables and connections. For more information, see
-ifndef::pendo-links[]
-xref:tml.adoc#fqn[ThoughtSpot Modeling Language].
-endif::[]
-ifdef::pendo-links[]
-xref:tml.adoc#fqn[ThoughtSpot Modeling Language,window=_blank].
-endif::[]
-
-image::tml-export-fqn.png[Choose what to export modal with the export fqn option highlighted]
-
 
 [#9-0-0-sw-snowflake]
 [discrete]
@@ -246,11 +231,37 @@ image::tml-export-fqn.png[Choose what to export modal with the export fqn option
 
 // Mark
 
+[#9-0-0-sw-fqn]
+[discrete]
+=== Include FQNs when exporting TML files
+
+To reduce ambiguity when exporting TML files, you can export the fully qualified names (FQNs) for the objects' data sources. If you select this option, the TML file contains FQNs for the underlying tables and connections. To try it out, select *Export FQNs of referenced objects* when exporting TML files. For more information, see
+ifndef::pendo-links[]
+xref:tml.adoc#fqn[ThoughtSpot Modeling Language].
+endif::[]
+ifdef::pendo-links[]
+xref:tml.adoc#fqn[ThoughtSpot Modeling Language,window=_blank].
+endif::[]
+
+image::tml-export-fqn.png[Choose what to export modal with the export fqn option highlighted]
+
+[#9-0-0-sw-tml-guids]
+[discrete]
+=== Visualization GUID support in TML files
+
+Liveboard ThoughtSpot Modeling Language (TML) files now contain distinct GUIDs for each visualization in the Liveboard by default. This ensures that the GUID for the visualization stays the same after you import or export it. To try it out, select the *Export TML* menu option for a Liveboard. For more information, see
+ifndef::pendo-links[]
+xref:tml.adoc#viz_guid[ThoughtSpot Modeling Language].
+endif::[]
+ifdef::pendo-links[]
+xref:tml.adoc#viz_guid[ThoughtSpot Modeling Language,window=_blank].
+endif::[]
+
 [#9-0-0-sw-joins-rls]
 [discrete]
 === Delete joins and RLS rules through TML
 
-When you edit and import TML files, ThoughtSpot now supports deletion of joins and RLS rules.  For more information, see
+When you edit and import TML files, ThoughtSpot now supports deletion of joins and row-level security (RLS) rules. To try it out, delete the lines in a TML file that contain RLS rules or joins, and import the object. For more information, see
 ifndef::pendo-links[]
 xref:tml.adoc[ThoughtSpot Modeling Language].
 endif::[]
@@ -271,24 +282,6 @@ endif::[]
 // Naomi
 
 Previously, when deleting tables from Connections, ThoughtSpot did not delete the table’s metadata completely. Starting in 9.0.0.sw, tables deleted through the ThoughtSpot UI disappear completely from your cluster.
-
-[#9-0-0-sw-join-creation]
-[discrete]
-=== Deprecate old join creation UI
-
-// Yochana. may not need what's new
-
-[#9-0-0-sw-tml-guids]
-[discrete]
-=== Visualization GUID support in TML files
-
-Liveboard ThoughtSpot Modeling Language (TML) files now contain distinct GUIDs for each visualization in the Liveboard by default. This ensures that the GUID for the visualization stays the same after you import or export it. For more information, see
-ifndef::pendo-links[]
-xref:tml.adoc#viz_guid[ThoughtSpot Modeling Language].
-endif::[]
-ifdef::pendo-links[]
-xref:tml.adoc#viz_guid[ThoughtSpot Modeling Language,window=_blank].
-endif::[]
 
 [#9-0-0-sw-python]
 [discrete]
