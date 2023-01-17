@@ -62,3 +62,143 @@ models:
 
 [#column-properties]
 == Column properties metadata tags
+
+`ts_column_type`:: Sets the column type for the column. For more information on column types, see xref:data-modeling-column-basics.adoc#change-column-type[Column Type].
+Possible values;; `ATTRIBUTE` or `MEASURE`
+Default values;; If the data type is `FLOAT`, `DOUBLE`, `INT`, or `BIGINT`, the default is `MEASURE`. If the data type is `VARCHAR`, `BOOL`, `DATE`, or `DATETIME`, the default is `ATTRIBUTE`.
+Sample;;
++
+----
+- name: QUANTITYPURCHASED
+  description: quantitypurchased (data type number)
+  meta:
+    ts_column_type: measure
+----
+
+`ts_additive`:: Controls the type of aggregation that is available for the column. For more information on additive columns, see xref:data-modeling-aggreg-additive.adoc[Set ADDITIVE or AGGREGATION].
+Possible values;; `YES` or `NO`
+Default values;; If the column type is `MEASURE`, the default is `YES`. If the column type is `ATTRIBUTE`, the default is `NO`.
+Sample;;
++
+----
+- name: QUANTITYPURCHASED
+  description: quantitypurchased (data type number)
+  meta:
+    ts_column_type: measure
+    ts_additive: YES
+----
+
+`ts_aggregation`:: Sets the default aggregation type for a column. For more information on aggregation, see xref:data-modeling-aggreg-additive.adoc[Set ADDITIVE or AGGREGATION].
+Possible values;; If the column type is `ATTRIBUTE`: `COUNT`, `COUNT_DISTINCT`, `MIN`, `MAX`, or `NONE`,
++
+If the column type is `MEASURE`: `COUNT`, `COUNT_DISTINCT`, `MIN`, `MAX`, `SUM`, `AVERAGE`, `STD_DEVIATION`, or `VARIANCE`
+Default values;; If the column type is `MEASURE`, the default is `SUM`. If the column type is `ATTRIBUTE`, the default is `NONE`.
+Sample;;
++
+----
+- name: QUANTITYPURCHASED
+  description: quantitypurchased (data type number)
+  meta:
+    ts_column_type: measure
+    ts_additive: YES
+    ts_additive: SUM
+----
+
+`ts_hidden`:: Sets the column visibility. For more information about hidden columns, see xref:data-modeling-visibility.adoc#hide[Hide a column].
+Possible values;; `YES` or `NO`
+Default values;; The default is `NO`.
+Sample;;
++
+----
+- name: QUANTITYPURCHASED
+  description: quantitypurchased (data type number)
+  meta:
+    ts_column_type: measure
+    ts_hidden: YES
+----
+
+`ts_synonym`:: Specifies synonyms that can be used in the search bar to refer to a column. For more information about column synonyms, see xref:data-modeling-visibility.adoc#synonyms[Create synonyms for a column].
+Possible values;; comma-separated text values
+Default values;; There is no default.
+Sample;;
++
+----
+- name: QUANTITYPURCHASED
+  description: quantitypurchased (data type number)
+  meta:
+    ts_column_type: measure
+    ts_synonym: PURCHASED,QUANTITY
+----
+
+`ts_index_type`:: Sets the type of indexing the column uses. For more information about column indexing, see xref:data-modeling-index.adoc[].
+Possible values;; `DEFAULT` OR `DONT_INDEX`
+Default values;; If the data type is `INT`, `BIGINT`, `DATE`, `DATETIME`, or `DOUBLE`, the default is `DONT_INDEX`. For all other data types, the default is `DEFAULT`.
+Sample;;
++
+----
+- name: QUANTITYPURCHASED
+  description: quantitypurchased (data type number)
+  meta:
+    ts_column_type: measure
+    ts_synonym: PURCHASED,QUANTITY
+    ts_index_type : DONT_INDEX
+----
+
+`ts_geo_config`:: Enables a column to be used in geo map visualizations. For more information about geo configuration, see xref:data-modeling-geo-data.adoc[].
+Possible values;; `NONE`, `LATITUDE`, `LONGITUDE`, `COUNTRY`, `sub_nation_region`
++
+NOTE: The `sub_nation_region` value depends on the country you specify. For example, for the United States, ThoughtSpot supports `State`, `County`, and `Zip Code`. For Denmark, ThoughtSpot supports `Region`, `Municipality`, and `Postal Code`. To determine which sub-nation regions ThoughtSpot supports for the relevant country, see xref:geomap-reference.adoc[].
+Default values;; The default is `NONE`.
+Samples;;
++
+----
+- name: STATE
+  description: state data (data type text)
+  meta:
+    ts_geo_config :
+      type : sub_nation_region
+      country : United States
+      region_type : State
+
+- name: LONGITUDE
+  description: longitude data (data type float)
+  meta:
+    ts_geo_config :
+      type : LONGITUDE
+----
+
+`ts_index_priority`:: Sets the indexing priority the column uses. For more information about column indexing, see xref:data-modeling-index.adoc[].
+Possible values;; Any number between 1-10. Use a value between 8-10 for important columns to improve their search ranking.
+Use 1-3 for low priority columns.
+Default values;; The default is `1`.
+Sample;;
++
+----
+- name: QUANTITYPURCHASED
+  description: quantitypurchased (data type number)
+  meta:
+    ts_column_type: measure
+    ts_index_priority : 2
+----
+
+`ts_format_pattern`:: Specifies the format to use for numeric values or dates in the column. For more information about format patterns, see xref:data-modeling-patterns.adoc[].
+Possible values;; TBA
+Default values;; The default is an empty string.
+Sample;;
++
+----
+- name: QUANTITYPURCHASED
+  description: quantitypurchased (data type number)
+  meta:
+    ts_column_type: measure
+    ts_format_pattern : "#,###"
+----
+
+`ts_currency_type`:: Specifies the format to use for currency values in the column. For more information about currency types, see xref:data-modeling-patterns.adoc#set-currency-type[Set currency type].
+Possible values;;
+Default values;;
+Sample;;
++
+----
+
+----
