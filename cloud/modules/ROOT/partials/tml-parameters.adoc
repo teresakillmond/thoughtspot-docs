@@ -526,11 +526,11 @@ Uses two paired parameters:
 - `region_name: __<region_name_in_UI>__`; can be State, Postal Code, District, and so on.
 
 `custom_file_guid: <custom map GUID>`;; for columns that use a custom map. Must be followed by `geometryType`
-`geometryType: POLYGON`;; for columns that use a custom map. Must be preceded by `custom_file_guid`
+`geometryType: <custom_map_geometry_type>`;; for columns that use a custom map. Must be preceded by `custom_file_guid`. Accepts the following values: `POINT`, `LINE_STRING`, `LINEAR_RING`, `POLYGON`, `MULTI_POINT`, `MULTI_LINE_STRING`, `MULTI_POLYGON`, `GEOMETRY_COLLECTION`, `CIRCLE`
 
 [#geometryType]
 geometryType::
-Required for geographical configuration of Worksheet or table columns that use a custom map. `POLYGON` is the only valid value.
+Specifies the geometry type of the *TopoJSON* file. Required for geographical configuration of Worksheet or table columns that use a custom map. Accepts the following values: `POINT`, `LINE_STRING`, `LINEAR_RING`, `POLYGON`, `MULTI_POINT`, `MULTI_LINE_STRING`, `MULTI_POLYGON`, `GEOMETRY_COLLECTION`, `CIRCLE`
 
 [#guid]
 guid::
