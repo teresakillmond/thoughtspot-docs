@@ -68,6 +68,8 @@ models:
 
 ThoughtSpot supports the following metadata tags and values when defining schemas in dbt.
 
+NOTE: ThoughtSpot does not support a metadata tag for column descriptions. The `description` tag in the schema examples in this article is only relevant in dbt. ThoughtSpot's metadata tags all begin with `ts_`.
+
 `ts_column_type`:: Sets the column type for the column. For more information on column types, see xref:data-modeling-column-basics.adoc#change-column-type[Change column type].
 Possible values;; `ATTRIBUTE` or `MEASURE`
 Default values;; If the data type is `FLOAT`, `DOUBLE`, `INT`, or `BIGINT`, the default is `MEASURE`. If the data type is `VARCHAR`, `BOOL`, `DATE`, or `DATETIME`, the default is `ATTRIBUTE`.
