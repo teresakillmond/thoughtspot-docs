@@ -68,6 +68,7 @@ In this case, you would need to correct this to indicate those months are quarte
 ** Snowflake, and other cloud data warehouses: 20,000 days
 +
 NOTE: Maximum calendar length is determined by the cloud data warehouse you connect to. To extend the calendar length for these connections, contact {support-url}.
+* ThoughtSpot uses ISO week format for the `week of [month | quarter | year]` keywords, which means that the last few days of a quarter may sometimes show as the first few days of the next quarter, based on the https://en.wikipedia.org/wiki/ISO_week_date[ISO week date system^].
 
 == Prerequisites
 
