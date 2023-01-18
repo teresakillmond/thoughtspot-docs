@@ -40,9 +40,9 @@ For a complete list of issues that we fixed in this release, see xref:fixed.adoc
 
 Upload custom geo maps [.badge.badge-beta-relnotes]#Beta#::
 
-Upload your own custom maps and visualize data on xref:chart-geo.adoc[geo charts] with regions that are specific to you and your organization.
+Upload your own custom maps and visualize data on xref:chart-geo.adoc[geo charts] with regions that are specific to you and your organization. For more information, see xref:geomaps-custom.adoc[].
 +
-This feature is in beta and off by default. To enable it, contact {support-url}. For more information, see xref:geomaps-custom.adoc[].
+This feature is in beta and off by default. To enable it, contact {support-url}.
 
 Parameters [.badge.badge-beta-relnotes]#Beta#::
 Create Worksheet parameters to optimize your data inquiries. Use parameters to run different scenarios with adjustable values, without creating or modifying the constants in formulas for each new value. For more information, refer to xref:parameters-create.adoc[] and xref:parameters-use.adoc[].
@@ -65,8 +65,6 @@ Visualization GUID support in TML files::
 
 Liveboard ThoughtSpot Modeling Language (TML) files now contain distinct GUIDs for each visualization in the Liveboard by default. This ensures that the GUID for the visualization stays the same after you import or export it. See the xref:tml.adoc#viz_guid[TML viz_guid] parameter.
 
-Sharing connections:: Users with *can manage data* or *admin* privileges can now share Connections with other users or groups that have *can manage data* privileges. Once granted access to a connection, users can add, remove, and modify tables in that connection.
-
 GroupAggregate Enhancements: Filters:: Starting with this release, you can specify column names within the ‘filters’ section of a group_aggregate formula, and any filter in your search bar referencing that column will be added to the formula.
 +
 For example: +
@@ -79,9 +77,9 @@ If you search for `fx` `color= ‘blue’` `ship mode != ‘car’`, where `fx` 
 
 Mandatory Liveboard filters [.badge.badge-beta-relnotes]#Beta#::
 
-Mark certain filters in your Liveboard as mandatory. If you add mandatory filters to a Liveboard, the visualizations will only load after Liveboard viewers select values for the mandatory filters. Use mandatory filters for Liveboards that contain data that may not be relevant for everyone who must view and consume the Liveboard. Mandatory filters also lower query and performance costs.
+Mark certain filters in your Liveboard as mandatory. If you add mandatory filters to a Liveboard, the visualizations will only load after Liveboard viewers select values for the mandatory filters. Use mandatory filters for Liveboards that contain data that may not be relevant for everyone who must view and consume the Liveboard. Mandatory filters also lower query and performance costs. For more information, see xref:liveboard-filters-mandatory.adoc[].
 +
-This feature is in beta and off by default. To enable it, contact {support-url}. For more information, see xref:liveboard-filters-mandatory.adoc[].
+This feature is in beta and off by default. To enable it, contact {support-url}.
 
 Delete tables from ThoughtSpot:: Previously, when deleting tables from Connections, ThoughtSpot did not delete the table’s metadata completely. Starting in 9.0.0.sw, tables deleted through the ThoughtSpot UI disappear completely from your cluster.
 
@@ -96,11 +94,14 @@ PostgreSQL connection::
 You can now create connections from ThoughtSpot to PostgreSQL. For details, see xref:connections-postgresql.adoc[PostgreSQL].
 
 
-dbt metadata tags for Worksheet column properties::
+dbt metadata tags for Worksheet column properties [.badge.badge-beta-relnotes]#Beta#::
 
 Manage your ThoughtSpot Worksheet column properties in dbt by using metadata tags to define column properties within your dbt model schema. dbt stays the source of truth, and you don't have to manually update the columns in ThoughtSpot when you make changes to your dbt model. For more information, see xref:dbt-integration-metadata-tags.adoc[Metadata tags for dbt].
 +
 This feature is in Beta and on by default.
+
+Sharing connections::
+You can now share connections with other users or groups. Once granted access to a connection, users can add, remove, and modify tables in that connection. For more information, see xref:connections.adoc[].
 
 Tag enhancements::
 This release includes the following updates to the xref:tags.adoc[tags] feature in the xref:data-workspace.adoc[Data workspace]:
