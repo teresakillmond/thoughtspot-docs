@@ -6,6 +6,8 @@
 :author: Teresa Killmond
 :description: Manage your ThoughtSpot Worksheet column properties in dbt by using metadata tags to define column properties within your dbt model schema.
 
+NOTE: This feature is in [.badge.badge-update-note]#Beta# in 9.0.0.cl.
+
 Manage your ThoughtSpot Worksheet xref:data-modeling-settings.adoc[column properties] in dbt by using metadata tags to define column properties within your dbt model schema. dbt stays the source of truth, and you don't have to manually update the columns in ThoughtSpot when you make changes to your dbt model.
 
 ThoughtSpot has its own set of metadata tags that you can use within the *schema.yml* files in your dbt model folders. For example, you can specify the column type, synonyms, and currency type for a column, before ThoughtSpot creates its own Worksheets based on your dbt models during xref:dbt-integration.adoc[dbt integration]. For more information about the Worksheet column properties, see xref:data-modeling-settings.adoc[].
