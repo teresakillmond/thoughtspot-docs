@@ -59,11 +59,14 @@ models:
 
 ----
 
+. When you xref:dbt-integration.adoc[integrate with dbt], the Worksheets ThoughtSpot creates will automatically have the column properties you defined.
 
 [#column-properties]
 == Column properties metadata tags
 
-`ts_column_type`:: Sets the column type for the column. For more information on column types, see xref:data-modeling-column-basics.adoc#change-column-type[Column Type].
+ThoughtSpot supports the following metadata tags and values when defining schemas in dbt.
+
+`ts_column_type`:: Sets the column type for the column. For more information on column types, see xref:data-modeling-column-basics.adoc#change-column-type[Change column type].
 Possible values;; `ATTRIBUTE` or `MEASURE`
 Default values;; If the data type is `FLOAT`, `DOUBLE`, `INT`, or `BIGINT`, the default is `MEASURE`. If the data type is `VARCHAR`, `BOOL`, `DATE`, or `DATETIME`, the default is `ATTRIBUTE`.
 Sample;;
@@ -75,7 +78,7 @@ Sample;;
     ts_column_type: measure
 ----
 
-`ts_additive`:: Controls the type of aggregation that is available for the column. For more information on additive columns, see xref:data-modeling-aggreg-additive.adoc[Set ADDITIVE or AGGREGATION].
+`ts_additive`:: Controls the type of aggregation that is available for the column. Determines whether the column values can be used in mathematical operations. For more information on additive columns, see xref:data-modeling-aggreg-additive.adoc[Set ADDITIVE or AGGREGATION].
 Possible values;; `YES` or `NO`
 Default values;; If the column type is `MEASURE`, the default is `YES`. If the column type is `ATTRIBUTE`, the default is `NO`.
 Sample;;
@@ -101,7 +104,7 @@ Sample;;
   meta:
     ts_column_type: measure
     ts_additive: YES
-    ts_additive: SUM
+    ts_aggregation: SUM
 ----
 
 `ts_hidden`:: Sets the column visibility. For more information about hidden columns, see xref:data-modeling-visibility.adoc#hide[Hide a column].
@@ -195,10 +198,63 @@ Sample;;
 ----
 
 `ts_currency_type`:: Specifies the format to use for currency values in the column. For more information about currency types, see xref:data-modeling-patterns.adoc#set-currency-type[Set currency type].
-Possible values;;
-Default values;;
+Possible values;; `from_isocode`, `from_browser`, `from_column`, `NONE` (need confirmation)
+Default values;; The default is `NONE`.
 Sample;;
 +
 ----
+- name: SALES
+  description: sales (data type number)
+  meta:
+    ts_column_type: measure
+    ts_currency_type :
+      type : from_isocode
+      isocode : USD
 
+- name: DISCOUNT
+  description: discount (data type number)
+  meta:
+    ts_column_type: measure
+    ts_currency_type :
+      type : from_browser
+----
+
+`ts_attr_dim`:: Only applies to tables that join over a xref:chasm-trap.adoc[chasm trap]. Designates whether the tables depend on this column for attribution. For more information about attribution dimensions, see xref:data-modeling-attributable-dimension.adoc[Change the Attribution dimension].
+Possible values;; `YES` or `NO`
+Default values;; The default is `YES`.
+Sample;;
++
+----
+- name: PRODUCTNAME
+  description: productname (data type text)
+  meta:
+    ts_column_type : attribute
+    ts_additive : YES
+    ts_aggregation : COUNT
+    ts_attr_dim : YES
+----
+
+`ts_spotiq_pref`:: Excludes specified columns from SpotIQ analyses. By default, ThoughtSpot includes all columns in SpotIQ analysis. For more information about SpotIQ preferences, see xref:spotiq-data-model-preferences.adoc[].
+Possible values;; `DEFAULT` or `EXCLUDE`
+Default values;; The default is `DEFAULT`, in which ThoughtSpot includes all columns in SpotIQ analysis.
+Sample;;
++
+----
+- name: PRODUCTNAME
+  description: productname (data type text)
+  meta:
+    ts_column_type : attribute
+    ts_additive : YES
+    ts_aggregation : COUNT
+    ts_spotiq_pref : EXCLUDE
+----
+
+`ts_calendar_type`:: Specifies what type of calendar a date type column uses.
+It can be the Gregorian calendar (default), a fiscal calendar, or any other custom calendar. For more information about custom calendars, see xref:connections-cust-cal.adoc[].
+Possible values;; `NONE`, `DEFAULT`, or a specified custom calendar
+Default values;; If the data type is `VARCHAR`, `INT`, `BIGINT`, `FLOAT`, `BOOL`, or `DOUBLE`, the default is `NONE`, and this tag is not editable. If the data type is `DATE` or `DATETIME`, the default is `NULL`, and the tag is editable.
+Sample;;
++
+----
+TBA
 ----
