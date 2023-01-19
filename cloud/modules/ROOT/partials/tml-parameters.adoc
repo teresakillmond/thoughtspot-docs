@@ -380,6 +380,8 @@ A way to identify the external data warehouse connection that the table or colum
 [#creator]
 creator::
 Container for information about the creator of a Monitor alert. The creator information is only visible for administrators.
++
+NOTE: You can't edit the creator of a Monitor alert after you create the alert. You can only edit it if you have admin privileges, while creating the alert.
 
 [#cron]
 cron::
@@ -982,11 +984,15 @@ Possible values: `COLUMN`, `BAR`, `LINE`, `PIE`, `SCATTER`, `BUBBLE`, `STACKED_C
 
 [#username]
 username::
-The username of the creator of a Monitor alert, or the usernames of subscribed users for a Monitor alert. The creator information is only visible for administrators.
+The username of the creator of a Monitor alert, or the usernames of subscribed users for a Monitor alert. The creator information is only visible for administrators. If you specify both a `username` and a `user_email` for the creator of a Monitor alert, the `username` specified takes precedence.
++
+NOTE: You can't edit the creator of a Monitor alert after you create the alert. You can only edit it if you have admin privileges, while creating the alert.
 
 [#user_email]
 user_email::
-The email address of the creator of a Monitor alert, or the email addresses of subscribed users for a Monitor alert. The creator information is only visible for administrators.
+The email address of the creator of a Monitor alert, or the email addresses of subscribed users for a Monitor alert. The creator information is only visible for administrators. If you specify both a `username` and a `user_email` for the creator of a Monitor alert, the `username` specified takes precedence. If the `user_email` is the only parameter specified and multiple ThoughtSpot users have that email address, the TML validation returns an error, and you must specify a username.
++
+NOTE: You can't edit the creator of a Monitor alert after you create the alert. You can only edit it if you have admin privileges, while creating the alert.
 
 [#value]
 value::
