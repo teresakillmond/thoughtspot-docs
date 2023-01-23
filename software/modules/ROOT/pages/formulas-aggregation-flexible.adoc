@@ -201,8 +201,10 @@ Filter condition: `color= 'blue'` `ship mode != 'car'`
 
 For a search on `group_agg color= 'blue' ship mode != 'car'`, you can add a formula to calculate the revenue for all blue-colored items while ignoring the ship mode filter as:
 
-groupagg
-—- group_aggregate (sum(Revenue), {ship mode}, {color, quantity}) —-
+.groupagg
+----
+group_aggregate (sum(Revenue), {ship mode}, {color, quantity})
+----
 
 In this case, the results will be aggregated based on the dimensions in the formula and the filter on the color column; the ship mode not equal to car filter will be ignored, since it is not specified as a filter column in the formula.
 
