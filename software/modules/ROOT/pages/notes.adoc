@@ -65,11 +65,10 @@ Visualization GUID support in TML files::
 
 Liveboard ThoughtSpot Modeling Language (TML) files now contain distinct GUIDs for each visualization in the Liveboard by default. This ensures that the GUID for the visualization stays the same after you import or export it. See the xref:tml.adoc#viz_guid[TML viz_guid] parameter.
 
-GroupAggregate Enhancements: Filters:: Starting with this release, you can specify column names within the ‘filters’ section of a group_aggregate formula, and any filter in your search bar referencing that column will be added to the formula.
+GroupAggregate Enhancements: Filters [.badge.badge-beta-relnotes]#Beta#:: Previously, when using group_aggregate formulas, users could use query_filters to include filters entered in the search bar in the formula's value, but it was difficult to write a formula that accepted filters from only a single column. Starting with this release, you can specify column names within the ‘filters’ section of a group_aggregate formula, and any filter in your search bar referencing that column will be added to the formula. Filters entered in the search bar that are not on columns specified in the third argument of the group_aggregate formula will be ignored.
 +
-For example: +
-If you search for `fx` `color= ‘blue’` `ship mode != ‘car’`, where `fx` = `group_aggregate (sum(Revenue), {ship mode}, {color, quantity})`, then the formula will evaluate to `group_aggregate(sum(Revenue), {ship mode}, {color = ‘blue’})`.
-
+For example:
+Say that you search for `group formula` `color= ‘blue’` `ship mode != ‘car’`, where `group formula = group_aggregate (sum(Revenue), {ship mode}, {color, quantity})`. In this case, the formula will adopt the color = blue filter but ignore the ship mode filter, evaluating to `group_aggregate(sum(Revenue), {ship mode}, {color = ‘blue’})`.
 
 
 [#business-user-9-0-0-sw]
