@@ -3,9 +3,10 @@
 :author: Naomi
 :linkattrs:
 :experimental:
+:page-noindex:
 :page-layout: default-cloud
 :connection: HubSpot
-:description: You can connect ThoughtSpot to your Google account and push CSV tables and charts to HubSpot.
+:description: You can connect ThoughtSpot to your Google account and push CSV tables to HubSpot.
 
 
 
@@ -20,8 +21,10 @@ To create a sync to {connection} from an Answer, follow these steps:
 NOTE: You cannot create a sync from an unsaved Answer. If the *Sync to other apps* option appears grayed-out in the menu, first save the Answer before trying again.
 
 . If this is the first sync you have created for {connection}, a pop-up authorization window appears. To give ThoughtSpot permission to send data to your {connection} account, select your account from the pop-up window.
-
-
++
+image:hubspot-login.png[HubSpot sign-in pop-up]
++
+image:hubspot-permission.png[List of HubSpot permissions for ThoughtSpot]
 
 . Within ThoughtSpot, fill in the following parameters:
 
@@ -32,7 +35,7 @@ NOTE: You cannot create a sync from an unsaved Answer. If the *Sync to other app
 
 * Map the *Source* and *Destination* columns from the dropdown menus provided. Note that the Source column refers to the column in ThoughtSpot, while the Destination column refers to the column in {connection}.
 +
-image:ts-sync-hubspot-param.png[HubSpot Sync window]
+image:sync-hubspot-param.png[HubSpot Sync window]
 
 
 . By default, “Save and sync” is selected. Select *Save* to send your data to {connection}. Your data immediately appears in {connection}.
