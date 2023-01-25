@@ -34,7 +34,7 @@ ifndef::free-trial-feature[]
 <<9-0-0-cl-chart-config-apply,Apply multiple chart changes at once>> +
 endif::free-trial-feature[]
 ifndef::free-trial-feature[]
-<<9-0-0-cl-group-aggregate,GroupAggregate Enhancements: Filters>> +
+<<9-0-0-cl-group-aggregate,Group aggregation enhancements: filters>> +
 endif::free-trial-feature[]
 <<9-0-0-cl-snowflake-csv,Snowflake CSV upload>> +
 <<9-0-0-cl-postgresql,PostgreSQL connection>> +
@@ -58,12 +58,6 @@ endif::free-trial-feature[]
 endif::[]
 
 [#primary-9-0-0-cl]
-
-[#9-0-0-cl-early-access]
-[discrete]
-=== Early Access features
-
-Administrators can see the available Early Access features and selectively enable or disable them for all users by going to the *Admin* tab and selecting *Early Access features*.  Early Access features are new in this release, and are disabled by default.
 
 [#9-0-0-cl-sync-servicenow]
 [discrete]
@@ -100,7 +94,7 @@ image::parameter-gif.gif[Parameter gif example]
 
 [#9-0-0-cl-mandatory-filters]
 [discrete]
-=== Mandatory filters
+=== Mandatory Liveboard filters
 
 Mark certain filters in your Liveboard as mandatory. If you add mandatory filters to a Liveboard, the visualizations will only load after Liveboard viewers select values for the mandatory filters. Use mandatory filters for Liveboards that contain data that may not be relevant for everyone who must view and consume the Liveboard. Mandatory filters also lower query and performance costs. This feature must be enabled by your administrator.
 
@@ -110,7 +104,7 @@ endif::free-trial-feature[]
 
 [#9-0-0-cl-pivot-measures]
 [discrete]
-=== Show measures in Pivot table rows
+=== Show measures in pivot table rows
 
 By default, ThoughtSpot displays measures in columns in pivot tables. With this release, choose whether to display measures in rows or columns in your pivot tables.
 
@@ -127,13 +121,17 @@ image::custom-map-search-example.png[Custom geo map being added]
 
 endif::free-trial-feature[]
 
+ifndef::free-trial-feature[]
 
 [#9-0-0-cl-labels]
 [discrete]
-=== Data labels not visible on dark colored charts
+=== Data labels on a dark background
 
-// Yochana. early access
+Labels that appear on a dark background can be displayed in a lighter text color, making them easier to read. This feature must be enabled by your administrator.
 
+image::chartconfig-data-labels-on-dark-background.png[A chart with data labels that are clearly visible on a dark background]
+
+endif::free-trial-feature[]
 
 ifdef::free-trial-feature[]
 [#9-0-0-cl-free-trial-row-limits]
@@ -149,7 +147,7 @@ endif::free-trial-feature[]
 
 [#9-0-0-cl-chinese-traditional]
 [discrete]
-=== ThoughtSpot in Chinese Traditional
+=== Chinese (Traditional) or 中文 (繁體) localization
 
 Set your ThoughtSpot locale to Chinese (Traditional), or 中文 (繁體). ThoughtSpot changes your data format settings, such as currency and number formatting, and translates keywords, ThoughtSpot menu and navigation items, operators, and error messages. To try it out, navigate to your profile, and edit your system language.
 
@@ -164,11 +162,15 @@ Change the name or description of a Liveboard or visualization from view mode. T
 
 image::liveboard-viz-rename.png[More menu for a Liveboard visualization, with Rename highlighted]
 
+ifndef::free-trial-feature[]
+
 [#9-0-0-cl-chart-config-apply]
 [discrete]
-=== Apply button on Configure menu under Edit Chart
+=== Apply multiple chart changes at once
 
-// Yochana. early access
+When a user drags and drops the fields in the chart configuration panel, the chart reloads. When a user has multiple fields, they need to rearrange a lot of them to reach a desired chart. Now users can make multiple configurations, and apply them all at once, rather than waiting in between each configuration.
+
+endif::free-trial-feature[]
 
 ifndef::free-trial-feature[]
 ifdef::pendo-links[]
@@ -286,6 +288,17 @@ When you edit and import table TML files, ThoughtSpot now supports deletion of j
 Delete or make a copy of Worksheets and Views from an object's details page. To try it out, open any Worksheet or View, and select the more menu image:icon-more-10px.png[more menu icon image].
 
 ifndef::free-trial-feature[]
+
+[#9-0-0-cl-early-access]
+[discrete]
+=== Early Access features
+
+Administrators can see the available Early Access features and selectively enable or disable them for all users by going to the *Admin* tab and selecting *Early Access features*.  Early Access features are new in this release, and are disabled by default.
+
+endif::free-trial-feature[]
+
+ifndef::free-trial-feature[]
+[#tse]
 [discrete]
 === ThoughtSpot Everywhere
 
