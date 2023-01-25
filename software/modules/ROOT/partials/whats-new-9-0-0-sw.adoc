@@ -16,7 +16,36 @@ endif::[]
 
 [#primary-9-0-0-sw]
 
-
+ifndef::pendo-links[]
+[%collapsible]
+.Navigate to a specific feature
+====
+--
+<<9-0-0-sw-parameters,Parameters>> +
+<<9-0-0-sw-mandatory-filters, Mandatory Liveboard filters>> +
+<<9-0-0-sw-pivot-measures,Show measures in pivot table rows>> +
+<<9-0-0-sw-custom-map,Upload custom geo maps>> +
+<<9-0-0-sw-labels,Data labels on a dark background>> +
+<<9-0-0-sw-rename,Rename Liveboards and visualizations in view mode>> +
+<<9-0-0-sw-chart-config-apply,Apply multiple chart changes at once>> +
+<<9-0-0-sw-group-aggregate,Group aggregation enhancements: filters>> +
+<<9-0-0-sw-postgresql,PostgreSQL connection>> +
+<<9-0-0-sw-connection-share,Sharing connections>> +
+<<9-0-0-sw-dbt-meta,dbt metadata tags for Worksheets>> +
+<<9-0-0-sw-sql-server,Certify SQL Server with Embrace Synapse connection>> +
+<<9-0-0-sw-tags,Tag enhancements>> +
+<<9-0-0-sw-snowflake,Snowflake for session pricing>> +
+<<9-0-0-sw-csv-snowflake,CSV Upload For Snowflake>> +
+<<9-0-0-sw-fqn,Include FQNs when exporting TML files>> +
+<<9-0-0-sw-tml-guids,Visualization GUID support in TML files>> +
+<<9-0-0-sw-joins-rls,Delete joins and RLS rules through TML>> +
+<<9-0-0-sw-detail-options,Delete or make a copy of objects from the details page>> +
+<<9-0-0-sw-table-delete,Delete tables from ThoughtSpot>> +
+<<9-0-0-sw-python,Python 3.9 upgrade>>
+<<tse,ThoughtSpot Everywhere>>
+--
+====
+endif::[]
 
 [#9-0-0-sw-parameters]
 ifndef::pendo-links[]
@@ -93,34 +122,25 @@ endif::[]
 image::custom-map-search-example.png[Custom geo map being added, and a ThoughtSpot search using the custom map]
 
 [#9-0-0-sw-labels]
-[discrete]
-=== Data labels not visible on dark colored charts
-
-// Yochana. early access
-
-
 ifdef::pendo-links[]
-[#9-0-0-cl-group-aggregate]
 [discrete]
-=== Group aggregation enhancements: filters [.badge.badge-beta-whats-new]#Beta#
+=== Data labels on a dark background [.badge.badge-beta-whats-new]#Beta#
 endif::[]
 ifndef::pendo-links[]
-[#9-0-0-cl-group-aggregate]
 [discrete]
-=== Group aggregation enhancements: filters [.badge.badge-beta]#Beta#
+=== Data labels on a dark background [.badge.badge-beta]#Beta#
 endif::[]
-// Naomi-- behind a flag
-
-Previously, when using group_aggregate formulas, users could use query_filters to include filters entered in the search bar in the formula's value, but it was difficult to write a formula that accepted filters from only a single column.
-
-Starting with this release, you can specify column names within the ‘filters’ section of a group_aggregate formula, and any filter in your search bar referencing that column will be added to the formula. Filters entered in the search bar that are not on columns specified in the third argument of the group_aggregate formula will be ignored. For details, see
+Labels that appear on a dark background can be displayed in a lighter text color, making them easier to read. To try it out, navigate to Search data and *Create a chart* > *Change the chart color*, and *Add labels*.
+For more information,
+see
 ifndef::pendo-links[]
-xref:formulas-aggregation-flexible.adoc#groupagg-filters-enhancement[Group aggregation filters].
+xref:chart-data-labels.adoc[Show data labels].
 endif::[]
 ifdef::pendo-links[]
-xref:formulas-aggregation-flexible.adoc#groupagg-filters-enhancement[Group aggregation filters,window=_blank].
+xref:chart-data-labels.adoc[Show data labels,window=_blank].
 endif::[]
 
+image::chartconfig-data-labels-on-dark-background.png[]
 
 [#9-0-0-sw-rename]
 [discrete]
@@ -137,10 +157,23 @@ endif::[]
 image::liveboard-viz-rename-software.png[More menu for a Liveboard visualization, with Rename highlighted]
 
 [#9-0-0-sw-chart-config-apply]
+ifdef::pendo-links[]
 [discrete]
-=== Apply button on Configure menu under Edit Chart
+=== Apply multiple chart changes at once [.badge.badge-beta-whats-new]#Beta#
+endif::[]
+ifndef::pendo-links[]
+[discrete]
+=== Apply multiple chart changes at once [.badge.badge-beta]#Beta#
+endif::[]
+When a user drags and drops the fields in the chart configuration panel, the chart reloads. When a user has multiple fields, they need to rearrange a lot of them to reach a desired chart. Now users can make multiple configurations, and apply them all at once, rather than waiting in between each configuration. To try it out, click *Apply* in the chart configuration panel of edit chart.
 
-// Yochana
+For more information, see
+ifndef::pendo-links[]
+xref:chart-x-axis.adoc[Reorder labels on the axis or legend].
+endif::[]
+ifdef::pendo-links[]
+xref:chart-x-axis.adoc[Reorder labels on the axis or legend,window=_blank].
+endif::[]
 
 [#9-0-0-sw-profile]
 [discrete]
@@ -148,10 +181,47 @@ image::liveboard-viz-rename-software.png[More menu for a Liveboard visualization
 
 // Yochana
 
+ifdef::pendo-links[]
+[#9-0-0-sw-group-aggregate]
+[discrete]
+=== Group aggregation enhancements: filters [.badge.badge-beta-whats-new]#Beta#
+endif::[]
+ifndef::pendo-links[]
+[#9-0-0-sw-group-aggregate]
+[discrete]
+=== Group aggregation enhancements: filters [.badge.badge-beta]#Beta#
+endif::[]
+// Naomi-- behind a flag
+
+Previously, when using group_aggregate formulas, users could use query_filters to include filters entered in the search bar in the formula's value, but it was difficult to write a formula that accepted filters from only a single column.
+
+Starting with this release, you can specify column names within the ‘filters’ section of a group_aggregate formula, and any filter in your search bar referencing that column will be added to the formula. Filters entered in the search bar that are not on columns specified in the third argument of the group_aggregate formula will be ignored. For details, see
+ifndef::pendo-links[]
+xref:formulas-aggregation-flexible.adoc#groupagg-filters-enhancement[Group aggregation filters].
+endif::[]
+ifdef::pendo-links[]
+xref:formulas-aggregation-flexible.adoc#groupagg-filters-enhancement[Group aggregation filters,window=_blank].
+endif::[]
+
+
 '''
 [#secondary-9-0-0-sw]
 [discrete]
 === _Other features and enhancements_
+
+[#9-0-0-sw-postgresql]
+[discrete]
+=== PostgreSQL connection
+
+// Naomi
+
+You can now create connections from ThoughtSpot to PostgreSQL. For details, see
+ifndef::pendo-links[]
+xref:connections-postgresql.adoc[PostgreSQL].
+endif::[]
+ifdef::pendo-links[]
+xref:connections-postgresql.adoc[PostgreSQL,window=_blank].
+endif::[]
 
 [#9-0-0-sw-connection-share]
 [discrete]
@@ -167,9 +237,8 @@ ifdef::pendo-links[]
 xref:connections.adoc#connection-share[About connections in ThoughtSpot,window=_blank].
 endif::[]
 
-
+[#9-0-0-sw-dbt-meta]
 ifdef::pendo-links[]
-[#9-0-0-cl-dbt-meta]
 [discrete]
 === dbt metadata tags for tables and Worksheets [.badge.badge-beta-whats-new]#Beta#
 endif::[]
@@ -184,20 +253,6 @@ xref:dbt-integration-metadata-tags.adoc[Metadata tags for dbt].
 endif::[]
 ifdef::pendo-links[]
 xref:dbt-integration-metadata-tags.adoc[Metadata tags for dbt,window=_blank].
-endif::[]
-
-[#9-0-0-sw-postgresql]
-[discrete]
-=== PostgreSQL connection
-
-// Naomi
-
-You can now create connections from ThoughtSpot to PostgreSQL. For details, see
-ifndef::pendo-links[]
-xref:connections-postgresql.adoc[PostgreSQL].
-endif::[]
-ifdef::pendo-links[]
-xref:connections-postgresql.adoc[PostgreSQL,window=_blank].
 endif::[]
 
 [#9-0-0-sw-sql-server]
@@ -278,9 +333,15 @@ endif::[]
 
 [#9-0-0-sw-detail-options]
 [discrete]
-=== Add Delete and Make a copy option For applicable objects in details page
+=== Delete or make a copy of objects from the details page
 
-// Yochana
+Delete or make a copy of Worksheets and Views from an object's details page. To try it out, open any Worksheet or View, and select the more menu image:icon-more-10px.png[more menu icon image]. For more information, see
+ifndef::pendo-links[]
+xref:worksheets.adoc[Create and use Worksheets] and xref:views.adoc[Understanding Views].
+endif::[]
+ifdef::pendo-links[]
+xref:worksheets.adoc[Create and use Worksheets,window=_blank] and xref:views.adoc[Understanding Views,window=_blank].
+endif::[]
 
 [#9-0-0-sw-table-delete]
 [discrete]
