@@ -93,7 +93,7 @@ Internal mirror repository::
   If the hosts of your ThoughtSpot cluster have access to an internal repository that mirrors the public repositories, copy the xref:yum-repository[Yum], xref:python-repository[Python], and xref:r-repository[R] package repositories to your hosts.
 
 [#tmp-permission]
-== Ensure tmp has permission 777
+== Ensure tmp has permission 777 or 1777
 
 The `/tmp` directory must have either the `777` or `1777` permission. `1777` is the `777` permission but with the sticky bit set. If you mount the `/tmp` directory as a separate partition, it must NOT have the `noexec` flag set.
 
