@@ -16,12 +16,12 @@ Before you build the ThoughtSpot cluster and install the ThoughtSpot application
 
 - Ansible installs the required packages: YAML, Python, and R packages; see xref:al2-packages.adoc[Packages installed with ThoughtSpot for Amazon Linux 2].
 - It creates and configures local user accounts for ThoughtSpot:
-   - `admin` user has full administrative functionality
-   - `thoughtspot` user can load data in the application
+** `admin` user has full administrative functionality
+** `thoughtspot` user can load data in the application
 - It installs the ThoughtSpot CLI, `tscli`.
 - It configures the ThoughtSpot host nodes:
-   - checks that customization scripts can execute on the nodes
-   - checks that the partitions meet minimum size requirements
+** checks that customization scripts can execute on the nodes
+** checks that the partitions meet minimum size requirements
 
 Here are the general steps for installing offline:
 [cols="5,~",grid=none,frame=none]
@@ -37,7 +37,7 @@ Here are the general steps for installing offline:
 
 To set up the Ansible, follow these steps:
 
-. Obtain the Ansible tarball by talking to your ThoughtSpot contact. Download it to your local machine. Note that you need a specific tarball for an Amazon Linux 2 installation.
+. Download the Ansible tarball you obtained from {support-url} to your local machine. Note that you need a specific tarball for an Amazon Linux 2 installation.
 +
 You can download it by running the cp command. For example, if the tarball is in your S3 bucket, run `aws s3 cp s3://bucket_name/path/to/the/tarball ./`.
 +
@@ -45,7 +45,7 @@ Note that you only need to copy the tarball to one node.
 . Unzip the Ansible tarball, to see the following files and directories on your local machine:
 
 ansible_pkgs:: This contains the Ansible Yum packages.
-customize.sh:: This script runs as the last step in the preparation process. You can use it to inject deployment-specific customizations, such as enabling or disabling a corporate proxy, configuring extra SSH keys, installing extra services, and so on.
+ts-customize.yml:: This runs as the last step in the preparation process. You can use it to inject deployment-specific customizations, such as enabling or disabling a corporate proxy, configuring extra SSH keys, installing extra services, and so on. By default, this script does nothing.
 hosts.sample:: The Ansible inventory file.
 prod_image:: This directory contains the ThoughtSpot tools and tscli, the ThoughtSpot CLI binary.
 python3_pkgs:: This contains all the xref:al2-packages.adoc#pip3[python 3 packages].
