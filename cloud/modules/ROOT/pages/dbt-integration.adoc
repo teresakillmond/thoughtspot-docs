@@ -52,19 +52,19 @@ ThoughtSpot reads the following information from the `catalog.json` file:
 
 === How ThoughtSpot creates Worksheets from dbt
 
-ThoughtSpot creates Worksheets based on the table relationships defined in a `schema.yml` file in the *models* directory.
+ThoughtSpot creates Worksheets based on the table relationships defined in a .yml schema file in the *models* directory.
 
 The Worksheet creation follows these steps:
 
 . ThoughtSpot creates logical tables based on the model files. In the following example, ThoughtSpot creates a table for d_customer, d_product, d_product_category, and so on.
 
-. ThoughtSpot creates joins between the logical tables, based on the relationships defined in the `schema.yml` file. In the following example, ThoughtSpot creates joins between d_product and d_product_category, d_shipping and d_customer, and so on.
+. ThoughtSpot creates joins between the logical tables, based on the relationships defined in the .yml schema file. In the following example, ThoughtSpot creates joins between d_product and d_product_category, d_shipping and d_customer, and so on.
 
-. ThoughtSpot creates Worksheets made up of the logical tables, based on the relationships defined in the `schema.yml` file.
+. ThoughtSpot creates Worksheets made up of the logical tables, based on the relationships defined in the .yml schema file.
 
-For example, based on the following `schema.yml` file, ThoughtSpot creates the following Worksheets:
+For example, based on the following .yml schema file, ThoughtSpot creates the following Worksheets:
 
-Download the `schema.yml` file link:{attachmentsdir}/schema-example.yml[here].
+Download the yml schema file link:{attachmentsdir}/schema-example.yml[here].
 
 |===
 | Model name | Relationship to | Worksheet created?
