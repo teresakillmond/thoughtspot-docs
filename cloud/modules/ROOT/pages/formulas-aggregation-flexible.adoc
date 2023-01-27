@@ -1,5 +1,5 @@
 = Flexible aggregation functions
-:last_updated: 08/30/2021
+:last_updated: 01/23/2023
 :linkattrs:
 :experimental:
 :page-layout: default-cloud
@@ -158,7 +158,7 @@ In this case, the results will be aggregated based on the dimensions in the sear
 Customer ID and any filter related to Ship Mode will not be considered while aggregating the results.
 
 [#groupagg-filters-enhancement]
-=== Group aggregation filters enhancement
+=== Group aggregation filters enhancement [.badge.badge-beta]#Beta#
 
 Beginning in the 9.0.0.cl release, you can specify a column in the third argument of a group_aggregate function in order to include all filters defined in the search that pertain to that column, and ignore unrelated filters. This feature is in beta and off by default. To enable group aggregation filters, contact ThoughtSpot Support.
 
@@ -167,16 +167,17 @@ Filter condition: `color= 'blue'` `ship mode != 'car'`
 For a search on `group_agg color= 'blue'` `ship mode != 'car'`, you can add a formula to calculate the Revenue for all blue-colored items while ignoring the ship mode filter as:
 
 .groupagg
-—-
+----
 group_aggregate (sum(Revenue), {ship mode}, {color, quantity})
-—-
+----
 
 In this case, the results will be aggregated based on the dimensions in the formula and the filter on the color column; the ship mode not equal to car filter will be ignored, since it is not specified as a filter column in the formula.
 
 
-== Related information
-
-* For more examples of flexible aggregation, see the xref:formula-reference.adoc#group_aggregate[group_aggregate] function in the xref:formula-reference.adoc[Formula function reference].
-* To learn about aggregation formulas in general, see xref:formulas-aggregation.adoc#[Overview of aggregate formulas] and xref:formulas-aggregation-group.adoc#[Group aggregation functions].
-* To understand group aggregate query filters, see xref:aggregation-filters.adoc#[Aggregate filters].
-* To learn about how the `group-aggregate` function can be used within your business practice, we encourage you to see xref:reaggregation-scenarios.adoc[Reaggregation scenarios in practice].
+'''
+> **Related information**
+>
+> * For more examples of flexible aggregation, see the xref:formula-reference.adoc#group_aggregate[group_aggregate] function in the xref:formula-reference.adoc[Formula function reference].
+> * To learn about aggregation formulas in general, see xref:formulas-aggregation.adoc#[Overview of aggregate formulas] and xref:formulas-aggregation-group.adoc#[Group aggregation functions].
+> * To understand group aggregate query filters, see xref:aggregation-filters.adoc#[Aggregate filters].
+> * To learn about how the `group-aggregate` function can be used within your business practice, we encourage you to see xref:reaggregation-scenarios.adoc[Reaggregation scenarios in practice].

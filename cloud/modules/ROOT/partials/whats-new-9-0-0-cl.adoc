@@ -2,13 +2,60 @@ ifndef::pendo-links[]
 February 2023 [label label-dep]#9.0.0.cl#
 endif::[]
 ifdef::pendo-links[]
-[month-year-whats-new]#February 2023 #
+[month-year-whats-new]#February 2023#
 [label label-dep-whats-new]#9.0.0.cl#
 endif::[]
 
 ifndef::free-trial-feature[]
 NOTE: Features marked as [.badge.badge-update-note]#Beta# are off by default. To enable them, contact {support-url}.
 endif::free-trial-feature[]
+
+ifndef::pendo-links[]
+[%collapsible]
+.Navigate to a specific feature
+====
+--
+<<9-0-0-cl-sync-servicenow,ThoughtSpot Sync>> +
+ifndef::free-trial-feature[]
+<<9-0-0-cl-parameters,Parameters>> +
+<<9-0-0-cl-mandatory-filters, Mandatory Liveboard filters>> +
+endif::free-trial-feature[]
+<<9-0-0-cl-pivot-measures,Show measures in pivot table rows>> +
+ifndef::free-trial-feature[]
+<<9-0-0-cl-custom-map,Upload custom geo maps>> +
+<<9-0-0-cl-labels,Data labels on a dark background>> +
+endif::free-trial-feature[]
+ifdef::free-trial-feature[]
+<<9-0-0-cl-free-trial-row-limits,Show row limits>> +
+endif::free-trial-feature[]
+<<9-0-0-cl-chinese-traditional,Chinese (Traditional) or 中文 (繁體) localization>> +
+<<9-0-0-cl-rename,Rename Liveboards and visualizations in view mode>> +
+ifndef::free-trial-feature[]
+<<9-0-0-cl-chart-config-apply,Apply multiple chart changes at once>> +
+endif::free-trial-feature[]
+ifndef::free-trial-feature[]
+<<9-0-0-cl-group-aggregate,GroupAggregate Enhancements: Filters>> +
+endif::free-trial-feature[]
+<<9-0-0-cl-snowflake-csv,Snowflake CSV upload>> +
+<<9-0-0-cl-postgresql,PostgreSQL connection>> +
+<<9-0-0-cl-connection-share,Sharing connections>> +
+ifndef::free-trial-feature[]
+<<9-0-0-cl-dbt-meta,dbt metadata tags for Worksheets>> +
+endif::free-trial-feature[]
+<<9-0-0-cl-redshift,Redshift Partner Connect>> +
+ifndef::free-trial-feature[]
+<<9-0-0-cl-tml-monitor,TML for Monitor alerts>> +
+endif::free-trial-feature[]
+<<9-0-0-cl-fqn,Include FQNs when exporting TML files>> +
+<<9-0-0-cl-joins-rls,Delete joins and RLS rules through TML>> +
+<<9-0-0-cl-detail-options,Delete or make a copy of objects from the details page>> +
+ifndef::free-trial-feature[]
+<<9-0-0-cl-early-access,Early Access features>> +
+<<tse,ThoughtSpot Everywhere>>
+endif::free-trial-feature[]
+--
+====
+endif::[]
 
 [#primary-9-0-0-cl]
 
@@ -32,6 +79,7 @@ endif::[]
 ifdef::pendo-links[]
 * xref:sync-servicenow.adoc[ServiceNow,window=_blank]
 endif::[]
+ifndef::free-trial-feature[]
 ifndef::pendo-links[]
 * xref:sync-gainsight.adoc[Gainsight] [.badge.badge-beta]#Beta#
 endif::[]
@@ -45,9 +93,16 @@ ifdef::pendo-links[]
 * xref:sync-zoho.adoc[Zoho,window=_blank] [.badge.badge-beta-whats-new]#Beta#
 endif::[]
 
+
 // combine new sync connectors into one blurb. add link
 
+ifdef::free-trial-feature[]
+image:sync-hubspot.png[]
+endif::free-trial-feature[]
+ifndef::free-trial-feature[]
 image:sync-9-0.png[]
+endif::free-trial-feature[]
+endif::free-trial-feature[]
 
 //update image to show all connections
 
@@ -120,7 +175,7 @@ ifndef::free-trial-feature[]
 [#9-0-0-cl-labels]
 [discrete]
 === Data labels on a dark background
-Labels that appear on a dark background can be displayed in a lighter text color, making them easier to read. To try it out, Navigate to Search data and *Create a chart* > *Change the chart color*, and *Add labels* . This feature must be enabled by your administrator.
+Labels that appear on a dark background can be displayed in a lighter text color, making them easier to read. To try it out, navigate to Search data and *Create a chart* > *Change the chart color*, and *Add labels*. This feature must be enabled by your administrator.
 For more information,
 see
 ifndef::pendo-links[]
@@ -153,7 +208,7 @@ endif::free-trial-feature[]
 [discrete]
 === Chinese (Traditional) or 中文 (繁體) localization
 
-Set your ThoughtSpot locale to Chinese (Traditional), or 中文 (繁體). ThoughtSpot changes your data format settings, such as currency and number formatting, and translates keywords, ThoughtSpot menu and navigation items, operators, and error messages. For more information, see
+Set your ThoughtSpot locale to Chinese (Traditional), or 中文 (繁體). ThoughtSpot changes your data format settings, such as currency and number formatting, and translates keywords, ThoughtSpot menu and navigation items, operators, and error messages. To try it out, navigate to your profile, and edit your system language. For more information, see
 ifndef::pendo-links[]
 xref:keywords-zh-HANT.adoc[中文 (繁體) keyword reference] and xref:user-profile.adoc#language[Change language and data format settings].
 endif::[]
@@ -184,8 +239,8 @@ ifndef::free-trial-feature[]
 
 [#9-0-0-cl-chart-config-apply]
 [discrete]
-=== Apply multiple changes at once
-Every time when a user drag and drop the fields in the chart configuration panel, the chart reloads. When a user has multiple fields, they need to rearrange a lot of them to reach a desired chart. Now users can make multiple configurations, and apply them rather than waiting in between each configuration. To try it out, Click *Apply* in the chart configuration panel of edit chart.
+=== Apply multiple chart changes at once
+When a user drags and drops the fields in the chart configuration panel, the chart reloads. When a user has multiple fields, they need to rearrange a lot of them to reach a desired chart. Now users can make multiple configurations, and apply them all at once, rather than waiting in between each configuration. To try it out, click *Apply* in the chart configuration panel of edit chart.
 
 This feature must be enabled by your administrator.
 For more information, see
@@ -206,12 +261,12 @@ ifndef::free-trial-feature[]
 ifdef::pendo-links[]
 [#9-0-0-cl-group-aggregate]
 [discrete]
-=== GroupAggregate Enhancements: Filters [.badge.badge-beta-whats-new]#Beta#
+=== Group aggregation enhancements: filters [.badge.badge-beta-whats-new]#Beta#
 endif::[]
 ifndef::pendo-links[]
 [#9-0-0-cl-group-aggregate]
 [discrete]
-=== Group aggregatation enhancements: filters [.badge.badge-beta]#Beta#
+=== Group aggregation enhancements: filters [.badge.badge-beta]#Beta#
 endif::[]
 // Naomi-- behind a flag
 
@@ -268,8 +323,6 @@ ifdef::pendo-links[]
 xref:connections-postgresql.adoc[PostgreSQL,window=_blank].
 endif::[]
 
-endif::free-trial-feature[]
-
 // move to other features. If there is more than one new connection, combine into one blurb
 
 [#9-0-0-cl-connection-share]
@@ -291,18 +344,18 @@ endif::[]
 
 // link
 
+[#9-0-0-cl-dbt-meta]
 ifndef::free-trial-feature[]
 ifdef::pendo-links[]
-[#9-0-0-cl-dbt-meta]
 [discrete]
-=== dbt metadata tags for Worksheets [.badge.badge-beta-whats-new]#Beta#
+=== dbt metadata tags for tables and Worksheets [.badge.badge-beta-whats-new]#Beta#
 endif::[]
 ifndef::pendo-links[]
 [discrete]
-=== dbt metadata tags for Worksheets [.badge.badge-beta]#Beta#
+=== dbt metadata tags for tables and Worksheets [.badge.badge-beta]#Beta#
 endif::[]
 
-Manage your ThoughtSpot Worksheet column properties in dbt by using metadata tags to define column properties within your dbt model schema. Your dbt models contain all the necessary information, and you don't have to manually update the columns in ThoughtSpot when you make changes to your dbt model. To try it out, update the `schema.yml` files for your dbt models with the new metadata tags. For more information, see
+Manage your ThoughtSpot table and Worksheet column properties and table joins in dbt by using metadata tags to define column properties and joins within your dbt model schema. Your dbt models contain all the necessary information, and you don't have to manually update the columns in ThoughtSpot when you make changes to your dbt model. To try it out, update the `schema.yml` files for your dbt models with the new metadata tags. For more information, see
 ifndef::pendo-links[]
 xref:dbt-integration-metadata-tags.adoc[Metadata tags for dbt].
 endif::[]
@@ -327,9 +380,9 @@ ifdef::pendo-links[]
 see xref:connections-redshift-partner.adoc[ThoughtSpot in Redshift Partner Connect,window=_blank].
 endif::[]
 
+[#9-0-0-cl-tml-monitor]
 ifndef::free-trial-feature[]
 ifdef::pendo-links[]
-[#9-0-0-cl-tml-monitor]
 [discrete]
 === TML for Monitor alerts [.badge.badge-beta-whats-new]#Beta#
 endif::[]
@@ -365,19 +418,25 @@ image::tml-export-fqn.png[Choose what to export modal with the export fqn option
 [discrete]
 === Delete joins and RLS rules through TML
 
-When you edit and import TML files, ThoughtSpot now supports deletion of joins and row-level security (RLS) rules. To try it out, delete the lines in a TML file that contain RLS rules or joins, and import the object. For more information, see
+When you edit and import table TML files, ThoughtSpot now supports deletion of joins at the table level and row-level security (RLS) rules. To try it out, delete the lines in a TML file that contain RLS rules or joins, and import the object. For more information, see
 ifndef::pendo-links[]
 xref:tml.adoc[ThoughtSpot Modeling Language].
 endif::[]
 ifdef::pendo-links[]
-xref:tml.adoc[ThoughtSpot Modeling Language],window=_blank].
+xref:tml.adoc[ThoughtSpot Modeling Language,window=_blank].
 endif::[]
 
 [#9-0-0-cl-detail-options]
 [discrete]
-=== Add Delete and Make a copy option For applicable objects in details page
+=== Delete or make a copy of objects from the details page
 
-// Yochana Tried to contact the concerned person, waiting to hear back.
+Delete or make a copy of Worksheets and Views from an object's details page. To try it out, open any Worksheet or View, and select the more menu image:icon-more-10px.png[more menu icon image]. For more information, see
+ifndef::pendo-links[]
+xref:worksheets.adoc[Create and use Worksheets] and xref:views.adoc[Understanding Views].
+endif::[]
+ifdef::pendo-links[]
+xref:worksheets.adoc[Create and use Worksheets,window=_blank] and xref:views.adoc[Understanding Views,window=_blank].
+endif::[]
 
 ifndef::free-trial-feature[]
 [#9-0-0-cl-early-access]
@@ -403,6 +462,7 @@ endif::free-trial-feature[]
 // just have an admin blurb? near the bottom of the list. change link format to pendo
 
 ifndef::free-trial-feature[]
+[#tse]
 [discrete]
 === ThoughtSpot Everywhere
 

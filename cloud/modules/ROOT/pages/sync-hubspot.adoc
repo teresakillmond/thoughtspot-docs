@@ -5,7 +5,7 @@
 :experimental:
 :page-layout: default-cloud
 :connection: HubSpot
-:description: You can connect ThoughtSpot to your Google account and push CSV tables and charts to HubSpot.
+:description: You can connect ThoughtSpot to your Google account and push data to HubSpot.
 
 
 
@@ -19,9 +19,11 @@ To create a sync to {connection} from an Answer, follow these steps:
 +
 NOTE: You cannot create a sync from an unsaved Answer. If the *Sync to other apps* option appears grayed-out in the menu, first save the Answer before trying again.
 
-. If this is the first sync you have created for {connection}, a pop-up authorization window appears. To give ThoughtSpot permission to send data to your {connection} account, select your account from the pop-up window.
-
-
+. If this is the first sync you have created for {connection}, a pop-up authorization window appears. To give ThoughtSpot permission to send data to your {connection} account, sign in to your account in the pop-up window and click *Connect app*.
++
+image:hubspot-login.png[HubSpot sign-in pop-up]
++
+image:hubspot-permission.png[List of HubSpot permissions for ThoughtSpot]
 
 . Within ThoughtSpot, fill in the following parameters:
 
@@ -47,7 +49,7 @@ To sync to {connection} from a custom SQL view, follow these steps:
 
 . In the upper-right corner, click the *more options* menu icon image:icon-more-10px.png[more options menu icon] and select *Sync to {connection}*.
 
-.  If this is the first sync you have created for the selected app, an authorization page appears. To give ThoughtSpot permission to send data to your {connection} account, click *Sign in with {connection}*, select your account, and click *Allow*.
+.  If this is the first sync you have created for the selected app, an authorization page appears. To give ThoughtSpot permission to send data to your {connection} account, sign in to your account in the pop-up window and click *Connect app*.
 
 . Fill in the following parameters:
 
@@ -104,4 +106,7 @@ While you can also manage a pipeline from the *Pipelines* tab in the Data Worksp
 +
 image::ts-sync-manage-pipelines.png[More options menu for a pipeline]
 
-
+'''
+> **Related information**
+>
+> * xref:thoughtspot-sync.adoc[]

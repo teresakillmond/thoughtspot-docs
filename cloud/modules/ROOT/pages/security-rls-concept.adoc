@@ -22,9 +22,8 @@ By default, Worksheet queries only take into account RLS rules on tables whose c
 Other related tables that may underlie the Worksheet are ignored.
 This means that not all RLS rules on underlying tables are applied when a user queries a Worksheet.
 
-You can configure a stricter application of RLS rules to take into account RLS rules from all the tables underlying the Worksheet.
-This is recommended if you have key dimension tables that Worksheets rely on but that are not necessarily regularly accessed through query.
-To do this,  https://community.thoughtspot.com/customers/s/contactsupport[contact ThoughtSpot Customer Support].
+By default, ThoughtSpot implements a strict application of RLS rules, which takes into account RLS rules from all the tables underlying the Worksheet.
+This is recommended if you have key dimension tables that Worksheets rely on but that are not necessarily regularly accessed through query. If you do not want to take into account RLS rules from underlying tables, contact {support-url}. Additionally, ThoughtSpot's RLS logic may override the table join types. If you would like your RLS implementation to always take into account the table join types, contact {support-url}.
 
 [#exempt-rls]
 == Privileges that allow users to set, or be exempt from, RLS
@@ -147,8 +146,9 @@ So, err on the side of simple rules rather than complex rules with a lot of logi
 
 * RLS rules do not support use of aggregate functions.
 
-== Related information
-
-* To learn the procedure you follow for setting a rule, xref:security-rls-implement.adoc#[set RLS rules].
-* For a list of operators and functions you can use to build RLS rules, see xref:rls-rule-builder-reference.adoc#[Row-level security rules reference].
-* For information on bypassing rules on a Worksheet, see xref:worksheet-inclusion.adoc#[Change inclusion, join, or RLS for a Worksheet].
+'''
+> **Related information**
+>
+> * To learn the procedure you follow for setting a rule, xref:security-rls-implement.adoc#[set RLS rules].
+> * For a list of operators and functions you can use to build RLS rules, see xref:rls-rule-builder-reference.adoc#[Row-level security rules reference].
+> * For information on bypassing rules on a Worksheet, see xref:worksheet-inclusion.adoc#[Change inclusion, join, or RLS for a Worksheet].
