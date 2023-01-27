@@ -17,12 +17,12 @@ Before you build the ThoughtSpot cluster and install the ThoughtSpot application
 
 - Ansible installs the required packages: YAML, Python, and R packages; see xref:rhel-packages.adoc[Packages installed with ThoughtSpot for RHEL and OEL].
 - It creates and configures local user accounts for ThoughtSpot:
-   - `admin` user has full administrative functionality
-   - `thoughtspot` user can load data in the application
+** `admin` user has full administrative functionality
+** `thoughtspot` user can load data in the application
 - It installs the ThoughtSpot CLI, `tscli`.
 - It configures the ThoughtSpot host nodes:
-   - checks that customization scripts can execute on the nodes
-   - checks that the partitions meet minimum size requirements
+** checks that customization scripts can execute on the nodes
+** checks that the partitions meet minimum size requirements
 
 These are the general steps for installing ThoughtSpot on RHEL clussters:
 
@@ -38,11 +38,10 @@ These are the general steps for installing ThoughtSpot on RHEL clussters:
 
 To set up the Ansible, follow these steps:
 
-. Obtain the Ansible tarball from xref:support-contact.adoc[ThoughtSpot Support].
-. Download it to your local machine.
+. Download the Ansible tarball you obtained from {support-url} to your local machine.
 . Unzip the Ansible tarball, to see the following files and directories on your local machine:
 
-`customize.sh`:: This script runs as the last step in the preparation process. You can use it to inject deployment-specific customizations, such as enabling or disabling a corporate proxy, configuring extra SSH keys, installing extra services, and so on.
+`ts-customize.yml`:: This runs as the last step in the preparation process. You can use it to inject deployment-specific customizations, such as enabling or disabling a corporate proxy, configuring extra SSH keys, installing extra services, and so on. By default, this script does nothing.
 
 `hosts.sample`::
 Ansible inventory file for host configuration.
