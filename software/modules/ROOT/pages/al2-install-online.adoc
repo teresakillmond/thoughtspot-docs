@@ -75,9 +75,22 @@ sudo parted -s /dev/$TS_DISK mkpart primary xfs 0% 100%
 ----
 
 hosts:: Add the IP addresses or hostnames of all hosts in the ThoughtSpot cluster.
-admin_uid:: The admin user ID parameter. If you are using `ssh` instead of AWS SSM, use the default values. If you are using SSM, the `ssm_user` uses the default value, `1001`. You must choose a new value. Note that the `thoughtspot` user uses `1002`, so you cannot use `1001` or `1002`.
-admin_gid:: The admin user group ID. If you are using `ssh` instead of AWS SSM, use the default values. If you are using SSM, the `ssm_user` uses the default value, `1001`. You must choose a new value. Note that the `thoughtspot` user uses `1002`, so you cannot use `1001` or `1002`.
-
+user_uid:: Specify the user ID for the user who will set up the node. If you are using `ssh` instead of AWS SSM, use the default values. If you are using SSM, the `ssm_user` uses the default value, `1001`. You must choose a new value. Note that the `thoughtspot` user uses `1002`, so you cannot use `1001` or `1002`.
++
+If you do not use the default, add values that are not currently in use. To determine what values your system uses already, run the following command:
++
+[source,bash]
+----
+cat /etc/passwd | cut -d ":" -f3-4| sort
+----
+user_gid:: Specify the user group ID for the user who will set up the node. If you are using `ssh` instead of AWS SSM, use the default values. If you are using SSM, the `ssm_user` uses the default value, `1001`. You must choose a new value. Note that the `thoughtspot` user uses `1002`, so you cannot use `1001` or `1002`.
++
+If you do not use the default, add values that are not currently in use. To determine what values your system uses already, run the following command:
++
+[source,bash]
+----
+cat /etc/passwd | cut -d ":" -f3-4| sort
+----
 username::
 Specify the username for the user who will set up the node. The default is `admin`.
 groupname::
