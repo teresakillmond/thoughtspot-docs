@@ -41,7 +41,7 @@ When a user logs in with a username, the default domain is added to the username
 If users reside in multiple sub-domains, you can still designate one of them as the default.
 Authentication against multiple domains isn't supported.
 
-Users who don't belong to the default domain must explicitly qualify their username when they log in.
+Users who don't belong to the default domain must explicitly qualify their username when they sign in.
 
 For example: `username@ad.yourdomain.local`.
 
@@ -66,10 +66,10 @@ ThoughtSpot doesn't support a scenario where multiple AD servers provide their o
 If you choose 'yes', new users are automatically created within ThoughtSpot when successfully authenticated against AD.
 ThoughtSpot doesn't cache passwords for AD-authenticated users.
 
-If you choose 'no', users have to be manually created with a dummy password as a placeholder in ThoughtSpot before they can log in.
+If you choose 'no', users have to be manually created with a dummy password as a placeholder in ThoughtSpot before they can sign in.
 The username you specify when creating the LDAP-authenticated user manually in ThoughtSpot has to be domain qualified, for example: `username1@ad.yourdomain.local`.
 
-In order to log in to ThoughtSpot, the user has to exist in ThoughtSpot independent of whether that user is authenticated against AD or against ThoughtSpot's internal authentication.
+In order to sign in to ThoughtSpot, the user has to exist in ThoughtSpot independent of whether that user is authenticated against AD or against ThoughtSpot's internal authentication.
 
 [#ts-auth]
 === Also use ThoughtSpot internal authentication? (yes/no)
