@@ -20,8 +20,8 @@ Before you can integrate with dbt, you must satisfy the following prerequisites
 * If you connect to dbt via *dbt cloud*, you need the API key, Account ID, and Project ID:
 +
 API key:: This is also called the *API token* in dbt. To find this token, refer to the https://docs.getdbt.com/docs/dbt-cloud-apis/user-tokens[dbt documentation^].
-Account ID:: Your default dbt Cloud account ID. Find your account ID in your dbt Cloud URL, after you log in. For example, if your URL is `https://cloud.getdbt.com/#/accounts/12345/projects/56789/dashboard`, your account ID is `12345`.
-Project ID:: Find your project ID in your dbt Cloud URL, after you log in. For example, if your URL is `https://cloud.getdbt.com/#/accounts/12345/projects/56789/dashboard`, your project ID is `56789`.
+Account ID:: Your default dbt Cloud account ID. Find your account ID in your dbt Cloud URL, after you sign in. For example, if your URL is `https://cloud.getdbt.com/#/accounts/12345/projects/56789/dashboard`, your account ID is `12345`.
+Project ID:: Find your project ID in your dbt Cloud URL, after you sign in. For example, if your URL is `https://cloud.getdbt.com/#/accounts/12345/projects/56789/dashboard`, your project ID is `56789`.
 * Optionally define the relationships for the dbt models in your `yml` schema file. For more information, refer to the https://docs.getdbt.com/docs/build/tests[dbt documentation^].
 +
 NOTE: If you do not define relationships, ThoughtSpot imports each model as a single table and creates one Worksheet based on each table.
@@ -99,8 +99,8 @@ image::dbt-integration-connect.png[dbt integration step 1]
 . If you select *Via dbt cloud*, fill in the following parameters:
 +
 API key:: This is also called the *API token* in dbt. To find this token, navigate to your *Account Settings* page in dbt cloud. Select the *Service Account tokens* page, and generate a new token.
-Account ID:: Your default dbt Cloud account ID. Find your account ID in your dbt Cloud URL, after you log in. For example, if your URL is `https://cloud.getdbt.com/#/accounts/12345/projects/56789/dashboard`, your account ID is `12345`.
-Project ID:: Find your project ID in your dbt Cloud URL, after you log in. For example, if your URL is `https://cloud.getdbt.com/#/accounts/12345/projects/56789/dashboard`, your project ID is `56789`.
+Account ID:: Your default dbt Cloud account ID. Find your account ID in your dbt Cloud URL, after you sign in. For example, if your URL is `https://cloud.getdbt.com/#/accounts/12345/projects/56789/dashboard`, your account ID is `12345`.
+Project ID:: Find your project ID in your dbt Cloud URL, after you sign in. For example, if your URL is `https://cloud.getdbt.com/#/accounts/12345/projects/56789/dashboard`, your project ID is `56789`.
 
 . If you select *Use a .zip file*, select the *Upload* button, and add the zip file from your files. The zip file must contain the latest `manifest.json` and `catalog.json` files. By default, dbt stores these files under the `<project name>/target` folder.
 +
