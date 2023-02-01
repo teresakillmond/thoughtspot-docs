@@ -28,10 +28,11 @@ ifndef::pendo-links[]
 <<9-0-0-sw-labels,Data labels on a dark background>> +
 <<9-0-0-sw-rename,Rename Liveboards and visualizations in view mode>> +
 <<9-0-0-sw-chart-config-apply,Apply multiple chart changes at once>> +
+<<9-0-0-sw-profile,Edit display name from profile>> +
 <<9-0-0-sw-group-aggregate,Group aggregation enhancements: filters>> +
 <<9-0-0-sw-postgresql,PostgreSQL connection>> +
 <<9-0-0-sw-connection-share,Sharing connections>> +
-<<9-0-0-sw-dbt-meta,dbt metadata tags for Worksheets>> +
+<<9-0-0-sw-dbt-meta,dbt metadata tags for Worksheets and tables>> +
 <<9-0-0-sw-sql-server,Certify SQL Server with Embrace Synapse connection>> +
 <<9-0-0-sw-tags,Tag enhancements>> +
 <<9-0-0-sw-snowflake,Snowflake for session pricing>> +
@@ -41,7 +42,7 @@ ifndef::pendo-links[]
 <<9-0-0-sw-joins-rls,Delete joins and RLS rules through TML>> +
 <<9-0-0-sw-detail-options,Delete or make a copy of objects from the details page>> +
 <<9-0-0-sw-table-delete,Delete tables from ThoughtSpot>> +
-<<9-0-0-sw-python,Python 3.9 upgrade>>
+<<9-0-0-sw-python,Python 3.9 upgrade>> +
 <<tse,ThoughtSpot Everywhere>>
 --
 ====
@@ -337,7 +338,7 @@ ifndef::pendo-links[]
 xref:tml.adoc[ThoughtSpot Modeling Language].
 endif::[]
 ifdef::pendo-links[]
-xref:tml.adoc[ThoughtSpot Modeling Language],window=_blank].
+xref:tml.adoc[ThoughtSpot Modeling Language,window=_blank].
 endif::[]
 
 [#9-0-0-sw-detail-options]
@@ -346,10 +347,10 @@ endif::[]
 
 Delete or make a copy of Worksheets and Views from an object's details page. To try it out, open any Worksheet or View, and select the more menu image:icon-more-10px.png[more menu icon image]. For more information, see
 ifndef::pendo-links[]
-xref:worksheets.adoc[Create and use Worksheets] and xref:views.adoc[Understanding Views].
+xref:worksheet-edit.adoc#copy[Make a copy of a Worksheet] and xref:sql-views.adoc#copy[Make a copy of a SQL-based View].
 endif::[]
 ifdef::pendo-links[]
-xref:worksheets.adoc[Create and use Worksheets,window=_blank] and xref:views.adoc[Understanding Views,window=_blank].
+xref:worksheet-edit.adoc#copy[Make a copy of a Worksheet,window=_blank] and xref:sql-views.adoc#copy[Make a copy of a SQL-based View,window=_blank].
 endif::[]
 
 [#9-0-0-sw-table-delete]
@@ -365,6 +366,7 @@ Previously, when deleting tables from Connections, ThoughtSpot did not delete th
 === Python 3.9 upgrade
 Python 3.9 is now the default Python version for all ThoughtSpot Software clusters, regardless of deployment type. ThoughtSpot does not support any other Python release for clusters on ThoughtSpot release 9.0.0.sw and later.
 
+[#tse]
 [discrete]
 === ThoughtSpot Everywhere
 
