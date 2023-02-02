@@ -36,9 +36,7 @@ endif::free-trial-feature[]
 <<9-0-0-cl-snowflake-csv,Snowflake CSV upload>> +
 <<9-0-0-cl-postgresql,PostgreSQL connection>> +
 <<9-0-0-cl-connection-share,Sharing connections>> +
-ifndef::free-trial-feature[]
 <<9-0-0-cl-dbt-meta,dbt metadata tags for tables and Worksheets>> +
-endif::free-trial-feature[]
 <<9-0-0-cl-redshift,Redshift Partner Connect>> +
 ifndef::free-trial-feature[]
 <<9-0-0-cl-tml-monitor,TML for Monitor alerts>> +
@@ -312,25 +310,16 @@ endif::[]
 image::share-connection.png[]
 
 [#9-0-0-cl-dbt-meta]
-ifndef::free-trial-feature[]
-ifdef::pendo-links[]
 [discrete]
-=== dbt metadata tags for tables and Worksheets [.badge.badge-beta-whats-new]#Beta#
-endif::[]
-ifndef::pendo-links[]
-[discrete]
-=== dbt metadata tags for tables and Worksheets [.badge.badge-beta]#Beta#
-endif::[]
+=== dbt metadata tags for tables and Worksheets
 
-Manage your ThoughtSpot table and Worksheet column properties and table joins in dbt by using metadata tags to define column properties and joins within your dbt model schema. Your dbt models contain all the necessary information, and you don't have to manually update the columns in ThoughtSpot when you make changes to your dbt model. To try it out, update the `schema.yml` files for your dbt models with the new metadata tags. For more information, see
+Manage your ThoughtSpot table and Worksheet column properties and table joins in dbt by using metadata tags to define column properties and joins within your dbt model schema. Your dbt models contain all the necessary information, and you don't have to manually update the columns in ThoughtSpot when you make changes to your dbt model. To try it out, update the `.yml` schema files for your dbt models with the new metadata tags. For more information, see
 ifndef::pendo-links[]
 xref:dbt-integration-metadata-tags.adoc[Metadata tags for dbt].
 endif::[]
 ifdef::pendo-links[]
 xref:dbt-integration-metadata-tags.adoc[Metadata tags for dbt,window=_blank].
 endif::[]
-
-endif::free-trial-feature[]
 
 [#9-0-0-cl-redshift]
 [discrete]
