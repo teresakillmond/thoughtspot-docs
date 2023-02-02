@@ -49,7 +49,7 @@ NOTE: You must specify the date in epoch time (also known as POSIX or Unix time)
 
 You can use runtime filters with the Data REST API to create dynamic controls in your application.
 For example, you could use the Data REST API to get a list of possible filters for a visualization.
-Then use that data to populate a _select_ list in your Web application.
+Then use that data to populate a _select_ list in your web application.
 When a user selects an option, the application passes that option as a runtime filter. The resulting answer or Liveboard satisfies the conditions of the filter.
 
 [#limitations-of-runtime-filters]
@@ -64,4 +64,10 @@ If the answer from which you create the worksheet includes raw tables or joins m
 
 CAUTION: Runtime filters do not allow you to apply `having` filters using the URL.
 
-* You cannot apply a runtime filter on a Liveboard or visualization built on tables whose schema includes a chasm trap. See the information on handling xref:chasm-trap.adoc[] and xref:formulas-chasm-trap.adoc[].
+* You cannot apply a runtime filter on a Liveboard or visualization built on tables whose schema includes a chasm trap. See the information on handling xref:chasm-trap.adoc[chasm traps] and xref:formulas-chasm-trap.adoc[formula support for chasm traps].
+
+'''
+> **Related information**
+>
+> * xref:runtime-filter-apply.adoc[]
+> * xref:runtime-filter-operators.adoc[]

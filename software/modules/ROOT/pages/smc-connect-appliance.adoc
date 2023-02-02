@@ -17,7 +17,7 @@ Follow the steps in this checklist:
 | &#10063; | <<appliance-step-1,Step 1: Connect switches to 10GbE ports>>
 | &#10063; | <<appliance-step-2,Step 2: Connect IPMI port>>
 | &#10063; | <<appliance-step-3,Step 3: Turn on nodes>>
-| &#10063; | <<appliance-step-4,Step 4: Log in>>
+| &#10063; | <<appliance-step-4,Step 4: Sign in>>
 |===
 
 [#appliance-step-1]
@@ -56,7 +56,7 @@ See xref:smc-connect-appliance.adoc#haswell-port-location[Haswell port location]
 == Step 3: Turn on nodes
 
 Turn on the power to the nodes by pressing the power button;
-see xref:smc-connect-appliance.adoc#smc-appliance-power-button[Appliance Power Button].
+see xref:smc-connect-appliance.adoc#smc-appliance-power-button[Appliance power button].
 
 There is one power button for each node.
 The following images show two of the four power buttons.
@@ -84,14 +84,22 @@ $ ping <default-gateway-IP>
 ----
 
 [#appliance-step-4]
-== Step 4: Log in
+== Step 4: Sign in
 
 . Connect a keyboard and the mouse to each node on the appliance.
 . You should see a login prompt on the screen.
 If you don't see one or the screen isn't responsive, press the key combination *control--alt--F2* or *alt--F2* on your keyboard to bring up the login prompt.
-. Log in using the admin user credentials for the console.
+. Sign in using the admin user credentials for the console.
 If you don't know the admin credentials, ask your network administrator.
 
 == Configure nodes
 
 Next, xref:smc-configure-nodes.adoc[configure nodes.]
+
+'''
+> **Related information**
+>
+> * xref:smc-prerequisites.adoc[Prerequisites]
+> * xref:smc-hardware-requirements.adoc[Hardware requirements]
+> * xref:smc-configure-nodes.adoc[Configure nodes]
+> * xref:smc-cluster-install.adoc[Install cluster]

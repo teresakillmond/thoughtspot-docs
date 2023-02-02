@@ -19,7 +19,7 @@ After you determine your configuration options, set up your virtual machines (VM
 ThoughtSpot will share the ThoughtSpot base image for booting the VMs and some other aspects of system setup with you on the https://console.cloud.google.com[GCP platform^].
 
 ThoughtSpot uses a custom image to populate VMs in GCP.
-To find the ThoughtSpot custom image, refer to step 13 in the xref:instance-create[create an instance] section.
+To find the ThoughtSpot custom image, refer to step 13 in the xref:instance-create[Create an instance] section.
 
 Ask your ThoughtSpot contact for access to this image.
 We need the Google account/email ID of the individual who will be signed in to your organization's GCP console.
@@ -42,7 +42,7 @@ Before you begin setting up ThoughtSpot, complete the following tasks:
 |===
 | &#10063; | Ensure that your *Network Service Tier* on the https://console.cloud.google.com/[Google Cloud Console^] is set to *Premium* for the best performance of all your VMs.
 | &#10063; | A ThoughtSpot cluster requires 10 Gb/s bandwidth (or better) between any two nodes. You must ensure this _before_ creating a new cluster.
-| &#10063; | Download and fill out the ThoughtSpot link:{attachmentsdir}/site-survey.pdf[Site survey^] to have a quick reference for your networking information. Ask your network administrator if you need help filling out the site survey.
+| &#10063; | Download and fill out the ThoughtSpot link:{attachmentsdir}/site-survey.pdf[site survey^] to have a quick reference for your networking information. Ask your network administrator if you need help filling out the site survey.
 |===
 
 [#bucket-setup]
@@ -173,8 +173,8 @@ Update the network interface with your specific information or create a new one.
 +
 Network:: Add an existing VPC network, or create a new one by selecting *VPC network* from the main menu.
 Ensure that this network has a *firewall rule* attached, with the minimum ports required for ThoughtSpot operation open.
-Refer to the <<port-requirements,minimum port requirements>>.
-See Google's https://cloud.google.com/vpc/docs/using-firewalls[using firewalls] and https://cloud.google.com/vpc/docs/using-vpc[using VPCs] documentation for assistance creating a firewall rule and a VPC network.
+Refer to the <<port-requirements,Minimum port requirements>>.
+See Google's https://cloud.google.com/vpc/docs/using-firewalls[Using firewalls] and https://cloud.google.com/vpc/docs/using-vpc[Using VPCs] documentation for assistance creating a firewall rule and a VPC network.
 
 External IP:: Set the external IP as either ephemeral or static, depending on your preference.
 
@@ -206,7 +206,7 @@ Port:: 12345
 
 == Prepare the VMs
 
-Before you can install your ThoughtSpot cluster, an administrator must log in to each VM through SSH as user "admin", and complete the following preparation steps:
+Before you can install your ThoughtSpot cluster, an administrator must sign in to each VM through SSH as user "admin", and complete the following preparation steps:
 
 . Open a terminal application on your machine and ssh into one of your VMs.
 +
@@ -234,3 +234,6 @@ To install your ThoughtSpot cluster, complete the installation process outlined 
 >
 > * https://cloud.google.com/compute/docs/disks/gcs-buckets[Connecting to Google Cloud Storage buckets]
 > * xref:tsload-import-csv.adoc#loading-data-from-a-gcp-gcs-bucket[Loading data from a GCP GCS bucket]
+> * xref:gcp-installing.adoc[Configure ThoughtSpot nodes in GCP]
+> * xref:gcp-cluster-install.adoc[Install ThoughtSpot clusters in GCP]
+> * xref:gcp-backup-restore.adoc[Back up and restore a GCP cluster using GCS]

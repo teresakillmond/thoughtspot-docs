@@ -36,6 +36,8 @@ a| <<aggregation,aggregation>>
 
 <<currency_type,currency_type>>
 
+<<custom_file_guid,custom_file_guid>>
+
 <<custom_name,custom_name>>
 
 <<data_type,data_type>>
@@ -69,6 +71,8 @@ a| <<filters,filters>>
 <<fqn,fqn>>
 
 <<geo_config,geo_config>>
+
+<<geometryType,geometryType>>
 
 <<guid,guid>>
 
@@ -124,9 +128,11 @@ a| <<filters,filters>>
 
 <<ordered_column_ids,ordered_column_ids>>
 
-a| <<parameter_overrides,paramater_overrides>>
+<<override_value,override_value>>
 
-<<parameter_values,paramater_values>>
+a| <<parameter_overrides,parameter_overrides>>
+
+<<parameter_values,parameter_values>>
 
 <<parameters,parameters>>
 
@@ -305,6 +311,10 @@ One of:
 +
 See https://www.iso.org/iso-4217-currency-codes.html[ISO 4217 Currency Codes^] and xref:data-modeling-patterns.adoc#set-currency-type[Set currency type] for more information.
 
+[#custom_file_guid]
+custom_file_guid::
+The GUID for a custom map uploaded by an administrator.
+
 [#custom_name]
 custom_name::
   Optional display name for a column.
@@ -336,7 +346,7 @@ Note that this database is not the same as the data warehouse (Falcon, Amazon Re
 
 [#default_value]
 default_value::
-The default value for a parameter in a Worksheet. Specififed when xref:parameters-create.adoc[creating a parameter].
+The default value for a parameter in a Worksheet. Specified when xref:parameters-create.adoc[creating a parameter].
 
 [#description]
 description::
@@ -365,7 +375,7 @@ excluded_visualizations::
 
 [#expr]
 expr::
-  The definition of the formula or row level security (RLS) rule. For RLS rules, the syntax for variables in TML should be the same as the syntax of the variables in the rule on the table.
+  The definition of the formula or row-level security (RLS) rule. For RLS rules, the syntax for variables in TML should be the same as the syntax of the variables in the rule on the table.
 
 [#filters]
 filters::
@@ -394,7 +404,7 @@ Use this optional parameter to reduce ambiguity and identify a specific table or
 
 [#geo_config]
 geo_config::
-  Specifies the geographic information of a column.
+  Specifies the geographic information of a column. See xref:data-modeling-geo-data.adoc[Add a geographical data setting].
 +
 One of:
 +
@@ -408,7 +418,12 @@ Uses two paired parameters:
 - `country: __<country_name>__`
 - `region_name: __<region_name_in_UI>__`; can be State, Postal Code, District, and so on.
 
-See xref:data-modeling-geo-data.adoc[Add a geographical data setting].
+`custom_file_guid: <custom map GUID>`;; for columns that use a custom map. Must be followed by `geometryType`
+`geometryType: <custom_map_geometry_type>`;; for columns that use a custom map. Must be preceded by `custom_file_guid`. Accepts the following values: `POINT`, `LINE_STRING`, `LINEAR_RING`, `POLYGON`, `MULTI_POINT`, `MULTI_LINE_STRING`, `MULTI_POLYGON`, `GEOMETRY_COLLECTION`, `CIRCLE`
+
+[#geometryType]
+geometryType::
+Specifies the geometry type of the *TopoJSON* file. Required for geographical configuration of Worksheet or table columns that use a custom map. Accepts the following values: `POINT`, `LINE_STRING`, `LINEAR_RING`, `POLYGON`, `MULTI_POINT`, `MULTI_LINE_STRING`, `MULTI_POLYGON`, `GEOMETRY_COLLECTION`, `CIRCLE`
 
 [#guid]
 guid::
@@ -427,27 +442,24 @@ id::
   Specifies the id of an object, such as `table_paths`, `formula`.
 +
 For answers, `id` refers to how the column appears in the query.
-For example, if you sorted by `Quarter` in your search, from the `Commit Date` column, the `id` of the column is `Quarter(Commit Date)`.
+For example, if you sorted by `Quarter` in your search, from the `Commit Date` column, the `id` of the column is `Quarter(Commit Date)`. Refer to link:https://developers.thoughtspot.com/docs/?pageid=search-data-api#components[Components of a Search Query] to understand syntax.
 +
-Refer to link:https://developers.thoughtspot.com/docs/?pageid=search-data-api#components[Components of a Search Query] to understand syntax.
+For formulas within answers, `id` refers to the display name of the formula. If you do not give your formula a name, it appears as 'Untitled Formula'.
 +
-For formulas within answers, `id` refers to the display name of the formula.
-+
-If you do not give your formula a name, it appears as 'Untitled Formula'.
-
+In the <<parameter_overrides,parameter_overrides>> section, `id` refers to the parameter's GUID.
 
 [#include_max]
 include_max::
 
-// NEED MORE INFO
-
+Indicates if the maximum value in a parameter range is a valid value. For example, if the range is 0-10, and `include_max` is false, the value `10` is not valid for that parameter.
++
 Valid values are `true` and `false`.
 
 [#include_min]
 include_min::
 
-// NEED MORE INFO
-
+Indicates if the minimum value in a parameter range is a valid value. For example, if the range is 0-10, and `include_min` is false, the value `0` is not valid for that parameter.
++
 Valid values are `true` and `false`.
 
 [#index_priority]
@@ -466,7 +478,7 @@ Possible values: `DONT_INDEX`, `DEFAULT` (see xref:data-modeling-index.adoc#defa
 +
 Default: `DEFAULT`
 +
-See xref:data-modeling-index.adoc#overide-system-default-column[Index Type Values].
+See xref:data-modeling-index.adoc#overide-system-default-column[Index type values].
 
 [#is_additive]
 is_additive::
@@ -571,6 +583,8 @@ joins_with::
 [#key]
 key::
 Name of the xref:parameters-create.adoc[parameter] referenced in a formula in an Answer.
++
+In the <<parameter_overrides,parameter_overrides>> section, `key` refers to the parameter's GUID.
 
 [#layout]
 layout::
@@ -605,6 +619,8 @@ Applies to `worksheet`, `table`,`joins`, `formula`, `rls_rules`, `answer`, `pinb
 For answers, `name` refers to how the column appears in the query.
 For example, if you sorted by `Quarter` in your search, from the `Commit Date` column, the `name` of the column is `Quarter(Commit Date)`.
 Refer to link:https://developers.thoughtspot.com/docs/?pageid=search-data-api#components[Components of a Search Query] to understand syntax.
++
+In the `parameter_overrides` section for an Answer or Liveboard, `name` refers to the xref:parameters-create.adoc[parameter] name.
 
 [#on]
 on::
@@ -620,10 +636,14 @@ Accepted operators are `"in"`, `"not in"`, `"between"`, `=<`, `!=`, `+<=+`, `>=`
 ordered_column_ids::
   A list of columns, in the order they appear in the table.
 
+[#override_value]
+override_value::
+The value a parameter is set to in a Liveboard or Answer, if different from the default value. Only appears if you change the parameter value in Liveboard *Edit* mode and save it.
+
 [#parameter_overrides]
 parameter_overrides::
 
-// NEED DEFINITION
+Contains information on the value a parameter is set to in a Liveboard or Answer, if different from its default value. If there is no `override_value` line, the parameter is set to the default value.
 
 [#parameter_values]
 parameter_values::
@@ -675,7 +695,7 @@ The minimum value for the range of values allowed for a parameter, if a range is
 
 [#rls_rules]
 rls_rules::
-A container for the full definition of xref:security-rls-concept.adoc[row level security] rules for the table.
+A container for the full definition of xref:security-rls-concept.adoc[row-level security] rules for the table.
 
 [#rule]
 rule::
@@ -683,7 +703,7 @@ A conditional formatting rule.
 
 [#rules]
 rules::
-A container for the names and expressions of xref:security-rls-concept.adoc[row level security] rules for the table.
+A container for the names and expressions of xref:security-rls-concept.adoc[row-level security] rules for the table.
 
 [#schema]
 schema::

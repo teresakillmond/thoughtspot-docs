@@ -25,7 +25,7 @@ The following steps detail the configuration of IdP with Okta as an example. You
 
 To configure the IdP with Okta, do the following:
 
-. Log in to the Okta console with a user having administrator privileges. Navigate to the *Applications* page in the console and select *Create App Integration*.
+. Sign in to the Okta console with a user having administrator privileges. Navigate to the *Applications* page in the console and select *Create App Integration*.
 +
 image::dremio-oauth1.png[Select Applications > Create App Integration]
 +
@@ -80,7 +80,7 @@ http-server.authentication.jwt.required-audience=<value of audience frmo open id
 http-server.authentication.jwt.principal-field=<value of the claim containing the user name>
 ----
 +
-These details should be obtained from the well known open id configuration URL obtained from Okta authorization server (e.g. *\https://example.okta.com/oauth2/abc1234xyz/.well-known/oauth-authorization-server*).
+These details should be obtained from the well known open id configuration URL obtained from Okta authorization server (for example, *\https://example.okta.com/oauth2/abc1234xyz/.well-known/oauth-authorization-server*).
 +
 The value for the principal-field configuration should be the claim name in the JWT that contains the username matching the username created in Starburst. This can be found from the token payload. In the following example, the username is in the claim “sub.”
 +
@@ -96,4 +96,5 @@ image::dremio-oauth8.png[Sample token payload]
 > * xref:connections-starburst-delete-table.adoc[Delete a table from a {connection} connection]
 > * xref:connections-starburst-delete-table-dependencies.adoc[Delete a table with dependent objects]
 > * xref:connections-starburst-delete.adoc[Delete a {connection} connection]
+> * xref:connections-starburst-azure-ad-oauth.adoc[]
 > * xref:connections-starburst-reference.adoc[Connection reference for {connection}]

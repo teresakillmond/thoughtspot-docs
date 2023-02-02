@@ -8,7 +8,7 @@ include::partial$liveboards-announcement.adoc[]
 
 ThoughtSpot provides many features for protecting data.
 
-== Object Security
+== Object security
 
 Object security controls what content users see within ThoughtSpot.
 Objects are tables, columns in tables, worksheets, Liveboards, and saved answers.
@@ -19,13 +19,13 @@ Objects may be shared with edit or view-only options.
 A user can automatically share objects with anyone else in the groups to which they belong.
 This has implications on setting up privileges, and on applying row-level security.
 
-=== Permissive Security Mode
+=== Permissive Security mode
 
 The default Permissive Security mode of ThoughtSpot means that when someone shares an object with you, you can see all the data it uses, regardless of explicit permissions to the parent object data.
 You can see a shared Liveboard without having access to its underlying worksheet or table.
 
 [#advanced-security-mode]
-=== Advanced Security Mode
+=== Advanced Security mode
 
 ThoughtSpot's Advanced Security mode is the opposite of the default permissive mode.
 Unless the user has explicit permissions to the entire stack of parent objects, they cannot see the data in the child object.
@@ -34,9 +34,9 @@ Similarly, you can only see the data in a worksheet to which you have access if 
 
 Work with your ThoughtSpot support team to enable the Advanced Security Mode on the relevant clusters.
 
-== Row level security (RLS)
+== Row-level security (RLS)
 
-Row level security controls what data a user can see in each shared piece of content.
+Row-level security controls what data a user can see in each shared piece of content.
 Even if a user has access to a worksheet, they can only see rows from the tables they have permission to see.
 
 RLS applies at the table level, so it automatically extends to all worksheets, saved answers, and Liveboards based on that table, every time.
@@ -57,15 +57,15 @@ RLS supports a hierarchy of groups, which makes it possible to grant access to s
 Keep in mind that users within a group can share with one another.
 If you put everyone in your organization into the same group for RLS, they can share with anyone in the company.
 
-== Column level security (CLS)
+== Column-level security (CLS)
 
-Column level security lets users see certain columns in a table, but not other columns.
+Column-level security lets users see certain columns in a table, but not other columns.
 This can be accomplished by sharing a limited set of columns in a table with specific users or groups.
 
 Because someone can share with anyone in the same group, they can potentially share restricted columns.
 For example, if a _Human Resources_ repository has a column with salary information, and it appears in a worksheet, any _Human Resources_ group member could create an answer with visible salary information and mistakenly share with someone outside of _Human Resources_.
 That 'outside' person now has access to the salary information.
-In such cases, we recommend that you work with your ThoughtSpot support team to enable <<advanced-security-mode,Advanced Security Mode>>, which allows table dependents (such as worksheets, Liveboards, and answers) to inherit a table's CLS.
+In such cases, we recommend that you work with your ThoughtSpot support team to enable <<advanced-security-mode,Advanced Security mode>>, which allows table dependents (such as worksheets, Liveboards, and answers) to inherit a table's CLS.
 
 == System privileges
 

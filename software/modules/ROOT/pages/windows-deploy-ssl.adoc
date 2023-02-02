@@ -66,15 +66,19 @@ Choose a location where the certificate is unlikely to be deleted by mistake, fo
 . Select *Options*.
 . Check the *Require SSL* option and/or add SSL as a custom property.
 +
-image:windows-odbc-ssl-options.png[You can click Require SSL, but this is less dependable. It is better to add it as a custom property.] +
-image:windows-odbc-custom-SSL-property.png[Set UseSSL to either enabled or required. ThoughtSpot suggests Required.] +
+image:windows-odbc-ssl-options.png[You can click Require SSL, but this is less dependable. It is better to add it as a custom property.]
++
+image:windows-odbc-custom-SSL-property.png[Set UseSSL to either enabled or required. ThoughtSpot suggests Required.]
++
 image:windows-odbc-custom-SSL-added.png[New custom SSL property]
 
 . Enter the location of the CA certificate in the *SSL Certificate File* field and/or add the CA certificate as a custom property.
 Be sure to provide the full path to the certificate (`+{certificate_directory}\{CA_certificate}.pem+`).
 +
-image:windows-odbc-cert-add-custom.png[Add the CA certificate as a custom property] +
-image:windows-odbc-custom-CACert-property.png[Specify the ful path to your CA certificate] +
+image:windows-odbc-cert-add-custom.png[Add the CA certificate as a custom property]
++
+image:windows-odbc-custom-CACert-property.png[Specify the ful path to your CA certificate]
++
 image:windows-odbc-cert-and-SSL.png[You can also specify the custom path next to SSL Certifcate File, but this is less dependable]
 
 . When you are done, select *OK* to save your new properties.
@@ -85,3 +89,12 @@ image::windows-odbc-success.png[DSN configuration success pop-up]
 . Select *Cancel* to close the configuration dialog.
 . Select *OK* to close the *Client Configuration Dialog* the dialog.
 . Select *OK* to close the *ODBC Data Source Administrator (64-bit)* application.
+
+'''
+> **Related information**
+>
+> * xref:odbc-windows-install.adoc[ODBC on Windows]
+> * xref:multiple-sources-windows.adoc[Configure multiple connections on Windows]
+> * xref:odbc-driver-ssis.adoc[Set up the ODBC Driver for SSIS]
+> * xref:odbc-linux-install.adoc[Install the ODBC Driver on Linux]
+> * xref:odbc-best-practices.adoc[Best practices for using ODBC]

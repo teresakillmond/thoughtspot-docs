@@ -57,6 +57,8 @@ This formula takes the following form:
 +
 Define lists using curly brackets, `{ }`. Optional list functions `query_groups` or `query_filters` specify the lists or filters used in the original search. Use `+` (plus) and `-` (minus) to add or exclude specific columns for query groups.
 +
+NOTE: Starting in 9.0.0.sw release, you can specify columns in the third argument of a group_aggregate function to include only the filters defined in the search bar that are on that column. Other filters not on columns defined in the third argument of the function will be ignored. This feature is in beta and off by default.
++
 See xref:formulas-aggregation-flexible.adoc[Flexible aggregation functions].
 +
 `group_aggregate (sum (revenue), {ship mode, date}, {} )`

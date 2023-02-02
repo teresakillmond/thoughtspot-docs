@@ -76,11 +76,11 @@ When restoring from a dataless backup, you must supply the correct release tarba
 Dataless backups contain the following information for deployments with ThoughtSpot's in-memory database:
 
 * Metadata:
-** Users, groups, answers, Liveboards, visualizations, worksheets, data modeling settings, row level security filters
+** Users, groups, answers, Liveboards, visualizations, worksheets, data modeling settings, row-level security filters
 * Scheduled jobs (for example, scheduled Liveboards)
 * Cluster details: ID, name, version
 * *[For clusters with S3 storage]:* AWS configuration (label, region, S3 bucket name)
-* Cluster manager configuration (e.g. backup policy), and service configuration (e.g. service enabled or disabled, memory limits for service)
+* Cluster manager configuration (for example, backup policy), and service configuration (for example, service enabled or disabled, memory limits for service)
 * Database schema: Definitions of databases, tables and views. Definition of a table includes its type (dimension/fact), version, internal/external, column details, region, primary key, unique key, relationships (foreign key)
 * End-user license agreement (EULA) policy and file
 * ThoughtSpot Software artifacts: version, checksum of binaries
@@ -101,7 +101,7 @@ Dataless backups for ThoughtSpot's in-memory database DON'T include the followin
 Dataless backups contain the following information for deployments with connections to external cloud data warehouses:
 
 * Metadata:
-** Users, groups, answers, Liveboards, visualizations, worksheets, data modeling settings, row level security filters, tables, columns
+** Users, groups, answers, Liveboards, visualizations, worksheets, data modeling settings, row-level security filters, tables, columns
 ** Configuration of connections to external cloud data warehouses
 * Scheduled jobs (for example, scheduled Liveboards)
 * Cluster details: ID, name, version

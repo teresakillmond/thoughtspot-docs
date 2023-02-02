@@ -16,7 +16,7 @@ The following steps detail the configuration of IdP with Okta as an example. You
 
 To configure the IdP with Okta, do the following:
 
-. Log in to the Okta console with a user having administrator privileges. Navigate to the *Applications* page in the console and select *Create App Integration*.
+. Sign in to the Okta console with a user having administrator privileges. Navigate to the *Applications* page in the console and select *Create App Integration*.
 +
 image::dremio-oauth1.png[Click Create App Integration on the Applications page]
 +
@@ -60,7 +60,7 @@ For Okta, it should follow this format:
 
 To add an external token provider in {connection}, do the following:
 
-. Log in to the {connection} administrator tool and select the *Administration* tab.
+. Sign in to the {connection} administrator tool and select the *Administration* tab.
 . Select *Server Authentication* from the menu.
 . Select *OAuth* and fill in the details from your IdP.
 +
@@ -82,6 +82,7 @@ Example connection string:
 ----
 jdbc:vdb://<host>:<port>/<database>?publishCatalogsAsSchemas=true&useOAuth2=true
 ----
+
 '''
 > **Related information**
 >

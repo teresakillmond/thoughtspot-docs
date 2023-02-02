@@ -36,15 +36,15 @@ Tables::
   Default security model;; Administrator users have access to source tables. They can share a table with other users or groups. See xref:share-source-tables.adoc[Sharing tables and columns].
 Columns::
   Description;; The columns in the source data tables that have been loaded using ThoughtSpot Loader.
-  Default security model;; Administrator users have access to columns in the source tables. They can share selected columns with other users or groups. xref:share-source-tables.adoc[Sharing tables and columns].
+  Default security model;; Administrator users have access to columns in the source tables. They can share selected columns with other users or groups. See xref:share-source-tables.adoc[Sharing tables and columns].
 Rows::
   Description;; The rows in the source data tables that have been loaded using ThoughtSpot Loader.
   Default security model;; All rows in the source tables are shared with all users by default.
 Imported data::
-  Description;; Data that was imported using a Web browser.
+  Description;; Data that was imported using a web browser.
   Default security model;; Only the user who imported the data (and any user with administrator privileges) has access to it by default. They can share a table (or selected columns) with other users or groups. See xref:share-source-tables.adoc[Sharing tables and columns].
 Worksheets::
-  Description;; A worksheet created using a Web browser.
+  Description;; A worksheet created using a web browser.
   Default security model;; Only the creator of the worksheet (and any user with administrator privileges) has access to it by default. They can share a worksheet with other users or groups. See xref:share-worksheets.adoc[Share Worksheets].
 Liveboards::
   Description;; A Liveboard of saved search results.
@@ -63,9 +63,9 @@ Users in groups marked *NOT SHAREABLE* cannot share objects among themselves.
 In multi-tenant scenarios, admins can create groups that bring together portions of two non-share groups so that they can share.
 For example, the members of group C can share even if they belong to other groups that cannot.
 
-== Row level security
+== Row-level security
 
-ThoughtSpot includes robust row level security, which allows you to filter all objects users see based on conditions you set at the level of row values in base data tables.
+ThoughtSpot includes robust row-level security, which allows you to filter all objects users see based on conditions you set at the level of row values in base data tables.
 
 You may find it useful to create groups for RLS.
 To prevent these groups from appearing in the *Share* dialog, create a *NOT SHAREABLE* group with a single user and an RLS group with another single user (1-to-1).
@@ -74,4 +74,4 @@ To prevent these groups from appearing in the *Share* dialog, create a *NOT SHAR
 > **Related information**
 >
 > * xref:share-revoke-access.adoc[Revoke access (unshare)]
-> * xref:security-rls.adoc[Row level security]
+> * xref:security-rls.adoc[Row-level security]

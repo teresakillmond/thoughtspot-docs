@@ -20,7 +20,7 @@ The data set we use is shown in the following image:
 
 image::meetings-tiny.png[Meetings_tiny as a table in Excel]
 
-Select link:{attachmentsdir}/Meetings_tiny.csv[here] to download this data set.
+Click link:{attachmentsdir}/Meetings_tiny.csv[here] to download this data set.
 
 In this data set we have four accounts: Snowflake, Redshift, Amazon, and Oracle. Each account has activities associated with it: Meetings and Calls. Each meeting or call occurs on a particular date and for a specified number of hours. We use this data set for all of our examples. Using a small data set like this allows you to fully understand how group_aggregate() functions on your data.
 
@@ -93,7 +93,7 @@ The arguments to group_aggregate are:
   ** query_groups() - { activity classification }: aggregate by applying the inner aggregation function at a level of detail created by removing activity classification from the level of detail specified by the search bar. If the search bar does not contain an activity classification, this has no effect.
 
 * <filters> specifies filters that are applied to the return value. The filters can be independent of any filters in the search or they can include or exclude filters from the search bar. Examples are:
-  ** {activity classification = "meeting"}: apply a row level filter to include only rows where activity classification is set to ‘meeting’
+  ** {activity classification = "meeting"}: apply a row-level filter to include only rows where activity classification is set to ‘meeting’
   ** query_filters() : apply the filters specified in the search bar
 
 ////

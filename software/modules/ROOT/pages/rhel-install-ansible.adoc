@@ -5,7 +5,7 @@
 :experimental:
 :description: Install ThoughtSpot using Ansible on RHEL clusters.
 
-This is an alternative installation method to the xref:rhel-install-online.adoc[Online cluster RHEL installation] and xref:rhel-install-offline.adoc[Offline cluster RHEL installation]. If your organization requires that privilege escalation take place through an external tool that integrates with Ansible, follow the steps in this article.
+This is an alternative installation method to the xref:rhel-install-online.adoc[online cluster RHEL installation] and xref:rhel-install-offline.adoc[offline cluster RHEL installation]. If your organization requires that privilege escalation take place through an external tool that integrates with Ansible, follow the steps in this article.
 
 Before starting the installation, complete the xref:rhel-prerequisites.adoc[prerequisites].
 
@@ -130,7 +130,7 @@ all:
     env: {}
     ssh_private_key: <private key use for ssh>
     tarball_location: <Release tarball complete path>
-    cluster_id: <Cluster id>
+    cluster_id: <Cluster id. Provided by ThoughtSpot.>
     cluster_name: <Cluster name>
     ramdisk_size: <size of ramdisk for falcon> # The default is 50619136k (50Gb)
     # ThoughtSpot variables. Do not modify.
@@ -144,3 +144,13 @@ all:
     skip_r: 1
     skip_local_user_creation: 1
 ----
+
+'''
+> **Related information**
+>
+> * xref:rhel-restore-ansible.adoc[Restoring a cluster]
+> * xref:rhel-start-stop-ansible.adoc#start[Starting a cluster]
+> * xref:rhel-start-stop-ansible.adoc#stop[Stopping a cluster]
+> * xref:rhel-upgrade-ansible.adoc[Upgrading a cluster]
+> * xref:rhel-add-node-ansible.adoc[Adding a node to a cluster]
+> * xref:rhel-delete-ansible.adoc[Deleting a cluster]

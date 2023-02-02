@@ -56,7 +56,7 @@ It may cause outages for your ThoughtSpot servers.
 Your VMware administrator must disable VMware DRS.
 | &#10063; | Install https://my.vmware.com/web/vmware/downloads/details?downloadGroup=VMTOOLS1106&productId=974[VMware tools] on each virtual machine, to increase hardware speed and performance.
 | &#10063; | A ThoughtSpot cluster requires 10 Gb/s bandwidth (or better) between any two nodes. You must ensure this _before_ creating a new cluster.
-| &#10063; a| Download and fill out the ThoughtSpot link:{attachmentsdir}/site-survey.pdf[Site survey^] to have a quick reference for any networking information you may need to fill out as you install ThoughtSpot.
+| &#10063; a| Download and fill out the ThoughtSpot link:{attachmentsdir}/site-survey.pdf[site survey^] to have a quick reference for any networking information you may need to fill out as you install ThoughtSpot.
 
 Ask your network administrator if you need help filling out the site survey.
 |===
@@ -130,3 +130,9 @@ As a prerequisite, verify the following:
 . The Network Adapter type is set to VMware vmxnet3 (Highly recommended).
 . All ESXi hosts in your VMware farm for ThoughtSpot have been trunked to the VLAN assigned to your ThoughtSpot VMs.
 . The console of all ThoughtSpot VMs is accessible in VMware vCenter Server.
+
+'''
+> **Related information**
+>
+> * xref:vmware-installing.adoc[Configure ThoughtSpot nodes in VMware]
+> * xref:vmware-cluster-install.adoc[Install ThoughtSpot clusters in VMware]

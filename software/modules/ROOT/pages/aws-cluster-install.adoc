@@ -39,7 +39,6 @@ Follow the steps in this checklist.
 | &#10063; | <<cluster-step-1,Step 1: Run the installer>>
 | &#10063; | <<cluster-step-2,Step 2: Check cluster health>>
 | &#10063; | <<cluster-step-3,Step 3: Finalize installation>>
-| &#10063; | <<install-step-4, *[Optional]* Step 4: Upgrade Python>>
 |===
 
 Refer to your welcome letter from ThoughtSpot to find the link to download the release bundle.
@@ -122,7 +121,7 @@ For more information on this process, refer xref:cluster-create.adoc[Using the t
 The cluster installer automatically reboots all the nodes after a successful install.
 The `firewalld` service automatically turns on.
 At this time, the system is rebooting, which may take approximately 15 minutes.
-Log in to any node to check the current cluster status:
+Sign in to any node to check the current cluster status:
 +
 [source,console]
 ----
@@ -259,12 +258,6 @@ ThoughtSpot recommends changing the default admin password.
 [#ts-login]
 image:ts-login-page.png[ThoughtSpot's sign-in window]
 
-[#install-step-4]
-=== [Optional] Step 4: Upgrade Python
-By default, your ThoughtSpot cluster comes with Python 3.6. Optionally upgrade it to Python 3.9, or remain on the default version.
-
-Refer to xref:python-upgrade.adoc[].
-
 [#lean-configuration]
 == Lean configuration
 
@@ -312,3 +305,8 @@ NOTE: If you decide later you want to disable advanced lean mode, use `default`.
 > * xref:cluster-create.adoc[Using the tscli cluster create command]
 > * xref:parameters-cluster-create.adoc[Parameters of the cluster create command]
 > * Contact xref:support-contact.adoc[ThoughtSpot Support]
+> * xref:aws-launch-instance.adoc[Set up AWS resources for ThoughtSpot]
+> * xref:aws-prepare-vms.adoc[Prepare AWS VMs for ThoughtSpot]
+> * xref:aws-installing.adoc[Configure ThoughtSpot nodes in AWS]
+> * xref:ha-aws-efs.adoc[Set up high availability]
+> * xref:aws-backup-restore.adoc[Back up and restore using S3]

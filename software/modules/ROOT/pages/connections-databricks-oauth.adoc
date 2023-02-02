@@ -14,7 +14,7 @@ ThoughtSpot supports OAuth for a {connection} connection. This page describes th
 
 To create an application in AAD, do the following:
 
-. Log in to the Azure portal and navigate to the AAD resource, click *Add*, and select *App registration*.
+. Sign in to the Azure portal and navigate to the AAD resource, click *Add*, and select *App registration*.
 +
 image::databricks-oauth-config-1.png[Select Add > App registration]
 . Provide a name for your application and add a redirect URI in the following format:
@@ -58,7 +58,7 @@ For more information, see https://docs.microsoft.com/en-us/azure/databricks/dev-
 
 To create AAD users in the {connection} workspace, do the following:
 
-. Log in to the {connection} workspace as a user with admin privileges. Select *Setting* and navigate to *Admin Console*.
+. Sign in to the {connection} workspace as a user with admin privileges. Select *Setting* and navigate to *Admin Console*.
 . Select *Add User* to create AAD users in {connection}.
 +
 image::databricks-oauth-config-6.png[Click add user]
@@ -74,3 +74,14 @@ The JDBC connection URL which uses the access token from AAD must use the follow
 "AuthMech=11;Auth_Flow=0;" +"Auth_AccessToken=<access_token>"`
 ----
 ////
+
+'''
+> **Related information**
+>
+> * xref:connections-databricks-add.adoc[]
+> * xref:connections-databricks-edit.adoc[]
+> * xref:connections-databricks-remap.adoc[]
+> * xref:connections-databricks-delete-table.adoc[]
+> * xref:connections-databricks-delete-table-dependencies.adoc[]
+> * xref:connections-databricks-delete.adoc[]
+> * xref:connections-databricks-reference.adoc[]

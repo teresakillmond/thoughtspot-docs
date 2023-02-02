@@ -55,9 +55,9 @@ You can also choose to create resource groups when creating your virtual machine
 
 Create your virtual machines based on the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/thoughtspot-inc.thoughtspotvirtualmachine[ThoughtSpot Virtual Machine^].
 
-. Log in to the Azure portal.
+. Sign in to the Azure portal.
 +
-In a browser, go to https://portal.azure.com/#home[Azure home^], and log in to your Azure account.
+In a browser, go to https://portal.azure.com/#home[Azure home^], and sign in to your Azure account.
 
 . On the Azure portal homepage, hover over *Virtual machines*, and select *Create*.
 +
@@ -76,7 +76,7 @@ Size:: xref:azure-configuration-options.adoc[Specify the size] for your VM that 
 Authentication type:: Select *SSH public key*.
 Username:: Specify a username.
 +
-NOTE: This user is necessary for Azure VM creation, but does not exist in ThoughtSpot. You cannot log in to ThoughtSpot, or `ssh` into the command line, with this user.
+NOTE: This user is necessary for Azure VM creation, but does not exist in ThoughtSpot. You cannot sign in to ThoughtSpot, or `ssh` into the command line, with this user.
 
 SSH public key:: Enter an SSH public key.
 +
@@ -155,7 +155,7 @@ Refer to xref:ports.adoc[Network ports] for more information.
 [#prepare-for-startup]
 === Prepare for starting up ThoughtSpot
 
-_Prerequisite_: To log in to the VM, you need the private key that is available in the image.
+_Prerequisite_: To sign in to the VM, you need the private key that is available in the image.
 You can obtain this from your ThoughtSpot contact.
 
 . Obtain the VM's public and private IP addresses.
@@ -166,7 +166,7 @@ Private IP:: To see the private IP, select *more services* from the Microsoft Az
 Select *Networking* from the list on the left side of the screen.
 . In a terminal application, connect to the VM through SSH.
 +
-Log in as the admin user, using the private key that your ThoughtSpot contact sent you.
+Sign in as the admin user, using the private key that your ThoughtSpot contact sent you.
 +
 [source,console]
 ----
@@ -244,3 +244,9 @@ Any data on it will be wiped if the VM is shut down.
  $ df -h
 ----
 . Repeat the steps in this section for each node in your cluster.
+
+'''
+> **Related information**
+>
+> * xref:azure-installing.adoc[Configure ThoughtSpot nodes in Azure]
+> * xref:azure-cluster-install.adoc[Install ThoughtSpot clusters in Azure]

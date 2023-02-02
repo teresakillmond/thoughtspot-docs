@@ -17,7 +17,7 @@ Upload up to 50 custom map files. To increase this limit, contact {support-url}.
 
 * To upload custom maps, you must have admin privileges.
 * Your custom map must be a `TopoJSON` file. It can't be more than 100 MB.
-* In 9.0.0.cl, this feature is early access. You must enable it from the *Early access features > Custom maps* section of the Admin Console.
+* In 9.0.0.sw, this feature is in Beta. {support-url} must enable it.
 
 == Upload your own custom maps
 
@@ -25,7 +25,7 @@ To upload your own custom maps, follow these steps:
 
 . Select *Admin* from the top navigation bar.
 
-. Select *Custom maps* from the side navigation bar that appears. If you do not see the *Custom maps* option, you must enable it in your environment, from the *Early access features > Custom maps* section of the Admin Console.
+. Select *Custom maps* from the side navigation bar that appears. If you do not see the *Custom maps* option, {support-url} must enable it in your environment.
 
 . Select *Add map*.
 
@@ -60,6 +60,8 @@ If you must make changes to the custom map you uploaded, you can edit it from th
 
 . Edit the map name or upload a new TopoJSON file.
 
+. If the map has any dependents, a warning appears at the top of the *Edit map* dialog: *Changes to the map will update _n_ objects. View all*. To view the dependents that will change if you edit the map, select *View all*.
+
 . Select *Save*.
 
 When you edit a custom map, ThoughtSpot expects your data to be in sync with the new map. For example, if you add a new region to the file you upload, ThoughtSpot expects that region to be present in your data.
@@ -76,4 +78,6 @@ Delete a custom map from the Admin Console. To delete your custom map, follow th
 
 . Select *Delete*.
 
-. A confirmation dialog appears. Select *Delete* again.
+. If the custom map has any dependents, a *Fix dependent objects* dialog appears, warning you that you can't delete the custom map while it has dependents. To delete the map, you must first remove it from the dependent objects' geo configuration. See xref:data-modeling-geo-data.adoc#add-geo-config[How to edit geographic columns].
++
+If the custom map does not have dependents, a confirmation dialog appears. Select *Delete* again.

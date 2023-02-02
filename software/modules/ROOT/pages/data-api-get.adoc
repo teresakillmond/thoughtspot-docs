@@ -3,11 +3,11 @@
 :linkattrs:
 :experimental:
 :page-aliases: /app-integrate/data-api/use-data-api-read.adoc
-:description: This procedure shows how to use the REST API to get data out of ThoughtSpot, so you can use it in a Web page, portal, or application.
+:description: This procedure shows how to use the REST API to get data out of ThoughtSpot, so you can use it in a web page, portal, or application.
 
 include::partial$liveboards-announcement.adoc[]
 
-This procedure shows how to use the REST API to get data out of ThoughtSpot, so you can use it in a Web page, portal, or application.
+This procedure shows how to use the REST API to get data out of ThoughtSpot, so you can use it in a webpage, portal, or application.
 
 Data retrieved using the Data REST API is returned as JSON (JavaScript Object Notation).
 
@@ -15,7 +15,7 @@ Before you can use the Data REST API, you need to enable the xref:js-api-enable.
 
 Use this procedure to construct the URL you will use to call the Data REST API:
 
-. Log in to ThoughtSpot from a browser.
+. Sign in to ThoughtSpot from a browser.
 . Navigate to the Liveboard from which you want to get data.
 If it doesn't exist yet, create it now.
 . Find the ID number of the object you want to get the data from. Select the *More* menu icon image:icon-more-10px.png[more options menu icon] for the object and select *Copy embed link*.
@@ -53,4 +53,12 @@ For a visualization, the URL takes the form:
 . If you want to apply any filters to the data that will be returned, apply xref:runtime-filters.adoc[Runtime Filters].
 . Now your URL is complete, and you can use it to access the data directly through the HTTP POST method.
 The Data REST API returns the data formatted as JSON.
-. Retrieve the data from the JSON and display it in your Web page, Web portal, or application.
+. Retrieve the data from the JSON and display it in your webpage, web portal, or application.
+
+'''
+> **Related information**
+>
+> * xref:rest-api-getstarted.adoc[Get started]
+> * xref:data-api-calling.adoc[Calling the REST API]
+> * xref:data-api-pagination.adoc[REST API pagination]
+> * xref:data-api-search.adoc[Use the Embedded Search API]

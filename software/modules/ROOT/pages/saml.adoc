@@ -38,7 +38,7 @@ If you want to configure multiple IDPs, add `--multi` to the end of the command.
  tscli saml configure --multi
 ----
 +
-To change your default IDP, add `--change_default_idp` to the end of the command. When users log in to ThoughtSpot from the ThoughtSpot URL, the login screen will take them to the default IDP. To use other, non-default IDPs that you configured with the `--multi` flag, users must log in to ThoughtSpot from the other IDP's login page.
+To change your default IDP, add `--change_default_idp` to the end of the command. When users sign in to ThoughtSpot from the ThoughtSpot URL, the login screen will take them to the default IDP. To use other, non-default IDPs that you configured with the `--multi` flag, users must sign in to ThoughtSpot from the other IDP's login page.
 +
 [source]
 ----
@@ -59,6 +59,6 @@ To determine if ThoughtSpot supports your preferred IDP, xref:support-contact.ad
 
 Complete your configuration of the IDP using the IDP's SAML documentation. Upload or copy the contents of the `spring_saml_metadata.xml` to your IDP server. If you did not download the `spring_saml_metadata.xml` file, navigate to `\https://<your_ThoughtSpot_hostname-or-IP>/callosum/v1/saml/metadata`. The file automatically downloads.
 
-After you configure the IDP, open a Web browser and go to the ThoughtSpot login page. It should now show the Single Sign On option.
+After you configure the IDP, open a web browser and go to the ThoughtSpot login page. It should now show the Single Sign On option.
 
 include::partial$authentication-saml.adoc[]

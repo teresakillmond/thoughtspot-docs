@@ -27,7 +27,7 @@ NOTE: ThoughtSpot automatically adds the `{Null}` value to the filter options fo
 
 == Show NULL and blank values differently
 
-If you need to differentiate between NULL and blank values, you can xref:formula-add.adoc[Add a formula] to make them appear differently in charts and tables.
+If you need to differentiate between NULL and blank values, you can xref:formula-add.adoc[add a formula] to make them appear differently in charts and tables.
 In this example, we'll use `<text_column>` to refer to the text column which contains both NULL and blank values:
 
 [source]
@@ -54,3 +54,11 @@ Use the filter you created instead of the original text column in your search to
 
 After creating the formula for what you want to do, you can filter on the formula column you created in the search bar by typing the value *\{blank}*, *\{empty}*, or *\{null}*, which will act as a filter. Then, you can type normal filter syntax, such as `customer name = &lcub;empty&rcub;` or `department != &lcub;null&rcub;`.
 Or you can filter by left-clicking on a *\{blank}*, *\{empty}*, or *\{null}*  value in your search result table, then right-clicking and selecting *Show only "\{value}"*.
+
+'''
+> **Related information**
+>
+> * xref:filter-chart-table.adoc[Add a filter to a table]
+> * xref:filter-chart.adoc[Add a filter to a chart]
+> * xref:filter-bulk.adoc[Create a bulk filter]
+> * xref:filter-delete.adoc[Delete a filter]

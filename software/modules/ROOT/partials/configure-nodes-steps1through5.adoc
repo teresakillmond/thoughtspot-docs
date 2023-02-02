@@ -37,7 +37,7 @@ $ tscli cluster get-config |& tee nodes.config
 
 WARNING: _DNS server_ and _IP address_ values must be set in the cloud backend. It then populates them into the VM configuration. If you specify different values during this step, it can create a temporary mismatch and lead to connectivity issues.
 
-. Add your specific network information for the nodes in the `nodes.config` file, as demonstrated in the xref:nodesconfig-example.adoc#autodiscovery-of-one-node-example[autodiscovery of one node example].
+. Add your specific network information for the nodes in the `nodes.config` file, as demonstrated in the xref:nodesconfig-example.adoc#autodiscovery-of-one-node-example[Autodiscovery of one node example].
 +
 Run `vim nodes.config` to edit the file.
 +
@@ -85,7 +85,7 @@ $ sudo systemctl status firewalld
 
 . Run the configuration command: `$ cat nodes.config | tscli cluster set-config`.
 +
-If the command returns an error, refer to xref:set-config-error-recovery[set-config error recovery].
+If the command returns an error, refer to xref:set-config-error-recovery[Set-config error recovery].
 +
 After you run the node configuration command, your output appears similar to the following:
 +

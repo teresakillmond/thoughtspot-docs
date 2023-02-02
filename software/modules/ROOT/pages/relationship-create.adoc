@@ -39,7 +39,7 @@ A Many:1 cardinality defines a join where multiple values in the origin table (T
 
 A 1:Many cardinality defines a join where one value in the origin table corresponds to multiple values within the target table.
 
-A 1:1 cardinality defines a join where one value in the origin table corresponds to a single value within the target table (e.g. employee name and employee ID).
+A 1:1 cardinality defines a join where one value in the origin table corresponds to a single value within the target table (for example, employee name and employee ID).
 
 You must create a join between columns in two data sources that contain the same data type, with the same meaning. That is, they must represent the same data. Normally, you can make this kind of link from a fact table column to a column in a dimension table that uniquely identifies a logical entity in your data such as Employee ID for a person, Product ID for a product, or Date Key for a specific date in a date lookup table.
 
@@ -58,7 +58,7 @@ NOTE:  If you create joins at the table level, and then create a worksheet that 
 [#table-join]
 === Creating a join from a table
 
-To create a table join through the Web interface:
+To create a table join through the web interface:
 
 . Select *Data* in the top menu, and choose *Tables*.
 . Find your table through browsing, Search, or selecting the appropriate Tag(s).
@@ -122,7 +122,7 @@ image:worksheet-join-dialog.png[Worksheet join dialog]
 [#modify-join]
 == Modifying joins
 
-ThoughtSpot allows you to edit the name, join type, and cardinality through the Web interface. This allows you to change a many-to-one join to one-to-one. To reverse the join cardinality, you must delete the join and create it again with the opposite cardinality. Deleting the join  *doesn't* delete the dependent objects, but it does make them unusable until you create another join. To change the columns that define a join, you must delete the join and create a new one.
+ThoughtSpot allows you to edit the name, join type, and cardinality through the web interface. This allows you to change a many-to-one join to one-to-one. To reverse the join cardinality, you must delete the join and create it again with the opposite cardinality. Deleting the join  *doesn't* delete the dependent objects, but it does make them unusable until you create another join. To change the columns that define a join, you must delete the join and create a new one.
 
 [#table-join-modify]
 === Editing a join from a table

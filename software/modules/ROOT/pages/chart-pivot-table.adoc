@@ -39,9 +39,11 @@ By default, ThoughtSpot displays measures in columns. To display measures in row
 +
 image::pivot-table-measures-rows.png[Display measures in rows]
 
+NOTE: Displaying measures in rows is only available with the xref:answer-experience-new.adoc[new Answer experience].
+
 [#sort]
 == Sort
-To sort any column or row, right-click on a row or column heading or subheading or a measure or attribute name and select *Sort*. You can also sort from the search bar. Type `sort by <column name> [ascending | descending]`.
+To sort any column or row, right-click a row or column heading or subheading or a measure or attribute name and select *Sort*. You can also sort from the search bar. Type `sort by <column name> [ascending | descending]`.
 
 You can sort a pivot table in many different ways. The ways you can sort a pivot table differ, depending on whether you are using the <<classic-experience,classic answer experience>> or the <<new-experience,new answer experience>>.
 
@@ -65,7 +67,7 @@ If you use the xref:answer-experience-new.adoc[new answer experience], you can s
 
 * When you save a pivot table that you sorted, all sorting saves as well.
 
-* If you sort both from the search bar and from the in-context row or column heading menus, whichever sorting is the latest overrides the other. For example, if you right-click on a `Department` row heading and select *Sort ascending*, and then add `sort by date monthly` to the search bar, ThoughtSpot sorts only by `date monthly`.
+* If you sort both from the search bar and from the in-context row or column heading menus, whichever sorting is the latest overrides the other. For example, if you right-click a `Department` row heading and select *Sort ascending*, and then add `sort by date monthly` to the search bar, ThoughtSpot sorts only by `date monthly`.
 
 [#sort-table]
 .Sorting logic
@@ -142,3 +144,6 @@ If your query returns more than 100k rows, you cannot visualize it with a pivot 
 * If the query the pivot table is based on contains the `top` or `bottom` keyword, column and row summaries are not accurate.
 
 * You cannot filter aggregated columns or columns with aggregated formulas.
+
+* Pivot tables do not support xref:formulas-cumulative.adoc[cumulative functions].
+* Pivot tables do not support xref:formulas-moving.adoc[moving functions].
