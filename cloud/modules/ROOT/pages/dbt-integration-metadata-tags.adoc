@@ -6,18 +6,16 @@
 :author: Teresa Killmond
 :description: Manage table and Worksheet column properties and table joins in dbt. Use metadata tags to define column properties and joins within your dbt model schema.
 
-NOTE: This feature is in [.badge.badge-update-note]#Beta# in 9.0.0.cl.
-
 Manage your ThoughtSpot Worksheet and table xref:data-modeling-settings.adoc[column properties] and table xref:join-add.adoc[joins] in dbt by using metadata tags to define column properties and joins within your dbt model schema. dbt stays the source of truth, and you don't have to manually update the columns and joins in ThoughtSpot when you make changes to your dbt model.
 
-ThoughtSpot has its own set of metadata tags that you can use within the yml schema files in your dbt model folders. For example, you can specify the column type, synonyms, and currency type for a column, before ThoughtSpot creates its own Worksheets based on your dbt models during xref:dbt-integration.adoc[dbt integration]. For more information about the Worksheet and table column properties, see xref:data-modeling-settings.adoc[].
+ThoughtSpot has its own set of metadata tags that you can use within the `.yml` schema files in your dbt model folders. For example, you can specify the column type, synonyms, and currency type for a column, before ThoughtSpot creates its own Worksheets based on your dbt models during xref:dbt-integration.adoc[dbt integration]. For more information about the Worksheet and table column properties, see xref:data-modeling-settings.adoc[].
 
 If there are any changes to the dbt models that you would like the ThoughtSpot Worksheets and tables to reflect _after_ you already integrated dbt with ThoughtSpot, you must run the dbt integration again, which creates a new set of Worksheets, and updates the existing tables.
 
 == Add metadata tags
 To add metadata tags, follow these steps:
 
-. In dbt, navigate to the yml schema file for the dbt model. The yml schema file has syntax similar to the following example:
+. In dbt, navigate to the `.yml` schema file for the dbt model. The `.yml` schema file has syntax similar to the following example:
 +
 ----
 models:
@@ -96,7 +94,7 @@ NOTE: ThoughtSpot does not support a metadata tag for column descriptions, becau
 
 `ts_additive`:: Controls the type of aggregation that is available for the column. Determines whether the column values can be used in mathematical operations. For more information on additive columns, see xref:data-modeling-aggreg-additive.adoc[Set ADDITIVE or AGGREGATION].
 Possible values;; `yes` or `no`
-Default values;; If the column type is `measure`, the default is `yes`. If the column type is `attribute`, the default is `no`.
+Default values;; If the column type is `measure`, the value must be `yes`, or ThoughtSpot will return an error. If the column type is `attribute`, the value must be `no`, or ThoughtSpot will return an error.
 Sample;;
 +
 ----
@@ -108,9 +106,9 @@ Sample;;
 ----
 
 `ts_aggregation`:: Sets the default aggregation type for a column. For more information on aggregation, see xref:data-modeling-aggreg-additive.adoc[Set ADDITIVE or AGGREGATION].
-Possible values;; If the column type is `attribute`: `count`, `count_distinct`, `min`, `max`, or `none`
+Possible values;; If the column type is `attribute`: `count`, `count_distinct`, `min`, `max`, or `none`. If you try to set a value not in this list, ThoughtSpot will return an error.
 +
-If the column type is `measure`: `count`, `count_distinct`, `min`, `max`, `sum`, `average`, `std_deviation`, or `variance`
+If the column type is `measure`: `count`, `count_distinct`, `min`, `max`, `sum`, `average`, `std_deviation`, or `variance`. If you try to set a value not in the list, ThoughtSpot will return an error.
 Default values;; If the column type is `measure`, the default is `sum`. If the column type is `attribute`, the default is `none`.
 Sample;;
 +
@@ -195,7 +193,7 @@ Samples;;
 ----
 
 `ts_format_pattern`:: Specifies the format to use for numeric values or dates in the column. For more information about format patterns, see xref:data-modeling-patterns.adoc[].
-Possible values;; Refer to the xref:data-modeling-patterns.adoc#number_formats[number] and xref:data-modeling-patterns.adoc#date[date] formats specified in xref:data-modeling-patterns.adoc[].
+Possible values;; Refer to the xref:data-modeling-patterns.adoc#number_formats[number] and xref:data-modeling-patterns.adoc#date[date] formats specified in xref:data-modeling-patterns.adoc[]. You can only set this value if the column data type is `INT`, `BIGINT`, `DOUBLE`, `DATE`, or `DATETIME`, or ThoughtSpot will return an error.
 Default values;; By default, ThoughtSpot shows the data as it appears in the table or Worksheet, without any number or date formatting.
 Sample;;
 +
@@ -210,7 +208,7 @@ Sample;;
 `ts_geo_config`:: Enables a column to be used in geo map visualizations. For more information about geo configuration, see xref:data-modeling-geo-data.adoc[].
 Possible values;; `none`, `latitude`, `longitude`, `country`, `sub_nation_region`
 +
-NOTE: The `sub_nation_region` value depends on the country you specify. For example, for the United States, ThoughtSpot supports `State`, `County`, and `Zip Code`. For Denmark, ThoughtSpot supports `Region`, `Municipality`, and `Postal Code`. To determine which sub-nation regions ThoughtSpot supports for the relevant country, see xref:geomap-reference.adoc[].
+NOTE: The `sub_nation_region` value depends on the country you specify. For example, for the United States, ThoughtSpot supports `State`, `County`, and `Zip Code`. For Denmark, ThoughtSpot supports `Region`, `Municipality`, and `Postal Code`. To determine which sub-nation regions ThoughtSpot supports for the relevant country, see xref:geomap-reference.adoc[]. If you specify a sub-nation region that is not supported for that country, such as `Principality` for `United States`, ThoughtSpot will return an error.
 Default values;; The default is `none`.
 Samples;;
 +
