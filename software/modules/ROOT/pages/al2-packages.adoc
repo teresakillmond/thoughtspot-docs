@@ -8,7 +8,7 @@ View the packages necessary to deploy ThoughtSpot with Amazon Linux 2.
 
 ThoughtSpot also uses the third-party software packages listed in xref:third-party.adoc[].
 
-To successfully deploy ThoughtSpot in your organization, you must have the following packages on each node of your ThoughtSpot cluster: yum, python 3, and R.
+To successfully deploy ThoughtSpot in your organization, you must have the following packages on each node of your ThoughtSpot cluster: yum, python 3, and R. ThoughtSpot does not install the R packages if you define the xref:al2-install-online.adoc#skip_r[skip_r] flag in the Ansible playbook.
 When the Ansible playbook runs, it automatically installs them.
 
 [#yum]
@@ -30,6 +30,8 @@ Download: link:{attachmentsdir}/pip3-rpm-packages.csv[Python3 RPM package list].
 include::partial$packages/pip3-rpm-packages.adoc[]
 --
 R packages;;
++
+ThoughtSpot does not install the R packages if you define the xref:al2-install-online.adoc#skip_r[skip_r] flag in the Ansible playbook.
 +
 --
 Download: link:{attachmentsdir}/r-rpm-packages.csv[R RPM package list].
