@@ -10,9 +10,49 @@ ifndef::free-trial-feature[]
 NOTE: Features marked as [.badge.badge-update-note]#Beta# are off by default. To enable them, contact {support-url}.
 endif::free-trial-feature[]
 
+ifndef::pendo-links[]
+[%collapsible]
+.Navigate to a specific feature
+====
+--
+<<9-1-0-cl-mandatory-filters, Mandatory Liveboard filters>> +
+<<9-1-0-cl-custom-map,Upload custom geo maps>> +
+ifndef::free-trial-feature[]
+<<tse,ThoughtSpot Everywhere>>
+endif::free-trial-feature[]
+--
+====
+endif::[]
+
 [#primary-9-1-0-cl]
 
-TBD
+[#9-1-0-cl-mandatory-filters]
+[discrete]
+=== Mandatory Liveboard filters
+
+The mandatory Liveboard filters feature is now GA. Mark certain filters in your Liveboard as mandatory. If you add mandatory filters to a Liveboard, the visualizations will only load after Liveboard viewers select values for the mandatory filters. Use mandatory filters for Liveboards that contain data that may not be relevant for everyone who must view and consume the Liveboard. Mandatory filters also lower query and performance costs. To try the feature out, select *Mandatory filter* when adding a filter to a Liveboard. For more information, see
+ifndef::pendo-links[]
+xref:liveboard-filters-mandatory.adoc[Mandatory Liveboard filters].
+endif::[]
+ifdef::pendo-links[]
+xref:liveboard-filters-mandatory.adoc[Mandatory Liveboard filters,window=_blank].
+endif::[]
+
+image::mandatory-filter.png[Creation of a mandatory filter and an image of a Liveboard with the mandatory filter]
+
+[#9-1-0-cl-custom-map]
+[discrete]
+=== Upload custom geo maps
+
+The custom geo maps feature is now GA. Upload your own custom maps and visualize data on geo charts with regions that are specific to you and your organization. To try it out, select *Custom maps* in the Admin Console. For more information, see
+ifndef::pendo-links[]
+xref:geomaps-custom.adoc[Upload custom geo maps].
+endif::[]
+ifdef::pendo-links[]
+xref:geomaps-custom.adoc[Upload custom geo maps,window=_blank].
+endif::[]
+
+image::custom-map-search-example.png[Custom geo map being added, and a ThoughtSpot search using the custom map]
 
 ifdef::free-trial-feature[]
 [#9-0-0-cl-free-trial-row-limits]
