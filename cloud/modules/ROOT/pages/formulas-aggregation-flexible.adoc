@@ -158,9 +158,9 @@ In this case, the results will be aggregated based on the dimensions in the sear
 Customer ID and any filter related to Ship Mode will not be considered while aggregating the results.
 
 [#groupagg-filters-enhancement]
-=== Group aggregation filters enhancement [.badge.badge-beta]#Beta#
+=== Group aggregation filters enhancement
 
-Beginning in the 9.0.0.cl release, you can specify a column in the third argument of a group_aggregate function in order to include all filters defined in the search that pertain to that column, and ignore unrelated filters. This enhancement allows the analyst to specify which fields to accept filters from, improving readability of formulas, and reducing operational change and related errors. The group aggregation filters enhancement feature is in beta and off by default. To enable this feature, contact ThoughtSpot Support.
+Beginning in the 9.0.0.cl release, you can specify a column in the third argument of a group_aggregate function in order to include all filters defined in the search that pertain to that column, and ignore unrelated filters. This enhancement allows the analyst to specify which fields to accept filters from, improving readability of formulas, and reducing operational change and related errors.
 
 For example, say that you would like to determine how many stores a certain product was sold in during a given time period, expressed as a ratio of total available stores. In order to calculate the total available stores you require a group_aggregate function that will accept the filters associated with transaction date (for example, this year, last six months, august), and ignore filters from other fields.
 
