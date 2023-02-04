@@ -128,7 +128,7 @@ When using Free Trial, users are limited to a maximum of 5 million rows. You can
 [discrete]
 === [GA] Provide ability to remove attached pdf/csv from scheduled emails
 
-// Naomi
+// Naomi-- GA
 
 [#9-1-0-cl-indexing]
 [discrete]
@@ -192,7 +192,7 @@ When using Free Trial, users are limited to a maximum of 5 million rows. You can
 [discrete]
 === [Customer roll out] Deprecate new Headline creation from table summary
 
-// Naomi
+// Naomi-- moved to 9.2.0.cl
 
 
 [#9-1-0-cl-or]
@@ -203,13 +203,23 @@ When using Free Trial, users are limited to a maximum of 5 million rows. You can
 
 [#9-1-0-cl-group-aggregate]
 [discrete]
-=== Enable GroupAggregate Enhancements: Filters
+=== Group aggregation enhancements: filters
 
 // Naomi
 
+Group aggregate filter enhancements are GA and on by default. Previously, when using group_aggregate formulas, users could use query_filters to include filters entered in the search bar in the formula's value, but it was difficult to write a formula that accepted filters from only a single column.
+
+Starting with this release, you can specify column names within the ‘filters’ section of a group_aggregate formula, and any filter in your search bar referencing that column will be added to the formula. Filters entered in the search bar that are not on columns specified in the third argument of the group_aggregate formula will be ignored. For details, see
+ifndef::pendo-links[]
+xref:formulas-aggregation-flexible.adoc#groupagg-filters-enhancement[Group aggregation filters].
+endif::[]
+ifdef::pendo-links[]
+xref:formulas-aggregation-flexible.adoc#groupagg-filters-enhancement[Group aggregation filters,window=_blank].
+endif::[]
+
 [#9-1-0-cl-mobile]
 [discrete]
-=== Mobile App should be able to show all the rows for a table view
+=== Mobile App load more button
 
 // Naomi
 
@@ -254,7 +264,27 @@ THE FOLLOWING ARE NEEDS EVALUATION
 [discrete]
 === Data workspace minor enhancements
 
+// Naomi-- not customer-facing
+
+ifndef::free-trial-feature[]
+[#9-1-0-cl-object-usage]
+[discrete]
+=== Object Usage Liveboard
+
 // Naomi
+
+Use the Object Usage Liveboard to easily track how specific objects (Liveboards, Answers, Worksheets, or tables) are trending over time. Our new visualizations allow you to understand adoption on the object-level, and filter on a specific user or users to see usage on the user-level.
+
+For more information, see
+ifndef::pendo-links[]
+xref:object-usage-liveboard.adoc[Object Usage Liveboard].
+endif::[]
+ifdef::pendo-links[]
+xref:object-usage-liveboard.adoc[Object Usage Liveboard,window=_blank].
+endif::[]
+
+image::object-usage-whats-new.png[Object Usage Liveboard]
+endif::free-trial-feature[]
 
 [#9-1-0-cl-sql-server]
 [discrete]
@@ -272,7 +302,7 @@ endif::[]
 [discrete]
 === [GA] - Dr.Sum Embrace connector integration
 
-// Naomi
+// Naomi-- pushed to later release
 
 [#9-1-0-cl-join-tml]
 [discrete]
