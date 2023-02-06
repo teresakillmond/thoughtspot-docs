@@ -43,6 +43,7 @@ ifndef::pendo-links[]
 <<9-0-0-sw-detail-options,Delete or make a copy of objects from the details page>> +
 <<9-0-0-sw-table-delete,Delete tables from ThoughtSpot>> +
 <<9-0-0-sw-python,Python 3.9 upgrade>> +
+<<9-0-0-sw-rhel-deploy,Deploy ThoughtSpot on RHEL, OEL, or Amazon Linux 2 using your LDAP or AD service account>> +
 <<tse,ThoughtSpot Everywhere>>
 --
 ====
@@ -359,6 +360,16 @@ Previously, when deleting tables from Connections, ThoughtSpot did not delete th
 [discrete]
 === Python 3.9 upgrade
 Python 3.9 is now the default Python version for all ThoughtSpot Software clusters, regardless of deployment type. ThoughtSpot does not support any other Python release for clusters on ThoughtSpot release 9.0.0.sw and later.
+
+[#9-0-0-sw-rhel-deploy]
+Deploy ThoughtSpot on RHEL, OEL, or Amazon Linux 2 using your LDAP or AD service account::
+When deploying ThoughtSpot on RHEL, OEL, or Amazon Linux 2, you can use your LDAP or Active Directory service account for installation, instead of using a local user. For more information, see
+ifndef::pendo-links[]
+xref:rhel-install-online.adoc[RHEL or OEL online install], xref:rhel-install-offline.adoc[RHEL or OEL offline install], xref:al2-install-online.adoc[Amazon Linux 2 online install] or xref:al2-install-offline.adoc[Amazon Linux 2 offline install].
+endif::[]
+ifdef::pendo-links[]
+xref:rhel-install-online.adoc[RHEL or OEL online install,window=_blank], xref:rhel-install-offline.adoc[RHEL or OEL offline install,window=_blank], xref:al2-install-online.adoc[Amazon Linux 2 online install,window=_blank] or xref:al2-install-offline.adoc[Amazon Linux 2 offline install,window=_blank].
+endif::[]
 
 [#tse]
 [discrete]
