@@ -109,6 +109,37 @@ To enable the Contact and Case objects requires the Customer Service plugin (com
 
 Non-admin users require the `personalize_dictionary` role to access custom fields.
 
+== Updating and deleting records in {connection}
+
+To update and delete records in {connection}, the Sys Id field must be used as the mapping field. The following table shows the mapping needed for each object in {connection} to update or delete records in {connection}.
+
+[options="header"]
+|===
+| ServiceNow object | Source column | Destination column
+
+| Cases | Sys_id | Sys_id
+
+| Contacts | Update and delete function not supported. | Update and delete function not supported.
+
+| Incidents | Sys_id | Sys_id
+
+| Tasks | Sys_id | Sys_id
+|===
+
+The Sys_id can also be found at the end of a URL link when you have a specific incident. See the example below, between "sys_id" and "sysparm_view":
+
+https://dev107692.service-now.com/now/nav/ui/classic/params/target/incident.do%3Fsys_id%3Df3e44afe1b3021104d09ea03b24bcb82%26sysparm_view%3Dess%26sysparm_record_target%3Dincident%26sysparm_record_row%3D13%26sysparm_record_rows%3D72%26sysparm_record_list%3DORDERBYDESCnumber
+
+=== Failure to sync
+
+A sync to {connection} can fail due to multiple reasons. If you experience a sync failure, consider the following causes:
+
+* The underlying ThoughtSpt object was deleted.
+* The underlying {connection} object was deleted.
+* The column name was changed in either ThoughtSpot or {connection}, making it different to the column name setup in the mapping.
+* There are data validation rules in {connection} which only allow data with a certain data type to be populated in the {connection} fields, but the columns being mapped onto {connection} from ThoughtSpot do not have the same or allowable data types.
+* There is a mandatory field in {connection} which has not been mapped onto as a destination column when setting up the mapping in ThoughtSpot.
+
 === Manage pipelines
 
 While you can also manage a pipeline from the *Pipelines* tab in the Data Workspace, accessing the *Manage pipelines* option from an Answer or view displays all pipelines local to that specific data object. To manage a pipeline from an Answer or view, follow these steps:
