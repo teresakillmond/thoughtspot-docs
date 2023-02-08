@@ -1,5 +1,5 @@
 = Sync data from ThoughtSpot to ServiceNow
-:last_updated: 12/15/2022
+:last_updated: 2/8/2023
 :author: Naomi
 :linkattrs:
 :experimental:
@@ -108,6 +108,38 @@ To create a sync to {connection} from the Data Workspace, follow these steps:
 To enable the Contact and Case objects requires the Customer Service plugin (com.sn_customerservice), and users require the `csm_ws_integration` role for full API access. External users with `sn_customerservice.customer` or `sn_customerservice.consumer` roles can access the case API endpoints.
 
 Non-admin users require the `personalize_dictionary` role to access custom fields.
+
+== Updating and deleting records in {connection}
+
+To update and delete records in {connection}, the Sys Id field must be used as the mapping field. The following table shows the mapping needed for each object in {connection} to update or delete records in {connection}.
+
+[options="header"]
+|===
+| ServiceNow object | Source column | Destination column
+
+| Cases | Sys_id | Sys_id
+
+| Contacts | Update and delete function not supported. | Update and delete function not supported.
+
+| Incidents | Sys_id | Sys_id
+
+| Tasks | Sys_id | Sys_id
+|===
+
+The Sys_id can also be found at the end of a URL link when you have a specific incident. See the example below, between "sys_id" and "sysparm_view":
+
+https://dev107692.service-now.com/now/nav/ui/classic/params/target/incident.do%3Fsys_id%3Df3e44afe1b3021104d09ea03b24bcb82%26sysparm_view%3Dess%26sysparm_record_target%3Dincident%26sysparm_record_row%3D13%26sysparm_record_rows%3D72%26sysparm_record_list%3DORDERBYDESCnumber
+
+=== Failure to sync
+
+A sync to {connection} can fail due to multiple reasons. If you experience a sync failure, consider the following causes:
+
+* The underlying ThoughtSpt object was deleted.
+* The underlying {connection} object was deleted.
+* The column name was changed in either ThoughtSpot or {connection}, making it different to the column name setup in the mapping.
+* There are data validation rules in {connection} which only allow data with a certain data type to be populated in the {connection} fields, but the columns being mapped onto {connection} from ThoughtSpot do not have the same or allowable data types.
+* There is a mandatory field in {connection} which has not been mapped onto as a destination column when setting up the mapping in ThoughtSpot.
+
 
 === Manage pipelines
 
