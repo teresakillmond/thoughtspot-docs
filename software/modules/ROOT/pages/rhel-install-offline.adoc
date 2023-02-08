@@ -203,6 +203,8 @@ As the Ansible Playbook runs, it will perform these tasks:
     - Formats and creates export partitions, if they do not exist.
     - Formats the data disks.
 
+== Prepare disks
+
 After the Ansible Playbook finishes, run the `prepare_disks` script on every node. You *must* run this script as an admin user. Specify the data drives by adding the full device path for all data drives, such as `/dev/sdc`, after the script name. Separate data drives with a space.
 
 . Switch to the admin user, if necessary:
@@ -219,7 +221,44 @@ su admin
 /usr/local/scaligent/bin/prepare_disks.sh /dev/sdc /dev/sdd
 ----
 
-Your hosts are ready for installing the ThoughtSpot application.
+== Prepare services
+
+If you defined the <<remote_user_management,remote_user_management>> parameter in the Ansible playbook and used your LDAP or Active Directory service account for installation, you must perform additional service configuration. Ensure that the following three services only start _after_ the service you use for LDAP/AD integration: `nginx`, `cgconfig`, `cgroup-init`.
+
+If you did _not_ define the <<remote_user_management,remote_user_management>> parameter, and are using a local user for installation (the default), skip the following configuration, and move on to <<install-thoughtspot,Install the ThoughtSpot cluster and the application>>.
+
+The service you use for LDAP/AD integration can vary. In this example, we use the `sssd` service. To ensure that `nginx`, `cgconfig`, and `cgroup-init` start at the correct time, follow these steps:
+
+. Open the `systemd` config for each service: `nginx`, `cgconfig`, and `cgroup-init`.
+
+. Add the following line to the config for each of the 3 services, replacing `<service-name>` with the name of the service you use for LDAP/AD integration:
++
+[source,bash]
+----
+After=<service-name>.service
+----
++
+For example, if you use the `sssd` service, add the following line to each config:
++
+[source,bash]
+----
+After=sssd.service
+----
+
+. If the `systemd` config for any of the three services already has an `After` line, append the LDAP/ AD service with a space:
++
+[source,bash]
+----
+After=syslog.target sssd.service
+----
+. Reload the services by running the following command:
++
+[source,bash]
+----
+sudo systemctl daemon-reload
+----
+
+. Your hosts are ready for installing the ThoughtSpot application.
 
 [#install-thoughtspot]
 == Install the ThoughtSpot cluster and the application
