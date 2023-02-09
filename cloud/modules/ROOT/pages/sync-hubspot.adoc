@@ -1,5 +1,5 @@
 = Sync data from ThoughtSpot to HubSpot
-:last_updated: 12/16/2022
+:last_updated: 2/8/2023
 :author: Naomi
 :linkattrs:
 :experimental:
@@ -30,7 +30,7 @@ image:hubspot-permission.png[List of HubSpot permissions for ThoughtSpot]
 
 * Edit the *Pipeline name* if needed. By default, this field populates with _PL-[Answer Name]_.
 * If you have more than one {connection} destination set up, then the *Destination* field appears, and you will have to select a {connection} destination from the dropdown menu available. However, if no destinations have been set up before or if you have only one {connection} destination, the *Destination* field will not appear.
-* Select your {connection} *Object* from the dropdown menu.
+* Select your {connection} *Object* from the dropdown menu. Sync to {connection} supports four objects: Contacts, Companies, Deals, and Tickets.
 * Select *Operation* from the dropdown menu. You can choose between *Create*,  *Update*, and *Delete*.
 
 * Map the *Source* and *Destination* columns from the dropdown menus provided. Note that the Source column refers to the column in ThoughtSpot, while the Destination column refers to the column in {connection}.
@@ -56,7 +56,7 @@ To sync to {connection} from a custom SQL view, follow these steps:
 
 * Edit the *Pipeline name* if needed. By default, this field populates with _PL-[Answer Name]_.
 * If you have more than one {connection} destination set up, then the *Destination* field appears, and you have to select a {connection} destination from the dropdown menu available. However, if no destinations have been set up before or if you have only one {connection} destination, the *Destination* field will not appear.
-* Select *Object* from the dropdown menu.
+* Select *Object* from the dropdown menu. Sync to {connection} supports four objects: Contacts, Companies, Deals, and Tickets.
 * Select *Operation* from the dropdown menu. You can choose between *Create*, *Update*, and *Delete*.
 
 * Map the *Source* and *Destination* columns from the dropdown menus provided.
@@ -84,13 +84,47 @@ To create a sync to {connection} from the Data Workspace, follow these steps:
 * Edit the *Pipeline name* if needed. By default, this field populates with _PL-[Answer Name]_.
 * All destinations available appear in the *Destination* dropdown menu.
 * Select your *Source* data. Here you will pick an Answer or a custom SQL view to send through sync.
-* Select *Object* from the dropdown menu.
+* Select *Object* from the dropdown menu. Sync to {connection} supports four objects: Contacts, Companies, Deals, and Tickets.
 * Select *Operation* from the dropdown menu. You can choose between *Create*, *Update*, and *Delete*
 
 * Map the source and destination columns from the dropdown menus provided.
 
 
 .  By default, *Save and sync* is selected. Select *Save* to send your data to {connection}. Your data immediately appears in {connection}.
+
+== Updating and deleting records in {connection}
+
+To update and delete records in HubSpot,the Record Id field must be used as the mapping field. The following table shows the mapping needed for each object to update or delete records in {connection}.
+
+[option="header"]
+|===
+| HubSpot object | Source column | Destination column
+
+| Contacts | ContactID | Record Id
+
+| Companies | CompanyID | Record Id
+
+| Deals | DealID | Record Id
+
+| Tickets | TicketID | Record Id
+|===
+
+This ID can also be found at the end of the URL link when you open a contact, deal, company, or ticket. See the following example, where the contactID / Record Id has been highlighted.
+
+https://app.hubspot.com/contacts/22693066/contact/#1751#
+
+=== Failure to sync
+
+A sync to {connection} can fail due to multiple reasons. If you experience a sync failure, consider the following causes:
+
+* The underlying ThoughtSpot object was deleted.
+* The underlying {connection} object was deleted.
+* The column name was changed in either ThoughtSpot or {connection}, making it different to the column name set up in the mapping.
+* There are data validation rules in {connection} which only allow data with a certain data type to be populated in the {connection} fields, but the columns being mapped onto {connection} from ThoughtSpot do not have the same or allowable data type.
+
+** NOTE: In this case, only the rows in ThoughtSpot that meet the data validation criteria of the column in {connection} will be inserted or updated. All others will be ignored.
+
+* There is a mandatory field in {connection} which has not been mapped as a destination column when setting up the mapping in ThoughtSpot.
 
 === Manage pipelines
 
