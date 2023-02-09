@@ -207,43 +207,6 @@ su admin
 /usr/local/scaligent/bin/prepare_disks.sh /dev/sdc /dev/sdd
 ----
 
-== Prepare services
-
-If you defined the <<remote_user_management,remote_user_management>> parameter in the Ansible playbook and used your LDAP or Active Directory service account for installation, you must perform additional service configuration. Ensure that the following three services only start _after_ the service you use for LDAP/AD integration: `nginx`, `cgconfig`, `cgroup-init`.
-
-If you did _not_ define the <<remote_user_management,remote_user_management>> parameter, and are using a local user for installation (the default), skip the following configuration, and move on to <<install-thoughtspot,Install the ThoughtSpot cluster and the application>>.
-
-The service you use for LDAP/AD integration can vary. In this example, we use the `sssd` service. To ensure that `nginx`, `cgconfig`, and `cgroup-init` start at the correct time, follow these steps:
-
-. Open the `systemd` config for each service: `nginx`, `cgconfig`, and `cgroup-init`.
-
-. Add the following line to the config for each of the 3 services, replacing `<service-name>` with the name of the service you use for LDAP/AD integration:
-+
-[source,bash]
-----
-After=<service-name>.service
-----
-+
-For example, if you use the `sssd` service, add the following line to each config:
-+
-[source,bash]
-----
-After=sssd.service
-----
-
-. If the `systemd` config for any of the three services already has an `After` line, append the LDAP/ AD service with a space:
-+
-[source,bash]
-----
-After=syslog.target sssd.service
-----
-. Reload the services by running the following command:
-+
-[source,bash]
-----
-sudo systemctl daemon-reload
-----
-
 . Your hosts are ready for installing the ThoughtSpot application.
 
 [#install-thoughtspot]
@@ -263,7 +226,9 @@ Follow these general steps to install ThoughtSpot on the prepared hosts:
 . Download the release artifact from the ThoughtSpot file sharing system.
 . Upload the release artifact to the first host.
 . Run the `tscli cluster create` command. This script prompts for user input.
-. Check the cluster health by running health checks and logging in to the application.
+. Check the cluster health by running health checks.
+. If you used your LDAP/AD service account for installation, prepare the services with some additional configuration.
+. Log in to the application.
 
 '''
 > **Related information**
