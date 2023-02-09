@@ -34,7 +34,8 @@ image::servicenow-instance.png[ServiceNow instance url, client id, client secret
 * If you have more than one {connection} destination set up, then the *Destination* field appears, and you will have to select a {connection} destination from the drop-down available. However, if no destinations have been set up before or if you have only one {connection} destination, the *Destination* field will not appear.
 * Select your {connection} *Object* from the drop-down menu. The available options are *Cases*, *Contacts*, *Incidents*, and *Tasks*.
 * Select *Operation* from the drop-down menu. You can choose between *Create*, *Update*, and *Delete*.
-
++
+NOTE: Not all objects will support all three operations.
 * Map the *Source* and *Destination* columns from the drop-downs provided.
 +
 image:ts-sync-servicenow-param.png[{connection} Sync window]
@@ -73,7 +74,8 @@ To sync to {connection} from a custom SQL view, follow these steps:
 * If you have more than one {connection} destination set up, then the *Destination* field appears, and you will have to select a {connection} destination from the drop-down available. However, if no destinations have been set up before or if you have only one {connection} destination, the *Destination* field will not appear.
 * Select your {connection} *Object* from the drop-down menu. The available options are *Cases*, *Contacts*, *Incidents*, and *Tasks*.
 * Select *Operation* from the drop-down menu. You can choose between *Create*, *Update*, and *Delete*.
-
++
+NOTE: Not all objects will support all three operations.
 * Map the *Source* and *Destination* columns from the drop-downs provided.
 
 
@@ -111,7 +113,8 @@ To create a sync to {connection} from the Data Workspace, follow these steps:
 * Select your *Source* data. Here you will pick an Answer or a custom SQL view to send through sync.
 * Select the *Object* from the drop-down menu. The available options are *Cases*, *Contacts*, *Incidents*, and *Tasks*.
 * Select the *Operation* from the drop-down menu. You can choose between *Create*, *Update*, and *Delete*.
-
++
+NOTE: Not all objects will support all three operations.
 * Map the source and destination columns from the drop-downs provided.
 
 .  By default, “Save and sync” is selected. Select *Save* to send your data to {connection}. Your data immediately appears in {connection}.
@@ -129,7 +132,7 @@ To enable the Contact and Case objects requires the Customer Service plugin (com
 
 Non-admin users require the `personalize_dictionary` role to access custom fields.
 
-== Updating and deleting records in {connection}
+== Update and delete records in {connection}
 
 To update and delete records in {connection}, the Sys Id field must be used as the mapping field. The following table shows the mapping needed for each object in {connection} to update or delete records in {connection}.
 
@@ -146,9 +149,9 @@ To update and delete records in {connection}, the Sys Id field must be used as t
 | Tasks | Sys_id | Sys_id
 |===
 
-The Sys_id can also be found at the end of a URL link when you have a specific incident. See the example below, between "sys_id" and "sysparm_view":
+This Sys_id is a 32-digit value that can be found by right-clicking the individual value of an object. For example, by right-clicking a specific incident number like in the following image.
 
-https://dev107692.service-now.com/now/nav/ui/classic/params/target/incident.do%3Fsys_id%3Df3e44afe1b3021104d09ea03b24bcb82%26sysparm_view%3Dess%26sysparm_record_target%3Dincident%26sysparm_record_row%3D13%26sysparm_record_rows%3D72%26sysparm_record_list%3DORDERBYDESCnumber
+image::servicenow-sysid.png[Right-click an incident number to see Sys_id]
 
 === Failure to sync
 
