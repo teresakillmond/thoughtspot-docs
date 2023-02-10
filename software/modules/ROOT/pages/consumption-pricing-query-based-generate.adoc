@@ -15,9 +15,9 @@ Here are common user actions, and the queries that they generate.
 |===
 |User action |Number of queries |Details
 
-|Opening a Liveboard
+|Opening a pinboard
 |Multiple queries, various times
-|A Liveboard may have quite a large number of visualizations. When a user opens a Liveboard, the system sends a request for several queries to render the first several visualizations on the screen. As the user scrolls downward in the Liveboard, the system makes additional requests for queries that correspond to further visualizations and charts to render on the screen.
+|A pinboard may have quite a large number of visualizations. When a user opens a pinboard, the system sends a request for several queries to render the first several visualizations on the screen. As the user scrolls downward in the pinboard, the system makes additional requests for queries that correspond to further visualizations and charts to render on the screen.
 
 |Opening an Answer in the table view
 |Multiple queries, at the same time
@@ -103,7 +103,7 @@ a|Toggling a view from a chart to a table with modifications.
 |Multiple queries initially, and more with drill-down
 |The user opens a pivot table chart. The system generates the necessary number of queries initially, based on the structure of the pivot. If the user drills down further, the system generates more queries, depending on the dimensions of the x-axis and y-axis. See information on pivot tables.
 
-|Transforming a table in an Answer or inside a Liveboard
+|Transforming a table in an Answer or inside a pinboard
 |Single query for each transformation
 a|The user transforms a table in Answer or on a Pinboard Viz. When changing the aggregation, filtering and sorting from the column header, filtering from the contents of cells.
 
@@ -125,21 +125,21 @@ a|The user transforms a table in Answer or on a Pinboard Viz. When changing the 
 |Single query
 |When a user drills down on an answer or visualization and selects a column, the system generates a single query.
 
-|Schedule Liveboard
+|Schedule pinboard
 |Multiple queries
-|When a user schedules a Liveboard without row-level security (RLS), the system generates the same number of queries required by the Liveboard.
+|When a user schedules a pinboard without row-level security (RLS), the system generates the same number of queries required by the pinboard.
 
-|Scheduling a Liveboard, with RLS
+|Scheduling a pinboard, with RLS
 |Multiple queries
-|When a user schedules a Liveboard with multiple row-level security rules, such as 2 RLS rules for 2 groups of users, the number of queries that the system generates depends on the number of user groups and the number of queries required by the Liveboard.
+|When a user schedules a pinboard with multiple row-level security rules, such as 2 RLS rules for 2 groups of users, the number of queries that the system generates depends on the number of user groups and the number of queries required by the pinboard.
 
-|Adding a new chart to the Liveboard
+|Adding a new chart to the pinboard
 |Multiple queries
-|When the user adds a new chart to the Liveboard and then returns to the Liveboard view through the link at bottom of the screen, the system generates the same number of initial queries as there are charts that appear in the viewport (on the screen) when the Liveboard loads.
+|When the user adds a new chart to the pinboard and then returns to the pinboard view through the link at bottom of the screen, the system generates the same number of initial queries as there are charts that appear in the viewport (on the screen) when the pinboard loads.
 
-|Updating chart and return to Liveboard
+|Updating chart and return to pinboard
 |Multiple queries
-|When a user edits a chart and makes several changes, then updates or closes the chart and returns to the Liveboard, the system generates queries for each change on enter during the editing time, and an additional query when the user saves the chart and returns to the Liveboard.
+|When a user edits a chart and makes several changes, then updates or closes the chart and returns to the pinboard, the system generates queries for each change on enter during the editing time, and an additional query when the user saves the chart and returns to the pinboard.
 
 |Opening the filter widget
 |Query for each unique value
@@ -157,25 +157,25 @@ a|The user transforms a table in Answer or on a Pinboard Viz. When changing the 
 |Single query
 |When downloading an answer as a chart, the system triggers 1 query for each chart type.
 
-|Downloading any answer as a chart inside a Liveboard
+|Downloading any answer as a chart inside a pinboard
 |Multiple queries
 |One (1) query for each chart Answer.
 
-|Downloading Liveboard as PDF
+|Downloading pinboard as PDF
 |Multiple queries
-|The number of queries is equal to the sum of all queries generated from each tile in the liveboard.
+|The number of queries is equal to the sum of all queries generated from each tile in the pinboard.
 |===
 
 == User actions that don't generate queries
 
 Here are common user actions that *don't* generate queries:
 
-- Downloading a Liveboard visualization as a table in any format
-- Downloading an answer as a table in any format, NOT within a Liveboard
+- Downloading a pinboard visualization as a table in any format
+- Downloading an answer as a table in any format, NOT within a pinboard
 - Searching answers
-- Accessing system-default Liveboards
-- Importing TML of an answer or a Liveboard
-- Exporting TML of an answer or a Liveboard without data (associated objects)
+- Accessing system-default pinboards
+- Importing TML of an answer or a pinboard
+- Exporting TML of an answer or a pinboard without data (associated objects)
 - Creating a connection to an external data warehouse
 - Updating a connection to a external data warehouse by adding a new table with the string data type (triggers Sage indexing)
 - Inspecting data in Data samples tabs after adding multiple tables in a worksheet with joins between them
@@ -190,7 +190,7 @@ To reduce the number of queries, ThoughtSpot has two options:
 
 ThoughtSpot recommends turning off the summary function for the table if you plan limit the number of queries, at least temporarily.
 
-. Click the table in the Liveboard, to open it in Answer mode.
+. Click the table in the pinboard, to open it in Answer mode.
 . Click the gear icon (chart configuration).
 . Under the Edit table heading, select *Settings*.
 . Under Display, de-select the *Column summary* option.
@@ -205,10 +205,10 @@ Alternatively, in the new user experience,  users with administrative privileges
 . Set the option to the *Disabled* state.
 . Click *Save* to update the configuration for future answers.
 
-== How do Liveboards affect queries?
+== How do pinboards affect queries?
 
-When you have a Liveboard with a large number of visualizations, ThougtSpot does NOT generate all of them at the same time. Instead, the system only requests queries for the visualizations that appear in the initial viewport of the screen when it renders the Liveboard.  As you scroll down, additional queries are sent to render the newly in-view visualizations.
-So, the initial query request is approximately the same as the number of visualizations that appear in the Liveboard before the user scrolls downward. Both tables and pivot tables require multiple queries, as described elsewhere in this article.
+When you have a pinboard with a large number of visualizations, ThougtSpot does NOT generate all of them at the same time. Instead, the system only requests queries for the visualizations that appear in the initial viewport of the screen when it renders the pinboard.  As you scroll down, additional queries are sent to render the newly in-view visualizations.
+So, the initial query request is approximately the same as the number of visualizations that appear in the pinboard before the user scrolls downward. Both tables and pivot tables require multiple queries, as described elsewhere in this article.
 
 == How do pivot tables affect queries?
 

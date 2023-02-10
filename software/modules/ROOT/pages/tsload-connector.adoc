@@ -99,7 +99,7 @@ All the successive calls will need to use this cycle_id as a parameter, includin
 In reality, this could be a post-call with data directly instead of a file.
  ** This can also be broken into multiple load calls for load data incrementally.
  ** This simply uploads and starts processing the file, but the load is not complete just by calling this method.
- ** This method returns immediately, and the actual parsing, etc is done asynchronously.
+ ** This method returns immediately, and the actual parsing, etc. is done asynchronously.
  ** To get the status at any point, the *getStatus* method can be used.
 * *commitLoad*: This method commits the current ingested data into the Falcon database.
  ** This method returns immediately, and the commit is done asynchronously.
