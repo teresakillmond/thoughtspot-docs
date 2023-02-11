@@ -1199,19 +1199,19 @@ ServiceNow SpotApp +++<span class="label label-beta">+++Beta+++</span>+++::
 SpotApps are ThoughtSpot's new out-of-the-box solution templates built for specific use cases and data sources. They are built on Blocks, which are pre-built pieces of code that are easy to download and implement directly from the product. This release introduces the ServiceNow SpotApp and Analytics Blocks. Analytics Blocks include pre-built Worksheet, Answer, and Liveboard Blocks. +
 The ServiceNow SpotApp mimics the ServiceNow data model. After you connect to your ServiceNow data in your cloud data warehouse, ThoughtSpot maps that data to SpotApp columns, and creates pre-built but still customizable worksheets, answers, and Liveboards, based on your ServiceNow data. +
 Refer to xref:app-templates.adoc[SpotApps]. +
-This feature is in beta and off by default. It is part of the <<data-tab,Data tab redesign>> beta. To enable SpotApps and the Data tab redesign, link:https://community.thoughtspot.com/customers/s/contactsupport[contact ThoughtSpot Support].
+This feature is in beta and off by default. It is part of the <<data-tab,Data tab redesign>> beta. To enable SpotApps and the Data tab redesign, contact {support-url}.
 
 
 
 SQL-based views +++<span class="label label-beta">+++Beta+++</span>+++::
 This release introduces beta support for SQL-based views. Users can create views based on SQL queries, and use those views as data sources. This type of view has the same functionality as a view based on searching your data. +
-This feature is in beta and off by default. To enable it, link:https://community.thoughtspot.com/customers/s/contactsupport[contact ThoughtSpot Support].
+This feature is in beta and off by default. To enable it, contact {support-url}.
 
 
 [#data-tab]
 Data tab redesign +++<span class="label label-beta">+++Beta+++</span>+++::
 This release redesigns the *Data* section of the product. To access this part of the product, select *Data* from the top navigation bar. The redesign introduces several new features, such as SQL-based views and SpotApps, and makes the UI more intuitive. +
-This feature is in beta and off by default. To enable it,  link:https://community.thoughtspot.com/customers/s/contactsupport[contact ThoughtSpot Support].
+This feature is in beta and off by default. To enable it,  contact {support-url}.
 ////
 
 [#date-interval-functions]
@@ -1248,7 +1248,7 @@ Clusters created on the October Cloud release and earlier have the old experienc
 In the old experience, the *idle session timeout* is 60 minutes with *Remember me*, and 30 minutes without it.
 The old *maximum session validity* is 7 days with *Remember me*, and not available without it.
 
-To increase idle session timeouts or maximum session validity for clusters created on the October Cloud release and earlier, https://community.thoughtspot.com/customers/s/contactsupport[contact ThoughtSpot Support].
+To increase idle session timeouts or maximum session validity for clusters created on the October Cloud release and earlier, contact {support-url}.
 
 [#search-suggestions]
 Search suggestions::
@@ -1278,13 +1278,13 @@ If you have the new redesigned data tab enabled, you'll see the new Data Portal 
 SAML assertion validity::
 ThoughtSpot now supports 2 methods to increase the duration of validity for your xref:authentication-integration.adoc#saml-assertion[SAML assertion]: the `SessionNotOnOrAfter` attribute and the `maxAuthenticationAge` parameter.
 You can ask ThoughtSpot to disable either one of these checks. If you use both, and either check fails, ThoughtSpot does not authenticate the user. Some IDPs do not support use of `SessionNotOnOrAfter`.
-If your IDP does not support use of `SessionNotOnOrAfter`, remove that attribute from your IDP assertion and https://community.thoughtspot.com/customers/s/contactsupport[ask ThoughtSpot Support] to enable `maxAuthenticationAge`.
+If your IDP does not support use of `SessionNotOnOrAfter`, remove that attribute from your IDP assertion and ask {support-url} to enable `maxAuthenticationAge`.
 
 [#multiple-idp]
 Multiple Identity Providers for SAML login::
 You can now configure SAML SSO login for more than one Identity Provider (IDP).
 You may have multiple groups of users who need to sign in to ThoughtSpot but are managed by separate IDPs.
-To configure this, https://community.thoughtspot.com/customers/s/contactsupport[contact ThoughtSpot Support].
+To configure this, contact {support-url}.
 
 [#vpn]
 OpenVPN support for Google BigQuery and Azure Synapse connections::
@@ -1429,7 +1429,7 @@ This is useful when embedding ThoughtSpot pages with TS Everywhere, so that your
 If you are embedding ThoughtSpot in multiple environments, such as a staging environment and a production environment, these multiple domains can point to the same ThoughtSpot instance.
 +
 Refer to xref:custom-domains.adoc[Custom domain configuration] for more information.
-To set up a custom domain in your ThoughtSpot Cloud URL, https://community.thoughtspot.com/customers/s/contactsupport[contact ThoughtSpot Support].
+To set up a custom domain in your ThoughtSpot Cloud URL, contact {support-url}.
 
 [#september-cloud-2021-developer]
 === For the Developer
@@ -1494,7 +1494,7 @@ Refer to xref:deprecation.adoc#removed-august-cloud[Deprecation Announcements] f
 <dlentry id="custom-calendar">
 <dt>Custom calendar enhancements</dt>
 <dd>There are several enhancements for custom calendar in this release:
-<ul><li>Custom calendar offers <span class="badge badge-update">Beta</span> support for Redshift, Teradata, Starburst, Synapse, and SAP HANA connections. These are off by default. To enable them, https://community.thoughtspot.com/customers/s/contactsupport[contact ThoughtSpot support].</li><li>Streamlined custom calendar window with the ability to preview calendar data.</li>
+<ul><li>Custom calendar offers <span class="badge badge-update">Beta</span> support for Redshift, Teradata, Starburst, Synapse, and SAP HANA connections. These are off by default. To enable them, contact {support-url}.</li><li>Streamlined custom calendar window with the ability to preview calendar data.</li>
 <li>Simplified workflow.</li>
 <li>Preview calendar data from custom calendar list</li></ul>
 For more information, refer to xref:connections-cust-cal-create.adoc[Custom calendar overview].</dd>
@@ -1509,7 +1509,7 @@ Credit Usage Liveboard::  The Credit Usage Liveboard, a Liveboard for monitoring
 [#saml-mail-field]
 SAML configuration::
 When configuring SAML authentication for ThoughtSpot, it is now mandatory to map the `mail` attribute in the IDP metadata file to the email address of the user.
-If your company cannot meet this requirement, https://community.thoughtspot.com/customers/s/contactsupport[contact ThoughtSpot support].
+If your company cannot meet this requirement, contact {support-url}.
 For more information, refer to xref:authentication-integration.adoc[configure SAML].
 [#column-summaries]
 Enable or disable table column summaries::
@@ -1614,7 +1614,7 @@ For example, you can allow certain users to create and manage users, while not a
 These new administrator privileges do *_not_* provide access to all data in ThoughtSpot, unlike the *Can administer ThoughtSpot* privilege.
 Users with the new privileges can only see data that others share with them.
 The *Can administer ThoughtSpot* privilege, which encompasses all 4 new administrator privileges, still appears as an option by default.
-To remove it, https://community.thoughtspot.com/customers/s/contactsupport[contact ThoughtSpot Support].
+To remove it, contact {support-url}.
 The 4 new privileges are:
 
 * Can manage users: Can create, delete, and edit users.
@@ -1626,7 +1626,7 @@ Can view scheduled maintenance.
 * Can see system information: Can view all default admin data, including system Worksheets and Liveboards.
 
 This feature is in beta and off by default.
-To enable it, https://community.thoughtspot.com/customers/s/contactsupport[contact ThoughtSpot Support].
+To enable it, contact {support-url}.
 [#security-log-collection]
 Security log collection::
 This release of ThoughtSpot Cloud enables your security team to collect security audit events based on user activity and ship them to your SIEM application in real-time.
@@ -1775,7 +1775,7 @@ For details, see xref:connections-starburst.adoc[Starburst].
 Databricks for Embrace [.badge.badge-beta-relnotes]#Beta#::
 Embrace now supports Databricks.
 This feature is in beta and disabled by default.
-To enable this feature, contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support].
+To enable this feature, contact {support-url}.
 
 [#may-cloud-it-ops-engineer]
 === For the IT Ops Engineer
@@ -1809,7 +1809,7 @@ Visual Embed SDK notification when third-party cookies are disabled::
 When a user accesses the embedded application from a web browser that has third-party cookies disabled, the Visual Embed SDK emits the `NoCookieAccess` event to notify the developer.
 Cookies are disabled by default in Safari.
 Users can enable third-party cookies in Safari's Preferences setting page or use another web browser.
-To know how to enable this setting by default on Safari for a ThoughtSpot embedded instance, https://community.thoughtspot.com/customers/s/contactsupport[contact ThoughtSpot Support].
+To know how to enable this setting by default on Safari for a ThoughtSpot embedded instance, contact {support-url}.
 [#pinboard-embed-enhancements]
 Liveboard embed enhancements::  The More menu image:icon-more-10px.png[more options menu icon] in the embedded Liveboard page now shows the following actions for Liveboard and visualizations.
 
@@ -1888,7 +1888,7 @@ New Answer experience [.badge.badge-beta-relnotes]#Beta#::
 This release redesigns the experience of creating and working with Answers.
 The new Answer experience contains multiple new features and feature enhancements.
 It is in beta and off by default, but the option to turn it on or off individually is on by default.
-You can toggle it on or off individually from the *Experience manager* in your profile, or for the whole company by https://community.thoughtspot.com/customers/s/contactsupport[contacting ThoughtSpot Support].
+You can toggle it on or off individually from the *Experience manager* in your profile, or for the whole company by contacting {support-url}.
 
 The new Answer experience contains the following features and enhancements:
 
@@ -2057,7 +2057,7 @@ Scriptability [.badge.badge-beta-relnotes]#Beta#::
 You must edit these joins from the source table, not the destination table.
 Refer to xref:tml.adoc#syntax-tables[ThoughtSpot Modeling Language]. +
 This feature is in Beta in the February release.
-To enable it, https://community.thoughtspot.com/customers/s/contactsupport[contact ThoughtSpot Support].
+To enable it, contact {support-url}.
 * *Export custom sets of TML files*: Support for export of custom sets of TML files is now GA and on by default.
 You can now export your own custom sets of TML files, or collections of Scriptable ThoughtSpot Answers, Liveboards, Views, tables, and Worksheets, packaged together as a zip file.
 Simply navigate to menu:Data[Utilities > Import/Export TML] and choose the objects you would like to include in a custom set of TML files.
@@ -2085,7 +2085,7 @@ You can now create and access quick links to your most-used Answers and Liveboar
 Refer to xref:thoughtspot-one-homepage.adoc#quick-links[Home page shortcuts].
 
 Search Answers may be off in your environment.
-To enable Search Answers, https://community.thoughtspot.com/customers/s/contactsupport[contact ThoughtSpot Support].
+To enable Search Answers, contact {support-url}.
 [#internet-explorer]
 Deprecation of Internet Explorer::
 ThoughtSpot browser support for Internet Explorer is now deprecated.
@@ -2106,7 +2106,7 @@ Oracle Autonomous Database [.badge.badge-beta-relnotes]#Beta#:::
 Embrace now supports Oracle Autonomous Database.
 
 This feature is in beta and disabled by default.
-To enable this feature, contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support].
+To enable this feature, contact {support-url}.
 
 [#feb-cloud-it-ops-engineer]
 === For the IT Ops Engineer
@@ -2125,7 +2125,7 @@ There are several changes to the behavior of the xref:thoughtspot-one-query-inte
 * The Liveboard and its underlying Worksheet, *Discover Monitoring Data*, are now accessible only to admins by default.
 Admins can share the Liveboard and Worksheet with anyone else who might need this information.
 * The Liveboard is populated with your users' Search on Answers data by default.
-You do not need to https://community.thoughtspot.com/customers/s/contactsupport[Contact ThoughtSpot Support] to see your users' Search on Answers data in the Liveboard.
+You do not need to contact {support-url} to see your users' Search on Answers data in the Liveboard.
 [#pinboard-download-control]
 Liveboard download control::
 You can now limit or remove the options ThoughtSpot provides for downloading Liveboards and their visualizations.
@@ -2133,7 +2133,7 @@ You can allow users to only download Liveboard visualizations in a specific form
 This is a cluster-level feature.
 You cannot configure permissions for specific users. +
 This is an embed-only feature.
-To enable this functionality, https://community.thoughtspot.com/customers/s/contactsupport[contact ThoughtSpot Support].
+To enable this functionality, contact {support-url}.
 [#consumption-based-pricing]
 Consumption-based pricing::
 ThoughtSpot now offers consumption, or usage, based pricing.
@@ -2152,7 +2152,7 @@ Simply navigate to menu:Data[Utilities > Import/Export TML] and choose the objec
 Refer to xref:tml-import-export-multiple.adoc[Migrate multiple TML files].
 +
 This feature is in Beta.
-To enable it, https://community.thoughtspot.com/customers/s/contactsupport[contact ThoughtSpot Support].
+To enable it, contact {support-url}.
 
 * *GUID handling*: ThoughtSpot now recognizes pre-existing GUIDs upon import and asks if you would like to update the existing object or create a new one.
 Refer to xref:scriptability.adoc[Scriptability].

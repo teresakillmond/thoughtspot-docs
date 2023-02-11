@@ -5,6 +5,11 @@
 :page-layout: default-cloud
 :description: For each person who accesses ThoughtSpot, you must create an account. When you create a user manually in ThoughtSpot, you manage that user in ThoughtSpot.
 
+
+You can create users directly in ThoughtSpot, or import users and user groups through SAML or similar protocols.
+
+For users who have access through SAML, the SAML installation manages all user information.
+
 [NOTE]
 ====
 This article contains instructions for managing users if your company uses Identity and Access Management V2 (IAMv2). IAMv2 is *_off_* by default. If the *Users* section of the Admin Console contains an *Account Activation* column, your company is using IAMv2.
@@ -12,9 +17,6 @@ This article contains instructions for managing users if your company uses Ident
 If the *Users* section of the Admin Console does *_not_* contain an *Account Activation* column, your company is *_not_* using IAMv2. Refer to xref:user-management.adoc[].
 ====
 
-You can create users directly in ThoughtSpot, or import users and user groups through SAML or similar protocols.
-
-For users who have access through SAML, the SAML installation manages all user information.
 
 [#add-user]
 == Create a user in ThoughtSpot
@@ -50,7 +52,7 @@ Indicate whether objects can be shared with this user. When set to *SHAREABLE*, 
 Email::
 The user's email address. ThoughtSpot uses this for  notification when another user shares something with them, for onboarding, and others.
 +
-NOTE: During cluster configuration, the administrator specifies the email server domain. ThoughtSpot does not accept emails outside this domain. Contact https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support] to add new domains to a list of allowed domains.
+NOTE: During cluster configuration, the administrator specifies the email server domain. ThoughtSpot does not accept emails outside this domain. Contact {support-url} to add new domains to a list of allowed domains.
 [#groups]
 Groups::
 (Recommended) Select the groups for the user.
