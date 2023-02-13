@@ -30,7 +30,8 @@ These are the general steps for installing ThoughtSpot on RHEL clusters:
 |===
 | &#10063; | xref:configure-ansible[1. Configure the Ansible Playbook]
 | &#10063; | xref:run-ansible[2. Run the Ansible Playbook]
-| &#10063; | xref:install-thoughtspot[3. Install ThoughtSpot]
+| &#10063; | <<prepare-disks,3. Prepare disks>>
+| &#10063; | xref:install-thoughtspot[4. Install ThoughtSpot]
 |===
 
 [#configure-ansible]
@@ -189,6 +190,7 @@ As the Ansible Playbook runs, it will perform these tasks:
     - Formats and creates export partitions, if they do not exist.
     - Formats the data disks.
 
+[#prepare-disks]
 == Prepare disks
 
 After the Ansible Playbook finishes, run the `prepare_disks` script on every node. You *must* run this script as an admin user. Specify the data drives by adding the full device path for all data drives, such as `/dev/sdc`, after the script name. Separate data drives with a space.
