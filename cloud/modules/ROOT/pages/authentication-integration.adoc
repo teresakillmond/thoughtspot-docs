@@ -6,6 +6,10 @@
 :page-aliases: /admin/setup/configure-saml-with-tscli.adoc, /admin/ts-cloud/authentication-integration.adoc, authentication-saml.adoc
 :description: ThoughtSpot integrates with SAML for authentication.
 
+
+
+ThoughtSpot integrates with SAML for authentication.
+
 [NOTE]
 ====
 This article contains instructions for managing SAML authentication if your company does *_NOT_* use IAMv2. IAMv2 is *_off_* by default. If the *SAML* section of the Admin Console is called *Authentication: SAML*, your company is *_not_* using IAMv2.
@@ -19,8 +23,6 @@ If your organization uses xref:orgs-overview.adoc[], you must be a cluster admin
 
 To ensure SAML authentication works smoothly in an Orgs environment, you must include Orgs mapping in your IDP assertion. See <<assertion,IDP metadata XML file>>.
 ====
-
-ThoughtSpot integrates with SAML for authentication.
 
 == SAML SSO authentication
 
@@ -155,7 +157,7 @@ This allows the ThoughtSpot system to automatically pick up certain attributes a
 Map the username attribute value in your IDP (`userPrincipalName` in Okta, for example) to `NameId`, map the email attribute value to `mail`, and map the display name subject value to `displayName`.
 Attributes and subjects appear in separate sections of your SAML assertion.
 It is *mandatory* to fill out the mail field.
-If your company cannot meet this requirement, https://community.thoughtspot.com/customers/s/contactsupport[contact ThoughtSpot Support].
+If your company cannot meet this requirement, contact {support-url}.
 +
 If your company uses Orgs, it is also mandatory to include mapping for the Orgs attribute. You must include all the Orgs to which the user belongs. Here is a sample *Orgs* attribute:
 +

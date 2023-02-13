@@ -12,7 +12,7 @@
 :description: You can upload a CSV file that will become a table you can join to existing tables in your Snowflake connection.
 
 
-You can upload a CSV file that will become a table you can join to existing tables in your Snowflake connection.
+You can upload a CSV file that will become a table you can join to existing tables in your Snowflake connection. When uploaded, the data goes to memory and is then pushed to Snowflake. No uploaded CSV data is stored in ThoughtSpot.
 
 == Prerequisites
 
@@ -38,14 +38,14 @@ image::csv-upload-app.png[CSV upload]
 +
 .When multiple connections have CSV Upload enabled
 ****
-If there are multiple Snowflake connections in your cluster that have CSV Upload enabled, you will see *Do you want this table to be colocated with other tables/worksheets?* at the bottom of the Upload Data window.
+If there are multiple Snowflake connections in your cluster that have CSV Upload enabled, you will see *Do you want this table to be collocated with other tables/worksheets?* at the bottom of the Upload Data window.
 
 If so, this means that you have the option of choosing a table or Worksheet you plan to join with your imported table after you upload it.
 
 If you choose *Yes* and select a table or Worksheet, your table will be imported into the same Snowflake database as that table or Worksheet, making it easy to set up a join later.
 ****
 +
-If you see *Do you want this table to be colocated with other tables/worksheets?* at the bottom of the Upload Data window, go to the next step. If not, skip to step 7.
+If you see *Do you want this table to be collocated with other tables/worksheets?* at the bottom of the Upload Data window, go to the next step. If not, skip to step 7.
 
 . Choose whether you want to import your into the same Snowflake database as an existing table or Worksheet:
 +

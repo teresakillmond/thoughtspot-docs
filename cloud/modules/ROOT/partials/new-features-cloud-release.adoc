@@ -22,6 +22,20 @@ Upload your own custom maps and visualize data on xref:chart-geo.adoc[geo charts
 +
 For more information, see xref:geomaps-custom.adoc[].
 
+Change filter order for Liveboard filters::
+
+Arrange Liveboard filters in the filter bar so that they are in a logical, coherent order, by dragging and dropping them to different spots in the list. This makes it easier for viewers of the Liveboard to understand and use the filters on the Liveboard. For more information, see xref:liveboard-filters.adoc#order[Change the filter order].
+
+TML for Monitor alerts::
+TML for Monitor alerts is now GA and on by default. Export, edit, and import xref:monitor.adoc[KPI Monitor alerts] programmatically, using ThoughtSpot Modeling Language. For more information, see xref:tml.adoc#syntax-alerts[Syntax of the Monitor alert TML file].
+
+Show timezone in scheduled Liveboards modal:: When scheduling Liveboards, you can now specify your timezone.
+
+Remove attached pdf/csv from scheduled emails:: You now have the option to remove attached PDF and CSV files from scheduled emails. To ensure that only signed-in users can access your data, contact ThoughtSpot Support to enable this option.
+
+Group aggregate enhancements: filters:: Group aggregate filter enhancements are GA and on by default. Previously, when using group_aggregate formulas, users could use query_filters to include filters entered in the search bar in the formula's value, but it was difficult to write a formula that accepted filters from only a single column. +
+Starting with this release, you can specify column names within the ‘filters’ section of a group_aggregate formula, and any filter in your search bar referencing that column will be added to the formula. Filters entered in the search bar that are not on columns specified in the third argument of the group_aggregate formula will be ignored. For details, see xref:formulas-aggregation-flexible.adoc#groupagg-filters-enhancement[Group aggregation filters].
+
 [#9-1-0-cl-business-user]
 === For the Business User
 
@@ -41,14 +55,27 @@ xref:chart-kpi.adoc#kpi-custom-comparison[Custom comparison points].
 Parameters::
 The parameters feature is now GA and on by default. Create Worksheet parameters to optimize your data inquiries. Use parameters to run different scenarios with adjustable values, without creating or modifying the constants in formulas for each new value. For more information, refer to xref:parameters-create.adoc[] and xref:parameters-use.adoc[].
 
+Mobile app Load More button:: When using ThoughtSpot Mobile, you can now press the *Load More* button at the bottom of a table to see the next 100 rows of data.
+
 [#9-1-0-cl-data-engineer]
 === For the Data Engineer
 
 
 SQL Server connection:: You can now create connections from ThoughtSpot to SQL Server. For details, see xref:connections-sql-server.adoc[SQL Server].
 
+Delete table columns using TML::
+
+Remove columns from tables in ThoughtSpot by deleting them in the tables' TML files. For more information, see xref:tml.adoc#syntax-tables[Syntax of the table TML file].
+
+Edit join conditions using TML::
+
+Use TML to directly edit a join condition by editing the TML file's `on` parameter. This replaces the existing process of deleting and recreating the join in TML or the ThoughtSpot application. For more information, see xref:tml.adoc#syntax-joins[TML join syntax].
+
+
 [#9-1-0-cl-it-ops-engineer]
 === For the IT/Ops Engineer
+
+Object Usage Liveboard:: Use the Object Usage Liveboard to easily track how specific objects (Liveboards, Answers, Worksheets, or tables) are trending over time. Our new visualizations allow you to understand adoption on the object-level, and filter on a specific user or users to see usage on the user-level. For more information, see xref:object-usage-liveboard.adoc[Object Usage Liveboard].
 
 [#9-1-0-cl-developer]
 === For the Developer

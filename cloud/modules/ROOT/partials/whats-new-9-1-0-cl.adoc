@@ -20,6 +20,15 @@ ifndef::pendo-links[]
 <<9-1-0-cl-kpi-explain-change,Explain change for KPI charts>> +
 <<9-1-0-cl-kpi-comparison,Custom comparison points for KPI charts>> +
 <<9-1-0-cl-parameters,Parameters>> +
+<<9-1-0-cl-timezone,Timezone in Liveboard Schedule modal>> +
+<<9-1-0-cl-scheduled,Remove attached files from scheduled emails>> +
+<<9-1-0-cl-filter,Change filter order for Liveboard filters>> +
+<<9-1-0-cl-group-aggregate,Group Aggregate enhancement: filters>> +
+<<9-1-0-cl-mobile,Load More button for ThoughtSpot mobile>> +
+<<9-1-0-cl-sql-server,SQL Server connection>> +
+<<9-1-0-cl-tml-monitor,TML for Monitor alerts>> +
+<<9-1-0-cl-join-tml,Edit join conditions using TML>> +
+<<9-1-0-cl-delete-tml,Delete table columns using TML>> +
 ifndef::free-trial-feature[]
 <<tse,ThoughtSpot Everywhere>>
 endif::free-trial-feature[]
@@ -109,9 +118,11 @@ image::parameter-2.gif[Parameter gif example]
 
 [#9-1-0-cl-timezone]
 [discrete]
-=== [GA] [Papercut] Show timezone in the schedule liveboard modal
+=== Show timezone in the schedule Liveboard modal
 
 // Naomi
+
+When scheduling Liveboards, you can now specify your timezone.
 
 [#9-1-0-cl-heatmap]
 [discrete]
@@ -137,30 +148,13 @@ When using Free Trial and Team Edition, users are limited to a maximum of 5 mill
 image:ft-row.png[Show row limits on Free Trial]
 endif::free-trial-feature[]
 
-[#9-1-0-cl-param-runtime]
-[discrete]
-=== Parameters II: Allow overriding parameters via URL params (runtime)
-
-// Teresa
-
-
 [#9-1-0-cl-scheduled]
 [discrete]
-=== [GA] Provide ability to remove attached pdf/csv from scheduled emails
+=== Remove attached pdf/csv from scheduled emails
 
 // Naomi-- GA
 
-[#9-1-0-cl-indexing]
-[discrete]
-=== Users should be able to specify build window for sage indexing
-
-// Teresa
-
-[#9-1-0-cl-search-data]
-[discrete]
-=== February (9.1.0) Quality - Search Data FE
-
-// Teresa
+You now have the option to remove attached PDF and CSV files from scheduled emails. To ensure that only signed-in users can access your data, contact ThoughtSpot Support to enable this option.
 
 [#9-1-0-cl-resolution]
 [discrete]
@@ -182,9 +176,18 @@ endif::free-trial-feature[]
 
 [#9-1-0-cl-filter]
 [discrete]
-=== [GA] [Papercut] Filter chips re-ordering in edit mode on LB
+=== Change filter order for Liveboard filters
 
-// Teresa
+Arrange Liveboard filters in the filter bar so that they are in a logical, coherent order, by dragging and dropping them to different spots in the list. This makes it easier for viewers of the Liveboard to understand and use the filters on the Liveboard. To try it out, edit any Liveboard, and drag and drop the filters in the filter bar.
+For more information, see
+ifndef::pendo-links[]
+xref:liveboard-filters.adoc#order[Change the filter order].
+endif::[]
+ifdef::pendo-links[]
+xref:liveboard-filters.adoc#order[Change the filter order,window=_blank].
+endif::[]
+
+image::filter-reorder.gif[Filter reorder gif]
 
 [#9-1-0-cl-apply]
 [discrete]
@@ -202,11 +205,7 @@ endif::free-trial-feature[]
 [discrete]
 === Keywords Improvement in all supported languages
 
-// Yochana[#9-1-0-cl-disaster-recovery]
-// [discrete]
-// === Cross-region disaster recovery
-//
-// // Teresa
+// Yochana
 
 [#9-1-0-cl-headlines]
 [discrete]
@@ -248,6 +247,8 @@ endif::[]
 === Mobile App load more button
 
 // Naomi
+
+When using ThoughtSpot Mobile, you can now press the *Load More* button at the bottom of a table to see the next 100 rows of data.
 
 [#9-1-0-cl-checkbox]
 [discrete]
@@ -334,17 +335,41 @@ endif::[]
 
 // Naomi-- pushed to later release
 
+[#9-1-0-cl-tml-monitor]
+[discrete]
+=== TML for Monitor alerts
+
+TML for Monitor alerts is now GA and on by default. Export, edit, and import KPI Monitor alerts programmatically, using ThoughtSpot Modeling Language. To try it out, export a Liveboard that contains Monitor alerts and its associated objects. For more information, see
+ifndef::pendo-links[]
+xref:tml.adoc#syntax-alerts[Syntax of the Monitor alert TML file] and xref:monitor.adoc[Monitor KPIs in your data].
+endif::[]
+ifdef::pendo-links[]
+xref:tml.adoc#syntax-alerts[Syntax of the Monitor alert TML file,window=_blank] and xref:monitor.adoc[Monitor KPIs in your data,window=_blank].
+endif::[]
+
 [#9-1-0-cl-join-tml]
 [discrete]
-=== Allow editing of join condition via TML
+=== Edit join conditions using TML
 
-// Teresa
+Use TML to directly edit a join condition by editing the TML file's `on` parameter. This replaces the existing process of deleting and recreating the join in TML or the ThoughtSpot application. To try it out, edit a TML file, and update a join's `on` parameter. For more information, see
+ifndef::pendo-links[]
+xref:tml.adoc#syntax-joins[TML join syntax].
+endif::[]
+ifdef::pendo-links[]
+xref:tml.adoc#syntax-joins[TML join syntax,window=_blank].
+endif::[]
 
 [#9-1-0-cl-delete-tml]
 [discrete]
-=== Support deletion of table-columns during TML import
+=== Delete table columns using TML
 
-// Teresa
+Remove columns from tables in ThoughtSpot by deleting them in the tables' TML files. To try it out, edit a table TML file, and delete a column's name and properties. For more information, see
+ifndef::pendo-links[]
+xref:tml.adoc#syntax-tables[Syntax of the table TML file].
+endif::[]
+ifdef::pendo-links[]
+xref:tml.adoc#syntax-tables[Syntax of the table TML file,window=_blank].
+endif::[]
 
 [#9-1-0-cl-join-creation]
 [discrete]
