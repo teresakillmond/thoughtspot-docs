@@ -19,6 +19,7 @@ Upload up to 50 custom map files. To increase this limit, contact {support-url}.
 * To upload custom maps, you must have admin privileges.
 * Your custom map must be a `TopoJSON` file. It can't be more than 100 MB.
 * In 9.0.0.sw, this feature is in Beta. {support-url} must enable it.
+* If you use a remote URL to upload your custom map, you must add the base URL of the custom map to your CSP override list. For example, if the remote URL for your custom map is https://raw.githubusercontent.com/bmesuere/belgium-topojson/master/belgium.json, you must add https://raw.githubusercontent.com to your CSP override list. See <<remote-url,Add the remote URL to your CSP override list>>.
 
 == Upload your own custom maps
 
@@ -37,12 +38,39 @@ To upload your own custom maps, follow these steps:
 . If you select *From computer*, select *Upload*. Select a file from your computer's file picker when it appears.
 
 . If you select *From URL*, enter the URL for the file in the *Remote URL* text box, and select *Upload*.
-
++
+If you use a remote URL to upload your custom map, you must add the base URL of the custom map to your CSP override list. See <<remote-url,Add the remote URL to your CSP override list>>.
 . Under *Select property key*, use the dropdown to select the property key that defines the region names in your TopoJSON file. If you select the correct key, a preview of the map and a list of the regions it defines appears in the preview box. If you do not select the correct key, it returns an error, and does not show a preview.
 +
 image::custom-map-example.png[Add map modal in the Admin Console]
 
 . Select *Add*.
+
+[#remote-url]
+=== Add the remote URL to your CSP override list
+
+If you use a remote URL to upload your custom map, you must add the base URL of the custom map to your CSP override list. Use the xref:tscli-command-ref.adoc#tscli-csp[tscli csp add-override] command. To add your remote URL to your CSP override list, follow these steps:
+
+. `ssh` into your ThoughtSpot cluster as an admin.
++
+[source,bash]
+----
+ssh admin@<IP-address>
+----
+. Run the xref:tscli-command-ref.adoc#tscli-csp[tscli csp add-override] command, using the remote URL you added when you uploaded your custom map.
++
+[source,bash]
+----
+tscli csp add-override -source 'connect-src' --url <base-url>
+----
++
+Replace `<base-url>` with your remote URL's base URL. For example, if the remote URL for your custom map is https://raw.githubusercontent.com/bmesuere/belgium-topojson/master/belgium.json, your base URL is https://raw.githubusercontent.com.
++
+[source,bash]
+----
+tscli csp add-override -source 'connect-src' --url https://raw.githubusercontent.com
+----
+
 
 == Use your custom map to visualize data
 
