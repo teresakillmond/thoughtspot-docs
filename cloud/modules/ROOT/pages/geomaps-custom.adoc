@@ -22,6 +22,7 @@ The custom geo maps feature is disabled by default. To enable it, contact your T
 * To upload custom maps, you must have admin privileges.
 * Your custom map must be a `TopoJSON` file. The file can't be more than 100 MB. `TopoJSON` is a JSON format that encodes geographic data structures into a shared topology. For more information on TopoJSON files and how to structure them, see https://github.com/topojson/topojson-specification[TopoJSON specification^].
 * In 9.0.0.cl, this feature is early access. You must enable it from the *Early access features > Custom maps* section of the Admin Console.
+* If you use a remote URL to upload your custom map, you must contact {support-url} and ask them to add the base URL of the custom map to your CSP override list.
 
 == Upload your own custom maps
 
@@ -40,6 +41,8 @@ To upload your own custom maps, follow these steps:
 . If you select *From computer*, select *Upload*. Select a file from your computer's file picker when it appears.
 
 . If you select *From URL*, enter the URL for the file in the *Remote URL* text box, and select *Upload*.
++
+If you use a remote URL to upload your custom map, you must contact {support-url} and ask them to add the base URL of the custom map to your CSP override list. For example, if the remote URL for your custom map is https://raw.githubusercontent.com/bmesuere/belgium-topojson/master/belgium.json, {support-url} must add https://raw.githubusercontent.com to your CSP override list.
 
 . Under *Select property key*, use the dropdown to select the property key that defines the region names in your TopoJSON file. The property key must be unique for each value or region name in your file. If you select the correct key, a preview of the map and a list of the regions it defines appears in the preview box. If you do not select the correct key, it returns an error, and does not show a preview.
 +
