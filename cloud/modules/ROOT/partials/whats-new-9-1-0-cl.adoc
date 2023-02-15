@@ -21,6 +21,7 @@ ifndef::pendo-links[]
 <<9-1-0-cl-custom-map,Upload custom geo maps>> +
 <<9-1-0-cl-kpi-explain-change,Explain change for KPI charts>> +
 <<9-1-0-cl-parameters,Parameters>> +
+<<9-1-0-cl-multiple-changes, Apply multiple chart changes at once>> +
 <<9-1-0-cl-timezone,Timezone in Liveboard Schedule modal>> +
 <<9-1-0-cl-scheduled,Remove attached files from scheduled emails>> +
 <<9-1-0-cl-filter,Change filter order for Liveboard filters>> +
@@ -118,6 +119,18 @@ endif::[]
 
 image::parameter-2.gif[Parameter gif example]
 
+[#9-1-0-cl-multiple-changes]
+[discrete]
+=== Apply multiple chart changes at once
+
+In previous releases, every time a user reordered the fields in the chart configuration panel, the chart reloaded. When creating a visualization with multiple fields, users often need to make multiple rearrangements to reach a desired chart. Now users can make multiple configurations and apply them at the same time rather than waiting in between each configuration. For more information, see
+ifndef::pendo-links[]
+xref:chart-multiple-changes.adoc[Multiple chart changes].
+endif::[]
+ifdef::pendo-links[]
+xref:chart-multiple-changes.adoc[Multiple chart changes,window=_blank].
+endif::[]
+
 [#9-1-0-cl-timezone]
 [discrete]
 === Show timezone in the schedule Liveboard modal
@@ -179,17 +192,10 @@ endif::[]
 [discrete]
 === Data labels on a dark background
 Data labels on a dark background are now GA and on by default. Labels that appear on a dark background now display in a lighter text color, making them easier to read. To try it out, navigate to Search data and *Create a chart* > *Change the chart color*, and *Add labels*.
-For more information,
-see
-ifndef::pendo-links[]
-xref:chart-data-labels.adoc[Show data labels].
-endif::[]
-ifdef::pendo-links[]
-xref:chart-data-labels.adoc[Show data labels,window=_blank].
-endif::[]
 
 image::chartconfig-data-labels-on-dark-background.png[Labels appear on dark background]
 
+// no link because this just requires a release note -- is that okay?
 
 [#9-1-0-cl-filter]
 [discrete]
