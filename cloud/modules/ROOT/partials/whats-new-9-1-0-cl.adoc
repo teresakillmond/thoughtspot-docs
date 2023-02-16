@@ -262,19 +262,18 @@ image::filter-reorder.gif[Filter reorder gif]
 
 // change analysis no longer requires SpotIQ privileges-- all users will be able to do change analysis and access SpotIQ tab. Auto analyse will be privilege-specific.
 
-[#9-1-0-cl-keywords]
-[discrete]
-=== Keywords Improvement in all supported languages
-
-// Teresa
-
-
-
 [#9-1-0-cl-or]
 [discrete]
-=== Enable or semantics for string operator in sage
+=== Text keywords enhancements
 
-// Teresa
+We improved the syntax of our text keywords, making it easier to choose whether ThoughtSpot combines keyword phrases with `and` or `or`.
+For more information, see the
+ifndef::pendo-links[]
+xref:keywords.adoc#text[Keyword reference].
+endif::[]
+ifdef::pendo-links[]
+xref:keywords.adoc#text[Keyword reference,window=_blank].
+endif::[]
 
 [#9-1-0-cl-group-aggregate]
 [discrete]
@@ -347,7 +346,16 @@ THE FOLLOWING ARE NEEDS EVALUATION
 [discrete]
 === Cross-region disaster recovery
 
-// Teresa
+Cross-region support allows ThoughtSpot to migrate your ThoughtSpot application from one AWS region to another in the case of AWS region failures. This ensures that if one AWS region fails, ThoughtSpot can start your application in another region, guaranteeing minimal downtime.
+For more information, see
+ifndef::pendo-links[]
+xref:business-continuity.adoc[Disaster recovery].
+endif::[]
+ifdef::pendo-links[]
+xref:business-continuity.adoc[Disaster recovery,window=_blank].
+endif::[]
+
+// unclear if this is going to make it
 
 [#9-1-0-cl-data-workspace]
 [discrete]
