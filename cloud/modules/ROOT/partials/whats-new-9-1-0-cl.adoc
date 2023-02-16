@@ -71,6 +71,27 @@ endif::[]
 
 image:kpi-comparison-point.gif[]
 
+[#9-0-0-cl-sync]
+[discrete]
+=== ThoughtSpot Sync
+
+// Naomi
+
+You can now use ThoughtSpot Sync to sync data directly from an Answer or custom SQL view to the following apps:
+
+ifndef::pendo-links[]
+* xref:sync-gainsight.adoc[Gainsight]
+endif::[]
+ifdef::pendo-links[]
+* xref:sync-gainsight.adoc[Gainsight,window=_blank]
+endif::[]
+ifndef::pendo-links[]
+* xref:sync-zoho.adoc[Zoho]
+endif::[]
+ifdef::pendo-links[]
+* xref:sync-zoho.adoc[Zoho,window=_blank]
+endif::[]
+
 [#9-1-0-cl-custom-map]
 [discrete]
 === Upload custom geo maps
@@ -123,6 +144,8 @@ image::parameter-2.gif[Parameter gif example]
 [discrete]
 === Apply multiple chart changes at once
 
+// Naomi
+
 In previous releases, every time a user reordered the fields in the chart configuration panel, the chart reloaded. When creating a visualization with multiple fields, users often need to make multiple rearrangements to reach a desired chart. Now users can make multiple configurations and apply them at the same time rather than waiting in between each configuration. For more information, see
 ifndef::pendo-links[]
 xref:chart-multiple-changes.adoc[Multiple chart changes].
@@ -174,11 +197,11 @@ endif::free-trial-feature[]
 
 [#9-1-0-cl-scheduled]
 [discrete]
-=== Remove attached pdf/csv from scheduled emails
+=== Remove attached files from scheduled emails
 
 // Naomi-- GA
 
-You now have the option to remove attached PDF and CSV files from scheduled Liveboard emails. When this feature is enabled, scheduled Liveboard email recipients will receive an email with a link to the Liveboard, which they will need to sign in to see.To ensure that only signed-in users can access your data, contact ThoughtSpot Support to enable this option. For more information, see
+For data security, you may choose to remove attached files from scheduled Liveboard emails, so that users need to sign in to view updates in Liveboards they follow. When this feature is enabled, scheduled Liveboard email recipients will receive an email with a link to the Liveboard, which they will need to sign in to see. To ensure that only signed-in users can access your data, contact ThoughtSpot Support to enable this option. For more information, see
 ifndef::pendo-links[]
 xref:schedule-liveboards.adoc#disable-csv-pdf[Scheduled Liveboards].
 endif::[]
@@ -202,7 +225,9 @@ endif::[]
 [discrete]
 === [GA] Make table download options more accessible
 
-// Yochana
+// Naomi
+
+// new option in "Download" item on more options menu, lets you download in different formats (XLSX, CSV, PDF when table view, XLSX, CSV, PNG when in chart view). applicable wherever there are chart download options (Liveboards, explore, spotIQ)
 
 [#9-1-0-cl-labels]
 [discrete]
@@ -228,29 +253,21 @@ endif::[]
 
 image::filter-reorder.gif[Filter reorder gif]
 
-[#9-1-0-cl-apply]
-[discrete]
-=== [GA] Apply button on Configure menu under Edit Chart
-
-// Yochana
 
 [#9-1-0-cl-spotiq]
 [discrete]
 === Decouple change analysis/explain change from SpotIQ privilege
 
-// Yochana
+// Naomi
+
+// change analysis no longer requires SpotIQ privileges-- all users will be able to do change analysis and access SpotIQ tab. Auto analyse will be privilege-specific.
 
 [#9-1-0-cl-keywords]
 [discrete]
 === Keywords Improvement in all supported languages
 
-// Yochana
+// Teresa
 
-[#9-1-0-cl-headlines]
-[discrete]
-=== [Customer roll out] Deprecate new Headline creation from table summary
-
-// Naomi-- moved to 9.2.0.cl
 
 
 [#9-1-0-cl-or]
@@ -275,11 +292,7 @@ ifdef::pendo-links[]
 xref:formulas-aggregation-flexible.adoc#groupagg-filters-enhancement[Group aggregation filters,window=_blank].
 endif::[]
 
-[#9-1-0-cl-group-aggregate-view]
-[discrete]
-=== Group aggregation enhancement: Correct re-aggregation of the results to view level
 
-// Naomi -- moved to 9.2.0.cl
 
 [#9-1-0-cl-mobile]
 [discrete]
@@ -309,11 +322,7 @@ THE FOLLOWING ARE NEEDS EVALUATION
 
 // Naomi
 
-[#9-1-0-cl-zoho]
-[discrete]
-=== Zoho GA Epic with UI changes
 
-// Naomi
 
 
 
@@ -332,7 +341,7 @@ THE FOLLOWING ARE NEEDS EVALUATION
 [discrete]
 === Data workspace minor enhancements
 
-// Naomi-- not customer-facing
+// Naomi-- not customer-facing. New option to do "schedule every N minutes" in Sync, filters will persist in Data tab.
 
 ifndef::free-trial-feature[]
 [#9-1-0-cl-object-usage]
@@ -368,11 +377,7 @@ ifdef::pendo-links[]
 xref:connections-sql-server.adoc[SQL Server,window=_blank].
 endif::[]
 
-[#9-1-0-cl-dr-sum]
-[discrete]
-=== [GA] - Dr.Sum Embrace connector integration
 
-// Naomi-- pushed to later release
 
 [#9-1-0-cl-tml-monitor]
 [discrete]
@@ -414,7 +419,7 @@ endif::[]
 [discrete]
 === Deprecate old join creation UI
 
-// Yochana. Maybe not in the what's new?
+// Naomi. Maybe not in the what's new? old join pop-up from views will now be the "new" join UI-- redirect to a webpage
 
 THE FOLLOWING ARE NEEDS EVALUATION
 
