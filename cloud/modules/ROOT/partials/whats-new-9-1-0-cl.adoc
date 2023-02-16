@@ -43,22 +43,6 @@ Mandatory Liveboard filters are now GA. Mark certain filters in your Liveboard a
 
 image::mandatory-filter.png[Creation of a mandatory filter and an image of a Liveboard with the mandatory filter]
 
-[#9-1-0-cl-custom-map]
-[discrete]
-=== Upload custom geo maps
-
-Upload your own custom maps and visualize data on geo charts with regions that are specific to you and your organization.
-
-image::custom-map-search-example.png[Custom geo map being added, and a ThoughtSpot search using the custom map]
-
-[#9-1-0-cl-parameters]
-[discrete]
-=== Parameters
-
-The parameters feature is now GA. Create Worksheet parameters to optimize your data inquiries. Use parameters to run different scenarios with adjustable values, without creating or modifying the constants in formulas for each new value. For example, easily adjust the attribute in an Answer to view your revenue by commit date or order date, as in the following gif.
-
-image::parameter-2.gif[Parameter gif example]
-
 [#9-1-0-cl-kpi-explain-change]
 [discrete]
 === Explain change for KPI charts
@@ -107,12 +91,6 @@ endif::free-trial-feature[]
 
 // Naomi
 
-[#9-1-0-cl-resolution]
-[discrete]
-=== Scheduled or downloaded Liveboard PDF width
-
-By default, scheduled and downloaded Liveboard PDFs now have a width of 1920 px. This ensures that the Liveboard you see in ThoughtSpot and the Liveboard PDF you download or schedule looks the same. You can also change this default width to a different width for your company.
-
 [#9-1-0-cl-download]
 [discrete]
 === [GA] Make table download options more accessible
@@ -146,24 +124,22 @@ image::filter-reorder.gif[Filter reorder gif]
 
 // Naomi
 
-[#9-1-0-cl-keywords]
+[#9-1-0-cl-or]
 [discrete]
-=== Keywords Improvement in all supported languages
+=== Text keywords enhancements
 
-// Teresa
+We improved the syntax of our text keywords, such as `begins with` and `contains`, to make it easier to choose whether ThoughtSpot combines keyword phrases with *or* logic or *and* logic.
+
+[#9-1-0-cl-french]
+[discrete]
+=== Improvements to French keywords
+This release improves the translated French keywords.
 
 [#9-1-0-cl-headlines]
 [discrete]
 === [Customer roll out] Deprecate new Headline creation from table summary
 
 // Naomi
-
-
-[#9-1-0-cl-or]
-[discrete]
-=== Enable or semantics for string operator in sage
-
-// Teresa
 
 [#9-1-0-cl-group-aggregate]
 [discrete]
@@ -177,37 +153,6 @@ image::filter-reorder.gif[Filter reorder gif]
 
 // Naomi
 
-[#9-1-0-cl-checkbox]
-[discrete]
-=== [Alpha]Data Literacy : Checkbox interaction to Add Column
-
-// Mark
-
-[#9-1-0-cl-french]
-[discrete]
-=== Improvements to French keywords
-This release improves the translated French keywords.
-
-THE FOLLOWING ARE NEEDS EVALUATION
-
-[#9-1-0-cl-webex]
-[discrete]
-=== [Beta]-TS-Sync: Adding Webex Destination
-
-// Naomi
-
-[#9-1-0-cl-zendesk]
-[discrete]
-=== [Beta]TS-Sync: Adding Zendesk Destination
-
-// Naomi
-
-[#9-1-0-cl-zoho]
-[discrete]
-=== Zoho GA Epic with UI changes
-
-// Naomi
-
 '''
 [#secondary-9-1-0-cl]
 [discrete]
@@ -217,13 +162,30 @@ THE FOLLOWING ARE NEEDS EVALUATION
 [discrete]
 === Cross-region disaster recovery
 
-// Teresa
+Cross-region support allows ThoughtSpot to migrate your ThoughtSpot application from one AWS region to another in the case of AWS region failures. This ensures that if one AWS region fails, ThoughtSpot can start your application in another region, guaranteeing minimal downtime.
 
 [#9-1-0-cl-data-workspace]
 [discrete]
 === Data workspace minor enhancements
 
 // Naomi
+
+[#9-1-0-cl-parameters]
+[discrete]
+=== Parameters
+
+The parameters feature is now GA. Create Worksheet parameters to optimize your data inquiries. Use parameters to run different scenarios with adjustable values, without creating or modifying the constants in formulas for each new value. For example, easily adjust the attribute in an Answer to view your revenue by commit date or order date, as in the following gif.
+
+image::parameter-2.gif[Parameter gif example]
+
+[#9-1-0-cl-custom-map]
+[discrete]
+=== Upload custom geo maps
+
+Custom geo maps are now GA. Upload your own custom maps and visualize data on geo charts with regions that are specific to you and your organization.
+
+image::custom-map-search-example.png[Custom geo map being added, and a ThoughtSpot search using the custom map]
+
 
 [#9-1-0-cl-sql-server]
 [discrete]
@@ -237,17 +199,23 @@ You can now create connections from ThoughtSpot to SQL Server.
 
 // Naomi
 
+[#9-1-0-cl-resolution]
+[discrete]
+=== Scheduled or downloaded Liveboard PDF width
+
+By default, scheduled and downloaded Liveboard PDFs now render at a width of 1920 pixels. This ensures that most Liveboard PDFs you download or schedule look the same as the Liveboards you see in ThoughtSpot. You can also change this default width to a different width for your company, by contacting {support-url}.
+
 [#9-1-0-cl-tml-monitor]
 [discrete]
 === TML for Monitor alerts
 
-TML for Monitor alerts is now GA and on by default. Export, edit, and import KPI Monitor alerts programmatically, using ThoughtSpot Modeling Language.
+TML for Monitor alerts is now GA. Export, edit, and import KPI Monitor alerts programmatically, using ThoughtSpot Modeling Language.
 
 [#9-1-0-cl-join-tml]
 [discrete]
 === Edit join conditions using TML
 
-Use TML to directly edit a join condition by editing the TML file's `on` parameter. This replaces the existing process of deleting and recreating the join in TML or the ThoughtSpot application.
+Use TML to directly edit a join condition by editing the TML file's *on* parameter. This replaces the existing process of deleting and recreating the join in TML or the ThoughtSpot application.
 
 [#9-1-0-cl-delete-tml]
 [discrete]
@@ -260,14 +228,6 @@ Remove columns from tables in ThoughtSpot by deleting them in the tables' TML fi
 === Deprecate old join creation UI
 
 // Naomi. Maybe not in the what's new?
-
-THE FOLLOWING ARE NEEDS EVALUATION
-
-[#9-1-0-cl-pricing]
-[discrete]
-=== Design: Pricing and Metrics in GCP cell architecture
-
-// Mark
 
 ifndef::free-trial-feature[]
 [discrete]
