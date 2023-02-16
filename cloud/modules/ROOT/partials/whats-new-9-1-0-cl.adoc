@@ -102,24 +102,6 @@ endif::[]
 
 When scheduling a sync with an external app, you can now choose to schedule every 5, 15, 30, and 45 minutes.
 
-
-
-[#9-1-0-cl-custom-map]
-[discrete]
-=== Upload custom geo maps
-
-Custom geo maps are now GA. Upload your own custom maps and visualize data on geo charts with regions that are specific to you and your organization. To try it out, select *Custom maps* in the Admin Console. For more information, see
-ifndef::pendo-links[]
-xref:geomaps-custom.adoc[Upload custom geo maps].
-endif::[]
-ifdef::pendo-links[]
-xref:geomaps-custom.adoc[Upload custom geo maps,window=_blank].
-endif::[]
-
-image::custom-map-search-example.png[Custom geo map being added, and a ThoughtSpot search using the custom map]
-
-// high up in the second half
-
 [#9-1-0-cl-kpi-explain-change]
 [discrete]
 === Explain change for KPI charts
@@ -140,31 +122,13 @@ endif::[]
 
 image::kpi-explain-change.png[KPI explain change option and resulting SpotIQ analysis]
 
-
-
-[#9-1-0-cl-parameters]
-[discrete]
-=== Parameters
-
-The parameters feature is now GA. Create Worksheet parameters to optimize your data inquiries. Use parameters to run different scenarios with adjustable values, without creating or modifying the constants in formulas for each new value. For example, easily adjust the attribute in an Answer to view your revenue by commit date or order date, as in the following gif. To try it out, edit a Worksheet, and select the *+* button that appears when you hover over the *Parameters* section. For more information about parameters, see
-ifndef::pendo-links[]
-xref:parameters-create.adoc[Creating parameters] and xref:parameters-use.adoc[Using parameters].
-endif::[]
-ifdef::pendo-links[]
-xref:parameters-create.adoc[Creating parameters,window=_blank] and xref:parameters-use.adoc[Using parameters,window=_blank].
-endif::[]
-
-image::parameter-2.gif[Parameter gif example]
-
-// move down to high up in the second half
-
 [#9-1-0-cl-multiple-changes]
 [discrete]
 === Apply multiple chart changes at once
 
 // Naomi
 
-Apply change is now GA. Now users can make multiple configurations and apply them at the same time rather than waiting in between each configuration. When creating a visualization with multiple fields, users often need to make multiple rearrangements to reach a desired chart. For more information, see
+The *Apply* button is now GA. Now users can make multiple configurations and apply them at the same time rather than waiting in between each configuration. When creating a visualization with multiple fields, users often need to make multiple rearrangements to reach a desired chart. For more information, see
 ifndef::pendo-links[]
 xref:chart-multiple-changes.adoc[Multiple chart changes].
 endif::[]
@@ -180,7 +144,7 @@ image::apply-change.png[Apply multiple changes]
 [discrete]
 === Disable heatmap data labels
 
-Optionally disable heatmap charts' data labels, and understand the chart quickly by scanning the heatmap colors. This makes complex heatmap charts with many data values easier to read. To try it out, create a heatmap chart, select the *edit chart configuration* icon image:icon-gear-10px.png[edit chart configuration icon image], select *Settings*, and unselect *All labels*.
+Optionally disable heatmap charts' data labels, and understand the chart quickly by scanning the heatmap colors. This makes complex heatmap charts with many data values easier to read. To try it out, create a heatmap chart, select the *edit chart configuration* icon image:icon-gear-10px.png[edit chart configuration icon image], select *Settings*, and clear the *All labels* checkbox.
 For more information, see
 ifndef::pendo-links[]
 xref:chart-heatmap.adoc#labels[Heatmap charts].
@@ -190,8 +154,6 @@ xref:chart-heatmap.adoc#labels[Heatmap charts,window=_blank].
 endif::[]
 
 image::chart-heatmap-labels-whats-new.png[Heatmap with and without labels]
-
-// unselect or de-select? check style guide
 
 ifdef::free-trial-feature[]
 [#9-1-0-cl-free-trial-row-limits]
@@ -204,21 +166,6 @@ When using Free Trial and Team Edition, users are limited to a maximum of 5 mill
 
 image:ft-row.png[Show row limits on Free Trial]
 endif::free-trial-feature[]
-
-
-[#9-1-0-cl-resolution]
-[discrete]
-=== Scheduled or downloaded Liveboard PDF width
-
-By default, scheduled and downloaded Liveboard PDFs now render at a width of 1920 pixels. This ensures that the Liveboard you see in ThoughtSpot and the Liveboard PDF you download or schedule looks the same. You can also change this default width to a different width for your company, by contacting {support-url}. To try the new default width out, download a PDF of a Liveboard. For more information, see
-ifndef::pendo-links[]
-xref:liveboard-download-pdf.adoc#pdf-width[Download a Liveboard as a PDF] and xref:liveboard-schedule.adoc#pdf-width[Schedule a Liveboard job].
-endif::[]
-ifdef::pendo-links[]
-liveboard-download-pdf.adoc#pdf-width[Download a Liveboard as a PDF,window=_blank] and xref:liveboard-schedule.adoc#pdf-width[Schedule a Liveboard job,window=_blank].
-endif::[]
-
-// move down to second half. this doesn't necessarily ensure that the two liveboards will match. think about phrasing
 
 [#9-1-0-cl-download]
 [discrete]
@@ -285,7 +232,7 @@ endif::[]
 [discrete]
 === Text keywords enhancements
 
-We improved the syntax of our text keywords, such as `begins with` and `contains`, to make it easier to choose whether ThoughtSpot combines keyword phrases with `or` logic or `and` logic.
+We improved the syntax of our text keywords, such as `begins with` and `contains`, to make it easier to choose whether ThoughtSpot combines keyword phrases with *or* logic or *and* logic.
 For more information, see the
 ifndef::pendo-links[]
 xref:keywords.adoc#text[Keyword reference].
@@ -294,11 +241,17 @@ ifdef::pendo-links[]
 xref:keywords.adoc#text[Keyword reference,window=_blank].
 endif::[]
 
-// check what the code looks like and change to bold or italics if necessary
-
-// move keywords features next to each other
-
-
+[#9-1-0-cl-french]
+[discrete]
+=== Improvements to French keywords
+This release improves the translated French keywords.
+For more information, see
+ifndef::pendo-links[]
+xref:keywords-fr-FR.adoc[Français (France) keyword reference].
+endif::[]
+ifdef::pendo-links[]
+xref:keywords-fr-FR.adoc[Français (France) keyword reference,window=_blank].
+endif::[]
 
 [#9-1-0-cl-group-aggregate]
 [discrete]
@@ -325,18 +278,6 @@ endif::[]
 // Naomi
 
 When using ThoughtSpot Mobile, you can now press the *Load More* button at the bottom of a table to see the next 100 rows of data.
-
-[#9-1-0-cl-french]
-[discrete]
-=== Improvements to French keywords
-This release improves the translated French keywords.
-For more information, see
-ifndef::pendo-links[]
-xref:keywords-fr-FR.adoc[Français (France) keyword reference].
-endif::[]
-ifdef::pendo-links[]
-xref:keywords-fr-FR.adoc[Français (France) keyword reference,window=_blank].
-endif::[]
 
 [#9-1-0-cl-timezone]
 [discrete]
@@ -368,7 +309,33 @@ endif::[]
 
 // unclear if this is going to make it
 
+[#9-1-0-cl-parameters]
+[discrete]
+=== Parameters
 
+The parameters feature is now GA. Create Worksheet parameters to optimize your data inquiries. Use parameters to run different scenarios with adjustable values, without creating or modifying the constants in formulas for each new value. For example, easily adjust the attribute in an Answer to view your revenue by commit date or order date, as in the following gif. To try it out, edit a Worksheet, and select the *+* button that appears when you hover over the *Parameters* section. For more information about parameters, see
+ifndef::pendo-links[]
+xref:parameters-create.adoc[Creating parameters] and xref:parameters-use.adoc[Using parameters].
+endif::[]
+ifdef::pendo-links[]
+xref:parameters-create.adoc[Creating parameters,window=_blank] and xref:parameters-use.adoc[Using parameters,window=_blank].
+endif::[]
+
+image::parameter-2.gif[Parameter gif example]
+
+[#9-1-0-cl-custom-map]
+[discrete]
+=== Upload custom geo maps
+
+Custom geo maps are now GA. Upload your own custom maps and visualize data on geo charts with regions that are specific to you and your organization. To try it out, select *Custom maps* in the Admin Console. For more information, see
+ifndef::pendo-links[]
+xref:geomaps-custom.adoc[Upload custom geo maps].
+endif::[]
+ifdef::pendo-links[]
+xref:geomaps-custom.adoc[Upload custom geo maps,window=_blank].
+endif::[]
+
+image::custom-map-search-example.png[Custom geo map being added, and a ThoughtSpot search using the custom map]
 
 [#9-1-0-cl-scheduled]
 [discrete]
@@ -403,6 +370,18 @@ xref:connections-sql-server.adoc[SQL Server,window=_blank].
 endif::[]
 
 // put closer to top
+
+[#9-1-0-cl-resolution]
+[discrete]
+=== Scheduled or downloaded Liveboard PDF width
+
+By default, scheduled and downloaded Liveboard PDFs now render at a width of 1920 pixels. This ensures that most Liveboard PDFs you download or schedule look the same as the Liveboards you see in ThoughtSpot. You can also change this default width to a different width for your company, by contacting {support-url}. To try the new default width out, download a PDF of a Liveboard. For more information, see
+ifndef::pendo-links[]
+xref:liveboard-download-pdf.adoc#pdf-width[Download a Liveboard as a PDF] and xref:liveboard-schedule.adoc#pdf-width[Schedule a Liveboard job].
+endif::[]
+ifdef::pendo-links[]
+liveboard-download-pdf.adoc#pdf-width[Download a Liveboard as a PDF,window=_blank] and xref:liveboard-schedule.adoc#pdf-width[Schedule a Liveboard job,window=_blank].
+endif::[]
 
 ifndef::free-trial-feature[]
 [#9-1-0-cl-object-usage]
@@ -443,15 +422,13 @@ endif::[]
 [discrete]
 === Edit join conditions using TML
 
-Use TML to directly edit a join condition by editing the TML file's `on` parameter. This simplifies the previous process of deleting and recreating the join in TML or the ThoughtSpot application. To try it out, edit a TML file, and update a join's `on` parameter. For more information, see
+Use TML to directly edit a join condition by editing the TML file's *on* parameter. This simplifies the previous process of deleting and recreating the join in TML or the ThoughtSpot application. To try it out, edit a TML file, and update a join's *on* parameter. For more information, see
 ifndef::pendo-links[]
 xref:tml.adoc#syntax-joins[TML join syntax].
 endif::[]
 ifdef::pendo-links[]
 xref:tml.adoc#syntax-joins[TML join syntax,window=_blank].
 endif::[]
-
-// check how the code looks and update if necessary
 
 [#9-1-0-cl-delete-tml]
 [discrete]
