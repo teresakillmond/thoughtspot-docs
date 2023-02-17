@@ -1,9 +1,21 @@
 [#contains]
 contains::
-Example;;
+Examples;;
++
+Returns country names that contain the letter a and country names that contain the letter b. For example, this phrase might return `North America`:
 +
 ----
-product name contains "alpine" description contains "snow shoe"
+country name contains 'a' country name contains 'b'
 ----
-//+
-//When your search includes multiple `contains` operators for the same attribute, ThoughtSpot combines the clauses with `AND` by default. For example, `country name contains 'a' country name contains 'b'` returns results such as `Azerbaijan` and `Bahrain`, but *_not_* `North America` or `Canada`. You have the option to change the way ThoughtSpot combines the clauses to `OR` instead. Then, `country name contains 'a' country name contains 'b'` returns results such as `Azerbaijan`, `Bahrain`, `North America`, and `Canada`. To enable `OR` instead of `AND` for multiple `contains` clauses, contact {support-url}. Note that making this change may affect backward compatibility for objects built with multiple `contains` clauses.
++
+Returns country names that contain the letter a and country names that contain the letter b. For example, this phrase might return `North America`:
++
+----
+country name contains 'a' or 'b'
+----
++
+Returns only country names that contain both the letter a and the letter b. For example, this phrase might return `Azerbijan`, but it wouldn't return `North America`.
++
+----
+country name contains 'a' and 'b'
+----

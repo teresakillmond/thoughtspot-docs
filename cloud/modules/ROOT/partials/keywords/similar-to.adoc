@@ -1,7 +1,24 @@
 [#similar-to]
 similar to::
-Example;;
+Examples;;
++
+Returns all products that contain text similar to 'jacket'. For example, this phrase might return `jean jacket men's`, but it wouldn't return `t-shirt`:
 +
 ----
-course name similar to 'hand'
+product name similar to 'jacket'
 ----
++
+Returns all products that contain text similar to 'jacket' or 't-shirt'. For example, this phrase might return `jean jacket men's` or `white t-shirt`, but it wouldn't return `green hat`:
++
+----
+product name similar to 'jacket' or 't-shirt'
+----
++
+Returns all products that contain text similar to 'jacket' or 't-shirt'. For example, this phrase might return `jean jacket men's` or `white t-shirt`, but it wouldn't return `green hat`:
++
+----
+product name similar to 'jacket'
+  product name similar to 't-shirt'
+----
++
+`similar to` phrases *_can't_* be combined with `and`.

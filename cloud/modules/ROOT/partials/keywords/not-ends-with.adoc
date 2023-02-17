@@ -1,7 +1,21 @@
 [#not-ends-with]
 not ends with::
-Example;;
+Examples;;
++
+Returns all products that do not end with 'luxury'. For example, this phrase might return `bath towels basic`, but it wouldn't return `bath towels luxury`:
 +
 ----
-product name not ends with "trial"
+product name not ends with 'luxury'
+----
++
+Returns all products that do not end with 'luxury' and do not end with 'deluxe'. For example, this phrase might return `bath towels basic`, but it wouldn't return `bath towels luxury` or `bath towels deluxe`:
++
+----
+product name not ends with 'luxury' or 'deluxe'
+----
++
+Returns all products that do not end with 'luxury' and do not end with 'deluxe'. For example, this phrase might return `bath towels basic`, but it wouldn't return `bath towels luxury` or `bath towels deluxe`:
++
+----
+product name not ends with 'luxury' product name not begins with 'deluxe'
 ----

@@ -2,6 +2,20 @@
 not similar to::
 Example;;
 +
+Returns all products that do not contain text that is similar to 'jacket'. For example, this phrase might return `t-shirt`, but it wouldn't return `jean jacket men's`:
++
 ----
-course name not similar to 'hand'
+product name not similar to 'jacket'
+----
++
+Returns all products that do not contain text similar to 'jacket' and do not contain text similar to 't-shirt'. For example, this phrase might return `green hat`, but it wouldn't return `jean jacket men's` or `t-shirt`:
++
+----
+product name not similar to 'jacket' or 't-shirt'
+----
++
+Returns all products that do not contain text similar to 'jacket' and do not contain text similar to 't-shirt'. For example, this phrase might return `green hat`, but it wouldn't return `jean jacket men's` or `t-shirt`:
++
+----
+product name not begins with 'jacket' product name not begins with 't-shirt'
 ----

@@ -1,7 +1,21 @@
 [#not-begins-with]
 not begins with::
-Example;;
+Examples;;
++
+Returns all products that do not start with 'pro'. For example, this phrase might return `beginner sport set`, but it wouldn't return `pro sport set`:
 +
 ----
-product name not begins with "tom's"
+product name not begins with 'pro'
+----
++
+Returns all products that do not start with 'pro' and do not start with 'sport'. For example, this phrase might return `beginner sport set`, but it wouldn't return `pro sport set` or `sport set`:
++
+----
+product name not begins with 'pro' or 'sport'
+----
++
+Returns all products that do not start with 'pro' and do not start with 'sport'. For example, this phrase might return `beginner sport set`, but it wouldn't return `pro sport set` or `sport set`:
++
+----
+product name not begins with 'pro' product name not begins with 'sport'
 ----
