@@ -1,7 +1,23 @@
 [#ends-with]
 ends with::
-Example;;
+Examples;;
++
+Returns product names that end with 'deluxe'. For example, this phrase might return `bath towels deluxe`, but it wouldn't return `deluxe bath towels`:
 +
 ----
 product name ends with 'deluxe'
 ----
++
+Returns product names that end with 'deluxe' or 'luxury'. For example, this phrase might return `bath towels deluxe` or `bath towels luxury`, but it wouldn't return `deluxe bath towels`:
++
+----
+product name ends with 'deluxe' or 'luxury'
+----
++
+Returns product names that end with 'deluxe' or 'luxury'. For example, this phrase might return `bath towels deluxe` or `bath towels luxury`, but it wouldn't return `deluxe bath towels`:
++
+----
+product name ends with 'deluxe' product name ends with 'luxury'
+----
++
+`ends with` phrases *_can't_* be combined with `and`.
