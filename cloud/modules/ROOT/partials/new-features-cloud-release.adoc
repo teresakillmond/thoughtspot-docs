@@ -49,7 +49,9 @@ Data labels on a dark background are now GA and on by default. Labels that appea
 
 Text keywords enhancements::
 
-We improved the syntax of our text keywords, such as `begins with` and `contains`, to make it easier to choose whether ThoughtSpot combines keyword phrases with *or* logic or *and* logic. You can also add multiple attribute values in one phrase. See xref:keywords.adoc#text[Keyword reference].
+We improved the syntax of our text keywords, such as `begins with` and `contains`, to provide users with more flexibility. For example, the `contains` keyword now accepts expressions such as `product name contains 'shoes' or 'snickers'`. See the xref:keywords.adoc#text[Keyword reference].
++
+Additionally, if your query includes two or more `contains` phrases that modify the same column, ThoughtSpot now combines the phrases using `or` logic, instead of `and`. If you have existing Answers or visualizations using this `and` logic, ThoughtSpot will automatically update your queries after you upgrade to 9.1.0.cl, to ensure they return the same information. See xref:keywords.adoc#contains[the contains keyword].
 
 [#9-1-0-cl-business-user]
 === For the Business User
