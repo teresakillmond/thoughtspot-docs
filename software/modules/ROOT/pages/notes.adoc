@@ -38,6 +38,22 @@ For a complete list of issues that we fixed in this release, see xref:fixed.adoc
 [#analyst-9-0-0-sw]
 === For the Analyst
 
+Show measures in pivot table rows::
+By default, ThoughtSpot displays measures in columns in pivot tables. With this release, choose whether to display measures in rows or columns in your pivot tables. For more information, see xref:chart-pivot-table.adoc#reorder[Reorder your pivot table].
+
+Delete joins and RLS rules through TML::
+When you edit and import table TML files, ThoughtSpot now supports deletion of joins at the table level and RLS rules. Refer to xref:tml.adoc[].
+
+Export FQNs when exporting TML files::
+
+To reduce ambiguity when exporting TML files, export the fully qualified names (FQNs) for the objects' data sources. If you select this option, the TML file contains FQNs for the underlying tables and connections.
++
+For more information, see xref:tml.adoc#fqn[ThoughtSpot Modeling Language].
+
+Visualization GUID support in TML files::
+
+Liveboard ThoughtSpot Modeling Language (TML) files now contain distinct GUIDs for each visualization in the Liveboard by default. This ensures that the GUID for the visualization stays the same after you import or export it. See the xref:tml.adoc#viz_guid[TML viz_guid] parameter.
+
 Upload custom geo maps [.badge.badge-beta-relnotes]#Beta#::
 
 Upload your own custom maps and visualize data on xref:chart-geo.adoc[geo charts] with regions that are specific to you and your organization. For more information, see xref:geomaps-custom.adoc[].
@@ -60,23 +76,8 @@ Every time when a user drag and drop the fields in the chart configuration panel
 +
 This feature is in beta and off by default. To enable it, contact {support-url}.
 
-Show measures in pivot table rows::
-By default, ThoughtSpot displays measures in columns in pivot tables. With this release, choose whether to display measures in rows or columns in your pivot tables. For more information, see xref:chart-pivot-table.adoc#reorder[Reorder your pivot table].
 
-Delete joins and RLS rules through TML::
-When you edit and import table TML files, ThoughtSpot now supports deletion of joins at the table level and RLS rules. Refer to xref:tml.adoc[].
-
-Export FQNs when exporting TML files::
-
-To reduce ambiguity when exporting TML files, export the fully qualified names (FQNs) for the objects' data sources. If you select this option, the TML file contains FQNs for the underlying tables and connections.
-+
-For more information, see xref:tml.adoc#fqn[ThoughtSpot Modeling Language].
-
-Visualization GUID support in TML files::
-
-Liveboard ThoughtSpot Modeling Language (TML) files now contain distinct GUIDs for each visualization in the Liveboard by default. This ensures that the GUID for the visualization stays the same after you import or export it. See the xref:tml.adoc#viz_guid[TML viz_guid] parameter.
-
-GroupAggregate Enhancements: Filters [.badge.badge-beta-relnotes]#Beta#:: Previously, when using group_aggregate formulas, users could use query_filters to include filters entered in the search bar in the formula's value, but it was difficult to write a formula that accepted filters from only a single column. Starting with this release, you can specify column names within the ‘filters’ section of a group_aggregate formula, and any filter in your search bar referencing that column will be added to the formula. Filters entered in the search bar that are not on columns specified in the third argument of the group_aggregate formula will be ignored.
+Group aggregate enhancements: filters [.badge.badge-beta-relnotes]#Beta#:: Previously, when using group_aggregate formulas, users could use query_filters to include filters entered in the search bar in the formula's value, but it was difficult to write a formula that accepted filters from only a single column. Starting with this release, you can specify column names within the ‘filters’ section of a group_aggregate formula, and any filter in your search bar referencing that column will be added to the formula. Filters entered in the search bar that are not on columns specified in the third argument of the group_aggregate formula will be ignored.
 +
 For example:
 Say that you search for `group formula` `color= ‘blue’` `ship mode != ‘car’`, where `group formula = group_aggregate (sum(Revenue), {ship mode}, {color, quantity})`. In this case, the formula will adopt the color = blue filter but ignore the ship mode filter, evaluating to `group_aggregate(sum(Revenue), {ship mode}, {color = ‘blue’})`.
@@ -85,11 +86,6 @@ Say that you search for `group formula` `color= ‘blue’` `ship mode != ‘car
 [#business-user-9-0-0-sw]
 === For the Business User
 
-Mandatory Liveboard filters [.badge.badge-beta-relnotes]#Beta#::
-
-Mark certain filters in your Liveboard as mandatory. If you add mandatory filters to a Liveboard, the visualizations will only load after Liveboard viewers select values for the mandatory filters. Use mandatory filters for Liveboards that contain data that may not be relevant for everyone who must view and consume the Liveboard. Mandatory filters also lower query and performance costs. For more information, see xref:liveboard-filters-mandatory.adoc[].
-+
-This feature is in beta and off by default. To enable it, contact {support-url}.
 
 Delete tables from ThoughtSpot:: Previously, when deleting tables from Connections, ThoughtSpot did not delete the table’s metadata completely. Starting in 9.0.0.sw, tables deleted through the ThoughtSpot UI disappear completely from your cluster.
 
@@ -106,11 +102,16 @@ Delete or make a copy of Worksheets and Views from an object's details page. To 
 xref:worksheet-edit.adoc[Edit or rename Worksheet,window=_blank] and xref:sql-views.adoc[SQL based Views,window=_blank].
 
 Rename Liveboards and visualizations without entering edit mode::
-
 Change the name or description of a Liveboard or visualization without entering *Edit* mode. The more image:icon-more-10px.png[more menu icon] menu for Liveboards and Liveboard visualizations now includes a *Rename* option, where you can edit the object name and description. For more information, see xref:liveboard-layout-edit.adoc#other-edits[Other Liveboard edits].
 
 Improvements to French keywords::
 This release improves the translated French keywords. See xref:keywords-fr-FR.adoc[].
+
+Mandatory Liveboard filters [.badge.badge-beta-relnotes]#Beta#::
+
+Mark certain filters in your Liveboard as mandatory. If you add mandatory filters to a Liveboard, the visualizations will only load after Liveboard viewers select values for the mandatory filters. Use mandatory filters for Liveboards that contain data that may not be relevant for everyone who must view and consume the Liveboard. Mandatory filters also lower query and performance costs. For more information, see xref:liveboard-filters-mandatory.adoc[].
++
+This feature is in beta and off by default. To enable it, contact {support-url}.
 
 [#data-engineer-9-0-0-sw]
 === For the Data Engineer
