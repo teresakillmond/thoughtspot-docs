@@ -2,20 +2,17 @@
 not contains::
 Examples;;
 +
-Returns country names that do not contain the letter a and the letter b. For example, this phrase might return `North America`, but it wouldn't return `Azerbaijan`:
-+
 ----
 country name not contains 'a' country name not contains 'b'
-----
-+
-Returns country names that do not contain the letter a and the letter b. For example, this phrase might return `North America`, but it wouldn't return `Azerbaijan`:
-+
-----
+OR
 country name not contains 'a' or 'b'
 ----
 +
-Returns country names that do not contain the letter a or the letter b. For example, this phrase would not return `North America` or `Azerbaijan`:
+The preceding phrases both return country names that do not contain the letter a or the letter b. For example, either of these phrases might return `Yemen`, but they wouldn't return `North America` or `Azerbaijan`.
 +
 ----
 country name not contains 'a' and 'b'
 ----
++
+The preceding phrase returns country names that contain neither the letter a nor the letter b. For example, this phrase would return `North America`,  but not `Azerbaijan`.
+
