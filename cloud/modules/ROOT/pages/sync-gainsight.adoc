@@ -7,9 +7,17 @@
 :connection: Gainsight
 :description: You can connect ThoughtSpot to your Google account and push insights to Gainsight.
 
+[#prerequisites]
 == Prerequisites
 
-Before you create a sync to {connection}, log in to find your *API key*. You need this information to set up your connection.
+Before you create a sync to {connection}, log in to Gainsight to generate an *API key*. You need this information to set up your connection. You can generate the API key using the following steps:
+
+. Log in to {connection}.
+. Open the menu on the left and scroll down to the *Administration* section and select *REST API* under *Integrations*.
+. Select *New API Key* in the top right corner.
+. In the pop-up, select the checkboxes under *Production Launch*. If desired, rename the API key.
+. Click *Generate*.
+. In the pop-up, click *Copy*.
 
 == Sync to {connection} from an Answer
 
@@ -21,7 +29,7 @@ To create a sync to {connection} from an Answer, follow these steps:
 +
 NOTE: You cannot create a sync from an unsaved Answer. If the *Sync to other apps* option appears grayed-out in the menu, first save the Answer before trying again.
 
-. If this is the first sync you have created for {connection}, a pop-up authorization window appears. Enter the API key, which you generate in Gainsight.
+. If this is the first sync you have created for {connection}, a pop-up authorization window appears. Enter the API key you generated in the <<prerequisites,prerequisites>>.
 
 
 
@@ -41,6 +49,7 @@ image:ts-sync-gainsight-param.png[Gainsight Sync window]
 
 . [Optional] To set up a repeated sync, click *Schedule your sync* and select your timezone. From the options provided, choose whether the sync will occur every:
 
+* _n_ minutes. You can choose to schedule a sync every 5, 10, 15, 20, 30, or 45 minutes.
 * _n_ hours.
 * _n_ days at a selected time. Note that you can choose not to send an update on weekends.
 * week at a selected time and day.
@@ -54,7 +63,7 @@ To sync to {connection} from a custom SQL view, follow these steps:
 
 . In the upper-right corner, click the *more options* menu icon image:icon-more-10px.png[more options menu icon] and select *Sync to {connection}*.
 
-.  If this is the first sync you have created for the selected app, an authorization page appears. To give ThoughtSpot permission to send data to your {connection} account, click *Sign in with {connection}*, select your account, and click *Allow*.
+.   If this is the first sync you have created for {connection}, a pop-up authorization window appears. Enter the API key you generated in the <<prerequisites,prerequisites>>.
 
 . Fill in the following parameters:
 
@@ -71,6 +80,7 @@ To sync to {connection} from a custom SQL view, follow these steps:
 
 . [Optional] To set up a repeated sync, click *Schedule your sync* and select your timezone. From the options provided, choose whether the sync will occur every:
 
+* _n_ minutes. You can choose to schedule a sync every 5, 10, 15, 20, 30, or 45 minutes.
 * _n_ hours.
 * _n_ days at a selected time. Note that you can choose not to send an update on weekends.
 * week at a selected time and day.
@@ -84,7 +94,7 @@ To create a sync to {connection} from the Data Workspace, follow these steps:
 
 . On the left menu bar, select *Sync*.
 
-. Under the *Pipelines* tab, select “Create new pipeline”. Note that if you do not already have a destination created to the intended destination app, you first need to create one in the *Destinations* tab.
+. Under the *Pipelines* tab, select “Create new pipeline”. Note that if you do not already have a destination created to the intended destination app, you first need to create one in the *Destinations* tab, and authenticate using the API key you generated in the <<prerequisites,prerequisites>>.
 
 
 
@@ -103,6 +113,7 @@ To create a sync to {connection} from the Data Workspace, follow these steps:
 
 . [Optional] To set up a repeated sync, click *Schedule your sync* and select your timezone. From the options provided, choose whether the sync will occur every:
 
+* _n_ minutes. You can choose to schedule a sync every 5, 10, 15, 20, 30, or 45 minutes.
 * _n_ hours.
 * _n_ days at a selected time. Note that you can choose not to send an update on weekends.
 * week at a selected time and day.
@@ -122,3 +133,8 @@ While you can also manage a pipeline from the *Pipelines* tab in the Data Worksp
 * *View run history* to see the pipeline’s Activity log in the Data Workspace.
 +
 image::ts-sync-manage-pipelines.png[More options menu for a pipeline]
+
+'''
+> **Related information**
+>
+> * xref:thoughtspot-sync.adoc[]
