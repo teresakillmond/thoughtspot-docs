@@ -1,18 +1,26 @@
-= Data protection and business continuity
-:last_updated: 2/22/2022
+= Disaster recovery
+:last_updated: 2/23/2023
 :linkattrs:
 :experimental:
 :page-layout: default-cloud
 :description: Learn how ThoughtSpot protects your data and ensures business continuity. This article describes ThoughtSpot's disaster recovery strategy.
 
-This article describes ThoughtSpot's data protection and business continuity strategy for ThoughtSpot Cloud.
+This article describes ThoughtSpot's disaster recovery strategy for ThoughtSpot Cloud.
 
-There are several methods ThoughtSpot employs to protect your cluster data and ensure business continuity in the event of a hardware or software failure or a catastrophic event.
+There are several methods ThoughtSpot employs to protect your application data and ensure business continuity in the event of a hardware or software failure or a catastrophic event.
 
 == Recovery Point Objective and Recovery Time Objective
-A Recovery Point Objective (RPO) is the frequency of which you take a backup of a system. ThoughtSpot's RPO is 24 hours. Every 24 hours, ThoughtSpot automatically takes a backup and stores it in Amazon S3, in the same region as the cluster, but in a different Availability Zone.
+A Recovery Point Objective (RPO) is the frequency of which you take a backup of a system. ThoughtSpot's RPO is 24 hours. Every 24 hours, ThoughtSpot automatically takes a backup and stores it in Amazon S3, in a different AWS region than the region your application is in, and in a different Availability Zone.
 
 A Recovery Time Objective (RTO) is the targeted duration of time between an event of failure and the return to operation. ThoughtSpot's RTO is 2 hours.
+
+== Cross-region support
+Cross-region support allows ThoughtSpot to migrate your ThoughtSpot application from one AWS region to another in the case of AWS region failures. ThoughtSpot takes <<backups,backups>> of your application once a day, and stores those backups in a different AWS region than the region your application is in. This ensures that if one AWS region fails, ThoughtSpot can start your application in another region, guaranteeing minimal downtime.
+
+== High Availability
+High Availability (HA) ensures that the ThoughtSpot Cloud application experiences near-zero downtime in the case of AWS Availability Zone (AZ) failures. ThoughtSpot provides HA through deployment spanning multiple AZs. This ensures that, in the case of an AWS Availability Zone failure, ThoughtSpot continues to function.
+
+For more information, see xref:high-availability.adoc[High availability and resilience].
 
 == Snapshots and backups
 ThoughtSpot has a concept of both <<snapshots,snapshots>> and <<backups,backups>> for data protection and backing up your ThoughtSpot cluster.
