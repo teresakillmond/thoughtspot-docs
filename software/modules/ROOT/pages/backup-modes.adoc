@@ -27,9 +27,9 @@ For example, if you have disabled the periodic snapshots system and periodic bac
 ThoughtSpot usually stores backups on a xref:nas-mount.adoc[NAS (network attached storage) file system] but you can store them on a local disk as well.
 You can back up an AWS cluster xref:aws-backup-restore.adoc[using an S3 bucket].
 You can back up a GCP cluster xref:gcp-backup-restore.adoc[using a GCS bucket].
-When creating a backup, ThoughtSpot copies a release tarball and several supporting files to a disk you specify.
-Storing these supporting files takes about 10 GB of extra space beyond the backup itself.
-The final backup image is smaller because these extra files are removed after the backup completes successfully.
+When creating a backup, ThoughtSpot copies a release tarball and several supporting files to a storage you specify.
+Storing these supporting files takes about 10 GB of extra space temporarily beyond the backup itself.
+These supporting files are removed after the backup completes successfully.
 So, make sure you have enough disk space both to _take_ a backup and store the result.
 Use the `tscli storage df` command to identify the amount of space available.
 
