@@ -21,7 +21,7 @@ A snapshot is a point-in-time image of your running cluster. Snapshots are taken
 
 [#backups]
 ==== Backups
-A backup is a procedure that stores a snapshot outside a ThoughtSpot cluster. ThoughtSpot takes data-less backups of your cluster once a day, at midnight local cluster time, and stores them for 30 days in an Amazon S3 bucket in the same region as the cluster. ThoughtSpot can use a backup to restore a cluster to a prior state. ThoughtSpot can restore the cluster in any Availability Zone and in the same region as the original cluster.
+A backup is a procedure that stores a snapshot outside a ThoughtSpot cluster. ThoughtSpot takes data-less backups of your cluster once a day, at midnight local cluster time, and stores them for 30 days in cloud object storage in the same region as the cluster. ThoughtSpot can use a backup to restore a cluster to a prior state. ThoughtSpot can restore the cluster in either the same or, if you enable <<disaster-recovery,Cross-Region Disaster Recovery>>, a different region from the original cluster.
 
 Backups contain the following information:
 
@@ -47,21 +47,21 @@ Backups DO NOT include the following information:
 * Traces
 
 === RPO and RTO for Data Protection
-A Recovery Point Objective (RPO) is the frequency of which you take a backup of a system. ThoughtSpot's RPO for Data Protection is 24 hours. Every 24 hours, ThoughtSpot automatically takes a backup and stores it in Amazon S3, in the same AWS region that your cluster is in, but in a different Availability Zone.
+A Recovery Point Objective (RPO) is the frequency of which you take a backup of a system. ThoughtSpot's RPO for Data Protection is 24 hours. Every 24 hours, ThoughtSpot automatically takes a backup and stores it in cloud object storage, in the same AWS region that your cluster is in.
 
 A Recovery Time Objective (RTO) is the targeted duration of time between an event of failure and the return to operation. ThoughtSpot's RTO for data protection is 2 hours.
 
 === Automation of Data Protection
-ThoughtSpot's Data Protection procedure is fully automated. You do not need to file an issue with ThoughtSpot to request recovery. {support-url} receives an alert after 15 minutes of  cluster unavailability, and immediately investigates it. However, if you have an issue with cluster availability, and the cluster does not recover automatically, you also have the option to open a support request with {support-url}. ThoughtSpot automatically takes <<snapshots,snapshots>> of your cluster once an hour and stores them on EBS disks attached to your VM instance. ThoughtSpot automatically takes <<backups,backups>> of your cluster once a day and stores them in Amazon S3.
+ThoughtSpot's Data Protection procedure is fully automated. You do not need to file an issue with ThoughtSpot to request recovery. {support-url} receives an alert after 15 minutes of  cluster unavailability, and immediately investigates it. However, if you have an issue with cluster availability, and the cluster does not recover automatically, you also have the option to open a support request with {support-url}. ThoughtSpot automatically takes <<snapshots,snapshots>> of your cluster once an hour and stores them on EBS disks attached to your VM instance. ThoughtSpot automatically takes <<backups,backups>> of your cluster once a day and stores them in cloud object storage.
 
 If a cluster is not available, {support-url} receives an alert after 15 minutes of unavailability. Then, ThoughtSpot Support investigates the cluster to determine the problem and tries to fix it. If necessary, ThoughtSpot Support restores the cluster from a snapshot or backup.
 
 [#disaster-recovery]
 == Cross-Region Disaster Recovery
-Cross-Region Disaster Recovery allows ThoughtSpot to recover your ThoughtSpot cluster in a secondary AWS region in the case of a failure of the primary AWS region where the cluster is running. ThoughtSpot takes automated <<backups,backups>> of your cluster once a day, and stores those backups in a different AWS region than the region your cluster is in. This ensures that if one AWS region fails, ThoughtSpot can start your cluster in another region, guaranteeing minimal downtime.
+Cross-Region Disaster Recovery allows ThoughtSpot to recover your ThoughtSpot cluster in a secondary AWS region in the case of a failure of the primary AWS region where the cluster is running. ThoughtSpot takes automated <<backups,backups>> of your cluster once a day, and replicates those backups in a different AWS region from the region your cluster is in. This ensures that if one AWS region fails, ThoughtSpot can start your cluster in another region, guaranteeing minimal downtime.
 
 === RPO and RTO for Cross-Region Disaster Recovery
-ThoughtSpot's RPO for Cross-Region Disaster Recovery is 24 hours. Every 24 hours, ThoughtSpot automatically takes a backup and stores it in Amazon S3, in a different AWS region than the one your cluster is in, and in a different Availability Zone.
+ThoughtSpot's RPO for Cross-Region Disaster Recovery is 24 hours. Every 24 hours, ThoughtSpot automatically takes a backup and replicates it in cloud object storage, in a different AWS region than the one your cluster is in.
  ThoughtSpot's RTO for Cross-Region Disaster Recovery is 2 hours.
 
 === Enabling Cross-Region Disaster Recovery
