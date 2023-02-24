@@ -57,7 +57,7 @@ If you're not an administrator, you also need edit permissions on the table, vie
 
 You can join any data object to another object, with the following 2 restrictions:
 
-* You cannot join a Worksheet to any other object.
+* You can only join a Worksheet to an uploaded CSV table. CSV Upload is currently in beta and off by default. To enable it, contact {support-url}.
 
 * You cannot join objects across connections. This means that you cannot join an object that is part of one connection to an object in a different connection.
 
@@ -71,6 +71,8 @@ If you want the Worksheet to have the changes you made at the table level, you m
 include::partial$joins-create-table.adoc[]
 
 ==== Creating a join from a Worksheet or view
+
+NOTE: You can only create a join between a Worksheet and an uploaded CSV table. The upload CSV feature is currently in beta and off by default.
 
 include::partial$joins-create-worksheet.adoc[]
 
