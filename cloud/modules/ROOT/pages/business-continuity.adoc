@@ -47,7 +47,7 @@ Backups DO NOT include the following information:
 * Traces
 
 === RPO and RTO for Data Protection
-A Recovery Point Objective (RPO) is the frequency of which you take a backup of a system. ThoughtSpot's RPO for Data Protection is 24 hours. Every 24 hours, ThoughtSpot automatically takes a backup and stores it in cloud object storage, in the same AWS region that your cluster is in.
+A Recovery Point Objective (RPO) is the frequency of which you take a backup of a system. ThoughtSpot's RPO for Data Protection is 24 hours. Every 24 hours, ThoughtSpot automatically takes a backup and stores it in cloud object storage, in the same cloud region that your cluster is in.
 
 A Recovery Time Objective (RTO) is the targeted duration of time between an event of failure and the return to operation. ThoughtSpot's RTO for data protection is 2 hours.
 
@@ -58,10 +58,10 @@ If a cluster is not available, {support-url} receives an alert after 15 minutes 
 
 [#disaster-recovery]
 == Cross-Region Disaster Recovery
-Cross-Region Disaster Recovery allows ThoughtSpot to recover your ThoughtSpot cluster in a secondary AWS region in the case of a failure of the primary AWS region where the cluster is running. ThoughtSpot takes automated <<backups,backups>> of your cluster once a day, and replicates those backups in a different AWS region from the region your cluster is in. This ensures that if one AWS region fails, ThoughtSpot can start your cluster in another region, guaranteeing minimal downtime.
+Cross-Region Disaster Recovery allows ThoughtSpot to recover your ThoughtSpot cluster in a secondary cloud region in the case of a failure of the primary cloud region where the cluster is running. ThoughtSpot takes automated <<backups,backups>> of your cluster once a day, and replicates those backups in a different cloud region from the region your cluster is in. This ensures that if one cloud region fails, ThoughtSpot can start your cluster in another region, guaranteeing minimal downtime.
 
 === RPO and RTO for Cross-Region Disaster Recovery
-ThoughtSpot's RPO for Cross-Region Disaster Recovery is 24 hours. Every 24 hours, ThoughtSpot automatically takes a backup and replicates it in cloud object storage, in a different AWS region than the one your cluster is in.
+ThoughtSpot's RPO for Cross-Region Disaster Recovery is 24 hours. Every 24 hours, ThoughtSpot automatically takes a backup and replicates it in cloud object storage, in a different cloud region than the one your cluster is in.
  ThoughtSpot's RTO for Cross-Region Disaster Recovery is 2 hours.
 
 === Enabling Cross-Region Disaster Recovery
