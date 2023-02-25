@@ -19,7 +19,7 @@ If the *SAML* section of the Admin Console is called *SAML integration*, your co
 
 [NOTE]
 ====
-If your organization uses xref:orgs-overview.adoc[], you must be a cluster administrator to manage SAML authentication, not an Org administrator. You manage SAML authentication for the whole cluster. You cannot set it separately for each Org.
+If your organization uses xref:orgs-overview.adoc[multi-tenancy with Orgs], you must be a cluster administrator to manage SAML authentication, not an Org administrator. You manage SAML authentication for the whole cluster. You cannot set it separately for each Org.
 
 To ensure SAML authentication works smoothly in an Orgs environment, you must include Orgs mapping in your IDP assertion. See <<assertion,IDP metadata XML file>>.
 ====
@@ -103,7 +103,7 @@ A unique service name to identify the client application from which the SSO logi
 
 * *SAML attributes*
 +
-The attributes associated with the user; for example, the username and email address. In a xref:orgs-overview.adoc[] environment, you must include an *Orgs* attribute that contains all the Orgs the user belongs to.
+The attributes associated with the user; for example, the username and email address. In a xref:orgs-overview.adoc[multi-tenancy with Orgs] environment, you must include an *Orgs* attribute that contains all the Orgs the user belongs to.
 
 == Enable SAML authentication
 
@@ -114,7 +114,7 @@ You need admin privileges to enable SAML SSO authentication.
 . From the top navigation bar, select the *Admin* tab.
 . Select *SAML* from the side navigation bar that appears.
 +
-If your organization uses xref:orgs-overview.adoc[], ensure that you are in the Primary Org, in the *All orgs* section of the Admin Console. You manage SAML authentication for the whole cluster. You cannot set it separately for each Org.
+If your organization uses xref:orgs-overview.adoc[multi-tenancy with Orgs], ensure that you are in the Primary Org, in the *All orgs* section of the Admin Console. You manage SAML authentication for the whole cluster. You cannot set it separately for each Org.
 . Select the *Configure* button in the middle of the screen.
 . Fill in the following parameters:
 +
@@ -153,7 +153,7 @@ If your IDP needs an Assertion Consumer Service URL to create the metadata file,
 Note that this URL is case-sensitive.
 +
 If your IDP does not allow you to import the IDP metadata XML file, you must map values between ThoughtSpot and your IDP manually.
-This allows the ThoughtSpot system to automatically pick up certain attributes and subjects, such as a user's email address, display name, and username. In a xref:orgs-overview.adoc[] environment, you must include an *Orgs* attribute that contains all the Orgs to which the user belongs.
+This allows the ThoughtSpot system to automatically pick up certain attributes and subjects, such as a user's email address, display name, and username. In a xref:orgs-overview.adoc[multi-tenancy with Orgs] environment, you must include an *Orgs* attribute that contains all the Orgs to which the user belongs.
 Map the username attribute value in your IDP (`userPrincipalName` in Okta, for example) to `NameId`, map the email attribute value to `mail`, and map the display name subject value to `displayName`.
 Attributes and subjects appear in separate sections of your SAML assertion.
 It is *mandatory* to fill out the mail field.
