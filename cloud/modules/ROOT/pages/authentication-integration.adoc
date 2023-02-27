@@ -21,7 +21,7 @@ If the *SAML* section of the Admin Console is called *SAML integration*, your co
 ====
 If your organization uses xref:orgs-overview.adoc[multi-tenancy with Orgs], you must be a cluster administrator to manage SAML authentication, not an Org administrator. You manage SAML authentication for the whole cluster. You cannot set it separately for each Org.
 
-To ensure SAML authentication works smoothly in an Orgs environment, you must include Orgs mapping in your IDP assertion. See <<assertion,IDP metadata XML file>>.
+To ensure SAML authentication works smoothly in an Orgs environment, you must include Orgs mapping in your IDP assertion. See <<assertion,IDP metadata XML file>>. If you map Orgs with SAML, you can't also map groups.
 ====
 
 == SAML SSO authentication
@@ -237,10 +237,12 @@ xsi:type="xs:string">testorg
 </saml2:Attribute>
 ----
 
+NOTE: If you map Orgs with SAML, you can't also map groups.
+
 == SAML group mapping
 
-You can map your SAML groups from your IDP to your ThoughtSpot groups.
-This means that you do not have to manually recreate your groups in ThoughtSpot, if they are already present in your IDP.
+You can map your SAML groups from your IDP to your ThoughtSpot groups, unless you are using xref:orgs-overview.adoc[Orgs].
+SAML group mapping means that you do not have to manually recreate your groups in ThoughtSpot, if they are already present in your IDP.
 Refer to xref:saml-group-mapping.adoc[Configure SAML group mapping].
 
 == Use SSO login by default
