@@ -9,7 +9,7 @@ include::partial$org-intro.adoc[]
 
 This article is an overview of the Orgs functionality and Org management in the standard ThoughtSpot Cloud environment. To learn more about Orgs functionality and programmatic Org management using REST APIs in the ThoughtSpot Everywhere environment, refer to https://developers.thoughtspot.com/docs/?pageid=orgs[Multi-tenancy with Orgs^]. To learn more about Orgs APIs, refer to https://developers.thoughtspot.com/docs/?pageid=orgs-api[Orgs API^].
 
-WARNING: After you enable the Orgs feature on a cluster, you can’t turn off the ability to create Orgs. However, your environment remains a single-tenant environment until you create an Org, and you can return to single-tenancy by deleting all the Orgs you created.
+WARNING: After you enable the Orgs feature on a cluster, you can’t turn off the ability to create Orgs. However, your environment remains a single-tenant environment until you create an Org, and you can return to single-tenancy by deleting all the Orgs you created. For more information, see <<enable-disable,Enabling and disabling Orgs>>.
 
 == Orgs in ThoughtSpot
 
@@ -64,6 +64,7 @@ For information on how to create, edit, and delete Orgs, refer to xref:orgs-admi
 
 To create Orgs using the REST v1 API endpoints, refer to https://developers.thoughtspot.com/docs/?pageid=orgs-api[Orgs API^].
 
+[#switch]
 == Switch between Orgs
 
 Any user with access to multiple Orgs can use the *Org switcher* in the top navigation bar, next to the help icon, to switch between the Orgs they belong to. The *Org switcher* also identifies the Org the user is currently in. For example, in the following image, the user is in the Primary Org.
@@ -83,6 +84,17 @@ include::partial$all-org-scope.adoc[]
 include::partial$org-users-groups.adoc[]
 
 For information on how to add, remove, and manage users and groups in Orgs, refer to xref:orgs-administration-overview.adoc#users-groups[Orgs administration].
+
+[#enable-disable]
+== Enabling and disabling Orgs
+The Orgs feature requires either the ThoughtSpot Enterprise Edition or the ThoughtSpot Everywhere Enterprise Edition. See https://www.thoughtspot.com/pricing[ThoughtSpot pricing and editions^]. Even if you have one of those editions, the Orgs feature is off by default. To enable Orgs in your environment, contact {support-url}.
+
+After you enable the Orgs feature on a cluster, you can’t turn off the ability to create Orgs. However, your environment remains a single-tenant environment until you create an Org, and you can return to single-tenancy by deleting all the Orgs you created.
+
+If you decide not to take advantage of multi-tenancy after enabling Orgs, your ThoughtSpot environment will be different in the following ways:
+
+* Your Admin Console will look like the xref:admin-console-orgs.adoc[] instead of the standard Admin Console. The Orgs Admin Console has all the same functionality as the standard Admin Console. It also has the ability to create Orgs.
+* Your top navigation bar will have an <<switch,Org switcher>> next to the help icon. However, if you don't create any Orgs, the Org switcher doesn't do anything.
 
 == Limitations
 
