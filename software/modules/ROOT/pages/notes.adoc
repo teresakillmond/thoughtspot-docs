@@ -21,7 +21,7 @@ These release notes include information about new and enhanced features.
 
 To see our feature deprecation plans, please see xref:deprecation.adoc[].
 
-For a complete list of issues that we fixed in this release, see xref:fixed.adoc#releases-8-8-x[Fixed issues].
+For a complete list of issues that we fixed in this release, see xref:fixed.adoc#releases-9-0-x[Fixed issues].
 
 * <<new-9-0-0,9.0.0.sw New Features and Functionality>>
 * <<upgrade-paths,Supported Upgrade Paths>>
@@ -59,11 +59,9 @@ Visualization GUID support in TML files::
 
 Liveboard ThoughtSpot Modeling Language (TML) files now contain distinct GUIDs for each visualization in the Liveboard by default. This ensures that the GUID for the visualization stays the same after you import or export it. See the xref:tml.adoc#viz_guid[TML viz_guid] parameter.
 
-Upload custom geo maps [.badge.badge-beta-relnotes]#Beta#::
+Upload custom geo maps [.badge.badge-early-access-relnotes]#Early Access#::
 
-Upload your own custom maps and visualize data on xref:chart-geo.adoc[geo charts] with regions that are specific to you and your organization. For more information, see xref:geomaps-custom.adoc[].
-+
-This feature is in beta and off by default. To enable it, contact {support-url}.
+Upload your own custom maps and visualize data on xref:chart-geo.adoc[geo charts] with regions that are specific to you and your organization. This feature must be enabled by your administrator. For more information, see xref:geomaps-custom.adoc[].
 
 Parameters [.badge.badge-beta-relnotes]#Beta#::
 Create Worksheet parameters to optimize your data inquiries. Use parameters to run different scenarios with adjustable values, without creating or modifying the constants in formulas for each new value. For more information, refer to xref:parameters-create.adoc[] and xref:parameters-use.adoc[].
@@ -71,15 +69,11 @@ Create Worksheet parameters to optimize your data inquiries. Use parameters to r
 This feature is in beta and off by default. To enable it, contact {support-url}.
 
 
-Data labels on a dark background  [.badge.badge-beta-relnotes]#Beta#::
-Labels that appear on a dark background can be displayed in a lighter text color, making them easier to read. This feature must be enabled by your administrator. For more information about data labels on a darkbackground, see xref:chart-data-labels-on-darkbackground.adoc[].
-+
-This feature is in beta and off by default. To enable it, contact {support-url}.
+Data labels on a dark background  [.badge.badge-early-access-relnotes]#Early Access#::
+Labels that appear on a dark background can be displayed in a lighter text color, making them easier to read. This feature must be enabled by your administrator. For more information about data labels on a dark background, see xref:chart-data-labels-on-darkbackground.adoc[].
 
-Apply multiple changes at once  [.badge.badge-beta-relnotes]#Beta#::
-Every time when a user drag and drop the fields in the chart configuration panel, the chart reloads. When a user has multiple fields, they need to rearrange a lot of them to reach a desired chart. Now users can make multiple configurations, and apply them rather than waiting in between each configuration. For more information, see xref:chart-multiple-chart-changes.adoc[].
-+
-This feature is in beta and off by default. To enable it, contact {support-url}.
+Apply multiple changes at once  [.badge.badge-early-access-relnotes]#Early Access#::
+When a user drags and drops the fields in the chart configuration panel, the chart reloads. When a user has multiple fields, they need to rearrange a lot of them to reach a desired chart. Now users can make multiple configurations, and apply them all at once, rather than waiting in between each configuration. This feature must be enabled by your administrator. For more information, see xref:chart-multiple-chart-changes.adoc[].
 
 
 Group aggregate enhancements: filters [.badge.badge-beta-relnotes]#Beta#:: Previously, when using group_aggregate formulas, users could use query_filters to include filters entered in the search bar in the formula's value, but it was difficult to write a formula that accepted filters from only a single column. Starting with this release, you can specify column names within the ‘filters’ section of a group_aggregate formula, and any filter in your search bar referencing that column will be added to the formula. Filters entered in the search bar that are not on columns specified in the third argument of the group_aggregate formula will be ignored.
@@ -112,11 +106,9 @@ Change the name or description of a Liveboard or visualization without entering 
 Improvements to French keywords::
 This release improves the translated French keywords. See xref:keywords-fr-FR.adoc[].
 
-Mandatory Liveboard filters [.badge.badge-beta-relnotes]#Beta#::
+Mandatory Liveboard filters [.badge.badge-early-access-relnotes]#Early Access#::
 
-Mark certain filters in your Liveboard as mandatory. If you add mandatory filters to a Liveboard, the visualizations will only load after Liveboard viewers select values for the mandatory filters. Use mandatory filters for Liveboards that contain data that may not be relevant for everyone who must view and consume the Liveboard. Mandatory filters also lower query and performance costs. For more information, see xref:liveboard-filters-mandatory.adoc[].
-+
-This feature is in beta and off by default. To enable it, contact {support-url}.
+Mark certain filters in your Liveboard as mandatory. If you add mandatory filters to a Liveboard, the visualizations will only load after Liveboard viewers select values for the mandatory filters. Use mandatory filters for Liveboards that contain data that may not be relevant for everyone who must view and consume the Liveboard. Mandatory filters also lower query and performance costs. This feature must be enabled by your administrator. For more information, see xref:liveboard-filters-mandatory.adoc[].
 
 [#data-engineer-9-0-0-sw]
 === For the Data Engineer
