@@ -8,9 +8,9 @@
 
 
 
-Use Scriptability to export and import Worksheets, views, tables, Liveboards, Monitor alerts ([.badge.badge-beta]#Beta# and off by default in 9.0.0.cl), and Answers in a human-readable format.
+Use Scriptability to export and import Worksheets, views, tables, Liveboards, Monitor alerts, and Answers in a human-readable format.
 
-ThoughtSpot developed its own scriptable approach for exporting, enhancing, and migrating Worksheets, views, tables, Liveboards, Monitor alerts ([.badge.badge-beta]#Beta# and off by default in 9.0.0.cl), and Answers.
+ThoughtSpot developed its own scriptable approach for exporting, enhancing, and migrating Worksheets, views, tables, Liveboards, Monitor alerts, and Answers.
 
 You can model your data and build out sophisticated dashboards in your test environment, before deploying to all users.
 
@@ -86,7 +86,7 @@ To edit TML for an object using the in-product TML editor, you must have the per
 You can export one object at a time or export more than one object as a zip file.
 The zip file contains a document called the `Manifest` file, which defines the objects you exported, and their underlying data sources.
 
-The zip file also contains the `Alerts.tml` file, which only appears when you export an Answer or Liveboard and its associated objects. The `Alerts.tml` file defines the KPI Monitor alerts associated with the object. If you have administrator privileges, you see every alert for the object. Otherwise, you see only the alerts you created. TML for Monitor alerts is in [.badge.badge-beta]#Beta# and off by default in 9.0.0.cl. To enable it, contact {support-url}.
+The zip file also contains the `Alerts.tml` file, which only appears when you export an Answer or Liveboard and its associated objects. The `Alerts.tml` file defines the KPI Monitor alerts associated with the object. If you have administrator privileges, you see every alert for the object. Otherwise, you see only the alerts you created.
 
 To export custom collections of related TML files, refer to xref:tml-import-export-multiple.adoc#export-multiple[Migrate multiple TML files].
 
@@ -117,7 +117,7 @@ image::nav-bar-no-spotiq.png[The top navigation bar]
 +
 image::scriptability-cloud-export-multiple.png[Export multiple objects]
 
-. Choose whether to export only the objects, or the objects and their underlying data sources (worksheets, tables, and views). To download any KPI Monitor alerts for the object, you must export the associated objects. The `Alerts.tml` file in the zip file that downloads defines any KPI Monitor alerts associated with the objects. If you have administrator privileges, you see every alert for the objects. Otherwise, you see only the alerts you created. TML for Monitor alerts is in [.badge.badge-beta]#Beta# and off by default in 9.0.0.cl. To enable it, contact {support-url}. Choose whether to export the table and connection FQNs. If you select this option, the TML file contains FQNs for the underlying tables and connections.
+. Choose whether to export only the objects, or the objects and their underlying data sources (worksheets, tables, and views). To download any KPI Monitor alerts for the object, you must export the associated objects. The `Alerts.tml` file in the zip file that downloads defines any KPI Monitor alerts associated with the objects. If you have administrator privileges, you see every alert for the objects. Otherwise, you see only the alerts you created. Choose whether to export the table and connection FQNs. If you select this option, the TML file contains FQNs for the underlying tables and connections.
 If you export a table, you do not see the *Choose what to export* modal, since tables do not have any dependents.
 +
 image::tml-export-with-fqn.png[Choose what to export]
