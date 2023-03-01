@@ -10,7 +10,7 @@
 
 == Before you begin
 
-If you are going to use SSL or OAuth, you must configure them before you can add a {connection} connection.
+If you are going to use SSL, you must configure it before you can add a {connection} connection.
 
 === Enabling SSL in {connection}
 
@@ -20,9 +20,11 @@ To enable *FIPS-compliant SSL* mode, set both the _use_fips_ssl_ parameter and t
 
 For more information, see https://docs.aws.amazon.com/redshift/latest/mgmt/connecting-ssl-support.html[Connect using SSL^] in Amazon's {connection} documentation.
 
+////
 === Configuring OAuth
 
 If you need to use OAuth with {connection}, you must configure an OpenID Connect (OIDC) provider in AWS IAM. For details, see xref:connections-redshift-oauth.adoc[Configure OAuth for a {connection} connection].
+////
 
 == Adding a {connection} connection
 
@@ -34,7 +36,7 @@ To connect to Amazon {connection}:
 +
 image::embrace-redshift-connection-type-ts-cloud.png[Choose connection type]
 
-. Enter the connection details for your {connection} data source using Service Account, IAM or OAuth. The *User* you specify must have at least *read* access to the *SVV_TABLE_INFO* table.
+. Enter the connection details for your {connection} data source using Service Account or IAM. The *User* you specify must have at least *read* access to the *SVV_TABLE_INFO* table.
 +
 image::redshift-connectiondetails.png[Enter connection details]
 +
@@ -43,18 +45,19 @@ For Service Account authentication, do the following:
 ** Enter Host, Port, User, Password, and Database.
 
 +
---
 For IAM authentication, do the following:
 
 ** Enter Host, Port, Database, Db User, Access Key, and Secret Key.
 
 +
---
+
+////
 For OAuth authentication, do the following:
 
  ** Enter Host, Port, Database, OAuth Client ID, OAuth Client Secret, Auth Url, Access token Url, Role ARN, and DbGroups.
 +
 Refer to the xref:connections-redshift-reference.adoc[{connection} connection reference] for more information on each of the specific attributes you must enter for your connection.
+////
 
 . (Optional) To customize additional JDBC parameters supported by {connection}, use *Advanced Config*. Refer to the https://docs.aws.amazon.com/redshift/latest/mgmt/jdbc20-configuration-options.html[Redshift JDBC documentation^].
 
@@ -116,7 +119,6 @@ Note that to remove share access from a connection, you must navigate to the *Sh
 > * xref:connections-redshift-reference.adoc[{connection} connection reference]
 > * xref:connections-redshift-delete.adoc[Delete a {connection} connection]
 > * xref:connections-redshift-external-tables.adoc[]
-> * xref:connections-redshift-oauth.adoc[]
 > * xref:connections-redshift-private-link.adoc[]
 > * xref:connections-redshift-partner.adoc[Redshift Partner Connect overview]
 // > * xref:connections-aws-secrets.adoc[Configure AWS Secrets Manager] //
