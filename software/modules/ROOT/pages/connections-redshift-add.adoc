@@ -9,7 +9,7 @@
 
 == Before you begin
 
-If you are going to use SSL or OAuth, you must configure them before you can add a Redshift connection.
+If you are going to use SSL, you must configure it before you can add a Redshift connection.
 
 === Enabling SSL in Amazon Redshift
 
@@ -19,9 +19,11 @@ To enable *FIPS-compliant SSL* mode, set both the _use_fips_ssl_ parameter and t
 
 For more information, see https://docs.aws.amazon.com/redshift/latest/mgmt/connecting-ssl-support.html[Connect using SSL^] in Amazon's Redshift documentation.
 
+////
 === Configuring OAuth
 
 If you need to use OAuth with Redshift, you must configure an OpenID Connect (OIDC) provider in AWS IAM. For details, see xref:connections-redshift-oauth.adoc[Configure OAuth for a Redshift connection].
+////
 
 == Adding a Redshift connection
 
@@ -33,7 +35,7 @@ To connect to Amazon Redshift:
 +
 image::embrace-redshift-connection-type-ts-cloud.png[Choose connection type]
 
-. Enter the connection details for your Redshift data source using Service Account, IAM or OAuth. The *User* you specify must have at least *read* access to the *SVV_TABLE_INFO* table.
+. Enter the connection details for your Redshift data source using Service Account or IAM. The *User* you specify must have at least *read* access to the *SVV_TABLE_INFO* table.
 +
 image::redshift-connectiondetails.png[Enter connection details]
 +
@@ -42,18 +44,19 @@ For Service Account authentication, do the following:
 ** Enter Host, Port, User, Password, and Database.
 
 +
---
+
 For IAM authentication, do the following:
 
 ** Enter Host, Port, Database, Db User, Access Key, and Secret Key.
-
 +
---
+
+////
 For OAuth authentication, do the following:
 
  ** Enter Host, Port, Database, OAuth Client ID, OAuth Client Secret, Auth Url, Access token Url, Role ARN, and DbGroups.
 +
 Refer to the xref:connections-redshift-reference.adoc[Redshift connection reference] for more information on each of the specific attributes you must enter for your connection.
+////
 
 . (Optional) To customize additional JDBC parameters supported by Redshift, use *Advanced Config*. Refer to the https://docs.aws.amazon.com/redshift/latest/mgmt/jdbc20-configuration-options.html[Redshift JDBC documentation^].
 
@@ -97,7 +100,6 @@ With linked data, ThoughtSpot queries the external database directly.
 > * xref:connections-redshift-delete-table.adoc[]
 > * xref:connections-redshift-delete-table-dependencies.adoc[]
 > * xref:connections-redshift-delete.adoc[]
-> * xref:connections-redshift-oauth.adoc[Configure OAuth]
 > * xref:connections-redshift-best.adoc[Best practices]
 > * xref:connections-redshift-reference.adoc[Reference]
 > * xref:connections-aws-secrets.adoc[Configure AWS Secrets Manager]
