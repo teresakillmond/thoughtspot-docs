@@ -12,7 +12,10 @@ Parameters are useful for 'what-if' analysis, financial planning, cohort analysi
 
 To learn how to create parameters, see xref:parameters-create.adoc[].
 
-NOTE: This feature is in [.badge.badge-update-note]#Beta# and off by default. To enable it, contact {support-url}.
+.[.badge.badge-beta]#Beta#
+****
+This feature is in Beta and off by default. To enable it, contact {support-url}. For more about Beta features, see xref:release-lifecycle.adoc#beta[ThoughtSpot Cloud release life cycle].
+****
 
 == Using parameters
 Use parameters within formulas to run different scenarios when searching on your data or viewing Liveboards or Answers. For example, you may want to forecast your sales for the next month, based on various rates of growth. You might create a parameter, called `growth %`, with a range from 0 to 1 and a default value of .1. Then, you create a formula called `profit forecast`, defined by `profit * (1 + growth %)`. You can then create Answers and Liveboards that use this formula and change the parameter value to view your forecasted profit if your sales grow by 25%, 53%, and so on.
