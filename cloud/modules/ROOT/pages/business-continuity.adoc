@@ -7,21 +7,21 @@
 
 This article describes ThoughtSpot's Data Protection and Disaster Recovery strategy for ThoughtSpot Cloud.
 
-There are several methods ThoughtSpot employs to protect your cluster data and ensure business continuity in the event of a hardware or software failure or a catastrophic event.
+There are several methods ThoughtSpot employs to protect your ThoughtSpot data and ensure business continuity in the event of a hardware or software failure or a catastrophic event.
 
 [#data-protection]
 == Data Protection
 
 === Snapshots and backups
-ThoughtSpot has a concept of both <<snapshots,snapshots>> and <<backups,backups>> for data protection and backing up your ThoughtSpot cluster.
+ThoughtSpot has a concept of both <<snapshots,snapshots>> and <<backups,backups>> for data protection and backing up your ThoughtSpot instance.
 
 [#snapshots]
 ==== Snapshots
-A snapshot is a point-in-time image of your running cluster. Snapshots are taken on a running cluster, and later restored to the same cluster. ThoughtSpot takes snapshots of your cluster once an hour and stores them in persistent storage attached to your cluster. If an error occurs while making any changes to your cluster’s environment, or changing the structure of a table, you can file an issue with {support-url} to restore the cluster from snapshots.
+A snapshot is a point-in-time image of your running instance. Snapshots are taken on a running instance, and later restored to the same instance. ThoughtSpot takes snapshots of your instance once an hour and stores them in persistent storage attached to your instance. If an error occurs while making any changes to your instance’s environment, or changing the structure of a table, you can file an issue with {support-url} to restore the instance from snapshots.
 
 [#backups]
 ==== Backups
-A backup is a procedure that stores a snapshot outside a ThoughtSpot cluster. ThoughtSpot takes data-less backups of your cluster once a day, at midnight local cluster time, and stores them for 30 days in cloud object storage in the same region as the cluster. ThoughtSpot can use a backup to restore a cluster to a prior state. ThoughtSpot can restore the cluster in either the same or, if you enable <<disaster-recovery,Cross-Region Disaster Recovery>>, a different region from the original cluster.
+A backup is a procedure that stores a snapshot outside a ThoughtSpot instance. ThoughtSpot takes data-less backups of your instance once a day, at midnight local instance time, and stores them for 30 days in cloud object storage in the same region as the instance. ThoughtSpot can use a backup to restore an instance to a prior state. ThoughtSpot can restore the instance in either the same or, if you enable <<disaster-recovery,Cross-Region Disaster Recovery>>, a different region from the original instance.
 
 Backups contain the following information:
 
@@ -29,9 +29,9 @@ Backups contain the following information:
 ** Users, groups, Answers, Liveboards, visualizations, Worksheets, data modeling settings, row-level security filters, tables, columns
 ** Configuration of connections to external cloud data warehouses
 * Scheduled jobs (for example, scheduled Liveboards)
-* Cluster details: ID, name, version
-* AWS configuration (label, region, S3 bucket name)
-* Cluster manager configuration (for example, backup policy), and service configuration (for example, service enabled or disabled, memory limits for service)
+* Instance details: ID, name, version
+* Cloud configuration (label, region, cloud storage bucket name)
+* Instance manager configuration (for example, backup policy), and service configuration (for example, service enabled or disabled, memory limits for service)
 * End-user license agreement (EULA) policy and file
 * ThoughtSpot Software artifacts: version, checksum of binaries
 * Hadoop layout
@@ -47,21 +47,21 @@ Backups DO NOT include the following information:
 * Traces
 
 === RPO and RTO for Data Protection
-A Recovery Point Objective (RPO) is the frequency of which you take a backup of a system. ThoughtSpot's RPO for Data Protection is 24 hours. Every 24 hours, ThoughtSpot automatically takes a backup and stores it in cloud object storage, in the same cloud region that your cluster is in.
+A Recovery Point Objective (RPO) is the frequency of which you take a backup of a system. ThoughtSpot's RPO for Data Protection is 24 hours. Every 24 hours, ThoughtSpot automatically takes a backup and stores it in cloud object storage, in the same cloud region that your instance is in.
 
 A Recovery Time Objective (RTO) is the targeted duration of time between an event of failure and the return to operation. ThoughtSpot's RTO for data protection is 2 hours.
 
 === Automation of Data Protection
-ThoughtSpot's Data Protection procedure is fully automated. You do not need to file an issue with ThoughtSpot to request recovery. {support-url} receives an alert after 15 minutes of  cluster unavailability, and immediately investigates it. However, if you have an issue with cluster availability, and the cluster does not recover automatically, you also have the option to open a support request with {support-url}. ThoughtSpot automatically takes <<snapshots,snapshots>> of your cluster once an hour and stores them on EBS disks attached to your VM instance. ThoughtSpot automatically takes <<backups,backups>> of your cluster once a day and stores them in cloud object storage.
+ThoughtSpot's Data Protection procedure is fully automated. You do not need to file an issue with ThoughtSpot to request recovery. {support-url} receives an alert after 15 minutes of ThoughtSpot service unavailability, and immediately investigates it. However, if you have an issue with service availability, and ThoughtSpot does not recover automatically, you also have the option to open a support request with {support-url}. ThoughtSpot automatically takes <<snapshots,snapshots>> of your instance once an hour and stores them on EBS disks attached to your VM instance. ThoughtSpot automatically takes <<backups,backups>> of your instance once a day and stores them in cloud object storage.
 
-If a cluster is not available, {support-url} receives an alert after 15 minutes of unavailability. Then, ThoughtSpot Support investigates the cluster to determine the problem and tries to fix it. If necessary, ThoughtSpot Support restores the cluster from a snapshot or backup.
+If an instance is not available, {support-url} receives an alert after 15 minutes of unavailability. Then, ThoughtSpot Support investigates the instance to determine the problem and tries to fix it. If necessary, ThoughtSpot Support restores the instance from a snapshot or backup.
 
 [#disaster-recovery]
 == Cross-Region Disaster Recovery
-Cross-Region Disaster Recovery allows ThoughtSpot to recover your ThoughtSpot cluster in a secondary cloud region in the case of a failure of the primary cloud region where the cluster is running. ThoughtSpot takes automated <<backups,backups>> of your cluster once a day, and replicates those backups in a different cloud region from the region your cluster is in. This ensures that if one cloud region fails, ThoughtSpot can start your cluster in another region, guaranteeing minimal downtime.
+Cross-Region Disaster Recovery allows ThoughtSpot to recover your ThoughtSpot instance in a secondary cloud region in the case of a failure of the primary cloud region where the ThoughtSpot service is running. ThoughtSpot takes automated <<backups,backups>> of your instance once a day, and replicates those backups in a different cloud region from the region your ThoughtSpot primary instance is in. This ensures that if one cloud region fails, ThoughtSpot can start in another region, guaranteeing minimal downtime.
 
 === RPO and RTO for Cross-Region Disaster Recovery
-ThoughtSpot's RPO for Cross-Region Disaster Recovery is 24 hours. Every 24 hours, ThoughtSpot automatically takes a backup and replicates it in cloud object storage, in a different cloud region than the one your cluster is in.
+ThoughtSpot's RPO for Cross-Region Disaster Recovery is 24 hours. Every 24 hours, ThoughtSpot automatically takes a backup and replicates it in cloud object storage, in a different cloud region than the one your instance is in.
  ThoughtSpot's RTO for Cross-Region Disaster Recovery is 2 hours.
 
 === Enabling Cross-Region Disaster Recovery
@@ -69,6 +69,6 @@ Enabling Cross-Region Disaster Recovery requires the purchase of a new SKU. Cont
 
 [#high-availabity]
 == High Availability
-High Availability (HA) ensures that the ThoughtSpot Cloud cluster experiences near-zero downtime in the case of AWS Availability Zone (AZ) failures. ThoughtSpot provides HA through deployment spanning multiple AZs. This ensures that, in the case of an AWS Availability Zone failure, ThoughtSpot continues to function.
+High Availability (HA) ensures that the ThoughtSpot Cloud instance experiences near-zero downtime in the case of Availability Zone (AZ) failures. ThoughtSpot provides HA through deployment spanning multiple AZs. This ensures that, in the case of an Availability Zone failure, ThoughtSpot continues to function.
 
 For more information, see xref:high-availability.adoc[High Availability and resilience].
