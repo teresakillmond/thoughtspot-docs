@@ -1,0 +1,42 @@
+ifndef::pendo-links[]
+April 2023 [label label-dep]#9.2.0.cl#
+endif::[]
+ifdef::pendo-links[]
+[month-year-whats-new]#April 2023#
+[label label-dep-whats-new]#9.2.0.cl#
+endif::[]
+
+ifndef::free-trial-feature[]
+NOTE: Features marked as [.badge.badge-update-note]#Beta# are off by default. To enable them, contact {support-url}.
+endif::free-trial-feature[]
+
+[#primary-9-1-0-cl]
+
+
+
+'''
+[#secondary-9-1-0-cl]
+[discrete]
+=== _Other features and enhancements_
+
+[#9-2-0-cl-search-suggestions]
+[discrete]
+=== Search suggestions on columns with many values
+
+For any column with a high cardinality, which is defined as more than 100,000 unique column values, ThoughtSpot does not index the column by default. This means the column values do not show up in search suggestions. Previously, this limit was 1 million unique column values. This change improves performance, and reduces index times and memory usage.
+
+If you have existing columns with a cardinality between 100,000 and 1 million, and you use these columns' search suggestions regularly, ThoughtSpot will continue to index these columns.
+For more information, see
+ifndef::pendo-links[]
+xref:data-modeling-index.adoc#high-cardinality[High cardinality and performance].
+endif::[]
+ifdef::pendo-links[]
+xref:data-modeling-index.adoc#high-cardinality[High cardinality and performance,window=_blank].
+endif::[]
+
+ifndef::free-trial-feature[]
+[discrete]
+=== ThoughtSpot Everywhere
+
+For new features and enhancements introduced in this release of ThoughtSpot Everywhere, see https://developers.thoughtspot.com/docs/?pageid=whats-new[ThoughtSpot Developer Documentation^].
+endif::[]
