@@ -21,7 +21,7 @@ A snapshot is a point-in-time image of your running instance. Snapshots are take
 
 [#backups]
 ==== Backups
-A backup is a procedure that stores a snapshot outside a ThoughtSpot instance. ThoughtSpot takes data-less backups of your instance once a day, at midnight local instance time, and stores them for 30 days in cloud object storage in the same region as the instance. ThoughtSpot can use a backup to restore an instance to a prior state. ThoughtSpot can restore the instance in either the same or, if you enable <<disaster-recovery,Cross-Region Disaster Recovery>>, a different region from the original instance.
+A backup is a procedure that stores a snapshot outside a ThoughtSpot instance. ThoughtSpot takes data-less backups of your instance once a day, at midnight local instance time, and stores them for 30 days in cloud object storage. ThoughtSpot can use a backup to restore an instance to a prior state. ThoughtSpot can restore the instance in either the same or, if you enable <<disaster-recovery,Cross-Region Disaster Recovery>>, a different region from the original instance. If you enable Cross Region Disaster Recovery, ThoughtSpot replicates the backups in a different cloud region.
 
 Backups contain the following information:
 
