@@ -54,7 +54,7 @@ endif::free-trial-feature[]
 [discrete]
 === (Phase 1) Migrate existing Customer Headlines to KPI charts ( Code complete)
 
-// Naomi. Should this have a what's new/ release note?
+// Naomi. Should this have a what's new/ release note? No, it's not customer-facing
 
 THE FOLLOWING ARE NEEDS EVALUATION
 
@@ -113,7 +113,7 @@ THE FOLLOWING ARE NEEDS EVALUATION
 
 [#9-2-0-cl-jdbc]
 [discrete]
-=== Generic JDBC Embrace connector Integration
+=== Generic JDBC Embrace connector integration
 
 // Naomi
 
@@ -162,13 +162,34 @@ ifdef::pendo-links[]
 xref:data-modeling-index.adoc#high-cardinality[High cardinality and performance,window=_blank].
 endif::[]
 
+ifndef::pendo-links[]
+[#9-2-0-cl-group-aggregate]
+[discrete]
+=== Group aggregate enhancement: reaggregation [.badge.badge-beta]#Beta#
+endif::[]
+ifdef::pendo-links[]
+[#9-2-0-cl-group-aggregate]
+[discrete]
+=== Group aggregate enhancement: reaggregation [.badge.badge-beta-whats-new]#Beta#
+endif::[]
+
+// Naomi
+
+To reduce confusion when using aggregate formulas and to avoid overcounting, the level of detail defined in group formulas is now respected at query level. For more information, see
+ifndef::pendo-links[]
+xref:formulas-aggregation-flexible.adoc[Flexible aggregation functions].
+endif::[]
+ifdef::pendo-links[]
+xref:formulas-aggregation-flexible.adoc[Flexible aggregation functions,window=_blank].
+endif::[]
+
 THE FOLLOWING ARE NEEDS EVALUATION
 
 [#9-2-0-cl-cortex]
 [discrete]
 === [Early Access] Cortex with bugs and paper cuts fixed
 
-// naomi
+// Naomi
 
 [#9-2-0-cl-dependency]
 [discrete]
