@@ -98,6 +98,21 @@ image:client-id-client-secret.png[Client ID and Client secret]
 * link:https://cloud.google.com/looker/docs/db-config-google-bigquery#generating_google_oauth_credentials[Generating Google OAuth credentials]
 * link:https://developers.google.com/identity/protocols/oauth2/scopes[OAuth 2.0 Scopes for Google APIs]
 
+== Logging in to a connection created by another user using OAuth
+
+As an admin user, you may run into an issue logging in to connections created using OAuth. To resolve this issue, complete the following steps:
+
+. Search on a table belonging to the connection you are trying to edit. The following error appears:
++
+image:oauth-error.png[Error reading “Error in loading data. Connection to Snowflake could not be established. OAuth login required. Login”]
+
+. Click *Login*. You will be directed to the IDP login page.
+
+. Enter your login credentials.
+
+. You will now have access to edit the connection.
+
+
 '''
 > **Related information**
 >
