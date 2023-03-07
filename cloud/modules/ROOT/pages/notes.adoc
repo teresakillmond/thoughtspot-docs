@@ -97,8 +97,26 @@ To access this feature, go to your KPI chart and select the caret icon to the ri
 Parameters::
 The parameters feature is now GA and on by default. Create Worksheet parameters to optimize your data inquiries. Use parameters to run different scenarios with adjustable values, without creating or modifying the constants in formulas for each new value. For more information, refer to xref:parameters-create.adoc[] and xref:parameters-use.adoc[].
 
+ThoughtSpot Sync::
+You can now use ThoughtSpot Sync to sync data directly from an Answer or custom SQL view to the following apps: +
++
+--
+* xref:sync-gainsight.adoc[Gainsight]
+* xref:sync-zoho.adoc[Zoho]
+--
++
+Using ThoughtSpot Sync, you can push insights directly to your selected app, notify your teams, and view data in context. ThoughtSpot Sync automatically establishes a secure pipeline to the destination app and thus eliminates the need for building custom connectors.
+
+Schedule ThoughtSpot Sync:: When scheduling a sync with an external app, you can now choose to schedule every 5, 10, 15, 20, 30, and 45 minutes.
+
+
 Apply multiple changes to charts at once:: In previous releases, every time a user reordered the fields in the chart configuration panel, the chart reloaded. When creating a visualization with multiple fields, users often need to make multiple rearrangements to reach a desired chart. Now users can make multiple configurations and apply them at the same time rather than waiting in between each configuration. For more information, see
 xref:chart-x-axis.adoc[Reorder labels on the axis or legend].
+
+Specify format when downloading charts and tables::
+
+We streamlined the file format options when downloading tables and charts from ThoughtSpot. You can download tables in XLSX, CSV, or PDF format, and download charts in XLSX, CSV, or PNG format. To try it out, open a chart or table, and select *Download* from the *more options* menu image:icon-more-10px.png[ellipsis icon]. For more information, see
+xref:search-download.adoc#download-chart-table[Download a chart or table].
 
 
 Mobile app Load More button:: When using ThoughtSpot Mobile, you can now press the *Load More* button at the bottom of a table to see the next 100 rows of data.
@@ -119,6 +137,10 @@ Remove columns from tables in ThoughtSpot by deleting them in the tables' TML fi
 Edit join conditions using TML::
 
 Use TML to directly edit a join condition by editing the TML file's `on` parameter. This replaces the existing process of deleting and recreating the join in TML or the ThoughtSpot application. For more information, see xref:tml.adoc#syntax-joins[TML join syntax].
+
+Join creation for views::
+We standardized the method of creating joins for all data objects in ThoughtSpot. When creating a join from a view, users are now directed to a *Create join* page where they can choose a connection, name the join, and map the source and destination columns.
+
 
 
 [#9-1-0-cl-it-ops-engineer]
