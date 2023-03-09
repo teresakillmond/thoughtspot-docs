@@ -6,7 +6,7 @@
 :page-aliases: /admin/ts-cloud/about-runtime-filters.adoc
 :description: Use runtime filters to filter an embedded Answer or Liveboard.
 
-Runtime filters apply filters to a Liveboard or Answer by passing the filter properties as query parameters in a Liveboard or visualization URL. You can also apply runtime filters in REST API requests when querying data from a Liveboard, Answer, or a visualization object. On embedded instances, you can use the Visual Embed SDK to apply filters to an embedded Liveboard or Answer, and update filters using events.
+Runtime filters apply filters or xref:parameters-use.adoc[parameter] values to a Liveboard or Answer by passing the filter or parameter properties as query parameters in a Liveboard or visualization URL. You can also apply runtime filters in REST API requests when querying data from a Liveboard, Answer, or a visualization object. On embedded instances, you can use the Visual Embed SDK to apply filters to an embedded Liveboard or Answer, and update filters using events.
 
 == Supported data types
 
@@ -35,7 +35,7 @@ new Date('2020-05-22').getTime() / 1000
 
 == Runtime filter operators
 
-This list contains all the filter operators you can use with runtime filters.
+This list contains all the filter operators you can use with runtime filters. Note that these operators do not apply to parameters.
 
 |===
 | Operator | Description | Number of Values
@@ -99,7 +99,25 @@ This list contains all the filter operators you can use with runtime filters.
 
 == How to apply runtime filters
 
-For information about how to apply runtime filters, see link:https://developers.thoughtspot.com/docs/?pageid=runtime-filters[Runtime filters, window=_blank].
+For information about how to apply runtime filters, see link:https://developers.thoughtspot.com/docs/?pageid=runtime-filters[Runtime filters, window=_blank]. For information about how to apply runtime filters in REST API v1 requests, see [DEV DOCS LINK].
+
+[#parameters]
+=== Apply parameters at runtime on a Liveboard or visualization
+To change parameter values in a Liveboard or visualization URL, use the following syntax in the URL. Place the runtime content directly after the ThoughtSpot host name and forward slash, or at the end of the URL.
+
+[source,bash]
+----
+?param1=<parameter-name>&paramVal1=<supported-parameter-value>&param2=<parameter2-name>&paramVal2=<supported-parameter2-value>#
+----
+
+For example:
+
+[source,bash]
+----
+https://{ThoughtSpot-Host}/?param1=discount&paramVal1=0.25#/pinboard/d084c256-e284-4fc4-b80c-111cb606449a
+
+https://{ThoughtSpot-Host}/#/pinboard/d084c256-e284-4fc4-b80c-111cb606449a?param1=discount&paramVal1=0.25
+----
 
 [#limitations-of-runtime-filters]
 == Limitations of runtime filters
