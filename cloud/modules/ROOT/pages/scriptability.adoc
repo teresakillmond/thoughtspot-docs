@@ -1,29 +1,30 @@
-= Scriptability
-:last_updated: 11/05/2021
+= Import and export TML files
+:last_updated: 3/9/2023
 :linkattrs:
 :experimental:
+:author: Teresa Killmond
 :page-layout: default-cloud
 :page-aliases: /admin/ts-cloud/scriptability.adoc
-:description: Use Scriptability to export and import Worksheets, views, SQL Views, tables, Liveboards, Monitor alerts, and Answers in a human-readable format.
+:description: Export and import Worksheets, views, SQL Views, tables, Liveboards, Monitor alerts, and Answers in a human-readable format.
 
 
 
-Use Scriptability to export and import Worksheets, views, tables, Liveboards, Monitor alerts, and Answers in a human-readable format.
+Use ThoughtSpot Modeling Language (TML) to export and import Worksheets, views, tables, Liveboards, Monitor alerts, and Answers in a human-readable format.
 
 ThoughtSpot developed its own scriptable approach for exporting, enhancing, and migrating Worksheets, views, tables, Liveboards, Monitor alerts, and Answers.
 
 You can model your data and build out sophisticated dashboards in your test environment, before deploying to all users.
 
-The Scriptability feature supports several scenarios that you may encounter:
+TML supports several scenarios that you may encounter:
 
 * *Migrating from a development environment to a production environment* by downloading files from the development cluster and uploading the same files into the production cluster
 * *Implementing metadata changes outside ThoughtSpot UI*, such as replacing the underlying tables for an object, or replacing a single column from one table with a column in another table
 * *Making bulk changes*, such as mass renaming of objects defined by Worksheets, and managing duplicates
 * *Reusing existing objects to build new objects*, such as building two very similar objects based on a similar, pre-existing object.
 
-== How to use Scriptability
+== How to use TML files
 
-Depending on how you want to use Scriptability, there are several workflows you can follow:
+Depending on how you want to migrate or change your files, there are several workflows you can follow:
 
 . *Edit and update an existing object in the same cluster*: You can either
  ** <<export-object,export>> the object(s), edit the object(s) by modifying its xref:tml.adoc[ThoughtSpot Modeling Language] (`TML`) representation, and <<update-object,import>> the updated file(s) to modify the existing object _or_
@@ -253,7 +254,7 @@ You can open the object(s) that you imported, or select *Exit* to return to the 
 
 To migrate an Answer, Liveboard, view, or Worksheet from one cluster to another, follow these steps.
 To migrate collections of objects packaged together as a zip file, refer to xref:tml-import-export-multiple.adoc[Migrate multiple TML files].
-Note that you cannot create a new table using Scriptability.
+Note that you cannot create a new table using TML.
 You can only update existing tables.
 
 . <<export-object,Export the object>> you want to move, as in steps 1 to 5 of the <<export-object,Export an Object>> section.
