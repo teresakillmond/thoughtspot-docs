@@ -8,8 +8,12 @@
 
 Runtime filters apply filters or xref:parameters-use.adoc[parameter] values to a Liveboard or Answer by passing the filter or parameter properties as query parameters in a Liveboard or visualization URL. You can also apply runtime filters in REST API requests when querying data from a Liveboard, Answer, or a visualization object. On embedded instances, you can use the Visual Embed SDK to apply filters to an embedded Liveboard or Answer, and update filters using events.
 
-== Supported data types
+== Supported data types for runtime filters and runtime parameter overrides
 
+There are different supported data types for runtime filters and runtime parameter overrides. See <<data-types-runtime-filters,runtime filters>> and <<data-types-parameters,parameters>>.
+
+[#data-types-runtime-filters]
+=== Supported data types for runtime filters
 You can use runtime filters on these data types:
 
 * `VARCHAR`
@@ -33,9 +37,20 @@ For example, if you want to filter data for 2020-05-22, you can specify the date
 new Date('2020-05-22').getTime() / 1000
 ----
 
+[#data-types-parameters]
+=== Supported data types for runtime parameter overrides
+You can use runtime parameter overrides on these data types:
+
+* `VARCHAR`
+* `BIGINT`
+* `INT`
+* `DOUBLE`
+* `BOOLEAN`
+* `DATE`
+
 == Runtime filter operators
 
-This list contains all the filter operators you can use with runtime filters. Note that these operators do not apply to parameters.
+This list contains all the filter operators you can use with runtime filters. Note that these operators do not apply to runtime parameter overrides.
 
 |===
 | Operator | Description | Number of Values
@@ -97,12 +112,12 @@ This list contains all the filter operators you can use with runtime filters. No
 | multiple
 |===
 
-== How to apply runtime filters
+== How to apply runtime filters and runtime parameter overrides
 
 For information about how to apply runtime filters, see link:https://developers.thoughtspot.com/docs/?pageid=runtime-filters[Runtime filters, window=_blank]. For information about how to apply runtime filters in REST API v1 requests, see [DEV DOCS LINK].
 
 [#parameters]
-=== Apply parameters at runtime on a Liveboard or visualization
+=== Override parameter values at runtime on a Liveboard or visualization
 To change parameter values in a Liveboard or visualization URL, use the following syntax in the URL. Place the runtime content directly after the ThoughtSpot host name and forward slash, or at the end of the URL.
 
 [source,bash]
@@ -112,6 +127,8 @@ To change parameter values in a Liveboard or visualization URL, use the followin
 
 For example:
 
+*Liveboards*
+
 [source,bash]
 ----
 https://{ThoughtSpot-Host}/?param1=discount&paramVal1=0.25#/pinboard/d084c256-e284-4fc4-b80c-111cb606449a
@@ -119,8 +136,21 @@ https://{ThoughtSpot-Host}/?param1=discount&paramVal1=0.25#/pinboard/d084c256-e2
 https://{ThoughtSpot-Host}/#/pinboard/d084c256-e284-4fc4-b80c-111cb606449a?param1=discount&paramVal1=0.25
 ----
 
+*Answers*
+
+[source,bash]
+----
+https://{ThoughtSpot-Host}/?param1=discount&paramVal1=0.25#/saved-answer/923d2db9-d3f1-40bb-8836-b5fbd6727082
+
+https://{ThoughtSpot-Host}/#/saved-answer/923d2db9-d3f1-40bb-8836-b5fbd6727082?param1=discount&paramVal1=0.25
+----
+
+== Limitations
+
+There are different limitations for runtime filters and runtime parameter overrides. See <<limitations-of-runtime-filters,runtime filters>> and <<limitations-parameters,parameters>>.
+
 [#limitations-of-runtime-filters]
-== Limitations of runtime filters
+=== Limitations of runtime filters
 
 Runtime filters do not work directly on top of tables. You must create a Worksheet if you want to use runtime filters.
 This means that the Liveboard or visualization on which you apply a runtime filter must be created on top of a Worksheet.
@@ -130,3 +160,13 @@ This means that the Liveboard or visualization on which you apply a runtime filt
 * Runtime filters do not allow you to apply HAVING in the URL parameters. +
 * You cannot apply a runtime filter on a Liveboard or visualization built on tables whose schema includes a chasm trap.
 
+The <<limitations-parameters,runtime parameter override limitations>> do not apply to runtime filters.
+
+[#limitations-parameters]
+=== Limitations of runtime parameter overrides
+
+* Runtime parameter overrides only work on Liveboards and Answers that already use parameters.
+
+* The DATE data type must be specified as EPOCH time.
+
+The <<limitations-of-runtime-filters,runtime filter limitations>> do not apply to runtime parameter overrides.
