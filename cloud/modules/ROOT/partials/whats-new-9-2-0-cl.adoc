@@ -201,9 +201,21 @@ endif::[]
 
 [#9-2-0-cl-tml-delete]
 [discrete]
-=== TML column deletion support improvements
+=== TML column deletion improvements
 
-// Teresa
+We made the following improvements to the deletion of table, Worksheet, View, or SQL View columns using TML:
+
+* We support deleting a column from a TML file and removing that column's dependencies in the same zip file import.
+
+* If the deletion of a column fails, the whole import will fail.
+
+For more information, see
+ifndef::pendo-links[]
+xref:scriptability.adoc#delete[Deleting columns, joins, and RLS rules].
+endif::[]
+ifdef::pendo-links[]
+xref:scriptability.adoc#delete[Deleting columns, joins, and RLS rules,window=_blank].
+endif::[]
 
 [#9-2-0-cl-runtime]
 [discrete]

@@ -46,6 +46,18 @@ Anomaly detection for time-series KPI charts [.badge.badge-beta-relnotes]#Beta#:
 
 Sync destinations for admin users:: Beginning in 9.2.0.cl, admin users will not see destinations created by other users in the Destinations drop-down that appears when setting up a sync. Admin users will still be able to view all destinations on the Sync page in the Data workspace.
 
+TML column deletion improvements::
+
+We made the following improvements to the deletion of table, Worksheet, View, or SQL View columns using TML:
++
+--
+* We support deleting a column from a TML file and removing that column's dependencies in the same zip file import.
+
+* If the deletion of a column fails, the whole import will fail.
+--
++
+For more information, see xref:scriptability.adoc#delete[Deleting columns, joins, and RLS rules].
+
 [#9-2-0-cl-it-ops-engineer]
 === For the IT/Ops Engineer
 
