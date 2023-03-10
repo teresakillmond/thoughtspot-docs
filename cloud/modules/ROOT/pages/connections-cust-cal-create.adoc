@@ -1,5 +1,5 @@
 = Create a custom calendar
-:last_updated: 5/5/2021
+:last_updated: 3/10/2023
 :linkattrs:
 :experimental:
 :page-layout: default-cloud
@@ -166,6 +166,57 @@ image::custom-cal-table.png[Under choose a method, select existing table]
 The Custom calendar page appears again, with the message "Custom calendar created successfully!"
 +
 Your custom calendar appears in the list of calendars.
+
+
+=== Formatting the calendar table
+
+The following DDL shows the custom calendar table creation for Snowflake. Other data warehouses will have a similar structure. The name of the table isn’t important, you will specify the name to ThoughtSpot.  The columns and type are important, however.
+
+[source]
+----
+create or replace TABLE FISCAL_CAL(
+  "date" DATE,
+  "day_of_week" VARCHAR(),
+  "month" VARCHAR(),
+  "quarter" VARCHAR(),
+  "year" VARCHAR(),
+  "day_number_of_week" BIGINT,
+  "week_number_of_month" BIGINT,
+  "week_number_of_quarter" BIGINT,
+  "week_number_of_year" BIGINT,
+  "is_weekend" BOOLEAN,
+  "monthly" VARCHAR(),
+  "quarterly" VARCHAR(),
+  "day_number_of_month" BIGINT,
+  "day_number_of_quarter" BIGINT,
+  "day_number_of_year" BIGINT,
+  "month_number_of_quarter" BIGINT,
+  "month_number_of_year" BIGINT,
+  "quarter_number_of_year" BIGINT,
+  "absolute_week_number" BIGINT,
+  "start_of_week_epoch" DATE,
+  "end_of_week_epoch" DATE,
+  "absolute_month_number" BIGINT,
+  "start_of_month_epoch" DATE,
+  "end_of_month_epoch" DATE,
+  "absolute_quarter_number" BIGINT,
+  "start_of_quarter_epoch" DATE,
+  "end_of_quarter_epoch" DATE,
+  "absolute_year_number" BIGINT,
+  "start_of_year_epoch" DATE,
+  "end_of_year_epoch" DATE,
+ PRIMARY KEY ("date" )
+);
+----
+
+=== Populating the calendar
+
+Once the table has been created, you need to populate the table with the appropriate data. The date (first column) is the actual calendar date that will be used to map to the custom date values. The following example shows a few records. In this case, the day and month names have been changed to Spanish, the first month is June, and the first day of the week is Monday.
+
+`2021-06-01,martes,junio,QTR1,YR2021,2,1,1,1,false,junio YR2021,QTR1 YR2021,1,1,1,1,1,1,1,2021-06-01,2021-06-07,1,2021-06-01,2021-07-01,1,2021-06-01,2021-09-01,1,2021-06-01,2022-06-01`
+
+`2022-05-28,sábado,mayo,QTR4,YR2021,6,5,13,52,true,mayo YR2021,QTR4 YR2021,28,89,362,3,12,4,52,2022-05-23,2022-05-30,12,2022-05-01,2022-06-01,4,2022-03-01,2022-06-01,1,2021-06-01,2022-06-01`
+
 
 == Using your custom calendar in your connection
 
