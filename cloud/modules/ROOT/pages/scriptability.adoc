@@ -295,6 +295,22 @@ You must select the objects yourself.
 . The *Import Status* screen displays the status of the objects you imported.
 You can open the object(s) that you imported, or select *Exit* to return to the main object page.
 
+[#delete]
+== Deleting columns, joins, and RLS rules
+You can delete joins at the table level, table RLS rules, and table, Worksheet, View, and SQL View columns. However, keep in mind the following behaviors:
+
+* To delete a column or join, you must first remove its dependents. If you are deleting a column, you can delete it and remove that column's dependencies in the same zip file import.
+
+* If the deletion of a column fails, the whole import, including any other objects in a zip file, will fail.
+
+* Joins only appear in the table TML file of the source table in a join, or the table on the Many side of a Many-to-One join.
+You can only add and edit table joins from the TML file of the table on the Many side of the join.
+You can't view or modify table-level joins from the destination table's TML file.
+
+* You can't modify joins at the table level from the Worksheet, view, or Answer TML file.
+You can only override the joins for that specific Worksheet, view, or Answer.
+To modify table-level joins, you must edit the source table's TML file.
+
 == Limitations of working with TML files
 
 There are certain limitations to the changes you can apply by editing a Worksheet, Answer, table, view, or Liveboard through TML.
