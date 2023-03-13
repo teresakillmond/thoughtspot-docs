@@ -84,7 +84,8 @@ After {support-url} finishes the configuration, they will contact you, and you c
 [#embrace]
 === Step 6: Configure Connections
 
-Create a xref:connections-databricks.adoc[{connection} connection].
+Create a xref:connections-databricks.adoc[{connection} connection].  Note that Databricks connections use the same xref:connections-databricks-reference.adoc#databricks-reference-host[host name] regardless of whether they are created through PrivateLink. When PrivateLink is configured, ThoughtSpot switches the internal DNS resolution for the hostname to point to the PrivateLink endpoint IP. For example, if your customer Databricks account is `\https://myaccount.cloud.databricks.com`, you would use the same name when configuring a connection that uses PrivateLink.
+
 
 
 '''
