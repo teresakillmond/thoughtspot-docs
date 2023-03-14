@@ -35,6 +35,8 @@ TML for Monitor alerts is now GA and on by default. Export, edit, and import xre
 
 Remove attached files from scheduled emails:: For data security, you may choose to remove attached files from scheduled Liveboard emails. When this feature is enabled, scheduled Liveboard email recipients will receive an email with a link to the Liveboard, which they will need to sign in to see.To ensure that only signed-in users can access your data, contact ThoughtSpot Support to enable this option. For more information, see xref:schedule-liveboards.adoc#disable-csv-pdf[Scheduled Liveboards].
 
+Add a custom message in the alert notification:: When creating an alert for a KPI chart, you can now include a custom message in the alert update email. You can use this feature to specify next steps the alert subscribers should take once the KPI reaches a certain threshold.
+
 Disable heatmap data labels::
 
 Optionally disable heatmap charts' data labels, and understand the chart quickly by scanning the heatmap colors. This makes complex heatmap charts with many data values easier to read. See xref:chart-heatmap.adoc#labels[Heatmap charts].
@@ -63,6 +65,9 @@ When scheduling Liveboards, you can now specify your time zone. For more informa
 
 Group aggregate enhancements: filters:: Group aggregate filter enhancements are GA and on by default. Previously, when using group_aggregate formulas, users could use query_filters to include filters entered in the search bar in the formula's value, but it was difficult to write a formula that accepted filters from only a single column. +
 Starting with this release, you can specify column names within the ‘filters’ section of a group_aggregate formula, and any filter in your search bar referencing that column will be added to the formula. Filters entered in the search bar that are not on columns specified in the third argument of the group_aggregate formula will be ignored. For details, see xref:formulas-aggregation-flexible.adoc#groupagg-filters-enhancement[Group aggregation filters].
+
+Group aggregate enhancement: reaggregation [.badge.badge-beta-relnotes]#Beta#:: To reduce confusion when using aggregate formulas, the level of detail defined in group formulas is now respected at query level. For more information, see xref:formulas-aggregation-flexible.adoc#reaggregation-enhancement[Flexible aggregation functions].
+
 
 Data labels on a dark background::
 Data labels on a dark background are now GA and on by default. Labels that appear on a dark background now display in a lighter text color, making them easier to read.
@@ -112,6 +117,8 @@ Schedule ThoughtSpot Sync:: When scheduling a sync with an external app, you can
 
 Create a sync as an admin:: When creating a sync to an external app, admin users will no longer see destinations created by other users in the *Destinations* dropdown menu. Admin users will still be able to see a list of all destinations created by users in their organization when they navigate to the *Destinations* tab in the Data Workspace.
 
+HubSpot Sync mapping fields:: When creating a sync to HubSpot, you can now use email as a mapping field on the Contacts object type, as well as ContactID.
+
 Apply multiple changes to charts at once:: In previous releases, every time a user reordered the fields in the chart configuration panel, the chart reloaded. When creating a visualization with multiple fields, users often need to make multiple rearrangements to reach a desired chart. Now users can make multiple configurations and apply them at the same time rather than waiting in between each configuration. For more information, see
 xref:chart-x-axis.adoc[Reorder labels on the axis or legend].
 
@@ -130,6 +137,12 @@ This release improves the translated French keywords. See xref:keywords-fr-FR.ad
 === For the Data Engineer
 
 SQL Server connection:: You can now create connections from ThoughtSpot to SQL Server. For details, see xref:connections-sql-server.adoc[SQL Server].
+
+Generic JDBC connection:: You can now create connections from ThoughtSpot to Generic JDBC databases. For details, see xref:connections-jdbc.adoc[Generic JDBC].
+
+Certify Amazon Aurora and Amazon Relational Database Service (RDS) for PostgreSQL:: You can now connect to and query Amazon Aurora and Amazon RDS for PostgreSQL databases.
+
+Databricks Catalog field:: When creating a connection to Databricks, you can now enter your catalog name under the *Catalog* field. For more information, see xref:connections-databricks-add.adoc[Add a Databricks connection].
 
 Sync destinations for admin users:: Beginning in 9.2.0.cl, admin users will not see destinations created by other users in the Destinations drop-down that appears when setting up a sync. Admin users will still be able to view all destinations on the Sync page in the Data workspace.
 
