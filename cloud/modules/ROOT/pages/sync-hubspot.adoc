@@ -40,7 +40,15 @@ image:sync-hubspot-param.png[HubSpot Sync window]
 
 . By default, “Save and sync” is selected. Select *Save* to send your data to {connection}. Your data immediately appears in {connection}.
 
+. [Optional] To set up a repeated sync, select *Schedule your sync*. From the options provided, choose whether the sync will occur every:
 
+* _n_ hours.
+* _n_ days at a selected time. Note that you can choose not to send an update on weekends.
+* week at a selected time and day.
+* _n_ months at a selected time and date.
+
+
+NOTE: Any sync over 50,000 rows may result in an execution timeout. For optimal performance, keep your sync to below 50,000 rows. If you're syncing a large number of rows and the sync fails, try applying filters like date filters to make your dataset smaller and then sync.
 
 == Sync to {connection} from a Custom SQL View
 
@@ -64,7 +72,15 @@ To sync to {connection} from a custom SQL view, follow these steps:
 
 . By default, “Sync and save” is selected. Select *Save* to send your data to {connection}. Your data immediately appears in {connection}.
 
+. [Optional] To set up a repeated sync, select *Schedule your sync*. From the options provided, choose whether the sync will occur every:
 
+* _n_ hours.
+* _n_ days at a selected time. Note that you can choose not to send an update on weekends.
+* week at a selected time and day.
+* _n_ months at a selected time and date.
+
+
+NOTE: Any sync over 50,000 rows may result in an execution timeout. For optimal performance, keep your sync to below 50,000 rows. If you're syncing a large number of rows and the sync fails, try applying filters like date filters to make your dataset smaller and then sync.
 
 
 == Sync to {connection} from the Data Workspace
@@ -91,6 +107,16 @@ To create a sync to {connection} from the Data Workspace, follow these steps:
 
 
 .  By default, *Save and sync* is selected. Select *Save* to send your data to {connection}. Your data immediately appears in {connection}.
+
+. [Optional] To set up a repeated sync, select *Schedule your sync*. From the options provided, choose whether the sync will occur every:
+
+* _n_ hours.
+* _n_ days at a selected time. Note that you can choose not to send an update on weekends.
+* week at a selected time and day.
+* _n_ months at a selected time and date.
+
+
+NOTE: Any sync over 50,000 rows may result in an execution timeout. For optimal performance, keep your sync to below 50,000 rows. If you're syncing a large number of rows and the sync fails, try applying filters like date filters to make your dataset smaller and then sync.
 
 == Updating and deleting records in {connection}
 
@@ -125,6 +151,8 @@ A sync to {connection} can fail due to multiple reasons. If you experience a syn
 ** NOTE: In this case, only the rows in ThoughtSpot that meet the data validation criteria of the column in {connection} will be inserted or updated. All others will be ignored.
 
 * There is a mandatory field in {connection} which has not been mapped as a destination column when setting up the mapping in ThoughtSpot.
+
+* Any sync over 50,000 rows may result in an execution timeout. For optimal performance, keep your sync to below 50,000 rows. If you're syncing a large number of rows and the sync fails, try applying filters like date filters to make your dataset smaller and then sync.
 
 === Manage pipelines
 
