@@ -13,9 +13,34 @@ This feature is designed to help you get started if you are a new user, or you a
 
 AI-suggested searches are generated using GPT-3.5, a Large Language Model (LLM) by OpenAI. All users of a dataset will see the same set of questions.
 
-
+.[.badge.badge-early-access]#Early Access#
+****
+AI-suggested searches is disabled by default. To enable it, contact your ThoughtSpot administrator. For more about Early Access features, see xref:release-lifecycle.adoc#early-access[ThoughtSpot Cloud release life cycle].
+****
 
 == Using AI-suggested searches
+
+To use AI-suggested searches, do the following:
+
+. Click *Search Data*.
++
+ThoughtSpot automatically selects the data source used in your most recent search. You can use the selected data source,s or select a new one.
++
+In the main area of the screen, "New to search?" is displayed, and some suggested searches
+are provided.
+. Choose a suggested search, and click *Try this search*.
++
+Once the search completes, the answer is displayed.
+. Review the answer, drill down on data points, or make changes to the query in the search bar as needed.
+. (Optional) You can share feedback on the suggested search by clicking *Share Feedback*.
+** Options include:
+*** I am not interested in this question
+*** The answer is not correct
+*** Tell us how we can improve
+** When you are ready to submit your feedback, click *Submit*.
++
+Your feedback is collected by ThoughtSpot, and is used to improve suggested searches in the future.
+. When you are done reviewing the answer, you can click *Clear* to go back to the initial Search Data screen.
 
 == When AI-suggested searches are not generated
 
@@ -23,7 +48,7 @@ AI-suggested searches are *not* shown under the following conditions:
 
 - Search Assist is configured on a Worksheet
 +
-If Search Assist is configured on some datasources, Search Assist will be displayed on the empty Search Data page. In those cases, suggested searches will not be shown.
+If Search Assist is configured on some data sources, Search Assist will be displayed on the empty Search Data page. In those cases, AI-suggested searches are not shown.
 - Multiple sources are selected
 +
 AI-suggested searches are not be available when you select multiple sources, because those types of searches are more commonly done by an advanced user, who doesn't rely on suggested searches.
