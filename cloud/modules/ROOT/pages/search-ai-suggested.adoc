@@ -5,6 +5,28 @@
 :page-layout: default-cloud-early-access
 :page-aliases:
 :author: Mark Plummer
-:description: Use AI-suggested searches
+:description: AI-suggested searches help you think of business questions for your data.
 
-Content TBD
+AI-suggested searches help you think of relevant questions to ask of your own data source, by providing examples of searches. This feature is designed to help you to gain insights using Search Data.
+
+This feature is designed to help you get started if you are a new user, or you are working with a new worksheet.
+
+AI-suggested searches are generated using GPT-3.5, a Large Language Model (LLM) by OpenAI. All users of a dataset will see the same set of questions.
+
+
+
+== Using AI-suggested searches
+
+== When AI-suggested searches are not generated
+
+AI-suggested searches are *not* shown under the following conditions:
+
+- Search Assist is configured on a Worksheet
++
+If Search Assist is configured on some datasources, Search Assist will be displayed on the empty Search Data page. In those cases, suggested searches will not be shown.
+- Multiple sources are selected
++
+AI-suggested searches are not be available when you select multiple sources, because those types of searches are more commonly done by an advanced user, who doesn't rely on suggested searches.
+- ThoughtSpot couldn't generate AI-suggested searches
++
+AI-generated questions may not be available for some data sources if ThoughtSpot was unable to generate meaningful questions. Currently, this may happen with worksheets containing less than 5**&#8211;**10 columns.
