@@ -75,12 +75,6 @@ image::sync-zoho.png[New ThoughtSpot Sync connections]
 
 When scheduling a sync with an external app, you can now choose to schedule every 5, 10, 15, 20, 30, and 45 minutes, in addition to the other existing schedule options.
 
-[#9-2-0-cl-worksheet-enablement]
-[discrete]
-=== [Alpha] Worksheet Enablement toggle
-
-// Naomi
-
 [#9-2-0-cl-copy]
 [discrete]
 === Papercut: Remove 'Make a Copy' from LB and viz menu in Edit Mode
@@ -204,7 +198,7 @@ image::kpi-explain-change.png[KPI explain change option and resulting SpotIQ ana
 
 // Naomi
 
-The *Apply* button is now GA. Now users can make multiple configurations and apply them at the same time rather than waiting in between each configuration. For more information, see
+The *Apply* button is now GA. Now users can make multiple configurations and apply them at the same time rather than waiting for each configuration to load separately. For more information, see
 ifndef::pendo-links[]
 xref:chart-x-axis.adoc[Reorder labels on the axis or legend].
 endif::[]
@@ -418,6 +412,7 @@ endif::[]
 You can now pull data from a ThoughtSpot instance into Google Sheets using the *ThoughtSpot for connected sheets* extension from the Google Workspace Marketplace. You can connect to any ThoughtSpot instance, even Free Trial. Once connected, you can select your data by using the search bar or selecting it from the data panel, just like in ThoughtSpot. Once you select your data, you can then pull it into Google Sheets and use the available tools to further analyze your data.
 // Mark
 
+ifdef::free-trial-feature[]
 [#9-2-0-cl-invite]
 [discrete]
 === Share Liveboards and underlying data during invitation process
@@ -425,13 +420,13 @@ You can now pull data from a ThoughtSpot instance into Google Sheets using the *
 // Naomi. FT only
 
 When inviting users to join Free Trial and Team Edition, you can now share Liveboards and underlying data. Users who are invited open an environment populated with the data you share.
-
+endif::free-trial-feature[]
 
 [#9-2-0-cl-headlines]
 [discrete]
 === (Phase 1) Migrate existing Customer Headlines to KPI charts ( Code complete)
 
-// Naomi. Should this have a what's new/ release note? No, it's not customer-facing
+// Naomi. Should this have a what's new/ release note?  not customer-facing
 
 [#9-2-0-cl-support]
 [discrete]
