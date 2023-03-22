@@ -39,13 +39,29 @@ This could be due to different groups in your organization using different terms
 Or maybe your users just intuitively use different words when searching for that item.
 Using synonyms allows them to access the data even if the term they choose isn't the same as the actual column name.
 
+ThoughtSpot creates <<automatic-synonyms, automatic synonyms>> when you create a new Worksheet. You can also <<create-synonyms,create them yourself>>, or edit the synonyms ThoughtSpot created.
+
+When users search using these synonyms, the returned table or chart uses the _actual column name_, but the search bar reflects the term the user typed in (the synonym).
+
+[#automatic-synonyms]
+=== Automatic synonyms
+
+When you create a new Worksheet, ThoughtSpot automatically creates synonyms for each column name. ThoughtSpot creates column synonyms after you save your new Worksheet.
+
+You can see these synonyms in the *Synonyms* column of the Worksheet details page. Auto-generated synonyms are in italics.
+
+image::worksheet-column-synonyms.png[Worksheet column synonyms]
+
+[#create-synonyms]
+=== Create synonyms
+
 You can set column synonyms for columns in tables and Worksheets.
-The returned table or chart uses the _actual column name_, but the search bar reflects the term the user typed in (the synonym).
 
 To create a synonym for a column:
 
-. Find the column for which you want to add synonyms.
-. Select its *Synonyms*.
+. Within the Worksheet details page, find the column for which you want to add synonyms.
+. Scroll to the right, to the *Synonyms* column.
+. In the *Synonyms* column, select the text box for the column name you would like to add synonyms for.
 . Enter a comma-separated list of the synonyms.
 +
 If a synonym is more than one word, enclose it in double quotes.
