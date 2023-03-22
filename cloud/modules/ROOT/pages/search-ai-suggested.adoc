@@ -2,20 +2,22 @@
 :last_updated: 5/22/2020
 :linkattrs:
 :experimental:
-:page-layout: default-cloud-early-access
+:page-layout: default-cloud
 :page-aliases:
 :author: Mark Plummer
 :description: AI-suggested searches help you think of business questions for your data.
 
-AI-suggested searches help you think of relevant questions to ask of your own data source, by providing examples of searches. This feature is designed to help you to gain insights using Search Data.
+AI-suggested searches help you think of relevant questions to ask of your data source, by providing example searches. This feature is designed to help you learn how to use the Search Data interface, and to gain insights when working with a new data set or worksheet.
 
-This feature is designed to help you get started if you are a new user, or you are working with a new worksheet.
+image::searches-ai-suggested.png[]
 
-AI-suggested searches are generated using GPT-3.5, a Large Language Model (LLM) by OpenAI. All users of a dataset will see the same set of questions.
+AI-suggested searches are generated using GPT-3.5, a Large Language Model (LLM) by OpenAI. All users of a data source see the same set of suggested searches.
 
-.[.badge.badge-early-access]#Early Access#
+NOTE: The list of suggested searches is generated once for all worksheets.
+
+.Preview feature
 ****
-AI-suggested searches is disabled by default. To enable it, contact your ThoughtSpot administrator. For more about Early Access features, see xref:release-lifecycle.adoc#early-access[ThoughtSpot Cloud release life cycle].
+AI-suggested searches is preview feature and is disabled by default. To enable it, contact {support-url}.
 ****
 
 == Using AI-suggested searches
@@ -24,13 +26,13 @@ To use AI-suggested searches, do the following:
 
 . Click *Search Data*.
 +
-ThoughtSpot automatically selects the data source used in your most recent search. You can use the selected data source,s or select a new one.
+ThoughtSpot automatically selects the data source used in your most recent search. You can use the selected data source, or select a new one.
 +
-In the main area of the screen, "New to search?" is displayed, and some suggested searches
+In the main area of the Search Data page, "New to search?" is displayed, and some suggested searches
 are provided.
 . Choose a suggested search, and click *Try this search*.
 +
-Once the search completes, the answer is displayed.
+Once the search is complete, the answer is displayed.
 . Review the answer, drill down on data points, or make changes to the query in the search bar as needed.
 . (Optional) You can share feedback on the suggested search by clicking *Share Feedback*.
 ** Options include:
@@ -40,13 +42,13 @@ Once the search completes, the answer is displayed.
 ** When you are ready to submit your feedback, click *Submit*.
 +
 Your feedback is collected by ThoughtSpot, and is used to improve suggested searches in the future.
-. When you are done reviewing the answer, you can click *Clear* to go back to the initial Search Data screen.
+. When you are done reviewing the answer, you can click *Clear* to go back to the Search Data page.
 
 == When AI-suggested searches are not generated
 
 AI-suggested searches are *not* shown under the following conditions:
 
-- Search Assist is configured on a Worksheet
+- Search Assist is configured on the data source
 +
 If Search Assist is configured on some data sources, Search Assist will be displayed on the empty Search Data page. In those cases, AI-suggested searches are not shown.
 - Multiple sources are selected
