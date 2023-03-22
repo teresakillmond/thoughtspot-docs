@@ -51,6 +51,9 @@ image:ts-sync-servicenow-param.png[{connection} Sync window]
 * week at a selected time and day.
 * _n_ months at a selected time and date.
 
+NOTE: Any sync over 50,000 rows may result in an execution timeout. For optimal performance, keep your sync to below 50,000 rows. If you're syncing a large number of rows and the sync fails, try applying filters like date filters to make your dataset smaller and then sync.
+
+
 === Roles
 
 To enable the Contact and Case objects requires the Customer Service plugin (com.sn_customerservice), and users require the `csm_ws_integration` role for full API access. External users with `sn_customerservice.customer` or `sn_customerservice.consumer` roles can access the case API endpoints.
@@ -89,6 +92,9 @@ NOTE: Not all objects will support all three operations.
 * _n_ days at a selected time. Note that you can choose not to send an update on weekends.
 * week at a selected time and day.
 * _n_ months at a selected time and date.
+
+NOTE: Any sync over 50,000 rows may result in an execution timeout. For optimal performance, keep your sync to below 50,000 rows. If you're syncing a large number of rows and the sync fails, try applying filters like date filters to make your dataset smaller and then sync.
+
 
 === Roles
 
@@ -129,6 +135,9 @@ NOTE: Not all objects will support all three operations.
 * _n_ days at a selected time. Note that you can choose not to send an update on weekends.
 * week at a selected time and day.
 * _n_ months at a selected time and date.
+
+NOTE: Any sync over 50,000 rows may result in an execution timeout. For optimal performance, keep your sync to below 50,000 rows. If you're syncing a large number of rows and the sync fails, try applying filters like date filters to make your dataset smaller and then sync.
+
 
 === Roles
 
