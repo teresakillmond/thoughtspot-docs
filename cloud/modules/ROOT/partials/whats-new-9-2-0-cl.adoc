@@ -171,9 +171,17 @@ image::note-tile-example.png[Example of a Liveboard with a note tile]
 
 // group with other liveboard features
 
+ifndef::pendo-links[]
 [#9-2-0-cl-cortex]
 [discrete]
-=== Anomaly detection for time-series KPI charts
+=== Anomaly detection for time-series KPI charts [.badge.badge-early-access]#Early Access#
+endif::[]
+ifdef::pendo-links[]
+[#9-2-0-cl-cortex]
+[discrete]
+=== Anomaly detection for time-series KPI charts  [.badge.badge-early-access-whats-new]#Early Access#
+endif::[]
+
 // Naomi
 
 You can now see anomalies in time-series KPI charts. Our new anomaly detection algorithm detects data which does not fall within the expected confidence intervals, while allowing for seasonal changes and growth over time. To try it out, open your KPI chart as an Answer, open the chart configuration menu, and select *Show anomalies*. For more information, see
@@ -184,7 +192,7 @@ ifdef::pendo-links[]
 xref:time-series-anomalies.adoc[Anomaly detection,window=_blank].
 endif::[]
 
-// naomi -- add your image again. point to the area where it's happening
+image::kpi-show-anomalies.png[]
 
 [#9-2-0-cl-kpi-explain-change]
 [discrete]
