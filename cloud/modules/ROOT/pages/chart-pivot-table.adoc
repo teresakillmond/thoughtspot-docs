@@ -15,11 +15,11 @@ A pivot table is a chart time table that uses a drag-and-drop interface.
 If you would like to visualize your search as a pivot table, click the *change visualization* icon image:icon-chart-type-10px.png[Chart type icon image] near the upper right of your screen, and select *pivot table*.
 You need at least one attribute and one measure in your search.
 
-If you right-click a row or column heading, the system displays a contextual menu, allowing you to *exclude* or *include* values, xref:search-drill-down.adoc[drill down], *show underlying data*, *SpotIQ analyze*, *expand* or *collapse* the values in the row, or *sort*.
+If you select a row or column heading, the system displays a contextual menu, allowing you to *exclude* or *include* values, xref:search-drill-down.adoc[drill down], *show underlying data*, *SpotIQ analyze*, *expand* or *collapse* the values in the row, or *sort*.
 
 image::charts-pivot-table-row-new.png[Sort by a row heading]
 
-If you right-click a table cell, the system displays a contextual menu, allowing you to *exclude* or *include* values, xref:search-drill-down.adoc[drill down], *show underlying data*, or *SpotIQ analyze*.
+If you select a table cell, the system displays a contextual menu, allowing you to *exclude* or *include* values, xref:search-drill-down.adoc[drill down], *show underlying data*, or *SpotIQ analyze*.
 
 image::charts-pivot-table-cell-new.png[Pivot table cell menu]
 
@@ -43,7 +43,7 @@ image::pivot-table-measures-rows.png[Display measures in rows]
 NOTE: Displaying measures in rows is only available with the xref:answer-experience-new.adoc[new Answer experience].
 
 == Sort
-To sort any column or row, right-click on a row or column heading or subheading or a measure or attribute name and select **Sort**. You can also sort from the search bar. Type `sort by <column name> [ascending | descending]`.
+To sort any column or row, select on a row or column heading or subheading or a measure or attribute name and select **Sort**. You can also sort from the search bar. Type `sort by <column name> [ascending | descending]`.
 
 You can sort a pivot table in many different ways. The ways you can sort a pivot table differ, depending on whether you are using the <<classic-experience,classic Answer experience>> or the <<new-experience,new Answer experience>>.
 
@@ -62,7 +62,7 @@ If you use the xref:answer-experience-new.adoc[new Answer experience], you can s
 * You can sort on more than one attribute at a time, as long as it works within ThoughtSpot's logic. See the <<sorting-logic,sorting logic table>>.
 * When you sort by a measure, you sort rows only. This allows you to sort the rows by a measure and the columns by an attribute. For example, in the sample pivot table at the beginning of the article, you can sort the rows by `Total sales` and the columns by `Store State`.
 * When you save a pivot table that you sorted, all sorting saves as well.
-* If you sort both from the search bar and from the in-context row or column heading menus, whichever sorting is the latest overrides the other. For example, if you right-click on a `Department` row heading and select *Sort ascending*, and then add `sort by date monthly` to the search bar, ThoughtSpot sorts only by `date monthly`.
+* If you sort both from the search bar and from the in-context row or column heading menus, whichever sorting is the latest overrides the other. For example, if you select on a `Department` row heading and select *Sort ascending*, and then add `sort by date monthly` to the search bar, ThoughtSpot sorts only by `date monthly`.
 
 [#sorting-logic]
 .Sorting logic
