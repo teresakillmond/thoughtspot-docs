@@ -10,7 +10,9 @@ ifndef::free-trial-feature[]
 NOTE: Features marked as [.badge.badge-update-note]#Beta# are off by default. To enable them, contact {support-url}.
 endif::free-trial-feature[]
 
-// For the preview features, how do we plan to handle doc and what’s new? Full doc with a note similar to the what’s new note? “This feature must be enabled by ThoughtSpot support” for the what’s new?
+// For the private preview features, “This feature must be enabled by ThoughtSpot support” for the what’s new. no badge.
+
+// Mark -- add a note/ definition at the end of private preview. similar to what's new
 
 [#primary-9-2-0-cl]
 
@@ -77,12 +79,6 @@ image::sync-zoho.png[New ThoughtSpot Sync connections]
 
 When scheduling a sync with an external app, you can now choose to schedule every 5, 10, 15, 20, 30, and 45 minutes, in addition to the other existing schedule options.
 
-[#9-2-0-cl-copy]
-[discrete]
-=== Papercut: Remove 'Make a Copy' from LB and viz menu in Edit Mode
-
-// teresa. probably doesn't need a release note or what's new. confirming with vanshree
-
 [#9-2-0-cl-cross-filters]
 [discrete]
 === Liveboard cross filters
@@ -97,7 +93,11 @@ endif::[]
 
 image::cross-filters.gif[Cross filter example gif]
 
-//  Teresa. As part of this, we are invoking the  contextual menu on left click instead of right click. Should this be mentioned anywhere?
+//  Teresa. As part of this, we are invoking the  contextual menu on left click instead of right click. Should this be mentioned anywhere? Yes -- as part of a separate blurb. "now it's easier to access the menu with a single click" or something
+
+// group liveboard ones together. put this one at the top
+
+// make it clearer that you can click on any data point and automatically filter by that data point. use an example?
 
 ifndef::pendo-links[]
 [#9-2-0-cl-ai-answers]
@@ -112,7 +112,7 @@ endif::[]
 
 // Naomi
 
-You can now use natural language to search for answers to your business questions. To try it out, navigate to the Home page, select the search bar labeled *Ask any business question you have* and type your question. When you enter your question, you will see the AI generated answer appear, along with a list of related Answers created by users in your team. For more information, see
+You can now use natural language to search for answers to your business questions. To try it out, navigate to the Home page, select the search bar labeled *Ask any business question you have* and type your question. When you enter your question, you will see the AI-generated answer appear, along with a list of related Answers created by users in your team. For more information, see
 ifndef::pendo-links[]
 xref:ai-answers.adoc[AI-generated Answers].
 endif::[]
@@ -131,11 +131,19 @@ endif::[]
 
 image:ai-answer.gif[]
 
+// private preview not early access
+
+// gpt features at the top
+
+// add the "this feature must be enabled by ts support"
+
+// tweak the first sentence to clarify that you can use natural language to create new charts/tables
+
 [#9-2-0-cl-parameters]
 [discrete]
 === Parameters at the Answer level
 
-Any user can now create parameters at the Answer level to optimize their data inquiries. Use parameters to run different scenarios with adjustable values, without creating or modifying the constants in formulas for each new value. For example, easily adjust the attribute in an Answer to view your revenue by commit date or order date, as in the following gif. To try it out, navigate to any Answer or search, and select the *+* button next to the *Parameters* section in the *Data* panel. For more information, see
+Any user can now create parameters at the Answer level to optimize their data inquiries. Use parameters to run different scenarios with adjustable values, without creating or modifying the constants in formulas for each new value. For example, easily adjust the attribute in an Answer to view your revenue by commit date or order date, as in the following image. To try it out, navigate to any Answer or search, and select the *+* button next to the *Parameters* section in the *Data* panel. For more information, see
 ifndef::pendo-links[]
 xref:parameters-create.adoc#answer[Creating Answer parameters] and xref:parameters-use.adoc[Using parameters].
 endif::[]
@@ -144,6 +152,8 @@ xref:parameters-create.adoc[Creating parameters,window=_blank] and xref:paramete
 endif::[]
 
 image::parameter-2.gif[Parameter gif example]
+
+// maybe no gif? or just an image. of the part where you choose the parameter value
 
 [#9-2-0-cl-notes]
 [discrete]
@@ -158,6 +168,8 @@ xref:liveboard-note-tiles.adoc[Liveboard note tiles,window=_blank].
 endif::[]
 
 image::note-tile-example.png[Example of a Liveboard with a note tile]
+
+// group with other liveboard features
 
 ifndef::pendo-links[]
 [#9-2-0-cl-cortex]
@@ -179,6 +191,8 @@ endif::[]
 ifdef::pendo-links[]
 xref:time-series-anomalies.adoc[Anomaly detection,window=_blank].
 endif::[]
+
+// naomi -- add your image again. point to the area where it's happening
 
 [#9-2-0-cl-kpi-explain-change]
 [discrete]
@@ -389,6 +403,7 @@ ifdef::pendo-links[]
 xref:formulas-aggregation-flexible.adoc#reaggregation-enhancement[Flexible aggregation functions,window=_blank].
 endif::[]
 
+// example?
 
 [#9-2-0-cl-mobile]
 [discrete]
@@ -412,16 +427,16 @@ ifdef::pendo-links[]
 xref:liveboard-schedule.adoc#frequency[Schedule a Liveboard job,window=_blank].
 endif::[]
 
-// move to business user.
+// add an image
 
 [#9-2-0-cl-connected-sheets]
 [discrete]
 === Connect your ThoughtSpot instance to Google Sheets
 
 You can now pull data from a ThoughtSpot instance into Google Sheets using the *ThoughtSpot for connected sheets* extension from the Google Workspace Marketplace. You can connect to any ThoughtSpot instance, even Free Trial. Once connected, you can select your data by using the search bar or selecting it from the data panel, just like in ThoughtSpot. Once you select your data, you can then pull it into Google Sheets and use the available tools to further analyze your data.
-// Mark
+// Mark. add article link
 
-ifndef::free-trial-feature[]
+ifdef::free-trial-feature[]
 [#9-2-0-cl-invite]
 [discrete]
 === Share Liveboards and underlying data during invitation process
@@ -439,7 +454,9 @@ endif::free-trial-feature[]
 
 // Naomi
 
-Existing customer Headlines have been changed to KPI chart type. KPI charts retain all properties of Headlines, but allow users to set alerts to track when your Key Performance Indicators reach certain thresholds.
+Existing customer Headlines have been changed to KPI charts. KPI charts retain all properties of Headlines, but also allow users to set alerts to track when your Key Performance Indicators reach certain thresholds.
+
+// existing headlines are now kpi charts
 
 [#9-2-0-cl-support]
 [discrete]
@@ -447,11 +464,15 @@ Existing customer Headlines have been changed to KPI chart type. KPI charts reta
 
 Now you can get live, chat-based support from anywhere, in a small self-contained window that floats on top of the ThoughtSpot UI. You can send a message, book a call with a product specialist, or search for answers in our documentation, training and community sites. Messages can be a product question, sales inquiry, feedback, or even a product idea.
 
-To use the chat-based support, click the support icon in the bottom-right corner of ThoughtSpot.
+To use the chat-based support, click the support icon in the lower-right corner of ThoughtSpot.
 
 image::icon-chat-support.png[]
 
+// make sure it's left-aligned in the actual site
+
 Chat support is available to all customers in North America for the 9.2.0.cl release.
+
+// in-product learning hub blurb should be next to this one. put these nearer the top as they'll be very useful. visually separate them from product features?
 
 [#9-2-0-cl-sample]
 [discrete]
@@ -466,7 +487,7 @@ For more information, see xref:search-start.adoc#search-data-fluency[Start a new
 endif::[]
 
 
-// Mark
+// Mark. add screenshot. mention column overview in the actual text. describe where the info is coming from?
 
 ////
 ifndef::pendo-links[]
@@ -505,7 +526,7 @@ endif::[]
 [discrete]
 === AI-suggested searches
 
-AI-suggested searches helps you think of relevant questions to ask of your own data source, by providing examples of searches. This feature is designed to help you get started if you are a new user of Search Data, or you are working with a new worksheet.
+The AI-suggested searches feature helps you think of relevant questions to ask of your own data source, by providing examples of searches. This feature is designed to help you get started if you are a new user of Search Data, or if you are working with a new Worksheet.
 ifndef::pendo-links[]
 For more information, see xref:search-ai-suggested.adoc[AI-suggested searches].
 endif::[]
@@ -513,7 +534,7 @@ ifdef::pendo-links[]
 For more information, see xref:search-ai-suggested.adoc[AI-suggested searches,window=_blank]].
 endif::[]
 
-
+// move up with other gpt. screenshot. make it clearer that you can actually click on the searches
 
 // Mark
 
@@ -535,7 +556,7 @@ see xref:thoughspot-sheets.adoc[ThoughtSpot Google Sheets add-ons,window=_blank]
 endif::[]
 // Mark
 
-
+// we have two blurbs for these add-ons. remove the other one
 
 '''
 [#secondary-9-2-0-cl]
@@ -570,6 +591,8 @@ xref:parameters-create.adoc[Creating parameters,window=_blank] and xref:paramete
 endif::[]
 
 image::parameter-2.gif[Parameter gif example]
+
+// figure out how to lay these out since they're the same thing, just for admins and business users.
 
 [#9-2-0-cl-custom-map]
 [discrete]
@@ -668,6 +691,8 @@ endif::[]
 
 image::column-synonyms.png[A search using synonyms]
 
+// move it to the top of the other features. the image should be of the synonyms getting created
+
 [#9-2-0-cl-hubspot]
 [discrete]
 === HubSpot Sync mapping fields
@@ -679,7 +704,7 @@ When creating a sync to HubSpot, you can now use email as a mapping field on the
 
 [#9-2-0-cl-databricks]
 [discrete]
-=== Databricks Catalog field
+=== Databricks catalog field
 
 // Naomi
 
