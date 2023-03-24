@@ -44,11 +44,11 @@ ThoughtSpot creates <<automatic-synonyms, automatic synonyms>> when you create a
 When users search using these synonyms, the returned table or chart uses the _actual column name_, but the search bar reflects the term the user typed in (the synonym).
 
 [#automatic-synonyms]
-=== Automatic synonyms
+=== AI-generated synonyms
 
 When you create a new Worksheet, ThoughtSpot automatically creates synonyms for each column name. ThoughtSpot creates column synonyms after you save your new Worksheet.
 
-You can see these synonyms in the *Synonyms* column of the Worksheet details page. Auto-generated synonyms are in italics.
+You can see these synonyms in the *Synonyms* column of the Worksheet details page. AI-generated synonyms are in italics.
 
 image::worksheet-column-synonyms.png[Worksheet column synonyms]
 
@@ -63,13 +63,6 @@ To create a synonym for a column:
 . Scroll to the right, to the *Synonyms* column.
 . In the *Synonyms* column, select the text box for the column name you would like to add synonyms for.
 . Enter a comma-separated list of the synonyms.
-+
-If a synonym is more than one word, enclose it in double quotes.
-If you are using the web interface, you would type:
-+
-----
- profit,"gross profit"
-----
 +
 If you are using the model file, the list of synonyms must be enclosed in  square brackets:
 +
