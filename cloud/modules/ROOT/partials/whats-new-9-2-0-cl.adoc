@@ -10,7 +10,7 @@ ifndef::free-trial-feature[]
 NOTE: Features marked as [.badge.badge-update-note]#Beta# are off by default. To enable them, contact {support-url}.
 endif::free-trial-feature[]
 
-// For the private preview features, “This feature must be enabled by ThoughtSpot support” for the what’s new. no badge.
+// For the private preview features, “This feature must be enabled by ThoughtSpot Support” for the what’s new. no badge.
 
 // Mark -- add a note/ definition at the end of private preview. similar to what's new
 
@@ -50,6 +50,42 @@ image:ai-answer.gif[]
 // add the "this feature must be enabled by ts support"
 
 // tweak the first sentence to clarify that you can use natural language to create new charts/tables
+
+[#9-2-0-cl-cross-filters]
+[discrete]
+=== Liveboard cross filters
+
+Click on any data point in your Liveboard and easily filter the entire Liveboard by that value. For example, if you select *California* in a geo chart on your Liveboard, and then select *Filter*, all the other visualizations only show data from California. A visualization for *Total sales by city*, for example, would only show sales for cities in California. To try it out, select any data point(s) in a Liveboard visualization, and select *Filter* from the menu that appears. This feature must be enabled by your administrator. For more information about cross filters, see
+ifndef::pendo-links[]
+xref:liveboard-filters.adoc#cross-filter[Liveboard filters].
+endif::[]
+ifdef::pendo-links[]
+xref:liveboard-filters.adoc#cross-filter[Liveboard filters,window=_blank].
+endif::[]
+
+image::cross-filters.gif[Cross filter example gif]
+
+// group liveboard ones together.
+
+[#9-2-0-cl-context-menu]
+[discrete]
+=== Access the contextual menu on left click
+
+Access the contextual menu for visualization data points with a left click. Instead of right-clicking on a data point to include or exclude it, drill down on it, or show underlying data, now you can access the menu more easily, with a single left click.
+
+[#9-2-0-cl-notes]
+[discrete]
+=== Liveboard note tiles
+
+Add notes to your Liveboards, so that viewers of your Liveboards can quickly understand how to use the data and visualizations you gathered. Note tiles can provide an overview of a Liveboard or visualization, company branding through images, definitions of terms used in the Liveboard, and so on. To try it out, edit a Liveboard, and select *Add note*. The Liveboard note tiles feature must be enabled by your administrator. For more information about note tiles, see
+ifndef::pendo-links[]
+xref:liveboard-note-tiles.adoc[Liveboard note tiles].
+endif::[]
+ifdef::pendo-links[]
+xref:liveboard-note-tiles.adoc[Liveboard note tiles,window=_blank].
+endif::[]
+
+image::note-tile-example.png[Example of a Liveboard with a note tile]
 
 [#9-2-0-cl-mandatory-filters]
 [discrete]
@@ -114,29 +150,6 @@ image::sync-zoho.png[New ThoughtSpot Sync connections]
 
 When scheduling a sync with an external app, you can now choose to schedule every 5, 10, 15, 20, 30, and 45 minutes, in addition to the other existing schedule options.
 
-[#9-2-0-cl-cross-filters]
-[discrete]
-=== Liveboard cross filters
-
-Click on any data point in your Liveboard and easily filter the entire Liveboard by that value. For example, if you select *California* in a geo chart on your Liveboard, and then select *Filter*, all the other visualizations only show data from California. A visualization for *Total sales by city*, for example, would only show sales for cities in California. To try it out, select any data point(s) in a Liveboard visualization, and select *Filter* from the menu that appears. This feature must be enabled by your administrator. For more information about cross filters, see
-ifndef::pendo-links[]
-xref:liveboard-filters.adoc#cross-filter[Liveboard filters].
-endif::[]
-ifdef::pendo-links[]
-xref:liveboard-filters.adoc#cross-filter[Liveboard filters,window=_blank].
-endif::[]
-
-image::cross-filters.gif[Cross filter example gif]
-
-// group liveboard ones together. put this one at the top
-
-[#9-2-0-cl-context-menu]
-[discrete]
-=== Access the contextual menu on left click
-
-Access the contextual menu for visualization data points with a left click. Instead of right-clicking on a data point to include or exclude it, drill down on it, or show underlying data, now you can access the menu more easily, with a single left click.
-
-
 [#9-2-0-cl-parameters]
 [discrete]
 === Parameters at the Answer level
@@ -149,25 +162,7 @@ ifdef::pendo-links[]
 xref:parameters-create.adoc[Creating parameters,window=_blank] and xref:parameters-use.adoc[Using parameters,window=_blank].
 endif::[]
 
-image::parameter-2.gif[Parameter gif example]
-
-// maybe no gif? or just an image. of the part where you choose the parameter value
-
-[#9-2-0-cl-notes]
-[discrete]
-=== Liveboard note tiles
-
-Add notes to your Liveboards, so that viewers of your Liveboards can quickly understand how to use the data and visualizations you gathered. Note tiles can provide an overview of a Liveboard or visualization, company branding through images, definitions of terms used in the Liveboard, and so on. To try it out, edit a Liveboard, and select *Add note*. The Liveboard note tiles feature must be enabled by your administrator. For more information about note tiles, see
-ifndef::pendo-links[]
-xref:liveboard-note-tiles.adoc[Liveboard note tiles].
-endif::[]
-ifdef::pendo-links[]
-xref:liveboard-note-tiles.adoc[Liveboard note tiles,window=_blank].
-endif::[]
-
-image::note-tile-example.png[Example of a Liveboard with a note tile]
-
-// group with other liveboard features
+image::parameter-answer-whats-new.png[Parameter in an answer]
 
 [#9-2-0-cl-cortex]
 [discrete]
@@ -374,12 +369,12 @@ xref:formulas-aggregation-flexible.adoc#groupagg-filters-enhancement[Group aggre
 endif::[]
 
 ifndef::pendo-links[]
-[#9-2-0-cl-group-aggregate]
+[#9-2-0-cl-group-aggregate-reagg]
 [discrete]
 === Group aggregate enhancement: reaggregation [.badge.badge-beta]#Beta#
 endif::[]
 ifdef::pendo-links[]
-[#9-2-0-cl-group-aggregate]
+[#9-2-0-cl-group-aggregate-reagg]
 [discrete]
 === Group aggregate enhancement: reaggregation [.badge.badge-beta-whats-new]#Beta#
 endif::[]
@@ -564,6 +559,23 @@ endif::[]
 [discrete]
 === _Other features and enhancements_
 
+[#9-2-0-cl-synonyms]
+[discrete]
+=== AI-generated Worksheet column synonyms
+
+When you create a Worksheet, ThoughtSpot automatically creates synonyms for each column name. Users can easily start searching on your data, without knowing the exact names for every column. For example, if you have a column named `Product type`, ThoughtSpot might create a synonym such as `Product Category`. When a user searches for revenue by product category, for example, ThoughtSpot returns sales by product type. To try it out, create and save a new Worksheet. Your column name synonyms appear in the *Synonyms* column on the Worksheet details page. This feature must be enabled by ThoughtSpot Support.
+For more information, see
+ifndef::pendo-links[]
+xref:data-modeling-visibility.adoc#automatic-synonyms[Create synonyms for a column].
+endif::[]
+ifdef::pendo-links[]
+xref:data-modeling-visibility.adoc#automatic-synonyms[Create synonyms for a column,window=_blank].
+endif::[]
+
+image::column-synonyms.png[A search using synonyms]
+
+// image should be of the synonyms getting created
+
 [#9-2-0-cl-disaster-recovery]
 [discrete]
 === Cross-Region Disaster Recovery
@@ -579,7 +591,7 @@ endif::[]
 
 // unclear if this is going to make it
 
-[#9-2-0-cl-parameters]
+[#9-2-0-cl-parameters-ws]
 [discrete]
 === Parameters
 
@@ -674,25 +686,6 @@ endif::[]
 // Naomi
 
 You can now connect to and query Amazon Aurora and Amazon RDS for PostgreSQL databases.
-
-
-
-[#9-2-0-cl-synonyms]
-[discrete]
-=== AI-generated Worksheet column synonyms
-
-When you create a Worksheet, ThoughtSpot automatically creates synonyms for each column name. Users can easily start searching on your data, without knowing the exact names for every column. For example, if you have a column named `Product type`, ThoughtSpot might create a synonym such as `Product Category`. When a user searches for revenue by product category, for example, ThoughtSpot returns sales by product type. To try it out, create and save a new Worksheet. Your column name synonyms appear in the *Synonyms* column on the Worksheet details page. This feature must be enabled by ThoughtSpot Support.
-For more information, see
-ifndef::pendo-links[]
-xref:data-modeling-visibility.adoc#automatic-synonyms[Create synonyms for a column].
-endif::[]
-ifdef::pendo-links[]
-xref:data-modeling-visibility.adoc#automatic-synonyms[Create synonyms for a column,window=_blank].
-endif::[]
-
-image::column-synonyms.png[A search using synonyms]
-
-// move it to the top of the other features. the image should be of the synonyms getting created
 
 [#9-2-0-cl-hubspot]
 [discrete]
