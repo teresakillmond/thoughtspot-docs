@@ -1260,18 +1260,18 @@ To learn more about snapshots and backups, see xref:backup-strategy.adoc[].
 
 This subcommand has the following options:
 
-tscli snapshot backup [-h] [--mode {full,light,dataless}] [--type {full,incremental}] [--base __BASE__] [--storage_type {local,nas,s3a,gcs}] [--remote] [--no-orion-master] [--bucket_name __BUCKET_NAME__] [--staging_dir __STAGING_DIR__] __NAME__ __OUT__::
+tscli snapshot backup [-h] [--mode {full,light,dataless}] [--type {full,incremental}] [--base __BASE__] [--storage_type {local,nas,s3a,gs}] [--remote] [--no-orion-master] [--bucket_name __BUCKET_NAME__] [--staging_dir __STAGING_DIR__] __NAME__ __OUT__::
   Pulls snapshot out as a backup. This command has two required elements: `name` and `out`. The rest of the flags are optional:
   name;; Name of snapshot to pull out as a backup. To list all snapshots, run `tscli snapshot ls`.
   out;; Directory where backup will be written. The directory must not already exist.
   --mode {full,light,dataless};; Mode of backups. The default is `full`.
   --type {full,incremental};; Type of backup. Incremental backup is not implemented. The default setting is `full`.
   --base __BASE__;; Based snapshot name for incremental backup. Incremental backup is not implemented yet.
-  storage_type {local,nas,s3a,gcs};; Storage type of output directory. The default is `local`.
+  storage_type {local,nas,s3a,gs};; Storage type of output directory. The default is `local`.
   --remote;; Takes backup through orion master. The default is `False`.
   --no-orion-master;; Specifies whether orion master is available during backup. The default is `False`.
-  --bucket_name __BUCKET_NAME__;; The name of the s3a/gcs bucket to create the backup. The platform depends on the storage type of the cluster. You must specify `--storage_type` as one of `s3a` or `gcs`.
-  --staging_dir __STAGING_DIR__;; Specify the staging directory for hdfs data in cloud-based backups. No effect in backups not based on cloud. You must specify `--storage_type` as one of `s3a` or `gcs`.
+  --bucket_name __BUCKET_NAME__;; The name of the Amazon S3 (s3a) or Google Cloud Storage (gs) bucket to create the backup. The platform depends on the storage type of the cluster. You must specify `--storage_type` as one of `s3a` or `gs`.
+  --staging_dir __STAGING_DIR__;; Specify the staging directory for hdfs data in cloud-based backups. No effect in backups not based on cloud. You must specify `--storage_type` as one of `s3a` or `gs`.
 
 tscli snapshot create [-h] NAME REASON TTL::
   Creates a new snapshot with the specified `name` and `reason`. This command does not accept `.` (periods). It does accept `-` (dashes or hyphens). The `ttl`, or 'time to live,' parameter is the number of days after which this snapshot is automatically deleted. A value of `-1` disables automatic deletion.
