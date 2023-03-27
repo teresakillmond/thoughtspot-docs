@@ -283,16 +283,16 @@ tscli backup [-h] {create,delete,ls}
 
 This subcommand has the following options:
 
-tscli backup create [-h] [--mode {full,light,dataless}] [--type {full,incremental}] [--base BASE] [--storage_type {local,nas,s3a,gcs}] [--remote] [--no-orion-master] [--bucket_name BUCKET_NAME] [--staging_dir STAGING_DIR] name out::
+tscli backup create [-h] [--mode {full,light,dataless}] [--type {full,incremental}] [--base BASE] [--storage_type {local,nas,s3a,gs}] [--remote] [--no-orion-master] [--bucket_name BUCKET_NAME] [--staging_dir STAGING_DIR] name out::
   Pulls a snapshot and saves it as a backup. You must specify the snapshot name, `name`, and also the backup directory, `out`. The command has the following optional parameters:
   --mode {full,light,dataless};; Mode of backups. The default is `full`.
   --type;; Type of backup. Only `STANDALONE` is supported.
   --base BASE;; Based snapshot name for incremental backup. Because `incremental` is not implemented, neither is this option. There is no default setting.
-  --storage_type {local,nas,s3a,gcs};;  Storage type of output directory. Specify `s3a` to use Amazon S3 storage, and specify `gcs` to use Google GCS storage. The default setting is `local`.
+  --storage_type {local,nas,s3a,gs};;  Storage type of output directory. Specify `s3a` to use Amazon S3 storage, and specify `gs` to use Google GCS storage. The default setting is `local`.
   --remote;; Takes backup through Orion. The default setting is `False`.
   --no-orion-master;; Determines whether Orion is available during backup. The default is `False`.
-  --bucket_name BUCKET_NAME;; The name of the s3a/gcs bucket to create the backup. The platform depends on the storage type of the cluster. You must specify `--storage_type as one of `s3a` or `gcs`.
-  --staging_dir STAGING_DIR;; Specify the staging directory for hdfs data in cloud-based backups. No effect in backups not based on cloud. You must specify `--storage_type` as one of `s3a` or `gcs`.
+  --bucket_name BUCKET_NAME;; The name of the s3a/gcs bucket to create the backup. The platform depends on the storage type of the cluster. You must specify `--storage_type as one of `s3a` or `gs`.
+  --staging_dir STAGING_DIR;; Specify the staging directory for hdfs data in cloud-based backups. No effect in backups not based on cloud. You must specify `--storage_type` as one of `s3a` or `gs`.
 
 tscli backup delete ID::
   Deletes the backup with the specified ID.
