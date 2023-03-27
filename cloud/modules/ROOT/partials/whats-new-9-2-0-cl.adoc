@@ -12,6 +12,28 @@ endif::free-trial-feature[]
 
 [#primary-9-2-0-cl]
 
+[#9-2-0-cl-cross-filters]
+[discrete]
+=== Liveboard cross filters
+
+Click on any data point in your Liveboard and easily filter the entire Liveboard by that value. For example, if you select *California* in a geo chart on your Liveboard, and then select *Filter*, all the other visualizations only show data from California. A visualization for *Total sales by city*, for example, would only show sales for cities in California.
+
+image::cross-filters.gif[Cross filter example gif]
+
+[#9-2-0-cl-context-menu]
+[discrete]
+=== Access the contextual menu on left click
+
+Access the contextual menu for visualization data points with a left click. Instead of right-clicking on a data point to include or exclude it, drill down on it, or show underlying data, now you can access the menu more easily, with a single left click.
+
+[#9-2-0-cl-notes]
+[discrete]
+=== Liveboard note tiles
+
+Add notes to your Liveboards, so that viewers of your Liveboards can quickly understand how to use the data and visualizations you gathered. Note tiles can provide an overview of a Liveboard or visualization, company branding through images, definitions of terms used in the Liveboard, and so on.
+
+image::note-tile-example.png[Example of a Liveboard with a note tile]
+
 [#9-2-0-cl-mandatory-filters]
 [discrete]
 === Mandatory Liveboard filters
@@ -59,43 +81,19 @@ When scheduling a sync with an external app, you can now choose to schedule ever
 
 // Naomi
 
-[#9-2-0-cl-copy]
+[#9-2-0-cl-parameters]
 [discrete]
-=== Papercut: Remove 'Make a Copy' from LB and viz menu in Edit Mode
+=== Parameters
 
-// teresa. probably doesn't need a release note or what's new. confirming with vanshree
+The parameters feature is now GA. Any user can now create parameters at the Answer level to optimize their data inquiries. Analysts can also create Worksheet parameters that are available to all Worksheet users. Use parameters to run different scenarios with adjustable values, without creating or modifying the constants in formulas for each new value. For example, easily adjust the attribute in an Answer to view your revenue by commit date or order date, as in the following image.
 
-[#9-2-0-cl-cross-filters]
-[discrete]
-=== Liveboard cross filters
-
-Easily filter your entire Liveboard by one or more specific data points in a visualization from *View* mode.
-
-image::cross-filters.gif[Cross filter example gif]
-
-//  Teresa. As part of this, we are invoking the  contextual menu on left click instead of right click. Should this be mentioned anywhere?
+image::parameter-answer-whats-new.png[Parameter in an answer]
 
 [#9-2-0-cl-ai-answers]
 [discrete]
 === [Alpha][FE/BE] AI generated answers in eureka SRP
 
 // Naomi
-
-[#9-2-0-cl-parameters]
-[discrete]
-=== Parameters at the Answer level
-
-Any user can now create parameters at the Answer level to optimize their data inquiries. Use parameters to run different scenarios with adjustable values, without creating or modifying the constants in formulas for each new value. For example, easily adjust the attribute in an Answer to view your revenue by commit date or order date, as in the following gif.
-
-image::parameter-2.gif[Parameter gif example]
-
-[#9-2-0-cl-notes]
-[discrete]
-=== Liveboard note tiles
-
-Add notes to your Liveboards, so that viewers of your Liveboards can quickly understand how to use the data and visualizations you gathered. Note tiles can provide an overview of a Liveboard or visualization, company branding through images, definitions of terms used in the Liveboard, and so on.
-
-image::note-tile-example.png[Example of a Liveboard with a note tile]
 
 ifndef::pendo-links[]
 [#9-2-0-cl-cortex]
@@ -331,31 +329,25 @@ You can now identify the key change drivers for changes in your metrics in a KPI
 [discrete]
 === _Other features and enhancements_
 
+[#9-2-0-cl-synonyms]
+[discrete]
+=== AI-generated Worksheet column synonyms
+
+When you create a Worksheet, ThoughtSpot automatically creates synonyms for each column name. Users can easily start searching on your data, without knowing the exact names for every column. For example, if you have a column named `Product type`, ThoughtSpot might create a synonym such as `Product Category`. When a user searches for revenue by product category, for example, ThoughtSpot returns sales by product type.
+
+image::ai-synonyms.png[A Worksheet with AI synonyms]
+
 [#9-2-0-cl-disaster-recovery]
 [discrete]
 === Cross-Region Disaster Recovery
 
 Cross-Region Disaster Recovery allows ThoughtSpot to recover your ThoughtSpot instance in a secondary cloud region in the case of a failure of the primary cloud region where ThoughtSpot is running. This ensures that if one cloud region fails, ThoughtSpot can start in another region, guaranteeing minimal downtime.
 
-[#9-2-0-cl-parameters]
-[discrete]
-=== Parameters
-
-The parameters feature is now GA. Create Worksheet parameters to optimize your data inquiries. Use parameters to run different scenarios with adjustable values, without creating or modifying the constants in formulas for each new value. For example, easily adjust the attribute in an Answer to view your revenue by commit date or order date, as in the following gif.
-
-image::parameter-2.gif[Parameter gif example]
-
 [#9-2-0-cl-custom-map]
 [discrete]
 === Upload custom geo maps
 
-Custom geo maps are now GA. Upload your own custom maps and visualize data on geo charts with regions that are specific to you and your organization. To try it out, select *Custom maps* in the Admin Console. For more information, see
-ifndef::pendo-links[]
-xref:geomaps-custom.adoc[Upload custom geo maps].
-endif::[]
-ifdef::pendo-links[]
-xref:geomaps-custom.adoc[Upload custom geo maps,window=_blank].
-endif::[]
+Custom geo maps are now GA. Upload your own custom maps and visualize data on geo charts with regions that are specific to you and your organization.
 
 image::custom-map-search-example.png[Custom geo map being added, and a ThoughtSpot search using the custom map]
 
@@ -407,14 +399,6 @@ You can now connect to and query Amazon Aurora and Amazon RDS for PostgreSQL dat
 // Naomi
 
 You can now create connections from ThoughtSpot to Generic JDBC databases.
-
-[#9-2-0-cl-synonyms]
-[discrete]
-=== Automatic synonyms for Worksheet columns
-
-When you create a Worksheet, ThoughtSpot automatically creates synonyms for each column name. Users can easily start searching on your data, without knowing the exact names for every column. For example, if you have a column named `Product type`, ThoughtSpot might create a synonym such as `Product Category`. When a user searches for revenue by product category, for example, ThoughtSpot returns sales by product type.
-
-image::column-synonyms.png[A search using synonyms]
 
 [#9-2-0-cl-row-limits]
 [discrete]
@@ -473,7 +457,7 @@ Use TML to directly edit a join condition by editing the TML file's *on* paramet
 [discrete]
 === Delete table columns using TML
 
-Remove columns from tables in ThoughtSpot by deleting them in the tables' TML files. To try it out, edit a table TML file, and delete a column's name and properties. We support deleting a column from a TML file and removing that column's dependencies in the same zip file import. Note that if the deletion of a column fails, the whole import will fail.
+Remove columns from tables in ThoughtSpot by deleting them in the tables' TML files. We support deleting a column from a TML file and removing that column's dependencies in the same zip file import. Note that if the deletion of a column fails, the whole import will fail.
 
 ifndef::pendo-links[]
 [#9-2-0-cl-join-creation]
@@ -496,7 +480,7 @@ We standardized the method of creating joins for all data objects in ThoughtSpot
 [discrete]
 === Runtime parameter overrides
 
-Adjust parameter values at runtime from Liveboard or Answer URLs, or using REST API v1 requests. To try it out, add the parameter runtime override syntax to any Liveboard or Answer with an active parameter.
+Adjust parameter values at runtime from Liveboard or Answer URLs, or using REST API v1 requests.
 
 [#9-2-0-cl-search-suggestions]
 [discrete]
