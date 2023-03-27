@@ -1261,7 +1261,7 @@ tscli snapshot backup [-h] [--mode {full,light,dataless}] [--type {full,incremen
   storage_type {local,nas,s3a,gs};; Storage type of output directory. The default is `local`.
   --remote;; Takes backup through orion master. The default is `False`.
   --no-orion-master;; Specifies whether orion master is available during backup. The default is `False`.
-  --bucket_name __BUCKET_NAME__;; The name of the s3a/gcs bucket to create the backup. The platform depends on the storage type of the cluster. You must specify `--storage_type` as one of `s3a` or `gs`.
+  --bucket_name __BUCKET_NAME__;; The name of the Amazon S3 (s3a) or Google Cloud Storage (gs) bucket to create the backup. The platform depends on the storage type of the cluster. You must specify `--storage_type` as one of `s3a` or `gs`.
   --staging_dir __STAGING_DIR__;; Specify the staging directory for hdfs data in cloud-based backups. No effect in backups not based on cloud. You must specify `--storage_type` as one of `s3a` or `gs`.
 
 tscli snapshot create [-h] NAME REASON TTL::
