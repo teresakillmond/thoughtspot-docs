@@ -26,7 +26,7 @@ $ ssh admin@<cluster-IP>
 [source,bash]
 ----
 tscli backup create
-   --storage_type=cloud <SNAPSHOT NAME> <PATH TO BACKUP>
+   --storage_type=gs <SNAPSHOT NAME> <PATH TO BACKUP>
    --bucket_name=<BUCKET NAME>`
 ----
 +
@@ -35,7 +35,7 @@ Example:
 [source,bash]
 ----
 $ tscli backup create -
-    --storage_type=cloud snapshot_1 my_backup001
+    --storage_type=gs snapshot_1 my_backup001
     --bucket_name=my_bucket
 ----
 
