@@ -23,6 +23,7 @@ Project ID:: Find your project ID in your dbt Cloud URL, after you log in. For e
 * Optionally define the relationships for the dbt models in your `yml` schema file. For more information, refer to the https://docs.getdbt.com/docs/build/tests[dbt documentation^].
 +
 NOTE: If you do not define relationships, ThoughtSpot imports each model as a single table and creates one Worksheet based on each table.
+* To ensure that ThoughtSpot can read your `yml` schema file and the descriptions and relationships it defines, make sure that the `manifest.json` file contains the latest details of your `yml` schema file.
 * If you are using *dbt cloud*, the *generate docs on run* setting must be on. You can enable this setting in the jobs settings of the project, under *Execution settings*.
 * If you are using *dbt core*, execute the `dbt docs generate` command along with the `dbt run` command.
 * If you are using *dbt core*, you must connect to dbt using a zip file, which must contain the latest `manifest.json` and `catalog.json` files. By default, dbt stores these files under the `<project name>/target` folder.
@@ -33,7 +34,7 @@ NOTE: When you compress the `manifest.json` and `catalog.json` files into one zi
 
 To integrate with dbt, ThoughtSpot reads information from the latest versions of the `manifest.json` and `catalog.json` files. In the <<prerequisites,prerequisites>>, you ensured that ThoughtSpot could find these files, either by enabling the *generate docs on run* setting in dbt cloud, or by creating a zip file with your `manifest.json` and `catalog.json` files for dbt core.
 
-ThoughtSpot reads the following information from the `manifest.json` file:
+ThoughtSpot reads the following information from the `manifest.json` file. Make sure that the `manifest.json` file contains the latest details of your `yml` schema file.
 
 * Database name
 * Schema name
