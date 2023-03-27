@@ -32,6 +32,9 @@ When you create a Worksheet, ThoughtSpot automatically creates synonyms for each
 For more information, see
 xref:data-modeling-visibility.adoc#automatic-synonyms[Create synonyms for a column].
 
+Parameters::
+The parameters feature is now GA and on by default. Any user can now create parameters at the Answer level to optimize their data inquiries. Analysts can also create Worksheet parameters that are available to all Worksheet users. Use parameters to run different scenarios with adjustable values, without creating or modifying the constants in formulas for each new value. For more information, refer to xref:parameters-create.adoc[] and xref:parameters-use.adoc[].
+
 Change filter order for Liveboard filters::
 
 Arrange Liveboard filters in the filter bar so that they are in a logical, coherent order, by dragging and dropping them to different spots in the list. This makes it easier for viewers of the Liveboard to understand and use the filters on the Liveboard. For more information, see xref:liveboard-filters.adoc#order[Change the filter order].
@@ -107,10 +110,6 @@ Access the contextual menu on left click [.badge.badge-early-access-relnotes]#Ea
 
 Access the contextual menu for visualization data points on left click. Instead of right-clicking on a data point to include or exclude it, drill down on it, or show underlying data, now you can access the menu more easily, with a single left click. This feature must be enabled by your administrator.
 
-Parameters at the Answer level::
-
-Any user can now create parameters at the Answer level to optimize their data inquiries. Use parameters to run different scenarios with adjustable values, without creating or modifying the constants in formulas for each new value. See xref:parameters-create.adoc#answer[Creating Answer parameters] and xref:parameters-use.adoc[Using parameters].
-
 Mandatory Liveboard filters::
 
 Mandatory Liveboard filters are now GA. Mark certain filters in your Liveboard as mandatory. If you add mandatory filters to a Liveboard, the visualizations will only load after Liveboard viewers select values for the mandatory filters. Use mandatory filters for Liveboards that contain data that may not be relevant for everyone who must view and consume the Liveboard. Mandatory filters also lower query and performance costs.
@@ -121,14 +120,12 @@ Custom comparison points for KPI charts:: You can now set your KPI chart to disp
 xref:chart-kpi.adoc#kpi-custom-comparison[Custom comparison points].
 
 Change analysis for KPI charts::
-KPI change analysis is now GA and on by default. You can now use change analysis to directly identify the key drivers for change in your KPIs. +
+KPI change analysis is now GA and on by default. You can now use change analysis to directly identify the key drivers for change in your KPIs.
++
 To access this feature, go to your KPI chart and select the caret icon to the right of the percent change label. The *Run change analysis* pop-up allows you to customize the attribute columns ThoughtSpot analyzes. ThoughtSpot runs change analysis for the most recent data point and the past comparison data point as per the KPI chart's configuration. For more information on change analysis, see xref:spotiq-change.adoc#change-analysis-kpi[Comparative analysis].
 Note that you need SpotIQ privileges to use the KPI change analysis feature.
 
 Anomaly detection for time-series KPI charts [.badge.badge-beta-relnotes]#Beta#:: You can now see anomalies in time-series KPI charts. Our new anomaly detection algorithm detects data which does not fall within the expected confidence intervals, while allowing for seasonal changes and growth over time. To try it out, open your KPI chart as an Answer, open the chart configuration menu, and select *Show anomalies*. See xref:time-series-anomalies.adoc[].
-
-Parameters::
-The parameters feature is now GA and on by default. Create Worksheet parameters to optimize your data inquiries. Use parameters to run different scenarios with adjustable values, without creating or modifying the constants in formulas for each new value. For more information, refer to xref:parameters-create.adoc[] and xref:parameters-use.adoc[].
 
 ThoughtSpot Sync::
 You can now use ThoughtSpot Sync to sync data directly from an Answer or custom SQL view to the following apps: +
