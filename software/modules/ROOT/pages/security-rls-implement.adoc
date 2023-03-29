@@ -55,8 +55,20 @@ NOTE: RLS rules don't support use of aggregate functions.
 
 . Select *Save*.
 
-The rule you created is listed in the rules.
-You can edit the rule or add more rules by selecting *+ Add*.
+. If your rule involves another table, and there are multiple joins between that other table and the table the rule is on, ThoughtSpot asks you to choose one of the join paths after you save the rule.
++
+image::rls-join-save.png[Define RLS join mapping]
+
+. Select *Save*.
+
+. The rule you created appears in the list of Row Security rules.
+To edit the rule, select it in the list, and make any changes.
+
+. If your rule involves another table, and there are multiple joins between that other table and the table the rule is on, you can edit the join path you chose at any time. Select the icon in the upper left corner of the modal. If you hover over it, the icon says "Change how the join rule affects Row Level Security."
++
+image::rls-join-edit.png[Change how the join rule affects Row Level Security]
+
+. To add more rules, select *+ Add*.
 
 == Test your rule with restricted and unrestricted users
 
