@@ -1,5 +1,5 @@
 = Change analysis
-:last_updated: 07/21/2021
+:last_updated: 03/31/2023
 :experimental:
 :page-aliases: /spotiq/comparative-analysis.adoc, spotiq-comparative.adoc
 :page-layout: default-cloud
@@ -21,12 +21,13 @@ SpotIQ change analysis compares data points of simple or complex measures using 
 
 === Change analysis for chart visualizations
 
-ThoughtSpot supports change analysis for area, line, column, bar, and line-column charts.
+ThoughtSpot supports change analysis for area, line, column, bar, line-column, pie, and KPI charts.
 To perform this analysis, follow these steps:
 
-. On an area, line, column, bar, or line-column chart, hold down the command key (MacOS) or control key (Linux or Windows).
+. On an area, line, column, bar, line-column, pie, or KPI chart, hold down the command key (MacOS) or control key (Linux or Windows).
 . Select the two columns or data points you plan to compare.
-Here, we are comparing the results for the _San Francisco_ and _Atlanta_ stores.
+Here, we are comparing the results for the _San Francisco_ and _Atlanta_ stores. +
+Note that if you are analyzing a KPI chart, you must select two points from the sparkline visualization. You cannot run change analysis on a KPI chart with no sparkline visualization.
 . Select either of the columns or data points to see the dropdown menu, and select *SpotIQ analyze*.
 +
 image:comparative-analysis-1.png[Click and select SpotIQ Analyze]
@@ -37,21 +38,25 @@ By default, SpotIQ picks the most relevant columns, based on what it learned fro
 . Optionally, <<advanced-change-analysis,customize the analysis parameters>>.
 . Select *Analyze*.
 
-[#change-analysis-kpi]
-=== Change analysis for KPI charts
 
-To perform this analysis on a KPI chart, follow these steps:
+[#change-analysis-contextual]
+=== Contextual change analysis (private preview)
 
-. On a KPI chart, hold down the command key (MacOS) or control key (Linux or Windows).
-. From the sparkline visualization, select the two data points you plan to compare.
-. Select either of the data points to see the dropdown menu, and select *SpotIQ analyze*.
+ThoughtSpot supports contextual change analysis for area, line, column, bar, line-column, pie, and KPI charts. You do not need SpotIQ privileges to run contextual change analysis. To enable this feature, contact {support-url}.
 
-. The SpotIQ window modal appears. Make sure that you select *Change analysis*.
-. Select *Continue*.
-. Select the columns for SpotIQ to compare.
-By default, SpotIQ picks the most relevant columns, based on what it learned from your past activity.
-. Optionally, <<advanced-change-analysis,customize the analysis parameters>>.
-. Select *Analyze*.
+To perform this analysis, follow these steps:
+
+. On an area, line, column, bar, line-column, pie, or KPI chart, hold down the command key (MacOS) or control key (Linux or Windows).
+. Select the two columns or data points you plan to compare. +
+Note that if you are analyzing a KPI chart, you must select two points from the sparkline visualization. You cannot run change analysis on a KPI chart with no sparkline visualization.
+
+. Right-click to see the dropdown menu, and select *SpotIQ analyze*.
++
+image:comparative-analysis-1.png[Right-click and select SpotIQ Analyze]
+. The SpotIQ window modal appears with the results of your analysis..
+By default, SpotIQ picks the top 5 most relevant columns, based on what it learned from your past activity. To select other columns to analyze, click *Manage attributes* in the lower left corner of the window and select the desired column from the window that appears.
+
+
 
 [#viewing-results]
 == View results
