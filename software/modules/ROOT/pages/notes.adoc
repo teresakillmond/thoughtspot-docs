@@ -79,7 +79,8 @@ When a user drags and drops the fields in the chart configuration panel, the cha
 Group aggregate enhancements: filters [.badge.badge-beta-relnotes]#Beta#:: Previously, when using group_aggregate formulas, users could use query_filters to include filters entered in the search bar in the formula's value, but it was difficult to write a formula that accepted filters from only a single column. Starting with this release, you can specify column names within the ‘filters’ section of a group_aggregate formula, and any filter in your search bar referencing that column will be added to the formula. Filters entered in the search bar that are not on columns specified in the third argument of the group_aggregate formula will be ignored.
 +
 For example:
-Say that you search for `group formula` `color= ‘blue’` `ship mode != ‘car’`, where `group formula = group_aggregate (sum(Revenue), {ship mode}, {color, quantity})`. In this case, the formula will adopt the color = blue filter but ignore the ship mode filter, evaluating to `group_aggregate(sum(Revenue), {ship mode}, {color = ‘blue’})`.
+Say that you search for `group formula` `color= ‘blue’` `ship mode != ‘car’`, where `group formula = group_aggregate (sum(Revenue), {ship mode}, {color, quantity})`. In this case, the formula will adopt the color = blue filter but ignore the ship mode filter, evaluating to `group_aggregate(sum(Revenue), {ship mode}, {color = ‘blue’})`. For details, see
+xref:formulas-aggregation-flexible.adoc#groupagg-filters-enhancement[Group aggregation filters].
 
 
 [#business-user-9-0-0-sw]
@@ -122,7 +123,7 @@ dbt metadata tags for table and Worksheet column properties and joins::
 Manage your ThoughtSpot table and Worksheet column properties and table joins in dbt by using metadata tags to define column properties and joins within your dbt model schema. dbt stays the source of truth, and you don't have to manually update the columns in ThoughtSpot when you make changes to your dbt model. For more information, see xref:dbt-integration-metadata-tags.adoc[Metadata tags for dbt].
 
 Sharing connections::
-You can now share connections with other users or groups. Once granted access to a connection, users can add, remove, and modify tables in that connection. For more information, see xref:connections.adoc[].
+You can now share connections with other users or groups. Once granted access to a connection, users can add, remove, and modify tables in that connection. For more information, see xref:connection-share.adoc[].
 
 Tag enhancements::
 This release includes the following updates to the xref:tags.adoc[tags] feature in the xref:data-workspace.adoc[Data workspace]:
