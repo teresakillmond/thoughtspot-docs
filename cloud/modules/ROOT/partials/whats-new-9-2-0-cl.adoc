@@ -12,6 +12,18 @@ endif::free-trial-feature[]
 
 [#primary-9-2-0-cl]
 
+[#9-2-0-cl-ai-answers]
+[discrete]
+=== Natural language search
+
+// Naomi
+
+You can now search using natural language to access AI-generated answers to your business questions. To try it out, navigate to the Home page, select the search bar labeled *Ask any business question you have*, and type your question. When you enter your question, you will see the AI-generated answer appear, along with a list of related Answers created by users in your team.
+
+You can select the Worksheet to search on by clicking the Worksheet title in the left side of the search bar and selecting a new Worksheet from the dropdown. Worksheets with AI answers enabled display a triangular icon to the left of the Worksheet name: image:icon-ai-answer.png[AI answer enabled icon].
+
+image:ai-answer.gif[]
+
 [#9-2-0-cl-cross-filters]
 [discrete]
 === Liveboard cross filters
@@ -85,15 +97,6 @@ The parameters feature is now GA. Any user can now create parameters at the Answ
 
 image::parameter-answer-whats-new.png[Parameter in an answer]
 
-[#9-2-0-cl-ai-answers]
-[discrete]
-=== Natural language search
-
-// Naomi
-
-You can now search using natural language to access AI-generated answers to your business questions. To try it out, navigate to the Home page, select the search bar labeled *Ask any business question you have* and type your question. When you enter your question, you will see the AI-generated answer appear, along with a list of related Answers created by users in your team.
-
-You can select the Worksheet to search on by clicking the Worksheet title in the left side of the search bar and selecting a new Worksheet from the dropdown. Worksheets with AI answers enabled display a triangular icon to the left of the Worksheet name: image:icon-ai-answer.png[AI answer enabled icon].
 
 
 ifndef::pendo-links[]
@@ -111,6 +114,8 @@ endif::[]
 
 You can now see anomalies in time-series KPI charts. Our new anomaly detection algorithm detects data which does not fall within the expected confidence intervals, while allowing for seasonal changes and growth over time.
 
+image:kpi-show-anomalies.png[]
+
 [#9-2-0-cl-kpi-explain-change]
 [discrete]
 === Change analysis for KPI charts
@@ -121,7 +126,7 @@ KPI change analysis is now GA. You can now use change analysis to directly ident
 
 To access this feature, go to your KPI chart and select the caret icon to the right of the percent change label. The *Run change analysis* pop-up allows you to customize the attribute columns ThoughtSpot analyzes to identify the drivers of change. ThoughtSpot runs change analysis for the most recent data point and the past comparison data point as per the KPI chart's configuration.
 
-Note that you need SpotIQ privileges to use the KPI change analysis feature.
+// Note that you need SpotIQ privileges to use the KPI change analysis feature.
 
 image::kpi-explain-change.png[KPI explain change option and resulting SpotIQ analysis]
 
@@ -131,7 +136,7 @@ image::kpi-explain-change.png[KPI explain change option and resulting SpotIQ ana
 
 // Naomi
 
-The *Apply* button is now GA. Now users can make multiple configurations and apply them at the same time rather than waiting in between each configuration.
+Apply multiple chart changes at once is now GA. Now users can make multiple configurations and apply them at the same time rather than waiting in between each configuration.
 
 image::apply-change.png[Apply multiple changes]
 
@@ -290,6 +295,7 @@ image:share-data-on-invite.png[]
 [discrete]
 ===  Existing Headlines are now KPI charts
 // Naomi
+
 Existing customer Headlines have been changed to KPI charts. KPI charts retain all properties of Headlines, but also allow users to set alerts to track when your Key Performance Indicators reach certain thresholds.
 
 
@@ -374,7 +380,7 @@ image::custom-map-search-example.png[Custom geo map being added, and a ThoughtSp
 
 // Naomi
 
-When creating an alert for a KPI chart, you can now include a custom message in the alert update email.
+When creating an alert for a KPI chart, you can now include a custom message in the alert update email. You can use this feature to specify next steps the alert subscribers should take once the KPI reaches a certain threshold.
 
 image::alert-custom-message.png[]
 
@@ -400,15 +406,6 @@ You can now create connections from ThoughtSpot to SQL Server.
 
 // put closer to top
 
-[#9-2-0-cl-amazon]
-[discrete]
-=== Certify Amazon Aurora and Amazon Relational Database Service (RDS) for PostgreSQL
-
-// Naomi
-
-You can now connect to and query Amazon Aurora and Amazon RDS for PostgreSQL databases.
-
-
 [#9-2-0-cl-jdbc]
 [discrete]
 === Generic JDBC connector integration
@@ -417,6 +414,13 @@ You can now connect to and query Amazon Aurora and Amazon RDS for PostgreSQL dat
 
 You can now create connections from ThoughtSpot to Generic JDBC databases.
 
+[#9-2-0-cl-amazon]
+[discrete]
+=== Certify Amazon Aurora and Amazon Relational Database Service (RDS) for PostgreSQL
+
+// Naomi
+
+You can now connect to and query Amazon Aurora and Amazon RDS for PostgreSQL databases.
 
 
 [#9-2-0-cl-hubspot]
@@ -504,9 +508,6 @@ For any column with a high cardinality, which is defined as more than 100,000 un
 
 If you have existing columns with a cardinality between 100,000 and 1 million, and you use these columns' search suggestions regularly, ThoughtSpot will continue to index these columns.
 
-
-
-THE FOLLOWING ARE NEEDS EVALUATION
 
 
 [#9-2-0-cl-dependency]
