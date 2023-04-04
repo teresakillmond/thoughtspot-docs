@@ -1,0 +1,27 @@
+= Upgrading ThoughtSpot on your own OS to a new release
+:last_updated: 4/4/2023
+:author: Teresa Killmond
+:linkattrs:
+:experimental:
+:description: Learn how to upgrade your Amazon Linux 2, RHEL, or OEL installation of ThoughtSpot.
+
+Learn how to upgrade your RHEL, OEL, or Al2 installation of ThoughtSpot.
+
+To upgrade your installation of ThoughtSpot, follow these steps:
+
+. Back up your ThoughtSpot cluster.
+. Pull the necessary security updates.
+. Download the release tarball to each cluster (for online clusters) or to your organization's mirror repository (for offline clusters).
+. For offline clusters only, run the `run_offline.sh` script from the Ansible tarball.
+. Run the `tscli cluster update` command.
+
+'''
+> **Related information**
+>
+> * xref:customer-os.adoc[]
+> * xref:customer-os-prerequisites.adoc[]
+> * xref:customer-os-artifacts.adoc[]
+> * xref:customer-os-install-online.adoc[Installing ThoughtSpot on online clusters]
+> * xref:customer-os-install-offline.adoc[Installing ThoughtSpot on offline clusters]
+> * xref:customer-os-add-node.adoc[Adding new nodes to clusters running on your own OS]
+> * xref:customer-os-packages.adoc[Packages installed with ThoughtSpot running on your own OS]
