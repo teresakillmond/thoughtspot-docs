@@ -1,6 +1,6 @@
 [#strpos]
 `strpos`::
-  Returns the numeric position (starting from 0) of the first occurrence of the second string in the first string, or -1 if not found.
+  Returns the numeric position (starting from 0 if the data is in ThoughtSpot's internal in-memory database, starting from 1 if xref:connections.adoc[connecting to data in an external database]) of the first occurrence of the second string in the first string. Returns -1 if not found, if the data is in ThoughtSpot's internal in-memory database. Returns 0 if not found, if xref:connections.adoc[connecting to data in an external database].
 Examples;;
 +
 ----
