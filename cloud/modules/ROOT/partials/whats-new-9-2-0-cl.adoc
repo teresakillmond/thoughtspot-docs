@@ -75,11 +75,7 @@ image::sync-zoho.png[New ThoughtSpot Sync connections]
 
 When scheduling a sync with an external app, you can now choose to schedule every 5, 10, 15, 20, 30, and 45 minutes, in addition to the other existing schedule options.
 
-[#9-2-0-cl-worksheet-enablement]
-[discrete]
-=== [Alpha] Worksheet Enablement toggle
 
-// Naomi
 
 [#9-2-0-cl-parameters]
 [discrete]
@@ -91,9 +87,14 @@ image::parameter-answer-whats-new.png[Parameter in an answer]
 
 [#9-2-0-cl-ai-answers]
 [discrete]
-=== [Alpha][FE/BE] AI generated answers in eureka SRP
+=== Natural language search
 
 // Naomi
+
+You can now search using natural language to access AI-generated answers to your business questions. To try it out, navigate to the Home page, select the search bar labeled *Ask any business question you have* and type your question. When you enter your question, you will see the AI-generated answer appear, along with a list of related Answers created by users in your team.
+
+You can select the Worksheet to search on by clicking the Worksheet title in the left side of the search bar and selecting a new Worksheet from the dropdown. Worksheets with AI answers enabled display a triangular icon to the left of the Worksheet name: image:icon-ai-answer.png[AI answer enabled icon].
+
 
 ifndef::pendo-links[]
 [#9-2-0-cl-cortex]
@@ -232,6 +233,24 @@ Group aggregate filter enhancements are GA. Previously, when using group_aggrega
 
 Starting with this release, you can specify column names within the ‘filters’ section of a group_aggregate formula, and any filter in your search bar referencing that column will be added to the formula. Filters entered in the search bar that are not on columns specified in the third argument of the group_aggregate formula will be ignored.
 
+ifndef::pendo-links[]
+[#9-2-0-cl-group-aggregate-reagg]
+[discrete]
+=== Group aggregate enhancement: reaggregation [.badge.badge-beta]#Beta#
+endif::[]
+ifdef::pendo-links[]
+[#9-2-0-cl-group-aggregate-reagg]
+[discrete]
+=== Group aggregate enhancement: reaggregation [.badge.badge-beta-whats-new]#Beta#
+endif::[]
+// Naomi
+To reduce confusion when using aggregate formulas, the level of detail defined in group formulas is now respected at query level. For example, when trying to calculate the contribution of each store’s sales to the entire region, you might use a group_sum formula, where the sales at store level is divided by the sales at regional level. Your search would include the following columns: `Revenue`, `Customer nation`, `Regional Revenue formula`, and `Customer region`, where `Regional Revenue formula =  group_sum(Revenue, Customer Region)`.
+
+According to the old reaggregation behavior, if a customer removed `Customer region` from the search bar, the level of detail in the formula would no longer be respected and the formula’s denominator would re-aggregate up to the total. In this case, the formula result would display revenue as a percentage of total revenue, rather than as a percentage of regional revenue.
+
+Under the new aggregation behavior, the formula result will continue to display revenue as a percentage of each region, even if you remove `Customer region` from the search bar. Visualizations will also display the correct aggregation even if the grouping column is not added to the X-axis.
+
+
 [#9-2-0-cl-mobile]
 [discrete]
 === Mobile App load more button
@@ -265,12 +284,14 @@ You can now pull data from a ThoughtSpot instance into Google Sheets using the *
 
 When inviting users to join Free Trial and Team Edition, you can now share Liveboards and underlying data. Users who are invited open an environment populated with the data you share.
 
+image:share-data-on-invite.png[]
 
 [#9-2-0-cl-headlines]
 [discrete]
-=== (Phase 1) Migrate existing Customer Headlines to KPI charts ( Code complete)
+===  Existing Headlines are now KPI charts
+// Naomi
+Existing customer Headlines have been changed to KPI charts. KPI charts retain all properties of Headlines, but also allow users to set alerts to track when your Key Performance Indicators reach certain thresholds.
 
-// Naomi. Should this have a what's new/ release note? No, it's not customer-facing
 
 [#9-2-0-cl-support]
 [discrete]
@@ -315,11 +336,7 @@ image:contextual-change.png[]
 
 // Mark
 
-[#9-2-0-cl-mailchimp]
-[discrete]
-=== [Beta]TS-Sync: Adding Mailchimp Destination
 
-// Naomi
 
 '''
 [#secondary-9-2-0-cl]
@@ -400,11 +417,7 @@ You can now connect to and query Amazon Aurora and Amazon RDS for PostgreSQL dat
 
 You can now create connections from ThoughtSpot to Generic JDBC databases.
 
-[#9-2-0-cl-row-limits]
-[discrete]
-=== GA:Show row limits on FT/TE and move it to an experiment
 
-// Naomi
 
 [#9-2-0-cl-hubspot]
 [discrete]
@@ -417,11 +430,12 @@ When creating a sync to HubSpot, you can now use email as a mapping field on the
 
 [#9-2-0-cl-databricks]
 [discrete]
-=== Databricks Unity Catalog support
+=== Databricks catalog field
 
 // Naomi
 
-We now support Unity Catalog for Databricks. When creating a connection to Databricks, enter your catalog name under the *Catalog* field.
+
+When creating a connection to Databricks, you can now enter your catalog name under the *Catalog* field.
 
 [#9-2-0-cl-resolution]
 [discrete]
@@ -490,19 +504,7 @@ For any column with a high cardinality, which is defined as more than 100,000 un
 
 If you have existing columns with a cardinality between 100,000 and 1 million, and you use these columns' search suggestions regularly, ThoughtSpot will continue to index these columns.
 
-ifndef::pendo-links[]
-[discrete]
-=== Group aggregate enhancement: reaggregation [.badge.badge-beta]#Beta#
-endif::[]
-ifdef::pendo-links[]
-[#9-2-0-cl-group-aggregate]
-[discrete]
-=== Group aggregate enhancement: reaggregation [.badge.badge-beta-whats-new]#Beta#
-endif::[]
 
-// Naomi
-
-To reduce confusion when using aggregate formulas and to avoid over-counting, the level of detail defined in group formulas is now respected at query level.
 
 THE FOLLOWING ARE NEEDS EVALUATION
 
