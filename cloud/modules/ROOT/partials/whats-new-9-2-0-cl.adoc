@@ -31,10 +31,9 @@ Now you can get live, chat-based support from anywhere, in a small self-containe
 
 To use the chat-based support, click the support icon image:icon-chat-support.png[Chat support icon] in the lower-right corner of ThoughtSpot.
 
+****
 
-
-// make sure it's left-aligned in the actual site
-
+ifndef::free-trial-feature[]
 
 [#9-2-0-cl-ai-answers]
 [discrete]
@@ -47,6 +46,15 @@ You can now search using natural language to access AI-generated answers to your
 You can select the Worksheet to search on by clicking the Worksheet title in the left side of the search bar and selecting a new Worksheet from the dropdown. Worksheets with AI answers enabled display a triangular icon to the left of the Worksheet name: image:icon-ai-answer.png[AI answer enabled icon].
 
 image:ai-answer.gif[]
+
+[#9-2-0-cl-ai-search]
+[discrete]
+=== AI-suggested searches
+The AI-suggested searches feature helps you think of relevant questions to ask of your own data source, by providing examples of searches. This feature is designed to help you get started if you are a new user of Search Data, or if you are working with a new Worksheet.
+
+image::searches-ai-suggested.png[ai-suggested searches]
+
+This feature must be enabled by your ThoughtSpot administrator.
 
 [#9-2-0-cl-cross-filters]
 [discrete]
@@ -69,6 +77,8 @@ Access the contextual menu for visualization data points with a left click. Inst
 Add notes to your Liveboards, so that viewers of your Liveboards can quickly understand how to use the data and visualizations you gathered. Note tiles can provide an overview of a Liveboard or visualization, company branding through images, definitions of terms used in the Liveboard, and so on.
 
 image::note-tile-example.png[Example of a Liveboard with a note tile]
+
+endif::free-trial-feature[]
 
 [#9-2-0-cl-mandatory-filters]
 [discrete]
@@ -121,7 +131,7 @@ The parameters feature is now GA. Any user can now create parameters at the Answ
 
 image::parameter-answer-whats-new.png[Parameter in an answer]
 
-
+ifndef::free-trial-feature[]
 
 ifndef::pendo-links[]
 [#9-2-0-cl-cortex]
@@ -139,6 +149,8 @@ endif::[]
 You can now see anomalies in time-series KPI charts. Our new anomaly detection algorithm detects data which does not fall within the expected confidence intervals, while allowing for seasonal changes and growth over time.
 
 image:kpi-show-anomalies.png[]
+
+endif::free-trial-feature[]
 
 [#9-2-0-cl-kpi-explain-change]
 [discrete]
@@ -262,6 +274,8 @@ Group aggregate filter enhancements are GA. Previously, when using group_aggrega
 
 Starting with this release, you can specify column names within the ‘filters’ section of a group_aggregate formula, and any filter in your search bar referencing that column will be added to the formula. Filters entered in the search bar that are not on columns specified in the third argument of the group_aggregate formula will be ignored.
 
+ifndef::free-trial-feature[]
+
 ifndef::pendo-links[]
 [#9-2-0-cl-group-aggregate-reagg]
 [discrete]
@@ -279,6 +293,7 @@ According to the old reaggregation behavior, if a customer removed `Customer reg
 
 Under the new aggregation behavior, the formula result will continue to display revenue as a percentage of each region, even if you remove `Customer region` from the search bar. Visualizations will also display the correct aggregation even if the grouping column is not added to the X-axis.
 
+endif::free-trial-feature[]
 
 [#9-2-0-cl-mobile]
 [discrete]
@@ -305,6 +320,8 @@ When scheduling Liveboards, you can now specify your time zone.
 You can now pull data from a ThoughtSpot instance into Google Sheets using the *ThoughtSpot for connected sheets* extension from the Google Workspace Marketplace. You can connect to any ThoughtSpot instance, even Free Trial. Once connected, you can select your data by using the search bar or selecting it from the data panel, just like in ThoughtSpot. Once you select your data, you can then pull it into Google Sheets and use the available tools to further analyze your data.
 // Mark
 
+ifdef::free-trial-feature[]
+
 [#9-2-0-cl-invite]
 [discrete]
 === Share Liveboards and underlying data during invitation process
@@ -314,6 +331,8 @@ You can now pull data from a ThoughtSpot instance into Google Sheets using the *
 When inviting users to join Free Trial and Team Edition, you can now share Liveboards and underlying data. Users who are invited open an environment populated with the data you share.
 
 image:share-data-on-invite.png[]
+
+endif::free-trial-feature[]
 
 [#9-2-0-cl-headlines]
 [discrete]
@@ -327,10 +346,7 @@ Existing customer Headlines have been changed to KPI charts. KPI charts retain a
 [discrete]
 === Expansion of In-App support to tscloud accounts
 
-// Mark
-
-THE FOLLOWING ARE NEEDS EVALUATION
-
+ifndef::free-trial-feature[]
 
 [#9-2-0-cl-data-fluency]
 [discrete]
@@ -348,7 +364,6 @@ All of this information saves you time, by helping you find the right data sourc
 
 image::data-panel-overview.png[]
 
-ifndef::free-trial-feature[]
 [#9-2-0-cl-change]
 [discrete]
 === Contextual change analysis
@@ -369,15 +384,6 @@ In the new _Notification preferences_ section of your user profile, you have the
 
 // Mark
 
-[#9-2-0-cl-ai-search]
-[discrete]
-=== AI-suggested searches
-The AI-suggested searches feature helps you think of relevant questions to ask of your own data source, by providing examples of searches. This feature is designed to help you get started if you are a new user of Search Data, or if you are working with a new Worksheet.
-
-image::searches-ai-suggested.png[ai-suggested searches]
-
-This feature must be enabled by your ThoughtSpot administrator.
-
 endif::free-trial-feature[]
 
 '''
@@ -394,13 +400,13 @@ When you create a Worksheet, ThoughtSpot automatically creates synonyms for each
 
 image::ai-synonyms.png[A Worksheet with AI synonyms]
 
-endif::free-trial-feature[]
-
 [#9-2-0-cl-disaster-recovery]
 [discrete]
 === Cross-Region Disaster Recovery
 
 Cross-Region Disaster Recovery allows ThoughtSpot to recover your ThoughtSpot instance in a secondary cloud region in the case of a failure of the primary cloud region where ThoughtSpot is running. This ensures that if one cloud region fails, ThoughtSpot can start in another region, guaranteeing minimal downtime.
+
+endif::free-trial-feature[]
 
 [#9-2-0-cl-custom-map]
 [discrete]
@@ -513,6 +519,8 @@ Use TML to directly edit a join condition by editing the TML file's *on* paramet
 
 Remove columns from tables in ThoughtSpot by deleting them in the tables' TML files. We support deleting a column from a TML file and removing that column's dependencies in the same zip file import. Note that if the deletion of a column fails, the whole import will fail.
 
+ifndef::free-trial-feature[]
+
 ifndef::pendo-links[]
 [#9-2-0-cl-join-creation]
 [discrete]
@@ -529,6 +537,8 @@ endif::[]
 We standardized the method of creating joins for all data objects in ThoughtSpot. When creating a join from a view, users are now directed to a *Create join* page where they can choose a connection, name the join, and map the source and destination columns.
 
 // ask pm if we want this in the what's new or the release notes. if it simplifies creation, we might want it
+
+endif::free-trial-feature[]
 
 [#9-2-0-cl-runtime]
 [discrete]
