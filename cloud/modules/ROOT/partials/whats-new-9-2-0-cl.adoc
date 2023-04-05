@@ -248,6 +248,34 @@ Note that you need SpotIQ privileges to use the KPI change analysis feature.
 
 image::kpi-explain-change.png[KPI explain change option and resulting SpotIQ analysis]
 
+ifndef::free-trial-feature[]
+[#9-2-0-cl-change]
+[discrete]
+=== Contextual change analysis
+
+// Naomi
+
+// default analysis of change drivers in KPIs, appears as a pop-up with multiple tabs for each column change (top 5 columns) instead of taking you to SpotIQ tab, can use "manage attributes" to access changes in columns that were not included in default analysis. click the percent change label or select any data points from the KPI sparkline to see the columns selected by UBR.
+
+You can now identify the key change drivers for changes in your metrics in a KPI chart. Select the percent change label or select any two data points on the KPI sparkline to view change analysis on your top 5 columns by usage-based ranking (UBR) and identify the reason behind the observed change. You can view the changes in other columns by clicking *Manage attributes* and selecting the desired column(s). This feature must be enabled by ThoughtSpot Support.
+
+For more information, see
+ifndef::pendo-links[]
+xref:spotiq-change.adoc#change-analysis-contextual[Contextual change analysis].
+endif::[]
+ifdef::pendo-links[]
+xref:spotiq-change.adoc#change-analysis-contextual[Contextual change analysis,window=_blank].
+endif::[]
+
+
+image:contextual-change.png[]
+
+// add link. maybe add image? This should be with other gpt features -- either the synonyms one (the "other features" gpt feature) or the ai searches and ai answers ones (the business users gpt features).
+
+// is this feature different with the gpt integration?
+
+endif::free-trial-feature[]
+
 [#9-2-0-cl-multiple-changes]
 [discrete]
 === Apply multiple chart changes at once
@@ -444,6 +472,14 @@ endif::[]
 
 // example?
 
+[#9-2-0-cl-mobile-v2]
+[discrete]
+=== Mobile app Liveboard experience
+
+// Naomi
+
+ThoughtSpot is updating the Liveboard experience for the mobile app. Mobile app users can now view KPI charts and pin them to Liveboards. Note that features like Liveboard tabs and mandatory filters are not supported for ThoughtSpot mobile.
+
 [#9-2-0-cl-mobile]
 [discrete]
 === Mobile App load more button
@@ -522,34 +558,6 @@ For more information, see xref:search-start.adoc#search-data-fluency[Start a new
 endif::[]
 
 image::data-panel-overview.png[]
-
-ifndef::free-trial-feature[]
-[#9-2-0-cl-change]
-[discrete]
-=== Contextual change analysis
-
-// Naomi
-
-// default analysis of change drivers in KPIs, appears as a pop-up with multiple tabs for each column change (top 5 columns) instead of taking you to SpotIQ tab, can use "manage attributes" to access changes in columns that were not included in default analysis. click the percent change label or select any data points from the KPI sparkline to see the columns selected by UBR.
-
-You can now identify the key change drivers for changes in your metrics in a KPI chart. Select the percent change label or select any two data points on the KPI sparkline to view change analysis on your top 5 columns by usage-based ranking (UBR) and identify the reason behind the observed change. You can view the changes in other columns by clicking *Manage attributes* and selecting the desired column(s). This feature must be enabled by ThoughtSpot Support.
-
-For more information, see
-ifndef::pendo-links[]
-xref:spotiq-change.adoc#change-analysis-contextual[Contextual change analysis].
-endif::[]
-ifdef::pendo-links[]
-xref:spotiq-change.adoc#change-analysis-contextual[Contextual change analysis,window=_blank].
-endif::[]
-
-
-image:contextual-change.png[]
-
-// add link. maybe add image? This should be with other gpt features -- either the synonyms one (the "other features" gpt feature) or the ai searches and ai answers ones (the business users gpt features).
-
-// is this feature different with the gpt integration?
-
-endif::free-trial-feature[]
 
 [#9-2-0-cl-communication]
 [discrete]
