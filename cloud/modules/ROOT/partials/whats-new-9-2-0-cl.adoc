@@ -12,6 +12,30 @@ endif::free-trial-feature[]
 
 [#primary-9-2-0-cl]
 
+.[.badge .badge-outlined.badge-secondary]#Help and support features#
+****
+This release introduces important enhancements to provide help and support for all ThoughtSpot users.
+[#9-2-0-cl-help]
+[discrete]
+=== In-product help
+
+With the new in-product help, you can search the documentation, training and community sites to find the information you're looking for. Links to documentation open in a window inside ThoughtSpot, so you can read the documentation while never leaving ThoughtSpot.
+
+To use the help, click the question mark icon image:icon-question-mark.png[Question Mark icon] to open the Information Center, and then click *Help*.
+
+[#9-2-0-cl-support]
+[discrete]
+=== AI-assisted chat support
+
+Now you can get live, chat-based support from anywhere, in a small self-contained window that floats on top of the ThoughtSpot UI. You can send a message, book a call with a product specialist, or search for answers in our documentation, training and community sites. Messages can be a product question, sales inquiry, feedback, or even a product idea.
+
+To use the chat-based support, click the support icon image:icon-chat-support.png[Chat support icon] in the lower-right corner of ThoughtSpot.
+
+
+
+// make sure it's left-aligned in the actual site
+
+
 [#9-2-0-cl-ai-answers]
 [discrete]
 === Natural language search
@@ -308,12 +332,21 @@ Existing customer Headlines have been changed to KPI charts. KPI charts retain a
 THE FOLLOWING ARE NEEDS EVALUATION
 
 
-[#9-2-0-cl-sample]
+[#9-2-0-cl-data-fluency]
 [discrete]
-=== Data Literacy : Sample Values for Columns
+=== Column and data source overview in Search Data [.badge.badge-beta]#Beta#
 
-// Mark
+In the Search data page, you now see a short description of your selected data source which helps you understand the kinds of answers you can get from that data source.
 
+Data source information includes the name,
+description, Liveboards created using the data source (if available),
+tags or classifications (if available), metadata, and experts (top users).
+
+Column information includes the name, description, synonyms (if available), column type, sample values, parameters, and more.
+
+All of this information saves you time, by helping you find the right data source for the question you want to ask.
+
+image::data-panel-overview.png[]
 
 ifndef::free-trial-feature[]
 [#9-2-0-cl-change]
@@ -331,18 +364,21 @@ image:contextual-change.png[]
 
 
 [#9-2-0-cl-communication]
-[discrete]
-=== Communication Service Phase 2
+
+In the new _Notification preferences_ section of your user profile, you have the option of receiving email notifications when other users share Liveboards or answers with you, and when they request access to Liveboards or answers which you edit.
 
 // Mark
 
-[#9-2-0-cl-llm]
+[#9-2-0-cl-ai-search]
 [discrete]
-=== [EA delivery] Seed Questions with LLM (#Shipathon)
+=== AI-suggested searches
+The AI-suggested searches feature helps you think of relevant questions to ask of your own data source, by providing examples of searches. This feature is designed to help you get started if you are a new user of Search Data, or if you are working with a new Worksheet.
 
-// Mark
+image::searches-ai-suggested.png[ai-suggested searches]
 
+This feature must be enabled by your ThoughtSpot administrator.
 
+endif::free-trial-feature[]
 
 '''
 [#secondary-9-2-0-cl]
