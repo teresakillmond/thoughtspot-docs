@@ -32,17 +32,15 @@ image::cross-filters.gif[Cross filter example gif]
 
 // Teresa
 
-[#9-3-0-cl-pivot-attribute]
+[#9-3-0-cl-pivot-attribute-ga]
 [discrete]
-=== Allow attributes in pivot table cells - hardening
+=== Allow attributes in pivot table cells
 
 // Naomi
 
-[#9-3-0-cl-pivot-attribute-ga]
-[discrete]
-=== [GA] Allow attributes in pivot table cells
+We now support attributes in pivot table cells. Users can now pivot on attributes as well as measures, and drag and drop cells to change the order.
 
-// Naomi. probably can be combined with the one above
+image:pivot-attributes.png[A pivot table displaying attributes within its cells]
 
 [#9-3-0-cl-filter-answer]
 [discrete]
@@ -76,9 +74,13 @@ image::cross-filters.gif[Cross filter example gif]
 
 [#9-3-0-cl-legend]
 [discrete]
-=== [GA] Ability to change legend position
+=== Ability to change legend position
 
 // Naomi
+
+You can now configure the legend position of a chart. The available options are left, right, above, and below the visualization. To try it out, open the chart configuration menu, select *Settings*, and choose between *Legend on right*, *Legend on left*, *Legend on top*, and *Legend on bottom*. You can select the *Show legend* toggle to hide or show the legend.
+
+image:legend-move.png[Chart configuration menu displays legend on the right]
 
 [#9-3-0-cl-note-tiles]
 [discrete]
@@ -102,13 +104,28 @@ image::cross-filters.gif[Cross filter example gif]
 [discrete]
 === Pinboard-v2 Migration on Mobile
 
-// Naomi
+// Naomi-- moved to 9.2.0.cl
 
 [#9-3-0-cl-group-agg-correct]
 [discrete]
 === Group Aggregate enhancements Phase III- Correct re-aggregation of the results to the view level
 
 // Naomi
+
+To reduce confusion when using aggregate formulas, the level of detail defined in group formulas is now respected at query level. For example, when trying to calculate the contribution of each store’s sales to the entire region, you might use a group_sum formula, where the sales at store level is divided by the sales at regional level. Your search would include the following columns: `Revenue`, `Customer nation`, `Regional Revenue formula`, and `Customer region`, where `Regional Revenue formula =  group_sum(Revenue, Customer Region)`.
+
+According to the old reaggregation behavior, if a customer removed `Customer region` from the search bar, the level of detail in the formula would no longer be respected and the formula’s denominator would re-aggregate up to the total. In this case, the formula result would display revenue as a percentage of total revenue, rather than as a percentage of regional revenue.
+
+Under the new aggregation behavior, the formula result will continue to display revenue as a percentage of each region, even if you remove `Customer region` from the search bar. Visualizations will also display the correct aggregation even if the grouping column is not added to the X-axis.
+
+For more information, see
+ifndef::pendo-links[]
+xref:formulas-aggregation-flexible.adoc#reaggregation-enhancement[Flexible aggregation functions].
+endif::[]
+ifdef::pendo-links[]
+xref:formulas-aggregation-flexible.adoc#reaggregation-enhancement[Flexible aggregation functions,window=_blank].
+endif::[]
+
 
 THE FOLLOWING ARE NEEDS EVALUATION
 
@@ -145,7 +162,7 @@ THE FOLLOWING ARE NEEDS EVALUATION
 [discrete]
 === Support Worksheet v2 flow behind a flag
 
-// Naomi
+// Naomi-- moved to 9.5.0.cl
 
 [#9-3-0-cl-dbt]
 [discrete]
@@ -155,15 +172,17 @@ THE FOLLOWING ARE NEEDS EVALUATION
 
 [#9-3-0-cl-mysql]
 [discrete]
-=== MySQL Embrace connector Integration
+=== MySQL connector integration
 
 // Naomi
+
+You can now create connections from ThoughtSpot to MySQL databases.
 
 [#9-3-0-cl-joins]
 [discrete]
 === Allow editing of join condition via UI
 
-// Naomi
+// Naomi-- TML only for now, ETV unknown
 
 THE FOLLOWING ARE NEEDS EVALUATION
 
@@ -183,13 +202,13 @@ THE FOLLOWING ARE NEEDS EVALUATION
 [discrete]
 === Update Column Properties bach API
 
-// Naomi
+// Naomi-- moved to 9.5.0.cl
 
 [#9-3-0-cl-column-table-layout]
 [discrete]
 === Columns Table layout
 
-// Naomi
+// Naomi -- moved to 9.5.0.cl
 
 [#9-3-0-cl-data-model]
 [discrete]
@@ -201,13 +220,13 @@ THE FOLLOWING ARE NEEDS EVALUATION
 [discrete]
 === Select Connection
 
-// Naomi
+// Naomi-- moved to 9.5.0.cl
 
 [#9-3-0-cl-data-model-popup]
 [discrete]
 === Data Model Selection popup
 
-// Naomi
+// Naomi -- moved to 9.5.0.cl
 
 [#9-3-0-cl-data-fluency-admin]
 [discrete]
