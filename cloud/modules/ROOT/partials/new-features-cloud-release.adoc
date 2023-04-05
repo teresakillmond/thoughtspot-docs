@@ -144,8 +144,13 @@ xref:chart-kpi.adoc#kpi-custom-comparison[Custom comparison points].
 Change analysis for KPI charts::
 KPI change analysis is now GA and on by default. You can now use change analysis to directly identify the key drivers for change in your KPIs.
 +
-To access this feature, go to your KPI chart and select the caret icon to the right of the percent change label. The *Run change analysis* pop-up allows you to customize the attribute columns ThoughtSpot analyzes. ThoughtSpot runs change analysis for the most recent data point and the past comparison data point as per the KPI chart's configuration. For more information on change analysis, see xref:spotiq-change.adoc#change-analysis-kpi[Comparative analysis].
+To access this feature, go to your KPI chart and select the caret icon to the right of the percent change label. The *Run change analysis* pop-up allows you to customize the attribute columns ThoughtSpot analyzes. ThoughtSpot runs change analysis for the most recent data point and the past comparison data point as per the KPI chart's configuration. For more information on change analysis, see xref:spotiq-change.adoc#basic-change-analysis[Comparative analysis].
 Note that you need SpotIQ privileges to use the KPI change analysis feature.
+
+Contextual change analysis [.badge.badge-private-preview-relnotes]#Private Preview#::
+You can now identify the key change drivers for changes in your metrics in a KPI chart. Select the percent change label or select any two data points on the KPI sparkline to view change analysis on your top 5 columns by usage-based ranking (UBR) and identify the reason behind the observed change. You can view the changes in other columns by clicking *Manage attributes* and selecting the desired column(s). This feature must be enabled by ThoughtSpot Support. +
+For more information, see
+xref:spotiq-change.adoc#change-analysis-contextual[Contextual change analysis].
 
 Anomaly detection for time-series KPI charts [.badge.badge-beta-relnotes]#Beta#:: You can now see anomalies in time-series KPI charts. Our new anomaly detection algorithm detects data which does not fall within the expected confidence intervals, while allowing for seasonal changes and growth over time. To try it out, open your KPI chart as an Answer, open the chart configuration menu, and select *Show anomalies*. See xref:time-series-anomalies.adoc[].
 
@@ -176,7 +181,7 @@ Existing Headlines are now KPI charts::
 
 Existing customer Headlines have been changed to KPI charts. KPI charts retain all properties of Headlines, but also allow users to set alerts to track when your Key Performance Indicators reach certain thresholds.
 
-
+Mobile app Liveboard experience:: ThoughtSpot is updating the Liveboard experience for the mobile app. Mobile app users can now view KPI charts and pin them to Liveboards. Note that features like Liveboard tabs and mandatory filters are not supported for ThoughtSpot mobile.
 
 Mobile app Load More button:: When using ThoughtSpot Mobile, you can now press the *Load More* button at the bottom of a table to see the next 100 rows of data.
 
