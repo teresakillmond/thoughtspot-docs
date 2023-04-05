@@ -86,9 +86,7 @@ endif::[]
 
 image::ai-suggested-searches.png[ai-suggested searches]
 
-This feature must be enabled by your ThoughtSpot administrator.
-
-endif::free-trial-feature[]
+This feature must be enabled by ThoughtSpot Support.
 
 [#9-2-0-cl-cross-filters]
 [discrete]
@@ -125,6 +123,8 @@ xref:liveboard-note-tiles.adoc[Liveboard note tiles,window=_blank].
 endif::[]
 
 image::note-tile-example.png[Example of a Liveboard with a note tile]
+
+endif::free-trial-feature[]
 
 [#9-2-0-cl-mandatory-filters]
 [discrete]
@@ -203,6 +203,8 @@ endif::[]
 
 image::parameter-answer-whats-new.png[Parameter in an answer]
 
+ifndef::free-trial-feature[]
+
 ifndef::pendo-links[]
 [#9-2-0-cl-cortex]
 [discrete]
@@ -226,6 +228,8 @@ xref:time-series-anomalies.adoc[Anomaly detection,window=_blank].
 endif::[]
 
 image::kpi-show-anomalies.png[A KPI chart with anomaly bounds in blue and a detected anomaly in red]
+
+endif::free-trial-feature[]
 
 [#9-2-0-cl-kpi-explain-change]
 [discrete]
@@ -443,6 +447,8 @@ ifdef::pendo-links[]
 xref:formulas-aggregation-flexible.adoc#groupagg-filters-enhancement[Group aggregation filters,window=_blank].
 endif::[]
 
+ifndef::free-trial-feature[]
+
 ifndef::pendo-links[]
 [#9-2-0-cl-group-aggregate-reagg]
 [discrete]
@@ -471,6 +477,8 @@ xref:formulas-aggregation-flexible.adoc#reaggregation-enhancement[Flexible aggre
 endif::[]
 
 // example?
+
+endif::free-trial-feature[]
 
 [#9-2-0-cl-mobile-v2]
 [discrete]
@@ -537,9 +545,18 @@ Existing customer Headlines have been changed to KPI charts. KPI charts retain a
 
 // existing headlines are now kpi charts
 
+ifndef::free-trial-feature[]
+
+ifndef::pendo-links[]
 [#9-2-0-cl-data-fluency]
 [discrete]
 === Column and data source overview in Search Data [.badge.badge-beta]#Beta#
+endif::[]
+ifdef::pendo-links[]
+[#9-2-0-cl-data-fluency]
+[discrete]
+=== Column and data source overview in Search Data [.badge.badge-beta-whats-new]#Beta#
+endif::[]
 
 In the Search data page, you now see a short description of your selected data source which helps you understand the kinds of answers you can get from that data source.
 
@@ -558,6 +575,8 @@ For more information, see xref:search-start.adoc#search-data-fluency[Start a new
 endif::[]
 
 image::data-panel-overview.png[]
+
+endif::free-trial-feature[]
 
 [#9-2-0-cl-communication]
 [discrete]
@@ -612,8 +631,6 @@ endif::[]
 
 image::ai-synonyms.png[A Worksheet with AI synonyms]
 
-endif::free-trial-feature[]
-
 [#9-2-0-cl-disaster-recovery]
 [discrete]
 === Cross-Region Disaster Recovery
@@ -628,6 +645,8 @@ xref:business-continuity.adoc#disaster-recovery[Data protection and disaster rec
 endif::[]
 
 // unclear if this is going to make it
+
+endif::free-trial-feature[]
 
 [#9-2-0-cl-custom-map]
 [discrete]
@@ -803,6 +822,8 @@ ifdef::pendo-links[]
 xref:scriptability.adoc#delete[Deleting columns, joins, and RLS rules,window=_blank].
 endif::[]
 
+ifndef::free-trial-feature[]
+
 ifndef::pendo-links[]
 [#9-2-0-cl-join-creation]
 [discrete]
@@ -819,6 +840,8 @@ endif::[]
 We standardized the method of creating joins for all data objects in ThoughtSpot. When creating a join from a view, users are now directed to a *Create join* page where they can choose a connection, name the join, and map the source and destination columns.
 
 // ask pm if we want this in the what's new or the release notes. if it simplifies creation, we might want it
+
+endif::free-trial-feature[]
 
 [#9-2-0-cl-runtime]
 [discrete]
