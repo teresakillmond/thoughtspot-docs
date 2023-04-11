@@ -1,6 +1,6 @@
 [#strpos]
 `strpos`::
-Returns the numeric position (starting from 0 if the data is in ThoughtSpot's internal in-memory database, starting from 1 if xref:connections.adoc[connecting to data in an external database]) of the first occurrence of the second string in the first string. Returns -1 if not found, if the data is in ThoughtSpot's internal in-memory database. Returns 0 if not found, if xref:connections.adoc[connecting to data in an external database].
+Returns the numeric position of the first occurrence of the second string in the first string. If using an external cloud data warehouse xref:connections.adoc[connection], the position starts at 1, and 0 indicates not found. If using ThoughtSpot's internal in-memory database (Falcon), the position starts at 0, and -1 returns not found.
 Examples;;
 +
 ----
