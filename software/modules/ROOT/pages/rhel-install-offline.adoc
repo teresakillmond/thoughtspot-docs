@@ -205,23 +205,38 @@ As the Ansible Playbook runs, it will perform these tasks:
     - Formats and creates export partitions, if they do not exist.
     - Formats the data disks.
 
-[#prepare-disks]
+[#prepare_disks]
 == Prepare disks
+After the Ansible Playbook finishes, run the `prepare_disks` script on every node. You *must* run this script with elevated privileges, either with <<sudo,sudo>> or as a <<root,root user>>. Specify the data drives by adding the full device path for all data drives, such as `/dev/sdc`, after the script name. Separate data drives with a space.
 
-After the Ansible Playbook finishes, run the `prepare_disks` script on every node. You *must* run this script as an admin user. Specify the data drives by adding the full device path for all data drives, such as `/dev/sdc`, after the script name. Separate data drives with a space.
+Run the `prepare_disks` script, either with sudo or as a root user:
 
-. Switch to the admin user, if necessary:
+[#sudo]
+=== Run prepare_disks with sudo
+
+. Switch to the admin user:
 +
 [source]
 ----
 su admin
 ----
 
-. Run the `prepare_disks` script:
+. Run the prepare_disks script.
 +
 [source]
 ----
-/usr/local/scaligent/bin/prepare_disks.sh /dev/sdc /dev/sdd
+sudo /usr/local/scaligent/bin/prepare_disks.sh /dev/sdc /dev/sdd
+----
+
+[#root]
+=== Run prepare_disks as a root user
+
+. Run the prepare_disks script.
++
+[source]
+----
+sudo su
+/usr/local/scaligent/bin/prepare_disks.sh --username <admin user> /dev/sdc /dev/sdd
 ----
 
 [#install-thoughtspot]
