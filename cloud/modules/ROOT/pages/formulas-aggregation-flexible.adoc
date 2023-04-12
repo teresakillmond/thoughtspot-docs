@@ -183,7 +183,7 @@ For example, say that you would like to determine how many stores a certain prod
 
 Before 9.0.0.cl, this formula would look like: `group_aggregate(count(storid),query_groups(),query_filters-{field1,field2,fieldN})`, where users would have to use `query_filters - {}` to manually remove every field in the search bar that did not relate to transaction date. When adding a new unrelated filter to the search bar, users would then have to edit all existing formulas to ignore the filter.
 
-With this feature enabled, users can simply specify the formula as `group_aggregate(count(storied),query_groups, {date}), and the formula will automatically ignore all unrelated filters in the search bar.
+Now, users can simply specify the formula as `group_aggregate(count(storied),query_groups, {date}), and the formula will automatically ignore all unrelated filters in the search bar.
 
 '''
 > **Related information**
