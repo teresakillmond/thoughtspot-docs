@@ -1,5 +1,5 @@
 = Change analysis
-:last_updated: 04/03/2023
+:last_updated: 04/12/2023
 :author: Naomi
 :experimental:
 :page-aliases: /spotiq/comparative-analysis.adoc, spotiq-comparative.adoc
@@ -13,10 +13,11 @@ SpotIQ change analysis compares data points of simple or complex measures using 
 
 * _Sum_
 * _Count_
-* _Sum over sum_, which generates a Liveboard that has 'what-if' percentage insights
-* _Average_, which generates a Liveboard that has 'what-if' percentage insights
+* _Sum over sum_, which generates 'what-if' percentage insights
+* _Average_, which generates 'what-if' percentage insights
 * Other functions which use a 'versus' analysis to show the absolute change grouped by different drill attributes
 
+////
 [#basic-change-analysis]
 == Basic change analysis in SpotIQ
 
@@ -38,7 +39,7 @@ image:comparative-analysis-1.png[Click and select SpotIQ Analyze]
 By default, SpotIQ picks the most relevant columns, based on what it learned from your past activity.
 . Optionally, <<advanced-change-analysis,customize the analysis parameters>>.
 . Select *Analyze*.
-
+////
 
 [#change-analysis-contextual]
 === Contextual change analysis
@@ -59,40 +60,21 @@ Note that if you are analyzing a KPI chart, you must either click the percent ch
 . Click to see the dropdown menu, and select *Run change analysis*.
 
 . The SpotIQ window modal appears with the results of your analysis.
-By default, SpotIQ picks the top 5 most relevant columns, based on what it learned from your past activity. To select other columns to analyze, click *Manage attributes* in the lower left corner of the window and select the desired column from the window that appears.
-
-
-
-[#viewing-results]
-== View results
-
-Notice that ThoughtSpot saves the results of SpotIQ analysis for 24 hours.
-
-To view the results of your analysis, follow these steps:
-
-. On the top navigation bar, select *SpotIQ*.
-. If you do not see your analysis, select *Yours*. This filters the list of analyses.
+By default, SpotIQ picks the top 5 most relevant columns, based on what it learned from your past activity.
 +
-Your analysis may be in progress.
-Wait until its *Status* changes to _Done_.
-
-. Select your analysis.
-
-. In the report, SpotIQ generates a Liveboard with insights that compare the two selected points, grouped by the columns you chose for analysis.
+image:contextual-change.png[Contextual change analysis window]
 +
-image::comparative-analysis-6.png[SpotIQ Liveboard example]
+To select other columns to analyze, click *Manage attributes* in the lower left corner of the window and select the desired column from the window that appears.
 +
 NOTE: Each colored section of a SpotIQ insight represents a statistically significant outlier among the values of your chosen columns.
 
-. You can now examine each visualization of the analysis for details of comparison, give feedback on its usefulness, and so on.
-+
-image:comparative-analysis-7.png[Image with a 1 next to the "Is this insight useful?" option, a 2 next to the pin button, a 3 next to the information button, and a 4 next to the more menu button.]
+. You can now examine each visualization of the analysis for details of comparison.
 
-1.&nbsp;Give feedback:: SpotIQ learns how to improve its analysis based on the information you provide. If you dislike a specific type of insight, SpotIQ pushes that type of insight to the bottom of any future SpotIQ analyses you run. The feedback you provide is specific to you and does not affect the SpotIQ experience of other users.
-2.&nbsp;Add to a Liveboard:: You can add the specific visualization to an existing Liveboard, or create a new Liveboard and add it there.
-3.&nbsp;Analysis details:: Get the name of the algorithm.
-4.&nbsp;More options:: You can run another round of SpotIQ analysis, download the data as a CSV file, edit this visualization, or edit a copy of the visualization.
+. You can add the specific visualization to an existing Liveboard, or create a new Liveboard and add it there.
 
+. You can run another round of SpotIQ analysis, download the data as a CSV file, edit this visualization, or make a copy of the visualization.
+
+////
 [#advanced-change-analysis]
 == Advanced change analysis in SpotIQ
 
@@ -109,6 +91,7 @@ Under *Refine parameters for change*, adjust the options.
 In this example, the algorithm parameters are *Maximum Difference Elements*, *Max Fraction*, *Min Abs Change Ratio*, and *Min Change Ratio*.
 
 image::comparative-analysis-advanced-new.png[Comparative analysis advanced values]
+////
 
 '''
 > **Related information**
