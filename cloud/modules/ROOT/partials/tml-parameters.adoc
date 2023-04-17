@@ -409,7 +409,7 @@ Optional display name for a column.
 
 [#data_type]
 data_type::
-The data type of the formula output or column.
+The data type of the Parameter or formula output or column.
 If the data type is `INT32` or `INT64`, the formula output's `column_type` defaults to `Measure`.
 If the data type is `BOOL`, `VARCHAR`, `DOUBLE`, `FLOAT`, `DATE`, `DATETIME`, or `TIME`, the formula output's `column_type` defaults to `Attribute`.
 
@@ -442,7 +442,7 @@ Note that this database is not the same as the data warehouse (Falcon, Amazon Re
 
 [#default_value]
 default_value::
-The default value for a parameter in a Worksheet. Specififed when xref:parameters-create.adoc[creating a parameter].
+The default value for a Parameter in a Worksheet. Specified when xref:parameters-create.adoc[creating a Parameter].
 
 [#description]
 description::
@@ -563,7 +563,7 @@ For example, if you sorted by `Quarter` in your search, from the `Commit Date` c
 +
 For formulas within answers, `id` refers to the display name of the formula. If you do not give your formula a name, it appears as 'Untitled Formula'.
 +
-In the <<parameter_overrides,parameter_overrides>> section, `id` refers to the parameter's GUID.
+In the <<parameter_overrides,parameter_overrides>> section, `id` refers to the Parameter's GUID.
 
 [#include_max]
 include_max::
@@ -757,7 +757,7 @@ For Answers, `name` refers to how the column appears in the query.
 For example, if you sorted by `Quarter` in your search, from the `Commit Date` column, the `name` of the column is `Quarter(Commit Date)`.
 Refer to https://developers.thoughtspot.com/docs/?pageid=search-data-api[Components of a Search Query^] to understand syntax.
 +
-In the `parameter_overrides` section for an Answer or Liveboard, `name` refers to the xref:parameters-create.adoc[parameter] name.
+In the `parameter_overrides` section for an Answer or Liveboard, `name` refers to the xref:parameters-create.adoc[Parameter] name.
 
 [#on]
 on::
@@ -776,20 +776,20 @@ A list of columns, in the order they appear in the table.
 
 [#override_value]
 override_value::
-The value a parameter is set to in a Liveboard or Answer, if different from the default value. Only appears if you change the parameter value in Liveboard *Edit* mode and save it.
+The value a Parameter is set to in a Liveboard or Answer, if different from the default value. Only appears if you change the Parameter value in Liveboard *Edit* mode and save it.
 
 [#parameter_overrides]
 parameter_overrides::
 
-Contains information on the value a parameter is set to in a Liveboard or Answer, if different from its default value. If there is no `override_value` line, the parameter is set to the default value.
+Contains information on the value a Parameter is set to in a Liveboard or Answer, if different from its default value. If there is no `override_value` line, the Parameter is set to the default value.
 
 [#parameter_values]
 parameter_values::
-Container for the xref:parameters-create.adoc[parameters] in an Answer.
+Container for the xref:parameters-create.adoc[Parameters] in an Answer.
 
 [#parameters]
 parameters::
-Container for the xref:parameters-create.adoc[parameters] in a Worksheet.
+Container for the xref:parameters-create.adoc[Parameters] in a Worksheet.
 
 [#percentage_change_condition]
 percentage_change_condition::
@@ -832,15 +832,15 @@ Range for the conditional formatting to apply to, with a specified `min` and `ma
 
 [#range_config]
 range_config::
-Contains the minimum and maximum values for the range of values allowed for a parameter, if a range is specified when xref:parameters-create.adoc[creating a parameter].
+Contains the minimum and maximum values for the range of values allowed for a Parameter, if a range is specified when xref:parameters-create.adoc[creating a Parameter].
 
 [#range_max]
 range_max::
-The maximum value for the range of values allowed for a parameter, if a range is specified when xref:parameters-create.adoc[creating a parameter].
+The maximum value for the range of values allowed for a Parameter, if a range is specified when xref:parameters-create.adoc[creating a Parameter].
 
 [#range_min]
 range_min::
-The minimum value for the range of values allowed for a parameter, if a range is specified when xref:parameters-create.adoc[creating a parameter].
+The minimum value for the range of values allowed for a Parameter, if a range is specified when xref:parameters-create.adoc[creating a Parameter].
 
 [#rls_rules]
 rls_rules::
