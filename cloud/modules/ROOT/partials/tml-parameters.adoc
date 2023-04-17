@@ -442,7 +442,7 @@ Note that this database is not the same as the data warehouse (Falcon, Amazon Re
 
 [#default_value]
 default_value::
-The default value for a parameter in a Worksheet. Specififed when xref:parameters-create.adoc[creating a parameter].
+The default value for a Parameter in a Worksheet. Specififed when xref:parameters-create.adoc[creating a Parameter].
 
 [#description]
 description::
@@ -463,7 +463,7 @@ Specify either `CHART_MODE` or `TABLE_MODE`.
 
 [#display_name]
 display_name::
-The name or value that displays in the parameter dialog for an accepted value, if a display name was set when xref:parameters-create.adoc[creating a parameter]. For example, if the parameter accepts `true` and `false`, the display names might be `yes` and `no`.
+The name or value that displays in the Parameter dialog for an accepted value, if a display name was set when xref:parameters-create.adoc[creating a Parameter]. For example, if the Parameter accepts `true` and `false`, the display names might be `yes` and `no`.
 
 [#end_time]
 end_time::
@@ -563,19 +563,19 @@ For example, if you sorted by `Quarter` in your search, from the `Commit Date` c
 +
 For formulas within answers, `id` refers to the display name of the formula. If you do not give your formula a name, it appears as 'Untitled Formula'.
 +
-In the <<parameter_overrides,parameter_overrides>> section, `id` refers to the parameter's GUID.
+In the <<parameter_overrides,parameter_overrides>> section, `id` refers to the Parameter's GUID.
 
 [#include_max]
 include_max::
 
-Indicates if the maximum value in a parameter range is a valid value. For example, if the range is 0-10, and `include_max` is false, the value `10` is not valid for that parameter.
+Indicates if the maximum value in a Parameter range is a valid value. For example, if the range is 0-10, and `include_max` is false, the value `10` is not valid for that Parameter.
 +
 Valid values are `true` and `false`.
 
 [#include_min]
 include_min::
 
-Indicates if the minimum value in a parameter range is a valid value. For example, if the range is 0-10, and `include_min` is false, the value `0` is not valid for that parameter.
+Indicates if the minimum value in a Parameter range is a valid value. For example, if the range is 0-10, and `include_min` is false, the value `0` is not valid for that Parameter.
 +
 Valid values are `true` and `false`.
 
@@ -699,9 +699,9 @@ Each join is identified by `name` and optional `description`, and the additional
 
 [#key]
 key::
-Name of the xref:parameters-create.adoc[parameter] referenced in a formula in an Answer.
+Name of the xref:parameters-create.adoc[Parameter] referenced in a formula in an Answer.
 +
-In the <<parameter_overrides,parameter_overrides>> section, `key` refers to the parameter's GUID.
+In the <<parameter_overrides,parameter_overrides>> section, `key` refers to the Parameter's GUID.
 
 [#layout]
 layout::
@@ -709,11 +709,11 @@ Specifies the Liveboard layout, in the order that a `visualization_id` is listed
 
 [#list_choice]
 list_choice::
-Contains the list of accepted values for a parameter, if a list was configured when xref:parameters-create.adoc[creating a parameter].
+Contains the list of accepted values for a Parameter, if a list was configured when xref:parameters-create.adoc[creating a Parameter].
 
 [#list_config]
 list_config::
-Contains the list of accepted values for a parameter, if a list was configured when xref:parameters-create.adoc[creating a parameter].
+Contains the list of accepted values for a Parameter, if a list was configured when xref:parameters-create.adoc[creating a Parameter].
 
 [#liveboard]
 liveboard::
@@ -757,7 +757,7 @@ For Answers, `name` refers to how the column appears in the query.
 For example, if you sorted by `Quarter` in your search, from the `Commit Date` column, the `name` of the column is `Quarter(Commit Date)`.
 Refer to https://developers.thoughtspot.com/docs/?pageid=search-data-api[Components of a Search Query^] to understand syntax.
 +
-In the `parameter_overrides` section for an Answer or Liveboard, `name` refers to the xref:parameters-create.adoc[parameter] name.
+In the `parameter_overrides` section for an Answer or Liveboard, `name` refers to the xref:parameters-create.adoc[Parameter] name.
 
 [#on]
 on::
@@ -776,20 +776,20 @@ A list of columns, in the order they appear in the table.
 
 [#override_value]
 override_value::
-The value a parameter is set to in a Liveboard or Answer, if different from the default value. Only appears if you change the parameter value in Liveboard *Edit* mode and save it.
+The value a paraParametermeter is set to in a Liveboard or Answer, if different from the default value. Only appears if you change the Parameter value in Liveboard *Edit* mode and save it.
 
 [#parameter_overrides]
 parameter_overrides::
 
-Contains information on the value a parameter is set to in a Liveboard or Answer, if different from its default value. If there is no `override_value` line, the parameter is set to the default value.
+Contains information on the value a Parameter is set to in a Liveboard or Answer, if different from its default value. If there is no `override_value` line, the Parameter is set to the default value.
 
 [#parameter_values]
 parameter_values::
-Container for the xref:parameters-create.adoc[parameters] in an Answer.
+Container for the xref:parameters-create.adoc[Parameters] in an Answer.
 
 [#parameters]
 parameters::
-Container for the xref:parameters-create.adoc[parameters] in a Worksheet.
+Container for the xref:parameters-create.adoc[Parameters] in a Worksheet.
 
 [#percentage_change_condition]
 percentage_change_condition::
@@ -832,15 +832,15 @@ Range for the conditional formatting to apply to, with a specified `min` and `ma
 
 [#range_config]
 range_config::
-Contains the minimum and maximum values for the range of values allowed for a parameter, if a range is specified when xref:parameters-create.adoc[creating a parameter].
+Contains the minimum and maximum values for the range of values allowed for a Parameter, if a range is specified when xref:parameters-create.adoc[creating a Parameter].
 
 [#range_max]
 range_max::
-The maximum value for the range of values allowed for a parameter, if a range is specified when xref:parameters-create.adoc[creating a parameter].
+The maximum value for the range of values allowed for a Parameter, if a range is specified when xref:parameters-create.adoc[creating a Parameter].
 
 [#range_min]
 range_min::
-The minimum value for the range of values allowed for a parameter, if a range is specified when xref:parameters-create.adoc[creating a parameter].
+The minimum value for the range of values allowed for a Parameter, if a range is specified when xref:parameters-create.adoc[creating a Parameter].
 
 [#rls_rules]
 rls_rules::
@@ -997,9 +997,9 @@ NOTE: Only administrators can change the owner/creator of an alert, and only at 
 
 [#value]
 value::
-The threshold value in a xref:monitor.adoc[Monitor] threshold-based alert, or an accepted value for a parameter, if a list was configured when xref:parameters-create.adoc[creating a parameter].
+The threshold value in a xref:monitor.adoc[Monitor] threshold-based alert, or an accepted value for a Parameter, if a list was configured when xref:parameters-create.adoc[creating a Parameter].
 +
-In an Answer or Liveboard, `value` refers to the configured value of the parameter referenced in a formula in the last saved state Answer or Liveboard.
+In an Answer or Liveboard, `value` refers to the configured value of the Parameter referenced in a formula in the last saved state Answer or Liveboard.
 
 [#values]
 values::

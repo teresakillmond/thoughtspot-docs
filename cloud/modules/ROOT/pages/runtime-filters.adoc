@@ -1,13 +1,13 @@
-= Runtime filters and parameter overrides
+= Runtime filters and Parameter overrides
 :last_updated: 3/24/2023
 :linkattrs:
 :author: Teresa Killmond
 :experimental:
 :page-layout: default-cloud
 :page-aliases: /admin/ts-cloud/about-runtime-filters.adoc
-:description: Use runtime filters to filter an embedded Answer or Liveboard, or use runtime parameters to apply parameter values to an ANswer or Liveboard.
+:description: Use runtime filters to filter an embedded Answer or Liveboard, or use runtime Parameters to apply Parameter values to an Answer or Liveboard.
 
-Runtime filters and parameter overrides apply filters or xref:parameters-use.adoc[parameter] values to a Liveboard or Answer by passing the filter or parameter properties as query parameters in a Liveboard or visualization URL. You can also apply runtime filters in REST API requests when querying data from a Liveboard, Answer, or a visualization object. On embedded instances, you can use the Visual Embed SDK to apply filters to an embedded Liveboard or Answer, and update filters using events.
+Runtime filters and Parameter overrides apply filters or xref:parameters-use.adoc[Parameter] values to a Liveboard or Answer by passing the filter or Parameter properties as query parameters in a Liveboard or visualization URL. You can also apply runtime filters in REST API requests when querying data from a Liveboard, Answer, or a visualization object. On embedded instances, you can use the Visual Embed SDK to apply filters to an embedded Liveboard or Answer, and update filters using events.
 
 == Runtime filters
 Runtime filters apply filters to a Liveboard or Answer by passing the filter properties as query parameters in a Liveboard or visualization URL.
@@ -39,7 +39,7 @@ new Date('2020-05-22').getTime() / 1000
 
 === Runtime filter operators
 
-This list contains all the filter operators you can use with runtime filters. Note that these operators do not apply to runtime parameter overrides.
+This list contains all the filter operators you can use with runtime filters. Note that these operators do not apply to runtime Parameter overrides.
 
 |===
 | Operator | Description | Number of Values
@@ -116,15 +116,15 @@ This means that the Liveboard or visualization on which you apply a runtime filt
 * Runtime filters do not allow you to apply HAVING in the URL parameters. +
 * You cannot apply a runtime filter on a Liveboard or visualization built on tables whose schema includes a chasm trap.
 
-The <<limitations-parameters,runtime parameter override limitations>> do not apply to runtime filters.
+The <<limitations-parameters,runtime Parameter override limitations>> do not apply to runtime filters.
 
-== Runtime parameter overrides
+== Runtime Parameter overrides
 
-Runtime parameter overrides apply xref:parameters-use.adoc[parameter] values to a Liveboard or Answer by passing the parameter properties as query parameters in a Liveboard or visualization URL.
+Runtime Parameter overrides apply xref:parameters-use.adoc[Parameter] values to a Liveboard or Answer by passing the Parameter properties as query parameters in a Liveboard or visualization URL.
 
 [#data-types-parameters]
-=== Supported data types for runtime parameter overrides
-You can use runtime parameter overrides on these data types:
+=== Supported data types for runtime Parameter overrides
+You can use runtime Parameter overrides on these data types:
 
 * `VARCHAR`
 * `BIGINT` (Stored internally as int64)
@@ -133,8 +133,8 @@ You can use runtime parameter overrides on these data types:
 * `DATE` (Stored internally as int64. Must be epoch value.)
 
 [#parameters]
-=== How to override parameter values at runtime on a Liveboard or visualization
-To change parameter values in a Liveboard or visualization URL, use the following syntax in the URL. Place the runtime content directly after the ThoughtSpot host name and forward slash, or at the end of the URL.
+=== How to override Parameter values at runtime on a Liveboard or visualization
+To change Parameter values in a Liveboard or visualization URL, use the following syntax in the URL. Place the runtime content directly after the ThoughtSpot host name and forward slash, or at the end of the URL.
 
 [source,bash]
 ----
@@ -162,10 +162,10 @@ https://{ThoughtSpot-Host}/#/saved-answer/923d2db9-d3f1-40bb-8836-b5fbd6727082?p
 ----
 
 [#limitations-parameters]
-=== Limitations of runtime parameter overrides
+=== Limitations of runtime Parameter overrides
 
-* Runtime parameter overrides only work on Liveboards and Answers that already use parameters.
+* Runtime Parameter overrides only work on Liveboards and Answers that already use Parameters.
 
 * The DATE data type must be specified as EPOCH time.
 
-The <<limitations-of-runtime-filters,runtime filter limitations>> do not apply to runtime parameter overrides.
+The <<limitations-of-runtime-filters,runtime filter limitations>> do not apply to runtime Parameters overrides.
