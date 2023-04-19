@@ -19,3 +19,4 @@ To modify table-level joins, you must edit the source table's TML file.
 To alter a relationship definition, you must rename the join or create a new join.
 * You cannot remove columns or tables from a connection.
 You can only add them.
+* If there is an error in any row-level security (RLS) rule when importing a table, all RLS rules for the table are removed. ThoughtSpot warns you about this on import, and highlights the rule that is in an error state, so you can fix it or remove it.
