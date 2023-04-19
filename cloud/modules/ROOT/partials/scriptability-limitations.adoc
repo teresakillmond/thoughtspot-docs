@@ -20,3 +20,4 @@ You can only add them.
 * You can only delete table columns that have no dependents. If the table column has any dependents, ThoughtSpot returns an error when you try to import or validate the TML file. To delete a table column, you must first delete the dependents.
 
 * When deleting columns, you only delete ThoughtSpot's record of the column. You don't delete the column in your external database.
+* If there is an error in any row-level security (RLS) rule when importing a table, all RLS rules for the table are removed. ThoughtSpot warns you about this on import, and highlights the rule that is in an error state, so you can fix it or remove it.
