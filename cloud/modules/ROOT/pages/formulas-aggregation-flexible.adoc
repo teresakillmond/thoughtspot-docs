@@ -53,12 +53,14 @@ include::partial$flexible-aggregation-best-practices.adoc[]
 
 For a search on `revenue monthly ship mode`, you can add a formula to calculate yearly revenue by ship mode:
 
+[source]
 ----
 group_aggregate(sum(revenue), {ship mode, year(commit date)}, {})
 ----
 
 The same formula can also be written using `query_groups()` and `query_filters()` as following:
 
+[source]
 ----
 group_aggregate(sum(revenue), query_groups() - {commit date} + {year(commit date)}, {})
 ----
@@ -83,6 +85,7 @@ For example, in this search we've added the keyword *min* just before our formul
 +
 where, the `monthly_sales` formula is written as:
 +
+[source]
 ----
    group_aggregate(sum(revenue), {start_of_month(date)}, {})
 ----
@@ -93,6 +96,7 @@ where, the `monthly_sales` formula is written as:
 +
 where, the `min_monthly_sales` formula is written as:
 +
+[source]
 ----
 min(monthly_sales)
 ----
@@ -118,6 +122,7 @@ An example of this is this search:
 
 where the formula `monthly_sales` is written as:
 
+[source]
 ----
 group_aggregate(sum(revenue), query_groups() + {start_of_month(date)}, {})
 ----
@@ -138,6 +143,7 @@ Filter condition: `Ship Mode='car'`
 
 For a search on `Category Customer ID sales by customer id and category Ship Mode='car’`, you can add a formula to calculate sales by category for each customer as:
 
+[source]
 ----
 sales by Customer ID and Category= group_aggregate (sum(Sales), {Category, Customer ID }, query_filters()+{Ship Mode='air'})
 ----
@@ -150,6 +156,7 @@ Filter condition: `Ship Mode='car'`
 
 For a search on `Customer ID sales by customer id and category Ship Mode='car'`, you can add a formula to calculate sales for each customer while ignoring the filter on a column as:
 
+[source]
 ----
 sales by Customer ID and Category= group_aggregate (sum(Sales), {Customer ID, Category }, query_filters()-{Ship Mode})
 ----
@@ -157,7 +164,7 @@ sales by Customer ID and Category= group_aggregate (sum(Sales), {Customer ID, Ca
 In this case, the results will be aggregated based on the dimensions in the search;
 Customer ID and any filter related to Ship Mode will not be considered while aggregating the results.
 
-.[.badge.badge-beta]#Beta# Group aggregation filters enhancement
+.Group aggregation filters enhancement [.badge.badge-beta]#Beta#
 ****
 Beginning in the 9.0.0.cl release, you can specify a column in the third argument of a group_aggregate function in order to include all filters defined in the search that pertain to that column, and ignore unrelated filters. This enhancement allows the analyst to specify which fields to accept filters from, improving readability of formulas, and reducing operational change and related errors. The group aggregation filters enhancement feature is in beta and off by default. To enable this feature, contact ThoughtSpot Support.
 
