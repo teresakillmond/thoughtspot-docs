@@ -54,7 +54,7 @@ You obtained ThoughtSpot's AWS Account ID from https://community.thoughtspot.com
 +
 NOTE: Snowflake support must configure the AWS PrivateLink. Snowflake's self-service PrivateLink feature does not support third-party PrivateLink integrations, including the integration with ThoughtSpot.
 
-. After {connection} completes the PrivateLink configuration on the {connection} side, run the following command in your Snowflake environment. This command retrieves the *VPC Endpoint Service Name* and *Private DNS records required for {connection} clients* that you must send to ThoughtSpot Support.
+. After {connection} completes the PrivateLink configuration on the {connection} side, run the following command in your Snowflake environment. This command retrieves the *VPC Endpoint Service Name* and *Private DNS records required for {connection} clients* that you must send to {support-url}.
 +
 [source,bash]
 ----
@@ -66,14 +66,14 @@ Refer to the Snowflake documentation for additional information on the specific 
 [#exchange-information]
 === Exchange AWS and ThoughtSpot information with ThoughtSpot Support
 
-. Send the *account name* from the DNS records and the *Service name* to ThoughtSpot Support.
+. Send the *account name* from the DNS records and the *Service name* to {support-url}.
 You gathered this information from {connection} in step 2 of <<request-configuration,Request {connection} PrivateLink configuration>>.
 . After ThoughtSpot Support configures the AWS PrivateLink in ThoughtSpot, ask them to send you the PrivateLink {connection} account name.
 
 [#embrace]
 === Configure Connections
 
-xref:connections-snowflake.adoc[Configure Connections for {connection}], using the PrivateLink {connection} account name from ThoughtSpot Support for the *Account name* field. For example, `xyz99999.us-west-2.privatelink`.
+xref:connections-snowflake.adoc[Configure Connections for {connection}], using the PrivateLink {connection} account name from {support-url} for the *Account name* field. For example, `xyz99999.us-west-2.privatelink`.
 
 '''
 > **Related information**
