@@ -1,0 +1,29 @@
+= Passthrough functions for {connection}
+:last_updated: 4/21/2023
+:linkattrs:
+:experimental:
+:page-layout: default-cloud
+:page-aliases:
+:connection: Amazon RDS PostgreSQL
+:description: Passthrough functions allow you to send SQL expressions directly to Amazon RDS PostgreSQL without being interpreted by ThoughtSpot.
+
+Passthrough functions allow you to send SQL expressions directly to {connection} without being interpreted by ThoughtSpot.
+If you have custom database functions that ThoughtSpot doesn't support, you can use these new passthrough functions in the ThoughtSpot Formula Assistant to call your custom functions.
+
+A passthrough function serves as a wrapper around the specific {connection} SQL function.
+To use a specific {connection} SQL function, match the data type that the function returns with the Connections passthrough function that returns that data type.
+
+For details on all supported passthrough functions, see xref:formula-reference.adoc#passthrough-functions[Connections passthrough functions].
+
+//For details on {connection} functions, see {connection}'s link:https://dev.mysql.com/doc/refman/8.0/en/functions.html[SQL Reference^].
+
+'''
+> **Related information**
+>
+> * xref:connections-rds-add.adoc[Add an {connection} connection]
+> * xref:connections-rds-edit.adoc[Edit an {connection} connection]
+> * xref:connections-rds-remap.adoc[Remap an {connection} connection]
+> * xref:connections-rds-delete-table.adoc[Delete a table from an {connection} connection]
+> * xref:connections-rds-delete-table-dependencies.adoc[Delete a table with dependent objects]
+> * xref:connections-rds-delete.adoc[Delete an {connection} connection]
+> * xref:connections-rds-reference.adoc[Connection reference for {connection}]
