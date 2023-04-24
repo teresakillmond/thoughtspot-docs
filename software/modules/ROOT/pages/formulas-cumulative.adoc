@@ -82,3 +82,23 @@ The formula appears in the search bar and in the table as its own column.
 image::cumulative_sum_table.png[cumulative sum table]
 +
 A headline box that displays the cumulative sum within the entire table appears at the bottom. You can select it to toggle between different aggregations.
+
+== Calculate a cumulative sum of a unique count
+
+ThoughtSpot doesn't have a purpose-built function for calculating a cumulative sum, or other cumulative formula, for a unique count. However, for many use cases, you can use a `group_aggregate` to facilitate this type of count. Adding a `group_aggregate` to your formula allows you to pass the aggregate function (in this case, `unique count`) in the windowing function (in this case, `cumulative_sum`).
+
+See the following example for the general formula for a cumulative sum of a unique count. In this example, we calculate the cumulative sum of unique customer names, using `monthly date` as our aggregation bucket.
+
+[source,bash]
+----
+cumulative_sum (group_aggregate (unique count (Customer Name ),query_groups (),query_filters ()),start_of_month (Date) )
+----
+
+The result looks something like this:
+
+image::cumulative-unique-example.png[Cumulative sum of a unique count of customers]
+
+You can use this syntax on any cumulative formula: average, maximum, minimum, and sum.
+
+NOTE: This syntax produces a unique count for each individual result, such as *Oct 2021*. However, it doesn't produce a unique count across results. If a customer name appears in both October 2021 and November 2021, for example, that customer would be counted in both those months.
+
