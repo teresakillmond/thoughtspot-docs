@@ -1,12 +1,12 @@
-= Add an {connection} connection
-:last_updated: 4/19/2023
+= Add a {connection} connection
+:last_updated: 3/3/2023
 :author: Naomi
 :linkattrs:
 :page-layout: default-cloud
 :page-aliases:
 :experimental:
-:connection: Amazon RDS PostgreSQL
-:description: Learn how to add an Amazon RDS PostgreSQL connection.
+:connection: Generic JDBC
+:description: Learn how to add a Generic JDBC connection.
 
 To connect to {connection}, follow these steps:
 
@@ -18,13 +18,13 @@ To connect to {connection}, follow these steps:
 // ![]({{ site.baseurl }}/images/new-connection.png "New db connect")
 . Create a name for your connection, a description (optional), then select the {connection} connection type, and click *Continue*.
 +
-image::rds-connectiontype.png[Add a {connection} connection]
+image::jdbc-connectiontype.png[Add a {connection} connection]
 
 . Enter the connection details for your {connection} data source.
 +
-image::rds-connectiondetails.png[Enter connection details]
+image::jdbc-connectiondetails.png[Enter connection details]
 +
-Refer to the xref:connections-rds-reference.adoc[{connection} connection reference] for more information on each of the specific attributes you must enter for your connection.
+Refer to the xref:connections-genericjdbc-reference.adoc[{connection} connection reference] for more information on each of the specific attributes you must enter for your connection.
 . (Optional) Configure proxy for your {connection} connection by doing the following:
 .. Select the *Advanced Config* menu to reveal the Key and Value fields.
 .. For Key, enter *httpProxy*, and for Value, enter *<proxyHost>:<proxyPort>*.
@@ -63,16 +63,16 @@ Because the selected tables and columns in your connection are linked, it may ta
 This is because ThoughtSpot does not cache linked data.
 With linked data, ThoughtSpot queries the external database directly, which is slower than querying data that is stored in ThoughtSpot's database.
 
-You can modify an {connection} connection in the following ways:
+You can modify a {connection} connection in the following ways:
 
-* xref:connections-rds-edit.adoc[Edit an {connection} connection]
-* xref:connections-rds-remap.adoc[Remap an {connection} connection]
-* xref:connections-rds-delete-table.adoc[Delete a table from an {connection} connection]
-* xref:connections-rds-delete-table-dependencies.adoc[Delete a table with dependent objects]
+* xref:connections-genericjdbc-edit.adoc[Edit a {connection} connection]
+* xref:connections-genericjdbc-remap.adoc[Remap a {connection} connection]
+* xref:connections-genericjdbc-delete-table.adoc[Delete a table from a {connection} connection]
+* xref:connections-genericjdbc-delete-table-dependencies.adoc[Delete a table with dependent objects]
 
-You can also xref:connections-rds-delete.adoc[Delete an {connection} connection].
+You can also xref:connections-genericjdbc-delete.adoc[Delete a {connection} connection].
 
-See the xref:connections-rds-reference.adoc[Connection reference] for details of connection parameters.
+See the xref:connections-genericjdbc-reference.adoc[Connection reference] for details of connection parameters.
 
 == Share a connection
 
@@ -93,10 +93,9 @@ Note that to remove share access from a connection, you must navigate to the *Sh
 '''
 > **Related information**
 >
-> * xref:connections-rds-edit.adoc[Edit an {connection} connection]
-> * xref:connections-rds-remap.adoc[Remap an {connection} connection]
-> * xref:connections-rds-delete-table.adoc[Delete a table from an {connection} connection]
-> * xref:connections-rds-delete-table-dependencies.adoc[Delete a table with dependent objects]
-> * xref:connections-rds-delete.adoc[Delete an {connection} connection]
-> * xref:connections-rds-reference.adoc[Connection reference for {connection}]
-> * xref:connections-rds-passthrough.adoc[]
+> * xref:connections-genericjdbc-edit.adoc[Edit a {connection} connection]
+> * xref:connections-genericjdbc-remap.adoc[Remap a {connection} connection]
+> * xref:connections-genericjdbc-delete-table.adoc[Delete a table from a {connection} connection]
+> * xref:connections-genericjdbc-delete-table-dependencies.adoc[Delete a table with dependent objects]
+> * xref:connections-genericjdbc-delete.adoc[Delete a {connection} connection]
+> * xref:connections-genericjdbc-reference.adoc[Connection reference for {connection}]
