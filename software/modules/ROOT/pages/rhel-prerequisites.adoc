@@ -67,7 +67,7 @@ ThoughtSpot is certified with RHEL versions 7.8, 7.9, 8.1, 8.2, 8.3, 8.4, and 8.
 we *do not* support other versions of RHEL, including 7.7 and 8.
 ThoughtSpot is certified with OEL version 7.9. Install RHEL version 7.8, 7.9, 8.1, 8.2, 8.3, 8.4, or 8.5, or OEL version 7.9.
 
-On RHEL version 7.8, ensure that your <<#linux-kernel-version,linux kernel version>> is 3.10.0-1127.19.1 or higher. On all other supported RHEL versions, use the default linux kernel. On OEL version 7.9, ensure that you are using the Red Hat Compatible Kernel (RHCK), not the default Unbreakable Enterprise Kernel (UEK). If you are using the UEK, xref:support-contact.adoc[contact ThoughtSpot Support] to switch to the RHCK.
+On RHEL version 7.8, ensure that your <<#linux-kernel-version,linux kernel version>> is 3.10.0-1127.19.1 or higher. On all other supported RHEL versions, use the default linux kernel. On OEL version 7.9, ensure that you are using the Red Hat Compatible Kernel (RHCK), not the default Unbreakable Enterprise Kernel (UEK). If you are using the UEK, contact {support-url} to switch to the RHCK.
 
 NOTE: For RHEL deployments on online clusters, the Ansible playbook upgrades the OS to the latest supported version of RHEL. The Ansible playbook does *not* upgrade the OS when installing offline.
 
@@ -79,12 +79,12 @@ RHEL 7.8 used to come with a Linux kernel of version 3.10.x, which has a bug tha
 The default Linux kernel version for RHEL 7.8 is now 3.10.0-1127.19.1.
 However, you may have an older RHEL 7.8, with a Linux kernel of version 3.10.x.
 You must upgrade to 3.10.0-1127.19.1 or higher.
-If you have trouble upgrading your Linux kernel to version 3.10.0-1127.19.1 or higher, contact xref:support-contact.adoc[ThoughtSpot Support].
+If you have trouble upgrading your Linux kernel to version 3.10.0-1127.19.1 or higher, contact {support-url}.
 This is a requirement for *all* platforms: hardware appliance, cloud, and VMware.
 
 If you are using any other supported RHEL version, use the default Linux kernel.
 
-On OEL version 7.9, ensure that you are using the Red Hat Compatible Kernel (RHCK), not the default Unbreakable Enterprise Kernel (UEK). If you are using the UEK, xref:support-contact.adoc[contact ThoughtSpot Support] to switch to the RHCK.
+On OEL version 7.9, ensure that you are using the Red Hat Compatible Kernel (RHCK), not the default Unbreakable Enterprise Kernel (UEK). If you are using the UEK, contact {support-url} to switch to the RHCK.
 
 WARNING: If you are running RHEL 7.8, and your Linux kernel version is not 3.10.0-1127.19.1 or higher, you may run into unexpected node reboots and possible loss of data.
 
@@ -116,7 +116,7 @@ R repository::
 
 Make sure that you can download RHEL or OEL packages to all hosts, either from the xref:official-repositories[official package repositories], or from a xref:mirror-repositories[mirror repository] owned and managed by your organization.
 
-If you cannot access the RHEL or OEL repositories, there is no mirror repository in your organization, or you are unable to access Yum, Python, or R repositories, contact xref:support-contact.adoc[ThoughtSpot Support].
+If you cannot access the RHEL or OEL repositories, there is no mirror repository in your organization, or you are unable to access Yum, Python, or R repositories, contact {support-url}.
 
 [#official-repositories]
 *Official package repositories*

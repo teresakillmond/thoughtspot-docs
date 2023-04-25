@@ -475,7 +475,7 @@ tscli cluster check [--path PATH] [--includes INCLUDES] [--retry RETRY] [--local
   --disable-events;; Disables raising configuration events. The default is `False`.
 
 tscli cluster create RELEASE::
-  Creates a new cluster from the release file specified by adding the release number. Used by ThoughtSpot Support when installing a new cluster. For example, `tscli cluster create 6.3.1.tar.gz`. This command has the following parameters:
+  Creates a new cluster from the release file specified by adding the release number. Used by {support-url} when installing a new cluster. For example, `tscli cluster create 6.3.1.tar.gz`. This command has the following parameters:
   --disable_rotate_keys;; Disables cluster rotate key configuration. The default is `False`.
   --enable_cloud_storage {s3a,gcs};; Determines whether to enable Cloud Storage setup, and which storage format to use.
   heterogeneous;; Should be set for heterogeneous clusters. The default is `False`.
@@ -710,7 +710,7 @@ tscli fileserver configure [-h] --user USER [--password PASSWORD]::
   Configures the secure file server username and password for file upload/download, and the call home feature. You only have to issue this command one time, to set up the connection to the secure file server. Reissue this command if the password changes. The parameter `PASSWORD` is optional. If a password is not specified, the system prompts the user to enter it.
 
 tscli fileserver download-release [-h] [--user USER] [--password PASSWORD] [--url URL] [--md5 MD5] [--out OUT] release::
-  Downloads the specified release file, including its checksum, and verifies the integrity of release bundle. You must specify the exact release number, such as `6.3.1`. Before using this command for the first time, you must set up the file server connection using `tscli fileserver configure`.  You must work with a member of the ThoughtSpot Support team, because they must specify a privileged `user` and a corresponding `password` to allow you to download releases.  This command has the following parameters:
+  Downloads the specified release file, including its checksum, and verifies the integrity of release bundle. You must specify the exact release number, such as `6.3.1`. Before using this command for the first time, you must set up the file server connection using `tscli fileserver configure`.  You must work with a member of the {support-url} team, because they must specify a privileged `user` and a corresponding `password` to allow you to download releases.  This command has the following parameters:
   --user USER;; The fileserver username.
   --password PASSWORD;; The fileserver password.
   --url URL;; Url from where the release needs to be downloaded.
@@ -1138,7 +1138,7 @@ tscli scheduled-pinboards status::
   Shows the status of scheduled Pinboards for the cluster.
 
 NOTE: When you enable scheduled Pinboards, you must also configure a list of allowed email domains.
-Contact xref:support-contact.adoc[ThoughtSpot Support]  for help on how to configure this list.
+Contact {support-url}  for help on how to configure this list.
 
 [#tscli-set]
 === set
@@ -1216,7 +1216,7 @@ $ tscli smtp set-relayhost IP_address
 ```
 $ tscli smtp set-relayhost IP_address:custom_port
 ```
-  * If you are on 6.1 or on a version earlier than 6.0.5, contact xref:support-contact.adoc[ThoughtSpot Support] to help you set up a custom port.
+  * If you are on 6.1 or on a version earlier than 6.0.5, contact {support-url} to help you set up a custom port.
 
 tscli smtp set-saslcredentials::
   Sets SASL credentials and enables SMTP AUTH.
@@ -1431,7 +1431,7 @@ tscli sssd disable::
 tscli sssd disable-openldap::
   Disables OpenLDAP integration.
 
-NOTE: If you mapped your OpenLDAP admin user to ThoughtSpot's local admin user through the Ansible playbook while deploying ThoughtSpot on RHEL, do not run this command. If you ran `tscli sssd enable-openldap` and also mapped your OpenLDAP admin user to ThoughtSpot's local admin user through the Ansible playbook, contact xref:support-contact.adoc[ThoughtSpot Support].
+NOTE: If you mapped your OpenLDAP admin user to ThoughtSpot's local admin user through the Ansible playbook while deploying ThoughtSpot on RHEL, do not run this command. If you ran `tscli sssd enable-openldap` and also mapped your OpenLDAP admin user to ThoughtSpot's local admin user through the Ansible playbook, contact {support-url}.
 
 [#tscli-sssd-enable]
 tscli sssd enable --user USER --domain DOMAIN::
