@@ -6,6 +6,8 @@
 :page-aliases: /admin/setup/configure-saml-with-tscli.adoc, /admin/ts-cloud/authentication-integration.adoc, authentication-saml.adoc
 :description: ThoughtSpot integrates with SAML for authentication.
 
+ThoughtSpot integrates with SAML for authentication.
+
 [NOTE]
 ====
 This article contains instructions for managing SAML authentication if your company does *_NOT_* use IAMv2. IAMv2 is *_off_* by default. If the *SAML* section of the Admin Console is called *Authentication: SAML*, your company is *_not_* using IAMv2.
@@ -17,10 +19,8 @@ If the *SAML* section of the Admin Console is called *SAML integration*, your co
 ====
 If your organization uses xref:orgs-overview.adoc[], you must be a cluster administrator to manage SAML authentication, not an Org administrator. You manage SAML authentication for the whole cluster. You cannot set it separately for each Org.
 
-To ensure SAML authentication works smoothly in an Orgs environment, you must include Orgs mapping in your IDP assertion. See <<assertion,IDP metadata XML file>>. If you map Orgs with SAML, you can't also map groups.
+To ensure SAML authentication works smoothly in an Orgs environment, you must include Orgs mapping in your IDP assertion. See <<assertion,IDP metadata XML file>>. If you map Orgs with SAML, you can't also map groups. If you are using xref:orgs-overview.adoc[], we do not currently support using IAMv2.
 ====
-
-ThoughtSpot integrates with SAML for authentication.
 
 == SAML SSO authentication
 
@@ -40,7 +40,7 @@ You can configure SAML SSO login for more than one Identity Provider. However, w
 
 To configure SAML authentication with multiple IDPs, contact {support-url}.
 
-NOTE: ThoughtSpot supports configuration of a maximum of 5 IDPs.
+NOTE: ThoughtSpot supports configuration of a maximum of 5 IDPs. If you are using xref:orgs-overview.adoc[] or xref:okta-iam.adoc[], we do not support SAML authentication with multiple IDPs.
 
 == About SAML authentication
 
@@ -107,7 +107,9 @@ The attributes associated with the user; for example, the username and email add
 
 You need admin privileges to enable SAML SSO authentication.
 
+. If you are using xref:orgs-overview.adoc[], ask {support-url} to enable SAML integration in your environment. After ThoughtSpot Support enables SAML integration, you can configure SAML for your environment.
 . Configure the ThoughtSpot application instance on your IDP server.
+.. If you are using xref:okta-iam.adoc[], you must whitelist the following URL in your IDP: `https://identity.thoughtspotlogin.cloud/`.
 . Sign in to your ThoughtSpot application instance.
 . From the top navigation bar, select the *Admin* tab.
 . Select *SAML* from the side navigation bar that appears.
@@ -157,7 +159,7 @@ Attributes and subjects appear in separate sections of your SAML assertion.
 It is *mandatory* to fill out the mail field.
 If your company cannot meet this requirement, contact {support-url}.
 +
-If your company uses Orgs, it is also mandatory to include mapping for the Orgs attribute. You must include all the Orgs to which the user belongs. Here is a sample *Orgs* attribute:
+If your company uses Orgs, it is also mandatory to include mapping for the Orgs attribute. If you do not including Orgs mapping, all users get assigned only to the Primary Org. In the Org mapping, you must include all the Orgs to which the user belongs. Here is a sample *Orgs* attribute:
 +
 [source,bash]
 ----
@@ -242,6 +244,8 @@ NOTE: If you map Orgs with SAML, you can't also map groups.
 You can map your SAML groups from your IDP to your ThoughtSpot groups, unless you are using xref:orgs-overview.adoc[Orgs].
 SAML group mapping means that you do not have to manually recreate your groups in ThoughtSpot, if they are already present in your IDP.
 Refer to xref:saml-group-mapping.adoc[Configure SAML group mapping].
+
+NOTE: If you are using xref:orgs-overview.adoc[] or xref:okta-iam.adoc[], we do not currently support SAML group mapping.
 
 == Use SSO login by default
 After you configure SAML authentication, a new option appears on the login page that allows users to sign in using SSO, while still allowing local users to sign in.
