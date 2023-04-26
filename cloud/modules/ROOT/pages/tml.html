@@ -1,0 +1,3536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.18">
+<meta name="description" content="Use TML to modify a ThoughtSpot object in a flat-file format. Then, migrate the object to a different cluster, or restore it to the same cluster.">
+<title>ThoughtSpot Modeling Language</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment the following line when using as a custom stylesheet */
+/* @import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"; */
+html{font-family:sans-serif;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+b,strong{font-weight:bold}
+abbr{font-size:.9em}
+abbr[title]{cursor:help;border-bottom:1px dotted #dddddf;text-decoration:none}
+dfn{font-style:italic}
+hr{height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type=checkbox],input[type=radio]{padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,::before,::after{box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;line-height:1;position:relative;cursor:auto;-moz-tab-size:4;-o-tab-size:4;tab-size:4;word-wrap:anywhere;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ul.square{list-style-type:square}
+ul.circle ul:not([class]),ul.disc ul:not([class]),ul.square ul:not([class]){list-style:inherit}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:1px solid #dedede;word-wrap:normal}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre).nobreak{word-wrap:normal}
+:not(pre).nowrap{white-space:nowrap}
+:not(pre).pre-wrap{white-space:pre-wrap}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;border-radius:3px;box-shadow:0 1px 0 rgba(0,0,0,.2),inset 0 0 0 .1em #fff;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin:0 auto;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:flex;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border:1px solid #e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:none;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:hsla(0,0%,100%,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details{margin-left:1.25rem}
+details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;outline:none;-webkit-tap-highlight-color:transparent}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"";border:solid transparent;border-left:solid;border-width:.3em 0 .3em .5em;position:absolute;top:.5em;left:-1.25rem;transform:translateX(15%)}
+details[open]>summary::before{border:solid transparent;border-top:solid;border-width:.5em .3em 0;transform:translateY(15%)}
+details>summary::after{content:"";width:1.25rem;height:1em;position:absolute;top:.3em;left:-1.25rem}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class=paragraph]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border:1px solid #e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border:1px solid #dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class=highlight],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos,pre.pygments .linenos{border-right:1px solid;opacity:.35;padding-right:.5em;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+pre.pygments span.linenos{display:inline-block;margin-right:.75em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans-serif;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;font-size:.85rem;text-align:left;margin-right:0}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>*>tr>*{border-width:1px}
+table.grid-cols>*>tr>*{border-width:0 1px}
+table.grid-rows>*>tr>*{border-width:1px 0}
+table.frame-all{border-width:1px}
+table.frame-ends{border-width:1px 0}
+table.frame-sides{border-width:0 1px}
+table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-child>*{border-top-width:0}
+table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
+table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
+table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
+table.stripes-all>*>tr,table.stripes-odd>*>tr:nth-of-type(odd),table.stripes-even>*>tr:nth-of-type(even),table.stripes-hover>*>tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+li>p:empty:only-child::before{content:"";display:inline-block}
+ul.checklist>li>p:first-child{margin-left:-1em}
+ul.checklist>li>p:first-child>.fa-square-o:first-child,ul.checklist>li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist>li>p:first-child>input[type=checkbox]:first-child{margin-right:.25em}
+ul.inline{display:flex;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+td.hdlist2{word-wrap:anywhere}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:4px solid #fff;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt,summary{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt,summary{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]{border-bottom:1px dotted}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media amzn-kf8,print{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="article">
+<div id="header">
+<h1>ThoughtSpot Modeling Language</h1>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>INTRO FROM SAMRIDH</p>
+</div>
+<div class="paragraph">
+<p>INCLUDE LINKS TO SCRIPTABILITY.ADOC AND TML-IMPORT-EXPORT-MULTIPLE.ADOC</p>
+</div>
+<div class="paragraph">
+<p>Use TML to modify a ThoughtSpot object in a flat-file format. Then, migrate the object to a different cluster, or restore it to the same cluster.</p>
+</div>
+<div class="paragraph">
+<p>To work with TML files for Worksheets, views, SQL views, tables, Answers, Liveboards, and Monitor alerts in ThoughtSpot, you can download these objects to a flat file in <code>.TML</code> format, modify it, and subsequently upload this file either to the same cluster, or to a different cluster.
+To learn how to export, change, and update Worksheets, views, tables, Answers, and Liveboards, see <a href="scriptability.html">Import and export TML files</a>.</p>
+</div>
+<div class="paragraph">
+<p>In this section, you learn the syntax of the TML files for each object.
+You also learn how to add and modify joins for Worksheets, views, SQL views, and tables.</p>
+</div>
+<div class="paragraph">
+<p>See the following articles for the full syntax of each type of TML file:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="tml-answers.html">TML for Answers</a></p>
+</li>
+<li>
+<p><a href="tml-joins.html">TML for joins</a></p>
+</li>
+<li>
+<p><a href="tml-liveboards.html">TML for Liveboards</a></p>
+</li>
+<li>
+<p><a href="tml-alerts.html">TML for Monitor alerts</a></p>
+</li>
+<li>
+<p><a href="tml-sql-views.html">TML for SQL views</a></p>
+</li>
+<li>
+<p><a href="tml-tables.html">TML for tables</a></p>
+</li>
+<li>
+<p><a href="tml-views.html">TML for views</a></p>
+</li>
+<li>
+<p><a href="tml-worksheets.html">TML for Worksheets</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="syntax-worksheets">Syntax of the Worksheet TML file</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>TML</code> file for Worksheets has a specific syntax.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="#worksheet-parameters">TML Worksheet parameters</a> for details about the keywords used in this example.</p>
+</div>
+<div class="paragraph">
+<p>You may not see each of these parameters in your own TML files, depending on whether each variable is explicitly defined.
+For example, if you do not have any filters on your Worksheet, the <code>filters</code> parameter does not appear.
+You can add that variable to the TML file to specify filters for your Worksheet.</p>
+</div>
+<div class="paragraph">
+<p>To reduce ambiguity, you may need to add the optional <code>fqn</code> parameter to your TML file when you reference source tables or connections. This is necessary if you have multiple connections or tables with the same name. If you do not add the <code>fqn</code> parameter, and the connection or table you reference does not have a unique name, the file import fails.</p>
+</div>
+<div class="paragraph">
+<p>Refer to <a href="tml-joins.html">TML for joins</a> for more information on the functionality and syntax of Worksheet joins in TML.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If you edit the joins in the Worksheet TML file, you are only editing the joins for that specific Worksheet. You are not editing the joins at the table level. To modify table-level joins, you must edit the source table&#8217;s TML file.
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><a href="#guid">guid</a>: &lt;worksheet_guid&gt;
+<a href="#worksheet">worksheet</a>:
+  name: &lt;worksheet_name&gt;
+  <a href="#description">description</a>:
+    This is a multi-line description of the worksheet
+    Description line 2
+  <a href="#tables">tables</a>:
+  - <a href="#name">name</a>: &lt;table_name_1&gt;
+    <a href="#id">id</a> : &lt;optional_table_id&gt;
+    <a href="#fqn">fqn</a> : &lt;optional_GUID_of_table_name&gt;
+  - <a href="#name">name</a>: &lt;table_name_2&gt;
+  - <a href="#name">name</a>: &lt;table_name_n&gt;
+  <a href="#joins">joins</a>:
+  - <a href="#name">name</a>: &lt;join_name_1&gt;
+    <a href="#source">source</a>: &lt;source_table_name&gt;
+    <a href="#destination">destination</a>: &lt;destination_table_name&gt;
+    <a href="#type">type</a>: [RIGHT_OUTER | LEFT_OUTER | INNER | OUTER]
+    <a href="#on">on</a>: &lt;join_expression_string&gt;
+    <a href="#is_one_to_one">is_one_to_one</a>: [ false | true ]
+  - ...
+  <a href="#table_paths">table_paths</a>:
+  - <a href="#id">id</a>: &lt;table_path_name_1&gt;
+    <a href="#table">table</a>: &lt;table_name_1&gt;
+    <a href="#join_path">join_path</a>:
+    - <a href="#join">join</a>:
+      - &lt;join_name_1&gt;
+      - &lt;join_name_n&gt;
+  - <a href="#id">id</a>: &lt;table_path_name_2&gt;
+    <a href="#table">table</a>: &lt;table_name_2&gt;
+    <a href="#join_path">join_path</a>:
+    - <a href="#join">join</a>:
+      - &lt;join_name_2&gt;
+  - <a href="#id">id</a>: &lt;table_path_name_n&gt;
+    <a href="#table">table</a>: &lt;table_name_n&gt;
+    <a href="#join_path">join_path</a>:
+    - <a href="#join">join</a>:
+      - &lt;join_name_n&gt;
+  <a href="#formulas">formulas</a>:
+  - <a href="#name">name</a>: &lt;formula_name_1&gt;
+    <a href="#expr">expr</a>: &lt;formula_definition_1&gt;
+    [id]: &lt;optional_unique_identifier&gt;
+  - <a href="#name">name</a>: &lt;formula_name_2&gt;
+    <a href="#expr">expr</a>: &lt;formula_definition_2&gt;
+  - <a href="#name">name</a>: &lt;formula_name_3&gt;
+    <a href="#expr">expr</a>: &lt;formula_definition_3&gt;
+  <a href="#filters">filters</a>:
+  - <a href="#column">column</a>: &lt;filtered_column_name_1&gt;
+    <a href="#oper">oper</a>: &lt;filter_operator&gt;
+    <a href="#values">values</a>: &lt;filtered_values&gt;
+    - value 1
+    - value 2
+    - value n
+  - <a href="#column">column</a>: &lt;filtered_column_name_2&gt;
+  <a href="#worksheet_columns">worksheet_columns</a>:
+  - <a href="#name">name</a>: &lt;column_name_1&gt;
+    <a href="#description">description</a>: &lt;optional_column_description&gt;
+    <a href="#column_id">column_id</a>: &lt;table_path&gt;::&lt;column_id_1&gt;
+    <a href="#properties">properties</a>:
+      <a href="#column_type">column_type</a>: [ MEASURE | ATTRIBUTE ]
+      <a href="#aggregation">aggregation</a>: [ SUM | COUNT | AVERAGE | MAX | MIN |
+                     COUNT_DISTINCT | NONE | STD_DEVIATION | VARIANCE]
+      <a href="#index_type">index_type</a>: [ DONT_INDEX | DEFAULT | PREFIX_ONLY |
+                    PREFIX_AND_SUBSTRING | PREFIX_AND_WORD_SUBSTRING ]
+      <a href="#index_priority">index_priority</a>: &lt;index_priority&gt;
+      <a href="#synonyms">synonyms</a> :
+             &lt;synonym_1&gt;
+             &lt;synonym_2&gt;
+      <a href="#is_attribution_dimension">is_attribution_dimension</a> : [true | false]
+      <a href="#is_additive">is_additive</a> : [ true | false ]
+      <a href="#calendar">calendar</a> : [ default | calendar_name ]
+      <a href="#format_pattern">format_pattern</a> : &lt;format_pattern_string&gt;
+      <a href="#currency_type">currency_type</a> :
+        is_browser : true
+          OR
+        column : &lt;column_name&gt;
+          OR
+        iso_code : &lt;valid_ISO_code&gt;
+      <a href="#is_hidden">is_hidden</a>: [ true | false ]
+      <a href="#geo_config">geo_config</a>:
+        latitude : true
+          OR
+        longitude : true
+          OR
+        country : true
+          OR
+        region_name:
+        - country : &lt;name_supported_country&gt;
+        - region_name : &lt;region_name_in_UI&gt;
+          OR
+        <a href="#custom_file_guid">custom_file_guid</a>: &lt;custom_map_guid&gt;
+        <a href="#geometryType">geometryType</a>: &lt;custom_map_geometry_type&gt;
+      <a href="#spotiq_preference">spotiq_preference</a>: &lt;spotiq_preference_string&gt;
+    <a href="#name">name</a>: &lt;column_name_2&gt;
+    <a href="#description">description</a>: &lt;column_description&gt;
+    <a href="#column_id">column_id</a>: &lt;table_path&gt;::&lt;column_id_2&gt;
+    ...
+  <a href="#properties">properties</a>:
+    <a href="#is_bypass_rls">is_bypass_rls</a>: [ true | false ]
+    <a href="#join_progressive">join_progressive</a>: [ true | false ]
+  <a href="#parameters">parameters</a>:
+  - <a href="#id">id</a>: &lt;parameter_1_id&gt;
+    <a href="#name">name</a>: &lt;parameter_1_name&gt;
+    <a href="#data_type">data_type</a>: &lt;parameter_1_data_type&gt;
+    <a href="#default_value">default_value</a>: &lt;parameter_1_default_value&gt;
+    <a href="#range_config">range_config</a>:
+      <a href="#range_min">range_min</a>: &lt;parameter_1_range_minimum&gt;
+      <a href="#range_max">range_max</a>: &lt;parameter_1_range_maximum&gt;
+      <a href="#include_min">include_min</a>: [true | false]
+      <a href="#include_max">include_max</a>: [true | false]
+  - <a href="#id">id</a>: &lt;parameter_2_id&gt;
+    <a href="#name">name</a>: &lt;parameter_2_name&gt;
+    <a href="#data_type">data_type</a>: &lt;parameter_2_data_type&gt;
+    <a href="#default_value">default_value</a>: &lt;parameter_1_default_value&gt;
+    <a href="#list_config">list_config</a>:
+      <a href="#list_choice">list_choice</a>:
+      - <a href="#value">value</a>: &lt;list_value_1&gt;
+        <a href="#display_name">display_name</a>: &lt;value_1_display_name&gt;
+      - <a href="#value">value</a>: &lt;list_value_2&gt;
+        <a href="#display_name">display_name</a>: &lt;value_2_display_name&gt;
+      - <a href="#value">value</a>: &lt;list_value_n&gt;
+        <a href="#display_name">display_name</a>: &lt;value_n_display_name&gt;
+  - <a href="#id">id</a>: &lt;parameter_n_id&gt;
+    <a href="#name">name</a>: &lt;parameter_n_name&gt;
+    <a href="#data_type">data_type</a>: &lt;parameter_n_data_type&gt;
+    <a href="#default_value">default_value</a>: &lt;parameter_n_default_value&gt;
+    <a href="#range_config">range_config</a>:
+      <a href="#range_min">range_min</a>: &lt;parameter_n_range_minimum&gt;
+      <a href="#range_max">range_max</a>: &lt;parameter_n_range_maximum&gt;
+      <a href="#include_min">include_min</a>: [true | false]
+      <a href="#include_max">include_max</a>: [true | false]
+  <a href="#lesson_plans">lesson_plans</a>
+  - <a href="#lesson_id">lesson_id</a>: &lt;lesson_id_number_1&gt;
+    <a href="#lesson_plan_string">lesson_plan_string</a> &lt;lesson_plan_string_1&gt;
+  - <a href="#lesson_id">lesson_id</a>: &lt;lesson_id_number_2&gt;
+    <a href="#lesson_plan_string">lesson_plan_string</a> &lt;lesson_plan_string_2&gt;
+  - <a href="#lesson_id">lesson_id</a>: &lt;lesson_id_number_n&gt;
+    <a href="#lesson_plan_string">lesson_plan_string</a> &lt;lesson_plan_string_n&gt;
+  <a href="#joins_with">joins_with</a>:
+  - <a href="#name">name</a>: &lt;join_name_1&gt;
+    <a href="#description">description</a>: &lt;optional_join_description_1&gt;
+    <a href="#destination">destination</a>:
+      <a href="#name">name</a>: &lt;destination_table_name_1&gt;
+      <a href="#fqn">fqn</a>: &lt;optional_table_guid_1&gt;
+    <a href="#on">on</a>: &lt;join_expression_string_1&gt;
+    <a href="#type">type</a>: [RIGHT_OUTER | LEFT_OUTER | INNER | OUTER]
+    <a href="#is_one_to_one">is_one_to_one</a>: [ false | true ]
+    <a href="#name">name</a>: &lt;join_name_2&gt;
+    <a href="#name">name</a>: &lt;join_name_n&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="syntax-views">Syntax of the view TML file</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>TML</code> file for views has a specific syntax.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="#tml-parameters">TML parameters</a> for details about the keywords used in this example.</p>
+</div>
+<div class="paragraph">
+<p>You may not see each of these parameters in your own TML files, depending on whether each variable is explicitly defined.
+For example, if you did not define any conditional formatting, the <code>conditional_formatting</code> variable does not appear.
+You can add that variable in the TML file to specify conditional formatting.</p>
+</div>
+<div class="paragraph">
+<p>To reduce ambiguity, you may need to add the optional <code>fqn</code> parameter to your TML file when you reference source tables or connections. This is necessary if you have multiple connections or tables with the same name. If you do not add the <code>fqn</code> parameter, and the connection or table you reference does not have a unique name, the file import fails.</p>
+</div>
+<div class="paragraph">
+<p>Refer to <a href="#syntax-joins">join syntax</a> for more information on the functionality and syntax of Worksheet, view, SQL view, and table joins in TML.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If you edit the joins in the view TML file, you are only editing the joins for that specific view. You are not editing the joins at the table level. To modify table-level joins, you must edit the source table&#8217;s TML file.
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><a href="#guid">guid</a>: &lt;view_guid&gt;
+<a href="#view">view</a>:
+  <a href="#name">name</a>: &lt;view_name&gt;
+  <a href="#description">description</a>:
+    This is a multi-line description of the View.
+    Description line 2
+  <a href="#tables">tables</a>:
+  - <a href="#name">name</a>: &lt;table_name_1&gt;
+    <a href="#id">id</a> : &lt;optional_table_id&gt;
+    <a href="#fqn">fqn</a> : &lt;optional_GUID_of_table_name&gt;
+  - <a href="#name">name</a>: &lt;table_name_2&gt;
+  - <a href="#name">name</a>: &lt;table_name_n&gt;
+  <a href="#joins">joins</a>:
+  - <a href="#name">name</a>: &lt;join_name_1&gt;
+    <a href="#source">source</a>: &lt;source_table_name&gt;
+    <a href="#destination">destination</a>: &lt;destination_table_name&gt;
+    <a href="#type">type</a>: [RIGHT_OUTER | LEFT_OUTER | INNER | OUTER]
+    <a href="#on">on</a>: &lt;join_expression_string&gt;
+    <a href="#is_one_to_one">is_one_to_one</a>: [ false | true ]
+  <a href="#table_paths">table_paths</a>:
+  - <a href="#id">id</a>: &lt;table_path_name_1&gt;
+    <a href="#table">table</a>: &lt;table_name_1&gt;
+    <a href="#join_path">join_path</a>:
+    - <a href="#join">join</a>:
+      - &lt;join_name_1&gt;
+      - &lt;join_name_n&gt;
+  - <a href="#id">id</a>: &lt;table_path_name_2&gt;
+    <a href="#table">table</a>: &lt;table_name_2&gt;
+    <a href="#join_path">join_path</a>:
+    - <a href="#join">join</a>:
+      - &lt;join_name_2&gt;
+  - <a href="#id">id</a>: &lt;table_path_name_n&gt;
+    <a href="#table">table</a>: &lt;table_name_n&gt;
+    <a href="#join_path">join_path</a>:
+    - <a href="#join">join</a>:
+      - &lt;join_name_n&gt;
+  <a href="#formulas">formulas</a>:
+  - <a href="#id">id</a>: &lt;formula_id_1&gt;
+    <a href="#name">name</a>: &lt;formula_name_1&gt;
+    <a href="#expr">expr</a>: &lt;formula_definition_1&gt;
+    <a href="#properties">properties</a>: &lt;formula_properties_1&gt;
+      <a href="#column_type">column_type</a>: [ MEASURE | ATTRIBUTE ]
+      <a href="#data_type">data_type</a>: [ BOOL | VARCHAR | DOUBLE | FLOAT | INT | BIGINT | DATE | DATETIME | TIMESTAMP | TIME ]
+      <a href="#aggregation">aggregation</a>: [ SUM | COUNT | AVERAGE | MAX | MIN |
+                         COUNT_DISTINCT | NONE | STD_DEVIATION | VARIANCE]
+  - <a href="#id">id</a>: &lt;formula_id_n&gt;
+    <a href="#name">name</a>: &lt;formula_name_n&gt;
+    <a href="#expr">expr</a>: &lt;formula_definition_n&gt;
+    <a href="#properties">properties</a>: &lt;formula_properties_n&gt;
+  <a href="#filters">filters</a>:
+  - <a href="#column">column</a>: &lt;filtered_column_name_1&gt;
+    <a href="#oper">oper</a>: &lt;filter_operator&gt;
+    <a href="#values">values</a>: &lt;filtered_values&gt;
+    - value 1
+    - value 2
+  - <a href="#column">column</a>: &lt;filtered_column_name_n&gt;
+  <a href="#search_query">search_query</a>: &lt;query_string&gt;
+  <a href="#view_columns">view_columns</a>:
+  - <a href="#name">name</a>: &lt;column_name_1&gt;
+    <a href="#description">description</a>: &lt;optional_column_description&gt;
+    <a href="#search_output_column">search_output_column</a>: &lt;query_column_name&gt;
+    <a href="#column_id">column_id</a>: &lt;table_path&gt;::&lt;column_id_1&gt;
+    <a href="#phrase">phrase</a>: &lt;phrase_string_1&gt;
+    <a href="#properties">properties</a>:
+      <a href="#column_type">column_type</a>: [ MEASURE | ATTRIBUTE ]
+      <a href="#aggregation">aggregation</a>: [ SUM | COUNT | AVERAGE | MAX | MIN |
+                     COUNT_DISTINCT | NONE | STD_DEVIATION | VARIANCE]
+      <a href="#index_type">index_type</a>: [ DONT_INDEX | DEFAULT | PREFIX_ONLY |
+                    PREFIX_AND_SUBSTRING | PREFIX_AND_WORD_SUBSTRING ]
+ 	    <a href="#index_priority">index_priority</a>: &lt;index_priority&gt;
+      <a href="#synonyms">synonyms</a> :
+             &lt;synonym_1&gt;
+             &lt;synonym_2&gt;
+      <a href="#is_attribution_dimension">is_attribution_dimension</a> : [true | false]
+      <a href="#is_additive">is_additive</a> : [ true | false ]
+      <a href="#calendar">calendar</a> : [ default | calendar_name ]
+      <a href="#format_pattern">format_pattern</a> : &lt;format_pattern_string&gt;
+      <a href="#currency_type">currency_type</a> :
+        is_browser : true
+          OR
+        column : &lt;column_name&gt;
+          OR
+        iso_code : &lt;valid_ISO_code&gt;
+      <a href="#is_hidden">is_hidden</a> : [ true | false ]
+      <a href="#geo_config">geo_config</a> :
+        latitude : true
+          OR
+        longitude : true
+          OR
+        country : true
+          OR
+        region_name:
+        - country : &lt;name_supported_country&gt;
+        - region_name : &lt;region_name_in_UI&gt;
+      <a href="#spotiq_preference">spotiq_preference</a> : &lt;spotiq_preference_string&gt;
+  - <a href="#name">name</a>: &lt;column_name_2&gt;
+    <a href="#description">description</a> : &lt;column_description&gt;
+    <a href="#search_output_column">search_output_column</a>: &lt;query_column_name&gt;
+    <a href="#column_id">column_id</a> : &lt;table_path&gt;::&lt;column_id_2&gt;
+  <a href="#joins_with">joins_with</a>:
+  - <a href="#name">name</a>: &lt;join_name_1&gt;
+    <a href="#description">description</a>: &lt;optional_join_description_1&gt;
+    <a href="#destination">destination</a>:
+      <a href="#name">name</a>: &lt;destination_table_name_1&gt;
+      <a href="#fqn">fqn</a>: &lt;optional_table_guid_1&gt;
+    <a href="#on">on</a>: &lt;join_expression_string_1&gt;
+    <a href="#type">type</a>: [RIGHT_OUTER | LEFT_OUTER | INNER | OUTER]
+    <a href="#is_one_to_one">is_one_to_one</a>: [ false | true ]
+    <a href="#name">name</a>: &lt;join_name_2&gt;
+    <a href="#name">name</a>: &lt;join_name_n&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="syntax-sql-views">Syntax of the SQL view TML file</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>TML</code> file for SQL views has a specific syntax.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="#tml-parameters">TML parameters</a> for details about the keywords used in this example.</p>
+</div>
+<div class="paragraph">
+<p>You may not see each of these parameters in your own TML files, depending on whether each variable is explicitly defined.
+For example, if you did not define any conditional formatting, the <code>conditional_formatting</code> variable does not appear.
+You can add that variable in the TML file to specify conditional formatting.</p>
+</div>
+<div class="paragraph">
+<p>To reduce ambiguity, you may need to add the optional <code>fqn</code> parameter to your TML file when you reference source tables or connections. This is necessary if you have multiple connections or tables with the same name. If you do not add the <code>fqn</code> parameter, and the connection or table you reference does not have a unique name, the file import fails.</p>
+</div>
+<div class="paragraph">
+<p>Refer to <a href="#syntax-joins">join syntax</a> for more information on the functionality and syntax of Worksheet, view, SQL view, and table joins in TML.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If you edit the joins in the SQL view TML file, you are only editing the joins for that specific SQL view. You are not editing the joins at the table level. To modify table-level joins, you must edit the source table&#8217;s TML file.
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><a href="#guid">guid</a>: &lt;sql_view_guid&gt;
+<a href="#sql_view">sql_view</a>:
+  <a href="#name">name</a>: &lt;view_name&gt;
+  <a href="#description">description</a>:
+    This is a multi-line description of the View.
+    Description line 2
+  <a href="#connection">connection</a>:
+    <a href="#name">name</a>: &lt;connection_name&gt;
+    <a href="#fqn">fqn</a>: &lt;optional_connection_GUID&gt;
+  <a href="#sql_query">sql_query</a>: &lt;sql_query_string&gt;
+  <a href="#sql_view_columns">sql_view_columns</a>:
+  - <a href="#name">name</a>: &lt;column_name_1&gt;
+    <a href="#description">description</a>: &lt;optional_column_description&gt;
+    <a href="#sql_output_column">sql_output_column</a>: &lt;sql_query_column_name&gt;
+    <a href="#properties">properties</a>:
+      <a href="#column_type">column_type</a>: [ MEASURE | ATTRIBUTE ]
+      <a href="#aggregation">aggregation</a>: [ SUM | COUNT | AVERAGE | MAX | MIN |
+                     COUNT_DISTINCT | NONE | STD_DEVIATION | VARIANCE]
+      <a href="#index_type">index_type</a>: [ DONT_INDEX | DEFAULT | PREFIX_ONLY |
+                    PREFIX_AND_SUBSTRING | PREFIX_AND_WORD_SUBSTRING ]
+ 	    <a href="#index_priority">index_priority</a>: &lt;index_priority&gt;
+      <a href="#synonyms">synonyms</a> :
+             &lt;synonym_1&gt;
+             &lt;synonym_2&gt;
+      <a href="#is_attribution_dimension">is_attribution_dimension</a> : [true | false]
+      <a href="#is_additive">is_additive</a> : [ true | false ]
+      <a href="#calendar">calendar</a> : [ default | calendar_name ]
+      <a href="#format_pattern">format_pattern</a> : &lt;format_pattern_string&gt;
+      <a href="#currency_type">currency_type</a> :
+        is_browser : true
+          OR
+        column : &lt;column_name&gt;
+          OR
+        iso_code : &lt;valid_ISO_code&gt;
+      <a href="#is_hidden">is_hidden</a> : [ true | false ]
+      <a href="#geo_config">geo_config</a> :
+        latitude : true
+          OR
+        longitude : true
+          OR
+        country : true
+          OR
+        region_name:
+        - country : &lt;name_supported_country&gt;
+        - region_name : &lt;region_name_in_UI&gt;
+      <a href="#spotiq_preference">spotiq_preference</a> : &lt;spotiq_preference_string&gt;
+  - <a href="#name">name</a> : &lt;column_name_2&gt;
+    <a href="#description">description</a> : &lt;column_description_2&gt;
+    <a href="#sql_output_column">sql_output_column</a>: &lt;sql_query_column_name_2&gt;
+    <a href="#properties">properties</a>:
+    ...
+  - <a href="#name">name</a> : &lt;column_name_n&gt;
+    <a href="#description">description</a> : &lt;column_description_n&gt;
+    <a href="#sql_output_column">sql_output_column</a>: &lt;sql_query_column_name_n&gt;
+    <a href="#properties">properties</a>:
+    ...
+  <a href="#joins_with">joins_with</a>:
+  - <a href="#name">name</a>: &lt;join_name_1&gt;
+    <a href="#description">description</a>: &lt;optional_join_description_1&gt;
+    <a href="#destination">destination</a>:
+      <a href="#name">name</a>: &lt;destination_table_name_1&gt;
+      <a href="#fqn">fqn</a>: &lt;optional_table_guid_1&gt;
+    <a href="#on">on</a>: &lt;join_expression_string_1&gt;
+    <a href="#type">type</a>: [RIGHT_OUTER | LEFT_OUTER | INNER | OUTER]
+    <a href="#is_one_to_one">is_one_to_one</a>: [ false | true ]
+  - <a href="#name">name</a>: &lt;join_name_2&gt;
+  - <a href="#name">name</a>: &lt;join_name_n&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="syntax-tables">Syntax of the table TML file</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>TML</code> file for tables has a specific syntax.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="#tml-parameters">TML parameters</a> for details about the keywords used in this example.</p>
+</div>
+<div class="paragraph">
+<p>You may not see each of these parameters in your own TML files, depending on whether each variable is explicitly defined.
+For example, if you did not define any conditional formatting, the <code>conditional_formatting</code> variable does not appear.
+You can add that variable in the TML file to specify conditional formatting.</p>
+</div>
+<div class="paragraph">
+<p>Refer to <a href="#syntax-joins">join syntax</a> for more information on the functionality and syntax of Worksheet, view, SQL view, and table joins in TML.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+To reduce ambiguity, you may need to add the optional <code>fqn</code> parameter to your TML file when you reference source tables or connections. This is necessary if you have multiple connections or tables with the same name. If you do not add the <code>fqn</code> parameter, and the connection or table you reference does not have a unique name, the file import fails.
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><a href="#guid">guid</a>: &lt;table_guid&gt;
+<a href="#table">table</a> :
+  <a href="#name">name</a>: &lt;table_name&gt;
+  <a href="#db">db</a>: &lt;database_name&gt;
+  <a href="#schema">schema</a>: &lt;schema_name&gt;
+  <a href="#db_table">db_table</a>: &lt;database_table_name&gt;
+  <a href="#connection">connection</a>:
+    <a href="#name">name</a>: &lt;connection_name&gt;
+    <a href="#fqn">fqn</a>: &lt;optional_connection_GUID&gt;
+  <a href="#columns">columns</a>:
+  - <a href="#name">name</a>: &lt;column_name_1&gt;
+    <a href="#db_column_name">db_column_name</a>: &lt;database_column_name&gt;
+    <a href="#data_type">data_type</a>: [ BOOL | VARCHAR | DOUBLE | FLOAT | INT32 | INT64 | DATE | TIME ]
+    <a href="#properties">properties</a>:
+      <a href="#column_type">column_type</a>: [ MEASURE | ATTRIBUTE ]
+      <a href="#aggregation">aggregation</a>: [ SUM | COUNT | AVERAGE | MAX | MIN |
+                     COUNT_DISTINCT | NONE | STD_DEVIATION | VARIANCE]
+      <a href="#index_type">index_type</a>: [ DONT_INDEX | DEFAULT | PREFIX_ONLY |
+                    PREFIX_AND_SUBSTRING | PREFIX_AND_WORD_SUBSTRING ]
+      <a href="#index_priority">index_priority</a>: &lt;index_priority&gt;
+      <a href="#synonyms">synonyms</a>:
+             &lt;synonym_1&gt;
+             &lt;synonym_2&gt;
+      <a href="#is_attribution_dimension">is_attribution_dimension</a>: [true | false]
+      <a href="#is_additive">is_additive</a>: [ true | false ]
+      <a href="#calendar">calendar</a>: [ default | calendar_name ]
+      <a href="#format_pattern">format_pattern</a>: &lt;format_pattern_string&gt;
+      <a href="#currency_type">currency_type</a>:
+        is_browser : true
+          OR
+        column : &lt;column_name&gt;
+          OR
+        iso_code : &lt;valid_ISO_code&gt;
+      <a href="#is_hidden">is_hidden</a>: [ true | false ]
+      <a href="#geo_config">geo_config</a>:
+        latitude : true
+          OR
+        longitude : true
+          OR
+        country : true
+          OR
+        region_name:
+        - country : &lt;name_supported_country&gt;
+        - region_name : &lt;region_name_in_UI&gt;
+          OR
+        <a href="#custom_file_guid">custom_file_guid</a>: &lt;custom_map_guid&gt;
+        <a href="#geometryType">geometryType</a>: &lt;custom_map_geometry_type&gt;
+      <a href="#spotiq_preference">spotiq_preference</a>: &lt;spotiq_preference_string&gt;
+    <a href="#db_column_properties">db_column_properties</a>:
+      <a href="#data_type">data_type</a>: [ BOOL | VARCHAR | DOUBLE | FLOAT | INT32 | INT64 | DATE | TIME ]
+  - <a href="#name">name</a>: &lt;column_name_2&gt;
+  - <a href="#name">name</a>: &lt;column_name_n&gt;
+  <a href="#rls_rules">rls_rules</a>:
+    <a href="#tables">tables</a>:
+    - <a href="#name">name</a>: &lt;table_name_1&gt;
+      <a href="#id">id</a>: &lt;optional_table_id&gt;
+      <a href="#fqn">fqn</a>: &lt;optional_table_GUID&gt;
+    - <a href="#name">name</a>: &lt;table_name_2&gt;
+    - <a href="#name">name</a>: &lt;table_name_n&gt;
+    <a href="#joins">joins</a>:
+    - <a href="#name">name</a>: &lt;join_name_1&gt;
+      <a href="#source">source</a>: &lt;source_table_name&gt;
+      <a href="#destination">destination</a>: &lt;destination_table_name&gt;
+      <a href="#type">type</a>: [RIGHT_OUTER | LEFT_OUTER | INNER | OUTER]
+      <a href="#on">on</a>: &lt;join_expression_string&gt;
+      <a href="#is_one_to_one">is_one_to_one</a>: [ false | true ]
+    <a href="#table_paths">table_paths</a>:
+    - <a href="#id">id</a>: &lt;table_path_name_1&gt;
+      <a href="#table">table</a>: &lt;table_name_1&gt;
+      <a href="#join_path">join_path</a>:
+      - <a href="#join">join</a>:
+        - &lt;join_name_1&gt;
+        - &lt;join_name_n&gt;
+   - <a href="#id">id</a>: &lt;table_path_name_2&gt;
+      <a href="#table">table</a>: &lt;table_name_2&gt;
+      <a href="#join_path">join_path</a>:
+      - <a href="#join">join</a>:
+        - &lt;join_name_2&gt;
+   - <a href="#id">id</a>: &lt;table_path_name_n&gt;
+      <a href="#table">table</a>: &lt;table_name_n&gt;
+      <a href="#join_path">join_path</a>:
+      - <a href="#join">join</a>:
+        - &lt;join_name_n&gt;
+    <a href="#rules">rules</a>:
+    - <a href="#name">name</a>: &lt;rls_rule_name_1&gt;
+      <a href="#expr">expr</a>: &lt;rls_rule_expression_1&gt;
+    - <a href="#name">name</a>: &lt;rls_rule_name_2&gt;
+      <a href="#expr">expr</a>: &lt;rls_rule_expression_2&gt;
+    - <a href="#name">name</a>: &lt;rls_rule_name_n&gt;
+      <a href="#expr">expr</a>: &lt;rls_rule_expression_n&gt;
+  <a href="#joins_with">joins_with</a>:
+  - <a href="#name">name</a>: &lt;join_name_1&gt;
+    <a href="#description">description</a>: &lt;optional_join_description_1&gt;
+    <a href="#destination">destination</a>:
+      <a href="#name">name</a>: &lt;destination_table_name_1&gt;
+      <a href="#fqn">fqn</a>: &lt;optional_table_guid_1&gt;
+    <a href="#on">on</a>: &lt;join_expression_string_1&gt;
+    <a href="#type">type</a>: [RIGHT_OUTER | LEFT_OUTER | INNER | OUTER]
+    <a href="#is_one_to_one">is_one_to_one</a>: [ false | true ]
+  - <a href="#name">name</a>: &lt;join_name_2&gt;
+  - <a href="#name">name</a>: &lt;join_name_n&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="syntax-joins">Join syntax</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The syntax and functionality of joins in the table TML file differs from the syntax and functionality for Worksheet and View TML files.</p>
+</div>
+<div class="paragraph">
+<p>When you edit the information in the <a href="#joins_syntax">joins</a> section of the TML for a Worksheet or view, you override the table join(s) from the table the Worksheet or view comes from. However, you only override the join(s) for the specific Worksheet or view you are editing, <strong>not</strong> for the source table.</p>
+</div>
+<div class="paragraph">
+<p>When you edit the information in the <a href="#joins_with_syntax">joins_with</a> section of the TML for a table, Worksheet, view, or SQL view, you edit the join information for the source object, the destination object, and any dependents, such as Worksheets and views. Note that you can only edit joins for which the object is the source.</p>
+</div>
+<div class="sect2">
+<h3 id="_syntax_for_joins_a_worksheet_or_view_is_built_on">Syntax for joins a Worksheet or view is built on</h3>
+<div class="paragraph">
+<p>For the joins a Worksheets or view is built on, the join syntax is the following. The <a href="#joins_syntax">joins</a> section defines the joins that the Worksheet or view was built on, and the <a href="#joins_with_syntax">joins_with</a> section defines the joins from that Worksheet, view, or SQL view to another object. Note that SQL views and tables do not have the <a href="#joins_syntax">joins</a> section, but they may have the <a href="#joins_with_syntax">joins_with</a> section.</p>
+</div>
+<div id="joins_syntax" class="paragraph">
+<p><code>joins</code> syntax</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><a href="#joins">joins</a>:
+- <a href="#name">name</a>: &lt;join_name_1&gt;
+  <a href="#source">source</a>: &lt;source_table_name&gt;
+  <a href="#destination">destination</a>: &lt;destination_table_name&gt;
+  <a href="#type">type</a>: [RIGHT_OUTER | LEFT_OUTER | INNER | OUTER]
+  <a href="#on">on</a>: &lt;join_expression_string&gt;
+  <a href="#is_one_to_one">is_one_to_one</a>: [ false | true ]
+<a href="#table_paths">table_paths</a>:
+- <a href="#id">id</a>: &lt;table_path_name_1&gt;
+  <a href="#table">table</a>: &lt;table_name_1&gt;
+  <a href="#join_path">join_path</a>:
+  - <a href="#join">join</a>
+    - &lt;join_name_1&gt;
+    - &lt;join_name_2&gt;</pre>
+</div>
+</div>
+<div id="joins_with_syntax" class="paragraph">
+<p><code>joins_with</code> syntax</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><a href="#joins_with">joins_with</a>:
+- <a href="#name">name</a>: &lt;join_name_1&gt;
+  <a href="#description">description</a>: &lt;optional_join_description_1&gt;
+  <a href="#destination">destination</a>:
+    <a href="#name">name</a>: &lt;destination_table_name_1&gt;
+    <a href="#fqn">fqn</a>: &lt;optional_table_guid_1&gt;
+  <a href="#on">on</a>: &lt;join_expression_string_1&gt;
+  <a href="#type">type</a>: [RIGHT_OUTER | LEFT_OUTER | INNER | OUTER]
+  <a href="#is_one_to_one">is_one_to_one</a>: [ false | true ]
+  <a href="#name">name</a>: &lt;join_name_2&gt;
+  <a href="#name">name</a>: &lt;join_name_n&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_functionality_and_limitations_of_the_joins_section">Functionality and limitations of the joins section</h3>
+<div class="paragraph">
+<p>You can accomplish the following tasks:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Add new joins at the Worksheet, view, or SQL view level</p>
+</li>
+<li>
+<p>Modify existing joins at the Worksheet, view, or SQL view level</p>
+</li>
+<li>
+<p>Delete existing joins at the Worksheet, view, or SQL view level</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You have the following limitation:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You cannot modify joins at the table level from the Worksheet, view, or SQL view TML file. You can only override the joins for that specific Worksheet, view, or SQL view.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_syntax_for_joins_from_a_table_worksheet_view_or_sql_view_to_another_object">Syntax for joins from a table, Worksheet, view, or SQL view to another object</h3>
+<div class="paragraph">
+<p>To reduce ambiguity, you may need to add the optional <code>fqn</code> parameter to your TML file when you reference source tables or connections. This is necessary if you have multiple connections or tables with the same name. If you do not add the <code>fqn</code> parameter, and the connection or table you reference does not have a unique name, the file import fails.</p>
+</div>
+<div class="paragraph">
+<p>The <a href="#joins_with_syntax">joins_with</a> section defines the joins from the data source to another object. It may appear in tables, Worksheets, views, and SQL views.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><a href="#joins_with">joins_with</a>:
+- <a href="#name">name</a>: &lt;join_name_1&gt;
+  <a href="#description">description</a>: &lt;optional_join_description_1&gt;
+  <a href="#destination">destination</a>:
+    <a href="#name">name</a>: &lt;destination_table_name_1&gt;
+    <a href="#fqn">fqn</a>: &lt;optional_table_guid_1&gt;
+  <a href="#on">on</a>: &lt;join_expression_string_1&gt;
+  <a href="#type">type</a>: [RIGHT_OUTER | LEFT_OUTER | INNER | OUTER]
+  <a href="#is_one_to_one">is_one_to_one</a>: [ false | true ]
+  <a href="#name">name</a>: &lt;join_name_2&gt;
+  <a href="#name">name</a>: &lt;join_name_n&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="table-join-functionality">Functionality and limitations of the joins_with section</h3>
+<div class="paragraph">
+<p>You can accomplish the following tasks:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Add new joins at the table level. Joins only appear in the table TML file of the source table in a join, or the table on the Many side of a Many-to-One join. You can only add and edit table joins from the TML file of the table on the Many side of the join.</p>
+</li>
+<li>
+<p>Create range joins at the table level, such as <code>Table1.date = Table2.date AND Table1.date &gt; Table2.start_date AND Table1.date &lt; Table2.end_date</code>.</p>
+<div class="paragraph">
+<p>Note that you must have an 'equals' clause before you can have a 'greater than/less than' clause. <code>Table1.date = Table2.date AND Table1.date &gt; Table2.start_date AND Table1.date &lt; Table2.end_date</code> is valid, but <code>Table1.date &lt; Table2.end_date</code> is not.</p>
+</div>
+<div class="paragraph">
+<p>Joins only appear in the table TML file of the source table in a join, or the table on the Many side of a Many-to-One join. You can only add and edit table joins from the TML file of the table on the Many side of the join.</p>
+</div>
+<div class="paragraph">
+<p><strong>Generic/ range join example</strong>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>name: LO to Date Range Join
+    destination:
+    name: DATE
+    "on": "(([LINEORDER::Order Date] = [DATE::Datekey]) AND ([LINEORDER::Commit Date] &lt; [DATE::Datekey]))"
+    type: INNER</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Edit existing joins by changing the name of the join and modifying it to your specifications. Changing the name of the join creates a new join; you must then delete the old join. Joins only appear in the table TML file of the source table in a join, or the table on the Many side of a Many-to-One join. You can only add and edit table joins from the TML file of the table on the Many side of the join.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You have the following limitations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Renaming a join creates a new join with that name and does not delete the old join with the original name.</p>
+</li>
+<li>
+<p>When creating generic or range joins, you must have an 'equals' clause before you can have a 'greater than/less than' clause. <code>Table1.date = Table2.date AND Table1.date &gt; Table2.start_date AND Table1.date &lt; Table2.end_date</code> is valid, but <code>Table1.date &lt; Table2.end_date</code> is not.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_generic_joins">Generic joins</h3>
+<div class="paragraph">
+<p>The functionality for generic joins in TML files allows the following elements:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Constants: int, double, bool, date, and string</p>
+</li>
+<li>
+<p>Comparison operators: <code>=</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&#8656;</code>, and <code>&gt;=</code></p>
+</li>
+<li>
+<p>Columns</p>
+</li>
+<li>
+<p>Boolean operators: <code>AND</code> and <code>NOT</code>. TML does <strong><em>not</em></strong> support use of <code>OR</code> in generic joins.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="syntax-answers">Syntax of the Answer TML file</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>TML</code> file for Answers has a specific syntax.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="#tml-parameters">TML parameters</a> for details about the keywords used in this example.</p>
+</div>
+<div class="paragraph">
+<p>You may not see each of these parameters in your own TML files, depending on whether each variable is explicitly defined.
+For example, if you did not define any conditional formatting, the <code>conditional_formatting</code> variable does not appear.
+You can add that variable in the TML file to specify conditional formatting.</p>
+</div>
+<div class="paragraph">
+<p>To reduce ambiguity, you may need to add the optional <code>fqn</code> parameter to your TML file when you reference source tables or connections. This is necessary if you have multiple connections or tables with the same name. If you do not add the <code>fqn</code> parameter, and the connection or table you reference does not have a unique name, the file import fails.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><a href="#guid">guid</a>: &lt;answer_guid&gt;
+<a href="#answer">answer</a>:
+  <a href="#name">name</a>: &lt;answer_name&gt;
+  <a href="#description">description</a>:
+    This is a multi-line description of the answer
+    Description line 2
+  <a href="#tables">tables</a>:
+  - <a href="#id">id</a>: &lt;table_id&gt;
+    <a href="#name">name</a>: &lt;table_name_1&gt;
+    <a href="#fqn">fqn</a>: &lt;optional_GUID_of_table_name&gt;
+  <a href="#formulas">formulas</a>:
+  - <a href="#id">id</a>: &lt;formula_id_1&gt;
+    <a href="#name">name</a>: &lt;formula_name_1&gt;
+    <a href="#expr">expr</a>: &lt;formula_definition_1&gt;
+    <a href="#properties">properties</a>: &lt;formula_properties_1&gt;
+      <a href="#column_type">column_type</a>: [ MEASURE | ATTRIBUTE ]
+      <a href="#data_type">data_type</a>: [ BOOL | VARCHAR | DOUBLE | FLOAT | INT | BIGINT | DATE | DATETIME | TIMESTAMP | TIME ]
+      <a href="#aggregation">aggregation</a>: [ SUM | COUNT | AVERAGE | MAX | MIN |
+                     COUNT_DISTINCT | NONE | STD_DEVIATION | VARIANCE]
+  - <a href="#id">id</a>: &lt;formula_id_2&gt;
+    <a href="#name">name</a>: &lt;formula_name_2&gt;
+    <a href="#expr">expr</a>: &lt;formula_definition_2&gt;
+    <a href="#properties">properties</a>: &lt;formula_properties_2&gt;
+  - <a href="#id">id</a>: &lt;formula_id_3&gt;
+    <a href="#name">name</a>: &lt;formula_name_3&gt;
+    <a href="#expr">expr</a>: &lt;formula_definition_3&gt;
+    <a href="#properties">properties</a>: &lt;formula_properties_3&gt;
+  <a href="#search_query">search_query</a>: &lt;search_query_string&gt;
+  <a href="#answer_columns">answer_columns</a>:
+  - <a href="#id">id</a>: &lt;column_id_1&gt;
+    <a href="#name">name</a>: &lt;column_name_1&gt;
+    <a href="#custom_name">custom_name</a>: &lt;custom_name_1&gt;
+  - <a href="#name">name</a>: &lt;column_name_2&gt;
+  <a href="#table">table</a>:
+    <a href="#table_columns">table_columns</a>:
+    - <a href="#column_id">column_id</a>: &lt;column_id_1&gt;
+      <a href="#conditional_formatting">conditional_formatting</a>:
+      - <a href="#range">range</a>:
+        <a href="#min">min</a>: &lt;conditional_formatting_minimum&gt;
+        <a href="#max">max</a>: &lt;conditional_formatting_maximum&gt;
+      - <a href="#rule">rule</a>: &lt;conditional_formatting_rule_1&gt;
+          <a href="#range">range</a>:
+            <a href="#min">min</a>: &lt;conditional_formatting_minimum&gt;
+            <a href="#max">max</a>: &lt;conditional_formatting_maximum&gt;
+          <a href="#color">color</a>: &lt;color_string&gt;
+          <a href="#plotAsBand">plotAsBand</a>: [ true | false ]
+      - <a href="#rule">rule</a>: &lt;conditional_formatting_rule_2&gt;
+      <a href="#show_headline">show_headline</a>: [ true | false ]
+      <a href="#headline_aggregation">headline_aggregation</a>: &lt;headline_aggregation_string&gt;
+    - <a href="#column_id">column_id</a>: &lt;column_id_2&gt;
+    <a href="#ordered_column_ids">ordered_column_ids</a>:
+    - <a href="#column_id">column_id</a>: &lt;column_id_1&gt;
+    - <a href="#column_id">column_id</a>: &lt;column_id_2&gt;
+    <a href="#client_state">client_state</a>: &lt;client_state_string&gt;
+  <a href="#chart">chart</a>:
+    <a href="#type">type</a>: &lt;chart_type&gt;
+    <a href="#chart_columns">chart_columns</a>: &lt;chart_column_1&gt;
+    - <a href="#column_id">column_id</a>: &lt;column_id_1&gt;
+      <a href="#conditional_formatting">conditional_formatting</a>:
+      - <a href="#rule">rule</a>: &lt;conditional_formatting_rule_1&gt;
+          <a href="#range">range</a>:
+            <a href="#min">min</a>: &lt;conditional_formatting_minimum&gt;
+            <a href="#max">max</a>: &lt;conditional_formatting_maximum&gt;
+          <a href="#color">color</a>: &lt;color_string&gt;
+          <a href="#plotAsBand">plotAsBand</a>: [ true | false ]
+      - <a href="#rule">rule</a>: &lt;conditional_formatting_rule_2&gt;
+    - <a href="#column_id">column_id</a>: &lt;column_id_2&gt;
+    <a href="#axis_configs">axis_configs</a>: &lt;axis_config_1&gt;
+    - x:
+      - <a href="#column_id">column_id</a>: &lt;column_id_x_axis&gt;
+    - y:
+      - <a href="#column_id">column_id</a>: &lt;column_id_y_axis&gt;
+      <a href="#color">color</a>:
+      - <a href="#column_id">column_id</a>: &lt;column_id_color&gt;
+    <a href="#axis_configs">axis_configs</a>: &lt;axis_config_2&gt;
+    <a href="#locked">locked</a>: [ true | false ]
+    <a href="#client_state">client_state</a>: &lt;client_state_string&gt;
+  <a href="#display_mode">display_mode</a>: &lt;display_mode_string&gt;
+  <a href="#parameter_values">parameter_values</a>:
+  - <a href="#key">key</a>: &lt;parameter_1_key&gt;
+    <a href="#value">value</a>: &lt;parameter_1_value&gt;
+  - <a href="#key">key</a>: &lt;parameter_2_key&gt;
+    <a href="#value">value</a>: &lt;parameter_2_value&gt;
+  - <a href="#key">key</a>: &lt;parameter_n_key&gt;
+    <a href="#value">value</a>: &lt;parameter_n_value&gt;
+  <a href="#parameter_overrides">parameter_overrides</a>:
+  - <a href="#key">key</a>: &lt;parameter_guid&gt;
+    <a href="#value">value</a>:
+      <a href="#name">name</a>: &lt;parameter_name&gt;
+      <a href="#id">id</a>: &lt;parameter_guid&gt;
+      <a href="#override_value">override_value</a>: &lt;parameter_override_value&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="syntax-liveboards">Syntax of the Liveboard TML file</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>TML</code> file for Liveboards has a specific syntax.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="#tml-parameters">TML parameters</a> for details about the keywords used in this example.</p>
+</div>
+<div class="paragraph">
+<p>You may not see each of these parameters in your own TML files, depending on whether each variable is explicitly defined.
+For example, if you do not have any filters on your Liveboard, the <code>filters</code> parameter does not appear.
+You can add that variable to the TML file to specify filters for your Liveboard.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>In 8.9.0.cl, ThoughtSpot changed the <code>pinboard</code> parameter to <code>liveboard</code>, consistent with our rebranding of pinboards as Liveboards.</p>
+</div>
+<div class="paragraph">
+<p>Liveboard TML files exported from older versions still work. However, if you export a Liveboard TML file in 8.9.0.cl and try to import that file in an environment on 8.8.0.cl or earlier, the import fails. You must replace <code>liveboard</code> with <code>pinboard</code> in earlier versions.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><a href="#guid">guid</a>: &lt;liveboard_guid&gt;
+<a href="#liveboard">liveboard</a>:
+  <a href="#name">name</a>: &lt;liveboard_name&gt;
+  <a href="#description">description</a>:
+    This is a multi-line description of the Liveboard.
+    Description line 2
+  <a href="#visualizations">visualizations</a>:
+  - <a href="#id">id</a>: &lt;viz_id_1&gt;
+    <a href="#answer">answer</a>:
+    This section includes all the Answer specification for a visualization, from name to display_mode, in the <a href="#syntax-answers">Answer syntax</a> section.
+    <a href="#viz_guid">viz_guid</a>: &lt;vizualization_1_guid&gt;&gt;
+  - <a href="#id">id</a>: &lt;viz_id_2&gt;
+    <a href="#answer">answer</a>:
+    This section includes all the <a href="#syntax-answers">Answer specification</a> for a second visualization. In this case, the visualization is a headline.
+    <a href="#display_headline_column">display_headline_column</a>: &lt;headline_column&gt;
+    <a href="#viz_guid">viz_guid</a>: &lt;vizualization_2_guid&gt;&gt;
+  <a href="#filters">filters</a>:
+  - <a href="#column">column</a>:
+   - &lt;<a href="liveboard-filters-linked.html">primary_filter</a>_column_name_1&gt;
+   - &lt;<a href="liveboard-filters-linked.html">linked_filter</a>_column_name_2&gt;
+   - &lt;<a href="liveboard-filters-linked.html">linked_filter</a>_column_name_n&gt;
+    <a href="#oper">oper</a>: &lt;filter_operator&gt;
+    <a href="#values">values</a>: &lt;filtered_values&gt;
+    - value 1
+    - value 2
+    - value n
+    <a href="#excluded_visualizations">excluded_visualizations</a>:
+    - <a href="#id">excluded_viz_id_1</a>
+    - <a href="#id">excluded_viz_id_2</a>
+  - <a href="#column">column</a>: &lt;filtered_column_name_2&gt;
+   ...
+  <a href="#layout">layout</a>:
+    <a href="#tabs">tabs</a>:
+    - <a href="#name">name</a>: &lt;tab_1_name&gt;
+      <a href="#description">description</a>: &lt;tab_1_description&gt;
+      tiles:
+      - <a href="#visualization_id">visualization_id</a>: &lt;visualization_id_1&gt;
+        <a href="#x">x</a>: &lt;viz_1_horizontal_location&gt;
+        <a href="#y">"y"</a>: &lt;viz_1_vertical_location&gt;
+        <a href="#height">height</a>: &lt;viz_1_height&gt;
+        <a href="#width">width</a>: &lt;viz_1_width&gt;
+      - <a href="#visualization_id">visualization_id</a>: &lt;visualization_id_2&gt;
+        <a href="#x">x</a>: &lt;viz_2_horizontal_location&gt;
+        <a href="#y">"y"</a>: &lt;viz_2_vertical_location&gt;
+        <a href="#height">height</a>: &lt;viz_2_height&gt;
+        <a href="#width">width</a>: &lt;viz_2_width&gt;
+      - <a href="#visualization_id">visualization_id</a>: &lt;visualization_id_n&gt;
+        <a href="#x">x</a>: &lt;viz_n_horizontal_location&gt;
+        <a href="#y">"y"</a>: &lt;viz_n_vertical_location&gt;
+        <a href="#height">height</a>: &lt;viz_n_height&gt;
+        <a href="#width">width</a>: &lt;viz_n_width&gt;
+    - <a href="#name">name</a>: &lt;tab_2_name&gt;
+      <a href="#description">description</a>: &lt;tab_2_description&gt;
+      tiles:
+      ...
+    - <a href="#name">name</a>: &lt;tab_n_name&gt;
+      <a href="#description">description</a>: &lt;tab_n_description&gt;
+      tiles:
+      ...
+  <a href="#parameter_overrides">parameter_overrides</a>:
+  - <a href="#key">key</a>: &lt;parameter_guid&gt;
+    <a href="#value">value</a>:
+      <a href="#name">name</a>: &lt;parameter_name&gt;
+      <a href="#id">id</a>: &lt;parameter_guid&gt;
+      <a href="#override_value">override_value</a>: &lt;parameter_override_value&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="syntax-alerts">Syntax of the Monitor alert TML file</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>TML</code> file for Monitor alerts has a specific syntax. The <code>Alerts.tml</code> file only appears when you export an Answer or Liveboard and its associated objects.</p>
+</div>
+<div class="paragraph">
+<p>The <code>Alerts.tml</code> file defines the KPI Monitor alerts associated with the object. If you have administrator privileges, you see every alert for the object. Otherwise, you see only the alerts you created.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="#tml-parameters">TML parameters</a> for details about the keywords used in this example.</p>
+</div>
+<div class="paragraph">
+<p>You may not see each of these parameters in your own TML files, depending on whether each variable is explicitly defined.
+For example, for scheduled alerts, the <code>condition</code> parameter does not appear. The <code>condition</code> parameter only appears for threshold alerts.
+You can add that section to the TML file to change a Monitor alert to a threshold alert.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+We rebranded Pinboards to Liveboards. However, some of the parameters in the alerts.tml file still use Pinboard, not Liveboard. Ensure that you use the correct syntax.
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><a href="#monitor_alert">monitor_alert</a>:
+- <a href="#guid">guid</a>: &lt;alert_1_guid&gt;
+  <a href="#name">name</a>: &lt;alert_1_name&gt;
+  <a href="#frequency_spec">frequency_spec</a>:
+    <a href="#cron">cron</a>:
+      <a href="#second">second</a>: &lt;alert_1_time_seconds&gt;&gt;
+      <a href="#minute">minute</a>: &lt;alert_1_time_minutes&gt;&gt;
+      <a href="#hour">hour</a>: &lt;alert_1_time_hours&gt;&gt;
+      <a href="#day_of_month">day_of_month</a>: &lt;alert_1_day_of_month&gt;&gt;
+      <a href="#month">month</a>: &lt;alert_1_month&gt;&gt;
+      <a href="#day_of_week">day_of_week</a>: &lt;alert_1_day_of_week&gt;&gt;
+    <a href="#time_zone">time_zone</a>: &lt;alert_1_timezone&gt;
+    <a href="#start_time">start_time</a>: &lt;alert_1_start_time&gt;
+    <a href="#end_time">end_time</a>: &lt;alert_1_end_time&gt;
+    <a href="#frequency_granularity">frequency_granularity</a>: &lt;alert_1_frequency&gt;
+  <a href="#creator">creator</a>:
+    <a href="#username">username</a>: &lt;alert_1_creator_username&gt;
+    <a href="#user_email">user_email</a>: &lt;alert_1_creator_email&gt;
+  <a href="#condition">condition</a>:
+    <a href="#simple_condition">simple_condition</a>:
+      <a href="#comparator">comparator</a>: &lt;alert_1_condition_operator&gt;&gt;
+      <a href="#threshold">threshold</a>:
+        <a href="#value">value</a>: &lt;alert_1_threshold_value&gt;
+  <a href="#metric_id">metric_id</a>:
+    <a href="#answer_id">answer_id</a>: &lt;alert_1_answer_id&gt;
+    OR
+    <a href="#pinboard_viz_id">pinboard_viz_id</a>:
+      <a href="#pinboard_id">pinboard_id</a>: &lt;alert_1_liveboard_guid&gt;
+      <a href="#viz_id">viz_id</a>: &lt;alert_1_vizualization_guid&gt;
+  <a href="#subscribed_user">subscribed_user</a>:
+  - <a href="#username">username</a>: &lt;alert_1_subscribed_user_1_username&gt;
+  - <a href="#user_email">user_email</a>: &lt;alert_1_subscribed_user_1_email&gt;
+  - <a href="#username">username</a>: &lt;alert_1_subscribed_user_2_username&gt;
+  - <a href="#user_email">user_email</a>: &lt;alert_1_subscribed_user_2_email&gt;
+- <a href="#guid">guid</a>: &lt;alert_2_guid&gt;
+  <a href="#name">name</a>: &lt;alert_2_name&gt;
+  <a href="#frequency_spec">frequency_spec</a>:
+    <a href="#cron">cron</a>:
+      <a href="#second">second</a>: &lt;alert_2_time_seconds&gt;&gt;
+      <a href="#minute">minute</a>: &lt;alert_2_time_minutes&gt;&gt;
+      <a href="#hour">hour</a>: &lt;alert_2_time_hours&gt;&gt;
+      <a href="#day_of_month">day_of_month</a>: &lt;alert_2_day_of_month&gt;&gt;
+      <a href="#month">month</a>: &lt;alert_2_month&gt;&gt;
+      <a href="#day_of_week">day_of_week</a>: &lt;alert_2_day_of_week&gt;&gt;
+    <a href="#time_zone">time_zone</a>: &lt;alert_2_timezone&gt;
+    <a href="#start_time">start_time</a>: &lt;alert_2_start_time&gt;
+    <a href="#end_time">end_time</a>: &lt;alert_2_end_time&gt;
+    <a href="#frequency_granularity">frequency_granularity</a>: &lt;alert_2_frequency&gt;
+  <a href="#creator">creator</a>:
+    <a href="#username">username</a>: &lt;alert_2_creator_username&gt;
+    <a href="#user_email">user_email</a>: &lt;alert_2_creator_email&gt;
+  <a href="#condition">condition</a>:
+    <a href="#percentage_change_condition">percentage_change_condition</a>:
+      <a href="#comparator">comparator</a>: &lt;alert_2_condition_operator&gt;&gt;
+      <a href="#threshold">threshold</a>:
+        <a href="#value">value</a>: &lt;alert_2_threshold_value&gt;
+ <a href="#metric_id">metric_id</a>:
+    <a href="#answer_id">answer_id</a>: &lt;alert_2_answer_id&gt;
+    OR
+    <a href="#pinboard_viz_id">pinboard_viz_id</a>:
+      <a href="#pinboard_id">pinboard_id</a>: &lt;alert_1_liveboard_guid&gt;
+      <a href="#viz_id">viz_id</a>: &lt;alert_1_vizualization_guid&gt;
+  <a href="#subscribed_user">subscribed_user</a>:
+  - <a href="#username">username</a>: &lt;alert_1_subscribed_user_username&gt;
+  - <a href="#user_email">user_email</a>: &lt;alert_1_subscribed_user_email&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="tml-parameters">Parameters of TML files</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-“none” stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">a - e</th>
+<th class="tableblock halign-left valign-top">f - o</th>
+<th class="tableblock halign-left valign-top">p - w</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="#aggregation">aggregation</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#answer">answer</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#answer_columns">answer_columns</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#answer_id">answer_id</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#axis_configs">axis_configs</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#calendar">calendar</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#chart">chart</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#chart_columns">chart_columns</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#client_state">client_state</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#color">color</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#column">column</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#columns">columns</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#column_id">column_id</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#column_type">column_type</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#comparator">comparator</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#condition">condition</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#conditional_formatting">conditional_formatting</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#connection">connection</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#creator">creator</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#cron">cron</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#currency_type">currency_type</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#custom_file_guid">custom_file_guid</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#custom_name">custom_name</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#data_type">data_type</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#day_of_month">day_of_month</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#db">db</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#db_column_name">db_column_name</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#db_table">db_table</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#default_value">default_value</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#description">description</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#destination">destination</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#display_headline_column">display_headline_column</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#display_mode">display_mode</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#display_name">display_name</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#end_time">end_time</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#expr">expr</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="#frequency_granularity">frequency_granularity</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#filters">filters</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#format_pattern">format_pattern</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#formulas">formulas</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#fqn">fqn</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#frequency_spec">frequency_spec</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#geo_config">geo_config</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#geometryType">geometryType</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#guid">guid</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#headline_aggregation">headline_aggregation</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#height">height</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#hour">hour</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#id">id</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#include_max">include_max</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#include_min">include_min</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#index_priority">index_priority</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#index_type">index_type</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#is_additive">is_additive</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#is_attribution_dimension">is_attribution_dimension</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#is_bypass_rls">is_bypass_rls</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#is_hidden">is_hidden</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#is_one_to_one">is_one_to_one</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#join">join</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#join_path">join_path</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#join_progressive">join_progressive</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#joins">joins</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#key">key</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#layout">layout</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#list_choice">list_choice</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#list_config">list_config</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#liveboard">liveboard</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#locked">locked</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#max">max</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#metric_id">metric_id</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#min">min</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#minute">minute</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#monitor_alert">monitor_alert</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#month">month</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#name">name</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#on">on</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#oper">oper</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#ordered_column_ids">ordered_column_ids</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#override_value">override_value</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="#parameter_overrides">parameter_overrides</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#parameter_values">parameter_values</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#parameters">parameters</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#percentage_change_condition">percentage_change_condition</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#phrase">phrase</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#pinboard_id">pinboard_id</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#pinboard_viz_id">pinboard_viz_id</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#properties">properties</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#plotAsBand">plotAsBand</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#range">range</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#range_config">range_config</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#range_max">range_max</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#range_min">range_min</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#rls_rules">rls_rules</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#rule">rule</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#rules">rules</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#schema">schema</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#search_output_column">search_output_column</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#search_query">search_query</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#second">second</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#show_headline">show_headline</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#simple_condition">simple_condition</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#size">size</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#source">source</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#spotiq_preference">spotiq_preference</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#sql_output_column">sql_output_column</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#sql_query">sql_query</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#sql_view">sql_view</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#sql_view_columns">sql_view_columns</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#start_time">start_time</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#subscribed_user">subscribed_user</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#synonyms">synonyms</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#table">table</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#table_columns">table_columns</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#table_paths">table_paths</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#tables">tables</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#tabs">tabs</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#threshold">threshold</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#time_zone">time_zone</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#type">type</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#username">username</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#user_email">user_email</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#value">value</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#values">values</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#view">view</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#view_columns">view_columns</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#visualizations">visualizations</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#visualization_id">visualization_id</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#viz_guid">viz_guid</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#viz_id">viz_id</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#width">width</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#worksheet">worksheet</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#worksheet_columns">worksheet_columns</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#x">x</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#y">"y"</a></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div id="aggregation" class="dlist">
+<dl>
+<dt class="hdlist1">aggregation</dt>
+<dd>
+<p>The default aggregation of the Worksheet, view, or table column, or the aggregation of the output for a formula.</p>
+<div class="paragraph">
+<p>Aggregation options depend on the data type.</p>
+</div>
+<div class="paragraph">
+<p>Possible values are <code>SUM</code>, <code>COUNT</code>, <code>AVERAGE</code>, <code>MAX</code>, <code>MIN</code>, <code>COUNT_DISTINCT</code>, <code>NONE</code>, <code>STD_DEVIATION</code>, and <code>VARIANCE</code></p>
+</div>
+<div class="paragraph">
+<p>Default: <code>SUM</code>.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="answer" class="dlist">
+<dl>
+<dt class="hdlist1">answer</dt>
+<dd>
+<p>Top-level container for all object definitions within an answer.</p>
+</dd>
+</dl>
+</div>
+<div id="answer_columns" class="dlist">
+<dl>
+<dt class="hdlist1">answer_columns</dt>
+<dd>
+<p>A list of columns generated by the search query.</p>
+</dd>
+</dl>
+</div>
+<div id="answer_id" class="dlist">
+<dl>
+<dt class="hdlist1">answer_id</dt>
+<dd>
+<p>The GUID of an Answer. Used in <a href="monitor.html">Monitor alert</a> TML files to specify the KPI used to create the alert. If you are importing or editing a Liveboard, use the <a href="#pinboard_viz_id">pinboard_viz_id</a> section instead, and do not include <a href="#answer_id">answer_id</a>.</p>
+<div class="paragraph">
+<p>You can find this string of letters and numbers at the end of the URL for an Answer.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="axis_configs" class="dlist">
+<dl>
+<dt class="hdlist1">axis_configs</dt>
+<dd>
+<p>Specifies the columns for each axis on a chart.</p>
+<div class="paragraph">
+<p>If you are displaying a column chart with a line chart overlaying it, for example, you would need to specify more than one <code>axis_config</code>.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="calendar" class="dlist">
+<dl>
+<dt class="hdlist1">calendar</dt>
+<dd>
+<p>Specifies the calendar used by a date column.</p>
+<div class="paragraph">
+<p>Can be the Gregorian calendar (<code>default</code>), a fiscal calendar, or any custom calendar.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="connections-cust-cal.html">Set up a custom calendar</a>.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="chart" class="dlist">
+<dl>
+<dt class="hdlist1">chart</dt>
+<dd>
+<p>Contains configuration for the answer, if it displays in chart format.</p>
+</dd>
+</dl>
+</div>
+<div id="chart_columns" class="dlist">
+<dl>
+<dt class="hdlist1">chart_columns</dt>
+<dd>
+<p>A list of columns in the chart.</p>
+</dd>
+</dl>
+</div>
+<div id="client_state" class="dlist">
+<dl>
+<dt class="hdlist1">client_state</dt>
+<dd>
+<p>A JSON string with more advanced chart and table configuration.</p>
+</dd>
+</dl>
+</div>
+<div id="color" class="dlist">
+<dl>
+<dt class="hdlist1">color</dt>
+<dd>
+<p>Color to use for conditional formatting or for the columns of an answer in chart form, in the form of a HEX value.</p>
+</dd>
+</dl>
+</div>
+<div id="column" class="dlist">
+<dl>
+<dt class="hdlist1">column</dt>
+<dd>
+<p>The id of the column(s) being filtered on. When a Liveboard contains <a href="liveboard-filters-linked.html">linked filters</a>, or filters that affect visualizations based on more than one Worksheet, the primary filter column appears first in the list of columns in the TML. The linked filter column appears after the primary filter column.</p>
+</dd>
+</dl>
+</div>
+<div id="columns" class="dlist">
+<dl>
+<dt class="hdlist1">columns</dt>
+<dd>
+<p>The columns in the table.</p>
+</dd>
+</dl>
+</div>
+<div id="column_id" class="dlist">
+<dl>
+<dt class="hdlist1">column_id</dt>
+<dd>
+<p>The <code>id</code> of the Worksheet or view column.</p>
+<div class="paragraph">
+<p>For answers, <code>column_id</code> refers to how the column appears in the query.
+For example, if you sorted by <code>Quarter</code> in your search, from the <code>Commit Date</code> column, the <code>column_id</code> of the column is <code>Quarter(Commit Date)</code>.</p>
+</div>
+<div class="paragraph">
+<p>For Worksheets and views, <code>column_id</code> is in the following format: <code>column_id: &lt;id&gt;::&lt;name&gt;</code>. <code>id</code> comes from <code>Worksheet.table_path</code>, and <code>name</code> comes from <code>Table.column</code>. For example: <code>column_id: Customer_Dimension::Customer_Name</code>.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="column_type" class="dlist">
+<dl>
+<dt class="hdlist1">column_type</dt>
+<dd>
+<p>The type of data the column represents.
+For a formula, the <code>column_type</code> refers to the output of the formula.</p>
+<div class="paragraph">
+<p>Possible values: <code>MEASURE</code> or <code>ATTRIBUTE</code></p>
+</div>
+<div class="paragraph">
+<p>For Worksheets, the default is: <code>MEASURE</code></p>
+</div>
+<div class="paragraph">
+<p>For formulas, the default depends on the <a href="#data_type">data_type</a>.</p>
+</div>
+<div class="paragraph">
+<p>If the data type is <code>INT</code> or <code>BIGINT</code>, the formula output&#8217;s <code>column_type</code> defaults to <code>Measure</code>.</p>
+</div>
+<div class="paragraph">
+<p>If the data type is <code>BOOL</code>, <code>VARCHAR</code>, <code>DOUBLE</code>, <code>FLOAT</code>, <code>DATE</code>, <code>DATETIME</code>, or <code>TIME</code>, the formula output&#8217;s <code>column_type</code> defaults to <code>Attribute</code>.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="comparator" class="dlist">
+<dl>
+<dt class="hdlist1">comparator</dt>
+<dd>
+<p>The operator used in the condition of a <a href="monitor.html">Monitor</a> threshold-based alert. The options are <code>COMPARATOR_GT</code> (greater than), <code>COMPARATOR_LT</code> (less than), <code>COMPARATOR_GEQ</code> (greater than or equal to), <code>COMPARATOR_LEQ</code> (less than or equal to), <code>COMPARATOR_EQ</code> (equal to), <code>COMPARATOR_NEQ</code> (not equal to), <code>PERCENTAGE_CHANGE_COMPARATOR_CHANGES_BY</code> (changes by %), <code>PERCENTAGE_CHANGE_COMPARATOR_INCREASES_BY</code> (increases by %), <code>PERCENTAGE_CHANGE_COMPARATOR_DECREASES_BY</code> (decreases by %). The <code>PERCENTAGE_CHANGE</code> operators are only valid if your KPI includes a <a href="search-time.html">time-series keyword</a>, such as <code>weekly</code>.</p>
+</dd>
+</dl>
+</div>
+<div id="condition" class="dlist">
+<dl>
+<dt class="hdlist1">condition</dt>
+<dd>
+<p>Container for the <a href="monitor.html">Monitor</a> threshold-based alert condition. Contains either a simple condition or a percentage change condition. To change a threshold-based alert to a scheduled alert, remove the <code>condition</code> section.</p>
+</dd>
+</dl>
+</div>
+<div id="conditional_formatting" class="dlist">
+<dl>
+<dt class="hdlist1">conditional_formatting</dt>
+<dd>
+<p>Conditional formatting for the chart or table of an answer.</p>
+</dd>
+</dl>
+</div>
+<div id="connection" class="dlist">
+<dl>
+<dt class="hdlist1">connection</dt>
+<dd>
+<p>A way to identify the external data warehouse connection that the table or column resides in. To add tables or columns to an external connection, you must specify this parameter.</p>
+</dd>
+</dl>
+</div>
+<div id="creator" class="dlist">
+<dl>
+<dt class="hdlist1">creator</dt>
+<dd>
+<p>Container for information about the creator of a <a href="monitor.html">Monitor alert</a>. The creator information is only visible for administrators.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Only administrators can change the owner/creator of an alert, and only at the time of alert creation. You can’t change the owner of an alert after the alert is created.
+</td>
+</tr>
+</table>
+</div>
+</dd>
+</dl>
+</div>
+<div id="cron" class="dlist">
+<dl>
+<dt class="hdlist1">cron</dt>
+<dd>
+<p>Contains frequency information for delivery of <a href="monitor.html">Monitor alerts</a>.</p>
+</dd>
+</dl>
+</div>
+<div id="currency_type" class="dlist">
+<dl>
+<dt class="hdlist1">currency_type</dt>
+<dd>
+<p>The source of currency type.</p>
+<div class="paragraph">
+<p>One of:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>is_browser : true</code></dt>
+<dd>
+<p>infer the currency data from the locale of your browser</p>
+</dd>
+<dt class="hdlist1"><code>column : &lt;column_name&gt;</code></dt>
+<dd>
+<p>extracts the currency information from a specified column</p>
+</dd>
+<dt class="hdlist1"><code>iso_code : &lt;valid_ISO_code&gt;</code></dt>
+<dd>
+<p>applies currency based on the ISO code;</p>
+<div class="paragraph">
+<p>See <a href="https://www.iso.org/iso-4217-currency-codes.html" target="_blank" rel="noopener">ISO 4217 Currency Codes</a> and <a href="data-modeling-patterns.html#set-currency-type">Set currency type</a> for more information.</p>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="custom_file_guid" class="dlist">
+<dl>
+<dt class="hdlist1">custom_file_guid</dt>
+<dd>
+<p>The GUID for a custom map uploaded by an administrator.</p>
+</dd>
+</dl>
+</div>
+<div id="custom_name" class="dlist">
+<dl>
+<dt class="hdlist1">custom_name</dt>
+<dd>
+<p>Optional display name for a column.</p>
+</dd>
+</dl>
+</div>
+<div id="data_type" class="dlist">
+<dl>
+<dt class="hdlist1">data_type</dt>
+<dd>
+<p>The data type of the Parameter or formula output or column.
+If the data type is <code>INT32</code> or <code>INT64</code>, the formula output&#8217;s <code>column_type</code> defaults to <code>Measure</code>.
+If the data type is <code>BOOL</code>, <code>VARCHAR</code>, <code>DOUBLE</code>, <code>FLOAT</code>, <code>DATE</code>, <code>DATETIME</code>, or <code>TIME</code>, the formula output&#8217;s <code>column_type</code> defaults to <code>Attribute</code>.</p>
+</dd>
+</dl>
+</div>
+<div id="day_of_month" class="dlist">
+<dl>
+<dt class="hdlist1">day_of_month</dt>
+<dd>
+<p>The numbered days of the month, 1-31, when a <a href="monitor.html">Monitor alert</a> should be sent. For example, <code>"3,18,25"</code>.</p>
+</dd>
+</dl>
+</div>
+<div id="day_of_week" class="dlist">
+<dl>
+<dt class="hdlist1">day_of_week</dt>
+<dd>
+<p>The numbered days of the week, 1-7, when a <a href="monitor.html">Monitor alert</a> should be sent. For example, <code>"0,3,5"</code>. <code>0</code> refers to Sunday, and <code>6</code> refers to Saturday.</p>
+</dd>
+</dl>
+</div>
+<div id="db" class="dlist">
+<dl>
+<dt class="hdlist1">db</dt>
+<dd>
+<p>The database that a table resides in.
+Note that this is not the same as the data warehouse (Falcon, Amazon Redshift, or Snowflake, for example).</p>
+</dd>
+</dl>
+</div>
+<div id="db_column_name" class="dlist">
+<dl>
+<dt class="hdlist1">db_column_name</dt>
+<dd>
+<p>The name of the column in the database.
+Note that this database is not the same as the data warehouse (Amazon Redshift, or Snowflake, for example).</p>
+</dd>
+</dl>
+</div>
+<div id="db_column_properties" class="dlist">
+<dl>
+<dt class="hdlist1">db_column_properties</dt>
+<dd>
+<p>The properties of the column in the database. Note that this database is not the same as the data warehouse (Amazon Redshift or Snowflake, for example).</p>
+</dd>
+</dl>
+</div>
+<div id="db_table" class="dlist">
+<dl>
+<dt class="hdlist1">db_table</dt>
+<dd>
+<p>The name of the table in the database.
+Note that this database is not the same as the data warehouse (Falcon, Amazon Redshift, or Snowflake, for example).</p>
+</dd>
+</dl>
+</div>
+<div id="default_value" class="dlist">
+<dl>
+<dt class="hdlist1">default_value</dt>
+<dd>
+<p>The default value for a Parameter in a Worksheet. Specified when <a href="parameters-create.html">creating a Parameter</a>.</p>
+</dd>
+</dl>
+</div>
+<div id="description" class="dlist">
+<dl>
+<dt class="hdlist1">description</dt>
+<dd>
+<p>The text that describes an object: a <code>worksheet</code>, a <code>worksheet_column</code>, <code>answer</code>, <code>liveboard</code>, <code>view</code>, <code>view_column</code> and so on.</p>
+</dd>
+</dl>
+</div>
+<div id="destination" class="dlist">
+<dl>
+<dt class="hdlist1">destination</dt>
+<dd>
+<p>The name of the destination table or view for a join.</p>
+</dd>
+</dl>
+</div>
+<div id="display_headline_column" class="dlist">
+<dl>
+<dt class="hdlist1">display_headline_column</dt>
+<dd>
+<p>If the visualization is a headline, this parameter specifies the column the headline comes from.</p>
+</dd>
+</dl>
+</div>
+<div id="display_mode" class="dlist">
+<dl>
+<dt class="hdlist1">display_mode</dt>
+<dd>
+<p>Determines whether the answer displays as a chart or a table.
+Specify either <code>CHART_MODE</code> or <code>TABLE_MODE</code>.</p>
+</dd>
+</dl>
+</div>
+<div id="display_name" class="dlist">
+<dl>
+<dt class="hdlist1">display_name</dt>
+<dd>
+<p>The name or value that displays in the Parameter dialog for an accepted value, if a display name was set when <a href="parameters-create.html">creating a Parameter</a>. For example, if the Parameter accepts <code>true</code> and <code>false</code>, the display names might be <code>yes</code> and <code>no</code>.</p>
+</dd>
+</dl>
+</div>
+<div id="end_time" class="dlist">
+<dl>
+<dt class="hdlist1">end_time</dt>
+<dd>
+<p>The epoch time at which the alert should end. This is almost always 0, which means the alert continues to be triggered indefinitely. Do not edit this parameter.</p>
+</dd>
+</dl>
+</div>
+<div id="excluded_visualizations" class="dlist">
+<dl>
+<dt class="hdlist1">excluded_visualizations</dt>
+<dd>
+<p>A list of visualizations the Liveboard editor chose to exclude from the filter. Only appears when using <a href="liveboard-filters-selective.html">selective filters</a>.</p>
+</dd>
+</dl>
+</div>
+<div id="expr" class="dlist">
+<dl>
+<dt class="hdlist1">expr</dt>
+<dd>
+<p>The definition of the formula or row-level security (RLS) rule. For RLS rules, the syntax for variables in TML should be the same as the syntax of the variables in the rule on the table.</p>
+</dd>
+</dl>
+</div>
+<div id="frequency_granularity" class="dlist">
+<dl>
+<dt class="hdlist1">frequency_granularity</dt>
+<dd>
+<p>Frequency with which ThoughtSpot sends a <a href="monitor.html">Monitor alert</a>, either <code>HOURLY</code>, <code>DAILY</code>, <code>WEEKLY</code>, or <code>MONTHLY</code>.</p>
+</dd>
+</dl>
+</div>
+<div id="filters" class="dlist">
+<dl>
+<dt class="hdlist1">filters</dt>
+<dd>
+<p>Contains specifications for Liveboard, view, and Worksheet filters.</p>
+</dd>
+</dl>
+</div>
+<div id="format_pattern" class="dlist">
+<dl>
+<dt class="hdlist1">format_pattern</dt>
+<dd>
+<p>The format pattern string that controls the display of a number, date, or currency column.</p>
+<div class="paragraph">
+<p>See <a href="data-modeling-patterns.html">Set number, date, and currency formats</a></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="formulas" class="dlist">
+<dl>
+<dt class="hdlist1">formulas</dt>
+<dd>
+<p>The list of formulas in the Worksheet, view, or answer.</p>
+<div class="paragraph">
+<p>Each formula is identified by <code>name</code>, the <code>expr</code> (expression), and an optional <code>id</code> attribute.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="fqn" class="dlist">
+<dl>
+<dt class="hdlist1">fqn</dt>
+<dd>
+<p>The table or connection&#8217;s GUID.
+You can find this string of letters and numbers at the end of the URL for that table or connection.</p>
+<div class="paragraph">
+<p>For example, in <code>https://&lt;company&gt;.thoughtspot.com/#/data/tables/34226aaa-4bcf-4d6b-9045-24cb1e9437cb</code>, the GUID is <code>34226aaa-4bcf-4d6b-9045-24cb1e9437cb</code>.</p>
+</div>
+<div class="paragraph">
+<p>Use this optional parameter to reduce ambiguity and identify a specific table, if you have multiple tables with the same name. When exporting a TML file, you have the option to <strong>Export FQNs of referenced objects</strong>, which ensures that the TML files you export contain FQNs for the underlying tables and connections. If you do not add the <code>fqn</code> parameter, and the connection or table you reference does not have a unique name, the file import fails.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="frequency_spec" class="dlist">
+<dl>
+<dt class="hdlist1">frequency_spec</dt>
+<dd>
+<p>Contains the frequency specifications for a <a href="monitor.html">Monitor alert</a>.</p>
+</dd>
+</dl>
+</div>
+<div id="geo_config" class="dlist">
+<dl>
+<dt class="hdlist1">geo_config</dt>
+<dd>
+<p>Specifies the geographic information of a column. See <a href="data-modeling-geo-data.html">Add a geographical data setting</a></p>
+<div class="paragraph">
+<p>One of:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>latitude : true</code></dt>
+<dd>
+<p>for columns that specify the latitude</p>
+</dd>
+<dt class="hdlist1"><code>longitude : true</code></dt>
+<dd>
+<p>for columns that specify the longitude</p>
+</dd>
+<dt class="hdlist1"><code>country : true</code></dt>
+<dd>
+<p>for columns that specify the country</p>
+</dd>
+<dt class="hdlist1"><code>region_name</code></dt>
+<dd>
+<p>for specifying a region in a country</p>
+<div class="paragraph">
+<p>Uses two paired parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>country: <em>&lt;country_name&gt;</em></code></p>
+</li>
+<li>
+<p><code>region_name: <em>&lt;region_name_in_UI&gt;</em></code>; can be State, Postal Code, District, and so on.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1"><code>custom_file_guid: &lt;custom map GUID&gt;</code></dt>
+<dd>
+<p>for columns that use a custom map. Must be followed by <code>geometryType</code></p>
+</dd>
+<dt class="hdlist1"><code>geometryType: &lt;custom_map_geometry_type&gt;</code></dt>
+<dd>
+<p>for columns that use a custom map. Must be preceded by <code>custom_file_guid</code>. Accepts the following values: <code>POINT</code>, <code>LINE_STRING</code>, <code>LINEAR_RING</code>, <code>POLYGON</code>, <code>MULTI_POINT</code>, <code>MULTI_LINE_STRING</code>, <code>MULTI_POLYGON</code>, <code>GEOMETRY_COLLECTION</code>, <code>CIRCLE</code></p>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div id="geometryType" class="dlist">
+<dl>
+<dt class="hdlist1">geometryType</dt>
+<dd>
+<p>Specifies the geometry type of the <strong>TopoJSON</strong> file. Required for geographical configuration of Worksheet or table columns that use a custom map. Accepts the following values: <code>POINT</code>, <code>LINE_STRING</code>, <code>LINEAR_RING</code>, <code>POLYGON</code>, <code>MULTI_POINT</code>, <code>MULTI_LINE_STRING</code>, <code>MULTI_POLYGON</code>, <code>GEOMETRY_COLLECTION</code>, <code>CIRCLE</code></p>
+</dd>
+</dl>
+</div>
+<div id="guid" class="dlist">
+<dl>
+<dt class="hdlist1">guid</dt>
+<dd>
+<p>The GUID for the answer, Liveboard, SpotIQ result, table, Worksheet, view, SQL view, or <a href="monitor.html">Monitor alert</a>.</p>
+<div class="paragraph">
+<p>You can find this string of letters and numbers at the end of the URL for an object.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="headline_aggregation" class="dlist">
+<dl>
+<dt class="hdlist1">headline_aggregation</dt>
+<dd>
+<p>Specifies the type of headline aggregation.</p>
+<div class="paragraph">
+<p>Can be <code>COUNT</code>, <code>COUNT_DISTINCT</code>, <code>SUM</code>, <code>MIN</code>, <code>MAX</code>, <code>AVERAGE</code>, or <code>TABLE_AGGR</code>.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="height" class="dlist">
+<dl>
+<dt class="hdlist1">height</dt>
+<dd>
+<p>The height of the Liveboard visualization.</p>
+</dd>
+</dl>
+</div>
+<div id="hour" class="dlist">
+<dl>
+<dt class="hdlist1">hour</dt>
+<dd>
+<p>Specifies the hour that a <a href="monitor.html">Monitor alert</a> is scheduled to be sent. For example, if you specify <code>9</code> for the <code>hour</code> parameter and <code>17</code> for the minute parameter, ThoughtSpot sends the Monitor alert at 9:17 AM.</p>
+</dd>
+</dl>
+</div>
+<div id="id" class="dlist">
+<dl>
+<dt class="hdlist1">id</dt>
+<dd>
+<p>Specifies the id of an object, such as <code>table_paths</code>, <code>formula</code>.</p>
+<div class="paragraph">
+<p>For Answers, <code>id</code> refers to how the column appears in the query.
+For example, if you sorted by <code>Quarter</code> in your search, from the <code>Commit Date</code> column, the <code>id</code> of the column is <code>Quarter(Commit Date)</code>. Refer to <a href="https://developers.thoughtspot.com/docs/?pageid=search-data-api" target="_blank" rel="noopener">Components of a Search Query</a> to understand syntax.</p>
+</div>
+<div class="paragraph">
+<p>For formulas within answers, <code>id</code> refers to the display name of the formula. If you do not give your formula a name, it appears as 'Untitled Formula'.</p>
+</div>
+<div class="paragraph">
+<p>In the <a href="#parameter_overrides">parameter_overrides</a> section, <code>id</code> refers to the Parameter&#8217;s GUID.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="include_max" class="dlist">
+<dl>
+<dt class="hdlist1">include_max</dt>
+<dd>
+<p>Indicates if the maximum value in a Parameter range is a valid value. For example, if the range is 0-10, and <code>include_max</code> is false, the value <code>10</code> is not valid for that Parameter.</p>
+<div class="paragraph">
+<p>Valid values are <code>true</code> and <code>false</code>.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="include_min" class="dlist">
+<dl>
+<dt class="hdlist1">include_min</dt>
+<dd>
+<p>Indicates if the minimum value in a Parameter range is a valid value. For example, if the range is 0-10, and <code>include_min</code> is false, the value <code>0</code> is not valid for that Parameter.</p>
+<div class="paragraph">
+<p>Valid values are <code>true</code> and <code>false</code>.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="index_priority" class="dlist">
+<dl>
+<dt class="hdlist1">index_priority</dt>
+<dd>
+<p>A value (1-10) that determines where to rank a column&#8217;s name and values in the search suggestions</p>
+<div class="paragraph">
+<p>ThoughtSpot prioritizes columns with higher values.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="data-modeling-index.html#column-suggestion-priority">Change a column&#8217;s suggestion priority</a>.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="index_type" class="dlist">
+<dl>
+<dt class="hdlist1">index_type</dt>
+<dd>
+<p>The indexing option of the Worksheet, view, or table column.</p>
+<div class="paragraph">
+<p>Possible values: <code>DONT_INDEX</code>, <code>DEFAULT</code> (see <a href="data-modeling-index.html#default-indexing">Understand the default indexing behavior</a>), <code>PREFIX_ONLY</code>, <code>PREFIX_AND_SUBSTRING</code>, and <code>PREFIX_AND_WORD_SUBSTRING</code></p>
+</div>
+<div class="paragraph">
+<p>Default: <code>DEFAULT</code></p>
+</div>
+<div class="paragraph">
+<p>See <a href="data-modeling-index.html#override-system-default-column">Index Type Values</a>.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="is_additive" class="dlist">
+<dl>
+<dt class="hdlist1">is_additive</dt>
+<dd>
+<p>Controls extended aggregate options for attribute columns</p>
+<div class="paragraph">
+<p>For attribute columns that have a numeric data type (<code>FLOAT</code>, <code>DOUBLE</code>, or <code>INTEGER</code>) or a date data type (<code>DATE</code>, <code>DATETIME</code>, <code>TIMESTAMP</code>, or <code>TIME</code>)</p>
+</div>
+<div class="paragraph">
+<p>Possible values: <code>true</code> or <code>false</code>.</p>
+</div>
+<div class="paragraph">
+<p>Default: <code>true</code>.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="data-modeling-aggreg-additive.html#make-attribute-additive">Making an ATTRIBUTE column ADDITIVE</a>.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="is_attribution_dimension" class="dlist">
+<dl>
+<dt class="hdlist1">is_attribution_dimension</dt>
+<dd>
+<p>Controls if the column is an attribution dimension.</p>
+<div class="paragraph">
+<p>Used in managing chasm traps.</p>
+</div>
+<div class="paragraph">
+<p>Possible values: <code>true</code> by default, <code>false</code> to designate a column as not producing meaningful attributions across a chasm trap</p>
+</div>
+<div class="paragraph">
+<p>Default: <code>true</code></p>
+</div>
+<div class="paragraph">
+<p>See <a href="data-modeling-attributable-dimension.html">Change the attribution dimension</a>.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="is_bypass_rls" class="dlist">
+<dl>
+<dt class="hdlist1">is_bypass_rls</dt>
+<dd>
+<p>Specifies if the Worksheet supports bypass of Row-level security (RLS)</p>
+<div class="paragraph">
+<p>Possible values: <code>true</code> or <code>false</code></p>
+</div>
+<div class="paragraph">
+<p>Default: <code>false</code></p>
+</div>
+<div class="paragraph">
+<p>See <a href="security-rls-concept.html#exempt-rls">Privileges that allow users to set, or be exempt from, RLS</a>.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="is_hidden" class="dlist">
+<dl>
+<dt class="hdlist1">is_hidden</dt>
+<dd>
+<p>The visibility of the column</p>
+<div class="paragraph">
+<p>Possible values: <code>true</code> to hide the column, <code>false</code> not to hide the column<br>
+Default: <code>false</code></p>
+</div>
+<div class="paragraph">
+<p>See <a href="data-modeling-visibility.html">Hide a column or define a synonym</a>.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="is_one_to_one" class="dlist">
+<dl>
+<dt class="hdlist1">is_one_to_one</dt>
+<dd>
+<p>Specifies the cardinality of the join. This is an optional parameter.</p>
+<div class="paragraph">
+<p>Possible values: <code>true</code>, <code>false</code></p>
+</div>
+<div class="paragraph">
+<p>Default: <code>false</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="join" class="dlist">
+<dl>
+<dt class="hdlist1">join</dt>
+<dd>
+<p>Specific join, used in defining higher-level objects, such as table paths</p>
+<div class="paragraph">
+<p>Defined as <code>name</code> within <code>joins</code> definition</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="join_path" class="dlist">
+<dl>
+<dt class="hdlist1">join_path</dt>
+<dd>
+<p>Specification of a composite join as a list of distinct <code>join</code> attributes.</p>
+<div class="paragraph">
+<p>These <code>join</code> attributes list relevant joins, previously defined in the <code>joins</code>, by name.</p>
+</div>
+<div class="paragraph">
+<p>Default: <code>{}</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="join_progressive" class="dlist">
+<dl>
+<dt class="hdlist1">join_progressive</dt>
+<dd>
+<p>Specifies when to apply joins on a Worksheet</p>
+<div class="paragraph">
+<p>Possible values: <code>true</code> when joins are applied only for tables whose columns are included in the search, and <code>false</code> for all possible joins</p>
+</div>
+<div class="paragraph">
+<p>Default: <code>true</code></p>
+</div>
+<div class="paragraph">
+<p>See <a href="worksheet-progressive-joins.html">How the Worksheet join rule works</a>.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="joins" class="dlist">
+<dl>
+<dt class="hdlist1">joins</dt>
+<dd>
+<p>Contains a list of joins between the tables and views.</p>
+<div class="paragraph">
+<p>If you edit the joins in the Worksheet or View TML file, you are only editing the joins for that specific Worksheet or view. You are not editing the joins at the table level. To modify table-level joins, you must edit the source table&#8217;s TML file.</p>
+</div>
+<div class="paragraph">
+<p>Each join is identified by <code>name</code>, and the additional attributes of <code>source</code>, <code>destination</code>, <code>type</code>, and <code>is_one_to_one.</code></p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="joins_with" class="dlist">
+<dl>
+<dt class="hdlist1">joins_with</dt>
+<dd>
+<p>Contains a list of external joins for which this table is the source.<br>
+Each join is identified by <code>name</code> and optional <code>description</code>, and the additional attributes of <code>destination</code>, <code>type</code>, <code>on</code>, and <code>is_one_to_one</code>.</p>
+</dd>
+</dl>
+</div>
+<div id="key" class="dlist">
+<dl>
+<dt class="hdlist1">key</dt>
+<dd>
+<p>Name of the <a href="parameters-create.html">Parameter</a> referenced in a formula in an Answer.</p>
+<div class="paragraph">
+<p>In the <a href="#parameter_overrides">parameter_overrides</a> section, <code>key</code> refers to the Parameter&#8217;s GUID.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="layout" class="dlist">
+<dl>
+<dt class="hdlist1">layout</dt>
+<dd>
+<p>Specifies the Liveboard layout, in the order that a <code>visualization_id</code> is listed.</p>
+</dd>
+</dl>
+</div>
+<div id="list_choice" class="dlist">
+<dl>
+<dt class="hdlist1">list_choice</dt>
+<dd>
+<p>Contains the list of accepted values for a Parameter, if a list was configured when <a href="parameters-create.html">creating a Parameter</a>.</p>
+</dd>
+</dl>
+</div>
+<div id="list_config" class="dlist">
+<dl>
+<dt class="hdlist1">list_config</dt>
+<dd>
+<p>Contains the list of accepted values for a Parameter, if a list was configured when <a href="parameters-create.html">creating a Parameter</a>.</p>
+</dd>
+</dl>
+</div>
+<div id="liveboard" class="dlist">
+<dl>
+<dt class="hdlist1">liveboard</dt>
+<dd>
+<p>Top-level container for all object definitions within the Liveboard or SpotIQ result.</p>
+</dd>
+</dl>
+</div>
+<div id="locked" class="dlist">
+<dl>
+<dt class="hdlist1">locked</dt>
+<dd>
+<p>The 'automatically select my chart' option in the UI.
+If set to <code>true</code>, the chart type does not change, even when you add items to the query.</p>
+</dd>
+</dl>
+</div>
+<div id="max" class="dlist">
+<dl>
+<dt class="hdlist1">max</dt>
+<dd>
+<p>Maximum value for conditional formatting.</p>
+</dd>
+</dl>
+</div>
+<div id="metric_id" class="dlist">
+<dl>
+<dt class="hdlist1">metric_id</dt>
+<dd>
+<p>Container for the KPI used in the <a href="monitor.html">Monitor alert</a>.</p>
+</dd>
+</dl>
+</div>
+<div id="min" class="dlist">
+<dl>
+<dt class="hdlist1">min</dt>
+<dd>
+<p>Minimum value for conditional formatting.</p>
+</dd>
+</dl>
+</div>
+<div id="minute" class="dlist">
+<dl>
+<dt class="hdlist1">minute</dt>
+<dd>
+<p>Specifies the minute that a <a href="monitor.html">Monitor alert</a> is scheduled to be sent. For example, if you specify <code>9</code> for the <code>hour</code> parameter and <code>17</code> for the minute parameter, ThoughtSpot sends the Monitor alert at 9:17 AM.</p>
+</dd>
+</dl>
+</div>
+<div id="monitor_alert" class="dlist">
+<dl>
+<dt class="hdlist1">monitor_alert</dt>
+<dd>
+<p>Top-level container for all object definitions within the <a href="monitor.html">Monitor alert</a>.</p>
+</dd>
+</dl>
+</div>
+<div id="month" class="dlist">
+<dl>
+<dt class="hdlist1">month</dt>
+<dd>
+<p>The numbered months of the year (1-12, starting with January, even if you use a custom/fiscal calendar) in which the <a href="monitor.html">Monitor alert</a> should be sent. For example, to send an alert only in March and September, specify <code>'3,9'</code>.</p>
+</dd>
+</dl>
+</div>
+<div id="name" class="dlist">
+<dl>
+<dt class="hdlist1">name</dt>
+<dd>
+<p>The name of an object.
+Applies to <code>worksheet</code>, <code>table</code>,<code>joins</code>, <code>formula</code>, <code>rls_rules</code>, <code>answer</code>, <code>liveboard</code>, <code>view</code>, <code>sql_view</code> <code>table</code>, <code>connection</code>, <code>destination</code>, <code>monitor_alert</code>, and so on.</p>
+<div class="paragraph">
+<p>For Answers, <code>name</code> refers to how the column appears in the query.
+For example, if you sorted by <code>Quarter</code> in your search, from the <code>Commit Date</code> column, the <code>name</code> of the column is <code>Quarter(Commit Date)</code>.
+Refer to <a href="https://developers.thoughtspot.com/docs/?pageid=search-data-api" target="_blank" rel="noopener">Components of a Search Query</a> to understand syntax.</p>
+</div>
+<div class="paragraph">
+<p>In the <code>parameter_overrides</code> section for an Answer or Liveboard, <code>name</code> refers to the <a href="parameters-create.html">Parameter</a> name.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="on" class="dlist">
+<dl>
+<dt class="hdlist1">on</dt>
+<dd>
+<p>The join expression: the relationship definition, or the keys that your tables are joined on. For example, <code>[sale::Sale_Last Name] = [employee::Employee_Last Name] AND [sale::Sale_First Name] = [employee::Employee_First Name]</code>.</p>
+<div class="paragraph">
+<p>To alter a relationship definition, edit this parameter.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="oper" class="dlist">
+<dl>
+<dt class="hdlist1">oper</dt>
+<dd>
+<p>The operator of the Liveboard, view or Worksheet filter.
+Accepted operators are <code>"in"</code>, <code>"not in"</code>, <code>"between"</code>, <code>=&lt;</code>, <code>!=</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>&gt;</code>, or <code>&lt;</code>.</p>
+</dd>
+</dl>
+</div>
+<div id="ordered_column_ids" class="dlist">
+<dl>
+<dt class="hdlist1">ordered_column_ids</dt>
+<dd>
+<p>A list of columns, in the order they appear in the table.</p>
+</dd>
+</dl>
+</div>
+<div id="override_value" class="dlist">
+<dl>
+<dt class="hdlist1">override_value</dt>
+<dd>
+<p>The value a Parameter is set to in a Liveboard or Answer, if different from the default value. Only appears if you change the Parameter value in Liveboard <strong>Edit</strong> mode and save it.</p>
+</dd>
+</dl>
+</div>
+<div id="parameter_overrides" class="dlist">
+<dl>
+<dt class="hdlist1">parameter_overrides</dt>
+<dd>
+<p>Contains information on the value a Parameter is set to in a Liveboard or Answer, if different from its default value. If there is no <code>override_value</code> line, the Parameter is set to the default value.</p>
+</dd>
+</dl>
+</div>
+<div id="parameter_values" class="dlist">
+<dl>
+<dt class="hdlist1">parameter_values</dt>
+<dd>
+<p>Container for the <a href="parameters-create.html">Parameters</a> in an Answer.</p>
+</dd>
+</dl>
+</div>
+<div id="parameters" class="dlist">
+<dl>
+<dt class="hdlist1">parameters</dt>
+<dd>
+<p>Container for the <a href="parameters-create.html">Parameters</a> in a Worksheet.</p>
+</dd>
+</dl>
+</div>
+<div id="percentage_change_condition" class="dlist">
+<dl>
+<dt class="hdlist1">percentage_change_condition</dt>
+<dd>
+<p>Container for the <a href="monitor.html">Monitor</a> threshold-based alert condition, if the alert condition involves a percentage change. If the alert condition involves a simple condition (greater than, less than, equal, not equal to, greater than or equal to, less than or equal to), ThoughtSpot uses <code>simple_condition</code> instead of <code>percentage_change_condition</code>.</p>
+</dd>
+</dl>
+</div>
+<div id="phrase" class="dlist">
+<dl>
+<dt class="hdlist1">phrase</dt>
+<dd>
+<p>Phrase associated with a view column.</p>
+</dd>
+</dl>
+</div>
+<div id="pinboard_id" class="dlist">
+<dl>
+<dt class="hdlist1">pinboard_id</dt>
+<dd>
+<p>The GUID of a Liveboard. Used in <a href="monitor.html">Monitor alert</a> TML files to specify the KPI used to create the alert. If you are importing or editing an Answer, use <a href="#answer_id">answer_id</a> instead, and do not include any part of the <a href="#pinboard_viz_id">pinboard_viz_id</a> section.</p>
+<div class="paragraph">
+<p>You can find this string of letters and numbers at the end of the URL for a Liveboard.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="pinboard_viz_id" class="dlist">
+<dl>
+<dt class="hdlist1">pinboard_viz_id</dt>
+<dd>
+<p>Contains information about the KPI used to create a <a href="monitor.html">Monitor alert</a>. If you are importing or editing an Answer, use <a href="#answer_id">answer_id</a> instead, and do not include any part of the <a href="#pinboard_viz_id">pinboard_viz_id</a> section.</p>
+</dd>
+</dl>
+</div>
+<div id="properties" class="dlist">
+<dl>
+<dt class="hdlist1">properties</dt>
+<dd>
+<p>The list of properties of a Worksheet, table, or view column, a Worksheet or view itself, or the properties of the output for a formula within an answer, Worksheet, or view.</p>
+<div class="paragraph">
+<p>For Worksheets, views, and tables, each column can have the following properties, depending on its definition: <code>column_type</code>, <code>aggregation</code>, <code>index_type</code>, <code>is_hidden</code>, <code>index_priority</code>, <code>synonyms</code>, <code>is_attribution_dimension</code>, <code>is_additive</code>, <code>calendar</code>, <code>format_pattern</code>, <code>currency_type</code>, <code>geo_config</code>, and <code>spotiq_preference</code>.</p>
+</div>
+<div class="paragraph">
+<p>Worksheets and views themselves can have the following properties that affect query generation: <code>is_bypass_rls</code>, and <code>join_progressive</code>.</p>
+</div>
+<div class="paragraph">
+<p>For Answers, each formula&#8217;s output can have the following properties, depending on its definition: <code>column_type</code> and <code>aggregation</code>.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="plotAsBand" class="dlist">
+<dl>
+<dt class="hdlist1">plotAsBand</dt>
+<dd>
+<p>Specifies whether to plot the chart conditional formatting like a band on the visualization.</p>
+<div class="paragraph">
+<p>This is the 'fill chart' option in the UI.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="range" class="dlist">
+<dl>
+<dt class="hdlist1">range</dt>
+<dd>
+<p>Range for the conditional formatting to apply to, with a specified <code>min</code> and <code>max</code>.</p>
+</dd>
+</dl>
+</div>
+<div id="range_config" class="dlist">
+<dl>
+<dt class="hdlist1">range_config</dt>
+<dd>
+<p>Contains the minimum and maximum values for the range of values allowed for a Parameter, if a range is specified when <a href="parameters-create.html">creating a Parameter</a>.</p>
+</dd>
+</dl>
+</div>
+<div id="range_max" class="dlist">
+<dl>
+<dt class="hdlist1">range_max</dt>
+<dd>
+<p>The maximum value for the range of values allowed for a Parameter, if a range is specified when <a href="parameters-create.html">creating a Parameter</a>.</p>
+</dd>
+</dl>
+</div>
+<div id="range_min" class="dlist">
+<dl>
+<dt class="hdlist1">range_min</dt>
+<dd>
+<p>The minimum value for the range of values allowed for a Parameter, if a range is specified when <a href="parameters-create.html">creating a Parameter</a>.</p>
+</dd>
+</dl>
+</div>
+<div id="rls_rules" class="dlist">
+<dl>
+<dt class="hdlist1">rls_rules</dt>
+<dd>
+<p>A container for the full definition of <a href="security-rls-concept.html">row-level security</a> rules for the table.</p>
+</dd>
+</dl>
+</div>
+<div id="rule" class="dlist">
+<dl>
+<dt class="hdlist1">rule</dt>
+<dd>
+<p>A conditional formatting rule.</p>
+</dd>
+</dl>
+</div>
+<div id="rules" class="dlist">
+<dl>
+<dt class="hdlist1">rules</dt>
+<dd>
+<p>A container for the names and expressions of <a href="security-rls-concept.html">row-level security</a> rules for the table.</p>
+</dd>
+</dl>
+</div>
+<div id="schema" class="dlist">
+<dl>
+<dt class="hdlist1">schema</dt>
+<dd>
+<p>The schema that the table is a part of.</p>
+</dd>
+</dl>
+</div>
+<div id="search_output_column" class="dlist">
+<dl>
+<dt class="hdlist1">search_output_column</dt>
+<dd>
+<p>Name of the column generated by the view. To change the name of the column in the view, edit the <code>name</code> parameter.</p>
+</dd>
+</dl>
+</div>
+<div id="search_query" class="dlist">
+<dl>
+<dt class="hdlist1">search_query</dt>
+<dd>
+<p>A string that represents the fully disambiguated search query.
+Refer to <a href="https://developers.thoughtspot.com/docs/?pageid=search-data-api" target="_blank" rel="noopener">Components of a Search Query</a> to understand syntax.</p>
+</dd>
+</dl>
+</div>
+<div id="second" class="dlist">
+<dl>
+<dt class="hdlist1">second</dt>
+<dd>
+<p>Specifies the second that a <a href="monitor.html">Monitor alert</a> is scheduled to be sent. For example, if you specify <code>"30"</code> for the <code>second</code> parameter, <code>9</code> for the <code>hour</code> parameter, and <code>17</code> for the minute parameter, ThoughtSpot sends the Monitor alert at 9:17 and 30 seconds. You can only specify seconds in TML, not in the UI.</p>
+</dd>
+</dl>
+</div>
+<div id="show_headline" class="dlist">
+<dl>
+<dt class="hdlist1">show_headline</dt>
+<dd>
+<p>Determines whether to show the headline for this column.
+<code>true</code> shows the headline.</p>
+</dd>
+</dl>
+</div>
+<div id="simple_condition" class="dlist">
+<dl>
+<dt class="hdlist1">simple_condition</dt>
+<dd>
+<p>Container for the <a href="monitor.html">Monitor</a> threshold-based alert condition. If the alert condition involves a percentage change, ThoughtSpot uses <code>percentage_change_condition</code> instead of <code>simple_condition</code>.</p>
+</dd>
+</dl>
+</div>
+<div id="size" class="dlist">
+<dl>
+<dt class="hdlist1">size</dt>
+<dd>
+<p>The size of a visualization in a Liveboard.
+The options are <code>EXTRA_SMALL</code>, <code>SMALL</code>, <code>MEDIUM</code>, <code>LARGE</code>, <code>LARGE_SMALL</code>, <code>MEDIUM_SMALL</code>, and <code>EXTRA_LARGE</code>.</p>
+</dd>
+</dl>
+</div>
+<div id="source" class="dlist">
+<dl>
+<dt class="hdlist1">source</dt>
+<dd>
+<p>Name of the source table or view for a join.</p>
+</dd>
+</dl>
+</div>
+<div id="spotiq_preference" class="dlist">
+<dl>
+<dt class="hdlist1">spotiq_preference</dt>
+<dd>
+<p>Specifies whether to include a column in SpotIQ analysis.
+Specify <code>EXCLUDE</code>, or this property defaults to include the column in SpotIQ Analysis.</p>
+<div class="paragraph">
+<p>Refer to <a href="spotiq-data-model-preferences.html">Set columns to exclude from SpotIQ analyses</a>.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="sql_output_column" class="dlist">
+<dl>
+<dt class="hdlist1">sql_output_column</dt>
+<dd>
+<p>Name of the SQL&#8217;s output column as per the select clause in the view&#8217;s SQL query.</p>
+</dd>
+</dl>
+</div>
+<div id="sql_query" class="dlist">
+<dl>
+<dt class="hdlist1">sql_query</dt>
+<dd>
+<p>A string that represents the SQL query used to create the SQL view.</p>
+</dd>
+</dl>
+</div>
+<div id="sql_view" class="dlist">
+<dl>
+<dt class="hdlist1">sql_view</dt>
+<dd>
+<p>Top-level container for all object definitions within the SQL view.</p>
+</dd>
+</dl>
+</div>
+<div id="sql_view_columns" class="dlist">
+<dl>
+<dt class="hdlist1">sql_view_columns</dt>
+<dd>
+<p>The list of columns in the SQL view.</p>
+<div class="paragraph">
+<p>Each column is identified by <code>name</code>, <code>description</code>, and <code>properties</code>.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="start_time" class="dlist">
+<dl>
+<dt class="hdlist1">start_time</dt>
+<dd>
+<p>The epoch time at which the user created the alert. Do not edit this parameter.</p>
+</dd>
+</dl>
+</div>
+<div id="subscribed_user" class="dlist">
+<dl>
+<dt class="hdlist1">subscribed_user</dt>
+<dd>
+<p>List of users subscribed to a <a href="monitor.html">Monitor alert</a>.</p>
+</dd>
+</dl>
+</div>
+<div id="synonyms" class="dlist">
+<dl>
+<dt class="hdlist1">synonyms</dt>
+<dd>
+<p>Alternate names for the column, used in search.</p>
+<div class="paragraph">
+<p>See <a href="data-modeling-visibility.html">Hide a column or define a synonym</a>.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="table" class="dlist">
+<dl>
+<dt class="hdlist1">table</dt>
+<dd>
+<p>Top-level container for all object definitions within the table.</p>
+<div class="paragraph">
+<p>Specific table, used in defining higher-level objects, such as table paths.</p>
+</div>
+<div class="paragraph">
+<p>Defined as <code>name</code> within <code>tables</code> definition.</p>
+</div>
+<div class="paragraph">
+<p>For answers, this parameter contains configuration for the answer, if it displays in table format.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="table_columns" class="dlist">
+<dl>
+<dt class="hdlist1">table_columns</dt>
+<dd>
+<p>The columns in an answer that is being displayed in table format.</p>
+</dd>
+</dl>
+</div>
+<div id="table_paths" class="dlist">
+<dl>
+<dt class="hdlist1">table_paths</dt>
+<dd>
+<p>The list of table paths</p>
+<div class="paragraph">
+<p>Each table path is identified by the <code>id</code>, and additional attributes of <code>table</code> and <code>join_path</code>.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="tables" class="dlist">
+<dl>
+<dt class="hdlist1">tables</dt>
+<dd>
+<p>List of tables used by the Worksheet, answer, or table RLS rule.</p>
+<div class="paragraph">
+<p>Each table is identified by <code>name</code>.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="tabs" class="dlist">
+<dl>
+<dt class="hdlist1">tabs</dt>
+<dd>
+<p>List of tabs in the Liveboard.</p>
+</dd>
+</dl>
+</div>
+<div id="threshold" class="dlist">
+<dl>
+<dt class="hdlist1">threshold</dt>
+<dd>
+<p>Container for the threshold value in a <a href="monitor.html">Monitor</a> threshold-based alert.</p>
+</dd>
+</dl>
+</div>
+<div id="time_zone" class="dlist">
+<dl>
+<dt class="hdlist1">time_zone</dt>
+<dd>
+<p>Specifies the timezone ThoughtSpot should use when sending an alert. For example, if you live in New York City (ET) and are creating an alert for someone in Los Angeles (PST), you may want to specify that the alert should be sent at 9 AM in the <code>America/Los_Angeles</code> timezone. Specify the timezone with the full name: America/Los_Angeles, not PST.</p>
+</dd>
+</dl>
+</div>
+<div id="type" class="dlist">
+<dl>
+<dt class="hdlist1">type</dt>
+<dd>
+<p>For Worksheets and views, this is the join type. This is an optional parameter.</p>
+<div class="paragraph">
+<p>Possible values: <code>LEFT_OUTER</code> for left outer join, <code>RIGHT_OUTER</code> for right outer join, <code>INNER</code> for inner join, <code>OUTER</code> for full outer join.</p>
+</div>
+<div class="paragraph">
+<p>Default: <code>INNER</code></p>
+</div>
+<div class="paragraph">
+<p>For tables, this is the connection type.</p>
+</div>
+<div class="paragraph">
+<p>Possible values: <code>Snowflake</code>, <code>Google BigQuery</code>, <code>Microsoft Azure</code>, or <code>Amazon Redshift</code>.</p>
+</div>
+<div class="paragraph">
+<p>Within the <code>chart</code> section of an Answer TML file, this is the chart type.</p>
+</div>
+<div class="paragraph">
+<p>Possible values: <code>COLUMN</code>, <code>BAR</code>, <code>LINE</code>, <code>PIE</code>, <code>SCATTER</code>, <code>BUBBLE</code>, <code>STACKED_COLUMN</code>, <code>AREA</code>, <code>PARETO</code>, <code>COLUMN</code>, <code>GEO_AREA</code>, <code>GEO_BUBBLE</code>, <code>GEO_HEATMAP</code>, <code>GEO_EARTH_BAR</code>, <code>GEO_EARTH_AREA</code>, <code>GEO_EARTH_GRAPH</code>, <code>GEO_EARTH_BUBBLE</code>, <code>GEO_EARTH_HEATMAP</code>, <code>WATERFALL</code>, <code>TREEMAP</code>, <code>HEATMAP</code>, <code>STACKED_AREA</code>, <code>LINE_COLUMN</code>, <code>FUNNEL</code>, <code>LINE_STACKED_COLUMN</code>, <code>PIVOT_TABLE</code>, <code>SANKEY</code>, <code>GRID_TABLE</code>, <code>SPIDER_WEB</code>, <code>WHISKER_SCATTER</code>, <code>STACKED_BAR</code>, or <code>CANDLESTICK</code>.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="username" class="dlist">
+<dl>
+<dt class="hdlist1">username</dt>
+<dd>
+<p>The username of the creator of a <a href="monitor.html">Monitor alert</a>, or the usernames of subscribed users for a Monitor alert. The creator information is only visible for administrators. If you specify both a <code>username</code> and a <code>user_email</code> for the creator of a Monitor alert, the <code>username</code> specified takes precedence.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Only administrators can change the owner/creator of an alert, and only at the time of alert creation. You can’t change the owner of an alert after the alert is created.
+</td>
+</tr>
+</table>
+</div>
+</dd>
+</dl>
+</div>
+<div id="user_email" class="dlist">
+<dl>
+<dt class="hdlist1">user_email</dt>
+<dd>
+<p>The email address of the creator of a <a href="monitor.html">Monitor alert</a>, or the email addresses of subscribed users for a Monitor alert. The creator information is only visible for administrators. If you specify both a <code>username</code> and a <code>user_email</code> for the creator of a Monitor alert, the <code>username</code> specified takes precedence. If the <code>user_email</code> is the only parameter specified and multiple ThoughtSpot users have that email address, the TML validation returns an error, and you must specify a username.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Only administrators can change the owner/creator of an alert, and only at the time of alert creation. You can’t change the owner of an alert after the alert is created.
+</td>
+</tr>
+</table>
+</div>
+</dd>
+</dl>
+</div>
+<div id="value" class="dlist">
+<dl>
+<dt class="hdlist1">value</dt>
+<dd>
+<p>The threshold value in a <a href="monitor.html">Monitor</a> threshold-based alert, or an accepted value for a Parameter, if a list was configured when <a href="parameters-create.html">creating a Parameter</a>.</p>
+<div class="paragraph">
+<p>In an Answer or Liveboard, <code>value</code> refers to the configured value of the Parameter referenced in a formula in the last saved state Answer or Liveboard.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="values" class="dlist">
+<dl>
+<dt class="hdlist1">values</dt>
+<dd>
+<p>The values being filtered (excluded or included) in a Liveboard, view, or Worksheet.</p>
+</dd>
+</dl>
+</div>
+<div id="view" class="dlist">
+<dl>
+<dt class="hdlist1">view</dt>
+<dd>
+<p>Top-level container for all object definitions within the view.</p>
+</dd>
+</dl>
+</div>
+<div id="view_columns" class="dlist">
+<dl>
+<dt class="hdlist1">view_columns</dt>
+<dd>
+<p>The list of columns in the view.</p>
+<div class="paragraph">
+<p>Each column is identified by <code>name</code>, <code>description</code>, <code>column_id</code>, <code>phrase</code> and <code>properties</code>.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="visualizations" class="dlist">
+<dl>
+<dt class="hdlist1">visualizations</dt>
+<dd>
+<p>The visualizations in a Liveboard: tables, charts, and headlines.</p>
+</dd>
+</dl>
+</div>
+<div id="visualization_id" class="dlist">
+<dl>
+<dt class="hdlist1">visualization_id</dt>
+<dd>
+<p>The id of a visualization.</p>
+<div class="paragraph">
+<p>Used to specify the Liveboard&#8217;s <a href="#layout">layout</a>.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="viz_guid" class="dlist">
+<dl>
+<dt class="hdlist1">viz_guid</dt>
+<dd>
+<p>The GUID for the Liveboard visualization. The GUID provides a distinct way to identify the Liveboard visualization, even if it has the same name as another Liveboard visualization.</p>
+<div class="paragraph">
+<p>You can find this string of letters and numbers at the end of the URL for a Liveboard visualization. Under the visualization&#8217;s <strong>more</strong> <span class="image"><img src="../images/icon-more-10px.png" alt="more menu icon"></span> menu, select <strong>Copy link</strong>. The link copies to your clipboard. The second string of letters and numbers in the URL is the visualization GUID.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="viz_id" class="dlist">
+<dl>
+<dt class="hdlist1">viz_id</dt>
+<dd>
+<p>The GUID of a Liveboard visualization. Used in <a href="monitor.html">Monitor alert</a> TML files to specify the KPI used to create the alert. If you are importing or editing an Answer, use <a href="#answer_id">answer_id</a> instead, and do not include any part of the <a href="#pinboard_viz_id">pinboard_viz_id</a> section.</p>
+<div class="paragraph">
+<p>You can find this string of letters and numbers at the end of the URL for a Liveboard visualization. Under the visualization&#8217;s <strong>more</strong> <span class="image"><img src="../images/icon-more-10px.png" alt="more menu icon"></span> menu, select <strong>Copy link</strong>. The link copies to your clipboard. The second string of letters and numbers in the URL is the visualization GUID.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="width" class="dlist">
+<dl>
+<dt class="hdlist1">width</dt>
+<dd>
+<p>The width of the Liveboard visualization.</p>
+</dd>
+</dl>
+</div>
+<div id="worksheet" class="dlist">
+<dl>
+<dt class="hdlist1">worksheet</dt>
+<dd>
+<p>Top-level container for all object definitions within the Worksheet</p>
+</dd>
+</dl>
+</div>
+<div id="worksheet_columns" class="dlist">
+<dl>
+<dt class="hdlist1">worksheet_columns</dt>
+<dd>
+<p>The list of columns in the Worksheet</p>
+<div class="paragraph">
+<p>Each Worksheet is identified by <code>name</code>, <code>description</code>, <code>column_id</code>, and <code>properties</code>.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div id="x" class="dlist">
+<dl>
+<dt class="hdlist1">x</dt>
+<dd>
+<p>The horizontal location of the Liveboard visualization, relative to the upper left of the Liveboard.</p>
+</dd>
+</dl>
+</div>
+<div id="y" class="dlist">
+<dl>
+<dt class="hdlist1">"y"</dt>
+<dd>
+<p>The vertical location of the Liveboard visualization, relative to the upper left of the Liveboard.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_limitations_of_working_with_tml_files">Limitations of working with TML files</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are certain limitations to the changes you can apply by editing a Worksheet, Answer, table, view, Liveboard, or <a href="monitor.html">Monitor alert</a> through TML.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Formulas and columns can either have a new name, or a new expression.
+You can&#8217;t change both, unless migrating or updating the Worksheet two times.</p>
+</li>
+<li>
+<p>It isn&#8217;t possible to reverse the join direction in the TML script.</p>
+</li>
+<li>
+<p>You can&#8217;t create new tables using TML files.
+You can only update existing tables.</p>
+</li>
+<li>
+<p>You can only change logical tables using TML files.
+You can&#8217;t change the physical version of the table that exists in a database.
+When you change the <code>column_name</code>, for example, the name changes in the application, but not in the physical table in the database.</p>
+</li>
+<li>
+<p>You can&#8217;t create or export TML files for R- or Python-powered visualizations.</p>
+</li>
+<li>
+<p>You can&#8217;t import manually compressed .zip files.
+You can only import .zip files that you exported from ThoughtSpot: a custom set of TML files, an object and its associated data sources, or multiple objects of the same type that you exported from the object list page.</p>
+</li>
+<li>
+<p>Joins only appear in the table TML file of the source table in a join, or the table on the Many side of a Many-to-One join.
+You can only add and edit table joins from the TML file of the table on the Many side of the join.
+You can&#8217;t view or modify table-level joins from the destination table&#8217;s TML file.</p>
+</li>
+<li>
+<p>You can&#8217;t modify joins at the table level from the Worksheet, view, or Answer TML file.
+You can only override the joins for that specific Worksheet, view, or Answer.
+To modify table-level joins, you must edit the source table&#8217;s TML file.</p>
+</li>
+<li>
+<p>You can&#8217;t remove tables from a connection.
+You can only add them.</p>
+</li>
+<li>
+<p>You can only delete table columns that have no dependents. If the table column has any dependents, ThoughtSpot returns an error when you try to import or validate the TML file. To delete a table column, you must first delete the dependents.</p>
+</li>
+<li>
+<p>When deleting columns, you only delete ThoughtSpot&#8217;s record of the column. You don&#8217;t delete the column in your external database.</p>
+</li>
+<li>
+<p>If there is an error in any row-level security (RLS) rule when importing a table, all RLS rules for the table are removed. ThoughtSpot warns you about this on import, and highlights the rule that is in an error state, so you can fix it or remove it.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2023-04-26 13:17:12 -0700
+</div>
+</div>
+</body>
+</html>
