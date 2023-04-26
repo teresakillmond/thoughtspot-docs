@@ -40,7 +40,7 @@ image::note-tile-example.png[Example of a Liveboard with a note tile]
 
 // Naomi
 
-We now support attributes in pivot table cells. Users can now pivot on attributes as well as measures, and drag and drop cells to change the order.
+You can now include attributes in pivot table cells, as well as measures. This is useful for cases when you want to summarize text data such as user role, pass/fail, or other attributes.
 
 image:pivot-attributes.png[A pivot table displaying attributes within its cells]
 
@@ -60,9 +60,11 @@ image::answer-filter-rearrange.gif[Gif of answer filters being rearranged]
 
 [#9-3-0-cl-group-agg]
 [discrete]
-=== Group Aggregate Sage Search Tokens Phase 1: to remove need for formulas to answer level of detail questions
+=== Keywords "of","percentage of"
 
 // Naomi
+
+To enable business users to answer questions related to mix, contribution, share of, percentage, and total ratios, we added the keywords “of” and “percentage of”. These keywords help answer questions such as “What is the share of a certain store’s sales as a percentage of the regional whole?” Previously, searches such as these required the use of a group aggregate formula, which presented a barrier to users.
 
 [#9-3-0-cl-header-sticky]
 [discrete]
@@ -100,15 +102,11 @@ image:legend-move.png[Chart configuration menu displays legend on the right]
 
 // Mark. Can probably be combined with above
 
-[#9-3-0-cl-lb-v2-mobile]
-[discrete]
-=== Pinboard-v2 Migration on Mobile
 
-// Naomi-- moved to 9.2.0.cl
 
 [#9-3-0-cl-group-agg-correct]
 [discrete]
-=== Group Aggregate enhancements Phase III- Correct re-aggregation of the results to the view level
+=== Group Aggregate enhancements: reaggregation
 
 // Naomi
 
@@ -118,45 +116,45 @@ According to the old reaggregation behavior, if a customer removed `Customer reg
 
 Under the new aggregation behavior, the formula result will continue to display revenue as a percentage of each region, even if you remove `Customer region` from the search bar. Visualizations will also display the correct aggregation even if the grouping column is not added to the X-axis.
 
-For more information, see
-ifndef::pendo-links[]
-xref:formulas-aggregation-flexible.adoc#reaggregation-enhancement[Flexible aggregation functions].
-endif::[]
-ifdef::pendo-links[]
-xref:formulas-aggregation-flexible.adoc#reaggregation-enhancement[Flexible aggregation functions,window=_blank].
-endif::[]
-
 
 THE FOLLOWING ARE NEEDS EVALUATION
 
-[#9-3-0-cl-new-group-agg]
-[discrete]
-=== Enable new group aggregate reaggregation logic by default
-
-// Naomi
 
 [#9-3-0-cl-contextual-change]
 [discrete]
-=== EA: Contextual Change Analysis V1
+=== Contextual change analysis
 
 // Naomi
+
+You can now identify the key change drivers for changes in your metrics in a KPI chart. Select the percent change label or select any two data points on the KPI sparkline to view change analysis on your top 5 columns by usage-based ranking (UBR) and identify the reason behind the observed change. You can view the changes in other columns by clicking *Manage attributes* and selecting the desired column(s). This feature must be enabled by your administrator.
 
 '''
 [#secondary-9-2-0-cl]
 [discrete]
 === _Other features and enhancements_
 
-[#9-3-0-cl-ws-v2]
-[discrete]
-=== Support Worksheet v2 flow behind a flag
-
-// Naomi-- moved to 9.5.0.cl
 
 [#9-3-0-cl-dbt]
 [discrete]
 === dbt Incremental Changes (Beta)
 
 // Teresa
+
+[#9-3-0-cl-aurora]
+[discrete]
+=== Amazon Aurora PostgreSQL connection
+
+// Naomi
+
+You can now create connections from ThoughtSpot to Amazon Aurora PostgreSQL.
+
+[#9-3-0-cl-rds]
+[discrete]
+=== Amazon RDS PostgreSQL connection
+
+// Naomi
+
+You can now create connections from ThoughtSpot to Amazon RDS PostgreSQL.
 
 [#9-3-0-cl-mysql]
 [discrete]
@@ -166,11 +164,6 @@ THE FOLLOWING ARE NEEDS EVALUATION
 
 You can now create connections from ThoughtSpot to MySQL databases.
 
-[#9-3-0-cl-joins]
-[discrete]
-=== Allow editing of join condition via UI
-
-// Naomi-- TML only for now, ETV unknown
 
 THE FOLLOWING ARE NEEDS EVALUATION
 
@@ -186,17 +179,6 @@ THE FOLLOWING ARE NEEDS EVALUATION
 
 // Mark
 
-[#9-3-0-cl-column-properties-api]
-[discrete]
-=== Update Column Properties bach API
-
-// Naomi-- moved to 9.5.0.cl
-
-[#9-3-0-cl-column-table-layout]
-[discrete]
-=== Columns Table layout
-
-// Naomi -- moved to 9.5.0.cl
 
 [#9-3-0-cl-data-model]
 [discrete]
@@ -204,17 +186,7 @@ THE FOLLOWING ARE NEEDS EVALUATION
 
 // Teresa
 
-[#9-3-0-cl-select-connection]
-[discrete]
-=== Select Connection
 
-// Naomi-- moved to 9.5.0.cl
-
-[#9-3-0-cl-data-model-popup]
-[discrete]
-=== Data Model Selection popup
-
-// Naomi -- moved to 9.5.0.cl
 
 [#9-3-0-cl-data-fluency-admin]
 [discrete]
