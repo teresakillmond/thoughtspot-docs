@@ -5,7 +5,7 @@
 :page-layout: default-cloud
 :description: ThoughtSpot Sage provide AI-powered search in ThoughtSpot.
 
-ThoughtSpot Sage is our new natural language search which leverages the large language model (LLM) of Microsoft Azure OpenAI Service which uses the GPT 3.5 model.  Natural language search significantly reduces the skill and level of effort required for you to create insights in ThoughtSpot.
+ThoughtSpot Sage is our new natural language search which leverages the large language model (LLM) of Microsoft Azure OpenAI Service. Currently, Sage uses a combination of GPT-3.5T and GPT-4. Natural language search significantly reduces the skill and level of effort required for you to create insights in ThoughtSpot.
 
 When searching in a Worksheet, ThoughtSpot Sage translates your natural language query to a relational search to provide you an accurate, AI-generated answer from your complex data.
 
@@ -53,9 +53,8 @@ ThoughtSpot Sage features are available as Private Preview starting in the 9.2.0
 Once it is enabled, your ThoughtSpot administrator can do the following:
 
 - Limit access by enabling ThoughtSpot Sage for specific worksheets and specific users
-- Disable sending any information to GPT if you are concerned about security risks
 - Disable indexing of personally identifiable information (PII) and sensitive data columns so the data isn’t used by the GPT features at all.
-- Disable sending any information to GPT if you are concerned about security risks
+// - Disable sending any information to GPT if you are concerned about security risks
 
 == ThoughtSpot Sage security
 
@@ -64,7 +63,8 @@ Features of ThoughtSpot Sage security:
 - https://learn.microsoft.com/en-us/legal/cognitive-services/openai/data-privacy?context=%2Fazure%2Fcognitive-services%2Fopenai%2Fcontext%2Fcontext[Azure OpenAI Service^] complies with SOC2 for data security and privacy, and has passed the ThoughtSpot Vendor Security Risk Assessment (https://learn.microsoft.com/en-us/compliance/regulatory/offering-home?view=o365-worldwide[Azure cloud compliances)^].
 - ThoughtSpot sends the natural language search query along with additional metadata such as worksheet column names, descriptions and sample values as part of the GPT prompt in order to provide accurate, in-context responses.
 - GPT does not store the data or metadata that ThoughtSpot sends. We have turned off persistence of the prompt. Though Microsoft allows you to persist data for 30 days to do troubleshooting, we have explicitly disabled this.
-- ThoughtSpot Sage does not use ChatGPT. We use GPT 3.5, also created by Open AI, because it is better suited for natural language translation to SQL.
+- ThoughtSpot Sage does not use ChatGPT. We use a combination of GPT 3.5T and GPT-4, also created by Open AI, because it is better suited for natural language translation to SQL.
+.
 
 == ThoughtSpot Sage accuracy
 
