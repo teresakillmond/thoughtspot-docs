@@ -5,12 +5,12 @@
 :experimental:
 :page-layout: default-cloud
 :page-aliases: /admin/scriptability/tsl-view.adoc, /admin/scriptability/tml-view.adoc, /admin/ts-cloud/tsl-view.adoc
-:description: Use TML to modify Views in a flat-file format. Then, migrate the View to a different cluster, or restore it to the same cluster.
+:description: Use TML to modify views in a flat-file format. Then, migrate the view to a different cluster, or restore it to the same cluster.
 :object: views
 
 include::partial$tml-intro.adoc[]
 
-[#syntax-worksheets]
+[#syntax-views]
 include::partial$tml-syntax-view.adoc[]
 
 [#view-parameters]
@@ -95,6 +95,8 @@ a| <<phrase,phrase>>
 <<synonyms,synonyms>>
 
 <<table,table>>
+
+<<tables,tables>>
 
 <<table_columns,table_columns>>
 
@@ -352,11 +354,9 @@ Phrase associated with a view column.
 
 [#properties]
 properties::
-The list of properties of a view column, a view itself, or the properties of the output for a formula within a view.
+The list of properties of a view column or the properties of the output for a formula within a view.
 +
 Each column can have the following properties, depending on its definition: `column_type`, `aggregation`, `index_type`, `is_hidden`, `index_priority`, `synonyms`, `is_attribution_dimension`, `is_additive`, `calendar`, `format_pattern`, `currency_type`, `geo_config`, and `spotiq_preference`.
-+
-Views can have the following properties that affect query generation: `is_bypass_rls`, and `join_progressive`.
 
 [#search_output_column]
 search_output_column::
@@ -389,6 +389,12 @@ table::
 Specific table, used in defining higher-level objects, such as table paths.
 +
 Defined as `name` within `tables` definition.
+
+[#tables]
+tables::
+List of tables used by the View.
++
+Each table is identified by `name`.
 
 [#table_columns]
 table_columns::
