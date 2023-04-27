@@ -77,6 +77,19 @@ include::partial$redshift-sql-script.adoc[]
 
 include::partial$spotapp-deploy-individual.adoc[]
 
+== Review formula values
+After you deploy the {spotapp}, you must review the default formula values ThoughtSpot used in several formulas in the *Amazon Redshift Clusters* Worksheet. Your values may be different from the default values ThoughtSpot used in the formulas. To ensure the {spotapp} is as useful for your specific data as possible, review the values in the following formulas in the *Amazon Redshift Clusters* Worksheet.
+
+All currency values are in USD. If necessary, convert them to your currency.
+
+* `node type`: By default, this is set to `dc2.large`. If necessary, replace this value with the node type for your Redshift cluster and region.
+
+* `Price Per Node Per Hour (Currency)`: If necessary, replace this value with the value for your node type and region. Refer to "On-demand pricing" in the https://aws.amazon.com/redshift/pricing/[Redshift pricing documentation^].
+
+* `Spectrum Price Per TB (Currency)`: If necessary, replace this value with the value for your region. Refer to "Amazon Redshift Spectrum pricing" in the https://aws.amazon.com/redshift/pricing/[Redshift pricing documentation^].
+
+* `Concurrency Price per Second (Currency)`: If necessary, replace this value with the value for your region. Refer to "Concurrency Scaling Pricing" in the https://aws.amazon.com/redshift/pricing/[Redshift pricing documentation^].
+
 [#schema]
 == {spotapp} schema
 
