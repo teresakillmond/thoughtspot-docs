@@ -8,7 +8,7 @@
 
 A Parameter is a container or a placeholder such as a number, date, or string that can replace a constant value or a list of values. Create Worksheet Parameters to optimize your data inquiries. Use Parameters to run different scenarios with adjustable values, without creating or modifying the constants in formulas for each new value.
 
-Parameters are useful for 'what-if' analysis, financial planning, cohort analysis, and so on. When you create Parameters for your Worksheet, you guide users in their exploration of the data as they search on your Worksheet.
+Parameters are useful for 'what-if' analysis, financial planning, cohort analysis, and so on. When you create Parameters for your Worksheet, you guide users in their exploration of the data as they search on your Worksheet or use Liveboards based on your Worksheets.
 
 To learn how to create Parameters, see xref:parameters-create.adoc[].
 
@@ -51,6 +51,8 @@ If there is a list of values, select the value you would like to use.
 == Changing Parameter values in a Liveboard
 
 When you create or view a Liveboard that contains a formula with a Parameter, you'll know: ThoughtSpot displays the name of the Parameter and its current value below the Liveboard description, in the row where it displays filters.
+
+For Parameters to affect the entire Liveboard and appear in the Liveboard filter bar, the Worksheet the Liveboard is based on must contain Parameters. You can't create new Parameters from a Liveboard; you can only change their values.
 
 image::parameter-liveboard.png[Parameter name and value under the Liveboard description]
 
