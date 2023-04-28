@@ -130,9 +130,13 @@ image::dbt-integration-folder-multiple.png[dbt integration step 2]
 
 . On the next screen, select tables or models to import. By default, ThoughtSpot imports all models in the folder(s). Deselect any models you do not want to import. You must select at least 1 model within each dbt folder.
 +
+The *Synced* column appears if you enabled *Incremental updates* in your environment. See <<edit,Editing a dbt project>>. The *Synced* column says *No* if this is the first time you are importing this model. The *Synced* column says *Yes* if you are importing the same model again. If the *Synced* column says *Yes*, ThoughtSpot will update the existing ThoughtSpot objects, instead of creating new objects.
++
 image::dbt-integration-tables.png[dbt integration step 3]
 
-. On the next screen, choose which Worksheets you would like ThoughtSpot to create, based odn the models and relationships specified.
+. On the next screen, choose which Worksheets you would like ThoughtSpot to create, based on the models and relationships specified.
++
+The *Synced* column appears if you enabled *Incremental updates* in your environment. See <<edit,Editing a dbt project>>. The *Synced* column says *No* if this is the first time you are importing this Worksheet. The *Synced* column says *Yes* if you are importing the same Worksheet again. If the *Synced* column says *Yes*, ThoughtSpot will update the existing Worksheet, instead of creating a new one.
 +
 image::dbt-integration-worksheets-create.png[Select Worksheets for ThoughtSpot to create]
 
@@ -156,14 +160,24 @@ NOTE: This process may replace existing dbt tables you imported into ThoughtSpot
 
 . If you select any of the tables or Worksheets you created, and then click *Joins*, you can see the joins ThoughtSpot created, based on the relationships in dbt.
 
+[#edit]
 == Editing a dbt project
-If there are any changes to the dbt models that you would like the ThoughtSpot Worksheets, Liveboards, and tables to reflect, you must edit the dbt integration you created. This updates the existing Worksheets, Liveboards, and tables. To edit a dbt project/ integration, follow these steps:
+If there are any changes to the dbt models that you would like the ThoughtSpot Worksheets, Liveboards, and tables to reflect, you must edit the dbt integration you created. This updates the existing Worksheets, Liveboards, and tables.
+
+.[.badge.badge-beta]#Beta#
+****
+Updating your existing dbt integration Worksheets, Liveboards, and tables is in beta and off by default. ThoughtSpot also calls this feature *incremental updates*. To enable it, contact {support-url}.
+
+If incremental updates is off in your environment, editing a dbt integration creates new Worksheets, Liveboards, and tables. It does not update the existing objects.
+****
+
+To edit a dbt project/ integration, follow these steps:
 
 . Select *Data* in the top navigation bar.
 
 . Select *dbt* in the side navigation bar.
 
-. In the list of dbt project, select the empty checkbox next to your project name. If necessary, use the search bar in the upper left corner.
+. In the list of dbt project, select the empty checkbox next to your project name. If necessary, use the search bar in the upper left corner to find your project.
 
 . Select *Edit*.
 
@@ -179,7 +193,9 @@ If there are any changes to the dbt models that you would like the ThoughtSpot W
 
 * If you make changes to your dbt models in dbt, ThoughtSpot does not automatically reflect those changes. You must integrate with dbt again. This may affect changes you made to the tables and Worksheets in ThoughtSpot.
 
-* When you edit a dbt project in ThoughtSpot, you can't remove table and Worksheet columns. You can only add them.
+* When you edit a dbt project in ThoughtSpot, you can't remove table and Worksheet columns, or joins. You can only add them.
+
+* When you edit a dbt project in ThoughtSpot, you can't change the column datatype.
 
 == Troubleshooting
 
