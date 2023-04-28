@@ -107,6 +107,7 @@ For information about how to apply runtime filters, see link:https://developers.
 Runtime filters do not work directly on top of tables. You must create a Worksheet if you want to use runtime filters.
 This means that the Liveboard or visualization on which you apply a runtime filter must be created on top of a Worksheet.
 
+* You can pass a maximum of 2000 characters in the URL using runtime filters.
 * The DATE and DATE_TIME data type must be specified as EPOCH time (Unix or POSIX time) in runtime filters. +
 * If the Worksheet was created from an Answer (it is an aggregated Worksheet), runtime filters will only work if the Answer was formed using a single Worksheet. If the Answer from which the Worksheet was created includes raw tables or joins multiple Worksheets, you won't be able to use runtime filters on it. This is because of the join path ambiguity that could result.
 * Runtime filters do not allow you to apply HAVING in the URL parameters. +
