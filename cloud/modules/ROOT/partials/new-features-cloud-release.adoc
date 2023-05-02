@@ -31,6 +31,21 @@ Chat support is available to all customers in North America for the 9.2.0.cl rel
 IMPORTANT: Our in-app support team cannot access your data. Questions that require access to or understanding of your data or data model should be directed to your internal data teams.
 ****
 
+[#9-2-0-cl-sage]
+=== ThoughtSpot Sage
+
+In this release we introduce our new AI-powered search experience called ThoughtSpot Sage, which makes it easier for you to get answers and insights from your complex data. ThoughtSpot Sage uses  a combination of GPT-3, GPT-3.5T and GPT-4, and the large language models (LLM) of the Microsoft Azure OpenAI Service.
+
+Sage features include:
+
+- xref:#9-2-0-cl-ai-answers[Natural language search]
+- xref:#9-2-0-cl-ai-search[AI-suggested searches]
+- xref:#9-2-0-cl-synonyms[AI-generated Worksheet column synonyms]
+
+Sage features are disabled by default and available for select customers to try before they reach GA, when they are enabled by default. To enable ThoughtSpot Sage features, you must contact ThoughtSpot Support.
+
+Once enabled, your ThoughtSpot administrator can grant access to the *Natural language search* and *AI-suggested searches* features for users in a group by assigning the *_Can preview ThoughtSpot Sage_* user privilege to the group. For more information about ThoughtSpot Sage, see xref:search-sage.adoc[ThoughtSpot Sage].
+
 [#9-2-0-cl-first]
 === For the First User
 
@@ -41,6 +56,7 @@ For these instructions, see xref:ts-cloud-getting-started.adoc[Getting Started w
 [#9-2-0-cl-analyst]
 === For the Analyst
 
+[#9-2-0-cl-synonyms]
 AI-generated Worksheet column synonyms [.badge.badge-private-preview-relnotes]#Private Preview#::
 
 When you create a Worksheet, ThoughtSpot automatically creates synonyms for each column name. Users can easily start searching on your data, without knowing the exact names for every column. For example, if you have a column named `Product type`, ThoughtSpot might create a synonym such as `Product Category`. When a user searches for revenue by product category, for example, ThoughtSpot returns sales by product type. This feature must be enabled by {support-url}.
@@ -118,12 +134,14 @@ Additionally, if your query includes two or more `contains` phrases that modify 
 [#9-2-0-cl-business-user]
 === For the Business User
 
+[#9-2-0-cl-ai-answers]
 Natural language search [.badge.badge-private-preview-relnotes]#Private Preview#:: You can now use natural language to search for answers to your business questions. To try it out, navigate to the Home page, select the search bar labeled *Ask any business question you have* and type your question. When you enter your question, you will see the AI generated answer appear, along with a list of related Answers created by users in your team. For more information, see xref:ai-answers.adoc[].
 +
 You can select the Worksheet to search on by clicking the Worksheet title in the left side of the search bar and selecting a new Worksheet from the dropdown. Worksheets with AI answers enabled display a triangular icon to the left of the Worksheet name: image:icon-ai-answer.png[AI answer enabled icon].
 +
 To try out this feature, you must contact {support-url}.
 
+[#9-2-0-cl-ai-search]
 AI-suggested searches [.badge.badge-private-preview-relnotes]#Private Preview#::
 The AI-suggested searches feature helps you think of relevant questions to ask of your own data source, by providing examples of searches. This feature is designed to help you get started if you are a new user of Search Data, or if you are working with a new Worksheet.
 For more information, see xref:search-ai-suggested.adoc[AI-suggested searches]. This feature must be enabled by {support-url}.
