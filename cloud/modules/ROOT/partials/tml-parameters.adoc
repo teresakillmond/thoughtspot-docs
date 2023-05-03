@@ -23,8 +23,6 @@ a| <<aggregation,aggregation>>
 
 <<client_state,client_state>>
 
-<<color,color>>
-
 <<column,column>>
 
 <<columns,columns>>
@@ -36,8 +34,6 @@ a| <<aggregation,aggregation>>
 <<comparator,comparator>>
 
 <<condition,condition>>
-
-<<conditional_formatting,conditional_formatting>>
 
 <<connection,connection>>
 
@@ -141,11 +137,7 @@ a| <<frequency_granularity,frequency_granularity>>
 
 <<locked,locked>>
 
-<<max,max>>
-
 <<metric_id,metric_id>>
-
-<<min,min>>
 
 <<minute,minute>>
 
@@ -179,10 +171,6 @@ a| <<parameter_overrides,parameter_overrides>>
 
 <<properties,properties>>
 
-<<plotAsBand,plotAsBand>>
-
-<<range,range>>
-
 <<range_config,range_config>>
 
 <<range_max,range_max>>
@@ -190,8 +178,6 @@ a| <<parameter_overrides,parameter_overrides>>
 <<range_min,range_min>>
 
 <<rls_rules,rls_rules>>
-
-<<rule,rule>>
 
 <<rules,rules>>
 
@@ -325,10 +311,6 @@ A list of columns in the chart.
 client_state::
 A JSON string with more advanced chart and table configuration.
 
-[#color]
-color::
-Color to use for conditional formatting or for the columns of an answer in chart form, in the form of a HEX value.
-
 [#column]
 column::
 The id of the column(s) being filtered on. When a Liveboard contains xref:liveboard-filters-linked.adoc[linked filters], or filters that affect visualizations based on more than one Worksheet, the primary filter column appears first in the list of columns in the TML. The linked filter column appears after the primary filter column.
@@ -368,10 +350,6 @@ The operator used in the condition of a xref:monitor.adoc[Monitor] threshold-bas
 [#condition]
 condition::
 Container for the xref:monitor.adoc[Monitor] threshold-based alert condition. Contains either a simple condition or a percentage change condition. To change a threshold-based alert to a scheduled alert, remove the `condition` section.
-
-[#conditional_formatting]
-conditional_formatting::
-Conditional formatting for the chart or table of an answer.
 
 [#connection]
 connection::
@@ -419,7 +397,7 @@ The numbered days of the month, 1-31, when a xref:monitor.adoc[Monitor alert] sh
 
 [#day_of_week]
 day_of_week::
-The numbered days of the week, 1-7, when a xref:monitor.adoc[Monitor alert] should be sent. For example, `"0,3,5"`. `0` refers to Sunday, and `6` refers to Saturday.
+The numbered days of the week, 0-6, when a xref:monitor.adoc[Monitor alert] should be sent. For example, `"0,3,5"`. `0` refers to Sunday, and `6` refers to Saturday.
 
 [#db]
 db::
@@ -724,17 +702,9 @@ locked::
 The 'automatically select my chart' option in the UI.
 If set to `true`, the chart type does not change, even when you add items to the query.
 
-[#max]
-max::
-Maximum value for conditional formatting.
-
 [#metric_id]
 metric_id::
 Container for the KPI used in the xref:monitor.adoc[Monitor alert].
-
-[#min]
-min::
-Minimum value for conditional formatting.
 
 [#minute]
 minute::
@@ -819,16 +789,6 @@ Worksheets and views themselves can have the following properties that affect qu
 +
 For Answers, each formula's output can have the following properties, depending on its definition: `column_type` and `aggregation`.
 
-[#plotAsBand]
-plotAsBand::
-Specifies whether to plot the chart conditional formatting like a band on the visualization.
-+
-This is the 'fill chart' option in the UI.
-
-[#range]
-range::
-Range for the conditional formatting to apply to, with a specified `min` and `max`.
-
 [#range_config]
 range_config::
 Contains the minimum and maximum values for the range of values allowed for a Parameter, if a range is specified when xref:parameters-create.adoc[creating a Parameter].
@@ -844,10 +804,6 @@ The minimum value for the range of values allowed for a Parameter, if a range is
 [#rls_rules]
 rls_rules::
 A container for the full definition of xref:security-rls-concept.adoc[row-level security] rules for the table.
-
-[#rule]
-rule::
-A conditional formatting rule.
 
 [#rules]
 rules::
