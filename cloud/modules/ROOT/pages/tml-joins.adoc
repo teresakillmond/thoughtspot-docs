@@ -140,3 +140,21 @@ This is the join type. This is an optional parameter.
 Possible values: `LEFT_OUTER` for left outer join, `RIGHT_OUTER` for right outer join, `INNER` for inner join, `OUTER` for full outer join.
 +
 Default: `INNER`
+
+[#limitations]
+== Limitations of working with TML files
+
+There are certain limitations to the changes you can apply by editing {object} through TML.
+
+* It isn't possible to reverse the join direction in the TML script.
+* You can only change logical tables using TML files.
+You can't change the physical version of the table that exists in a database.
+When you change the `column_name`, for example, the name changes in the application, but not in the physical table in the database.
+* You can't import manually compressed .zip files.
+You can only import .zip files that you exported from ThoughtSpot: a custom set of TML files, an object and its associated data sources, or multiple objects of the same type that you exported from the object list page.
+* Joins only appear in the table TML file of the source table in a join, or the table on the Many side of a Many-to-One join.
+You can only add and edit table joins from the TML file of the table on the Many side of the join.
+You can't view or modify table-level joins from the destination table's TML file.
+* You can't modify joins at the table level from the Worksheet, view, or Answer TML file.
+You can only override the joins for that specific Worksheet, view, or Answer.
+To modify table-level joins, you must edit the source table's TML file.
