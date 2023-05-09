@@ -52,7 +52,7 @@ The exceptions are columns with *COLUMN TYPE* of `MEASURE` and columns with *DAT
 WARNING: If a column has a very large free text value, ThoughtSpot recommends you keep `DEFAULT` or set `DONT_INDEX`.
 Otherwise, you may generate confusing suggestions.
 
-* Short strings (like a `firstname` column) are indexed using `PREFIX_AND_SUBSTRING` by default, which indexes both prefix and substrings.
+* Short strings (like a `firstname` column) are indexed using `PREFIX_AND_WORD_SUBSTRING` by default, which indexes prefixes for each individual word in the column value.
 * If a column has a high _cardinality_ -
 the number of unique column values - ThoughtSpot does not index it by default. If your data is in ThoughtSpot's in-memory database, that limit is 10 million. If your data is in an external cloud data warehouse, that limit is 1 million. You can index columns with a greater cardinality than 10 million, but it may impact performance. To index a column with a cardinality greater than 10 million, contact {support-url}.
 
