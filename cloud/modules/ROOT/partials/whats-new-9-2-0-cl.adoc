@@ -760,13 +760,13 @@ endif::[]
 
 // put closer to top
 
-ifndef::free-trial-feature[]
 [#9-2-0-cl-jdbc]
 [discrete]
+ifndef::free-trial-feature[]
 === Generic JDBC connector integration
-
+endif::free-trial-feature[]
 // Naomi
-
+ifndef::free-trial-feature[]
 You can now create connections from ThoughtSpot to Generic JDBC databases. For details, see
 ifndef::pendo-links[]
 xref:connections-genericjdbc.adoc[Generic JDBC].
@@ -776,7 +776,13 @@ xref:connections-genericjdbc.adoc[Generic JDBC,window=_blank].
 endif::[]
 To enable this feature, contact {support-url}.
 endif::free-trial-feature[]
-
+ifdef::free-trial-feature[]
+=== Generic JDBC connector integration [.badge.badge-beta]#Beta#
+endif::free-trial-feature[]
+You can now create connections from ThoughtSpot to Generic JDBC databases. For details, see
+xref:connections-genericjdbc.adoc[Generic JDBC,window=_blank].
+endif::[]
+To enable this feature, contact {support-url}.
 [#9-2-0-cl-amazon]
 [discrete]
 === Certification of Amazon Aurora and Amazon Relational Database Service (RDS) for PostgreSQL
