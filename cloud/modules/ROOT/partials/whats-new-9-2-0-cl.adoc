@@ -40,8 +40,6 @@ Chat support is available to all customers in North America for the 9.2.0.cl rel
 NOTE: Our in-app support team cannot access your data. Questions that require access to or understanding of your data or data model should be directed to your internal data teams.
 ****
 
-ifndef::free-trial-feature[]
-
 ifndef::pendo-links[]
 [#9-2-0-cl-sage]
 [discrete]
@@ -61,9 +59,14 @@ Sage features include:
 - AI-suggested searches
 - AI-generated Worksheet column synonyms
 
+ifndef::free-trial-feature[]
 Sage features are disabled by default and available for select customers to try before they reach GA, when they are enabled by default. To enable ThoughtSpot Sage features, you must contact ThoughtSpot Support.
 
 Once enabled, your ThoughtSpot administrator can grant access to the *Natural language search* and *AI-suggested searches* features for users in a group by assigning the *_Can preview ThoughtSpot Sage_* user privilege to the group. For more information about ThoughtSpot Sage,
+endif::free-trial-feature[]
+ifdef::free-trial-feature[]
+Your ThoughtSpot administrator can grant access to the *Natural language search* and *AI-suggested searches* features for users in a group by assigning the *_Can preview ThoughtSpot Sage_* user privilege to the group. For more information about ThoughtSpot Sage,
+endif::free-trial-feature[]
 ifndef::pendo-links[]
 see xref:search-sage.adoc[ThoughtSpot Sage].
 endif::[]
@@ -95,8 +98,9 @@ endif::[]
 ifdef::pendo-links[]
 xref:ai-answers.adoc#worksheet-toggle[Enable or disable AI-generated Answers,window=_blank].
 endif::[]
-
+ifndef::free-trial-feature[]
 This feature must be enabled by ThoughtSpot Support.
+endif::free-trial-feature[]
 
 image:ai-answer.gif[]
 
@@ -126,7 +130,9 @@ endif::[]
 ifdef::pendo-links[]
 For more information, see xref:search-ai-suggested.adoc[AI-suggested searches,window=_blank].
 endif::[]
+ifndef::free-trial-feature[]
 This feature must be enabled by ThoughtSpot Support.
+endif::free-trial-feature[]
 
 image::ai-suggested-searches.png[ai-suggested searches]
 
@@ -567,11 +573,11 @@ image::schedule-timezone.png[Time zone dropdown menu with America/Los Angeles se
 
 
 
-[#9-2-0-cl-connected-sheets]
-[discrete]
-=== Connect your ThoughtSpot instance to Google Sheets
+// [#9-2-0-cl-connected-sheets]
+// [discrete]
+// === Connect your ThoughtSpot instance to Google Sheets
 
-You can now pull data from a ThoughtSpot instance into Google Sheets using the *ThoughtSpot for connected sheets* extension from the Google Workspace Marketplace. You can connect to any ThoughtSpot instance, even Free Trial. Once connected, you can select your data by using the search bar or selecting it from the data panel, just like in ThoughtSpot. Once you select your data, you can then pull it into Google Sheets and use the available tools to further analyze your data.
+// You can now pull data from a ThoughtSpot instance into Google Sheets using the *ThoughtSpot for connected sheets* extension from the Google Workspace Marketplace. You can connect to any ThoughtSpot instance, even Free Trial. Once connected, you can select your data by using the search bar or selecting it from the data panel, just like in ThoughtSpot. Once you select your data, you can then pull it into Google Sheets and use the available tools to further analyze your data.
 // Mark. add article link
 
 ifdef::free-trial-feature[]
@@ -633,19 +639,19 @@ endif::[]
 
 [#9-2-0-cl-llm]
 [discrete]
-=== ThoughtSpot Google Sheets(TM) add-ons
+=== ThoughtSpot Google Sheets(TM) add-on
 
-There are now two ThoughtSpot add-ons for Google Sheets aimed at different audiences:
+There is a ThoughtSpot add-on for Google Sheets:
 
 - *ThoughtSpot Analytics for Google Sheets* lets you use the power of ThoughtSpot to search, and create charts and visualizations from your spreadsheet data.
-- *ThoughtSpot Connected Sheets* lets you connect to a ThoughtSpot instance, pull data directly into a Google Sheet from trusted data sources connected to that instance, and use the tools in Google Sheets for ad-hoc analysis.
+// - *ThoughtSpot Connected Sheets* lets you connect to a ThoughtSpot instance, pull data directly into a Google Sheet from trusted data sources connected to that instance, and use the tools in Google Sheets for ad-hoc analysis.
 
-For details on both add-ons and how you can use them together,
+For details,
 ifndef::pendo-links[]
-see xref:thoughtspot-sheets.adoc[ThoughtSpot Google Sheets add-ons].
+see xref:thoughtspot-sheets.adoc[ThoughtSpot Google Sheets add-on].
 endif::[]
 ifdef::pendo-links[]
-see xref:thoughtspot-sheets.adoc[ThoughtSpot Google Sheets add-ons,window=_blank].
+see xref:thoughtspot-sheets.adoc[ThoughtSpot Google Sheets add-on,window=_blank].
 endif::[]
 // Mark
 
