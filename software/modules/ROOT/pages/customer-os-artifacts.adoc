@@ -1,4 +1,4 @@
-= ThoughtSpot artifacts for deploying on your own OS
+= Download ThoughtSpot artifacts for deploying on your own OS
 :last_updated: 4/19/2023
 :linkattrs:
 :author: Teresa Killmond
@@ -7,6 +7,16 @@
 :description: Get the two primary tarball artifacts for configuring ThoughtSpot using Amazon Linux 2, OEL, or RHEL.
 
 include::partial$ts-artifacts-customer-os.adoc[]
+
+== Download the required artifacts
+
+. Download the Ansible tarball you obtained from {support-url} to your local machine.
++
+You can download it by running the cp command. For example, if the tarball is in your S3 bucket, run `aws s3 cp s3://bucket_name/path/to/the/tarball ./`.
++
+As a best practice, copy the tarball to every node.
+. Download the release tarball you obtained from {support-url} to your local machine.
+
 
 == Next steps
 
