@@ -9,7 +9,7 @@ You can easily configure an additional node for a ThoughtSpot cluster on AL2, OE
 
 To add a new node to a ThoughtSpot cluster deployed through your own OS, you must first make this new node ready for ThoughtSpot.
 
-NOTE: If your cluster is on RHEL, and your organization requires that privilege escalation take place through an external tool that integrates with Ansible, follow the steps in xref:rhel-add-node-ansible.adoc[]. For more information, see xref:rhel-ansible.adoc[].
+NOTE: If your cluster is on RHEL, and your organization requires that privilege escalation take place through an external tool that integrates with ansible, follow the steps in xref:rhel-add-node-ansible.adoc[]. For more information, see xref:rhel-ansible.adoc[].
 
 [#prerequisites]
 == Prerequisites
@@ -19,28 +19,28 @@ NOTE: If your cluster is on RHEL, and your organization requires that privilege 
 * Your organization's AL2, OEL, or RHEL base image must be on the new node.
 
 [#configure-ansible]
-== Configure the Ansible Playbook
+== Configure the ansible Playbook
 
-Follow the general steps for configuring the Ansible Playbook, either on xref:customer-os-install-online.adoc#configure-ansible[online clusters], or on xref:customer-os-install-offline.adoc#configure-ansible[offline clusters].
+Follow the general steps for configuring the ansible Playbook, either on xref:customer-os-install-online.adoc#configure-ansible[online clusters], or on xref:customer-os-install-offline.adoc#configure-ansible[offline clusters].
 
 . Save a new copy of the `hosts.yaml` file, as `new-host.yaml`.
 . In the `hosts` parameter, *_only_* specify the `IP` or `hostname` of the new node.
-. Do not change the rest of the file; the Ansible configuration must be identical to the existing cluster.
+. Do not change the rest of the file; the ansible configuration must be identical to the existing cluster.
 
 [#run-ansible]
-== Run the Ansible Playbook
+== Run the ansible Playbook
 
-Run the Ansible Playbook from your local machine by entering the following command:
+Run the ansible Playbook from your local machine by entering the following command:
 [source]
 ----
 ansible-playbook -i new-host.yaml ts.yaml
 ----
 
-As the Ansible Playbook runs, it will perform the same tasks on the new node that it completed during the initial cluster set-up, but only for the new node.
-See xref:customer-os-install-online.adoc#run-ansible[Run Ansible].
+As the ansible Playbook runs, it will perform the same tasks on the new node that it completed during the initial cluster set-up, but only for the new node.
+See xref:customer-os-install-online.adoc#run-ansible[Run ansible].
 It will install all xref:customer-os-packages.adoc[Yum, Python, and R packages], configure the local user accounts for ThoughtSpot administration, install the ThoughtSpot CLI, and configure the node (create any necessary partitions, formatting the data disks, and running the `prepare disks` command).
 
-After the Ansible Playbook finishes, your new host is ready for installing the ThoughtSpot application.
+After the ansible Playbook finishes, your new host is ready for installing the ThoughtSpot application.
 
 [#install-thoughtspot]
 == Install the ThoughtSpot application on the new node
@@ -64,7 +64,9 @@ Follow these general steps to install ThoughtSpot on the new node:
 > * xref:customer-os.adoc[]
 > * xref:customer-os-prerequisites.adoc[]
 > * xref:customer-os-artifacts.adoc[]
-> * xref:customer-os-install-online.adoc[Installing ThoughtSpot on online clusters]
-> * xref:customer-os-install-offline.adoc[Installing ThoughtSpot on offline clusters]
+> * xref:customer-os-untar.adoc[]
+> * xref:customer-os-offline-script.adoc[]
+> * xref:customer-os-ansible-configure.adoc[]
+> * xref:customer-os-install.adoc[]
 > * xref:customer-os-upgrade.adoc[Upgrading ThoughtSpot on your own OS to a new release]
 > * xref:customer-os-packages.adoc[Packages installed with ThoughtSpot running on your own OS]

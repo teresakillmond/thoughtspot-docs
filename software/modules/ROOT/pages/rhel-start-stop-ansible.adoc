@@ -1,11 +1,11 @@
-= Start or stop ThoughtSpot using Ansible on clusters that use RHEL
+= Start or stop ThoughtSpot using ansible on clusters that use RHEL
 :last_updated: 12/8/2022
 :author: Teresa Killmond
 :linkattrs:
 :experimental:
-:description: Start or stop ThoughtSpot using Ansible on RHEL clusters.
+:description: Start or stop ThoughtSpot using ansible on RHEL clusters.
 
-If your organization requires that privilege escalation take place through an external tool that integrates with Ansible, follow the steps in this article to start or stop your cluster.
+If your organization requires that privilege escalation take place through an external tool that integrates with ansible, follow the steps in this article to start or stop your cluster.
 
 Before starting or stopping the cluster, ensure that the xref:rhel-install-ansible.adoc#system-settings[system settings] are correctly configured.
 
@@ -13,7 +13,7 @@ Before starting or stopping the cluster, ensure that the xref:rhel-install-ansib
 == Start the cluster
 
 . Rename *cluster_hosts.sample* to *cluster_hosts.yaml*.
-. Update the Ansible vars in *cluster_hosts.yaml* with your own specific values. See <<ansible-vars-start,Sample Ansible vars>>.
+. Update the ansible vars in *cluster_hosts.yaml* with your own specific values. See <<ansible-vars-start,Sample ansible vars>>.
 . Run the ansible-playbook. This starts the cluster. Run the following command on any cluster node:
 +
 [source,bash]
@@ -25,9 +25,9 @@ If privilege escalation requires a password, add the `-K` option to the `ansible
 . If there is a failure at any point, fix the failure and rerun the `ansible-playbook` command. Bypass the completed steps using the `--start-at-task` option, specifying the task at which to start.
 
 [#ansible-vars-start]
-=== Sample Ansible vars
+=== Sample ansible vars
 
-This is the definition of the *cluster_hosts.sample* file that is present in your Ansible tarball. You must replace anything in this file within `<>` with your own specific information.
+This is the definition of the *cluster_hosts.sample* file that is present in your ansible tarball. You must replace anything in this file within `<>` with your own specific information.
 
 [source,bash]
 ----
@@ -50,7 +50,7 @@ all:
 == Stop the cluster
 
 . Rename *cluster_hosts.sample* to *cluster_hosts.yaml*.
-. Update the Ansible vars in *cluster_create_hosts.yaml* with your own specific values. See <<ansible-vars-stop,Sample Ansible vars>>.
+. Update the ansible vars in *cluster_create_hosts.yaml* with your own specific values. See <<ansible-vars-stop,Sample ansible vars>>.
 . Run the ansible-playbook. This stops the cluster. Run the following command on any cluster node:
 +
 [source,bash]
@@ -62,9 +62,9 @@ If privilege escalation requires a password, add the `-K` option to the `ansible
 . If there is a failure at any point, fix the failure and rerun the `ansible-playbook` command. Bypass the completed steps using the `--start-at-task` option, specifying the task at which to start.
 
 [#ansible-vars-stop]
-=== Sample Ansible vars
+=== Sample ansible vars
 
-This is the definition of the *cluster_hosts.sample* file that is present in your Ansible tarball. You must replace anything in this file within `<>` with your own specific information.
+This is the definition of the *cluster_hosts.sample* file that is present in your ansible tarball. You must replace anything in this file within `<>` with your own specific information.
 
 [source,bash]
 ----

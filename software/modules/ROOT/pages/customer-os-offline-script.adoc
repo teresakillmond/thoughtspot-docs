@@ -1,0 +1,35 @@
+= Run the offline script for deployment on your own OS
+:last_updated: 5/10/2023
+:linkattrs:
+:author: Teresa Killmond
+:experimental:
+:description: If you are deploying ThoughtSpot offline, you must run the run-offline.sh script before you can configure and run the ansible playbook.
+
+After you untar the ansible tarball, but before you configure and run the ansible playbook, you must run the `run_offline.sh` script on your local machine. This is *_only_* required for offline deployments of ThoughtSpot on your own OS. This script is not available if you are deploying online.
+
+The `run_offline.sh` script installs the required xref:customer-os-packages.adoc[Yum, Python, and R packages] without connecting to the internet.
+
+Run the following command on all nodes:
+[source,bash]
+----
+run_offline.sh
+----
+
+If you already have ansible installed, or if you run ansible on a different node separate from the ThoughtSpot installation, include the `--skip_ansible` flag when you run `run_offline.sh`. This skips the ansible yum package installation on the node.
+
+== Next steps
+
+Next, xref:customer-os-ansible-configure.adoc[configure and run the ansible playbook].
+
+'''
+> **Related information**
+>
+> * xref:customer-os.adoc[]
+> * xref:customer-os-prerequisites.adoc[]
+> * xref:customer-os-artifacts.adoc[]
+> * xref:customer-os-untar.adoc[]
+> * xref:customer-os-ansible-configure.adoc[]
+> * xref:customer-os-install.adoc[]
+> * xref:customer-os-upgrade.adoc[Upgrading ThoughtSpot on your own OS to a new release]
+> * xref:customer-os-add-node.adoc[]
+> * xref:customer-os-packages.adoc[Packages installed with ThoughtSpot running on your own OS]

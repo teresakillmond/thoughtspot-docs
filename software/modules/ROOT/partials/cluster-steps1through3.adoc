@@ -119,7 +119,7 @@ If you run `tscli storage gc`, note that it restarts your cluster.
 [#cluster-step-3]
 === [RHEL, OEL, or AL2] Step 3: Prepare services
 
-If you deployed ThoughtSpot using xref:rhel.adoc[RHEL , OEL, or AL2], you must perform additional service configuration. This is only required if you defined the xref:rhel-install-online.adoc#remote_user_management[remote_user_management] parameter in the Ansible playbook and used your LDAP or Active Directory service account for installation. Ensure that the following three services only start _after_ the service you use for LDAP/AD integration: `nginx`, `cgconfig`, `cgroup-init`.
+If you deployed ThoughtSpot using xref:rhel.adoc[RHEL , OEL, or AL2], you must perform additional service configuration. This is only required if you defined the xref:rhel-install-online.adoc#remote_user_management[remote_user_management] parameter in the ansible playbook and used your LDAP or Active Directory service account for installation. Ensure that the following three services only start _after_ the service you use for LDAP/AD integration: `nginx`, `cgconfig`, `cgroup-init`.
 
 If you did _not_ deploy ThoughtSpot using RHEL, OEL, or AL2, or you did _not_ define the xref:rhel-install-online.adoc#remote_user_management[remote_user_management] parameter, and used a local user for installation (the default), skip the following configuration. Move on to <<cluster-step-4,Step 4: Finalize installation>>.
 

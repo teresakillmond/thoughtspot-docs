@@ -20,7 +20,7 @@ These are the general steps for installing ThoughtSpot on Amazon Linux 2 (AL2), 
 | &#10063; | xref:etc-sudoers[7. Remove Defaults requiretty from /etc/sudoers]
 | &#10063; | xref:selinux[(RHEL 8 only) 8. Remove the selinux policy for rsync]
 | &#10063; | xref:enable-hosts[9. Enable the hosts to download required packages]
-| &#10063; | xref:enable-ansible[ (Optional) Enable an Ansible Control Server]
+| &#10063; | xref:enable-ansible[ (Optional) Enable an ansible Control Server]
 |===
 
 TIP: ThoughtSpot recommends using private subnets for communication. Wherever there is a need to connect to the public internet, you should do it through a NAT gateway.
@@ -35,7 +35,7 @@ Please refer to the relevant deployment sections in our documentation for the ex
 
 On RHEL version 7.8, ensure that your <<#linux-kernel-version,linux kernel version>> is 3.10.0-1127.19.1 or higher. On all other supported RHEL versions, use the default linux kernel. On OEL version 7.9, ensure that you are using the Red Hat Compatible Kernel (RHCK), not the default Unbreakable Enterprise Kernel (UEK). If you are using the UEK, xref:support-contact.adoc[contact ThoughtSpot Support] to switch to the RHCK.
 
-NOTE: For RHEL deployments on online clusters, the Ansible playbook upgrades the OS to the latest supported version of RHEL. The Ansible playbook does *not* upgrade the OS when installing offline.
+NOTE: For RHEL deployments on online clusters, the ansible playbook upgrades the OS to the latest supported version of RHEL. The ansible playbook does *not* upgrade the OS when installing offline.
 
 * [*_RHEL 7 only_*] ThoughtSpot-certified hardware appliance manufactured by Dell:
 ** xref:dell-prerequisites.adoc[]
@@ -189,8 +189,8 @@ If the hosts of your ThoughtSpot cluster have access to an internal repository t
 [#enable-ansible]
 == [Optional] Enable an Ansible Control Server
 
-Optionally configure an Ansible Control Server, on a separate host, to run the Ansible playbook that ThoughtSpot supplies.
-You must install both `rsync` and Ansible on the Ansible Control Server host.
+Optionally configure an Ansible Control Server, on a separate host, to run the ansible playbook that ThoughtSpot supplies.
+You must install both `rsync` and ansible on the Ansible Control Server host.
 
 == Next steps
 
@@ -201,8 +201,10 @@ Next, xref:customer-os-artifacts.adoc[get ThoughtSpot artifacts].
 >
 > * xref:customer-os.adoc[]
 > * xref:customer-os-artifacts.adoc[]
-> * xref:customer-os-install-online.adoc[Installing ThoughtSpot on online clusters]
-> * xref:customer-os-install-offline.adoc[Installing ThoughtSpot on offline clusters]
+> * xref:customer-os-untar.adoc[]
+> * xref:customer-os-offline-script.adoc[]
+> * xref:customer-os-ansible-configure.adoc[]
+> * xref:customer-os-install.adoc[]
 > * xref:customer-os-upgrade.adoc[Upgrading ThoughtSpot on your own OS to a new release]
-> * xref:customer-os-add-node.adoc[Adding new nodes to clusters running on your own OS]
+> * xref:customer-os-add-node.adoc[]
 > * xref:customer-os-packages.adoc[Packages installed with ThoughtSpot running on your own OS]

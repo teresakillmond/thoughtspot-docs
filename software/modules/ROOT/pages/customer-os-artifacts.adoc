@@ -8,30 +8,43 @@
 
 include::partial$ts-artifacts-customer-os.adoc[]
 
-== Download the required artifacts
+[#download]
+== Download and verify the required artifacts
 
-. Download the Ansible tarball you obtained from {support-url} to your local machine.
+. Download the ansible tarball you obtained from {support-url} to your local machine.
 +
 You can download it by running the cp command. For example, if the tarball is in your S3 bucket, run `aws s3 cp s3://bucket_name/path/to/the/tarball ./`.
 +
 As a best practice, copy the tarball to every node.
-. Download the release tarball you obtained from {support-url} to your local machine.
+. Download the release tarball you obtained from {support-url} to your local machine. Move the release files to a directory with sufficient space in your ThoughtSpot node. Use `winscp` or a similar secure copy method to copy the downloaded release tarball from your Downloads folder to any path in the `/export` folder of your ThoughtSpot node that has enough space, at least 20 GB.
++
+WARNING: Do not put the release files in the `/home/admin` or `/home/thoughtspot` directories. You should put the release files in one of the bigger hard disks/volumes on one node in the cluster. Typically, this is `/export/sdb1/` for hardware appliances, VMware, and GCP, `/export/sdc1/` for Azure, and `/export/xvdb1/` for AWS.
+
+. Verify the checksum to ensure you have the correct release. Run:
++
+[source,console]
+----
+$ md5sum -c <release-number>.tar.gz.MD5checksum
+----
++
+Your output says `ok` if you have the correct release.
 
 
 == Next steps
 
-Next, proceed to install:
+Next, untar the ansible tarball:
 
-* xref:customer-os-install-online.adoc[install ThoughtSpot on online clusters], where the hosts can connect to the public repositories to download the required packages
-* xref:customer-os-install-offline.adoc[install ThoughtSpot on offline clusters], where the hosts cannot connect to the public repositories to download the required packages
+* xref:customer-os-untar.adoc[]
 
 '''
 > **Related information**
 >
 > * xref:customer-os.adoc[]
 > * xref:customer-os-prerequisites.adoc[]
-> * xref:customer-os-install-online.adoc[Installing ThoughtSpot on online clusters]
-> * xref:customer-os-install-offline.adoc[Installing ThoughtSpot on offline clusters]
+> * xref:customer-os-untar.adoc[]
+> * xref:customer-os-offline-script.adoc[]
+> * xref:customer-os-ansible-configure.adoc[]
+> * xref:customer-os-install.adoc[]
 > * xref:customer-os-upgrade.adoc[Upgrading ThoughtSpot on your own OS to a new release]
-> * xref:customer-os-add-node.adoc[Adding new nodes to clusters running on your own OS]
+> * xref:customer-os-add-node.adoc[]
 > * xref:customer-os-packages.adoc[Packages installed with ThoughtSpot running on your own OS]
