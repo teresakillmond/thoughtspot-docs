@@ -1,5 +1,5 @@
 = Hide a column or define a synonym
-:last_updated: tbd
+:last_updated: 5/12/23
 :linkattrs:
 :experimental:
 :page-layout: default-cloud
@@ -22,6 +22,8 @@ There might also be some columns in the dataset that you don't want to expose to
 When you hide a Worksheet, table, or view column, you only hide it from users without _edit_ privileges on the object.
 Administrators and users with edit privileges on the object can still see and interact with the hidden column.
 Users without edit privileges for the object cannot see or interact with the hidden column.
+
+If a hidden column is used in an Answer pinned to a Liveboard, then the entire Liveboard becomes read-only to users. This limits Liveboard functionality, which means the ability to adjust filters and download data is restricted. If you want to make a certain column available only to a subset of users, we recommend using xref:security-data-object.adoc#cls[column-level security].
 
 To hide a column, change the *HIDDEN* (UI)/*Hide* (model file) setting.
 By default, all columns in a data source appear in ThoughtSpot.
