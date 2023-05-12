@@ -53,7 +53,7 @@ When this is set, the ansible playbook runs an offline installation. This is not
 . The remote user must still function on the VM, even if the VM's connection to the AD or LDAP server goes down. If there is a node reboot, the remote user must be available as soon as possible.
 
 `skip_r`::
-When this is defined, the ansible playbook execution skips R package installation. Attempting to enable rserve orion service will fail.
+When this is defined, the ansible playbook execution skips R package installation. This only applies for online installations. Attempting to enable rserve orion service will fail.
 
 `skip_sshd_config`::
 When this is configured, ThoughtSpot does not make any changes to the sshd configuration of the node.  The user must ensure that the MaxSessions value for the administrator user is at least 10. The default is undefined.
@@ -62,7 +62,7 @@ When this is configured, ThoughtSpot does not make any changes to the sshd confi
 When this is defined, ThoughtSpot does not configure time synchronization between nodes using `ntp`. The user must configure time synchronization using either `ntp` or `chronyd` themselves. The default is undefined.
 
 `skip_yum_update`::
-When this is defined, the ansible playbook does not attempt to run a blanket yum update to pull the latest packages. The default is undefined.
+When this is defined, the ansible playbook does not attempt to run a blanket yum update to pull the latest packages. This only applies for online installations. The default is undefined.
 
 `ssh_private_key`::
 Add the private key for `ssh` access to the `hosts.yaml` file. You can use an existing key pair, or generate a new key pair in the ansible Control server.
