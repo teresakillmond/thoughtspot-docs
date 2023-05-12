@@ -17,6 +17,13 @@ For these instructions, see xref:ts-cloud-getting-started.adoc[Getting Started w
 [#9-3-0-cl-analyst]
 === For the Analyst
 
+AI-generated Worksheet column synonyms [.badge.badge-early-access-relnotes]#Early Access#::
+
+When you create a Worksheet, ThoughtSpot automatically creates synonyms for each column name. This feature is now available for administrators to enable by default, without contacting ThoughtSpot Support. Users can easily start searching on your data, without knowing the exact names for every column. For example, if you have a column named `Product type`, ThoughtSpot might create a synonym such as `Product Category`. When a user searches for revenue by product category, for example, ThoughtSpot returns sales by product type. This feature must be enabled by your administrator.
+For more information, see
+xref:data-modeling-visibility.adoc#automatic-synonyms[Create synonyms for a column].
+
+
 Liveboard note tiles::
 
 The Liveboard note tiles feature is now GA. Add notes to your Liveboards, so that viewers of your Liveboards can quickly understand how to use the data and visualizations you gathered. Note tiles can provide an overview of a Liveboard or visualization, company branding through images, definitions of terms used in the Liveboard, and so on. With the GA of the note tiles feature, you don't need a specific privilege to upload images. See xref:liveboard-notes.adoc[Liveboard note tiles].
@@ -37,6 +44,16 @@ xref:formulas-aggregation-flexible.adoc#reaggregation-enhancement[Flexible aggre
 
 [#9-3-0-cl-business-user]
 === For the Business User
+
+AI-generated answers [.badge.badge-early-access-relnotes]#Early Access#:: You can now use natural language to search for answers to your business questions. This feature is now available for administrators to enable by default, without contacting ThoughtSpot Support. To try it out, navigate to the Home page, select the search bar labeled *Ask any business question you have* and type your question. When you enter your question, you will see the AI generated answer appear, along with a list of related Answers created by users in your team.
++
+You can select the Worksheet to search on by clicking the Worksheet title in the left side of the search bar and selecting a new Worksheet from the dropdown. Worksheets with AI answers enabled display a triangular icon to the left of the Worksheet name: image:icon-ai-answer.png[AI answer enabled icon].
++
+This feature must be enabled by your administrator.
+
+AI-suggested searches [.badge.badge-early-access-relnotes]#Early Access#::
+The AI-suggested searches feature helps you think of relevant questions to ask of your own data source, by providing examples of searches. This feature is now available for administrators to enable by default, without contacting ThoughtSpot Support. This feature is designed to help you get started if you are a new user of Search Data, or if you are working with a new Worksheet.
+For more information, see xref:search-ai-suggested.adoc[AI-suggested searches]. This feature must be enabled by your administrator.
 
 Liveboard cross filters::
 
