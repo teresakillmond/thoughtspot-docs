@@ -18,9 +18,43 @@ Ensure that you have completed the following prerequisites:
 . xref:customer-os-offline-script.adoc[Run the offline script], if deploying offline.
 . xref:customer-os-ansible-configure.adoc[].
 
+[#prepare_disks]
+== Prepare disks
+After the ansible playbook finishes, run the `prepare_disks` script on every node. You *must* run this script with elevated privileges, either with <<sudo,sudo>> or as a <<root,root user>>. Specify the data drives by adding the full device path for all data drives, such as `/dev/sdc`, after the script name. Separate data drives with a space.
+
+Run the `prepare_disks` script, either with sudo or as a root user:
+
+[#sudo]
+=== Run prepare_disks with sudo
+
+. Switch to the admin user:
++
+[source]
+----
+su admin
+----
+
+. Run the prepare_disks script.
++
+[source]
+----
+sudo /usr/local/scaligent/bin/prepare_disks.sh /dev/sdc /dev/sdd
+----
+
+[#root]
+=== Run prepare_disks as a root user
+
+. Run the prepare_disks script.
++
+[source]
+----
+sudo su
+/usr/local/scaligent/bin/prepare_disks.sh --username <admin user> /dev/sdc /dev/sdd
+----
+
 == Install ThoughtSpot clusters
 
-After you complete the <<prereqs,prerequisites>>, you are ready to install ThoughtSpot clusters.
+After you complete the <<prereqs,prerequisites>> and run `prepare_disks`, you are ready to install ThoughtSpot clusters.
 
 
 . Launch a https://linux.die.net/man/1/screen[screen^] session.
