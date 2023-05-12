@@ -7,28 +7,31 @@
 
 Prepare the system and ThoughtSpot clusters for installation.
 
-These are the general steps for installing ThoughtSpot on Amazon Linux 2 (AL2), RedHat Enterprise Linux (RHEL), or Oracle Enterprise Linux (OEL):
+These are the prerequisites for installing ThoughtSpot on Amazon Linux 2 (AL2), RedHat Enterprise Linux (RHEL), or Oracle Enterprise Linux (OEL):
 
 [cols="5,~",grid=none,frame=none]
 |===
-| &#10063; | xref:set-up-hosts[1. Set up hosts for the ThoughtSpot cluster]
-| &#10063; | xref:aws-ssm[2. (Optional) Set up AWS Systems Manager Agent]
-| &#10063; | xref:partition-hosts[3. Partition the hosts]
-| &#10063; | xref:tmp-permission[4. Ensure tmp has permission 777 or 1777]
-| &#10063; | xref:cgroups[5. Ensure that you are using Linux cgroupsV1]
-| &#10063; | xref:proc[6. Ensure /proc mount point flags are compatible]
-| &#10063; | xref:etc-sudoers[7. Remove Defaults requiretty from /etc/sudoers]
-| &#10063; | xref:selinux[(RHEL 8 only) 8. Remove the selinux policy for rsync]
-| &#10063; | xref:enable-hosts[9. Enable the hosts to download required packages]
-| &#10063; | xref:enable-ansible[ (Optional) Enable an ansible Control Server]
+| &#10063; | xref:ports[1. Review the required network ports]
+| &#10063; | xref:set-up-hosts[2. Set up hosts for the ThoughtSpot cluster]
+| &#10063; | xref:aws-ssm[3. (Optional) Set up AWS Systems Manager Agent]
+| &#10063; | xref:partition-hosts[4. Partition the hosts]
+| &#10063; | xref:tmp-permission[5. Ensure tmp has permission 777 or 1777]
+| &#10063; | xref:cgroups[6. Ensure that you are using Linux cgroupsV1]
+| &#10063; | xref:proc[7. Ensure /proc mount point flags are compatible]
+| &#10063; | xref:etc-sudoers[8. Remove Defaults requiretty from /etc/sudoers]
+| &#10063; | xref:selinux[(RHEL 8 only) 9. Remove the selinux policy for rsync]
+| &#10063; | xref:enable-hosts[10. Enable the hosts to download required packages]
+| &#10063; | xref:enable-ansible[ (Optional) Enable an Ansible Control Server]
 |===
 
 TIP: ThoughtSpot recommends using private subnets for communication. Wherever there is a need to connect to the public internet, you should do it through a NAT gateway.
 
+[#ports]
+== Review the required network ports
+xref:ports.adoc[Review the required network ports] for operation of ThoughtSpot, and ensure that all required ports are open and available.
+
 [#set-up-hosts]
 == Set up hosts for the ThoughtSpot cluster
-
-Set up hosts for the ThoughtSpot cluster on a supported deployment platform.
 
 Set up hosts for the ThoughtSpot cluster on your chosen platform.
 Please refer to the relevant deployment sections in our documentation for the exact specification for the hosts (CPU, memory, and disks), and for instructions on setting up the hosts.
