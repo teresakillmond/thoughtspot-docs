@@ -261,16 +261,13 @@ image:legend-move.png[Move the legend position]
 
 [#9-3-0-cl-date-picker-2]
 [discrete]
-=== Date Picker Enhancement in Search - II
+=== Date Picker Enhancement in Search
 
 // Naomi
 
-[#9-3-0-cl-date-picker]
-[discrete]
-=== Date Picker Enhancement in Search
+We added support for rolling, fixed, and custom date filters when creating an Answer. Previously, when adding a date filter to a Search, ThoughtSpot supported the conditions ON (=), ON OR AFTER (>=), BEFORE (<), and BETWEEN. Now, you can additionally filter for ON OR BEFORE (\<=), NOT BETWEEN, ON LAST, and ON NEXT. To try it out, click the filter icon next to the Date column in the left side menu, or click the date filter below the Answer title.
 
-// Naomi. Can probably be combined with above
-
+image:date-picker.png[Date picker for Answers]
 
 [#9-3-0-cl-group-agg-correct]
 [discrete]
@@ -344,6 +341,18 @@ endif::[]
 
 endif::free-trial-feature[]
 
+
+[#9-3-0-cl-gcp]
+[discrete]
+=== ThoughtSpot Cloud on Google Cloud
+
+//Naomi
+
+ThoughtSpot Cloud SaaS will be available on Google Cloud Platform in addition to AWS. Customers can choose whether they want their SaaS deployed on AWS or GCP.
+
+ThoughtSpot SaaS on GCP can be purchased directly from ThoughtSpot but will also be available to purchase in the Google Cloud Marketplace, the BigQuery Partner Center, and Google Workspace Marketplace. Customers can also use their committed spend and credits on Google Marketplace to purchase ThoughtSpot.
+
+
 [#9-3-0-cl-aurora]
 [discrete]
 === Amazon Aurora PostgreSQL connection
@@ -386,13 +395,20 @@ ifdef::pendo-links[]
 xref:connections-mysql.adoc[MySQL,window=_blank].
 endif::[]
 
-THE FOLLOWING ARE NEEDS EVALUATION
-
 [#9-3-0-cl-csv-connection]
 [discrete]
-=== Allow data managers to specify default connection for CSV Uploads
+=== Specify default connection for CSV uploads
 
 // Naomi
+
+Administrators and data managers can now specify which connection to use for CSV uploads, by using the CSV upload default toggle under *Data > Connections*. Previously, in cases with multiple connections configured to receive CSV uploads, and where the user did not specify a destination table or Worksheet, CSV files were uploaded to a random connection.
+
+
+THE FOLLOWING ARE NEEDS EVALUATION
+
+
+
+
 
 [#9-3-0-cl-users-groups]
 [discrete]
