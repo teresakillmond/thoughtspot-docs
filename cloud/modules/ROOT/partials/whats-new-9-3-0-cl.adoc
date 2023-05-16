@@ -387,7 +387,10 @@ endif::[]
 // Naomi
 
 
-Administrators and data managers can now specify which connection to use for CSV uploads, by using the CSV upload default toggle under *Data > Connections*. Previously, in cases with multiple connections configured to receive CSV uploads, and where the user did not specify a destination table or Worksheet, CSV files were uploaded to a random connection.
+Previously, when multiple database connections were configured to receive CSV uploads without a specified table or worksheet for collocation, the files were randomly uploaded to one of the connections. With this new enhancement, administrators and data managers now have the ability to specify a default target connection for such uploads.
+
+To set the default target connection, navigate to *Data > Connections* and use the new CSV Upload Default toggle. By specifying a default connection, you ensure that CSV files without a designated destination will be uploaded to the chosen connection.
+This enhancement provides better control and organization of CSV uploads, making it easier to manage data in scenarios where end-users do not select a collocation for their uploaded files.
 
 [#9-3-0-cl-billing]
 [discrete]
