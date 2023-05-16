@@ -25,7 +25,7 @@ ifdef::pendo-links[]
 === ThoughtSpot Sage
 endif::[]
 
-In this release, ThoughtSpot Sage features are available for administrators to turn on by default, without contacting ThoughtSpot Support. ThoughtSpot Sage makes it easier for you to get answers and insights from your complex data. ThoughtSpot Sage uses  a combination of GPT-3, GPT-3.5T and GPT-4, and the large language models (LLM) of the Microsoft Azure OpenAI Service.
+In this release, ThoughtSpot Sage features are available for administrators to enable, without contacting ThoughtSpot Support. ThoughtSpot Sage makes it easier for you to get answers and insights from your complex data. ThoughtSpot Sage uses  a combination of GPT-3, GPT-3.5T and GPT-4, and the large language models (LLM) of the Microsoft Azure OpenAI Service.
 
 Sage features include:
 
@@ -54,10 +54,10 @@ ifdef::pendo-links[]
 === Natural language search
 endif::[]
 ifndef::pendo-links[]
-You can now search using natural language to access AI-generated answers to your business questions. This feature is now available for administrators to turn on by default, without contacting ThoughtSpot Support. To try it out, navigate to the Home page, select the search bar labeled *Ask any business question you have* and type your question. When you enter your question, you will see the AI-generated answer appear, along with a list of related Answers created by users in your team. For more information, see xref:ai-answers.adoc[Natural language search].
+You can now search using natural language to access AI-generated answers to your business questions. This feature is now available for administrators to enable, without contacting ThoughtSpot Support. To try it out, navigate to the Home page, select the search bar labeled *Ask any business question you have* and type your question. When you enter your question, you will see the AI-generated answer appear, along with a list of related Answers created by users in your team. For more information, see xref:ai-answers.adoc[Natural language search].
 endif::[]
 ifdef::pendo-links[]
-You can now search using natural language to access AI-generated answers to your business questions. To try it out, navigate to the Home page, select the search bar labeled *Ask any business question you have* and type your question. When you enter your question, you will see the AI-generated answer appear, along with a list of related Answers created by users in your team. For more information, see xref:ai-answers.adoc[Natural language search,window=_blank].
+You can now search using natural language to access AI-generated answers to your business questions. This feature is now available for administrators to enable, without contacting ThoughtSpot Support. To try it out, navigate to the Home page, select the search bar labeled *Ask any business question you have* and type your question. When you enter your question, you will see the AI-generated answer appear, along with a list of related Answers created by users in your team. For more information, see xref:ai-answers.adoc[Natural language search,window=_blank].
 endif::[]
 
 You can select the Worksheet to search on by clicking the Worksheet title in the left side of the search bar and selecting a new Worksheet from the dropdown. Worksheets with AI answers enabled display a triangular icon to the left of the Worksheet name: image:icon-ai-answer.png[AI answer enabled icon]. See
@@ -83,7 +83,7 @@ ifdef::pendo-links[]
 === AI-suggested searches
 endif::[]
 
-The AI-suggested searches feature is now available for administrators to turn on by default, without contacting ThoughtSpot Support. This feature helps you think of relevant questions to ask of your own data source, by providing examples of searches. This feature is designed to help you get started if you are a new user of Search Data, or if you are working with a new Worksheet.
+The AI-suggested searches feature is now available for administrators to enable, without contacting ThoughtSpot Support. This feature helps you think of relevant questions to ask of your own data source, by providing examples of searches. This feature is designed to help you get started if you are a new user of Search Data, or if you are working with a new Worksheet. This feature must be enabled by your administrator.
 ifndef::pendo-links[]
 For more information, see xref:search-ai-suggested.adoc[AI-suggested searches].
 endif::[]
@@ -92,8 +92,6 @@ For more information, see xref:search-ai-suggested.adoc[AI-suggested searches,wi
 endif::[]
 
 image::ai-suggested-searches.png[ai-suggested searches]
-
-This feature must be enabled by your administrator.
 
 [#9-3-0-cl-cross-filters]
 [discrete]
@@ -139,7 +137,7 @@ endif::[]
 
 // default analysis of change drivers in KPIs, appears as a pop-up with multiple tabs for each column change (top 5 columns) instead of taking you to SpotIQ tab, can use "manage attributes" to access changes in columns that were not included in default analysis. click the percent change label or select any data points from the KPI sparkline to see the columns selected by UBR.
 
-You can now identify the key change drivers for changes in your metrics in a KPI chart. Select the percent change label or select any two data points on the KPI sparkline to view change analysis on your top 5 columns by usage-based ranking (UBR) and identify the reason behind the observed change. You can view the changes in other columns by clicking *Manage attributes* and selecting the desired column(s). This feature must be enabled by your administrator.
+You can now identify the key change drivers for changes in your metrics in a KPI chart. This feature is now available for administrators to enable, without contacting ThoughtSpot Support. Select the percent change label or select any two data points on the KPI sparkline to view change analysis on your top 5 columns by usage-based ranking (UBR) and identify the reason behind the observed change. You can view the changes in other columns by clicking *Manage attributes* and selecting the desired column(s). This feature must be enabled by your administrator.
 
 For more information, see
 ifndef::pendo-links[]
@@ -211,37 +209,9 @@ endif::[]
 [discrete]
 === Liveboard header visible when you scroll down
 
-When you scroll down in a Liveboard, the Liveboard name, menu options, and filter and tab bars remain visible. You don't need to scroll back up to the top to edit the Liveboard or check if you're filtering by a specific store. You can see the filters or parameters applied to the Liveboard, select the *Edit* button or more options image:icon-more-10px.png[more options menu icon] menu, and view which tab you're on from any spot in the Liveboard. To try it out, open any Liveboard, and scroll down.
+When you scroll down in a Liveboard, the Liveboard name, menu options, and filter and tab bars remain visible. You don't need to scroll back up to the top to edit the Liveboard or check your filters. You can see the filters or parameters applied to the Liveboard, select the *Edit* button or more options image:icon-more-10px.png[more options menu icon] menu, and view which tab you're on from any spot in the Liveboard. To try it out, open any Liveboard, and scroll down.
 
 image::liveboard-header.png[Liveboard header visible even when scrolling down]
-
-ifndef::pendo-links[]
-[#9-2-0-cl-change]
-[discrete]
-=== Contextual change analysis [.badge.badge-early-access]#Early Access#
-endif::[]
-ifdef::pendo-links[]
-[#9-2-0-cl-change]
-[discrete]
-=== Contextual change analysis
-endif::[]
-
-// Naomi
-
-// default analysis of change drivers in KPIs, appears as a pop-up with multiple tabs for each column change (top 5 columns) instead of taking you to SpotIQ tab, can use "manage attributes" to access changes in columns that were not included in default analysis. click the percent change label or select any data points from the KPI sparkline to see the columns selected by UBR.
-
-You can now identify the key change drivers for changes in your metrics in a KPI chart. This feature is now available for administrators to turn on by default, without contacting ThoughtSpot Support. Select the percent change label or select any two data points on the KPI sparkline to view change analysis on your top 5 columns by usage-based ranking (UBR) and identify the reason behind the observed change. You can view the changes in other columns by clicking *Manage attributes* and selecting the desired column(s). This feature must be enabled by your administrator.
-
-For more information, see
-ifndef::pendo-links[]
-xref:spotiq-change.adoc#change-analysis-contextual[Contextual change analysis].
-endif::[]
-ifdef::pendo-links[]
-xref:spotiq-change.adoc#change-analysis-contextual[Contextual change analysis,window=_blank].
-endif::[]
-
-
-image:contextual-change.png[Change analysis pop-up showing anomalies in the change of several clothing types]
 
 [#9-3-0-cl-legend]
 [discrete]
@@ -249,7 +219,7 @@ image:contextual-change.png[Change analysis pop-up showing anomalies in the chan
 
 // Naomi
 
-You can now configure the legend position of a chart. The available options are left, right, above, and below the visualization. To try it out, open the chart configuration menu, select *Settings*, and choose between *Legend on right*, *Legend on left*, *Legend on top*, and *Legend on bottom*. You can select the Show legend toggle to hide or show the legend. See
+You can now configure the legend position in a chart. The available options are left, right, above, and below the visualization. To try it out, open the chart configuration menu, select *Settings*, and choose between *Legend on right*, *Legend on left*, *Legend on top*, and *Legend on bottom*. You can select the Show legend toggle to hide or show the legend. See
 ifndef::pendo-links[]
 xref:chart-change.adoc#legend[Changing charts].
 endif::[]
@@ -259,15 +229,19 @@ endif::[]
 
 image:legend-move.png[Move the legend position]
 
+// add a phrase to the first sentence about hide/show
+
 [#9-3-0-cl-date-picker-2]
 [discrete]
-=== Date Picker Enhancement in Search
+=== Date picker enhancement in Search
 
 // Naomi
 
 We added support for rolling, fixed, and custom date filters when creating an Answer. Previously, when adding a date filter to a Search, ThoughtSpot supported the conditions ON (=), ON OR AFTER (>=), BEFORE (<), and BETWEEN. Now, you can additionally filter for ON OR BEFORE (\<=), NOT BETWEEN, ON LAST, and ON NEXT. To try it out, click the filter icon next to the Date column in the left side menu, or click the date filter below the Answer title.
 
 image:date-picker.png[Date picker for Answers]
+
+// format the conditions as code. add article link when done. Clarify that the examples are not the only new things
 
 [#9-3-0-cl-group-agg-correct]
 [discrete]
@@ -289,6 +263,8 @@ ifdef::pendo-links[]
 xref:formulas-aggregation-flexible.adoc#reaggregation-enhancement[Flexible aggregation functions,window=_blank].
 endif::[]
 
+// Add note that this is now GA
+
 '''
 [#secondary-9-2-0-cl]
 [discrete]
@@ -305,7 +281,7 @@ ifdef::pendo-links[]
 === AI-generated Worksheet column synonyms
 endif::[]
 
-When you create a Worksheet, ThoughtSpot automatically creates synonyms for each column name. This feature is now available for administrators to turn on by default, without contacting ThoughtSpot Support. Users can easily start searching on your data, without knowing the exact names for every column. For example, if you have a column named `Product type`, ThoughtSpot might create a synonym such as `Product Category`. When a user searches for revenue by product category, for example, ThoughtSpot returns sales by product type. To try it out, create and save a new Worksheet. Your column name synonyms appear in the *Synonyms* column on the Worksheet details page. This feature must be enabled by your administrator.
+When you create a Worksheet, ThoughtSpot automatically creates synonyms for each column name. This feature is now available for administrators to enable, without contacting ThoughtSpot Support. Users can easily start searching on your data, without knowing the exact names for every column. For example, if you have a column named `Product type`, ThoughtSpot might create a synonym such as `Product Category`. When a user searches for revenue by product category, for example, ThoughtSpot returns sales by product type. To try it out, create and save a new Worksheet. Your column name synonyms appear in the *Synonyms* column on the Worksheet details page. This feature must be enabled by your administrator.
 For more information, see
 ifndef::pendo-links[]
 xref:data-modeling-visibility.adoc#automatic-synonyms[Create synonyms for a column].
@@ -352,6 +328,7 @@ ThoughtSpot Cloud SaaS will be available on Google Cloud Platform in addition to
 
 ThoughtSpot SaaS on GCP can be purchased directly from ThoughtSpot but will also be available to purchase in the Google Cloud Marketplace, the BigQuery Partner Center, and Google Workspace Marketplace. Customers can also use their committed spend and credits on Google Marketplace to purchase ThoughtSpot.
 
+// early access badge and maybe a sentence. remove mentions of saas
 
 [#9-3-0-cl-aurora]
 [discrete]
@@ -381,6 +358,8 @@ ifdef::pendo-links[]
 xref:connections-amazon-rds-postgresql.adoc[Amazon RDS PostgreSQL,window=_blank].
 endif::[]
 
+// spell out RDS somewhere
+
 [#9-3-0-cl-mysql]
 [discrete]
 === MySQL connection
@@ -404,25 +383,13 @@ endif::[]
 
 Administrators and data managers can now specify which connection to use for CSV uploads, by using the CSV upload default toggle under *Data > Connections*. Previously, in cases with multiple connections configured to receive CSV uploads, and where the user did not specify a destination table or Worksheet, CSV files were uploaded to a random connection.
 
-
-THE FOLLOWING ARE NEEDS EVALUATION
-
-
-
-
-
-[#9-3-0-cl-users-groups]
-[discrete]
-=== Users and Groups V2 UI
-
-
 [#9-3-0-cl-billing]
 [discrete]
 === In-app billing reporting
 
 // Naomi
 
-Admin users will be able to access a Liveboard reflecting the pricing model purchased and associated to their cluster. Query-based pricing customers see the xref:query-stats.adoc[Billable Query Stats Liveboard], while time-based pricing customers see the xref:consumption-pricing-time-based.adoc#credit-usage-pinboard[Credit Usage Liveboard].
+Admin users will be able to access a Liveboard reflecting the pricing model purchased and associated with their cluster. Query-based pricing customers see the xref:query-stats.adoc[Billable Query Stats Liveboard], while time-based pricing customers see the xref:consumption-pricing-time-based.adoc#credit-usage-pinboard[Credit Usage Liveboard].
 
 ifndef::free-trial-feature[]
 [discrete]
