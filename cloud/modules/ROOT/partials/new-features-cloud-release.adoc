@@ -41,18 +41,17 @@ Under the new aggregation behavior, the formula result will continue to display 
 For more information, see
 xref:formulas-aggregation-flexible.adoc#reaggregation-enhancement[Flexible aggregation functions].
 
+Date picker enhancement in Search:: We added support for rolling, fixed, and custom date filters when creating an Answer. Previously, when adding a date filter to a Search, ThoughtSpot supported the conditions `ON (=)`, `ON OR AFTER (>=)`, `BEFORE (<)`, and `BETWEEN`. Now, you can additionally filter for `ON OR BEFORE (\<=)`, `NOT BETWEEN`, `ON LAST`, and `ON NEXT`. To try it out, click the filter icon next to the Date column in the left side menu, or click the date filter below the Answer title.
 
 [#9-3-0-cl-business-user]
 === For the Business User
 
-AI-generated answers [.badge.badge-early-access-relnotes]#Early Access#:: You can now use natural language to search for answers to your business questions. This feature is now available for administrators to enable by default, without contacting ThoughtSpot Support. To try it out, navigate to the Home page, select the search bar labeled *Ask any business question you have* and type your question. When you enter your question, you will see the AI generated answer appear, along with a list of related Answers created by users in your team.
+AI-generated answers [.badge.badge-early-access-relnotes]#Early Access#:: You can now use natural language to search for answers to your business questions. This feature is now available for administrators to enable, without contacting ThoughtSpot Support. To try it out, navigate to the Home page, select the search bar labeled *Ask any business question you have* and type your question. When you enter your question, you will see the AI generated answer appear, along with a list of related Answers created by users in your team.
 +
 You can select the Worksheet to search on by clicking the Worksheet title in the left side of the search bar and selecting a new Worksheet from the dropdown. Worksheets with AI answers enabled display a triangular icon to the left of the Worksheet name: image:icon-ai-answer.png[AI answer enabled icon].
-+
-This feature must be enabled by your administrator.
 
 AI-suggested searches [.badge.badge-early-access-relnotes]#Early Access#::
-The AI-suggested searches feature helps you think of relevant questions to ask of your own data source, by providing examples of searches. This feature is now available for administrators to enable by default, without contacting ThoughtSpot Support. This feature is designed to help you get started if you are a new user of Search Data, or if you are working with a new Worksheet.
+The AI-suggested searches feature helps you think of relevant questions to ask of your own data source, by providing examples of searches. This feature is now available for administrators to enable, without contacting ThoughtSpot Support. This feature is designed to help you get started if you are a new user of Search Data, or if you are working with a new Worksheet.
 For more information, see xref:search-ai-suggested.adoc[AI-suggested searches]. This feature must be enabled by your administrator.
 
 Liveboard cross filters::
@@ -73,7 +72,7 @@ xref:formulas-keywords.adoc[Keywords: Of and Percentage of].
 Attributes in pivot table cells:: You can now include attributes in the pivot table cells as well as measures. This is useful for cases when you want to summarize text data such as user role, pass/fail, or other attributes. For more information, see
 xref:chart-pivot-table.adoc#attributes[Pivot table charts].
 
-Ability to change legend position:: You can now configure the legend position of a chart. The available options are left, right, above, and below the visualization. To try it out, open the chart configuration menu, select *Settings*, and choose between *Legend on right*, *Legend on left*, *Legend on top*, and *Legend on bottom*. You can select the Show legend toggle to hide or show the legend. See
+Ability to change legend position:: You can now configure the legend position of a chart, or hide the legend. The available options are left, right, above, and below the visualization. To try it out, open the chart configuration menu, select *Settings*, and choose between *Legend on right*, *Legend on left*, *Legend on top*, and *Legend on bottom*. You can select the Show legend toggle to hide or show the legend. See
 xref:chart-change.adoc#legend[Changing charts].
 
 Liveboard header visible when you scroll down::
@@ -94,12 +93,17 @@ This release includes the following improvements to the dbt integration:
 For more information, see xref:dbt-integration.adoc#edit[Editing a dbt integration].
 
 
+ThoughtSpot Cloud on Google Cloud [.badge.badge-early-access-relnotes]#Early Access#:: ThoughtSpot Cloud will be available on Google Cloud Platform in addition to AWS. Customers can choose whether they want their SaaS deployed on AWS or GCP.
++
+ThoughtSpot on GCP can be purchased directly from ThoughtSpot but will also be available to purchase in the Google Cloud Marketplace, the BigQuery Partner Center, and Google Workspace Marketplace. Customers can also use their committed spend and credits on Google Marketplace to purchase ThoughtSpot.
+
+
 Amazon Aurora PostgreSQL connection::
 You can now create connections from ThoughtSpot to Amazon Aurora PostgreSQL. For details, see
 xref:connections-amazon-aurora-postgresql.adoc[Amazon Aurora PostgreSQL].
 
 
-Amazon RDS PostgreSQL connection::
+Amazon Relational Database Service (RDS) PostgreSQL connection::
 You can now create connections from ThoughtSpot to Amazon RDS PostgreSQL. For details, see
 xref:connections-amazon-rds-postgresql.adoc[Amazon RDS PostgreSQL].
 
@@ -108,6 +112,9 @@ MySQL connection::
 You can now create connections from ThoughtSpot to MySQL. For details, see
 xref:connections-mysql.adoc[MySQL].
 
+Specify default connection for CSV uploads:: Administrators and data managers can now specify which connection to use for CSV uploads, by using the CSV upload default toggle under *Data > Connections*. Previously, in cases with multiple connections configured to receive CSV uploads, and where the user did not specify a destination table or Worksheet, CSV files were uploaded to a random connection.
+
+In-app billing reporting:: Admin users will be able to access a Liveboard reflecting the pricing model purchased and associated with their cluster. Query-based pricing customers see the xref:query-stats.adoc[Billable Query Stats Liveboard], while time-based pricing customers see the xref:consumption-pricing-time-based.adoc#credit-usage-pinboard[Credit Usage Liveboard].
 
 
 [#9-3-0-cl-it-ops-engineer]

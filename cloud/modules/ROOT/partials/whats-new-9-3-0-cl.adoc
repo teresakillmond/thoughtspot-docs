@@ -219,7 +219,7 @@ image::liveboard-header.png[Liveboard header visible even when scrolling down]
 
 // Naomi
 
-You can now configure the legend position in a chart. The available options are left, right, above, and below the visualization. To try it out, open the chart configuration menu, select *Settings*, and choose between *Legend on right*, *Legend on left*, *Legend on top*, and *Legend on bottom*. You can select the Show legend toggle to hide or show the legend. See
+You can now configure the legend position in a chart, or hide the legend. The available options are left, right, above, and below the visualization. To try it out, open the chart configuration menu, select *Settings*, and choose between *Legend on right*, *Legend on left*, *Legend on top*, and *Legend on bottom*. You can select the Show legend toggle to hide or show the legend. See
 ifndef::pendo-links[]
 xref:chart-change.adoc#legend[Changing charts].
 endif::[]
@@ -237,7 +237,7 @@ image:legend-move.png[Move the legend position]
 
 // Naomi
 
-We added support for rolling, fixed, and custom date filters when creating an Answer. Previously, when adding a date filter to a Search, ThoughtSpot supported the conditions ON (=), ON OR AFTER (>=), BEFORE (<), and BETWEEN. Now, you can additionally filter for ON OR BEFORE (\<=), NOT BETWEEN, ON LAST, and ON NEXT. To try it out, click the filter icon next to the Date column in the left side menu, or click the date filter below the Answer title.
+We added support for rolling, fixed, and custom date filters when creating an Answer. Previously, when adding a date filter to a Search, ThoughtSpot supported the conditions `ON (=)`, `ON OR AFTER (>=)`, `BEFORE (<)`, and `BETWEEN`. Now, you can additionally filter for `ON OR BEFORE (\<=)`, `NOT BETWEEN`, `ON LAST`, and `ON NEXT`. To try it out, click the filter icon next to the Date column in the left side menu, or click the date filter below the Answer title.
 
 image:date-picker.png[Date picker for Answers]
 
@@ -317,16 +317,22 @@ endif::[]
 
 endif::free-trial-feature[]
 
-
+ifndef::pendo-links[]
+[#9-3-0-cl-gcp]
+[discrete]
+=== ThoughtSpot Cloud on Google Cloud [.badge.badge-early-access]#Early
+endif::[]
+ifdef::pendo-links[]
 [#9-3-0-cl-gcp]
 [discrete]
 === ThoughtSpot Cloud on Google Cloud
+endif::[]
 
 //Naomi
 
-ThoughtSpot Cloud SaaS will be available on Google Cloud Platform in addition to AWS. Customers can choose whether they want their SaaS deployed on AWS or GCP.
+ThoughtSpot Cloud will be available on Google Cloud Platform in addition to AWS. Customers can choose whether they want their SaaS deployed on AWS or GCP.
 
-ThoughtSpot SaaS on GCP can be purchased directly from ThoughtSpot but will also be available to purchase in the Google Cloud Marketplace, the BigQuery Partner Center, and Google Workspace Marketplace. Customers can also use their committed spend and credits on Google Marketplace to purchase ThoughtSpot.
+ThoughtSpot on GCP can be purchased directly from ThoughtSpot but will also be available to purchase in the Google Cloud Marketplace, the BigQuery Partner Center, and Google Workspace Marketplace. Customers can also use their committed spend and credits on Google Marketplace to purchase ThoughtSpot.
 
 // early access badge and maybe a sentence. remove mentions of saas
 
@@ -346,7 +352,7 @@ endif::[]
 
 [#9-3-0-cl-rds]
 [discrete]
-=== Amazon RDS PostgreSQL connection
+=== Amazon Relational Database Service (RDS) PostgreSQL connection
 
 // Naomi
 
