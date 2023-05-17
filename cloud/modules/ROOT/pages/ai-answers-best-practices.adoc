@@ -27,7 +27,10 @@ Follow these best practices when creating Worksheets to get the best natural lan
 * Adjust the xref:data-modeling-index.adoc#column-suggestion-priority[index priority] for your most popular columns, so ThoughtSpot prioritizes those columns when generating Answers.
 
 == Search best practices
-Follow these best practices when searching using natural language to get the best accuracy:
+Follow these best practices when searching using natural language for the most accurate Answers:
 
-* Do not use personal pronouns, such as "I," "My," "Mine." GPT can't understand them using the data we send it. Instead, use identifiers that exist in your data sources, such as names, email addresses, and so on.
-
+* Don't use personal pronouns, such as "I," "My," "Mine." GPT can't understand them using the data we send it. Instead, use identifiers that exist in your data sources, such as names, email addresses, and so on.
+* Don't ask "why" questions that require reasoning or text-based answers. For example, don't ask "Why did my sales go down in Q2?" These questions aren't currently supported.
+* Don't ask descriptive questions about the data source. For example, don't ask "How many date columns does the Worksheet have?"
+* Don't ask overly ambiguous questions. The more precise the question, the more likely you are to get an accurate answer. Use actual column names, if you know them.
+* Don't ask questions that xref:search-data.adoc[] can't answer. ThoughtSpot must be able to express your question in search tokens. For example, don't ask common knowledge questions, or business questions that require text answers.
