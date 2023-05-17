@@ -119,27 +119,22 @@ image::liveboard-header.png[Liveboard header visible when scrolling]
 
 // Naomi
 
-You can now configure the legend position of a chart. To try it out, open the chart configuration menu, select *Settings*, and choose between *Legend on right*, *Legend on left*, *Legend on top*, and *Legend on bottom*. You can select the *Show legend* toggle to hide or show the legend.
+You can now configure the legend position of a chart, or hide the legend. The available options are left, right, above, and below the visualization. To try it out, open the chart configuration menu, select *Settings*, and choose between *Legend on right*, *Legend on left*, *Legend on top*, and *Legend on bottom*. You can select the *Show legend* toggle to hide or show the legend.
 
 image:legend-move.png[Chart configuration menu displays legend on the right]
 
 [#9-3-0-cl-date-picker-2]
 [discrete]
-=== Date Picker Enhancement in Search - II
+=== Date picker enhancement in Search
 
 // Naomi
 
-[#9-3-0-cl-date-picker]
-[discrete]
-=== Date Picker Enhancement in Search
-
-// Naomi. Can probably be combined with above
-
+We added support for rolling, fixed, and custom date filters when creating an Answer. Previously, when adding a date filter to a Search, ThoughtSpot supported the conditions `ON (=)`, `ON OR AFTER (>=)`, `BEFORE (<)`, and `BETWEEN`. Now, you can additionally filter for `ON OR BEFORE (\<=)`, `NOT BETWEEN`, `ON LAST`, and `ON NEXT`. To try it out, click the filter icon next to the Date column in the left side menu, or click the date filter below the Answer title.
 
 
 [#9-3-0-cl-group-agg-correct]
 [discrete]
-=== Group Aggregate enhancements: reaggregation
+=== Group aggregate enhancements: reaggregation
 
 // Naomi
 
@@ -162,7 +157,7 @@ endif::[]
 
 // Naomi
 
-You can now identify the key change drivers for changes in your metrics in a KPI chart. Select the percent change label or select any two data points on the KPI sparkline to view change analysis on your top 5 columns by usage-based ranking (UBR) and identify the reason behind the observed change. You can view the changes in other columns by clicking *Manage attributes* and selecting the desired column(s). This feature must be enabled by your administrator.
+You can now identify the key change drivers for changes in your metrics in a KPI chart.This feature is now available for administrators to enable, without contacting ThoughtSpot Support. Select the percent change label or select any two data points on the KPI sparkline to view change analysis on your top 5 columns by usage-based ranking (UBR) and identify the reason behind the observed change. You can view the changes in other columns by clicking *Manage attributes* and selecting the desired column(s).
 
 '''
 [#secondary-9-2-0-cl]
@@ -201,6 +196,23 @@ endif::[]
 
 endif::free-trial-feature[]
 
+ifndef::pendo-links[]
+[#9-3-0-cl-gcp]
+[discrete]
+=== ThoughtSpot Cloud on Google Cloud [.badge.badge-early-access]#Early
+endif::[]
+ifdef::pendo-links[]
+[#9-3-0-cl-gcp]
+[discrete]
+=== ThoughtSpot Cloud on Google Cloud
+endif::[]
+
+//Naomi
+
+ThoughtSpot Cloud will be available on Google Cloud Platform in addition to AWS. Customers can choose whether they want their SaaS deployed on AWS or GCP.
+
+ThoughtSpot on GCP can be purchased directly from ThoughtSpot but will also be available to purchase in the Google Cloud Marketplace, the BigQuery Partner Center, and Google Workspace Marketplace. Customers can also use their committed spend and credits on Google Marketplace to purchase ThoughtSpot.
+
 [#9-3-0-cl-aurora]
 [discrete]
 === Amazon Aurora PostgreSQL connection
@@ -211,7 +223,7 @@ You can now create connections from ThoughtSpot to Amazon Aurora PostgreSQL.
 
 [#9-3-0-cl-rds]
 [discrete]
-=== Amazon RDS PostgreSQL connection
+=== Amazon Relational Database Service (RDS) PostgreSQL connection
 
 // Naomi
 
@@ -227,9 +239,24 @@ You can now create connections from ThoughtSpot to MySQL databases.
 
 [#9-3-0-cl-csv-connection]
 [discrete]
-=== Allow data managers to specify default connection for CSV Uploads
+=== Specify default connection for CSV uploads
 
 // Naomi
+
+Previously, when multiple database connections were configured to receive CSV uploads without a specified table or worksheet for collocation, the files were randomly uploaded to one of the connections. With this new enhancement, administrators and data managers now have the ability to specify a default target connection for such uploads.
+
+To set the default target connection, navigate to *Data > Connections* and use the new CSV Upload Default toggle. By specifying a default connection, you ensure that CSV files without a designated destination will be uploaded to the chosen connection.
+This enhancement provides better control and organization of CSV uploads, making it easier to manage data in scenarios where end-users do not select a collocation for their uploaded files.
+
+ifndef::free-trial-feature[]
+[#9-3-0-cl-billing]
+[discrete]
+=== In-app billing reporting
+
+// Naomi
+
+Admin users will be able to access a Liveboard reflecting the pricing model purchased and associated with their cluster. Query-based pricing customers see the xref:query-stats.adoc[Billable Query Stats Liveboard], while time-based pricing customers see the xref:consumption-pricing-time-based.adoc#credit-usage-pinboard[Credit Usage Liveboard].
+endif::free-trial-feature[]
 
 ifndef::free-trial-feature[]
 [discrete]
