@@ -17,6 +17,7 @@ NOTE: Integration with dbt is certified only for Amazon Redshift, Databricks, Go
 Before you can integrate with dbt, you must satisfy the following prerequisites
 
 * Create a xref:connections.adoc[connection] to your external cloud data warehouse: Amazon Redshift, Databricks, Google BigQuery, or Snowflake. This cloud data warehouse must contain the tables that are created from your dbt models.
+* If you are using a single-tenant dbt environment, you must ask your dbt contact to enable access to the https://docs.getdbt.com/dbt-cloud/api-v2[dbt Cloud API v2 (2.0.0)^].
 * If you connect to dbt via *dbt cloud*, you need the API key, Account ID, and Project ID:
 +
 API key:: This is also called the *API token* in dbt. To find this token, refer to the https://docs.getdbt.com/docs/dbt-cloud-apis/user-tokens[dbt documentation^].
