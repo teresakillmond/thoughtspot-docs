@@ -156,10 +156,6 @@ Liveboard cross filters [.badge.badge-early-access-relnotes]#Early Access#::
 Click on any data point in your Liveboard and easily filter the entire Liveboard by that value. For example, if you select *California* in a geo chart on your Liveboard, and then select *Filter*, all the other visualizations only show data from California. A visualization for *Total sales by city*, for example, would only show sales for cities in California. This feature is also called _brushing and linking_. This feature must be enabled by your administrator. For more information about cross filters, see
 xref:liveboard-filters-cross.adoc[Liveboard cross filters].
 
-Access the contextual menu on left click [.badge.badge-early-access-relnotes]#Early Access#::
-
-Access the contextual menu for visualization data points on left click. Instead of right-clicking on a data point to include or exclude it, drill down on it, or show underlying data, now you can access the menu more easily, with a single left click. This feature must be enabled by your administrator.
-
 Mandatory Liveboard filters::
 
 Mandatory Liveboard filters are now GA. Mark certain filters in your Liveboard as mandatory. If you add mandatory filters to a Liveboard, the visualizations will only load after Liveboard viewers select values for the mandatory filters. Use mandatory filters for Liveboards that contain data that may not be relevant for everyone who must view and consume the Liveboard. Mandatory filters also lower query and performance costs.
@@ -175,7 +171,7 @@ KPI change analysis is now GA and on by default. You can now use change analysis
 To access this feature, go to your KPI chart and select the caret icon to the right of the percent change label. The *Run change analysis* pop-up allows you to customize the attribute columns ThoughtSpot analyzes. ThoughtSpot runs change analysis for the most recent data point and the past comparison data point as per the KPI chart's configuration. For more information on change analysis, see xref:spotiq-change.adoc[Comparative analysis].
 Note that you need SpotIQ privileges to use the KPI change analysis feature.
 
-Anomaly detection for time-series KPI charts [.badge.badge-early-access-relnotes]#Early Access#:: You can now see anomalies in time-series KPI charts. Our new anomaly detection algorithm detects data which does not fall within the expected confidence intervals, while allowing for seasonal changes and growth over time. This feature must be enabled by your administrator. To try it out, open your KPI chart as an Answer, open the chart configuration menu, and select *Show anomalies*. See xref:time-series-anomalies.adoc[].
+Anomaly detection for time-series KPI charts [.badge.badge-early-access-relnotes]#Early Access#:: You can now see anomalies in time-series KPI charts. Our new anomaly detection algorithm detects data which does not fall within the expected confidence intervals, while allowing for seasonal changes and growth over time. This feature must be enabled by your administrator. To try it out, open your KPI chart as an Answer, open the chart configuration menu, and select *Show anomalies*. See xref:time-series-anomaly.adoc[].
 
 ThoughtSpot Sync::
 You can now use ThoughtSpot Sync to sync data directly from an Answer or custom SQL view to the following apps: +
@@ -521,9 +517,9 @@ High Availability::
 ThoughtSpot now supports High Availability through deployment spanning multiple Availability Zones. This ensures that the ThoughtSpot Cloud application experiences near-zero downtime in the case of AWS Availability Zone (AZ) failures. To learn how to enable High Availability in your environment, see xref:high-availability.adoc[].
 
 [#8-9-0-cl-query-based-pricing]
-Query Stats Liveboard::
+Billable Query Stats Liveboard::
 
-The new Query Stats Liveboard allows administrators of customers who have signed up for a query-based usage subscription, to track the number of queries of their users. To view the Query Stats Liveboard, go to *Liveboards* and select *Query Stats Liveboard*. Query-based usage is part of consumption-based pricing. For more information, see xref:consumption-pricing-query-based.adoc[Query-based usage].
+The new Billable Query Stats Liveboard allows administrators of customers who have signed up for a query-based usage subscription, to track the number of queries of their users. To view the Billable Query Stats Liveboard, go to *Liveboards* and select *Billable Query Stats Liveboard*. Query-based usage is part of consumption-based pricing. For more information, see xref:consumption-pricing-query-based.adoc[Query-based usage].
 
 
 [#8-9-0-cl-developer]

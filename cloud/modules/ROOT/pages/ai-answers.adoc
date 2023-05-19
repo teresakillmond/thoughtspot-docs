@@ -1,9 +1,9 @@
 = Natural language search
 :author: Naomi
-:last_updated: 3/22/23
+:last_updated: 5/17/23
 :experimental:
 :linkattrs:
-:page-layout: default-cloud-private-preview
+:page-layout: default-cloud-early-access
 :description: You can now use natural language to search for answers to your business questions.
 
 // persona: business user
@@ -12,13 +12,15 @@ Use natural language to search for answers to your business questions. You can b
 
 Click the search bar labeled *Ask any business question you have*, select the Worksheet to search on, and type your question in natural language. You can change the Worksheet selected when you search from the Home page. When you search using the search bar in the top navigation bar, the search inherits the Worksheet you last searched on.
 
-ThoughtSpot translates your question into a SQL query using a Large Language Model (LLM). When you enter your question, you will see the AI-generated answer appear, along with a list of related Answers created by users in your team.
+ThoughtSpot translates your question into a SQL query using a Large Language Model (LLM). When you enter your question, you will see the AI-generated Answer appear, along with a list of related Answers created by users in your team.
+
+See xref:ai-answers-best-practices.adoc[] for more information about how to best use natural language search.
 
 Note that you must select a Worksheet to see an AI-generated Answer. If you use natural language search when the source is set to *All sources*, you see a list of user-generated Answers that match your query the closest.
 
-.[.badge.badge-private-preview]#Private Preview#
+.[.badge.badge-early-access]#Early Access#
 ****
-Natural language search is a private preview feature and is disabled by default. To enable it, contact {support-url}. Once enabled, your ThoughtSpot administrator can grant you access to this feature by assigning the *Can preview ThoughtSpot Sage* user privilege to your user group.
+Natural language search is an Early Access feature and is disabled by default. To enable it, contact your administrator. Once enabled, your ThoughtSpot administrator can grant you access to this feature by assigning the *Can preview ThoughtSpot Sage* user privilege to your user group.
 ****
 
 == Edit the Answer
@@ -37,9 +39,9 @@ You can leave feedback on the accuracy of the AI-generated Answer by clicking th
 
 // Worksheets with less than 200 columns will have AI-generated Answers enabled by default, while Worksheets with more than 200 columns will be disabled by default.
 
-Users can decide to disable or enable AI-generated Answers based on the Worksheets to which they have edit access.
+Users can decide to disable or enable AI-generated Answers based on the Worksheets to which they have edit access. When natural language search is enabled, AI-generated Answers are enabled for all Worksheets by default.
 
-To disable AI-generated answers on a Worksheet, follow these steps:
+To disable AI-generated Answers on a Worksheet, follow these steps:
 
 . Navigate to the *Data* tab.
 

@@ -1,5 +1,5 @@
 = Hide a column or define a synonym
-:last_updated: tbd
+:last_updated: 5/12/23
 :linkattrs:
 :experimental:
 :page-layout: default-cloud
@@ -22,6 +22,8 @@ There might also be some columns in the dataset that you don't want to expose to
 When you hide a Worksheet, table, or view column, you only hide it from users without _edit_ privileges on the object.
 Administrators and users with edit privileges on the object can still see and interact with the hidden column.
 Users without edit privileges for the object cannot see or interact with the hidden column.
+
+If a hidden column is used in an Answer pinned to a Liveboard, then the entire Liveboard becomes read-only to users. This limits Liveboard functionality, which means the ability to adjust filters and download data is restricted. If you want to make a certain column available only to a subset of users, we recommend using xref:security-data-object.adoc#cls[column-level security].
 
 To hide a column, change the *HIDDEN* (UI)/*Hide* (model file) setting.
 By default, all columns in a data source appear in ThoughtSpot.
@@ -46,11 +48,11 @@ When users search using these synonyms, the returned table or chart uses the _ac
 [#automatic-synonyms]
 === AI-generated synonyms
 
-When you create a new Worksheet, ThoughtSpot automatically creates synonyms for each column name. ThoughtSpot creates column synonyms after you save your new Worksheet.
+When you create a new Worksheet or edit a Worksheet, ThoughtSpot automatically creates synonyms for each column name, unless you already <<create-synonyms,created your own synonyms>> for the Worksheet columns. ThoughtSpot automatically creates synonyms for each column name. ThoughtSpot creates column synonyms after you save your new Worksheet.
 
-.[.badge.badge-private-preview]#Private Preview#
+.[.badge.badge-early-access]#Early Access#
 ****
-The AI-generated synonyms feature is a private preview feature and is disabled by default. To enable it, contact your ThoughtSpot administrator. For more about Private Preview features, see xref:release-lifecycle.adoc#private-preview[ThoughtSpot Cloud release life cycle].
+The AI-generated synonyms feature is an Early Access feature and is disabled by default. To enable it, contact your ThoughtSpot administrator. For more about Early Access features, see xref:release-lifecycle.adoc#early-access[ThoughtSpot Cloud release life cycle].
 ****
 
 You can see the AI-generated synonyms in the *Synonyms* column of the Worksheet details page. AI-generated synonyms are in italics.
@@ -60,7 +62,7 @@ image::worksheet-column-synonyms.png[Worksheet column synonyms]
 [#create-synonyms]
 === Create synonyms
 
-You can set column synonyms for columns in tables and Worksheets.
+You can create your own column synonyms for columns in tables and Worksheets.
 
 To create a synonym for a column:
 

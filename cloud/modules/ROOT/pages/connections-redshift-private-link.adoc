@@ -1,6 +1,6 @@
 = Enabling an AWS PrivateLink between ThoughtSpot Cloud and your {connection} data warehouse
 :experimental:
-:last_updated: 3/16/2021
+:last_updated: 5/3/2023
 :linkattrs:
 :page-layout: default-cloud
 :page-aliases: /admin/ts-cloud/private-link-redshift.adoc
@@ -51,7 +51,7 @@ To deploy an AWS PrivateLink between your {connection} data warehouse and the Th
 After completing the <<prerequisites,prerequisites>>, you must configure the Endpoint Service.
 
 . Sign in to the AWS Console.
-. Create a Network Load Balancer (NLB) routing TCP traffic on port 5439 to your {connection} database.
+. Create a Network Load Balancer (NLB) routing TCP traffic on port 5439 to your {connection} database. Ensure that "Cross Zone Load Balancing" is enabled in the load balancer.
 . Navigate to menu:AWS VPC Console[Endpoint Services > Create Endpoint Service].
 . Select the {connection} NLB you created in step 2.
 . Select *Require Acceptance for Endpoint*.
