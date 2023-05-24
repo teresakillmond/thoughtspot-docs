@@ -45,11 +45,13 @@ You can set up the SpotApp in one of two ways:
 
 [#option-1]
 ==== Option 1
-The following SQL commands grant permission for the role you use in your {application} connection to use the {application} database. They create a separate database and schema for the data in the {application} database, and create the tables with the data. Then, they grant permission for the role you use in your {application} connection to use the {application} database. Replace `<YOUR_ROLE>` and `<YOUR_WAREHOUSE>` with your specific information. The role should be either SYSADMIN or a custom SpotApps role. You can also modify the schedule. The following commands set the schedule to refresh the table data monthly. Changing the schedule may have performance and cost implications.
+The following SQL commands grant permission for the role you use in your {application} connection to use the {application} database. They create a separate database and schema for the data in the {application} database, and create the tables with the data. Then, they grant permission for the role you use in your {application} connection to use the {application} database. Replace `<YOUR_ROLE>` and `<YOUR_WAREHOUSE>` with your specific information. The role should be either ACCOUNTADMIN or a custom SpotApps role. You can also modify the schedule. The following commands set the schedule to refresh the table data monthly. Changing the schedule may have performance and cost implications.
 
 NOTE: ThoughtSpot recommends you create the database and schema with the suggested names, using the first two commands in the SQL script. However, you can also use your own names. If you use different names, you must replace ThoughtSpot's suggested names with the names you used.
 
-Run these commands as the `ACCOUNTADMIN`.
+Run these commands as the `ACCOUNTADMIN`. If you don't have account admin access, you can create a custom role with the permissions required to execute tasks. See the https://docs.snowflake.com/en/user-guide/tasks-intro#task-security[Snowflake documentation^].
+
+Make sure to be consistent in your SQL script. If you use double quotes as object identifiers for one object, you must use double quotes for all objects. If you run all the commands at once, use semicolons to separate the commands.
 
 SQL commands:
 [%collapsible]
@@ -62,10 +64,11 @@ include::partial$snowflake-sql-script-option-1.adoc[]
 
 [#option-2]
 ==== Option 2
-The following SQL commands grant permission for the role you use in your {application} connection to use the {application} database. They prepare you to query on the system database directly. Replace *YOUR_ROLE* with your specific information, either the SYSADMIN or a custom SpotApps role.
+The following SQL commands grant permission for the role you use in your {application} connection to use the {application} database. They prepare you to query on the system database directly. Replace *YOUR_ROLE* with your specific information, either the ACCOUNTADMIN or a custom SpotApps role.
 
-Run these commands as the `ACCOUNTADMIN`.
+Run these commands as the `ACCOUNTADMIN`. If you don't have account admin access, you can create a custom role with the permissions required to execute tasks. See the https://docs.snowflake.com/en/user-guide/tasks-intro#task-security[Snowflake documentation^].
 
+Make sure to be consistent in your SQL script. If you use double quotes as object identifiers for one object, you must use double quotes for all objects. If you run all the commands at once, use semicolons to separate the commands.
 
 SQL commands:
 [%collapsible]
