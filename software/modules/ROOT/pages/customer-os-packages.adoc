@@ -5,7 +5,7 @@
 :experimental:
 :description: To successfully deploy ThoughtSpot, you must have the following packages on each node of your ThoughtSpot cluster: yum, python 3, and R.
 
-To successfully deploy ThoughtSpot in your organization, you must have the following packages on each node of your ThoughtSpot cluster: <<yum,yum>>, <<pip,python 3>>, and <<r,R>>. ThoughtSpot does not install the R packages if you define the xref:customer-os-install-online.adoc#skip_r[skip_r] flag in the ansible playbook.
+To successfully deploy ThoughtSpot in your organization, you must have the following packages on each node of your ThoughtSpot cluster: <<yum,yum>>, <<pip,python 3>>, and <<r,R>>. ThoughtSpot does not install the R packages if you define the xref:customer-os-ansible-configure.adoc#skip_r[skip_r] flag in the ansible playbook.
 When the ansible playbook runs, it automatically installs the packages.
 
 ThoughtSpot also uses the third-party software packages listed in xref:third-party.adoc[].
@@ -42,7 +42,7 @@ include::partial$/packages/pip-rpm-packages.adoc[]
 --
 R packages;;
 +
-ThoughtSpot does not install the R packages if you define the xref:rhel-install-online.adoc#skip_r[skip_r] flag in the ansible playbook.
+ThoughtSpot does not install the R packages if you define the xref:customer-os-ansible-configure.adoc#skip_r[skip_r] flag in the ansible playbook.
 +
 --
 Download: link:{attachmentsdir}/r-rpm-packages-rhel.csv[R RPM package list].

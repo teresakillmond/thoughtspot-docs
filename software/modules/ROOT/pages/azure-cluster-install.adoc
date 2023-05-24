@@ -4,7 +4,7 @@
 :experimental:
 :description: Learn how to install ThoughtSpot clusters in Azure.
 
-Learn how to install ThoughtSpot clusters in Azure.
+Learn how to install ThoughtSpot clusters in Azure. If you are deploying ThoughtSpot using xref:customer-os.adoc[RHEL, OEL, or Amazon Linux 2], refer to xref:customer-os-install.adoc[] instead of this article.
 
 '''
 > **ThoughtSpot Training**
@@ -38,8 +38,7 @@ Follow the steps in this checklist:
 |===
 | &#10063; | <<cluster-step-1,Step 1: Run the installer>>
 | &#10063; | <<cluster-step-2,Step 2: Check cluster health>>
-| &#10063; | <<cluster-step-3,[RHEL] Step 3: Prepare services>>
-| &#10063; | <<cluster-step-4,Step 4: Finalize installation>>
+| &#10063; | <<cluster-step-3,Step 3: Finalize installation>>
 |===
 
 Refer to your welcome letter from ThoughtSpot to find the link to download the release bundle.
@@ -240,46 +239,7 @@ CAUTION: If `tscli cluster check` returns an error, it may suggest you run `tscl
 If you run `tscli storage gc`, note that it restarts your cluster.
 
 [#cluster-step-3]
-=== [RHEL] Step 3: Prepare services
-
-If you deployed ThoughtSpot using xref:rhel.adoc[RHEL], you may need to perform additional service configuration. This is only required if you defined the xref:rhel-install-online.adoc#remote_user_management[remote_user_management] parameter in the Ansible playbook and used your LDAP or Active Directory service account for installation. Ensure that the following three services only start _after_ the service you use for LDAP/AD integration: `nginx`, `cgconfig`, `cgroup-init`.
-
-If you did _not_ deploy ThoughtSpot using RHEL, or you did _not_ define the xref:rhel-install-online.adoc#remote_user_management[remote_user_management] parameter, and used a local user for installation (the default), skip the following configuration. Move on to <<cluster-step-4,Step 4: Finalize installation>>.
-
-The service you use for LDAP/AD integration can vary. In this example, we use the `sssd` service. To ensure that `nginx`, `cgconfig`, and `cgroup-init` start at the correct time, follow these steps:
-
-. Open the `systemd` config for each service: `nginx`, `cgconfig`, and `cgroup-init`.
-
-. Add the following line to the config for each of the 3 services, replacing `<service-name>` with the name of the service you use for LDAP/AD integration:
-+
-[source,bash]
-----
-After=<service-name>.service
-----
-+
-For example, if you use the `sssd` service, add the following line to each config:
-+
-[source,bash]
-----
-After=sssd.service
-----
-
-. If the `systemd` config for any of the three services already has an `After` line, append the LDAP/ AD service with a space:
-+
-[source,bash]
-----
-After=syslog.target sssd.service
-----
-. Reload the services by running the following command:
-+
-[source,bash]
-----
-sudo systemctl daemon-reload
-----
-
-
-[#cluster-step-4]
-=== Step 4: Finalize installation
+=== Step 3: Finalize installation
 
 After the cluster status changes to `READY`, sign in to ThoughtSpot on your browser.
 Follow these steps:

@@ -196,11 +196,11 @@ If you run `tscli storage gc`, note that it restarts your cluster.
 [#prepare-services]
 == Prepare services
 
-This additional service configuration is only required if you defined the xref:rhel-install-online.adoc#remote_user_management[remote_user_management] parameter in the Ansible playbook and used your LDAP or Active Directory service account for installation.
+This additional service configuration is only required if you defined the xref:customer-os-ansible-configure.adoc#remote_user_management[remote_user_management] parameter in the Ansible playbook and used your LDAP or Active Directory service account for installation.
 
 Ensure that the following three services only start _after_ the service you use for LDAP/AD integration: `nginx`, `cgconfig`, `cgroup-init`.
 
-If you did _not_ define the xref:rhel-install-online.adoc#remote_user_management[remote_user_management] parameter, and used a local user for installation (the default), skip the following configuration. Move on to <<finalize,Finalize installation>>.
+If you did _not_ define the xref:customer-os-ansible-configure.adoc#remote_user_management[remote_user_management] parameter, and used a local user for installation (the default), skip the following configuration. Move on to <<finalize,Finalize installation>>.
 
 The service you use for LDAP/AD integration can vary. In this example, we use the `sssd` service. To ensure that `nginx`, `cgconfig`, and `cgroup-init` start at the correct time, follow these steps:
 
@@ -298,4 +298,3 @@ tscli config-mode lean [-h] --type medium
 
 +
 NOTE: If you decide later you want to disable advanced lean mode, use `default`.
-

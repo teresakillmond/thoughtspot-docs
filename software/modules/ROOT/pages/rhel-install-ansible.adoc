@@ -5,15 +5,15 @@
 :experimental:
 :description: Install ThoughtSpot using ansible on RHEL clusters.
 
-This is an alternative installation method to the xref:rhel-install-online.adoc[online cluster RHEL installation] and xref:rhel-install-offline.adoc[offline cluster RHEL installation]. If your organization requires that privilege escalation take place through an external tool that integrates with ansible, follow the steps in this article.
+This is an alternative installation method to the xref:customer-os-install.adoc[default RHEL installation]. If your organization requires that privilege escalation take place through an external tool that integrates with ansible, follow the steps in this article.
 
-Before starting the installation, complete the xref:rhel-prerequisites.adoc[prerequisites].
+Before starting the installation, complete the xref:customer-os-prerequisites.adoc[prerequisites].
 
 [#system-settings]
 == Prepare system settings
-There are certain system settings, specific to this type of RHEL installation, that you must configure. Configure these settings _after_ completing the xref:rhel-prerequisites.adoc[prerequisites].
+There are certain system settings, specific to this type of RHEL installation, that you must configure. Configure these settings _after_ completing the xref:customer-os-prerequisites.adoc[prerequisites].
 
-. Install the required yum, Python 3, and R packages on each node of the ThoughtSpot cluster: xref:rhel-packages.adoc[].
+. Install the required yum, Python 3, and R packages on each node of the ThoughtSpot cluster: xref:customer-os-packages.adoc[].
 . If you are using a physical machine or appliance, you must disable the disk write cache. On each ThoughtSpot-specific mounted drive, run the following command:
 +
 [source,bash]
