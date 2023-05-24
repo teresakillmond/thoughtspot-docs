@@ -11,7 +11,8 @@ NOTE: Not available for row-level security (RLS) formulas.
 
 a|
 [#if-then-else]
-`if...then...else` | Conditional operator. Accepts multiple clauses | `if ( item type in {'shirts', 'jackets', 'sweatshirts', 'sweaters'}) then 'tops' else if ( item type in {'shorts', 'pants'}) then 'bottoms' else 'all other apparel'` +
+`if...then...else` a| Conditional operator. Accepts multiple clauses. +
+NOTE: If you use an `if...then...else` formula with a group_aggregate formula, you must specify the type of aggregation in the `if...then...else` formula. Otherwise, the default aggregation behavior is `sum`.| `if ( item type in {'shirts', 'jackets', 'sweatshirts', 'sweaters'}) then 'tops' else if ( item type in {'shorts', 'pants'}) then 'bottoms' else 'all other apparel'` +
 `if (cost > 500) then 'flag' else 'approve'`
 
 a|
