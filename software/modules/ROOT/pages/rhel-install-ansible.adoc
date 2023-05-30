@@ -1,19 +1,19 @@
-= Install ThoughtSpot using Ansible on clusters that use RHEL
+= Install ThoughtSpot using ansible on clusters that use RHEL
 :last_updated: 12/8/2022
 :author: Teresa Killmond
 :linkattrs:
 :experimental:
-:description: Install ThoughtSpot using Ansible on RHEL clusters.
+:description: Install ThoughtSpot using ansible on RHEL clusters.
 
-This is an alternative installation method to the xref:rhel-install-online.adoc[online cluster RHEL installation] and xref:rhel-install-offline.adoc[offline cluster RHEL installation]. If your organization requires that privilege escalation take place through an external tool that integrates with Ansible, follow the steps in this article.
+This is an alternative installation method to the xref:customer-os-install.adoc[default RHEL installation]. If your organization requires that privilege escalation take place through an external tool that integrates with ansible, follow the steps in this article.
 
-Before starting the installation, complete the xref:rhel-prerequisites.adoc[prerequisites].
+Before starting the installation, complete the xref:customer-os-prerequisites.adoc[prerequisites].
 
 [#system-settings]
 == Prepare system settings
-There are certain system settings, specific to this type of RHEL installation, that you must configure. Configure these settings _after_ completing the xref:rhel-prerequisites.adoc[prerequisites].
+There are certain system settings, specific to this type of RHEL installation, that you must configure. Configure these settings _after_ completing the xref:customer-os-prerequisites.adoc[prerequisites].
 
-. Install the required yum, Python 3, and R packages on each node of the ThoughtSpot cluster: xref:rhel-packages.adoc[].
+. Install the required yum, Python 3, and R packages on each node of the ThoughtSpot cluster: xref:customer-os-packages.adoc[].
 . If you are using a physical machine or appliance, you must disable the disk write cache. On each ThoughtSpot-specific mounted drive, run the following command:
 +
 [source,bash]
@@ -96,11 +96,11 @@ ln -s /etc/localtime /usr/share/zoneinfo/localtime
 
 Cluster creation takes about 60 to 90 minutes.
 
-The node that acts as the coordinator node must be part of the cluster. It is defined by the `var: local_node` in the Ansible vars. The release tarball `<software_release.tar.gz>` must be present in the coordinator node and must be specified by the `tarball_location` var in the coordinator node.
+The node that acts as the coordinator node must be part of the cluster. It is defined by the `var: local_node` in the ansible vars. The release tarball `<software_release.tar.gz>` must be present in the coordinator node and must be specified by the `tarball_location` var in the coordinator node.
 
 . Untar the ansible.tar.gz file on the node from which the ansible playbook will be run, if you have not already. If you are using the ansible tower for running the playbook, this should be the ansible tower machine.
 . Rename *cluster_create_hosts.sample* to *cluster_create_hosts.yaml*.
-. Update the Ansible vars in *cluster_create_hosts.yaml* with your own specific values. See <<ansible-vars,Sample Ansible vars>>.
+. Update the ansible vars in *cluster_create_hosts.yaml* with your own specific values. See <<ansible-vars,Sample ansible vars>>.
 . Run the ansible-playbook. This installs ThoughtSpot software on all nodes. Run the following command on any cluster node:
 +
 [source,bash]
@@ -112,9 +112,9 @@ If privilege escalation requires a password, add the `-K` option to the `ansible
 . If there is a failure at any point, fix the failure and rerun the `ansible-playbook` command. Bypass the completed steps using the `--start-at-task` option, specifying the task at which to start.
 
 [#ansible-vars]
-=== Sample Ansible vars
+=== Sample ansible vars
 
-This is the definition of the *cluster_create_hosts.sample* file that is present in your Ansible tarball. You must replace anything in this file within `<>` with your own specific information.
+This is the definition of the *cluster_create_hosts.sample* file that is present in your ansible tarball. You must replace anything in this file within `<>` with your own specific information.
 
 [source,bash]
 ----

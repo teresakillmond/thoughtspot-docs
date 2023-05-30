@@ -1,18 +1,18 @@
-= Restore ThoughtSpot using Ansible on clusters that use RHEL
+= Restore ThoughtSpot using ansible on clusters that use RHEL
 :last_updated: 12/8/2022
 :author: Teresa Killmond
 :linkattrs:
 :experimental:
-:description: Restore ThoughtSpot using Ansible on RHEL clusters.
+:description: Restore ThoughtSpot using ansible on RHEL clusters.
 
-If your organization requires that privilege escalation take place through an external tool that integrates with Ansible, follow the steps in this article to restore your cluster.
+If your organization requires that privilege escalation take place through an external tool that integrates with ansible, follow the steps in this article to restore your cluster.
 
 Before restoring the cluster, ensure that the xref:rhel-install-ansible.adoc#system-settings[system settings] are correctly configured.
 
 == Restore the cluster
 
 . Rename *cluster_create_hosts.sample* to *cluster_create_hosts.yaml*.
-. Update the Ansible vars in *cluster_create_hosts.yaml* with your own specific values. See <<ansible-vars,Sample Ansible vars>>.
+. Update the ansible vars in *cluster_create_hosts.yaml* with your own specific values. See <<ansible-vars,Sample ansible vars>>.
 . Run the ansible-playbook. This restores the cluster. Run the following command on any cluster node:
 +
 [source,bash]
@@ -24,9 +24,9 @@ If privilege escalation requires a password, add the `-K` option to the `ansible
 . If there is a failure at any point, fix the failure and rerun the `ansible-playbook` command. Bypass the completed steps using the `--start-at-task` option, specifying the task at which to start.
 
 [#ansible-vars]
-=== Sample Ansible vars
+=== Sample ansible vars
 
-This is the definition of the *cluster_create_hosts.sample* file that is present in your Ansible tarball. You must replace anything in this file within `<>` with your own specific information.
+This is the definition of the *cluster_create_hosts.sample* file that is present in your ansible tarball. You must replace anything in this file within `<>` with your own specific information.
 
 [source,bash]
 ----
