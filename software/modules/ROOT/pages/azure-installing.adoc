@@ -105,14 +105,13 @@ Configure the nodes in the `nodes.config` file using the `set-config` command.
 
 . Disable the `firewalld` service by running `sudo systemctl stop firewalld` in your terminal.
 The `firewalld` service is a Linux firewall that must be off for ThoughtSpot installation.
-After the cluster installer reboots the nodes, `firewalld` automatically turns back on.
 +
 [source,console]
 ----
 $ sudo systemctl stop firewalld
 ----
 
-. To make sure you temporarily disabled `firewalld`, run `sudo systemctl status firewalld`.
+. To make sure you disabled `firewalld`, run `sudo systemctl status firewalld`.
 Your output should specify that `firewalld` is inactive.
 It may look something like the following:
 +

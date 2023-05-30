@@ -25,8 +25,7 @@ If you haven't received a link to download the release bundle, open a support ti
 |===
 | &#10063; | <<install-step-1,Step 1: Run the installer>>
 | &#10063; | <<install-step-2,Step 2: Check cluster health>>
-| &#10063; | <<install-step-3,[RHEL] Step 3: Prepare services>>
-| &#10063; | <<install-step-4,Step 4: Finalize installation>>
+| &#10063; | <<install-step-3,Step 3: Finalize installation>>
 |===
 
 [#install-step-1]
@@ -207,46 +206,7 @@ $ tscli cluster check
 ----
 
 [#install-step-3]
-== [RHEL] Step 3: Prepare services
-
-If you deployed ThoughtSpot using xref:rhel.adoc[RHEL], you must perform additional service configuration. This is only required if you defined the xref:rhel-install-online.adoc#remote_user_management[remote_user_management] parameter in the Ansible playbook and used your LDAP or Active Directory service account for installation. Ensure that the following three services only start _after_ the service you use for LDAP/AD integration: `nginx`, `cgconfig`, `cgroup-init`.
-
-If you did _not_ deploy ThoughtSpot using RHEL, or you did _not_ define the xref:rhel-install-online.adoc#remote_user_management[remote_user_management] parameter, and used a local user for installation (the default), skip the following configuration. Move on to <<install-step-4,Step 4: Finalize installation>>.
-
-The service you use for LDAP/AD integration can vary. In this example, we use the `sssd` service. To ensure that `nginx`, `cgconfig`, and `cgroup-init` start at the correct time, follow these steps:
-
-. Open the `systemd` config for each service: `nginx`, `cgconfig`, and `cgroup-init`.
-
-. Add the following line to the config for each of the 3 services, replacing `<service-name>` with the name of the service you use for LDAP/AD integration:
-+
-[source,bash]
-----
-After=<service-name>.service
-----
-+
-For example, if you use the `sssd` service, add the following line to each config:
-+
-[source,bash]
-----
-After=sssd.service
-----
-
-. If the `systemd` config for any of the three services already has an `After` line, append the LDAP/ AD service with a space:
-+
-[source,bash]
-----
-After=syslog.target sssd.service
-----
-. Reload the services by running the following command:
-+
-[source,bash]
-----
-sudo systemctl daemon-reload
-----
-
-
-[#install-step-4]
-== Step 4: Finalize installation
+== Step 3: Finalize installation
 
 After the cluster status changes to "`Ready,`" sign in to the ThoughtSpot application on your browser.
 
