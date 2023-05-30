@@ -1,146 +1,105 @@
-= Install ThoughtSpot clusters in Azure
-:last_updated: 01/06/2021
+= Deploy ThoughtSpot clusters on your own OS
+:last_updated: 5/30/2023
 :linkattrs:
+:author: Teresa Killmond
 :experimental:
-:description: Learn how to install ThoughtSpot clusters in Azure.
+:description: Learn how to deploy ThoughtSpot clusters on RHEL, OEL, or Amazon Linux 2.
 
-Learn how to install ThoughtSpot clusters in Azure. If you are deploying ThoughtSpot using xref:customer-os.adoc[RHEL, OEL, or Amazon Linux 2], refer to xref:customer-os-install.adoc[] instead of this article.
+After you xref:customer-os-ansible-configure.adoc[configure and run the ansible playbook], you are ready to deploy ThoughtSpot clusters.
 
-'''
-> **ThoughtSpot Training**
->
-> * For best results when installing ThoughtSpot on Azure, we recommend that you take the following ThoughtSpot U course: https://training.thoughtspot.com/create-upgrade-patch-a-thoughtspot-cluster/430642[Create a Cluster^].
-> * See other training resources at https://training.thoughtspot.com/[ThoughtSpot U^].
+NOTE: If your organization requires that privilege escalation take place through an external tool that integrates with ansible, refer to xref:rhel-ansible.adoc[].
 
-'''
-
+[#prereqs]
 == Prerequisites
+Ensure that you have completed the following prerequisites:
 
-Before you can install your ThoughtSpot clusters in Azure, complete these prerequisites.
+. xref:ports.adoc[Review the required network ports] for operation of ThoughtSpot, and ensure that the required ports are open and available.
+. xref:customer-os-prerequisites.adoc[], including xref:customer-os-prerequisites.adoc#set-up-hosts[setting up hosts]. Note that the configuration requirements for the hosts depend on the platform type: AWS, GCP, and so on.
+. xref:customer-os-artifacts.adoc[Download the ThoughtSpot artifacts] for deploment.
+. xref:customer-os-untar.adoc[Untar the ansible tarball].
+. xref:customer-os-offline-script.adoc[Run the offline script], if deploying offline.
+. xref:customer-os-ansible-configure.adoc[].
 
-[cols="5,~",grid=none,frame=none]
-|===
-| &#10063; | xref:azure-configuration-options.adoc[1. Review Azure configuration options] for detailed instance specs
-| &#10063; | xref:azure-launch-instance.adoc[2. Set up Azure for ThoughtSpot] to create and launch your instance
-| &#10063; | xref:ports.adoc[3. Review required network ports] for successful operation of ThoughtSpot
-| &#10063; | xref:azure-installing.adoc[4. Configure ThoughtSpot nodes in Azure]
-|===
+[#prepare_disks]
+== Prepare disks
+After the ansible playbook finishes, run the `prepare_disks` script on every node. You *must* run this script with elevated privileges, either with <<sudo,sudo>> or as a <<root,root user>>. Specify the data drives by adding the full device path for all data drives, such as `/dev/sdc`, after the script name. Separate data drives with a space.
 
-[#cluster-install]
-== Install ThoughtSpot software
+Run the `prepare_disks` script, either with sudo or as a root user:
 
-Install the cluster using the ThoughtSpot software release bundle.
-The estimated installation time is one hour.
+[#sudo]
+=== Run prepare_disks with sudo
 
-Follow the steps in this checklist:
-
-[cols="5,~",grid=none,frame=none]
-|===
-| &#10063; | <<cluster-step-1,Step 1: Run the installer>>
-| &#10063; | <<cluster-step-2,Step 2: Check cluster health>>
-| &#10063; | <<cluster-step-3,Step 3: Finalize installation>>
-|===
-
-Refer to your welcome letter from ThoughtSpot to find the link to download the release bundle.
-If you don't have a link, open a support ticket with {support-url} to request access to the release bundle.
-
-[#cluster-step-1]
-=== Step 1: Run the installer
-
-. Copy the downloaded release bundle to the `/export/sdc1/TS_TASKS/install` directory, using the following command:
+. Switch to the admin user:
 +
-[source,console]
+[source]
 ----
-$ scp <release-number>.tar.gz
-admin@<hostname>:/export/sdc1/TS_TASKS/install/<file-name>
+su admin
 ----
-+
-Note the following parameters:
 
-`release-number`::
-  is the release number of your ThoughtSpot instance, such as 5.3, 6.0, and so on.
-`hostname`::
-  is your specific hostname.
-`file-name`::
-  is the name of the tarball file on your local computer.
-
+. Run the prepare_disks script.
 +
-NOTE: You can use another secure copy method, if you prefer a method other than the `scp` command.
-
-. Alternatively, use `tscli fileserver download-release` to download the release bundle.
-+
-You must xref:tscli-command-ref.adoc#tscli-fileserver[configure the fileserver] by running `tscli fileserver configure` before you can download the release.
-+
-[source,console]
+[source]
 ----
- $ tscli fileserver download-release <release-number> --user <username> --out <release-location>
+sudo /usr/local/scaligent/bin/prepare_disks.sh /dev/sdc /dev/sdd
 ----
-+
-Note the following parameters:
 
-`release-number`::
-  is the release number of your ThoughtSpot instance, such as 5.3, 5.3.1, 6.0, and so on.
-`username`::
-  is the username for the fileserver that you set up earlier, when configuring the fileserver.
-`release-location`::
-  is the location path of the release bundle on your local machine. For example, `/export/sdc1/TS_TASKS/install/6.0.tar.gz`.
+[#root]
+=== Run prepare_disks as a root user
 
-. Verify the checksum to ensure you have the correct release.
+. Run the prepare_disks script.
 +
-Run `md5sum -c <release-number>.tar.gz.MD5checksum`.
-+
-[source,console]
+[source]
 ----
-$ md5sum -c <release-number>.tar.gz.MD5checksum
+sudo su
+/usr/local/scaligent/bin/prepare_disks.sh --username <admin user> /dev/sdc /dev/sdd
 ----
-+
-Your output says `ok` if you have the correct release.
+
+== Install ThoughtSpot clusters
+
+After you complete the <<prereqs,prerequisites>> and run `prepare_disks`, you are ready to install ThoughtSpot clusters.
+
 
 . Launch a https://linux.die.net/man/1/screen[screen^] session.
-Use screen to ensure that your installation doesn't stop if you lose network connectivity.
+Use screen to ensure that your installation does not stop if you lose network connectivity.
 +
 [source,console]
 ----
 $ screen -S DEPLOYMENT
 ----
 
-. Manually update `tscli`.
-+
-[source,console]
-$ tar -C /usr/local/scaligent -zxpf <release-number>.tar.gz './bin/tscli'
-
 . Take a machine snapshot prior to the release deployment, as a best practice.
 
-. Create the cluster.
+. Create the cluster by running the `tscli cluster create` command.
 +
-Run `tscli cluster create` to create the cluster.
+If you are using an s3 or gcs bucket for object storage, add the flag `--enable_cloud_storage=s3a` or `--enable_cloud_storage=gcs` to the end of the command.
 +
 [source,console]
 ----
 $ tscli cluster create <release-number>.tar.gz
 ----
 
-. Edit the output with your specific cluster information.
+. Edit the output with your specific cluster information. Fill out the cluster name, cluster ID, email alert preferences, and the node IPs at the prompts specified. Don't edit any other sections of the installer script.
 +
-For more information on this process, refer to xref:cluster-create.adoc[Using the tscli cluster create command] and xref:parameters-cluster-create.adoc[Parameters of the `cluster create` command].
+*Cluster Name*:: Name your cluster based on the ThoughtSpot naming convention, in the form _company-clustertype-location-clusternumber_.
+For example, _ThoughtSpot-prod-Sunnyvale-12_.
 +
-The cluster installer automatically reboots all the nodes after a successful install.
-At this time, the system is rebooting, which may take approximately 15 minutes.
+*Cluster ID*:: Enter the ID of your cluster that {support-url} provided for you.
+Open a ticket with ThoughtSpot Support if you do not have an ID.
 +
-
-. Sign in to any node to check the current cluster status:
+*Host IPs*:: Enter the IP addresses of all cluster hosts, in the form `000.000.000.000`.
+For example, 192.168.7.70.
+Use spaces instead of commas to separate multiple IP addresses.
 +
-[source,console]
-----
-$ tscli cluster status
-----
+*Email alerts*:: Enter the email addresses you would like to receive alerts about this cluster, in the form company@example.com.
+The address prod-alerts@thoughtspot.com appears automatically and should remain, so that ThoughtSpot can be aware of the status of your cluster.
+Separate email addresses using a space.
 
-[#cluster-step-2]
-=== Step 2: Check cluster health
+[#cluster-health]
+== Check cluster health
 
-After the cluster installs, check its status using the `tscli cluster status` command.
+After the cluster installs, check its status using the `tscli cluster status` and `tscli cluster check` commands.
 
-Your output may look similar to the following:
+Your output may look similar to the following example. Ensure that the cluster is `RUNNING` and that the Database and Search Engine are `READY`.
 
 [source,console]
 ----
@@ -153,14 +112,12 @@ Release         : 6.0
 Last update     = Wed Oct 16 02:24:18 2019
 Heterogeneous Cluster : False
 Storage Type    : HDFS
-
 Database: READY
 Number of tables in READY state: 2185
 Number of tables in OFFLINE state: 0
 Number of tables in INPROGRESS state: 0
 Number of tables in STALE state: 0
 Number of tables in ERROR state: 0
-
 Search Engine: READY
 Has pending tables. Pending time = 1601679ms
 Number of tables in KNOWN_TABLES state: 1934
@@ -171,9 +128,7 @@ Number of tables in BUILDING_AND_SERVING state: 128
 Number of tables in WILL_NOT_INDEX state: 0
 ----
 
-Ensure that the cluster is `RUNNING` and that the Database and Search Engine are `READY`.
-
-Your output may look something like the following listing.
+Your output for `tscli cluster check` may look similar to the following example.
 Ensure that all diagnostics show `SUCCESS`.
 
 [source,console]
@@ -238,8 +193,48 @@ Ensure that all diagnostics show `SUCCESS`.
 CAUTION: If `tscli cluster check` returns an error, it may suggest you run `tscli storage gc` to resolve the issue.
 If you run `tscli storage gc`, note that it restarts your cluster.
 
-[#cluster-step-3]
-=== Step 3: Finalize installation
+[#prepare-services]
+== Prepare services
+
+This additional service configuration is only required if you defined the xref:customer-os-ansible-configure.adoc#remote_user_management[remote_user_management] parameter in the Ansible playbook and used your LDAP or Active Directory service account for installation.
+
+Ensure that the following three services only start _after_ the service you use for LDAP/AD integration: `nginx`, `cgconfig`, `cgroup-init`.
+
+If you did _not_ define the xref:customer-os-ansible-configure.adoc#remote_user_management[remote_user_management] parameter, and used a local user for installation (the default), skip the following configuration. Move on to <<finalize,Finalize installation>>.
+
+The service you use for LDAP/AD integration can vary. In this example, we use the `sssd` service. To ensure that `nginx`, `cgconfig`, and `cgroup-init` start at the correct time, follow these steps:
+
+. Open the `systemd` config for each service: `nginx`, `cgconfig`, and `cgroup-init`.
+
+. Add the following line to the config for each of the 3 services, replacing `<service-name>` with the name of the service you use for LDAP/AD integration:
++
+[source,bash]
+----
+After=<service-name>.service
+----
++
+For example, if you use the `sssd` service, add the following line to each config:
++
+[source,bash]
+----
+After=sssd.service
+----
+
+. If the `systemd` config for any of the three services already has an `After` line, append the LDAP/ AD service with a space:
++
+[source,bash]
+----
+After=syslog.target sssd.service
+----
+. Reload the services by running the following command:
++
+[source,bash]
+----
+sudo systemctl daemon-reload
+----
+
+[#finalize]
+== Finalize installation
 
 After the cluster status changes to `READY`, sign in to ThoughtSpot on your browser.
 Follow these steps:
@@ -249,7 +244,7 @@ Follow these steps:
 +
 [source,console]
 ----
-https://<IP-address>
+https://<VM-IP>
 ----
 
 . If you don't have a security certificate for ThoughtSpot, you must bypass the security warning:
@@ -265,6 +260,7 @@ ThoughtSpot recommends changing the default admin password.
 [#ts-login]
 image:ts-login-page.png[ThoughtSpot's sign-in window]
 
+[#lean-configuration]
 == Lean configuration
 
 *For use with thin provisioning only:* If you have a xref:deploying-cloud.adoc#small-medium[small or medium instance type], with less than 100GB of data, you must use advanced lean configuration before loading any data into ThoughtSpot.
@@ -306,10 +302,12 @@ NOTE: If you decide later you want to disable advanced lean mode, use `default`.
 '''
 > **Related information**
 >
-> * xref:nodesconfig-example.adoc[The nodes.config file]
-> * xref:parameters-nodesconfig.adoc[Parameters of the nodes.config file]
-> * xref:cluster-create.adoc[Using the tscli cluster create command]
-> * xref:parameters-cluster-create.adoc[Parameters of the cluster create command]
-> * xref:azure-launch-instance.adoc[Set up ThoughtSpot in Azure]
-> * xref:azure-installing.adoc[Configure ThoughtSpot nodes in Azure]
-> * Contact {support-url}.
+> * xref:customer-os.adoc[]
+> * xref:customer-os-prerequisites.adoc[]
+> * xref:customer-os-artifacts.adoc[]
+> * xref:customer-os-untar.adoc[]
+> * xref:customer-os-offline-script.adoc[]
+> * xref:customer-os-ansible-configure.adoc[]
+> * xref:customer-os-upgrade.adoc[Upgrading ThoughtSpot on your own OS to a new release]
+> * xref:customer-os-add-node.adoc[Adding new nodes to clusters running on your own OS]
+> * xref:customer-os-packages.adoc[Packages installed with ThoughtSpot running on your own OS]
